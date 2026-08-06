@@ -92,5 +92,19 @@ baseline on the same visible input reached 73.08% validation balanced identifiab
 revision should therefore use a binary classifier objective with a context-group calibration fold,
 then learn exact ambiguous counts hierarchically. Oracle-count generation remains gated off.
 
+Dataset and experiment V4 implemented the binary revision. It used balanced single-token `A`/`B`
+supervision, carved calibration only from V3 training contexts, selected checkpoints and
+thresholds on that fold, and evaluated each frozen seed once on V3 validation. The three selected
+seeds reached 49.15%, 48.96%, and 55.49% validation balanced identifiability, for a 51.20% mean.
+Both preregistered gates failed. The selected score margins also collapsed to only two or three
+distinct values because the language-model vocabulary logits were emitted at coarse precision.
+
+The next revision should therefore separate representation from language-model output
+calibration: extract frozen hidden states from 0.8B, 4B, and 9B Qwen3.5, train a class-balanced
+float32 linear probe, and select layer/regularization only on calibration. If a frozen probe
+succeeds, add LoRA behind the same discriminative head; if it fails across layers and sizes,
+revise serialization and corpus variation. Another digit/letter vocabulary-label run is not
+eligible. Exact ambiguous counts and oracle-count generation remain gated off.
+
 Next metrics: goal invariance, entity-renaming invariance, one-flag minimal-pair sensitivity,
 multi-step rollout divergence, and post-mismatch recovery.

@@ -19,3 +19,4 @@ for seed in 0 1 2; do
 done
 
 .venv/bin/python python/summarize_v4_binary.py
+.venv/bin/python python/analyze_v4_binary_scores.py

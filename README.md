@@ -29,6 +29,8 @@ simulator—not a frontier model—supplies every transition label.
 - A compact outcome-count calibration track, strict evaluator, balanced variant, and 0.8B config.
 - A V3 context-group stratifier over ambiguity, outcome counts, actions, scenario families, and
   supported mechanic tags, plus full-validation multi-seed checkpoint selection.
+- A V4 binary identifiability track with a context-disjoint calibration fold, calibrated A/B
+  logit scoring, token shortcut ablations, score-resolution diagnostics, and preregistered gates.
 
 ## Prerequisites
 
@@ -56,6 +58,8 @@ npm run dataset:v2
 npm run dataset:validate:v2
 npm run dataset:v3
 npm run dataset:validate:v3
+npm run dataset:v4
+npm run dataset:validate:v4
 ```
 
 Each generated dataset contains:
@@ -83,6 +87,10 @@ Dataset v3 is the calibration revision of the agent track. It retains whole obse
 groups while aligning class and mechanic distributions. Its MLX and record artifacts live under
 `data/v3`; the privileged track remains in v2 because V3 currently tests agent-view calibration.
 
+Dataset v4 reads only V3 training and validation records. It carves a calibration fold from V3
+training contexts, preserves V3 validation for one frozen evaluation per seed, and never reads V3
+test. Its binary MLX targets use `A` for identifiable and `B` for ambiguous.
+
 ## Audit and deterministic baselines
 
 ```bash
@@ -94,6 +102,8 @@ npm run baselines:v2:outcome-count
 npm run baselines:v2:privileged
 npm run audit:v3
 npm run baselines:v3:outcome-count
+npm run baselines:v4:binary
+npm run diagnostics:v4:binary
 ```
 
 The legacy v1 full corpus has no scenario-group leakage, but every test agent prompt appears
@@ -113,6 +123,12 @@ See `docs/v2-audit.md`, `docs/v2-agent-baselines.md`,
 V3 reduces the ambiguity-rate spread to under one percentage point while preserving zero prompt
 and context overlap. The largest observed common-mechanic share gap is 5.54%. See
 `docs/v3-audit.md` and `docs/v3-outcome-count-baselines.md`.
+
+V4's train/calibration/validation ambiguity rates differ by at most 1.13 points, its maximum
+mechanic-share gap is 3.78 points, and no prompt or context crosses a split. The primary calibrated
+full-input token baseline reaches 58.24% validation balanced accuracy. Removing history and
+memories reaches 76.92% as a diagnostic ablation, motivating stronger shortcut and invariance
+tests. See `docs/v4-experiment-plan.md` and `docs/v4-binary-baselines.md`.
 
 ## Training
 
@@ -174,6 +190,21 @@ for every prompt and reached 50% balanced identifiability. A balanced-prior toke
 baseline using only visible input reached 73.08%, locating the remaining problem in the current
 five-way digit SFT objective rather than the V3 split or the absence of input signal. See
 `docs/v3-results.md`, `docs/v3-calibration-results.md`, and `docs/v3-logit-diagnostics.md`.
+
+The preregistered V4 run applies the smallest controlled change: balanced binary `A`/`B` labels,
+checkpoint and threshold selection on a separate calibration fold, and one validation pass per
+frozen seed:
+
+```bash
+./scripts/run-v4-binary-multiseed.sh
+```
+
+V4 also failed. Selected-seed validation balanced accuracy was 49.15%, 48.96%, and 55.49%, for a
+51.20% mean; both the engineering stability and scientific token-baseline gates failed. The
+selected vocabulary-logit margins contained only two or three unique values, so the next
+experiment is a float32 classification head over frozen hidden representations—not another
+generative-label or larger-model LoRA run. See `docs/v4-results.md`,
+`docs/v4-binary-results.md`, and `docs/v4-score-diagnostics.md`.
 
 The legacy v1 exact-transition and privileged configs remain available for compatibility work:
 

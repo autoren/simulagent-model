@@ -26,6 +26,7 @@
     "baselines:v2:outcome-count": ".venv/bin/python python/run_outcome_count_baselines.py",
     "baselines:v3:outcome-count": ".venv/bin/python python/run_outcome_count_baselines.py --dataset data/v3/records/agent --evaluation-split valid --output-dir outputs/baselines/v3-outcome-count --markdown docs/v3-outcome-count-baselines.md --title 'Dataset v3 outcome-count validation baselines'",
     "baselines:v4:binary": ".venv/bin/python python/run_binary_baselines.py",
+    "diagnostics:v4:binary": ".venv/bin/python python/analyze_v4_binary_scores.py",
     "eval:predictions": ".venv/bin/python python/evaluate_predictions.py",
     "eval:v2:agent": ".venv/bin/python python/evaluate_epistemic.py",
     "eval:v2:outcome-count": ".venv/bin/python python/evaluate_outcome_count.py"
