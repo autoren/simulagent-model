@@ -39,6 +39,16 @@ export interface DatasetV3Config extends DatasetV2Config {
   maximumMechanicShareGap: number;
 }
 
+export interface DatasetV4Config {
+  inputDir: string;
+  outputDir: string;
+  splitSeed: string;
+  calibrationRatio: number;
+  stratificationRestarts: number;
+  maximumAmbiguityRateGap: number;
+  maximumMechanicShareGap: number;
+}
+
 export interface ActionDescriptor {
   key: string;
   label: string;
@@ -166,6 +176,16 @@ export interface AgentEpistemicRecordV3
   id: string;
   schema_version: 3;
   mechanic_labels: string[];
+}
+
+export type V4DevelopmentSplit = 'train' | 'calibration' | 'validation';
+
+export interface AgentIdentifiabilityRecordV4
+  extends Omit<AgentEpistemicRecordV3, 'id' | 'schema_version' | 'split'> {
+  id: string;
+  schema_version: 4;
+  split: V4DevelopmentSplit;
+  source_split: DatasetSplit;
 }
 
 export interface PrivilegedTransitionRecordV2 {

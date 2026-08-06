@@ -181,8 +181,8 @@ function featureWeight(feature: string): number {
 }
 
 function groupCapacities(total: number, ratios: SplitRatios): Record<DatasetSplit, number> {
-  const valid = Math.max(1, Math.round(total * ratios.valid));
-  const test = Math.max(1, Math.round(total * ratios.test));
+  const valid = ratios.valid === 0 ? 0 : Math.max(1, Math.round(total * ratios.valid));
+  const test = ratios.test === 0 ? 0 : Math.max(1, Math.round(total * ratios.test));
   const train = total - valid - test;
   if (train < 1) {
     throw new Error('Split ratios leave no training groups.');

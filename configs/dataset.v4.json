@@ -1,0 +1,9 @@
+{
+  "inputDir": "data/v3",
+  "outputDir": "data/v4",
+  "splitSeed": "simulagent-binary-v4-calibration",
+  "calibrationRatio": 0.15,
+  "stratificationRestarts": 128,
+  "maximumAmbiguityRateGap": 0.05,
+  "maximumMechanicShareGap": 0.1
+}

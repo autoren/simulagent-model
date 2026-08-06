@@ -42,4 +42,16 @@ describe('stratified group splitting', () => {
     });
     expect(Math.max(...rates) - Math.min(...rates)).toBeLessThanOrEqual(0.25);
   });
+
+  it('supports a deliberately closed zero-ratio holdout', () => {
+    const result = createStratifiedSplitPlan(
+      groups,
+      { train: 0.8, valid: 0.2, test: 0 },
+      'closed-holdout',
+      8,
+    );
+    expect([...result.plan.values()]).not.toContain('test');
+    expect([...result.plan.values()]).toContain('train');
+    expect([...result.plan.values()]).toContain('valid');
+  });
 });
