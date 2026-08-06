@@ -1,0 +1,36 @@
+{
+  "name": "simulagent-qlora",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Counterfactual transition datasets and Qwen3.5 fine-tuning experiments for Simulagent.",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run",
+    "test:python": ".venv/bin/python -m unittest discover -s python -p 'test_*.py'",
+    "dataset:pilot": "tsx src/compile-dataset.ts --config configs/dataset.pilot.json",
+    "dataset:full": "tsx src/compile-dataset.ts --config configs/dataset.full.json",
+    "dataset:v2": "tsx src/compile-v2.ts --config configs/dataset.v2.json",
+    "dataset:v3": "tsx src/compile-v3.ts --config configs/dataset.v3.json",
+    "dataset:validate": "tsx src/validate-dataset.ts",
+    "dataset:validate:v2": "tsx src/validate-v2.ts",
+    "dataset:validate:v3": "tsx src/validate-v3.ts",
+    "audit": ".venv/bin/python python/audit_dataset.py",
+    "audit:v2": ".venv/bin/python python/audit_v2.py",
+    "audit:v3": ".venv/bin/python python/audit_v3.py",
+    "baselines": ".venv/bin/python python/run_baselines.py",
+    "baselines:v2:privileged": ".venv/bin/python python/run_baselines.py --dataset data/v2/records/privileged --track privileged --output-dir outputs/baselines/v2-privileged --markdown docs/v2-privileged-baselines.md",
+    "baselines:v2:agent": ".venv/bin/python python/run_epistemic_baselines.py",
+    "baselines:v2:outcome-count": ".venv/bin/python python/run_outcome_count_baselines.py",
+    "baselines:v3:outcome-count": ".venv/bin/python python/run_outcome_count_baselines.py --dataset data/v3/records/agent --evaluation-split valid --output-dir outputs/baselines/v3-outcome-count --markdown docs/v3-outcome-count-baselines.md --title 'Dataset v3 outcome-count validation baselines'",
+    "eval:predictions": ".venv/bin/python python/evaluate_predictions.py",
+    "eval:v2:agent": ".venv/bin/python python/evaluate_epistemic.py",
+    "eval:v2:outcome-count": ".venv/bin/python python/evaluate_outcome_count.py"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}

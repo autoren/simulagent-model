@@ -1,0 +1,20 @@
+# Fast calibration run: one third of an epoch before generation-based checkpointing.
+model: "mlx-community/Qwen3.5-0.8B-4bit"
+train: true
+data: "data/v2/mlx/outcome-count"
+fine_tune_type: "lora"
+num_layers: 16
+batch_size: 1
+iters: 400
+val_batches: 50
+learning_rate: 1.0e-5
+steps_per_report: 50
+steps_per_eval: 100
+save_every: 200
+max_seq_length: 1024
+grad_checkpoint: true
+mask_prompt: true
+adapter_path: "adapters/qwen35-0.8b-v2-outcome-count-digit"
+test: true
+test_batches: 50
+seed: 0

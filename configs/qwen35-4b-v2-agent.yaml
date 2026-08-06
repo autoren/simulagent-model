@@ -1,0 +1,20 @@
+# Reproduces the saved v2 long-form probe; generation, not loss, is the stopping criterion.
+model: "mlx-community/Qwen3.5-4B-4bit"
+train: true
+data: "data/v2/mlx/agent"
+fine_tune_type: "lora"
+num_layers: 16
+batch_size: 1
+iters: 200
+val_batches: 30
+learning_rate: 1.0e-5
+steps_per_report: 20
+steps_per_eval: 100
+save_every: 200
+max_seq_length: 1536
+grad_checkpoint: true
+mask_prompt: true
+adapter_path: "adapters/qwen35-4b-v2-agent"
+test: true
+test_batches: 30
+seed: 0

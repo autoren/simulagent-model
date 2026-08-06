@@ -1,0 +1,21 @@
+# Continue the positive step-400 checkpoint on a different shuffle at half learning rate.
+model: "mlx-community/Qwen3.5-0.8B-4bit"
+train: true
+data: "data/v2/mlx/outcome-count"
+fine_tune_type: "lora"
+num_layers: 16
+batch_size: 1
+iters: 200
+val_batches: 50
+learning_rate: 5.0e-6
+steps_per_report: 50
+steps_per_eval: 100
+save_every: 200
+max_seq_length: 1024
+grad_checkpoint: true
+mask_prompt: true
+resume_adapter_file: "adapters/qwen35-0.8b-v2-outcome-count-digit/0000400_adapters.safetensors"
+adapter_path: "adapters/qwen35-0.8b-v2-outcome-count-digit-from400"
+test: true
+test_batches: 50
+seed: 1

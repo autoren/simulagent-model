@@ -1,0 +1,14 @@
+{
+  "inputDir": "data/full",
+  "outputDir": "data/v3",
+  "splitSeed": "simulagent-epistemic-v3",
+  "splitRatios": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  },
+  "stratificationRestarts": 64,
+  "minimumMechanicSupport": 100,
+  "maximumAmbiguityRateGap": 0.05,
+  "maximumMechanicShareGap": 0.12
+}

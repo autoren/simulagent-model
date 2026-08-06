@@ -1,0 +1,19 @@
+# Compatibility-only run. Do not interpret five steps as a dynamics result.
+model: "mlx-community/Qwen3.5-9B-4bit"
+train: true
+data: "data/pilot/mlx/agent"
+fine_tune_type: "lora"
+num_layers: 4
+batch_size: 1
+iters: 5
+val_batches: 2
+learning_rate: 1.0e-5
+steps_per_report: 1
+steps_per_eval: 5
+save_every: 5
+max_seq_length: 1024
+grad_checkpoint: true
+mask_prompt: true
+adapter_path: "adapters/qwen35-9b-smoke"
+test: true
+test_batches: 2

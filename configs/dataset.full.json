@@ -1,0 +1,13 @@
+{
+  "outputDir": "data/full",
+  "scenarioIds": "*",
+  "maxStatesPerScenario": 40,
+  "maxDepth": 14,
+  "splitSeed": "simulagent-transition-v1",
+  "splitRatios": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  }
+}
+

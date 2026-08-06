@@ -1,0 +1,33 @@
+{
+  "outputDir": "data/pilot",
+  "scenarioIds": [
+    "baseline",
+    "visible-key",
+    "early-storm",
+    "false-belief-relock",
+    "relock-behavior-trap",
+    "relock-behavior-control",
+    "forced-relock-behavior-trap",
+    "forced-relock-behavior-control",
+    "announced-forced-relock-behavior-trap",
+    "announced-forced-relock-behavior-control",
+    "unobservable-forced-relock-behavior-trap",
+    "unobservable-forced-relock-behavior-control",
+    "locked-access-behavior-trap",
+    "open-access-behavior-control",
+    "open-cache",
+    "mirror-visible",
+    "delayed-storm",
+    "volatile-station",
+    "relocking-hatch"
+  ],
+  "maxStatesPerScenario": 10,
+  "maxDepth": 6,
+  "splitSeed": "simulagent-transition-v1",
+  "splitRatios": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  }
+}
+

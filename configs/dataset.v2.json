@@ -1,0 +1,10 @@
+{
+  "inputDir": "data/full",
+  "outputDir": "data/v2",
+  "splitSeed": "simulagent-epistemic-v2",
+  "splitRatios": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  }
+}

@@ -1,0 +1,16 @@
+model: "mlx-community/Qwen3.5-4B-4bit"
+train: true
+data: "data/full/mlx/agent"
+fine_tune_type: "lora"
+num_layers: 16
+batch_size: 1
+iters: 600
+val_batches: 20
+learning_rate: 1.0e-5
+steps_per_report: 10
+steps_per_eval: 50
+save_every: 100
+max_seq_length: 1536
+grad_checkpoint: true
+mask_prompt: true
+adapter_path: "adapters/qwen35-4b-transition"

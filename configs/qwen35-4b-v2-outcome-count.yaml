@@ -1,0 +1,20 @@
+# Compact calibration task used as stage one of two-stage epistemic prediction.
+model: "mlx-community/Qwen3.5-4B-4bit"
+train: true
+data: "data/v2/mlx/outcome-count"
+fine_tune_type: "lora"
+num_layers: 8
+batch_size: 1
+iters: 50
+val_batches: 20
+learning_rate: 1.0e-5
+steps_per_report: 10
+steps_per_eval: 10
+save_every: 25
+max_seq_length: 1024
+grad_checkpoint: true
+mask_prompt: true
+adapter_path: "adapters/qwen35-4b-v2-outcome-count-digit"
+test: true
+test_batches: 20
+seed: 0
