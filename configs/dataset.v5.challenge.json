@@ -1,0 +1,25 @@
+{
+  "outputDir": "data/v5-challenge",
+  "sourceDevelopmentDir": "data/v4/records",
+  "frozenProbeLock": "configs/v5-frozen-probe-lock.json",
+  "scenarioSeeds": [8101, 8102, 8103],
+  "mechanics": ["relockshort", "powertrip"],
+  "evidenceVariants": [
+    "forced",
+    "announced",
+    "announced-upstream",
+    "announced-consequence",
+    "announced-procedure",
+    "unobservable"
+  ],
+  "surfaceVariants": ["canonical", "entity_renamed", "paraphrased"],
+  "maxStatesPerScenario": 40,
+  "maxDepth": 14,
+  "evaluationGates": {
+    "minimumCanonicalBalancedAccuracy": 0.75,
+    "minimumPerMechanicBalancedAccuracy": 0.65,
+    "minimumSurfaceBalancedAccuracy": 0.7,
+    "minimumSurfacePredictionAgreement": 0.85,
+    "minimumEvidenceDirectionalAccuracy": 0.75
+  }
+}

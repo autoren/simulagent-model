@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 26,
+  "experiment": "v26_exposed_full_depth_native_truth_decoder",
+  "sourceV25Lock": "configs/v25-truth-hypotheses-lock.json",
+  "sourceV25Result": "outputs/v25-truth-hypotheses/evaluation/result.json",
+  "sourceV25PostAudit": "outputs/v25-truth-hypotheses/post-result-audit.json",
+  "sourceV25Diagnostic": "outputs/v25-truth-hypotheses/compatibility-geometry.json",
+  "sourceV24Predictions": "outputs/v24-cross-encoder/evaluation/grounding-predictions.jsonl",
+  "outputDir": "data/v26-native-truth-decoder",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsExposed": true,
+    "v24CandidateAssignmentsFrozen": true,
+    "freshBenchmarkRecordsPermitted": 0,
+    "ontologyAndDslUnchanged": true
+  },
+  "labels": [
+    {"token": "A", "truthLabel": "true", "meaning": "the evidence entails the candidate fact"},
+    {"token": "B", "truthLabel": "false", "meaning": "the evidence contradicts the candidate fact"},
+    {"token": "C", "truthLabel": "unknown", "meaning": "the evidence leaves the candidate fact unresolved"}
+  ],
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "readoutLayer": 32,
+    "score": "fp32_direct_projection_to_dequantized_A_B_C_embedding_rows",
+    "secondaryScore": "bfloat16_native_lm_head_report_only",
+    "maxSequenceLength": 512,
+    "systemPrompt": "Classify the evidence relative to the candidate fact. Preserve negation, contrastive clause order, exact entity identity, and directed relation order. Return exactly one uppercase ASCII letter and nothing else. Return A when the evidence entails the candidate fact. Return B when the evidence contradicts the candidate fact. Return C when the evidence leaves the candidate fact unresolved."
+  },
+  "inference": {
+    "prediction": "argmax_fp32_direct_A_B_C_logit",
+    "headFits": 0,
+    "thresholdFits": 0,
+    "calibrationUse": "report_only_no_selection"
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "gates": {
+    "preEvaluation": {
+      "maximumExactFitEvaluationPromptOverlap": 0,
+      "maximumNewModelForwardPasses": 4500,
+      "requiredFixedAssignmentCoverage": 1.0,
+      "requiredSingleTokenLabels": 3
+    },
+    "development": {
+      "minimumEvaluationAtomAssignmentAccuracy": 0.95,
+      "minimumEvaluationRelationOrderAccuracy": 0.9,
+      "minimumEvaluationTruthAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.7,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumOracleSupportFrozenQueryExact": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumOracleOracleExact": 1.0
+    }
+  },
+  "limits": {
+    "nativeDecoderEvaluationAttempts": 1,
+    "modelForwardPasses": 4437,
+    "headFits": 0,
+    "thresholdFits": 0,
+    "integrationEvaluations": 1,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0
+  }
+}

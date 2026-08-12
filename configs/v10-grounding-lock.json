@@ -1,0 +1,115 @@
+{
+  "config": {
+    "operatorFamilies": {
+      "binary_partition": [
+        "hatch_traversal",
+        "beacon_calibration",
+        "pressure_hatch_relock"
+      ],
+      "multiway_partition": [
+        "generator_tuning",
+        "mirror_power_trip",
+        "mirror_rejection"
+      ]
+    },
+    "outputDir": "data/v10",
+    "protocol": {
+      "cValue": 1.0,
+      "diagnosticRepresentations": [
+        "mean_direct",
+        "evidence_span_direct"
+      ],
+      "gates": {
+        "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+        "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+        "minimumEveryFoldCompleteInterventionGroupAccuracy": 0.5,
+        "minimumEveryFoldNliPairConsistency": 0.7,
+        "minimumEveryFoldOraclePolarityAccuracy": 0.7,
+        "minimumEveryFoldSpanAccuracy": 0.65,
+        "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+        "minimumEveryFoldTemporalAccuracy": 0.7,
+        "minimumEverySurfaceAllowedValuesAccuracy": 0.6,
+        "minimumEverySurfaceNliPairConsistency": 0.65,
+        "minimumEverySurfaceOraclePolarityAccuracy": 0.65,
+        "minimumEverySurfaceSpanAccuracy": 0.6,
+        "minimumEverySurfaceSymbolicBalancedAccuracy": 0.6,
+        "minimumEverySurfaceTemporalAccuracy": 0.65
+      },
+      "layer": 6,
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-0.8B-4bit",
+      "primaryRepresentation": "nli_final",
+      "seed": 0
+    },
+    "shortcutGates": {
+      "maximumHypothesisPositionRelationBalancedAccuracy": 0.55,
+      "maximumMetadataMatchBalancedAccuracy": 0.6,
+      "maximumMetadataPolarityBalancedAccuracy": 0.55,
+      "maximumPositionMatchBalancedAccuracy": 0.6
+    },
+    "sourceManifest": "data/v8/manifest.json",
+    "sourceRecords": [
+      "data/v8/records/train.jsonl",
+      "data/v8/records/calibration.jsonl"
+    ],
+    "sourceReplica": 0,
+    "symbolicAudit": "outputs/v9-symbolic/oracle-audit.json",
+    "symbolicLock": "configs/v9-symbolic-lock.json",
+    "templateFamilies": [
+      "direct_assertion",
+      "explicit_negation",
+      "denied_claim",
+      "rejected_claim",
+      "contrastive_correction",
+      "scoped_rejection"
+    ]
+  },
+  "config_path": "configs/dataset.v10.json",
+  "config_sha256": "733443aff68e66baff3baaa604b8bbb5f3c04f78a220b823c931081a0786a0d0",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "expected_manifest": "data/v10/manifest.json",
+  "experiment": "v10_locked_corpus_generation_and_shortcut_audit",
+  "implementation": {
+    "python/audit_v10_shortcuts.py": "1bee24890e381d6b8f010ae9ab99878840c0432d14b069effaddfb109b9f2cf9",
+    "python/test_v10_protocol.py": "bfa2451d7acf9023ce9c0c5972d25c73e7212c08744d28021f9a80eaa618a712",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "src/compile-v10.ts": "be619a4ac3de5b8818c568cfff3ae2b6f0b0f2374e68d377704b299d8ecc2302",
+    "src/v10-contracts.ts": "024e2b5a01ac1197c7cb11eea9d1fc78feae615c5467addec8be593c6636733b",
+    "src/v10-grounding.ts": "4d60ec84a48fbd9a36d31d03296ed0ea5dc0b0fa5a5169a648669a1329c3ac0f",
+    "src/v10-validation.ts": "b31c48ddbc2d5564fbc61b3c84d0373bf0d80313ef6e1dc3d0629bc58a4b7c5d",
+    "src/v9-symbolic.ts": "f24a304d8e932445231deb80c7ac119041721fcc88db9c76061e2a9ae012c87a",
+    "tests/v10-grounding.test.ts": "766f0809ee1ffca8f2ed3b2f085037dcb62bf50e2c1dc03269f5649ffa767e46"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "development_corpus_generations_permitted": 1,
+    "final_mechanic_evaluations_permitted": 0,
+    "frozen_feature_extractions_permitted": 0,
+    "larger_model_extractions_permitted": 0,
+    "pre_model_shortcut_audits_permitted": 1
+  },
+  "lock_payload_sha256": "eba15e56b71c4a617886ec23ab1ab5faaaa0668137428f4f89c0ad742667acf5",
+  "preregistration": {
+    "path": "docs/v10-experiment-plan.md",
+    "sha256": "d2d1d793a86df792fa06fe4d997ae981d7c62e2115e94b4d1d0fb7863fafa307"
+  },
+  "schema_version": 10,
+  "source_artifact_sha256": {
+    "data/v8/records/calibration.jsonl": "238356c0d562de0afc249e97d54321c6e7d369ac1fb0ddce5eb215c6b8777ea8",
+    "data/v8/records/train.jsonl": "026529a101a9ca6a5cf3843da439a3e4d8796361f060e80716695e844da48f90"
+  },
+  "source_dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+  "source_manifest": "data/v8/manifest.json",
+  "source_manifest_sha256": "932416f8873b7bb301d3aded0171c38e71bfd5f1e15cfb61a3a49ba2fed8f1f6",
+  "symbolic_audit": "outputs/v9-symbolic/oracle-audit.json",
+  "symbolic_audit_sha256": "6e49e22329a498c6160bd46232f4ad449b6d50274aa1b6affe268a384de7d961",
+  "symbolic_lock": "configs/v9-symbolic-lock.json",
+  "symbolic_lock_sha256": "02dc72f68b9b25510498fe6f3328f910ef917a249b8c6f72f9952f4763f44250"
+}

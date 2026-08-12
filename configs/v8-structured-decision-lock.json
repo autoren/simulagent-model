@@ -1,0 +1,119 @@
+{
+  "components": {
+    "artifact": "outputs/v8-structured-head/components/components.npz",
+    "artifact_sha256": "43ba6d72529816a7a44162f463c023bac4da330dd88ad2ae8159911608faf308",
+    "metadata": "outputs/v8-structured-head/components/metadata.json",
+    "metadata_sha256": "ad44d13b9279fd1f854a0f31da1ca1a83c3ff3ba7dc07df4bf5981764ba75d80"
+  },
+  "data_access": {
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+  "decision_config": {
+    "decisionRule": "any_row_sensitive_is_unique_top_status",
+    "gates": {
+      "minimumEveryFoldSurfaceBalancedAccuracy": 0.65,
+      "minimumEveryFoldSurfaceDecisiveDeterminantAccuracy": 0.75,
+      "minimumEveryFoldSurfacePairDirection": 0.85,
+      "minimumEveryFoldSurfaceStatusMacroF1": 0.65,
+      "minimumMeanFoldSurfaceBalancedAccuracy": 0.75
+    },
+    "score": "maximum_row_sensitive_logit_minus_best_nonsensitive_logit",
+    "threshold": 0.0
+  },
+  "decision_config_path": "configs/v8-structured-decision.json",
+  "decision_config_sha256": "3db49fd1ccf9670af2f79a72ea71750cb057a6071c746c4884fdf28e5a46b1bc",
+  "experiment": "v8_locked_ledger_derived_decision",
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "evaluator": {
+      "path": "python/evaluate_v8_structured_decision_mlx.py",
+      "sha256": "9d9c77c07b34f6bb31a995005f7eff2c7285c2a23480e1876b06bcca25cd9556"
+    },
+    "pair_metrics": {
+      "path": "python/run_v8_lomo_diagnostics.py",
+      "sha256": "e3d04f30f443f572765314ce8a4d5a5805ade8b4e0eaecac0e320609e9cf9c2f"
+    },
+    "structured_head": {
+      "path": "python/train_v8_action_conditioned_head.py",
+      "sha256": "447ae5e35d0f49bcbf37bf547bb9b8981f3cacdec61cdf0627a31205677d40e6"
+    },
+    "tests": {
+      "path": "python/test_v8_structured_decision.py",
+      "sha256": "5d0693e469a00587d5fa9c4096eac623262dbf21eb064a06b70254e672f31c48"
+    }
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "ledger_derived_development_evaluations_permitted": 1,
+    "training_runs_permitted": 0,
+    "untouched_v8_mechanic_evaluations_permitted": 0
+  },
+  "lock_payload_sha256": "baf608b6a3dbf9bed5f4f30d5d3328b79cdd3ec177cec164cab6f21af6be499c",
+  "mechanics": [
+    "hatch_traversal",
+    "generator_tuning",
+    "beacon_calibration",
+    "mirror_power_trip",
+    "mirror_rejection",
+    "pressure_hatch_relock"
+  ],
+  "parameters": {
+    "beacon_calibration": {
+      "path": "outputs/v8-structured-head/lomo/beacon_calibration-head.npz",
+      "sha256": "2f06e16fc51645ea6c48ee51b537aa0010ec4e5f7d4e3bd67c4fc7e926743abf"
+    },
+    "generator_tuning": {
+      "path": "outputs/v8-structured-head/lomo/generator_tuning-head.npz",
+      "sha256": "d0726b0797d17315ac6f16adae2479970ffec670c5757a5d923c9b7c2f6cd395"
+    },
+    "hatch_traversal": {
+      "path": "outputs/v8-structured-head/lomo/hatch_traversal-head.npz",
+      "sha256": "64076953d5f9a360bf62b7e6f4a3bd19a69bd8aa21b373a2cb487b358c8d5e32"
+    },
+    "mirror_power_trip": {
+      "path": "outputs/v8-structured-head/lomo/mirror_power_trip-head.npz",
+      "sha256": "0ae4800fd5309261ba6e3168427bd6e077fda68afdfa2228176aae6548763ac6"
+    },
+    "mirror_rejection": {
+      "path": "outputs/v8-structured-head/lomo/mirror_rejection-head.npz",
+      "sha256": "a8bfc508b962c6464ea8eb5a89f91daed2ba24241bd3d0b4524f59062473a79a"
+    },
+    "pressure_hatch_relock": {
+      "path": "outputs/v8-structured-head/lomo/pressure_hatch_relock-head.npz",
+      "sha256": "c65b3a9056a1c3f220b6e8bcf660d5a7b74115ac2ea577861dfa30b7d97855ee"
+    }
+  },
+  "preregistration": {
+    "path": "docs/v8-structured-decision-plan.md",
+    "sha256": "16eb477ff84e2868dede395c4c296c77a1885832877306a0460625a7cee9f28e"
+  },
+  "projection_width": 48,
+  "schema_version": 8,
+  "stage3_features": {
+    "artifact": "outputs/v8-frozen-diagnostics/features/development.npz",
+    "artifact_sha256": "7f55aa3b3adb61634457128d16282280e0afd4249f9b89e7e2fc8b49c68dd49c",
+    "metadata": "outputs/v8-frozen-diagnostics/features/metadata.json",
+    "metadata_sha256": "502fdfbcf38395f8b72030b417db580a7f07c78810dc186cf4ea15fbd59a0651"
+  },
+  "stage4_lock": {
+    "path": "configs/v8-structured-head-lock.json",
+    "sha256": "e194ca957d52b22f85e12022c4e7ae24c5851c87f49a1898411e81bed6765f2e"
+  },
+  "stage4_result": {
+    "path": "outputs/v8-structured-head/lomo/result.json",
+    "sha256": "2ff494a6bb0cd6a97d4f9b83f3b49717a3e0eaa2db8caca9973cbfb51cd8fea8"
+  },
+  "surfaces": [
+    "canonical",
+    "entity_renamed",
+    "paraphrased"
+  ]
+}

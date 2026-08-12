@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 18,
+  "seed": 1801,
+  "outputDir": "data/v18",
+  "determinantsPerEpisode": 4,
+  "outcomeBits": 2,
+  "trainingEpisodes": 24,
+  "calibrationEpisodes": 8,
+  "episodesPerDevelopmentAxis": 8,
+  "developmentAxes": [
+    "known_primitive_recombination",
+    "structural_composition",
+    "determinant_vocabulary",
+    "composition_depth",
+    "outcome_invariance"
+  ],
+  "knownLexicons": ["industrial", "astronomical", "archival"],
+  "heldOutLexicon": "maritime",
+  "dsl": {
+    "version": 1,
+    "valueType": "boolean",
+    "operators": ["var", "not", "and", "or", "xor"],
+    "maximumDeterminants": 4,
+    "maximumOutcomeBits": 2
+  },
+  "supportCurveBudgets": [1, 2, 4, 8, "full"],
+  "gates": {
+    "minimumSchemaExecutionEquivalence": 1.0,
+    "minimumRelevantDeterminantExactMatch": 1.0,
+    "minimumTransitionSetExactMatch": 1.0,
+    "minimumIdentifiabilityBalancedAccuracy": 1.0,
+    "minimumInvariantUnknownAccuracy": 1.0,
+    "minimumSensitiveUnknownAccuracy": 1.0,
+    "minimumWorstDevelopmentAxisTransitionSetExactMatch": 1.0,
+    "maximumEmpiricalLookupTransitionSetExactMatch": 0.95
+  },
+  "firewall": {
+    "developmentOnly": true,
+    "v17RecordsRead": 0,
+    "v17ModelResultsRead": 0,
+    "freshFinalMechanicCreated": false,
+    "adapterTrainingRunsPermitted": 0
+  }
+}

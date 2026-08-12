@@ -1,0 +1,59 @@
+{
+  "config": {
+    "forbiddenSources": [
+      "v3_test",
+      "prior_holdout",
+      "tone_drift",
+      "v7_model_results",
+      "untouched_v8_mechanic"
+    ],
+    "output": "outputs/v9-symbolic/oracle-audit.json",
+    "requiredMismatches": 0,
+    "requiredRecords": 6480,
+    "sourceManifest": "data/v8/manifest.json",
+    "sourceSplits": [
+      "data/v8/records/train.jsonl",
+      "data/v8/records/calibration.jsonl"
+    ]
+  },
+  "config_path": "configs/v9-symbolic.json",
+  "config_sha256": "9dd32f0d3a12c9f8013fc8eb41cb212738883d13449981323cb13f2a80fb4dac",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "experiment": "v9_locked_symbolic_oracle_audit",
+  "implementation": {
+    "src/audit-v9-symbolic.ts": "1c4024664da8fdd4dcceec791ae9d5cc65bfb20084696da4aa68937eab150160",
+    "src/v9-contracts.ts": "3242ccaa5aa19e16d3214c932adc2e24a5653c61851ab132f99a54ef96d63251",
+    "src/v9-symbolic.ts": "f24a304d8e932445231deb80c7ac119041721fcc88db9c76061e2a9ae012c87a",
+    "tests/v9-symbolic.test.ts": "57dbf753052ec877ec30e72a0e62033c74c0b984c940e2e96e529010ad0dbeba"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "final_mechanic_evaluations_permitted": 0,
+    "model_extractions_permitted": 0,
+    "symbolic_oracle_audits_permitted": 1
+  },
+  "lock_payload_sha256": "533a4690c0efe0c145b7424b4ba689bf2b314a574dcfbe4161cd5cefb2905039",
+  "preregistration": {
+    "path": "docs/v9-symbolic-plan.md",
+    "sha256": "bdff9c93aa72bf45d8376c03771f7e7dd49bd5632edb0d11d2748d8820edc12d"
+  },
+  "schema_version": 9,
+  "source": {
+    "artifacts": {
+      "data/v8/records/calibration.jsonl": "238356c0d562de0afc249e97d54321c6e7d369ac1fb0ddce5eb215c6b8777ea8",
+      "data/v8/records/train.jsonl": "026529a101a9ca6a5cf3843da439a3e4d8796361f060e80716695e844da48f90"
+    },
+    "dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+    "development_lock": "configs/v8-development-lock.json",
+    "development_lock_sha256": "582513f20247f03f2465de80b3571641899be6bb3b7eedf534ff15e87246d378",
+    "manifest": "data/v8/manifest.json",
+    "manifest_sha256": "932416f8873b7bb301d3aded0171c38e71bfd5f1e15cfb61a3a49ba2fed8f1f6"
+  }
+}

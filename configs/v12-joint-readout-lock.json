@@ -1,0 +1,198 @@
+{
+  "conditional_head": {
+    "activation": "relu",
+    "alpha": 0.001,
+    "batchSize": 256,
+    "condition": "run_only_if_no_model_passes_primary_gates",
+    "features": "concatenate_hypothesis_mean_and_signed_difference",
+    "hiddenUnits": 32,
+    "iterationsWithoutChange": 20,
+    "learningRateInit": 0.001,
+    "maxIterations": 200,
+    "name": "joint_mlp",
+    "solver": "adam",
+    "tolerance": 0.0001
+  },
+  "config_path": "configs/v12-joint-readout.json",
+  "config_sha256": "9b0b1c3d81ec94c130153073a364bf926c0d6b09947868b97d2c5bdcee9d313b",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "experiment": "v12_locked_frozen_joint_hypothesis_readout",
+  "folds": [
+    {
+      "kind": "context",
+      "name": "context"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:beacon_calibration"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:generator_tuning"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:hatch_traversal"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:mirror_power_trip"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:mirror_rejection"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:pressure_hatch_relock"
+    },
+    {
+      "kind": "template",
+      "name": "template:contrastive_correction"
+    },
+    {
+      "kind": "template",
+      "name": "template:denied_claim"
+    },
+    {
+      "kind": "template",
+      "name": "template:direct_assertion"
+    },
+    {
+      "kind": "template",
+      "name": "template:explicit_negation"
+    },
+    {
+      "kind": "template",
+      "name": "template:rejected_claim"
+    },
+    {
+      "kind": "template",
+      "name": "template:scoped_rejection"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:canonical"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:entity_renamed"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:paraphrased"
+    },
+    {
+      "kind": "operator",
+      "name": "operator:binary_partition"
+    },
+    {
+      "kind": "operator",
+      "name": "operator:multiway_partition"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:canonical"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:entity_renamed"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:paraphrased"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:canonical"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:entity_renamed"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:paraphrased"
+    }
+  ],
+  "gates": {
+    "minimumEveryFoldAccuracy": 0.7,
+    "minimumEverySurfaceAccuracy": 0.65
+  },
+  "implementation": {
+    "python/evaluate_v12_joint_readout.py": "0aa847977e06fd2930ebc3e2638499df3958d3aa12f9626f25a84c5770f0cb55",
+    "python/test_v12_joint_readout.py": "055c592dfb0694154d189d8972710c160b55c5003ce62ce8b89fcaeef1171ee4",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "conditional_mlp_24_fold_evaluations_permitted": 3,
+    "final_mechanic_evaluations_permitted": 0,
+    "hyperparameter_searches_permitted": 0,
+    "linear_24_fold_evaluations_permitted": 3,
+    "new_feature_extractions_permitted": 0
+  },
+  "lock_payload_sha256": "320ebd7bfd32e88ecae95fb889ceb82b610b628e31601374a59270d1df01f629",
+  "model_order": [
+    "qwen35_0_8b",
+    "qwen35_4b",
+    "qwen35_9b"
+  ],
+  "models": {
+    "qwen35_0_8b": {
+      "feature_artifact": "outputs/v10-frozen/features/v10-features.npz",
+      "feature_artifact_sha256": "0e7e796f3d1c6815f1b2f8a3c6a63c091db8a93362555005ecbaa5c1d37d59f8",
+      "feature_metadata": "outputs/v10-frozen/features/metadata.json",
+      "feature_metadata_sha256": "06f84da7e3cd0149acd1ecebb6ace0660a2b455b1fcd78515dc7be64871a1abc"
+    },
+    "qwen35_4b": {
+      "feature_artifact": "outputs/v11-frozen-scale/features/qwen35_4b/v11-features.npz",
+      "feature_artifact_sha256": "666ba5027ae654defe74fc673e1e073a83116dc3656acdd4194ab9c5e452811c",
+      "feature_metadata": "outputs/v11-frozen-scale/features/qwen35_4b/metadata.json",
+      "feature_metadata_sha256": "fe4392ffe189926e7d0dc1817fc76ded1f3cf962df8d0818e7528e457b5e79a7"
+    },
+    "qwen35_9b": {
+      "feature_artifact": "outputs/v11-frozen-scale/features/qwen35_9b/v11-features.npz",
+      "feature_artifact_sha256": "00e082ee35a3bc3adb58f6f97bea873b9aa0eb7f554cea3953eb04aa193d070d",
+      "feature_metadata": "outputs/v11-frozen-scale/features/qwen35_9b/metadata.json",
+      "feature_metadata_sha256": "090342ebaa1115b6c72d4bb92480d586683c613223e4b83a73aec3a9f973cb0b"
+    }
+  },
+  "preregistration": {
+    "path": "docs/v12-joint-readout-plan.md",
+    "sha256": "8b65798174050b2b72eb993fc40c90b103f7bc833e716c33f26e7d13c5c18f00"
+  },
+  "primary_head": {
+    "cValue": 1.0,
+    "classWeight": "balanced",
+    "features": "active_hypothesis_minus_inactive_hypothesis",
+    "maxIterations": 3000,
+    "name": "signed_difference_linear",
+    "solver": "lbfgs"
+  },
+  "schema_version": 12,
+  "seed": 0,
+  "source_v10": {
+    "feature_artifact": "outputs/v10-frozen/features/v10-features.npz",
+    "feature_artifact_sha256": "0e7e796f3d1c6815f1b2f8a3c6a63c091db8a93362555005ecbaa5c1d37d59f8",
+    "feature_metadata": "outputs/v10-frozen/features/metadata.json",
+    "feature_metadata_sha256": "06f84da7e3cd0149acd1ecebb6ace0660a2b455b1fcd78515dc7be64871a1abc",
+    "frozen_lock": "configs/v10-frozen-lock.json",
+    "frozen_lock_sha256": "dc5e64ae202aad6437c1ff6e469e2e144e28a7db0978ce2802f81e833f744f4a",
+    "result": "outputs/v10-frozen/evaluation/result.json",
+    "result_sha256": "372a4240d48e9131101e24af0946d5a15a95d80db615e220e970db9c246c3463"
+  },
+  "source_v11": {
+    "frozen_lock": "configs/v11-frozen-scale-lock.json",
+    "frozen_lock_sha256": "d28e99579a6774a2ebb028fa33dadcfa59c861c4f4bd57eb70d08ae6467790af",
+    "result": "outputs/v11-frozen-scale/evaluation/result.json",
+    "result_sha256": "84c5685b4d4071c73981477189c600e798832ce557bc40b04c240b296c1e7ba7"
+  }
+}

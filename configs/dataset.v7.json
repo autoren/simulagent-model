@@ -1,0 +1,48 @@
+{
+  "outputDir": "data/v7",
+  "developmentSeeds": [9501, 9502, 9503, 9504, 9505, 9506, 9507, 9508],
+  "holdoutSeeds": [9701, 9702, 9703, 9704],
+  "developmentMechanics": ["relockshort", "powertrip"],
+  "holdoutMechanic": "tonedrift",
+  "evidenceVariants": [
+    "forced",
+    "announced",
+    "announced-upstream",
+    "announced-consequence",
+    "announced-procedure",
+    "unobservable"
+  ],
+  "surfaceVariants": ["canonical", "entity_renamed", "paraphrased"],
+  "maxStatesPerScenario": 40,
+  "maxDepth": 14,
+  "calibrationRatio": 0.25,
+  "stratificationRestarts": 128,
+  "maximumPairsPerConditionalStratum": 6,
+  "minimumLabelChangingDevelopmentGroups": 4,
+  "maximumConditionalLabelGap": 0.05,
+  "shortcutGates": {
+    "maximumMetadataBalancedAccuracy": 0.55,
+    "maximumEvidenceTextBalancedAccuracy": 0.60,
+    "maximumEvidenceTextAuc": 0.65
+  },
+  "protocol": {
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "feature": "layer_06_mean",
+    "cValue": 10.0,
+    "seed": 0,
+    "maxSeqLength": 1024,
+    "bootstrapSamples": 2000,
+    "bootstrapSeed": 7707,
+    "gates": {
+      "minimumCalibrationCanonicalBalancedAccuracy": 0.75,
+      "minimumHoldoutCanonicalBalancedAccuracy": 0.70,
+      "minimumHoldoutBootstrapLowerBound": 0.55,
+      "minimumSurfaceBalancedAccuracy": 0.65,
+      "minimumSurfacePredictionAgreement": 0.85,
+      "minimumCompleteTripletAccuracy": 0.60,
+      "minimumEvidenceDirectionalAccuracy": 0.75,
+      "minimumPairedScoreDirectionalAccuracy": 0.75,
+      "minimumWorstStratumBalancedAccuracy": 0.55
+    }
+  }
+}

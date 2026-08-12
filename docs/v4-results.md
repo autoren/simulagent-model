@@ -82,6 +82,15 @@ language-model head plus binary SFT did not expose useful signal.
 
 See `docs/v4-score-diagnostics.md` for the reproducible score-bin report.
 
+### Post-hoc float32 projection audit
+
+A no-retraining audit recomputed each selected checkpoint's A/B margin by projecting the final
+hidden state through the two vocabulary-head rows in float32. This recovered 153–154 distinct
+validation scores per seed instead of two or three, confirming that bfloat16 vocabulary logits
+were a real resolution bottleneck. It did not rescue discrimination: mean validation balanced
+accuracy was 51.16% and mean AUC was 0.540. Coarse output precision therefore contributed to V4's
+failure but was not its main cause.
+
 ## Token-baseline ablations
 
 The primary full-input token Naive Bayes model reached 58.24% validation balanced accuracy with a
@@ -112,7 +121,8 @@ is still static epistemic classification, not closed-loop recovery or perseverat
 
 ## Next experiment
 
-The next controlled sequence should be a discriminative representation probe:
+The next controlled sequence should be a discriminative representation probe. The 0.8B probe is
+run first, with larger models conditional on whether the smallest model exposes useful signal:
 
 1. Extract pooled hidden representations from frozen Qwen3.5-0.8B, 4B, and 9B models.
 2. Train a class-balanced float32 linear head with regularization selected on calibration.

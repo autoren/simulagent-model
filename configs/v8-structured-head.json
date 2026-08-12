@@ -1,0 +1,23 @@
+{
+  "model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "layer": 6,
+  "pooling": "mean",
+  "maxComponentTokens": 512,
+  "projectionWidth": 48,
+  "trainingSteps": 300,
+  "learningRate": 0.003,
+  "seed": 0,
+  "lossWeights": {
+    "determinant": 1.0,
+    "pointwise": 0.5,
+    "pairwise": 2.0,
+    "surface": 0.1
+  },
+  "gates": {
+    "minimumEveryFoldSurfaceBalancedAccuracy": 0.65,
+    "minimumMeanFoldSurfaceBalancedAccuracy": 0.75,
+    "minimumEveryFoldSurfacePairDirection": 0.85,
+    "minimumEveryFoldSurfaceStatusMacroF1": 0.65,
+    "minimumEveryFoldSurfaceDecisiveDeterminantAccuracy": 0.75
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "config": "configs/v24-cross-encoder.json",
+  "config_payload": {
+    "experiment": "v24_exposed_candidate_conditioned_relational_cross_encoder",
+    "gates": {
+      "development": {
+        "maximumFrozenSupportEmptyVersionSpace": 0.1,
+        "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+        "minimumEvaluationExactSceneGraph": 0.7,
+        "minimumEvaluationRelationOrderAccuracy": 0.9,
+        "minimumEvaluationTruthAccuracy": 0.9,
+        "minimumFitAtomAssignmentAccuracy": 0.95,
+        "minimumFrozenFrozenExact": 0.65,
+        "minimumFrozenSupportOracleQueryExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleExact": 1.0,
+        "minimumOracleSupportFrozenQueryExact": 0.75
+      },
+      "preExtraction": {
+        "maximumExactFitEvaluationPromptOverlap": 0,
+        "maximumNewModelForwardPasses": 20000,
+        "minimumEvaluationQueryGoldProposalCoverage": 0.95,
+        "minimumEvaluationSupportGoldProposalCoverage": 0.95
+      }
+    },
+    "heads": {
+      "assignment": "maximum_weight_one_to_one_over_proposed_edges",
+      "calibrationUse": "report_only_no_selection",
+      "fitSplit": "grounding_fit",
+      "match": {
+        "C": 1.0,
+        "classWeight": "balanced",
+        "maximumIterations": 2000,
+        "solver": "liblinear",
+        "type": "logistic_regression"
+      },
+      "truth": {
+        "C": 1.0,
+        "baseEstimator": "logistic_regression",
+        "classWeight": "balanced",
+        "classes": [
+          "false",
+          "true",
+          "unknown"
+        ],
+        "fitRows": "positive_candidate_pairs_only",
+        "maximumIterations": 2000,
+        "solver": "liblinear",
+        "type": "one_vs_rest_logistic_regression"
+      }
+    },
+    "integrationConditions": [
+      "oracle_support_oracle_query",
+      "frozen_support_oracle_query",
+      "oracle_support_frozen_query",
+      "frozen_support_frozen_query"
+    ],
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "featureExtractionAttempts": 1,
+      "finalSuiteConstructions": 0,
+      "hyperparameterSelections": 0,
+      "integrationEvaluations": 1,
+      "matchHeadFits": 1,
+      "truthHeadFits": 1
+    },
+    "model": {
+      "extractionLayer": 8,
+      "hiddenSize": 2560,
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "pooling": "candidate_fact_token_mean_float32",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "systemPrompt": "Compare the evidence statement with the candidate fact. Preserve exact entity identity, directed argument order, and whether the candidate is true, false, or unresolved. Do not infer action outcomes and do not generate an answer.",
+      "totalLayers": 32
+    },
+    "outputDir": "data/v24-cross-encoder-proposals",
+    "proposal": {
+      "deduplicateEdges": true,
+      "guaranteedPerfectMatching": "included_global_hard_assignment",
+      "includeV22r2aGlobalHardAssignment": true,
+      "maximumEdgesPerEvidence": 4,
+      "minimumEdgesPerEvidence": 3,
+      "perEvidenceRawTopK": 3
+    },
+    "schemaVersion": 24,
+    "scope": {
+      "allV22r2SplitsExposed": true,
+      "developmentOnly": true,
+      "freshBenchmarkRecordsPermitted": 0,
+      "ontologyAndDslUnchanged": true
+    },
+    "seed": 2401,
+    "sourceFeatures": "outputs/v22r2-relational-grounding/features/metadata.json",
+    "sourceHeads": "outputs/v22r2-relational-grounding/evaluation-v22r2a/heads.npz",
+    "sourcePredictions": "outputs/v22r2-relational-grounding/evaluation-v22r2a/grounding-predictions.jsonl",
+    "sourceV22r2Lock": "configs/v22r2-relational-grounding-lock.json",
+    "sourceV22r2aDiagnostic": "outputs/v22r2-relational-grounding/error-conditioning.json",
+    "sourceV22r2aLock": "configs/v22r2a-evaluation-amendment-lock.json",
+    "sourceV22r2aPostAudit": "outputs/v22r2-relational-grounding/post-result-audit.json",
+    "sourceV22r2aResult": "outputs/v22r2-relational-grounding/evaluation-v22r2a/result.json",
+    "sourceV23PostAudit": "outputs/v23-probabilistic-support/post-result-audit.json",
+    "sourceV23Result": "outputs/v23-probabilistic-support/result.json"
+  },
+  "config_sha256": "a8038fcebbd5e2620267371c2f98039e1066df7a2a79209f8f47759dbc92475e",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "all_v22r2_splits_exposed": true,
+    "fresh_benchmark_records_created": 0,
+    "hyperparameter_selections": 0,
+    "integration_evaluations": 0,
+    "new_feature_extractions": 0,
+    "new_linear_fits": 0,
+    "new_model_forward_passes": 0,
+    "pair_proposals_materialized": 13372
+  },
+  "experiment": "v24_exposed_candidate_conditioned_relational_cross_encoder",
+  "gates": {
+    "development": {
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.7,
+      "minimumEvaluationRelationOrderAccuracy": 0.9,
+      "minimumEvaluationTruthAccuracy": 0.9,
+      "minimumFitAtomAssignmentAccuracy": 0.95,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleExact": 1.0,
+      "minimumOracleSupportFrozenQueryExact": 0.75
+    },
+    "preExtraction": {
+      "maximumExactFitEvaluationPromptOverlap": 0,
+      "maximumNewModelForwardPasses": 20000,
+      "minimumEvaluationQueryGoldProposalCoverage": 0.95,
+      "minimumEvaluationSupportGoldProposalCoverage": 0.95
+    }
+  },
+  "heads": {
+    "assignment": "maximum_weight_one_to_one_over_proposed_edges",
+    "calibrationUse": "report_only_no_selection",
+    "fitSplit": "grounding_fit",
+    "match": {
+      "C": 1.0,
+      "classWeight": "balanced",
+      "maximumIterations": 2000,
+      "solver": "liblinear",
+      "type": "logistic_regression"
+    },
+    "truth": {
+      "C": 1.0,
+      "baseEstimator": "logistic_regression",
+      "classWeight": "balanced",
+      "classes": [
+        "false",
+        "true",
+        "unknown"
+      ],
+      "fitRows": "positive_candidate_pairs_only",
+      "maximumIterations": 2000,
+      "solver": "liblinear",
+      "type": "one_vs_rest_logistic_regression"
+    }
+  },
+  "implementation": {
+    "python/audit_v24_cross_encoder.py": "05b14223ac5bc85fde560dd878c70f435183dacdbacc742ece83afb8b5758be7",
+    "python/build_v24_cross_encoder_proposals.py": "23bce14d18d345ffddbf8ba772c429550af5941896537f23d555bded013151da",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v24_cross_encoder.py": "d2b1612b8e6f1d8da0d049a5bd01b6a793615b247c77abb76178c355afd02887",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/extract_v22r2_relational_features_mlx.py": "ee6ef9df9f5768b2dd7310d7f909477a5d3a95c6e1fd7d5604dbfb22aa2704fb",
+    "python/extract_v24_cross_features_mlx.py": "a86ce2f1fce6b8a3b8d499923da514dd20a1cf7923254ffd6b48d6b0944fbbd6",
+    "python/freeze_v24_cross_encoder.py": "8d911260174792c0e2f985385b2593fa56922ba61f96cd0a9d907f8f553d8012",
+    "python/test_v24_cross_encoder.py": "53e71dd8df0e7e1587ea40e77db014df0a5a3a843c353397cff436ebe33b71ee",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v24_cross_encoder.py": "a880a3a8a9d8dad6b08755be6a5a1a6f749c6d27c5fbac6d2ddab857927e9d8b"
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "featureExtractionAttempts": 1,
+    "finalSuiteConstructions": 0,
+    "hyperparameterSelections": 0,
+    "integrationEvaluations": 1,
+    "matchHeadFits": 1,
+    "truthHeadFits": 1
+  },
+  "lock_payload_sha256": "f2dad2021cbd9f061c193ce882b5c04e4d271b510d04901536da50d8e82ee276",
+  "model": {
+    "extractionLayer": 8,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "pooling": "candidate_fact_token_mean_float32",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "systemPrompt": "Compare the evidence statement with the candidate fact. Preserve exact entity identity, directed argument order, and whether the candidate is true, false, or unresolved. Do not infer action outcomes and do not generate an answer.",
+    "totalLayers": 32
+  },
+  "pre_extraction_audit": {
+    "budget": {
+      "planned_model_forwards": 13372,
+      "registered_maximum_model_forwards": 20000
+    },
+    "decision": "authorize_v24_protocol_lock",
+    "errors": [],
+    "experiment": "v24_pre_extraction_proposal_and_firewall_audit",
+    "firewall": {
+      "exact_fit_evaluation_prompt_overlap": 0,
+      "exact_source_agent_inputs": 13372,
+      "forbidden_agent_input_keys": {},
+      "fresh_benchmark_records_created": 0,
+      "new_linear_fits_before_lock": 0,
+      "new_model_forward_passes_before_lock": 0
+    },
+    "integrity": {
+      "corpus_sha256": "623068771b334529022c3d821bff176c5558f16cca7c1501fa54a2bda239e656",
+      "manifest_source_hashes_verified": 10
+    },
+    "passed": true,
+    "population": {
+      "evidence_groups": 4437,
+      "pair_class_counts": {
+        "false": 2483,
+        "other": 9015,
+        "true": 1828,
+        "unknown": 46
+      },
+      "pairs": 13372,
+      "positive_truth_counts_by_split": {
+        "grounding_calibration": {
+          "false": 401,
+          "true": 306,
+          "unknown": 7
+        },
+        "grounding_evaluation": {
+          "false": 1294,
+          "true": 858,
+          "unknown": 23
+        },
+        "grounding_fit": {
+          "false": 788,
+          "true": 664,
+          "unknown": 16
+        }
+      },
+      "proposal_sizes": {
+        "3": 4376,
+        "4": 61
+      },
+      "scenes": 384,
+      "split_counts": {
+        "grounding_calibration": 2184,
+        "grounding_evaluation": 6738,
+        "grounding_fit": 4450
+      }
+    },
+    "proposal": {
+      "gold_coverage_by_split_and_role": {
+        "grounding_calibration": {
+          "query": 0.9845679012345679,
+          "support": 0.9743589743589743
+        },
+        "grounding_evaluation": {
+          "query": 0.9753086419753086,
+          "support": 0.9789473684210527
+        },
+        "grounding_fit": {
+          "query": 0.9915123456790124,
+          "support": 0.9838709677419355
+        }
+      },
+      "hard_edges_present": 4437,
+      "perfect_matching_scenes": 384
+    },
+    "schema_version": 24
+  },
+  "preregistration": "docs/v24-cross-encoder-plan.md",
+  "preregistration_sha256": "791dad3af3d3fd3124d6ab79300e6fa23d3e1404b6cebbd528884a90f7e369f8",
+  "schema_version": 24,
+  "source": {
+    "pre_extraction_audit": "outputs/v24-cross-encoder/pre-extraction-audit.json",
+    "pre_extraction_audit_sha256": "c7d8610aa517c113cb6b44dbfca4f343f22c1393b1f5b09034ce0e8612211276",
+    "proposal_corpus": "data/v24-cross-encoder-proposals",
+    "proposal_corpus_sha256": "623068771b334529022c3d821bff176c5558f16cca7c1501fa54a2bda239e656",
+    "proposal_file_sha256": {
+      "grounding_calibration.jsonl": "42b2a845f6c9b048acd3fcd87fd5593bd351547f67ab632a8c516cfe40f4fd68",
+      "grounding_evaluation.jsonl": "d7bddf585e44d47cf0e0b2691e067207fb6ec89f7ffc1b36889f9cc806634972",
+      "grounding_fit.jsonl": "76abd65e69a7e65869b722f09b6dcf26dc6b63b2a5be14a07ca10cfa1f7746da",
+      "manifest.json": "7db0ea08453bc6476be63f4cf2a37410c1c3c2f827443b768f9614fb946594fd"
+    },
+    "proposal_manifest": "data/v24-cross-encoder-proposals/manifest.json",
+    "proposal_manifest_sha256": "7db0ea08453bc6476be63f4cf2a37410c1c3c2f827443b768f9614fb946594fd",
+    "v22r2_lock": "configs/v22r2-relational-grounding-lock.json",
+    "v22r2_lock_sha256": "87f9fa082718b843ec3875685295ee412c2a0c59e622ffb8d7e1c8fe3e17bedf",
+    "v22r2a_lock": "configs/v22r2a-evaluation-amendment-lock.json",
+    "v22r2a_lock_sha256": "6329fc546e7e4103657b03c45e0830e65a95b29dd31c844ae1a0f367e4b46424",
+    "v22r2a_post_audit": "outputs/v22r2-relational-grounding/post-result-audit.json",
+    "v22r2a_post_audit_sha256": "9c9af467e7bc93e67d1d34b29987aaf22c28beee629b68f13af5f0e420ff538e",
+    "v22r2a_result": "outputs/v22r2-relational-grounding/evaluation-v22r2a/result.json",
+    "v22r2a_result_sha256": "97a19e3041b8a4a8b66c21c2ffcf908d352572670d64776684152d21f01aac9d",
+    "v23_post_audit": "outputs/v23-probabilistic-support/post-result-audit.json",
+    "v23_post_audit_sha256": "7637ab623cad0f38aa463a7fa3c793fd013273da33a781e9058bf9fc6a04b585",
+    "v23_result": "outputs/v23-probabilistic-support/result.json",
+    "v23_result_sha256": "d2b98736a95bee60695b95349bba8ee276b1b6f2165fe2fc2f29ca5479ba0494"
+  }
+}

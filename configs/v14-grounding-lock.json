@@ -1,0 +1,103 @@
+{
+  "config": {
+    "operatorFamilies": {
+      "binary_partition": [
+        "hatch_traversal",
+        "beacon_calibration",
+        "pressure_hatch_relock"
+      ],
+      "multiway_partition": [
+        "generator_tuning",
+        "mirror_power_trip",
+        "mirror_rejection"
+      ]
+    },
+    "outputDir": "data/v14",
+    "semanticOperators": {
+      "affirmative_gold": [
+        "direct_assertion",
+        "present_confirmation",
+        "current_observation"
+      ],
+      "contrastive_both": [
+        "contrastive_correction",
+        "contrastive_verification",
+        "contrastive_resolution"
+      ],
+      "negated_opposite": [
+        "explicit_negation",
+        "denied_claim",
+        "scoped_rejection"
+      ]
+    },
+    "shortcutGates": {
+      "maximumHypothesisPositionRelationBalancedAccuracy": 0.55,
+      "maximumMetadataMatchBalancedAccuracy": 0.6,
+      "maximumMetadataPolarityBalancedAccuracy": 0.55,
+      "maximumPositionMatchBalancedAccuracy": 0.6
+    },
+    "sourceManifest": "data/v8/manifest.json",
+    "sourceRecords": [
+      "data/v8/records/train.jsonl",
+      "data/v8/records/calibration.jsonl"
+    ],
+    "sourceReplica": 0,
+    "symbolicAudit": "outputs/v9-symbolic/oracle-audit.json",
+    "symbolicLock": "configs/v9-symbolic-lock.json"
+  },
+  "config_path": "configs/dataset.v14.json",
+  "config_sha256": "ea40af8c7fa8767feafda573b0d2729e7ebf1af6170a6dd4e8f15ce910f9b83e",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "expected_manifest": "data/v14/manifest.json",
+  "experiment": "v14_locked_operator_supported_corpus_and_shortcut_audit",
+  "implementation": {
+    "python/audit_v14_shortcuts.py": "084fc5b84d0b9889dc7895ad779a3e7933a1b08d9743c9af77707a59ce1ce740",
+    "python/test_v14_protocol.py": "9b50ab78e3113eb7cee1efd142f34b59ec9902a14c25adc28ff2866ce3f86adb",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v14_protocol.py": "6d58e1586d82035dc27a2b5a40e932c37f6012e16769815568b87e474810b3a6",
+    "src/compile-v14.ts": "e3fc77d457f8827bc75f15e786937ad7cb7b05598c608445deffcc733cf8d9ed",
+    "src/v14-contracts.ts": "b03418e951d13407456c94f362d60a9db53315872565143de33bf3371f93e035",
+    "src/v14-grounding.ts": "2fd32215a1fbf4ab75b54fd11c0aa8c210352d89f04b03338b54b843a79efa4d",
+    "src/v14-validation.ts": "7669e10f4a9f9189669057759ab97f402a7a739957ddce3df30807f9c51b47ec",
+    "src/v9-symbolic.ts": "f24a304d8e932445231deb80c7ac119041721fcc88db9c76061e2a9ae012c87a",
+    "tests/v14-grounding.test.ts": "943b88ef1ab2715bc55cbc76605ed7d9eb0ecee86fdf836f003d6b3d99d17081"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "classifier_evaluations_permitted": 0,
+    "development_corpus_generations_permitted": 1,
+    "final_mechanic_evaluations_permitted": 0,
+    "frozen_feature_extractions_permitted": 0,
+    "pre_model_shortcut_audits_permitted": 1
+  },
+  "lock_payload_sha256": "1c772da4f4e715bb2fc25988a68122c975b6c39363407772c0595f1657be001c",
+  "preregistration": {
+    "path": "docs/v14-supervision-redesign-plan.md",
+    "sha256": "0bb3f46cdbe5c60b4537240da76c6030fe4cb78b969185f6ac38cd5fa37f15d9"
+  },
+  "schema_version": 14,
+  "source_artifact_sha256": {
+    "data/v8/records/calibration.jsonl": "238356c0d562de0afc249e97d54321c6e7d369ac1fb0ddce5eb215c6b8777ea8",
+    "data/v8/records/train.jsonl": "026529a101a9ca6a5cf3843da439a3e4d8796361f060e80716695e844da48f90"
+  },
+  "source_dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+  "source_manifest": "data/v8/manifest.json",
+  "source_manifest_sha256": "932416f8873b7bb301d3aded0171c38e71bfd5f1e15cfb61a3a49ba2fed8f1f6",
+  "source_v13": {
+    "operator_support_audit": "outputs/v13-token-local/operator-support-audit.json",
+    "operator_support_audit_sha256": "d38bfd9a06b3094daa4178df9c31d9d6b2a3dedcb89003e58a8d6b003be8b255",
+    "result": "outputs/v13-token-local/evaluation/result.json",
+    "result_sha256": "a7a00ee19b3f31e5945a4d7ccb223b02e3e12d2d0977343d587c1a8d68ad70a0"
+  },
+  "symbolic_audit": "outputs/v9-symbolic/oracle-audit.json",
+  "symbolic_audit_sha256": "6e49e22329a498c6160bd46232f4ad449b6d50274aa1b6affe268a384de7d961",
+  "symbolic_lock": "configs/v9-symbolic-lock.json",
+  "symbolic_lock_sha256": "02dc72f68b9b25510498fe6f3328f910ef917a249b8c6f72f9952f4763f44250"
+}

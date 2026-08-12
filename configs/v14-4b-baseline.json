@@ -1,0 +1,27 @@
+{
+  "sourceGroundingLock": "configs/v14-grounding-lock.json",
+  "sourceManifest": "data/v14/manifest.json",
+  "sourceShortcutAudit": "outputs/v14-pre-model/shortcut-audit.json",
+  "sourcePromptOverlapAudit": "outputs/v14-pre-model/local-prompt-overlap-audit.json",
+  "modelKey": "qwen35_4b",
+  "model": "mlx-community/Qwen3.5-4B-4bit",
+  "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "totalLayers": 32,
+  "hiddenSize": 2560,
+  "extractionLayer": 8,
+  "representation": "hypothesis_mean_signed_difference",
+  "head": {
+    "name": "hypothesis_mean_linear",
+    "cValue": 1.0,
+    "classWeight": "balanced",
+    "maxIterations": 3000,
+    "solver": "lbfgs"
+  },
+  "seed": 0,
+  "maxSequenceLength": 512,
+  "gates": {
+    "minimumEveryTransferFoldAccuracy": 0.7,
+    "minimumEveryTransferSurfaceAccuracy": 0.65
+  }
+}

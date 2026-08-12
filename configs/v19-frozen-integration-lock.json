@@ -1,0 +1,113 @@
+{
+  "conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "config": "configs/v19-frozen-integration.json",
+  "config_sha256": "0b066ecc5254de3bd084ef83acdb3af2ef406c1484565a78990f95f17e68ac71",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "head_provenance_verification_refits": 3,
+    "new_selection_linear_fits": 0,
+    "v17_head_artifacts_read": 1,
+    "v17_model_results_read": 0,
+    "v17_records_read": 0,
+    "v18_records_read": 72,
+    "v19_model_forward_passes": 0,
+    "v19_model_predictions_read": 0,
+    "v19_scenes_created": 6912
+  },
+  "empty_version_policy": {
+    "discardSupports": false,
+    "expandDsl": false,
+    "identifiable": false,
+    "possibleTransitionCodes": "complete_outcome_vocabulary",
+    "repairGrounding": false,
+    "reportFailure": true
+  },
+  "experiment": "v19_frozen_grounding_schema_integration_development",
+  "gates": {
+    "integration": {
+      "maximumSupportedEmptyVersionSpaceRate": 0.25,
+      "minimumSupportedEndToEndEpisodeMacroTransitionSetExact": 0.5,
+      "minimumSupportedTargetRetentionAfterAllSupports": 0.75
+    },
+    "preExtraction": {
+      "adapterTrainingRunsPermitted": 0,
+      "headProvenanceVerificationRefitsPermitted": 3,
+      "maximumNewModelForwardPasses": 1000,
+      "maximumPromptTokens": 512,
+      "newLinearFitsPermitted": 0,
+      "requiredCorpusAudit": true,
+      "requiredHeadProvenanceAudit": true
+    }
+  },
+  "implementation": {
+    "python/audit_v19_compatibility.py": "c1866c6ca561f8b7429d26a4438dbfcc27a701e190bf614fdcbf8508c59a4884",
+    "python/build_v19_grounding_views.py": "cbf7225a37738cc9d4cd83332a143913b77b51eafe87a526b1b4c3e59965d5f0",
+    "python/evaluate_v10_frozen.py": "ca1fc997ba72999632a4352da6244d73c08746816e1598091480f5e3633a9808",
+    "python/evaluate_v15_full_pipeline.py": "0dd5e77a1d88c3644e5cae501f19b6c47d1e4aa0a428b50abde1e376f426c004",
+    "python/evaluate_v19_frozen_integration.py": "89edccf48c0b61b4ca16ec824dfc8f3204bb7e2eae27b407ce99a725c4080c0c",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/extract_v13_token_local_mlx.py": "95ac80c7443de9bb2966850639f9fbe4056f37624a639197a3cdaa2affa41ecb",
+    "python/extract_v19_grounding_features_mlx.py": "c5931c1700b860509150782a228131447decd569f2def135953fb24c71fda941",
+    "python/run_v18_schema_baselines.py": "95b31a82dbb3a8a1c6735ba0908a580366211f566a767b3b0eec181eaeea3e95",
+    "python/test_v18_protocol.py": "3c6814848b9060c97005f170a23009fe4c1fc9717b5c3bc56bce6441dd3734a7",
+    "python/test_v18_schema.py": "dbda19a02d676076e5238c3f1293cf7ae069c087f509ce4c89809c79eea5884e",
+    "python/test_v19_protocol.py": "6dc260de4fa5afcffc76fb2c64cf8a6f006f8b40c847ccfc7c8ac430d4e93d24",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v18_schema.py": "c3395ca6ad770f617b70a778af4d075c7dc354f6e586c431322168d3837b9bd2"
+  },
+  "limits": {
+    "adapterTrainingRunsPermitted": 0,
+    "alternateLayersPermitted": 0,
+    "alternateModelsPermitted": 0,
+    "featureExtractionsPermitted": 1,
+    "finalMechanicConstructionsPermitted": 0,
+    "hyperparameterSearchesPermitted": 0,
+    "integrationEvaluationsPermitted": 1,
+    "newLinearFitsPermitted": 0
+  },
+  "lock_payload_sha256": "c759e1da783dffb4fbb2a3dd0f7694a89e41c5a405feeae408efa8e46e856b18",
+  "model": {
+    "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+    "extractionLayer": 8,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "modelKey": "qwen35_4b",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32
+  },
+  "preregistration": "docs/v19-frozen-integration-plan.md",
+  "preregistration_sha256": "953540b5b9358edf4db5aaa96ef72b77c04aa4fd3de3f182c1f673ec8ef552eb",
+  "primary_split": "development",
+  "schema_version": 19,
+  "source": {
+    "deployment_heads": "outputs/v17-final/evaluation/deployment-heads.npz",
+    "deployment_heads_sha256": "78b43b62d1a7f45dfe5efabf83ccfcd00c8c370c49f90f275dd32747f5a74278",
+    "pre_extraction_audit": "outputs/v19-frozen-integration/pre-extraction-audit.json",
+    "pre_extraction_audit_sha256": "d72e7bb40ba95a085d12a79dd789f00073705aff36d6422f8dad47167069df67",
+    "v15_features": "outputs/v15-full-pipeline/features/metadata.json",
+    "v15_features_sha256": "e84a4af2178dfd6d9fbf6736e22a8d0a92b1a62873af1573fe12c31b6576a44a",
+    "v15_lock": "configs/v15-full-pipeline-lock.json",
+    "v15_lock_sha256": "fdcde43b41449833d9e29f51d9dd0dd2ca67405209f4bc4abb42f191d3067a60",
+    "v18_dataset": "data/v18",
+    "v18_dataset_sha256": "94daedb51fdac667748a2b36faf10aa80fbab1cbb50b89c90b7c62cd0a9e5b95",
+    "v18_manifest": "data/v18/manifest.json",
+    "v18_manifest_sha256": "da119a9579bf79eea5f8052b64988b1da95f4614476f3a4efd1a6b471016b754",
+    "v18_result": "outputs/v18-schema-induction/baselines.json",
+    "v18_result_sha256": "f180d6221a0d157469fc38d7a904930638f4c7d9b3971662b17df88a62be880c",
+    "v19_dataset": "data/v19",
+    "v19_dataset_sha256": "5f8bf7a6da709f922ce7f17cb0355395e0a43a0779af467dc5400e83212f2075",
+    "v19_manifest": "data/v19/manifest.json",
+    "v19_manifest_sha256": "91f6dde7e7db897926bcdf1362e13bac9b38a14036c42ef3fa3cbbb09142e278"
+  },
+  "views": {
+    "novel_ontology": "diagnostic",
+    "supported": "primary"
+  }
+}

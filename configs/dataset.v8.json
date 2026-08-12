@@ -1,0 +1,49 @@
+{
+  "outputDir": "data/v8",
+  "mechanics": [
+    "hatch_traversal",
+    "generator_tuning",
+    "beacon_calibration",
+    "mirror_power_trip",
+    "mirror_rejection",
+    "pressure_hatch_relock"
+  ],
+  "surfaceVariants": [
+    "canonical",
+    "entity_renamed",
+    "paraphrased"
+  ],
+  "replicasPerAssignment": 12,
+  "calibrationModulo": 4,
+  "simulatorSeeds": {
+    "hatch_traversal": 10101,
+    "generator_tuning": 10102,
+    "beacon_calibration": 10103,
+    "mirror_power_trip": 10104,
+    "mirror_rejection": 10105,
+    "pressure_hatch_relock": 10106
+  },
+  "shortcutGates": {
+    "maximumMetadataWorstFoldBalancedAccuracy": 0.55,
+    "maximumUnigramWorstFoldBalancedAccuracy": 0.55,
+    "maximumCharacterNgramWorstFoldBalancedAccuracy": 0.6,
+    "maximumLengthWorstFoldBalancedAccuracy": 0.55,
+    "maximumUnigramWorstFoldAuc": 0.65,
+    "maximumCharacterNgramWorstFoldAuc": 0.65,
+    "maximumLengthWorstFoldAuc": 0.55
+  },
+  "protocol": {
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "feature": "layer_06_mean",
+    "cValue": 10,
+    "seed": 0,
+    "maxSeqLength": 1024,
+    "bootstrapSamples": 2000,
+    "bootstrapSeed": 8819,
+    "gates": {
+      "minimumEveryFoldPairDifferenceAccuracy": 0.6,
+      "minimumMeanPairDifferenceAccuracy": 0.7,
+      "minimumEveryFoldPointwiseScoreDirection": 0.6
+    }
+  }
+}

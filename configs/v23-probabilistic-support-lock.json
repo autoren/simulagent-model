@@ -1,0 +1,156 @@
+{
+  "branch_budgets": [
+    1,
+    4,
+    16,
+    64
+  ],
+  "config": "configs/v23-probabilistic-support.json",
+  "config_payload": {
+    "branchBudgets": [
+      1,
+      4,
+      16,
+      64
+    ],
+    "credibleProgramMasses": [
+      0.5,
+      0.8,
+      0.95,
+      1.0
+    ],
+    "experiment": "v23_exposed_relational_probabilistic_support_replay",
+    "gates": {
+      "referenceMaximumEmptyPosteriorRate": 0.1,
+      "referenceMaximumMeanExcessOutcomes": 0.25,
+      "referenceMaximumMissingTargetOutcomeRate": 0.05,
+      "referenceMinimumTargetCredibleRetention": 0.75,
+      "referenceMinimumTargetNonzeroRetention": 0.75,
+      "referenceMinimumTransitionSetExact": 0.75
+    },
+    "interface": {
+      "assignmentEnumeration": "exact_murty_k_best_one_to_one",
+      "atomScore": "binary_logistic_sigmoid",
+      "emptyPosteriorPolicy": "complete_outcome_vocabulary",
+      "jointGraphDeduplication": true,
+      "jointGraphNormalization": "softmax_over_retained_top_b",
+      "jointGraphScore": "sum_log_atom_compatibility_plus_sum_log_truth_probability",
+      "maximumUnknownAtomsPerProposal": 4,
+      "programPosterior": "normalized_product_of_trace_likelihoods",
+      "programPrior": "uniform_over_v22_behavioral_hypotheses",
+      "querySemantics": "union_over_credible_programs_with_oracle_query_graph",
+      "supportLikelihood": "sum_retained_graph_probability_when_observed_transition_is_possible",
+      "truthEnumeration": "exact_independent_k_best_vectors",
+      "truthScore": "normalized_one_vs_rest_sigmoid"
+    },
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "finalSuiteConstructions": 0,
+      "hyperparameterSelections": 0,
+      "newFeatureExtractions": 0,
+      "newLinearFits": 0,
+      "newModelForwardPasses": 0,
+      "probabilisticReplayRuns": 1
+    },
+    "metrics": [
+      "target_nonzero_posterior_retention",
+      "target_credible_set_retention",
+      "empty_posterior_rate",
+      "credible_program_count",
+      "transition_set_exact_match",
+      "complete_episodes",
+      "mean_predicted_outcomes",
+      "mean_excess_outcomes",
+      "missing_target_outcome_rate",
+      "proposal_probability_concentration",
+      "runtime_seconds"
+    ],
+    "outputDir": "outputs/v23-probabilistic-support",
+    "registeredReference": {
+      "branchBudget": 64,
+      "credibleProgramMass": 0.95
+    },
+    "schemaVersion": 23,
+    "scope": {
+      "allV22r2SplitsNowExposed": true,
+      "developmentOnly": true,
+      "finalClaimPermitted": false,
+      "queryGrounding": "oracle_primary_hard_v22r2a_reported_as_external_ceiling",
+      "supportInterfaceOnly": true
+    },
+    "sourceFeatures": "outputs/v22r2-relational-grounding/features/metadata.json",
+    "sourceHeads": "outputs/v22r2-relational-grounding/evaluation-v22r2a/heads.npz",
+    "sourceV22r2aDiagnostic": "outputs/v22r2-relational-grounding/error-conditioning.json",
+    "sourceV22r2aLock": "configs/v22r2a-evaluation-amendment-lock.json",
+    "sourceV22r2aPostAudit": "outputs/v22r2-relational-grounding/post-result-audit.json",
+    "sourceV22r2aResult": "outputs/v22r2-relational-grounding/evaluation-v22r2a/result.json"
+  },
+  "config_sha256": "221e68c03e14ab0a67d1dbfd3c5c1600f39249cf683cf1db845e32350ad20c5e",
+  "credible_program_masses": [
+    0.5,
+    0.8,
+    0.95,
+    1.0
+  ],
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "all_v22r2_splits_exposed": true,
+    "hyperparameter_selections": 0,
+    "new_feature_extractions": 0,
+    "new_linear_fits": 0,
+    "new_model_forward_passes": 0,
+    "probabilistic_replay_runs": 0
+  },
+  "experiment": "v23_exposed_relational_probabilistic_support_replay",
+  "gates": {
+    "referenceMaximumEmptyPosteriorRate": 0.1,
+    "referenceMaximumMeanExcessOutcomes": 0.25,
+    "referenceMaximumMissingTargetOutcomeRate": 0.05,
+    "referenceMinimumTargetCredibleRetention": 0.75,
+    "referenceMinimumTargetNonzeroRetention": 0.75,
+    "referenceMinimumTransitionSetExact": 0.75
+  },
+  "implementation": {
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v23_probabilistic_support.py": "1ea2e65801d9255ccf8daf8b0d7c60c37f408ef55856c674f6801f99fb72a233",
+    "python/test_v23_probabilistic.py": "6cdf44971dccde49322e31f50b8abb2b425246d6df7a246a15823db44530cb4d",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v23_probabilistic_relational.py": "4a672fb2ca96e9f50d6c7e29921149d268fa91082f6846233b6255c67050db43"
+  },
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0,
+    "hyperparameterSelections": 0,
+    "newFeatureExtractions": 0,
+    "newLinearFits": 0,
+    "newModelForwardPasses": 0,
+    "probabilisticReplayRuns": 1
+  },
+  "lock_payload_sha256": "d23961bd7393330954641a9da40c700ad15a7a556fabbfc22da971edb50e9e1d",
+  "preregistration": "docs/v23-probabilistic-support-plan.md",
+  "preregistration_sha256": "37891293d8924f4d1e8a6848af06b0afbc43380df0d5bafc5cf5e049a4c38575",
+  "registered_reference": {
+    "branchBudget": 64,
+    "credibleProgramMass": 0.95
+  },
+  "schema_version": 23,
+  "source": {
+    "feature_artifact": "outputs/v22r2-relational-grounding/features/v22r2-relational-features.npz",
+    "feature_artifact_sha256": "0e601d3901fad6ec11238c5d2cc032637ce54e2e212e8331f6b1c4cf9fbf5a70",
+    "feature_metadata": "outputs/v22r2-relational-grounding/features/metadata.json",
+    "feature_metadata_sha256": "dad8333b53bd054029fa79cbe139deca535a72083a86fe201d5af34d5df78fdb",
+    "heads": "outputs/v22r2-relational-grounding/evaluation-v22r2a/heads.npz",
+    "heads_sha256": "16da2537951a47a7fa49378ff3d6ed99649167bc6e0d3dbd38bb334bca0acc37",
+    "v22r2_diagnostic": "outputs/v22r2-relational-grounding/error-conditioning.json",
+    "v22r2_diagnostic_sha256": "139f0d24acad54fe17d820b8f61034b212eeff26ea9ed2b0a37e7ed59c3b0575",
+    "v22r2_original_lock": "configs/v22r2-relational-grounding-lock.json",
+    "v22r2_original_lock_sha256": "87f9fa082718b843ec3875685295ee412c2a0c59e622ffb8d7e1c8fe3e17bedf",
+    "v22r2_post_audit": "outputs/v22r2-relational-grounding/post-result-audit.json",
+    "v22r2_post_audit_sha256": "9c9af467e7bc93e67d1d34b29987aaf22c28beee629b68f13af5f0e420ff538e",
+    "v22r2_result": "outputs/v22r2-relational-grounding/evaluation-v22r2a/result.json",
+    "v22r2_result_sha256": "97a19e3041b8a4a8b66c21c2ffcf908d352572670d64776684152d21f01aac9d",
+    "v22r2a_lock": "configs/v22r2a-evaluation-amendment-lock.json",
+    "v22r2a_lock_sha256": "6329fc546e7e4103657b03c45e0830e65a95b29dd31c844ae1a0f367e4b46424"
+  }
+}

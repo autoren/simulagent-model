@@ -1,0 +1,79 @@
+{
+  "amendment": {
+    "atomMatchingEstimatorUnchanged": true,
+    "baseEstimatorUnchanged": "LogisticRegression(C=1.0,class_weight=balanced,solver=liblinear,max_iter=2000,random_state=2202)",
+    "conditionsUnchanged": true,
+    "dataUnchanged": true,
+    "featuresUnchanged": true,
+    "gatesUnchanged": true,
+    "hyperparameterSelection": false,
+    "truthStatusMulticlassWrapper": "sklearn.multiclass.OneVsRestClassifier"
+  },
+  "config": "configs/v22r2a-evaluation-amendment.json",
+  "config_sha256": "5665bfd934501ca5da6b97c571ef435619c4dfb2fe8fc43f11a4a3515a9ab238",
+  "data_access_before_amendment_lock": {
+    "aborted_atom_head_fits": 1,
+    "adapter_training_runs": 0,
+    "completed_model_forward_passes": 384,
+    "evaluation_metrics_read": 0,
+    "held_out_predictions_read": 0,
+    "integration_evaluations": 0,
+    "truth_head_fits": 0
+  },
+  "experiment": "v22r2a_nondiscretionary_evaluation_compatibility_amendment",
+  "gates": {
+    "development": {
+      "maximumFrozenSupportEmptyVersionSpaceRate": 0.25,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.75,
+      "minimumEvaluationRelationOrientationAccuracy": 0.9,
+      "minimumEvaluationTruthStatusAccuracy": 0.9,
+      "minimumFitAtomAssignmentAccuracy": 0.95,
+      "minimumFrozenFrozenTransitionSetExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleTransitionSetExact": 1.0
+    },
+    "preExtraction": {
+      "maximumExactPromptOverlapAcrossFitEvaluation": 0,
+      "maximumNewModelForwardPasses": 384,
+      "maximumPublicAxisFields": 0,
+      "maximumSequentialPublicIds": 0,
+      "minimumAuditPassRate": 1.0
+    }
+  },
+  "implementation": {
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v22r2a_relational_grounding.py": "121a67863f4dbe8c2d78f19c5ec83b31fc5db93d082be20e389d1f7e6c2be1d0",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda"
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "lock_payload_sha256": "5952212096359e7db9f74dd61015d15d0fbcbadaa293dd711a6ceffc54b3b8ec",
+  "preregistration": "docs/v22r2a-evaluation-amendment.md",
+  "preregistration_sha256": "900ba6f17040f966b7f0d454e424d59dabd17daef4c4d58d6af1c44f38203994",
+  "replacement_limits": {
+    "adapterTrainingRuns": 0,
+    "evaluationAttempts": 1,
+    "hyperparameterSelections": 0,
+    "newModelForwardPasses": 0,
+    "replacementAtomMatchingHeadFits": 1,
+    "truthStatusHeadFits": 1
+  },
+  "schema_version": "22r2a",
+  "source": {
+    "failed_attempt": "outputs/v22r2-relational-grounding/evaluation-attempt.json",
+    "failed_attempt_sha256": "602086418c01a5604a6b9ec35ef926b7d87daeafff2c60654cdebc2cb56f41e7",
+    "failure_record": "outputs/v22r2-relational-grounding/evaluation-attempt-1-failure.json",
+    "failure_record_sha256": "c7ed11a91253a78b4900f4b3ef94f3ba73f035d8e0f23f757130ab24c26a63ac",
+    "feature_artifact": "outputs/v22r2-relational-grounding/features/v22r2-relational-features.npz",
+    "feature_artifact_sha256": "0e601d3901fad6ec11238c5d2cc032637ce54e2e212e8331f6b1c4cf9fbf5a70",
+    "feature_metadata": "outputs/v22r2-relational-grounding/features/metadata.json",
+    "feature_metadata_sha256": "dad8333b53bd054029fa79cbe139deca535a72083a86fe201d5af34d5df78fdb",
+    "original_lock": "configs/v22r2-relational-grounding-lock.json",
+    "original_lock_sha256": "87f9fa082718b843ec3875685295ee412c2a0c59e622ffb8d7e1c8fe3e17bedf"
+  }
+}

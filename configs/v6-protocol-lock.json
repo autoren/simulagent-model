@@ -1,0 +1,109 @@
+{
+  "data_access": {
+    "mechanic_holdout_records_read_before_probe_lock": 0,
+    "v3_test_records_read": 0
+  },
+  "dataset_artifact_sha256": {
+    "records/calibration.jsonl": "0821dd3e66e8977060f81be110945383bc070ff91c4c7cce5ddfba82d03bd4b8",
+    "records/mechanic_holdout.jsonl": "4284f180c0eeb45a301f16d793d5e40d5da99ac3b58e872aab87deb8af812d6b",
+    "records/train.jsonl": "e261fd4bcba699e49926db377889e9b50488d3c77671b190dbaa7f5964c21ec0"
+  },
+  "dataset_manifest": "data/v6/manifest.json",
+  "dataset_manifest_sha256": "2eb81d909135f3ee0a91eaac61147140ec55567c51f99eae0abf0197cb5514d7",
+  "dataset_sha256": "1fd29263b8aa262b2153aacb8d753fc942b43b1f6a869ec6c215c8690a61186d",
+  "experiment": "v6_shortcut_resistant_frozen_probe",
+  "gates": {
+    "minimumAbsoluteImprovementOverV5": 0.15,
+    "minimumCalibrationCanonicalBalancedAccuracy": 0.75,
+    "minimumCompleteTripletAccuracy": 0.6,
+    "minimumEvidenceDirectionalAccuracy": 0.75,
+    "minimumHoldoutBootstrapLowerBound": 0.55,
+    "minimumHoldoutCanonicalBalancedAccuracy": 0.7,
+    "minimumSurfaceBalancedAccuracy": 0.65,
+    "minimumSurfacePredictionAgreement": 0.85
+  },
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "builder": {
+      "path": "src/v6.ts",
+      "sha256": "212d0dfe8a1326e43197660b7f611106a7882570a6065151ddd2c0a33f359b04"
+    },
+    "compiler": {
+      "path": "src/compile-v6.ts",
+      "sha256": "f31687a8866014c232a36d63c047b8a5506694d8148541160748421a67053b81"
+    },
+    "evaluator": {
+      "path": "python/evaluate_v6_mechanic_holdout_mlx.py",
+      "sha256": "ad6a52aae11e9cadcd57e4da4b654855e8054d2fc241c1ecdc6f7e09b0ebdb54"
+    },
+    "extractor": {
+      "path": "python/extract_v6_development_features_mlx.py",
+      "sha256": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750"
+    },
+    "paired_metrics": {
+      "path": "python/evaluate_v5_challenge_mlx.py",
+      "sha256": "4af820784958e5222fb9017ed748bc1115fc638cbb4c4ef25106421d5ad33c96"
+    },
+    "probe_freezer": {
+      "path": "python/freeze_v6_probe.py",
+      "sha256": "fdaaad0b99bc5f27840924c63a13628575f84c8633bb2e8e98c32761ebe11256"
+    },
+    "probe_metrics": {
+      "path": "python/train_frozen_linear_probe.py",
+      "sha256": "ca04a77999f12ba097302f79c12cce471e31fc18987d42757e96ebab3ff63685"
+    },
+    "summarizer": {
+      "path": "python/summarize_v6.py",
+      "sha256": "11725ccc102455b1f5bce0988d6b268aee8e3165c187f826ed5e2021e9fbf847"
+    },
+    "trainer": {
+      "path": "python/train_v6_frozen_probe.py",
+      "sha256": "ae6d582d52e870a0a42b1857bc43f27e83095e86e08132b4a76e666a72e26209"
+    },
+    "validator": {
+      "path": "src/v6-validation.ts",
+      "sha256": "86e90b257a7388f5d34be66e31ffa0192667efc35609fd737b37892110d9dcde"
+    }
+  },
+  "limits": {
+    "development_feature_extractions_permitted": 1,
+    "mechanic_holdout_evaluations_permitted": 1,
+    "probe_trainings_permitted": 1
+  },
+  "lock_payload_sha256": "d39405fc8d0efa1a40ffc1ec39ee8881791f39d5a8761687ef887b5a4608209b",
+  "method": {
+    "adapter_path": null,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 6606,
+    "c_value": 10.0,
+    "class_weight": "balanced",
+    "feature": "layer_06_mean",
+    "frozen": true,
+    "input_variant": "full",
+    "layer": 6,
+    "max_seq_length": 1024,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pooling": "mean",
+    "seed": 0,
+    "solver": "saga",
+    "surface_supervision": "complete_triplets_with_shared_binary_target",
+    "threshold_selection": "canonical_calibration_only"
+  },
+  "partitions": {
+    "one_shot_evaluation": "mechanic_holdout/mirrorreject",
+    "threshold_calibration": "calibration/canonical",
+    "training": "train"
+  },
+  "reference": {
+    "path": "outputs/v5-challenge/frozen-probe/result.json",
+    "sha256": "30548b46774e61a40d2c36dcf384b45c2c45be6505cc388408df152917a10084",
+    "v5_challenge_balanced_accuracy": 0.49582289055973267
+  },
+  "schema_version": 6,
+  "source_commit": "d42e0266b59f60af6c7550ab69eb9f3a1c77a18c",
+  "source_simulation_sha256": "826668cec499f31be0304e9446fe1aec126e155a276f7a199910498dfc8a774d",
+  "source_worktree_diff_sha256": "23e18b2b9bf6ea8b4e04d2e6b64cc72ee5fc77f064ad6b06e7dd507238f24c92"
+}

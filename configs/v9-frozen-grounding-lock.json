@@ -1,0 +1,86 @@
+{
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "dataset_artifact_sha256": {
+    "records/calibration.jsonl": "2d1e294a34b1a6e89307373b5ebfa1e50791482f7706d6650691d75be23590a9",
+    "records/train.jsonl": "9f9020ff00aac5ae8f179951157dd0ad58fe24008e3ab687612e71fa41ba933c"
+  },
+  "dataset_lock": "configs/v9r2-grounding-lock.json",
+  "dataset_lock_sha256": "91d9c336b2e553f638287f28cc1d8444696ca53e754988dd0468b84bc2b42132",
+  "dataset_manifest": "data/v9r2/manifest.json",
+  "dataset_manifest_sha256": "98fc1978d8f87b42a3591c5aaddd405b27a24ac2c9c0f7acfcc30cb539c40dfb",
+  "dataset_sha256": "cff130b8efa713630ad915207bc18d8e43fb77d149e86eb72365fe06b71e2c78",
+  "experiment": "v9_locked_frozen_neuro_symbolic_grounding",
+  "folds": [
+    "context",
+    "mechanic:beacon_calibration",
+    "mechanic:generator_tuning",
+    "mechanic:hatch_traversal",
+    "mechanic:mirror_power_trip",
+    "mechanic:mirror_rejection",
+    "mechanic:pressure_hatch_relock",
+    "template:inspection_report",
+    "template:operator_log",
+    "template:questioned_claim",
+    "template:technical_summary",
+    "operator:binary_partition",
+    "operator:multiway_partition"
+  ],
+  "implementation": {
+    "python/audit_v9_grounding_shortcuts.py": "6adbcf5381a86435dcf2cc111891947e7a6804c320990d894a13423d71e39e5e",
+    "python/binary_metrics.py": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6",
+    "python/evaluate_v9_frozen_grounding.py": "93d9ba361e002793e7518557da8187bded98e6fefaecc882f33eb93234d077d6",
+    "python/extract_v6_development_features_mlx.py": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750",
+    "python/extract_v9_grounding_features_mlx.py": "4b0475eb532cfbe95dcfcff83b08c782714e381a8405892548fa1e8f90647669",
+    "python/test_v9_frozen_grounding.py": "5e842197c66316df6bc21e023c31c11810ac21202407fcffb8fd40c6b154d08b",
+    "python/test_v9_symbolic.py": "f8c99e5b3b349da7a8279646d3cf919032e16faf8e62b850c24a81303db70616",
+    "python/v9_symbolic.py": "252041deaa4eaf0c2fd0702cc502688af13a6feb16e8f52d1cf5f422da440acb"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "complete_13_fold_evaluations_permitted": 1,
+    "final_mechanic_evaluations_permitted": 0,
+    "frozen_feature_extractions_permitted": 1
+  },
+  "lock_payload_sha256": "5fe1ac59909f57b49d506cfed84c021d41c3951f6cbcf1abb16d2c91e312f6db",
+  "pre_model_audit": {
+    "gates_passed": true,
+    "path": "outputs/v9r2-pre-model/shortcut-audit.json",
+    "sha256": "b0027d646a6e921c50f333291ab72427344fb1023a7c6b2bd1393cb5914efe8a"
+  },
+  "preregistration": {
+    "amendment": {
+      "path": "docs/v9r2-experiment-plan.md",
+      "sha256": "16a61a7fb8ff1adb1f3b37b5e7a05c1beb6254a7fb882d4717da055a526d35a5"
+    },
+    "primary": {
+      "path": "docs/v9-experiment-plan.md",
+      "sha256": "6821cb0cc4a4893e79e68056216a68b9f71d5c63e95c3686ffe1f2577b711d90"
+    }
+  },
+  "protocol": {
+    "cValue": 1.0,
+    "feature": "layer_06_mean",
+    "gates": {
+      "minimumContextSpanAccuracy": 0.7,
+      "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+      "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+      "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+      "minimumEveryFoldTemporalAccuracy": 0.65,
+      "minimumEveryMechanicSpanAccuracy": 0.6,
+      "minimumEveryOperatorSpanAccuracy": 0.6,
+      "minimumEveryTemplateSpanAccuracy": 0.6
+    },
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "seed": 0
+  },
+  "revision": 2,
+  "schema_version": 9
+}

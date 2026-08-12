@@ -1,0 +1,293 @@
+{
+  "config": "configs/v27-support-map.json",
+  "config_payload": {
+    "experiment": "v27_exposed_outcome_constrained_support_map",
+    "gates": {
+      "development": {
+        "maximumFrozenSupportEmptyVersionSpace": 0.1,
+        "minimumEvaluationSupportExactGraph": 0.75,
+        "minimumFrozenFrozenExact": 0.65,
+        "minimumFrozenSupportOracleQueryExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleExact": 1.0,
+        "minimumOracleSupportFrozenQueryExact": 0.75
+      },
+      "preEvaluation": {
+        "maximumNewModelForwardPasses": 1200,
+        "maximumSparseAssignmentsPerScene": 256,
+        "minimumEvaluationSupportExactProposalSceneCoverage": 0.8,
+        "minimumEvaluationSupportGoldEdgeCoverage": 0.95,
+        "requiredV26QueryPredictionReuse": 1.0
+      }
+    },
+    "integrationConditions": [
+      "oracle_support_oracle_query",
+      "frozen_support_oracle_query",
+      "oracle_support_frozen_query",
+      "frozen_support_frozen_query"
+    ],
+    "jointMap": {
+      "assignmentEnumeration": "exhaustive_sparse_perfect_matchings",
+      "constraint": "every_selected_support_graph_must_allow_its_observed_transition_under_one_shared_episode_program",
+      "factorWeights": {
+        "match": 1.0,
+        "truth": 1.0
+      },
+      "graphBranchesPerScene": 512,
+      "matchFactor": "v24_binary_match_log_odds",
+      "maximumAssignmentsPerScene": 256,
+      "maximumUnknownAtomsPerGraph": 4,
+      "noFeasibleEpisodePolicy": "retain_v26_support_graphs",
+      "programPrior": "uniform",
+      "selection": "maximum_joint_log_score_then_program_key_then_graph_key",
+      "truthFactor": "log_softmax_v26_fp32_A_B_C_logits",
+      "truthVectorsPerAssignment": 64
+    },
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "finalSuiteConstructions": 0,
+      "headFits": 0,
+      "hyperparameterSelections": 0,
+      "jointMapEvaluations": 1,
+      "newModelForwardPasses": 1103,
+      "supportEdgeDecoderAttempts": 1,
+      "thresholdFits": 0
+    },
+    "model": {
+      "hiddenSize": 2560,
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "readoutLayer": 32,
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "score": "fp32_direct_projection_to_dequantized_A_B_C_embedding_rows",
+      "systemPrompt": "Classify the evidence relative to the candidate fact. Preserve negation, contrastive clause order, exact entity identity, and directed relation order. Return exactly one uppercase ASCII letter and nothing else. Return A when the evidence entails the candidate fact. Return B when the evidence contradicts the candidate fact. Return C when the evidence leaves the candidate fact unresolved.",
+      "totalLayers": 32
+    },
+    "outputDir": "data/v27-support-edge-decoder",
+    "schemaVersion": 27,
+    "scope": {
+      "allV22r2SplitsExposed": true,
+      "developmentOnly": true,
+      "freshBenchmarkRecordsPermitted": 0,
+      "ontologyAndDslUnchanged": true,
+      "supportScenesOnly": true,
+      "v26QueryPredictionsFrozen": true
+    },
+    "sourceV24Features": "outputs/v24-cross-encoder/features/metadata.json",
+    "sourceV24Heads": "outputs/v24-cross-encoder/evaluation/heads.npz",
+    "sourceV24ProposalCorpus": "data/v24-cross-encoder-proposals",
+    "sourceV26Lock": "configs/v26-native-truth-decoder-lock.json",
+    "sourceV26PostAudit": "outputs/v26-native-truth-decoder/post-result-audit.json",
+    "sourceV26Predictions": "outputs/v26-native-truth-decoder/evaluation/grounding-predictions.jsonl",
+    "sourceV26Residual": "outputs/v26-native-truth-decoder/residual-decomposition.json",
+    "sourceV26Result": "outputs/v26-native-truth-decoder/evaluation/result.json",
+    "sourceV26Scores": "outputs/v26-native-truth-decoder/evaluation/native-decoder-scores.jsonl"
+  },
+  "config_sha256": "978dd92d0cbcaafbda227c45a4164b20d3d913e8cb5425abcea62bda76cbf168",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "all_v22r2_splits_exposed": true,
+    "fresh_benchmark_records_created": 0,
+    "head_fits": 0,
+    "hyperparameter_selections": 0,
+    "joint_map_evaluations": 0,
+    "new_model_forward_passes": 0,
+    "threshold_fits": 0
+  },
+  "experiment": "v27_exposed_outcome_constrained_support_map",
+  "gates": {
+    "development": {
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumEvaluationSupportExactGraph": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleExact": 1.0,
+      "minimumOracleSupportFrozenQueryExact": 0.75
+    },
+    "preEvaluation": {
+      "maximumNewModelForwardPasses": 1200,
+      "maximumSparseAssignmentsPerScene": 256,
+      "minimumEvaluationSupportExactProposalSceneCoverage": 0.8,
+      "minimumEvaluationSupportGoldEdgeCoverage": 0.95,
+      "requiredV26QueryPredictionReuse": 1.0
+    }
+  },
+  "implementation": {
+    "python/audit_v27_support_map.py": "1a17b636653bdebc080c17df697d8ca01a4822ec1fc0fa52aa835283ec60b319",
+    "python/build_v27_support_edges.py": "a6edfbd74d12cbc011b6236039b80a7e19d68367db4ef71b730557687d823b6c",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v26_native_decoder_mlx.py": "df589dd73329761a57c7bf65c89dfc4237a989533f5f375362f6a8e278e3bcb6",
+    "python/evaluate_v27_support_map.py": "ce386070529fdcd4e97d7463eb3d31ffebf6a8e92236177b0c9d3d6c8ee7d30c",
+    "python/freeze_v27_support_map.py": "3a6cfe4015675aebc2ab6adf26c68444f5ff3deb57a8b455c811e530d6bc1779",
+    "python/score_v27_support_edges_mlx.py": "fbed73f2f4e05bdf8712b3772e7df02523a9d6dcc2a259ad1ae7eb0c51de630a",
+    "python/test_v27_support_map.py": "fa92fbac85e65e3eb2cc00dec821db42f121eebe6dd00cd75a41b945d2eeb72f",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v23_probabilistic_relational.py": "4a672fb2ca96e9f50d6c7e29921149d268fa91082f6846233b6255c67050db43",
+    "python/v27_support_map.py": "381791705c6f67a44f9eed11e618320ef28da462aa0ea560dad67bff6336fe53"
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "joint_map": {
+    "assignmentEnumeration": "exhaustive_sparse_perfect_matchings",
+    "constraint": "every_selected_support_graph_must_allow_its_observed_transition_under_one_shared_episode_program",
+    "factorWeights": {
+      "match": 1.0,
+      "truth": 1.0
+    },
+    "graphBranchesPerScene": 512,
+    "matchFactor": "v24_binary_match_log_odds",
+    "maximumAssignmentsPerScene": 256,
+    "maximumUnknownAtomsPerGraph": 4,
+    "noFeasibleEpisodePolicy": "retain_v26_support_graphs",
+    "programPrior": "uniform",
+    "selection": "maximum_joint_log_score_then_program_key_then_graph_key",
+    "truthFactor": "log_softmax_v26_fp32_A_B_C_logits",
+    "truthVectorsPerAssignment": 64
+  },
+  "labels": [
+    "A",
+    "B",
+    "C"
+  ],
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0,
+    "headFits": 0,
+    "hyperparameterSelections": 0,
+    "jointMapEvaluations": 1,
+    "newModelForwardPasses": 1103,
+    "supportEdgeDecoderAttempts": 1,
+    "thresholdFits": 0
+  },
+  "lock_payload_sha256": "47d6b6c10dda8988bbb1e2d627020c3a4987b485bbc1a2608150a5a485b01f90",
+  "model": {
+    "hiddenSize": 2560,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "readoutLayer": 32,
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "score": "fp32_direct_projection_to_dequantized_A_B_C_embedding_rows",
+    "systemPrompt": "Classify the evidence relative to the candidate fact. Preserve negation, contrastive clause order, exact entity identity, and directed relation order. Return exactly one uppercase ASCII letter and nothing else. Return A when the evidence entails the candidate fact. Return B when the evidence contradicts the candidate fact. Return C when the evidence leaves the candidate fact unresolved.",
+    "totalLayers": 32
+  },
+  "pre_decoder_audit": {
+    "budget": {
+      "planned_new_model_forwards": 1103,
+      "registered_new_model_forwards": 1103
+    },
+    "decision": "authorize_v27_protocol_lock",
+    "errors": [],
+    "experiment": "v27_pre_decoder_support_map_audit",
+    "firewall": {
+      "exact_fit_evaluation_prompt_overlap": 0,
+      "exact_source_agent_inputs": 1103,
+      "forbidden_agent_input_keys": {},
+      "fresh_benchmark_records_created": 0,
+      "new_linear_fits_before_lock": 0,
+      "new_model_forward_passes_before_lock": 0
+    },
+    "integrity": {
+      "corpus_sha256": "6eba6fd8942d906f62b0287e3ac27317604c20d5355490386f7937dd2f1f7794"
+    },
+    "passed": true,
+    "population": {
+      "all_support_proposal_edges": 1652,
+      "new_decoder_rows": 1103,
+      "reused_v26_edges": 549,
+      "support_evidence_groups": 549,
+      "support_scenes": 72
+    },
+    "proposal": {
+      "exact_episode_coverage_by_split": {
+        "grounding_calibration": 0.75,
+        "grounding_evaluation": 0.6666666666666666,
+        "grounding_fit": 0.75
+      },
+      "exact_scene_coverage_by_split": {
+        "grounding_calibration": 0.8181818181818182,
+        "grounding_evaluation": 0.8611111111111112,
+        "grounding_fit": 0.92
+      },
+      "gold_edge_coverage_by_split": {
+        "grounding_calibration": 0.9743589743589743,
+        "grounding_evaluation": 0.9789473684210527,
+        "grounding_fit": 0.9838709677419355
+      },
+      "matching_count_distribution": {
+        "102": 1,
+        "12": 4,
+        "14": 2,
+        "144": 1,
+        "16": 16,
+        "160": 2,
+        "17": 2,
+        "18": 25,
+        "192": 1,
+        "20": 2,
+        "24": 2,
+        "256": 1,
+        "32": 1,
+        "36": 2,
+        "48": 1,
+        "58": 1,
+        "60": 1,
+        "64": 1,
+        "72": 1,
+        "76": 1,
+        "8": 1,
+        "96": 3
+      },
+      "maximum_sparse_perfect_matchings": 256
+    },
+    "schema_version": 27
+  },
+  "preregistration": "docs/v27-support-map-plan.md",
+  "preregistration_sha256": "7e200a73cc33ab6f2b7c38d8e93df6ec9f851f92aace59fab0d7b27042654fcd",
+  "schema_version": 27,
+  "source": {
+    "corpus": "data/v27-support-edge-decoder",
+    "corpus_file_sha256": {
+      "grounding_calibration.jsonl": "91ebb242dc0448ebc7e0ce1eb52061bcef87b8430ddc461687ea11d3a5ea9e51",
+      "grounding_evaluation.jsonl": "b38c851cb916667c2a3d0ae80614b44a8ede2f55bfee36a81fe4407b2f48c284",
+      "grounding_fit.jsonl": "c77705e17d614e016bfd01c4a499a63f4cdecc5b528673d4b11385cb0035f23b",
+      "manifest.json": "fe9bebcec092dea3627e8af9ab4e0925d79d1d70fe0bd455bc12a5de333d0438"
+    },
+    "corpus_manifest": "data/v27-support-edge-decoder/manifest.json",
+    "corpus_manifest_sha256": "fe9bebcec092dea3627e8af9ab4e0925d79d1d70fe0bd455bc12a5de333d0438",
+    "corpus_sha256": "6eba6fd8942d906f62b0287e3ac27317604c20d5355490386f7937dd2f1f7794",
+    "pre_decoder_audit": "outputs/v27-support-map/pre-decoder-audit.json",
+    "pre_decoder_audit_sha256": "5d920cb639bf1264e77f5c600aa0d55b51b423cd8195e9bdb2216f536a650b03",
+    "v24_feature_artifact": "outputs/v24-cross-encoder/features/v24-cross-features.npz",
+    "v24_feature_artifact_sha256": "6dcf80447c4fdf9c73d0dd4e8d76beca6eea36827c986406b113fa043fd60a55",
+    "v24_feature_metadata": "outputs/v24-cross-encoder/features/metadata.json",
+    "v24_feature_metadata_sha256": "1a7419604f97b5afe54c1255dc3957733008658d4c6e7173afe9d35fbc8272b0",
+    "v24_heads": "outputs/v24-cross-encoder/evaluation/heads.npz",
+    "v24_heads_sha256": "547d30a88848d738e861158b8ba4f1b063c5b09d07d54a6844d69936d5f79db8",
+    "v24_proposal_corpus": "data/v24-cross-encoder-proposals",
+    "v24_proposal_manifest_sha256": "7db0ea08453bc6476be63f4cf2a37410c1c3c2f827443b768f9614fb946594fd",
+    "v26_lock": "configs/v26-native-truth-decoder-lock.json",
+    "v26_lock_sha256": "437f6cf9e340e3b1b7dd6acf614f60372c25f0e76c51412153d38b156cb4951a",
+    "v26_post_audit": "outputs/v26-native-truth-decoder/post-result-audit.json",
+    "v26_post_audit_sha256": "50ee74712192d8d0bf2f8b30ee570e3bbea6430b69b58b5d727873bf74921a2d",
+    "v26_predictions": "outputs/v26-native-truth-decoder/evaluation/grounding-predictions.jsonl",
+    "v26_predictions_sha256": "55dd833d279380fd184898a1384a14cb2f95eefa30342d9e983be8d1a3521695",
+    "v26_residual": "outputs/v26-native-truth-decoder/residual-decomposition.json",
+    "v26_residual_sha256": "27085391ff68753e899592ec35f4f933990860e53cbd348fd63541195ddb9389",
+    "v26_result": "outputs/v26-native-truth-decoder/evaluation/result.json",
+    "v26_result_sha256": "bba801036095f3345249f3cece7652f803eecc9755be858034d41027930b3646",
+    "v26_scores": "outputs/v26-native-truth-decoder/evaluation/native-decoder-scores.jsonl",
+    "v26_scores_sha256": "d3ac50bf6a4eb5d7767d4b423c4990518b8f19f6aecac71c2cadf3429e73a419"
+  },
+  "source_v26_reference": {
+    "empty_version_space": 0.25,
+    "frozen_frozen_exact": 0.5192307692307693,
+    "frozen_support_oracle_query_exact": 0.5448717948717948,
+    "target_retention": 0.6666666666666666
+  }
+}

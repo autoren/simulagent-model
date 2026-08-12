@@ -1,0 +1,199 @@
+{
+  "data_access": {
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "dataset_artifact_sha256": {
+    "records/calibration.jsonl": "238356c0d562de0afc249e97d54321c6e7d369ac1fb0ddce5eb215c6b8777ea8",
+    "records/train.jsonl": "026529a101a9ca6a5cf3843da439a3e4d8796361f060e80716695e844da48f90"
+  },
+  "dataset_manifest": "data/v8/manifest.json",
+  "dataset_manifest_sha256": "932416f8873b7bb301d3aded0171c38e71bfd5f1e15cfb61a3a49ba2fed8f1f6",
+  "dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+  "experiment": "v8_locked_development_lomo",
+  "gates": {
+    "minimumEveryFoldPairDifferenceAccuracy": 0.6,
+    "minimumEveryFoldPointwiseScoreDirection": 0.6,
+    "minimumMeanPairDifferenceAccuracy": 0.7
+  },
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "builder": {
+      "path": "src/v8.ts",
+      "sha256": "22e705aec51f9a8766b8d395deaa69c084367a9c54a6dc7124cfcb074dc8921e"
+    },
+    "compiler": {
+      "path": "src/compile-v8.ts",
+      "sha256": "438360e9ef6dc1efd26f48bdc3a47ba62874311feec28ed2c6703ac780911987"
+    },
+    "contracts": {
+      "path": "src/contracts.ts",
+      "sha256": "6f24dfcbb83c87ef272f0b56543f3d60f8853b71e8e61c11b5ec317d68392d94"
+    },
+    "diagnostic": {
+      "path": "python/run_v8_lomo_diagnostics.py",
+      "sha256": "e3d04f30f443f572765314ce8a4d5a5805ade8b4e0eaecac0e320609e9cf9c2f"
+    },
+    "extractor": {
+      "path": "python/extract_v8_development_features_mlx.py",
+      "sha256": "9e91ed71bd7d3e7f860ecf4411ac4dba5d76c3bdc21a35bdad30e27129ebcd61"
+    },
+    "forward_core": {
+      "path": "python/extract_v6_development_features_mlx.py",
+      "sha256": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750"
+    },
+    "shortcut_audit": {
+      "path": "python/audit_v8_shortcuts.py",
+      "sha256": "18da98e0db646d1ffc4d51dcaed23d559bd3e09a4d0a4fa497e4375b71155cb3"
+    },
+    "simulator": {
+      "path": "../simulagent/src/simulation.ts",
+      "sha256": "5a8a5ba913fa632074298994332318015649fb10c3536b271193bdede1a93332"
+    },
+    "validator": {
+      "path": "src/v8-validation.ts",
+      "sha256": "9d9c765b03c9f6dab491d37283c30fdc6a67f7b542680321a59781a8fe6cf740"
+    }
+  },
+  "limits": {
+    "development_feature_extractions_permitted": 1,
+    "lomo_diagnostic_runs_permitted": 1,
+    "untouched_v8_mechanic_evaluations_permitted": 0
+  },
+  "lock_payload_sha256": "65939c7ae476aa610e19851114edd73dfdd8caddae58bab9c1d3cb55ddc775ec",
+  "mechanics": [
+    "hatch_traversal",
+    "generator_tuning",
+    "beacon_calibration",
+    "mirror_power_trip",
+    "mirror_rejection",
+    "pressure_hatch_relock"
+  ],
+  "method": {
+    "adapter_path": null,
+    "c_value": 10,
+    "class_weight": "balanced",
+    "feature": "layer_06_mean",
+    "feature_dtype": "float32",
+    "frozen": true,
+    "layer": 6,
+    "max_seq_length": 1024,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pair_training": "symmetric_signed_differences",
+    "pooling": "mean",
+    "seed": 0,
+    "solver": "lbfgs",
+    "threshold_selection": "other_mechanics_canonical_calibration_only"
+  },
+  "pre_model_gates": {
+    "checks": [
+      {
+        "maximum": 0.55,
+        "name": "metadata_maximum_fold_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.55,
+        "name": "unigram_maximum_fold_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.6,
+        "name": "character_ngram_maximum_fold_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.55,
+        "name": "length_maximum_fold_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.65,
+        "name": "unigram_maximum_fold_auc_separation",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.65,
+        "name": "character_ngram_maximum_fold_auc_separation",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.55,
+        "name": "length_maximum_fold_auc_separation",
+        "passed": true,
+        "value": 0.5
+      }
+    ],
+    "passed": true
+  },
+  "preregistration": {
+    "path": "docs/v8-experiment-plan.md",
+    "sha256": "c806f991d85ad6a6a46990d8bdbf056bcf06a786734e326a126f2c109bf20505"
+  },
+  "reported_relational_character_baseline": {
+    "folds": {
+      "beacon_calibration": {
+        "balanced_accuracy": 0.5,
+        "examples": 576,
+        "roc_auc": 0.5608465608465608,
+        "threshold": 0.5014044550456358
+      },
+      "generator_tuning": {
+        "balanced_accuracy": 0.5,
+        "examples": 192,
+        "roc_auc": 0.6354166666666666,
+        "threshold": 0.5111617873558654
+      },
+      "hatch_traversal": {
+        "balanced_accuracy": 0.5,
+        "examples": 48,
+        "roc_auc": 0.5,
+        "threshold": 0.5036662143522537
+      },
+      "mirror_power_trip": {
+        "balanced_accuracy": 0.5,
+        "examples": 576,
+        "roc_auc": 0.4778645833333333,
+        "threshold": 0.5121637858305318
+      },
+      "mirror_rejection": {
+        "balanced_accuracy": 0.5,
+        "examples": 192,
+        "roc_auc": 0.6354166666666666,
+        "threshold": 0.5083878543718794
+      },
+      "pressure_hatch_relock": {
+        "balanced_accuracy": 0.5,
+        "examples": 576,
+        "roc_auc": 0.5722222222222222,
+        "threshold": 0.4846375354231104
+      }
+    },
+    "maximum_fold_auc": 0.6354166666666666,
+    "maximum_fold_auc_separation": 0.6354166666666666,
+    "maximum_fold_balanced_accuracy": 0.5,
+    "mean_auc": 0.5636277832892417,
+    "mean_balanced_accuracy": 0.5
+  },
+  "schema_version": 8,
+  "shortcut_audit": "outputs/v8-pre-model/shortcut-audit.json",
+  "shortcut_audit_sha256": "0889b11a71692a2d22776380baff14fceb161ebac6a13ab0905a710069f13e78",
+  "source_simulation_sha256": "5a8a5ba913fa632074298994332318015649fb10c3536b271193bdede1a93332",
+  "surfaces": [
+    "canonical",
+    "entity_renamed",
+    "paraphrased"
+  ]
+}

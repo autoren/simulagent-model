@@ -1,0 +1,46 @@
+{
+  "outputDir": "data/v14",
+  "sourceManifest": "data/v8/manifest.json",
+  "sourceRecords": [
+    "data/v8/records/train.jsonl",
+    "data/v8/records/calibration.jsonl"
+  ],
+  "symbolicLock": "configs/v9-symbolic-lock.json",
+  "symbolicAudit": "outputs/v9-symbolic/oracle-audit.json",
+  "sourceReplica": 0,
+  "semanticOperators": {
+    "affirmative_gold": [
+      "direct_assertion",
+      "present_confirmation",
+      "current_observation"
+    ],
+    "negated_opposite": [
+      "explicit_negation",
+      "denied_claim",
+      "scoped_rejection"
+    ],
+    "contrastive_both": [
+      "contrastive_correction",
+      "contrastive_verification",
+      "contrastive_resolution"
+    ]
+  },
+  "operatorFamilies": {
+    "binary_partition": [
+      "hatch_traversal",
+      "beacon_calibration",
+      "pressure_hatch_relock"
+    ],
+    "multiway_partition": [
+      "generator_tuning",
+      "mirror_power_trip",
+      "mirror_rejection"
+    ]
+  },
+  "shortcutGates": {
+    "maximumMetadataMatchBalancedAccuracy": 0.6,
+    "maximumPositionMatchBalancedAccuracy": 0.6,
+    "maximumMetadataPolarityBalancedAccuracy": 0.55,
+    "maximumHypothesisPositionRelationBalancedAccuracy": 0.55
+  }
+}

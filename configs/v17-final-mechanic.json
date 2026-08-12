@@ -1,0 +1,53 @@
+{
+  "constructionRevision": "r2_visible_action_outcome",
+  "outputDir": "data/v17-final",
+  "mechanic": "beacon_console_diagnostic",
+  "operatorFamily": "multiway_partition",
+  "lexicalReferenceMechanic": "beacon_calibration",
+  "sourceReplica": 0,
+  "sourceV8Manifest": "data/v8/manifest.json",
+  "sourceV8Records": [
+    "data/v8/records/train.jsonl",
+    "data/v8/records/calibration.jsonl"
+  ],
+  "sourceV14Manifest": "data/v14/manifest.json",
+  "sourceV15Lock": "configs/v15-full-pipeline-lock.json",
+  "sourceV15Features": "outputs/v15-full-pipeline/features/metadata.json",
+  "sourceV16Lock": "configs/v16-scope-correct-replay-lock.json",
+  "sourceV16Result": "outputs/v16-scope-correct-replay/result.json",
+  "modelKey": "qwen35_4b",
+  "model": "mlx-community/Qwen3.5-4B-4bit",
+  "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "totalLayers": 32,
+  "hiddenSize": 2560,
+  "extractionLayer": 8,
+  "cValue": 1.0,
+  "seed": 0,
+  "maxSequenceLength": 512,
+  "expected": {
+    "sourceScaffolds": 144,
+    "records": 1296,
+    "contexts": 24,
+    "interventionGroups": 216,
+    "recordsPerTemplateLexiconCell": 48,
+    "transitionCases": 8,
+    "transitionCodes": 8
+  },
+  "gates": {
+    "minimumEveryFoldSpanAccuracy": 0.65,
+    "minimumEverySurfaceSpanAccuracy": 0.6,
+    "minimumEveryFoldTemporalAccuracy": 0.7,
+    "minimumEverySurfaceTemporalAccuracy": 0.65,
+    "minimumEveryFoldOraclePolarityAccuracy": 0.7,
+    "minimumEverySurfaceOraclePolarityAccuracy": 0.65,
+    "minimumEveryFoldNliPairConsistency": 0.7,
+    "minimumEverySurfaceNliPairConsistency": 0.65,
+    "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+    "minimumEverySurfaceAllowedValuesAccuracy": 0.6,
+    "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+    "minimumEverySurfaceSymbolicBalancedAccuracy": 0.6,
+    "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+    "minimumEveryFoldCompleteInterventionGroupAccuracy": 0.5
+  }
+}

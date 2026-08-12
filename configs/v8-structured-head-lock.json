@@ -1,0 +1,117 @@
+{
+  "data_access": {
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "dataset_artifact_sha256": {
+    "records/calibration.jsonl": "238356c0d562de0afc249e97d54321c6e7d369ac1fb0ddce5eb215c6b8777ea8",
+    "records/train.jsonl": "026529a101a9ca6a5cf3843da439a3e4d8796361f060e80716695e844da48f90"
+  },
+  "dataset_manifest": "data/v8/manifest.json",
+  "dataset_manifest_sha256": "932416f8873b7bb301d3aded0171c38e71bfd5f1e15cfb61a3a49ba2fed8f1f6",
+  "dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+  "experiment": "v8_locked_structured_head_lomo",
+  "head_config": {
+    "gates": {
+      "minimumEveryFoldSurfaceBalancedAccuracy": 0.65,
+      "minimumEveryFoldSurfaceDecisiveDeterminantAccuracy": 0.75,
+      "minimumEveryFoldSurfacePairDirection": 0.85,
+      "minimumEveryFoldSurfaceStatusMacroF1": 0.65,
+      "minimumMeanFoldSurfaceBalancedAccuracy": 0.75
+    },
+    "layer": 6,
+    "learningRate": 0.003,
+    "lossWeights": {
+      "determinant": 1.0,
+      "pairwise": 2.0,
+      "pointwise": 0.5,
+      "surface": 0.1
+    },
+    "maxComponentTokens": 512,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pooling": "mean",
+    "projectionWidth": 48,
+    "seed": 0,
+    "trainingSteps": 300
+  },
+  "head_config_path": "configs/v8-structured-head.json",
+  "head_config_sha256": "78a82f8ec183100dcf1aeb1c7e028c2b112f14e53a586f2e2ab42a4b75818629",
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "component_extractor": {
+      "path": "python/extract_v8_structured_components_mlx.py",
+      "sha256": "5eb2650a8eaec4b2a350f9c68824cc0d1b4181ca211b72f55928b1e324c34683"
+    },
+    "forward_core": {
+      "path": "python/extract_v6_development_features_mlx.py",
+      "sha256": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750"
+    },
+    "stage3_diagnostic": {
+      "path": "python/run_v8_lomo_diagnostics.py",
+      "sha256": "e3d04f30f443f572765314ce8a4d5a5805ade8b4e0eaecac0e320609e9cf9c2f"
+    },
+    "structured_head": {
+      "path": "python/train_v8_action_conditioned_head.py",
+      "sha256": "447ae5e35d0f49bcbf37bf547bb9b8981f3cacdec61cdf0627a31205677d40e6"
+    },
+    "structured_head_tests": {
+      "path": "python/test_v8_structured_head.py",
+      "sha256": "ce6314cbb460a9d671bf39c233dd1e872d8d769e6258c1a1bae4f1cf5f510967"
+    }
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "structured_component_extractions_permitted": 1,
+    "structured_head_lomo_runs_permitted": 1,
+    "untouched_v8_mechanic_evaluations_permitted": 0
+  },
+  "lock_payload_sha256": "46595a23c51582f440ffbe7f44bdb577600f1ea89570c9293daeefa811fdabe7",
+  "mechanics": [
+    "hatch_traversal",
+    "generator_tuning",
+    "beacon_calibration",
+    "mirror_power_trip",
+    "mirror_rejection",
+    "pressure_hatch_relock"
+  ],
+  "method": {
+    "adapter_path": null,
+    "frozen_backbone": true,
+    "layer": 6,
+    "max_component_tokens": 512,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pooling": "mean",
+    "threshold_selection": "other_mechanics_canonical_calibration_only"
+  },
+  "preregistration": {
+    "path": "docs/v8-structured-head-plan.md",
+    "sha256": "f9536233dafee0f490cb690f1a0bfe759584f31e8f1311e9f2ae270567a2eef4"
+  },
+  "schema_version": 8,
+  "stage3_features": {
+    "artifact": "outputs/v8-frozen-diagnostics/features/development.npz",
+    "artifact_sha256": "7f55aa3b3adb61634457128d16282280e0afd4249f9b89e7e2fc8b49c68dd49c",
+    "metadata": "outputs/v8-frozen-diagnostics/features/metadata.json",
+    "metadata_sha256": "502fdfbcf38395f8b72030b417db580a7f07c78810dc186cf4ea15fbd59a0651"
+  },
+  "stage3_lock": {
+    "path": "configs/v8-development-lock.json",
+    "sha256": "582513f20247f03f2465de80b3571641899be6bb3b7eedf534ff15e87246d378"
+  },
+  "stage3_result": {
+    "gates_passed": true,
+    "path": "outputs/v8-frozen-diagnostics/lomo-result.json",
+    "sha256": "8b1d2879e2ea157b713627669b94da53b1696ec758a57edb4223735dbaa92ad1"
+  },
+  "surfaces": [
+    "canonical",
+    "entity_renamed",
+    "paraphrased"
+  ]
+}

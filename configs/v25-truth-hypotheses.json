@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 25,
+  "experiment": "v25_exposed_explicit_truth_hypothesis_compatibility",
+  "seed": 2501,
+  "sourceV24Lock": "configs/v24-cross-encoder-lock.json",
+  "sourceV24Result": "outputs/v24-cross-encoder/evaluation/result.json",
+  "sourceV24PostAudit": "outputs/v24-cross-encoder/post-result-audit.json",
+  "sourceV24Diagnostic": "outputs/v24-cross-encoder/truth-error-conditioning.json",
+  "sourceV24FeatureMetadata": "outputs/v24-cross-encoder/features/metadata.json",
+  "sourceV24Heads": "outputs/v24-cross-encoder/evaluation/heads.npz",
+  "sourceV24Predictions": "outputs/v24-cross-encoder/evaluation/grounding-predictions.jsonl",
+  "outputDir": "data/v25-truth-hypotheses",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsExposed": true,
+    "v24CandidateAssignmentsFrozen": true,
+    "freshBenchmarkRecordsPermitted": 0,
+    "ontologyAndDslUnchanged": true
+  },
+  "assessmentHypotheses": [
+    {
+      "id": "entailed",
+      "truthLabel": "true",
+      "statement": "The evidence entails the candidate fact."
+    },
+    {
+      "id": "contradicted",
+      "truthLabel": "false",
+      "statement": "The evidence contradicts the candidate fact."
+    },
+    {
+      "id": "unresolved",
+      "truthLabel": "unknown",
+      "statement": "The evidence leaves the candidate fact unresolved."
+    }
+  ],
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "extractionLayer": 8,
+    "pooling": "assessment_hypothesis_token_mean_float32",
+    "maxSequenceLength": 512,
+    "systemPrompt": "Compare the evidence, candidate fact, and assessment hypothesis. Represent whether the assessment correctly describes entailment, contradiction, or unresolved status. Preserve negation, contrastive clause order, and exact entity identity. Do not infer action outcomes and do not generate an answer."
+  },
+  "head": {
+    "type": "binary_logistic_regression",
+    "C": 1.0,
+    "classWeight": "balanced",
+    "solver": "liblinear",
+    "maximumIterations": 2000,
+    "fitSplit": "grounding_fit",
+    "fitRows": "gold_candidate_all_three_assessment_hypotheses",
+    "selection": "maximum_compatibility_probability",
+    "calibrationUse": "report_only_no_selection"
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "gates": {
+    "preExtraction": {
+      "maximumExactFitEvaluationPromptOverlap": 0,
+      "maximumNewModelForwardPasses": 14000,
+      "requiredAssessmentHypothesesPerPair": 3,
+      "requiredFixedAssignmentCoverage": 1.0
+    },
+    "development": {
+      "minimumEvaluationAtomAssignmentAccuracy": 0.95,
+      "minimumEvaluationRelationOrderAccuracy": 0.9,
+      "minimumEvaluationTruthAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.7,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumOracleSupportFrozenQueryExact": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumOracleOracleExact": 1.0
+    }
+  },
+  "limits": {
+    "featureExtractionAttempts": 1,
+    "truthCompatibilityHeadFits": 1,
+    "matchHeadFits": 0,
+    "integrationEvaluations": 1,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0
+  }
+}

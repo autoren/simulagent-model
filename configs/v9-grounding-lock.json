@@ -1,0 +1,99 @@
+{
+  "config": {
+    "contextCalibrationModulo": 4,
+    "operatorFamilies": {
+      "binary_partition": [
+        "hatch_traversal",
+        "beacon_calibration",
+        "pressure_hatch_relock"
+      ],
+      "multiway_partition": [
+        "generator_tuning",
+        "mirror_power_trip",
+        "mirror_rejection"
+      ]
+    },
+    "outputDir": "data/v9",
+    "protocol": {
+      "cValue": 1.0,
+      "feature": "layer_06_mean",
+      "gates": {
+        "minimumContextSpanAccuracy": 0.7,
+        "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+        "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+        "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+        "minimumEveryFoldTemporalAccuracy": 0.65,
+        "minimumEveryMechanicSpanAccuracy": 0.6,
+        "minimumEveryOperatorSpanAccuracy": 0.6,
+        "minimumEveryTemplateSpanAccuracy": 0.6
+      },
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-0.8B-4bit",
+      "seed": 0
+    },
+    "shortcutGates": {
+      "maximumContextCodeBalancedAccuracy": 0.55,
+      "maximumMetadataMatchBalancedAccuracy": 0.6,
+      "maximumPositionMatchBalancedAccuracy": 0.6
+    },
+    "sourceManifest": "data/v8/manifest.json",
+    "sourceRecords": [
+      "data/v8/records/train.jsonl",
+      "data/v8/records/calibration.jsonl"
+    ],
+    "sourceReplicas": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "symbolicAudit": "outputs/v9-symbolic/oracle-audit.json",
+    "symbolicLock": "configs/v9-symbolic-lock.json",
+    "templateFamilies": [
+      "inspection_report",
+      "operator_log",
+      "questioned_claim",
+      "technical_summary"
+    ]
+  },
+  "config_path": "configs/dataset.v9.json",
+  "config_sha256": "11f1aa9d6625916d0ae10172b846a59b5a637e01ccff5e27c7811ba45079698e",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "expected_manifest": "data/v9/manifest.json",
+  "experiment": "v9_locked_grounding_generation_and_audit",
+  "implementation": {
+    "python/audit_v9_grounding_shortcuts.py": "6adbcf5381a86435dcf2cc111891947e7a6804c320990d894a13423d71e39e5e",
+    "src/compile-v9.ts": "5fdf6b52f0e6e207cc1d2b92161880464a1310673528e36ad7fec2c7e2c32d31",
+    "src/v9-contracts.ts": "3242ccaa5aa19e16d3214c932adc2e24a5653c61851ab132f99a54ef96d63251",
+    "src/v9-grounding.ts": "b72858108f0357cd25f172830b94629f2958ce5c8793b82a018d402364971860",
+    "src/v9-symbolic.ts": "f24a304d8e932445231deb80c7ac119041721fcc88db9c76061e2a9ae012c87a",
+    "src/v9-validation.ts": "12ff8bcfc327742615bbfdc8faa5dec693040610c3c3086741de3184590530af",
+    "tests/v9-grounding.test.ts": "7d12ea2c2c007348e9c613ef4552c238a8941d19b960b7779bed9a36a881dbba"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "development_corpus_generations_permitted": 1,
+    "final_mechanic_evaluations_permitted": 0,
+    "model_feature_extractions_permitted": 0,
+    "pre_model_shortcut_audits_permitted": 1
+  },
+  "lock_payload_sha256": "e2896716bcaae58ea61e57d1a93584f76dc61e2b24bc1607121f755843b1ebe6",
+  "preregistration": {
+    "path": "docs/v9-experiment-plan.md",
+    "sha256": "6821cb0cc4a4893e79e68056216a68b9f71d5c63e95c3686ffe1f2577b711d90"
+  },
+  "schema_version": 9,
+  "source_dataset_sha256": "1937efeb5773c73d413ed32a3a7436b08d03baeac42f023ed316a348aecfd8a0",
+  "source_manifest_sha256": "932416f8873b7bb301d3aded0171c38e71bfd5f1e15cfb61a3a49ba2fed8f1f6",
+  "symbolic_audit": "outputs/v9-symbolic/oracle-audit.json",
+  "symbolic_audit_sha256": "6e49e22329a498c6160bd46232f4ad449b6d50274aa1b6affe268a384de7d961",
+  "symbolic_lock": "configs/v9-symbolic-lock.json",
+  "symbolic_lock_sha256": "02dc72f68b9b25510498fe6f3328f910ef917a249b8c6f72f9952f4763f44250"
+}

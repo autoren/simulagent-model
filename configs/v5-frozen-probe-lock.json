@@ -1,0 +1,31 @@
+{
+  "c_value": 10.0,
+  "challenge_evaluations_permitted": 1,
+  "experiment": "v5_frozen_probe_challenge_lock",
+  "feature": "layer_06_mean",
+  "input_variant": "full",
+  "max_seq_length": 1024,
+  "model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "numerics": {
+    "coefficient_dtype": "float32",
+    "decision_score_dtype": "float32",
+    "feature_dtype": "float32"
+  },
+  "prior_evaluation_split": "validation",
+  "probe_artifact": "outputs/v5-frozen-probe/qwen35-0.8b/full/probe/seed-0/selected-probe.npz",
+  "probe_artifact_sha256": "5068b133d436c73a7d124bf9bca16e260e5e26ab131eab0c3ac22ebebb896958",
+  "schema_version": 1,
+  "seed": 0,
+  "selection_split": "calibration",
+  "source_dataset_manifest": "data/v4/manifest.json",
+  "source_dataset_manifest_sha256": "2c8e4f5201f54d378b20ebd1ef2ae884151dfb9693ae19ea50a94bd410a8ee36",
+  "source_dataset_sha256": "3c5d51d6d7620e589d7ddbfe6ce5667ac9bd21e601abe31436e27eefa9e69d88",
+  "source_feature_metadata": "outputs/v5-frozen-probe/qwen35-0.8b/full/features/metadata.json",
+  "source_feature_metadata_sha256": "b133f041e03e2ea0642137549d0bfc7d0a6c32d95b19f114a5233eb441a4d064",
+  "source_result": "outputs/v5-frozen-probe/qwen35-0.8b/full/probe/seed-0/result.json",
+  "source_result_sha256": "53269a357bbe84c44d96bcdebda9d33570bc64c8deb947cbf506cce9b39ed9d0",
+  "system_prompt": "Classify whether the candidate action has exactly one transition supported by the observation history. Use only the supplied observation history and candidate action. Return exactly one uppercase ASCII letter and nothing else. Return A when exactly one transition is supported (identifiable). Return B when multiple transitions are supported (ambiguous).",
+  "system_prompt_sha256": "34c5ad31a57d5c864841a014288842d4d7a3dd6fcdc32776839f3e12fd90f73f",
+  "test_records_read": 0,
+  "threshold": -1.1556417346000671
+}

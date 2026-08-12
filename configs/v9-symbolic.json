@@ -1,0 +1,17 @@
+{
+  "sourceManifest": "data/v8/manifest.json",
+  "sourceSplits": [
+    "data/v8/records/train.jsonl",
+    "data/v8/records/calibration.jsonl"
+  ],
+  "output": "outputs/v9-symbolic/oracle-audit.json",
+  "requiredRecords": 6480,
+  "requiredMismatches": 0,
+  "forbiddenSources": [
+    "v3_test",
+    "prior_holdout",
+    "tone_drift",
+    "v7_model_results",
+    "untouched_v8_mechanic"
+  ]
+}

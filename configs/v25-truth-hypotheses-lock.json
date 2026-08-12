@@ -1,0 +1,260 @@
+{
+  "config": "configs/v25-truth-hypotheses.json",
+  "config_payload": {
+    "assessmentHypotheses": [
+      {
+        "id": "entailed",
+        "statement": "The evidence entails the candidate fact.",
+        "truthLabel": "true"
+      },
+      {
+        "id": "contradicted",
+        "statement": "The evidence contradicts the candidate fact.",
+        "truthLabel": "false"
+      },
+      {
+        "id": "unresolved",
+        "statement": "The evidence leaves the candidate fact unresolved.",
+        "truthLabel": "unknown"
+      }
+    ],
+    "experiment": "v25_exposed_explicit_truth_hypothesis_compatibility",
+    "gates": {
+      "development": {
+        "maximumFrozenSupportEmptyVersionSpace": 0.1,
+        "minimumEvaluationAtomAssignmentAccuracy": 0.95,
+        "minimumEvaluationExactSceneGraph": 0.7,
+        "minimumEvaluationRelationOrderAccuracy": 0.9,
+        "minimumEvaluationTruthAccuracy": 0.9,
+        "minimumFrozenFrozenExact": 0.65,
+        "minimumFrozenSupportOracleQueryExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleExact": 1.0,
+        "minimumOracleSupportFrozenQueryExact": 0.75
+      },
+      "preExtraction": {
+        "maximumExactFitEvaluationPromptOverlap": 0,
+        "maximumNewModelForwardPasses": 14000,
+        "requiredAssessmentHypothesesPerPair": 3,
+        "requiredFixedAssignmentCoverage": 1.0
+      }
+    },
+    "head": {
+      "C": 1.0,
+      "calibrationUse": "report_only_no_selection",
+      "classWeight": "balanced",
+      "fitRows": "gold_candidate_all_three_assessment_hypotheses",
+      "fitSplit": "grounding_fit",
+      "maximumIterations": 2000,
+      "selection": "maximum_compatibility_probability",
+      "solver": "liblinear",
+      "type": "binary_logistic_regression"
+    },
+    "integrationConditions": [
+      "oracle_support_oracle_query",
+      "frozen_support_oracle_query",
+      "oracle_support_frozen_query",
+      "frozen_support_frozen_query"
+    ],
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "featureExtractionAttempts": 1,
+      "finalSuiteConstructions": 0,
+      "hyperparameterSelections": 0,
+      "integrationEvaluations": 1,
+      "matchHeadFits": 0,
+      "truthCompatibilityHeadFits": 1
+    },
+    "model": {
+      "extractionLayer": 8,
+      "hiddenSize": 2560,
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "pooling": "assessment_hypothesis_token_mean_float32",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "systemPrompt": "Compare the evidence, candidate fact, and assessment hypothesis. Represent whether the assessment correctly describes entailment, contradiction, or unresolved status. Preserve negation, contrastive clause order, and exact entity identity. Do not infer action outcomes and do not generate an answer.",
+      "totalLayers": 32
+    },
+    "outputDir": "data/v25-truth-hypotheses",
+    "schemaVersion": 25,
+    "scope": {
+      "allV22r2SplitsExposed": true,
+      "developmentOnly": true,
+      "freshBenchmarkRecordsPermitted": 0,
+      "ontologyAndDslUnchanged": true,
+      "v24CandidateAssignmentsFrozen": true
+    },
+    "seed": 2501,
+    "sourceV24Diagnostic": "outputs/v24-cross-encoder/truth-error-conditioning.json",
+    "sourceV24FeatureMetadata": "outputs/v24-cross-encoder/features/metadata.json",
+    "sourceV24Heads": "outputs/v24-cross-encoder/evaluation/heads.npz",
+    "sourceV24Lock": "configs/v24-cross-encoder-lock.json",
+    "sourceV24PostAudit": "outputs/v24-cross-encoder/post-result-audit.json",
+    "sourceV24Predictions": "outputs/v24-cross-encoder/evaluation/grounding-predictions.jsonl",
+    "sourceV24Result": "outputs/v24-cross-encoder/evaluation/result.json"
+  },
+  "config_sha256": "93ea7dd368fa5cebf8fb5accfd27e2b0e7098505cc9159467e0c46147bc6d20c",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "all_v22r2_splits_exposed": true,
+    "fresh_benchmark_records_created": 0,
+    "hyperparameter_selections": 0,
+    "integration_evaluations": 0,
+    "match_head_fits": 0,
+    "new_feature_extractions": 0,
+    "new_linear_fits": 0,
+    "new_model_forward_passes": 0,
+    "truth_hypothesis_rows_materialized": 13383,
+    "v24_assignments_exposed_and_frozen": true
+  },
+  "experiment": "v25_exposed_explicit_truth_hypothesis_compatibility",
+  "gates": {
+    "development": {
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.95,
+      "minimumEvaluationExactSceneGraph": 0.7,
+      "minimumEvaluationRelationOrderAccuracy": 0.9,
+      "minimumEvaluationTruthAccuracy": 0.9,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleExact": 1.0,
+      "minimumOracleSupportFrozenQueryExact": 0.75
+    },
+    "preExtraction": {
+      "maximumExactFitEvaluationPromptOverlap": 0,
+      "maximumNewModelForwardPasses": 14000,
+      "requiredAssessmentHypothesesPerPair": 3,
+      "requiredFixedAssignmentCoverage": 1.0
+    }
+  },
+  "head": {
+    "C": 1.0,
+    "calibrationUse": "report_only_no_selection",
+    "classWeight": "balanced",
+    "fitRows": "gold_candidate_all_three_assessment_hypotheses",
+    "fitSplit": "grounding_fit",
+    "maximumIterations": 2000,
+    "selection": "maximum_compatibility_probability",
+    "solver": "liblinear",
+    "type": "binary_logistic_regression"
+  },
+  "implementation": {
+    "python/audit_v25_truth_hypotheses.py": "776f2d998beba0262e5291a0ebd10bebba2ca41a046436857f73989bc9732c59",
+    "python/build_v25_truth_hypotheses.py": "597f538148e1dc8cab6efb3bed8f5cf94b501118ac57dbed0796f474aa43f163",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v25_truth_hypotheses.py": "6fa210a98d28d8ca2edd9d3665da1f908c207b160bc34440e3c8650efe2ea902",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/extract_v22r2_relational_features_mlx.py": "ee6ef9df9f5768b2dd7310d7f909477a5d3a95c6e1fd7d5604dbfb22aa2704fb",
+    "python/extract_v25_truth_features_mlx.py": "eff25517f92ce16c1608a716d7c6be01608bdcad03dff0fd819fcd6fd44a4249",
+    "python/freeze_v25_truth_hypotheses.py": "5aefcf26f31e11cbd83170f11cd4dfc69163d5a307d9d9b4b7de7860c5b2f122",
+    "python/test_v25_truth_hypotheses.py": "d6f26e4dbfead1e62e6d5d667eead578ce5b09ba87f09996a4aa375a75e96819",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v25_truth_hypotheses.py": "7e72c10bf7a641df05edcbba988d028937d5ebd415d8963603c4a49508625100"
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "featureExtractionAttempts": 1,
+    "finalSuiteConstructions": 0,
+    "hyperparameterSelections": 0,
+    "integrationEvaluations": 1,
+    "matchHeadFits": 0,
+    "truthCompatibilityHeadFits": 1
+  },
+  "lock_payload_sha256": "e1620008164704f9319cee0ceff2984283f41aaf083594a8fa8acb1d792c2f74",
+  "model": {
+    "extractionLayer": 8,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "pooling": "assessment_hypothesis_token_mean_float32",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "systemPrompt": "Compare the evidence, candidate fact, and assessment hypothesis. Represent whether the assessment correctly describes entailment, contradiction, or unresolved status. Preserve negation, contrastive clause order, and exact entity identity. Do not infer action outcomes and do not generate an answer.",
+    "totalLayers": 32
+  },
+  "pre_extraction_audit": {
+    "budget": {
+      "planned_model_forwards": 13383,
+      "registered_maximum_model_forwards": 14000
+    },
+    "decision": "authorize_v25_protocol_lock",
+    "errors": [],
+    "experiment": "v25_pre_extraction_truth_hypothesis_audit",
+    "firewall": {
+      "exact_fit_evaluation_prompt_overlap": 0,
+      "exact_source_agent_inputs": 13383,
+      "forbidden_agent_input_keys": {},
+      "fresh_benchmark_records_created": 0,
+      "new_linear_fits_before_lock": 0,
+      "new_model_forward_passes_before_lock": 0
+    },
+    "fixed_assignment": {
+      "coverage": 1.0,
+      "exact_v24_assignment_groups": 4437
+    },
+    "integrity": {
+      "corpus_sha256": "20e28c06423bdd67eee9af38b422d08991c735a3c74f4a1111cc6843975968fb",
+      "manifest_source_hashes_verified": 7
+    },
+    "passed": true,
+    "population": {
+      "assessment_counts": {
+        "contradicted": 4461,
+        "entailed": 4461,
+        "unresolved": 4461
+      },
+      "base_pairs": 4461,
+      "evidence_groups": 4437,
+      "fit_gold_groups": 1482,
+      "fit_positive_rows": 1482,
+      "fit_training_rows": 4446,
+      "fixed_assignment_groups": 4437,
+      "rows": 13383,
+      "split_counts": {
+        "grounding_calibration": 2178,
+        "grounding_evaluation": 6687,
+        "grounding_fit": 4518
+      }
+    },
+    "schema_version": 25
+  },
+  "preregistration": "docs/v25-truth-hypotheses-plan.md",
+  "preregistration_sha256": "68c4cf2c20f1d6179b8e6715300a13210e68d73f25a042f93170776e5888bd63",
+  "schema_version": 25,
+  "source": {
+    "corpus": "data/v25-truth-hypotheses",
+    "corpus_file_sha256": {
+      "grounding_calibration.jsonl": "a5adb4ebaa3ce9abff6f768d5f4320cc27b9c0f4b2bfbdf99d8ebf7249f73fbb",
+      "grounding_evaluation.jsonl": "1dcd294f450c45eb97cadb6a59885ea678c06f14afe6a87416eb12f30cff8718",
+      "grounding_fit.jsonl": "70f05dd46bf390d55a1d26852bc80ce371bc8c2054c3f38dcc8d322938efb641",
+      "manifest.json": "016a86d968cef08fbf0bbdb03b5e191b1ffdabf8099b34fe663d9abff7f47b1e"
+    },
+    "corpus_manifest": "data/v25-truth-hypotheses/manifest.json",
+    "corpus_manifest_sha256": "016a86d968cef08fbf0bbdb03b5e191b1ffdabf8099b34fe663d9abff7f47b1e",
+    "corpus_sha256": "20e28c06423bdd67eee9af38b422d08991c735a3c74f4a1111cc6843975968fb",
+    "pre_extraction_audit": "outputs/v25-truth-hypotheses/pre-extraction-audit.json",
+    "pre_extraction_audit_sha256": "bdb5f37f0d18296733d1c59d2fb41c63ae426a3338f9be54544bb176b09ecc54",
+    "v24_diagnostic": "outputs/v24-cross-encoder/truth-error-conditioning.json",
+    "v24_diagnostic_sha256": "a1205544e2818d3343250772a138fdb62b52e83decca11b0c476a8b3d85a6b3d",
+    "v24_feature_metadata": "outputs/v24-cross-encoder/features/metadata.json",
+    "v24_feature_metadata_sha256": "1a7419604f97b5afe54c1255dc3957733008658d4c6e7173afe9d35fbc8272b0",
+    "v24_heads": "outputs/v24-cross-encoder/evaluation/heads.npz",
+    "v24_heads_sha256": "547d30a88848d738e861158b8ba4f1b063c5b09d07d54a6844d69936d5f79db8",
+    "v24_lock": "configs/v24-cross-encoder-lock.json",
+    "v24_lock_sha256": "4e81882ff7288324fe7a3370dd1041be2a68b9e271e88453535b3dacad97782c",
+    "v24_post_audit": "outputs/v24-cross-encoder/post-result-audit.json",
+    "v24_post_audit_sha256": "cee8730891b49702e83aea0acaa25560fa44d6f9a1a2e50bb86c7ba0bab3ddfa",
+    "v24_predictions": "outputs/v24-cross-encoder/evaluation/grounding-predictions.jsonl",
+    "v24_predictions_sha256": "6674ed1df2aafd3dfde36a59e6b5695533cf3f962bb04afe7c3901af56077f29",
+    "v24_result": "outputs/v24-cross-encoder/evaluation/result.json",
+    "v24_result_sha256": "a4fa59b7e4bc461c13f4b8481d2603ecd22cc10598923342003f7c7228acffcd"
+  }
+}

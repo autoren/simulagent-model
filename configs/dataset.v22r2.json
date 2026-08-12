@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "22r2",
+  "experiment": "v22r2_open_relational_language_grounding",
+  "seed": 2202,
+  "sourceV22Config": "configs/dataset.v22.json",
+  "sourceV22Manifest": "data/v22-relational-development/manifest.json",
+  "sourceV22Dataset": "data/v22-relational-development",
+  "sourceV22Audit": "outputs/v22-relational-development/audit.json",
+  "sourceV22Result": "outputs/v22-relational-development/oracle-baselines.json",
+  "outputDir": "data/v22r2-relational-grounding",
+  "splits": {
+    "grounding_fit": {
+      "source": "development_fit",
+      "episodeOrdinalsPerFamily": [0, 1],
+      "surfaceBanks": ["fit_a", "fit_b"]
+    },
+    "grounding_calibration": {
+      "source": "development_fit",
+      "episodeOrdinalsPerFamily": [2],
+      "surfaceBanks": ["fit_a", "fit_b"]
+    },
+    "grounding_evaluation": {
+      "source": "development_evaluation",
+      "episodeOrdinalsPerFamily": [3, 4, 5],
+      "surfaceBanks": ["eval_c", "eval_d"]
+    }
+  },
+  "publicInterface": {
+    "typedEntityInventoryProvided": true,
+    "actionBindingProvided": true,
+    "positiveAtomCandidateStatementsProvided": true,
+    "queryAxesProvided": false,
+    "sequentialIdentifiersPermitted": false,
+    "entityOrderRandomized": true,
+    "evidenceOrderRandomized": true,
+    "candidateOrderRandomized": true,
+    "supportAndQueryOrderRandomized": true
+  },
+  "language": {
+    "supportedOperators": [
+      "affirmative_gold",
+      "negated_opposite",
+      "contrastive_both",
+      "explicit_unknown"
+    ],
+    "relationOrientations": ["direct", "inverse"],
+    "fitSurfaceBanks": ["fit_a", "fit_b"],
+    "evaluationSurfaceBanks": ["eval_c", "eval_d"],
+    "surfaceBankOverlapPermitted": false
+  },
+  "counterfactuals": {
+    "relationOrientation": {
+      "pairSize": 2,
+      "permittedChangedAtoms": [
+        "r:linked:{actor}:{target}",
+        "r:linked:{target}:{actor}"
+      ]
+    },
+    "graphTopology": {
+      "pairSize": 2,
+      "cases": ["directed_chain", "common_parent_fork"],
+      "onlyLinkedAtomsMayChange": true
+    }
+  },
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "extractionLayer": 8,
+    "pooling": "single_scene_prompt_per_item_with_candidate_and_evidence_span_means_float32",
+    "maxSequenceLength": 1024,
+    "systemPrompt": "Represent the precise factual meaning of this relational state statement."
+  },
+  "heads": {
+    "atomMatching": {
+      "type": "logistic_regression",
+      "features": "absolute_difference_and_elementwise_product",
+      "C": 1.0,
+      "classWeight": "balanced",
+      "solver": "liblinear",
+      "maximumIterations": 2000,
+      "assignment": "maximum_weight_one_to_one"
+    },
+    "truthStatus": {
+      "type": "logistic_regression",
+      "features": "evidence_embedding",
+      "classes": ["false", "true", "unknown"],
+      "C": 1.0,
+      "classWeight": "balanced",
+      "solver": "liblinear",
+      "maximumIterations": 2000
+    },
+    "negativeSampling": {
+      "negativesPerPositive": 3,
+      "selection": "lowest_seeded_hash_within_scene"
+    },
+    "fitSplit": "grounding_fit",
+    "calibrationUse": "report_only_no_selection"
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "emptyVersionSpacePolicy": "return_full_outcome_vocabulary",
+  "excessUnknownPolicy": {
+    "maximumPredictedUnknownAtomsPerScene": 4,
+    "support": "empty_version_space",
+    "query": "return_full_outcome_vocabulary"
+  },
+  "gates": {
+    "preExtraction": {
+      "minimumAuditPassRate": 1.0,
+      "maximumExactPromptOverlapAcrossFitEvaluation": 0,
+      "maximumPublicAxisFields": 0,
+      "maximumSequentialPublicIds": 0,
+      "maximumNewModelForwardPasses": 384
+    },
+    "development": {
+      "minimumOracleOracleTransitionSetExact": 1.0,
+      "minimumFitAtomAssignmentAccuracy": 0.95,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+      "minimumEvaluationTruthStatusAccuracy": 0.9,
+      "minimumEvaluationRelationOrientationAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.75,
+      "minimumFrozenFrozenTransitionSetExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "maximumFrozenSupportEmptyVersionSpaceRate": 0.25
+    }
+  },
+  "limits": {
+    "featureExtractionAttempts": 1,
+    "atomMatchingHeadFits": 1,
+    "truthStatusHeadFits": 1,
+    "integrationEvaluations": 1,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "neuralChallengerRuns": 0,
+    "probabilisticInterfaceRuns": 0,
+    "finalSuiteConstructions": 0
+  },
+  "firewall": {
+    "developmentOnly": true,
+    "modelAccessBeforeLock": 0,
+    "modelPredictionsBeforeLock": 0,
+    "v21FinalRecordsRead": 0,
+    "v21FinalModelResultsRead": 0
+  }
+}

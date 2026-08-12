@@ -1,0 +1,59 @@
+{
+  "sourceV10FrozenLock": "configs/v10-frozen-lock.json",
+  "sourceV10FeatureArtifact": "outputs/v10-frozen/features/v10-features.npz",
+  "sourceV11Lock": "configs/v11-frozen-scale-lock.json",
+  "sourceV11FeatureMetadata": "outputs/v11-frozen-scale/features/qwen35_4b/metadata.json",
+  "sourceV12Lock": "configs/v12-joint-readout-lock.json",
+  "sourceV12Result": "outputs/v12-joint-readout/evaluation/result.json",
+  "modelKey": "qwen35_4b",
+  "model": "mlx-community/Qwen3.5-4B-4bit",
+  "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "totalLayers": 32,
+  "hiddenSize": 2560,
+  "extractionLayer": 8,
+  "representations": [
+    "hypothesis_last",
+    "hypothesis_mean"
+  ],
+  "linearHeads": [
+    {
+      "name": "hypothesis_last_linear",
+      "representation": "hypothesis_last",
+      "features": "active_minus_inactive",
+      "cValue": 1.0,
+      "classWeight": "balanced",
+      "maxIterations": 3000,
+      "solver": "lbfgs"
+    },
+    {
+      "name": "hypothesis_mean_linear",
+      "representation": "hypothesis_mean",
+      "features": "active_minus_inactive",
+      "cValue": 1.0,
+      "classWeight": "balanced",
+      "maxIterations": 3000,
+      "solver": "lbfgs"
+    }
+  ],
+  "conditionalHead": {
+    "name": "hypothesis_token_joint_mlp",
+    "condition": "run_only_if_neither_linear_head_passes",
+    "features": "concatenate_last_difference_mean_difference_and_last_pair_mean",
+    "hiddenUnits": 32,
+    "activation": "relu",
+    "alpha": 0.001,
+    "batchSize": 256,
+    "learningRateInit": 0.001,
+    "maxIterations": 200,
+    "solver": "adam",
+    "tolerance": 0.0001,
+    "iterationsWithoutChange": 20
+  },
+  "seed": 0,
+  "maxSequenceLength": 512,
+  "gates": {
+    "minimumEveryFoldAccuracy": 0.7,
+    "minimumEverySurfaceAccuracy": 0.65
+  }
+}

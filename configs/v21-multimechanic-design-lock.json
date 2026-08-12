@@ -1,0 +1,177 @@
+{
+  "config": {
+    "constructionFamilies": {
+      "composed_one_bit": {
+        "episodes": 12,
+        "injectiveOnRelevantProjection": false,
+        "outcomeBits": 1
+      },
+      "factorized_two_bit": {
+        "episodes": 12,
+        "injectiveOnRelevantProjection": true,
+        "outcomeBits": 2
+      },
+      "nested_two_bit": {
+        "episodes": 8,
+        "injectiveOnRelevantProjection": false,
+        "outcomeBits": 2
+      },
+      "primitive_one_bit": {
+        "episodes": 8,
+        "injectiveOnRelevantProjection": true,
+        "outcomeBits": 1
+      }
+    },
+    "episodes": 40,
+    "experiment": "v21_sealed_population_multimechanic_final",
+    "gates": {
+      "hardSupported": {
+        "maximumEmptyVersionRate": 0.05,
+        "minimumCompleteMechanics": 38,
+        "minimumCompletePerFamily": {
+          "composed_one_bit": 11,
+          "factorized_two_bit": 11,
+          "nested_two_bit": 7,
+          "primitive_one_bit": 7
+        },
+        "minimumMechanicMacroTransitionSetExact": 0.95,
+        "minimumOracleCeiling": 1.0,
+        "minimumTargetRetention": 0.95
+      },
+      "probabilisticSupported": {
+        "maximumEmptyPosteriorRate": 0.05,
+        "maximumMeanExcessOutcomesPerQuery": 0.1,
+        "minimumCompleteMechanics": 38,
+        "minimumMechanicMacroTransitionSetExact": 0.95,
+        "minimumTargetRetention": 0.95
+      }
+    },
+    "language": {
+      "semanticOperators": [
+        "affirmative_gold",
+        "negated_opposite",
+        "contrastive_both"
+      ],
+      "supportedConceptSource": "v15_registered_canonical_concepts",
+      "surfaceAssignment": "deterministic_from_semantic_grounding_not_mechanic_or_result",
+      "surfaceFamilies": [
+        "direct_assertion",
+        "present_confirmation",
+        "current_observation",
+        "explicit_negation",
+        "denied_claim",
+        "scoped_rejection",
+        "contrastive_correction",
+        "contrastive_verification",
+        "contrastive_resolution"
+      ],
+      "unresolvedModes": [
+        "unknown",
+        "stale",
+        "conflicting"
+      ]
+    },
+    "limits": {
+      "adapterTrainingRunsPermitted": 0,
+      "designLocksPermitted": 1,
+      "executionLocksPermitted": 1,
+      "featureExtractionsPermitted": 1,
+      "finalEvaluationsPermitted": 1,
+      "finalSuiteConstructionsPermitted": 1,
+      "hyperparameterSearchesPermitted": 0,
+      "maximumNewModelForwardPasses": 2000,
+      "newLinearFitsPermitted": 0,
+      "replaysPermitted": 1,
+      "retriesPermitted": 0,
+      "seedDrawsPermitted": 1
+    },
+    "primaryMetrics": {
+      "completeMechanics": true,
+      "emptyVersionRate": true,
+      "exactCompleteMechanicInterval": true,
+      "mechanicMacroTransitionSetExact": true,
+      "targetRetention": true,
+      "unit": "mechanic",
+      "worstFamily": true
+    },
+    "schemaVersion": 21,
+    "seedPolicy": {
+      "drawsPermitted": 1,
+      "entropyBits": 256,
+      "kind": "delayed_os_csprng_after_execution_lock",
+      "testSeedsAreNeverEligible": true
+    },
+    "systems": {
+      "hard": {
+        "role": "primary_confirmatory",
+        "source": "v19_frozen_grounding_and_exact_version_space"
+      },
+      "probabilistic": {
+        "eligibility": "v20_supported_preservation_passed",
+        "role": "separately_preregistered_challenger"
+      }
+    },
+    "views": {
+      "novel_ontology": "non_gating_diagnostic",
+      "supported": "primary"
+    }
+  },
+  "config_path": "configs/v21-multimechanic-final.json",
+  "config_sha256": "c9f70558f5ab19d3793d77f9f9ecc678c8214e1e0865620a4e8ccf90a3ddba27",
+  "data_access_before_lock": {
+    "final_records_created_or_read": 0,
+    "model_forward_passes": 0,
+    "v17_model_results_read": 0,
+    "v17_records_read": 0,
+    "v20_results_read": 0
+  },
+  "experiment": "v21_unmaterialized_population_design_lock",
+  "implementation": {
+    "python/audit_v21_design.py": "d7b4cbd86f2a7db44fed494fb9a5be82d9e78ad496d38ca8b589319024cf63e4",
+    "python/freeze_v21_design.py": "db2b7453a84bc05244e1f135b6992b16287a934986b03165a9415171d48f2ced",
+    "python/generate_v18_schema_benchmark.py": "2f40c78d17222ccc6464ab20cdf5e9a457ab6882ed58dd76ee303f1b327ababe",
+    "python/materialize_v21_final_suite.py": "af1844e1836a5da6bf5356df3fcf42e3391af5e4141f654a91d4b0b6fa1b0025",
+    "python/test_v21_final_suite.py": "075a3be6d51c184a2a1e1c46923f9ae62e0f65befefe6e3e84bd4a13b985c7c8",
+    "python/v18_schema.py": "c3395ca6ad770f617b70a778af4d075c7dc354f6e586c431322168d3837b9bd2",
+    "python/v21_final_suite.py": "c38e7ded9b52e59e6d8366ea548bc33c2757ecf0db60b81e22569e571cc025c2"
+  },
+  "limits": {
+    "adapterTrainingRunsPermitted": 0,
+    "designLocksPermitted": 1,
+    "executionLocksPermitted": 1,
+    "featureExtractionsPermitted": 1,
+    "finalEvaluationsPermitted": 1,
+    "finalSuiteConstructionsPermitted": 1,
+    "hyperparameterSearchesPermitted": 0,
+    "maximumNewModelForwardPasses": 2000,
+    "newLinearFitsPermitted": 0,
+    "replaysPermitted": 1,
+    "retriesPermitted": 0,
+    "seedDrawsPermitted": 1
+  },
+  "plan": "docs/v21-multimechanic-final-plan.md",
+  "plan_sha256": "f1c13c06408cbd0dd72fb9abe4001e9a219a06a9e09d96c3e6e5f78e6457e6bf",
+  "pre_materialization_audit": "outputs/v21-design/pre-materialization-audit.json",
+  "pre_materialization_audit_sha256": "cdb2a96cad324fd584e0f09cd93db5bf45d7c82c806a51cdbd0888a2eae33ac0",
+  "research_charter": "docs/research-direction.md",
+  "research_charter_sha256": "1e5e6aa9eb687e084488235f45ab99b6aee0e31434b7ad928305f9781de93137",
+  "schema_version": 21,
+  "seed_policy": {
+    "drawsPermitted": 1,
+    "entropyBits": 256,
+    "kind": "delayed_os_csprng_after_execution_lock",
+    "testSeedsAreNeverEligible": true
+  },
+  "source": {
+    "v18_dataset": "data/v18",
+    "v18_dataset_sha256": "94daedb51fdac667748a2b36faf10aa80fbab1cbb50b89c90b7c62cd0a9e5b95",
+    "v18_manifest": "data/v18/manifest.json",
+    "v18_manifest_sha256": "da119a9579bf79eea5f8052b64988b1da95f4614476f3a4efd1a6b471016b754",
+    "v19_lock": "configs/v19-frozen-integration-lock.json",
+    "v19_lock_sha256": "527f5d9708d0c69cea7a4ce750d9d19cd915b074d99b1913a4b434928324fc52",
+    "v20_config": "configs/v20-probabilistic-interface.json",
+    "v20_config_sha256": "08728b285d9de6316916c7dc6708fa1dbb53c839e14d889ce1e8eb2da4f4f2dc",
+    "v20_plan": "docs/v20-probabilistic-interface-plan.md",
+    "v20_plan_sha256": "3c41f01004d2a3ee4d1dae812e40e5eb385f3f146255d858e2297d18592504fc"
+  }
+}

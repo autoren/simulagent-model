@@ -1,0 +1,106 @@
+{
+  "config": {
+    "calibrationSplit": "calibration",
+    "conditions": [
+      "hard_support_hard_query",
+      "probabilistic_support_oracle_query",
+      "oracle_support_probabilistic_query",
+      "probabilistic_support_probabilistic_query"
+    ],
+    "evaluationSplit": "development",
+    "experiment": "v20_development_calibrated_grounding_program_posterior",
+    "gates": {
+      "novelDiagnosticImprovement": {
+        "maximumEmptyPosteriorRate": 0.225,
+        "maximumMeanExcessOutcomesPerQuery": 0.25,
+        "minimumCredibleTargetRetentionGainOverHard": 0.0,
+        "minimumEpisodeMacroGainOverHard": 0.0
+      },
+      "supportedPreservation": {
+        "maximumEmptyPosteriorRate": 0.0,
+        "minimumCompleteEpisodes": 40,
+        "minimumCredibleTargetRetention": 1.0,
+        "minimumEpisodeMacroTransitionSetExact": 1.0
+      }
+    },
+    "interface": {
+      "alpha": 0.1,
+      "calibration": "view_specific_unique_selected_prompt_split_conformal_lac",
+      "credibleProgramMass": 0.95,
+      "emptyLabelSetPolicy": "include_map_label",
+      "emptyPosteriorPolicy": "complete_outcome_vocabulary_and_not_identifiable",
+      "probabilityMap": "binary_logistic_sigmoid",
+      "programPrior": "uniform_over_behavioral_hypotheses",
+      "querySemantics": "union_over_credible_programs_and_all_conformal_or_semantically_unresolved_assignments",
+      "spanPolicy": "unchanged_hard_frozen_head",
+      "supportLikelihood": "sum_assignment_probability_for_observed_transition",
+      "temporalPolicy": "unchanged_hard_frozen_head",
+      "uncertainComponent": "current_polarity_only"
+    },
+    "limits": {
+      "adapterTrainingRunsPermitted": 0,
+      "developmentEvaluationsPermitted": 1,
+      "finalSuiteRecordsPermitted": 0,
+      "hyperparameterSearchesPermitted": 0,
+      "newFeatureExtractionsPermitted": 0,
+      "newLinearFitsPermitted": 0,
+      "newModelForwardPassesPermitted": 0
+    },
+    "schemaVersion": 20,
+    "sourceDeploymentHeads": "outputs/v17-final/evaluation/deployment-heads.npz",
+    "sourceV19Correction": "outputs/v19-frozen-integration/error-conditioning-replay.json",
+    "sourceV19Features": "outputs/v19-frozen-integration/features/metadata.json",
+    "sourceV19Lock": "configs/v19-frozen-integration-lock.json",
+    "sourceV19PostAudit": "outputs/v19-frozen-integration/post-result-audit.json",
+    "sourceV19Result": "outputs/v19-frozen-integration/evaluation/result.json",
+    "views": {
+      "novel_ontology": "diagnostic_repair",
+      "supported": "primary_preservation"
+    }
+  },
+  "config_path": "configs/v20-probabilistic-interface.json",
+  "config_sha256": "08728b285d9de6316916c7dc6708fa1dbb53c839e14d889ce1e8eb2da4f4f2dc",
+  "evaluation_count_before_lock": 0,
+  "experiment": "v20_development_calibrated_grounding_program_posterior",
+  "final_records_before_lock": 0,
+  "implementation": {
+    "python/audit_v20_protocol.py": "2551b18fdd2c228ac3e160ef6c8119251ade15f021dba1ef8a31daed89a549ca",
+    "python/evaluate_v10_frozen.py": "ca1fc997ba72999632a4352da6244d73c08746816e1598091480f5e3633a9808",
+    "python/evaluate_v15_full_pipeline.py": "0dd5e77a1d88c3644e5cae501f19b6c47d1e4aa0a428b50abde1e376f426c004",
+    "python/evaluate_v19_frozen_integration.py": "89edccf48c0b61b4ca16ec824dfc8f3204bb7e2eae27b407ce99a725c4080c0c",
+    "python/evaluate_v20_probabilistic_interface.py": "41e9c73118d8e4321b2797aae6ebbc8c7ca1b4affe6270f66796282915a03a37",
+    "python/freeze_v20_probabilistic_interface.py": "a86505be21552ec11eb69221323e2c0598c2d83f7e85f326ee0c0be1b418de8e",
+    "python/run_v18_schema_baselines.py": "95b31a82dbb3a8a1c6735ba0908a580366211f566a767b3b0eec181eaeea3e95",
+    "python/test_v20_probabilistic.py": "794572fe05696e03a2a5f7c1569e5a8ff11554271da02c48f78c0a9d0ef34321",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v18_schema.py": "c3395ca6ad770f617b70a778af4d075c7dc354f6e586c431322168d3837b9bd2",
+    "python/v20_probabilistic_grounding.py": "4fdac8f9bfe542f526185011bf971da37eecd31c73974d23142780b4681faa5f"
+  },
+  "limits": {
+    "adapterTrainingRunsPermitted": 0,
+    "developmentEvaluationsPermitted": 1,
+    "finalSuiteRecordsPermitted": 0,
+    "hyperparameterSearchesPermitted": 0,
+    "newFeatureExtractionsPermitted": 0,
+    "newLinearFitsPermitted": 0,
+    "newModelForwardPassesPermitted": 0
+  },
+  "plan": "docs/v20-probabilistic-interface-plan.md",
+  "plan_sha256": "3c41f01004d2a3ee4d1dae812e40e5eb385f3f146255d858e2297d18592504fc",
+  "pre_evaluation_audit": "outputs/v20-probabilistic-interface/pre-evaluation-audit.json",
+  "pre_evaluation_audit_sha256": "b4ce7f5c7bba209b046c907891d9c767e82b81af86817f132d7dc37e8099de18",
+  "schema_version": 20,
+  "source": {
+    "deployment_heads_sha256": "78b43b62d1a7f45dfe5efabf83ccfcd00c8c370c49f90f275dd32747f5a74278",
+    "v18_dataset": "data/v18",
+    "v19_correction_sha256": "4d068691358471c88421f4995270c2267dee7128f5a58c36f1220fe5aaa2a994",
+    "v19_dataset": "data/v19",
+    "v19_feature_artifact": "outputs/v19-frozen-integration/features/v19-grounding-features.npz",
+    "v19_feature_artifact_sha256": "c57df9f18a81977d939d0668148f559cf9e4a72f0b46ed61307501de2992dc48",
+    "v19_feature_metadata_sha256": "2780e48ed7a54561c236d525b2d5b3c27a9dc76aa6393b508f787b8cf881638b",
+    "v19_lock_sha256": "527f5d9708d0c69cea7a4ce750d9d19cd915b074d99b1913a4b434928324fc52",
+    "v19_post_audit_sha256": "c70fd532c0a1dd2968ebd6e370e3688bbab0e5fe7ad5c50be7638685bb21f5c5",
+    "v19_result_sha256": "856106ce3ef4020cc48d3c03dc37bc60b32f9a5e0c7244fcfc26421f9c0fa6c3",
+    "v21_design_lock_sha256": "69bab2cafbd3beb4bcfe3245a0326c2c11c1dd933470f040a96d01410152f08a"
+  }
+}

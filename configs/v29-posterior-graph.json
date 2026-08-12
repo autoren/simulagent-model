@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 29,
+  "experiment": "v29_exposed_posterior_marginal_support_graphs",
+  "sourceV28Lock": "configs/v28-marginal-map-lock.json",
+  "sourceV28Result": "outputs/v28-marginal-map/evaluation/result.json",
+  "sourceV28PostAudit": "outputs/v28-marginal-map/post-result-audit.json",
+  "sourceV28Predictions": "outputs/v28-marginal-map/evaluation/grounding-predictions.jsonl",
+  "sourceV28Diagnostics": "outputs/v28-marginal-map/evaluation/episode-marginal-diagnostics.jsonl",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsExposed": true,
+    "supportScenesOnly": true,
+    "v26QueryPredictionsFrozen": true,
+    "freshBenchmarkRecordsPermitted": 0,
+    "ontologyDslExecutorAndScoresUnchanged": true
+  },
+  "posteriorGraph": {
+    "graphCandidates": "exact_locked_v27_top_512_per_support_scene",
+    "graphProbability": "softmax_over_retained_v27_joint_log_scores",
+    "traceLikelihood": "sum_probability_of_graphs_allowing_observed_transition",
+    "programPrior": "uniform_over_v22_behavioral_hypotheses",
+    "episodePosterior": "normalized_product_of_trace_likelihoods",
+    "supportGraphSelection": "per_trace_maximum_posterior_marginal_after_integrating_program_and_other_trace_graphs_then_graph_key",
+    "noFinitePosteriorPolicy": "retain_v28_support_graphs",
+    "credibleUnionPermitted": false,
+    "hyperparameterGridPermitted": false
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "gates": {
+    "minimumEvaluationSupportExactGraph": 0.75,
+    "minimumFrozenSupportOracleQueryExact": 0.75,
+    "minimumOracleSupportFrozenQueryExact": 0.75,
+    "minimumFrozenFrozenExact": 0.65,
+    "minimumFrozenSupportTargetRetention": 0.75,
+    "maximumFrozenSupportEmptyVersionSpace": 0.1,
+    "minimumOracleOracleExact": 1.0
+  },
+  "limits": {
+    "newModelForwardPasses": 0,
+    "posteriorGraphEvaluations": 1,
+    "headFits": 0,
+    "thresholdFits": 0,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "freshBenchmarkRecords": 0
+  }
+}

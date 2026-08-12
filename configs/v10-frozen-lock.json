@@ -1,0 +1,174 @@
+{
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "dataset_artifact_sha256": {
+    "records/evaluation.jsonl": "f65fb77b3e97367cddfcb5082271798c405d78cf5f796470e2838714a4e1133e",
+    "records/train.jsonl": "1b42223b0083bb1812d53bfdc83483e6df6019bfe4f9f440a0bf435056ec4830"
+  },
+  "dataset_lock": "configs/v10-grounding-lock.json",
+  "dataset_lock_sha256": "c59271b7d5bf37bcf4f71aa46acdca3eff49ca445880855b6a0f4a54e8aa405e",
+  "dataset_manifest": "data/v10/manifest.json",
+  "dataset_manifest_sha256": "d7c3bfb6ce574313ccf6434a345b75b4ebbd89e4c867467eba144e9c5a31449b",
+  "dataset_sha256": "0dbfba34e46c85b26be2744fd27065bf1386450653a287765a3df07e331d57cb",
+  "experiment": "v10_locked_frozen_current_state_polarity",
+  "folds": [
+    {
+      "kind": "context",
+      "name": "context"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:beacon_calibration"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:generator_tuning"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:hatch_traversal"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:mirror_power_trip"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:mirror_rejection"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:pressure_hatch_relock"
+    },
+    {
+      "kind": "template",
+      "name": "template:contrastive_correction"
+    },
+    {
+      "kind": "template",
+      "name": "template:denied_claim"
+    },
+    {
+      "kind": "template",
+      "name": "template:direct_assertion"
+    },
+    {
+      "kind": "template",
+      "name": "template:explicit_negation"
+    },
+    {
+      "kind": "template",
+      "name": "template:rejected_claim"
+    },
+    {
+      "kind": "template",
+      "name": "template:scoped_rejection"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:canonical"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:entity_renamed"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:paraphrased"
+    },
+    {
+      "kind": "operator",
+      "name": "operator:binary_partition"
+    },
+    {
+      "kind": "operator",
+      "name": "operator:multiway_partition"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:canonical"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:entity_renamed"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:paraphrased"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:canonical"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:entity_renamed"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:paraphrased"
+    }
+  ],
+  "implementation": {
+    "python/binary_metrics.py": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6",
+    "python/evaluate_v10_frozen.py": "ca1fc997ba72999632a4352da6244d73c08746816e1598091480f5e3633a9808",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v6_development_features_mlx.py": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750",
+    "python/test_v10_frozen.py": "91ba49177b5e7e0bf77c457cbf7530d89dd365f8338c271f774fb7448272cb1c",
+    "python/test_v10_protocol.py": "bfa2451d7acf9023ce9c0c5972d25c73e7212c08744d28021f9a80eaa618a712",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v9_symbolic.py": "252041deaa4eaf0c2fd0702cc502688af13a6feb16e8f52d1cf5f422da440acb"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "complete_24_fold_evaluations_permitted": 1,
+    "final_mechanic_evaluations_permitted": 0,
+    "frozen_0_8b_feature_extractions_permitted": 1,
+    "larger_frozen_model_extractions_permitted": 0
+  },
+  "lock_payload_sha256": "38b68e0b417c1f582b3f2feb3ee0eff10d1c6053d3c7bfffdb6fdd5c79c40c19",
+  "pre_model_audit": {
+    "gates_passed": true,
+    "path": "outputs/v10-pre-model/shortcut-audit.json",
+    "sha256": "661d333a94cee9de96e67acbb4c5997383856a093b5ff69ef4e7b7de823430e9"
+  },
+  "preregistration": {
+    "path": "docs/v10-experiment-plan.md",
+    "sha256": "d2d1d793a86df792fa06fe4d997ae981d7c62e2115e94b4d1d0fb7863fafa307"
+  },
+  "protocol": {
+    "cValue": 1.0,
+    "diagnosticRepresentations": [
+      "mean_direct",
+      "evidence_span_direct"
+    ],
+    "gates": {
+      "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+      "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+      "minimumEveryFoldCompleteInterventionGroupAccuracy": 0.5,
+      "minimumEveryFoldNliPairConsistency": 0.7,
+      "minimumEveryFoldOraclePolarityAccuracy": 0.7,
+      "minimumEveryFoldSpanAccuracy": 0.65,
+      "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+      "minimumEveryFoldTemporalAccuracy": 0.7,
+      "minimumEverySurfaceAllowedValuesAccuracy": 0.6,
+      "minimumEverySurfaceNliPairConsistency": 0.65,
+      "minimumEverySurfaceOraclePolarityAccuracy": 0.65,
+      "minimumEverySurfaceSpanAccuracy": 0.6,
+      "minimumEverySurfaceSymbolicBalancedAccuracy": 0.6,
+      "minimumEverySurfaceTemporalAccuracy": 0.65
+    },
+    "layer": 6,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "primaryRepresentation": "nli_final",
+    "seed": 0
+  },
+  "schema_version": 10
+}

@@ -1,0 +1,151 @@
+{
+  "config": "configs/v28-marginal-map.json",
+  "config_payload": {
+    "experiment": "v28_exposed_marginal_program_map",
+    "gates": {
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumEvaluationSupportExactGraph": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleExact": 1.0,
+      "minimumOracleSupportFrozenQueryExact": 0.75
+    },
+    "integrationConditions": [
+      "oracle_support_oracle_query",
+      "frozen_support_oracle_query",
+      "oracle_support_frozen_query",
+      "frozen_support_frozen_query"
+    ],
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "freshBenchmarkRecords": 0,
+      "headFits": 0,
+      "hyperparameterSelections": 0,
+      "marginalMapEvaluations": 1,
+      "newModelForwardPasses": 0,
+      "thresholdFits": 0
+    },
+    "marginalMap": {
+      "credibleUnionPermitted": false,
+      "episodePosterior": "normalized_product_of_trace_likelihoods",
+      "graphCandidates": "exact_locked_v27_top_512_per_support_scene",
+      "graphProbability": "softmax_over_retained_v27_joint_log_scores",
+      "hyperparameterGridPermitted": false,
+      "noFinitePosteriorPolicy": "retain_v27_support_graphs",
+      "programPrior": "uniform_over_v22_behavioral_hypotheses",
+      "programSelection": "maximum_posterior_then_program_key",
+      "supportGraphSelection": "maximum_v27_log_score_compatible_with_selected_program_then_graph_key",
+      "traceLikelihood": "sum_probability_of_graphs_allowing_observed_transition"
+    },
+    "schemaVersion": 28,
+    "scope": {
+      "allV22r2SplitsExposed": true,
+      "developmentOnly": true,
+      "freshBenchmarkRecordsPermitted": 0,
+      "ontologyDslAndExecutorUnchanged": true,
+      "supportScenesOnly": true,
+      "v26QueryPredictionsFrozen": true
+    },
+    "sourceV27Diagnostics": "outputs/v27-support-map/evaluation/episode-map-diagnostics.jsonl",
+    "sourceV27EdgeMetadata": "outputs/v27-support-map/edge-scores/metadata.json",
+    "sourceV27EdgeScores": "outputs/v27-support-map/edge-scores/support-edge-scores.jsonl",
+    "sourceV27Lock": "configs/v27-support-map-lock.json",
+    "sourceV27NativeMatchDiagnostic": "outputs/v27-support-map/native-matching-diagnostic.json",
+    "sourceV27PostAudit": "outputs/v27-support-map/post-result-audit.json",
+    "sourceV27Predictions": "outputs/v27-support-map/evaluation/grounding-predictions.jsonl",
+    "sourceV27Result": "outputs/v27-support-map/evaluation/result.json"
+  },
+  "config_sha256": "5085f744d42e73b37118b720d4071ac9cfac38e06e70b16e2a971318c5b88bf5",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "all_v22r2_splits_exposed": true,
+    "fresh_benchmark_records": 0,
+    "head_fits": 0,
+    "hyperparameter_selections": 0,
+    "marginal_map_evaluations": 0,
+    "new_model_forward_passes": 0,
+    "threshold_fits": 0
+  },
+  "experiment": "v28_exposed_marginal_program_map",
+  "gates": {
+    "maximumFrozenSupportEmptyVersionSpace": 0.1,
+    "minimumEvaluationSupportExactGraph": 0.75,
+    "minimumFrozenFrozenExact": 0.65,
+    "minimumFrozenSupportOracleQueryExact": 0.75,
+    "minimumFrozenSupportTargetRetention": 0.75,
+    "minimumOracleOracleExact": 1.0,
+    "minimumOracleSupportFrozenQueryExact": 0.75
+  },
+  "implementation": {
+    "python/audit_v28_marginal_map.py": "c81f88b6dd83d2c0eeea4ec31e67114c4a02dacc7a181c6cedd5f6e231fbc86d",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v28_marginal_map.py": "2307f068e8e8eb1fd6a4ab6bc0af3a77da37ab8002b0f062d82a3b3fb9d97160",
+    "python/freeze_v28_marginal_map.py": "cdcfdf73c209e088c421cfea75dc1170a89e7cf3d4ae0ab78569c0bc12c36b83",
+    "python/test_v28_marginal_map.py": "35598e8a6f406ecf6a7d83660691cedcccd08b12c40e4ea5be765d7a14186cd6",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v23_probabilistic_relational.py": "4a672fb2ca96e9f50d6c7e29921149d268fa91082f6846233b6255c67050db43",
+    "python/v27_support_map.py": "381791705c6f67a44f9eed11e618320ef28da462aa0ea560dad67bff6336fe53",
+    "python/v28_marginal_map.py": "9eb8b203ac4ce5c2a7d2e14d9d22414cc18d18ecc4fb4367b7ae126f43106521"
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "freshBenchmarkRecords": 0,
+    "headFits": 0,
+    "hyperparameterSelections": 0,
+    "marginalMapEvaluations": 1,
+    "newModelForwardPasses": 0,
+    "thresholdFits": 0
+  },
+  "lock_payload_sha256": "04bdde0bf79f7fb38a2a7d7e98339bc4a7cc7caa189abb440f79d03657b011c8",
+  "marginal_map": {
+    "credibleUnionPermitted": false,
+    "episodePosterior": "normalized_product_of_trace_likelihoods",
+    "graphCandidates": "exact_locked_v27_top_512_per_support_scene",
+    "graphProbability": "softmax_over_retained_v27_joint_log_scores",
+    "hyperparameterGridPermitted": false,
+    "noFinitePosteriorPolicy": "retain_v27_support_graphs",
+    "programPrior": "uniform_over_v22_behavioral_hypotheses",
+    "programSelection": "maximum_posterior_then_program_key",
+    "supportGraphSelection": "maximum_v27_log_score_compatible_with_selected_program_then_graph_key",
+    "traceLikelihood": "sum_probability_of_graphs_allowing_observed_transition"
+  },
+  "pre_evaluation_audit": "outputs/v28-marginal-map/pre-evaluation-audit.json",
+  "pre_evaluation_audit_sha256": "cd507f6757381f043aa5cbf4d8266a7271b03177225acc2e4378c23af1d77e93",
+  "preregistration": "docs/v28-marginal-map-plan.md",
+  "preregistration_sha256": "1a723cc58f00732bbfd74a987b385db6b85a542cc87ef00ed662f7258d7a59ec",
+  "schema_version": 28,
+  "source": {
+    "sourceV27Diagnostics": "outputs/v27-support-map/evaluation/episode-map-diagnostics.jsonl",
+    "sourceV27Diagnostics_sha256": "8d5dfea9806334ead5c46b7afd256a282f1e600a3e631ab17deba61fb1544f28",
+    "sourceV27EdgeMetadata": "outputs/v27-support-map/edge-scores/metadata.json",
+    "sourceV27EdgeMetadata_sha256": "a9d0d0023917e1e1e1276653978e3fcb0ac867ebc6742838bcd73aa1f8f4bb0d",
+    "sourceV27EdgeScores": "outputs/v27-support-map/edge-scores/support-edge-scores.jsonl",
+    "sourceV27EdgeScores_sha256": "327ca8ab6371825d8bb3484ae7ae71b9ba7c5f50bbaf25f680b54e2208193754",
+    "sourceV27Lock": "configs/v27-support-map-lock.json",
+    "sourceV27Lock_sha256": "299e244d58ce942e53dbe350e699e8567eb118080ed4f20650ec5dcb9a5d318a",
+    "sourceV27NativeMatchDiagnostic": "outputs/v27-support-map/native-matching-diagnostic.json",
+    "sourceV27NativeMatchDiagnostic_sha256": "67f1424b5110c412d0cfc46549cf0e82795e92cc3a1fb121da6b53478c987b5e",
+    "sourceV27PostAudit": "outputs/v27-support-map/post-result-audit.json",
+    "sourceV27PostAudit_sha256": "ab02ab8159a1b26a773e1128f01cab1b982d67bf478ea42131c33aeb713b23a0",
+    "sourceV27Predictions": "outputs/v27-support-map/evaluation/grounding-predictions.jsonl",
+    "sourceV27Predictions_sha256": "6312c0eb96e1ee36f58b067a64fa35cce8f0d0401a7fc3fa27c44a00e4b73780",
+    "sourceV27Result": "outputs/v27-support-map/evaluation/result.json",
+    "sourceV27Result_sha256": "932d6c3ab48b6fb9a6f934cecdf35fe95da13555f7a7f4f697c7a612b5ad55bb"
+  },
+  "source_v27_reference": {
+    "empty_version_space": 0.0,
+    "evaluation_support_exact_graph": 0.6944444444444444,
+    "frozen_frozen_exact": 0.717948717948718,
+    "frozen_support_oracle_query_exact": 0.7435897435897436,
+    "target_retention": 0.8333333333333334
+  },
+  "v27_source_lock_sha256": "299e244d58ce942e53dbe350e699e8567eb118080ed4f20650ec5dcb9a5d318a"
+}

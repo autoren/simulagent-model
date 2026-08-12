@@ -1,0 +1,153 @@
+{
+  "calibration_features": "outputs/v7r2-frozen-probe/features/calibration.npz",
+  "calibration_features_sha256": "4d9a548cb92ccacf06d5604e1d9e784605a5dda1aa0d43cc96ce1698f8db3699",
+  "calibration_gate": {
+    "minimum": 0.75,
+    "passed": true,
+    "value": 0.7616279069767442
+  },
+  "dataset_manifest": "data/v7r2/manifest.json",
+  "dataset_manifest_sha256": "cb2f1fb111474c2088e3ae4ca725808c9cef6d566dfd8ef24994ca5d1cf5e1f7",
+  "dataset_sha256": "c5ddff9fef1e39a8e50f7a3868c3ebb1395d43aaaa1c07886e348c16a815e3af",
+  "experiment": "v7_locked_tone_drift_transfer",
+  "feature_metadata": "outputs/v7r2-frozen-probe/features/metadata.json",
+  "feature_metadata_sha256": "3f65206e63602e958454d6ddc155c6e0f0e348536b94d3092e36d018c5dc7547",
+  "gates": {
+    "minimumCalibrationCanonicalBalancedAccuracy": 0.75,
+    "minimumCompleteTripletAccuracy": 0.6,
+    "minimumEvidenceDirectionalAccuracy": 0.75,
+    "minimumHoldoutBootstrapLowerBound": 0.55,
+    "minimumHoldoutCanonicalBalancedAccuracy": 0.7,
+    "minimumPairedScoreDirectionalAccuracy": 0.75,
+    "minimumSurfaceBalancedAccuracy": 0.65,
+    "minimumSurfacePredictionAgreement": 0.85,
+    "minimumWorstStratumBalancedAccuracy": 0.55
+  },
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "builder": {
+      "path": "src/v7.ts",
+      "sha256": "ba2928150be4d606c238303c62aa99aa4c5e463c3e7a13c9ab2369658b45e8f5"
+    },
+    "compiler": {
+      "path": "src/compile-v7.ts",
+      "sha256": "6653ee1307d451c2b8c6aace1e01cb885c990b2939031006bf5b5df48161f3a0"
+    },
+    "evaluator": {
+      "path": "python/evaluate_v7_untouched_mlx.py",
+      "sha256": "a29ac3ad4c5c4a0356e29cc046bbc1af90bc36831d3fab55de74d0bc80884da8"
+    },
+    "extractor": {
+      "path": "python/extract_v7_development_features_mlx.py",
+      "sha256": "7339205fa2e4bd7c921250358a961468b219935abc259cb6ba94bf2297a1e649"
+    },
+    "extractor_core": {
+      "path": "python/extract_v6_development_features_mlx.py",
+      "sha256": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750"
+    },
+    "paired_metrics": {
+      "path": "python/evaluate_v5_challenge_mlx.py",
+      "sha256": "4af820784958e5222fb9017ed748bc1115fc638cbb4c4ef25106421d5ad33c96"
+    },
+    "probe_core": {
+      "path": "python/train_frozen_linear_probe.py",
+      "sha256": "ca04a77999f12ba097302f79c12cce471e31fc18987d42757e96ebab3ff63685"
+    },
+    "probe_freezer": {
+      "path": "python/freeze_v7_probe.py",
+      "sha256": "a0b078e760aa8b2cb3f742cbd9186731bf602dd315b3b575f3110182579c7c45"
+    },
+    "shortcut_audit": {
+      "path": "python/audit_v7_shortcuts.py",
+      "sha256": "c720d921ea92aaaae822ac3d9a50bdcc77758bf1db484e2a0fcfb2b382ea810f"
+    },
+    "simulator": {
+      "path": "../simulagent/src/simulation.ts",
+      "sha256": "5a8a5ba913fa632074298994332318015649fb10c3536b271193bdede1a93332"
+    },
+    "summarizer": {
+      "path": "python/summarize_v7.py",
+      "sha256": "2f5e2d8714c99d5e810704fc1d1b7a182b6b86f81320a0e40f1a01c5de21f79b"
+    },
+    "trainer": {
+      "path": "python/train_v7_frozen_probe.py",
+      "sha256": "bb044b49bcf9de258136fbd3c780a117da0d8807843233fd0e330ee32d05e0f9"
+    },
+    "v7_metrics": {
+      "path": "python/v7_metrics.py",
+      "sha256": "7cec5bb4fcaa65f52730bb5e85a4073e5afd968a8df5b9036177e8ba72eeeb9c"
+    },
+    "validator": {
+      "path": "src/v7-validation.ts",
+      "sha256": "8d077f163802d3738fa002dad9ddd6e97f48b29c2305f47c8dbeb205a98f550e"
+    }
+  },
+  "method": {
+    "adapter_path": null,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 7717,
+    "c_value": 10.0,
+    "class_weight": "balanced",
+    "feature": "layer_06_mean",
+    "frozen": true,
+    "input_variant": "full",
+    "layer": 6,
+    "max_seq_length": 1024,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pooling": "mean",
+    "seed": 0,
+    "solver": "saga",
+    "surface_supervision": "complete_triplets_with_shared_binary_target",
+    "threshold_selection": "canonical_calibration_only"
+  },
+  "pre_model_gates": {
+    "checks": [
+      {
+        "maximum": 0.55,
+        "name": "metadata_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.6,
+        "name": "evidence_text_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.65,
+        "name": "evidence_text_auc",
+        "passed": true,
+        "value": 0.5
+      }
+    ],
+    "passed": true
+  },
+  "preregistration": {
+    "path": "docs/v7-experiment-plan.md",
+    "sha256": "9354a8513b41beba6e0f66c4ce573986b73c15ced7ea0efc3b48225a7f782912"
+  },
+  "prior_holdout_records_read": 0,
+  "probe_artifact": "outputs/v7r2-frozen-probe/probe/selected-probe.npz",
+  "probe_artifact_sha256": "599002acd64b51e7467adfa6b4996e18de2e3fd8f03638a76005923f987adb51",
+  "probe_training_number": 1,
+  "protocol_lock": "configs/v7r2-protocol-lock.json",
+  "protocol_lock_sha256": "dcf1d022f8d357046c369d831aa57c560c6209dddd68b2b8e6c8ab3851e2a34d",
+  "schema_version": 7,
+  "shortcut_audit": "outputs/v7r2-pre-model/shortcut-audit.json",
+  "shortcut_audit_sha256": "33100be73da1491103b6f2b259b2dee8a6887d54f766d83b46cce80ea458a765",
+  "threshold": 0.0041918084025382996,
+  "train_features": "outputs/v7r2-frozen-probe/features/train.npz",
+  "train_features_sha256": "7491f2f1493bc83b75bc358f80aa7707856fd771046538fb09f53e183adde6ce",
+  "training_result": "outputs/v7r2-frozen-probe/probe/result.json",
+  "training_result_sha256": "29198f89399cadff3fbff5b9ad8893b3e440ddb2b3607b9036094b5a915b04ae",
+  "untouched_mechanic_evaluations_permitted": 1,
+  "untouched_mechanic_records_read_before_lock": 0,
+  "untouched_path_correction": "Corrected the stale default pathname to the r2 dataset before the first evaluation; the preregistered record hash and all model artifacts are unchanged.",
+  "untouched_records": "data/v7r2/records/untouched_mechanic.jsonl",
+  "untouched_records_sha256": "f89a0425d54fb63967e1790b15e943efcd48d0c10b441d4e97ff0b14999e257d",
+  "v3_test_records_read": 0
+}

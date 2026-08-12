@@ -1,0 +1,36 @@
+{
+  "sourceV10FrozenLock": "configs/v10-frozen-lock.json",
+  "sourceV10Manifest": "data/v10/manifest.json",
+  "sourceV10FeatureMetadata": "outputs/v10-frozen/features/metadata.json",
+  "sourceV10FeatureArtifact": "outputs/v10-frozen/features/v10-features.npz",
+  "sourceV10Result": "outputs/v10-frozen/evaluation/result.json",
+  "depthRule": {
+    "name": "nearest_quarter_depth",
+    "referenceLayers": 24,
+    "referenceExtractionLayer": 6,
+    "fraction": 0.25,
+    "rounding": "nearest_integer"
+  },
+  "models": {
+    "qwen35_4b": {
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+      "totalLayers": 32,
+      "hiddenSize": 2560,
+      "extractionLayer": 8
+    },
+    "qwen35_9b": {
+      "model": "mlx-community/Qwen3.5-9B-4bit",
+      "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+      "configSha256": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+      "totalLayers": 32,
+      "hiddenSize": 4096,
+      "extractionLayer": 8
+    }
+  },
+  "runOrder": [
+    "qwen35_4b",
+    "qwen35_9b"
+  ]
+}

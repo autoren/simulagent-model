@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "22r2a",
+  "experiment": "v22r2a_nondiscretionary_evaluation_compatibility_amendment",
+  "sourceLock": "configs/v22r2-relational-grounding-lock.json",
+  "sourceFeatures": "outputs/v22r2-relational-grounding/features/metadata.json",
+  "failedAttempt": "outputs/v22r2-relational-grounding/evaluation-attempt.json",
+  "failureRecord": "outputs/v22r2-relational-grounding/evaluation-attempt-1-failure.json",
+  "amendment": {
+    "truthStatusMulticlassWrapper": "sklearn.multiclass.OneVsRestClassifier",
+    "baseEstimatorUnchanged": "LogisticRegression(C=1.0,class_weight=balanced,solver=liblinear,max_iter=2000,random_state=2202)",
+    "atomMatchingEstimatorUnchanged": true,
+    "featuresUnchanged": true,
+    "dataUnchanged": true,
+    "gatesUnchanged": true,
+    "conditionsUnchanged": true,
+    "hyperparameterSelection": false
+  },
+  "replacementLimits": {
+    "evaluationAttempts": 1,
+    "replacementAtomMatchingHeadFits": 1,
+    "truthStatusHeadFits": 1,
+    "newModelForwardPasses": 0,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0
+  }
+}

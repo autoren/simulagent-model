@@ -1,0 +1,110 @@
+{
+  "calibration_features": "outputs/v6-frozen-probe/features/calibration.npz",
+  "calibration_features_sha256": "b01018183464902c4f67e164f10883383cb7eda7b3d8b5d4bb63c8a0bb46fb37",
+  "calibration_gate": {
+    "minimum": 0.75,
+    "passed": true,
+    "value": 0.9031986531986532
+  },
+  "dataset_manifest": "data/v6/manifest.json",
+  "dataset_manifest_sha256": "2eb81d909135f3ee0a91eaac61147140ec55567c51f99eae0abf0197cb5514d7",
+  "dataset_sha256": "1fd29263b8aa262b2153aacb8d753fc942b43b1f6a869ec6c215c8690a61186d",
+  "experiment": "v6_locked_mechanic_transfer",
+  "feature_metadata": "outputs/v6-frozen-probe/features/metadata.json",
+  "feature_metadata_sha256": "43c17d2e0ea7afc9e95d061927f39f610315193bb5e783d72d1d8be374a4bdd1",
+  "gates": {
+    "minimumAbsoluteImprovementOverV5": 0.15,
+    "minimumCalibrationCanonicalBalancedAccuracy": 0.75,
+    "minimumCompleteTripletAccuracy": 0.6,
+    "minimumEvidenceDirectionalAccuracy": 0.75,
+    "minimumHoldoutBootstrapLowerBound": 0.55,
+    "minimumHoldoutCanonicalBalancedAccuracy": 0.7,
+    "minimumSurfaceBalancedAccuracy": 0.65,
+    "minimumSurfacePredictionAgreement": 0.85
+  },
+  "holdout_records": "data/v6/records/mechanic_holdout.jsonl",
+  "holdout_records_sha256": "4284f180c0eeb45a301f16d793d5e40d5da99ac3b58e872aab87deb8af812d6b",
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "builder": {
+      "path": "src/v6.ts",
+      "sha256": "212d0dfe8a1326e43197660b7f611106a7882570a6065151ddd2c0a33f359b04"
+    },
+    "compiler": {
+      "path": "src/compile-v6.ts",
+      "sha256": "f31687a8866014c232a36d63c047b8a5506694d8148541160748421a67053b81"
+    },
+    "evaluator": {
+      "path": "python/evaluate_v6_mechanic_holdout_mlx.py",
+      "sha256": "ad6a52aae11e9cadcd57e4da4b654855e8054d2fc241c1ecdc6f7e09b0ebdb54"
+    },
+    "extractor": {
+      "path": "python/extract_v6_development_features_mlx.py",
+      "sha256": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750"
+    },
+    "paired_metrics": {
+      "path": "python/evaluate_v5_challenge_mlx.py",
+      "sha256": "4af820784958e5222fb9017ed748bc1115fc638cbb4c4ef25106421d5ad33c96"
+    },
+    "probe_freezer": {
+      "path": "python/freeze_v6_probe.py",
+      "sha256": "fdaaad0b99bc5f27840924c63a13628575f84c8633bb2e8e98c32761ebe11256"
+    },
+    "probe_metrics": {
+      "path": "python/train_frozen_linear_probe.py",
+      "sha256": "ca04a77999f12ba097302f79c12cce471e31fc18987d42757e96ebab3ff63685"
+    },
+    "summarizer": {
+      "path": "python/summarize_v6.py",
+      "sha256": "11725ccc102455b1f5bce0988d6b268aee8e3165c187f826ed5e2021e9fbf847"
+    },
+    "trainer": {
+      "path": "python/train_v6_frozen_probe.py",
+      "sha256": "ae6d582d52e870a0a42b1857bc43f27e83095e86e08132b4a76e666a72e26209"
+    },
+    "validator": {
+      "path": "src/v6-validation.ts",
+      "sha256": "86e90b257a7388f5d34be66e31ffa0192667efc35609fd737b37892110d9dcde"
+    }
+  },
+  "mechanic_holdout_evaluations_permitted": 1,
+  "mechanic_holdout_records_read_before_lock": 0,
+  "method": {
+    "adapter_path": null,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 6606,
+    "c_value": 10.0,
+    "class_weight": "balanced",
+    "feature": "layer_06_mean",
+    "frozen": true,
+    "input_variant": "full",
+    "layer": 6,
+    "max_seq_length": 1024,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pooling": "mean",
+    "seed": 0,
+    "solver": "saga",
+    "surface_supervision": "complete_triplets_with_shared_binary_target",
+    "threshold_selection": "canonical_calibration_only"
+  },
+  "probe_artifact": "outputs/v6-frozen-probe/probe/selected-probe.npz",
+  "probe_artifact_sha256": "b32f3aba28234b80bf764da7316f41a0bf4d805acc71ead2dc150100c4925e73",
+  "probe_training_number": 1,
+  "protocol_lock": "configs/v6-protocol-lock.json",
+  "protocol_lock_sha256": "9664acde7fa491b5d22c48c2fc4c2c1266c283472ffdd65eb6d4a9568c748164",
+  "reference": {
+    "path": "outputs/v5-challenge/frozen-probe/result.json",
+    "sha256": "30548b46774e61a40d2c36dcf384b45c2c45be6505cc388408df152917a10084",
+    "v5_challenge_balanced_accuracy": 0.49582289055973267
+  },
+  "schema_version": 6,
+  "threshold": 3.388678789138794,
+  "train_features": "outputs/v6-frozen-probe/features/train.npz",
+  "train_features_sha256": "1bb15b2f074e19df29936d4cdd784d39489a83e8888a4aaeef31af087a93f39c",
+  "training_result": "outputs/v6-frozen-probe/probe/result.json",
+  "training_result_sha256": "fc18651dd0d615efdbde42d8bfaf67708c73b8a1505d493485aad6c6a08bf91e",
+  "v3_test_records_read": 0
+}

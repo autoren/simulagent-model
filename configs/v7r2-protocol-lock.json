@@ -1,0 +1,152 @@
+{
+  "conditional_label_gap": 0,
+  "data_access": {
+    "prior_holdout_records_read": 0,
+    "untouched_mechanic_records_read_before_probe_lock": 0,
+    "v3_test_records_read": 0
+  },
+  "dataset_artifact_sha256": {
+    "records/calibration.jsonl": "14544ad6d408e335a7a222dac0550d65791aa2fe8b9bcfd2f5e5206ed58bf519",
+    "records/train.jsonl": "2ba4d29af3491c3e9d8cb62b0b19220aae7078252bec6317a71c3da7464938a7",
+    "records/untouched_mechanic.jsonl": "f89a0425d54fb63967e1790b15e943efcd48d0c10b441d4e97ff0b14999e257d"
+  },
+  "dataset_manifest": "data/v7r2/manifest.json",
+  "dataset_manifest_sha256": "cb2f1fb111474c2088e3ae4ca725808c9cef6d566dfd8ef24994ca5d1cf5e1f7",
+  "dataset_sha256": "c5ddff9fef1e39a8e50f7a3868c3ebb1395d43aaaa1c07886e348c16a815e3af",
+  "experiment": "v7_causal_evidence_frozen_probe",
+  "gates": {
+    "minimumCalibrationCanonicalBalancedAccuracy": 0.75,
+    "minimumCompleteTripletAccuracy": 0.6,
+    "minimumEvidenceDirectionalAccuracy": 0.75,
+    "minimumHoldoutBootstrapLowerBound": 0.55,
+    "minimumHoldoutCanonicalBalancedAccuracy": 0.7,
+    "minimumPairedScoreDirectionalAccuracy": 0.75,
+    "minimumSurfaceBalancedAccuracy": 0.65,
+    "minimumSurfacePredictionAgreement": 0.85,
+    "minimumWorstStratumBalancedAccuracy": 0.55
+  },
+  "implementation": {
+    "binary_metrics": {
+      "path": "python/binary_metrics.py",
+      "sha256": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6"
+    },
+    "builder": {
+      "path": "src/v7.ts",
+      "sha256": "ba2928150be4d606c238303c62aa99aa4c5e463c3e7a13c9ab2369658b45e8f5"
+    },
+    "compiler": {
+      "path": "src/compile-v7.ts",
+      "sha256": "6653ee1307d451c2b8c6aace1e01cb885c990b2939031006bf5b5df48161f3a0"
+    },
+    "evaluator": {
+      "path": "python/evaluate_v7_untouched_mlx.py",
+      "sha256": "a29ac3ad4c5c4a0356e29cc046bbc1af90bc36831d3fab55de74d0bc80884da8"
+    },
+    "extractor": {
+      "path": "python/extract_v7_development_features_mlx.py",
+      "sha256": "7339205fa2e4bd7c921250358a961468b219935abc259cb6ba94bf2297a1e649"
+    },
+    "extractor_core": {
+      "path": "python/extract_v6_development_features_mlx.py",
+      "sha256": "01e00e7eb81e2a7639be4e8230c92260fc66bd7469b286647c8064e75e977750"
+    },
+    "paired_metrics": {
+      "path": "python/evaluate_v5_challenge_mlx.py",
+      "sha256": "4af820784958e5222fb9017ed748bc1115fc638cbb4c4ef25106421d5ad33c96"
+    },
+    "probe_core": {
+      "path": "python/train_frozen_linear_probe.py",
+      "sha256": "ca04a77999f12ba097302f79c12cce471e31fc18987d42757e96ebab3ff63685"
+    },
+    "probe_freezer": {
+      "path": "python/freeze_v7_probe.py",
+      "sha256": "a0b078e760aa8b2cb3f742cbd9186731bf602dd315b3b575f3110182579c7c45"
+    },
+    "shortcut_audit": {
+      "path": "python/audit_v7_shortcuts.py",
+      "sha256": "c720d921ea92aaaae822ac3d9a50bdcc77758bf1db484e2a0fcfb2b382ea810f"
+    },
+    "simulator": {
+      "path": "../simulagent/src/simulation.ts",
+      "sha256": "5a8a5ba913fa632074298994332318015649fb10c3536b271193bdede1a93332"
+    },
+    "summarizer": {
+      "path": "python/summarize_v7.py",
+      "sha256": "2f5e2d8714c99d5e810704fc1d1b7a182b6b86f81320a0e40f1a01c5de21f79b"
+    },
+    "trainer": {
+      "path": "python/train_v7_frozen_probe.py",
+      "sha256": "bb044b49bcf9de258136fbd3c780a117da0d8807843233fd0e330ee32d05e0f9"
+    },
+    "v7_metrics": {
+      "path": "python/v7_metrics.py",
+      "sha256": "7cec5bb4fcaa65f52730bb5e85a4073e5afd968a8df5b9036177e8ba72eeeb9c"
+    },
+    "validator": {
+      "path": "src/v7-validation.ts",
+      "sha256": "8d077f163802d3738fa002dad9ddd6e97f48b29c2305f47c8dbeb205a98f550e"
+    }
+  },
+  "limits": {
+    "development_feature_extractions_permitted": 1,
+    "probe_trainings_permitted": 1,
+    "untouched_mechanic_evaluations_permitted": 1
+  },
+  "lock_payload_sha256": "920b3e7d113e4882c4044735576d86becc3a91954f477d68576c9c324291f4b7",
+  "method": {
+    "adapter_path": null,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 7717,
+    "c_value": 10.0,
+    "class_weight": "balanced",
+    "feature": "layer_06_mean",
+    "frozen": true,
+    "input_variant": "full",
+    "layer": 6,
+    "max_seq_length": 1024,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "pooling": "mean",
+    "seed": 0,
+    "solver": "saga",
+    "surface_supervision": "complete_triplets_with_shared_binary_target",
+    "threshold_selection": "canonical_calibration_only"
+  },
+  "partitions": {
+    "one_shot_evaluation": "untouched_mechanic/tonedrift",
+    "threshold_calibration": "calibration/canonical",
+    "training": "train"
+  },
+  "pre_model_gates": {
+    "checks": [
+      {
+        "maximum": 0.55,
+        "name": "metadata_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.6,
+        "name": "evidence_text_balanced_accuracy",
+        "passed": true,
+        "value": 0.5
+      },
+      {
+        "maximum": 0.65,
+        "name": "evidence_text_auc",
+        "passed": true,
+        "value": 0.5
+      }
+    ],
+    "passed": true
+  },
+  "preregistration": {
+    "path": "docs/v7-experiment-plan.md",
+    "sha256": "9354a8513b41beba6e0f66c4ce573986b73c15ced7ea0efc3b48225a7f782912"
+  },
+  "schema_version": 7,
+  "shortcut_audit": "outputs/v7r2-pre-model/shortcut-audit.json",
+  "shortcut_audit_sha256": "33100be73da1491103b6f2b259b2dee8a6887d54f766d83b46cce80ea458a765",
+  "source_commit": "d42e0266b59f60af6c7550ab69eb9f3a1c77a18c",
+  "source_simulation_sha256": "5a8a5ba913fa632074298994332318015649fb10c3536b271193bdede1a93332",
+  "source_worktree_diff_sha256": "3021276483c4aafabb0bf8b4b915e650309ac91899fcd33d4ecbf507988c4c48"
+}

@@ -1,0 +1,54 @@
+{
+  "sourceV10FrozenLock": "configs/v10-frozen-lock.json",
+  "sourceV10FeatureMetadata": "outputs/v10-frozen/features/metadata.json",
+  "sourceV10FeatureArtifact": "outputs/v10-frozen/features/v10-features.npz",
+  "sourceV10Result": "outputs/v10-frozen/evaluation/result.json",
+  "sourceV11Lock": "configs/v11-frozen-scale-lock.json",
+  "sourceV11Result": "outputs/v11-frozen-scale/evaluation/result.json",
+  "models": {
+    "qwen35_0_8b": {
+      "featureArtifact": "outputs/v10-frozen/features/v10-features.npz",
+      "featureMetadata": "outputs/v10-frozen/features/metadata.json"
+    },
+    "qwen35_4b": {
+      "featureArtifact": "outputs/v11-frozen-scale/features/qwen35_4b/v11-features.npz",
+      "featureMetadata": "outputs/v11-frozen-scale/features/qwen35_4b/metadata.json"
+    },
+    "qwen35_9b": {
+      "featureArtifact": "outputs/v11-frozen-scale/features/qwen35_9b/v11-features.npz",
+      "featureMetadata": "outputs/v11-frozen-scale/features/qwen35_9b/metadata.json"
+    }
+  },
+  "modelOrder": [
+    "qwen35_0_8b",
+    "qwen35_4b",
+    "qwen35_9b"
+  ],
+  "primaryHead": {
+    "name": "signed_difference_linear",
+    "features": "active_hypothesis_minus_inactive_hypothesis",
+    "cValue": 1.0,
+    "classWeight": "balanced",
+    "maxIterations": 3000,
+    "solver": "lbfgs"
+  },
+  "conditionalHead": {
+    "name": "joint_mlp",
+    "condition": "run_only_if_no_model_passes_primary_gates",
+    "features": "concatenate_hypothesis_mean_and_signed_difference",
+    "hiddenUnits": 32,
+    "activation": "relu",
+    "alpha": 0.001,
+    "batchSize": 256,
+    "learningRateInit": 0.001,
+    "maxIterations": 200,
+    "solver": "adam",
+    "tolerance": 0.0001,
+    "iterationsWithoutChange": 20
+  },
+  "seed": 0,
+  "gates": {
+    "minimumEveryFoldAccuracy": 0.7,
+    "minimumEverySurfaceAccuracy": 0.65
+  }
+}

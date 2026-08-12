@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 28,
+  "experiment": "v28_exposed_marginal_program_map",
+  "sourceV27Lock": "configs/v27-support-map-lock.json",
+  "sourceV27Result": "outputs/v27-support-map/evaluation/result.json",
+  "sourceV27PostAudit": "outputs/v27-support-map/post-result-audit.json",
+  "sourceV27EdgeMetadata": "outputs/v27-support-map/edge-scores/metadata.json",
+  "sourceV27EdgeScores": "outputs/v27-support-map/edge-scores/support-edge-scores.jsonl",
+  "sourceV27Predictions": "outputs/v27-support-map/evaluation/grounding-predictions.jsonl",
+  "sourceV27Diagnostics": "outputs/v27-support-map/evaluation/episode-map-diagnostics.jsonl",
+  "sourceV27NativeMatchDiagnostic": "outputs/v27-support-map/native-matching-diagnostic.json",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsExposed": true,
+    "supportScenesOnly": true,
+    "v26QueryPredictionsFrozen": true,
+    "freshBenchmarkRecordsPermitted": 0,
+    "ontologyDslAndExecutorUnchanged": true
+  },
+  "marginalMap": {
+    "graphCandidates": "exact_locked_v27_top_512_per_support_scene",
+    "graphProbability": "softmax_over_retained_v27_joint_log_scores",
+    "traceLikelihood": "sum_probability_of_graphs_allowing_observed_transition",
+    "programPrior": "uniform_over_v22_behavioral_hypotheses",
+    "episodePosterior": "normalized_product_of_trace_likelihoods",
+    "programSelection": "maximum_posterior_then_program_key",
+    "supportGraphSelection": "maximum_v27_log_score_compatible_with_selected_program_then_graph_key",
+    "noFinitePosteriorPolicy": "retain_v27_support_graphs",
+    "credibleUnionPermitted": false,
+    "hyperparameterGridPermitted": false
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "gates": {
+    "minimumEvaluationSupportExactGraph": 0.75,
+    "minimumFrozenSupportOracleQueryExact": 0.75,
+    "minimumOracleSupportFrozenQueryExact": 0.75,
+    "minimumFrozenFrozenExact": 0.65,
+    "minimumFrozenSupportTargetRetention": 0.75,
+    "maximumFrozenSupportEmptyVersionSpace": 0.1,
+    "minimumOracleOracleExact": 1.0
+  },
+  "limits": {
+    "newModelForwardPasses": 0,
+    "marginalMapEvaluations": 1,
+    "headFits": 0,
+    "thresholdFits": 0,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "freshBenchmarkRecords": 0
+  }
+}

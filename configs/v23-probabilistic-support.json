@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 23,
+  "experiment": "v23_exposed_relational_probabilistic_support_replay",
+  "sourceV22r2aLock": "configs/v22r2a-evaluation-amendment-lock.json",
+  "sourceV22r2aResult": "outputs/v22r2-relational-grounding/evaluation-v22r2a/result.json",
+  "sourceV22r2aPostAudit": "outputs/v22r2-relational-grounding/post-result-audit.json",
+  "sourceV22r2aDiagnostic": "outputs/v22r2-relational-grounding/error-conditioning.json",
+  "sourceFeatures": "outputs/v22r2-relational-grounding/features/metadata.json",
+  "sourceHeads": "outputs/v22r2-relational-grounding/evaluation-v22r2a/heads.npz",
+  "outputDir": "outputs/v23-probabilistic-support",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsNowExposed": true,
+    "supportInterfaceOnly": true,
+    "queryGrounding": "oracle_primary_hard_v22r2a_reported_as_external_ceiling",
+    "finalClaimPermitted": false
+  },
+  "interface": {
+    "atomScore": "binary_logistic_sigmoid",
+    "truthScore": "normalized_one_vs_rest_sigmoid",
+    "assignmentEnumeration": "exact_murty_k_best_one_to_one",
+    "truthEnumeration": "exact_independent_k_best_vectors",
+    "jointGraphScore": "sum_log_atom_compatibility_plus_sum_log_truth_probability",
+    "jointGraphDeduplication": true,
+    "jointGraphNormalization": "softmax_over_retained_top_b",
+    "programPrior": "uniform_over_v22_behavioral_hypotheses",
+    "supportLikelihood": "sum_retained_graph_probability_when_observed_transition_is_possible",
+    "programPosterior": "normalized_product_of_trace_likelihoods",
+    "querySemantics": "union_over_credible_programs_with_oracle_query_graph",
+    "emptyPosteriorPolicy": "complete_outcome_vocabulary",
+    "maximumUnknownAtomsPerProposal": 4
+  },
+  "branchBudgets": [1, 4, 16, 64],
+  "credibleProgramMasses": [0.5, 0.8, 0.95, 1.0],
+  "registeredReference": {
+    "branchBudget": 64,
+    "credibleProgramMass": 0.95
+  },
+  "metrics": [
+    "target_nonzero_posterior_retention",
+    "target_credible_set_retention",
+    "empty_posterior_rate",
+    "credible_program_count",
+    "transition_set_exact_match",
+    "complete_episodes",
+    "mean_predicted_outcomes",
+    "mean_excess_outcomes",
+    "missing_target_outcome_rate",
+    "proposal_probability_concentration",
+    "runtime_seconds"
+  ],
+  "gates": {
+    "referenceMinimumTargetNonzeroRetention": 0.75,
+    "referenceMinimumTargetCredibleRetention": 0.75,
+    "referenceMaximumEmptyPosteriorRate": 0.1,
+    "referenceMinimumTransitionSetExact": 0.75,
+    "referenceMaximumMeanExcessOutcomes": 0.25,
+    "referenceMaximumMissingTargetOutcomeRate": 0.05
+  },
+  "limits": {
+    "newModelForwardPasses": 0,
+    "newFeatureExtractions": 0,
+    "newLinearFits": 0,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "probabilisticReplayRuns": 1,
+    "finalSuiteConstructions": 0
+  }
+}

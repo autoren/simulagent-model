@@ -1,0 +1,72 @@
+{
+  "config_path": "configs/v14-4b-baseline.json",
+  "config_sha256": "9667144c99331b32ba80d66e88cc905a98162044db812c160bae282bbcd53566",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "experiment": "v14_locked_operator_supported_4b_token_mean_baseline",
+  "gates": {
+    "minimumEveryTransferFoldAccuracy": 0.7,
+    "minimumEveryTransferSurfaceAccuracy": 0.65
+  },
+  "head": {
+    "cValue": 1.0,
+    "classWeight": "balanced",
+    "maxIterations": 3000,
+    "name": "hypothesis_mean_linear",
+    "solver": "lbfgs"
+  },
+  "implementation": {
+    "python/evaluate_v12_joint_readout.py": "0aa847977e06fd2930ebc3e2638499df3958d3aa12f9626f25a84c5770f0cb55",
+    "python/evaluate_v14_4b_baseline.py": "17a92bf71af6ae6ce0be4ba3231330acb43f61f0b591ef990d9e374bfbb0af3a",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/extract_v13_token_local_mlx.py": "95ac80c7443de9bb2966850639f9fbe4056f37624a639197a3cdaa2affa41ecb",
+    "python/extract_v14_4b_token_mean_mlx.py": "a9c0272904d5ec4d4f4a1149e77b9bef701d455b353b9d6f691c72614fa16f6a",
+    "python/test_v14_4b_baseline.py": "9db8534ad93908d3a20c76dc62499317e4a800a148717069b9da2590e53a45ed",
+    "python/v14_protocol.py": "6d58e1586d82035dc27a2b5a40e932c37f6012e16769815568b87e474810b3a6"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "alternate_representations_permitted": 0,
+    "final_mechanic_evaluations_permitted": 0,
+    "frozen_4b_extractions_permitted": 1,
+    "hyperparameter_searches_permitted": 0,
+    "linear_fits_permitted": 30,
+    "unique_nli_prompts_permitted": 1512
+  },
+  "lock_payload_sha256": "7f83b61a019c7c48bc06ce374ffc7aec189e0c0d5483e0af727a55e0a1f46152",
+  "max_sequence_length": 512,
+  "model": {
+    "config_sha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+    "extraction_layer": 8,
+    "hidden_size": 2560,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "model_key": "qwen35_4b",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "total_layers": 32
+  },
+  "preregistration": {
+    "path": "docs/v14-4b-baseline-plan.md",
+    "sha256": "d5673583b353dd9e52ff114fd4b1b79d5a28cafe00bed4a069166808eabfbe52"
+  },
+  "representation": "hypothesis_mean_signed_difference",
+  "schema_version": 14,
+  "seed": 0,
+  "source": {
+    "dataset_sha256": "be110b757b31416b84386f604828996d2121d07214d7401ffb3ef68c9ce5dfa8",
+    "grounding_lock": "configs/v14-grounding-lock.json",
+    "grounding_lock_sha256": "c472351dfbc5e7d1e0af34093a7ee4c0e877a0cbfbc46f677d44d2469a15c167",
+    "manifest": "data/v14/manifest.json",
+    "manifest_sha256": "c900bcc55b7adbbc914b138e9895f4a9ba5024cea648e7592c99bcfecc2794ca",
+    "prompt_overlap_audit": "outputs/v14-pre-model/local-prompt-overlap-audit.json",
+    "prompt_overlap_audit_sha256": "d3e1d53d700548272264c21d04228795bc2ca3b1950399fd6b591d021000d243",
+    "shortcut_audit": "outputs/v14-pre-model/shortcut-audit.json",
+    "shortcut_audit_sha256": "6bc57cee4e2c8a3f424b8106a160d285a31e42e2b0e7db159a329a8cf2350177"
+  }
+}

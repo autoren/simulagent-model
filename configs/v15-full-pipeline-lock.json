@@ -1,0 +1,80 @@
+{
+  "c_value": 1.0,
+  "config_path": "configs/v15-full-pipeline.json",
+  "config_sha256": "0ff82a4dda7219bb7b46050b8c8b781f4c29998523c45343071542029d2ea631",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "experiment": "v15_locked_operator_supported_frozen_full_pipeline",
+  "gates": {
+    "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+    "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+    "minimumEveryFoldCompleteInterventionGroupAccuracy": 0.5,
+    "minimumEveryFoldNliPairConsistency": 0.7,
+    "minimumEveryFoldOraclePolarityAccuracy": 0.7,
+    "minimumEveryFoldSpanAccuracy": 0.65,
+    "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+    "minimumEveryFoldTemporalAccuracy": 0.7,
+    "minimumEverySurfaceAllowedValuesAccuracy": 0.6,
+    "minimumEverySurfaceNliPairConsistency": 0.65,
+    "minimumEverySurfaceOraclePolarityAccuracy": 0.65,
+    "minimumEverySurfaceSpanAccuracy": 0.6,
+    "minimumEverySurfaceSymbolicBalancedAccuracy": 0.6,
+    "minimumEverySurfaceTemporalAccuracy": 0.65
+  },
+  "implementation": {
+    "python/binary_metrics.py": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6",
+    "python/evaluate_v10_frozen.py": "ca1fc997ba72999632a4352da6244d73c08746816e1598091480f5e3633a9808",
+    "python/evaluate_v15_full_pipeline.py": "0dd5e77a1d88c3644e5cae501f19b6c47d1e4aa0a428b50abde1e376f426c004",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/extract_v13_token_local_mlx.py": "95ac80c7443de9bb2966850639f9fbe4056f37624a639197a3cdaa2affa41ecb",
+    "python/extract_v15_full_features_mlx.py": "8d151606e25ca9abb413184677900d203d87779c5c490c0b792cbba315fe7055",
+    "python/test_v15_full_pipeline.py": "ab21d9b41b252c0eeb4ccd9a91cb55788e9072c08031e2fb923a29502d21a3f9",
+    "python/v14_protocol.py": "6d58e1586d82035dc27a2b5a40e932c37f6012e16769815568b87e474810b3a6",
+    "python/v9_symbolic.py": "252041deaa4eaf0c2fd0702cc502688af13a6feb16e8f52d1cf5f422da440acb"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "alternate_representations_permitted": 0,
+    "final_mechanic_evaluations_permitted": 0,
+    "linear_fold_evaluations_permitted": 30,
+    "new_model_forward_passes_permitted": 13554,
+    "reused_nli_features_permitted": 1512
+  },
+  "lock_payload_sha256": "d33ea0051f2b2cb4b764ab399c4c61f6cab963e40086e788ca15d7a37aea0ada",
+  "max_sequence_length": 512,
+  "model": {
+    "config_sha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+    "extraction_layer": 8,
+    "hidden_size": 2560,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "model_key": "qwen35_4b",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "total_layers": 32
+  },
+  "preregistration": {
+    "path": "docs/v15-full-pipeline-plan.md",
+    "sha256": "bf7c97ed955f90417a58ec76927f7fe627bce2970420436b8cacccedd1ba434d"
+  },
+  "schema_version": 15,
+  "seed": 0,
+  "source": {
+    "dataset_sha256": "be110b757b31416b84386f604828996d2121d07214d7401ffb3ef68c9ce5dfa8",
+    "grounding_lock": "configs/v14-grounding-lock.json",
+    "grounding_lock_sha256": "c472351dfbc5e7d1e0af34093a7ee4c0e877a0cbfbc46f677d44d2469a15c167",
+    "manifest": "data/v14/manifest.json",
+    "manifest_sha256": "c900bcc55b7adbbc914b138e9895f4a9ba5024cea648e7592c99bcfecc2794ca",
+    "v14_feature_artifact": "outputs/v14-4b-baseline/features/v14-4b-token-mean-features.npz",
+    "v14_feature_artifact_sha256": "42c2d057b869566507d76c70672fbffa66e3b5e04a40495e8fc5e714b77d56e5",
+    "v14_model_lock": "configs/v14-4b-baseline-lock.json",
+    "v14_model_lock_sha256": "f37c28c2a60c90d3864e52a3a94f1c43746a6ceb9d602abed8ddedbbf195d950",
+    "v14_model_result": "outputs/v14-4b-baseline/evaluation/result.json",
+    "v14_model_result_sha256": "75ea1dad99948c787c40c1f06bc0846b2ee86b9526421d3be5bd5d6e7ca4e16f"
+  }
+}

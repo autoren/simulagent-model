@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 21,
+  "experiment": "v21_sealed_population_multimechanic_final",
+  "episodes": 40,
+  "constructionFamilies": {
+    "primitive_one_bit": {
+      "episodes": 8,
+      "outcomeBits": 1,
+      "injectiveOnRelevantProjection": true
+    },
+    "composed_one_bit": {
+      "episodes": 12,
+      "outcomeBits": 1,
+      "injectiveOnRelevantProjection": false
+    },
+    "factorized_two_bit": {
+      "episodes": 12,
+      "outcomeBits": 2,
+      "injectiveOnRelevantProjection": true
+    },
+    "nested_two_bit": {
+      "episodes": 8,
+      "outcomeBits": 2,
+      "injectiveOnRelevantProjection": false
+    }
+  },
+  "seedPolicy": {
+    "kind": "delayed_os_csprng_after_execution_lock",
+    "entropyBits": 256,
+    "drawsPermitted": 1,
+    "testSeedsAreNeverEligible": true
+  },
+  "views": {
+    "supported": "primary",
+    "novel_ontology": "non_gating_diagnostic"
+  },
+  "language": {
+    "supportedConceptSource": "v15_registered_canonical_concepts",
+    "surfaceFamilies": [
+      "direct_assertion",
+      "present_confirmation",
+      "current_observation",
+      "explicit_negation",
+      "denied_claim",
+      "scoped_rejection",
+      "contrastive_correction",
+      "contrastive_verification",
+      "contrastive_resolution"
+    ],
+    "semanticOperators": [
+      "affirmative_gold",
+      "negated_opposite",
+      "contrastive_both"
+    ],
+    "unresolvedModes": ["unknown", "stale", "conflicting"],
+    "surfaceAssignment": "deterministic_from_semantic_grounding_not_mechanic_or_result"
+  },
+  "systems": {
+    "hard": {
+      "role": "primary_confirmatory",
+      "source": "v19_frozen_grounding_and_exact_version_space"
+    },
+    "probabilistic": {
+      "role": "separately_preregistered_challenger",
+      "eligibility": "v20_supported_preservation_passed"
+    }
+  },
+  "primaryMetrics": {
+    "unit": "mechanic",
+    "mechanicMacroTransitionSetExact": true,
+    "completeMechanics": true,
+    "targetRetention": true,
+    "emptyVersionRate": true,
+    "worstFamily": true,
+    "exactCompleteMechanicInterval": true
+  },
+  "gates": {
+    "hardSupported": {
+      "minimumMechanicMacroTransitionSetExact": 0.95,
+      "minimumCompleteMechanics": 38,
+      "minimumCompletePerFamily": {
+        "primitive_one_bit": 7,
+        "composed_one_bit": 11,
+        "factorized_two_bit": 11,
+        "nested_two_bit": 7
+      },
+      "minimumTargetRetention": 0.95,
+      "maximumEmptyVersionRate": 0.05,
+      "minimumOracleCeiling": 1.0
+    },
+    "probabilisticSupported": {
+      "minimumMechanicMacroTransitionSetExact": 0.95,
+      "minimumCompleteMechanics": 38,
+      "minimumTargetRetention": 0.95,
+      "maximumEmptyPosteriorRate": 0.05,
+      "maximumMeanExcessOutcomesPerQuery": 0.1
+    }
+  },
+  "limits": {
+    "designLocksPermitted": 1,
+    "executionLocksPermitted": 1,
+    "finalSuiteConstructionsPermitted": 1,
+    "seedDrawsPermitted": 1,
+    "featureExtractionsPermitted": 1,
+    "finalEvaluationsPermitted": 1,
+    "replaysPermitted": 1,
+    "adapterTrainingRunsPermitted": 0,
+    "newLinearFitsPermitted": 0,
+    "hyperparameterSearchesPermitted": 0,
+    "retriesPermitted": 0,
+    "maximumNewModelForwardPasses": 5200
+  }
+}

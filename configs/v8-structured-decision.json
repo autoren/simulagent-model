@@ -1,0 +1,12 @@
+{
+  "decisionRule": "any_row_sensitive_is_unique_top_status",
+  "score": "maximum_row_sensitive_logit_minus_best_nonsensitive_logit",
+  "threshold": 0.0,
+  "gates": {
+    "minimumEveryFoldSurfaceBalancedAccuracy": 0.65,
+    "minimumMeanFoldSurfaceBalancedAccuracy": 0.75,
+    "minimumEveryFoldSurfacePairDirection": 0.85,
+    "minimumEveryFoldSurfaceStatusMacroF1": 0.65,
+    "minimumEveryFoldSurfaceDecisiveDeterminantAccuracy": 0.75
+  }
+}

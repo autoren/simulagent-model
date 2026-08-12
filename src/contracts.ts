@@ -49,6 +49,78 @@ export interface DatasetV4Config {
   maximumMechanicShareGap: number;
 }
 
+export type V5ChallengeMechanic = 'relockshort' | 'powertrip';
+export type V5EvidenceVariant =
+  | 'forced'
+  | 'announced'
+  | 'announced-upstream'
+  | 'announced-consequence'
+  | 'announced-procedure'
+  | 'unobservable'
+  | 'mixed';
+export type V5SurfaceVariant = 'canonical' | 'entity_renamed' | 'paraphrased';
+
+export interface DatasetV5ChallengeConfig {
+  outputDir: string;
+  sourceDevelopmentDir: string;
+  frozenProbeLock: string;
+  scenarioSeeds: number[];
+  mechanics: V5ChallengeMechanic[];
+  evidenceVariants: Exclude<V5EvidenceVariant, 'mixed'>[];
+  surfaceVariants: V5SurfaceVariant[];
+  maxStatesPerScenario: number;
+  maxDepth: number;
+  evaluationGates: {
+    minimumCanonicalBalancedAccuracy: number;
+    minimumPerMechanicBalancedAccuracy: number;
+    minimumSurfaceBalancedAccuracy: number;
+    minimumSurfacePredictionAgreement: number;
+    minimumEvidenceDirectionalAccuracy: number;
+  };
+}
+
+export type V6Mechanic = 'relockshort' | 'powertrip' | 'mirrorreject';
+export type V6DevelopmentMechanic = Exclude<V6Mechanic, 'mirrorreject'>;
+export type V6Split = 'train' | 'calibration' | 'mechanic_holdout';
+
+export interface DatasetV6Config {
+  outputDir: string;
+  priorDevelopmentDir: string;
+  priorChallengeRecords: string;
+  developmentSeeds: number[];
+  holdoutSeeds: number[];
+  developmentMechanics: V6DevelopmentMechanic[];
+  holdoutMechanic: 'mirrorreject';
+  evidenceVariants: Exclude<V5EvidenceVariant, 'mixed'>[];
+  surfaceVariants: V5SurfaceVariant[];
+  maxStatesPerScenario: number;
+  maxDepth: number;
+  calibrationRatio: number;
+  stratificationRestarts: number;
+  minimumEvidenceInterventionGroups: number;
+  maximumAmbiguityRateGap: number;
+  protocol: {
+    model: string;
+    feature: 'layer_06_mean';
+    cValue: number;
+    seed: number;
+    maxSeqLength: number;
+    bootstrapSamples: number;
+    bootstrapSeed: number;
+    referenceV5ChallengeBalancedAccuracy: number;
+    gates: {
+      minimumCalibrationCanonicalBalancedAccuracy: number;
+      minimumHoldoutCanonicalBalancedAccuracy: number;
+      minimumHoldoutBootstrapLowerBound: number;
+      minimumSurfaceBalancedAccuracy: number;
+      minimumSurfacePredictionAgreement: number;
+      minimumCompleteTripletAccuracy: number;
+      minimumAbsoluteImprovementOverV5: number;
+      minimumEvidenceDirectionalAccuracy: number;
+    };
+  };
+}
+
 export interface ActionDescriptor {
   key: string;
   label: string;
@@ -186,6 +258,233 @@ export interface AgentIdentifiabilityRecordV4
   schema_version: 4;
   split: V4DevelopmentSplit;
   source_split: DatasetSplit;
+}
+
+export interface V5ChallengeRecord {
+  id: string;
+  schema_version: 5;
+  split: 'challenge';
+  split_group: string;
+  base_record_id: string;
+  base_context_group: string;
+  surface_pair_id: string;
+  surface_variant: V5SurfaceVariant;
+  evidence_pair_id: string | null;
+  evidence_variant: V5EvidenceVariant;
+  mechanic: V5ChallengeMechanic;
+  scenario_seeds: number[];
+  source_scenario_ids: string[];
+  agent_input: AgentEpistemicInput;
+  target: AgentEpistemicTarget;
+}
+
+export interface V6IdentifiabilityTarget {
+  ambiguous: boolean;
+  invariance: 'same_label_across_surfaces';
+}
+
+export interface V6IdentifiabilityRecord {
+  id: string;
+  schema_version: 6;
+  split: V6Split;
+  split_group: string;
+  base_record_id: string;
+  base_context_group: string;
+  surface_pair_id: string;
+  surface_variant: V5SurfaceVariant;
+  invariance_group_id: string;
+  evidence_intervention_id: string | null;
+  evidence_variant: V5EvidenceVariant;
+  mechanic: V6Mechanic;
+  scenario_seeds: number[];
+  source_scenario_ids: string[];
+  agent_input: AgentEpistemicInput;
+  target: V6IdentifiabilityTarget;
+}
+
+export type V7DevelopmentMechanic = 'relockshort' | 'powertrip';
+export type V7Mechanic = V7DevelopmentMechanic | 'tonedrift';
+export type V7Split = 'train' | 'calibration' | 'untouched_mechanic';
+
+export interface DatasetV7Config {
+  outputDir: string;
+  developmentSeeds: number[];
+  holdoutSeeds: number[];
+  developmentMechanics: V7DevelopmentMechanic[];
+  holdoutMechanic: 'tonedrift';
+  evidenceVariants: Exclude<V5EvidenceVariant, 'mixed'>[];
+  surfaceVariants: V5SurfaceVariant[];
+  maxStatesPerScenario: number;
+  maxDepth: number;
+  calibrationRatio: number;
+  stratificationRestarts: number;
+  maximumPairsPerConditionalStratum: number;
+  minimumLabelChangingDevelopmentGroups: number;
+  maximumConditionalLabelGap: number;
+  shortcutGates: {
+    maximumMetadataBalancedAccuracy: number;
+    maximumEvidenceTextBalancedAccuracy: number;
+    maximumEvidenceTextAuc: number;
+  };
+  protocol: {
+    model: string;
+    feature: 'layer_06_mean';
+    cValue: number;
+    seed: number;
+    maxSeqLength: number;
+    bootstrapSamples: number;
+    bootstrapSeed: number;
+    gates: {
+      minimumCalibrationCanonicalBalancedAccuracy: number;
+      minimumHoldoutCanonicalBalancedAccuracy: number;
+      minimumHoldoutBootstrapLowerBound: number;
+      minimumSurfaceBalancedAccuracy: number;
+      minimumSurfacePredictionAgreement: number;
+      minimumCompleteTripletAccuracy: number;
+      minimumEvidenceDirectionalAccuracy: number;
+      minimumPairedScoreDirectionalAccuracy: number;
+      minimumWorstStratumBalancedAccuracy: number;
+    };
+  };
+}
+
+export interface V7IdentifiabilityTarget {
+  ambiguous: boolean;
+  invariance: 'same_label_across_surfaces';
+}
+
+export interface V7IdentifiabilityRecord {
+  id: string;
+  schema_version: 7;
+  split: V7Split;
+  split_group: string;
+  base_record_id: string;
+  base_context_group: string;
+  surface_pair_id: string;
+  surface_variant: V5SurfaceVariant;
+  invariance_group_id: string;
+  evidence_intervention_id: string;
+  evidence_intervention_kind: 'causal_rule_invariance' | 'oracle_label_change';
+  evidence_variant: Exclude<V5EvidenceVariant, 'mixed'> | 'mixed';
+  mechanic: V7Mechanic;
+  action_template: string;
+  scenario_seeds: number[];
+  source_scenario_ids: string[];
+  agent_input: AgentEpistemicInput;
+  target: V7IdentifiabilityTarget;
+}
+
+export type V8Mechanic =
+  | 'hatch_traversal'
+  | 'generator_tuning'
+  | 'beacon_calibration'
+  | 'mirror_power_trip'
+  | 'mirror_rejection'
+  | 'pressure_hatch_relock';
+export type V8Split = 'train' | 'calibration';
+export type V8SurfaceVariant = 'canonical' | 'entity_renamed' | 'paraphrased';
+export type V8EvidenceState = 'confirmed' | 'unresolved';
+export type V8DeterminantStatus =
+  | 'RESOLVED_TRUE'
+  | 'RESOLVED_FALSE'
+  | 'UNRESOLVED_OUTCOME_SENSITIVE'
+  | 'UNRESOLVED_OUTCOME_INVARIANT'
+  | 'IRRELEVANT';
+
+export interface V8ActionDependencySchema {
+  candidate_action: string;
+  transition_determinants: Array<{
+    id: string;
+    label: string;
+  }>;
+  transition_cases: Array<{
+    values: Array<'active' | 'inactive'>;
+    transition_code: string;
+  }>;
+  rule: 'Only the listed determinant roles may change the transition for this action.';
+}
+
+export interface V8EvidenceFact {
+  id: string;
+  role: string;
+  evidence_state: V8EvidenceState;
+  value: 'active' | 'inactive' | 'hidden';
+}
+
+export interface V8StructuredInput extends Omit<AgentEpistemicInput, 'task'> {
+  task: 'classify_transition_determinants';
+  action_dependency_schema: V8ActionDependencySchema;
+  evidence_ledger: V8EvidenceFact[];
+  output_instruction: string;
+  format_padding: string;
+}
+
+export interface V8DeterminantTarget {
+  id: string;
+  status: V8DeterminantStatus;
+}
+
+export interface V8StructuredRecord {
+  id: string;
+  schema_version: 8;
+  split: V8Split;
+  split_group: string;
+  mechanic: V8Mechanic;
+  action_template: string;
+  intervention_group_id: string;
+  intervention_kind: 'oracle_label_flip' | 'same_label_causal_control';
+  intervention_member: 'relevant_unresolved' | 'relevant_resolved';
+  primary_determinant_id: string;
+  primary_resolved_value: boolean;
+  surface_group_id: string;
+  surface_variant: V8SurfaceVariant;
+  replica: number;
+  source_scenario_id: string;
+  agent_input: V8StructuredInput;
+  target: {
+    ambiguous: boolean;
+    possible_transition_count: number;
+    determinant_ledger: V8DeterminantTarget[];
+    decisive_unresolved_determinants: string[];
+    invariance: 'same_target_across_surfaces';
+  };
+  oracle: {
+    actual_assignment: Record<string, boolean>;
+    compatible_assignments: number;
+    possible_transition_sha256: string[];
+  };
+}
+
+export interface DatasetV8Config {
+  outputDir: string;
+  mechanics: V8Mechanic[];
+  surfaceVariants: V8SurfaceVariant[];
+  replicasPerAssignment: number;
+  calibrationModulo: number;
+  simulatorSeeds: Record<V8Mechanic, number>;
+  shortcutGates: {
+    maximumMetadataWorstFoldBalancedAccuracy: number;
+    maximumUnigramWorstFoldBalancedAccuracy: number;
+    maximumCharacterNgramWorstFoldBalancedAccuracy: number;
+    maximumLengthWorstFoldBalancedAccuracy: number;
+    maximumUnigramWorstFoldAuc: number;
+    maximumCharacterNgramWorstFoldAuc: number;
+    maximumLengthWorstFoldAuc: number;
+  };
+  protocol: {
+    model: string;
+    feature: 'layer_06_mean';
+    cValue: number;
+    seed: number;
+    maxSeqLength: number;
+    bootstrapSamples: number;
+    bootstrapSeed: number;
+    gates: {
+      minimumEveryFoldPairDifferenceAccuracy: number;
+      minimumMeanPairDifferenceAccuracy: number;
+      minimumEveryFoldPointwiseScoreDirection: number;
+    };
+  };
 }
 
 export interface PrivilegedTransitionRecordV2 {

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 24,
+  "experiment": "v24_exposed_candidate_conditioned_relational_cross_encoder",
+  "seed": 2401,
+  "sourceV22r2Lock": "configs/v22r2-relational-grounding-lock.json",
+  "sourceV22r2aLock": "configs/v22r2a-evaluation-amendment-lock.json",
+  "sourceV22r2aResult": "outputs/v22r2-relational-grounding/evaluation-v22r2a/result.json",
+  "sourceV22r2aPostAudit": "outputs/v22r2-relational-grounding/post-result-audit.json",
+  "sourceV22r2aDiagnostic": "outputs/v22r2-relational-grounding/error-conditioning.json",
+  "sourceV23Result": "outputs/v23-probabilistic-support/result.json",
+  "sourceV23PostAudit": "outputs/v23-probabilistic-support/post-result-audit.json",
+  "sourceFeatures": "outputs/v22r2-relational-grounding/features/metadata.json",
+  "sourceHeads": "outputs/v22r2-relational-grounding/evaluation-v22r2a/heads.npz",
+  "sourcePredictions": "outputs/v22r2-relational-grounding/evaluation-v22r2a/grounding-predictions.jsonl",
+  "outputDir": "data/v24-cross-encoder-proposals",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsExposed": true,
+    "freshBenchmarkRecordsPermitted": 0,
+    "ontologyAndDslUnchanged": true
+  },
+  "proposal": {
+    "perEvidenceRawTopK": 3,
+    "includeV22r2aGlobalHardAssignment": true,
+    "deduplicateEdges": true,
+    "minimumEdgesPerEvidence": 3,
+    "maximumEdgesPerEvidence": 4,
+    "guaranteedPerfectMatching": "included_global_hard_assignment"
+  },
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "extractionLayer": 8,
+    "pooling": "candidate_fact_token_mean_float32",
+    "maxSequenceLength": 512,
+    "systemPrompt": "Compare the evidence statement with the candidate fact. Preserve exact entity identity, directed argument order, and whether the candidate is true, false, or unresolved. Do not infer action outcomes and do not generate an answer."
+  },
+  "heads": {
+    "match": {
+      "type": "logistic_regression",
+      "C": 1.0,
+      "classWeight": "balanced",
+      "solver": "liblinear",
+      "maximumIterations": 2000
+    },
+    "truth": {
+      "type": "one_vs_rest_logistic_regression",
+      "baseEstimator": "logistic_regression",
+      "classes": ["false", "true", "unknown"],
+      "C": 1.0,
+      "classWeight": "balanced",
+      "solver": "liblinear",
+      "maximumIterations": 2000,
+      "fitRows": "positive_candidate_pairs_only"
+    },
+    "fitSplit": "grounding_fit",
+    "calibrationUse": "report_only_no_selection",
+    "assignment": "maximum_weight_one_to_one_over_proposed_edges"
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "gates": {
+    "preExtraction": {
+      "minimumEvaluationSupportGoldProposalCoverage": 0.95,
+      "minimumEvaluationQueryGoldProposalCoverage": 0.95,
+      "maximumExactFitEvaluationPromptOverlap": 0,
+      "maximumNewModelForwardPasses": 20000
+    },
+    "development": {
+      "minimumFitAtomAssignmentAccuracy": 0.95,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+      "minimumEvaluationRelationOrderAccuracy": 0.9,
+      "minimumEvaluationTruthAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.7,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumOracleSupportFrozenQueryExact": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumOracleOracleExact": 1.0
+    }
+  },
+  "limits": {
+    "featureExtractionAttempts": 1,
+    "matchHeadFits": 1,
+    "truthHeadFits": 1,
+    "integrationEvaluations": 1,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0
+  }
+}

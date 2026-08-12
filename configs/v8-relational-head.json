@@ -1,0 +1,24 @@
+{
+  "model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "layer": 6,
+  "pooling": "mean",
+  "projectionWidth": 32,
+  "trainingSteps": 300,
+  "learningRate": 0.003,
+  "seed": 0,
+  "lossWeights": {
+    "determinant": 0.5,
+    "rowSensitivity": 1.0,
+    "pointwise": 1.0,
+    "pairwise": 2.0,
+    "surface": 0.1
+  },
+  "decisionRule": "maximum_row_sensitivity_logit_above_zero",
+  "gates": {
+    "minimumEveryFoldSurfaceBalancedAccuracy": 0.65,
+    "minimumMeanFoldSurfaceBalancedAccuracy": 0.75,
+    "minimumEveryFoldSurfacePairDirection": 0.85,
+    "minimumEveryFoldSurfaceStatusMacroF1": 0.65,
+    "minimumEveryFoldSurfaceDecisiveDeterminantAccuracy": 0.75
+  }
+}

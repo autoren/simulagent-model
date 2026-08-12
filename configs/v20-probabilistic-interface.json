@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 20,
+  "experiment": "v20_development_calibrated_grounding_program_posterior",
+  "sourceV19Lock": "configs/v19-frozen-integration-lock.json",
+  "sourceV19Features": "outputs/v19-frozen-integration/features/metadata.json",
+  "sourceV19Result": "outputs/v19-frozen-integration/evaluation/result.json",
+  "sourceV19PostAudit": "outputs/v19-frozen-integration/post-result-audit.json",
+  "sourceV19Correction": "outputs/v19-frozen-integration/error-conditioning-replay.json",
+  "sourceDeploymentHeads": "outputs/v17-final/evaluation/deployment-heads.npz",
+  "calibrationSplit": "calibration",
+  "evaluationSplit": "development",
+  "views": {
+    "supported": "primary_preservation",
+    "novel_ontology": "diagnostic_repair"
+  },
+  "interface": {
+    "uncertainComponent": "current_polarity_only",
+    "probabilityMap": "binary_logistic_sigmoid",
+    "calibration": "view_specific_unique_selected_prompt_split_conformal_lac",
+    "alpha": 0.1,
+    "emptyLabelSetPolicy": "include_map_label",
+    "programPrior": "uniform_over_behavioral_hypotheses",
+    "supportLikelihood": "sum_assignment_probability_for_observed_transition",
+    "credibleProgramMass": 0.95,
+    "querySemantics": "union_over_credible_programs_and_all_conformal_or_semantically_unresolved_assignments",
+    "emptyPosteriorPolicy": "complete_outcome_vocabulary_and_not_identifiable",
+    "temporalPolicy": "unchanged_hard_frozen_head",
+    "spanPolicy": "unchanged_hard_frozen_head"
+  },
+  "conditions": [
+    "hard_support_hard_query",
+    "probabilistic_support_oracle_query",
+    "oracle_support_probabilistic_query",
+    "probabilistic_support_probabilistic_query"
+  ],
+  "gates": {
+    "supportedPreservation": {
+      "minimumEpisodeMacroTransitionSetExact": 1.0,
+      "minimumCompleteEpisodes": 40,
+      "minimumCredibleTargetRetention": 1.0,
+      "maximumEmptyPosteriorRate": 0.0
+    },
+    "novelDiagnosticImprovement": {
+      "minimumEpisodeMacroGainOverHard": 0.0,
+      "minimumCredibleTargetRetentionGainOverHard": 0.0,
+      "maximumEmptyPosteriorRate": 0.225,
+      "maximumMeanExcessOutcomesPerQuery": 0.25
+    }
+  },
+  "limits": {
+    "newModelForwardPassesPermitted": 0,
+    "newFeatureExtractionsPermitted": 0,
+    "newLinearFitsPermitted": 0,
+    "adapterTrainingRunsPermitted": 0,
+    "hyperparameterSearchesPermitted": 0,
+    "developmentEvaluationsPermitted": 1,
+    "finalSuiteRecordsPermitted": 0
+  }
+}

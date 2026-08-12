@@ -1,0 +1,33 @@
+{
+  "sourceV14GroundingLock": "configs/v14-grounding-lock.json",
+  "sourceV14Manifest": "data/v14/manifest.json",
+  "sourceV14ModelLock": "configs/v14-4b-baseline-lock.json",
+  "sourceV14ModelResult": "outputs/v14-4b-baseline/evaluation/result.json",
+  "sourceV14ModelFeatures": "outputs/v14-4b-baseline/features/v14-4b-token-mean-features.npz",
+  "modelKey": "qwen35_4b",
+  "model": "mlx-community/Qwen3.5-4B-4bit",
+  "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "totalLayers": 32,
+  "hiddenSize": 2560,
+  "extractionLayer": 8,
+  "cValue": 1.0,
+  "seed": 0,
+  "maxSequenceLength": 512,
+  "gates": {
+    "minimumEveryFoldSpanAccuracy": 0.65,
+    "minimumEverySurfaceSpanAccuracy": 0.6,
+    "minimumEveryFoldTemporalAccuracy": 0.7,
+    "minimumEverySurfaceTemporalAccuracy": 0.65,
+    "minimumEveryFoldOraclePolarityAccuracy": 0.7,
+    "minimumEverySurfaceOraclePolarityAccuracy": 0.65,
+    "minimumEveryFoldNliPairConsistency": 0.7,
+    "minimumEverySurfaceNliPairConsistency": 0.65,
+    "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+    "minimumEverySurfaceAllowedValuesAccuracy": 0.6,
+    "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+    "minimumEverySurfaceSymbolicBalancedAccuracy": 0.6,
+    "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+    "minimumEveryFoldCompleteInterventionGroupAccuracy": 0.5
+  }
+}

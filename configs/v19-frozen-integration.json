@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 19,
+  "experiment": "v19_frozen_grounding_schema_integration_development",
+  "sourceV18Manifest": "data/v18/manifest.json",
+  "sourceV18Result": "outputs/v18-schema-induction/baselines.json",
+  "sourceV15Lock": "configs/v15-full-pipeline-lock.json",
+  "sourceV15Features": "outputs/v15-full-pipeline/features/metadata.json",
+  "sourceDeploymentHeads": "outputs/v17-final/evaluation/deployment-heads.npz",
+  "outputDir": "data/v19",
+  "views": {
+    "supported": {
+      "role": "primary",
+      "description": "V15-supported concepts, affirmative current evidence, and UNKNOWN_CURRENT wording"
+    },
+    "novel_ontology": {
+      "role": "diagnostic",
+      "description": "Identical latent episodes and operators with V18's fresh determinant concepts"
+    }
+  },
+  "primarySplit": "development",
+  "conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "emptyVersionPolicy": {
+    "reportFailure": true,
+    "possibleTransitionCodes": "complete_outcome_vocabulary",
+    "identifiable": false,
+    "discardSupports": false,
+    "repairGrounding": false,
+    "expandDsl": false
+  },
+  "model": {
+    "modelKey": "qwen35_4b",
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "extractionLayer": 8,
+    "maxSequenceLength": 512
+  },
+  "gates": {
+    "preExtraction": {
+      "requiredCorpusAudit": true,
+      "requiredHeadProvenanceAudit": true,
+      "maximumPromptTokens": 512,
+      "maximumNewModelForwardPasses": 1000,
+      "adapterTrainingRunsPermitted": 0,
+      "newLinearFitsPermitted": 0,
+      "headProvenanceVerificationRefitsPermitted": 3
+    },
+    "integration": {
+      "minimumSupportedEndToEndEpisodeMacroTransitionSetExact": 0.5,
+      "maximumSupportedEmptyVersionSpaceRate": 0.25,
+      "minimumSupportedTargetRetentionAfterAllSupports": 0.75
+    }
+  },
+  "limits": {
+    "featureExtractionsPermitted": 1,
+    "integrationEvaluationsPermitted": 1,
+    "adapterTrainingRunsPermitted": 0,
+    "newLinearFitsPermitted": 0,
+    "hyperparameterSearchesPermitted": 0,
+    "alternateModelsPermitted": 0,
+    "alternateLayersPermitted": 0,
+    "finalMechanicConstructionsPermitted": 0
+  }
+}

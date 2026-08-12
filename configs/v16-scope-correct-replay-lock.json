@@ -1,0 +1,38 @@
+{
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "experiment": "v16_locked_scope_correct_v15_gate_replay",
+  "implementation": {
+    "python/replay_v16_scope_correct_gates.py": "f870ba4289ecb593c09d7549b67b361bf0d2f858b05638b43847d922669184d8",
+    "python/test_v16_scope_correct.py": "795bfe073d2fa7a35e8c4b25a51bacf39501a1e5390d620e7496c1229836bad3",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6"
+  },
+  "limits": {
+    "final_mechanic_evaluations_permitted": 0,
+    "model_fits_permitted": 0,
+    "model_forward_passes_permitted": 0,
+    "prediction_recomputations_permitted": 0,
+    "threshold_changes_permitted": 0
+  },
+  "lock_payload_sha256": "65e580c8767286168ebf7ad2d40279fc6a998ab1e6be4682079340aafd1cb11d",
+  "minimum_complete_group_accuracy": 0.5,
+  "preregistration": {
+    "path": "docs/v16-scope-correct-replay-plan.md",
+    "sha256": "dd803b00e50863993740e4c54e0f252ee8d8428ada5778cabcde88235e4b5963"
+  },
+  "schema_version": 16,
+  "source": {
+    "scope_audit": "outputs/v15-full-pipeline/group-scope-audit.json",
+    "scope_audit_sha256": "50eeae74f1d44a7f0427258cdc4d9bb254ff2fc9695443d29d8d08179f338aef",
+    "v15_lock": "configs/v15-full-pipeline-lock.json",
+    "v15_lock_sha256": "fdcde43b41449833d9e29f51d9dd0dd2ca67405209f4bc4abb42f191d3067a60",
+    "v15_result": "outputs/v15-full-pipeline/evaluation/result.json",
+    "v15_result_sha256": "d45343e235238f97f0797f6056e2c96c6c8cbab33a3930557e1af9e0b7aef67c"
+  }
+}

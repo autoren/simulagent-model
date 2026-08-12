@@ -1,0 +1,70 @@
+{
+  "config": {
+    "failedShortcutAudit": "outputs/v9-pre-model/shortcut-audit.json",
+    "outputDir": "data/v9r2",
+    "protocol": {
+      "cValue": 1.0,
+      "feature": "layer_06_mean",
+      "gates": {
+        "minimumContextSpanAccuracy": 0.7,
+        "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+        "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+        "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+        "minimumEveryFoldTemporalAccuracy": 0.65,
+        "minimumEveryMechanicSpanAccuracy": 0.6,
+        "minimumEveryOperatorSpanAccuracy": 0.6,
+        "minimumEveryTemplateSpanAccuracy": 0.6
+      },
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-0.8B-4bit",
+      "seed": 0
+    },
+    "shortcutGates": {
+      "maximumMetadataMatchBalancedAccuracy": 0.6,
+      "maximumPositionMatchBalancedAccuracy": 0.6
+    },
+    "sourceManifest": "data/v9/manifest.json",
+    "sourceRecords": [
+      "data/v9/records/train.jsonl",
+      "data/v9/records/calibration.jsonl"
+    ]
+  },
+  "config_path": "configs/dataset.v9r2.json",
+  "config_sha256": "9b853326be16c7720b2c9cb4feb1be6e6d0b023a20e06472f28ef22854292218",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "expected_manifest": "data/v9r2/manifest.json",
+  "experiment": "v9r2_locked_grounding_generation_and_audit",
+  "failed_shortcut_audit": "outputs/v9-pre-model/shortcut-audit.json",
+  "failed_shortcut_audit_sha256": "3795b88cce83894b29c7a4db3a8f463e6342068b1fe718b2877728b2dda60422",
+  "implementation": {
+    "python/audit_v9r2_grounding_shortcuts.py": "1b9b86fe0657a8b7346a7af461a92e69ccd8bb1ce30cdda201b9bfbcd411de44",
+    "src/compile-v9r2.ts": "91477d5532b5e2fa144b33e81b0319dfe021b094a6083b6efe664a62b3eb2371",
+    "src/v9r2-grounding.ts": "b88848a71d3fbd7378683e5ecfe552809a26e31adf14186cffa937b0e45c8681",
+    "tests/v9r2-grounding.test.ts": "08f876f12bbdc8dd3bc5d09d174dc013bd1ec17d31dac94070c354235481275d"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "development_corpus_transformations_permitted": 1,
+    "final_mechanic_evaluations_permitted": 0,
+    "model_feature_extractions_permitted": 0,
+    "pre_model_shortcut_audits_permitted": 1
+  },
+  "lock_payload_sha256": "521ed468e88cdfb715fdfff216e674d6a2314e0b4f077e8a0252fa49c09370a9",
+  "preregistration": {
+    "path": "docs/v9r2-experiment-plan.md",
+    "sha256": "16a61a7fb8ff1adb1f3b37b5e7a05c1beb6254a7fb882d4717da055a526d35a5"
+  },
+  "revision": 2,
+  "schema_version": 9,
+  "source_dataset_sha256": "62d328c385fe0f58ea06f0171bef76a1824c188b4dfc75291c386fd638a88903",
+  "source_grounding_lock_sha256": "a052f6b95f844387862ad9a331f2ca3e7273c359f81915b998a33e930b430fba",
+  "source_manifest": "data/v9/manifest.json",
+  "source_manifest_sha256": "6ff9611eee38e4e19125c2986654dd9d098f5477f6aae3b766fd924662cb8e3c"
+}

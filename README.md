@@ -31,6 +31,15 @@ simulator—not a frontier model—supplies every transition label.
   supported mechanic tags, plus full-validation multi-seed checkpoint selection.
 - A V4 binary identifiability track with a context-disjoint calibration fold, calibrated A/B
   logit scoring, token shortcut ablations, score-resolution diagnostics, and preregistered gates.
+- A V5 frozen-representation track with quartile-layer last/mean pooling, true-float32 regularized
+  linear heads, three optimization seeds, context-group bootstrap intervals, and a no-history
+  shortcut diagnostic.
+- A locked V5 challenge track over new short-start relock and held-out power-trip worlds, with
+  entity-renaming/paraphrase triplets, evidence contrasts, hash-locked one-shot evaluation, and
+  preregistered robustness gates.
+- A V6 shortcut-resistant corpus with paired surface supervision, evidence interventions,
+  context-disjoint development, a newly implemented mirror-rejection mechanic holdout, and a
+  hash-locked one-shot transfer decision before LoRA.
 
 ## Prerequisites
 
@@ -60,6 +69,7 @@ npm run dataset:v3
 npm run dataset:validate:v3
 npm run dataset:v4
 npm run dataset:validate:v4
+npm run dataset:v6
 ```
 
 Each generated dataset contains:
@@ -104,6 +114,10 @@ npm run audit:v3
 npm run baselines:v3:outcome-count
 npm run baselines:v4:binary
 npm run diagnostics:v4:binary
+npm run diagnostics:v4:fp32
+npm run probe:v5:0.8b
+npm run challenge:v5:run
+npm run holdout:v6:run
 ```
 
 The legacy v1 full corpus has no scenario-group leakage, but every test agent prompt appears
@@ -201,10 +215,48 @@ frozen seed:
 
 V4 also failed. Selected-seed validation balanced accuracy was 49.15%, 48.96%, and 55.49%, for a
 51.20% mean; both the engineering stability and scientific token-baseline gates failed. The
-selected vocabulary-logit margins contained only two or three unique values, so the next
-experiment is a float32 classification head over frozen hidden representations—not another
-generative-label or larger-model LoRA run. See `docs/v4-results.md`,
+selected vocabulary-logit margins contained only two or three unique values. Direct float32
+projection recovered 153–154 distinct scores but only 51.16% mean balanced accuracy and 0.540 AUC,
+so precision was not the main failure. See `docs/v4-results.md`,
 `docs/v4-binary-results.md`, and `docs/v4-score-diagnostics.md`.
+
+V5 bypasses the vocabulary head with a regularized discriminative probe over frozen hidden
+states. On Qwen3.5-0.8B, all three true-float32 fits select layer 6 mean pooling. Full input reaches
+96.15% validation balanced accuracy and 0.9998 AUC; the fixed no-history diagnostic reaches 91.64%
+and 0.9803. This decisively establishes accessible representational signal, so 4B/9B extraction is
+deferred. It does not establish semantic reasoning: no-history errors are concentrated in three
+of 19 contexts, including two wholly failed contexts. That result triggered the locked,
+shortcut-resistant challenge described below. See `docs/v5-frozen-probe-results.md`.
+
+The locked challenge shows that the apparent V5 success did not transfer. Without retraining or
+recalibration, the canonical probe reaches 49.58% balanced accuracy and 0.457 AUC across 120 new
+base cases from 63 contexts. Power-trip is a constant-identifiable 50.00%; short-start relock is
+52.28%. Entity-renamed and paraphrased inputs remain near chance. Six of eight preregistered gates
+fail, although two narrow relock evidence contrasts retain correct score direction. This locates
+the 96.15% development result in dataset/template correlations rather than a demonstrated general
+epistemic boundary. See `docs/v5-challenge-plan.md` and `docs/v5-challenge-results.md`.
+
+V6 retrains only the fixed 0.8B layer-6 mean linear head on 143 base records from short-start
+relock and power-trip, with canonical/entity-renamed/paraphrased triplets and evidence
+interventions. A newly implemented mirror-rejection mechanic is reserved for one locked
+evaluation. Development calibration reaches 90.32% balanced accuracy, but the untouched mechanic
+reaches only 63.16% (95% context-group interval 51.55%–82.44%) and fails six of ten gates.
+Entity-renamed transfer reaches 69.74%, paraphrased transfer 57.89%, and evidence-directional
+accuracy is 0% across 12 label-changing comparisons. The failure is systematic: announced
+development records are exclusively ambiguous, whereas the corresponding holdout evidence is
+identifiable, so the probe learns an inverted evidence-wording shortcut. LoRA remains a no-go.
+See `docs/v6-experiment-plan.md` and `docs/v6-results.md`.
+
+V7 removes that observable wording shortcut before model access. Its final corpus contains 408
+training, 172 calibration, and 70 untouched base records, always as complete
+canonical/entity-renamed/paraphrased triplets. Conditional label gaps are exactly zero, and both
+metadata-only and evidence-text-only audits score exactly 50% balanced accuracy. The fixed frozen
+probe passes its development gate at 76.16%, after which a genuinely new tone-drift simulator
+mechanic is opened once under a hash lock. Canonical rank ordering transfers (0.807 AUC), but the
+locked threshold predicts 69 of 70 cases as identifiable: balanced accuracy is 48.57%, the grouped
+bootstrap lower bound is 42.86%, and both evidence-direction metrics are 0%. Eight preregistered
+holdout gates fail. The resulting decision is **no-go for LoRA**; no adapter training follows this
+run. See `docs/v7-experiment-plan.md` and `docs/v7-results.md`.
 
 The legacy v1 exact-transition and privileged configs remain available for compatibility work:
 

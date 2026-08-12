@@ -1,0 +1,237 @@
+{
+  "config": "configs/v26-native-truth-decoder.json",
+  "config_payload": {
+    "experiment": "v26_exposed_full_depth_native_truth_decoder",
+    "gates": {
+      "development": {
+        "maximumFrozenSupportEmptyVersionSpace": 0.1,
+        "minimumEvaluationAtomAssignmentAccuracy": 0.95,
+        "minimumEvaluationExactSceneGraph": 0.7,
+        "minimumEvaluationRelationOrderAccuracy": 0.9,
+        "minimumEvaluationTruthAccuracy": 0.9,
+        "minimumFrozenFrozenExact": 0.65,
+        "minimumFrozenSupportOracleQueryExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleExact": 1.0,
+        "minimumOracleSupportFrozenQueryExact": 0.75
+      },
+      "preEvaluation": {
+        "maximumExactFitEvaluationPromptOverlap": 0,
+        "maximumNewModelForwardPasses": 4500,
+        "requiredFixedAssignmentCoverage": 1.0,
+        "requiredSingleTokenLabels": 3
+      }
+    },
+    "inference": {
+      "calibrationUse": "report_only_no_selection",
+      "headFits": 0,
+      "prediction": "argmax_fp32_direct_A_B_C_logit",
+      "thresholdFits": 0
+    },
+    "integrationConditions": [
+      "oracle_support_oracle_query",
+      "frozen_support_oracle_query",
+      "oracle_support_frozen_query",
+      "frozen_support_frozen_query"
+    ],
+    "labels": [
+      {
+        "meaning": "the evidence entails the candidate fact",
+        "token": "A",
+        "truthLabel": "true"
+      },
+      {
+        "meaning": "the evidence contradicts the candidate fact",
+        "token": "B",
+        "truthLabel": "false"
+      },
+      {
+        "meaning": "the evidence leaves the candidate fact unresolved",
+        "token": "C",
+        "truthLabel": "unknown"
+      }
+    ],
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "finalSuiteConstructions": 0,
+      "headFits": 0,
+      "hyperparameterSelections": 0,
+      "integrationEvaluations": 1,
+      "modelForwardPasses": 4437,
+      "nativeDecoderEvaluationAttempts": 1,
+      "thresholdFits": 0
+    },
+    "model": {
+      "hiddenSize": 2560,
+      "maxSequenceLength": 512,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "readoutLayer": 32,
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "score": "fp32_direct_projection_to_dequantized_A_B_C_embedding_rows",
+      "secondaryScore": "bfloat16_native_lm_head_report_only",
+      "systemPrompt": "Classify the evidence relative to the candidate fact. Preserve negation, contrastive clause order, exact entity identity, and directed relation order. Return exactly one uppercase ASCII letter and nothing else. Return A when the evidence entails the candidate fact. Return B when the evidence contradicts the candidate fact. Return C when the evidence leaves the candidate fact unresolved.",
+      "totalLayers": 32
+    },
+    "outputDir": "data/v26-native-truth-decoder",
+    "schemaVersion": 26,
+    "scope": {
+      "allV22r2SplitsExposed": true,
+      "developmentOnly": true,
+      "freshBenchmarkRecordsPermitted": 0,
+      "ontologyAndDslUnchanged": true,
+      "v24CandidateAssignmentsFrozen": true
+    },
+    "sourceV24Predictions": "outputs/v24-cross-encoder/evaluation/grounding-predictions.jsonl",
+    "sourceV25Diagnostic": "outputs/v25-truth-hypotheses/compatibility-geometry.json",
+    "sourceV25Lock": "configs/v25-truth-hypotheses-lock.json",
+    "sourceV25PostAudit": "outputs/v25-truth-hypotheses/post-result-audit.json",
+    "sourceV25Result": "outputs/v25-truth-hypotheses/evaluation/result.json"
+  },
+  "config_sha256": "c8ab639489591a8b2ab3f64999c00d705dc2c2f774d22110521551b2d2f71a0c",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "all_v22r2_splits_exposed": true,
+    "fresh_benchmark_records_created": 0,
+    "head_fits": 0,
+    "hyperparameter_selections": 0,
+    "integration_evaluations": 0,
+    "new_model_forward_passes": 0,
+    "threshold_fits": 0,
+    "v24_assignments_exposed_and_frozen": true
+  },
+  "experiment": "v26_exposed_full_depth_native_truth_decoder",
+  "gates": {
+    "development": {
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.95,
+      "minimumEvaluationExactSceneGraph": 0.7,
+      "minimumEvaluationRelationOrderAccuracy": 0.9,
+      "minimumEvaluationTruthAccuracy": 0.9,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleExact": 1.0,
+      "minimumOracleSupportFrozenQueryExact": 0.75
+    },
+    "preEvaluation": {
+      "maximumExactFitEvaluationPromptOverlap": 0,
+      "maximumNewModelForwardPasses": 4500,
+      "requiredFixedAssignmentCoverage": 1.0,
+      "requiredSingleTokenLabels": 3
+    }
+  },
+  "implementation": {
+    "python/audit_v26_native_decoder.py": "5f51274deb50b189e4a0364470de596faea0f532524437defc83265c512a7673",
+    "python/build_v26_native_decoder.py": "433cb7a0fbb6ed782df234797d30d4c4e3839a753cf95cd47b6adbc399938b6c",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v25_truth_hypotheses.py": "6fa210a98d28d8ca2edd9d3665da1f908c207b160bc34440e3c8650efe2ea902",
+    "python/evaluate_v26_native_decoder_mlx.py": "df589dd73329761a57c7bf65c89dfc4237a989533f5f375362f6a8e278e3bcb6",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/freeze_v26_native_decoder.py": "d7b70e771e14056227a94de64a2c8ce9744f5376e282eec384a3e4ed0382d428",
+    "python/test_v26_native_decoder.py": "f00988ed7e6695b8132957c9e141a475552565bc29762b0b72b68d98715a2657",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v26_native_decoder.py": "a8ba4ee4067a7668f9036e8295b6e23b3c56c27f7903faab26cb259199693dbd"
+  },
+  "inference": {
+    "calibrationUse": "report_only_no_selection",
+    "headFits": 0,
+    "prediction": "argmax_fp32_direct_A_B_C_logit",
+    "thresholdFits": 0
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0,
+    "headFits": 0,
+    "hyperparameterSelections": 0,
+    "integrationEvaluations": 1,
+    "modelForwardPasses": 4437,
+    "nativeDecoderEvaluationAttempts": 1,
+    "thresholdFits": 0
+  },
+  "lock_payload_sha256": "d0b1931e711915c699f88c40e9a77e171a29614d15f71d8bd279deb57aa5824a",
+  "model": {
+    "hiddenSize": 2560,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "readoutLayer": 32,
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "score": "fp32_direct_projection_to_dequantized_A_B_C_embedding_rows",
+    "secondaryScore": "bfloat16_native_lm_head_report_only",
+    "systemPrompt": "Classify the evidence relative to the candidate fact. Preserve negation, contrastive clause order, exact entity identity, and directed relation order. Return exactly one uppercase ASCII letter and nothing else. Return A when the evidence entails the candidate fact. Return B when the evidence contradicts the candidate fact. Return C when the evidence leaves the candidate fact unresolved.",
+    "totalLayers": 32
+  },
+  "pre_evaluation_audit": {
+    "budget": {
+      "planned_model_forwards": 4437,
+      "registered_maximum_model_forwards": 4500
+    },
+    "decision": "authorize_v26_protocol_lock",
+    "errors": [],
+    "experiment": "v26_pre_evaluation_native_decoder_audit",
+    "firewall": {
+      "exact_fit_evaluation_prompt_overlap": 0,
+      "exact_source_agent_inputs": 4437,
+      "forbidden_agent_input_keys": {},
+      "fresh_benchmark_records_created": 0,
+      "new_linear_fits_before_lock": 0,
+      "new_model_forward_passes_before_lock": 0
+    },
+    "fixed_assignment": {
+      "coverage": 1.0,
+      "exact_v24_assignments": 4437
+    },
+    "integrity": {
+      "corpus_sha256": "4818524165d03b46eea423e58180bfa761de99948509988b266b54b04bef00b0",
+      "manifest_source_hashes_verified": 5
+    },
+    "passed": true,
+    "population": {
+      "role_counts": {
+        "query": 3888,
+        "support": 549
+      },
+      "rows": 4437,
+      "scenes": 384,
+      "split_counts": {
+        "grounding_calibration": 726,
+        "grounding_evaluation": 2229,
+        "grounding_fit": 1482
+      }
+    },
+    "schema_version": 26
+  },
+  "preregistration": "docs/v26-native-truth-decoder-plan.md",
+  "preregistration_sha256": "4557b4bfed4e47082f9172ae9fc7d3e789f788f8cefb7182e0436e3a11dcb2ac",
+  "schema_version": 26,
+  "source": {
+    "corpus": "data/v26-native-truth-decoder",
+    "corpus_file_sha256": {
+      "grounding_calibration.jsonl": "317ae6326ad886a5021239601b53cda538aed6afd7af7e839a9fcd378a82c0f3",
+      "grounding_evaluation.jsonl": "cdad8301a17d03f6cea262a811f602f8f482cd0ea49ab62f6d7061c93c0cbc9a",
+      "grounding_fit.jsonl": "6acf27e32859e21af5a04366470df701c027afe7070b50b54c2b16896f82df20",
+      "manifest.json": "ce8cd71a038f1bbefe8c5b556e82aef69d394578f76837ba31efdbe5833e9615"
+    },
+    "corpus_manifest": "data/v26-native-truth-decoder/manifest.json",
+    "corpus_manifest_sha256": "ce8cd71a038f1bbefe8c5b556e82aef69d394578f76837ba31efdbe5833e9615",
+    "corpus_sha256": "4818524165d03b46eea423e58180bfa761de99948509988b266b54b04bef00b0",
+    "pre_evaluation_audit": "outputs/v26-native-truth-decoder/pre-evaluation-audit.json",
+    "pre_evaluation_audit_sha256": "a47106eeb99c4348490dc05e6814eeb60dd2f774d55f32f57ab3b74ca8f9d55f",
+    "v24_predictions": "outputs/v24-cross-encoder/evaluation/grounding-predictions.jsonl",
+    "v24_predictions_sha256": "6674ed1df2aafd3dfde36a59e6b5695533cf3f962bb04afe7c3901af56077f29",
+    "v25_diagnostic": "outputs/v25-truth-hypotheses/compatibility-geometry.json",
+    "v25_diagnostic_sha256": "8b81a9c21e933f30748eac52b5c26d98c2f0f714e559e5f5845edeece4c9bfef",
+    "v25_lock": "configs/v25-truth-hypotheses-lock.json",
+    "v25_lock_sha256": "bf1ee3db3d8f97080bbbc98850b3d4a729080d4cb88fddb688bd786c38065a28",
+    "v25_post_audit": "outputs/v25-truth-hypotheses/post-result-audit.json",
+    "v25_post_audit_sha256": "81dc77cbb01b3404d1697f3c244463582f766004b17ffba41898d45801ebd2a5",
+    "v25_result": "outputs/v25-truth-hypotheses/evaluation/result.json",
+    "v25_result_sha256": "3606e4e8827abdfa3d905ca33423a6464ff11ba2a1d687579a91b22d6e936869"
+  }
+}

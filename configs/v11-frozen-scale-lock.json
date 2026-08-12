@@ -1,0 +1,204 @@
+{
+  "config_path": "configs/v11-frozen-scale.json",
+  "config_sha256": "fb418a57ee00e28e6450232c47d9d53714a44b9e3b494faacc705a500055ed15",
+  "data_access": {
+    "final_v9_mechanic_records_read": 0,
+    "prior_holdout_records_read": 0,
+    "untouched_v8_mechanic_records_read": 0,
+    "v3_test_records_read": 0,
+    "v7_model_results_read": 0,
+    "v7_tone_drift_records_read": 0
+  },
+  "depth_rule": {
+    "fraction": 0.25,
+    "name": "nearest_quarter_depth",
+    "referenceExtractionLayer": 6,
+    "referenceLayers": 24,
+    "rounding": "nearest_integer"
+  },
+  "experiment": "v11_locked_frozen_scale_capacity_diagnostic",
+  "folds": [
+    {
+      "kind": "context",
+      "name": "context"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:beacon_calibration"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:generator_tuning"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:hatch_traversal"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:mirror_power_trip"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:mirror_rejection"
+    },
+    {
+      "kind": "mechanic",
+      "name": "mechanic:pressure_hatch_relock"
+    },
+    {
+      "kind": "template",
+      "name": "template:contrastive_correction"
+    },
+    {
+      "kind": "template",
+      "name": "template:denied_claim"
+    },
+    {
+      "kind": "template",
+      "name": "template:direct_assertion"
+    },
+    {
+      "kind": "template",
+      "name": "template:explicit_negation"
+    },
+    {
+      "kind": "template",
+      "name": "template:rejected_claim"
+    },
+    {
+      "kind": "template",
+      "name": "template:scoped_rejection"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:canonical"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:entity_renamed"
+    },
+    {
+      "kind": "lexicon",
+      "name": "lexicon:paraphrased"
+    },
+    {
+      "kind": "operator",
+      "name": "operator:binary_partition"
+    },
+    {
+      "kind": "operator",
+      "name": "operator:multiway_partition"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:canonical"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:entity_renamed"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:binary_partition:paraphrased"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:canonical"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:entity_renamed"
+    },
+    {
+      "kind": "combined",
+      "name": "combined:multiway_partition:paraphrased"
+    }
+  ],
+  "implementation": {
+    "python/binary_metrics.py": "1bb45d8981c4f36307f8ea9b08f656f9c82efd74c90afe58143f25f5b12330f6",
+    "python/evaluate_v10_frozen.py": "ca1fc997ba72999632a4352da6244d73c08746816e1598091480f5e3633a9808",
+    "python/evaluate_v11_frozen_scale.py": "6e453ac253072e139800fb22a85bdd2a1c2d7e9921d0e58a5156e1b712475272",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/test_v11_frozen_scale.py": "873a8e83ca9f7d0a364ce7861a662203f4e846971b9cd6ff0ec72b512d147736",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v9_symbolic.py": "252041deaa4eaf0c2fd0702cc502688af13a6feb16e8f52d1cf5f422da440acb"
+  },
+  "limits": {
+    "adapter_training_runs_permitted": 0,
+    "alternative_layer_extractions_permitted": 0,
+    "complete_24_fold_model_evaluations_permitted": 2,
+    "final_mechanic_evaluations_permitted": 0,
+    "frozen_feature_extractions_permitted": 2
+  },
+  "lock_payload_sha256": "8baac8e1bdb40033370abf86c91ddc354870e51e9a4cd7c06b9d8cb85836467c",
+  "models": {
+    "qwen35_4b": {
+      "configSha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+      "extractionLayer": 8,
+      "hiddenSize": 2560,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "totalLayers": 32
+    },
+    "qwen35_9b": {
+      "configSha256": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+      "extractionLayer": 8,
+      "hiddenSize": 4096,
+      "model": "mlx-community/Qwen3.5-9B-4bit",
+      "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+      "totalLayers": 32
+    }
+  },
+  "preregistration": {
+    "path": "docs/v11-frozen-scale-plan.md",
+    "sha256": "e01649cb5047ece1c9c1336ddf5ee51e6fd7f34774b8a471431e2001eb83e6f5"
+  },
+  "protocol": {
+    "cValue": 1.0,
+    "diagnosticRepresentations": [
+      "mean_direct",
+      "evidence_span_direct"
+    ],
+    "gates": {
+      "minimumEveryFoldAllowedValuesAccuracy": 0.65,
+      "minimumEveryFoldCompleteFlipPairAccuracy": 0.6,
+      "minimumEveryFoldCompleteInterventionGroupAccuracy": 0.5,
+      "minimumEveryFoldNliPairConsistency": 0.7,
+      "minimumEveryFoldOraclePolarityAccuracy": 0.7,
+      "minimumEveryFoldSpanAccuracy": 0.65,
+      "minimumEveryFoldSymbolicBalancedAccuracy": 0.65,
+      "minimumEveryFoldTemporalAccuracy": 0.7,
+      "minimumEverySurfaceAllowedValuesAccuracy": 0.6,
+      "minimumEverySurfaceNliPairConsistency": 0.65,
+      "minimumEverySurfaceOraclePolarityAccuracy": 0.65,
+      "minimumEverySurfaceSpanAccuracy": 0.6,
+      "minimumEverySurfaceSymbolicBalancedAccuracy": 0.6,
+      "minimumEverySurfaceTemporalAccuracy": 0.65
+    },
+    "layer": 6,
+    "maxSequenceLength": 512,
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "primaryRepresentation": "nli_final",
+    "seed": 0
+  },
+  "run_order": [
+    "qwen35_4b",
+    "qwen35_9b"
+  ],
+  "schema_version": 11,
+  "source_v10": {
+    "dataset_sha256": "0dbfba34e46c85b26be2744fd27065bf1386450653a287765a3df07e331d57cb",
+    "feature_artifact": "outputs/v10-frozen/features/v10-features.npz",
+    "feature_artifact_sha256": "0e7e796f3d1c6815f1b2f8a3c6a63c091db8a93362555005ecbaa5c1d37d59f8",
+    "feature_metadata": "outputs/v10-frozen/features/metadata.json",
+    "feature_metadata_sha256": "06f84da7e3cd0149acd1ecebb6ace0660a2b455b1fcd78515dc7be64871a1abc",
+    "frozen_lock": "configs/v10-frozen-lock.json",
+    "frozen_lock_sha256": "dc5e64ae202aad6437c1ff6e469e2e144e28a7db0978ce2802f81e833f744f4a",
+    "manifest": "data/v10/manifest.json",
+    "manifest_sha256": "d7c3bfb6ce574313ccf6434a345b75b4ebbd89e4c867467eba144e9c5a31449b",
+    "result": "outputs/v10-frozen/evaluation/result.json",
+    "result_sha256": "372a4240d48e9131101e24af0946d5a15a95d80db615e220e970db9c246c3463"
+  }
+}

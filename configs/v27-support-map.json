@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 27,
+  "experiment": "v27_exposed_outcome_constrained_support_map",
+  "sourceV26Lock": "configs/v26-native-truth-decoder-lock.json",
+  "sourceV26Result": "outputs/v26-native-truth-decoder/evaluation/result.json",
+  "sourceV26PostAudit": "outputs/v26-native-truth-decoder/post-result-audit.json",
+  "sourceV26Residual": "outputs/v26-native-truth-decoder/residual-decomposition.json",
+  "sourceV26Scores": "outputs/v26-native-truth-decoder/evaluation/native-decoder-scores.jsonl",
+  "sourceV26Predictions": "outputs/v26-native-truth-decoder/evaluation/grounding-predictions.jsonl",
+  "sourceV24ProposalCorpus": "data/v24-cross-encoder-proposals",
+  "sourceV24Features": "outputs/v24-cross-encoder/features/metadata.json",
+  "sourceV24Heads": "outputs/v24-cross-encoder/evaluation/heads.npz",
+  "outputDir": "data/v27-support-edge-decoder",
+  "scope": {
+    "developmentOnly": true,
+    "allV22r2SplitsExposed": true,
+    "supportScenesOnly": true,
+    "v26QueryPredictionsFrozen": true,
+    "freshBenchmarkRecordsPermitted": 0,
+    "ontologyAndDslUnchanged": true
+  },
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "readoutLayer": 32,
+    "score": "fp32_direct_projection_to_dequantized_A_B_C_embedding_rows",
+    "maxSequenceLength": 512,
+    "systemPrompt": "Classify the evidence relative to the candidate fact. Preserve negation, contrastive clause order, exact entity identity, and directed relation order. Return exactly one uppercase ASCII letter and nothing else. Return A when the evidence entails the candidate fact. Return B when the evidence contradicts the candidate fact. Return C when the evidence leaves the candidate fact unresolved."
+  },
+  "jointMap": {
+    "matchFactor": "v24_binary_match_log_odds",
+    "truthFactor": "log_softmax_v26_fp32_A_B_C_logits",
+    "factorWeights": {"match": 1.0, "truth": 1.0},
+    "assignmentEnumeration": "exhaustive_sparse_perfect_matchings",
+    "maximumAssignmentsPerScene": 256,
+    "truthVectorsPerAssignment": 64,
+    "graphBranchesPerScene": 512,
+    "maximumUnknownAtomsPerGraph": 4,
+    "programPrior": "uniform",
+    "constraint": "every_selected_support_graph_must_allow_its_observed_transition_under_one_shared_episode_program",
+    "selection": "maximum_joint_log_score_then_program_key_then_graph_key",
+    "noFeasibleEpisodePolicy": "retain_v26_support_graphs"
+  },
+  "integrationConditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "gates": {
+    "preEvaluation": {
+      "maximumNewModelForwardPasses": 1200,
+      "minimumEvaluationSupportGoldEdgeCoverage": 0.95,
+      "minimumEvaluationSupportExactProposalSceneCoverage": 0.8,
+      "maximumSparseAssignmentsPerScene": 256,
+      "requiredV26QueryPredictionReuse": 1.0
+    },
+    "development": {
+      "minimumEvaluationSupportExactGraph": 0.75,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumOracleSupportFrozenQueryExact": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "maximumFrozenSupportEmptyVersionSpace": 0.1,
+      "minimumOracleOracleExact": 1.0
+    }
+  },
+  "limits": {
+    "supportEdgeDecoderAttempts": 1,
+    "newModelForwardPasses": 1103,
+    "jointMapEvaluations": 1,
+    "headFits": 0,
+    "thresholdFits": 0,
+    "hyperparameterSelections": 0,
+    "adapterTrainingRuns": 0,
+    "finalSuiteConstructions": 0
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 22,
+  "experiment": "v22_typed_relational_state_development",
+  "seed": 2201,
+  "outputDir": "data/v22-relational-development",
+  "entityTypes": ["unit", "hub"],
+  "unaryPredicates": [
+    {"id": "stable", "entityType": "unit", "trueLabel": "stable", "falseLabel": "unstable"},
+    {"id": "charged", "entityType": "unit", "trueLabel": "charged", "falseLabel": "uncharged"},
+    {"id": "online", "entityType": "hub", "trueLabel": "online", "falseLabel": "offline"}
+  ],
+  "relations": [
+    {"id": "linked", "sourceType": "unit", "targetType": "unit", "allowSelf": false},
+    {"id": "feeds", "sourceType": "hub", "targetType": "unit", "allowSelf": false}
+  ],
+  "action": {
+    "id": "inspect_pair",
+    "parameters": [
+      {"id": "actor", "entityType": "unit"},
+      {"id": "target", "entityType": "unit"}
+    ],
+    "distinctParameters": true
+  },
+  "entityLayouts": [
+    {"units": 2, "hubs": 0},
+    {"units": 2, "hubs": 1},
+    {"units": 3, "hubs": 0},
+    {"units": 2, "hubs": 2},
+    {"units": 3, "hubs": 1},
+    {"units": 4, "hubs": 0}
+  ],
+  "supportEntityCounts": [2, 3],
+  "queryEntityCounts": [2, 3, 4],
+  "constructionFamilies": [
+    "unary_selection",
+    "relation_conditioned",
+    "two_hop_composition",
+    "existential_aggregation"
+  ],
+  "episodesPerFamily": 6,
+  "fitEpisodesPerFamily": 3,
+  "outcomeBits": [1, 2],
+  "queryAxes": [
+    "binding_recombination",
+    "relation_orientation",
+    "graph_topology",
+    "entity_count_extrapolation",
+    "partial_observation",
+    "distractor_invariance",
+    "permutation_equivariance"
+  ],
+  "dsl": {
+    "version": 1,
+    "valueType": "boolean",
+    "operators": ["unary", "relation", "not", "and", "or", "xor", "exists"],
+    "maximumBoundVariables": 1,
+    "maximumQuantifierDepth": 1,
+    "maximumEntityCount": 4,
+    "maximumOutcomeBits": 2,
+    "closedWorldForCompleteStates": true,
+    "missingFactsInEpistemicStatesForbidden": true
+  },
+  "language": {
+    "supportedOperators": ["affirmative_gold", "negated_opposite", "contrastive_both", "explicit_unknown"],
+    "relationOrientations": ["direct", "inverse"],
+    "completelyAbsentOperatorsAreNonGating": true
+  },
+  "limits": {
+    "maximumSupportTraces": 24,
+    "maximumUnknownAtomsPerQuery": 2,
+    "maximumTruthTableAtomsPerEquivalenceCheck": 16,
+    "newModelForwardPassesPermitted": 0,
+    "newLinearFitsPermitted": 0,
+    "adapterTrainingRunsPermitted": 0,
+    "finalSuiteConstructionsPermitted": 0
+  },
+  "gates": {
+    "minimumOracleSchemaRecovery": 1.0,
+    "minimumOracleTransitionSetExact": 1.0,
+    "minimumIdentifiabilityAccuracy": 1.0,
+    "minimumPermutationConsistency": 1.0,
+    "minimumDistractorConsistency": 1.0,
+    "minimumOrientationAuditAccuracy": 1.0,
+    "maximumEmpiricalLookupTransitionSetExact": 0.95
+  },
+  "firewall": {
+    "developmentOnly": true,
+    "finalRecordsPermitted": 0,
+    "newModelFeaturesPermitted": 0,
+    "newGroundingHeadFitsPermitted": 0,
+    "adapterTrainingRunsPermitted": 0,
+    "v21FinalRecordsRead": 0,
+    "v21FinalModelResultsRead": 0
+  }
+}

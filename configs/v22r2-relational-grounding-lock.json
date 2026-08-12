@@ -1,0 +1,317 @@
+{
+  "config": "configs/dataset.v22r2.json",
+  "config_payload": {
+    "counterfactuals": {
+      "graphTopology": {
+        "cases": [
+          "directed_chain",
+          "common_parent_fork"
+        ],
+        "onlyLinkedAtomsMayChange": true,
+        "pairSize": 2
+      },
+      "relationOrientation": {
+        "pairSize": 2,
+        "permittedChangedAtoms": [
+          "r:linked:{actor}:{target}",
+          "r:linked:{target}:{actor}"
+        ]
+      }
+    },
+    "emptyVersionSpacePolicy": "return_full_outcome_vocabulary",
+    "excessUnknownPolicy": {
+      "maximumPredictedUnknownAtomsPerScene": 4,
+      "query": "return_full_outcome_vocabulary",
+      "support": "empty_version_space"
+    },
+    "experiment": "v22r2_open_relational_language_grounding",
+    "firewall": {
+      "developmentOnly": true,
+      "modelAccessBeforeLock": 0,
+      "modelPredictionsBeforeLock": 0,
+      "v21FinalModelResultsRead": 0,
+      "v21FinalRecordsRead": 0
+    },
+    "gates": {
+      "development": {
+        "maximumFrozenSupportEmptyVersionSpaceRate": 0.25,
+        "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+        "minimumEvaluationExactSceneGraph": 0.75,
+        "minimumEvaluationRelationOrientationAccuracy": 0.9,
+        "minimumEvaluationTruthStatusAccuracy": 0.9,
+        "minimumFitAtomAssignmentAccuracy": 0.95,
+        "minimumFrozenFrozenTransitionSetExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleTransitionSetExact": 1.0
+      },
+      "preExtraction": {
+        "maximumExactPromptOverlapAcrossFitEvaluation": 0,
+        "maximumNewModelForwardPasses": 384,
+        "maximumPublicAxisFields": 0,
+        "maximumSequentialPublicIds": 0,
+        "minimumAuditPassRate": 1.0
+      }
+    },
+    "heads": {
+      "atomMatching": {
+        "C": 1.0,
+        "assignment": "maximum_weight_one_to_one",
+        "classWeight": "balanced",
+        "features": "absolute_difference_and_elementwise_product",
+        "maximumIterations": 2000,
+        "solver": "liblinear",
+        "type": "logistic_regression"
+      },
+      "calibrationUse": "report_only_no_selection",
+      "fitSplit": "grounding_fit",
+      "negativeSampling": {
+        "negativesPerPositive": 3,
+        "selection": "lowest_seeded_hash_within_scene"
+      },
+      "truthStatus": {
+        "C": 1.0,
+        "classWeight": "balanced",
+        "classes": [
+          "false",
+          "true",
+          "unknown"
+        ],
+        "features": "evidence_embedding",
+        "maximumIterations": 2000,
+        "solver": "liblinear",
+        "type": "logistic_regression"
+      }
+    },
+    "integrationConditions": [
+      "oracle_support_oracle_query",
+      "frozen_support_oracle_query",
+      "oracle_support_frozen_query",
+      "frozen_support_frozen_query"
+    ],
+    "language": {
+      "evaluationSurfaceBanks": [
+        "eval_c",
+        "eval_d"
+      ],
+      "fitSurfaceBanks": [
+        "fit_a",
+        "fit_b"
+      ],
+      "relationOrientations": [
+        "direct",
+        "inverse"
+      ],
+      "supportedOperators": [
+        "affirmative_gold",
+        "negated_opposite",
+        "contrastive_both",
+        "explicit_unknown"
+      ],
+      "surfaceBankOverlapPermitted": false
+    },
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "atomMatchingHeadFits": 1,
+      "featureExtractionAttempts": 1,
+      "finalSuiteConstructions": 0,
+      "hyperparameterSelections": 0,
+      "integrationEvaluations": 1,
+      "neuralChallengerRuns": 0,
+      "probabilisticInterfaceRuns": 0,
+      "truthStatusHeadFits": 1
+    },
+    "model": {
+      "extractionLayer": 8,
+      "hiddenSize": 2560,
+      "maxSequenceLength": 1024,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "pooling": "single_scene_prompt_per_item_with_candidate_and_evidence_span_means_float32",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "systemPrompt": "Represent the precise factual meaning of this relational state statement.",
+      "totalLayers": 32
+    },
+    "outputDir": "data/v22r2-relational-grounding",
+    "publicInterface": {
+      "actionBindingProvided": true,
+      "candidateOrderRandomized": true,
+      "entityOrderRandomized": true,
+      "evidenceOrderRandomized": true,
+      "positiveAtomCandidateStatementsProvided": true,
+      "queryAxesProvided": false,
+      "sequentialIdentifiersPermitted": false,
+      "supportAndQueryOrderRandomized": true,
+      "typedEntityInventoryProvided": true
+    },
+    "schemaVersion": "22r2",
+    "seed": 2202,
+    "sourceV22Audit": "outputs/v22-relational-development/audit.json",
+    "sourceV22Config": "configs/dataset.v22.json",
+    "sourceV22Dataset": "data/v22-relational-development",
+    "sourceV22Manifest": "data/v22-relational-development/manifest.json",
+    "sourceV22Result": "outputs/v22-relational-development/oracle-baselines.json",
+    "splits": {
+      "grounding_calibration": {
+        "episodeOrdinalsPerFamily": [
+          2
+        ],
+        "source": "development_fit",
+        "surfaceBanks": [
+          "fit_a",
+          "fit_b"
+        ]
+      },
+      "grounding_evaluation": {
+        "episodeOrdinalsPerFamily": [
+          3,
+          4,
+          5
+        ],
+        "source": "development_evaluation",
+        "surfaceBanks": [
+          "eval_c",
+          "eval_d"
+        ]
+      },
+      "grounding_fit": {
+        "episodeOrdinalsPerFamily": [
+          0,
+          1
+        ],
+        "source": "development_fit",
+        "surfaceBanks": [
+          "fit_a",
+          "fit_b"
+        ]
+      }
+    }
+  },
+  "config_sha256": "ce3a6b590e1c2bf7b3ade430b6433dfbed3e612031fb170c1402d2279c23ce4e",
+  "data_access_before_lock": {
+    "adapter_training_runs": 0,
+    "linear_fits": 0,
+    "model_predictions_read": 0,
+    "new_model_forward_passes": 0,
+    "v21_final_model_results_read": 0,
+    "v21_final_records_read": 0,
+    "v22_records_read": 24,
+    "v22r2_scenes_created": 384
+  },
+  "empty_version_space_policy": "return_full_outcome_vocabulary",
+  "excess_unknown_policy": {
+    "maximumPredictedUnknownAtomsPerScene": 4,
+    "query": "return_full_outcome_vocabulary",
+    "support": "empty_version_space"
+  },
+  "experiment": "v22r2_open_relational_language_grounding",
+  "gates": {
+    "development": {
+      "maximumFrozenSupportEmptyVersionSpaceRate": 0.25,
+      "minimumEvaluationAtomAssignmentAccuracy": 0.9,
+      "minimumEvaluationExactSceneGraph": 0.75,
+      "minimumEvaluationRelationOrientationAccuracy": 0.9,
+      "minimumEvaluationTruthStatusAccuracy": 0.9,
+      "minimumFitAtomAssignmentAccuracy": 0.95,
+      "minimumFrozenFrozenTransitionSetExact": 0.75,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "minimumOracleOracleTransitionSetExact": 1.0
+    },
+    "preExtraction": {
+      "maximumExactPromptOverlapAcrossFitEvaluation": 0,
+      "maximumNewModelForwardPasses": 384,
+      "maximumPublicAxisFields": 0,
+      "maximumSequentialPublicIds": 0,
+      "minimumAuditPassRate": 1.0
+    }
+  },
+  "heads": {
+    "atomMatching": {
+      "C": 1.0,
+      "assignment": "maximum_weight_one_to_one",
+      "classWeight": "balanced",
+      "features": "absolute_difference_and_elementwise_product",
+      "maximumIterations": 2000,
+      "solver": "liblinear",
+      "type": "logistic_regression"
+    },
+    "calibrationUse": "report_only_no_selection",
+    "fitSplit": "grounding_fit",
+    "negativeSampling": {
+      "negativesPerPositive": 3,
+      "selection": "lowest_seeded_hash_within_scene"
+    },
+    "truthStatus": {
+      "C": 1.0,
+      "classWeight": "balanced",
+      "classes": [
+        "false",
+        "true",
+        "unknown"
+      ],
+      "features": "evidence_embedding",
+      "maximumIterations": 2000,
+      "solver": "liblinear",
+      "type": "logistic_regression"
+    }
+  },
+  "implementation": {
+    "python/audit_v22r2_grounding.py": "15d740102bae016a4c415c57cded139d597b6783248d73a9a05d72a4343308c5",
+    "python/build_v22r2_relational_grounding.py": "4013b795c647c4b63114d02b34441c7c507f712a743b174f6ec39ac7aa561c69",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v11_scale_features_mlx.py": "215ec448688745b08aafa1864c46a10b67beff1765810123f0843b9d2f1b0188",
+    "python/extract_v22r2_relational_features_mlx.py": "ee6ef9df9f5768b2dd7310d7f909477a5d3a95c6e1fd7d5604dbfb22aa2704fb",
+    "python/freeze_v22r2_relational_grounding.py": "ad2fdf257d9848ce79e4e01ea2118c68378fa6f25177dd2445dcf591fc8da99f",
+    "python/run_v22_oracle_baselines.py": "d67b17526918f289e9fcebf0e66c850fb475c71534948dbac0877761cb1a5548",
+    "python/test_v22r2_grounding.py": "1d19ba6f715e1b00db9d2de80df449108cfb619217252cbc6c667b76348bd0b9",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda"
+  },
+  "integration_conditions": [
+    "oracle_support_oracle_query",
+    "frozen_support_oracle_query",
+    "oracle_support_frozen_query",
+    "frozen_support_frozen_query"
+  ],
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "atomMatchingHeadFits": 1,
+    "featureExtractionAttempts": 1,
+    "finalSuiteConstructions": 0,
+    "hyperparameterSelections": 0,
+    "integrationEvaluations": 1,
+    "neuralChallengerRuns": 0,
+    "probabilisticInterfaceRuns": 0,
+    "truthStatusHeadFits": 1
+  },
+  "lock_payload_sha256": "34bb1e686837bd8c30957bbaee57b615aad0694438afd618fef2f7d1f383403f",
+  "model": {
+    "extractionLayer": 8,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 1024,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "pooling": "single_scene_prompt_per_item_with_candidate_and_evidence_span_means_float32",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "systemPrompt": "Represent the precise factual meaning of this relational state statement.",
+    "totalLayers": 32
+  },
+  "preregistration": "docs/v22r2-relational-grounding-plan.md",
+  "preregistration_sha256": "a31b43cea8ee2bad6286d9f94cbe7124d1df434869bccec3f7dd966a855b87e3",
+  "schema_version": "22r2",
+  "source": {
+    "dataset": "data/v22r2-relational-grounding",
+    "manifest": "data/v22r2-relational-grounding/manifest.json",
+    "manifest_sha256": "0b2fe5b6f98c8641109a8ddce8bbf3067f804353ab30b7c4b3e151bd6e67767c",
+    "pre_extraction_audit": "outputs/v22r2-relational-grounding/pre-extraction-audit.json",
+    "pre_extraction_audit_sha256": "bc283a92a8e413010ec81423189a91ff8c4928131a26754ace732b3b6a3164ba",
+    "record_corpus_sha256": "358256262616618118640dbeb749ca4a0957337bbf38586ba37991dc33ae02d2",
+    "scene_corpus_sha256": "d8f543051d53601f8f5f107eaadfb306ad5de1367148ce0a1e1b24144a065192",
+    "v22_audit": "outputs/v22-relational-development/audit.json",
+    "v22_audit_sha256": "59bae5e8cd7255db6cf848f974b95fb95a2d731fe983f163e82fc0f3bf2b268f",
+    "v22_config": "configs/dataset.v22.json",
+    "v22_config_sha256": "60231e6adb8dc116c8e3dc0cdab698ec8ccd6fd63f7a068c7e0729024a1a3081",
+    "v22_manifest": "data/v22-relational-development/manifest.json",
+    "v22_manifest_sha256": "398c9d110c900415a0d89ed8b17fc8b7360f2ff29648b847e62cb6061fc357f7",
+    "v22_result": "outputs/v22-relational-development/oracle-baselines.json",
+    "v22_result_sha256": "2725b77c5c7919265b55a05d3b71dca570799c7c6a431393f8d1f4a0b62b6548"
+  }
+}
