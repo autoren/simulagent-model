@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "continue_to_next_preregistered_stage": true,
+    "modify_v59_population_or_evaluator": false,
+    "rerun_v59_candidate_evaluation": false,
+    "treat_synthetic_v58_as_human": false
+  },
+  "claim_boundary": {
+    "approximate_belief_correctness": false,
+    "budgeted_root_sampled_search_on_exact_belief": true,
+    "exact_long_horizon_optimality": false,
+    "formal_or_worst_case_safety": false,
+    "human_authored_language_robustness": false,
+    "model_or_adapter_performance": false
+  },
+  "evaluation_attempt": "outputs/v59-budgeted-root-sampled-planning/evaluation-attempt.json",
+  "evaluation_attempt_sha256": "d067b0414f6caf0b622bcb60a299553320e50461d657fca51adc8c0d3e121e28",
+  "evaluation_implementation_lock": "configs/v59-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "0c5c58612a96d893a0e9e512d2a43e23c364b88b2107e29497f57142c601c6e6",
+  "experiment": "v59_outcome_lock",
+  "lock_payload_sha256": "78ee870850243058cc7f41f2c28b3d5ec524de119f0a6baebd77bd0278759093",
+  "population_seal": "configs/v59-population-seal.json",
+  "population_seal_sha256": "10a6e7cacd5f3a984ef29afab26630dd4f911d45f0bed42a215ec798ffb32570",
+  "post_result_audit": "outputs/v59-budgeted-root-sampled-planning/post-result-audit.json",
+  "post_result_audit_sha256": "914470ffc221b8c3042599ed1d4eff8e5cd8ae9c75f882b199eab88e5001db50",
+  "qualification_passed": true,
+  "result": "outputs/v59-budgeted-root-sampled-planning/evaluation/result.json",
+  "result_sha256": "67b49276debca833522e6fe2a75c1fc83a46efb652419cdb22649c049877f74b",
+  "results_summary": "docs/v59-results.md",
+  "results_summary_sha256": "46b375d86b8b539ff1a208222115c00de8b4726ec8e15cdca67db9fb0d505102",
+  "schema_version": 59
+}

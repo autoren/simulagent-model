@@ -1,6 +1,6 @@
 # V53r2 continuous-parameter inference results
 
-**Qualification:** PASS
+**Qualification:** PASS  
 **Decision:** `authorize_exact_one_step_expected_information_gain_preregistration_only`
 
 ## Primary exact-oracle agreement

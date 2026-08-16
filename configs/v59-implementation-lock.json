@@ -1,0 +1,36 @@
+{
+  "authorization": {
+    "access_v59_audit_truth_during_candidate_evaluation": false,
+    "change_v59_design_or_implementation": false,
+    "construct_v59_population": true,
+    "formal_safety_claim": false,
+    "model_access": false,
+    "run_v59_evaluation": false,
+    "simulate_human_v58_records": false
+  },
+  "base_dependencies_sha256": {
+    "configs/v53r2-design-lock.json": "72197ec7776ad92cc4d525b42054b993df6cf38a1781e0804daf56b0fbe6c90d",
+    "configs/v53r2-outcome-lock.json": "957761b11f0937ade483934b7ef2b2eccef75c7646d8dc25763e6caf8b9992da",
+    "configs/v55r1-design-lock.json": "a72addff3b84bf3cba1621a9c459505c91cb1da7f55738c9c29701ff5521695c",
+    "configs/v55r1-outcome-lock.json": "4bbb84214c01b47bbebacef9a6db51558e20099d647427eab4259252748c7eb4",
+    "configs/v56-outcome-lock.json": "c00bae6635f8408bd4af545acc989af51ff90291a7d87dd2c28efdc12363507e",
+    "python/v46_stochastic.py": "67f7c729d4c053c88fb18ca76b5c85767ac3b152af9f454cc64cdb1ff4635326",
+    "python/v49_belief.py": "5d8bea80ce9559ec921bc7e392ca925ec36d7b378b63b5e45ac2d750081e6c6e",
+    "python/v53_smc2.py": "34a52233605687c50b6962bb6e2f65faaa0a688ed2c124ad6e4e4ef7ea69e399",
+    "python/v55_planning.py": "b53da4c409dcef44c541180429981c4cd4719efacd5fc6ee59a2ca6a9432b500",
+    "python/v55r1_planning.py": "d631456311ad6c5493b65d7ddfaf33a7485dccdac89be7021a3e0ed857caed0b"
+  },
+  "design_lock": "configs/v59-design-lock.json",
+  "design_lock_sha256": "a93020e9091587060262b31cdc2940a137d98835e8237353bdfe251b06d39161",
+  "experiment": "v59_implementation_lock",
+  "implementation_audit": "outputs/v59-budgeted-root-sampled-planning/implementation-audit.json",
+  "implementation_audit_sha256": "5550dfdb5cd67cc1a52e2c2a371aad0a4126562b363e50a99835c89ab5877582",
+  "implementation_files_sha256": {
+    "python/audit_v59_implementation.py": "1a455da28fd54fa8eff1358ada8746c995b4122d15aed521d7bb24d854f2cb20",
+    "python/generate_v59_planning.py": "a2a81183ea4257a4caad6596dbc7c963d9c2dffbb178eff27824ce2bf95d87ad",
+    "python/test_v59_planning.py": "83b028d89406f008dd0a1df1415fd75028d66b76bcdd034d29929b65817c3a2f",
+    "python/v59_planning.py": "1097ecf2bb40d01678588bcfb1492bf61af7383416703076a09a383870e8f866"
+  },
+  "lock_payload_sha256": "f42daf2aa5c29bca1c928063a995dc85dd4a2c198cc494d128fdcb09e8db2dfc",
+  "schema_version": 59
+}

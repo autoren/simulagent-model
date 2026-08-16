@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "audit_truth_file": {
+      "candidate_access": "forbidden",
+      "path": "data/v59-budgeted-root-sampled-planning/audit-truth.jsonl",
+      "rows_sha256": "cccb9040a0eb788fe7ae32afb381161da9561192d1a64e8fd5c854ddd4765996",
+      "sha256": "cccb9040a0eb788fe7ae32afb381161da9561192d1a64e8fd5c854ddd4765996"
+    },
+    "public_file": {
+      "path": "data/v59-budgeted-root-sampled-planning/public.jsonl",
+      "rows_sha256": "edebdde867b3397d0184f4d535596790930717e9ebb14a6e1fc3341b02041e64",
+      "sha256": "edebdde867b3397d0184f4d535596790930717e9ebb14a6e1fc3341b02041e64"
+    }
+  },
+  "authorization": {
+    "candidate_access_v59_audit_truth": false,
+    "collect_human_language": false,
+    "formal_safety_claim": false,
+    "model_access": false,
+    "modify_v59_population": false,
+    "run_v59_candidate_evaluation": false,
+    "write_and_audit_v59_candidate_runner": true
+  },
+  "experiment": "v59_population_seal",
+  "implementation_lock": "configs/v59-implementation-lock.json",
+  "implementation_lock_sha256": "24e686220973ede63d314f8f2628b54cd74eaa7f7383dfae58f9a0ee16230a91",
+  "manifest": "data/v59-budgeted-root-sampled-planning/manifest.json",
+  "manifest_sha256": "2b5f51d3384664fd7e2d86e62d72f9fb0322694ca5318c067ee85f68857a9640",
+  "population": "data/v59-budgeted-root-sampled-planning",
+  "population_audit": "outputs/v59-budgeted-root-sampled-planning/population-audit.json",
+  "population_audit_sha256": "41dd7bcc1b0bacb75ce5acbaeb012c56d40cde1c8c8d7f74d0e020a4a8490440",
+  "public_audit_pairing_sha256": "8629b5fec24a0b919eeb60a0714f0b46778633f57c5fdfa6da187fafd83adee0",
+  "schema_version": 59,
+  "seal_payload_sha256": "325e5be279a3b71ca2d274033929c53a0744e2e47741386487eeee775d2e4e63"
+}
