@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "adapter_training_runs": 0,
+    "final_evaluations": 0,
+    "language_model_forward_passes": 0,
+    "paired_development_runs": 1
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v43-sequential-language-grounding/development_evaluation.jsonl",
+      "records": 16,
+      "sha256": "996e178f9838df0f6770bb893de7dbb21c85e5ab7740146874d96b3bc0a931df"
+    },
+    "development_fit": {
+      "path": "data/v43-sequential-language-grounding/development_fit.jsonl",
+      "records": 24,
+      "sha256": "aafcb5dc6bf770a3654e886415de09f494b5412f56cb63d1e8048cc55f200500"
+    }
+  },
+  "corpus_audit": "outputs/v43-sequential-language-grounding/corpus-audit.json",
+  "corpus_audit_sha256": "18634d01e7580f039e59e47651e1b9213e24d0b57333a8bb483e1ecba0021b9c",
+  "experiment": "v43_corpus_seal",
+  "implementation_lock": "configs/v43-implementation-lock.json",
+  "implementation_lock_sha256": "7698619c454ccfe727bf2df3ef6ce11475826d583df68179f1dd198e4a627ea2",
+  "lock_payload_sha256": "fc367ef3734b652d7948bb039089bfd3c0e5789300bf4af0620810dd94d2bd44",
+  "manifest": "data/v43-sequential-language-grounding/manifest.json",
+  "manifest_sha256": "577b8e04e90ccda1b941fd17bc51e676d3e711d3fa6b3c8283a08c3a2a5c4cf8",
+  "schema_version": 43
+}

@@ -1,0 +1,164 @@
+{
+  "authorization": {
+    "construct_corpus": false,
+    "extract_features": false,
+    "fit_interface": false,
+    "score_validation": false,
+    "write_implementation": true
+  },
+  "config": "configs/v37-semantic-invariance.json",
+  "config_payload": {
+    "allowedTrainingSources": [
+      {
+        "corpus": "data/v32-factorized-semantics/factor_fit.jsonl",
+        "source": "v32_factor_fit"
+      },
+      {
+        "corpus": "data/v36-independent-confirmation/independent_confirmation.jsonl",
+        "source": "v36_exposed_confirmation"
+      }
+    ],
+    "decisionHierarchy": [
+      "if_all_gates_pass_preregister_fresh_semantic_confirmation_only",
+      "if_candidate_methods_improve_but_miss_gates_continue_semantic_interface_development",
+      "if_no_material_gain_pivot_to_constrained_semantic_parser_or_stronger_frozen_grounder"
+    ],
+    "developmentFit": {
+      "alphas": [
+        1.0,
+        10.0,
+        100.0,
+        1000.0,
+        10000.0
+      ],
+      "balanceDistractorWithinSourceCell": true,
+      "expectedRecords": 400,
+      "recordsFromV32WhenCellAvailable": 16,
+      "recordsFromV36WhenV32CellAvailable": 24,
+      "recordsFromV36WhenV32CellUnavailable": 40,
+      "recordsPerOperationSignCell": 40,
+      "samplingSeed": 3701,
+      "selectionFolds": 5,
+      "selectionGroup": "source_operation_surface_family"
+    },
+    "execution": {
+      "adapterTrainingRuns": 0,
+      "expectedBackboneForwardPasses": 6840,
+      "expectedFitRecords": 400,
+      "expectedValidationRecords": 360,
+      "featureExtractionAttempts": 1,
+      "selectionOnValidation": false,
+      "v28Runs": 0,
+      "v32EvaluationReads": 0,
+      "validationEvaluations": 1
+    },
+    "experiment": "v37_candidate_conditioned_semantic_invariance",
+    "firewall": {
+      "adapterOrBackboneTraining": "forbidden",
+      "atomInterfaceChanges": "forbidden",
+      "endToEndRelationalSuite": "forbidden",
+      "executorChanges": "forbidden",
+      "freshValidationMaySelectMethodOrAlpha": false,
+      "freshValidationStatus": "development_validation_not_final_claim",
+      "v28Use": "forbidden",
+      "v32EvaluationUse": "forbidden"
+    },
+    "forbiddenSources": [
+      "data/v32-factorized-semantics/factor_calibration.jsonl",
+      "data/v32-factorized-semantics/factor_evaluation_paraphrase.jsonl",
+      "data/v32-factorized-semantics/factor_evaluation_composition.jsonl"
+    ],
+    "freshValidation": {
+      "baseScenesPerSurfaceFamilyCell": 1,
+      "entityCounts": [
+        3,
+        4,
+        5
+      ],
+      "expectedRecords": 360,
+      "expectedScenes": 100,
+      "expectedSurfaceFamilies": 10,
+      "generatorSeed": 3711,
+      "lexicalSignsPerOperation": [
+        "positive",
+        "negative"
+      ],
+      "requiredExactEvidenceOverlapWithSources": 0,
+      "requiredNormalizedTemplateOverlapWithSources": 0,
+      "sceneVariants": [
+        "direct_clean",
+        "inverse_clean",
+        "direct_distractor_prefix",
+        "direct_distractor_suffix",
+        "reversed_link_arguments_clean"
+      ],
+      "singleValidationEvaluation": true,
+      "split": "semantic_invariance_validation",
+      "surfaceNamesPerOperation": [
+        "invariance_a",
+        "invariance_b"
+      ]
+    },
+    "interfaces": {
+      "candidateAnswerTokens": [
+        "Yes",
+        "No"
+      ],
+      "candidateViewsPerRecord": 7,
+      "componentSelection": "fit_group_cv_only",
+      "directBaselineViewsPerRecord": 2,
+      "lexicalSignClasses": [
+        "positive",
+        "negative"
+      ],
+      "methods": [
+        "candidate_hidden_shared_ridge",
+        "candidate_margin_vector_ridge",
+        "candidate_native_margin",
+        "direct_hidden_ridge"
+      ],
+      "outerOperationClasses": [
+        "assert",
+        "deny",
+        "double_deny",
+        "contrast_select",
+        "unresolved"
+      ],
+      "truthCompiler": "unchanged_v32_fixed_compiler",
+      "viewsPerRecord": 9
+    },
+    "model": {
+      "hiddenSize": 2560,
+      "maxSequenceLength": 768,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "systemPrompt": "Judge the semantic compatibility of the candidate analysis with the evidence. Ignore unrelated material, preserve lexical negation, and distinguish rejection of a proposition from rejection of its denial.",
+      "totalLayers": 32
+    },
+    "qualification": {
+      "minimumDistractorTruthAccuracy": 0.9,
+      "minimumNegativeCompositionTruthAccuracy": 0.9,
+      "minimumPairExactAccuracy": 0.85,
+      "minimumTruthGainOverFrozenV36Interface": 0.15,
+      "minimumValidationCompiledTruthAccuracy": 0.95,
+      "minimumValidationLexicalSignAccuracy": 0.95,
+      "minimumValidationOuterOperationAccuracy": 0.95,
+      "minimumWorstOperationAccuracy": 0.9,
+      "minimumWorstSurfaceFamilyTruthAccuracy": 0.85
+    },
+    "schemaVersion": 37,
+    "scientificScope": "development_only_semantic_interface_repair",
+    "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+    "sourceV36Localization": "outputs/v36-independent-confirmation/failure-localization.json",
+    "sourceV36OutcomeLock": "configs/v36-outcome-lock.json",
+    "sourceV36Result": "outputs/v36-independent-confirmation/evaluation/result.json"
+  },
+  "config_sha256": "fec040549c7c96fd8ed8d8571edd790d2573628132e3cdb2dc6ed0ed27b1bb04",
+  "design_audit": "outputs/v37-semantic-invariance/design-audit.json",
+  "design_audit_sha256": "ee36c8016c608abc3d26c52e19b0598f15adbd98f57ef3e08a309b8cc241689b",
+  "experiment": "v37_semantic_invariance_design_lock",
+  "lock_payload_sha256": "0b2b3cd7b02e86d89c57e63c46ec6ff18ddb1ab8d2bbc6c04c9ae888448644bd",
+  "plan": "docs/v37-semantic-invariance-plan.md",
+  "plan_sha256": "1495b33fcbcf9a4ece95c3575c03c0b8483e7610d1ac132ebd2227aba5a29581",
+  "schema_version": 37
+}

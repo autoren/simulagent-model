@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 38,
+  "experiment": "v38_ontology_anchored_focus_parser",
+  "scientificScope": "development_only_lexical_sign_parser_pivot",
+  "sourceV37OutcomeLock": "configs/v37-outcome-lock.json",
+  "sourceV37Diagnostic": "outputs/v37-semantic-invariance/sign-anchor-diagnostic.json",
+  "frozenComponents": {
+    "backbone": "mlx-community/Qwen3.5-4B-4bit@0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "atomBinding": "v36_perfect_transfer_unchanged",
+    "outerOperation": "v37_direct_hidden_ridge_alpha_1000_unchanged",
+    "truthCompiler": "v32_fixed_compiler_unchanged"
+  },
+  "newInterface": {
+    "lexicalDefinitionsInAgentInput": true,
+    "candidateLiteralExtraction": "exact_typed_ontology_lexicalization_match",
+    "focusDecision": "frozen_language_focus_scorer_over_grounded_literal_span_and_discourse_context",
+    "signDecision": "sign_attached_to_selected_grounded_literal",
+    "lexicalFormSource": "declared_ontology_not_generator_private_state",
+    "forbidEarliestOrLatestMatchHeuristic": true
+  },
+  "developmentPopulation": {
+    "generatorSeed": 3811,
+    "fitSurfaceFamiliesPerOperation": 2,
+    "validationSurfaceFamiliesPerOperation": 2,
+    "lexicalSignsPerOperation": ["positive", "negative"],
+    "focusOrders": ["focus_first", "focus_second"],
+    "decoyKinds": ["exact_opposite", "different_grounded_atom", "non_state_distractor"],
+    "relationOrientations": ["direct", "inverse"],
+    "argumentReversalControls": true,
+    "entityCounts": [3, 4, 5],
+    "exactEvidenceOverlapAcrossSplits": 0,
+    "normalizedTemplateOverlapAcrossSplits": 0,
+    "targetFieldsInAgentInput": 0
+  },
+  "selection": {
+    "allowedSplit": "ontology_focus_fit",
+    "group": "surface_family",
+    "methods": [
+      "candidate_span_hidden_shared_ridge",
+      "candidate_span_native_margin",
+      "deterministic_discourse_parser"
+    ],
+    "alphas": [1.0, 10.0, 100.0, 1000.0, 10000.0],
+    "validationSelection": "none"
+  },
+  "gates": {
+    "minimumValidationFocusAccuracy": 0.95,
+    "minimumValidationLexicalSignAccuracy": 0.95,
+    "minimumFocusFirstAccuracy": 0.95,
+    "minimumFocusSecondAccuracy": 0.95,
+    "minimumExactOppositeDecoyAccuracy": 0.95,
+    "minimumDifferentAtomDecoyAccuracy": 0.95,
+    "minimumWorstSurfaceFamilyAccuracy": 0.90,
+    "minimumCompiledTruthWithFrozenOperation": 0.95
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_preregister_fresh_semantic_confirmation_only",
+    "if_neural_focus_scorer_fails_but_deterministic_parser_passes_retain_constrained_parser",
+    "if_all_focus_interfaces_fail_compare_a_separately_preregistered_stronger_frozen_grounder",
+    "do_not_reopen_atom_binding_or_relational_inference"
+  ],
+  "stageAuthorization": {
+    "writeAndAuditImplementation": true,
+    "constructCorpus": false,
+    "accessModel": false,
+    "fitParser": false,
+    "scoreValidation": false,
+    "preregisterConfirmation": false
+  },
+  "firewall": {
+    "v32CalibrationOrEvaluationUse": "forbidden",
+    "v28Use": "forbidden",
+    "adapterTraining": "forbidden",
+    "backboneChange": "forbidden",
+    "endToEndRelationalSuite": "forbidden",
+    "v37ValidationUse": "descriptive_design_only_no_v38_selection"
+  }
+}

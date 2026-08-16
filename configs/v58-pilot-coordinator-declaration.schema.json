@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v58-pilot-coordinator-declaration.schema.json",
+  "title": "V58 external pilot coordinator declaration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment",
+    "declaration_id",
+    "timestamp",
+    "coordinator_role_id",
+    "pilot_writer_assignments",
+    "validator_role_ids",
+    "adjudicator_role_ids",
+    "candidate_developer_role_ids",
+    "external_identity_and_consent_record_sha256",
+    "external_collection_storage_descriptor_sha256",
+    "tooling_lock",
+    "tooling_lock_sha256",
+    "packet_seal",
+    "packet_seal_sha256",
+    "protocol_sha256",
+    "attestations"
+  ],
+  "properties": {
+    "schema_version": {"const": 58},
+    "experiment": {"const": "v58_pilot_coordinator_declaration"},
+    "declaration_id": {"type": "string", "minLength": 12},
+    "timestamp": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "coordinator_role_id": {"type": "string", "minLength": 8},
+    "pilot_writer_assignments": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["anonymous_writer_slot", "packet_id", "external_human_role_id"],
+        "properties": {
+          "anonymous_writer_slot": {"type": "string", "pattern": "^pilot_writer_slot_[0-9]{2}$"},
+          "packet_id": {"type": "string", "minLength": 12},
+          "external_human_role_id": {"type": "string", "minLength": 8}
+        }
+      }
+    },
+    "validator_role_ids": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "minLength": 8},
+      "uniqueItems": true
+    },
+    "adjudicator_role_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 8},
+      "uniqueItems": true
+    },
+    "candidate_developer_role_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 8},
+      "uniqueItems": true
+    },
+    "external_identity_and_consent_record_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "external_collection_storage_descriptor_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "tooling_lock": {"const": "configs/v58-pilot-tooling-lock.json"},
+    "tooling_lock_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "packet_seal": {"const": "configs/v58-author-packet-seal.json"},
+    "packet_seal_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "protocol_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_named_roles_are_real_humans",
+        "all_roles_are_disjoint_as_required",
+        "pilot_writers_are_adults_or_valid_local_consent_has_been_obtained",
+        "pilot_writers_received_no_generative_assistance_briefing",
+        "identity_map_and_consent_records_remain_external",
+        "collection_storage_is_external_to_candidate_development",
+        "evaluation_packets_remain_unreleased",
+        "candidate_development_remains_frozen",
+        "protocol_and_stop_conditions_acknowledged",
+        "project_owner_authorizes_pilot_release_only"
+      ],
+      "properties": {
+        "all_named_roles_are_real_humans": {"const": true},
+        "all_roles_are_disjoint_as_required": {"const": true},
+        "pilot_writers_are_adults_or_valid_local_consent_has_been_obtained": {"const": true},
+        "pilot_writers_received_no_generative_assistance_briefing": {"const": true},
+        "identity_map_and_consent_records_remain_external": {"const": true},
+        "collection_storage_is_external_to_candidate_development": {"const": true},
+        "evaluation_packets_remain_unreleased": {"const": true},
+        "candidate_development_remains_frozen": {"const": true},
+        "protocol_and_stop_conditions_acknowledged": {"const": true},
+        "project_owner_authorizes_pilot_release_only": {"const": true}
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "authorization": {
+    "backbone_forward_passes": 3510,
+    "construct_final_suite": false,
+    "evaluate_confirmation": false,
+    "feature_extraction": true,
+    "feature_extractions": 1,
+    "reuse_v32_evaluation": false,
+    "run_v28": false
+  },
+  "corpus_artifact": "data/v36-independent-confirmation/independent_confirmation.jsonl",
+  "corpus_artifact_sha256": "130210bd2382598ba617f4b8d43da2a5dfed1c3ea2903914d373b729786679c8",
+  "corpus_audit": "outputs/v36-independent-confirmation/corpus-audit.json",
+  "corpus_audit_sha256": "5344be38c06d54c43d0aa0aa10da5d5848c6f6a7fc606254f33134aaa921e7cb",
+  "experiment": "v36_confirmation_seal",
+  "implementation_lock": "configs/v36-implementation-lock.json",
+  "implementation_lock_sha256": "81ba2c04d149aa828c2938006431f8cc796e10663ec2a0708ef01d668fd37768",
+  "interface_lock": "configs/v36-interface-lock.json",
+  "interface_lock_sha256": "db57bc14b06053d49e7404d7adebb09a737a12327a46553630713cea26d9748d",
+  "lock_payload_sha256": "33bc977d7f1a2df4e0aa95f4e0e96ff32f18b877fc098af0829fc803fb7abafb",
+  "manifest": "data/v36-independent-confirmation/manifest.json",
+  "manifest_sha256": "e72e88a32c9035962bcbcf1e755c5f7db5f0d7a34118290cef9506bc83d893d5",
+  "pair_counts": {
+    "argument_reversal": 90,
+    "distractor": 450,
+    "inverse": 180,
+    "lexical_sign_assert": 117,
+    "scope_assert_contrast": 234,
+    "scope_assert_deny": 234,
+    "scope_assert_double_deny": 234,
+    "unresolved_sign_invariance": 117
+  },
+  "population": {
+    "records": 1170,
+    "scenes": 360,
+    "surface_families": 15
+  },
+  "schema_version": 36
+}

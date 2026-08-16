@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 34,
+  "experiment": "v34_operation_focused_frozen_interface",
+  "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+  "sourceV32FeatureMetadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+  "sourceV32PostAudit": "outputs/v32-factorized-semantics/post-result-audit.json",
+  "sourceV33OutcomeLock": "configs/v33-development-outcome-lock.json",
+  "sourceCorpus": "data/v32-factorized-semantics",
+  "allowedSplits": ["factor_fit", "factor_calibration"],
+  "forbiddenSplits": ["factor_evaluation_paraphrase", "factor_evaluation_composition"],
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 768,
+    "systemPrompt": "Classify only the semantic operation that the evidence applies to its embedded literal. Do not identify the predicate, entities, lexical sign, or final truth value. Return only the requested option letter.",
+    "representation": "full_depth_final_token_float32_plus_direct_label_logits"
+  },
+  "operationInterface": {
+    "classes": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+    "labelTokens": ["A", "B", "C", "D", "E"],
+    "definitions": {
+      "assert": "The evidence directly endorses or records the embedded literal.",
+      "deny": "The evidence rejects, contradicts, or invalidates the embedded literal.",
+      "double_deny": "The evidence rejects or blocks a denial of the embedded literal; the denial itself is what fails.",
+      "contrast_select": "The evidence explicitly selects the embedded literal over its stated opposite.",
+      "unresolved": "The evidence leaves the embedded literal undecided, neither endorsed nor rejected."
+    },
+    "promptTargetFields": 0,
+    "promptIncludesOntology": false,
+    "promptIncludesEntityInventory": false
+  },
+  "readouts": {
+    "methods": ["legacyHiddenRidge", "semanticHiddenRidge", "nativeLogitRidge", "nativeArgmax"],
+    "selectionEligible": ["semanticHiddenRidge", "nativeLogitRidge"],
+    "alphas": [0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0],
+    "classifier": "standard_scaler_plus_balanced_ridge_classifier",
+    "fitCrossValidation": "leave_one_surface_name_out",
+    "selectionOrder": [
+      "maximum_mean_fit_group_cv_operation_accuracy",
+      "maximum_minimum_fit_group_cv_operation_accuracy",
+      "maximum_alpha"
+    ],
+    "calibrationUse": "report_and_post_selection_development_decision_only"
+  },
+  "qualification": {
+    "minimumCalibrationOperationAccuracy": 0.90,
+    "minimumWorstOperationCalibrationAccuracy": 0.80,
+    "minimumCalibrationOracleSignCompiledTruthAccuracy": 0.90,
+    "minimumCalibrationGainOverLegacyHiddenRidge": 0.20
+  },
+  "decisionHierarchy": [
+    "if_selected_interface_qualifies_proceed_to_binding_regularization_and_modular_assembly_on_development_data",
+    "if_selected_interface_improves_by_at_least_0.10_continue_operation_interface_repair",
+    "otherwise_pivot_to_constrained_semantic_parser_or_stronger_frozen_grounder"
+  ],
+  "limits": {
+    "featureExtractions": 1,
+    "backboneForwardPasses": 1820,
+    "ridgeTrainingFits": 75,
+    "calibrationSelections": 0,
+    "v32EvaluationRecordsRead": 0,
+    "v32EvaluationFeaturesRead": 0,
+    "v32EvaluationPredictionsRead": 0,
+    "adapterTrainingRuns": 0,
+    "v28IntegrationReplays": 0,
+    "freshSuiteConstructions": 0
+  },
+  "firewall": {
+    "developmentData": "v32_factor_fit_and_factor_calibration_only",
+    "v32EvaluationUse": "forbidden",
+    "fitLabels": "allowed_for_readout_fit_and_group_cv_only",
+    "calibrationLabels": "opened_once_after_fit_cv_method_and_alpha_selection",
+    "v28Use": "forbidden",
+    "freshSuiteUse": "forbidden",
+    "interpretation": "representation_diagnostic_not_a_generalization_claim"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "authorization": {
+    "collect_evaluation_language": false,
+    "collect_pilot_language": false,
+    "human_authored_language_claim": false,
+    "model_generated_writing_assistance": false,
+    "release_evaluation_packets": false,
+    "release_pilot_packets": false,
+    "run_candidate_evaluation": false,
+    "show_readiness_to_user": true,
+    "write_candidate_parser": false
+  },
+  "decision": "await_external_human_pilot_coordinator_and_release_authorization",
+  "experiment": "v58_pilot_collection_handoff_lock",
+  "handoff_files_sha256": {
+    "configs/v58-human-adjudication.schema.json": "b44d6e0165ae211b417a657f9456df2b6c52265690e6fe8800cc2b4ebd4c83cd",
+    "configs/v58-human-submission.schema.json": "b1c6efb826e97468c2ec5742cd35902b4a313b2763796bf7d54a2c00773e9726",
+    "configs/v58-human-validation.schema.json": "7b31b0bb5fadde32adaf64a188435a00f2aa14812fb5c7fd2e469c00c75da5bb",
+    "docs/v58-pilot-collection-handoff.md": "750c414aafb98a1455aa004203a9fd00db9882bcf5e15265ed503b54526b6e04",
+    "python/audit_v58_pilot_handoff.py": "db7e6b3a5276800d585c0c0b9af82158c4a82c4172d5bf30d9adae8c394d9931"
+  },
+  "lock_payload_sha256": "3748572d3ddecfa2c0e8386a7d39f2a4fe2bb400cbb2f54ac588392f06e8410f",
+  "packet_seal": "configs/v58-author-packet-seal.json",
+  "packet_seal_sha256": "acf1210dcad33c8c030103881c9b377af61be8186efcaeb33e37f50d46ce8b68",
+  "pilot_handoff_audit": "outputs/v58-human-authored-known-ontology-language/pilot-handoff-audit.json",
+  "pilot_handoff_audit_sha256": "6a330fd93fbd65088c3f1a17fd87a600cd0d75bd5610a7774c4402c08b254304",
+  "pilot_packet_artifacts": [
+    {
+      "anonymous_writer_id": "pilot_writer_slot_00",
+      "packet_id": "v58packet_4efe60a4e7079d556de0",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/pilot_writer_slot_00.json",
+      "sha256": "02bc0bd6ef33d5a8eea73df2deee4feec6c697593830037ddce39362b3f6e0e5"
+    },
+    {
+      "anonymous_writer_id": "pilot_writer_slot_01",
+      "packet_id": "v58packet_c06e8fecbd691e4f13fe",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/pilot_writer_slot_01.json",
+      "sha256": "d42e6a3c1aab80fb9f9b45770bc2cf4d30de2d5811aa6638226990f19f12429a"
+    }
+  ],
+  "schema_version": 58
+}

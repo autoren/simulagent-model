@@ -1,0 +1,136 @@
+{
+  "authorization": {
+    "construct_confirmation": false,
+    "model_access": false,
+    "score_confirmation": false,
+    "v22r2_evaluation": false,
+    "v28": false,
+    "write_implementation": true
+  },
+  "config": "configs/v41-relational-mechanic-confirmation.json",
+  "config_payload": {
+    "claim": "the_frozen_declared_language_compiler_and_symbolic_schema_inducer_transfer_end_to_end_across_fresh_unseen_one_step_relational_mechanics",
+    "decisionHierarchy": [
+      "if_all_gates_pass_accept_declared_scope_relational_mechanic_claim_and_begin_architecture_breaking_sequential_benchmark",
+      "if_language_or_graph_gates_fail_reject_end_to_end_transfer_without_repair_or_repeat",
+      "if_graphs_pass_but_schema_or_execution_fails_revisit_symbolic_hypothesis_coverage_without_repair_or_repeat",
+      "if_empirical_lookup_gate_fails_do_not_attribute_success_to_lifted_mechanic_induction"
+    ],
+    "experiment": "v41_declared_scope_relational_mechanic_confirmation",
+    "firewall": {
+      "V22TargetProgramReuse": "forbidden",
+      "V22r2EvaluationUse": "forbidden",
+      "V28Use": "forbidden",
+      "adapterTraining": "forbidden",
+      "claimExpansionBeyondDeclaredOneStepBooleanScope": "forbidden",
+      "compilerModification": "forbidden",
+      "confirmationRepeats": 0,
+      "confirmationSelection": "forbidden",
+      "modelAccess": "forbidden",
+      "semanticKernelModification": "forbidden"
+    },
+    "frozenCompiler": "python/v39_compiler.py",
+    "frozenSemanticKernel": "python/v22_relational.py",
+    "gates": {
+      "maximumEmpiricalLookupTransitionSetExact": 0.95,
+      "maximumEmptyVersionSpace": 0.0,
+      "minimumClauseExactParse": 1.0,
+      "minimumCompleteEpisodeExact": 1.0,
+      "minimumEveryFamilyTransitionSetExact": 1.0,
+      "minimumEveryQueryAxisTransitionSetExact": 1.0,
+      "minimumQueryExactGraph": 1.0,
+      "minimumSchemaRecovery": 1.0,
+      "minimumSupportExactGraph": 1.0,
+      "minimumTargetRetention": 1.0,
+      "minimumTransitionSetExact": 1.0
+    },
+    "inference": {
+      "assembleTypedEpistemicGraphsDeterministically": true,
+      "groundEverySupportAndQueryClauseWithFrozenCompiler": true,
+      "probabilisticV28Path": "not_used_when_declared_compiler_is_exact",
+      "programHypotheses": "unchanged_v22_finite_lifted_dsl",
+      "programSelection": "exact_version_space_from_support_traces",
+      "queryExecution": "unchanged_v22_partial_executor"
+    },
+    "languageInterface": {
+      "freshEntityNamespaces": true,
+      "freshEpisodeOperatorCues": true,
+      "openParaphrase": false,
+      "operatorOntologyDeclared": true,
+      "predicateOntologyDeclared": true,
+      "sameFrozenV39Grammar": true,
+      "semanticEquivalentOperationSignCellsBalanced": true,
+      "unsupportedInputPolicy": "conservative_full_outcome_vocabulary"
+    },
+    "population": {
+      "excludeAllV22TargetProgramKeys": true,
+      "families": [
+        "unary_selection",
+        "relation_conditioned",
+        "two_hop_composition",
+        "existential_aggregation"
+      ],
+      "generatorSeed": 4119,
+      "maximumSupportTraces": 24,
+      "mechanics": 40,
+      "mechanicsPerFamily": 10,
+      "oneBitMechanicsPerFamily": 3,
+      "queryAxes": [
+        "binding_recombination",
+        "relation_orientation",
+        "graph_topology",
+        "entity_count_extrapolation",
+        "partial_observation",
+        "distractor_invariance",
+        "permutation_equivariance"
+      ],
+      "statisticalUnit": "mechanic_episode",
+      "twoBitMechanicsPerFamily": 7
+    },
+    "schemaVersion": 41,
+    "sourceV22Config": "configs/dataset.v22.json",
+    "sourceV22DevelopmentCorpus": "data/v22-relational-development",
+    "sourceV40OutcomeLock": "configs/v40-outcome-lock.json",
+    "stageAuthorization": {
+      "architectureBreakingBenchmark": false,
+      "constructConfirmation": false,
+      "scoreConfirmation": false,
+      "writeAndAuditImplementation": true
+    }
+  },
+  "config_sha256": "cd7ac23ebceb1a9af5307c54106d610445f606eba7c2e39e3dd4b262787ab51b",
+  "design_audit": "outputs/v41-relational-mechanic-confirmation/design-audit.json",
+  "design_audit_sha256": "f76ff5185e7da320a99f3b44ee8a84f1cb4bdbb207f42c3bb73cec805b689faa",
+  "experiment": "v41_design_lock",
+  "frozen_compiler": "python/v39_compiler.py",
+  "frozen_compiler_sha256": "8732ccf074a9a03af7b3879b44fbec5c5b9531130849ceb682df1e5109469c4b",
+  "frozen_semantic_kernel": "python/v22_relational.py",
+  "frozen_semantic_kernel_sha256": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+  "lock_payload_sha256": "170f1c0a8e4c6f27c388751e71af277d541c125e20efe266b2c543efa5c2b02d",
+  "old_v22_target_programs": 24,
+  "preregistration": "docs/v41-relational-mechanic-confirmation-plan.md",
+  "preregistration_sha256": "6aacb6e866036a9cd1cbf29f418605d9fbc9cd14f0b67d9d813379b00d4e43ee",
+  "schema_version": 41,
+  "source_v40_outcome_lock": "configs/v40-outcome-lock.json",
+  "source_v40_outcome_lock_sha256": "4cdfd351bac07e8d383891be0edaffa3a1841141b4df3793da5e4e08ecae8a38",
+  "unseen_program_capacity": {
+    "existential_aggregation": {
+      "1": 3,
+      "2": 27
+    },
+    "relation_conditioned": {
+      "1": 3,
+      "2": 27
+    },
+    "two_hop_composition": {
+      "1": 3,
+      "2": 27
+    },
+    "unary_selection": {
+      "1": 3,
+      "2": 27
+    }
+  },
+  "v22_config": "configs/dataset.v22.json",
+  "v22_config_sha256": "60231e6adb8dc116c8e3dc0cdab698ec8ccd6fd63f7a068c7e0729024a1a3081"
+}

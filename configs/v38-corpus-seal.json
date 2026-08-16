@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "backbone_forward_passes": 1280,
+    "feature_extraction_attempts": 1,
+    "v28": false,
+    "v32_evaluation": false,
+    "validation_evaluations": 1
+  },
+  "corpora": {
+    "ontology_focus_fit": {
+      "path": "data/v38-ontology-anchored-focus-parser/ontology_focus_fit.jsonl",
+      "records": 240,
+      "sha256": "25c1ff9d622b177be86849165628652ab42d151e1f98e407d7b198a48e66c2dc"
+    },
+    "ontology_focus_validation": {
+      "path": "data/v38-ontology-anchored-focus-parser/ontology_focus_validation.jsonl",
+      "records": 240,
+      "sha256": "ae0754414d97ee53a9f2dbee87ece37c00b071f10599beb92293278ff1c754a9"
+    }
+  },
+  "corpus_audit": "outputs/v38-ontology-anchored-focus-parser/corpus-audit.json",
+  "corpus_audit_sha256": "1bb89e4ecfac63c1fad1f817130dd0309a5bf11b9f7bb26a59a7aa44e6aebdd4",
+  "experiment": "v38_corpus_seal",
+  "implementation_lock": "configs/v38-implementation-lock.json",
+  "implementation_lock_sha256": "b8c79e3e47981d15ff8d2277a0a398fd51a2fe7562494fe6ee478d6164321c5a",
+  "lock_payload_sha256": "de865f08840b36b7a8173a2cbd5fe2ff498efd2b76a0394647a0bb7bc76c62cc",
+  "manifest": "data/v38-ontology-anchored-focus-parser/manifest.json",
+  "manifest_sha256": "4f82a7f2716333e555b9712c51790f95ce00e136d712e03485fa87606ddc51b9",
+  "schema_version": 38
+}

@@ -1,0 +1,69 @@
+{
+  "experiment": "v32_trained_system_lock",
+  "feature_metadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+  "feature_metadata_sha256": "3b486f98fc46b3b1de989857f3a4e4fa3b0075d5c7b361dbcb094b00c7b63c5b",
+  "lock_payload_sha256": "c6341cbfac817a9ebbe2fdad026605c15ba4d0de38c9d76d7bcdcf1531d56c1e",
+  "proof": {
+    "checkpoint_selections": 0,
+    "evaluation_features_read": 0,
+    "evaluation_predictions": 0,
+    "evaluation_records_read": 0,
+    "hyperparameter_selections": 0,
+    "trained_systems": 6
+  },
+  "protocol_lock": "configs/v32-factorized-semantics-lock.json",
+  "protocol_lock_sha256": "227c08f017f7dae4094acdeae6ebdf1b27e159cbb310348f492c0243bcc4ecd5",
+  "schema_version": 32,
+  "systems": {
+    "joint_auxiliary": {
+      "manifest": "outputs/v32-factorized-semantics/training/joint_auxiliary/manifest.json",
+      "manifest_sha256": "eabc9676bc65bff797a66279e780f70aa087181abeb8b8f14e6a55ddd8a1cb56",
+      "seeds": {
+        "3211": {
+          "ledger": "outputs/v32-factorized-semantics/training/joint_auxiliary/seed-3211-ledger.json",
+          "ledger_sha256": "8a72cb1f36147314f4445b3c8e80887cd527885bee37512edf8fc46aae8de025",
+          "parameters": "outputs/v32-factorized-semantics/training/joint_auxiliary/seed-3211.safetensors",
+          "parameters_sha256": "3dc99fa0895712a8f5175079a6ece8ab865d6c26a778d33c374623858ec7b899"
+        },
+        "3212": {
+          "ledger": "outputs/v32-factorized-semantics/training/joint_auxiliary/seed-3212-ledger.json",
+          "ledger_sha256": "5a30bff169f76239b81668641b9a93d8afdcb50f636c97c69898a9dc6efcfac8",
+          "parameters": "outputs/v32-factorized-semantics/training/joint_auxiliary/seed-3212.safetensors",
+          "parameters_sha256": "9396585ff422b7dd7d62a456a6f7766fc66f377c7882d56cac2144efd05666c4"
+        },
+        "3213": {
+          "ledger": "outputs/v32-factorized-semantics/training/joint_auxiliary/seed-3213-ledger.json",
+          "ledger_sha256": "5635c12d204227ea443bfe0a2a68a977a53df090945dac5a1591d9061a4ff871",
+          "parameters": "outputs/v32-factorized-semantics/training/joint_auxiliary/seed-3213.safetensors",
+          "parameters_sha256": "b1bb03ccb841648a0a621890fceb3ac30d40f3736726e5529cc26eaa6b2aade4"
+        }
+      }
+    },
+    "monolithic": {
+      "manifest": "outputs/v32-factorized-semantics/training/monolithic/manifest.json",
+      "manifest_sha256": "324bc2674cfe0e4c47ca2615a50cc2c82bbd897abd0328c20a844167c4214dd7",
+      "seeds": {
+        "3211": {
+          "ledger": "outputs/v32-factorized-semantics/training/monolithic/seed-3211-ledger.json",
+          "ledger_sha256": "bc6c348f74e14d6cb494748a5d320470cf93d7e680929146ec41edf4f074972e",
+          "parameters": "outputs/v32-factorized-semantics/training/monolithic/seed-3211.safetensors",
+          "parameters_sha256": "81866ff92585dd2bc9349679e55dfa2b3fe1095e0892573f0e3402a344648048"
+        },
+        "3212": {
+          "ledger": "outputs/v32-factorized-semantics/training/monolithic/seed-3212-ledger.json",
+          "ledger_sha256": "376d4e8be6444865ffc3f5a40eb75b89b8d47c37fec4e4821f5dba2f968a3503",
+          "parameters": "outputs/v32-factorized-semantics/training/monolithic/seed-3212.safetensors",
+          "parameters_sha256": "105ee539ce092952028e358a03a16350e9f32d9b6e73836fbbd663e41023d913"
+        },
+        "3213": {
+          "ledger": "outputs/v32-factorized-semantics/training/monolithic/seed-3213-ledger.json",
+          "ledger_sha256": "689fb7a46a8c577682773c59ff171d1c0c4022e52ecdfc2297afa63491027e4f",
+          "parameters": "outputs/v32-factorized-semantics/training/monolithic/seed-3213.safetensors",
+          "parameters_sha256": "d9f12b652b26c510f9f506bb747176f353a1b470b834bfc63152d826daabdeb7"
+        }
+      }
+    }
+  },
+  "training_manifest": "outputs/v32-factorized-semantics/training/manifest.json",
+  "training_manifest_sha256": "9588e4100790dca69328bf4b6eb1666f857f8ff3ba0879254cb780745142d6c5"
+}

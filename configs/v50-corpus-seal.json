@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_development_once": true
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v50-history-dependent-belief-filtering/development_evaluation.jsonl",
+      "records": 24,
+      "sha256": "c266d8c48fa2b44e73df03e72ac8ac62f963dcc193329a2164971198905b93bf"
+    },
+    "development_fit": {
+      "path": "data/v50-history-dependent-belief-filtering/development_fit.jsonl",
+      "records": 24,
+      "sha256": "f506b3af0eed474edb65ddb1a33a52bb471a2d124165f718388836dd3d49bd96"
+    }
+  },
+  "corpus_audit": "outputs/v50-history-dependent-belief-filtering/corpus-audit.json",
+  "corpus_audit_sha256": "5656669d247e9c50ccb8f35098437d3fc106ea99ecf47e8f92e5aa7ddcd8b976",
+  "corpus_sha256": "20a16a6ecdd95b6c4ab6b4e89338339c01a35604156356dfd351b6ae1a022d33",
+  "experiment": "v50_corpus_seal",
+  "implementation_lock": "configs/v50-implementation-lock.json",
+  "implementation_lock_sha256": "8635b51ef05c6d2cb997cd98b41493ec168c42f5c7f5fc1ffa427d318209c7e0",
+  "manifest": "data/v50-history-dependent-belief-filtering/manifest.json",
+  "manifest_sha256": "c62d4b5957c3fa1806eec9d70ee6efec69d2ef8f876364a5e5d64fa521a6b50a",
+  "schema_version": 50,
+  "seal_payload_sha256": "cca68238ca1248e9b1e0ae7706344eeaf5883ec352bc4290e84d2895b0784649"
+}

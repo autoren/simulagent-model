@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 48,
+  "kind": "non_gating_reporting_supplement",
+  "sourceDesignLock": "configs/v48-design-lock.json",
+  "changesPrimaryGates": false,
+  "changesDecisionHierarchy": false,
+  "requiredReporting": {
+    "statisticalUnit": "mechanic_episode",
+    "reportAll48AndDevelopmentEvaluation24Separately": true,
+    "mechanicMacroMetrics": ["joint_distribution_total_variation", "heldout_joint_trajectory_log_loss", "calibration_error"],
+    "worstCases": ["worst_mechanic", "worst_family", "worst_probability", "worst_timing", "worst_sequence_length"],
+    "pairedComposition": ["per_mechanic_language_minus_symbolic_tv", "per_mechanic_language_minus_symbolic_log_loss", "paired_mechanic_cluster_bootstrap_95_percent_interval"],
+    "posteriorDiagnostics": ["target_program_mass", "posterior_entropy_nats", "runner_up_program_mass", "runner_up_program_key", "probability_posterior", "structural_vs_probability_uncertainty"],
+    "bootstrapResamples": 10000,
+    "bootstrapSeed": 4847
+  },
+  "requiredAlignmentAudit": {
+    "supportInterventionIdentity": true,
+    "trialOrdinalAndOutcomeId": true,
+    "initialStateAfterCompilation": true,
+    "orderedActionSequenceAfterCompilation": true,
+    "everyOutcomeCatalogTrajectoryAfterCompilation": true,
+    "queryIdentityAndHeldoutAssignment": true,
+    "requiredExactRate": 1.0,
+    "nonCompensatory": true
+  },
+  "interpretation": {
+    "v48Pass": "verified_information_preserving_composition_only",
+    "notEvidenceFor": ["open_language_grounding", "probability_language_comprehension", "passive_partial_observation", "active_intervention_selection"]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "authorization": {
+    "construct_development_population": true,
+    "language_grounding": false,
+    "model_access": false,
+    "run_oracle_development": false,
+    "sample_outcomes": false
+  },
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "finalEvaluation": false,
+      "languageGrounding": false,
+      "openOntology": false,
+      "oracleDistributionValuedSupport": true,
+      "primaryClaim": "exact_probability_semantics_and_distribution_valued_mechanic_induction_under_a_declared_finite_probability_vocabulary",
+      "probabilityCalibrationFromFiniteTrials": false,
+      "sampledOutcomeEstimation": false
+    },
+    "comparisons": {
+      "exactWeightedVersionSpaceExecutor": "primary",
+      "literalDistributionLookup": "non_lifted_control",
+      "mapDeterminizedExecutor": "registered_inadequacy_control_keeps_only_the_modal_outcome",
+      "sampleFrequencyEstimator": "deferred_until_empirical_sampling_stage",
+      "uniformizedSupportExecutor": "registered_inadequacy_control_preserves_outcome_support_but_replaces_nonzero_mass_uniformly"
+    },
+    "decisionHierarchy": [
+      "if_weighted_execution_and_induction_pass_and_probability_ablations_fail_authorize_preregistration_of_sampled_transition_estimation",
+      "if_mass_or_execution_fails_repair_exact_probability_semantics_before_any_sampling_or_language_work",
+      "if_schema_recovery_fails_expand_or_revise_the_stochastic_dsl_without_neural_training",
+      "if_uniformized_or_map_control_passes_redesign_queries_to_make_probability_mass_causally_necessary",
+      "if_literal_lookup_passes_redesign_structural_generalization"
+    ],
+    "experiment": "v46_oracle_stochastic_transition_foundation",
+    "firewall": {
+      "V45LanguageCorpusReuse": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "claimExpansionBeyondOracleProbabilityFoundation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "sampledOutcomeEstimation": "forbidden"
+    },
+    "frozenDeterministicFoundation": {
+      "actions": [
+        "pulse",
+        "route",
+        "wait"
+      ],
+      "delayTicks": [
+        1,
+        2
+      ],
+      "deterministicPayloads": [
+        "set_true",
+        "set_false",
+        "toggle"
+      ],
+      "languageInterface": "deferred",
+      "ontology": "v44_declared_boolean_ontology",
+      "tickPhaseOrder": "v44_frozen_delivery_action_enqueue_observe_order"
+    },
+    "gates": {
+      "maximumLiteralLookupExactDistributionMatch": 0.95,
+      "maximumMapExactDistributionMatch": 0.85,
+      "maximumMeanTrajectoryTotalVariation": 0.0,
+      "maximumUniformizedExactDistributionMatch": 0.85,
+      "maximumWeightedEmptyVersionSpace": 0.0,
+      "minimumEveryFamilyExactDistribution": 1.0,
+      "minimumEveryProbabilityValueExactDistribution": 1.0,
+      "minimumEverySequenceLengthExactDistribution": 1.0,
+      "minimumExactTrajectoryDistributionMatch": 1.0,
+      "minimumMassNormalization": 1.0,
+      "minimumOracleProgramValidation": 1.0,
+      "minimumWeightedSchemaRecovery": 1.0,
+      "minimumWeightedTargetRetention": 1.0
+    },
+    "metrics": {
+      "distributionError": [
+        "total_variation_distance"
+      ],
+      "distributionRepresentation": [
+        "exact_mass_normalization",
+        "exact_distribution_match"
+      ],
+      "induction": [
+        "target_retention",
+        "schema_recovery",
+        "empty_version_space"
+      ],
+      "strata": [
+        "family",
+        "sequence_length",
+        "probability_value",
+        "immediate_vs_delayed"
+      ]
+    },
+    "nextStageIfPassed": {
+      "activeSelectionStillDeferred": true,
+      "languageStillDeferred": true,
+      "requiresCalibrationAndProperScoring": true,
+      "requiresFreshPopulation": true,
+      "stage": "sampled_transition_probability_estimation",
+      "supportWillContainRealizedTrialsNotOracleDistributions": true
+    },
+    "population": {
+      "developmentEvaluationMechanics": 16,
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "families": [
+        "immediate_bernoulli_mutation",
+        "delayed_bernoulli_scheduling",
+        "state_conditional_probability",
+        "interleaved_deterministic_and_stochastic"
+      ],
+      "fitMechanics": 24,
+      "generatorSeed": 4637,
+      "mechanics": 40,
+      "mechanicsPerFamily": 10,
+      "querySequencesPerMechanic": 24,
+      "sequenceLengths": [
+        2,
+        3,
+        4
+      ],
+      "supportSequencesPerMechanicMaximum": 20
+    },
+    "probabilitySemantics": {
+      "arithmetic": "exact_reduced_rational",
+      "branchChoiceTime": "when_action_rule_is_evaluated_after_due_event_delivery",
+      "branchForm": "bernoulli_apply_payload_else_noop",
+      "delayedBranchChoice": "sample_at_scheduling_time_then_deliver_chosen_payload_at_due_tick",
+      "distributionState": "exact_mass_over_complete_world_and_pending_queue_pairs",
+      "massNormalizationRequired": true,
+      "observationDistribution": "marginal_exact_mass_over_post_action_worlds",
+      "probabilityVocabulary": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "repeatedActionChoices": "conditionally_independent_given_current_world_and_pending_queue",
+      "sameTargetSameTickConflict": "forbidden_by_generator_and_program_validator",
+      "sequenceEnd": "pending_events_are_not_automatically_flushed"
+    },
+    "schemaVersion": 46,
+    "scientificQuestion": "can_an_exact_probability_weighted_symbolic_extension_represent_identify_and_execute_stochastic_immediate_and_delayed_transition_mechanics_from_oracle_distribution_valued_support",
+    "sourceV45OutcomeLock": "configs/v45-outcome-lock.json",
+    "stageAuthorization": {
+      "constructDevelopmentPopulation": false,
+      "modelAccess": false,
+      "runOracleDevelopment": false,
+      "sampleOutcomes": false,
+      "writeAndAuditOracleImplementation": true
+    },
+    "supportAndQueryContract": {
+      "completeInitialStates": true,
+      "everyDelayedFamilyHasTimingSensitiveQuery": true,
+      "everyMechanicHasProbabilitySensitiveQuery": true,
+      "partialInitialStates": false,
+      "queriesRequireExactPostActionWorldDistributions": true,
+      "sampledRealizations": 0,
+      "statisticalUnit": "mechanic_episode",
+      "supportProvidesExactPostActionWorldDistributions": true,
+      "supportQueryStructuralOverlap": 0
+    }
+  },
+  "design_lock": "configs/v46-design-lock.json",
+  "design_lock_sha256": "6eea3f1dcc9bac059ac25871c522b203ffa49668a8e492ee9b27d659baeb6457",
+  "expected_corpus_sha256": "b2597b31d2a46b0df686aec3b9e0f249345b098f41657ffce326d104afca9db2",
+  "expected_counts": {
+    "mechanics": 40,
+    "probability_sensitive_queries": 896,
+    "query_sequences": 960,
+    "support_sequences": 40,
+    "timing_sensitive_queries": 416,
+    "uniform_sensitive_queries": 613
+  },
+  "experiment": "v46_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v46.py": "86f6fbf71c16e577e3b24a4868a549e85a46ad18f07123695025f8461aebce0f",
+    "python/audit_v46_corpus.py": "9bba7f33ce6ab080be33825f293d2f0896999b00b5b361264999db2cbaa0d48b",
+    "python/audit_v46_implementation.py": "1375da30362eee28ad1677b22d263cc2b823debf2aa31fef1d89dca8bfdfa4e1",
+    "python/evaluate_v46_stochastic.py": "e35e31e6e86e6e69977b431d92a9a382f55580f8f089d3714cf43619d4776c43",
+    "python/freeze_v46_implementation.py": "42546ef44ff8826300bb5ae19c07d206fc7eaf9347314e6d61249719cad41ee9",
+    "python/freeze_v46_outcome.py": "cb6183439d24360e76be9c0797d9ba50dd52d9cd530cfeedcdc31d4934d95cfd",
+    "python/generate_v46_stochastic.py": "20c040864b87aabed33fb0d2a9bca6b3007537a8f3f966806949dd583261b8e3",
+    "python/seal_v46_corpus.py": "3895f287fd6240ce6c768a73834782464a51a901a85413efbb95ac07474c8c8a",
+    "python/test_v46_stochastic.py": "8d20560b1169a06ba73b88192ca4d5a19800910765a782d8d86decf6449eaa70",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v42_stateful.py": "500a7d2ade4a6be0714f6e1a5a93928d47a132283295d168b6128c049d9652ea",
+    "python/v46_stochastic.py": "67f7c729d4c053c88fb18ca76b5c85767ac3b152af9f454cc64cdb1ff4635326"
+  },
+  "implementation_audit": "outputs/v46-oracle-stochastic-transitions/implementation-audit.json",
+  "implementation_audit_sha256": "4c4b2be8a930a6a982622b6c6ed20d126c51e0ef96c11420cce01582314dcb41",
+  "lock_payload_sha256": "280ccb79374f607b355d5179a95a507731e7877d4a906148d145c6ca702edd01",
+  "schema_version": 46,
+  "source_v45_outcome_lock": "configs/v45-outcome-lock.json",
+  "source_v45_outcome_lock_sha256": "cad662fed2ecb9f0a01d1360f53baa8d212316fc28c06f586a2c008f41be5629"
+}

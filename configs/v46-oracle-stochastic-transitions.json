@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 46,
+  "experiment": "v46_oracle_stochastic_transition_foundation",
+  "scientificQuestion": "can_an_exact_probability_weighted_symbolic_extension_represent_identify_and_execute_stochastic_immediate_and_delayed_transition_mechanics_from_oracle_distribution_valued_support",
+  "sourceV45OutcomeLock": "configs/v45-outcome-lock.json",
+  "claimBoundary": {
+    "primaryClaim": "exact_probability_semantics_and_distribution_valued_mechanic_induction_under_a_declared_finite_probability_vocabulary",
+    "oracleDistributionValuedSupport": true,
+    "sampledOutcomeEstimation": false,
+    "probabilityCalibrationFromFiniteTrials": false,
+    "languageGrounding": false,
+    "activeInterventionSelection": false,
+    "openOntology": false,
+    "finalEvaluation": false
+  },
+  "probabilitySemantics": {
+    "arithmetic": "exact_reduced_rational",
+    "probabilityVocabulary": ["1/4", "1/2", "3/4"],
+    "branchForm": "bernoulli_apply_payload_else_noop",
+    "branchChoiceTime": "when_action_rule_is_evaluated_after_due_event_delivery",
+    "repeatedActionChoices": "conditionally_independent_given_current_world_and_pending_queue",
+    "delayedBranchChoice": "sample_at_scheduling_time_then_deliver_chosen_payload_at_due_tick",
+    "distributionState": "exact_mass_over_complete_world_and_pending_queue_pairs",
+    "observationDistribution": "marginal_exact_mass_over_post_action_worlds",
+    "sequenceEnd": "pending_events_are_not_automatically_flushed",
+    "massNormalizationRequired": true,
+    "sameTargetSameTickConflict": "forbidden_by_generator_and_program_validator"
+  },
+  "frozenDeterministicFoundation": {
+    "ontology": "v44_declared_boolean_ontology",
+    "tickPhaseOrder": "v44_frozen_delivery_action_enqueue_observe_order",
+    "delayTicks": [1, 2],
+    "actions": ["pulse", "route", "wait"],
+    "deterministicPayloads": ["set_true", "set_false", "toggle"],
+    "languageInterface": "deferred"
+  },
+  "population": {
+    "mechanics": 40,
+    "mechanicsPerFamily": 10,
+    "families": [
+      "immediate_bernoulli_mutation",
+      "delayed_bernoulli_scheduling",
+      "state_conditional_probability",
+      "interleaved_deterministic_and_stochastic"
+    ],
+    "fitMechanics": 24,
+    "developmentEvaluationMechanics": 16,
+    "supportSequencesPerMechanicMaximum": 20,
+    "querySequencesPerMechanic": 24,
+    "sequenceLengths": [2, 3, 4],
+    "entityCounts": [2, 3, 4],
+    "generatorSeed": 4637
+  },
+  "supportAndQueryContract": {
+    "completeInitialStates": true,
+    "supportProvidesExactPostActionWorldDistributions": true,
+    "queriesRequireExactPostActionWorldDistributions": true,
+    "partialInitialStates": false,
+    "sampledRealizations": 0,
+    "supportQueryStructuralOverlap": 0,
+    "everyMechanicHasProbabilitySensitiveQuery": true,
+    "everyDelayedFamilyHasTimingSensitiveQuery": true,
+    "statisticalUnit": "mechanic_episode"
+  },
+  "comparisons": {
+    "exactWeightedVersionSpaceExecutor": "primary",
+    "uniformizedSupportExecutor": "registered_inadequacy_control_preserves_outcome_support_but_replaces_nonzero_mass_uniformly",
+    "mapDeterminizedExecutor": "registered_inadequacy_control_keeps_only_the_modal_outcome",
+    "literalDistributionLookup": "non_lifted_control",
+    "sampleFrequencyEstimator": "deferred_until_empirical_sampling_stage"
+  },
+  "metrics": {
+    "distributionRepresentation": ["exact_mass_normalization", "exact_distribution_match"],
+    "distributionError": ["total_variation_distance"],
+    "induction": ["target_retention", "schema_recovery", "empty_version_space"],
+    "strata": ["family", "sequence_length", "probability_value", "immediate_vs_delayed"]
+  },
+  "gates": {
+    "minimumOracleProgramValidation": 1.0,
+    "minimumMassNormalization": 1.0,
+    "minimumWeightedTargetRetention": 1.0,
+    "minimumWeightedSchemaRecovery": 1.0,
+    "maximumWeightedEmptyVersionSpace": 0.0,
+    "minimumExactTrajectoryDistributionMatch": 1.0,
+    "maximumMeanTrajectoryTotalVariation": 0.0,
+    "minimumEveryFamilyExactDistribution": 1.0,
+    "minimumEverySequenceLengthExactDistribution": 1.0,
+    "minimumEveryProbabilityValueExactDistribution": 1.0,
+    "maximumUniformizedExactDistributionMatch": 0.85,
+    "maximumMapExactDistributionMatch": 0.85,
+    "maximumLiteralLookupExactDistributionMatch": 0.95
+  },
+  "decisionHierarchy": [
+    "if_weighted_execution_and_induction_pass_and_probability_ablations_fail_authorize_preregistration_of_sampled_transition_estimation",
+    "if_mass_or_execution_fails_repair_exact_probability_semantics_before_any_sampling_or_language_work",
+    "if_schema_recovery_fails_expand_or_revise_the_stochastic_dsl_without_neural_training",
+    "if_uniformized_or_map_control_passes_redesign_queries_to_make_probability_mass_causally_necessary",
+    "if_literal_lookup_passes_redesign_structural_generalization"
+  ],
+  "nextStageIfPassed": {
+    "stage": "sampled_transition_probability_estimation",
+    "requiresFreshPopulation": true,
+    "supportWillContainRealizedTrialsNotOracleDistributions": true,
+    "requiresCalibrationAndProperScoring": true,
+    "activeSelectionStillDeferred": true,
+    "languageStillDeferred": true
+  },
+  "firewall": {
+    "V45LanguageCorpusReuse": "forbidden",
+    "sampledOutcomeEstimation": "forbidden",
+    "languageGrounding": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "activeSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden",
+    "claimExpansionBeyondOracleProbabilityFoundation": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditOracleImplementation": true,
+    "constructDevelopmentPopulation": false,
+    "runOracleDevelopment": false,
+    "sampleOutcomes": false,
+    "modelAccess": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "backbone_forward_passes": 6840,
+    "feature_extraction_attempts": 1,
+    "fit_interface": false,
+    "score_validation": false,
+    "v28": false,
+    "v32_evaluation": false
+  },
+  "corpora": {
+    "fit": {
+      "path": "data/v37-semantic-invariance/semantic_invariance_fit.jsonl",
+      "records": 400,
+      "sha256": "0367e413254f8ba7f59e347fddcee0bdd5d27d0765505ab2dd2fb815df14f68c"
+    },
+    "validation": {
+      "path": "data/v37-semantic-invariance/semantic_invariance_validation.jsonl",
+      "records": 360,
+      "sha256": "679653abd57a823c40b5a0780a3293322e3d0480e9f47ab05cd7e694621319f9"
+    }
+  },
+  "corpus_audit": "outputs/v37-semantic-invariance/corpus-audit.json",
+  "corpus_audit_sha256": "5bda2672fe52bf4b480ad4318014ff7948bfe4dd28e4fe11d9b4e8eb630004f6",
+  "experiment": "v37_corpus_seal",
+  "implementation_lock": "configs/v37-implementation-lock.json",
+  "implementation_lock_sha256": "f22ad4e849362037632103e0f7c2a623e6541765b897418761b75afba4538409",
+  "lock_payload_sha256": "dbc093762680bd01cba42df7dca5bc01c1932559e24c5201989dff14a520e96d",
+  "manifest": "data/v37-semantic-invariance/manifest.json",
+  "manifest_sha256": "071bc14d2f3ef078416c839286bf0ecd5f906515b0102cbcb9c3a3452ba29a98",
+  "schema_version": 37
+}

@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "adapter_training_runs": 0,
+    "final_evaluations": 0,
+    "model_forward_passes": 0,
+    "paired_development_runs": 1
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v45-delayed-language-grounding/development_evaluation.jsonl",
+      "records": 16,
+      "sha256": "abead51bd5102a5a2dbcc90278a74fefd20ab4520e8f68638971bf34be1569a2"
+    },
+    "development_fit": {
+      "path": "data/v45-delayed-language-grounding/development_fit.jsonl",
+      "records": 24,
+      "sha256": "8c8dd66ca7bd8a834a2fa0a8ea954b3ca4d6ff5e85f9c4bc764e14ce23c95679"
+    }
+  },
+  "corpus_audit": "outputs/v45-delayed-language-grounding/corpus-audit.json",
+  "corpus_audit_sha256": "2263a25e7c95695de7c1c0efce8d088f48865a59bc8ea17e44a6ed42744cfa1b",
+  "experiment": "v45_corpus_seal",
+  "implementation_lock": "configs/v45-implementation-lock.json",
+  "implementation_lock_sha256": "50ba3a3b65ee9430e76bc6ea811486e4642b2e9605ab6e79948e0fd5a55d9615",
+  "lock_payload_sha256": "fe5b3a3b5596aac2088be3b9e106abda0a7a98dbe7bacd17a073038b6642fd9d",
+  "manifest": "data/v45-delayed-language-grounding/manifest.json",
+  "manifest_sha256": "ae79ef23886c36f68c757915bb2ea960e9d86d4d4cb5b2e0eb905180b83e2e8f",
+  "schema_version": 45
+}

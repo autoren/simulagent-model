@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 31,
+  "experiment": "v31_matched_head_signed_fact_adaptation",
+  "seed": 3101,
+  "outputDir": "data/v31-signed-fact-adaptation",
+  "sourceV30Lock": "configs/v30-signed-fact-language-lock.json",
+  "sourceV30Result": "outputs/v30-signed-fact-language/evaluation/result.json",
+  "sourceV30PostAudit": "outputs/v30-signed-fact-language/post-result-audit.json",
+  "sourceV30EligibilitySupplement": "docs/v30-lora-eligibility-supplement.md",
+  "sourceV28Lock": "configs/v28-marginal-map-lock.json",
+  "sourceV28Result": "outputs/v28-marginal-map/evaluation/result.json",
+  "sourceV22r2Lock": "configs/v22r2-relational-grounding-lock.json",
+  "ontology": {
+    "entityTypes": ["unit", "hub"],
+    "unaryPredicates": [
+      {"id": "stable", "entityType": "unit", "trueForm": "{entity} is stable", "falseForm": "{entity} is unstable"},
+      {"id": "charged", "entityType": "unit", "trueForm": "{entity} is charged", "falseForm": "{entity} is uncharged"},
+      {"id": "online", "entityType": "hub", "trueForm": "{entity} is online", "falseForm": "{entity} is offline"}
+    ],
+    "relations": [
+      {"id": "linked", "sourceType": "unit", "targetType": "unit", "directTrueForm": "{source} is linked to {target}", "directFalseForm": "{source} is not linked to {target}", "inverseTrueForm": "{target} receives a link from {source}", "inverseFalseForm": "{target} does not receive a link from {source}"},
+      {"id": "feeds", "sourceType": "hub", "targetType": "unit", "directTrueForm": "{source} feeds {target}", "directFalseForm": "{source} does not feed {target}", "inverseTrueForm": "{target} is fed by {source}", "inverseFalseForm": "{target} is not fed by {source}"}
+    ],
+    "truthStatuses": ["true", "false", "unknown"]
+  },
+  "semanticOperators": [
+    "affirmative_gold",
+    "negated_opposite",
+    "contrastive_both",
+    "double_negation",
+    "explicit_unknown"
+  ],
+  "splits": {
+    "adaptation_fit": {"surfaceFamiliesPerOperator": ["fit_a", "fit_b", "fit_c", "fit_d", "fit_e"]},
+    "adaptation_calibration": {"surfaceFamiliesPerOperator": ["cal_a"]},
+    "adaptation_evaluation": {"surfaceFamiliesPerOperator": ["eval_a", "eval_b", "eval_c", "eval_d", "eval_e"]}
+  },
+  "construction": {
+    "baseScenesPerSurfaceFamily": 4,
+    "entityCounts": [3, 4, 5],
+    "sceneVariants": ["direct_clean", "inverse_clean", "direct_distractor", "reversed_link_arguments_clean"],
+    "factsInDirectScenes": ["stable", "charged", "online", "linked", "feeds"],
+    "factsInInverseScenes": ["linked", "feeds"],
+    "factsInReversedScenes": ["linked"]
+  },
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 768,
+    "systemPrompt": "Represent the evidence as one canonical signed fact in the declared typed ontology. Preserve directed source and target roles and distinguish known false from unresolved.",
+    "representation": "full_depth_final_token_plus_entity_inventory_and_evidence_mention_means_float32"
+  },
+  "sharedStructuredHead": {
+    "width": 128,
+    "dropout": 0.0,
+    "interaction": "clause_entity_absolute_difference_product_and_concat",
+    "predicateClasses": ["stable", "charged", "online", "linked", "feeds"],
+    "truthClasses": ["true", "false", "unknown"],
+    "argument1": "typed_entity_pointer",
+    "argument2": "typed_entity_pointer_plus_na",
+    "deterministicTypeMask": true,
+    "loss": {
+      "predicate": 1.0,
+      "argument1": 1.0,
+      "argument2": 1.0,
+      "truth": 1.0,
+      "classWeighting": "inverse_frequency_within_fit"
+    }
+  },
+  "systems": {
+    "zeroShotReference": {
+      "name": "locked_v30_candidate_independent_field_decoder",
+      "evaluationOnly": true,
+      "modelForwardPassesPerRecord": 4
+    },
+    "frozenReadout": {
+      "name": "frozen_full_depth_shared_structured_pointer_head",
+      "backboneTrainable": false,
+      "headTrainable": true
+    },
+    "loraReadout": {
+      "name": "lora_full_depth_shared_structured_pointer_head",
+      "backboneTrainable": "registered_lora_parameters_only",
+      "headTrainable": true,
+      "lastLayers": 8,
+      "rank": 8,
+      "scale": 16.0,
+      "dropout": 0.0,
+      "moduleKeys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj",
+        "linear_attn.in_proj_qkv",
+        "linear_attn.out_proj"
+      ]
+    }
+  },
+  "training": {
+    "seeds": [3111, 3112, 3113],
+    "epochs": 1,
+    "batchSize": 1,
+    "gradientAccumulationSteps": 4,
+    "optimizer": "adam",
+    "learningRate": 0.0002,
+    "gradientClipNorm": 1.0,
+    "checkpointSelection": "none_fixed_single_epoch",
+    "calibrationUse": "report_only_no_selection",
+    "surfaceBalancedDeterministicShuffle": true
+  },
+  "evaluation": {
+    "statisticalUnit": "surface_family",
+    "bootstrapReplicates": 10000,
+    "bootstrapSeed": 3199,
+    "primarySystemMetric": "exact_signed_fact_accuracy",
+    "seedAggregation": "report_each_seed_mean_and_minimum",
+    "noSeedSelection": true
+  },
+  "integration": {
+    "runCondition": "selected_system_passes_all_language_gates",
+    "seedCombination": "arithmetic_mean_field_logits_across_all_three_registered_seeds",
+    "candidateAlignment": "maximum_weight_one_to_one_using_typed_predicate_and_argument_log_probabilities",
+    "truthSelection": "argmax_mean_truth_logits",
+    "unchangedProgramSelection": "v28_marginal_program_map",
+    "gates": {
+      "minimumOracleOracleExact": 1.0,
+      "minimumEvaluationSupportExactGraph": 0.75,
+      "minimumFrozenSupportOracleQueryExact": 0.75,
+      "minimumOracleSupportFrozenQueryExact": 0.75,
+      "minimumFrozenFrozenExact": 0.65,
+      "minimumFrozenSupportTargetRetention": 0.75,
+      "maximumFrozenSupportEmptyVersionSpace": 0.10
+    }
+  },
+  "gates": {
+    "preModel": {
+      "minimumAuditPassRate": 1.0,
+      "maximumExactEvidenceOverlapAcrossSplits": 0,
+      "maximumConstructionHashOverlapAcrossSplits": 0,
+      "maximumConstructionHashOverlapWithV30": 0,
+      "maximumTargetFieldsInAgentInput": 0,
+      "requiredEvaluationSurfaceFamilies": 25,
+      "requiredExamplesPerSurfaceFamily": 52,
+      "requiredOracleRoundTripAccuracy": 1.0
+    },
+    "perSeedLanguage": {
+      "minimumPredicateAccuracy": 0.98,
+      "minimumArgument1Accuracy": 0.98,
+      "minimumRelationArgumentOrderAccuracy": 0.95,
+      "minimumTruthStatusAccuracy": 0.98,
+      "minimumExactSignedFactAccuracy": 0.98,
+      "minimumExactSceneAccuracy": 0.80,
+      "minimumWorstOperatorTruthAccuracy": 0.95,
+      "minimumWorstRelationSurfaceExact": 0.90,
+      "minimumWorstSurfaceFamilyExact": 0.90,
+      "minimumAffirmativeNegatedPairExact": 0.95,
+      "minimumAffirmativeDoubleNegationPairExact": 0.95,
+      "minimumArgumentReversalPairExact": 0.95,
+      "minimumInversePairExact": 0.95,
+      "minimumDistractorPairExact": 0.95,
+      "minimumFalseUnknownPairExact": 0.98
+    },
+    "systemStability": {
+      "requiredPassingSeeds": 3,
+      "minimumMeanPredicateAccuracy": 0.98,
+      "minimumMeanExactSignedFactAccuracy": 0.98,
+      "minimumMeanExactSceneAccuracy": 0.80
+    },
+    "loraMaterialAdvantage": {
+      "minimumMeanExactSignedFactDelta": 0.02,
+      "minimumMeanExactSceneDelta": 0.03,
+      "minimumPairedFamilyBootstrapLowerBound": 0.0
+    }
+  },
+  "decisionHierarchy": [
+    "frozen_pass_lora_no_material_advantage_prefer_frozen",
+    "frozen_fail_lora_pass_authorize_frozen_lora_interface",
+    "both_pass_lora_material_advantage_prefer_lora_otherwise_frozen",
+    "both_fail_stop_no_graph_reranking_or_rank_sweep"
+  ],
+  "limits": {
+    "benchmarkConstructions": 1,
+    "frozenFeatureExtractions": 1,
+    "frozenReadoutTrainingRuns": 3,
+    "loraTrainingRuns": 3,
+    "trainedSystemLocks": 1,
+    "sealedEvaluations": 1,
+    "v28IntegrationReplays": 1,
+    "hyperparameterSelections": 0,
+    "checkpointSelections": 0
+  },
+  "firewall": {
+    "developmentOnly": true,
+    "evaluationPredictionsBeforeTrainedSystemLock": 0,
+    "evaluationFeaturesBeforeTrainedSystemLock": 0,
+    "transitionOutcomesAvailableDuringTraining": false,
+    "programIdentitiesAvailableDuringTraining": false,
+    "v28SignalsAvailableDuringTraining": false,
+    "evaluationUse": "one_shot_after_protocol_and_trained_system_hash_locks",
+    "integrationUse": "conditional_single_replay_for_selected_passing_system"
+  }
+}

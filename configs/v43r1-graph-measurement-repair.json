@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "43r1",
+  "experiment": "v43r1_graph_measurement_repair",
+  "purpose": "correct_the_registered_graph_metric_from_ordered_list_equality_to_canonical_row_set_equality_without_changing_data_compilers_reasoner_or_any_other_metric",
+  "sourceV43OutcomeLock": "configs/v43-outcome-lock.json",
+  "sourceV43CorpusSeal": "configs/v43-corpus-seal.json",
+  "sourcePostHocDiagnostic": "outputs/v43-sequential-language-grounding/post-hoc-graph-diagnostic.json",
+  "registeredChange": {
+    "oldMetric": "direct_ordered_list_equality_of_graph_rows",
+    "newMetric": "equality_of_duplicate_free_canonical_sets_of_atom_and_allowed_value_rows",
+    "reason": "entity_aliasing_changes_lexicographic_order_without_changing_graph_content",
+    "allowedImplementationChanges": ["graph_comparator", "repair_reporting_and_audit_plumbing"]
+  },
+  "immutableInputs": {
+    "v43Corpus": true,
+    "v43Compiler": true,
+    "v42Reasoner": true,
+    "v43Predictions": true,
+    "v43RegisteredResult": true,
+    "newCorpusConstruction": false,
+    "newModelAccess": false
+  },
+  "gates": {
+    "minimumCanonicalGraphExact": 1.0,
+    "minimumDuplicateFree": 1.0,
+    "maximumSemanticContentMismatches": 0,
+    "minimumOtherV43MetricsReproduced": 1.0,
+    "minimumOtherV43GateChecksPassed": 1.0,
+    "minimumComparatorPermutationInvariance": 1.0
+  },
+  "decisionHierarchy": [
+    "if_all_repair_gates_pass_accept_v43_semantic_graph_composition_as_measurement_repaired_and_preregister_deterministic_delayed_effects",
+    "if_canonical_graph_exact_fails_reject_the_ordering_only_diagnosis_and_repair_the_language_translation_boundary",
+    "if_other_v43_metrics_do_not_reproduce_reject_the_repair_as_non_isolated",
+    "never_rewrite_or_replace_the_original_v43_failed_outcome"
+  ],
+  "firewall": {
+    "V43ArtifactModification": "forbidden",
+    "compilerModification": "forbidden",
+    "reasonerModification": "forbidden",
+    "newCorpus": "forbidden",
+    "metricChangesBeyondGraphCanonicalization": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "finalEvaluation": "forbidden",
+    "independentReplicationClaim": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditRepairImplementation": true,
+    "runRepairRescore": false,
+    "preregisterDelayedEffects": false
+  }
+}

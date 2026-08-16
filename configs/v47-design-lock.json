@@ -1,0 +1,169 @@
+{
+  "authorization": {
+    "construct_sampled_population": false,
+    "model_access": false,
+    "run_sampled_development": false,
+    "write_estimator_implementation": true
+  },
+  "config": "configs/v47-sampled-transition-estimation.json",
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "finalEvaluation": false,
+      "languageGrounding": false,
+      "openOntology": false,
+      "oracleDistributionValuedSupport": false,
+      "primaryClaim": "finite_sample_probability_estimation_and_program_uncertainty_under_the_declared_v46_ontology_dsl_and_probability_vocabulary",
+      "probabilityVocabularyKnown": true,
+      "realizedSupportTrials": true
+    },
+    "comparisons": {
+      "literalEmpiricalTrajectoryLookup": "non_lifted_control",
+      "mapProgramPlugIn": "uncertainty_ablation",
+      "oracleTargetProgram": "unattainable_scoring_reference",
+      "posteriorPredictive": "primary",
+      "uniformizedOutcomeMass": "probability_mass_ablation"
+    },
+    "decisionHierarchy": [
+      "if_estimation_calibration_learning_curve_and_controls_pass_authorize_preregistration_of_stochastic_language_composition",
+      "if_predictive_validity_fails_repair_joint_distribution_or_likelihood_semantics",
+      "if_program_recovery_passes_but_calibration_fails_revise_posterior_or_probability_vocabulary",
+      "if_low_budget_fails_but_learning_curve_improves_report_sample_complexity_without_architecture_expansion",
+      "if_all_budgets_fail_revisit_stochastic_dsl_identifiability_before_language_or_active_selection"
+    ],
+    "estimator": {
+      "likelihoodUnit": "complete_realized_trajectory_conditional_on_initial_world_and_action_sequence",
+      "perMechanicOracleChoices": false,
+      "predictive": "posterior_mixture_of_exact_joint_trajectory_distributions",
+      "primary": "uniform_prior_exact_likelihood_posterior_over_the_frozen_finite_program_registry",
+      "selectionOnEvaluation": false,
+      "zeroLikelihoodHandling": "retain_exact_zero_and_normalize_in_log_space"
+    },
+    "experiment": "v47_sampled_transition_probability_estimation",
+    "firewall": {
+      "V46ProgramsOrCasesReused": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "evaluationOutcomeAccessDuringSelection": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "oracleDistributionSupport": "forbidden"
+    },
+    "gatesAt128TrialsPerIntervention": {
+      "maximumCalibrationError": 0.05,
+      "maximumEveryFamilyMeanJointDistributionTotalVariation": 0.08,
+      "maximumLiteralLookupCoverage": 0.05,
+      "maximumMeanJointDistributionTotalVariation": 0.05,
+      "maximumProbabilityParameterMeanAbsoluteError": 0.05,
+      "minimumLogLossImprovementOverUniformizedNats": 0.03,
+      "minimumMapSchemaRecovery": 0.9,
+      "minimumMeanTargetProgramPosteriorMass": 0.85,
+      "minimumPredictiveMassNormalization": 1.0,
+      "requireMeanTvStrictImprovement32To128": true,
+      "requireMeanTvStrictImprovement8To32": true,
+      "requirePosteriorPredictiveLogLossNoWorseThanMap": true
+    },
+    "metrics": {
+      "calibration": [
+        "ten_bin_equal_width_multiclass_reliability_error"
+      ],
+      "learningCurveBudgets": [
+        8,
+        32,
+        128
+      ],
+      "oracleDiagnostics": [
+        "joint_distribution_total_variation",
+        "target_program_posterior_mass",
+        "map_schema_recovery",
+        "probability_parameter_mean_absolute_error"
+      ],
+      "properScoring": [
+        "heldout_joint_trajectory_log_loss",
+        "multiclass_brier_score"
+      ],
+      "strata": [
+        "family",
+        "probability_value",
+        "immediate_vs_delayed",
+        "sequence_length"
+      ],
+      "uncertainty": "mechanic_cluster_bootstrap_95_percent_interval_with_10000_resamples_and_seed_4747",
+      "validity": [
+        "predictive_mass_normalization",
+        "finite_log_loss"
+      ]
+    },
+    "population": {
+      "developmentEvaluationMechanics": 24,
+      "developmentFitMechanics": 24,
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "families": [
+        "immediate_bernoulli_mutation",
+        "delayed_bernoulli_scheduling",
+        "state_conditional_probability",
+        "interleaved_deterministic_and_stochastic"
+      ],
+      "freshProgramOverlapWithV46": 0,
+      "generatorSeed": 4739,
+      "heldoutTrialsPerQuery": 64,
+      "mechanics": 48,
+      "mechanicsPerFamily": 12,
+      "nestedTrialsPerIntervention": [
+        8,
+        32,
+        128
+      ],
+      "probabilityCounts": {
+        "1/2": 16,
+        "1/4": 16,
+        "3/4": 16
+      },
+      "queryInterventionsPerMechanic": 24,
+      "samplingSeed": 4741,
+      "sequenceLengths": [
+        2,
+        3,
+        4
+      ],
+      "supportInterventionsPerMechanic": 12
+    },
+    "samplingContract": {
+      "branchDraw": "one_independent_uniform_draw_per_evaluated_stochastic_branch",
+      "delayedBranchDraw": "at_scheduling_time",
+      "heldoutQueryTrialsScorerOnly": true,
+      "nestedSupportTrials": "first_8_subset_of_first_32_subset_of_first_128",
+      "oracleJointDistributionsScorerOnly": true,
+      "pseudoRandomGenerator": "python_random_Mersenne_Twister_with_per_trial_sha256_derived_integer_seed",
+      "queryAgentInputContainsNoOutcomes": true,
+      "statisticalUnit": "mechanic_episode",
+      "supportContainsOnlyRealizedTrajectories": true,
+      "supportQueryStructuralOverlap": 0
+    },
+    "schemaVersion": 47,
+    "scientificQuestion": "can_a_probability_weighted_symbolic_system_infer_stochastic_transition_programs_and_calibrated_predictive_distributions_from_finite_realized_trials",
+    "sourceV46OutcomeLock": "configs/v46-outcome-lock.json",
+    "stageAuthorization": {
+      "constructSampledPopulation": false,
+      "modelAccess": false,
+      "runSampledDevelopment": false,
+      "writeAndAuditEstimatorImplementation": true
+    }
+  },
+  "config_sha256": "a79163c23d09c7a0b89cfc2ac78a48c05798d1eac9af9d0be8307c8b14a2d366",
+  "design_audit": "outputs/v47-sampled-transition-estimation/design-audit.json",
+  "design_audit_sha256": "3b88720bf185e192dd6580863d98dd7f5e1e2a27a4c3004155faae4db40ebc4d",
+  "experiment": "v47_design_lock",
+  "lock_payload_sha256": "d7ded12c71eec8bc9092178ddd97c7b94b76629dd9cc9af0708dd0d6c5522704",
+  "preregistration": "docs/v47-sampled-transition-estimation-plan.md",
+  "preregistration_sha256": "164dafc9dede12229a7112c587a6135f9abe0ebcf59051e72ce81c9f93b7f642",
+  "schema_version": 47,
+  "source_v46_outcome_lock": "configs/v46-outcome-lock.json",
+  "source_v46_outcome_lock_sha256": "098cbae4a795b73ffcd517a725ed8f431c54c38f4f670ea7dc98b533c3c86233"
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 36,
+  "experiment": "v36_independent_modular_interface_confirmation_design",
+  "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+  "sourceV32FeatureMetadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+  "sourceV34ProtocolLock": "configs/v34-operation-interface-lock.json",
+  "sourceV34Result": "outputs/v34-operation-interface/result.json",
+  "sourceV34OutcomeLock": "configs/v34-operation-outcome-lock.json",
+  "sourceV35ProtocolLock": "configs/v35-binding-assembly-lock.json",
+  "sourceV35Result": "outputs/v35-binding-assembly/result.json",
+  "sourceV35OutcomeLock": "configs/v35-binding-outcome-lock.json",
+  "trainingCorpus": "data/v32-factorized-semantics",
+  "trainingSplit": "factor_fit",
+  "forbiddenLegacySplits": ["factor_calibration", "factor_evaluation_paraphrase", "factor_evaluation_composition"],
+  "frozenInterface": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "predicate": {
+      "representation": "v35_atom_focused_final_hidden",
+      "classifier": "balanced_ridge_lsqr",
+      "alpha": 10000.0
+    },
+    "binding": {
+      "representation": "v35_atom_focused_evidence_entity_mentions",
+      "classifier": "balanced_three_role_ridge_lsqr",
+      "alpha": 1000.0,
+      "projection": {"kind": "fixed_gaussian", "seed": 3501, "dimensions": 256}
+    },
+    "lexicalSign": {
+      "representation": "v32_generic_final_hidden",
+      "classifier": "balanced_ridge_lsqr",
+      "alpha": 100.0
+    },
+    "outerOperation": {
+      "representation": "v34_operation_focused_final_hidden",
+      "classifier": "balanced_ridge_lsqr",
+      "alpha": 10000.0
+    },
+    "truth": "unchanged_v32_fixed_compiler",
+    "selectionAfterDesignLock": "none"
+  },
+  "confirmationSuite": {
+    "outputDir": "data/v36-independent-confirmation",
+    "split": "independent_confirmation",
+    "outerOperations": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+    "lexicalSignsPerOperation": ["positive", "negative"],
+    "newSurfaceNamesPerOperation": ["confirm_a", "confirm_b", "confirm_c"],
+    "requiredSurfaceFamilies": 15,
+    "baseScenesPerSurfaceFamilyCell": 3,
+    "entityCounts": [3, 4, 5],
+    "sceneVariants": ["direct_clean", "inverse_clean", "direct_distractor", "reversed_link_arguments_clean"],
+    "factsInInverseScenes": ["linked", "feeds"],
+    "factsInReversedScenes": ["linked"],
+    "expectedRecords": 1170,
+    "expectedScenes": 360,
+    "languageStatus": "supported_operator_inventory_new_surface_realizations",
+    "ontology": "unchanged_v32_declared_typed_ontology",
+    "targetVisibility": "never_in_model_prompts",
+    "requiredExactEvidenceOverlapWithV32AllSplits": 0,
+    "requiredConstructionHashOverlapWithV32AllSplits": 0
+  },
+  "execution": {
+    "interfaceFitRuns": 4,
+    "interfaceSelectionRuns": 0,
+    "interfaceFreezeBeforeConfirmationConstruction": true,
+    "featureExtractions": 3,
+    "expectedBackboneForwardPasses": 3510,
+    "confirmationEvaluations": 1,
+    "bootstrapUnit": "surface_family",
+    "bootstrapReplicates": 10000,
+    "bootstrapSeed": 3699
+  },
+  "gates": {
+    "minimumPredicateAccuracy": 0.98,
+    "minimumAtomExactAccuracy": 0.95,
+    "minimumRelationOrderAccuracy": 0.95,
+    "minimumLexicalSignAccuracy": 0.95,
+    "minimumOuterOperationAccuracy": 0.95,
+    "minimumCompiledTruthAccuracy": 0.95,
+    "minimumCompiledExactFactAccuracy": 0.90,
+    "minimumExactSceneAccuracy": 0.80,
+    "minimumWorstSurfaceFamilyExactFact": 0.80,
+    "minimumCompositionNegativeExactFact": 0.90,
+    "minimumPairExact": 0.90
+  },
+  "decisionHierarchy": [
+    "if_all_confirmation_gates_pass_preregister_fresh_sealed_end_to_end_relational_suite",
+    "if_operation_or_sign_fails_reopen_only_semantic_interface_development",
+    "if_predicate_or_binding_fails_reopen_only_atom_interface_development",
+    "if_components_pass_but_exact_fact_or_scene_fails_revisit_assembly_dependence"
+  ],
+  "designStageAuthorization": {
+    "writeImplementation": true,
+    "fitInterface": false,
+    "constructConfirmation": false,
+    "accessConfirmationLabels": false,
+    "reuseV32Evaluation": false,
+    "runV28": false,
+    "constructFreshFinalSuite": false
+  },
+  "firewall": {
+    "purpose": "independent_development_confirmation_not_final_claim",
+    "legacyCalibrationAndEvaluationUse": "forbidden",
+    "interfaceMustBeHashFrozenBeforeConstruction": true,
+    "confirmationUseForSelection": "forbidden",
+    "singleEvaluation": true,
+    "nextFinalSuiteConstruction": "forbidden_until_v36_pass_and_separate_preregistration"
+  }
+}

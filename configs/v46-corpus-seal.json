@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "adapter_training_runs": 0,
+    "final_evaluations": 0,
+    "model_forward_passes": 0,
+    "oracle_development_runs": 1,
+    "sampled_realizations": 0
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v46-oracle-stochastic-transitions/development_evaluation.jsonl",
+      "records": 16,
+      "sha256": "8d191873f11c60b70185d9e08fc763634507c6a64fc4097f2d265fce974c28de"
+    },
+    "development_fit": {
+      "path": "data/v46-oracle-stochastic-transitions/development_fit.jsonl",
+      "records": 24,
+      "sha256": "075f8607a13b735e748263be9a8813e9c142aef776b9d1fc4963c6b829d4f341"
+    }
+  },
+  "corpus_audit": "outputs/v46-oracle-stochastic-transitions/corpus-audit.json",
+  "corpus_audit_sha256": "92888d0f3c4c793e0b28d5a6e3a60341a358e5170a2fad2318fdaa4e7a6b9ee0",
+  "experiment": "v46_corpus_seal",
+  "implementation_lock": "configs/v46-implementation-lock.json",
+  "implementation_lock_sha256": "3b9ff73ed2e25372cb2adda4eadbc81e74bb8f4b04de14baff83800951a4d4b2",
+  "lock_payload_sha256": "837397cb21a5d4aba19cece9f5689a5fd4c8acc5e642866fff1e6970edf32295",
+  "manifest": "data/v46-oracle-stochastic-transitions/manifest.json",
+  "manifest_sha256": "6a50562370f95583d41148f3b886f791fea9bb5ecbb77bcf5ffce7273e91312f",
+  "schema_version": 46
+}

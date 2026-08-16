@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "adapter_training_runs": 0,
+    "final_evaluations": 0,
+    "model_forward_passes": 0,
+    "sampled_development_runs": 1
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v47-sampled-transition-estimation/development_evaluation.jsonl",
+      "records": 24,
+      "sha256": "a966204d6717e713b61196f4db47c73a240933654e0f5c8cd09d1c0cec7c96bf"
+    },
+    "development_fit": {
+      "path": "data/v47-sampled-transition-estimation/development_fit.jsonl",
+      "records": 24,
+      "sha256": "8423aa4d6979fac1949cb65fcbadc2c04064c57ce3508347875b579199ca3c3b"
+    }
+  },
+  "corpus_audit": "outputs/v47-sampled-transition-estimation/corpus-audit.json",
+  "corpus_audit_sha256": "8ac1e475fb47925c7eb395663035f603f10605e30932e886d09a894e122c4fe6",
+  "experiment": "v47_corpus_seal",
+  "implementation_lock": "configs/v47-implementation-lock.json",
+  "implementation_lock_sha256": "9e58d415cef38bbd10679d6252dec8e3364c48eca685d8356c0da8421e064834",
+  "lock_payload_sha256": "50e237685dc3f28bb56bfe4d105a0ea27bf796ee59bb707c1bf9bb08c36ef09a",
+  "manifest": "data/v47-sampled-transition-estimation/manifest.json",
+  "manifest_sha256": "459157e45fb9ba98a5e9f60c4c376b7f1bd3a2f481f079ea0ee4d784a3855be7",
+  "schema_version": 47
+}

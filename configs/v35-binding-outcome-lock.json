@@ -1,0 +1,35 @@
+{
+  "authorization": {
+    "fresh_final_suite": false,
+    "independent_confirmation_construction": false,
+    "independent_confirmation_preregistration": true,
+    "v28_replay": false,
+    "v32_evaluation_reuse": false
+  },
+  "decision": "development_interface_qualified_preregister_independent_confirmation",
+  "experiment": "v35_outcome_lock",
+  "fit_selected_binding_method": "atomEvidenceEntityRoleRidge",
+  "fit_selected_predicate_method": "atomHiddenRidge",
+  "lock_payload_sha256": "0b684140ca5424db199b2d2f0bd407a13c0476210cf67c8dbbb96c1f7f5159a4",
+  "post_result_audit": "outputs/v35-binding-assembly/post-result-audit.json",
+  "post_result_audit_sha256": "a38b24587ce0c1825ba1bd7deecc62d2d72f763934b803abe07dc9bf50028741",
+  "protocol_lock": "configs/v35-binding-assembly-lock.json",
+  "protocol_lock_sha256": "2868af5b6bd090f88ff80579512512eb69de1dc7a870e0f8285abcf99487807c",
+  "qualification": {
+    "calibration_exact_fact_gain_over_legacy": 0.09340659340659341,
+    "checks": {
+      "atom": true,
+      "compiled_exact_fact": true,
+      "compiled_truth": true,
+      "gain_over_legacy": true,
+      "lexical_sign": true,
+      "outer_operation": true,
+      "predicate": true,
+      "relation_order": true
+    },
+    "passed": true
+  },
+  "result": "outputs/v35-binding-assembly/result.json",
+  "result_sha256": "2bed97fb71f40230e2cf322a19ec9b35b7b14b55f22c99292642a62347eca1af",
+  "schema_version": 35
+}

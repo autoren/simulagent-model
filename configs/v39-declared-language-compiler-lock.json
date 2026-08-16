@@ -1,0 +1,117 @@
+{
+  "authorization": {
+    "construct_evaluation": false,
+    "preregister_confirmation": false,
+    "score_evaluation": false,
+    "v28": false,
+    "v32_evaluation": false,
+    "write_implementation": true
+  },
+  "config": "configs/v39-declared-language-compiler.json",
+  "config_payload": {
+    "challengeConditions": {
+      "malformedDeclaredGrammar": true,
+      "novelNaturalLanguageParaphrases": "secondary_non_gating",
+      "twoEquallyMarkedFocusLiterals": true,
+      "unknownOperatorCue": true,
+      "unknownPredicateLexeme": true
+    },
+    "comparison": {
+      "frozenNeuralFocusScorer": "secondary",
+      "frozenV37OperationReadout": "secondary",
+      "noSelectionFromSecondaryComparisons": true
+    },
+    "decisionHierarchy": [
+      "if_all_compiler_gates_pass_preregister_fresh_supported_language_confirmation",
+      "if_exact_parse_fails_repair_declared_grammar_or_compiler_only",
+      "if_safety_abstention_fails_repair_ambiguity_handling_before_any_confirmation",
+      "treat_novel_paraphrase_failure_as_scope_boundary_not_compiler_failure"
+    ],
+    "experiment": "v39_declared_language_compiler",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "backboneChange": "forbidden",
+      "claimExpansionBeyondDeclaredGrammar": "forbidden",
+      "endToEndRelationalSuite": "forbidden",
+      "v28Use": "forbidden",
+      "v32CalibrationOrEvaluationUse": "forbidden"
+    },
+    "fixedInterface": {
+      "ambiguousInputPolicy": "return_all_supported_parses_or_abstain_never_arbitrary_first_match",
+      "compilerOutput": [
+        "predicate",
+        "arguments",
+        "lexical_sign",
+        "outer_operation"
+      ],
+      "operatorOntologyIncludesCueLexiconAndGrammar": true,
+      "predicateOntologyIncludesLexicalForms": true,
+      "truthCompiler": "v32_fixed_truth_table",
+      "unsupportedInputPolicy": "explicit_abstention"
+    },
+    "gates": {
+      "minimumAmbiguitySafety": 1.0,
+      "minimumEveryCompositionCellExactParse": 1.0,
+      "minimumMalformedAbstention": 1.0,
+      "minimumSupportedCompiledTruth": 1.0,
+      "minimumSupportedCoverage": 1.0,
+      "minimumSupportedExactParse": 1.0,
+      "minimumUnknownLexemeAbstention": 1.0
+    },
+    "schemaVersion": 39,
+    "scientificScope": "exact_supported_language_compilation_not_open_paraphrase_generalization",
+    "sourceV38OutcomeLock": "configs/v38-outcome-lock.json",
+    "stageAuthorization": {
+      "constructEvaluation": false,
+      "preregisterConfirmation": false,
+      "scoreEvaluation": false,
+      "writeAndAuditImplementation": true
+    },
+    "supportedGrammar": {
+      "argumentReversalControls": true,
+      "compositionalSplit": "hold_out_combinations_of_declared_primitives_not_undeclared_lexemes",
+      "decoyKinds": [
+        "exact_opposite",
+        "different_grounded_atom",
+        "non_state_distractor"
+      ],
+      "entityCounts": [
+        3,
+        4,
+        5
+      ],
+      "lexicalSigns": [
+        "positive",
+        "negative"
+      ],
+      "literalPositions": [
+        "focus_first",
+        "focus_second"
+      ],
+      "outerOperations": [
+        "assert",
+        "deny",
+        "double_deny",
+        "contrast_select",
+        "unresolved"
+      ],
+      "punctuationRealizations": [
+        "period",
+        "semicolon",
+        "em_dash"
+      ],
+      "relationOrientations": [
+        "direct",
+        "inverse"
+      ]
+    }
+  },
+  "config_sha256": "0fc54c6b457e8ae172f2de858f405438a6da8b958c8cb2118321af732a91ce68",
+  "design_audit": "outputs/v39-declared-language-compiler/design-audit.json",
+  "design_audit_sha256": "0575228dc5be56ce29f53510ba84eb1f34d03a599d504cdcb253a7e521c33ed7",
+  "experiment": "v39_declared_language_compiler_design_lock",
+  "lock_payload_sha256": "731899134bc1cd1e653543c87d01405389747c1660ab0f97e554a8d98450fa73",
+  "preregistration": "docs/v39-declared-language-compiler-plan.md",
+  "preregistration_sha256": "5abfe56cce5254aaa8f307c319a9008a334130f95e29af2fdc57bd63d69465ee",
+  "schema_version": 39
+}

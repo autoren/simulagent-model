@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "change_v55_design_implementation_or_analysis": false,
+    "construct_v55_planning_population": true,
+    "formal_verification": false,
+    "language_grounding": false,
+    "model_access": false,
+    "run_v55_planning_evaluation": false
+  },
+  "base_dependencies_sha256": {
+    "configs/v55-design-lock.json": "5b038998f2b5c1abf0034fe0474ec7e2740d3fbe15e85877884f40ed4a344856",
+    "configs/v55-implementation-lock.json": "6f467a0ef96c49570c369bc1060cb4b6f3bb2389a850c1dcf69cc3718e40b9d2"
+  },
+  "evaluation_implementation_audit": "outputs/v55-short-horizon-bayes-adaptive-planning/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "a4a9f78fd96919403a7ef9f474d50752eb44762f6e5c86cb92471a709db194e0",
+  "experiment": "v55_evaluation_implementation_lock",
+  "implementation_files_sha256": {
+    "python/audit_and_summarize_v55.py": "f5ab0cc77640f9d20788f0e68d9640390ad7d43a679034025f70ace494d0662c",
+    "python/audit_v55_evaluation_implementation.py": "7b653b9705c3ce9664f51be500dad5444d0715271808e3ca052017affd3277d2",
+    "python/audit_v55_populations.py": "da0472b15b28e3d351bb907e8a4acfbba09ab703a422cba8e0cfde0eaea04a99",
+    "python/evaluate_v55_planning.py": "7ada8b10491e50808915fb0d23f791b1d42b6f511c768f3ce2180a524b440006",
+    "python/freeze_v55_outcome.py": "aee7b43d75241b8f32f9883a18c7f2f0ae2c388e321c948b1269234fe40b6e53",
+    "python/seal_v55_population.py": "d7c67f09980d66323946245c32771f3b49e25d17501f6d34615a5ccf573c9ea2",
+    "scripts/run-v55-short-horizon-bayes-adaptive-planning.sh": "ee23ef26e2d7e69699f4eef8f9c33e01adea5cacef4dc57596319c7323d4c92d"
+  },
+  "implementation_lock": "configs/v55-implementation-lock.json",
+  "implementation_lock_sha256": "6f467a0ef96c49570c369bc1060cb4b6f3bb2389a850c1dcf69cc3718e40b9d2",
+  "lock_payload_sha256": "dbc16272a98528c48ee4258d79f237ce6086418aba19f78c2d57e7982d2551ca",
+  "schema_version": 55
+}

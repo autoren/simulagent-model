@@ -1,0 +1,24 @@
+{
+  "authorization": {
+    "change_population": false,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_formal_verification": false,
+    "rerun_v55_population": false,
+    "run_formal_verification": false,
+    "run_v55r1_evaluation": false,
+    "write_and_audit_v55r1_evaluation_implementation": true
+  },
+  "experiment": "v55r1_population_seal",
+  "implementation_lock": "configs/v55r1-implementation-lock.json",
+  "implementation_lock_sha256": "60a11d08cc503fe1f7bceef6cc5dd24e56fe0d88641ca39ebb96c19e2b000531",
+  "manifest": "data/v55r1-delayed-consequence-adequacy-confirmation/manifest.json",
+  "manifest_sha256": "75f8d2dddb80cefe4572a04179c4389395d3564eddbdf0db29578fa31c84c31c",
+  "population": "data/v55r1-delayed-consequence-adequacy-confirmation/planning.jsonl",
+  "population_audit": "outputs/v55r1-delayed-consequence-adequacy-confirmation/population-audit.json",
+  "population_audit_sha256": "278979707c3888e0566d373237cfc5ff7d8055b4fb9ebc8123d9ee8eb77be1ef",
+  "population_sha256": "b3d269c080915f62159bdd428cc1467597751472088e6a9b98d1dee2e3d25963",
+  "revision": "r1",
+  "schema_version": 55,
+  "seal_payload_sha256": "b5b994259cc1a1c321264b5e3068073d05719a4fbc228ae0157a39c4f86eb8b6"
+}

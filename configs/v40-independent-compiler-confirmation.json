@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 40,
+  "experiment": "v40_independent_declared_language_confirmation",
+  "claim": "the_frozen_v39_compiler_exactly_transfers_to_fresh_declared_predicate_and_operator_lexicons_under_the_same_controlled_grammar",
+  "sourceV39OutcomeLock": "configs/v39-outcome-lock.json",
+  "frozenCompiler": "python/v39_compiler.py",
+  "confirmationPopulation": {
+    "ontologyPacks": 12,
+    "statisticalUnit": "ontology_pack",
+    "coreRecordsPerPack": 120,
+    "coreFactors": {
+      "outerOperations": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+      "literalPositions": ["focus_first", "focus_second"],
+      "decoyKinds": ["exact_opposite", "different_grounded_atom", "non_state_distractor"],
+      "relationOrientations": ["direct", "inverse"],
+      "lexicalSigns": ["positive", "negative"]
+    },
+    "entityCounts": [3, 4, 5],
+    "punctuationRealizations": ["period", "semicolon", "em_dash"],
+    "newPredicateLexicalForms": true,
+    "newOperatorCues": true,
+    "newEntityNamespaces": true,
+    "argumentReversalControls": true,
+    "generatorSeed": 4017
+  },
+  "safetyPopulation": {
+    "conditions": [
+      "mixed_separators",
+      "two_complete_focus_fields",
+      "unknown_predicate_lexeme",
+      "unknown_operator_cue",
+      "duplicate_operation_fields"
+    ],
+    "recordsPerConditionPerPack": 2,
+    "totalRecords": 120
+  },
+  "gates": {
+    "minimumOverallCoverage": 1.0,
+    "minimumOverallExactParse": 1.0,
+    "minimumOverallCompiledTruth": 1.0,
+    "minimumEveryOntologyPackExactParse": 1.0,
+    "minimumEveryOperationSignCellExactParse": 1.0,
+    "minimumSafetyRate": 1.0,
+    "minimumEverySafetyConditionRate": 1.0
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_accept_declared_language_interface_within_scope_and_move_to_relational_mechanic_confirmation",
+    "if_semantic_gates_fail_reject_v39_transfer_claim_without_repair_or_repeat",
+    "if_safety_gates_fail_reject_fail_closed_claim_without_repair_or_repeat"
+  ],
+  "firewall": {
+    "compilerModificationAfterV39": "forbidden",
+    "confirmationTargetAccessBeforeSeal": "forbidden",
+    "evaluationSelection": "forbidden",
+    "evaluationRepeats": 0,
+    "modelAccess": "forbidden",
+    "v32EvaluationUse": "forbidden",
+    "v28Use": "forbidden",
+    "adapterTraining": "forbidden",
+    "claimExpansionToOpenParaphrase": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditIndependentGenerator": true,
+    "constructConfirmation": false,
+    "scoreConfirmation": false,
+    "relationalMechanicConfirmation": false
+  }
+}

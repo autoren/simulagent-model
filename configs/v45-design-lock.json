@@ -1,0 +1,130 @@
+{
+  "authorization": {
+    "construct_paired_language_corpus": false,
+    "model_access": false,
+    "preregister_stochastic_foundation": false,
+    "run_paired_development": false,
+    "write_and_audit_implementation": true
+  },
+  "config": "configs/v45-delayed-language-grounding.json",
+  "config_payload": {
+    "comparisons": {
+      "collapsedDelayExecutor": "frozen_v44_inadequacy_control",
+      "compiledQueuedPipeline": "primary",
+      "endFlushExecutor": "frozen_v44_inadequacy_control",
+      "literalLanguageSequenceLookup": "non_lifted_control",
+      "pairedOracleV44Pipeline": "frozen_reference"
+    },
+    "decisionHierarchy": [
+      "if_all_gates_pass_accept_declared_delayed_interface_composition_and_preregister_an_oracle_stochastic_transition_foundation",
+      "if_state_or_action_language_gates_fail_repair_only_the_corresponding_declared_compiler",
+      "if_language_passes_but_delayed_execution_fails_audit_translation_before_changing_the_frozen_v44_reasoner",
+      "if_a_timing_or_lookup_control_passes_repair_the_control_before_any_stronger_claim"
+    ],
+    "experiment": "v45_declared_delayed_language_grounding",
+    "firewall": {
+      "V44CaseOrTargetSelection": "forbidden",
+      "V44ReasonerModification": "forbidden",
+      "activeInterventionSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "openParaphraseClaim": "forbidden",
+      "outcomeDrivenRepeat": "forbidden",
+      "stochasticEffectsInV45": "forbidden"
+    },
+    "frozenReasoning": {
+      "delayedDsl": "python/v44_delayed.py",
+      "eventQueueExecution": "exact_frozen_v44_tick_semantics",
+      "mechanicRegistry": "frozen_v44_registry",
+      "reasonerModification": "forbidden",
+      "supportAndQueries": "frozen_v44_corpus",
+      "versionSpaceInduction": "exact_frozen_v44_filtering"
+    },
+    "gates": {
+      "maximumCollapsedDelayFinalExact": 0.85,
+      "maximumCompiledEmptyVersionSpace": 0.0,
+      "maximumEndFlushFinalExact": 0.85,
+      "maximumLiteralLanguageLookupFinalExact": 0.95,
+      "minimumActionCommandExactParse": 1.0,
+      "minimumActionSequenceExact": 1.0,
+      "minimumCanonicalStateGraphExact": 1.0,
+      "minimumCompiledEveryFamilyExact": 1.0,
+      "minimumCompiledEverySequenceLengthExact": 1.0,
+      "minimumCompiledFinalObservationExact": 1.0,
+      "minimumCompiledNextStateExact": 1.0,
+      "minimumCompiledSchemaRecovery": 1.0,
+      "minimumCompiledTargetRetention": 1.0,
+      "minimumCompiledWaitCounterfactualAccuracy": 1.0,
+      "minimumSafetyAbstention": 1.0,
+      "minimumStateClauseExactParse": 1.0,
+      "minimumWaitCommandExactParse": 1.0
+    },
+    "languageInterface": {
+      "boundActionCompiler": "frozen_v43_declared_template_and_ordinal_contract",
+      "openParaphrase": false,
+      "partialUnknownEncoding": "v39_unresolved_operation",
+      "sequenceOrder": "explicit_contiguous_one_based_step_ordinals",
+      "stateCompiler": "frozen_v39_declared_language_compiler",
+      "stateGraphComparator": "frozen_v43r1_canonical_duplicate_safe_comparator",
+      "tickSemantics": "declared_structured_contract_identical_to_v44",
+      "unsupportedOrAmbiguousPolicy": "abstain_and_return_conservative_full_outcome_set",
+      "waitExtension": "declared_zero_argument_wait_cue_and_exact_step_production"
+    },
+    "nextAxisIfPassed": {
+      "activeSelectionStillDeferred": true,
+      "axis": "stochastic_transition_effects",
+      "delaysRemainFixedAndDeclared": true,
+      "reason": "add_transition_uncertainty_only_after_persistent_state_delay_and_declared_language_each_have_isolated_foundations",
+      "stage": "oracle_first_preregistration_only"
+    },
+    "pairedDesign": {
+      "freshEpisodeActionCues": true,
+      "freshEpisodeOperatorCues": true,
+      "freshEpisodePredicateLexemes": true,
+      "mechanics": 40,
+      "newEntityNamespaces": true,
+      "noV44TargetDrivenSelection": true,
+      "querySequences": 960,
+      "reasonForPairing": "hold_delayed_mechanics_tick_semantics_states_actions_and_targets_fixed_while_changing_only_the_exposed_representation",
+      "reuseSealedV44MechanicsAndCases": true,
+      "supportSequences": 46,
+      "waitCounterfactualPairs": 480
+    },
+    "safetyChallenges": {
+      "ambiguousActionTemplate": true,
+      "duplicateStepOrdinal": true,
+      "malformedDeclaredGrammar": true,
+      "missingStepOrdinal": true,
+      "unknownBoundActionCue": true,
+      "unknownPredicateLexeme": true,
+      "unknownStateOperatorCue": true,
+      "unknownWaitCue": true,
+      "waitWithArguments": true
+    },
+    "schemaVersion": 45,
+    "scientificQuestion": "can_declared_state_and_ordered_action_language_including_an_explicit_wait_command_populate_the_frozen_v44_hidden_queue_reasoner_without_losing_delayed_mechanic_induction_or_execution",
+    "sourceV44CorpusSeal": "configs/v44-corpus-seal.json",
+    "sourceV44OutcomeLock": "configs/v44-outcome-lock.json",
+    "stageAuthorization": {
+      "constructPairedLanguageCorpus": false,
+      "modelAccess": false,
+      "preregisterStochasticFoundation": false,
+      "runPairedDevelopment": false,
+      "writeAndAuditImplementation": true
+    }
+  },
+  "config_sha256": "fb427ea948aff53c96b7fcffb648d86e0d3041f80cd8093f0a4f90de7df1aace",
+  "design_audit": "outputs/v45-delayed-language-grounding/design-audit.json",
+  "design_audit_sha256": "a0b2f4d9db92dded1f53ded3683fa9cf4c5c1f11cc813c64475dc7a4f7ab7a44",
+  "experiment": "v45_design_lock",
+  "lock_payload_sha256": "c69c7571a10a217894611b8375eb837dfe6ab90b6e358ae708aa37784f4c32bc",
+  "preregistration": "docs/v45-delayed-language-grounding-plan.md",
+  "preregistration_sha256": "5f0953fc6e0fe5576cfdd8adbd7a9d9174b304fa369e7ca86041c2877c6a128a",
+  "schema_version": 45,
+  "source_v44_corpus_seal": "configs/v44-corpus-seal.json",
+  "source_v44_corpus_seal_sha256": "d3ee589dafe12da4696ad14ef3f099205d5656c5bd5d90fd56926a626cde8080",
+  "source_v44_outcome_lock": "configs/v44-outcome-lock.json",
+  "source_v44_outcome_lock_sha256": "f2d05dca0e4039e71b716c659e2c6b0281eb0710b13438dcf91337cce0dfa66c"
+}

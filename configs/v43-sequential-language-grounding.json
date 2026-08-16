@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 43,
+  "experiment": "v43_declared_sequential_language_grounding",
+  "scientificQuestion": "can_declared_controlled_language_for_states_and_ordered_actions_populate_the_frozen_v42_stateful_interface_without_losing_sequential_mechanic_induction_or_execution",
+  "sourceV42OutcomeLock": "configs/v42-outcome-lock.json",
+  "sourceV42CorpusSeal": "configs/v42-corpus-seal.json",
+  "pairedDesign": {
+    "reuseSealedV42MechanicsAndCases": true,
+    "mechanics": 40,
+    "supportSequences": 43,
+    "querySequences": 960,
+    "reasonForPairing": "hold_the_mechanics_states_actions_and_targets_fixed_while_changing_only_the_exposed_representation",
+    "newEntityNamespaces": true,
+    "freshEpisodePredicateLexemes": true,
+    "freshEpisodeOperatorCues": true,
+    "freshEpisodeActionCues": true,
+    "noV42TargetDrivenSelection": true
+  },
+  "languageInterface": {
+    "stateCompiler": "frozen_v39_declared_language_compiler",
+    "statePackets": "one_declared_packet_per_ground_atom",
+    "stateTruthRealizations": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+    "partialUnknownEncoding": "v39_unresolved_operation",
+    "actionCompiler": "declared_template_and_ordinal_compiler_to_be_frozen_in_v43",
+    "actionOrientations": ["actor_first", "target_first"],
+    "sequenceOrder": "explicit_contiguous_one_based_step_ordinals",
+    "unsupportedOrAmbiguousPolicy": "abstain_and_return_conservative_full_outcome_set",
+    "openParaphrase": false
+  },
+  "frozenReasoning": {
+    "statefulDsl": "python/v42_stateful.py",
+    "mechanicRegistry": "frozen_v42_registry",
+    "supportSelection": "frozen_v42_support_sequences",
+    "versionSpaceInduction": "exact_frozen_v42_program_filtering",
+    "partialStateExecution": "exact_frozen_v42_union_semantics",
+    "reasonerModification": "forbidden"
+  },
+  "safetyChallenges": {
+    "unknownPredicateLexeme": true,
+    "unknownStateOperatorCue": true,
+    "unknownActionCue": true,
+    "duplicateStepOrdinal": true,
+    "missingStepOrdinal": true,
+    "ambiguousActionTemplate": true,
+    "malformedDeclaredGrammar": true
+  },
+  "comparisons": {
+    "pairedOracleV42Pipeline": "frozen_reference",
+    "compiledStatefulPipeline": "primary",
+    "bagOfActionsOrderAblation": "registered_inadequacy_control",
+    "literalLanguageSequenceLookup": "non_lifted_control"
+  },
+  "gates": {
+    "minimumStateClauseExactParse": 1.0,
+    "minimumStateGraphExact": 1.0,
+    "minimumActionCommandExactParse": 1.0,
+    "minimumActionSequenceExact": 1.0,
+    "minimumSafetyAbstention": 1.0,
+    "minimumCompiledTargetRetention": 1.0,
+    "minimumCompiledSchemaRecovery": 1.0,
+    "maximumCompiledEmptyVersionSpace": 0.0,
+    "minimumCompiledNextStateExact": 1.0,
+    "minimumCompiledFinalObservationExact": 1.0,
+    "minimumCompiledEveryFamilyExact": 1.0,
+    "minimumCompiledEverySequenceLengthExact": 1.0,
+    "minimumCompiledOrderCounterfactualAccuracy": 1.0,
+    "maximumBagOfActionsOrderCounterfactualAccuracy": 0.85,
+    "maximumLiteralLanguageLookupFinalExact": 0.95
+  },
+  "decisionHierarchy": [
+    "if_all_language_and_end_to_end_gates_pass_accept_declared_sequential_interface_composition_and_preregister_one_new_temporal_axis",
+    "if_state_or_action_parse_gates_fail_repair_only_the_corresponding_declared_compiler_before_any_reasoner_change",
+    "if_parsing_passes_but_schema_or_execution_fails_audit_representation_translation_before_changing_the_frozen_v42_reasoner",
+    "if_bag_of_actions_passes_redesign_the_order_ablation_before_making_an_order_sensitive_language_claim",
+    "if_literal_lookup_passes_do_not_attribute_success_to_lifted_sequential_induction"
+  ],
+  "nextAxisIfPassed": {
+    "axis": "deterministic_delayed_effects",
+    "stage": "oracle_first_preregistration_only",
+    "stochasticityStillDeferred": true,
+    "reason": "add_temporal_credit_and_scheduled_state_change_while_preserving_deterministic_exact_semantics"
+  },
+  "firewall": {
+    "V42ReasonerModification": "forbidden",
+    "V42CaseOrTargetSelection": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "openParaphraseClaim": "forbidden",
+    "stochasticEffects": "forbidden",
+    "delayedEffectsInV43": "forbidden",
+    "activeInterventionSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden",
+    "outcomeDrivenRepeat": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditImplementation": true,
+    "constructPairedLanguageCorpus": false,
+    "runPairedDevelopment": false,
+    "preregisterDelayedEffects": false,
+    "modelAccess": false
+  }
+}

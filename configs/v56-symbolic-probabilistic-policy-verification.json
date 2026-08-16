@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 56,
+  "experiment": "v56_symbolic_and_probabilistic_policy_verification",
+  "sourceV55r1OutcomeLock": "configs/v55r1-outcome-lock.json",
+  "scientificQuestion": "do_independently_encoded_symbolic_constraints_and_an_external_probabilistic_model_checker_reproduce_the_bounded_execution_semantics_goal_probability_and_posterior_expected_return_of_every_frozen_v55_and_v55r1_policy",
+  "claimBoundary": {
+    "verifyEveryFrozenV55AndV55r1Policy": true,
+    "boundedHorizonPolicyExecution": true,
+    "symbolicReachableTransitionVerification": true,
+    "probabilisticTerminationReachability": true,
+    "probabilisticTerminalGoalReachability": true,
+    "posteriorExpectedAccumulatedReward": true,
+    "externalStormProcess": true,
+    "independentZ3Encoding": true,
+    "policyVerificationNotPlannerVerification": true,
+    "posteriorExpectedNotWorstCase": true,
+    "frozenHorizon": 3,
+    "formalSafetyContract": false,
+    "catastrophicOutcomeClaim": false,
+    "worstCaseSafetyClaim": false,
+    "parameterUniformGuarantee": false,
+    "unboundedTemporalClaim": false,
+    "longHorizonClaim": false,
+    "plannerOptimalityClaimBeyondFrozenSources": false,
+    "newPlanningEvaluation": false,
+    "approximateOrLearnedPlanning": false,
+    "languageGrounding": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "finalEvaluation": false,
+    "primaryClaim": "all_forty_eight_frozen_three_action_policies_are_symbolically_well_formed_and_their_compiled_dtmcs_reproduce_independent_bounded_execution_values"
+  },
+  "sourcePolicies": {
+    "cohorts": [
+      {
+        "id": "v55",
+        "tasks": 32,
+        "populationSeal": "configs/v55-population-seal.json",
+        "outcomeLock": "configs/v55-outcome-lock.json",
+        "result": "outputs/v55-short-horizon-bayes-adaptive-planning/evaluation/result.json",
+        "registry": "v53_mechanic_registry_seed_5303"
+      },
+      {
+        "id": "v55r1",
+        "tasks": 16,
+        "populationSeal": "configs/v55r1-population-seal.json",
+        "outcomeLock": "configs/v55r1-outcome-lock.json",
+        "result": "outputs/v55r1-delayed-consequence-adequacy-confirmation/evaluation/result.json",
+        "registry": "v55r1_frozen_planning_specific_registry"
+      }
+    ],
+    "totalPolicies": 48,
+    "selection": "all_records_in_both_sealed_source_populations_in_canonical_cohort_and_record_order",
+    "reconstruction": "rerun_only_the_frozen_primary_planner_on_public_source_records_and_require_the_frozen_root_action_and_value_before_compilation",
+    "truthFieldsAvailableToCompiler": false,
+    "sourceResultMutation": "forbidden",
+    "sourceEvaluationRerun": "forbidden"
+  },
+  "formalExecutor": {
+    "semantics": "frozen_v53_continuous_unit_transition_with_v46_typed_actions_delayed_queue_delivery_and_v42_boolean_relational_worlds",
+    "plannerRole": "proposes_the_frozen_contingent_policy",
+    "executorRole": "defines_each_reachable_stochastic_transition",
+    "verifierRole": "checks_the_compiled_transition_system_and_quantitative_properties",
+    "observation": "complete_world_signature_routes_to_the_next_frozen_policy_node_while_the_queue_remains_hidden",
+    "horizonActions": 3,
+    "terminalGoal": "the_public_goal_atom_equals_the_public_goal_boolean_after_three_actions",
+    "actionCosts": {
+      "pulse": 0.01,
+      "route": 0.01,
+      "wait": 0.0
+    }
+  },
+  "symbolicVerification": {
+    "backend": "Z3Py",
+    "package": "z3-solver",
+    "packageVersion": "4.16.0.0",
+    "solverVersion": "4.16.0",
+    "encodingIndependence": "a_separate_dsl_to_smt_transition_encoder_must_not_call_step_belief_plan_exact_evaluate_policy_or_the_storm_compiler_transition_builder",
+    "reachableChecks": [
+      "complete_typed_boolean_world",
+      "bound_actions_reference_two_distinct_known_entities_and_wait_has_no_binding",
+      "queued_events_have_canonical_typed_payload_binding_and_nonoverdue_due_tick",
+      "policy_depth_decreases_exactly_once_per_action",
+      "every_reachable_observation_has_exactly_one_frozen_policy_child",
+      "symbolic_transition_support_equals_compiler_emitted_successor_support",
+      "terminal_success_label_equals_the_public_goal",
+      "no_reachable_nonterminal_state_is_deadlocked"
+    ],
+    "proofCriterion": "the_xor_of_the_independent_smt_transition_relation_and_the_compiler_emitted_successor_relation_is_unsatisfiable_for_every_reachable_source_state",
+    "exhaustiveSyntheticDomain": {
+      "entityCount": 2,
+      "worldsPerTemplate": 256,
+      "actionsPerWorld": 5,
+      "queueFixtures": [
+        "empty",
+        "one_event_due_now",
+        "one_event_due_next_tick"
+      ],
+      "templates": "all_unique_v53_and_v55r1_templates"
+    }
+  },
+  "probabilisticVerification": {
+    "backend": "Storm standalone CLI",
+    "version": "1.13.0",
+    "installation": "official_moves_rwth_homebrew_tap",
+    "pythonBindings": false,
+    "input": "one_explicit_dtmc_transition_label_and_transition_reward_bundle_per_policy",
+    "numericType": "double_precision_explicit_probabilities_bound_to_full_precision_source_weights",
+    "state": "synthetic_posterior_root_or_program_theta_world_queue_policy_node_depth_or_terminal_absorber",
+    "initialDistribution": "one_synthetic_root_transition_distribution_over_every_joint_belief_atom",
+    "policySemantics": "the_observed_successor_world_selects_the_unique_next_policy_node",
+    "terminalConstruction": "after_three_actions_a_goal_labeled_or_failure_staging_state_transitions_to_a_done_absorber",
+    "rewardConstruction": "each_action_transition_has_negative_action_cost_and_each_terminal_staging_to_done_transition_has_one_for_goal_success_else_zero",
+    "properties": {
+      "termination": "P=? [F \"done\"]",
+      "success": "P=? [F \"success\"]",
+      "return": "R=? [F \"done\"]"
+    },
+    "independentReferences": {
+      "termination": 1.0,
+      "success": "direct_executor_terminal_goal_probability_without_reading_storm_output",
+      "return": "frozen_primary_value_and_independent_recursive_policy_evaluator"
+    }
+  },
+  "implementationAudit": {
+    "sealedSourcePolicyRecordsAccessible": false,
+    "alteredSeed": 5603,
+    "analyticStormFixtures": [
+      "deterministic_success",
+      "bernoulli_one_quarter_success",
+      "two_tick_delayed_success",
+      "observation_contingent_second_action",
+      "negative_action_cost_plus_terminal_reward"
+    ],
+    "symbolicMutants": [
+      "swap_actor_and_target",
+      "omit_due_queue_delivery",
+      "evaluate_condition_after_deterministic_effect",
+      "shift_delayed_due_tick_by_one",
+      "permit_self_binding"
+    ],
+    "probabilisticMutants": [
+      "drop_one_stochastic_successor",
+      "omit_one_reachable_policy_observation_branch",
+      "flip_terminal_success_label",
+      "omit_action_cost_reward",
+      "corrupt_initial_distribution_mass"
+    ],
+    "requiredMutantKillRate": 1.0,
+    "requiredAnalyticFixturePassRate": 1.0
+  },
+  "verificationBundle": {
+    "constructionBeforeImplementationLock": "forbidden",
+    "modelsPerPolicy": 1,
+    "expectedModels": 48,
+    "requiredFilesPerPolicy": [
+      "model.tra",
+      "model.lab",
+      "model.rew",
+      "model.meta.json",
+      "policy.json"
+    ],
+    "manifest": "canonical_hash_size_state_transition_and_source_binding_manifest",
+    "sealBeforeVerification": true,
+    "postSealMutation": "forbidden"
+  },
+  "metrics": {
+    "sourceBinding": [
+      "reconstructed_root_action_match_rate",
+      "maximum_reconstructed_root_value_error",
+      "policy_count_by_cohort"
+    ],
+    "symbolic": [
+      "reachable_state_invariant_proof_rate",
+      "reachable_transition_support_equivalence_proof_rate",
+      "policy_observation_totality_rate",
+      "nonterminal_deadlock_count",
+      "z3_unknown_count"
+    ],
+    "probabilistic": [
+      "storm_completed_model_fraction",
+      "maximum_termination_probability_error",
+      "maximum_success_probability_error_against_direct_executor",
+      "maximum_expected_return_error_against_frozen_value",
+      "maximum_expected_return_error_against_independent_policy_evaluator",
+      "transition_distribution_normalization_rate",
+      "finite_result_rate"
+    ],
+    "integrity": [
+      "truth_field_access_count",
+      "source_result_mutation_count",
+      "verification_bundle_hash_mismatch_count",
+      "tool_version_mismatch_count",
+      "unexpected_verification_attempt_count"
+    ]
+  },
+  "gates": {
+    "minimumCompletedPolicyFraction": 1.0,
+    "minimumPolicyCount": 48,
+    "minimumV55PolicyCount": 32,
+    "minimumV55r1PolicyCount": 16,
+    "minimumReconstructedRootActionMatchRate": 1.0,
+    "maximumReconstructedRootValueError": 1e-10,
+    "minimumReachableStateInvariantProofRate": 1.0,
+    "minimumReachableTransitionSupportEquivalenceProofRate": 1.0,
+    "minimumPolicyObservationTotalityRate": 1.0,
+    "maximumNonterminalDeadlockCount": 0,
+    "maximumZ3UnknownCount": 0,
+    "minimumStormCompletedModelFraction": 1.0,
+    "maximumTerminationProbabilityError": 1e-10,
+    "maximumSuccessProbabilityError": 1e-9,
+    "maximumExpectedReturnErrorAgainstFrozenValue": 1e-9,
+    "maximumExpectedReturnErrorAgainstIndependentPolicyEvaluator": 1e-9,
+    "minimumTransitionDistributionNormalizationRate": 1.0,
+    "minimumFiniteResultRate": 1.0,
+    "minimumImplementationMutantKillRate": 1.0,
+    "minimumAnalyticFixturePassRate": 1.0,
+    "maximumTruthFieldAccessCount": 0,
+    "maximumSourceResultMutationCount": 0,
+    "maximumVerificationBundleHashMismatchCount": 0,
+    "maximumToolVersionMismatchCount": 0,
+    "maximumUnexpectedVerificationAttemptCount": 0
+  },
+  "decisionHierarchy": [
+    "if_all_symbolic_probabilistic_source_binding_mutation_and_integrity_gates_pass_qualify_only_bounded_posterior_expected_verification_of_the_frozen_three_action_policies",
+    "if_source_binding_fails_stop_before_bundle_seal_and_repair_policy_reconstruction_without_rerunning_v55_or_v55r1_evaluations",
+    "if_z3_and_compiler_support_disagree_repair_the_independent_symbolic_encoder_or_compiler_then_create_a_new_revision_without_modifying_the_sealed_bundle",
+    "if_storm_and_direct_execution_disagree_repair_model_reward_label_or_probability_compilation_then_create_a_new_revision_without_modifying_the_sealed_bundle",
+    "if_mutation_controls_fail_do_not_run_the_candidate_verification",
+    "a_pass_does_not_establish_worst_case_safety_parameter_uniform_guarantees_planner_optimality_long_horizon_behavior_or_open_language_grounding"
+  ],
+  "firewall": {
+    "verificationBundleConstructionBeforeImplementationLock": "forbidden",
+    "candidateVerificationBeforeBundleSeal": "forbidden",
+    "candidateVerificationBeforeEvaluationImplementationLock": "forbidden",
+    "postSealBundleMutation": "forbidden",
+    "additionalV55OrV55r1Evaluation": "forbidden",
+    "truthFieldAccess": "forbidden",
+    "stormpy": "forbidden",
+    "gateChangesAfterDesignLock": "forbidden",
+    "formalSafetyClaimWithoutPreregisteredContract": "forbidden",
+    "worstCaseSafetyClaim": "forbidden",
+    "parameterUniformClaim": "forbidden",
+    "longHorizonClaim": "forbidden",
+    "languageGrounding": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "finalEvaluation": "forbidden"
+  },
+  "stageAuthorization": {
+    "installPinnedVerificationDependencies": true,
+    "writeAndAuditIndependentVerifiers": true,
+    "constructVerificationBundle": false,
+    "runCandidateFormalVerification": false,
+    "formalSafetyClaim": false,
+    "languageGrounding": false,
+    "modelAccess": false
+  }
+}

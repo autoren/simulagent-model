@@ -1,0 +1,706 @@
+{
+  "config": "configs/v33-development-adequacy.json",
+  "config_payload": {
+    "allowedSplits": [
+      "factor_fit",
+      "factor_calibration"
+    ],
+    "confirmation": {
+      "candidateSystems": [
+        "independentDirect",
+        "independentCompiled",
+        "jointDirect",
+        "jointCompiled"
+      ],
+      "jointAssembly": "jointAuxiliary",
+      "modularAssembly": {
+        "directTruth": "truth",
+        "lexicalSign": "lexicalSign",
+        "outerOperation": "outerOperation",
+        "predicateArguments": "atom"
+      },
+      "seeds": [
+        3311,
+        3312,
+        3313
+      ],
+      "trainEachSelectedObjectivePerSeed": true,
+      "truthCompiler": "unchanged_v32_registered_compiler"
+    },
+    "diagnosis": {
+      "fitFailure": "representation_or_head_optimization_inadequate",
+      "fitPassCalibrationFailure": "surface_family_transfer_inadequate",
+      "independentPassJointFailure": "negative_multitask_interference",
+      "jointPass": "shared_factorized_interface_development_qualified"
+    },
+    "experiment": "v33_fit_calibration_adequacy",
+    "firewall": {
+      "developmentData": "v32_factor_fit_and_factor_calibration_only",
+      "freshSuiteUse": "construct_only_after_v33_qualification_and_outcome_lock",
+      "interpretation": "development_qualification_not_a_new_generalization_claim",
+      "v28Use": "forbidden",
+      "v32EvaluationUse": "forbidden_for_training_selection_qualification_and_diagnosis"
+    },
+    "forbiddenSplits": [
+      "factor_evaluation_paraphrase",
+      "factor_evaluation_composition"
+    ],
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "backboneForwardPasses": 0,
+      "confirmationTrainingRuns": 15,
+      "freshSuiteConstructionsBeforeQualification": 0,
+      "searchCheckpointEvaluations": 75,
+      "searchTrainingPaths": 15,
+      "v28IntegrationReplays": 0,
+      "v32EvaluationFeaturesRead": 0,
+      "v32EvaluationPredictionsRead": 0,
+      "v32EvaluationRecordsRead": 0
+    },
+    "qualification": {
+      "eligibleSystems": [
+        "independentCompiled",
+        "jointCompiled"
+      ],
+      "perSeedCalibration": {
+        "minimumAtomExactAccuracy": 0.95,
+        "minimumCompiledExactFactAccuracy": 0.9,
+        "minimumCompiledTruthAccuracy": 0.95,
+        "minimumLexicalSignAccuracy": 0.95,
+        "minimumOuterOperationAccuracy": 0.95,
+        "minimumRelationOrderAccuracy": 0.9
+      },
+      "perSeedFit": {
+        "minimumAtomExactAccuracy": 0.98,
+        "minimumCompiledExactFactAccuracy": 0.95,
+        "minimumCompiledTruthAccuracy": 0.98,
+        "minimumLexicalSignAccuracy": 0.98,
+        "minimumOuterOperationAccuracy": 0.98
+      },
+      "requiredPassingSeeds": 3,
+      "selection": {
+        "minimumIndependentMinusJointCalibrationExactFactForModularSelection": 0.05,
+        "preferJointIfBothPass": true
+      }
+    },
+    "schemaVersion": 33,
+    "search": {
+      "batchSize": 16,
+      "checkpointEpochs": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "gradientClipNorm": 1.0,
+      "learningRates": [
+        0.0002,
+        0.001,
+        0.003
+      ],
+      "objectives": {
+        "atom": [
+          "predicate",
+          "argument1",
+          "argument2"
+        ],
+        "jointAuxiliary": [
+          "predicate",
+          "argument1",
+          "argument2",
+          "truth",
+          "lexicalSign",
+          "outerOperation"
+        ],
+        "lexicalSign": [
+          "lexicalSign"
+        ],
+        "outerOperation": [
+          "outerOperation"
+        ],
+        "truth": [
+          "truth"
+        ]
+      },
+      "optimizer": "adam",
+      "seed": 3301,
+      "selectionOrder": [
+        "maximum_calibration_primary_metric",
+        "maximum_fit_primary_metric",
+        "maximum_calibration_component_mean",
+        "fewest_epochs",
+        "lowest_learning_rate"
+      ],
+      "selectionPrimaryMetric": {
+        "atom": "atom_exact_accuracy",
+        "jointAuxiliary": "compiled_exact_fact_accuracy",
+        "lexicalSign": "lexical_sign_accuracy",
+        "outerOperation": "outer_operation_accuracy",
+        "truth": "direct_truth_accuracy"
+      }
+    },
+    "sourceCorpus": "data/v32-factorized-semantics",
+    "sourceV32FeatureMetadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+    "sourceV32PostAudit": "outputs/v32-factorized-semantics/post-result-audit.json",
+    "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+    "sourceV32TrainedLock": "configs/v32-trained-systems-lock.json"
+  },
+  "config_sha256": "35930e3d872a70ad015894e45138755e13ec328ee9e5c4352a7e7db5640cf47f",
+  "confirmation": {
+    "candidateSystems": [
+      "independentDirect",
+      "independentCompiled",
+      "jointDirect",
+      "jointCompiled"
+    ],
+    "jointAssembly": "jointAuxiliary",
+    "modularAssembly": {
+      "directTruth": "truth",
+      "lexicalSign": "lexicalSign",
+      "outerOperation": "outerOperation",
+      "predicateArguments": "atom"
+    },
+    "seeds": [
+      3311,
+      3312,
+      3313
+    ],
+    "trainEachSelectedObjectivePerSeed": true,
+    "truthCompiler": "unchanged_v32_registered_compiler"
+  },
+  "data_access_before_lock": {
+    "backbone_forward_passes": 0,
+    "fresh_suite_constructions": 0,
+    "training_paths": 0,
+    "v28_integration_replays": 0,
+    "v32_calibration_records_read": 0,
+    "v32_evaluation_features_read": 0,
+    "v32_evaluation_predictions_read": 0,
+    "v32_evaluation_records_read": 0,
+    "v32_fit_records_read": 0
+  },
+  "experiment": "v33_fit_calibration_adequacy",
+  "implementation": {
+    "python/audit_and_summarize_v33.py": "4d92f83e177d2c6b2145ef3e91ceff7acede0fa47ce63c5039f0c211686f4120",
+    "python/audit_v32_factorized_semantics.py": "25115d3613610a02f01b9f0e60489096595dc115b9dc61b335975a48bd7dc19f",
+    "python/audit_v33_development.py": "a7ee4aa7da432c5c72cbc3f4b7d611ad3285372c2798126486062691de517894",
+    "python/freeze_v33_development.py": "f796c770a3babcc6953864ee24b1cfb53af424ab9f5fee5d1f02e47ecdd3b89f",
+    "python/freeze_v33_outcome.py": "5a3f5dea3a26a796957aa7ad0847d2d2452c129cdceb8927d2ee4f1b90895530",
+    "python/run_v33_development.py": "776cb3d3ec92f02bd2aa800a144b3fd46268e4f6db9cc43783890df5876c1d34",
+    "python/test_v33_development.py": "d8880a952d31a77825cac69dced5d8e5c65e9fe63c514cff5645ae9546475344",
+    "python/train_v32_heads.py": "85c6d1ee99b525a63b8e10d2eba16c73d063d56934bc968e4a3e7565371a1702",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v30_language.py": "d1d47708f3b8db5f68b3c1d6a95620f1d4f4b53ad143181b7eace07f803d8822",
+    "python/v32_language.py": "43e1a40537d4a9b65af600d63269591a98bfaf709a4cff7310b0b4c68aaf2529",
+    "python/v32_structured_model.py": "55f28be0e36b4849b43fe52c5794d32f84bf30f0ff4b49c069f896fb28e9ed12",
+    "python/v33_development.py": "f6112b13c13132761c328361cf021aa36666eff9ee7239d01b7be37468bbe49d"
+  },
+  "limits": {
+    "adapterTrainingRuns": 0,
+    "backboneForwardPasses": 0,
+    "confirmationTrainingRuns": 15,
+    "freshSuiteConstructionsBeforeQualification": 0,
+    "searchCheckpointEvaluations": 75,
+    "searchTrainingPaths": 15,
+    "v28IntegrationReplays": 0,
+    "v32EvaluationFeaturesRead": 0,
+    "v32EvaluationPredictionsRead": 0,
+    "v32EvaluationRecordsRead": 0
+  },
+  "lock_payload_sha256": "ecfb0113fefbf07d094251cb983b4cb4f9c165a168b38c34b26d0b90c7c83967",
+  "pre_run_audit": "outputs/v33-development-adequacy/pre-run-audit.json",
+  "pre_run_audit_sha256": "9228a50f52bffe1d5faa726bfd4e0b1cfe9ed4f1a1f61bff4c1f698b2395eedc",
+  "preregistration": "docs/v33-development-adequacy-plan.md",
+  "preregistration_sha256": "a2f175b2b96cb6c0d67c2cf8a1d871ce8ecd21e4f95945b6c7a7fc78680b7090",
+  "qualification": {
+    "eligibleSystems": [
+      "independentCompiled",
+      "jointCompiled"
+    ],
+    "perSeedCalibration": {
+      "minimumAtomExactAccuracy": 0.95,
+      "minimumCompiledExactFactAccuracy": 0.9,
+      "minimumCompiledTruthAccuracy": 0.95,
+      "minimumLexicalSignAccuracy": 0.95,
+      "minimumOuterOperationAccuracy": 0.95,
+      "minimumRelationOrderAccuracy": 0.9
+    },
+    "perSeedFit": {
+      "minimumAtomExactAccuracy": 0.98,
+      "minimumCompiledExactFactAccuracy": 0.95,
+      "minimumCompiledTruthAccuracy": 0.98,
+      "minimumLexicalSignAccuracy": 0.98,
+      "minimumOuterOperationAccuracy": 0.98
+    },
+    "requiredPassingSeeds": 3,
+    "selection": {
+      "minimumIndependentMinusJointCalibrationExactFactForModularSelection": 0.05,
+      "preferJointIfBothPass": true
+    }
+  },
+  "schema_version": 33,
+  "search": {
+    "batchSize": 16,
+    "checkpointEpochs": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "gradientClipNorm": 1.0,
+    "learningRates": [
+      0.0002,
+      0.001,
+      0.003
+    ],
+    "objectives": {
+      "atom": [
+        "predicate",
+        "argument1",
+        "argument2"
+      ],
+      "jointAuxiliary": [
+        "predicate",
+        "argument1",
+        "argument2",
+        "truth",
+        "lexicalSign",
+        "outerOperation"
+      ],
+      "lexicalSign": [
+        "lexicalSign"
+      ],
+      "outerOperation": [
+        "outerOperation"
+      ],
+      "truth": [
+        "truth"
+      ]
+    },
+    "optimizer": "adam",
+    "seed": 3301,
+    "selectionOrder": [
+      "maximum_calibration_primary_metric",
+      "maximum_fit_primary_metric",
+      "maximum_calibration_component_mean",
+      "fewest_epochs",
+      "lowest_learning_rate"
+    ],
+    "selectionPrimaryMetric": {
+      "atom": "atom_exact_accuracy",
+      "jointAuxiliary": "compiled_exact_fact_accuracy",
+      "lexicalSign": "lexical_sign_accuracy",
+      "outerOperation": "outer_operation_accuracy",
+      "truth": "direct_truth_accuracy"
+    }
+  },
+  "source": {
+    "allowed_corpus_file_sha256": {
+      "factor_calibration.jsonl": "be5b5ae7815d490249c75a3499b26b73a2d1d7e5c1b92829b5e89ad1c7edcb91",
+      "factor_fit.jsonl": "08daea322b5f0ba0921177cfe797e23ee9244eb0fe6df7cbe7b85830b174325c"
+    },
+    "feature_artifact": "outputs/v32-factorized-semantics/fit-calibration-features/features.npz",
+    "feature_artifact_sha256": "eafb9b25bce9a62631d2fe74778503a481e793f0f64cec13ce2991e99cfed40f",
+    "feature_metadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+    "feature_metadata_sha256": "3b486f98fc46b3b1de989857f3a4e4fa3b0075d5c7b361dbcb094b00c7b63c5b",
+    "v32_post_audit": "outputs/v32-factorized-semantics/post-result-audit.json",
+    "v32_post_audit_sha256": "81d5f890fffcc51cae228e744ae3fa3ee4c68123b8f88bafe548858b22f763af",
+    "v32_protocol_lock": "configs/v32-factorized-semantics-lock.json",
+    "v32_protocol_lock_sha256": "227c08f017f7dae4094acdeae6ebdf1b27e159cbb310348f492c0243bcc4ecd5",
+    "v32_trained_lock": "configs/v32-trained-systems-lock.json",
+    "v32_trained_lock_sha256": "3aece27b349cbcbba99add5a4a3eba7e4e613c54326a9a40413a32b70550f0db"
+  },
+  "v32_config_payload": {
+    "construction": {
+      "baseScenesPerSurfaceFamilyCell": 4,
+      "entityCounts": [
+        3,
+        4,
+        5
+      ],
+      "factsInInverseScenes": [
+        "linked",
+        "feeds"
+      ],
+      "factsInReversedScenes": [
+        "linked"
+      ],
+      "sceneVariants": [
+        "direct_clean",
+        "inverse_clean",
+        "direct_distractor",
+        "reversed_link_arguments_clean"
+      ]
+    },
+    "decisionHierarchy": [
+      "report_scientific_factorization_success_independently_of_absolute_interface_pass",
+      "select_simplest_absolute_passing_system_unless_a_more_structured_system_has_material_advantage",
+      "authorize_v28_only_for_selected_absolute_passing_system",
+      "if_no_absolute_pass_stop_without_v28"
+    ],
+    "evaluation": {
+      "bootstrapReplicates": 10000,
+      "bootstrapSeed": 3299,
+      "noSeedSelection": true,
+      "reportEachSeedMeanAndMinimum": true,
+      "statisticalUnit": "surface_family"
+    },
+    "experiment": "v32_factorized_polarity_scope",
+    "factorization": {
+      "compositionHoldoutCells": {
+        "assert": [
+          "negative"
+        ],
+        "contrast_select": [
+          "negative"
+        ],
+        "deny": [
+          "negative"
+        ],
+        "double_deny": [
+          "negative"
+        ]
+      },
+      "fitCells": {
+        "assert": [
+          "positive",
+          "negative"
+        ],
+        "contrast_select": [
+          "positive"
+        ],
+        "deny": [
+          "positive"
+        ],
+        "double_deny": [
+          "positive"
+        ],
+        "unresolved": [
+          "positive",
+          "negative"
+        ]
+      },
+      "lexicalSigns": [
+        "positive",
+        "negative"
+      ],
+      "outerOperations": [
+        "assert",
+        "deny",
+        "double_deny",
+        "contrast_select",
+        "unresolved"
+      ],
+      "truthCompiler": {
+        "assert": {
+          "negative": "false",
+          "positive": "true"
+        },
+        "contrast_select": {
+          "negative": "false",
+          "positive": "true"
+        },
+        "deny": {
+          "negative": "true",
+          "positive": "false"
+        },
+        "double_deny": {
+          "negative": "false",
+          "positive": "true"
+        },
+        "unresolved": {
+          "negative": "unknown",
+          "positive": "unknown"
+        }
+      }
+    },
+    "firewall": {
+      "evaluationFeaturesBeforeTrainedSystemLock": 0,
+      "evaluationPredictionsBeforeTrainedSystemLock": 0,
+      "evaluationUse": "one_shot_after_protocol_and_trained_system_hash_locks",
+      "integrationUse": "conditional_single_replay_only_after_absolute_language_pass",
+      "programIdentitiesAvailableDuringTraining": false,
+      "transitionOutcomesAvailableDuringTraining": false,
+      "v28SignalsAvailableDuringTraining": false,
+      "v30AndV31EvaluationUse": "descriptive_design_only_no_v32_selection"
+    },
+    "gates": {
+      "absolutePerSeed": {
+        "minimumArgument1Accuracy": 0.98,
+        "minimumArgumentReversalPairExact": 0.95,
+        "minimumDistractorPairExact": 0.95,
+        "minimumExactSceneAccuracy": 0.8,
+        "minimumExactSignedFactAccuracy": 0.98,
+        "minimumInversePairExact": 0.95,
+        "minimumLexicalSignPairExact": 0.95,
+        "minimumPredicateAccuracy": 0.98,
+        "minimumRelationArgumentOrderAccuracy": 0.95,
+        "minimumScopePairExact": 0.95,
+        "minimumTruthStatusAccuracy": 0.98,
+        "minimumWorstOuterOperationTruth": 0.95,
+        "minimumWorstSurfaceFamilyExact": 0.9
+      },
+      "absoluteSystem": {
+        "minimumMeanExactSceneAccuracy": 0.8,
+        "minimumMeanExactSignedFactAccuracy": 0.98,
+        "minimumMeanPredicateAccuracy": 0.98,
+        "requiredPassingSeeds": 3
+      },
+      "preModel": {
+        "maximumConstructionHashOverlapAcrossSplits": 0,
+        "maximumConstructionHashOverlapWithV30OrV31": 0,
+        "maximumExactEvidenceOverlapAcrossSplits": 0,
+        "maximumTargetFieldsInAgentInput": 0,
+        "minimumAuditPassRate": 1.0,
+        "requiredEvaluationCompositionFamilies": 12,
+        "requiredEvaluationParaphraseFamilies": 15,
+        "requiredOracleCompilerAccuracy": 1.0
+      },
+      "scientificFactorization": {
+        "minimumFactorizedMinusAuxiliaryCompositionExactFact": 0.1,
+        "minimumMeanCompositionCompiledTruthAccuracy": 0.9,
+        "minimumMeanCompositionLexicalSignAccuracy": 0.95,
+        "minimumMeanCompositionOuterOperationAccuracy": 0.95,
+        "minimumMinimumSeedCompositionCompiledTruthAccuracy": 0.85,
+        "minimumPairedFamilyBootstrapLowerBound": 0.0,
+        "requiredOracleCompilerAccuracy": 1.0
+      },
+      "scientificIntermediateSupervision": {
+        "minimumAuxiliaryMinusMonolithicCompositionExactFact": 0.05,
+        "minimumPairedFamilyBootstrapLowerBound": 0.0
+      },
+      "selectionMaterialAdvantage": {
+        "minimumMeanExactSceneDelta": 0.03,
+        "minimumMeanExactSignedFactDelta": 0.02,
+        "minimumPairedFamilyBootstrapLowerBound": 0.0
+      }
+    },
+    "integration": {
+      "candidateAlignment": "maximum_weight_one_to_one_typed_atom_alignment",
+      "gates": {
+        "maximumFrozenSupportEmptyVersionSpace": 0.1,
+        "minimumEvaluationSupportExactGraph": 0.75,
+        "minimumFrozenFrozenExact": 0.65,
+        "minimumFrozenSupportOracleQueryExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleExact": 1.0,
+        "minimumOracleSupportFrozenQueryExact": 0.75
+      },
+      "runCondition": "one_system_selected_by_absolute_language_gates",
+      "seedCombination": "arithmetic_mean_logits_across_all_three_registered_seeds",
+      "unchangedProgramSelection": "v28_marginal_program_map"
+    },
+    "limits": {
+      "adapterTrainingRuns": 0,
+      "benchmarkConstructions": 1,
+      "checkpointSelections": 0,
+      "featureExtractions": 1,
+      "hyperparameterSelections": 0,
+      "jointAuxiliaryTrainingRuns": 3,
+      "monolithicTrainingRuns": 3,
+      "sealedEvaluations": 1,
+      "trainedSystemLocks": 1,
+      "v28IntegrationReplays": 1
+    },
+    "model": {
+      "hiddenSize": 2560,
+      "maxSequenceLength": 768,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "representation": "full_depth_final_token_plus_entity_inventory_and_evidence_mention_means_float32",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "systemPrompt": "Represent the evidence compositionally in the declared typed ontology. Preserve the embedded literal's lexical sign, the outer evidence operation, directed source and target roles, and unresolved status.",
+      "totalLayers": 32
+    },
+    "ontology": {
+      "entityTypes": [
+        "unit",
+        "hub"
+      ],
+      "relations": [
+        {
+          "directFalseForm": "{source} is not linked to {target}",
+          "directTrueForm": "{source} is linked to {target}",
+          "id": "linked",
+          "inverseFalseForm": "{target} does not receive a link from {source}",
+          "inverseTrueForm": "{target} receives a link from {source}",
+          "sourceType": "unit",
+          "targetType": "unit"
+        },
+        {
+          "directFalseForm": "{source} does not feed {target}",
+          "directTrueForm": "{source} feeds {target}",
+          "id": "feeds",
+          "inverseFalseForm": "{target} is not fed by {source}",
+          "inverseTrueForm": "{target} is fed by {source}",
+          "sourceType": "hub",
+          "targetType": "unit"
+        }
+      ],
+      "truthStatuses": [
+        "true",
+        "false",
+        "unknown"
+      ],
+      "unaryPredicates": [
+        {
+          "entityType": "unit",
+          "falseForm": "{entity} is unstable",
+          "id": "stable",
+          "trueForm": "{entity} is stable"
+        },
+        {
+          "entityType": "unit",
+          "falseForm": "{entity} is uncharged",
+          "id": "charged",
+          "trueForm": "{entity} is charged"
+        },
+        {
+          "entityType": "hub",
+          "falseForm": "{entity} is offline",
+          "id": "online",
+          "trueForm": "{entity} is online"
+        }
+      ]
+    },
+    "outputDir": "data/v32-factorized-semantics",
+    "schemaVersion": 32,
+    "seed": 3201,
+    "sharedHead": {
+      "argument1": "typed_entity_pointer",
+      "argument2": "typed_entity_pointer_plus_na",
+      "classWeighting": "inverse_frequency_within_fit",
+      "deterministicTypeMask": true,
+      "dropout": 0.0,
+      "lexicalSignClasses": [
+        "positive",
+        "negative"
+      ],
+      "lossWeights": {
+        "argument1": 1.0,
+        "argument2": 1.0,
+        "lexicalSign": 1.0,
+        "outerOperation": 1.0,
+        "predicate": 1.0,
+        "truth": 1.0
+      },
+      "outerOperationClasses": [
+        "assert",
+        "deny",
+        "double_deny",
+        "contrast_select",
+        "unresolved"
+      ],
+      "predicateClasses": [
+        "stable",
+        "charged",
+        "online",
+        "linked",
+        "feeds"
+      ],
+      "truthClasses": [
+        "true",
+        "false",
+        "unknown"
+      ],
+      "width": 128
+    },
+    "sourceV22r2Lock": "configs/v22r2-relational-grounding-lock.json",
+    "sourceV28Lock": "configs/v28-marginal-map-lock.json",
+    "sourceV28Result": "outputs/v28-marginal-map/evaluation/result.json",
+    "sourceV31ForensicAudit": "outputs/v31-signed-fact-adaptation/lora-forensic-audit.json",
+    "sourceV31PostAudit": "outputs/v31-signed-fact-adaptation/post-result-audit.json",
+    "sourceV31ProtocolLock": "configs/v31-signed-fact-adaptation-lock.json",
+    "sourceV31Result": "outputs/v31-signed-fact-adaptation/sealed-evaluation/result.json",
+    "sourceV31TrainedLock": "configs/v31-trained-systems-lock.json",
+    "splits": {
+      "factor_calibration": {
+        "cells": "fitCells",
+        "surfaceNames": [
+          "cal_a"
+        ]
+      },
+      "factor_evaluation_composition": {
+        "cells": "compositionHoldoutCells",
+        "surfaceNames": [
+          "comp_a",
+          "comp_b",
+          "comp_c"
+        ]
+      },
+      "factor_evaluation_paraphrase": {
+        "cells": "fitCells",
+        "surfaceNames": [
+          "para_a",
+          "para_b",
+          "para_c"
+        ]
+      },
+      "factor_fit": {
+        "cells": "fitCells",
+        "surfaceNames": [
+          "fit_a",
+          "fit_b",
+          "fit_c",
+          "fit_d"
+        ]
+      }
+    },
+    "systems": {
+      "auxiliaryDirect": {
+        "trainingArtifact": "joint_auxiliary",
+        "trainingObjective": [
+          "predicate",
+          "argument1",
+          "argument2",
+          "truth",
+          "lexicalSign",
+          "outerOperation"
+        ],
+        "truthDecoding": "direct_truth_head"
+      },
+      "factorizedCompiled": {
+        "trainingArtifact": "same_joint_auxiliary_parameters",
+        "trainingObjective": [
+          "predicate",
+          "argument1",
+          "argument2",
+          "truth",
+          "lexicalSign",
+          "outerOperation"
+        ],
+        "truthDecoding": "fixed_registered_truth_compiler"
+      },
+      "monolithic": {
+        "trainingObjective": [
+          "predicate",
+          "argument1",
+          "argument2",
+          "truth"
+        ],
+        "truthDecoding": "direct_truth_head"
+      }
+    },
+    "training": {
+      "calibrationUse": "report_only_no_selection",
+      "checkpointSelection": "none_fixed_single_epoch",
+      "epochs": 1,
+      "gradientAccumulationSteps": 4,
+      "gradientClipNorm": 1.0,
+      "learningRate": 0.0002,
+      "microbatchSize": 1,
+      "optimizer": "adam",
+      "seeds": [
+        3211,
+        3212,
+        3213
+      ],
+      "trainingArtifactsPerSeed": [
+        "monolithic",
+        "joint_auxiliary"
+      ]
+    }
+  }
+}

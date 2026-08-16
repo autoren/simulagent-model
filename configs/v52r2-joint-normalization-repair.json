@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 52,
+  "revision": "r2",
+  "experiment": "v52r2_joint_normalization_repair",
+  "sourceOutcomeLock": "configs/v52-outcome-lock.json",
+  "sourceImplementationLock": "configs/v52-implementation-lock.json",
+  "sourcePopulationSeal": "configs/v52-population-seal.json",
+  "diagnosis": {
+    "failedGates": [
+      "normalization",
+      "scale_normalization"
+    ],
+    "allOtherGatesPassed": true,
+    "firstFailedSbcRecord": "sbc_00006",
+    "measuredJointResidual": "1.2e-29",
+    "workingPrecisionDigits": 100,
+    "frozenNormalizationTolerance": "1e-80",
+    "cause": "final_joint_and_configuration_products_were_assembled_under_the_process_default_28_digit_decimal_context"
+  },
+  "singleAuthorizedChange": "assemble_and_normalize_final_joint_and_configuration_marginals_inside_a_100_digit_decimal_context",
+  "invariants": [
+    "same_sealed_exact_sbc_and_scale_populations",
+    "same_program_registry",
+    "same_particle_budgets_31_127_509",
+    "same_particle_and_resampling_stream_seeds",
+    "same_filtering_likelihoods_and_resampling_decisions",
+    "same_exact_oracle",
+    "same_metrics_and_noncompensatory_gates",
+    "same_controls_and_claim_boundary",
+    "one_repair_evaluation_only",
+    "no_model_access_training_active_selection_reward_planning_or_language"
+  ],
+  "maximumPermittedBaseVsRepairTv": "1e-25",
+  "repairOutput": "outputs/v52r2-joint-normalization-repair/evaluation",
+  "decision": {
+    "pass": "authorize_continuous_parameter_smc_squared_preregistration_with_pmcmc_reference",
+    "fail": "repair_particle_inference_without_authorizing_smc_squared"
+  }
+}

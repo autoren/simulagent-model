@@ -1,0 +1,79 @@
+{
+  "authorization": {
+    "model_access": false,
+    "preregister_delayed_effects": false,
+    "run_repair_rescore": false,
+    "write_and_audit_repair_implementation": true
+  },
+  "config": "configs/v43r1-graph-measurement-repair.json",
+  "config_payload": {
+    "decisionHierarchy": [
+      "if_all_repair_gates_pass_accept_v43_semantic_graph_composition_as_measurement_repaired_and_preregister_deterministic_delayed_effects",
+      "if_canonical_graph_exact_fails_reject_the_ordering_only_diagnosis_and_repair_the_language_translation_boundary",
+      "if_other_v43_metrics_do_not_reproduce_reject_the_repair_as_non_isolated",
+      "never_rewrite_or_replace_the_original_v43_failed_outcome"
+    ],
+    "experiment": "v43r1_graph_measurement_repair",
+    "firewall": {
+      "V43ArtifactModification": "forbidden",
+      "adapterTraining": "forbidden",
+      "compilerModification": "forbidden",
+      "finalEvaluation": "forbidden",
+      "independentReplicationClaim": "forbidden",
+      "languageModelAccess": "forbidden",
+      "metricChangesBeyondGraphCanonicalization": "forbidden",
+      "newCorpus": "forbidden",
+      "reasonerModification": "forbidden"
+    },
+    "gates": {
+      "maximumSemanticContentMismatches": 0,
+      "minimumCanonicalGraphExact": 1.0,
+      "minimumComparatorPermutationInvariance": 1.0,
+      "minimumDuplicateFree": 1.0,
+      "minimumOtherV43GateChecksPassed": 1.0,
+      "minimumOtherV43MetricsReproduced": 1.0
+    },
+    "immutableInputs": {
+      "newCorpusConstruction": false,
+      "newModelAccess": false,
+      "v42Reasoner": true,
+      "v43Compiler": true,
+      "v43Corpus": true,
+      "v43Predictions": true,
+      "v43RegisteredResult": true
+    },
+    "purpose": "correct_the_registered_graph_metric_from_ordered_list_equality_to_canonical_row_set_equality_without_changing_data_compilers_reasoner_or_any_other_metric",
+    "registeredChange": {
+      "allowedImplementationChanges": [
+        "graph_comparator",
+        "repair_reporting_and_audit_plumbing"
+      ],
+      "newMetric": "equality_of_duplicate_free_canonical_sets_of_atom_and_allowed_value_rows",
+      "oldMetric": "direct_ordered_list_equality_of_graph_rows",
+      "reason": "entity_aliasing_changes_lexicographic_order_without_changing_graph_content"
+    },
+    "schemaVersion": "43r1",
+    "sourcePostHocDiagnostic": "outputs/v43-sequential-language-grounding/post-hoc-graph-diagnostic.json",
+    "sourceV43CorpusSeal": "configs/v43-corpus-seal.json",
+    "sourceV43OutcomeLock": "configs/v43-outcome-lock.json",
+    "stageAuthorization": {
+      "preregisterDelayedEffects": false,
+      "runRepairRescore": false,
+      "writeAndAuditRepairImplementation": true
+    }
+  },
+  "config_sha256": "2dbf63ed576644349667cc925411b6cc4b58547e68558b5f84c82d8b798a1002",
+  "design_audit": "outputs/v43r1-graph-measurement-repair/design-audit.json",
+  "design_audit_sha256": "ea8b71443eea4431ea2ba21bda44fc993bf56af29d63b5952a3ec8e5d37a2eb0",
+  "experiment": "v43r1_design_lock",
+  "lock_payload_sha256": "b2e96df162e15730d4f7d27165903030e96a945d5ace644bad93caa1687f66ea",
+  "preregistration": "docs/v43r1-graph-measurement-repair-plan.md",
+  "preregistration_sha256": "68de214783ed75f54f5380771c5fdc25f27b81c8bc0dc9a6d1c8bb9ca0615fd4",
+  "schema_version": "43r1",
+  "source_post_hoc_diagnostic": "outputs/v43-sequential-language-grounding/post-hoc-graph-diagnostic.json",
+  "source_post_hoc_diagnostic_sha256": "d2fc5f4d07eafa603a864eb171886db3c242dc4ff89e886f88f3a9e3f163f8dd",
+  "source_v43_corpus_seal": "configs/v43-corpus-seal.json",
+  "source_v43_corpus_seal_sha256": "9bf69dd6882f9e11a18a6b93a65bc6ff3ea33198e131d3bc12580c28c0f2568c",
+  "source_v43_outcome_lock": "configs/v43-outcome-lock.json",
+  "source_v43_outcome_lock_sha256": "04802f38c84552f560c0321e96e60199097f39ee1cc327dbb17aba4ec78975f7"
+}

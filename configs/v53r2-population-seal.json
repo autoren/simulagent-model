@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_v53r2_evaluation_once": true
+  },
+  "experiment": "v53r2_population_seal",
+  "implementation_lock": "configs/v53r2-implementation-lock.json",
+  "implementation_lock_sha256": "84227fd272c86fc6e491c733a8e6468cf4b1ebe1d700c866218013057be39d92",
+  "manifest": "data/v53r2-continuous-parameter-smc2/manifest.json",
+  "manifest_sha256": "92cdf3b24fe1a45800a69c541f02c07f04a870e92ca1b28b32df34c0bc5461ba",
+  "population_audit": "outputs/v53r2-continuous-parameter-smc2/population-audit.json",
+  "population_audit_sha256": "4885ddf645419748f1817447a3e83cffd8e626858887f6b279298328569824bd",
+  "populations": {
+    "exact": {
+      "path": "data/v53r2-continuous-parameter-smc2/exact.jsonl",
+      "records": 32,
+      "sha256": "9645b7e9f6ebbea5a7dd82e3d1b4b2448d59d48d30c4fb8f4de306b379b487fe"
+    },
+    "sbc": {
+      "path": "data/v53r2-continuous-parameter-smc2/sbc.jsonl",
+      "records": 256,
+      "sha256": "365b60a49ca7cf95df10bcb3e2f25ff674eed1509468a51c3f8d99fdf81e8420"
+    },
+    "scale": {
+      "path": "data/v53r2-continuous-parameter-smc2/scale.jsonl",
+      "records": 32,
+      "sha256": "b928ead70d12b87132e4261387d58af735c47be6f372a12dbb8c32ac97f1739a"
+    }
+  },
+  "revision": "r2",
+  "schema_version": 53,
+  "seal_payload_sha256": "51dabfbe60960bcc8e4b83d3919f82a58768f21c1a779584e37bcbe7197b95c9"
+}

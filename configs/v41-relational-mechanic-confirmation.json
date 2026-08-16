@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 41,
+  "experiment": "v41_declared_scope_relational_mechanic_confirmation",
+  "claim": "the_frozen_declared_language_compiler_and_symbolic_schema_inducer_transfer_end_to_end_across_fresh_unseen_one_step_relational_mechanics",
+  "sourceV40OutcomeLock": "configs/v40-outcome-lock.json",
+  "sourceV22Config": "configs/dataset.v22.json",
+  "sourceV22DevelopmentCorpus": "data/v22-relational-development",
+  "frozenCompiler": "python/v39_compiler.py",
+  "frozenSemanticKernel": "python/v22_relational.py",
+  "population": {
+    "mechanics": 40,
+    "statisticalUnit": "mechanic_episode",
+    "families": ["unary_selection", "relation_conditioned", "two_hop_composition", "existential_aggregation"],
+    "mechanicsPerFamily": 10,
+    "oneBitMechanicsPerFamily": 3,
+    "twoBitMechanicsPerFamily": 7,
+    "excludeAllV22TargetProgramKeys": true,
+    "maximumSupportTraces": 24,
+    "queryAxes": [
+      "binding_recombination",
+      "relation_orientation",
+      "graph_topology",
+      "entity_count_extrapolation",
+      "partial_observation",
+      "distractor_invariance",
+      "permutation_equivariance"
+    ],
+    "generatorSeed": 4119
+  },
+  "languageInterface": {
+    "predicateOntologyDeclared": true,
+    "operatorOntologyDeclared": true,
+    "sameFrozenV39Grammar": true,
+    "freshEpisodeOperatorCues": true,
+    "freshEntityNamespaces": true,
+    "semanticEquivalentOperationSignCellsBalanced": true,
+    "unsupportedInputPolicy": "conservative_full_outcome_vocabulary",
+    "openParaphrase": false
+  },
+  "inference": {
+    "groundEverySupportAndQueryClauseWithFrozenCompiler": true,
+    "assembleTypedEpistemicGraphsDeterministically": true,
+    "programHypotheses": "unchanged_v22_finite_lifted_dsl",
+    "programSelection": "exact_version_space_from_support_traces",
+    "queryExecution": "unchanged_v22_partial_executor",
+    "probabilisticV28Path": "not_used_when_declared_compiler_is_exact"
+  },
+  "gates": {
+    "minimumClauseExactParse": 1.0,
+    "minimumSupportExactGraph": 1.0,
+    "minimumQueryExactGraph": 1.0,
+    "minimumSchemaRecovery": 1.0,
+    "minimumTargetRetention": 1.0,
+    "maximumEmptyVersionSpace": 0.0,
+    "minimumTransitionSetExact": 1.0,
+    "minimumCompleteEpisodeExact": 1.0,
+    "minimumEveryFamilyTransitionSetExact": 1.0,
+    "minimumEveryQueryAxisTransitionSetExact": 1.0,
+    "maximumEmpiricalLookupTransitionSetExact": 0.95
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_accept_declared_scope_relational_mechanic_claim_and_begin_architecture_breaking_sequential_benchmark",
+    "if_language_or_graph_gates_fail_reject_end_to_end_transfer_without_repair_or_repeat",
+    "if_graphs_pass_but_schema_or_execution_fails_revisit_symbolic_hypothesis_coverage_without_repair_or_repeat",
+    "if_empirical_lookup_gate_fails_do_not_attribute_success_to_lifted_mechanic_induction"
+  ],
+  "firewall": {
+    "compilerModification": "forbidden",
+    "semanticKernelModification": "forbidden",
+    "V22TargetProgramReuse": "forbidden",
+    "V22r2EvaluationUse": "forbidden",
+    "V28Use": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "confirmationSelection": "forbidden",
+    "confirmationRepeats": 0,
+    "claimExpansionBeyondDeclaredOneStepBooleanScope": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditImplementation": true,
+    "constructConfirmation": false,
+    "scoreConfirmation": false,
+    "architectureBreakingBenchmark": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "authorization": {
+    "collect_evaluation_language": false,
+    "collect_pilot_language": false,
+    "generate_and_audit_blinded_author_packets": true,
+    "human_authored_language_claim": false,
+    "joint_new_surface_new_concept_claim": false,
+    "model_generated_writing_assistance": false,
+    "release_evaluation_packets": false,
+    "release_pilot_packets": false,
+    "run_candidate_evaluation": false,
+    "write_and_audit_blinded_author_packet_generator": true,
+    "write_candidate_parser": false
+  },
+  "collection_protocol_audit": "outputs/v58-human-authored-known-ontology-language/collection-protocol-audit.json",
+  "collection_protocol_audit_sha256": "d3f25d241119e40818b4a108502bd7ef222638b33b214389ccfdc0a3a2960757",
+  "experiment": "v58_collection_protocol_lock",
+  "lock_payload_sha256": "91b5a5fd034d196d1d239def6583405dcc930b2b46d37a33a1ceeb5e51ee75ab",
+  "protocol": "configs/v58-collection-and-adjudication-protocol.json",
+  "protocol_files_sha256": {
+    "configs/v58-collection-and-adjudication-protocol.json": "1cd739ea5d9d2a621950d85cd3c91292a6eaff9aa0b67f13ebf1e39df4df0afb",
+    "docs/v58-collection-and-adjudication-protocol.md": "32701c3127b2fef7a440bffd33d94ea9af4de25fe23e7ce64e9700da4e5bd2db",
+    "python/audit_v58_collection_protocol.py": "a3250f5ef9442b0adb4b63070bb767c96ba39e10bce32395d77087d098af0c88",
+    "python/v58_collection_protocol.py": "21b67e55f2edb35362f6767aea69d3ddb31f7acb6994eb6bfa47c2e00fa7d823"
+  },
+  "protocol_sha256": "1cd739ea5d9d2a621950d85cd3c91292a6eaff9aa0b67f13ebf1e39df4df0afb",
+  "schema_version": 58,
+  "v40_corpus_seal": "configs/v40-corpus-seal.json",
+  "v40_corpus_seal_sha256": "6017862909028ca3baad725721623e1ccab1391e0fb3ae1196b567965becb01d",
+  "v57_outcome_lock": "configs/v57-outcome-lock.json",
+  "v57_outcome_lock_sha256": "479285a8f924b9f476a63e3e34bff248eca3a79ef04ec34a58a479babed20113",
+  "v58_design_lock": "configs/v58-design-lock.json",
+  "v58_design_lock_sha256": "68f4d2663981f2dd79ae3bd4c1f40af26cdcbb8de89b61650897e0a5a99525bc"
+}

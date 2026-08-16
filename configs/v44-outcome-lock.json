@@ -1,0 +1,71 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "add_stochasticity": false,
+    "construct_delayed_language_grounding": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_delayed_language_grounding": true
+  },
+  "experiment": "v44_outcome_lock",
+  "gate_checks": {
+    "collapsed_delay_inadequate": true,
+    "end_flush_inadequate": true,
+    "literal_lookup_inadequate": true,
+    "oracle_program_validation": true,
+    "queued_empty_version_space": true,
+    "queued_every_family": true,
+    "queued_every_sequence_length": true,
+    "queued_final_observation_exact": true,
+    "queued_next_state_exact": true,
+    "queued_schema_recovery": true,
+    "queued_target_retention": true,
+    "wait_placement_counterfactual_accuracy": true
+  },
+  "lock_payload_sha256": "76a845ed60731b8411c924800547d263fc66c331cbe172320c225ad1b44a540e",
+  "metrics": {
+    "collapsed_delay_final_exact": 0.5,
+    "end_flush_final_exact": 0.5,
+    "literal_lookup_final_exact": 0.0,
+    "mechanics": 40,
+    "median_final_version_space": 1.0,
+    "oracle_program_validation": 1.0,
+    "queries": 960,
+    "queued_by_family_final_exact": {
+      "interleaved_immediate_and_delayed": 1.0,
+      "one_tick_unary_set_clear": 1.0,
+      "state_conditional_scheduling": 1.0,
+      "two_tick_relational_toggle": 1.0
+    },
+    "queued_by_sequence_length_final_exact": {
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0,
+      "6": 1.0
+    },
+    "queued_by_split_final_exact": {
+      "development_evaluation": 1.0,
+      "development_fit": 1.0
+    },
+    "queued_complete_mechanic_exact": 1.0,
+    "queued_empty_version_space": 0.0,
+    "queued_final_observation_exact": 1.0,
+    "queued_next_state_exact": 1.0,
+    "queued_partial_initial_final_exact": {
+      "False": 1.0,
+      "True": 1.0
+    },
+    "queued_schema_recovery": 1.0,
+    "queued_target_retention": 1.0,
+    "wait_counterfactual_pairs": 480,
+    "wait_placement_counterfactual_accuracy": 1.0
+  },
+  "post_result_audit": "outputs/v44-deterministic-delayed-effects/post-result-audit.json",
+  "post_result_audit_sha256": "bbb14b940940fb8c37fe7a525a84fc75711b697b92900e543b54490ec3ee099c",
+  "qualification_passed": true,
+  "result": "outputs/v44-deterministic-delayed-effects/development/result.json",
+  "result_sha256": "7a498ba327dff519f69d40f362c260d7debf734f736c7de5e6e4a5028a42dd11",
+  "schema_version": 44,
+  "scientific_decision": "delayed_foundation_pass_preregister_delayed_language_grounding"
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 42,
+  "experiment": "v42_oracle_sequential_state_foundation",
+  "scientificQuestion": "can_a_minimal_stateful_symbolic_extension_represent_identify_and_execute_order_sensitive_multi_action_mechanics_that_the_frozen_one_step_architecture_cannot",
+  "sourceV41OutcomeLock": "configs/v41-outcome-lock.json",
+  "scope": {
+    "oracleFirst": true,
+    "languageGrounding": false,
+    "declaredBooleanOntology": true,
+    "persistentStateMutation": true,
+    "deterministicImmediateEffects": true,
+    "sequenceLengths": [2, 3, 4],
+    "variableEntitiesAndDirectedRelations": true,
+    "partialObservation": true,
+    "stochasticEffects": false,
+    "delayedEffects": false,
+    "activeInterventionSelection": false,
+    "openConceptInventory": false
+  },
+  "population": {
+    "mechanics": 40,
+    "mechanicsPerFamily": 10,
+    "families": [
+      "set_clear_toggle",
+      "state_conditional_effect",
+      "directed_relational_propagation",
+      "order_sensitive_composition"
+    ],
+    "fitMechanics": 24,
+    "developmentEvaluationMechanics": 16,
+    "supportSequencesPerMechanicMaximum": 16,
+    "querySequencesPerMechanic": 24,
+    "entityCounts": [2, 3, 4, 5],
+    "generatorSeed": 4213
+  },
+  "statefulDsl": {
+    "conditions": ["unary", "relation", "not", "and", "or", "exists"],
+    "effects": ["set_true", "set_false", "toggle", "copy", "conditional_effect"],
+    "actionParametersMaximum": 2,
+    "maximumBoundVariables": 1,
+    "maximumConditionDepth": 2,
+    "maximumEffectsPerAction": 2,
+    "closedWorldCompleteStates": true,
+    "explicitUnknownPartialStates": true,
+    "simultaneousEffectsWithinAction": true,
+    "statePersistsAcrossActions": true
+  },
+  "comparisons": {
+    "statefulVersionSpaceExecutor": "primary",
+    "frozenV22MemorylessExecutor": "registered_inadequacy_control",
+    "literalSequenceLookup": "non_lifted_control",
+    "jointNeuralChallenger": "deferred"
+  },
+  "gates": {
+    "minimumOracleProgramValidation": 1.0,
+    "minimumStatefulTargetRetention": 1.0,
+    "minimumStatefulSchemaRecovery": 1.0,
+    "minimumStatefulNextStateExact": 1.0,
+    "minimumStatefulFinalObservationExact": 1.0,
+    "minimumStatefulEveryFamilyExact": 1.0,
+    "minimumStatefulEverySequenceLengthExact": 1.0,
+    "minimumOrderCounterfactualAccuracy": 1.0,
+    "maximumMemorylessFinalObservationExact": 0.85,
+    "maximumLiteralLookupFinalObservationExact": 0.95
+  },
+  "decisionHierarchy": [
+    "if_stateful_passes_and_memoryless_fails_authorize_sequential_language_grounding_development",
+    "if_stateful_fails_repair_stateful_dsl_or_executor_before_language_or_neural_work",
+    "if_memoryless_passes_redesign_benchmark_to_make_persistent_state_causally_necessary",
+    "if_literal_lookup_passes_redesign_generalization_split_before_any_claim"
+  ],
+  "firewall": {
+    "V41CorpusReuse": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "stochasticOrDelayedAxes": "forbidden",
+    "activeSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden",
+    "claimExpansionBeyondOracleSequentialFoundation": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditOracleImplementation": true,
+    "constructDevelopmentPopulation": false,
+    "runOracleDevelopment": false,
+    "languageGrounding": false
+  }
+}

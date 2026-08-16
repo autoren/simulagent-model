@@ -1,0 +1,81 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "add_stochasticity": false,
+    "construct_delayed_effects_benchmark": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_deterministic_delayed_effects": false
+  },
+  "experiment": "v43_outcome_lock",
+  "gate_checks": {
+    "action_command_exact_parse": true,
+    "action_sequence_exact": true,
+    "bag_of_actions_inadequate": true,
+    "compiled_empty_version_space": true,
+    "compiled_every_family": true,
+    "compiled_every_sequence_length": true,
+    "compiled_final_observation_exact": true,
+    "compiled_next_state_exact": true,
+    "compiled_order_counterfactual_accuracy": true,
+    "compiled_schema_recovery": true,
+    "compiled_target_retention": true,
+    "literal_language_lookup_inadequate": true,
+    "safety_abstention": true,
+    "state_clause_exact_parse": true,
+    "state_graph_exact": false
+  },
+  "lock_payload_sha256": "aae8de174b6f8d9c673c64de1dbc2531a7028926d1971e8fba97029ca2b9e790",
+  "metrics": {
+    "action_command_exact_parse": 1.0,
+    "action_commands": 3024,
+    "action_sequence_exact": 1.0,
+    "action_sequences": 1003,
+    "bag_of_actions_order_counterfactual_accuracy": 0.0,
+    "compiled_by_family_final_exact": {
+      "directed_relational_propagation": 1.0,
+      "order_sensitive_composition": 1.0,
+      "set_clear_toggle": 1.0,
+      "state_conditional_effect": 1.0
+    },
+    "compiled_by_sequence_length_final_exact": {
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "compiled_by_split_final_exact": {
+      "development_evaluation": 1.0,
+      "development_fit": 1.0
+    },
+    "compiled_complete_mechanic_exact": 1.0,
+    "compiled_empty_version_space": 0.0,
+    "compiled_final_observation_exact": 1.0,
+    "compiled_next_state_exact": 1.0,
+    "compiled_order_counterfactual_accuracy": 1.0,
+    "compiled_order_counterfactual_pairs": 88,
+    "compiled_partial_initial_final_exact": {
+      "False": 1.0,
+      "True": 1.0
+    },
+    "compiled_schema_recovery": 1.0,
+    "compiled_target_retention": 1.0,
+    "literal_language_lookup_final_exact": 0.0,
+    "mechanics": 40,
+    "median_final_version_space": 1.0,
+    "queries": 960,
+    "safety_abstention": 1.0,
+    "safety_challenges": 280,
+    "state_clause_exact_parse": 1.0,
+    "state_clauses": 22072,
+    "state_graph_exact": 0.26155187445510025,
+    "state_graphs": 1147
+  },
+  "post_result_audit": "outputs/v43-sequential-language-grounding/post-result-audit.json",
+  "post_result_audit_sha256": "035094c3a66b0f184d7824807f7eb5212bf723a81d2800e834f923c9f63d266a",
+  "qualification_passed": false,
+  "result": "outputs/v43-sequential-language-grounding/development/result.json",
+  "result_sha256": "3ef1b48f61158337c3b2ed86ca36ac0348cc9cf35b389a17d36311e71dc3050a",
+  "schema_version": 43,
+  "scientific_decision": "repair_declared_language_compiler_only"
+}

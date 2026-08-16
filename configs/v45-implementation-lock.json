@@ -1,0 +1,159 @@
+{
+  "authorization": {
+    "construct_paired_language_corpus": true,
+    "model_access": false,
+    "preregister_stochastic_foundation": false,
+    "run_paired_development": false
+  },
+  "config_payload": {
+    "comparisons": {
+      "collapsedDelayExecutor": "frozen_v44_inadequacy_control",
+      "compiledQueuedPipeline": "primary",
+      "endFlushExecutor": "frozen_v44_inadequacy_control",
+      "literalLanguageSequenceLookup": "non_lifted_control",
+      "pairedOracleV44Pipeline": "frozen_reference"
+    },
+    "decisionHierarchy": [
+      "if_all_gates_pass_accept_declared_delayed_interface_composition_and_preregister_an_oracle_stochastic_transition_foundation",
+      "if_state_or_action_language_gates_fail_repair_only_the_corresponding_declared_compiler",
+      "if_language_passes_but_delayed_execution_fails_audit_translation_before_changing_the_frozen_v44_reasoner",
+      "if_a_timing_or_lookup_control_passes_repair_the_control_before_any_stronger_claim"
+    ],
+    "experiment": "v45_declared_delayed_language_grounding",
+    "firewall": {
+      "V44CaseOrTargetSelection": "forbidden",
+      "V44ReasonerModification": "forbidden",
+      "activeInterventionSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "openParaphraseClaim": "forbidden",
+      "outcomeDrivenRepeat": "forbidden",
+      "stochasticEffectsInV45": "forbidden"
+    },
+    "frozenReasoning": {
+      "delayedDsl": "python/v44_delayed.py",
+      "eventQueueExecution": "exact_frozen_v44_tick_semantics",
+      "mechanicRegistry": "frozen_v44_registry",
+      "reasonerModification": "forbidden",
+      "supportAndQueries": "frozen_v44_corpus",
+      "versionSpaceInduction": "exact_frozen_v44_filtering"
+    },
+    "gates": {
+      "maximumCollapsedDelayFinalExact": 0.85,
+      "maximumCompiledEmptyVersionSpace": 0.0,
+      "maximumEndFlushFinalExact": 0.85,
+      "maximumLiteralLanguageLookupFinalExact": 0.95,
+      "minimumActionCommandExactParse": 1.0,
+      "minimumActionSequenceExact": 1.0,
+      "minimumCanonicalStateGraphExact": 1.0,
+      "minimumCompiledEveryFamilyExact": 1.0,
+      "minimumCompiledEverySequenceLengthExact": 1.0,
+      "minimumCompiledFinalObservationExact": 1.0,
+      "minimumCompiledNextStateExact": 1.0,
+      "minimumCompiledSchemaRecovery": 1.0,
+      "minimumCompiledTargetRetention": 1.0,
+      "minimumCompiledWaitCounterfactualAccuracy": 1.0,
+      "minimumSafetyAbstention": 1.0,
+      "minimumStateClauseExactParse": 1.0,
+      "minimumWaitCommandExactParse": 1.0
+    },
+    "languageInterface": {
+      "boundActionCompiler": "frozen_v43_declared_template_and_ordinal_contract",
+      "openParaphrase": false,
+      "partialUnknownEncoding": "v39_unresolved_operation",
+      "sequenceOrder": "explicit_contiguous_one_based_step_ordinals",
+      "stateCompiler": "frozen_v39_declared_language_compiler",
+      "stateGraphComparator": "frozen_v43r1_canonical_duplicate_safe_comparator",
+      "tickSemantics": "declared_structured_contract_identical_to_v44",
+      "unsupportedOrAmbiguousPolicy": "abstain_and_return_conservative_full_outcome_set",
+      "waitExtension": "declared_zero_argument_wait_cue_and_exact_step_production"
+    },
+    "nextAxisIfPassed": {
+      "activeSelectionStillDeferred": true,
+      "axis": "stochastic_transition_effects",
+      "delaysRemainFixedAndDeclared": true,
+      "reason": "add_transition_uncertainty_only_after_persistent_state_delay_and_declared_language_each_have_isolated_foundations",
+      "stage": "oracle_first_preregistration_only"
+    },
+    "pairedDesign": {
+      "freshEpisodeActionCues": true,
+      "freshEpisodeOperatorCues": true,
+      "freshEpisodePredicateLexemes": true,
+      "mechanics": 40,
+      "newEntityNamespaces": true,
+      "noV44TargetDrivenSelection": true,
+      "querySequences": 960,
+      "reasonForPairing": "hold_delayed_mechanics_tick_semantics_states_actions_and_targets_fixed_while_changing_only_the_exposed_representation",
+      "reuseSealedV44MechanicsAndCases": true,
+      "supportSequences": 46,
+      "waitCounterfactualPairs": 480
+    },
+    "safetyChallenges": {
+      "ambiguousActionTemplate": true,
+      "duplicateStepOrdinal": true,
+      "malformedDeclaredGrammar": true,
+      "missingStepOrdinal": true,
+      "unknownBoundActionCue": true,
+      "unknownPredicateLexeme": true,
+      "unknownStateOperatorCue": true,
+      "unknownWaitCue": true,
+      "waitWithArguments": true
+    },
+    "schemaVersion": 45,
+    "scientificQuestion": "can_declared_state_and_ordered_action_language_including_an_explicit_wait_command_populate_the_frozen_v44_hidden_queue_reasoner_without_losing_delayed_mechanic_induction_or_execution",
+    "sourceV44CorpusSeal": "configs/v44-corpus-seal.json",
+    "sourceV44OutcomeLock": "configs/v44-outcome-lock.json",
+    "stageAuthorization": {
+      "constructPairedLanguageCorpus": false,
+      "modelAccess": false,
+      "preregisterStochasticFoundation": false,
+      "runPairedDevelopment": false,
+      "writeAndAuditImplementation": true
+    }
+  },
+  "design_lock": "configs/v45-design-lock.json",
+  "design_lock_sha256": "03cf22e5dfbe3cb24e5a64e41702c3678312dc0d5b2304ed1d79a571a199292e",
+  "expected_corpus_sha256": "be46c5d48d86c578b734ce673eae1043b26571fe3b2dd01565194e7294d320f1",
+  "expected_counts": {
+    "action_commands": 4550,
+    "bound_action_commands": 3051,
+    "mechanics": 40,
+    "query_sequences": 960,
+    "safety_challenges": 360,
+    "state_clauses": 23148,
+    "support_sequences": 46,
+    "wait_commands": 1499,
+    "wait_counterfactual_pairs": 480
+  },
+  "experiment": "v45_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v45.py": "01b5e09b36b63dc645e06323779f509193258c002ff5babbd0bf910d9fdbf713",
+    "python/audit_v45_corpus.py": "742ec860c371491f47b5702774cd32ba2211431451d486d4a0b3db72067e5342",
+    "python/audit_v45_implementation.py": "ca857e0d8fe316cc067b9d1c4ee79897c411f3fe51fb7b6e501427eed6409720",
+    "python/evaluate_v44_delayed.py": "17408355b584867c070f27c6ee49439deb82c1ddfc5f1283e147c5bdf88e0d6b",
+    "python/evaluate_v45_language.py": "b7110424af20241ff81e49958b525b82352fe947ec972930cb61cfd93a62cd53",
+    "python/freeze_v45_implementation.py": "baf4423c7255287925133253de0ff2fb2181e6d099522e044f3cf6add35a4ec4",
+    "python/freeze_v45_outcome.py": "a6f27a81fd48ab26ef4bc6ca0e482829d6f0abd69790c9f1d6753d9653ae5e35",
+    "python/generate_v45_language.py": "9d8683fa09c4c07fb3adce25ccf4c434959a17a03ce696ca8e41aadecd7c549a",
+    "python/seal_v45_corpus.py": "264fdeca065f1cd26f3348c6380770f32e96677a7287269909afb0066bc932af",
+    "python/test_v45_language.py": "f4962d4897bba47b77f9f6a3c1a088d03122eb63b04acfde98532d2bc56be19d",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v38_focus_parser.py": "6055bec5885ac4fda8a3952be02daaddc2954bc9319c27a670c51879f3f241f1",
+    "python/v39_compiler.py": "8732ccf074a9a03af7b3879b44fbec5c5b9531130849ceb682df1e5109469c4b",
+    "python/v42_stateful.py": "500a7d2ade4a6be0714f6e1a5a93928d47a132283295d168b6128c049d9652ea",
+    "python/v43_language.py": "0fa72d852645b362aa9ae9d0ec5a45d36070420515bd851b4ec3a68cd7b09986",
+    "python/v43r1_measurement.py": "044d927d4fa2bb0d245ba9224a52554589be70ea2ce408db6cf6e801595002a2",
+    "python/v44_delayed.py": "f9603996369b1aafffa7a4d790367f007384b4b49827f671c354996415cc69eb",
+    "python/v45_language.py": "f9a03717bb3386f4814a54398ff6666ccfca777a0b4b60ad2063cede48d2f335"
+  },
+  "implementation_audit": "outputs/v45-delayed-language-grounding/implementation-audit.json",
+  "implementation_audit_sha256": "45e8a924cf055d0a23a16cf9ecefbed79643d78e82fd0d0852393a492209ce8d",
+  "lock_payload_sha256": "b4c118072446ff8032d193fe0407466f9329386d7825e42a9690b20aa8b2a0d1",
+  "schema_version": 45,
+  "source_v44_corpus_seal": "configs/v44-corpus-seal.json",
+  "source_v44_corpus_seal_sha256": "d3ee589dafe12da4696ad14ef3f099205d5656c5bd5d90fd56926a626cde8080"
+}

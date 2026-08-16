@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 53,
+  "revision": "r1",
+  "experiment": "v53r1_prepopulation_design_repair",
+  "sourceDesignLock": "configs/v53-design-lock.json",
+  "diagnosis": {
+    "stage": "implementation_fixture_before_population_construction",
+    "candidatePopulationRecordsAccessed": 0,
+    "evaluationRuns": 0,
+    "pmcmcProposalStandardDeviation": 0.35,
+    "alteredSeedAcceptanceRange": [0.807, 0.900],
+    "frozenAcceptanceGate": [0.10, 0.70],
+    "singleRepeatTwentyBinMeanJointTvAt509": 0.09088,
+    "threeRepeatTwentyBinMeanJointTvAt509OnFourFixtureRecords": 0.07147,
+    "singleRepeatTenBinMeanJointTvAt509": 0.05734
+  },
+  "authorizedDesignChanges": {
+    "pmcmcProposalStandardDeviation": 1.30,
+    "jointThetaBins": 10,
+    "exactBenchmarkRepeatAggregation": "equal_weight_posterior_mixture_across_three_independent_repeats"
+  },
+  "alteredSeedChecks": {
+    "proposalStandardDeviation": 1.30,
+    "acceptanceMean": 0.554,
+    "acceptanceRange": [0.493, 0.627],
+    "seeds": "all_v53_root_seeds_plus_1000000",
+    "sealedCandidateOverlap": false
+  },
+  "implementationClarifications": [
+    "continuous probabilities use a V53-local transition and filtering path so frozen V46 through V52 validators are unchanged",
+    "the cross-action template pool is extended symmetrically with set-false effects after the inherited pool is exhausted",
+    "joint posterior calibration draws are sampled from explicit program-theta-configuration atoms rather than independently sampled marginals",
+    "the 10 theta bins are equal-width over the frozen support [0.05,0.95]",
+    "each reported budget remains 31, 127, or 509 particles per independent repeat; the primary posterior estimate is the preregistered equal-weight mixture of all three repeats"
+  ],
+  "invariants": [
+    "same eight fresh templates with two per family",
+    "same exact SMC-squared SBC PMCMC and scale population quotas",
+    "same 257-node exact quadrature oracle",
+    "same outer budgets 31 127 509 and inner budget 127",
+    "same four PMCMC chains warmup 1000 retained 2000 and inner budget 509",
+    "same prior parameter support controls gates decision hierarchy firewalls and claim boundary",
+    "no active intervention selection reward planning verification language model access or training"
+  ],
+  "decision": {
+    "pass": "authorize_v53r1_implementation_audit_only",
+    "fail": "repair_continuous_parameter_inference_design_without_constructing_populations"
+  }
+}

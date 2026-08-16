@@ -1,0 +1,291 @@
+{
+  "authorization": {
+    "construct_v54_active_populations": false,
+    "language_grounding": false,
+    "model_access": false,
+    "reward_or_planning": false,
+    "run_v54_active_evaluation": false,
+    "write_and_audit_exact_eig_implementation": true
+  },
+  "config": "configs/v54-exact-one-step-eig.json",
+  "config_payload": {
+    "adaptiveSbc": {
+      "coverageLevels": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "discreteTieHandling": "randomized_insertion_rank_with_frozen_independent_seed",
+      "expectedRanksPerBin": 16,
+      "outcomeGeneration": "draw_from_the_selected_assays_exact_posterior_predictive_conditioned_on_the_generating_latents",
+      "posteriorDrawsPerReplication": 127,
+      "posteriorUpdate": "exact_conditioning_on_the_realized_masked_assay_trajectory",
+      "rankBins": 16,
+      "rankSupportSize": 128,
+      "replications": 256,
+      "reuseSelectionPopulation": false,
+      "selectionOnSbcOutcomes": false,
+      "selectionPolicy": "the_frozen_exact_eig_policy_using_only_public_pre_outcome_history",
+      "testQuantities": [
+        "program_ordinal",
+        "continuous_theta",
+        "target_program_posterior_probability"
+      ]
+    },
+    "claimBoundary": {
+      "activeInterventionSelection": true,
+      "adapterTraining": false,
+      "approximateParticleAcquisition": false,
+      "exactContinuousParameterQuadrature": true,
+      "exactHiddenConfigurationMarginalization": true,
+      "exactHistoryDependentJointBelief": true,
+      "exactProgramEnumeration": true,
+      "finalEvaluation": false,
+      "hiddenConfigurationRole": "nuisance_integrated_out_not_an_information_target",
+      "languageGrounding": false,
+      "learnedAcquisition": false,
+      "modelAccess": false,
+      "multiStepContingentDesign": false,
+      "noisySensors": false,
+      "oneStepOpenLoopAssaySelection": true,
+      "openOntology": false,
+      "primaryClaim": "exact_expected_information_gain_action_selection_for_static_model_identification_under_partial_observability",
+      "reuseV53ParameterizedTemplates": true,
+      "rewardOrPlanning": false,
+      "targetLatent": "joint_program_identity_and_continuous_theta",
+      "verification": false
+    },
+    "controls": {
+      "controlDetection": "a_nonstructural_control_is_detected_when_mean_exact_eig_regret_exceeds_0_001_nats_or_strict_selection_disagreement_exceeds_0_10_on_informative_records;_the_leakage_control_is_detected_only_by_a_positive_firewall_rejection",
+      "likelihoodSquaredControl": "square_each_candidate_outcome_likelihood_before_posterior_normalization",
+      "mapProgramControl": "replace_program_posterior_with_a_point_mass_at_the_map_program_before_scoring",
+      "minimumControlsDetectedOrDominated": 5,
+      "outcomeLeakageControl": "attempt_to_select_after_reading_the_realized_outcome_and_require_the_firewall_to_reject_it",
+      "predictiveEntropyControl": "maximize_observation_entropy_without_subtracting_conditional_entropy",
+      "stateOnlyInformationControl": "maximize_information_about_current_hidden_configuration_instead_of_program_theta",
+      "thetaPointMassControl": "replace_theta_posterior_with_a_point_mass_at_its_mean_before_scoring",
+      "uniformRandomControl": "uniform_mean_over_the_complete_candidate_set"
+    },
+    "decisionHierarchy": [
+      "if_exact_oracle_agreement_information_identities_evidence_efficiency_adaptive_sbc_controls_and_selection_integrity_all_pass_authorize_only_preregistration_of_short_horizon_exact_bayes_adaptive_planning",
+      "if_eig_values_or_rankings_disagree_repair_outcome_enumeration_or_joint_program_theta_marginalization",
+      "if_information_identity_checks_fail_repair_probability_or_entropy_accounting",
+      "if_adaptive_sbc_fails_repair_selection_conditioning_or_posterior_updates_before_planning",
+      "if_evidence_efficiency_fails_repair_the_acquisition_objective_or_candidate_assays_without_adding_reward",
+      "do_not_authorize_multi_step_planning_verification_language_model_access_or_training"
+    ],
+    "exactOracle": {
+      "analyticFixtures": [
+        "uninformative_wait_has_zero_static_latent_eig_without_pending_events",
+        "binary_bernoulli_assay_matches_closed_form_mutual_information",
+        "identical_program_templates_have_zero_program_information",
+        "posterior_entropy_reduction_identity"
+      ],
+      "dynamicStateReference": "exact_stepwise_world_queue_history_enumeration",
+      "independentReference": "scalar_nested_program_theta_configuration_outcome_enumeration",
+      "outcomeSupport": "exact_enumeration_of_distinct_masked_observation_trajectories",
+      "primaryImplementation": "batched_predictive_outcome_accumulation",
+      "programTemplates": 8,
+      "quadrature": "257_node_gauss_legendre_weighted_by_the_scaled_beta_prior",
+      "quadratureNodes": 257,
+      "referenceUsesSamePublicHistoryAndQuadratureNodes": true,
+      "templateSource": "v53_parameterized_registry_with_template_seed_5303",
+      "thetaPrior": "scaled_beta_2_2_on_0_05_0_95"
+    },
+    "experiment": "v54_exact_one_step_expected_information_gain",
+    "firewall": {
+      "activePopulationConstructionBeforeImplementationLock": "forbidden",
+      "adapterTraining": "forbidden",
+      "approximateParticleAcquisition": "forbidden",
+      "candidatePruning": "forbidden",
+      "evaluationBeforePopulationSeal": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "learnedAcquisition": "forbidden",
+      "modelAccess": "forbidden",
+      "multiStepContingentDesign": "forbidden",
+      "postPopulationControlChanges": "forbidden",
+      "postPopulationGateChanges": "forbidden",
+      "rewardOrPlanning": "forbidden",
+      "selectionOnRealizedOutcome": "forbidden",
+      "selectionOnTruthFields": "forbidden",
+      "simulationBasedInference": "forbidden_while_exact_likelihood_is_available",
+      "verification": "forbidden"
+    },
+    "gates": {
+      "informativeRecordMinimumOracleSpreadNats": 0.001,
+      "maximumAbsoluteCandidateEigError": 1e-10,
+      "maximumAbsoluteCoverageZ": 4.75,
+      "maximumAbsoluteRankBinZ": 4.75,
+      "maximumCandidateOmissionCount": 0,
+      "maximumCanonicalTieBreakViolationCount": 0,
+      "maximumEigMinusPriorEntropy": 1e-10,
+      "maximumEntropyReductionIdentityError": 1e-10,
+      "maximumHistoryAndOutcomeStreamCollisionCount": 0,
+      "maximumMeanAbsoluteCandidateEigError": 1e-12,
+      "maximumRealizedOutcomeAccessBeforeSelectionCount": 0,
+      "maximumSelectedEigRegret": 1e-10,
+      "maximumStrictlyDominatedNoOpSelectionRate": 0.0,
+      "maximumTruthFieldAccessCount": 0,
+      "minimumCandidateAndPredictiveNormalizationRate": 1.0,
+      "minimumCandidateEig": -1e-10,
+      "minimumCompletedSelectionFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 5,
+      "minimumFiniteValueRate": 1.0,
+      "minimumInformativeRecordFraction": 0.25,
+      "minimumMeanFractionOfAvailableEigCaptured": 0.999999999,
+      "minimumMeanOracleMinusUniformRandomEigNats": 0.001,
+      "minimumOptimalSetMembershipRate": 1.0,
+      "minimumPostSelectionNormalizationRate": 1.0,
+      "minimumRankChiSquarePValue": 0.001
+    },
+    "interventionSet": {
+      "actionIds": [
+        "pulse",
+        "route",
+        "wait"
+      ],
+      "assay": "candidate_bound_action_at_tick_zero_followed_by_two_fixed_wait_actions",
+      "assayTicks": 3,
+      "bindingRule": "all_ordered_distinct_actor_target_pairs_for_non_wait_actions",
+      "candidateCountsByEntityCount": {
+        "2": 5,
+        "3": 13
+      },
+      "enumeration": "complete_legal_bound_action_set_for_the_record_entities_plus_wait",
+      "equalEvidenceCost": {
+        "costUnits": 1,
+        "environmentTicks": 3,
+        "observationPanels": 3
+      },
+      "noOpCandidate": "wait_then_wait_then_wait",
+      "observationPanel": "full_world_atom_universe_at_every_assay_tick",
+      "observationTiming": "after_each_of_the_three_assay_ticks",
+      "withinAssayAdaptation": false
+    },
+    "metrics": {
+      "adaptiveCalibration": [
+        "rank_histograms",
+        "rank_chi_square_p_values",
+        "maximum_absolute_rank_bin_z",
+        "central_rank_coverage",
+        "maximum_absolute_coverage_z",
+        "post_selection_normalization_rate"
+      ],
+      "evidenceEfficiency": [
+        "informative_record_fraction",
+        "mean_oracle_eig",
+        "mean_uniform_random_eig",
+        "mean_oracle_minus_uniform_random_eig",
+        "mean_fraction_of_available_eig_captured",
+        "strictly_dominated_no_op_selection_rate"
+      ],
+      "informationIdentities": [
+        "maximum_entropy_reduction_identity_error",
+        "minimum_candidate_eig",
+        "maximum_eig_minus_prior_entropy",
+        "finite_value_rate"
+      ],
+      "oracleAgreement": [
+        "maximum_absolute_candidate_eig_error",
+        "mean_absolute_candidate_eig_error",
+        "optimal_set_membership_rate",
+        "maximum_selected_eig_regret",
+        "candidate_and_predictive_normalization_rate"
+      ],
+      "selectionIntegrity": [
+        "truth_field_access_count",
+        "realized_outcome_access_before_selection_count",
+        "candidate_omission_count",
+        "canonical_tie_break_violation_count",
+        "history_and_outcome_stream_collision_count"
+      ]
+    },
+    "population": {
+      "entityCounts": [
+        2,
+        3
+      ],
+      "freshObservationDesignsAgainst": [
+        "V49",
+        "V50",
+        "V51",
+        "V52",
+        "V53"
+      ],
+      "freshPublicHistoriesAgainst": [
+        "V49",
+        "V50",
+        "V51",
+        "V52",
+        "V53"
+      ],
+      "generatorSeed": 5401,
+      "historyClasses": {
+        "mixed_informative": 32,
+        "pending_delayed_event": 16,
+        "prior_like_all_wait": 16
+      },
+      "historySeed": 5407,
+      "maskSeed": 5431,
+      "ongoingHistoryPrefixLengths": [
+        5,
+        7
+      ],
+      "outcomeSeed": 5437,
+      "randomBaselineSeed": 5443,
+      "recordsPerGeneratingTemplate": 8,
+      "reuseParameterizedTemplatesToIsolateAcquisition": true,
+      "sbcRankSeed": 5441,
+      "selectionRecords": 64,
+      "supportEpisodesPerRecord": 4,
+      "supportSequenceLengths": [
+        6,
+        8
+      ],
+      "templateAssignmentSeed": 5413,
+      "thetaPriorSeed": 5417,
+      "tieBreakAuditSeed": 5449,
+      "trajectorySeed": 5419,
+      "truthFieldsRetainedForAuditOnly": true
+    },
+    "schemaVersion": 54,
+    "scientificQuestion": "can_an_exact_finite_design_policy_select_the_one_step_intervention_that_maximizes_expected_information_gain_about_joint_program_identity_and_continuous_stochastic_parameter_while_integrating_out_hidden_dynamic_state",
+    "sourceV53r2OutcomeLock": "configs/v53r2-outcome-lock.json",
+    "stageAuthorization": {
+      "constructActivePopulations": false,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "rewardOrPlanning": false,
+      "runActiveEvaluation": false,
+      "writeAndAuditExactEigImplementation": true
+    },
+    "targetAndObjective": {
+      "equivalentObjective": "pre_action_program_theta_entropy_minus_predictive_expected_post_action_program_theta_entropy",
+      "forbidOutcomeConditionedSelection": true,
+      "logarithmBase": "natural",
+      "nuisanceLatent": "current_world_queue_configuration",
+      "objective": "sum_o_predictive_probability_times_kl_of_post_action_program_theta_posterior_to_pre_action_program_theta_posterior",
+      "primaryTarget": [
+        "program_identity",
+        "continuous_theta"
+      ],
+      "priorBelief": "exact_normalized_posterior_over_program_theta_and_current_world_queue_configuration_given_public_history",
+      "selection": "argmax_over_complete_finite_candidate_set",
+      "tieBreak": "lexicographically_smallest_canonical_intervention_key_within_tolerance",
+      "tieToleranceNats": 1e-12,
+      "units": "nats",
+      "zeroProbabilityConvention": "zero_mass_terms_contribute_zero_and_positive_posterior_mass_with_zero_prior_mass_is_an_error"
+    }
+  },
+  "config_sha256": "f6b4e7673905bb1c287a74002e076d2684083ba709c28100e09789c2a04f77aa",
+  "design_audit": "outputs/v54-exact-one-step-eig/design-audit.json",
+  "design_audit_sha256": "0380fe72abac59c349dfb9793e623e32835c00d497f08a2d44efca8e24d66451",
+  "experiment": "v54_design_lock",
+  "lock_payload_sha256": "33bd1a4119692fffdd334179c4f0191a475a2e93dd27d9b0f0efa919d034211b",
+  "preregistration": "docs/v54-exact-one-step-eig-plan.md",
+  "preregistration_sha256": "88755a0dae3fa682d140c69c710f1f470a4c4d21c6f35da986d560eef9e14c2f",
+  "schema_version": 54,
+  "source_outcome_lock": "configs/v53r2-outcome-lock.json",
+  "source_outcome_lock_sha256": "957761b11f0937ade483934b7ef2b2eccef75c7646d8dc25763e6caf8b9992da"
+}

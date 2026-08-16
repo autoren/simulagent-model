@@ -1,0 +1,86 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_sampled_transition_population": false,
+    "final_evaluation": false,
+    "language_grounding": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_sampled_transition_estimation": true,
+    "sample_outcomes": false
+  },
+  "experiment": "v46_outcome_lock",
+  "gate_checks": {
+    "every_family_exact": true,
+    "every_probability_exact": true,
+    "every_sequence_length_exact": true,
+    "exact_trajectory_distribution_match": true,
+    "literal_lookup_inadequate": true,
+    "map_inadequate": true,
+    "mass_normalization": true,
+    "mean_trajectory_total_variation": true,
+    "oracle_program_validation": true,
+    "uniformized_inadequate": true,
+    "weighted_empty_version_space": true,
+    "weighted_schema_recovery": true,
+    "weighted_target_retention": true
+  },
+  "lock_payload_sha256": "4c78f4a8d946a399bef39d38be51dfcda70dbc952e485296d18434e757768fca",
+  "metrics": {
+    "by_family_exact": {
+      "delayed_bernoulli_scheduling": 1.0,
+      "immediate_bernoulli_mutation": 1.0,
+      "interleaved_deterministic_and_stochastic": 1.0,
+      "state_conditional_probability": 1.0
+    },
+    "by_probability_exact": {
+      "1/2": 1.0,
+      "1/4": 1.0,
+      "3/4": 1.0
+    },
+    "by_sequence_length_exact": {
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "by_split_exact": {
+      "development_evaluation": 1.0,
+      "development_fit": 1.0
+    },
+    "by_timing_exact": {
+      "delayed": 1.0,
+      "immediate": 1.0
+    },
+    "exact_trajectory_distribution_match": 1.0,
+    "literal_lookup_exact_distribution_match": 0.0,
+    "map_exact_distribution_match": 0.0,
+    "mass_normalization": 1.0,
+    "mean_trajectory_total_variation": 0.0,
+    "mean_trajectory_total_variation_exact": "0/1",
+    "mechanics": 40,
+    "median_map_version_space": 0.0,
+    "median_uniformized_version_space": 0.0,
+    "median_weighted_version_space": 1.0,
+    "oracle_program_validation": 1.0,
+    "probability_sensitive_exact": {
+      "False": 1.0,
+      "True": 1.0
+    },
+    "queries": 960,
+    "timing_sensitive_exact": {
+      "False": 1.0,
+      "True": 1.0
+    },
+    "uniformized_exact_distribution_match": 0.28229166666666666,
+    "weighted_empty_version_space": 0.0,
+    "weighted_schema_recovery": 1.0,
+    "weighted_target_retention": 1.0
+  },
+  "post_result_audit": "outputs/v46-oracle-stochastic-transitions/post-result-audit.json",
+  "post_result_audit_sha256": "3dc37578e5a8b33cf9748dea22e053caa69f77b97090d83bf11b207181886047",
+  "qualification_passed": true,
+  "result": "outputs/v46-oracle-stochastic-transitions/development/result.json",
+  "result_sha256": "6c05fb629f54ccbf5f3418efb3c135f344f3b03fa015606e6abbe20c506ed7ca",
+  "schema_version": 46,
+  "scientific_decision": "oracle_probability_foundation_pass_preregister_sampled_transition_estimation"
+}

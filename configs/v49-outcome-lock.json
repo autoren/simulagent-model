@@ -1,0 +1,190 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_language_composition_population": false,
+    "continuous_probabilities": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "noisy_sensors": false,
+    "open_ontology": false,
+    "preregister_partial_observation_language_composition": false
+  },
+  "experiment": "v49_outcome_lock",
+  "gate_checks": {
+    "belief_normalization": true,
+    "calibration": true,
+    "every_family_tv": true,
+    "finite_log_loss": true,
+    "history_ablation_inadequate": false,
+    "likelihood_normalization": true,
+    "literal_lookup_inadequate": true,
+    "map_latent_collapse_inadequate": true,
+    "map_schema": true,
+    "oracle_filter": true,
+    "partial_full_log_loss": false,
+    "partial_full_tv": true,
+    "predictive_normalization": true,
+    "primary_tv": true,
+    "probability_mae": true,
+    "target_latent_retention": true,
+    "target_program": true,
+    "uniformized_inadequate": true
+  },
+  "lock_payload_sha256": "55c955b1e244639194a5de0da4f70f66b4306f8ffb18964cfdc29ccdcaccdfd4",
+  "metrics": {
+    "all_mechanics": {
+      "belief_diagnostics": {
+        "effective_program_count": 1.0,
+        "expected_within_program_entropy": 0.6059391565991873,
+        "filtered_configuration_entropy": 0.6059391565991873,
+        "oracle_program_predictive_entropy": 0.6059391565991873,
+        "predictive_entropy": 0.6059391565991873,
+        "program_suffix_mutual_information": 0.0,
+        "target_program_posterior_after_prefix": 1.0
+      },
+      "belief_normalization": 1.0,
+      "calibration_error": 0.0005823942845235901,
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 7.580513817083334e-91,
+        "immediate_bernoulli_mutation": 2.9385207314839475e-24,
+        "interleaved_deterministic_and_stochastic": 1.8916558300344918e-21,
+        "state_conditional_probability": 0.0
+      },
+      "every_probability_mean_tv": {
+        "1/2": 1.4383375706368104e-32,
+        "1/4": 1.4115715570800183e-21,
+        "3/4": 9.374205980080423e-24
+      },
+      "every_query_prefix_length_mean_tv": {
+        "1": 4.73648587691494e-22,
+        "2": 4.73648587691494e-22,
+        "3": 4.73648587691494e-22
+      },
+      "every_sequence_length_mean_tv": {
+        "4": 4.73648587691494e-22,
+        "5": 4.73648587691494e-22,
+        "6": 4.73648587691494e-22
+      },
+      "every_timing_mean_tv": {
+        "delayed": 9.458279150172459e-22,
+        "immediate": 1.4692603657419738e-24
+      },
+      "every_visible_fraction_mean_tv": {
+        "0.25": 4.73648587691494e-22,
+        "0.5": 4.73648587691494e-22,
+        "0.75": 4.73648587691494e-22
+      },
+      "finite_log_loss_rate": 1.0,
+      "heldout_brier": 0.4168023003472222,
+      "heldout_conditional_suffix_log_loss": 0.606088165427403,
+      "likelihood_normalization": 1.0,
+      "literal_masked_trace_lookup_coverage": 0.0,
+      "map_latent_collapse_log_loss_disadvantage": Infinity,
+      "map_schema_recovery": 1.0,
+      "matched_full_log_loss": 0.1604418305331276,
+      "matched_full_mean_tv": 3.1369188511309384e-22,
+      "mean_conditional_latent_suffix_tv": 4.73648587691494e-22,
+      "mean_target_program_posterior": 1.0,
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 1.1619838390904894e-25,
+        "mean": 4.736485876914939e-22,
+        "upper": 1.4169701992028784e-21
+      },
+      "mechanic_cluster_bootstrap_partial_minus_full_log_loss": {
+        "lower": 0.3945119591041586,
+        "mean": 0.44564633489427535,
+        "upper": 0.49597151923797356
+      },
+      "mechanics": 48,
+      "observation_history_ablation_log_loss_disadvantage": 0.0,
+      "oracle_program_partial_mean_tv": 0.0,
+      "partial_minus_full_log_loss": 0.44564633489427535,
+      "partial_minus_full_mean_tv": 1.5995670257840013e-22,
+      "predictive_normalization": 1.0,
+      "probability_parameter_mae": 0.0,
+      "queries": 1152,
+      "target_latent_continuation_retention": 1.0,
+      "uniformized_log_loss_disadvantage": 1.8925942963650846
+    },
+    "development_evaluation": {
+      "belief_diagnostics": {
+        "effective_program_count": 1.0,
+        "expected_within_program_entropy": 0.6059391565991873,
+        "filtered_configuration_entropy": 0.6059391565991873,
+        "oracle_program_predictive_entropy": 0.6059391565991873,
+        "predictive_entropy": 0.6059391565991873,
+        "program_suffix_mutual_information": 0.0,
+        "target_program_posterior_after_prefix": 1.0
+      },
+      "belief_normalization": 1.0,
+      "calibration_error": 0.0005122061581225458,
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 1.5161027634083334e-90,
+        "immediate_bernoulli_mutation": 5.877041462967895e-24,
+        "interleaved_deterministic_and_stochastic": 1.9120841188935567e-23,
+        "state_conditional_probability": 0.0
+      },
+      "every_probability_mean_tv": {
+        "1/2": 2.8766751409896356e-32,
+        "3/4": 9.374205980080423e-24
+      },
+      "every_query_prefix_length_mean_tv": {
+        "1": 6.2494706629758654e-24,
+        "2": 6.2494706629758654e-24,
+        "3": 6.2494706629758654e-24
+      },
+      "every_sequence_length_mean_tv": {
+        "4": 6.2494706629758654e-24,
+        "5": 6.2494706629758654e-24,
+        "6": 6.249470662975866e-24
+      },
+      "every_timing_mean_tv": {
+        "delayed": 9.560420594467784e-24,
+        "immediate": 2.9385207314839475e-24
+      },
+      "every_visible_fraction_mean_tv": {
+        "0.25": 6.2494706629758654e-24,
+        "0.5": 6.2494706629758654e-24,
+        "0.75": 6.2494706629758654e-24
+      },
+      "finite_log_loss_rate": 1.0,
+      "heldout_brier": 0.4159342447916667,
+      "heldout_conditional_suffix_log_loss": 0.605134508926823,
+      "likelihood_normalization": 1.0,
+      "literal_masked_trace_lookup_coverage": 0.0,
+      "map_latent_collapse_log_loss_disadvantage": Infinity,
+      "map_schema_recovery": 1.0,
+      "matched_full_log_loss": 0.16117143685552676,
+      "matched_full_mean_tv": 1.8633746179638782e-26,
+      "mean_conditional_latent_suffix_tv": 6.249470662975866e-24,
+      "mean_target_program_posterior": 1.0,
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 6.267831265085795e-32,
+        "mean": 6.249470662975866e-24,
+        "upper": 1.7046754758777653e-23
+      },
+      "mechanic_cluster_bootstrap_partial_minus_full_log_loss": {
+        "lower": 0.37233389142130247,
+        "mean": 0.4439630720712962,
+        "upper": 0.5147841751429417
+      },
+      "mechanics": 24,
+      "observation_history_ablation_log_loss_disadvantage": 0.0,
+      "oracle_program_partial_mean_tv": 0.0,
+      "partial_minus_full_log_loss": 0.4439630720712962,
+      "partial_minus_full_mean_tv": 6.230836916796227e-24,
+      "predictive_normalization": 1.0,
+      "probability_parameter_mae": 0.0,
+      "queries": 576,
+      "target_latent_continuation_retention": 1.0,
+      "uniformized_log_loss_disadvantage": 1.9259551604847498
+    }
+  },
+  "post_result_audit": "outputs/v49-passive-partial-observation/post-result-audit.json",
+  "post_result_audit_sha256": "7e59d26b931a64edaf71b3f486b38f1ddd69cc2ab1931e59916c88385c7dd660",
+  "qualification_passed": false,
+  "result": "outputs/v49-passive-partial-observation/development/result.json",
+  "result_sha256": "638c3525d797adcc4f77e7b2dcbf0b03be5acd1870f9b8adf8124ca34dd3b40c",
+  "schema_version": 49,
+  "scientific_decision": "prediction_may_pass_without_demonstrated_persistent_belief_use"
+}

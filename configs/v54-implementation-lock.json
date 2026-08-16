@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "change_v54_design_or_implementation": false,
+    "construct_v54_active_populations": true,
+    "language_grounding": false,
+    "model_access": false,
+    "reward_or_planning": false,
+    "run_v54_active_evaluation": false
+  },
+  "base_dependencies_sha256": {
+    "configs/v53r2-design-lock.json": "72197ec7776ad92cc4d525b42054b993df6cf38a1781e0804daf56b0fbe6c90d",
+    "configs/v53r2-outcome-lock.json": "957761b11f0937ade483934b7ef2b2eccef75c7646d8dc25763e6caf8b9992da",
+    "python/v46_stochastic.py": "67f7c729d4c053c88fb18ca76b5c85767ac3b152af9f454cc64cdb1ff4635326",
+    "python/v49_belief.py": "5d8bea80ce9559ec921bc7e392ca925ec36d7b378b63b5e45ac2d750081e6c6e",
+    "python/v53_smc2.py": "34a52233605687c50b6962bb6e2f65faaa0a688ed2c124ad6e4e4ef7ea69e399"
+  },
+  "design_lock": "configs/v54-design-lock.json",
+  "design_lock_sha256": "632841183b2206cd4ddb439a3e647bca2c534222777844a8ebad1b10d44b3066",
+  "experiment": "v54_implementation_lock",
+  "implementation_audit": "outputs/v54-exact-one-step-eig/implementation-audit.json",
+  "implementation_audit_sha256": "d9bb754abbb402edd12a8bab432587878ba42df07a6f4d74eeb6dd169f691f7c",
+  "implementation_files_sha256": {
+    "python/audit_v54_implementation.py": "c31b760dd08e11dc9617bc4843ff1b938a52cc38ac4493b4623bc52b69f06d0c",
+    "python/generate_v54_eig.py": "9f729a643320fe9dffaac4dabe354d7e427b5cb32f8d3918ab314dd7af1d37ef",
+    "python/test_v54_eig.py": "c7c25aeff55b2deb873b362b10156a732d46f13480e76044d8d1d6c50fdc67ea",
+    "python/v54_eig.py": "7ea2ec4b8258e9650ce4e65ee74e8a266fd3bd067dde6f6c417de0618d5ec895"
+  },
+  "lock_payload_sha256": "3f81844de693717aa68155eb238855d3d8afaf903e4e13c79dcfd62094f499f2",
+  "schema_version": 54
+}

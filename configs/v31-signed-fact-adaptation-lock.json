@@ -1,0 +1,502 @@
+{
+  "conditional_integration": {
+    "evidence_clauses": 2229,
+    "maximum_model_forward_passes": 6687,
+    "run_condition": "selected_system_passes_all_language_gates",
+    "scenes": 192,
+    "seed_combination": "arithmetic_mean_field_logits_across_all_three_registered_seeds",
+    "v28_integration_replays": 1
+  },
+  "config": "configs/v31-signed-fact-adaptation.json",
+  "config_payload": {
+    "construction": {
+      "baseScenesPerSurfaceFamily": 4,
+      "entityCounts": [
+        3,
+        4,
+        5
+      ],
+      "factsInDirectScenes": [
+        "stable",
+        "charged",
+        "online",
+        "linked",
+        "feeds"
+      ],
+      "factsInInverseScenes": [
+        "linked",
+        "feeds"
+      ],
+      "factsInReversedScenes": [
+        "linked"
+      ],
+      "sceneVariants": [
+        "direct_clean",
+        "inverse_clean",
+        "direct_distractor",
+        "reversed_link_arguments_clean"
+      ]
+    },
+    "decisionHierarchy": [
+      "frozen_pass_lora_no_material_advantage_prefer_frozen",
+      "frozen_fail_lora_pass_authorize_frozen_lora_interface",
+      "both_pass_lora_material_advantage_prefer_lora_otherwise_frozen",
+      "both_fail_stop_no_graph_reranking_or_rank_sweep"
+    ],
+    "evaluation": {
+      "bootstrapReplicates": 10000,
+      "bootstrapSeed": 3199,
+      "noSeedSelection": true,
+      "primarySystemMetric": "exact_signed_fact_accuracy",
+      "seedAggregation": "report_each_seed_mean_and_minimum",
+      "statisticalUnit": "surface_family"
+    },
+    "experiment": "v31_matched_head_signed_fact_adaptation",
+    "firewall": {
+      "developmentOnly": true,
+      "evaluationFeaturesBeforeTrainedSystemLock": 0,
+      "evaluationPredictionsBeforeTrainedSystemLock": 0,
+      "evaluationUse": "one_shot_after_protocol_and_trained_system_hash_locks",
+      "integrationUse": "conditional_single_replay_for_selected_passing_system",
+      "programIdentitiesAvailableDuringTraining": false,
+      "transitionOutcomesAvailableDuringTraining": false,
+      "v28SignalsAvailableDuringTraining": false
+    },
+    "gates": {
+      "loraMaterialAdvantage": {
+        "minimumMeanExactSceneDelta": 0.03,
+        "minimumMeanExactSignedFactDelta": 0.02,
+        "minimumPairedFamilyBootstrapLowerBound": 0.0
+      },
+      "perSeedLanguage": {
+        "minimumAffirmativeDoubleNegationPairExact": 0.95,
+        "minimumAffirmativeNegatedPairExact": 0.95,
+        "minimumArgument1Accuracy": 0.98,
+        "minimumArgumentReversalPairExact": 0.95,
+        "minimumDistractorPairExact": 0.95,
+        "minimumExactSceneAccuracy": 0.8,
+        "minimumExactSignedFactAccuracy": 0.98,
+        "minimumFalseUnknownPairExact": 0.98,
+        "minimumInversePairExact": 0.95,
+        "minimumPredicateAccuracy": 0.98,
+        "minimumRelationArgumentOrderAccuracy": 0.95,
+        "minimumTruthStatusAccuracy": 0.98,
+        "minimumWorstOperatorTruthAccuracy": 0.95,
+        "minimumWorstRelationSurfaceExact": 0.9,
+        "minimumWorstSurfaceFamilyExact": 0.9
+      },
+      "preModel": {
+        "maximumConstructionHashOverlapAcrossSplits": 0,
+        "maximumConstructionHashOverlapWithV30": 0,
+        "maximumExactEvidenceOverlapAcrossSplits": 0,
+        "maximumTargetFieldsInAgentInput": 0,
+        "minimumAuditPassRate": 1.0,
+        "requiredEvaluationSurfaceFamilies": 25,
+        "requiredExamplesPerSurfaceFamily": 52,
+        "requiredOracleRoundTripAccuracy": 1.0
+      },
+      "systemStability": {
+        "minimumMeanExactSceneAccuracy": 0.8,
+        "minimumMeanExactSignedFactAccuracy": 0.98,
+        "minimumMeanPredicateAccuracy": 0.98,
+        "requiredPassingSeeds": 3
+      }
+    },
+    "integration": {
+      "candidateAlignment": "maximum_weight_one_to_one_using_typed_predicate_and_argument_log_probabilities",
+      "gates": {
+        "maximumFrozenSupportEmptyVersionSpace": 0.1,
+        "minimumEvaluationSupportExactGraph": 0.75,
+        "minimumFrozenFrozenExact": 0.65,
+        "minimumFrozenSupportOracleQueryExact": 0.75,
+        "minimumFrozenSupportTargetRetention": 0.75,
+        "minimumOracleOracleExact": 1.0,
+        "minimumOracleSupportFrozenQueryExact": 0.75
+      },
+      "runCondition": "selected_system_passes_all_language_gates",
+      "seedCombination": "arithmetic_mean_field_logits_across_all_three_registered_seeds",
+      "truthSelection": "argmax_mean_truth_logits",
+      "unchangedProgramSelection": "v28_marginal_program_map"
+    },
+    "limits": {
+      "benchmarkConstructions": 1,
+      "checkpointSelections": 0,
+      "frozenFeatureExtractions": 1,
+      "frozenReadoutTrainingRuns": 3,
+      "hyperparameterSelections": 0,
+      "loraTrainingRuns": 3,
+      "sealedEvaluations": 1,
+      "trainedSystemLocks": 1,
+      "v28IntegrationReplays": 1
+    },
+    "model": {
+      "hiddenSize": 2560,
+      "maxSequenceLength": 768,
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "representation": "full_depth_final_token_plus_entity_inventory_and_evidence_mention_means_float32",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "systemPrompt": "Represent the evidence as one canonical signed fact in the declared typed ontology. Preserve directed source and target roles and distinguish known false from unresolved.",
+      "totalLayers": 32
+    },
+    "ontology": {
+      "entityTypes": [
+        "unit",
+        "hub"
+      ],
+      "relations": [
+        {
+          "directFalseForm": "{source} is not linked to {target}",
+          "directTrueForm": "{source} is linked to {target}",
+          "id": "linked",
+          "inverseFalseForm": "{target} does not receive a link from {source}",
+          "inverseTrueForm": "{target} receives a link from {source}",
+          "sourceType": "unit",
+          "targetType": "unit"
+        },
+        {
+          "directFalseForm": "{source} does not feed {target}",
+          "directTrueForm": "{source} feeds {target}",
+          "id": "feeds",
+          "inverseFalseForm": "{target} is not fed by {source}",
+          "inverseTrueForm": "{target} is fed by {source}",
+          "sourceType": "hub",
+          "targetType": "unit"
+        }
+      ],
+      "truthStatuses": [
+        "true",
+        "false",
+        "unknown"
+      ],
+      "unaryPredicates": [
+        {
+          "entityType": "unit",
+          "falseForm": "{entity} is unstable",
+          "id": "stable",
+          "trueForm": "{entity} is stable"
+        },
+        {
+          "entityType": "unit",
+          "falseForm": "{entity} is uncharged",
+          "id": "charged",
+          "trueForm": "{entity} is charged"
+        },
+        {
+          "entityType": "hub",
+          "falseForm": "{entity} is offline",
+          "id": "online",
+          "trueForm": "{entity} is online"
+        }
+      ]
+    },
+    "outputDir": "data/v31-signed-fact-adaptation",
+    "schemaVersion": 31,
+    "seed": 3101,
+    "semanticOperators": [
+      "affirmative_gold",
+      "negated_opposite",
+      "contrastive_both",
+      "double_negation",
+      "explicit_unknown"
+    ],
+    "sharedStructuredHead": {
+      "argument1": "typed_entity_pointer",
+      "argument2": "typed_entity_pointer_plus_na",
+      "deterministicTypeMask": true,
+      "dropout": 0.0,
+      "interaction": "clause_entity_absolute_difference_product_and_concat",
+      "loss": {
+        "argument1": 1.0,
+        "argument2": 1.0,
+        "classWeighting": "inverse_frequency_within_fit",
+        "predicate": 1.0,
+        "truth": 1.0
+      },
+      "predicateClasses": [
+        "stable",
+        "charged",
+        "online",
+        "linked",
+        "feeds"
+      ],
+      "truthClasses": [
+        "true",
+        "false",
+        "unknown"
+      ],
+      "width": 128
+    },
+    "sourceV22r2Lock": "configs/v22r2-relational-grounding-lock.json",
+    "sourceV28Lock": "configs/v28-marginal-map-lock.json",
+    "sourceV28Result": "outputs/v28-marginal-map/evaluation/result.json",
+    "sourceV30EligibilitySupplement": "docs/v30-lora-eligibility-supplement.md",
+    "sourceV30Lock": "configs/v30-signed-fact-language-lock.json",
+    "sourceV30PostAudit": "outputs/v30-signed-fact-language/post-result-audit.json",
+    "sourceV30Result": "outputs/v30-signed-fact-language/evaluation/result.json",
+    "splits": {
+      "adaptation_calibration": {
+        "surfaceFamiliesPerOperator": [
+          "cal_a"
+        ]
+      },
+      "adaptation_evaluation": {
+        "surfaceFamiliesPerOperator": [
+          "eval_a",
+          "eval_b",
+          "eval_c",
+          "eval_d",
+          "eval_e"
+        ]
+      },
+      "adaptation_fit": {
+        "surfaceFamiliesPerOperator": [
+          "fit_a",
+          "fit_b",
+          "fit_c",
+          "fit_d",
+          "fit_e"
+        ]
+      }
+    },
+    "systems": {
+      "frozenReadout": {
+        "backboneTrainable": false,
+        "headTrainable": true,
+        "name": "frozen_full_depth_shared_structured_pointer_head"
+      },
+      "loraReadout": {
+        "backboneTrainable": "registered_lora_parameters_only",
+        "dropout": 0.0,
+        "headTrainable": true,
+        "lastLayers": 8,
+        "moduleKeys": [
+          "self_attn.q_proj",
+          "self_attn.v_proj",
+          "linear_attn.in_proj_qkv",
+          "linear_attn.out_proj"
+        ],
+        "name": "lora_full_depth_shared_structured_pointer_head",
+        "rank": 8,
+        "scale": 16.0
+      },
+      "zeroShotReference": {
+        "evaluationOnly": true,
+        "modelForwardPassesPerRecord": 4,
+        "name": "locked_v30_candidate_independent_field_decoder"
+      }
+    },
+    "training": {
+      "batchSize": 1,
+      "calibrationUse": "report_only_no_selection",
+      "checkpointSelection": "none_fixed_single_epoch",
+      "epochs": 1,
+      "gradientAccumulationSteps": 4,
+      "gradientClipNorm": 1.0,
+      "learningRate": 0.0002,
+      "optimizer": "adam",
+      "seeds": [
+        3111,
+        3112,
+        3113
+      ],
+      "surfaceBalancedDeterministicShuffle": true
+    }
+  },
+  "config_sha256": "d4da1fe0e839eea06a87f54f32b6d7db1a23d6432e63d5a46e4a87a051a0cca5",
+  "data_access_before_lock": {
+    "benchmark_constructions": 1,
+    "checkpoint_selections": 0,
+    "evaluation_features_read": 0,
+    "evaluation_predictions": 0,
+    "evaluation_records_read": 0,
+    "feature_extractions": 0,
+    "frozen_training_runs": 0,
+    "hyperparameter_selections": 0,
+    "lora_training_runs": 0,
+    "model_forward_passes": 0,
+    "v28_integration_replays": 0
+  },
+  "evaluation": {
+    "bootstrapReplicates": 10000,
+    "bootstrapSeed": 3199,
+    "noSeedSelection": true,
+    "primarySystemMetric": "exact_signed_fact_accuracy",
+    "seedAggregation": "report_each_seed_mean_and_minimum",
+    "statisticalUnit": "surface_family"
+  },
+  "experiment": "v31_matched_head_signed_fact_adaptation",
+  "gates": {
+    "loraMaterialAdvantage": {
+      "minimumMeanExactSceneDelta": 0.03,
+      "minimumMeanExactSignedFactDelta": 0.02,
+      "minimumPairedFamilyBootstrapLowerBound": 0.0
+    },
+    "perSeedLanguage": {
+      "minimumAffirmativeDoubleNegationPairExact": 0.95,
+      "minimumAffirmativeNegatedPairExact": 0.95,
+      "minimumArgument1Accuracy": 0.98,
+      "minimumArgumentReversalPairExact": 0.95,
+      "minimumDistractorPairExact": 0.95,
+      "minimumExactSceneAccuracy": 0.8,
+      "minimumExactSignedFactAccuracy": 0.98,
+      "minimumFalseUnknownPairExact": 0.98,
+      "minimumInversePairExact": 0.95,
+      "minimumPredicateAccuracy": 0.98,
+      "minimumRelationArgumentOrderAccuracy": 0.95,
+      "minimumTruthStatusAccuracy": 0.98,
+      "minimumWorstOperatorTruthAccuracy": 0.95,
+      "minimumWorstRelationSurfaceExact": 0.9,
+      "minimumWorstSurfaceFamilyExact": 0.9
+    },
+    "preModel": {
+      "maximumConstructionHashOverlapAcrossSplits": 0,
+      "maximumConstructionHashOverlapWithV30": 0,
+      "maximumExactEvidenceOverlapAcrossSplits": 0,
+      "maximumTargetFieldsInAgentInput": 0,
+      "minimumAuditPassRate": 1.0,
+      "requiredEvaluationSurfaceFamilies": 25,
+      "requiredExamplesPerSurfaceFamily": 52,
+      "requiredOracleRoundTripAccuracy": 1.0
+    },
+    "systemStability": {
+      "minimumMeanExactSceneAccuracy": 0.8,
+      "minimumMeanExactSignedFactAccuracy": 0.98,
+      "minimumMeanPredicateAccuracy": 0.98,
+      "requiredPassingSeeds": 3
+    }
+  },
+  "implementation": {
+    "python/audit_and_summarize_v31.py": "cbe83c561ed92de10bb8d30f00567de7082266f626d528888b1eb079c635fd13",
+    "python/audit_v31_signed_fact_adaptation.py": "08c306994114904928c4226ea7df5de675d3e101aaab204f363772adf1d63683",
+    "python/evaluate_v22r2_relational_grounding.py": "2f2c4d554129424331766e3ecc674a204a2ab3c7a0b83d68f19d082a8ed3e9e7",
+    "python/evaluate_v30_signed_fact_language_mlx.py": "30fb73d2974248aaa8086baf2a893e83d205b862a9a8d5c372c0c8914b359834",
+    "python/evaluate_v31_sealed_mlx.py": "a14101f747cb03e71d201a1499bcb1b1f0b4db0aa58ff70be76a9360e46d6e8a",
+    "python/evaluate_v31_v28_integration_mlx.py": "a1e4b70a3c786c2fba95f5d8cc1f1f8b0cf833fd19266dcd8eed75b8927e4ad3",
+    "python/extract_v10_features_mlx.py": "6d05f0fb52c421b087aa9f22cc4714b7c5fd8a8f4a7ae69a2dde700f519cd91b",
+    "python/extract_v22r2_relational_features_mlx.py": "ee6ef9df9f5768b2dd7310d7f909477a5d3a95c6e1fd7d5604dbfb22aa2704fb",
+    "python/extract_v31_fit_calibration_features_mlx.py": "ae60800f93970400c1f721fdfd47dd5adc18c741f19273fda8ddb69ba7d296ae",
+    "python/freeze_v31_signed_fact_adaptation.py": "dc7aa7dd024731b9dc82a6ad0ebb1cd0a1cb88adddfec4af7d91c56b6a72edeb",
+    "python/freeze_v31_trained_systems.py": "72808563eb42c30f358f31fe7ed72ef7eda00fa9d68d55b46cbef4561b75ba71",
+    "python/generate_v31_signed_fact_adaptation.py": "de84d7b51e2d3e4f487eaf54a75cc91325337a86dc2ccdf8ad8147eaef0b75b1",
+    "python/test_v31_signed_fact_adaptation.py": "0e271b52b5f0f58d1c5d0cbcc7d7f2d1195e11d13beec10b6ba427f607fad83d",
+    "python/train_v31_frozen_readout.py": "801e59edf5a7a96549305d0c8c8e523006c76d7d97fb76226242fe84df2442b8",
+    "python/train_v31_lora_readout_mlx.py": "f8c3ff4db3c1e05101d2690f3b44e316654b0473e00eddbdabdc2b9699dcd226",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v28_marginal_map.py": "9eb8b203ac4ce5c2a7d2e14d9d22414cc18d18ecc4fb4367b7ae126f43106521",
+    "python/v30_language.py": "d1d47708f3b8db5f68b3c1d6a95620f1d4f4b53ad143181b7eace07f803d8822",
+    "python/v31_evaluation.py": "7d3ce2f64c5b41b054e3837ec319752ef5d5d4aa86d8d038997ed7bc46c8e83d",
+    "python/v31_integration.py": "8d4485501e6faf352db6d1d7d9c3ef569439582a3f8e6b385b6f97e0ea360ab6",
+    "python/v31_language.py": "c8043968ef9cd3cfc7852ad87e4f25d8eb5bdeecf9190328346c48cdadd4d391",
+    "python/v31_structured_model.py": "2b2292b9f3bf1df9f081d75282cd07d0143dd34772c1aafbdf31b0128780d150"
+  },
+  "limits": {
+    "benchmarkConstructions": 1,
+    "checkpointSelections": 0,
+    "frozenFeatureExtractions": 1,
+    "frozenReadoutTrainingRuns": 3,
+    "hyperparameterSelections": 0,
+    "loraTrainingRuns": 3,
+    "sealedEvaluations": 1,
+    "trainedSystemLocks": 1,
+    "v28IntegrationReplays": 1
+  },
+  "lock_payload_sha256": "278582b78a2f174dab31355e2896f60e0ef103dc9e292c1a2cc1b63e6a7c9747",
+  "model": {
+    "hiddenSize": 2560,
+    "maxSequenceLength": 768,
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "representation": "full_depth_final_token_plus_entity_inventory_and_evidence_mention_means_float32",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "systemPrompt": "Represent the evidence as one canonical signed fact in the declared typed ontology. Preserve directed source and target roles and distinguish known false from unresolved.",
+    "totalLayers": 32
+  },
+  "planned_evaluation": {
+    "frozen_feature_forward_passes": 1300,
+    "lora_forward_passes": 3900,
+    "records": 1300,
+    "surface_families": 25,
+    "zero_shot_forward_passes": 5200
+  },
+  "planned_training": {
+    "calibration_records": 260,
+    "evaluation_records_read": 0,
+    "fit_calibration_records": 1560,
+    "fit_records": 1300,
+    "frozen_feature_forward_passes": 1560,
+    "frozen_readout_training_runs": 3,
+    "lora_training_runs": 3
+  },
+  "preregistration": "docs/v31-signed-fact-adaptation-plan.md",
+  "preregistration_sha256": "bc9ad37ccf8404883008353440c24cbf5fbd449502a1b50624f2b882299f2a3b",
+  "schema_version": 31,
+  "source": {
+    "corpus": "data/v31-signed-fact-adaptation",
+    "corpus_file_sha256": {
+      "adaptation_calibration.jsonl": "b55ac72547b1fa6841215658deedba116aa6d23a7595ba9add36e067dad7e6b4",
+      "adaptation_evaluation.jsonl": "ca6294e349cb851994d7fd1bf5fcbc5bb31f28519d45bb0378ed543753d98abf",
+      "adaptation_fit.jsonl": "2c30a185c924913bf28b0444c6350b413438376487a2f97888cc83fff1cb4135",
+      "manifest.json": "bf6791c24ca1748e6d4d8819323724423ed654181e84f83eb2cfd02b939c1f00"
+    },
+    "corpus_manifest": "data/v31-signed-fact-adaptation/manifest.json",
+    "corpus_manifest_sha256": "bf6791c24ca1748e6d4d8819323724423ed654181e84f83eb2cfd02b939c1f00",
+    "corpus_sha256": "86a693e45d4f0928a5266d4285907c991290ee9f2da140f5bf845ca85194a12e",
+    "pre_model_audit": "outputs/v31-signed-fact-adaptation/pre-model-audit.json",
+    "pre_model_audit_sha256": "82cf22c2f9fdf1675fd3c36f68f8cff96aa4435b97ae06ff7bdda5b2deba7ecb",
+    "v22r2_lock": "configs/v22r2-relational-grounding-lock.json",
+    "v22r2_lock_sha256": "87f9fa082718b843ec3875685295ee412c2a0c59e622ffb8d7e1c8fe3e17bedf",
+    "v28_lock": "configs/v28-marginal-map-lock.json",
+    "v28_lock_sha256": "c0efa9fb00fb9481c1803bc5e87a87629383a8e8e4c3210ddb503590edfdcda4",
+    "v28_result": "outputs/v28-marginal-map/evaluation/result.json",
+    "v28_result_sha256": "1567d5a50e885df4694b0064298d8700671811ad73b8ac8206a9ec07672d6384",
+    "v30_lock": "configs/v30-signed-fact-language-lock.json",
+    "v30_lock_sha256": "952365a625f9509d1a6fa95e6d758ad1514de8ed7911d592ef8ed4b550ae078d",
+    "v30_post_audit": "outputs/v30-signed-fact-language/post-result-audit.json",
+    "v30_post_audit_sha256": "c2b53811b81c0800ced54d731e6a21feba137579284108afee8eb5672e2f9094",
+    "v30_result": "outputs/v30-signed-fact-language/evaluation/result.json",
+    "v30_result_sha256": "c3fc9f8d80f37d23c680bd1d64db2d1a0bf006efe8deddaab78cfc5ee184bcd2"
+  },
+  "systems": {
+    "frozenReadout": {
+      "backboneTrainable": false,
+      "headTrainable": true,
+      "name": "frozen_full_depth_shared_structured_pointer_head"
+    },
+    "loraReadout": {
+      "backboneTrainable": "registered_lora_parameters_only",
+      "dropout": 0.0,
+      "headTrainable": true,
+      "lastLayers": 8,
+      "moduleKeys": [
+        "self_attn.q_proj",
+        "self_attn.v_proj",
+        "linear_attn.in_proj_qkv",
+        "linear_attn.out_proj"
+      ],
+      "name": "lora_full_depth_shared_structured_pointer_head",
+      "rank": 8,
+      "scale": 16.0
+    },
+    "zeroShotReference": {
+      "evaluationOnly": true,
+      "modelForwardPassesPerRecord": 4,
+      "name": "locked_v30_candidate_independent_field_decoder"
+    }
+  },
+  "training": {
+    "batchSize": 1,
+    "calibrationUse": "report_only_no_selection",
+    "checkpointSelection": "none_fixed_single_epoch",
+    "epochs": 1,
+    "gradientAccumulationSteps": 4,
+    "gradientClipNorm": 1.0,
+    "learningRate": 0.0002,
+    "optimizer": "adam",
+    "seeds": [
+      3111,
+      3112,
+      3113
+    ],
+    "surfaceBalancedDeterministicShuffle": true
+  }
+}

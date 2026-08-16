@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "adapter_training_runs": 0,
+    "final_evaluations": 0,
+    "model_forward_passes": 0,
+    "oracle_development_runs": 1
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v44-deterministic-delayed-effects/development_evaluation.jsonl",
+      "records": 16,
+      "sha256": "1f312a228bf97c1db0ace3f81f6a33986b1bc8c861a3f454d9372d11915c13ae"
+    },
+    "development_fit": {
+      "path": "data/v44-deterministic-delayed-effects/development_fit.jsonl",
+      "records": 24,
+      "sha256": "bd84eb0a27bbacfac6a332f04fea0ef9250850dc0984facb45d199253c5b7059"
+    }
+  },
+  "corpus_audit": "outputs/v44-deterministic-delayed-effects/corpus-audit.json",
+  "corpus_audit_sha256": "b927054d3bfdfe6498c1ed9244f81e85203dd43d478f1c0ec15809bd301cf8d9",
+  "experiment": "v44_corpus_seal",
+  "implementation_lock": "configs/v44-implementation-lock.json",
+  "implementation_lock_sha256": "af98b9e3c332942752c349ed594c8d5c66956a3791fc3bdbf1e58420a349af86",
+  "lock_payload_sha256": "143e3035504758dfa8d18e73e8c3111b3109b51444d66c795692b2ecf0d1f680",
+  "manifest": "data/v44-deterministic-delayed-effects/manifest.json",
+  "manifest_sha256": "80d2546195ce147d1fe026c57b017c47f668b1cc97bb6aac05d3d24fd9427d32",
+  "schema_version": 44
+}

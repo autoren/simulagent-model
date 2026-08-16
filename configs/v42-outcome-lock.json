@@ -1,0 +1,79 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "add_stochasticity_or_delay": false,
+    "construct_sequential_language_grounding": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_sequential_language_grounding": true
+  },
+  "experiment": "v42_outcome_lock",
+  "gate_checks": {
+    "literal_lookup_inadequate": true,
+    "memoryless_inadequate": true,
+    "oracle_program_validation": true,
+    "order_counterfactual_accuracy": true,
+    "stateful_every_family": true,
+    "stateful_every_sequence_length": true,
+    "stateful_final_observation_exact": true,
+    "stateful_next_state_exact": true,
+    "stateful_schema_recovery": true,
+    "stateful_target_retention": true
+  },
+  "lock_payload_sha256": "f673dca12d2de7852ecfca976572e59df23f68ae978708ae8a94f921f718391c",
+  "metrics": {
+    "literal_lookup_final_observation_exact": 0.0,
+    "mechanics": 40,
+    "median_final_version_space": 1.0,
+    "memoryless_final_observation_exact": 0.371875,
+    "oracle_program_validation": 1.0,
+    "order_counterfactual_accuracy": 1.0,
+    "order_counterfactual_pairs": 88,
+    "queries": 960,
+    "stateful_by_family_final_exact": {
+      "directed_relational_propagation": 1.0,
+      "order_sensitive_composition": 1.0,
+      "set_clear_toggle": 1.0,
+      "state_conditional_effect": 1.0
+    },
+    "stateful_by_sequence_length_final_exact": {
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "stateful_by_split_final_exact": {
+      "development_evaluation": 1.0,
+      "development_fit": 1.0
+    },
+    "stateful_complete_mechanic_exact": 1.0,
+    "stateful_empty_version_space": 0.0,
+    "stateful_final_observation_exact": 1.0,
+    "stateful_next_state_exact": 1.0,
+    "stateful_partial_initial_final_exact": {
+      "False": 1.0,
+      "True": 1.0
+    },
+    "stateful_schema_recovery": 1.0,
+    "stateful_target_retention": 1.0,
+    "support_prefix": {
+      "1": {
+        "mechanics": 40,
+        "median_version_space": 1.0,
+        "target_retention": 1.0
+      },
+      "2": {
+        "mechanics": 3,
+        "median_version_space": 1.0,
+        "target_retention": 1.0
+      }
+    }
+  },
+  "post_result_audit": "outputs/v42-sequential-state-foundation/post-result-audit.json",
+  "post_result_audit_sha256": "cce33094d7035e4105e901d03f160e77278a3004b7fbc69269b1591fdf362465",
+  "qualification_passed": true,
+  "result": "outputs/v42-sequential-state-foundation/development/result.json",
+  "result_sha256": "9f76fb38a1e447c4b3c8e8210feccfa2e0d7aa2840252c452d789ee1704daee7",
+  "schema_version": 42,
+  "scientific_decision": "stateful_foundation_pass_authorize_sequential_language_grounding"
+}

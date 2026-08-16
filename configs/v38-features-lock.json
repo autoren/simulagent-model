@@ -1,0 +1,17 @@
+{
+  "authorization": {
+    "fit_selection": "ontology_focus_fit_only",
+    "v28": false,
+    "v32_evaluation": false,
+    "validation_evaluations": 1
+  },
+  "corpus_seal": "configs/v38-corpus-seal.json",
+  "corpus_seal_sha256": "dc8cc3658db15b807a86b6d692342b74ba985a7909e1e88296a2187c2c4d6846",
+  "experiment": "v38_features_lock",
+  "feature_artifact": "outputs/v38-ontology-anchored-focus-parser/features/features.npz",
+  "feature_artifact_sha256": "1173037d815c898d2fc10da9f9d8745c4c30aed6c4c143ffd0dd03c270e4a453",
+  "feature_metadata": "outputs/v38-ontology-anchored-focus-parser/features/metadata.json",
+  "feature_metadata_sha256": "aef65a3b1b8e1eb7d5c9265a345b49c6895c650973d615250c6dfe24d761ee4c",
+  "lock_payload_sha256": "d984a5a823c1817a35164b3b242e952258eb35e1b5d443bbb0d585be688c39ab",
+  "schema_version": 38
+}

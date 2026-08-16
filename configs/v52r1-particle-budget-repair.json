@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 52,
+  "revision": "r1",
+  "experiment": "v52r1_particle_budget_commensurability_repair",
+  "sourceDesignLock": "configs/v52-design-lock.json",
+  "diagnosis": "systematic_resampling_budgets_32_128_and_512_are_all_divisible_by_the_probability_vocabulary_denominator_four_and_can_make_common_branch_allocations_artificially_exact",
+  "singleAuthorizedChange": {
+    "particleBudgets.budgets": {
+      "old": [32, 128, 512],
+      "new": [31, 127, 509]
+    },
+    "particleBudgets.primaryBudget": {
+      "old": 512,
+      "new": 509
+    },
+    "scaleStress.particleBudget": {
+      "old": 512,
+      "new": 509
+    }
+  },
+  "invariants": {
+    "sameParticleCostClass": true,
+    "allNewBudgetsCoprimeToFour": true,
+    "changePrograms": false,
+    "changePopulationSizes": false,
+    "changeSeeds": false,
+    "changeInferenceTargets": false,
+    "changeGates": false,
+    "constructPopulation": false,
+    "runEvaluation": false,
+    "modelAccess": false
+  },
+  "decision": "authorize_particle_implementation_only_after_the_repaired_budget_design_is_audited_and_frozen"
+}

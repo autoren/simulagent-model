@@ -1,0 +1,118 @@
+{
+  "authorization": {
+    "construct_confirmation": false,
+    "model_access": false,
+    "score_confirmation": false,
+    "v28": false,
+    "v32_evaluation": false,
+    "write_independent_implementation": true
+  },
+  "config": "configs/v40-independent-compiler-confirmation.json",
+  "config_payload": {
+    "claim": "the_frozen_v39_compiler_exactly_transfers_to_fresh_declared_predicate_and_operator_lexicons_under_the_same_controlled_grammar",
+    "confirmationPopulation": {
+      "argumentReversalControls": true,
+      "coreFactors": {
+        "decoyKinds": [
+          "exact_opposite",
+          "different_grounded_atom",
+          "non_state_distractor"
+        ],
+        "lexicalSigns": [
+          "positive",
+          "negative"
+        ],
+        "literalPositions": [
+          "focus_first",
+          "focus_second"
+        ],
+        "outerOperations": [
+          "assert",
+          "deny",
+          "double_deny",
+          "contrast_select",
+          "unresolved"
+        ],
+        "relationOrientations": [
+          "direct",
+          "inverse"
+        ]
+      },
+      "coreRecordsPerPack": 120,
+      "entityCounts": [
+        3,
+        4,
+        5
+      ],
+      "generatorSeed": 4017,
+      "newEntityNamespaces": true,
+      "newOperatorCues": true,
+      "newPredicateLexicalForms": true,
+      "ontologyPacks": 12,
+      "punctuationRealizations": [
+        "period",
+        "semicolon",
+        "em_dash"
+      ],
+      "statisticalUnit": "ontology_pack"
+    },
+    "decisionHierarchy": [
+      "if_all_gates_pass_accept_declared_language_interface_within_scope_and_move_to_relational_mechanic_confirmation",
+      "if_semantic_gates_fail_reject_v39_transfer_claim_without_repair_or_repeat",
+      "if_safety_gates_fail_reject_fail_closed_claim_without_repair_or_repeat"
+    ],
+    "experiment": "v40_independent_declared_language_confirmation",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "claimExpansionToOpenParaphrase": "forbidden",
+      "compilerModificationAfterV39": "forbidden",
+      "confirmationTargetAccessBeforeSeal": "forbidden",
+      "evaluationRepeats": 0,
+      "evaluationSelection": "forbidden",
+      "modelAccess": "forbidden",
+      "v28Use": "forbidden",
+      "v32EvaluationUse": "forbidden"
+    },
+    "frozenCompiler": "python/v39_compiler.py",
+    "gates": {
+      "minimumEveryOntologyPackExactParse": 1.0,
+      "minimumEveryOperationSignCellExactParse": 1.0,
+      "minimumEverySafetyConditionRate": 1.0,
+      "minimumOverallCompiledTruth": 1.0,
+      "minimumOverallCoverage": 1.0,
+      "minimumOverallExactParse": 1.0,
+      "minimumSafetyRate": 1.0
+    },
+    "safetyPopulation": {
+      "conditions": [
+        "mixed_separators",
+        "two_complete_focus_fields",
+        "unknown_predicate_lexeme",
+        "unknown_operator_cue",
+        "duplicate_operation_fields"
+      ],
+      "recordsPerConditionPerPack": 2,
+      "totalRecords": 120
+    },
+    "schemaVersion": 40,
+    "sourceV39OutcomeLock": "configs/v39-outcome-lock.json",
+    "stageAuthorization": {
+      "constructConfirmation": false,
+      "relationalMechanicConfirmation": false,
+      "scoreConfirmation": false,
+      "writeAndAuditIndependentGenerator": true
+    }
+  },
+  "config_sha256": "4c863d0fd14553720290a6471f9ae869710e3d0132c3746d29e767898d7ebb9f",
+  "design_audit": "outputs/v40-independent-compiler-confirmation/design-audit.json",
+  "design_audit_sha256": "31fe6dc2d5f0c6322bab62b7789013ee853df5f308e91cfa6943bf5102b57f81",
+  "experiment": "v40_design_lock",
+  "frozen_compiler": "python/v39_compiler.py",
+  "frozen_compiler_sha256": "8732ccf074a9a03af7b3879b44fbec5c5b9531130849ceb682df1e5109469c4b",
+  "lock_payload_sha256": "0a76a1429f8eeb1b1f57ee6d240bfc92fc164e3818e698d7ff3d330224a4a8c2",
+  "preregistration": "docs/v40-independent-compiler-confirmation-plan.md",
+  "preregistration_sha256": "279946218ed5b7df818cc7c5da980f67a04fbdc0f11926c58e8d72f899393795",
+  "schema_version": 40,
+  "source_v39_outcome_lock": "configs/v39-outcome-lock.json",
+  "source_v39_outcome_lock_sha256": "9bf734039f842626edf0c9469646c2eab9eafb992ca521b6589e1e3ffede0d4b"
+}

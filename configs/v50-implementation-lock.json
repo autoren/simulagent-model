@@ -1,0 +1,236 @@
+{
+  "authorization": {
+    "construct_development_population": true,
+    "model_access": false,
+    "run_development": false
+  },
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "adapterTraining": false,
+      "continuousProbabilityLearning": false,
+      "finalEvaluation": false,
+      "historyDependenceRequired": true,
+      "knownObservationSchedule": true,
+      "languageGrounding": false,
+      "missingCompletelyAtRandom": false,
+      "modelAccess": false,
+      "noisySensors": false,
+      "openOntology": false,
+      "partialObservation": true,
+      "persistentLatentWorldAndQueue": true,
+      "primaryClaim": "exact_history_dependent_passive_belief_filtering_under_a_known_value_independent_time_varying_observation_schedule_and_declared_finite_stochastic_program_space",
+      "unknownProgramAndProbability": true,
+      "valueIndependentMasks": true
+    },
+    "decisionHierarchy": [
+      "if_exact_prediction_condition_matched_regret_and_all_history_controls_pass_authorize_preregistration_of_declared_language_composition_with_history_dependent_partial_observation",
+      "if_oracle_history_dependence_construction_fails_repair_the_population_without_running_development",
+      "if_oracle_filter_fails_repair_world_or_queue_semantics",
+      "if_primary_prediction_passes_but_latest_only_or_time_shuffle_is_not_worse_do_not_claim_history_dependent_belief_use",
+      "if_condition_matched_regret_passes_while_raw_log_loss_differs_interpret_the_raw_gap_as_value_of_information_not_model_error",
+      "do_not_add_language_active_selection_noisy_sensors_continuous_probabilities_open_ontology_or_neural_training_in_v50"
+    ],
+    "experiment": "v50_history_dependent_belief_filtering",
+    "firewall": {
+      "V46ThroughV49ProgramsOrCasesReused": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "continuousProbabilities": "forbidden",
+      "developmentOutcomeAccessDuringImplementation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "modelAccess": "forbidden",
+      "noisySensors": "forbidden",
+      "openOntology": "forbidden",
+      "rawCrossInformationLogLossAsGate": "forbidden"
+    },
+    "frozenComponents": {
+      "beliefKernel": "v49_exact_forward_sum_product",
+      "ontology": "v44_declared_boolean_ontology",
+      "probabilityVocabulary": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "programPrior": "uniform_over_frozen_finite_v50_registry",
+      "stochasticDsl": "v49_exact_world_and_delayed_queue_semantics"
+    },
+    "gates": {
+      "maximumCalibrationError": 0.05,
+      "maximumEveryFamilyMeanTv": 0.08,
+      "maximumMeanConditionMatchedRegretNats": 0.02,
+      "maximumOracleProgramMeanTv": 1e-10,
+      "maximumPartialMinusFullConditionMatchedRegretNats": 0.01,
+      "maximumPrimaryMeanTv": 0.05,
+      "maximumProbabilityParameterMeanAbsoluteError": 0.07,
+      "maximumRawLogLossVsOracleEntropyGapDiscrepancyNats": 0.03,
+      "minimumBeliefNormalization": 1.0,
+      "minimumFiniteLogLossRate": 1.0,
+      "minimumLatestOnlyLogLossDisadvantageNats": 0.1,
+      "minimumLikelihoodNormalization": 1.0,
+      "minimumMapLatentCollapseLogLossDisadvantageNats": 0.01,
+      "minimumMapSchemaRecovery": 0.8,
+      "minimumMeanOracleFullHistoryVsLatestOnlyTv": 0.1,
+      "minimumMeanTargetProgramPosterior": 0.7,
+      "minimumOracleHistoryDependentQueryFraction": 0.8,
+      "minimumPredictiveNormalization": 1.0,
+      "minimumTargetContinuationRetention": 1.0,
+      "minimumTimeShuffledLogLossDisadvantageNats": 0.05
+    },
+    "historyDependenceContract": {
+      "agentDoesNotChooseActionsOrMasks": true,
+      "delayedEventQueueIncluded": true,
+      "informativeEarlierStep": "reveals_at_least_one_branch_or_queue_relevant_atom_that_is_hidden_at_the_latest_prefix_step",
+      "initialWorld": "complete_and_observed",
+      "latestPrefixStep": "not_a_sufficient_statistic_for_the_complete_observation_history",
+      "maskSchedule": "structurally_designed_before_sampling_to_create_temporal_information_loss",
+      "masksIndependentOfRealizedValues": true,
+      "masksKnownToAgent": true,
+      "minimumOracleFullHistoryVsLatestOnlyTv": 0.1,
+      "minimumOracleHistoryDependentQueryFraction": 0.8,
+      "scoredSuffix": "contains_a_complete_latent_state_consequence_of_the_earlier_evidence",
+      "supportQueryStructuralOverlap": 0
+    },
+    "inference": {
+      "latestOnlyAblation": "same_kernel_conditioned_only_on_the_latest_prefix_observation",
+      "mapLatentCollapse": "retain_program_posterior_but_replace_each_programs_filtered_configuration_belief_with_one_map_configuration",
+      "matchedFullyObserved": "same_latent_trials_with_complete_prefix_worlds_and_the_same_program_inference_contract",
+      "oracleProgram": "target_program_fixed_with_exact_history_dependent_state_and_queue_filtering",
+      "perEpisodeOracleChoices": false,
+      "primary": "frozen_v49_exact_joint_program_world_and_queue_filter_conditioned_on_the_complete_masked_history",
+      "selectionOnDevelopmentEvaluation": false,
+      "timeShuffledAblation": "same_observations_assigned_to_incorrect_prefix_times"
+    },
+    "metricRepair": {
+      "conditionMatchedRegretDefinition": "model_negative_log_probability_minus_target_program_oracle_negative_log_probability_for_the_same_outcome_conditioned_on_the_same_information_set",
+      "historyValue": "latest_only_log_loss_minus_complete_history_log_loss_on_the_same_partially_observed_task",
+      "oracleConditionalEntropyGap": "report_non_gating_and_compare_to_raw_partial_minus_full_log_loss_as_a_measurement_identity_check",
+      "partialVsFullComparison": "compare_partial_condition_regret_to_fully_observed_condition_regret_not_raw_log_loss",
+      "primaryProperScore": "heldout_conditional_suffix_log_loss",
+      "rawPartialMinusFullLogLoss": "report_non_gating_as_the_empirical_value_of_additional_information",
+      "statisticalUnit": "mechanic_episode",
+      "uncertainty": "mechanic_cluster_bootstrap_95_percent_interval_with_10000_resamples_and_seed_5063"
+    },
+    "metrics": {
+      "historyControls": [
+        "oracle_full_history_vs_latest_only_tv",
+        "latest_only_log_loss_disadvantage",
+        "time_shuffled_log_loss_disadvantage",
+        "map_latent_collapse_log_loss_disadvantage"
+      ],
+      "induction": [
+        "map_schema_recovery",
+        "mean_target_program_posterior",
+        "probability_parameter_mean_absolute_error"
+      ],
+      "matchedInformation": [
+        "partial_condition_regret",
+        "full_condition_regret",
+        "partial_minus_full_condition_matched_regret",
+        "raw_partial_minus_full_log_loss_non_gating",
+        "oracle_conditional_entropy_gap_non_gating"
+      ],
+      "prediction": [
+        "complete_history_conditional_suffix_tv",
+        "complete_history_log_loss",
+        "complete_history_condition_matched_regret",
+        "calibration_error"
+      ],
+      "strata": [
+        "family",
+        "probability",
+        "timing",
+        "sequence_length",
+        "prefix_length",
+        "earlier_evidence_distance"
+      ],
+      "validity": [
+        "likelihood_normalization",
+        "belief_normalization",
+        "predictive_normalization",
+        "finite_log_loss",
+        "target_continuation_retention"
+      ]
+    },
+    "population": {
+      "caseOverlapWithV47ThroughV49": 0,
+      "developmentEvaluationMechanics": 24,
+      "developmentFitMechanics": 24,
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "families": [
+        "immediate_bernoulli_mutation",
+        "delayed_bernoulli_scheduling",
+        "state_conditional_probability",
+        "interleaved_deterministic_and_stochastic"
+      ],
+      "generatorSeed": 5039,
+      "heldoutConditionalContinuationsPerQuery": 64,
+      "maskSeed": 5059,
+      "mechanics": 48,
+      "mechanicsPerFamily": 12,
+      "probabilityCounts": {
+        "1/2": 16,
+        "1/4": 16,
+        "3/4": 16
+      },
+      "programOverlapWithV46ThroughV49": 0,
+      "queryEpisodesPerMechanic": 24,
+      "queryEvidencePrefixLengths": [
+        2,
+        3,
+        4
+      ],
+      "realizedTrialsPerSupportIntervention": 32,
+      "samplingSeed": 5051,
+      "sequenceLengths": [
+        4,
+        5,
+        6
+      ],
+      "supportInterventionsPerMechanic": 12
+    },
+    "schemaVersion": 50,
+    "scientificQuestion": "can_the_exact_structured_system_retain_and_use_earlier_partial_observations_when_the_latest_observation_is_not_a_sufficient_statistic_for_the_latent_future",
+    "sourceV49OutcomeLock": "configs/v49-outcome-lock.json",
+    "stageAuthorization": {
+      "constructDevelopmentPopulation": false,
+      "modelAccess": false,
+      "runDevelopment": false,
+      "writeAndAuditHistoryDependentImplementation": true
+    },
+    "v49Interpretation": {
+      "coreBeliefInferenceResult": "positive",
+      "historyAblationLogLossDisadvantage": 0.0,
+      "integrityPassed": true,
+      "mapLatentCollapseLogLossDisadvantage": "positive_infinity",
+      "meanConditionalLatentSuffixTv": 4.73648587691494e-22,
+      "measurementDiagnosis": "raw_log_loss_across_different_information_sets_conflates_model_error_with_irreducible_conditional_entropy",
+      "oracleProgramPartialTv": 0.0,
+      "partialMinusFullRawLogLoss": 0.44564633489427535,
+      "populationDiagnosis": "latest_observation_was_sufficient_in_the_generated_one_event_queries_so_history_retention_was_not_tested"
+    }
+  },
+  "design_lock": "configs/v50-design-lock.json",
+  "design_lock_sha256": "8b56286c552a1172d08b4a8ced764098be89b48058f9179c9b1646de7f5f954c",
+  "expected_corpus_sha256": "20a16a6ecdd95b6c4ab6b4e89338339c01a35604156356dfd351b6ae1a022d33",
+  "experiment": "v50_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v50.py": "ab6b95f3b51050febb8c56cc4c64f3a15b5ce726ecc96ad00d4509d0db9e48cd",
+    "python/audit_v50_corpus.py": "e34e84b82735cef2372f0abf75eb486615cd84db255cb4c884abcb36ef20be1f",
+    "python/evaluate_v50_history.py": "090b3ef3f6f3b20e9b357f02dcd00666a92566499f60f4c3c707e04bdfc8f4f7",
+    "python/freeze_v50_outcome.py": "5482e0b1258c0079cf49bcacdc0d3dde15479d15d2d5c2a5c941070678baf2c9",
+    "python/generate_v50_history.py": "db51faad8224fa0e7ddf4d0e014710276881c60cdce812da5e2d5dd3b85db115",
+    "python/seal_v50_corpus.py": "dc435b11c664fd596ee9569a2b0b6f71bd2f94f08b5b712c710b7337eccf9a16",
+    "python/v50_belief.py": "1ade83be6bd07b07b123239e2e2fd67106e961e8269001cdc1eb5f1902765880",
+    "scripts/run-v50-history-dependent-belief-filtering.sh": "a27543f29d8454374cd465d97e2cfd78161dcb5a8a059ad3e8d837d2f661f5f9"
+  },
+  "implementation_audit": "outputs/v50-history-dependent-belief-filtering/implementation-audit.json",
+  "implementation_audit_sha256": "39cdf8a5598bd5d0400f6c6df6e38bbb8c78e65fe8ce74d1e95ced74787516e1",
+  "lock_payload_sha256": "64739e6ea6f90d9eb008c4b400148a93c6fcb8db7090ddda6e904d1f1d4491d0",
+  "schema_version": 50
+}

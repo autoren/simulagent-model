@@ -1,0 +1,111 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_stochastic_language_population": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_stochastic_language_composition": true
+  },
+  "experiment": "v47_outcome_lock",
+  "gate_checks": {
+    "calibration": true,
+    "every_family_tv": true,
+    "literal_lookup_inadequate": true,
+    "map_schema_recovery": true,
+    "mass_normalization": true,
+    "mean_tv": true,
+    "posterior_no_worse_than_map": true,
+    "probability_mae": true,
+    "target_posterior": true,
+    "tv_improves_32_to_128": true,
+    "tv_improves_8_to_32": true,
+    "uniformized_inadequate": true
+  },
+  "lock_payload_sha256": "49e8457aa63028daa1c57764958a2fd69e215d78e34330392069a482ace83f57",
+  "metrics": {
+    "128": {
+      "calibration_error": 0.007017686631944444,
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 2.5e-101,
+        "immediate_bernoulli_mutation": 2.9177173871666664e-90,
+        "interleaved_deterministic_and_stochastic": 0.0,
+        "state_conditional_probability": 0.0
+      },
+      "heldout_brier": 0.3857828776041667,
+      "heldout_log_loss": 0.5617494480595385,
+      "literal_lookup_coverage": 0.0,
+      "log_loss_improvement_over_uniformized": 0.08326251162818835,
+      "map_log_loss": 0.5617494480595385,
+      "map_schema_recovery": 1.0,
+      "mean_joint_distribution_tv": 7.294293467979167e-91,
+      "mean_target_program_posterior": 1.0,
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 0.0,
+        "mean": 7.294293467979167e-91,
+        "upper": 2.1882880403875e-90
+      },
+      "predictive_mass_normalization": 1.0,
+      "probability_parameter_mae": 0.0,
+      "uniformized_log_loss": 0.6450119596877268
+    },
+    "32": {
+      "calibration_error": 0.007017686631112945,
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 9.56237408362281e-26,
+        "immediate_bernoulli_mutation": 3.325997152787166e-12,
+        "interleaved_deterministic_and_stochastic": 8.703577026661415e-23,
+        "state_conditional_probability": 1.3055365538902164e-22
+      },
+      "heldout_brier": 0.385782877604106,
+      "heldout_log_loss": 0.5617494480594577,
+      "literal_lookup_coverage": 0.0,
+      "log_loss_improvement_over_uniformized": 0.08326251162826918,
+      "map_log_loss": 0.5617494480595385,
+      "map_schema_recovery": 1.0,
+      "mean_joint_distribution_tv": 8.314992882512127e-13,
+      "mean_target_program_posterior": 0.9999999999966741,
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 2.392256821201596e-26,
+        "mean": 8.314992882512128e-13,
+        "upper": 2.4944978646883143e-12
+      },
+      "predictive_mass_normalization": 1.0,
+      "probability_parameter_mae": 8.314992213283764e-13,
+      "uniformized_log_loss": 0.6450119596877268
+    },
+    "8": {
+      "calibration_error": 0.012429139025776968,
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 6.946747998465197e-07,
+        "immediate_bernoulli_mutation": 0.019726372176718514,
+        "interleaved_deterministic_and_stochastic": 4.884074555908097e-07,
+        "state_conditional_probability": 2.439521874768928e-07
+      },
+      "heldout_brier": 0.3877567932333781,
+      "heldout_log_loss": 0.5638069359143387,
+      "literal_lookup_coverage": 0.0,
+      "log_loss_improvement_over_uniformized": 0.08120502377338815,
+      "map_log_loss": 0.5640574740893085,
+      "map_schema_recovery": 0.9791666666666666,
+      "mean_joint_distribution_tv": 0.004931949802790357,
+      "mean_target_program_posterior": 0.980271698930145,
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 1.9597369914985289e-07,
+        "mean": 0.004931949802790357,
+        "upper": 0.014793586544870408
+      },
+      "predictive_mass_normalization": 1.0,
+      "probability_parameter_mae": 0.004932075267068706,
+      "uniformized_log_loss": 0.6450119596877268
+    },
+    "mechanics": 48
+  },
+  "post_result_audit": "outputs/v47-sampled-transition-estimation/post-result-audit.json",
+  "post_result_audit_sha256": "e9dd0426256e4b4332e4c0142d8825cf405e4f3b705e3c6484dc785077ec8c1f",
+  "qualification_passed": true,
+  "result": "outputs/v47-sampled-transition-estimation/development/result.json",
+  "result_sha256": "0d3df4d37cfe77bf086ff24f28d34cb45efb1278144a90c1c89531192357835a",
+  "schema_version": 47,
+  "scientific_decision": "sampled_estimation_pass_preregister_stochastic_language_composition"
+}

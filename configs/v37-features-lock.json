@@ -1,0 +1,18 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "selection_source": "semantic_invariance_fit_only",
+    "v28": false,
+    "v32_evaluation": false,
+    "validation_evaluations": 1
+  },
+  "corpus_seal": "configs/v37-corpus-seal.json",
+  "corpus_seal_sha256": "1731a0adb37e8302ea1b49d9fbaf1ddd33b5a363178781f6238e3f1773b3c51e",
+  "experiment": "v37_features_lock",
+  "feature_artifact": "outputs/v37-semantic-invariance/features/features.npz",
+  "feature_artifact_sha256": "016099f5638a64a554b3b6b9e70f70236a2d9ea5bcd81cada70541678f93b326",
+  "feature_metadata": "outputs/v37-semantic-invariance/features/metadata.json",
+  "feature_metadata_sha256": "6ebdc936b14666935b5741a287993325c2e3d6053a6ff4f03c78e909a91746d7",
+  "lock_payload_sha256": "d5c3543da51943ecd7c2a273cb4be1e2027eb59e8736019ea96aefe0aab16df6",
+  "schema_version": 37
+}

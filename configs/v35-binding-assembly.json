@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 35,
+  "experiment": "v35_atom_binding_modular_assembly",
+  "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+  "sourceV32FeatureMetadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+  "sourceV32PostAudit": "outputs/v32-factorized-semantics/post-result-audit.json",
+  "sourceV34ProtocolLock": "configs/v34-operation-interface-lock.json",
+  "sourceV34OutcomeLock": "configs/v34-operation-outcome-lock.json",
+  "sourceV34Result": "outputs/v34-operation-interface/result.json",
+  "sourceV34Predictions": "outputs/v34-operation-interface/predictions.npz",
+  "sourceCorpus": "data/v32-factorized-semantics",
+  "allowedSplits": ["factor_fit", "factor_calibration"],
+  "forbiddenSplits": ["factor_evaluation_paraphrase", "factor_evaluation_composition"],
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 768,
+    "systemPrompt": "Identify only the canonical typed atom described inside the evidence: its declared predicate and canonical arguments. For relations, preserve directed source and target roles even under inverse or passive wording. Do not decide lexical sign, outer operation, or final truth. Return only the requested option letter when a choice is requested.",
+    "representation": "full_depth_final_token_plus_evidence_entity_mention_means_plus_native_predicate_logits_float32"
+  },
+  "atomInterface": {
+    "predicateClasses": ["stable", "charged", "online", "linked", "feeds"],
+    "predicateLabelTokens": ["A", "B", "C", "D", "E"],
+    "canonicalRelationOrder": "predicate(source,target)",
+    "promptTargetFields": 0
+  },
+  "readouts": {
+    "alphas": [0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0],
+    "classifier": "standard_scaler_plus_balanced_ridge_classifier_lsqr",
+    "fitCrossValidation": "leave_one_surface_name_out",
+    "selectionOrder": [
+      "maximum_mean_fit_group_cv_primary_metric",
+      "maximum_minimum_fit_group_cv_primary_metric",
+      "maximum_alpha"
+    ],
+    "predicateMethods": ["legacyHiddenRidge", "atomHiddenRidge", "nativePredicateLogitRidge"],
+    "predicateSelectionEligible": ["atomHiddenRidge", "nativePredicateLogitRidge"],
+    "bindingMethods": ["legacyEntityRoleRidge", "atomEvidenceEntityRoleRidge"],
+    "bindingProjection": {
+      "kind": "fixed_gaussian_random_projection",
+      "seed": 3501,
+      "inputDimensions": 2560,
+      "outputDimensions": 256
+    },
+    "lexicalSignMethod": "legacyHiddenRidge",
+    "outerOperationMethod": "fixed_v34_semanticHiddenRidge_predictions",
+    "calibrationUse": "report_and_post_selection_development_decision_only"
+  },
+  "systems": {
+    "legacyAssembly": {
+      "predicate": "legacyHiddenRidge",
+      "binding": "legacyEntityRoleRidge",
+      "lexicalSign": "legacyHiddenRidge",
+      "outerOperation": "fixed_v34_semanticHiddenRidge_predictions"
+    },
+    "modularAssembly": {
+      "predicate": "fit_cv_selected_new_predicate_method",
+      "binding": "fit_cv_selected_binding_method",
+      "lexicalSign": "legacyHiddenRidge",
+      "outerOperation": "fixed_v34_semanticHiddenRidge_predictions"
+    }
+  },
+  "qualification": {
+    "minimumCalibrationPredicateAccuracy": 0.98,
+    "minimumCalibrationAtomExactAccuracy": 0.95,
+    "minimumCalibrationRelationOrderAccuracy": 0.95,
+    "minimumCalibrationLexicalSignAccuracy": 0.95,
+    "minimumCalibrationOuterOperationAccuracy": 0.95,
+    "minimumCalibrationCompiledTruthAccuracy": 0.95,
+    "minimumCalibrationCompiledExactFactAccuracy": 0.90,
+    "minimumCalibrationExactFactGainOverLegacyAssembly": 0.03
+  },
+  "decisionHierarchy": [
+    "if_modular_assembly_qualifies_preregister_independent_development_confirmation_suite",
+    "if_only_atom_or_binding_gates_fail_repair_atom_interface_without_new_suite",
+    "otherwise_revisit_modular_interface_assumptions"
+  ],
+  "limits": {
+    "featureExtractions": 1,
+    "backboneForwardPasses": 1820,
+    "ridgeTrainingFits": 150,
+    "calibrationSelections": 0,
+    "v32EvaluationRecordsRead": 0,
+    "v32EvaluationFeaturesRead": 0,
+    "v32EvaluationPredictionsRead": 0,
+    "adapterTrainingRuns": 0,
+    "v28IntegrationReplays": 0,
+    "freshSuiteConstructions": 0
+  },
+  "firewall": {
+    "developmentData": "v32_factor_fit_and_factor_calibration_only",
+    "v32EvaluationUse": "forbidden",
+    "v34OperationComponent": "fixed_audited_development_component",
+    "calibrationLabels": "not_indexed_by_any_selection_function",
+    "v28Use": "forbidden",
+    "freshSuiteUse": "preregistration_only_if_qualified_no_construction_in_v35",
+    "interpretation": "development_assembly_not_a_generalization_claim"
+  }
+}

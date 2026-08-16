@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 55,
+  "revision": "r1",
+  "experiment": "v55r1_delayed_consequence_adequacy_confirmation",
+  "sourceV55OutcomeLock": "configs/v55-outcome-lock.json",
+  "sourceV55DelayLocalization": "outputs/v55-short-horizon-bayes-adaptive-planning/delay-failure-localization.json",
+  "sourceV55ImplementationLock": "configs/v55-implementation-lock.json",
+  "scientificQuestion": "does_the_frozen_exact_bayes_adaptive_planner_change_its_root_policy_or_value_when_two_tick_stochastic_consequences_are_decision_relevant_under_joint_program_theta_and_hidden_queue_uncertainty",
+  "relationshipToV55": {
+    "v55RemainsFailedAndFrozen": true,
+    "supplementaryConfirmationOnly": true,
+    "inheritNineteenPassingV55Gates": true,
+    "rerunV55Population": false,
+    "reinterpretV55Population": false,
+    "repairTarget": "delayed_consequence_sensitivity_only"
+  },
+  "claimBoundary": {
+    "exactThreeActionBayesAdaptivePlanning": true,
+    "decisionRelevantDelayTwoConsequences": true,
+    "jointProgramThetaHiddenConfigurationBelief": true,
+    "planningSpecificLatentMechanicRegistry": true,
+    "fullWorldObservationsWithHiddenQueue": true,
+    "supplementaryConfirmation": true,
+    "generalPlanningPopulationPass": false,
+    "longHorizonClaim": false,
+    "approximateSearch": false,
+    "learnedPlanner": false,
+    "formalVerification": false,
+    "languageGrounding": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "finalEvaluation": false
+  },
+  "singleAuthorizedRepair": {
+    "mechanicRegistry": "replace_the_inference_selected_registry_with_an_eight_template_planning_specific_registry_whose_delay_two_effects_have_no_same_target_deterministic_immediate_substitute",
+    "goalPopulation": "replace_uniform_full_atom_goals_with_truth_independent_exactly_balanced_active_entity_boolean_goals_and_initialize_query_active_atoms_opposite_the_public_goal",
+    "analyticAdequacy": "replace_delay_visibility_only_with_exhaustive_delay_decision_relevance_fixtures",
+    "unchanged": [
+      "v55_exact_planner",
+      "v55_belief_update",
+      "v55_action_enumeration",
+      "v55_reward_and_action_costs",
+      "v55_horizon",
+      "v55_observation_semantics",
+      "v55_truth_and_future_observation_firewalls",
+      "v53_exact_quadrature_and_history_inference"
+    ]
+  },
+  "planningModel": {
+    "horizonActions": 3,
+    "candidateCount": 5,
+    "entityCount": 2,
+    "observation": "full_world_after_each_action_with_queue_hidden",
+    "terminalReward": {
+      "success": 1.0,
+      "failure": 0.0,
+      "goal": "one_public_active_atom_equals_one_public_boolean_at_the_terminal_tick"
+    },
+    "actionCost": {
+      "pulse": 0.01,
+      "route": 0.01,
+      "wait": 0.0
+    },
+    "discountFactor": 1.0,
+    "tieTolerance": 1e-12,
+    "tieBreak": "lexicographically_smallest_canonical_action_key_within_tolerance"
+  },
+  "planningSpecificRegistry": {
+    "templates": 8,
+    "thetaBranchesPerTemplate": 1,
+    "thetaPrior": "scaled_beta_2_2_on_0_05_0_95",
+    "quadratureNodes": 257,
+    "delayClassCounts": {
+      "delay_two": 4,
+      "delay_one": 2,
+      "immediate": 2
+    },
+    "stochasticTargetPredicate": "active",
+    "deterministicDistractorPredicates": [
+      "marked",
+      "ready",
+      "linked"
+    ],
+    "requirements": [
+      "both_pulse_and_route_rules_are_present",
+      "exactly_one_stochastic_theta_branch_per_template",
+      "all_stochastic_effects_target_active_actor_or_active_target",
+      "no_deterministic_immediate_effect_targets_any_active_atom",
+      "every_template_has_one_deterministic_immediate_distractor_on_the_other_action",
+      "four_templates_deliver_only_at_tick_plus_two",
+      "two_templates_deliver_at_tick_plus_one",
+      "two_templates_apply_immediately",
+      "template_keys_are_unique"
+    ],
+    "templateBlueprints": [
+      {"trigger": "pulse", "timing": "delay_two", "operation": "set_false", "targetVar": "target", "distractorAction": "route", "distractor": "toggle_marked_actor"},
+      {"trigger": "pulse", "timing": "delay_two", "operation": "set_true", "targetVar": "target", "distractorAction": "route", "distractor": "toggle_ready_actor"},
+      {"trigger": "route", "timing": "delay_two", "operation": "set_false", "targetVar": "actor", "distractorAction": "pulse", "distractor": "toggle_marked_target"},
+      {"trigger": "route", "timing": "delay_two", "operation": "set_true", "targetVar": "actor", "distractorAction": "pulse", "distractor": "toggle_ready_target"},
+      {"trigger": "pulse", "timing": "delay_one", "operation": "toggle", "targetVar": "target", "distractorAction": "route", "distractor": "toggle_linked_actor_target"},
+      {"trigger": "route", "timing": "delay_one", "operation": "toggle", "targetVar": "actor", "distractorAction": "pulse", "distractor": "toggle_linked_target_actor"},
+      {"trigger": "pulse", "timing": "immediate", "operation": "toggle", "targetVar": "target", "distractorAction": "route", "distractor": "toggle_marked_actor"},
+      {"trigger": "route", "timing": "immediate", "operation": "toggle", "targetVar": "actor", "distractorAction": "pulse", "distractor": "toggle_ready_target"}
+    ]
+  },
+  "population": {
+    "confirmationTasks": 16,
+    "tasksPerGeneratingTemplate": 2,
+    "entityCount": 2,
+    "historyClasses": {
+      "prior_like_all_wait": 8,
+      "mixed_informative": 8
+    },
+    "supportEpisodesPerTask": 4,
+    "supportSequenceLengths": [6, 8],
+    "ongoingHistoryPrefixLengths": [4, 6],
+    "goalAssignments": "exactly_four_each_of_active_unit_0_false_active_unit_0_true_active_unit_1_false_active_unit_1_true_shuffled_independently_of_truth_assignment",
+    "queryInitialGoalState": "both_active_atoms_are_set_to_the_negation_of_the_public_goal_boolean_before_query_history_simulation",
+    "goalDependsOnGeneratingTruth": false,
+    "freshPublicHistoriesAgainst": ["V49", "V50", "V51", "V52", "V53", "V54", "V55"],
+    "truthFieldsRetainedForAuditOnly": true,
+    "generatorSeed": 55101,
+    "historySeed": 55103,
+    "truthAssignmentSeed": 55107,
+    "goalSeed": 55109,
+    "thetaPriorSeed": 55121,
+    "trajectorySeed": 55127,
+    "policyEvaluationSeed": 55133,
+    "fixtureSeed": 55147
+  },
+  "counterfactual": {
+    "primary": "frozen_planning_specific_registry",
+    "delaySuppressed": "identical_registry_except_all_delay_two_due_ticks_are_shifted_to_horizon_plus_one",
+    "sensitiveTask": "primary_selected_root_action_is_outside_the_delay_suppressed_root_optimal_set_or_absolute_root_value_change_exceeds_0_001",
+    "causalIsolation": "no_other_transition_reward_observation_action_or_inference_semantics_change"
+  },
+  "exactChecks": {
+    "primaryPlanner": "unchanged_v55_memoized_recursive_belief_tree_dynamic_programming",
+    "independentReference": "unchanged_v55_scalar_explicit_tree_without_primary_memoization",
+    "independentPolicyEvaluator": "unchanged_v55_independent_recursive_execution_of_selected_policy",
+    "analyticFixtures": [
+      "all_eight_blueprints_are_valid_unique_and_have_one_theta_branch",
+      "all_four_delay_two_blueprints_lack_same_target_immediate_substitutes",
+      "delay_two_delivery_occurs_before_the_third_action",
+      "decision_relevance_for_each_delay_two_blueprint_an_exhaustive_known_model_fixture_has_a_goal_and_world_where_suppression_changes_optimal_value_by_more_than_0_001",
+      "candidate_actions_remain_complete_and_canonical",
+      "truth_and_future_observation_firewalls_remain_active"
+    ]
+  },
+  "metrics": [
+    "completed_task_fraction",
+    "maximum_root_value_error_against_scalar_reference",
+    "root_optimal_set_membership_rate",
+    "maximum_independent_policy_evaluation_error",
+    "belief_and_observation_normalization_rate",
+    "finite_value_rate",
+    "delayed_consequence_sensitive_policy_fraction",
+    "delayed_sensitive_task_count_by_history_class",
+    "root_action_change_fraction_under_delay_suppression",
+    "root_value_change_fraction_over_0_001",
+    "mean_and_max_absolute_root_value_change_under_delay_suppression",
+    "truth_field_access_before_policy_evaluation_count",
+    "future_observation_access_count",
+    "candidate_action_omission_count",
+    "canonical_tie_break_violation_count",
+    "history_and_policy_evaluation_stream_collision_count"
+  ],
+  "gates": {
+    "minimumCompletedTaskFraction": 1.0,
+    "maximumRootValueError": 1e-10,
+    "minimumRootOptimalSetMembershipRate": 1.0,
+    "maximumIndependentPolicyEvaluationError": 1e-10,
+    "minimumBeliefAndObservationNormalizationRate": 1.0,
+    "minimumFiniteValueRate": 1.0,
+    "minimumDelayedConsequenceSensitivePolicyFraction": 0.125,
+    "minimumDelayedSensitiveTasksPerHistoryClass": 1,
+    "minimumRootActionOrValueChangeTasks": 2,
+    "maximumTruthFieldAccessBeforePolicyEvaluationCount": 0,
+    "maximumFutureObservationAccessCount": 0,
+    "maximumCandidateActionOmissionCount": 0,
+    "maximumCanonicalTieBreakViolationCount": 0,
+    "maximumHistoryAndPolicyEvaluationStreamCollisionCount": 0
+  },
+  "decisionHierarchy": [
+    "if_all_v55r1_gates_pass_combine_only_with_the_frozen_nineteen_passing_v55_gates_and_authorize_symbolic_and_probabilistic_policy_verification_preregistration_only",
+    "if_exact_reference_or_policy_evaluation_disagrees_repair_generic_planning_or_transition_code",
+    "if_delay_sensitivity_fails_retain_both_v55_and_v55r1_failures_and_repair_task_semantics_without_rerunning_either_population",
+    "never_relabel_v55_as_a_standalone_pass"
+  ],
+  "firewall": {
+    "v55PopulationRerun": "forbidden",
+    "v55ResultReinterpretation": "forbidden",
+    "v55r1PopulationConstructionBeforeImplementationLock": "forbidden",
+    "v55r1EvaluationBeforePopulationSeal": "forbidden",
+    "postPopulationRegistryChanges": "forbidden",
+    "postPopulationGoalChanges": "forbidden",
+    "postPopulationGateChanges": "forbidden",
+    "rootActionSelectionOnTruthFields": "forbidden",
+    "rootActionSelectionOnFutureObservations": "forbidden",
+    "candidateActionPruning": "forbidden",
+    "formalVerification": "forbidden",
+    "languageGrounding": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditV55r1Implementation": true,
+    "constructV55r1Population": false,
+    "runV55r1Evaluation": false,
+    "preregisterFormalVerification": false,
+    "runFormalVerification": false,
+    "languageGrounding": false,
+    "modelAccess": false
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "authorization": {
+    "construct_development_population": false,
+    "language_grounding": false,
+    "model_access": false,
+    "run_oracle_development": false,
+    "write_oracle_implementation": true
+  },
+  "config": "configs/v42-sequential-state-foundation.json",
+  "config_payload": {
+    "comparisons": {
+      "frozenV22MemorylessExecutor": "registered_inadequacy_control",
+      "jointNeuralChallenger": "deferred",
+      "literalSequenceLookup": "non_lifted_control",
+      "statefulVersionSpaceExecutor": "primary"
+    },
+    "decisionHierarchy": [
+      "if_stateful_passes_and_memoryless_fails_authorize_sequential_language_grounding_development",
+      "if_stateful_fails_repair_stateful_dsl_or_executor_before_language_or_neural_work",
+      "if_memoryless_passes_redesign_benchmark_to_make_persistent_state_causally_necessary",
+      "if_literal_lookup_passes_redesign_generalization_split_before_any_claim"
+    ],
+    "experiment": "v42_oracle_sequential_state_foundation",
+    "firewall": {
+      "V41CorpusReuse": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "claimExpansionBeyondOracleSequentialFoundation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "stochasticOrDelayedAxes": "forbidden"
+    },
+    "gates": {
+      "maximumLiteralLookupFinalObservationExact": 0.95,
+      "maximumMemorylessFinalObservationExact": 0.85,
+      "minimumOracleProgramValidation": 1.0,
+      "minimumOrderCounterfactualAccuracy": 1.0,
+      "minimumStatefulEveryFamilyExact": 1.0,
+      "minimumStatefulEverySequenceLengthExact": 1.0,
+      "minimumStatefulFinalObservationExact": 1.0,
+      "minimumStatefulNextStateExact": 1.0,
+      "minimumStatefulSchemaRecovery": 1.0,
+      "minimumStatefulTargetRetention": 1.0
+    },
+    "population": {
+      "developmentEvaluationMechanics": 16,
+      "entityCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "families": [
+        "set_clear_toggle",
+        "state_conditional_effect",
+        "directed_relational_propagation",
+        "order_sensitive_composition"
+      ],
+      "fitMechanics": 24,
+      "generatorSeed": 4213,
+      "mechanics": 40,
+      "mechanicsPerFamily": 10,
+      "querySequencesPerMechanic": 24,
+      "supportSequencesPerMechanicMaximum": 16
+    },
+    "schemaVersion": 42,
+    "scientificQuestion": "can_a_minimal_stateful_symbolic_extension_represent_identify_and_execute_order_sensitive_multi_action_mechanics_that_the_frozen_one_step_architecture_cannot",
+    "scope": {
+      "activeInterventionSelection": false,
+      "declaredBooleanOntology": true,
+      "delayedEffects": false,
+      "deterministicImmediateEffects": true,
+      "languageGrounding": false,
+      "openConceptInventory": false,
+      "oracleFirst": true,
+      "partialObservation": true,
+      "persistentStateMutation": true,
+      "sequenceLengths": [
+        2,
+        3,
+        4
+      ],
+      "stochasticEffects": false,
+      "variableEntitiesAndDirectedRelations": true
+    },
+    "sourceV41OutcomeLock": "configs/v41-outcome-lock.json",
+    "stageAuthorization": {
+      "constructDevelopmentPopulation": false,
+      "languageGrounding": false,
+      "runOracleDevelopment": false,
+      "writeAndAuditOracleImplementation": true
+    },
+    "statefulDsl": {
+      "actionParametersMaximum": 2,
+      "closedWorldCompleteStates": true,
+      "conditions": [
+        "unary",
+        "relation",
+        "not",
+        "and",
+        "or",
+        "exists"
+      ],
+      "effects": [
+        "set_true",
+        "set_false",
+        "toggle",
+        "copy",
+        "conditional_effect"
+      ],
+      "explicitUnknownPartialStates": true,
+      "maximumBoundVariables": 1,
+      "maximumConditionDepth": 2,
+      "maximumEffectsPerAction": 2,
+      "simultaneousEffectsWithinAction": true,
+      "statePersistsAcrossActions": true
+    }
+  },
+  "config_sha256": "6a67cbcfa27117a43473d2774c6019930267bbd01bd3a19d2570b1008c4dad84",
+  "design_audit": "outputs/v42-sequential-state-foundation/design-audit.json",
+  "design_audit_sha256": "085be1078f7a984d0c6df158de93cdc657dd5d0450166613ae6ce3813e3fbbae",
+  "experiment": "v42_design_lock",
+  "lock_payload_sha256": "f1ddbadca51ccc105e2f302acf44ecc65e3b5df49be78c18084e6155f76f0732",
+  "preregistration": "docs/v42-sequential-state-foundation-plan.md",
+  "preregistration_sha256": "b2a2152469aa89a15cd3975744de787d10801147659c629c5f965de1c6b5d519",
+  "schema_version": 42,
+  "source_v41_outcome_lock": "configs/v41-outcome-lock.json",
+  "source_v41_outcome_lock_sha256": "8ced76152c02a7e3f9d49212c2066ea8ca2d026908f60be6eafb474382990ec0"
+}

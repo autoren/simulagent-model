@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "construct_and_audit_v56_verification_bundle": true,
+    "formal_safety_claim": false,
+    "language_grounding": false,
+    "model_access": false,
+    "modify_v55_or_v55r1_results": false,
+    "run_v56_candidate_formal_verification": false,
+    "write_and_audit_v56_candidate_runner": true
+  },
+  "design_lock": "configs/v56-design-lock.json",
+  "design_lock_sha256": "5d3e06b008fdcfc7ed01cee20550601670d068bd9b604e7cf6a3f97bd19e23c5",
+  "exhaustive_symbolic_cases": 61440,
+  "experiment": "v56_implementation_lock",
+  "implementation": "python/v56_verification.py",
+  "implementation_audit": "outputs/v56-symbolic-probabilistic-policy-verification/implementation-audit.json",
+  "implementation_audit_sha256": "0bb69e0686c753fac3b6e9b98fac93ff10e0fbf9f4673c3d5ea0015927cb5c44",
+  "implementation_sha256": "63d03358f62a18f93037ad3ab02b3cdc285c158ef006a2d252bb8d6b2329541e",
+  "lock_payload_sha256": "fc43151a9521603f15948b8f7868c3e1f31c8eaf86c6f98f8a0a30f7724a6850",
+  "mutation_kill_rate": 1.0,
+  "schema_version": 56,
+  "tool_versions": {
+    "storm": "1.13.0",
+    "z3": "4.16.0"
+  },
+  "unit_tests": "python/test_v56_verification.py",
+  "unit_tests_sha256": "ea3b5d58c71885a0099db5fc0ea4bec8a719da4dcebfb2ecb90b31be4c79fb09"
+}

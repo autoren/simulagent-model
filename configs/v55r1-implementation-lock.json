@@ -1,0 +1,37 @@
+{
+  "authorization": {
+    "change_v55r1_design_or_implementation": false,
+    "construct_v55r1_population": true,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_formal_verification": false,
+    "rerun_v55_population": false,
+    "run_formal_verification": false,
+    "run_v55r1_evaluation": false
+  },
+  "base_dependencies_sha256": {
+    "configs/v53r2-design-lock.json": "72197ec7776ad92cc4d525b42054b993df6cf38a1781e0804daf56b0fbe6c90d",
+    "configs/v53r2-outcome-lock.json": "957761b11f0937ade483934b7ef2b2eccef75c7646d8dc25763e6caf8b9992da",
+    "configs/v55-implementation-lock.json": "6f467a0ef96c49570c369bc1060cb4b6f3bb2389a850c1dcf69cc3718e40b9d2",
+    "configs/v55-outcome-lock.json": "a31cb7b52f2724b67e727e9d2323eaeecd7f810d60b164fcd6a70e5279616b79",
+    "python/v46_stochastic.py": "67f7c729d4c053c88fb18ca76b5c85767ac3b152af9f454cc64cdb1ff4635326",
+    "python/v49_belief.py": "5d8bea80ce9559ec921bc7e392ca925ec36d7b378b63b5e45ac2d750081e6c6e",
+    "python/v53_smc2.py": "34a52233605687c50b6962bb6e2f65faaa0a688ed2c124ad6e4e4ef7ea69e399",
+    "python/v54_eig.py": "7ea2ec4b8258e9650ce4e65ee74e8a266fd3bd067dde6f6c417de0618d5ec895",
+    "python/v55_planning.py": "b53da4c409dcef44c541180429981c4cd4719efacd5fc6ee59a2ca6a9432b500"
+  },
+  "design_lock": "configs/v55r1-design-lock.json",
+  "design_lock_sha256": "a72addff3b84bf3cba1621a9c459505c91cb1da7f55738c9c29701ff5521695c",
+  "experiment": "v55r1_implementation_lock",
+  "implementation_audit": "outputs/v55r1-delayed-consequence-adequacy-confirmation/implementation-audit.json",
+  "implementation_audit_sha256": "b60595bddd796dd4f6b52aaf396b31737fb07d47a47625c9225985dc893d4e3d",
+  "implementation_files_sha256": {
+    "python/audit_v55r1_implementation.py": "dba891f60c14268e6c8725401840b6951fb0eb63b81f60ee86211ee7e88fbb8c",
+    "python/generate_v55r1_planning.py": "59fc35e4e62e058afe836b2b0f2436148f24064bcd8f1c32d3a2f8256ec2b4ed",
+    "python/test_v55r1_planning.py": "1dc7a6b25ecb981e4203e0bb6869badaf80bebcf711c21e66759af020aa4527c",
+    "python/v55r1_planning.py": "d631456311ad6c5493b65d7ddfaf33a7485dccdac89be7021a3e0ed857caed0b"
+  },
+  "lock_payload_sha256": "c5c3a37eef71f42766c4af3e36f2f0490e1cf6c4e84461e06e3271d9746e7df4",
+  "revision": "r1",
+  "schema_version": 55
+}

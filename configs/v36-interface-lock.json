@@ -1,0 +1,62 @@
+{
+  "authorization": {
+    "audit_and_seal_confirmation": true,
+    "construct_confirmation": true,
+    "construct_final_suite": false,
+    "evaluate_confirmation": false,
+    "model_access": false,
+    "reuse_v32_evaluation": false,
+    "run_v28": false
+  },
+  "data_access_before_freeze": {
+    "confirmation_records_read": 0,
+    "fit_records_used": 1456,
+    "interface_fit_runs": 4,
+    "legacy_calibration_targets_read": 0,
+    "legacy_evaluation_records_read": 0,
+    "model_forward_passes": 0,
+    "selection_runs": 0
+  },
+  "experiment": "v36_frozen_interface",
+  "fit_ledger": "outputs/v36-independent-confirmation/interface/fit-ledger.json",
+  "fit_ledger_sha256": "aab92480c910e63ed6d3e282fb4d8a0a053cbc1870a99c65e8c99a9bc376f333",
+  "fixed_components": {
+    "binding": {
+      "alpha": 1000.0,
+      "classifier": "balanced_three_role_ridge_lsqr",
+      "projection": {
+        "dimensions": 256,
+        "kind": "fixed_gaussian",
+        "seed": 3501
+      },
+      "representation": "v35_atom_focused_evidence_entity_mentions"
+    },
+    "lexicalSign": {
+      "alpha": 100.0,
+      "classifier": "balanced_ridge_lsqr",
+      "representation": "v32_generic_final_hidden"
+    },
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "outerOperation": {
+      "alpha": 10000.0,
+      "classifier": "balanced_ridge_lsqr",
+      "representation": "v34_operation_focused_final_hidden"
+    },
+    "predicate": {
+      "alpha": 10000.0,
+      "classifier": "balanced_ridge_lsqr",
+      "representation": "v35_atom_focused_final_hidden"
+    },
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "selectionAfterDesignLock": "none",
+    "truth": "unchanged_v32_fixed_compiler"
+  },
+  "implementation_lock": "configs/v36-implementation-lock.json",
+  "implementation_lock_sha256": "81ba2c04d149aa828c2938006431f8cc796e10663ec2a0708ef01d668fd37768",
+  "interface_audit": "outputs/v36-independent-confirmation/interface/audit.json",
+  "interface_audit_sha256": "ccc89232c287cde1f9508034e7496dad8fb2f833be583fcf772d74630b06c0f9",
+  "lock_payload_sha256": "e172385029289cb0d77d775a51fca537f33793ec5d9cf6de0c759b35cfd86551",
+  "parameter_artifact": "outputs/v36-independent-confirmation/interface/parameters.npz",
+  "parameter_artifact_sha256": "a217a132817a4d630ee4e422611179f699c4f9f22ae78e1fc6e5f19b98733ef9",
+  "schema_version": 36
+}

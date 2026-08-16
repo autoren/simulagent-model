@@ -1,0 +1,152 @@
+{
+  "authorization": {
+    "collect_evaluation_language": false,
+    "collect_pilot_language": false,
+    "generate_blinded_author_packets": false,
+    "run_candidate_evaluation": false,
+    "write_and_audit_collection_protocol": true,
+    "write_candidate_parser": false
+  },
+  "config": "configs/v58-human-authored-known-ontology-language.json",
+  "config_payload": {
+    "candidateProtocol": {
+      "abstentionIsAnExplicitOutput": true,
+      "canonicalCompilerAndExecutorRemainFrozen": true,
+      "developmentTextMayUsePilotAuthorsOnly": true,
+      "evaluationAuthorTextMayNotTrainTunePromptOrSelectCandidate": true,
+      "exactAstEquivalence": "canonical_predicate_arguments_sign_and_outer_operation",
+      "freezeBeforeEvaluationAuthorTextIsVisible": true
+    },
+    "claimBoundary": {
+      "ambiguityAndUnknownRequireAbstention": true,
+      "authorHeldOutEvaluation": true,
+      "constructionFamilyHeldOutEvaluation": true,
+      "definitionAugmentedTransfer": false,
+      "exactAstPrimaryMetric": true,
+      "humanAuthoredEvaluationLanguage": true,
+      "jointNewConceptAndNewSurfaceClaim": false,
+      "knownFrozenOntology": true,
+      "newConcepts": false,
+      "primaryClaim": "human_surface_transfer_over_known_concepts_with_author_and_structure_level_holds_out",
+      "probabilisticInferenceOrPlanningEvaluation": false,
+      "syntheticTextCountedAsHuman": false
+    },
+    "collection": {
+      "acceptedUtterancesPerEvaluationAuthor": 60,
+      "ambiguousItems": "retained_in_a_separate_abstention_stratum",
+      "constructionFamilies": [
+        "plain_assertion",
+        "lexical_negation",
+        "denial",
+        "double_denial",
+        "contrastive_focus",
+        "unresolved_status",
+        "direct_relation",
+        "inverse_relation",
+        "argument_reversal",
+        "distractor_scope"
+      ],
+      "independentSemanticValidation": "two_blinded_validators_with_adjudication",
+      "knownOntologySource": "v40_frozen_ontology_packs_and_semantic_asts",
+      "minimumEvaluationAuthors": 10,
+      "minimumEvaluationUtterances": 600,
+      "pilotAuthorsExcludedFromEvaluation": 2,
+      "randomUtteranceSplit": false,
+      "requiredProvenance": [
+        "anonymous_writer_id",
+        "collection_round",
+        "prompt_id",
+        "timestamp",
+        "consent_and_license_attestation"
+      ],
+      "splitUnit": [
+        "author",
+        "construction_family"
+      ],
+      "syntheticOrModelGeneratedUtterances": "excluded",
+      "targetAstKnownFromPrompt": true
+    },
+    "controls": {
+      "frozenV39DeclaredCompiler": true,
+      "humanUpperBound": "blinded_validator_agreement_and_adjudication",
+      "lexicalLookupBaseline": true,
+      "majorityAstBaseline": true,
+      "shuffledLabelSelectivityControl": true,
+      "surfaceFeatureControl": true
+    },
+    "decisionHierarchy": [
+      "if_all_gates_pass_qualify_human_authored_surface_transfer_over_known_concepts_only",
+      "if_overall_metrics_pass_but_author_or_construction_minima_fail_reject_the_transfer_claim",
+      "if_validator_agreement_fails_repair_collection_and_adjudication_before_scoring_a_candidate",
+      "only_separate_v57_and_v58_passes_authorize_preregistration_of_the_joint_two_by_two_transfer_design"
+    ],
+    "experiment": "v58_human_authored_known_ontology_language",
+    "firewall": {
+      "candidateChangesAfterEvaluationTextAccess": "forbidden",
+      "claimHumanAuthorshipForSyntheticText": "forbidden",
+      "evaluationAuthorOverlapWithPilot": "forbidden",
+      "evaluationRepeats": "forbidden",
+      "jointTransferClaim": "forbidden",
+      "newConceptClaim": "forbidden",
+      "probabilisticOrPlanningClaim": "forbidden",
+      "randomUtteranceSplit": "forbidden",
+      "targetAstAccessByCandidate": "forbidden",
+      "unadjudicatedAmbiguityInPrimaryStratum": "forbidden"
+    },
+    "gates": {
+      "maximumTargetLeakCount": 0,
+      "maximumUnexpectedEvaluationAttemptCount": 0,
+      "minimumAbstentionSafety": 0.95,
+      "minimumAcceptedEvaluationUtterances": 600,
+      "minimumCompiledTruth": 0.95,
+      "minimumCoverage": 0.9,
+      "minimumEvaluationAuthors": 10,
+      "minimumExactAst": 0.9,
+      "minimumNegativeCompositionExactAst": 0.85,
+      "minimumProvenanceCompleteness": 1.0,
+      "minimumRelationOrderAccuracy": 0.95,
+      "minimumSelectiveExactAst": 0.97,
+      "minimumShuffledLabelSelectivity": 0.5,
+      "minimumValidatorAgreement": 0.9,
+      "minimumWorstAuthorExactAst": 0.75,
+      "minimumWorstConstructionFamilyExactAst": 0.75
+    },
+    "metrics": [
+      "coverage",
+      "exact_ast",
+      "compiled_truth",
+      "selective_exact_ast",
+      "worst_author_exact_ast",
+      "worst_construction_family_exact_ast",
+      "negative_composition_exact_ast",
+      "relation_order_accuracy",
+      "abstention_safety",
+      "validator_agreement",
+      "shuffled_label_selectivity",
+      "provenance_completeness",
+      "target_leak_count",
+      "unexpected_evaluation_attempt_count"
+    ],
+    "schemaVersion": 58,
+    "scientificQuestion": "can_a_frozen_semantic_interface_parse_independently_human_authored_surface_forms_over_a_known_ontology_when_evaluation_is_split_by_author_and_construction_family",
+    "sourceV56OutcomeLock": "configs/v56-outcome-lock.json",
+    "stageAuthorization": {
+      "collectEvaluationLanguage": false,
+      "collectPilotLanguage": false,
+      "generateBlindedAuthorPackets": false,
+      "runCandidateEvaluation": false,
+      "writeAndAuditCollectionProtocol": true,
+      "writeCandidateParser": false
+    }
+  },
+  "config_sha256": "6009a2d4dbe812ed1d75ec83167ecf59be22c7f8374141158f031b43b341cc61",
+  "design_audit": "outputs/v58-human-authored-known-ontology-language/design-audit.json",
+  "design_audit_sha256": "2f11d7fd343d51442c9dfefb91fde69a8cb2d6f4b80b0fddb99c8e35c383e401",
+  "experiment": "v58_design_lock",
+  "lock_payload_sha256": "5d24773a6409c62874a7d3ec9d774f54f69599621fee4ce517f6e15ebac60daf",
+  "preregistration": "docs/v58-human-authored-known-ontology-language-plan.md",
+  "preregistration_sha256": "fb8f9224bd3c8e87c931a1b2bdbef6fa83f51d8dd52c74f7201cfe36f2b56b24",
+  "schema_version": 58,
+  "source_outcome_lock": "configs/v56-outcome-lock.json",
+  "source_outcome_lock_sha256": "c00bae6635f8408bd4af545acc989af51ff90291a7d87dd2c28efdc12363507e"
+}

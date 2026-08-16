@@ -1,0 +1,210 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "change_backbone": false,
+    "construct_confirmation": false,
+    "end_to_end_relational_suite": false,
+    "preregister_fresh_semantic_confirmation": false,
+    "v28": false,
+    "v32_evaluation": false
+  },
+  "experiment": "v38_outcome_lock",
+  "focus_selection": {
+    "alpha": null,
+    "folds": [
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "assert.focus_a",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "assert.focus_b",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "contrast_select.focus_a",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "contrast_select.focus_b",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "deny.focus_a",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "deny.focus_b",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "double_deny.focus_a",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "double_deny.focus_b",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "unresolved.focus_a",
+        "records": 24
+      },
+      {
+        "focus_accuracy": 1.0,
+        "held_out_surface_family": "unresolved.focus_b",
+        "records": 24
+      }
+    ],
+    "mean_group_cv_focus_accuracy": 1.0,
+    "method": "deterministic_discourse_parser",
+    "worst_group_cv_focus_accuracy": 1.0
+  },
+  "gate_checks": {
+    "compiled_truth": false,
+    "different_atom_decoy": true,
+    "exact_opposite_decoy": true,
+    "focus": true,
+    "focus_first": true,
+    "focus_second": true,
+    "lexical_sign": true,
+    "worst_surface_family": true
+  },
+  "lock_payload_sha256": "b88a3009ae4190810c824bfd5a18594b384fec152886e129c8d50f097b8b6f2f",
+  "post_result_audit": "outputs/v38-ontology-anchored-focus-parser/post-result-audit.json",
+  "post_result_audit_sha256": "2c8e9563a364ee0e7e414b454430dac203ac88d37d1ca30c1d68a52b5a7d2645",
+  "qualification_passed": false,
+  "result": "outputs/v38-ontology-anchored-focus-parser/evaluation/result.json",
+  "result_sha256": "f11a4292e890dc5d1172b4b818a824e66c463adc837daaaee4f5e157c5b288fa",
+  "schema_version": 38,
+  "scientific_decision": "ontology_focus_parser_succeeds_but_frozen_operation_blocks_full_gate",
+  "selected_validation": {
+    "by_decoy_kind": {
+      "different_grounded_atom": {
+        "compiled_truth_accuracy": 0.775,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 80
+      },
+      "exact_opposite": {
+        "compiled_truth_accuracy": 0.75,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 80
+      },
+      "non_state_distractor": {
+        "compiled_truth_accuracy": 0.775,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 80
+      }
+    },
+    "by_focus_order": {
+      "focus_first": {
+        "compiled_truth_accuracy": 0.775,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 120
+      },
+      "focus_second": {
+        "compiled_truth_accuracy": 0.7583333333333333,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 120
+      }
+    },
+    "by_orientation": {
+      "direct": {
+        "compiled_truth_accuracy": 0.775,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 120
+      },
+      "inverse": {
+        "compiled_truth_accuracy": 0.7583333333333333,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 120
+      }
+    },
+    "by_surface_family": {
+      "assert.focus_a": {
+        "compiled_truth_accuracy": 0.7916666666666666,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "assert.focus_b": {
+        "compiled_truth_accuracy": 1.0,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "contrast_select.focus_a": {
+        "compiled_truth_accuracy": 0.9166666666666666,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "contrast_select.focus_b": {
+        "compiled_truth_accuracy": 1.0,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "deny.focus_a": {
+        "compiled_truth_accuracy": 0.5833333333333334,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "deny.focus_b": {
+        "compiled_truth_accuracy": 0.7916666666666666,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "double_deny.focus_a": {
+        "compiled_truth_accuracy": 0.7916666666666666,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "double_deny.focus_b": {
+        "compiled_truth_accuracy": 1.0,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "unresolved.focus_a": {
+        "compiled_truth_accuracy": 0.7916666666666666,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      },
+      "unresolved.focus_b": {
+        "compiled_truth_accuracy": 0.0,
+        "focus_accuracy": 1.0,
+        "lexical_sign_accuracy": 1.0,
+        "records": 24
+      }
+    },
+    "compiled_truth_accuracy": 0.7666666666666667,
+    "different_atom_decoy_accuracy": 1.0,
+    "exact_opposite_decoy_accuracy": 1.0,
+    "focus_accuracy": 1.0,
+    "focus_first_accuracy": 1.0,
+    "focus_second_accuracy": 1.0,
+    "lexical_sign_accuracy": 1.0,
+    "outer_operation_accuracy": 0.6333333333333333,
+    "records": 240,
+    "worst_surface_family_accuracy": 1.0
+  }
+}

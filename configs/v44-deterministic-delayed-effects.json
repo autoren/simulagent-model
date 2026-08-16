@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 44,
+  "experiment": "v44_oracle_deterministic_delayed_effects",
+  "scientificQuestion": "can_a_hidden_event_queue_extension_represent_identify_and_execute_deterministic_effects_that_arrive_one_or_two_action_ticks_after_their_trigger",
+  "sourceV43r1OutcomeLock": "configs/v43r1-outcome-lock.json",
+  "scope": {
+    "oracleFirst": true,
+    "languageGrounding": false,
+    "declaredBooleanOntology": true,
+    "persistentStateMutation": true,
+    "deterministicImmediateEffects": true,
+    "deterministicDelayedEffects": true,
+    "delayTicks": [1, 2],
+    "hiddenPendingEventQueue": true,
+    "partialObservation": true,
+    "stochasticEffects": false,
+    "activeInterventionSelection": false,
+    "openConceptInventory": false
+  },
+  "tickSemantics": {
+    "phaseOrder": [
+      "deliver_events_due_at_start_of_tick",
+      "evaluate_current_action_on_post_delivery_state",
+      "apply_immediate_action_effects_and_enqueue_delayed_effects",
+      "emit_post_action_state_observation"
+    ],
+    "delayOneMeaning": "event_scheduled_at_tick_t_is_delivered_at_start_of_tick_t_plus_1",
+    "sequenceEnd": "pending_events_are_not_automatically_flushed",
+    "conditionEvaluation": "at_scheduling_tick_after_due_event_delivery",
+    "delayedPayloads": ["set_true", "set_false", "toggle"],
+    "copyPayloads": "deferred",
+    "sameTargetSameTickConflict": "forbidden_by_generator_and_program_validator",
+    "waitAction": "advances_one_tick_without_direct_effect"
+  },
+  "population": {
+    "mechanics": 40,
+    "mechanicsPerFamily": 10,
+    "families": [
+      "one_tick_unary_set_clear",
+      "two_tick_relational_toggle",
+      "state_conditional_scheduling",
+      "interleaved_immediate_and_delayed"
+    ],
+    "fitMechanics": 24,
+    "developmentEvaluationMechanics": 16,
+    "supportSequencesPerMechanicMaximum": 20,
+    "querySequencesPerMechanic": 24,
+    "sequenceLengths": [3, 4, 5, 6],
+    "entityCounts": [2, 3, 4, 5],
+    "actions": ["pulse", "route", "wait"],
+    "generatorSeed": 4421
+  },
+  "causalRequirements": {
+    "everyMechanicHasDelaySensitiveQuery": true,
+    "everyFamilyHasWaitPlacementCounterfactual": true,
+    "pairedQueriesUseSameInitialStateAndActionMultiset": true,
+    "waitPlacementChangesAtLeastOneRegisteredFinalObservation": true,
+    "supportQueryStructuralOverlap": 0
+  },
+  "comparisons": {
+    "queuedVersionSpaceExecutor": "primary",
+    "collapsedDelayExecutor": "registered_inadequacy_control_applies_delayed_payload_immediately",
+    "endFlushExecutor": "registered_inadequacy_control_holds_all_delayed_payloads_until_sequence_end",
+    "literalSequenceLookup": "non_lifted_control",
+    "jointNeuralChallenger": "deferred"
+  },
+  "gates": {
+    "minimumOracleProgramValidation": 1.0,
+    "minimumQueuedTargetRetention": 1.0,
+    "minimumQueuedSchemaRecovery": 1.0,
+    "maximumQueuedEmptyVersionSpace": 0.0,
+    "minimumQueuedNextStateExact": 1.0,
+    "minimumQueuedFinalObservationExact": 1.0,
+    "minimumQueuedEveryFamilyExact": 1.0,
+    "minimumQueuedEverySequenceLengthExact": 1.0,
+    "minimumWaitPlacementCounterfactualAccuracy": 1.0,
+    "maximumCollapsedDelayFinalExact": 0.85,
+    "maximumEndFlushFinalExact": 0.85,
+    "maximumLiteralLookupFinalExact": 0.95
+  },
+  "decisionHierarchy": [
+    "if_queued_executor_passes_and_both_delay_controls_fail_authorize_preregistration_of_declared_delayed_effect_language_grounding",
+    "if_queued_executor_fails_repair_event_queue_semantics_or_delayed_dsl_before_language_or_stochastic_work",
+    "if_collapsed_delay_passes_redesign_cases_to_make_timing_causally_necessary",
+    "if_end_flush_passes_redesign_intermediate_and_wait_placement_queries",
+    "if_literal_lookup_passes_redesign_structural_generalization"
+  ],
+  "firewall": {
+    "V43LanguageCorpusReuse": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "languageGrounding": "forbidden",
+    "stochasticEffects": "forbidden",
+    "activeSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden",
+    "claimExpansionBeyondDeterministicDelayFoundation": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditOracleImplementation": true,
+    "constructDevelopmentPopulation": false,
+    "runOracleDevelopment": false,
+    "languageGrounding": false,
+    "modelAccess": false
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 58,
+  "experiment": "v58_human_collection_and_adjudication_protocol",
+  "sourceV57OutcomeLock": "configs/v57-outcome-lock.json",
+  "sourceV58DesignLock": "configs/v58-design-lock.json",
+  "knownOntologySource": {
+    "corpusSeal": "configs/v40-corpus-seal.json",
+    "corePopulation": "data/v40-independent-compiler-confirmation/independent_confirmation.jsonl",
+    "use": "target_asts_entities_and_frozen_predicate_operator_ontologies_only",
+    "authorPacketExclusions": ["original_evidence_text", "oracle_metadata", "reference_surface_realization"],
+    "candidateInputExclusions": ["target_ast", "prompt_instructions", "validator_records", "adjudication_records"]
+  },
+  "roles": {
+    "collectionCoordinator": "assigns_pseudonymous_writer_ids_releases_packets_and_holds_identity_mapping_outside_the_repository",
+    "pilotWriters": "two_human_writers_whose_text_may_be_used_for_development_but_never_evaluation",
+    "evaluationWriters": "at_least_ten_human_writers_disjoint_from_pilot_writers_and_candidate_developers",
+    "validators": "two_independent_humans_per_submission_blinded_to_writer_identity_candidate_outputs_and_each_other",
+    "adjudicator": "a_third_human_resolving_disagreement_without_candidate_outputs",
+    "candidateDevelopers": "may_access_pilot_text_only_and_must_freeze_candidate_and_baselines_before_evaluation_packet_release"
+  },
+  "roleSeparation": {
+    "writerMayValidateOwnText": false,
+    "validatorMayAdjudicateOwnDisagreement": false,
+    "candidateDeveloperMayWriteEvaluationText": false,
+    "candidateDeveloperMayValidateOrAdjudicateEvaluationText": false,
+    "pilotWriterMayBeEvaluationWriter": false,
+    "identityMappingStoredInRepository": false
+  },
+  "constructionSplit": {
+    "selectionRule": "sort_by_sha256(v58_design_lock_payload_sha256+'|pilot-family|'+family); first_five_are_pilot_exposed",
+    "pilotExposedFamilies": [
+      "distractor_scope",
+      "argument_reversal",
+      "contrastive_focus",
+      "inverse_relation",
+      "direct_relation"
+    ],
+    "evaluationOnlyFamilies": [
+      "denial",
+      "lexical_negation",
+      "plain_assertion",
+      "unresolved_status",
+      "double_denial"
+    ],
+    "pilotTextForEvaluationOnlyFamilies": 0,
+    "evaluationAuthorsCoverAllFamilies": true,
+    "randomUtteranceSplit": false,
+    "reportAuthorAndConstructionFamiliesSeparately": true
+  },
+  "quotas": {
+    "pilotAuthors": 2,
+    "acceptedPrimaryPerPilotAuthor": 60,
+    "acceptedPrimaryPerPilotExposedFamilyPerPilotAuthor": 12,
+    "minimumEvaluationAuthors": 10,
+    "acceptedPrimaryPerEvaluationAuthor": 60,
+    "acceptedPrimaryPerFamilyPerEvaluationAuthor": 6,
+    "minimumAcceptedEvaluationPrimary": 600,
+    "acceptedAbstentionPerEvaluationAuthor": 10,
+    "acceptedAbstentionPerFamilyPerEvaluationAuthor": 1,
+    "minimumAcceptedEvaluationAbstention": 100,
+    "rejectedOrWithdrawnItemsCountTowardQuota": false,
+    "replacementPromptsRequiredUntilQuotaMet": true,
+    "withdrawnAuthorReplacement": "remove_all_items_from_that_author_and_recruit_a_new_disjoint_author"
+  },
+  "primaryPrompt": {
+    "fieldsVisibleToWriter": [
+      "packet_id",
+      "prompt_id",
+      "construction_family",
+      "entity_legend",
+      "known_ontology_glossary",
+      "intended_semantics",
+      "writing_instructions"
+    ],
+    "intendedSemantics": "canonical_target_ast_rendered_as_a_role_labeled_meaning_specification",
+    "instructions": [
+      "write_one_natural_utterance_that_uniquely_expresses_the_intended_semantics",
+      "realize_the_assigned_construction_family",
+      "preserve_source_target_order_lexical_sign_and_outer_operation",
+      "do_not_copy_any_example_or_reference_sentence",
+      "do_not_include_ast_json_field_names_or_meta_commentary",
+      "do_not_use_a_language_model_paraphraser_or_other_generative_writing_tool"
+    ]
+  },
+  "abstentionPrompt": {
+    "conditions": ["genuinely_ambiguous_scope_or_referent", "unsupported_or_unknown_reference"],
+    "assignment": "alternate_conditions_within_each_author_and_balance_across_construction_families",
+    "target": "abstain",
+    "instructions": [
+      "write_one_natural_utterance_that_intentionally_lacks_a_unique_supported_ast",
+      "do_not_state_that_the_sentence_is_ambiguous_or_unsupported",
+      "do_not_use_a_language_model_paraphraser_or_other_generative_writing_tool"
+    ],
+    "neverIncludedInPrimaryStratum": true
+  },
+  "submissionSchema": {
+    "requiredFields": [
+      "submission_id",
+      "packet_id",
+      "prompt_id",
+      "anonymous_writer_id",
+      "collection_round",
+      "submitted_text",
+      "timestamp",
+      "consent_and_license_attestation"
+    ],
+    "forbiddenFields": ["target", "target_ast", "oracle_metadata", "candidate_output", "validator_label"],
+    "timestampFormat": "RFC3339_UTC",
+    "textRequirements": {
+      "minimumUnicodeCharacters": 4,
+      "maximumUnicodeCharacters": 500,
+      "singleUtterance": true,
+      "personallyIdentifyingInformation": "forbidden"
+    },
+    "attestation": {
+      "humanAuthoredWithoutGenerativeAssistance": true,
+      "rightToContribute": true,
+      "datasetLicense": "CC-BY-4.0",
+      "researchUseConsent": true
+    }
+  },
+  "validation": {
+    "validatorsPerSubmission": 2,
+    "validatorBlindness": ["anonymous_writer_id", "writer_cohort", "candidate_output", "other_validator_record"],
+    "validatorSees": ["submitted_text", "entity_legend", "known_ontology_glossary", "prompted_target_or_abstention_condition", "assigned_construction_family"],
+    "verdicts": ["equivalent_unique", "not_equivalent", "ambiguous", "unsupported", "malformed_or_meta"],
+    "requiredAnnotations": ["verdict", "inferred_canonical_ast_or_null", "construction_family_realized", "source_target_order_preserved_or_null", "notes_without_writer_identity"],
+    "rawAgreementMetric": "exact_match_of_pre_adjudication_verdicts_across_all_double_coded_submissions",
+    "minimumRawAgreementBeforePopulationSeal": 0.9,
+    "adjudicationRequiredFor": ["verdict_disagreement", "ast_disagreement", "construction_family_disagreement", "relation_order_disagreement"],
+    "adjudicatorCannotSee": ["candidate_output", "writer_identity", "writer_cohort"],
+    "primaryAcceptance": "final_verdict_equivalent_unique_and_final_ast_equals_prompt_target_and_construction_family_realized",
+    "abstentionAcceptance": "final_verdict_is_ambiguous_or_unsupported_and_no_unique_supported_ast_exists",
+    "unadjudicatedDisagreementAccepted": false,
+    "validatorAndAdjudicatorRecordsImmutable": true
+  },
+  "provenance": {
+    "required": ["anonymous_writer_id", "collection_round", "prompt_id", "timestamp", "consent_and_license_attestation"],
+    "authorshipEvidence": "coordinator_assignment_log_plus_per_submission_attestation",
+    "syntheticOrModelGeneratedText": "excluded_from_pilot_evaluation_and_abstention_strata",
+    "rejectedItems": "retained_in_a_restricted_audit_log_but_never_candidate_input_or_scored_primary_data",
+    "withdrawal": "honored_before_population_seal_with_tombstone_only"
+  },
+  "freezeAndReleaseSequence": [
+    "freeze_collection_protocol",
+    "generate_and_hash_blinded_pilot_and_evaluation_author_packets_without_text",
+    "release_pilot_packets_only",
+    "collect_validate_and_seal_pilot_text",
+    "freeze_candidate_parser_all_baselines_prompts_and_scoring_implementation",
+    "verify_evaluation_packet_hashes_and_candidate_freeze",
+    "release_evaluation_packets",
+    "collect_and_validate_evaluation_text_without_candidate_access",
+    "audit_author_family_quota_provenance_agreement_and_adjudication",
+    "seal_evaluation_primary_and_abstention_populations",
+    "audit_and_freeze_one_shot_evaluator",
+    "run_exactly_one_candidate_evaluation"
+  ],
+  "firewall": {
+    "humanTextBeforeProtocolLock": "forbidden",
+    "evaluationTextBeforeCandidateAndBaselineFreeze": "forbidden",
+    "evaluationPacketReleaseBeforeCandidateFreeze": "forbidden",
+    "candidateAccessToTargetValidatorOrAdjudicationFields": "forbidden",
+    "evaluationTextUsedForTrainingTuningPromptingOrSelection": "forbidden",
+    "syntheticOrModelGeneratedTextCountedAsHuman": "forbidden",
+    "randomUtteranceSplit": "forbidden",
+    "pilotEvaluationAuthorOverlap": "forbidden",
+    "unadjudicatedPrimaryItems": "forbidden",
+    "rejectedOrWithdrawnTextInScoredPopulation": "forbidden",
+    "newConceptOrJointTransferClaim": "forbidden",
+    "evaluationRepeats": "forbidden"
+  },
+  "protocolAuthorization": {
+    "generateAndAuditBlindedAuthorPackets": true,
+    "releasePilotPackets": false,
+    "collectPilotLanguage": false,
+    "releaseEvaluationPackets": false,
+    "collectEvaluationLanguage": false,
+    "writeCandidateParser": false,
+    "runCandidateEvaluation": false,
+    "modelGeneratedWritingAssistance": false
+  }
+}

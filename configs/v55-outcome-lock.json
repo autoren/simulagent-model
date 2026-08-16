@@ -1,0 +1,50 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "approximate_or_learned_planning": false,
+    "construct_new_planning_population": false,
+    "language_grounding": false,
+    "long_horizon_claim": false,
+    "model_access": false,
+    "preregister_symbolic_and_probabilistic_policy_verification": false,
+    "run_additional_v55_evaluation": false,
+    "run_formal_verification": false
+  },
+  "decision": "retain_v55_failure_and_localize_failed_gates",
+  "experiment": "v55_outcome_lock",
+  "lock_payload_sha256": "5e8d70661c5b1e4cee535cbfa7389eeb47d8645ee8eb83a7ff1b132dd34d465f",
+  "population_seal": "configs/v55-population-seal.json",
+  "population_seal_sha256": "2fcf875cd65b73b216f6bc1a4e562a41efadcac5ce8def0949c3346387d348c7",
+  "post_result_audit": "outputs/v55-short-horizon-bayes-adaptive-planning/post-result-audit.json",
+  "post_result_audit_sha256": "92e5ef7780d02cd774f8ab7832f7fc36cc210f1fd45e6ac1912f71900fe8c109",
+  "qualification": {
+    "checks": {
+      "belief_and_observation_normalization_rate": true,
+      "bellman_residual": true,
+      "canonical_tie_break": true,
+      "clairvoyant_upper_bound": true,
+      "complete_candidate_actions": true,
+      "completed_task_fraction": true,
+      "controls_detected_or_dominated": true,
+      "delayed_consequence_sensitivity": false,
+      "deployable_baseline_dominance": true,
+      "finite_value_rate": true,
+      "future_observation_firewall": true,
+      "independent_policy_evaluation": true,
+      "independent_streams": true,
+      "information_then_control_fraction": true,
+      "mean_adaptive_minus_open_loop": true,
+      "nonmyopic_root_action_fraction": true,
+      "positive_adaptation_fraction": true,
+      "root_optimal_set_membership": true,
+      "root_value_error": true,
+      "truth_field_firewall": true
+    },
+    "passed": false
+  },
+  "result": "outputs/v55-short-horizon-bayes-adaptive-planning/evaluation/result.json",
+  "result_sha256": "3e6b4b59b0e79578a00cd3d3081866e29ba77b15fe2e97010f0d6363095a212d",
+  "schema_version": 55,
+  "summary": "docs/v55-results.md",
+  "summary_sha256": "b9c27dbee9463b941ddf9136dc3926ef8548d496fe518a0eab574c17769f2859"
+}

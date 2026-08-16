@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "change_v54_design_implementation_or_analysis": false,
+    "construct_v54_active_populations": true,
+    "language_grounding": false,
+    "model_access": false,
+    "reward_or_planning": false,
+    "run_v54_active_evaluation": false
+  },
+  "base_dependencies_sha256": {
+    "configs/v54-design-lock.json": "632841183b2206cd4ddb439a3e647bca2c534222777844a8ebad1b10d44b3066",
+    "configs/v54-implementation-lock.json": "3580ab739efd0db16297008d5edcea66974bd8453e38b28d684e272e9f9dcec2"
+  },
+  "evaluation_implementation_audit": "outputs/v54-exact-one-step-eig/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "e7841ccb1234ee50df0146b027b0a141c97201c4226c9849536e8e686114ed38",
+  "experiment": "v54_evaluation_implementation_lock",
+  "implementation_files_sha256": {
+    "python/audit_and_summarize_v54.py": "a98df44eedf71401faa0d8f3593bd428a28126a49ffeffcf416a0f193005f226",
+    "python/audit_v54_evaluation_implementation.py": "e0cee3762a5723e46d3001c1cf2a437113b2fd19f73db3f5da931a9b845652ef",
+    "python/audit_v54_populations.py": "756962db8c73d03b03673da7b480e0c013414acc2a612321620996c164ae4d1e",
+    "python/evaluate_v54_eig.py": "5c5704b15b39c173d485c76c82d6b71ecec747e005b7b5d6d27d1d0377d0faea",
+    "python/freeze_v54_outcome.py": "b1243f984b1651684b72b37593c014632511e08e0703fa8ca694bed5545ff31a",
+    "python/seal_v54_populations.py": "f102931bacccd31911686783da3decde5a1942871051cc809d557967f0f823fd",
+    "scripts/run-v54-exact-one-step-eig.sh": "d7a91ecab53e9b42a7dfad7ac0d19cd9fbb06ebcc1493ad7dc9773d1dab55af2"
+  },
+  "implementation_lock": "configs/v54-implementation-lock.json",
+  "implementation_lock_sha256": "3580ab739efd0db16297008d5edcea66974bd8453e38b28d684e272e9f9dcec2",
+  "lock_payload_sha256": "83014ea628b601fa244c9ca11ae4c71a235f29f3e21c7b23fb9b28e88104920c",
+  "schema_version": 54
+}

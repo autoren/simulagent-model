@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 48,
+  "experiment": "v48_stochastic_language_composition",
+  "scientificQuestion": "does_the_frozen_declared_language_interface_compose_with_the_frozen_sampled_stochastic_estimator_on_fresh_mechanics_without_material_predictive_degradation",
+  "sourceV47OutcomeLock": "configs/v47-outcome-lock.json",
+  "frozenComponents": {
+    "languageCompiler": "v45_declared_state_and_action_language_compiler",
+    "probabilisticEstimator": "v47_uniform_prior_exact_likelihood_program_posterior",
+    "executor": "v47_exact_joint_trajectory_executor",
+    "ontology": "v44_declared_boolean_ontology",
+    "probabilityVocabulary": ["1/4", "1/2", "3/4"]
+  },
+  "claimBoundary": {
+    "primaryClaim": "composition_of_supported_declared_language_with_finite_sample_stochastic_mechanic_induction",
+    "learnProbabilityFromRealizedTrials": true,
+    "learnProbabilityWords": false,
+    "openOntology": false,
+    "activeInterventionSelection": false,
+    "languageModelAccess": false,
+    "adapterTraining": false,
+    "finalEvaluation": false
+  },
+  "population": {
+    "mechanics": 48,
+    "mechanicsPerFamily": 12,
+    "families": ["immediate_bernoulli_mutation", "delayed_bernoulli_scheduling", "state_conditional_probability", "interleaved_deterministic_and_stochastic"],
+    "developmentFitMechanics": 24,
+    "developmentEvaluationMechanics": 24,
+    "programOverlapWithV46OrV47": 0,
+    "probabilityCounts": {"1/4": 16, "1/2": 16, "3/4": 16},
+    "supportInterventionsPerMechanic": 12,
+    "realizedTrialsPerSupportIntervention": 32,
+    "queryInterventionsPerMechanic": 24,
+    "heldoutTrialsPerQuery": 64,
+    "sequenceLengths": [2, 3, 4],
+    "entityCounts": [2, 3, 4],
+    "generatorSeed": 4831,
+    "samplingSeed": 4837,
+    "languageSeed": 4841
+  },
+  "languageContract": {
+    "initialStates": "complete_clause_lists_in_v45_supported_language",
+    "actions": "ordered_v45_supported_bound_action_and_wait_commands",
+    "realizedSupportTrajectories": "complete_post_action_state_clause_lists_in_v45_supported_language",
+    "queriesExposeOutcomes": false,
+    "freshEntityAliasesPerMechanic": true,
+    "freshPredicateAndActionCuesPerMechanic": true,
+    "exactOrdinalActionOrderRequired": true,
+    "unknownAmbiguousMalformedAndDuplicateOrdinalInputsFailClosed": true,
+    "probabilityIsInferredFromRepeatedOutcomesNotStatedInLanguage": true
+  },
+  "conditions": {
+    "languagePrimary": "compile_all_agent_visible_states_actions_and_realized_trajectories_then_run_frozen_v47_estimator",
+    "matchedSymbolicBaseline": "same_programs_interventions_trials_and_queries_with_precompiled_symbols",
+    "uniformizedProbabilityControl": "replace_predicted_nonzero_outcome_mass_uniformly",
+    "shuffledActionOrderControl": "destroy_declared_temporal_order_after_successful_parsing",
+    "literalLanguageLookup": "non_compositional_control"
+  },
+  "metrics": {
+    "interface": ["clause_parse_accuracy", "canonical_graph_exact", "action_command_accuracy", "action_sequence_exact", "fail_closed_safety_accuracy"],
+    "induction": ["map_schema_recovery", "mean_target_program_posterior", "probability_parameter_mean_absolute_error"],
+    "prediction": ["heldout_joint_trajectory_log_loss", "multiclass_brier_score", "joint_distribution_total_variation", "calibration_error"],
+    "composition": ["language_minus_symbolic_mean_tv", "language_minus_symbolic_log_loss"],
+    "strata": ["family", "probability", "timing", "sequence_length"],
+    "uncertainty": "mechanic_cluster_bootstrap_95_percent_interval_with_10000_resamples_and_seed_4847"
+  },
+  "gates": {
+    "minimumClauseParseAccuracy": 1.0,
+    "minimumCanonicalGraphExact": 1.0,
+    "minimumActionCommandAccuracy": 1.0,
+    "minimumActionSequenceExact": 1.0,
+    "minimumFailClosedSafetyAccuracy": 1.0,
+    "minimumMapSchemaRecovery": 0.90,
+    "minimumMeanTargetProgramPosterior": 0.85,
+    "maximumProbabilityParameterMeanAbsoluteError": 0.05,
+    "maximumMeanJointDistributionTotalVariation": 0.05,
+    "maximumEveryFamilyMeanJointDistributionTotalVariation": 0.08,
+    "maximumCalibrationError": 0.05,
+    "maximumLanguageMinusSymbolicMeanTv": 0.01,
+    "maximumLanguageMinusSymbolicLogLoss": 0.01,
+    "minimumUniformizedLogLossDisadvantageNats": 0.03,
+    "maximumShuffledActionOrderExactDistributionMatch": 0.85,
+    "maximumLiteralLanguageLookupCoverage": 0.05
+  },
+  "decisionHierarchy": [
+    "if_interface_prediction_and_matched_composition_gates_pass_authorize_preregistration_of_passive_partial_observation_under_stochastic_dynamics",
+    "if_symbolic_passes_but_language_fails_repair_only_the_declared_language_interface",
+    "if_both_language_and_symbolic_fail_revisit_sampled_stochastic_identifiability",
+    "if_only_novel_or_unsupported_language_fails_do_not_expand_the_primary_claim",
+    "do_not_add_active_selection_open_ontology_or_neural_training_in_v48"
+  ],
+  "firewall": {
+    "V46OrV47ProgramsOrCasesReused": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "activeSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditCompositionImplementation": true,
+    "constructDevelopmentPopulation": false,
+    "runDevelopment": false,
+    "modelAccess": false
+  }
+}

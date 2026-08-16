@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "continue_binding_and_assembly_development": true,
+    "fresh_suite": false,
+    "v28_replay": false,
+    "v32_evaluation_reuse": false
+  },
+  "decision": "operation_interface_qualified_continue_binding_and_assembly",
+  "experiment": "v34_outcome_lock",
+  "fit_selected_prompt_method": "semanticHiddenRidge",
+  "lock_payload_sha256": "ae6bd89ebadfcfe54c03843783d6e25a89012bc5f84ebeb5b086f3c35a8f4a50",
+  "post_result_audit": "outputs/v34-operation-interface/post-result-audit.json",
+  "post_result_audit_sha256": "0ecd551f7297e0e95d866697f7900170161ae5bf942174506cc3512d19533fb7",
+  "protocol_lock": "configs/v34-operation-interface-lock.json",
+  "protocol_lock_sha256": "ff7f5410180d0665a71ef793bd280139916a6204d9bb2b5b493dceae82d634d8",
+  "qualification": {
+    "calibration_operation_gain_over_legacy": 0.37637362637362637,
+    "checks": {
+      "calibration_operation_accuracy": true,
+      "gain_over_legacy": true,
+      "oracle_sign_compiled_truth_accuracy": true,
+      "worst_operation_accuracy": true
+    },
+    "passed": true
+  },
+  "result": "outputs/v34-operation-interface/result.json",
+  "result_sha256": "eb4137dce20a5d5092d870099c666fd950f4fda338f4ae8dce5f69258e3a5b7e",
+  "schema_version": 34
+}

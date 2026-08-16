@@ -1,0 +1,31 @@
+{
+  "artifacts": {
+    "core": {
+      "path": "data/v57-definition-augmented-ontology-transfer/core.jsonl",
+      "records": 1920,
+      "sha256": "b992ef734666cfdfa606ea6b726d7fbabf7733d24fdb9935be88ed50bb734ae4"
+    },
+    "safety": {
+      "path": "data/v57-definition-augmented-ontology-transfer/safety.jsonl",
+      "records": 224,
+      "sha256": "9938c8f4b1c8a12bd8fca0efaa2405ee200151c69fbfc347b63cfe35d3538f63"
+    }
+  },
+  "authorization": {
+    "collect_human_language": false,
+    "model_access": false,
+    "modify_v57_population": false,
+    "run_v57_candidate_evaluation": false,
+    "write_and_audit_v57_candidate_runner": true
+  },
+  "experiment": "v57_population_seal",
+  "implementation_lock": "configs/v57-implementation-lock.json",
+  "implementation_lock_sha256": "016ecc12ba5d500b41733d7bc6d5d8296ab3cdcff2c15a5660818ef3db7b6212",
+  "manifest": "data/v57-definition-augmented-ontology-transfer/manifest.json",
+  "manifest_sha256": "1342db8b75083659fe5c261001cb8d9bf19bcc2595460dfedf0938248364b755",
+  "population": "data/v57-definition-augmented-ontology-transfer",
+  "population_audit": "outputs/v57-definition-augmented-ontology-transfer/population-audit.json",
+  "population_audit_sha256": "894f236927c7d0b6ca803cfeaa782d4e9d9faad8e2dc0cbf27c31b40fafd7df2",
+  "schema_version": 57,
+  "seal_payload_sha256": "2939bb2ff6ed39da27592a5b15733b07dc889c105978a898d89557a04b5ea0cf"
+}

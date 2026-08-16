@@ -1,0 +1,839 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_particle_population": false,
+    "final_evaluation": false,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_scalable_particle_inference": true,
+    "reward_or_planning": false
+  },
+  "experiment": "v51_outcome_lock",
+  "gate_checks": {
+    "bug_sensitivity": true,
+    "completed_replications": true,
+    "coverage": true,
+    "exact_path_agreement": true,
+    "normalization": true,
+    "rank_bin_envelope": true,
+    "rank_chi_square": true
+  },
+  "lock_payload_sha256": "f99e7ea3dabc9362a46c0d74f58283e7d9e5e84f6784b9fe0700ff1f6bf7471d",
+  "metrics": {
+    "bug_controls": {
+      "latest_only_query": {
+        "chi_square_p_values": {
+          "configuration_ordinal": 0.6564331054481687,
+          "configuration_posterior_probability": 0.8236528061805362,
+          "probability_ordinal": 0.8265628950820471,
+          "program_ordinal": 0.798608124678783,
+          "program_posterior_probability": 0.8426422357555772
+        },
+        "coverage": {
+          "configuration_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.48681640625,
+              "z": -1.1932426932522988
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.78564453125,
+              "z": -1.2632405836765064
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.94677734375,
+              "z": -1.3590417710722233
+            }
+          },
+          "configuration_posterior_probability": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.51025390625,
+              "z": 0.9280776503073436
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.80029296875,
+              "z": 0.3844645254667628
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.95361328125,
+              "z": 0.10454167469786334
+            }
+          },
+          "probability_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.484375,
+              "z": -1.414213562373095
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.7822265625,
+              "z": -1.6477051091432693
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.9453125,
+              "z": -1.6726667951658134
+            }
+          },
+          "program_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.5126953125,
+              "z": 1.1490485194281397
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.80078125,
+              "z": 0.4393880291048718
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.9501953125,
+              "z": -0.62725004818718
+            }
+          },
+          "program_posterior_probability": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.48828125,
+              "z": -1.0606601717798212
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.7900390625,
+              "z": -0.7689290509335256
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.94970703125,
+              "z": -0.7317917228850433
+            }
+          }
+        },
+        "histograms": {
+          "configuration_ordinal": [
+            133,
+            133,
+            123,
+            132,
+            123,
+            126,
+            125,
+            131,
+            129,
+            130,
+            130,
+            103,
+            144,
+            112,
+            129,
+            145
+          ],
+          "configuration_posterior_probability": [
+            123,
+            126,
+            132,
+            114,
+            157,
+            128,
+            127,
+            124,
+            126,
+            134,
+            118,
+            131,
+            128,
+            130,
+            126,
+            124
+          ],
+          "probability_ordinal": [
+            143,
+            119,
+            136,
+            123,
+            117,
+            121,
+            125,
+            126,
+            126,
+            113,
+            135,
+            129,
+            138,
+            120,
+            135,
+            142
+          ],
+          "program_ordinal": [
+            123,
+            138,
+            131,
+            107,
+            126,
+            134,
+            117,
+            131,
+            137,
+            138,
+            137,
+            130,
+            114,
+            125,
+            123,
+            137
+          ],
+          "program_posterior_probability": [
+            134,
+            125,
+            134,
+            120,
+            123,
+            131,
+            114,
+            134,
+            121,
+            111,
+            127,
+            139,
+            136,
+            132,
+            123,
+            144
+          ]
+        },
+        "maximum_absolute_coverage_z": 1.6726667951658134,
+        "maximum_absolute_rank_bin_z": 2.647325694608303,
+        "maximum_absolute_rank_bin_z_by_quantity": {
+          "configuration_ordinal": 2.282177322938192,
+          "configuration_posterior_probability": 2.647325694608303,
+          "probability_ordinal": 1.3693063937629153,
+          "program_ordinal": 1.9170289512680814,
+          "program_posterior_probability": 1.5518805795979707
+        },
+        "minimum_chi_square_p_value": 0.6564331054481687,
+        "rejected": false
+      },
+      "map_posterior": {
+        "chi_square_p_values": {
+          "configuration_ordinal": 5.822358224388992e-83,
+          "configuration_posterior_probability": 1.97256748266682e-142,
+          "probability_ordinal": 7.125647004220046e-78,
+          "program_ordinal": 2.5424029754229185e-191,
+          "program_posterior_probability": 0.0
+        },
+        "coverage": {
+          "configuration_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.4345703125,
+              "z": -5.922019292437335
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.68017578125,
+              "z": -13.126717369508045
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.80078125,
+              "z": -32.61700250573336
+            }
+          },
+          "configuration_posterior_probability": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.41796875,
+              "z": -7.424621202458749
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.68505859375,
+              "z": -12.577482333126955
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.8076171875,
+              "z": -31.153419059963273
+            }
+          },
+          "probability_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.42529296875,
+              "z": -6.76170859509636
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.6611328125,
+              "z": -15.268734011394294
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.787109375,
+              "z": -35.544169397273535
+            }
+          },
+          "program_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.37890625,
+              "z": -10.960155108391486
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.59716796875,
+              "z": -22.46371298798657
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.71533203125,
+              "z": -50.91179557785944
+            }
+          },
+          "program_posterior_probability": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.38330078125,
+              "z": -10.562407543974054
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.603515625,
+              "z": -21.749707440691154
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.7177734375,
+              "z": -50.38908720437013
+            }
+          }
+        },
+        "histograms": {
+          "configuration_ordinal": [
+            198,
+            94,
+            99,
+            115,
+            99,
+            122,
+            117,
+            112,
+            117,
+            104,
+            110,
+            109,
+            107,
+            109,
+            98,
+            338
+          ],
+          "configuration_posterior_probability": [
+            419,
+            109,
+            118,
+            115,
+            113,
+            107,
+            99,
+            101,
+            113,
+            111,
+            113,
+            99,
+            113,
+            125,
+            92,
+            101
+          ],
+          "probability_ordinal": [
+            267,
+            98,
+            95,
+            96,
+            117,
+            110,
+            103,
+            119,
+            102,
+            105,
+            111,
+            104,
+            113,
+            106,
+            113,
+            289
+          ],
+          "program_ordinal": [
+            332,
+            94,
+            84,
+            86,
+            99,
+            91,
+            100,
+            82,
+            96,
+            106,
+            103,
+            99,
+            99,
+            95,
+            102,
+            380
+          ],
+          "program_posterior_probability": [
+            606,
+            100,
+            103,
+            88,
+            98,
+            94,
+            112,
+            90,
+            102,
+            102,
+            82,
+            105,
+            107,
+            79,
+            93,
+            87
+          ]
+        },
+        "maximum_absolute_coverage_z": 50.91179557785944,
+        "maximum_absolute_rank_bin_z": 43.63523041457823,
+        "maximum_absolute_rank_bin_z_by_quantity": {
+          "configuration_ordinal": 19.170289512680814,
+          "configuration_posterior_probability": 26.564544039000555,
+          "probability_ordinal": 14.697221959721958,
+          "program_ordinal": 23.004347415216976,
+          "program_posterior_probability": 43.63523041457823
+        },
+        "minimum_chi_square_p_value": 0.0,
+        "rejected": true
+      },
+      "tempered_likelihood": {
+        "chi_square_p_values": {
+          "configuration_ordinal": 0.6872883534072313,
+          "configuration_posterior_probability": 0.08055819797982859,
+          "probability_ordinal": 0.009441282417649549,
+          "program_ordinal": 0.001960769806450293,
+          "program_posterior_probability": 5.5948428268737745e-15
+        },
+        "coverage": {
+          "configuration_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.50537109375,
+              "z": 0.4861359120657514
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.79150390625,
+              "z": -0.6041585400191987
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.9482421875,
+              "z": -1.0454167469786333
+            }
+          },
+          "configuration_posterior_probability": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.49853515625,
+              "z": -0.13258252147247765
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.79638671875,
+              "z": -0.054923503638108974
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.94921875,
+              "z": -0.8363333975829067
+            }
+          },
+          "probability_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.48193359375,
+              "z": -1.635184431493891
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.763671875,
+              "z": -3.73479824739141
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.9345703125,
+              "z": -3.972583638518807
+            }
+          },
+          "program_ordinal": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.4765625,
+              "z": -2.1213203435596424
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.763671875,
+              "z": -3.73479824739141
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.92919921875,
+              "z": -5.122542060195303
+            }
+          },
+          "program_posterior_probability": {
+            "0.5": {
+              "expected": 0.5,
+              "observed": 0.4755859375,
+              "z": -2.2097086912079607
+            },
+            "0.8": {
+              "expected": 0.796875,
+              "observed": 0.7509765625,
+              "z": -5.162809341982244
+            },
+            "0.95": {
+              "expected": 0.953125,
+              "observed": 0.93408203125,
+              "z": -4.07712531321667
+            }
+          }
+        },
+        "histograms": {
+          "configuration_ordinal": [
+            137,
+            104,
+            138,
+            126,
+            132,
+            132,
+            120,
+            133,
+            121,
+            124,
+            139,
+            134,
+            113,
+            122,
+            134,
+            139
+          ],
+          "configuration_posterior_probability": [
+            153,
+            124,
+            123,
+            120,
+            120,
+            108,
+            132,
+            150,
+            131,
+            121,
+            139,
+            120,
+            128,
+            150,
+            124,
+            105
+          ],
+          "probability_ordinal": [
+            138,
+            123,
+            126,
+            124,
+            144,
+            134,
+            115,
+            120,
+            117,
+            108,
+            119,
+            130,
+            122,
+            125,
+            124,
+            179
+          ],
+          "program_ordinal": [
+            144,
+            128,
+            130,
+            116,
+            145,
+            120,
+            104,
+            130,
+            107,
+            116,
+            128,
+            126,
+            133,
+            104,
+            149,
+            168
+          ],
+          "program_posterior_probability": [
+            220,
+            159,
+            134,
+            136,
+            116,
+            139,
+            129,
+            116,
+            105,
+            135,
+            118,
+            116,
+            101,
+            93,
+            112,
+            119
+          ]
+        },
+        "maximum_absolute_coverage_z": 5.162809341982244,
+        "maximum_absolute_rank_bin_z": 8.398412548412548,
+        "maximum_absolute_rank_bin_z_by_quantity": {
+          "configuration_ordinal": 2.1908902300206643,
+          "configuration_posterior_probability": 2.282177322938192,
+          "probability_ordinal": 4.6556417387939115,
+          "program_ordinal": 3.6514837167011076,
+          "program_posterior_probability": 8.398412548412548
+        },
+        "minimum_chi_square_p_value": 5.5948428268737745e-15,
+        "rejected": true
+      }
+    },
+    "bug_controls_rejected": 2,
+    "completed_replication_fraction": 1.0,
+    "maximum_exact_path_tv": 6e-100,
+    "maximum_exact_path_tv_by_target": {
+      "joint_configuration_tv": 0.0,
+      "query_program_tv": 6e-100,
+      "suffix_predictive_tv": 5.28e-100,
+      "support_program_tv": 0.0
+    },
+    "normalization_rate": 1.0,
+    "primary_sbc": {
+      "chi_square_p_values": {
+        "configuration_ordinal": 0.5066593268339947,
+        "configuration_posterior_probability": 0.05683879968802381,
+        "probability_ordinal": 0.6837535509904926,
+        "program_ordinal": 0.26102621841513796,
+        "program_posterior_probability": 0.741441450616548
+      },
+      "coverage": {
+        "configuration_ordinal": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.48291015625,
+            "z": -1.5467960838455725
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.7802734375,
+            "z": -1.867399123695705
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.95166015625,
+            "z": -0.31362502409359
+          }
+        },
+        "configuration_posterior_probability": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.515625,
+            "z": 1.414213562373095
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.8017578125,
+            "z": 0.5492350363810897
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.96044921875,
+            "z": 1.56812512046795
+          }
+        },
+        "probability_ordinal": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.515625,
+            "z": 1.414213562373095
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.80224609375,
+            "z": 0.6041585400191987
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.9501953125,
+            "z": -0.62725004818718
+          }
+        },
+        "program_ordinal": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.4990234375,
+            "z": -0.08838834764831843
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.7919921875,
+            "z": -0.5492350363810897
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.94482421875,
+            "z": -1.7772084698636768
+          }
+        },
+        "program_posterior_probability": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.49365234375,
+            "z": -0.5745242597140698
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.791015625,
+            "z": -0.6590820436573077
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.9482421875,
+            "z": -1.0454167469786333
+          }
+        }
+      },
+      "histograms": {
+        "configuration_ordinal": [
+          142,
+          156,
+          132,
+          133,
+          120,
+          129,
+          110,
+          127,
+          118,
+          119,
+          136,
+          130,
+          117,
+          123,
+          125,
+          131
+        ],
+        "configuration_posterior_probability": [
+          135,
+          132,
+          145,
+          99,
+          139,
+          126,
+          122,
+          111,
+          151,
+          144,
+          118,
+          145,
+          125,
+          121,
+          113,
+          122
+        ],
+        "probability_ordinal": [
+          129,
+          111,
+          120,
+          131,
+          128,
+          131,
+          146,
+          121,
+          136,
+          136,
+          128,
+          130,
+          125,
+          109,
+          123,
+          144
+        ],
+        "program_ordinal": [
+          151,
+          120,
+          118,
+          129,
+          150,
+          134,
+          109,
+          114,
+          112,
+          127,
+          139,
+          137,
+          133,
+          121,
+          128,
+          126
+        ],
+        "program_posterior_probability": [
+          128,
+          125,
+          131,
+          116,
+          131,
+          121,
+          128,
+          126,
+          121,
+          142,
+          107,
+          135,
+          130,
+          135,
+          124,
+          148
+        ]
+      },
+      "maximum_absolute_coverage_z": 1.867399123695705,
+      "maximum_absolute_rank_bin_z": 2.647325694608303,
+      "maximum_absolute_rank_bin_z_by_quantity": {
+        "configuration_ordinal": 2.556038601690775,
+        "configuration_posterior_probability": 2.647325694608303,
+        "probability_ordinal": 1.734454765433026,
+        "program_ordinal": 2.099603137103137,
+        "program_posterior_probability": 1.9170289512680814
+      },
+      "minimum_chi_square_p_value": 0.05683879968802381
+    },
+    "replications": 2048
+  },
+  "post_result_audit": "outputs/v51r1-corpus-audit-repair/post-result-audit.json",
+  "post_result_audit_sha256": "28a02882a0df8df1e520fa02277544f3cb581df28c30021d465b31074c0369da",
+  "qualification_passed": true,
+  "result": "outputs/v51r1-corpus-audit-repair/calibration/result.json",
+  "result_sha256": "be64bff23b3e6e260c85a7e9d67354427e2ae184292b6778388821aaf3b90f26",
+  "schema_version": 51,
+  "scientific_decision": "exact_inference_calibrated_authorize_scalable_particle_inference_preregistration"
+}

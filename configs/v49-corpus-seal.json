@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_development_once": true
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v49-passive-partial-observation/development_evaluation.jsonl",
+      "records": 24,
+      "sha256": "cb3f8053f6817a362d1787b50cc950feb9201386d01123e333077d3661652b94"
+    },
+    "development_fit": {
+      "path": "data/v49-passive-partial-observation/development_fit.jsonl",
+      "records": 24,
+      "sha256": "2b67ecd2b828ffc4f94d437382961936b9c323d93d31a08db8c0204b3b2a91d2"
+    }
+  },
+  "corpus_audit": "outputs/v49-passive-partial-observation/corpus-audit.json",
+  "corpus_audit_sha256": "1265027285ef3ac3aa2c24ca759aba89474add2e9f34484d030c38786624fd04",
+  "corpus_sha256": "d9c70ff8b3ac479b26b208e0c2d86f7c907c6185d6f4d01b9ca855e69bb8ad6f",
+  "experiment": "v49_corpus_seal",
+  "implementation_lock": "configs/v49-implementation-lock.json",
+  "implementation_lock_sha256": "89a7a32ffa343d7343496d49736c805b9f8b9d028ef1350b0247aa512b4d3a84",
+  "manifest": "data/v49-passive-partial-observation/manifest.json",
+  "manifest_sha256": "6ae3a67119f764ad1861e8201ffd1a95da19ad1196b892574b8c33337959e9a0",
+  "schema_version": 49,
+  "seal_payload_sha256": "def46a7c035dafea8ecf2b4a5a693a2c33bd906271d5e5e0d97fa052a805c6a6"
+}

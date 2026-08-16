@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 55,
+  "experiment": "v55_short_horizon_exact_bayes_adaptive_planning",
+  "sourceV54OutcomeLock": "configs/v54-outcome-lock.json",
+  "scientificQuestion": "can_exact_short_horizon_belief_space_dynamic_programming_use_observations_and_model_uncertainty_to_maximize_goal_reward_under_hidden_state_discrete_program_and_continuous_parameter_uncertainty",
+  "claimBoundary": {
+    "shortHorizonPlanning": true,
+    "exactBayesAdaptiveBeliefPlanning": true,
+    "hiddenWorldQueueState": true,
+    "unknownProgramIdentity": true,
+    "unknownContinuousTheta": true,
+    "exactProgramEnumeration": true,
+    "exactContinuousParameterQuadrature": true,
+    "fullWorldObservationsWithHiddenQueue": true,
+    "delayedAndStochasticConsequences": true,
+    "rewardOptimization": true,
+    "horizon": 3,
+    "reuseV53ParameterizedTemplates": true,
+    "learnedPlanner": false,
+    "particlePlanning": false,
+    "approximateSearch": false,
+    "longHorizonClaim": false,
+    "formalVerification": false,
+    "languageGrounding": false,
+    "openOntology": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "finalEvaluation": false,
+    "primaryClaim": "exact_three_action_bayes_adaptive_planning_over_joint_program_theta_and_hidden_configuration_beliefs"
+  },
+  "planningModel": {
+    "beliefState": "exact_normalized_distribution_over_program_theta_quadrature_node_and_current_world_queue_configuration",
+    "staticLatents": [
+      "program_identity",
+      "continuous_theta"
+    ],
+    "dynamicLatent": "world_queue_configuration",
+    "actionSet": "complete_legal_bound_pulse_and_route_actions_plus_wait",
+    "candidateCount": 5,
+    "entityCount": 2,
+    "observation": "full_world_atom_panel_after_each_action_with_queue_remaining_hidden",
+    "horizonActions": 3,
+    "withinHorizonAdaptation": true,
+    "discountFactor": 1.0,
+    "terminalReward": {
+      "success": 1.0,
+      "failure": 0.0,
+      "goal": "one_preregistered_world_atom_equals_one_preregistered_boolean_at_the_terminal_tick"
+    },
+    "actionCost": {
+      "pulse": 0.01,
+      "route": 0.01,
+      "wait": 0.0
+    },
+    "bellmanEquation": "V_h_b_equals_max_a_negative_cost_a_plus_sum_o_p_o_given_b_a_times_V_h_minus_1_tau_b_a_o_with_V_0_equal_expected_terminal_goal_reward",
+    "tieTolerance": 1e-12,
+    "tieBreak": "lexicographically_smallest_canonical_action_key_within_tolerance"
+  },
+  "exactOracle": {
+    "programTemplates": 8,
+    "templateSource": "v53_parameterized_registry_with_template_seed_5303",
+    "thetaPrior": "scaled_beta_2_2_on_0_05_0_95",
+    "quadrature": "257_node_gauss_legendre_weighted_by_scaled_beta_prior",
+    "quadratureNodes": 257,
+    "dynamicStateReference": "exact_world_queue_transition_enumeration",
+    "primaryPlanner": "memoized_recursive_belief_tree_dynamic_programming",
+    "independentReference": "scalar_explicit_policy_tree_enumeration_without_primary_memoization",
+    "independentPolicyEvaluator": "exact_recursive_execution_of_the_frozen_selected_policy_under_the_root_belief",
+    "clairvoyantUpperBound": "exact_planner_conditioned_on_true_program_theta_quadrature_node_and_configuration",
+    "analyticFixtures": [
+      "horizon_zero_equals_expected_terminal_reward",
+      "horizon_one_matches_exhaustive_action_enumeration",
+      "uninformative_observation_reduces_to_open_loop_control",
+      "bellman_value_is_at_least_every_registered_baseline_value",
+      "delayed_effect_due_at_two_ticks_is_visible_to_horizon_three"
+    ]
+  },
+  "baselines": {
+    "openLoopPosteriorPredictive": "choose_the_fixed_three_action_sequence_with_maximum_exact_expected_return_and_no_outcome_contingency",
+    "greedyReward": "at_each_step_choose_the_action_with_maximum_one_step_expected_terminal_goal_probability_minus_cost",
+    "mapProgram": "plan_after_collapsing_program_identity_to_its_map_value_while_retaining_hidden_configuration_uncertainty",
+    "posteriorMeanTheta": "plan_after_replacing_theta_with_its_posterior_mean",
+    "eigOnly": "choose_each_action_for_one_step_program_theta_information_gain_without_goal_reward",
+    "beliefUpdateDisabled": "replan_dynamic_state_but_hold_the_static_program_theta_marginal_fixed_after_observations",
+    "clairvoyant": "upper_bound_only_not_a_deployable_baseline"
+  },
+  "population": {
+    "planningTasks": 32,
+    "tasksPerGeneratingTemplate": 4,
+    "entityCount": 2,
+    "historyClasses": {
+      "prior_like_all_wait": 16,
+      "mixed_informative": 16
+    },
+    "supportEpisodesPerTask": 4,
+    "supportSequenceLengths": [
+      6,
+      8
+    ],
+    "ongoingHistoryPrefixLengths": [
+      4,
+      6
+    ],
+    "goalAtomPool": "complete_two_entity_world_atom_universe",
+    "goalBooleanBalance": "exact_16_false_16_true",
+    "truthAssignment": "four_copies_of_each_program_shuffled_by_a_seed_independent_of_history_and_goal_seeds",
+    "freshPublicHistoriesAgainst": [
+      "V49",
+      "V50",
+      "V51",
+      "V52",
+      "V53",
+      "V54"
+    ],
+    "freshPlanningGoalsAgainst": "not_applicable_first_reward_bearing_population",
+    "truthFieldsRetainedForAuditAnd_clairvoyantUpperBoundOnly": true,
+    "generatorSeed": 5501,
+    "historySeed": 5503,
+    "truthAssignmentSeed": 5507,
+    "goalSeed": 5519,
+    "thetaPriorSeed": 5521,
+    "trajectorySeed": 5527,
+    "tieBreakAuditSeed": 5531,
+    "policyEvaluationSeed": 5557
+  },
+  "metrics": {
+    "exactCorrectness": [
+      "maximum_root_value_error_against_scalar_reference",
+      "root_optimal_set_membership_rate",
+      "maximum_bellman_residual",
+      "maximum_independent_policy_evaluation_error",
+      "belief_and_observation_normalization_rate",
+      "finite_value_rate"
+    ],
+    "decisionQuality": [
+      "mean_bayes_adaptive_value",
+      "mean_open_loop_value",
+      "mean_bayes_adaptive_minus_open_loop_value",
+      "positive_value_of_adaptation_fraction",
+      "mean_and_max_regret_by_baseline",
+      "clairvoyant_upper_bound_violation_rate"
+    ],
+    "nonMyopicBehavior": [
+      "nonmyopic_root_action_fraction",
+      "information_then_control_policy_fraction",
+      "delayed_consequence_sensitive_policy_fraction"
+    ],
+    "integrity": [
+      "truth_field_access_before_policy_evaluation_count",
+      "future_observation_access_count",
+      "candidate_action_omission_count",
+      "canonical_tie_break_violation_count",
+      "history_and_policy_evaluation_stream_collision_count"
+    ]
+  },
+  "controls": {
+    "openLoopControl": "forbid_observation_contingent_future_actions",
+    "greedyControl": "truncate_the_bellman_backup_to_one_step_reward",
+    "mapProgramControl": "collapse_program_uncertainty_before_planning",
+    "posteriorMeanThetaControl": "collapse_theta_uncertainty_before_planning",
+    "eigOnlyControl": "remove_goal_reward_and_optimize_only_one_step_static_latent_information",
+    "beliefUpdateDisabledControl": "ignore_static_latent_learning_from_within_horizon_observations",
+    "futureOutcomeLeakageControl": "attempt_to_condition_the_root_action_on_a_future_observation_and_require_firewall_rejection",
+    "minimumControlsDetectedOrDominated": 5,
+    "controlDetection": "a_nonstructural_control_is_detected_when_mean_exact_return_regret_exceeds_0_001_or_root_action_disagreement_exceeds_0_10_on_adaptation_informative_tasks;_future_outcome_leakage_counts_only_if_rejected"
+  },
+  "gates": {
+    "minimumCompletedTaskFraction": 1.0,
+    "minimumBeliefAndObservationNormalizationRate": 1.0,
+    "minimumFiniteValueRate": 1.0,
+    "maximumRootValueError": 1e-10,
+    "minimumRootOptimalSetMembershipRate": 1.0,
+    "maximumBellmanResidual": 1e-10,
+    "maximumIndependentPolicyEvaluationError": 1e-10,
+    "maximumBayesAdaptiveRegretAgainstAnyRegisteredDeployableBaseline": 1e-10,
+    "maximumClairvoyantUpperBoundViolationRate": 0.0,
+    "adaptationInformativeMinimumValueGap": 0.005,
+    "minimumPositiveValueOfAdaptationFraction": 0.15,
+    "minimumMeanBayesAdaptiveMinusOpenLoopValue": 0.002,
+    "minimumNonmyopicRootActionFraction": 0.10,
+    "minimumInformationThenControlPolicyFraction": 0.10,
+    "minimumDelayedConsequenceSensitivePolicyFraction": 0.10,
+    "maximumTruthFieldAccessBeforePolicyEvaluationCount": 0,
+    "maximumFutureObservationAccessCount": 0,
+    "maximumCandidateActionOmissionCount": 0,
+    "maximumCanonicalTieBreakViolationCount": 0,
+    "maximumHistoryAndPolicyEvaluationStreamCollisionCount": 0,
+    "minimumControlsDetectedOrDominated": 5
+  },
+  "decisionHierarchy": [
+    "if_exact_correctness_decision_quality_nonmyopic_behavior_controls_and_integrity_all_pass_authorize_only_preregistration_of_symbolic_and_probabilistic_policy_verification",
+    "if_primary_and_scalar_values_disagree_repair_belief_updates_observation_branching_or_bellman_backups",
+    "if_adaptive_value_falls_below_any_baseline_repair_the_planner_or_policy_evaluator",
+    "if_strict_adaptation_or_nonmyopic_gates_fail_repair_reward_task_identifiability_without_changing_exact_correctness_gates",
+    "if_integrity_fails_repair_truth_future_observation_candidate_or_stream_firewalls",
+    "do_not_authorize_formal_verification_language_model_access_training_approximate_search_or_long_horizon_claims"
+  ],
+  "firewall": {
+    "planningPopulationConstructionBeforeImplementationLock": "forbidden",
+    "evaluationBeforePopulationSeal": "forbidden",
+    "rootActionSelectionOnTruthFields": "forbidden",
+    "rootActionSelectionOnFutureObservations": "forbidden",
+    "candidateActionPruning": "forbidden",
+    "postPopulationGateChanges": "forbidden",
+    "postPopulationControlChanges": "forbidden",
+    "learnedPlanner": "forbidden",
+    "particlePlanning": "forbidden",
+    "approximateSearch": "forbidden",
+    "formalVerification": "forbidden",
+    "languageGrounding": "forbidden",
+    "openOntology": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "finalEvaluation": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditExactBayesAdaptivePlanner": true,
+    "constructPlanningPopulation": false,
+    "runPlanningEvaluation": false,
+    "formalVerification": false,
+    "languageGrounding": false,
+    "modelAccess": false
+  }
+}

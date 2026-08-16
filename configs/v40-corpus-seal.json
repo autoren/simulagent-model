@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "confirmation_evaluations": 1,
+    "model_forward_passes": 0,
+    "v28": false,
+    "v32_evaluation": false
+  },
+  "corpora": {
+    "independent_confirmation": {
+      "path": "data/v40-independent-compiler-confirmation/independent_confirmation.jsonl",
+      "records": 1440,
+      "sha256": "4a29826f59824f20011bd4a313c4ee8a09a21549b91aaa5c90f2051238ebd4f7"
+    },
+    "independent_safety": {
+      "path": "data/v40-independent-compiler-confirmation/independent_safety.jsonl",
+      "records": 120,
+      "sha256": "7e6db9ceac390b10438a7f8dfb2a6f774ddf5c9772b965e114ebe5e85d8cb79c"
+    }
+  },
+  "corpus_audit": "outputs/v40-independent-compiler-confirmation/corpus-audit.json",
+  "corpus_audit_sha256": "8e366c5f7cbbf4f21ff82b5e96a4f1b372c925f5549ecb375475c70a18592266",
+  "experiment": "v40_corpus_seal",
+  "implementation_lock": "configs/v40-implementation-lock.json",
+  "implementation_lock_sha256": "af602ba45b03afc32f4a3151c88a8ac9d01c0c72aab7057a1548d550153edb55",
+  "lock_payload_sha256": "9fcb882f707551362e119cd50d070599563cb604d209f112a4e37a61a5998fb7",
+  "manifest": "data/v40-independent-compiler-confirmation/manifest.json",
+  "manifest_sha256": "04343c81c6a33968c826d697349c73dbe531b0aec6b9a1399a9cb51b60369a8d",
+  "schema_version": 40
+}

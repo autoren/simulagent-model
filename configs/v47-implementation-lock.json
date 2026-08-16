@@ -1,0 +1,191 @@
+{
+  "authorization": {
+    "construct_sampled_population": true,
+    "model_access": false,
+    "run_sampled_development": false
+  },
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "finalEvaluation": false,
+      "languageGrounding": false,
+      "openOntology": false,
+      "oracleDistributionValuedSupport": false,
+      "primaryClaim": "finite_sample_probability_estimation_and_program_uncertainty_under_the_declared_v46_ontology_dsl_and_probability_vocabulary",
+      "probabilityVocabularyKnown": true,
+      "realizedSupportTrials": true
+    },
+    "comparisons": {
+      "literalEmpiricalTrajectoryLookup": "non_lifted_control",
+      "mapProgramPlugIn": "uncertainty_ablation",
+      "oracleTargetProgram": "unattainable_scoring_reference",
+      "posteriorPredictive": "primary",
+      "uniformizedOutcomeMass": "probability_mass_ablation"
+    },
+    "decisionHierarchy": [
+      "if_estimation_calibration_learning_curve_and_controls_pass_authorize_preregistration_of_stochastic_language_composition",
+      "if_predictive_validity_fails_repair_joint_distribution_or_likelihood_semantics",
+      "if_program_recovery_passes_but_calibration_fails_revise_posterior_or_probability_vocabulary",
+      "if_low_budget_fails_but_learning_curve_improves_report_sample_complexity_without_architecture_expansion",
+      "if_all_budgets_fail_revisit_stochastic_dsl_identifiability_before_language_or_active_selection"
+    ],
+    "estimator": {
+      "likelihoodUnit": "complete_realized_trajectory_conditional_on_initial_world_and_action_sequence",
+      "perMechanicOracleChoices": false,
+      "predictive": "posterior_mixture_of_exact_joint_trajectory_distributions",
+      "primary": "uniform_prior_exact_likelihood_posterior_over_the_frozen_finite_program_registry",
+      "selectionOnEvaluation": false,
+      "zeroLikelihoodHandling": "retain_exact_zero_and_normalize_in_log_space"
+    },
+    "experiment": "v47_sampled_transition_probability_estimation",
+    "firewall": {
+      "V46ProgramsOrCasesReused": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "evaluationOutcomeAccessDuringSelection": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "oracleDistributionSupport": "forbidden"
+    },
+    "gatesAt128TrialsPerIntervention": {
+      "maximumCalibrationError": 0.05,
+      "maximumEveryFamilyMeanJointDistributionTotalVariation": 0.08,
+      "maximumLiteralLookupCoverage": 0.05,
+      "maximumMeanJointDistributionTotalVariation": 0.05,
+      "maximumProbabilityParameterMeanAbsoluteError": 0.05,
+      "minimumLogLossImprovementOverUniformizedNats": 0.03,
+      "minimumMapSchemaRecovery": 0.9,
+      "minimumMeanTargetProgramPosteriorMass": 0.85,
+      "minimumPredictiveMassNormalization": 1.0,
+      "requireMeanTvStrictImprovement32To128": true,
+      "requireMeanTvStrictImprovement8To32": true,
+      "requirePosteriorPredictiveLogLossNoWorseThanMap": true
+    },
+    "metrics": {
+      "calibration": [
+        "ten_bin_equal_width_multiclass_reliability_error"
+      ],
+      "learningCurveBudgets": [
+        8,
+        32,
+        128
+      ],
+      "oracleDiagnostics": [
+        "joint_distribution_total_variation",
+        "target_program_posterior_mass",
+        "map_schema_recovery",
+        "probability_parameter_mean_absolute_error"
+      ],
+      "properScoring": [
+        "heldout_joint_trajectory_log_loss",
+        "multiclass_brier_score"
+      ],
+      "strata": [
+        "family",
+        "probability_value",
+        "immediate_vs_delayed",
+        "sequence_length"
+      ],
+      "uncertainty": "mechanic_cluster_bootstrap_95_percent_interval_with_10000_resamples_and_seed_4747",
+      "validity": [
+        "predictive_mass_normalization",
+        "finite_log_loss"
+      ]
+    },
+    "population": {
+      "developmentEvaluationMechanics": 24,
+      "developmentFitMechanics": 24,
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "families": [
+        "immediate_bernoulli_mutation",
+        "delayed_bernoulli_scheduling",
+        "state_conditional_probability",
+        "interleaved_deterministic_and_stochastic"
+      ],
+      "freshProgramOverlapWithV46": 0,
+      "generatorSeed": 4739,
+      "heldoutTrialsPerQuery": 64,
+      "mechanics": 48,
+      "mechanicsPerFamily": 12,
+      "nestedTrialsPerIntervention": [
+        8,
+        32,
+        128
+      ],
+      "probabilityCounts": {
+        "1/2": 16,
+        "1/4": 16,
+        "3/4": 16
+      },
+      "queryInterventionsPerMechanic": 24,
+      "samplingSeed": 4741,
+      "sequenceLengths": [
+        2,
+        3,
+        4
+      ],
+      "supportInterventionsPerMechanic": 12
+    },
+    "samplingContract": {
+      "branchDraw": "one_independent_uniform_draw_per_evaluated_stochastic_branch",
+      "delayedBranchDraw": "at_scheduling_time",
+      "heldoutQueryTrialsScorerOnly": true,
+      "nestedSupportTrials": "first_8_subset_of_first_32_subset_of_first_128",
+      "oracleJointDistributionsScorerOnly": true,
+      "pseudoRandomGenerator": "python_random_Mersenne_Twister_with_per_trial_sha256_derived_integer_seed",
+      "queryAgentInputContainsNoOutcomes": true,
+      "statisticalUnit": "mechanic_episode",
+      "supportContainsOnlyRealizedTrajectories": true,
+      "supportQueryStructuralOverlap": 0
+    },
+    "schemaVersion": 47,
+    "scientificQuestion": "can_a_probability_weighted_symbolic_system_infer_stochastic_transition_programs_and_calibrated_predictive_distributions_from_finite_realized_trials",
+    "sourceV46OutcomeLock": "configs/v46-outcome-lock.json",
+    "stageAuthorization": {
+      "constructSampledPopulation": false,
+      "modelAccess": false,
+      "runSampledDevelopment": false,
+      "writeAndAuditEstimatorImplementation": true
+    }
+  },
+  "design_lock": "configs/v47-design-lock.json",
+  "design_lock_sha256": "27d18f8b61a6a2ba6dcccb7e0328d962a1ed0ae16b87933150054be68db2e857",
+  "expected_corpus_sha256": "08cbad46b2896e8823dc8d169f4062ab43e950b966de4e221896ac3e06baef12",
+  "expected_counts": {
+    "heldout_trials": 73728,
+    "mechanics": 48,
+    "queries": 1152,
+    "support_interventions": 576,
+    "support_trials": 73728
+  },
+  "experiment": "v47_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v47.py": "b1ca9e5b53ea9faf18fa25efaadc61922c77ba5c33e0689706ede04f9851a92a",
+    "python/audit_v47_corpus.py": "bd797adf7a11dff6558f85d6b241ab9567f4f5e92ce04258f112a357d6803b8b",
+    "python/audit_v47_implementation.py": "8eaca6de2105f5d374710c472ce77a8f4d3b9590095adcbcbba05b2b2f5b5dcf",
+    "python/evaluate_v47_sampled.py": "0ed796f5033178d5d8f9a4b8d422aba6f555a92067d2f76ccf4b8d8a8bf30dc6",
+    "python/freeze_v47_implementation.py": "9a1bd33266ac7de4d3e5a234795b7a80c645fc8e79d4ef71b00de2223ec79a42",
+    "python/freeze_v47_outcome.py": "e6967415144f9a98c64cd95b4e421e6aa53d8e3a3dd9708765045474890a019a",
+    "python/generate_v47_sampled.py": "5e9c39ea4685cf4b28afe2af0304f37c5e7d5b901e7ea94cbeb26da249f41409",
+    "python/seal_v47_corpus.py": "0c2da5ef26fa3ca78f924e734aa29255619de9e36bd1044ee1201cdbddff0756",
+    "python/test_v47_sampling.py": "8cadbb47c202a650a7e97e8afefb32a5adc3af4a1989df48a9307aba63171e46",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v42_stateful.py": "500a7d2ade4a6be0714f6e1a5a93928d47a132283295d168b6128c049d9652ea",
+    "python/v46_stochastic.py": "67f7c729d4c053c88fb18ca76b5c85767ac3b152af9f454cc64cdb1ff4635326",
+    "python/v47_sampling.py": "3efce0f0105cc1356b9238ff2ed6e77891cdf1eab6f49409e355967a57dba5a1"
+  },
+  "implementation_audit": "outputs/v47-sampled-transition-estimation/implementation-audit.json",
+  "implementation_audit_sha256": "2d5411c5c8be93b21bc1eb39968dd36e5b317d9ca33b5628391c386bf1e71f81",
+  "lock_payload_sha256": "6b906986ed52090194b4eb5a7fa1b9bd9ce3da9ba3faca83bc1f80f116edce82",
+  "schema_version": 47,
+  "source_v46_outcome_lock": "configs/v46-outcome-lock.json",
+  "source_v46_outcome_lock_sha256": "098cbae4a795b73ffcd517a725ed8f431c54c38f4f670ea7dc98b533c3c86233"
+}

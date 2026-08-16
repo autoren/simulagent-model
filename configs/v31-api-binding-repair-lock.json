@@ -1,0 +1,31 @@
+{
+  "experiment": "v31_mlx_api_binding_repair",
+  "failure": {
+    "attempt": "outputs/v31-signed-fact-adaptation/failed-attempts/frozen-api-binding/attempt.json",
+    "attempt_sha256": "bb425881246ab355ffb9f9926d0c2a3a1404f854d27563fbaf295cfcd5393fbc",
+    "completed_seeds": 0,
+    "evaluation_features_read": 0,
+    "evaluation_records_read": 0,
+    "exception": "TypeError: make_loss.<locals>.loss_fn() missing 1 required positional argument: 'entity_mask'",
+    "optimizer_updates": 0,
+    "parameter_artifacts": 0
+  },
+  "implementation": {
+    "docs/v31-api-binding-repair.md": "dcd42cec13f9bb03cd39662e115a42b1ed8c399e8dd34ae9975801d317e48670",
+    "python/freeze_v31_api_binding_repair.py": "eea038f7503a502016056391ef2e4b184242737714ed872f261c6a840e0c73ed",
+    "python/freeze_v31_trained_systems_repaired.py": "518df6fad96caf2db189f59f798aefaec8309c8ac1ff44190fdfb4c54b0b799d",
+    "python/run_v31_training_api_repair.py": "abe481a9a66ed58b16a3bb44d4746201d290f3350ab6a31216d78d21f84d92c0"
+  },
+  "lock_payload_sha256": "ad5b6480ff286da7197f742bcab78651e11ff8d9047c0e390d9e7ddd6b951a10",
+  "protocol_lock": "configs/v31-signed-fact-adaptation-lock.json",
+  "protocol_lock_sha256": "778df5dde305fa2184d3e8529adf28c112a3d3cf49e4d1b94e40993d7f97c8e6",
+  "repair": {
+    "evaluation_code_changes": 0,
+    "extra_seeds": 0,
+    "extra_training_runs": 0,
+    "gate_changes": 0,
+    "method_changes": 0,
+    "scope": "inject_captured_module_as_locked_closure_first_argument_only"
+  },
+  "schema_version": "31r1"
+}

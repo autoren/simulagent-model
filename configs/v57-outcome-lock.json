@@ -1,0 +1,52 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "collect_v58_evaluation_language": false,
+    "collect_v58_pilot_language": false,
+    "freeze_v58_collection_protocol": true,
+    "generate_blinded_v58_author_packets": false,
+    "human_authored_language_claim": false,
+    "joint_new_surface_new_concept_claim": false,
+    "model_access": false,
+    "open_language_claim": false,
+    "probabilistic_or_planning_claim": false,
+    "run_additional_v57_candidate_evaluation": false,
+    "run_v58_candidate_evaluation": false,
+    "write_and_audit_v58_collection_protocol": true
+  },
+  "decision": "qualify_controlled_definition_conditioned_new_concept_transfer_and_authorize_v58_collection_protocol_only",
+  "experiment": "v57_outcome_lock",
+  "lock_payload_sha256": "c88c36b1ef5147be6d5d19cd9f854ac12926d14733805ae9df94fb5f9bf89995",
+  "population_seal": "configs/v57-population-seal.json",
+  "population_seal_sha256": "ef592e100d752a012a6716916cd9cae7fd15f417a6a81012c221460821e478e2",
+  "post_result_audit": "outputs/v57-definition-augmented-ontology-transfer/post-result-audit.json",
+  "post_result_audit_sha256": "9f1c4cc45e1bf45ef29c26597113db4a1d09573cffae2c4c0ed26ffec33cd842",
+  "qualification": {
+    "checks": {
+      "core_coverage": true,
+      "core_exact_ast": true,
+      "every_concept_kind_exact_ast": true,
+      "every_definition_template_exact_ast": true,
+      "every_ontology_pack_exact_ast": true,
+      "every_safety_condition_rate": true,
+      "exact_bound_action": true,
+      "mutation_kill_rate": true,
+      "no_definition_abstention_rate": true,
+      "opaque_name_only_abstention_rate": true,
+      "predicate_compiled_truth": true,
+      "safety_rate": true,
+      "shuffled_schema_exact_ast": true,
+      "truth_access_count": true,
+      "unexpected_evaluation_attempt_count": true
+    },
+    "passed": true
+  },
+  "qualification_passed": true,
+  "result": "outputs/v57-definition-augmented-ontology-transfer/evaluation/result.json",
+  "result_sha256": "facc5aab20541b4655b62a6911f4a7ba3f9b4f7a8b47b11acba2be7324a6250e",
+  "schema_version": 57,
+  "summary": "docs/v57-results.md",
+  "summary_sha256": "e4e9af187fa94f6762f7bd2b7d74ebd891b74703e153b39317f2cdcee1c54cf6",
+  "v58_design_lock": "configs/v58-design-lock.json",
+  "v58_design_lock_sha256": "68f4d2663981f2dd79ae3bd4c1f40af26cdcbb8de89b61650897e0a5a99525bc"
+}

@@ -1,0 +1,24 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_repair_evaluation_once": true
+  },
+  "experiment": "v52r2_implementation_lock",
+  "implementation_audit": "outputs/v52r2-joint-normalization-repair/implementation-audit.json",
+  "implementation_audit_sha256": "5a86d262491d715394a0f51c677e7a3e282cb40654d7b13088d8ecf829b8abcb",
+  "lock_payload_sha256": "c9e54a00ed7e83a1b2ea286fb060c64f51303067a8d225342710d01d5b3ae708",
+  "repair_implementation": {
+    "python/audit_and_summarize_v52r2.py": "60ef83ab2f95607b40be2593fb37a0b0aac0a147628de9d4c56b4a48ef34d611",
+    "python/evaluate_v52r2_particle.py": "d138cb24f5af4194fd45d9eaef5d8d056015cc0b775d8b22cc6977d54e90f37f",
+    "python/freeze_v52r2_outcome.py": "7c72a29a4e2bdfae64bfe0b869c5866a7792d31274afbab181fef06d729cddf1",
+    "python/test_v52r2_repair.py": "1e306807e41a2a4e09e99deff1aa9d1aeb6c37805895816a0d0f0aa9807bc4b6",
+    "python/v52r2_particle.py": "7139d05e5d48eacabc87b8483e04e45e6171220418218c42c795277e7aec3331",
+    "scripts/run-v52r2-joint-normalization-repair.sh": "42b738fb36967d2d20b3098e4946e4904d373a62d1edfc101db73abf9667f54c"
+  },
+  "repair_lock": "configs/v52r2-repair-lock.json",
+  "repair_lock_sha256": "7ef147e2aced9ca674bcb912221eb02d8e384f2ca4890fbe84802f9167b6b871",
+  "revision": "r2",
+  "schema_version": 52,
+  "source_population_seal": "configs/v52-population-seal.json",
+  "source_population_seal_sha256": "cc02e8a720aa76f30dd5b4da3c59009c4387741d81a06e4d2b1fe91cb4a9634f"
+}

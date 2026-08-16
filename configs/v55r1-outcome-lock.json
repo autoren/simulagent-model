@@ -1,0 +1,51 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "approximate_or_learned_planning": false,
+    "construct_additional_v55_or_v55r1_population": false,
+    "language_grounding": false,
+    "long_horizon_claim": false,
+    "model_access": false,
+    "preregister_symbolic_and_probabilistic_policy_verification": true,
+    "run_additional_v55_or_v55r1_evaluation": false,
+    "run_formal_verification": false
+  },
+  "combined_planning_layer_qualification_passed": true,
+  "decision": "authorize_symbolic_and_probabilistic_policy_verification_preregistration_only",
+  "experiment": "v55r1_outcome_lock",
+  "lock_payload_sha256": "d2f597877515c40d06e9ba9a080adfab98622eadb1452b39086061ae607d5801",
+  "population_seal": "configs/v55r1-population-seal.json",
+  "population_seal_sha256": "e57b5e5ce45e6d1b9c29717e9909539f8debd6e4f660fdaa92f57ba982a3e99d",
+  "post_result_audit": "outputs/v55r1-delayed-consequence-adequacy-confirmation/post-result-audit.json",
+  "post_result_audit_sha256": "f371e7decaa5debb3be7aad173b911b6f8cf9cd1fede181424fc2c261ba3eed1",
+  "qualification": {
+    "checks": {
+      "belief_and_observation_normalization": true,
+      "canonical_tie_break": true,
+      "complete_candidate_actions": true,
+      "completed_task_fraction": true,
+      "delayed_consequence_sensitive_fraction": true,
+      "delayed_sensitive_each_history_class": true,
+      "finite_value_rate": true,
+      "future_observation_firewall": true,
+      "independent_policy_evaluation": true,
+      "independent_streams": true,
+      "minimum_root_action_or_value_change_tasks": true,
+      "root_optimal_set_membership": true,
+      "root_value_error": true,
+      "truth_field_firewall": true
+    },
+    "passed": true
+  },
+  "result": "outputs/v55r1-delayed-consequence-adequacy-confirmation/evaluation/result.json",
+  "result_sha256": "ef00da789cae7fe8302f0c66dd85b67a0121011c1350cef0e3e9c41b86b6625c",
+  "revision": "r1",
+  "schema_version": 55,
+  "summary": "docs/v55r1-results.md",
+  "summary_sha256": "df54de0382776d721f6e41c48324e26b6e9604e7a004d5dd22c1da27d1e776cc",
+  "v55_outcome_lock": "configs/v55-outcome-lock.json",
+  "v55_outcome_lock_sha256": "a31cb7b52f2724b67e727e9d2323eaeecd7f810d60b164fcd6a70e5279616b79",
+  "v55_passing_gate_count": 19,
+  "v55_standalone_qualification_passed": false,
+  "v55r1_qualification_passed": true
+}

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 58,
+  "experiment": "v58_human_authored_known_ontology_language",
+  "sourceV56OutcomeLock": "configs/v56-outcome-lock.json",
+  "scientificQuestion": "can_a_frozen_semantic_interface_parse_independently_human_authored_surface_forms_over_a_known_ontology_when_evaluation_is_split_by_author_and_construction_family",
+  "claimBoundary": {
+    "humanAuthoredEvaluationLanguage": true,
+    "knownFrozenOntology": true,
+    "authorHeldOutEvaluation": true,
+    "constructionFamilyHeldOutEvaluation": true,
+    "exactAstPrimaryMetric": true,
+    "ambiguityAndUnknownRequireAbstention": true,
+    "newConcepts": false,
+    "definitionAugmentedTransfer": false,
+    "jointNewConceptAndNewSurfaceClaim": false,
+    "syntheticTextCountedAsHuman": false,
+    "probabilisticInferenceOrPlanningEvaluation": false,
+    "primaryClaim": "human_surface_transfer_over_known_concepts_with_author_and_structure_level_holds_out"
+  },
+  "collection": {
+    "knownOntologySource": "v40_frozen_ontology_packs_and_semantic_asts",
+    "pilotAuthorsExcludedFromEvaluation": 2,
+    "minimumEvaluationAuthors": 10,
+    "acceptedUtterancesPerEvaluationAuthor": 60,
+    "minimumEvaluationUtterances": 600,
+    "constructionFamilies": ["plain_assertion", "lexical_negation", "denial", "double_denial", "contrastive_focus", "unresolved_status", "direct_relation", "inverse_relation", "argument_reversal", "distractor_scope"],
+    "splitUnit": ["author", "construction_family"],
+    "randomUtteranceSplit": false,
+    "targetAstKnownFromPrompt": true,
+    "independentSemanticValidation": "two_blinded_validators_with_adjudication",
+    "ambiguousItems": "retained_in_a_separate_abstention_stratum",
+    "requiredProvenance": ["anonymous_writer_id", "collection_round", "prompt_id", "timestamp", "consent_and_license_attestation"],
+    "syntheticOrModelGeneratedUtterances": "excluded"
+  },
+  "candidateProtocol": {
+    "freezeBeforeEvaluationAuthorTextIsVisible": true,
+    "developmentTextMayUsePilotAuthorsOnly": true,
+    "evaluationAuthorTextMayNotTrainTunePromptOrSelectCandidate": true,
+    "canonicalCompilerAndExecutorRemainFrozen": true,
+    "abstentionIsAnExplicitOutput": true,
+    "exactAstEquivalence": "canonical_predicate_arguments_sign_and_outer_operation"
+  },
+  "controls": {
+    "frozenV39DeclaredCompiler": true,
+    "lexicalLookupBaseline": true,
+    "majorityAstBaseline": true,
+    "shuffledLabelSelectivityControl": true,
+    "surfaceFeatureControl": true,
+    "humanUpperBound": "blinded_validator_agreement_and_adjudication"
+  },
+  "metrics": ["coverage", "exact_ast", "compiled_truth", "selective_exact_ast", "worst_author_exact_ast", "worst_construction_family_exact_ast", "negative_composition_exact_ast", "relation_order_accuracy", "abstention_safety", "validator_agreement", "shuffled_label_selectivity", "provenance_completeness", "target_leak_count", "unexpected_evaluation_attempt_count"],
+  "gates": {
+    "minimumEvaluationAuthors": 10,
+    "minimumAcceptedEvaluationUtterances": 600,
+    "minimumCoverage": 0.9,
+    "minimumExactAst": 0.9,
+    "minimumCompiledTruth": 0.95,
+    "minimumSelectiveExactAst": 0.97,
+    "minimumWorstAuthorExactAst": 0.75,
+    "minimumWorstConstructionFamilyExactAst": 0.75,
+    "minimumNegativeCompositionExactAst": 0.85,
+    "minimumRelationOrderAccuracy": 0.95,
+    "minimumAbstentionSafety": 0.95,
+    "minimumValidatorAgreement": 0.9,
+    "minimumShuffledLabelSelectivity": 0.5,
+    "minimumProvenanceCompleteness": 1.0,
+    "maximumTargetLeakCount": 0,
+    "maximumUnexpectedEvaluationAttemptCount": 0
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_qualify_human_authored_surface_transfer_over_known_concepts_only",
+    "if_overall_metrics_pass_but_author_or_construction_minima_fail_reject_the_transfer_claim",
+    "if_validator_agreement_fails_repair_collection_and_adjudication_before_scoring_a_candidate",
+    "only_separate_v57_and_v58_passes_authorize_preregistration_of_the_joint_two_by_two_transfer_design"
+  ],
+  "firewall": {
+    "claimHumanAuthorshipForSyntheticText": "forbidden",
+    "randomUtteranceSplit": "forbidden",
+    "evaluationAuthorOverlapWithPilot": "forbidden",
+    "candidateChangesAfterEvaluationTextAccess": "forbidden",
+    "targetAstAccessByCandidate": "forbidden",
+    "unadjudicatedAmbiguityInPrimaryStratum": "forbidden",
+    "evaluationRepeats": "forbidden",
+    "newConceptClaim": "forbidden",
+    "jointTransferClaim": "forbidden",
+    "probabilisticOrPlanningClaim": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditCollectionProtocol": true,
+    "generateBlindedAuthorPackets": false,
+    "collectPilotLanguage": false,
+    "collectEvaluationLanguage": false,
+    "writeCandidateParser": false,
+    "runCandidateEvaluation": false
+  }
+}

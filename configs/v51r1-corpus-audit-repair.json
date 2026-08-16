@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 51,
+  "revision": "r1",
+  "experiment": "v51r1_corpus_identity_audit_repair",
+  "sourceDesignLock": "configs/v51-design-lock.json",
+  "sourceImplementationLock": "configs/v51-implementation-lock.json",
+  "sourceFailedCorpusAudit": "outputs/v51-simulation-based-calibration/corpus-audit.json",
+  "sourceCorpus": "data/v51-simulation-based-calibration/replications.jsonl",
+  "diagnosis": "the_frozen_structural_key_excludes_observation_masks_and_therefore_is_not_a_complete_identity_for_a_partially_observed_experiment",
+  "singleAuthorizedChange": {
+    "oldIdentity": ["entities", "initial_state", "actions"],
+    "newIdentity": ["entities", "initial_state", "actions", "masks"],
+    "reason": "known_value_independent_masks_are_part_of_the_frozen_observation_design_and_materially_distinguish_partial_observation_experiments"
+  },
+  "invariants": {
+    "regenerateCorpus": false,
+    "changeCorpusBytes": false,
+    "changeMechanicRegistry": false,
+    "changeInference": false,
+    "changePosteriorDraws": false,
+    "changeRanks": false,
+    "changeBugControls": false,
+    "changeGates": false,
+    "accessCalibrationOutcomes": false,
+    "runCalibration": false,
+    "modelAccess": false
+  },
+  "repairGates": {
+    "sourceAuditHasOnlyIdentityFirewallError": true,
+    "allNonIdentitySourceChecksPassed": true,
+    "allSupportObservationDesignsUnique": true,
+    "allQueryObservationDesignsUnique": true,
+    "supportQueryObservationDesignsDisjoint": true,
+    "zeroV50ObservationDesignOverlap": true
+  },
+  "decision": "if_and_only_if_all_repair_gates_pass_authorize_sealing_the_unchanged_v51_corpus_and_running_the_original_frozen_calibration_once"
+}

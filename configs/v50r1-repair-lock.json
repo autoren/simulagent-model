@@ -1,0 +1,27 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "run_repair_development_once": true
+  },
+  "config": "configs/v50r1-execution-repair.json",
+  "config_sha256": "64cbf718ab20507f6629172a496fe43ca424412b9377e89c0351802c24d455e9",
+  "experiment": "v50r1_repair_lock",
+  "failed_attempt": "outputs/v50-history-dependent-belief-filtering/development-attempt.json",
+  "failed_attempt_sha256": "9810f651dd9255015eb566cbd957ac0629c2f92523c93d4290d6271067326fdb",
+  "lock_payload_sha256": "16608f8dedcbe052f2259e3bed0bcaf42ada68cf9bf8f091438a309094225828",
+  "plan": "docs/v50r1-execution-repair-plan.md",
+  "plan_sha256": "68ebb8c5f9fffa289c279cc8e3510ac99ca98052ce6ebb42bae9a08f6501ce95",
+  "repair_audit": "outputs/v50r1-execution-repair/repair-audit.json",
+  "repair_audit_sha256": "f7d6b0b76f17f018f7c8227bf4337bbfda28969f1504f3ba95afc731ea1d6f8e",
+  "repair_implementation": {
+    "python/evaluate_v50r1_history.py": "fb4c70126e2a1abcba5d9f1adaaf64041c94198a3672f34ad8bf3d1cfdc08c72",
+    "python/freeze_v50r1_outcome.py": "2ad7ae56cb49d23e353790749670fc1fff8cf97545a8ddce51a1e82fb1910913"
+  },
+  "schema_version": "50r1",
+  "source_corpus_seal": "configs/v50-corpus-seal.json",
+  "source_corpus_seal_sha256": "52af01b7b13f651b82396e7f335c440093682f7a2f9d69360bc9757c44514f77",
+  "source_implementation_lock": "configs/v50-implementation-lock.json",
+  "source_implementation_lock_sha256": "8635b51ef05c6d2cb997cd98b41493ec168c42f5c7f5fc1ffa427d318209c7e0"
+}

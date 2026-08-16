@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "50r1",
+  "experiment": "v50r1_execution_repair",
+  "sourceCorpusSeal": "configs/v50-corpus-seal.json",
+  "sourceImplementationLock": "configs/v50-implementation-lock.json",
+  "failedAttempt": "outputs/v50-history-dependent-belief-filtering/development-attempt.json",
+  "failureClass": "diagnostic_decimal_to_float_underflow_before_result_materialization",
+  "observedException": "ValueError_expected_a_positive_input_got_0_0_in_v49_effective_count",
+  "scientificOutcomeAccessed": false,
+  "mechanicMetricsMaterialized": false,
+  "resultMaterialized": false,
+  "permittedChange": {
+    "target": "non_gating_effective_program_count_after_support_diagnostic",
+    "oldComputation": "convert_each_positive_decimal_weight_to_float_before_log",
+    "newComputation": "compute_entropy_and_exponential_in_decimal_then_convert_final_effective_count_to_float",
+    "predictionOrPosteriorSemanticsChanged": false,
+    "populationChanged": false,
+    "metricsChanged": false,
+    "gatesChanged": false,
+    "heldoutOutcomesChanged": false
+  },
+  "firewall": {
+    "reuseExactV50CorpusSeal": true,
+    "preserveFailedAttempt": true,
+    "singleRepairRun": true,
+    "developmentOutcomeSelection": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "finalEvaluation": false
+  }
+}

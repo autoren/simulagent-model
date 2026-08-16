@@ -1,0 +1,23 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_calibration_once": true
+  },
+  "corpus": {
+    "path": "data/v51-simulation-based-calibration/replications.jsonl",
+    "records": 2048,
+    "sha256": "aeb5eb2c7164eaf258034a2c2b1382ccad3d7518a1016bdf7a2def116541bb58"
+  },
+  "corpus_audit": "outputs/v51r1-corpus-audit-repair/corpus-audit.json",
+  "corpus_audit_sha256": "c9ff5d508b996c58507c9533946f3fd424f172b84bdac12803c19e0a78838eb0",
+  "experiment": "v51r1_corpus_seal",
+  "implementation_lock": "configs/v51-implementation-lock.json",
+  "implementation_lock_sha256": "53680d007a4e5825cd13bbdf4b1d4e1982bb0e9ff9f85eeb84a0c2ac762beb6b",
+  "manifest": "data/v51-simulation-based-calibration/manifest.json",
+  "manifest_sha256": "ce2619df8ef3120891507d43da872493254670bce0a5cf5b948cf5349c3ae8c7",
+  "repair_lock": "configs/v51r1-corpus-repair-lock.json",
+  "repair_lock_sha256": "d06f11709df5f2fcd9f7a6c11eb5598cf59dd02a2d6d9541a2226f77ce943bde",
+  "revision": "r1",
+  "schema_version": 51,
+  "seal_payload_sha256": "428f90e2dd1968f22982d403a7e952a06119588965c7247f1d2f946303a01990"
+}

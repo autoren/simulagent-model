@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_particle_evaluation_once": true
+  },
+  "experiment": "v52_population_seal",
+  "implementation_lock": "configs/v52-implementation-lock.json",
+  "implementation_lock_sha256": "f302b86ab0ebaf142edefa55b70e6487324ddc06eed01b407046aab6f0ccda25",
+  "manifest": "data/v52-rao-blackwellized-particle-filtering/manifest.json",
+  "manifest_sha256": "97b9c41e09a751ceb2f8bc359cebf7d3c0b001bccec31366151eb913e3b30e19",
+  "population_audit": "outputs/v52-rao-blackwellized-particle-filtering/population-audit.json",
+  "population_audit_sha256": "2fc40068760473c57f3fc83e1e78579409fda5e3fbd81e1af689bbd48877afe9",
+  "populations": {
+    "exact": {
+      "path": "data/v52-rao-blackwellized-particle-filtering/exact.jsonl",
+      "records": 96,
+      "sha256": "626a4833c5b9b269c114d1049d5f6dadaeadfff9389ace226d470cad01f00dff"
+    },
+    "sbc": {
+      "path": "data/v52-rao-blackwellized-particle-filtering/sbc.jsonl",
+      "records": 1024,
+      "sha256": "2184e98ca85e7a57106d4b6c6aa8e94f7283d8aeb870db57d6c440c93a5588b5"
+    },
+    "scale": {
+      "path": "data/v52-rao-blackwellized-particle-filtering/scale.jsonl",
+      "records": 96,
+      "sha256": "6f02c36d4d5e38fdc2f85051730865877c71cdb68ee24b6fe67355c237470db4"
+    }
+  },
+  "schema_version": 52,
+  "seal_payload_sha256": "5dd2d3e22d3fcba3ec15c274764fee291066ba23c3312ee3557acec33d13bbd4"
+}

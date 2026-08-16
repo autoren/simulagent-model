@@ -1,0 +1,233 @@
+{
+  "authorization": {
+    "construct_development_population": true,
+    "model_access": false,
+    "run_development": false
+  },
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "adapterTraining": false,
+      "continuousProbabilityLearning": false,
+      "finalEvaluation": false,
+      "knownObservationProcess": true,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "noisySensors": false,
+      "openOntology": false,
+      "partialObservation": true,
+      "persistentLatentState": true,
+      "primaryClaim": "exact_passive_belief_state_inference_under_known_noiseless_value_independent_observation_masks_and_a_declared_finite_stochastic_program_space",
+      "unknownProgramAndProbability": true
+    },
+    "conditions": {
+      "literalMaskedTraceLookup": "non_lifted_exact_support_query_key_match",
+      "mapLatentStateCollapse": "replace_the_filtered_world_and_queue_belief_with_its_single_map_configuration_before_suffix_prediction",
+      "matchedFullyObservedInference": "same_programs_latent_trials_actions_and_queries_with_complete_support_and_prefix_states",
+      "observationHistoryAblation": "condition_only_on_the_latest_visible_query_step_and_discard_earlier_prefix_observations",
+      "oracleProgramPartialObservation": "target_program_fixed_but_hidden_world_and_queue_filtered_exactly",
+      "partiallyObservedJointInference": "primary",
+      "uniformizedOutcomeMass": "uniform_mass_over_the_primary_nonzero_suffix_support"
+    },
+    "constructionRequirements": {
+      "maskQuotasBalancedWithinMechanic": true,
+      "minimumFractionQueriesWhereHiddenStateCanAffectScoredSuffix": 0.75,
+      "minimumFractionQueriesWithNondegenerateOracleLatentBelief": 0.75,
+      "minimumHiddenAtomsPerStep": 1,
+      "minimumObservedAtomsPerStep": 1,
+      "sameLatentDrawsAcrossPartialAndFullConditions": true,
+      "supportQueryStructuralOverlap": 0
+    },
+    "decisionHierarchy": [
+      "if_oracle_filter_joint_inference_prediction_calibration_and_controls_pass_authorize_preregistration_of_declared_language_composition_with_passive_partial_observation",
+      "if_oracle_program_filter_fails_repair_latent_world_or_delayed_queue_semantics_before_scientific_interpretation",
+      "if_oracle_filter_passes_but_joint_program_inference_fails_revisit_identifiability_or_evidence_coverage_under_masking",
+      "if_primary_prediction_passes_but_belief_collapse_or_history_ablation_is_not_worse_do_not_claim_persistent_belief_state_use",
+      "if_only_language_free_partial_observation_passes_preregister_a_separate_matched_language_composition_test",
+      "do_not_add_active_selection_noisy_sensors_open_ontology_continuous_probabilities_or_neural_training_in_v49"
+    ],
+    "experiment": "v49_passive_partial_observation",
+    "firewall": {
+      "V46V47OrV48ProgramsOrCasesReused": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "continuousProbabilities": "forbidden",
+      "developmentOutcomeAccessDuringImplementation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "modelAccess": "forbidden",
+      "noisySensors": "forbidden",
+      "openOntology": "forbidden"
+    },
+    "frozenComponents": {
+      "ontology": "v44_declared_boolean_ontology",
+      "probabilityVocabulary": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "programPrior": "uniform_over_frozen_finite_v49_registry",
+      "stochasticDsl": "v47_finite_probability_transition_dsl",
+      "transitionSemantics": "v47_exact_world_and_delayed_queue_semantics"
+    },
+    "gates": {
+      "maximumCalibrationError": 0.07,
+      "maximumEveryFamilyMeanConditionalLatentTv": 0.12,
+      "maximumLiteralMaskedTraceLookupCoverage": 0.05,
+      "maximumOracleProgramPartialMeanTv": 1e-10,
+      "maximumPartialMinusFullLogLoss": 0.05,
+      "maximumPartialMinusFullMeanTv": 0.05,
+      "maximumPrimaryMeanConditionalLatentTv": 0.08,
+      "maximumProbabilityParameterMeanAbsoluteError": 0.07,
+      "minimumBeliefNormalization": 1.0,
+      "minimumFiniteLogLossRate": 1.0,
+      "minimumLikelihoodNormalization": 1.0,
+      "minimumMapLatentCollapseLogLossDisadvantageNats": 0.01,
+      "minimumMapSchemaRecovery": 0.8,
+      "minimumMeanTargetProgramPosterior": 0.7,
+      "minimumObservationHistoryAblationLogLossDisadvantageNats": 0.005,
+      "minimumPredictiveNormalization": 1.0,
+      "minimumTargetLatentContinuationRetention": 1.0,
+      "minimumUniformizedLogLossDisadvantageNats": 0.03
+    },
+    "inference": {
+      "perEpisodeOracleChoices": false,
+      "predictive": "posterior_mixture_of_exact_conditional_complete_latent_suffix_distributions",
+      "primary": "exact_forward_sum_product_joint_posterior_over_program_probability_world_and_delayed_event_queue",
+      "queryUpdate": "condition_the_support_posterior_on_the_masked_query_prefix_before_predicting_the_suffix",
+      "selectionOnDevelopmentEvaluation": false,
+      "supportUpdate": "multiply_marginal_masked_trace_likelihoods_and_normalize_in_log_space",
+      "zeroLikelihoodHandling": "retain_exact_zero_and_fail_if_all_candidates_have_zero_evidence"
+    },
+    "metrics": {
+      "beliefDiagnostics": [
+        "filtered_configuration_entropy",
+        "predictive_entropy",
+        "expected_within_program_entropy_as_aleatoric_component",
+        "program_suffix_mutual_information_as_epistemic_component",
+        "effective_program_count",
+        "target_program_retention"
+      ],
+      "induction": [
+        "map_schema_recovery",
+        "mean_target_program_posterior",
+        "probability_parameter_mean_absolute_error"
+      ],
+      "matchedComparison": [
+        "partial_minus_full_mean_tv",
+        "partial_minus_full_log_loss"
+      ],
+      "prediction": [
+        "conditional_latent_suffix_total_variation",
+        "heldout_conditional_suffix_log_loss",
+        "multiclass_brier_score",
+        "ten_bin_multiclass_calibration_error"
+      ],
+      "statisticalUnit": "mechanic_episode",
+      "strata": [
+        "family",
+        "probability",
+        "timing",
+        "sequence_length",
+        "visible_fraction",
+        "query_prefix_length"
+      ],
+      "uncertainty": "mechanic_cluster_bootstrap_95_percent_interval_with_10000_resamples_and_seed_4943",
+      "validity": [
+        "masked_trace_likelihood_normalization",
+        "filtered_belief_normalization",
+        "conditional_predictive_normalization",
+        "finite_heldout_log_loss",
+        "target_latent_continuation_retention"
+      ]
+    },
+    "observationContract": {
+      "delayedEventQueueIsLatentState": true,
+      "initialWorld": "complete_and_observed_before_each_trial",
+      "maskKnownToAgent": true,
+      "maskSampledIndependentlyOfProgramAndRealizedValues": true,
+      "missingnessMechanism": "known_noiseless_missing_completely_at_random_with_preregistered_structural_coverage_constraints",
+      "passiveFixedInterventions": true,
+      "postActionObservation": "truth_values_only_for_the_public_step_specific_atom_mask",
+      "queryEvidence": "sampled_masked_prefix_with_at_least_one_unobserved_reachable_state_atom",
+      "queryOutcomesScorerOnly": true,
+      "queryTarget": "conditional_distribution_over_the_complete_latent_suffix_trajectory",
+      "sensorNoise": "none",
+      "supportLikelihood": "sum_exact_complete_trajectory_probability_over_all_latent_trajectories_consistent_with_the_masked_trace",
+      "unobservedAtomsRemainLatent": true
+    },
+    "population": {
+      "caseOverlapWithV47OrV48": 0,
+      "developmentEvaluationMechanics": 24,
+      "developmentFitMechanics": 24,
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "families": [
+        "immediate_bernoulli_mutation",
+        "delayed_bernoulli_scheduling",
+        "state_conditional_probability",
+        "interleaved_deterministic_and_stochastic"
+      ],
+      "generatorSeed": 4931,
+      "heldoutConditionalContinuationsPerQuery": 64,
+      "maskSeed": 4937,
+      "mechanics": 48,
+      "mechanicsPerFamily": 12,
+      "probabilityCounts": {
+        "1/2": 16,
+        "1/4": 16,
+        "3/4": 16
+      },
+      "programOverlapWithV46V47OrV48": 0,
+      "queryEpisodesPerMechanic": 24,
+      "queryEvidencePrefixLengths": [
+        1,
+        2,
+        3
+      ],
+      "realizedTrialsPerSupportIntervention": 32,
+      "samplingSeed": 4933,
+      "sequenceLengths": [
+        4,
+        5,
+        6
+      ],
+      "supportInterventionsPerMechanic": 12,
+      "visibleFractions": [
+        0.25,
+        0.5,
+        0.75
+      ]
+    },
+    "schemaVersion": 49,
+    "scientificQuestion": "can_the_exact_structured_system_maintain_and_use_a_joint_posterior_over_hidden_dynamic_state_stochastic_program_and_probability_from_passively_masked_trajectories",
+    "sourceV48OutcomeLock": "configs/v48-outcome-lock.json",
+    "stageAuthorization": {
+      "constructDevelopmentPopulation": false,
+      "modelAccess": false,
+      "runDevelopment": false,
+      "writeAndAuditBeliefInferenceImplementation": true
+    }
+  },
+  "design_lock": "configs/v49-design-lock.json",
+  "design_lock_sha256": "9a2b2ace027a55a1ae476c2d3ba53eb11142aef9f852979a460e12f04072737c",
+  "expected_corpus_sha256": "d9c70ff8b3ac479b26b208e0c2d86f7c907c6185d6f4d01b9ca855e69bb8ad6f",
+  "experiment": "v49_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v49.py": "9f8261817e4263779d369932e6dbc761948529bd9058cd54d31af65a7509d38e",
+    "python/audit_v49_corpus.py": "0b039b8f146e57f9ca76d32a1e0ac59c3252d9d973bd87ded404eca78e652c27",
+    "python/evaluate_v49_partial.py": "d811b855eb78a969feb971361f54f9dbb31f54f358b4a11ad2963154067267cc",
+    "python/freeze_v49_outcome.py": "5cdfb089e97fdd3958fb736d91bb61ec2cd2d87003c76dd5c4f2c39a350ca6e3",
+    "python/generate_v49_partial.py": "e9895c80900d2b92f603e746be185872cdbebcdfee2670381e5f600e54f1f93e",
+    "python/seal_v49_corpus.py": "d6ca5cfc31c951db8d219dd2dd5247be6649aba9d7d8a99a066f329a0535480b",
+    "python/v49_belief.py": "5d8bea80ce9559ec921bc7e392ca925ec36d7b378b63b5e45ac2d750081e6c6e",
+    "scripts/run-v49-passive-partial-observation.sh": "b53091bdab5ccc96455dd3ae9d03fe6760dc3314395e6fe5903238af9051dd0f"
+  },
+  "implementation_audit": "outputs/v49-passive-partial-observation/implementation-audit.json",
+  "implementation_audit_sha256": "2bd0ee730ac40332b475cddfcb2654370fe7fabcb76e0a16d75f9b7d2abe431f",
+  "lock_payload_sha256": "afdb39681e338bfde5ef2b79c8b2e98dbbd92c8750d1a1ae107393f018dbccec",
+  "schema_version": 49
+}

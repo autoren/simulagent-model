@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "change_v54_design_implementation_or_populations": false,
+    "language_grounding": false,
+    "model_access": false,
+    "reward_or_planning": false,
+    "run_v54_active_evaluation_once": true
+  },
+  "evaluation_implementation_lock": "configs/v54-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "3ef7534769cd8453aeb77baa78a07544da68435035de368b0e42fb4c8428fc8a",
+  "experiment": "v54_population_seal",
+  "implementation_lock": "configs/v54-implementation-lock.json",
+  "implementation_lock_sha256": "3580ab739efd0db16297008d5edcea66974bd8453e38b28d684e272e9f9dcec2",
+  "manifest": "data/v54-exact-one-step-eig/manifest.json",
+  "manifest_sha256": "dc3ddda4111f243be88752292baba1d69d193c1e29a44cf931aa822f4dc706eb",
+  "population_audit": "outputs/v54-exact-one-step-eig/population-audit.json",
+  "population_audit_sha256": "c0d0cd8854a1987def72abefdb713e92b88dc6be27e29a4496a8afce0d3b0adf",
+  "population_hash": "b209cc9921aaf49207edbe3cb1fa47255cd3fef882a6ea7fa8d82692274357d5",
+  "populations": {
+    "adaptive_sbc": {
+      "path": "data/v54-exact-one-step-eig/adaptive_sbc.jsonl",
+      "sha256": "f13d14abb84507aa82af8cd4c3c5252e1da44d8acc0b05e9ae534d08a4e647b6"
+    },
+    "selection": {
+      "path": "data/v54-exact-one-step-eig/selection.jsonl",
+      "sha256": "7c40bca60f6cc7977840a492eac05636a4797038095af2a9232e2c8eeb2a198e"
+    }
+  },
+  "schema_version": 54,
+  "seal_payload_sha256": "129024ae34f76fad1d62445455a2d4823740e4c73ab42e0e81d570aa655b9cf8"
+}

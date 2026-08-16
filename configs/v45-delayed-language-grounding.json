@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 45,
+  "experiment": "v45_declared_delayed_language_grounding",
+  "scientificQuestion": "can_declared_state_and_ordered_action_language_including_an_explicit_wait_command_populate_the_frozen_v44_hidden_queue_reasoner_without_losing_delayed_mechanic_induction_or_execution",
+  "sourceV44OutcomeLock": "configs/v44-outcome-lock.json",
+  "sourceV44CorpusSeal": "configs/v44-corpus-seal.json",
+  "pairedDesign": {
+    "reuseSealedV44MechanicsAndCases": true,
+    "mechanics": 40,
+    "supportSequences": 46,
+    "querySequences": 960,
+    "waitCounterfactualPairs": 480,
+    "reasonForPairing": "hold_delayed_mechanics_tick_semantics_states_actions_and_targets_fixed_while_changing_only_the_exposed_representation",
+    "newEntityNamespaces": true,
+    "freshEpisodePredicateLexemes": true,
+    "freshEpisodeOperatorCues": true,
+    "freshEpisodeActionCues": true,
+    "noV44TargetDrivenSelection": true
+  },
+  "languageInterface": {
+    "stateCompiler": "frozen_v39_declared_language_compiler",
+    "stateGraphComparator": "frozen_v43r1_canonical_duplicate_safe_comparator",
+    "boundActionCompiler": "frozen_v43_declared_template_and_ordinal_contract",
+    "waitExtension": "declared_zero_argument_wait_cue_and_exact_step_production",
+    "sequenceOrder": "explicit_contiguous_one_based_step_ordinals",
+    "tickSemantics": "declared_structured_contract_identical_to_v44",
+    "partialUnknownEncoding": "v39_unresolved_operation",
+    "unsupportedOrAmbiguousPolicy": "abstain_and_return_conservative_full_outcome_set",
+    "openParaphrase": false
+  },
+  "frozenReasoning": {
+    "delayedDsl": "python/v44_delayed.py",
+    "mechanicRegistry": "frozen_v44_registry",
+    "supportAndQueries": "frozen_v44_corpus",
+    "versionSpaceInduction": "exact_frozen_v44_filtering",
+    "eventQueueExecution": "exact_frozen_v44_tick_semantics",
+    "reasonerModification": "forbidden"
+  },
+  "safetyChallenges": {
+    "unknownPredicateLexeme": true,
+    "unknownStateOperatorCue": true,
+    "unknownBoundActionCue": true,
+    "unknownWaitCue": true,
+    "waitWithArguments": true,
+    "duplicateStepOrdinal": true,
+    "missingStepOrdinal": true,
+    "ambiguousActionTemplate": true,
+    "malformedDeclaredGrammar": true
+  },
+  "comparisons": {
+    "pairedOracleV44Pipeline": "frozen_reference",
+    "compiledQueuedPipeline": "primary",
+    "collapsedDelayExecutor": "frozen_v44_inadequacy_control",
+    "endFlushExecutor": "frozen_v44_inadequacy_control",
+    "literalLanguageSequenceLookup": "non_lifted_control"
+  },
+  "gates": {
+    "minimumStateClauseExactParse": 1.0,
+    "minimumCanonicalStateGraphExact": 1.0,
+    "minimumActionCommandExactParse": 1.0,
+    "minimumWaitCommandExactParse": 1.0,
+    "minimumActionSequenceExact": 1.0,
+    "minimumSafetyAbstention": 1.0,
+    "minimumCompiledTargetRetention": 1.0,
+    "minimumCompiledSchemaRecovery": 1.0,
+    "maximumCompiledEmptyVersionSpace": 0.0,
+    "minimumCompiledNextStateExact": 1.0,
+    "minimumCompiledFinalObservationExact": 1.0,
+    "minimumCompiledEveryFamilyExact": 1.0,
+    "minimumCompiledEverySequenceLengthExact": 1.0,
+    "minimumCompiledWaitCounterfactualAccuracy": 1.0,
+    "maximumCollapsedDelayFinalExact": 0.85,
+    "maximumEndFlushFinalExact": 0.85,
+    "maximumLiteralLanguageLookupFinalExact": 0.95
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_accept_declared_delayed_interface_composition_and_preregister_an_oracle_stochastic_transition_foundation",
+    "if_state_or_action_language_gates_fail_repair_only_the_corresponding_declared_compiler",
+    "if_language_passes_but_delayed_execution_fails_audit_translation_before_changing_the_frozen_v44_reasoner",
+    "if_a_timing_or_lookup_control_passes_repair_the_control_before_any_stronger_claim"
+  ],
+  "nextAxisIfPassed": {
+    "axis": "stochastic_transition_effects",
+    "stage": "oracle_first_preregistration_only",
+    "delaysRemainFixedAndDeclared": true,
+    "activeSelectionStillDeferred": true,
+    "reason": "add_transition_uncertainty_only_after_persistent_state_delay_and_declared_language_each_have_isolated_foundations"
+  },
+  "firewall": {
+    "V44ReasonerModification": "forbidden",
+    "V44CaseOrTargetSelection": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "openParaphraseClaim": "forbidden",
+    "stochasticEffectsInV45": "forbidden",
+    "activeInterventionSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden",
+    "outcomeDrivenRepeat": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditImplementation": true,
+    "constructPairedLanguageCorpus": false,
+    "runPairedDevelopment": false,
+    "preregisterStochasticFoundation": false,
+    "modelAccess": false
+  }
+}

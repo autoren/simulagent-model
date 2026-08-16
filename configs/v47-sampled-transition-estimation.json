@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 47,
+  "experiment": "v47_sampled_transition_probability_estimation",
+  "scientificQuestion": "can_a_probability_weighted_symbolic_system_infer_stochastic_transition_programs_and_calibrated_predictive_distributions_from_finite_realized_trials",
+  "sourceV46OutcomeLock": "configs/v46-outcome-lock.json",
+  "claimBoundary": {
+    "primaryClaim": "finite_sample_probability_estimation_and_program_uncertainty_under_the_declared_v46_ontology_dsl_and_probability_vocabulary",
+    "realizedSupportTrials": true,
+    "oracleDistributionValuedSupport": false,
+    "probabilityVocabularyKnown": true,
+    "languageGrounding": false,
+    "activeInterventionSelection": false,
+    "openOntology": false,
+    "finalEvaluation": false
+  },
+  "estimator": {
+    "primary": "uniform_prior_exact_likelihood_posterior_over_the_frozen_finite_program_registry",
+    "predictive": "posterior_mixture_of_exact_joint_trajectory_distributions",
+    "likelihoodUnit": "complete_realized_trajectory_conditional_on_initial_world_and_action_sequence",
+    "zeroLikelihoodHandling": "retain_exact_zero_and_normalize_in_log_space",
+    "selectionOnEvaluation": false,
+    "perMechanicOracleChoices": false
+  },
+  "population": {
+    "mechanics": 48,
+    "mechanicsPerFamily": 12,
+    "families": [
+      "immediate_bernoulli_mutation",
+      "delayed_bernoulli_scheduling",
+      "state_conditional_probability",
+      "interleaved_deterministic_and_stochastic"
+    ],
+    "developmentFitMechanics": 24,
+    "developmentEvaluationMechanics": 24,
+    "freshProgramOverlapWithV46": 0,
+    "probabilityCounts": {"1/4": 16, "1/2": 16, "3/4": 16},
+    "supportInterventionsPerMechanic": 12,
+    "nestedTrialsPerIntervention": [8, 32, 128],
+    "queryInterventionsPerMechanic": 24,
+    "heldoutTrialsPerQuery": 64,
+    "sequenceLengths": [2, 3, 4],
+    "entityCounts": [2, 3, 4],
+    "generatorSeed": 4739,
+    "samplingSeed": 4741
+  },
+  "samplingContract": {
+    "pseudoRandomGenerator": "python_random_Mersenne_Twister_with_per_trial_sha256_derived_integer_seed",
+    "nestedSupportTrials": "first_8_subset_of_first_32_subset_of_first_128",
+    "branchDraw": "one_independent_uniform_draw_per_evaluated_stochastic_branch",
+    "delayedBranchDraw": "at_scheduling_time",
+    "supportContainsOnlyRealizedTrajectories": true,
+    "queryAgentInputContainsNoOutcomes": true,
+    "oracleJointDistributionsScorerOnly": true,
+    "heldoutQueryTrialsScorerOnly": true,
+    "supportQueryStructuralOverlap": 0,
+    "statisticalUnit": "mechanic_episode"
+  },
+  "comparisons": {
+    "posteriorPredictive": "primary",
+    "mapProgramPlugIn": "uncertainty_ablation",
+    "uniformizedOutcomeMass": "probability_mass_ablation",
+    "literalEmpiricalTrajectoryLookup": "non_lifted_control",
+    "oracleTargetProgram": "unattainable_scoring_reference"
+  },
+  "metrics": {
+    "validity": ["predictive_mass_normalization", "finite_log_loss"],
+    "properScoring": ["heldout_joint_trajectory_log_loss", "multiclass_brier_score"],
+    "oracleDiagnostics": ["joint_distribution_total_variation", "target_program_posterior_mass", "map_schema_recovery", "probability_parameter_mean_absolute_error"],
+    "calibration": ["ten_bin_equal_width_multiclass_reliability_error"],
+    "learningCurveBudgets": [8, 32, 128],
+    "strata": ["family", "probability_value", "immediate_vs_delayed", "sequence_length"],
+    "uncertainty": "mechanic_cluster_bootstrap_95_percent_interval_with_10000_resamples_and_seed_4747"
+  },
+  "gatesAt128TrialsPerIntervention": {
+    "minimumPredictiveMassNormalization": 1.0,
+    "maximumMeanJointDistributionTotalVariation": 0.05,
+    "maximumEveryFamilyMeanJointDistributionTotalVariation": 0.08,
+    "maximumProbabilityParameterMeanAbsoluteError": 0.05,
+    "minimumMapSchemaRecovery": 0.90,
+    "minimumMeanTargetProgramPosteriorMass": 0.85,
+    "maximumCalibrationError": 0.05,
+    "minimumLogLossImprovementOverUniformizedNats": 0.03,
+    "maximumLiteralLookupCoverage": 0.05,
+    "requireMeanTvStrictImprovement8To32": true,
+    "requireMeanTvStrictImprovement32To128": true,
+    "requirePosteriorPredictiveLogLossNoWorseThanMap": true
+  },
+  "decisionHierarchy": [
+    "if_estimation_calibration_learning_curve_and_controls_pass_authorize_preregistration_of_stochastic_language_composition",
+    "if_predictive_validity_fails_repair_joint_distribution_or_likelihood_semantics",
+    "if_program_recovery_passes_but_calibration_fails_revise_posterior_or_probability_vocabulary",
+    "if_low_budget_fails_but_learning_curve_improves_report_sample_complexity_without_architecture_expansion",
+    "if_all_budgets_fail_revisit_stochastic_dsl_identifiability_before_language_or_active_selection"
+  ],
+  "firewall": {
+    "V46ProgramsOrCasesReused": "forbidden",
+    "oracleDistributionSupport": "forbidden",
+    "evaluationOutcomeAccessDuringSelection": "forbidden",
+    "languageGrounding": "forbidden",
+    "languageModelAccess": "forbidden",
+    "adapterTraining": "forbidden",
+    "activeSelection": "forbidden",
+    "openOntology": "forbidden",
+    "finalEvaluation": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditEstimatorImplementation": true,
+    "constructSampledPopulation": false,
+    "runSampledDevelopment": false,
+    "modelAccess": false
+  }
+}

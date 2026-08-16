@@ -1,0 +1,44 @@
+{
+  "authorization": {
+    "model_access": false,
+    "reaudit_unchanged_corpus_once": true,
+    "regenerate_corpus": false,
+    "run_calibration": false,
+    "seal_if_repaired_audit_passes": true
+  },
+  "experiment": "v51r1_corpus_repair_lock",
+  "lock_payload_sha256": "a576890382d7ebd4d6b21c28f09cb16997a1d49eecf00ca70df9049001bc4368",
+  "repair_config": "configs/v51r1-corpus-audit-repair.json",
+  "repair_config_sha256": "61e1b6f66c800cacc3211c47f02f549063a282e5adff76e486cf3d76e1cdbe2e",
+  "repair_implementation": {
+    "python/audit_v51r1_corpus.py": "2dc7e37a3f3f600b0bc50b1602d27b999019f3a668dd2bd0b66d3bf454af7dd9",
+    "python/seal_v51r1_corpus.py": "b116b9ab7f6324c420a8a2449a10446b2153b11531b5a991bfed3a142ffe9689",
+    "scripts/run-v51r1-corpus-audit-repair.sh": "dc5015b5222449ba9ded1ac4059c5c27b6863ed8b6df3fe79afed83612a1b0d5"
+  },
+  "repair_plan": "docs/v51r1-corpus-audit-repair-plan.md",
+  "repair_plan_sha256": "3366e5efab6927a432a8809d1af355041686d4d3eb8129c3e598832d72e806ae",
+  "revision": "r1",
+  "schema_version": 51,
+  "single_authorized_change": {
+    "newIdentity": [
+      "entities",
+      "initial_state",
+      "actions",
+      "masks"
+    ],
+    "oldIdentity": [
+      "entities",
+      "initial_state",
+      "actions"
+    ],
+    "reason": "known_value_independent_masks_are_part_of_the_frozen_observation_design_and_materially_distinguish_partial_observation_experiments"
+  },
+  "source_corpus": "data/v51-simulation-based-calibration/replications.jsonl",
+  "source_corpus_sha256": "aeb5eb2c7164eaf258034a2c2b1382ccad3d7518a1016bdf7a2def116541bb58",
+  "source_design_lock": "configs/v51-design-lock.json",
+  "source_design_lock_sha256": "cb6bb8f3d3fc8da5fc0e0429fe2572ddf2089c5dc2de97d9c1a544c7f7d3f94c",
+  "source_failed_corpus_audit": "outputs/v51-simulation-based-calibration/corpus-audit.json",
+  "source_failed_corpus_audit_sha256": "c4311863bf9cf316ab29f5883a777d505af375546bc0b64742126c8d5f263d39",
+  "source_implementation_lock": "configs/v51-implementation-lock.json",
+  "source_implementation_lock_sha256": "53680d007a4e5825cd13bbdf4b1d4e1982bb0e9ff9f85eeb84a0c2ac762beb6b"
+}

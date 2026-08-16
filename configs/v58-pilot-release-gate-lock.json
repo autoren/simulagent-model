@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "collect_evaluation_language": false,
+    "collect_pilot_language": false,
+    "human_authored_language_claim": false,
+    "model_generated_writing_assistance": false,
+    "release_evaluation_packets": false,
+    "release_pilot_packets": false,
+    "run_candidate_evaluation": false,
+    "validate_external_declaration_and_freeze_pilot_release": true,
+    "write_candidate_parser": false
+  },
+  "decision": "await_valid_external_coordinator_declaration",
+  "experiment": "v58_pilot_release_gate_lock",
+  "lock_payload_sha256": "283852fa95e9e7798666b333fc3a2b5abdee961d84a8dbbd8134746a39810cb5",
+  "packet_seal": "configs/v58-author-packet-seal.json",
+  "packet_seal_sha256": "acf1210dcad33c8c030103881c9b377af61be8186efcaeb33e37f50d46ce8b68",
+  "pilot_release_gate_audit": "outputs/v58-human-authored-known-ontology-language/pilot-release-gate-audit.json",
+  "pilot_release_gate_audit_sha256": "7962e5dabdfbc34bbe62713e3589c6294f400e38c516a79e3b4422e37e97a435",
+  "release_gate_files_sha256": {
+    "configs/v58-pilot-coordinator-declaration.schema.json": "95192dbdaf1d396860297d2c3aed8041bd7a85160f966bc2e73ba2b6a41826d9",
+    "docs/v58-pilot-release-gate.md": "efdcd996b1a013c2407616b5177235c5ade376536c20144a70fc71d7331eaca1",
+    "python/audit_v58_pilot_release_gate.py": "bea28c2af50f6b925fd78ca2f772249c3b190edbbed190466b3a30949fe41187",
+    "python/freeze_v58_pilot_release.py": "a45e61939a73b8cb76d2e97a89f60072828ab5863bc44a51b0ece3ac239f685a",
+    "python/freeze_v58_pilot_release_gate.py": "ce33fddfcdce4c84f44f6b49fd523b60793a421a403b4b2274c5ef252a45a47b"
+  },
+  "schema_version": 58,
+  "tooling_lock": "configs/v58-pilot-tooling-lock.json",
+  "tooling_lock_sha256": "edbe5333b3cbd656d74f0d264a6333d64c3a57d340c33b8d01bce2ea16e02d54"
+}

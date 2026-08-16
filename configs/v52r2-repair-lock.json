@@ -1,0 +1,42 @@
+{
+  "authorization": {
+    "model_access": false,
+    "run_repair_evaluation": false,
+    "write_and_audit_repair_implementation": true
+  },
+  "checks": {
+    "all_other_gates_passed": true,
+    "downstream_absent": true,
+    "exactly_two_diagnosed_gates_failed": true,
+    "source_chain_bound": true,
+    "source_one_run_frozen": true
+  },
+  "experiment": "v52r2_repair_lock",
+  "invariants": [
+    "same_sealed_exact_sbc_and_scale_populations",
+    "same_program_registry",
+    "same_particle_budgets_31_127_509",
+    "same_particle_and_resampling_stream_seeds",
+    "same_filtering_likelihoods_and_resampling_decisions",
+    "same_exact_oracle",
+    "same_metrics_and_noncompensatory_gates",
+    "same_controls_and_claim_boundary",
+    "one_repair_evaluation_only",
+    "no_model_access_training_active_selection_reward_planning_or_language"
+  ],
+  "lock_payload_sha256": "283c6fd2b2b1f9d386484df877c8104177ffe9ef06e0e5ff8f98591ac8107538",
+  "maximum_permitted_base_vs_repair_tv": "1e-25",
+  "preregistration": "docs/v52r2-joint-normalization-repair-plan.md",
+  "preregistration_sha256": "c4416dfbda74a65fffb738ba5fe34e4c7845f6f122de9be4443bc9666a73b77e",
+  "repair": "configs/v52r2-joint-normalization-repair.json",
+  "repair_sha256": "93d1a7b57d1f28fb453c69e7dc51a77577fc5645b24f1b3fab87f3039929d083",
+  "revision": "r2",
+  "schema_version": 52,
+  "single_authorized_change": "assemble_and_normalize_final_joint_and_configuration_marginals_inside_a_100_digit_decimal_context",
+  "source_implementation_lock": "configs/v52-implementation-lock.json",
+  "source_implementation_lock_sha256": "f302b86ab0ebaf142edefa55b70e6487324ddc06eed01b407046aab6f0ccda25",
+  "source_outcome_lock": "configs/v52-outcome-lock.json",
+  "source_outcome_lock_sha256": "13f7270a84e56fd6f4e10e57e6dbc159763412d64e0158f693948d53f023057c",
+  "source_population_seal": "configs/v52-population-seal.json",
+  "source_population_seal_sha256": "cc02e8a720aa76f30dd5b4da3c59009c4387741d81a06e4d2b1fe91cb4a9634f"
+}

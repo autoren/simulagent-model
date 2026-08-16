@@ -1,0 +1,42 @@
+{
+  "authorization": {
+    "change_evaluation_implementation": false,
+    "formal_safety_claim": false,
+    "language_grounding": false,
+    "long_horizon_claim": false,
+    "model_access": false,
+    "modify_v56_bundle": false,
+    "parameter_uniform_claim": false,
+    "run_additional_v55_or_v55r1_evaluation": false,
+    "run_additional_v56_candidate_verification": false,
+    "run_one_v56_candidate_verification": true,
+    "worst_case_safety_claim": false
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v56.py": "b90d2e976ed8c249f55b75e36ad0e7ab07dd399718d431834d1624d223ba9267",
+    "python/audit_v56_evaluation_implementation.py": "bb2965a70a7e56ee3196b2b19a9d0e90a767e0b5d4a601fafb3c8bbd3a11e990",
+    "python/evaluate_v56_verification.py": "743b79d97fec798482917d3292862aa010e519237f94d15e0551ea8141826678",
+    "python/freeze_v56_outcome.py": "732f6ac3891046cca9168dd7c2caf561ab50a7075d251da6ab3ccd31a625a28a"
+  },
+  "evaluation_implementation_audit": "outputs/v56-symbolic-probabilistic-policy-verification/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "7aed7ff8e62d6860dbed9d47fb6f2a744311cd8262bc8c9f10f4f537d5b7d9ba",
+  "experiment": "v56_evaluation_implementation_lock",
+  "frozen_dependencies_sha256": {
+    "configs/v56-design-lock.json": "5d3e06b008fdcfc7ed01cee20550601670d068bd9b604e7cf6a3f97bd19e23c5",
+    "configs/v56-implementation-lock.json": "026a1677c2ea5705ffba422a2a52c6ac704dbeb55cdc7a770e354ca48fa6b1f8",
+    "configs/v56-verification-bundle-seal.json": "90d98d99e779b9ba5dcbf2c595c7f83a0014c820943cc42af66a2705902509f0",
+    "python/v56_verification.py": "63d03358f62a18f93037ad3ab02b3cdc285c158ef006a2d252bb8d6b2329541e"
+  },
+  "implementation_lock": "configs/v56-implementation-lock.json",
+  "implementation_lock_sha256": "026a1677c2ea5705ffba422a2a52c6ac704dbeb55cdc7a770e354ca48fa6b1f8",
+  "lock_payload_sha256": "23d4403e3d087a10f5e02aeb410f5bb3b50da034c697be2d363e41fb633bb8e9",
+  "manifest": "data/v56-symbolic-probabilistic-policy-verification/manifest.json",
+  "manifest_sha256": "47e3966da302ecbeb0cf5986aaf596bd7184d9460007ef1a1d263682fb3eee6b",
+  "schema_version": 56,
+  "tool_versions": {
+    "storm": "1.13.0",
+    "z3": "4.16.0"
+  },
+  "verification_bundle_seal": "configs/v56-verification-bundle-seal.json",
+  "verification_bundle_seal_sha256": "90d98d99e779b9ba5dcbf2c595c7f83a0014c820943cc42af66a2705902509f0"
+}

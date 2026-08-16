@@ -1,0 +1,358 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_v53_populations": false,
+    "model_access": false,
+    "run_v53_evaluation": false,
+    "write_and_audit_smc_squared_implementation": true
+  },
+  "config": "configs/v53-continuous-parameter-smc2.json",
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "adapterTraining": false,
+      "continuousStochasticParameter": true,
+      "exactProgramEnumeration": true,
+      "exactSmallCaseQuadratureOracle": true,
+      "finalEvaluation": false,
+      "hiddenStateParticles": true,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "noisySensors": false,
+      "openOntology": false,
+      "particleMcmcReference": true,
+      "primaryClaim": "continuous_static_parameter_particles_with_nested_hidden_state_filters_and_exact_finite_program_enumeration",
+      "rewardOrPlanning": false,
+      "simulationBasedCalibration": true,
+      "smcSquared": true
+    },
+    "controls": {
+      "ambiguityDefinition": "exact_max_program_posterior_at_most_0_60",
+      "falseStaticCollapseDefinition": "ambiguous_exact_case_with_smc2_max_program_posterior_at_least_0_95",
+      "falseThetaCollapseDefinition": "exact_theta_central_80_interval_width_at_least_0_15_and_smc2_unique_theta_support_fraction_below_0_02",
+      "likelihoodSquaredControl": "square_each_observation_likelihood_increment",
+      "mapProgramControl": "replace_program_posterior_with_point_mass_at_map_program",
+      "minimumControlsDetectedOrDominated": 4,
+      "outerResamplingDisabledControl": "disable_outer_resampling_and_rejuvenation",
+      "streamCollisionControl": "deliberately_reuse_one_outer_and_one_inner_stream_and_require_detection",
+      "thetaPointMassControl": "replace_theta_posterior_with_point_mass_at_posterior_mean"
+    },
+    "decisionHierarchy": [
+      "if_exact_agreement_sbc_pmcmc_degeneracy_correlation_and_scale_gates_all_pass_authorize_only_preregistration_of_exact_one_step_expected_information_gain",
+      "if_smc2_disagrees_with_exact_quadrature_repair_outer_weighting_evidence_or_rejuvenation",
+      "if_pmcmc_disagrees_but_smc2_and_exact_agree_repair_pmcmc_reference_without_changing_smc2",
+      "if_sbc_fails_repair_inference_before_active_selection",
+      "if_degeneracy_or_stream_integrity_fails_repair_resampling_rejuvenation_or_stream_partitioning",
+      "do_not_authorize_reward_planning_verification_language_or_model_access"
+    ],
+    "exactBenchmark": {
+      "comparisonTargets": [
+        "program_posterior",
+        "theta_marginal",
+        "binned_joint_program_theta_posterior",
+        "current_configuration_marginal",
+        "suffix_predictive",
+        "record_log_evidence"
+      ],
+      "dynamicStateReference": "exact_stepwise_world_queue_enumeration",
+      "entityCounts": [
+        2,
+        3
+      ],
+      "quadrature": "gauss_legendre_on_scaled_beta_support",
+      "quadratureNodes": 257,
+      "queryPrefixLengths": [
+        5,
+        7
+      ],
+      "querySequenceLengths": [
+        10,
+        12
+      ],
+      "records": 32,
+      "recordsPerTemplate": 4,
+      "supportEpisodesPerRecord": 4,
+      "supportSequenceLengths": [
+        6,
+        8
+      ]
+    },
+    "experiment": "v53_continuous_parameter_smc_squared",
+    "firewall": {
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "finalEvaluation": "forbidden",
+      "implementationSmokeSeedsOverlap": "forbidden",
+      "languageGrounding": "forbidden",
+      "modelAccess": "forbidden",
+      "priorObservationDesignsReused": "forbidden",
+      "priorParameterizedTemplatesReused": "forbidden",
+      "rewardOrPlanning": "forbidden",
+      "selectionOnSealedResults": "forbidden",
+      "simulationBasedInference": "forbidden_while_exact_likelihood_is_available"
+    },
+    "gates": {
+      "maximumAbsoluteCoverageZ": 4.75,
+      "maximumAbsoluteRankBinZ": 4.75,
+      "maximumFalseStaticCollapseRate": 0.02,
+      "maximumFalseThetaCollapseRate": 0.02,
+      "maximumInnerFingerprintCollisionRate": 0.01,
+      "maximumMeanAbsoluteLogEvidenceError": 0.08,
+      "maximumMediumMinusLowMeanError": 0.02,
+      "maximumOuterFingerprintCollisionRate": 0.01,
+      "maximumPmcmcAcceptanceRate": 0.7,
+      "maximumPmcmcSplitRhat": 1.05,
+      "maximumPmcmcThetaWasserstein": 0.04,
+      "maximumPrimaryMeanBinnedProgramThetaTv": 0.06,
+      "maximumPrimaryMeanConfigurationTv": 0.05,
+      "maximumPrimaryMeanProgramTv": 0.03,
+      "maximumPrimaryMeanSuffixPredictiveTv": 0.05,
+      "maximumPrimaryMeanThetaWasserstein": 0.03,
+      "maximumPrimaryMinusMediumMeanError": 0.01,
+      "maximumPrimaryQ95BinnedProgramThetaTv": 0.18,
+      "maximumPrimaryQ95ConfigurationTv": 0.15,
+      "maximumPrimaryQ95ProgramTv": 0.1,
+      "maximumPrimaryQ95SuffixPredictiveTv": 0.15,
+      "maximumPrimaryQ95ThetaWasserstein": 0.1,
+      "maximumScaleStressTargetProgramExtinctionRate": 0.02,
+      "maximumTargetProgramExtinctionRate": 0.02,
+      "maximumUnintendedStreamCollisions": 0,
+      "minimumAmbiguousProgramEntropyRatio": 0.85,
+      "minimumCompletedExactBenchmarkFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 4,
+      "minimumDistinctThetaAncestorFraction": 0.03,
+      "minimumFinalOuterEssFraction": 0.1,
+      "minimumNormalizationRate": 1.0,
+      "minimumPmcmcAcceptanceRate": 0.1,
+      "minimumPmcmcBulkEss": 200,
+      "minimumRankChiSquarePValue": 0.001,
+      "minimumScaleStressCompletionFraction": 1.0,
+      "minimumScaleStressNormalizationRate": 1.0
+    },
+    "metrics": {
+      "calibration": [
+        "rank_histograms",
+        "rank_chi_square_p_values",
+        "maximum_absolute_rank_bin_z",
+        "central_rank_coverage",
+        "maximum_absolute_coverage_z"
+      ],
+      "correlationIntegrity": [
+        "unintended_stream_collision_count",
+        "outer_resampling_fingerprint_collision_rate",
+        "inner_resampling_fingerprint_collision_rate",
+        "intentional_collision_control_detected"
+      ],
+      "degeneracy": [
+        "target_program_extinction_rate",
+        "false_static_collapse_rate",
+        "false_theta_collapse_rate",
+        "ambiguous_program_entropy_ratio",
+        "outer_ess_fraction",
+        "inner_ess_fraction",
+        "distinct_theta_ancestor_fraction"
+      ],
+      "exactAgreement": [
+        "mean_and_q95_program_tv",
+        "mean_and_q95_theta_wasserstein",
+        "mean_and_q95_binned_program_theta_tv",
+        "mean_and_q95_configuration_tv",
+        "mean_and_q95_suffix_predictive_tv",
+        "mean_absolute_log_evidence_error"
+      ]
+    },
+    "parameterModel": {
+      "alpha": 2.0,
+      "beta": 2.0,
+      "boundaryMassAllowed": false,
+      "executorEncoding": "17_significant_digit_decimal_rational",
+      "name": "theta",
+      "prior": "scaled_beta",
+      "scope": "one_shared_branch_probability_per_program_across_all_episodes_and_ticks",
+      "support": [
+        0.05,
+        0.95
+      ]
+    },
+    "pmcmcReference": {
+      "adaptiveProposal": false,
+      "algorithm": "particle_marginal_metropolis_hastings",
+      "chains": 4,
+      "conditionedProgram": "generating_program",
+      "innerStateParticleBudget": 509,
+      "proposalSpace": "logit_of_scaled_theta",
+      "proposalStandardDeviation": 0.35,
+      "records": 16,
+      "referenceComparisons": [
+        "conditional_theta_mean",
+        "conditional_theta_central_intervals",
+        "conditional_theta_wasserstein_distance_to_exact_quadrature",
+        "split_rhat",
+        "bulk_effective_sample_size",
+        "acceptance_rate"
+      ],
+      "retainedIterationsPerChain": 2000,
+      "role": "offline_conditional_theta_reference_not_program_evidence_estimator",
+      "selection": "even_exact_benchmark_record_ordinals_fixed_before_population_construction",
+      "warmupIterationsPerChain": 1000
+    },
+    "population": {
+      "families": [
+        "state_conditional_probability",
+        "immediate_vs_delayed_stochasticity",
+        "cross_action_stochastic_composition",
+        "relational_stochastic_effects"
+      ],
+      "freshObservationDesignsAgainst": [
+        "V46",
+        "V47",
+        "V48",
+        "V49",
+        "V50",
+        "V51",
+        "V52"
+      ],
+      "freshParameterizedTemplatesAgainst": [
+        "V46",
+        "V47",
+        "V48",
+        "V49",
+        "V50",
+        "V51",
+        "V52"
+      ],
+      "generatorSeed": 5301,
+      "innerParticleSeed": 5329,
+      "maskSeed": 5311,
+      "outerParticleSeed": 5323,
+      "posteriorDrawSeed": 5339,
+      "programTemplates": 8,
+      "rejuvenationSeed": 5333,
+      "templateSeed": 5303,
+      "templatesPerFamily": 2,
+      "thetaPriorSeed": 5309,
+      "tieBreakSeed": 5347,
+      "trajectorySeed": 5317
+    },
+    "sbc": {
+      "coverageLevels": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "discreteTieHandling": "randomized_insertion_rank_with_frozen_independent_seed",
+      "entityCounts": [
+        2,
+        3
+      ],
+      "expectedRanksPerBin": 16,
+      "posteriorDrawsPerReplication": 127,
+      "queryPrefixLengths": [
+        8,
+        10
+      ],
+      "querySequenceLengths": [
+        12,
+        16
+      ],
+      "rankBins": 16,
+      "rankSupportSize": 128,
+      "replications": 256,
+      "selectionOnSbcReplications": false,
+      "supportEpisodesPerReplication": 4,
+      "supportSequenceLengths": [
+        8,
+        12
+      ],
+      "testQuantities": [
+        "program_ordinal",
+        "continuous_theta",
+        "configuration_ordinal",
+        "target_program_posterior_probability",
+        "target_configuration_posterior_probability"
+      ]
+    },
+    "scaleStress": {
+      "entityCounts": [
+        3,
+        4
+      ],
+      "exactQuadratureRequired": false,
+      "innerStateParticleBudget": 127,
+      "metrics": [
+        "completion_fraction",
+        "normalization_rate",
+        "target_program_extinction_rate",
+        "outer_ess_fraction",
+        "inner_ess_fraction",
+        "outer_resampling_count",
+        "inner_resampling_count",
+        "distinct_theta_ancestor_fraction",
+        "distinct_configuration_fraction",
+        "pmmh_move_acceptance_rate",
+        "runtime_seconds_non_gating"
+      ],
+      "outerThetaParticleBudget": 509,
+      "records": 32,
+      "recordsPerTemplate": 4,
+      "sequenceLengths": [
+        24,
+        40,
+        64
+      ]
+    },
+    "schemaVersion": 53,
+    "scientificQuestion": "can_smc_squared_maintain_a_calibrated_joint_posterior_over_exactly_enumerated_program_identity_continuous_shared_stochastic_parameters_and_particle_hidden_state_with_pmcmc_as_an_offline_conditional_parameter_reference",
+    "smcSquared": {
+      "adaptiveProposal": false,
+      "independentRepeatsOnExactBenchmark": 3,
+      "innerEssThresholdFraction": 0.5,
+      "innerResampling": "systematic",
+      "innerStateParticleBudget": 127,
+      "outerEssThresholdFraction": 0.5,
+      "outerRejuvenation": "particle_marginal_metropolis_hastings",
+      "outerResampling": "systematic",
+      "outerThetaParticleBudgets": [
+        31,
+        127,
+        509
+      ],
+      "primaryOuterThetaParticleBudget": 509,
+      "programLayer": "enumerate_all_8_templates_and_update_program_evidence_from_each_templates_smc_squared_normalizing_constant_estimate",
+      "proposalSpace": "logit_of_scaled_theta",
+      "proposalStandardDeviation": 0.4,
+      "randomStreamKey": [
+        "population",
+        "record",
+        "program",
+        "outer_budget",
+        "repeat",
+        "outer_particle",
+        "episode",
+        "tick",
+        "purpose",
+        "move"
+      ],
+      "recomputeLikelihoodAtProposal": true,
+      "rejuvenationStepsPerOuterResampling": 2
+    },
+    "sourceV52r2OutcomeLock": "configs/v52r2-outcome-lock.json",
+    "stageAuthorization": {
+      "activeInterventionSelection": false,
+      "constructSealedPopulations": false,
+      "modelAccess": false,
+      "runSmcSquaredEvaluation": false,
+      "writeAndAuditImplementation": true
+    }
+  },
+  "config_sha256": "ad590a46b7f83e0731b443fa50247c18d186f8fab643b51be1e095114995a0a5",
+  "design_audit": "outputs/v53-continuous-parameter-smc2/design-audit.json",
+  "design_audit_sha256": "d54b7bc8eeba8c40c655be551c2ae12cfee5f623fb647e1c5812e49f939f99e5",
+  "experiment": "v53_design_lock",
+  "lock_payload_sha256": "9cd86a43716586fc87cb27acee1ef625ef2db078b69fcf07499df5ece724e843",
+  "preregistration": "docs/v53-continuous-parameter-smc2-plan.md",
+  "preregistration_sha256": "29daad2f9287d5beda311057c8701443279dc5f6db49d8075b249af511baf3f3",
+  "schema_version": 53,
+  "source_outcome_lock": "configs/v52r2-outcome-lock.json",
+  "source_outcome_lock_sha256": "d9ec28b5dd14b08f8b716a357ebfe3613b19f285f51533982f033577f913ba14"
+}

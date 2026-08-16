@@ -1,0 +1,1240 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_partial_observation_population": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_passive_partial_observation": true
+  },
+  "experiment": "v48_outcome_lock",
+  "gate_checks": {
+    "action_command": true,
+    "action_sequence": true,
+    "calibration": true,
+    "canonical_graph": true,
+    "clause_parse": true,
+    "composition_log_loss": true,
+    "composition_tv": true,
+    "every_family_tv": true,
+    "literal_inadequate": true,
+    "map_schema": true,
+    "mean_tv": true,
+    "probability_mae": true,
+    "safety": true,
+    "shuffled_inadequate": true,
+    "target_posterior": true,
+    "trial_alignment": true,
+    "uniformized_inadequate": true
+  },
+  "lock_payload_sha256": "6e4fb95e5b662c6968ad3b9a252f661eec07e4f3aa58e61ea0a0d68df5e840cb",
+  "metrics": {
+    "all_mechanics": {
+      "language": {
+        "calibration_error": 0.004882812500000155,
+        "every_family_mean_tv": {
+          "delayed_bernoulli_scheduling": 6.244340905465121e-16,
+          "immediate_bernoulli_mutation": 1.4722959700244795e-26,
+          "interleaved_deterministic_and_stochastic": 3.098298242417113e-30,
+          "state_conditional_probability": 1.9898438559548392e-26
+        },
+        "every_probability_mean_tv": {
+          "1/2": 1.3344705205234843e-28,
+          "1/4": 4.683255649466401e-16,
+          "3/4": 2.98907890418467e-24
+        },
+        "every_sequence_length_mean_tv": {
+          "2": 1.5610852164924404e-16,
+          "3": 1.5610852314330422e-16,
+          "4": 1.5610852314330422e-16
+        },
+        "every_timing_mean_tv": {
+          "delayed": 3.122170452732576e-16,
+          "immediate": 1.7310699129896592e-26
+        },
+        "heldout_brier": 0.3751898871527778,
+        "heldout_log_loss": 0.5459805554833245,
+        "literal_lookup_coverage": 0.0,
+        "map_schema_recovery": 1.0,
+        "mean_target_program_posterior": 0.9999999999999994,
+        "mean_tv": 1.5610852264528417e-16,
+        "probability_mae": 1.5612511283791264e-16,
+        "shuffled_action_order_exact": 0.0,
+        "uniformized_log_loss_disadvantage": 0.07977731585551501
+      },
+      "language_minus_symbolic_log_loss": 0.0,
+      "language_minus_symbolic_tv": 0.0,
+      "mechanics": 48,
+      "paired_log_loss_bootstrap": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "paired_tv_bootstrap": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "posterior_diagnostics": [
+        {
+          "entropy": -0.0,
+          "id": "mechanic_09ed2160ade9d550",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 5.2826013557225243e-23,
+          "id": "mechanic_139ed83620a9b383",
+          "probability_posterior": {
+            "1/2": 9.551250508570399e-25,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 9.551250508570399e-25,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"condition\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"},\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/2\"}]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_24420bd93482b34b",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.6132021940257548e-118,
+          "id": "mechanic_287f0208346177a6",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 5.826983799534605e-121
+          },
+          "runner_up_mass": 5.826983799534605e-121,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"condition\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"target\"},\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"3/4\"}]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_2a36bc52bdd9d35f",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_2ead8564c8a056e5",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_324294599498367e",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 8.166037625803535e-27,
+          "id": "mechanic_35d44fe3e57412b3",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 1.2713284522875785e-28,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 1.2713284522875785e-28,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_38a9f14d447cf83e",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_3ddd29274aab66f6",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_3fa6f1ca97197d8a",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}},\"probability\":\"1/2\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.0602049072975877e-34,
+          "id": "mechanic_456bd3a9646c8dcd",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 1.2828581088104476e-36,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 1.2828581088104476e-36,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"condition\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"},\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_45ef3bb80bd2774f",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_46724808f2ff736f",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4678c4bc04083da2",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_47280401e98c9c06",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 8.68742615760709e-39,
+          "id": "mechanic_4ae98e6ef9adda0c",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 9.4262054645921e-41,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 9.4262054645921e-41,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.3742906183139117e-136,
+          "id": "mechanic_4cb587a98609b1eb",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 4.313562860601976e-139,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 4.313562860601976e-139,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"condition\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"target\"},\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/4\"}]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4d30243d4f8bcba8",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4e18b06522d53d3d",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4f427040bad4a569",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_50eab365a8c09363",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 2.323511876189122e-132,
+          "id": "mechanic_539eacfe9d271a17",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 7.523572045966646e-135,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 7.523572045966646e-135,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.929912822050088e-23,
+          "id": "mechanic_543cae28be985a1a",
+          "probability_posterior": {
+            "1/2": 7.0670206475940285e-25,
+            "1/4": 5.466146800561713e-129,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 7.0670206475940285e-25,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_true\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/2\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_54635c38c3f34e58",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_556c718e2a660849",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 6.189750786603835e-27,
+          "id": "mechanic_566cf480689d6ddc",
+          "probability_posterior": {
+            "1/2": 9.594462822513289e-29,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 9.594462822513289e-29,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_5e019176b2e6c34a",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_6437dd7f16ba4a6f",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_65eed172eaf139d1",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.6774715795498117e-106,
+          "id": "mechanic_67cdac3adc12ffcf",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.4811411002263693e-108,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 1.4811411002263693e-108,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_6b3b901a750105b1",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 5.2826013557225243e-23,
+          "id": "mechanic_6cde4adf8def9be9",
+          "probability_posterior": {
+            "1/2": 9.551250508570399e-25,
+            "1/4": 1.0,
+            "3/4": 9.717766758585209e-105
+          },
+          "runner_up_mass": 9.551250508570399e-25,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.9500080304859245e-38,
+          "id": "mechanic_7a5f705e50917341",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 4.358325815929629e-40,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 4.358325815929629e-40,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.418205769832373e-20,
+          "id": "mechanic_7fb034ddc61c57e7",
+          "probability_posterior": {
+            "1/2": 2.858915217041495e-22,
+            "1/4": 8.825307320868267e-112,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 2.858915217041495e-22,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_8f53b9214d15b870",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 9.632847272355122e-13,
+          "id": "mechanic_915e350ee46f330c",
+          "probability_posterior": {
+            "1/2": 2.997283615499303e-14,
+            "1/4": 0.99999999999997,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 2.997283615499303e-14,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 0.99999999999997,
+          "within_structure_probability_uncertainty_mass": 2.9976021664879227e-14
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_92d34edf9dbe3673",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.4679093108457551e-36,
+          "id": "mechanic_97f498a32ab89bcc",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 1.6877401077001938e-38,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 1.6877401077001938e-38,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"target\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 6.490222504632594e-32,
+          "id": "mechanic_9c730325f2773f26",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 1.2725377377199338e-39,
+            "3/4": 8.52348189922855e-34
+          },
+          "runner_up_mass": 8.52348189922855e-34,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_true\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"3/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 2.20637629719643e-37,
+          "id": "mechanic_9d3da4a0f4e79c6b",
+          "probability_posterior": {
+            "1/2": 2.4820943938654354e-39,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 2.4820943938654354e-39,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 2.2441017222235305e-90,
+          "id": "mechanic_a3436b261a87e4b7",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 1.0596386701710983e-92
+          },
+          "runner_up_mass": 1.0596386701710983e-92,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}},\"probability\":\"3/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.377168960316674e-32,
+          "id": "mechanic_ab5ab8372c511a5d",
+          "probability_posterior": {
+            "1/2": 4.396955755900803e-34,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 4.396955755900803e-34,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.1661896037427866e-46,
+          "id": "mechanic_acfb976d76ce7cb5",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 1.0556626164423937e-48,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 9.147789792824003e-114,
+          "id": "mechanic_b8e6e2eb2cffe139",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.0,
+            "3/4": 3.440775663787189e-116
+          },
+          "runner_up_mass": 3.440775663787189e-116,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"3/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 7.56434684854836e-25,
+          "id": "mechanic_ccae9f227d94e27d",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 8.397856458999058e-31,
+            "3/4": 1.2684622656971818e-26
+          },
+          "runner_up_mass": 1.2684622656971818e-26,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"3/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_e05525dcb931d24b",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_f409165064849b09",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        }
+      ],
+      "symbolic": {
+        "calibration_error": 0.004882812500000155,
+        "every_family_mean_tv": {
+          "delayed_bernoulli_scheduling": 6.244340905465121e-16,
+          "immediate_bernoulli_mutation": 1.4722959700244795e-26,
+          "interleaved_deterministic_and_stochastic": 3.098298242417113e-30,
+          "state_conditional_probability": 1.9898438559548392e-26
+        },
+        "every_probability_mean_tv": {
+          "1/2": 1.3344705205234843e-28,
+          "1/4": 4.683255649466401e-16,
+          "3/4": 2.98907890418467e-24
+        },
+        "every_sequence_length_mean_tv": {
+          "2": 1.5610852164924404e-16,
+          "3": 1.5610852314330422e-16,
+          "4": 1.5610852314330422e-16
+        },
+        "every_timing_mean_tv": {
+          "delayed": 3.122170452732576e-16,
+          "immediate": 1.7310699129896592e-26
+        },
+        "heldout_brier": 0.3751898871527778,
+        "heldout_log_loss": 0.5459805554833245,
+        "literal_lookup_coverage": 0.0,
+        "map_schema_recovery": 1.0,
+        "mean_target_program_posterior": 0.9999999999999994,
+        "mean_tv": 1.5610852264528417e-16,
+        "probability_mae": 1.5612511283791264e-16,
+        "shuffled_action_order_exact": 0.0,
+        "uniformized_log_loss_disadvantage": 0.07977731585551501
+      },
+      "worst_family": "delayed_bernoulli_scheduling",
+      "worst_mechanic": {
+        "id": "mechanic_915e350ee46f330c",
+        "tv": 7.493209038748257e-15
+      },
+      "worst_probability": "1/4",
+      "worst_sequence_length": "3",
+      "worst_timing": "delayed"
+    },
+    "development_evaluation": {
+      "language": {
+        "calibration_error": 0.005474175347222224,
+        "every_family_mean_tv": {
+          "delayed_bernoulli_scheduling": 7.94143115846081e-24,
+          "immediate_bernoulli_mutation": 2.9445919400489574e-26,
+          "interleaved_deterministic_and_stochastic": 3.5314679230249786e-30,
+          "state_conditional_probability": 0.0
+        },
+        "every_probability_mean_tv": {
+          "1/2": 2.6486275781099022e-30,
+          "3/4": 2.98907890418467e-24
+        },
+        "every_sequence_length_mean_tv": {
+          "2": 7.361479850122395e-27,
+          "3": 2.985399488573398e-24,
+          "4": 2.985399488573398e-24
+        },
+        "every_timing_mean_tv": {
+          "delayed": 3.970717344964367e-24,
+          "immediate": 1.4722959700244787e-26
+        },
+        "heldout_brier": 0.3760036892361111,
+        "heldout_log_loss": 0.5468293688682961,
+        "literal_lookup_coverage": 0.0,
+        "map_schema_recovery": 1.0,
+        "mean_target_program_posterior": 1.0,
+        "mean_tv": 1.992720152332306e-24,
+        "probability_mae": 0.0,
+        "shuffled_action_order_exact": 0.0,
+        "uniformized_log_loss_disadvantage": 0.07892850247054335
+      },
+      "language_minus_symbolic_log_loss": 0.0,
+      "language_minus_symbolic_tv": 0.0,
+      "mechanics": 24,
+      "paired_log_loss_bootstrap": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "paired_tv_bootstrap": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "posterior_diagnostics": [
+        {
+          "entropy": -0.0,
+          "id": "mechanic_2ead8564c8a056e5",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 8.166037625803535e-27,
+          "id": "mechanic_35d44fe3e57412b3",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 1.2713284522875785e-28,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 1.2713284522875785e-28,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_3ddd29274aab66f6",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_46724808f2ff736f",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4678c4bc04083da2",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_47280401e98c9c06",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 8.68742615760709e-39,
+          "id": "mechanic_4ae98e6ef9adda0c",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 9.4262054645921e-41,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 9.4262054645921e-41,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.3742906183139117e-136,
+          "id": "mechanic_4cb587a98609b1eb",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 4.313562860601976e-139,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 4.313562860601976e-139,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"condition\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"target\"},\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/4\"}]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4d30243d4f8bcba8",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4e18b06522d53d3d",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_4f427040bad4a569",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 2.323511876189122e-132,
+          "id": "mechanic_539eacfe9d271a17",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 7.523572045966646e-135,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 7.523572045966646e-135,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.929912822050088e-23,
+          "id": "mechanic_543cae28be985a1a",
+          "probability_posterior": {
+            "1/2": 7.0670206475940285e-25,
+            "1/4": 5.466146800561713e-129,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 7.0670206475940285e-25,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_true\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"1/2\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_54635c38c3f34e58",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_6437dd7f16ba4a6f",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.6774715795498117e-106,
+          "id": "mechanic_67cdac3adc12ffcf",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 1.4811411002263693e-108,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 1.4811411002263693e-108,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":1,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"1/4\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_6b3b901a750105b1",
+          "probability_posterior": {
+            "1/2": 0.0,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 1.418205769832373e-20,
+          "id": "mechanic_7fb034ddc61c57e7",
+          "probability_posterior": {
+            "1/2": 2.858915217041495e-22,
+            "1/4": 8.825307320868267e-112,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 2.858915217041495e-22,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 6.490222504632594e-32,
+          "id": "mechanic_9c730325f2773f26",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 1.2725377377199338e-39,
+            "3/4": 8.52348189922855e-34
+          },
+          "runner_up_mass": 8.52348189922855e-34,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_true\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"actor\"}},\"probability\":\"3/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 2.20637629719643e-37,
+          "id": "mechanic_9d3da4a0f4e79c6b",
+          "probability_posterior": {
+            "1/2": 2.4820943938654354e-39,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 2.4820943938654354e-39,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 2.2441017222235305e-90,
+          "id": "mechanic_a3436b261a87e4b7",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 1.0596386701710983e-92
+          },
+          "runner_up_mass": 1.0596386701710983e-92,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"actor\"}},\"probability\":\"3/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": 3.377168960316674e-32,
+          "id": "mechanic_ab5ab8372c511a5d",
+          "probability_posterior": {
+            "1/2": 4.396955755900803e-34,
+            "1/4": 0.0,
+            "3/4": 1.0
+          },
+          "runner_up_mass": 4.396955755900803e-34,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[{\"delay\":2,\"effect\":{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"ready\",\"var\":\"target\"}},\"probability\":\"1/2\"}],\"stochastic_immediate\":[]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"unary\",\"predicate\":\"marked\",\"var\":\"actor\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_e05525dcb931d24b",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        },
+        {
+          "entropy": -0.0,
+          "id": "mechanic_f409165064849b09",
+          "probability_posterior": {
+            "1/2": 1.0,
+            "1/4": 0.0,
+            "3/4": 0.0
+          },
+          "runner_up_mass": 0.0,
+          "runner_up_program_key": "{\"dsl_version\":4,\"rules\":[{\"action\":\"pulse\",\"deterministic_immediate\":[],\"stochastic_delayed\":[],\"stochastic_immediate\":[{\"effect\":{\"op\":\"set_false\",\"target\":{\"op\":\"unary\",\"predicate\":\"active\",\"var\":\"target\"}},\"probability\":\"1/4\"}]},{\"action\":\"route\",\"deterministic_immediate\":[{\"op\":\"toggle\",\"target\":{\"op\":\"relation\",\"predicate\":\"linked\",\"source\":\"actor\",\"target\":\"target\"}}],\"stochastic_delayed\":[],\"stochastic_immediate\":[]}]}",
+          "structural_uncertainty_mass": 0.0,
+          "target_mass": 1.0,
+          "within_structure_probability_uncertainty_mass": 0.0
+        }
+      ],
+      "symbolic": {
+        "calibration_error": 0.005474175347222224,
+        "every_family_mean_tv": {
+          "delayed_bernoulli_scheduling": 7.94143115846081e-24,
+          "immediate_bernoulli_mutation": 2.9445919400489574e-26,
+          "interleaved_deterministic_and_stochastic": 3.5314679230249786e-30,
+          "state_conditional_probability": 0.0
+        },
+        "every_probability_mean_tv": {
+          "1/2": 2.6486275781099022e-30,
+          "3/4": 2.98907890418467e-24
+        },
+        "every_sequence_length_mean_tv": {
+          "2": 7.361479850122395e-27,
+          "3": 2.985399488573398e-24,
+          "4": 2.985399488573398e-24
+        },
+        "every_timing_mean_tv": {
+          "delayed": 3.970717344964367e-24,
+          "immediate": 1.4722959700244787e-26
+        },
+        "heldout_brier": 0.3760036892361111,
+        "heldout_log_loss": 0.5468293688682961,
+        "literal_lookup_coverage": 0.0,
+        "map_schema_recovery": 1.0,
+        "mean_target_program_posterior": 1.0,
+        "mean_tv": 1.992720152332306e-24,
+        "probability_mae": 0.0,
+        "shuffled_action_order_exact": 0.0,
+        "uniformized_log_loss_disadvantage": 0.07892850247054335
+      },
+      "worst_family": "delayed_bernoulli_scheduling",
+      "worst_mechanic": {
+        "id": "mechanic_7fb034ddc61c57e7",
+        "tv": 4.7648586950691584e-23
+      },
+      "worst_probability": "3/4",
+      "worst_sequence_length": "3",
+      "worst_timing": "delayed"
+    },
+    "interface": {
+      "action_command_accuracy": 1.0,
+      "action_sequence_exact": 1.0,
+      "canonical_graph_exact": 1.0,
+      "counts": {
+        "alignment": 8640,
+        "clauses": 127771,
+        "commands": 5404,
+        "graphs": 6611,
+        "safety": 432,
+        "sequences": 1728
+      },
+      "fail_closed_safety_accuracy": 1.0,
+      "state_clause_exact_parse": 1.0,
+      "trial_alignment_exact": 1.0
+    }
+  },
+  "post_result_audit": "outputs/v48-stochastic-language-composition/post-result-audit.json",
+  "post_result_audit_sha256": "b67f6ed3a029315b410de92de8b7b9d4ae1775afb7f380d75fd572f0b9ac8aa2",
+  "qualification_passed": true,
+  "result": "outputs/v48-stochastic-language-composition/development/result.json",
+  "result_sha256": "51afe5b27acf1bec9ace8fa62e2f026eff3542bb969485b6f6df1b6fba905e02",
+  "schema_version": 48,
+  "scientific_decision": "stochastic_language_composition_pass_preregister_passive_partial_observation"
+}

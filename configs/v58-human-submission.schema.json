@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v58-human-submission.schema.json",
+  "title": "V58 human-authored submission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "submission_id",
+    "packet_id",
+    "prompt_id",
+    "anonymous_writer_id",
+    "collection_round",
+    "submitted_text",
+    "timestamp",
+    "consent_and_license_attestation"
+  ],
+  "properties": {
+    "submission_id": {"type": "string", "minLength": 8},
+    "packet_id": {"type": "string", "minLength": 8},
+    "prompt_id": {"type": "string", "minLength": 8},
+    "anonymous_writer_id": {"type": "string", "minLength": 8},
+    "collection_round": {"type": "string", "enum": ["pilot_01", "evaluation_01"]},
+    "submitted_text": {"type": "string", "minLength": 4, "maxLength": 500, "pattern": "^[^\\r\\n]+$"},
+    "timestamp": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "consent_and_license_attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "humanAuthoredWithoutGenerativeAssistance",
+        "rightToContribute",
+        "datasetLicense",
+        "researchUseConsent"
+      ],
+      "properties": {
+        "humanAuthoredWithoutGenerativeAssistance": {"const": true},
+        "rightToContribute": {"const": true},
+        "datasetLicense": {"const": "CC-BY-4.0"},
+        "researchUseConsent": {"const": true}
+      }
+    }
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_smc_squared_population": false,
+    "final_evaluation": false,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_continuous_parameter_smc_squared": false,
+    "reward_or_planning": false
+  },
+  "experiment": "v52_outcome_lock",
+  "gate_checks": {
+    "ambiguity_entropy": true,
+    "control_sensitivity": true,
+    "coverage": true,
+    "exact_completion": true,
+    "false_configuration_loss": true,
+    "false_static_collapse": true,
+    "fingerprint_collisions": true,
+    "joint_mean_tv": true,
+    "joint_q95_tv": true,
+    "log_evidence": true,
+    "medium_vs_low": true,
+    "normalization": false,
+    "primary_vs_medium": true,
+    "probability_mean_tv": true,
+    "probability_q95_tv": true,
+    "query_program_mean_tv": true,
+    "query_program_q95_tv": true,
+    "rank_bin_envelope": true,
+    "rank_chi_square": true,
+    "scale_completion": true,
+    "scale_normalization": false,
+    "scale_target_extinction": true,
+    "stream_collisions": true,
+    "suffix_mean_tv": true,
+    "suffix_q95_tv": true,
+    "support_program_mean_tv": true,
+    "support_program_q95_tv": true,
+    "target_configuration_log_loss": true,
+    "target_extinction": true,
+    "target_program_log_loss": true
+  },
+  "lock_payload_sha256": "34da366ddbcda3a4a5d0885e28f3f69c6c17283cfebc35032a29197e72d5b324",
+  "metrics": {
+    "exact": {
+      "by_budget": {
+        "127": {
+          "ambiguous_program_entropy_ratio": 0.9991829073895642,
+          "false_configuration_loss_rate": 0.0,
+          "false_static_collapse_rate": 0.0,
+          "mean_absolute_log_evidence_error": 0.013333184474643923,
+          "mean_core_tv": 0.0010745598774733482,
+          "mean_joint_belief_tv": 0.0018861895138210512,
+          "mean_probability_marginal_tv": 0.0006182193155899601,
+          "mean_query_program_tv": 0.0007872983444678101,
+          "mean_repeat_core_tv_dispersion": 0.000356744773498764,
+          "mean_suffix_predictive_tv": 0.0011618577737628588,
+          "mean_support_program_tv": 0.0009192344397250612,
+          "q95_joint_belief_tv": 0.0063976377952755905,
+          "q95_probability_marginal_tv": 0.0044758763083587744,
+          "q95_query_program_tv": 0.00485826681953064,
+          "q95_suffix_predictive_tv": 0.004552165354330708,
+          "q95_support_program_tv": 0.005127458111868096,
+          "target_configuration_log_loss_excess": 0.00022238849325895333,
+          "target_program_extinction_rate": 0.0,
+          "target_program_log_loss_excess": -8.788339095185814e-05
+        },
+        "31": {
+          "ambiguous_program_entropy_ratio": 0.9932571972224012,
+          "false_configuration_loss_rate": 0.0,
+          "false_static_collapse_rate": 0.0,
+          "mean_absolute_log_evidence_error": 0.0574700180382736,
+          "mean_core_tv": 0.005507776404574357,
+          "mean_joint_belief_tv": 0.009786387087315357,
+          "mean_probability_marginal_tv": 0.0036332686844286854,
+          "mean_query_program_tv": 0.004243838560980184,
+          "mean_repeat_core_tv_dispersion": 0.0016488998739095323,
+          "mean_suffix_predictive_tv": 0.005404655430169849,
+          "mean_support_program_tv": 0.004470732259977714,
+          "q95_joint_belief_tv": 0.031375172354088626,
+          "q95_probability_marginal_tv": 0.017341791605798008,
+          "q95_query_program_tv": 0.018366028880126756,
+          "q95_suffix_predictive_tv": 0.023918903086463376,
+          "q95_support_program_tv": 0.02308163108903172,
+          "target_configuration_log_loss_excess": 0.00025089690480842216,
+          "target_program_extinction_rate": 0.0,
+          "target_program_log_loss_excess": 0.002237784030721829
+        },
+        "509": {
+          "ambiguous_program_entropy_ratio": 0.9997805461842277,
+          "false_configuration_loss_rate": 0.0,
+          "false_static_collapse_rate": 0.0,
+          "mean_absolute_log_evidence_error": 0.003437891453330749,
+          "mean_core_tv": 0.0003435885111600364,
+          "mean_joint_belief_tv": 0.0005967651215230508,
+          "mean_probability_marginal_tv": 0.00021516870199401946,
+          "mean_query_program_tv": 0.0002584237470630298,
+          "mean_repeat_core_tv_dispersion": 0.0001371009425201076,
+          "mean_suffix_predictive_tv": 0.00035757958032416753,
+          "mean_support_program_tv": 0.0002900054048959145,
+          "q95_joint_belief_tv": 0.002445684562832546,
+          "q95_probability_marginal_tv": 0.001328194318809395,
+          "q95_query_program_tv": 0.0013467005835702528,
+          "q95_suffix_predictive_tv": 0.0016352935544701331,
+          "q95_support_program_tv": 0.001899416813418202,
+          "target_configuration_log_loss_excess": 0.0003411866753075787,
+          "target_program_extinction_rate": 0.0,
+          "target_program_log_loss_excess": 0.00012449532328515547
+        }
+      },
+      "completed_fraction": 1.0,
+      "controls": {
+        "checks": {
+          "likelihood_squared": true,
+          "map_configuration": true,
+          "map_program": true,
+          "stream_collision": true
+        },
+        "detected_or_dominated": 4,
+        "likelihood_squared_mean_query_program_tv": 0.03090487422691211
+      },
+      "medium_minus_low_mean_tv": -0.004433216527101009,
+      "primary_budget": 509,
+      "primary_minus_medium_mean_tv": -0.0007309713663133118,
+      "stochastic_fingerprint_collision_rate": 0.0,
+      "unintended_stream_collision_count": 0
+    },
+    "sbc": {
+      "chi_square_p_values": {
+        "configuration_ordinal": 0.08282186219329722,
+        "configuration_posterior_probability": 0.1535792909922302,
+        "probability_ordinal": 0.970753491658102,
+        "program_ordinal": 0.29516425136925173,
+        "program_posterior_probability": 0.9786786634050147
+      },
+      "coverage": {
+        "configuration_ordinal": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.4677734375,
+            "z": -2.0625
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.78515625,
+            "z": -0.9320827648567408
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.95703125,
+            "z": 0.5913770167636583
+          }
+        },
+        "configuration_posterior_probability": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.498046875,
+            "z": -0.125
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.798828125,
+            "z": 0.15534712747612348
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.9638671875,
+            "z": 1.6262867961000602
+          }
+        },
+        "probability_ordinal": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.5078125,
+            "z": 0.5
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.7958984375,
+            "z": -0.07767356373806174
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.9453125,
+            "z": -1.1827540335273166
+          }
+        },
+        "program_ordinal": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.5205078125,
+            "z": 1.3125
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.7900390625,
+            "z": -0.5437149461664321
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.9541015625,
+            "z": 0.14784425419091457
+          }
+        },
+        "program_posterior_probability": {
+          "0.5": {
+            "expected": 0.5,
+            "observed": 0.4853515625,
+            "z": -0.9375
+          },
+          "0.8": {
+            "expected": 0.796875,
+            "observed": 0.794921875,
+            "z": -0.15534712747612348
+          },
+          "0.95": {
+            "expected": 0.953125,
+            "observed": 0.9560546875,
+            "z": 0.4435327625727437
+          }
+        }
+      },
+      "histograms": {
+        "configuration_ordinal": [
+          63,
+          92,
+          66,
+          73,
+          71,
+          64,
+          53,
+          58,
+          57,
+          54,
+          65,
+          57,
+          67,
+          56,
+          72,
+          56
+        ],
+        "configuration_posterior_probability": [
+          65,
+          42,
+          75,
+          61,
+          64,
+          62,
+          57,
+          62,
+          78,
+          62,
+          55,
+          70,
+          67,
+          72,
+          77,
+          55
+        ],
+        "probability_ordinal": [
+          61,
+          56,
+          61,
+          66,
+          62,
+          67,
+          70,
+          59,
+          55,
+          74,
+          65,
+          68,
+          60,
+          66,
+          64,
+          70
+        ],
+        "program_ordinal": [
+          65,
+          61,
+          71,
+          51,
+          70,
+          57,
+          84,
+          66,
+          67,
+          69,
+          59,
+          61,
+          55,
+          62,
+          52,
+          74
+        ],
+        "program_posterior_probability": [
+          63,
+          66,
+          62,
+          78,
+          65,
+          68,
+          60,
+          61,
+          62,
+          62,
+          55,
+          64,
+          67,
+          61,
+          69,
+          61
+        ]
+      },
+      "maximum_absolute_coverage_z": 2.0625,
+      "maximum_absolute_rank_bin_z": 3.6147844564602556,
+      "maximum_absolute_rank_bin_z_by_quantity": {
+        "configuration_ordinal": 3.6147844564602556,
+        "configuration_posterior_probability": 2.840187787218772,
+        "probability_ordinal": 1.2909944487358056,
+        "program_ordinal": 2.581988897471611,
+        "program_posterior_probability": 1.8073922282301278
+      },
+      "minimum_chi_square_p_value": 0.08282186219329722
+    },
+    "sbc_normalization_rate": 0.7685546875,
+    "sbc_target_program_extinction_rate": 0.0,
+    "scale": {
+      "completion_fraction": 1.0,
+      "mean_distinct_configurations": 1.6047095554965545,
+      "mean_ess_fraction": 0.9554006406546387,
+      "mean_resampling_events": 76.4375,
+      "minimum_distinct_ancestor_fraction": 0.011787819253438114,
+      "minimum_ess_fraction": 0.5157211615933902,
+      "normalization_rate": 0.7083333333333334,
+      "target_program_extinction_rate": 0.0,
+      "transition_groups": 38720
+    }
+  },
+  "post_result_audit": "outputs/v52-rao-blackwellized-particle-filtering/post-result-audit.json",
+  "post_result_audit_sha256": "624596ea9293d6dd5b4824b8e08e056554cc3417eea4587abb9a24ba6b98fd46",
+  "qualification_passed": false,
+  "result": "outputs/v52-rao-blackwellized-particle-filtering/evaluation/result.json",
+  "result_sha256": "e2a19eff24182124b347eccd33dd374e31615b84e642d0ecd48b3c4de2c2c0ca",
+  "schema_version": 52,
+  "scientific_decision": "repair_particle_accuracy_calibration_degeneracy_or_stream_integrity"
+}

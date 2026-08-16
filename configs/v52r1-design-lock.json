@@ -1,0 +1,376 @@
+{
+  "authorization": {
+    "construct_particle_populations": false,
+    "model_access": false,
+    "run_particle_evaluation": false,
+    "write_particle_implementation": true
+  },
+  "checks": {
+    "downstream_absent": true,
+    "new_budgets_coprime_to_four": true,
+    "same_cost_class": true,
+    "source_design_passed": true
+  },
+  "config_payload": {
+    "algorithm": {
+      "adaptiveParticleCount": false,
+      "duplicateConfigurationMerging": true,
+      "forcedResamplingWhenWeightedSupportExceedsBudget": true,
+      "innerDynamicLayer": "for_each_static_hypothesis_propagate_world_and_delayed_queue_particles_one_tick_condition_on_the_current_masked_observation_merge_duplicate_configurations_and_resample_when_required",
+      "likelihoodAccumulation": "one_unbiased_normalizing_constant_increment_per_observation_in_log_space",
+      "outerStaticLayer": "enumerate_all_48_finite_program_probability_hypotheses_and_update_their_log_weights_with_particle_likelihood_increments",
+      "particleState": [
+        "world",
+        "delayed_effect_queue",
+        "particle_mass",
+        "ancestor_id"
+      ],
+      "raoBlackwellization": "sum_static_program_and_probability_hypotheses_exactly_and_sum_each_particles_one_step_stochastic_branches_exactly_before_bounded_resampling",
+      "rejuvenation": false,
+      "resampling": "systematic_resampling_with_program_record_repeat_and_tick_specific_hash_streams",
+      "resamplingEssThresholdFraction": 0.5,
+      "smoothing": false,
+      "zeroWeightProgramsRetainedWithZeroPosteriorMass": true
+    },
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "adapterTraining": false,
+      "approximateParticleInference": true,
+      "continuousProbabilities": false,
+      "exactOracleComparison": true,
+      "exactProgramAndProbabilityEnumeration": true,
+      "finalEvaluation": false,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "noisySensors": false,
+      "openOntology": false,
+      "particleHiddenState": true,
+      "particleMcmc": false,
+      "primaryClaim": "finite_static_latents_enumerated_exactly_with_bounded_particle_filtering_of_hidden_world_and_delayed_queue",
+      "raoBlackwellizedStaticLatents": true,
+      "rewardOrPlanning": false,
+      "scaleStress": true,
+      "simulationBasedCalibration": true,
+      "smcSquared": false
+    },
+    "collapseAndCorrelationControls": {
+      "ambiguityDefinition": "exact_max_program_posterior_at_most_0_60",
+      "falseConfigurationLossDefinition": "exact_configuration_mass_at_least_0_05_and_zero_particle_mass",
+      "falseStaticCollapseDefinition": "ambiguous_exact_case_with_particle_max_program_posterior_at_least_0_95",
+      "independentStreamKey": [
+        "population",
+        "record",
+        "program",
+        "budget",
+        "repeat",
+        "episode",
+        "tick"
+      ],
+      "likelihoodSquaredControl": "square_each_particle_likelihood_increment_before_static_normalization",
+      "mapConfigurationControl": "replace_dynamic_belief_with_point_mass_at_map_world_queue_configuration",
+      "mapProgramControl": "replace_static_posterior_with_point_mass_at_map_program",
+      "minimumControlsDetectedOrDominated": 3,
+      "streamCollisionControl": "deliberately_reuse_one_stream_and_require_the_stream_fingerprint_audit_to_detect_it"
+    },
+    "decisionHierarchy": [
+      "if_exact_agreement_convergence_calibration_degeneracy_correlation_and_scale_gates_pass_authorize_preregistration_of_continuous_parameter_smc_squared_with_pmcmc_reference",
+      "if_exact_agreement_or_sbc_fails_repair_particle_filter_or_increase_precommitted_budget_on_a_fresh_population",
+      "if_collapse_or_stream_integrity_fails_repair_resampling_and_random_stream_partitioning",
+      "if_scale_stress_alone_fails_repair_particle_data_structures_without_changing_inference_targets",
+      "do_not_authorize_active_intervention_selection_until_smc_squared_and_pmcmc_validation_pass"
+    ],
+    "exactBenchmark": {
+      "comparisonTargets": [
+        "support_program_posterior",
+        "query_program_posterior",
+        "probability_parameter_marginal",
+        "joint_program_world_queue_belief",
+        "complete_suffix_predictive",
+        "record_log_evidence"
+      ],
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "queryPrefixLengths": [
+        4,
+        5
+      ],
+      "querySequenceLengths": [
+        8,
+        10
+      ],
+      "records": 96,
+      "recordsPerMechanic": 2,
+      "reference": "v51_independent_exact_stepwise_configuration_filter",
+      "supportInterventionsPerRecord": 6,
+      "supportSequenceLengths": [
+        6,
+        8
+      ],
+      "trialsPerSupportIntervention": 1
+    },
+    "experiment": "v52_rao_blackwellized_particle_filtering",
+    "firewall": {
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "continuousProbabilities": "forbidden",
+      "exactSbcAndScalePopulationOverlap": "forbidden",
+      "finalEvaluation": "forbidden",
+      "implementationSmokeSeedsOverlap": "forbidden",
+      "languageGrounding": "forbidden",
+      "modelAccess": "forbidden",
+      "particleMcmc": "forbidden",
+      "priorObservationDesignsReused": "forbidden",
+      "priorProgramsReused": "forbidden",
+      "rewardOrPlanning": "forbidden",
+      "selectionOnSealedResults": "forbidden",
+      "smcSquared": "forbidden"
+    },
+    "gates": {
+      "maximumAbsoluteCoverageZ": 4.75,
+      "maximumAbsoluteRankBinZ": 4.75,
+      "maximumFalseConfigurationLossRate": 0.02,
+      "maximumFalseStaticCollapseRate": 0.02,
+      "maximumMeanAbsoluteLogEvidenceError": 0.06,
+      "maximumMediumMinusLowMeanTv": 0.01,
+      "maximumPrimaryMeanJointBeliefTv": 0.04,
+      "maximumPrimaryMeanProbabilityMarginalTv": 0.02,
+      "maximumPrimaryMeanQueryProgramTv": 0.025,
+      "maximumPrimaryMeanSuffixPredictiveTv": 0.035,
+      "maximumPrimaryMeanSupportProgramTv": 0.02,
+      "maximumPrimaryMinusMediumMeanTv": 0.005,
+      "maximumPrimaryQ95JointBeliefTv": 0.14,
+      "maximumPrimaryQ95ProbabilityMarginalTv": 0.08,
+      "maximumPrimaryQ95QueryProgramTv": 0.1,
+      "maximumPrimaryQ95SuffixPredictiveTv": 0.12,
+      "maximumPrimaryQ95SupportProgramTv": 0.08,
+      "maximumScaleStressTargetProgramExtinctionRate": 0.02,
+      "maximumStochasticFingerprintCollisionRate": 0.01,
+      "maximumTargetConfigurationLogLossExcess": 0.1,
+      "maximumTargetProgramExtinctionRate": 0.01,
+      "maximumTargetProgramLogLossExcess": 0.06,
+      "maximumUnintendedStreamCollisions": 0,
+      "minimumAmbiguousProgramEntropyRatio": 0.9,
+      "minimumCompletedExactBenchmarkFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 3,
+      "minimumNormalizationRate": 1.0,
+      "minimumRankChiSquarePValue": 0.001,
+      "minimumScaleStressCompletionFraction": 1.0,
+      "minimumScaleStressNormalizationRate": 1.0
+    },
+    "metrics": {
+      "calibration": [
+        "rank_histograms",
+        "rank_chi_square_p_values",
+        "maximum_absolute_rank_bin_z",
+        "central_rank_coverage",
+        "maximum_absolute_coverage_z"
+      ],
+      "convergence": [
+        "mean_tv_by_particle_budget",
+        "primary_minus_medium_mean_tv",
+        "medium_minus_low_mean_tv",
+        "monte_carlo_repeat_dispersion"
+      ],
+      "correlationIntegrity": [
+        "unintended_stream_collision_count",
+        "resampling_fingerprint_collision_rate_on_stochastic_cases",
+        "intentional_collision_control_detected"
+      ],
+      "degeneracy": [
+        "target_program_extinction_rate",
+        "false_static_collapse_rate",
+        "false_configuration_loss_rate",
+        "ambiguous_program_entropy_ratio",
+        "ess_fraction",
+        "distinct_ancestor_fraction"
+      ],
+      "exactAgreement": [
+        "mean_and_q95_support_program_tv",
+        "mean_and_q95_query_program_tv",
+        "mean_and_q95_probability_marginal_tv",
+        "mean_and_q95_joint_belief_tv",
+        "mean_and_q95_suffix_predictive_tv",
+        "mean_absolute_log_evidence_error",
+        "target_program_log_loss_excess",
+        "target_configuration_log_loss_excess"
+      ]
+    },
+    "particleBudgets": {
+      "budgetChosenBeforePopulationConstruction": true,
+      "budgets": [
+        31,
+        127,
+        509
+      ],
+      "independentRepeatsOnExactBenchmark": 3,
+      "primaryBudget": 509,
+      "primaryRepeatOnSbc": 0,
+      "selectionOnSealedResults": false
+    },
+    "population": {
+      "families": [
+        "state_conditional_probability",
+        "immediate_vs_delayed_stochasticity",
+        "cross_action_stochastic_composition",
+        "relational_stochastic_effects"
+      ],
+      "freshObservationDesignsAgainst": [
+        "V46",
+        "V47",
+        "V48",
+        "V49",
+        "V50",
+        "V51"
+      ],
+      "freshProgramsAgainst": [
+        "V46",
+        "V47",
+        "V48",
+        "V49",
+        "V50",
+        "V51"
+      ],
+      "generatorSeed": 5201,
+      "maskSeed": 5203,
+      "mechanics": 48,
+      "mechanicsPerFamilyProbabilityCell": 4,
+      "observationDesignIdentity": [
+        "entities",
+        "initial_state",
+        "actions",
+        "masks"
+      ],
+      "particleSeed": 5213,
+      "posteriorDrawSeed": 5219,
+      "probabilityVocabulary": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "tieBreakSeed": 5227,
+      "trajectorySeed": 5209
+    },
+    "sbc": {
+      "coverageLevels": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "discreteTieHandling": "randomized_insertion_rank_among_equal_values_with_frozen_independent_seed",
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "expectedRanksPerBin": 64,
+      "posteriorDrawsPerReplication": 63,
+      "queryPrefixLengths": [
+        8,
+        10
+      ],
+      "querySequenceLengths": [
+        12,
+        16
+      ],
+      "rankBins": 16,
+      "rankSupportSize": 64,
+      "replications": 1024,
+      "selectionOnSbcReplications": false,
+      "singlePrimaryParticleSeedPerReplication": true,
+      "supportInterventionsPerReplication": 6,
+      "supportSequenceLengths": [
+        8,
+        12
+      ],
+      "testQuantities": [
+        "canonical_program_ordinal",
+        "declared_probability_ordinal",
+        "canonical_world_queue_configuration_ordinal",
+        "target_program_posterior_probability",
+        "target_configuration_posterior_probability"
+      ]
+    },
+    "scaleStress": {
+      "entityCounts": [
+        3,
+        4
+      ],
+      "exactEnumerationRequired": false,
+      "metrics": [
+        "completion_fraction",
+        "normalization_rate",
+        "target_program_extinction_rate",
+        "ess_fraction_by_tick",
+        "resampling_count",
+        "distinct_configuration_fraction",
+        "distinct_ancestor_fraction",
+        "peak_live_weighted_configurations",
+        "particle_transition_proposals",
+        "estimated_unbounded_trajectory_count",
+        "runtime_seconds_non_gating"
+      ],
+      "particleBudget": 509,
+      "records": 96,
+      "recordsPerMechanic": 2,
+      "sequenceLengths": [
+        16,
+        24,
+        32
+      ]
+    },
+    "schemaVersion": 52,
+    "scientificQuestion": "can_a_bounded_particle_approximation_scale_hidden_world_and_queue_filtering_while_preserving_the_calibrated_joint_posterior_over_finite_mechanic_identity_probability_and_dynamic_state",
+    "sourceV51r1OutcomeLock": "configs/v51r1-outcome-lock.json",
+    "stageAuthorization": {
+      "constructSealedPopulations": false,
+      "modelAccess": false,
+      "runParticleEvaluation": false,
+      "writeAndAuditParticleImplementation": true
+    },
+    "v51r1Interpretation": {
+      "bugControlsRejected": 2,
+      "maximumExactPathTv": 6e-100,
+      "maximumPrimaryCoverageZ": 1.867399123695705,
+      "maximumPrimaryRankBinZ": 2.647325694608303,
+      "minimumPrimaryRankChiSquarePValue": 0.05683879968802381,
+      "normalizationRate": 1.0,
+      "qualificationPassed": true,
+      "replications": 2048
+    }
+  },
+  "experiment": "v52r1_design_lock",
+  "lock_payload_sha256": "7ca5e1830f5e775b3eab9fb181b0ef4f35e3820b645d5e507beeaf6a13b07a15",
+  "preregistration": "docs/v52r1-particle-budget-repair-plan.md",
+  "preregistration_sha256": "e9bc1407f4a0f73e6230a5ca48980d29b2ac29f79cdf5839b2bc1399dfd822bc",
+  "repair": "configs/v52r1-particle-budget-repair.json",
+  "repair_sha256": "33f6ef19a27e1337258f18f2a71bb7e8b751405349f7f1a3e75fdecc76f76a3d",
+  "revision": "r1",
+  "schema_version": 52,
+  "single_authorized_change": {
+    "particleBudgets.budgets": {
+      "new": [
+        31,
+        127,
+        509
+      ],
+      "old": [
+        32,
+        128,
+        512
+      ]
+    },
+    "particleBudgets.primaryBudget": {
+      "new": 509,
+      "old": 512
+    },
+    "scaleStress.particleBudget": {
+      "new": 509,
+      "old": 512
+    }
+  },
+  "source_design_lock": "configs/v52-design-lock.json",
+  "source_design_lock_sha256": "95a82a5e619988340eb4964a676e4f89aa39abaf47542adac6443d08dc4996cc"
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 37,
+  "experiment": "v37_candidate_conditioned_semantic_invariance",
+  "scientificScope": "development_only_semantic_interface_repair",
+  "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+  "sourceV36OutcomeLock": "configs/v36-outcome-lock.json",
+  "sourceV36Result": "outputs/v36-independent-confirmation/evaluation/result.json",
+  "sourceV36Localization": "outputs/v36-independent-confirmation/failure-localization.json",
+  "allowedTrainingSources": [
+    {
+      "corpus": "data/v32-factorized-semantics/factor_fit.jsonl",
+      "source": "v32_factor_fit"
+    },
+    {
+      "corpus": "data/v36-independent-confirmation/independent_confirmation.jsonl",
+      "source": "v36_exposed_confirmation"
+    }
+  ],
+  "forbiddenSources": [
+    "data/v32-factorized-semantics/factor_calibration.jsonl",
+    "data/v32-factorized-semantics/factor_evaluation_paraphrase.jsonl",
+    "data/v32-factorized-semantics/factor_evaluation_composition.jsonl"
+  ],
+  "model": {
+    "model": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "totalLayers": 32,
+    "hiddenSize": 2560,
+    "maxSequenceLength": 768,
+    "systemPrompt": "Judge the semantic compatibility of the candidate analysis with the evidence. Ignore unrelated material, preserve lexical negation, and distinguish rejection of a proposition from rejection of its denial."
+  },
+  "developmentFit": {
+    "samplingSeed": 3701,
+    "recordsPerOperationSignCell": 40,
+    "recordsFromV32WhenCellAvailable": 16,
+    "recordsFromV36WhenV32CellAvailable": 24,
+    "recordsFromV36WhenV32CellUnavailable": 40,
+    "balanceDistractorWithinSourceCell": true,
+    "expectedRecords": 400,
+    "selectionFolds": 5,
+    "selectionGroup": "source_operation_surface_family",
+    "alphas": [1.0, 10.0, 100.0, 1000.0, 10000.0]
+  },
+  "freshValidation": {
+    "split": "semantic_invariance_validation",
+    "generatorSeed": 3711,
+    "surfaceNamesPerOperation": ["invariance_a", "invariance_b"],
+    "lexicalSignsPerOperation": ["positive", "negative"],
+    "baseScenesPerSurfaceFamilyCell": 1,
+    "entityCounts": [3, 4, 5],
+    "sceneVariants": [
+      "direct_clean",
+      "inverse_clean",
+      "direct_distractor_prefix",
+      "direct_distractor_suffix",
+      "reversed_link_arguments_clean"
+    ],
+    "expectedSurfaceFamilies": 10,
+    "expectedRecords": 360,
+    "expectedScenes": 100,
+    "requiredExactEvidenceOverlapWithSources": 0,
+    "requiredNormalizedTemplateOverlapWithSources": 0,
+    "singleValidationEvaluation": true
+  },
+  "interfaces": {
+    "lexicalSignClasses": ["positive", "negative"],
+    "outerOperationClasses": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+    "candidateAnswerTokens": ["Yes", "No"],
+    "candidateViewsPerRecord": 7,
+    "directBaselineViewsPerRecord": 2,
+    "viewsPerRecord": 9,
+    "methods": [
+      "candidate_hidden_shared_ridge",
+      "candidate_margin_vector_ridge",
+      "candidate_native_margin",
+      "direct_hidden_ridge"
+    ],
+    "componentSelection": "fit_group_cv_only",
+    "truthCompiler": "unchanged_v32_fixed_compiler"
+  },
+  "execution": {
+    "expectedFitRecords": 400,
+    "expectedValidationRecords": 360,
+    "expectedBackboneForwardPasses": 6840,
+    "featureExtractionAttempts": 1,
+    "validationEvaluations": 1,
+    "selectionOnValidation": false,
+    "adapterTrainingRuns": 0,
+    "v28Runs": 0,
+    "v32EvaluationReads": 0
+  },
+  "qualification": {
+    "minimumValidationLexicalSignAccuracy": 0.95,
+    "minimumValidationOuterOperationAccuracy": 0.95,
+    "minimumValidationCompiledTruthAccuracy": 0.95,
+    "minimumWorstOperationAccuracy": 0.90,
+    "minimumWorstSurfaceFamilyTruthAccuracy": 0.85,
+    "minimumDistractorTruthAccuracy": 0.90,
+    "minimumNegativeCompositionTruthAccuracy": 0.90,
+    "minimumPairExactAccuracy": 0.85,
+    "minimumTruthGainOverFrozenV36Interface": 0.15
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_preregister_fresh_semantic_confirmation_only",
+    "if_candidate_methods_improve_but_miss_gates_continue_semantic_interface_development",
+    "if_no_material_gain_pivot_to_constrained_semantic_parser_or_stronger_frozen_grounder"
+  ],
+  "firewall": {
+    "v32EvaluationUse": "forbidden",
+    "v28Use": "forbidden",
+    "atomInterfaceChanges": "forbidden",
+    "executorChanges": "forbidden",
+    "adapterOrBackboneTraining": "forbidden",
+    "endToEndRelationalSuite": "forbidden",
+    "freshValidationMaySelectMethodOrAlpha": false,
+    "freshValidationStatus": "development_validation_not_final_claim"
+  }
+}

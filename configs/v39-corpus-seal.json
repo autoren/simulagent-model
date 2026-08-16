@@ -1,0 +1,39 @@
+{
+  "authorization": {
+    "evaluation_attempts": 1,
+    "model_forward_passes": 0,
+    "v28": false,
+    "v32_evaluation": false
+  },
+  "corpora": {
+    "compiler_development": {
+      "path": "data/v39-declared-language-compiler/compiler_development.jsonl",
+      "records": 360,
+      "sha256": "68a502a7b1871121a44fdc8bccb47af787ab547e8379f0a8ea3b9e2fc4438758"
+    },
+    "compiler_safety": {
+      "path": "data/v39-declared-language-compiler/compiler_safety.jsonl",
+      "records": 240,
+      "sha256": "ec1653a8e4342d2521b79ff95560e444e5739396287a85471a026a2dc69e8586"
+    },
+    "novel_paraphrase_diagnostic": {
+      "path": "data/v39-declared-language-compiler/novel_paraphrase_diagnostic.jsonl",
+      "records": 50,
+      "sha256": "8ca1a3b954682b36e4ebad6fa43cd525b65b494e71a051ab18e77331f79fdf49"
+    },
+    "supported_evaluation": {
+      "path": "data/v39-declared-language-compiler/supported_evaluation.jsonl",
+      "records": 360,
+      "sha256": "e6233276a005278594fc71fda8124fdca97329f9fd654c60ca911f4f540faff2"
+    }
+  },
+  "corpus_audit": "outputs/v39-declared-language-compiler/corpus-audit.json",
+  "corpus_audit_sha256": "32c6b930050ffe1706b9622c6a798fb8a84521c04b58b94d1967664a05093d58",
+  "experiment": "v39_corpus_seal",
+  "implementation_lock": "configs/v39-implementation-lock.json",
+  "implementation_lock_sha256": "0dc822a0dac2ad5c58f19106e40634f59af598397f2a6a603497e70627983f74",
+  "lock_payload_sha256": "5cb5d281f40bd3d5644ed2c6797f09abbd8eee6c41817947922458d765984b4e",
+  "manifest": "data/v39-declared-language-compiler/manifest.json",
+  "manifest_sha256": "47b4ef9cdfa3f938297120cd801f6cb977cc4f4a29cbd50ffafb40f5cbe8f42e",
+  "schema_version": 39
+}

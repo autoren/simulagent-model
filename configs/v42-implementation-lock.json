@@ -1,0 +1,150 @@
+{
+  "authorization": {
+    "construct_development_population": true,
+    "language_grounding": false,
+    "model_access": false,
+    "run_oracle_development": false
+  },
+  "config_payload": {
+    "comparisons": {
+      "frozenV22MemorylessExecutor": "registered_inadequacy_control",
+      "jointNeuralChallenger": "deferred",
+      "literalSequenceLookup": "non_lifted_control",
+      "statefulVersionSpaceExecutor": "primary"
+    },
+    "decisionHierarchy": [
+      "if_stateful_passes_and_memoryless_fails_authorize_sequential_language_grounding_development",
+      "if_stateful_fails_repair_stateful_dsl_or_executor_before_language_or_neural_work",
+      "if_memoryless_passes_redesign_benchmark_to_make_persistent_state_causally_necessary",
+      "if_literal_lookup_passes_redesign_generalization_split_before_any_claim"
+    ],
+    "experiment": "v42_oracle_sequential_state_foundation",
+    "firewall": {
+      "V41CorpusReuse": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "claimExpansionBeyondOracleSequentialFoundation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "stochasticOrDelayedAxes": "forbidden"
+    },
+    "gates": {
+      "maximumLiteralLookupFinalObservationExact": 0.95,
+      "maximumMemorylessFinalObservationExact": 0.85,
+      "minimumOracleProgramValidation": 1.0,
+      "minimumOrderCounterfactualAccuracy": 1.0,
+      "minimumStatefulEveryFamilyExact": 1.0,
+      "minimumStatefulEverySequenceLengthExact": 1.0,
+      "minimumStatefulFinalObservationExact": 1.0,
+      "minimumStatefulNextStateExact": 1.0,
+      "minimumStatefulSchemaRecovery": 1.0,
+      "minimumStatefulTargetRetention": 1.0
+    },
+    "population": {
+      "developmentEvaluationMechanics": 16,
+      "entityCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "families": [
+        "set_clear_toggle",
+        "state_conditional_effect",
+        "directed_relational_propagation",
+        "order_sensitive_composition"
+      ],
+      "fitMechanics": 24,
+      "generatorSeed": 4213,
+      "mechanics": 40,
+      "mechanicsPerFamily": 10,
+      "querySequencesPerMechanic": 24,
+      "supportSequencesPerMechanicMaximum": 16
+    },
+    "schemaVersion": 42,
+    "scientificQuestion": "can_a_minimal_stateful_symbolic_extension_represent_identify_and_execute_order_sensitive_multi_action_mechanics_that_the_frozen_one_step_architecture_cannot",
+    "scope": {
+      "activeInterventionSelection": false,
+      "declaredBooleanOntology": true,
+      "delayedEffects": false,
+      "deterministicImmediateEffects": true,
+      "languageGrounding": false,
+      "openConceptInventory": false,
+      "oracleFirst": true,
+      "partialObservation": true,
+      "persistentStateMutation": true,
+      "sequenceLengths": [
+        2,
+        3,
+        4
+      ],
+      "stochasticEffects": false,
+      "variableEntitiesAndDirectedRelations": true
+    },
+    "sourceV41OutcomeLock": "configs/v41-outcome-lock.json",
+    "stageAuthorization": {
+      "constructDevelopmentPopulation": false,
+      "languageGrounding": false,
+      "runOracleDevelopment": false,
+      "writeAndAuditOracleImplementation": true
+    },
+    "statefulDsl": {
+      "actionParametersMaximum": 2,
+      "closedWorldCompleteStates": true,
+      "conditions": [
+        "unary",
+        "relation",
+        "not",
+        "and",
+        "or",
+        "exists"
+      ],
+      "effects": [
+        "set_true",
+        "set_false",
+        "toggle",
+        "copy",
+        "conditional_effect"
+      ],
+      "explicitUnknownPartialStates": true,
+      "maximumBoundVariables": 1,
+      "maximumConditionDepth": 2,
+      "maximumEffectsPerAction": 2,
+      "simultaneousEffectsWithinAction": true,
+      "statePersistsAcrossActions": true
+    }
+  },
+  "design_lock": "configs/v42-design-lock.json",
+  "design_lock_sha256": "92b140a3a8c639583d5d12bc490ce6838d9f2fea5d0b654422570717027f757c",
+  "expected_corpus_sha256": "a7522d05dab0bfa609e45ffccfe3e9d3a4f50a843a0955e263d03471598006c6",
+  "expected_counts": {
+    "causal_order_pairs": 88,
+    "mechanics": 40,
+    "partial_queries": 320,
+    "query_sequences": 960,
+    "support_sequences": 43
+  },
+  "experiment": "v42_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v42.py": "25a4e060ffee865a1014598e161480422f2d50a35e5d04503d0e91dd161d583b",
+    "python/audit_v42_corpus.py": "8bb66e2753c3911f4db23f434485eeb17d29373736421c18773b916f2a0d5f4e",
+    "python/audit_v42_implementation.py": "24f1533e9a03e91afab06d64a146349a4d29329bf36b46a50a590cf7d8907d66",
+    "python/evaluate_v42_sequential.py": "d7a29f5ee43323eaabe2faa4ebece93a9a9e9a9eb035a0bac7a17461549ccf9a",
+    "python/freeze_v42_implementation.py": "e65b6c87e79a960ffde7f8ec4344a36eea6b7d5437c0dbb0e0ea7647793d19f3",
+    "python/freeze_v42_outcome.py": "52b9c441123dec4997fa969dfb9a31b669879718f2e93d787e404c867b85825c",
+    "python/generate_v42_sequential.py": "c6a2ed298bef148f996013e1b34b246ef0db309f8c4c948a9c71539bc7352882",
+    "python/seal_v42_corpus.py": "56d92047f16b91e7ede68d38fa7bb9180f7302e741d02c3edba85623b6515faf",
+    "python/test_v42_stateful.py": "c7dab31d139b5980e4d0b6fdaa5fd57c5e8d6fb52609e28a39d07ff13a9495cd",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v42_stateful.py": "500a7d2ade4a6be0714f6e1a5a93928d47a132283295d168b6128c049d9652ea"
+  },
+  "implementation_audit": "outputs/v42-sequential-state-foundation/implementation-audit.json",
+  "implementation_audit_sha256": "75b071040fdb8c06eb1d2a229296a1a51df50871397e4365c83f0c0d898f67a3",
+  "lock_payload_sha256": "7bcd527c137e58c7f0011b890ea43f25e50200142a84817ca64aaa550b308549",
+  "schema_version": 42,
+  "source_v41_outcome_lock": "configs/v41-outcome-lock.json",
+  "source_v41_outcome_lock_sha256": "8ced76152c02a7e3f9d49212c2066ea8ca2d026908f60be6eafb474382990ec0"
+}

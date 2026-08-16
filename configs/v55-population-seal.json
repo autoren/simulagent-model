@@ -1,0 +1,25 @@
+{
+  "authorization": {
+    "change_v55_design_implementation_or_population": false,
+    "formal_verification": false,
+    "language_grounding": false,
+    "model_access": false,
+    "run_v55_planning_evaluation_once": true
+  },
+  "evaluation_implementation_lock": "configs/v55-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "9c35169279b47b1980f0e0e604df9caf2faa61d1a18852b2ed955e70d6ab4edd",
+  "experiment": "v55_population_seal",
+  "implementation_lock": "configs/v55-implementation-lock.json",
+  "implementation_lock_sha256": "6f467a0ef96c49570c369bc1060cb4b6f3bb2389a850c1dcf69cc3718e40b9d2",
+  "manifest": "data/v55-short-horizon-bayes-adaptive-planning/manifest.json",
+  "manifest_sha256": "9a7fdd3b1fcd443472f1faacc640eeb24fcf9aa91b2c63da4d95fddc39718ebb",
+  "population": {
+    "path": "data/v55-short-horizon-bayes-adaptive-planning/planning.jsonl",
+    "sha256": "7483aa1c9ae81f842b381ac9b08d6d129f093a82d4fa64f92796c6c9bb47bdbd"
+  },
+  "population_audit": "outputs/v55-short-horizon-bayes-adaptive-planning/population-audit.json",
+  "population_audit_sha256": "d83a33fc9afea880dc9b5fafc10940f0cd11f74f087868fd77fd05d42a160942",
+  "population_hash": "7483aa1c9ae81f842b381ac9b08d6d129f093a82d4fa64f92796c6c9bb47bdbd",
+  "schema_version": 55,
+  "seal_payload_sha256": "5536daaeaa3aa2636fa051d757ba538d22e19e1ab5696d67a2f9c4549c08fdbe"
+}

@@ -1,0 +1,22 @@
+{
+  "authorization": {
+    "construct_active_population": false,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_exact_one_step_expected_information_gain": true,
+    "reward_or_planning": false,
+    "verification": false
+  },
+  "decision": "authorize_exact_one_step_expected_information_gain_preregistration_only",
+  "experiment": "v53r2_outcome_lock",
+  "lock_payload_sha256": "7d7d92e81ad20419e48925d3c418cdf5a284430bfcf28dce2ced5389e124542e",
+  "post_result_audit": "outputs/v53r2-continuous-parameter-smc2/post-result-audit.json",
+  "post_result_audit_sha256": "1bbfbd97342536a96524c0f3e4ac7753c5fff9cf048e40623fe86d89df8f8389",
+  "qualification_passed": true,
+  "result": "outputs/v53r2-continuous-parameter-smc2/evaluation/result.json",
+  "result_sha256": "c209f3b1263c432c1f98e341f796297dfff5cd4c80b324454d1aad04c46e82c5",
+  "revision": "r2",
+  "schema_version": 53,
+  "summary": "docs/v53r2-results.md",
+  "summary_sha256": "5bedec74f7b9ee895445229c7dff71aeddc6b863cb46b387b5340ee8ec36a132"
+}

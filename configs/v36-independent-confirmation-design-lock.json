@@ -1,0 +1,183 @@
+{
+  "audit_script_sha256": "d5f463c4db0432291419ad46e142e552b79fe92398bd3f155fdb88aeab1e85b7",
+  "authorization": {
+    "construct_confirmation": false,
+    "construct_final_suite": false,
+    "fit_interface": false,
+    "model_access": false,
+    "reuse_v32_evaluation": false,
+    "run_v28": false,
+    "write_implementation": true
+  },
+  "config": "configs/v36-independent-confirmation-design.json",
+  "config_payload": {
+    "confirmationSuite": {
+      "baseScenesPerSurfaceFamilyCell": 3,
+      "entityCounts": [
+        3,
+        4,
+        5
+      ],
+      "expectedRecords": 1170,
+      "expectedScenes": 360,
+      "factsInInverseScenes": [
+        "linked",
+        "feeds"
+      ],
+      "factsInReversedScenes": [
+        "linked"
+      ],
+      "languageStatus": "supported_operator_inventory_new_surface_realizations",
+      "lexicalSignsPerOperation": [
+        "positive",
+        "negative"
+      ],
+      "newSurfaceNamesPerOperation": [
+        "confirm_a",
+        "confirm_b",
+        "confirm_c"
+      ],
+      "ontology": "unchanged_v32_declared_typed_ontology",
+      "outerOperations": [
+        "assert",
+        "deny",
+        "double_deny",
+        "contrast_select",
+        "unresolved"
+      ],
+      "outputDir": "data/v36-independent-confirmation",
+      "requiredConstructionHashOverlapWithV32AllSplits": 0,
+      "requiredExactEvidenceOverlapWithV32AllSplits": 0,
+      "requiredSurfaceFamilies": 15,
+      "sceneVariants": [
+        "direct_clean",
+        "inverse_clean",
+        "direct_distractor",
+        "reversed_link_arguments_clean"
+      ],
+      "split": "independent_confirmation",
+      "targetVisibility": "never_in_model_prompts"
+    },
+    "decisionHierarchy": [
+      "if_all_confirmation_gates_pass_preregister_fresh_sealed_end_to_end_relational_suite",
+      "if_operation_or_sign_fails_reopen_only_semantic_interface_development",
+      "if_predicate_or_binding_fails_reopen_only_atom_interface_development",
+      "if_components_pass_but_exact_fact_or_scene_fails_revisit_assembly_dependence"
+    ],
+    "designStageAuthorization": {
+      "accessConfirmationLabels": false,
+      "constructConfirmation": false,
+      "constructFreshFinalSuite": false,
+      "fitInterface": false,
+      "reuseV32Evaluation": false,
+      "runV28": false,
+      "writeImplementation": true
+    },
+    "execution": {
+      "bootstrapReplicates": 10000,
+      "bootstrapSeed": 3699,
+      "bootstrapUnit": "surface_family",
+      "confirmationEvaluations": 1,
+      "expectedBackboneForwardPasses": 3510,
+      "featureExtractions": 3,
+      "interfaceFitRuns": 4,
+      "interfaceFreezeBeforeConfirmationConstruction": true,
+      "interfaceSelectionRuns": 0
+    },
+    "experiment": "v36_independent_modular_interface_confirmation_design",
+    "firewall": {
+      "confirmationUseForSelection": "forbidden",
+      "interfaceMustBeHashFrozenBeforeConstruction": true,
+      "legacyCalibrationAndEvaluationUse": "forbidden",
+      "nextFinalSuiteConstruction": "forbidden_until_v36_pass_and_separate_preregistration",
+      "purpose": "independent_development_confirmation_not_final_claim",
+      "singleEvaluation": true
+    },
+    "forbiddenLegacySplits": [
+      "factor_calibration",
+      "factor_evaluation_paraphrase",
+      "factor_evaluation_composition"
+    ],
+    "frozenInterface": {
+      "binding": {
+        "alpha": 1000.0,
+        "classifier": "balanced_three_role_ridge_lsqr",
+        "projection": {
+          "dimensions": 256,
+          "kind": "fixed_gaussian",
+          "seed": 3501
+        },
+        "representation": "v35_atom_focused_evidence_entity_mentions"
+      },
+      "lexicalSign": {
+        "alpha": 100.0,
+        "classifier": "balanced_ridge_lsqr",
+        "representation": "v32_generic_final_hidden"
+      },
+      "model": "mlx-community/Qwen3.5-4B-4bit",
+      "outerOperation": {
+        "alpha": 10000.0,
+        "classifier": "balanced_ridge_lsqr",
+        "representation": "v34_operation_focused_final_hidden"
+      },
+      "predicate": {
+        "alpha": 10000.0,
+        "classifier": "balanced_ridge_lsqr",
+        "representation": "v35_atom_focused_final_hidden"
+      },
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "selectionAfterDesignLock": "none",
+      "truth": "unchanged_v32_fixed_compiler"
+    },
+    "gates": {
+      "minimumAtomExactAccuracy": 0.95,
+      "minimumCompiledExactFactAccuracy": 0.9,
+      "minimumCompiledTruthAccuracy": 0.95,
+      "minimumCompositionNegativeExactFact": 0.9,
+      "minimumExactSceneAccuracy": 0.8,
+      "minimumLexicalSignAccuracy": 0.95,
+      "minimumOuterOperationAccuracy": 0.95,
+      "minimumPairExact": 0.9,
+      "minimumPredicateAccuracy": 0.98,
+      "minimumRelationOrderAccuracy": 0.95,
+      "minimumWorstSurfaceFamilyExactFact": 0.8
+    },
+    "schemaVersion": 36,
+    "sourceV32FeatureMetadata": "outputs/v32-factorized-semantics/fit-calibration-features/metadata.json",
+    "sourceV32ProtocolLock": "configs/v32-factorized-semantics-lock.json",
+    "sourceV34OutcomeLock": "configs/v34-operation-outcome-lock.json",
+    "sourceV34ProtocolLock": "configs/v34-operation-interface-lock.json",
+    "sourceV34Result": "outputs/v34-operation-interface/result.json",
+    "sourceV35OutcomeLock": "configs/v35-binding-outcome-lock.json",
+    "sourceV35ProtocolLock": "configs/v35-binding-assembly-lock.json",
+    "sourceV35Result": "outputs/v35-binding-assembly/result.json",
+    "trainingCorpus": "data/v32-factorized-semantics",
+    "trainingSplit": "factor_fit"
+  },
+  "config_sha256": "25a592a988ac86361c314e9df370021bae68bc53695154294f9a3006bfc70c8f",
+  "derived_population": {
+    "backbone_forward_passes": 3510,
+    "records": 1170,
+    "scenes": 360,
+    "surface_families": 15
+  },
+  "design_audit": "outputs/v36-independent-confirmation/design-audit.json",
+  "design_audit_sha256": "d8ede76c730512f841c21c9fbf4cffe01e71b710ab56c677e5a57e43b544df57",
+  "experiment": "v36_independent_modular_interface_confirmation_design",
+  "freeze_script_sha256": "c649b5e691f0296f9aed547b3a911a22258467021f4693b5cf32919171e929d9",
+  "lock_payload_sha256": "d376bce4b0d0591fcc106fa00304aa5147bf4ef3fb005e1300db5cfd1819a2b5",
+  "preregistration": "docs/v36-independent-confirmation-plan.md",
+  "preregistration_sha256": "425406478ca4b80542aeafb18d54ea1e2a876cdb5cf84ef2e8b41651f00b0b4f",
+  "schema_version": 36,
+  "source": {
+    "config_sha256": "25a592a988ac86361c314e9df370021bae68bc53695154294f9a3006bfc70c8f",
+    "v32_features_sha256": "3b486f98fc46b3b1de989857f3a4e4fa3b0075d5c7b361dbcb094b00c7b63c5b",
+    "v32_protocol_sha256": "227c08f017f7dae4094acdeae6ebdf1b27e159cbb310348f492c0243bcc4ecd5",
+    "v34_outcome_sha256": "dd9f4fd7a001bbe29d7cecd55f7574fbb022f5786910d4e71b9312a5ea69ceb4",
+    "v34_protocol_sha256": "ff7f5410180d0665a71ef793bd280139916a6204d9bb2b5b493dceae82d634d8",
+    "v34_result_sha256": "eb4137dce20a5d5092d870099c666fd950f4fda338f4ae8dce5f69258e3a5b7e",
+    "v35_outcome_sha256": "9402b717de70916141178aaa061893434b2004f53bcdc758f8b070725ab1d89d",
+    "v35_protocol_sha256": "2868af5b6bd090f88ff80579512512eb69de1dc7a870e0f8285abcf99487807c",
+    "v35_result_sha256": "2bed97fb71f40230e2cf322a19ec9b35b7b14b55f22c99292642a62347eca1af"
+  }
+}

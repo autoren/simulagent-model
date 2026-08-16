@@ -1,0 +1,38 @@
+{
+  "authorization": {
+    "change_evaluation_implementation": false,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_formal_verification": false,
+    "run_additional_v55_evaluation": false,
+    "run_additional_v55r1_evaluation": false,
+    "run_formal_verification": false,
+    "run_one_v55r1_evaluation": true
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v55r1.py": "e1e6f0e04705b9f61f613112ffecc5ee6f892bbe9f8f54dd609d65a4e7ec2efe",
+    "python/audit_v55r1_evaluation_implementation.py": "5f3a075f38cd05345b70d85f70fd7546495487a8d9ce2fa71d7f993c42c8cd4a",
+    "python/evaluate_v55r1_planning.py": "b03cdc9f818dc91d15c4b72a91f6effc829f40be64137a45dd45a79e3a14c549",
+    "python/freeze_v55r1_outcome.py": "a5ccdb9de461e15514cd7e6d84a979b069461ee0eb35d01d00ae0b3e4c9371c0"
+  },
+  "evaluation_implementation_audit": "outputs/v55r1-delayed-consequence-adequacy-confirmation/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "1a6c744705a0964f1224fa08350b974ab6227feade48d41bb4cb90a48fa3ecec",
+  "experiment": "v55r1_evaluation_implementation_lock",
+  "frozen_dependencies_sha256": {
+    "configs/v53r2-design-lock.json": "72197ec7776ad92cc4d525b42054b993df6cf38a1781e0804daf56b0fbe6c90d",
+    "configs/v55-outcome-lock.json": "a31cb7b52f2724b67e727e9d2323eaeecd7f810d60b164fcd6a70e5279616b79",
+    "configs/v55r1-design-lock.json": "a72addff3b84bf3cba1621a9c459505c91cb1da7f55738c9c29701ff5521695c",
+    "configs/v55r1-implementation-lock.json": "60a11d08cc503fe1f7bceef6cc5dd24e56fe0d88641ca39ebb96c19e2b000531",
+    "configs/v55r1-population-seal.json": "e57b5e5ce45e6d1b9c29717e9909539f8debd6e4f660fdaa92f57ba982a3e99d",
+    "python/generate_v55r1_planning.py": "59fc35e4e62e058afe836b2b0f2436148f24064bcd8f1c32d3a2f8256ec2b4ed",
+    "python/v53_smc2.py": "34a52233605687c50b6962bb6e2f65faaa0a688ed2c124ad6e4e4ef7ea69e399",
+    "python/v54_eig.py": "7ea2ec4b8258e9650ce4e65ee74e8a266fd3bd067dde6f6c417de0618d5ec895",
+    "python/v55_planning.py": "b53da4c409dcef44c541180429981c4cd4719efacd5fc6ee59a2ca6a9432b500",
+    "python/v55r1_planning.py": "d631456311ad6c5493b65d7ddfaf33a7485dccdac89be7021a3e0ed857caed0b"
+  },
+  "lock_payload_sha256": "c2e7945c8dfc540a0e4311277b9dacd0fbc20074ec232b58ab83aff02fbb1784",
+  "population_seal": "configs/v55r1-population-seal.json",
+  "population_seal_sha256": "e57b5e5ce45e6d1b9c29717e9909539f8debd6e4f660fdaa92f57ba982a3e99d",
+  "revision": "r1",
+  "schema_version": 55
+}

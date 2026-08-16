@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v58-human-adjudication.schema.json",
+  "title": "V58 blinded adjudication record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "adjudication_id",
+    "submission_id",
+    "anonymous_adjudicator_id",
+    "final_verdict",
+    "final_canonical_ast_or_null",
+    "construction_family_realized",
+    "source_target_order_preserved_or_null",
+    "reason",
+    "timestamp"
+  ],
+  "properties": {
+    "adjudication_id": {"type": "string", "minLength": 8},
+    "submission_id": {"type": "string", "minLength": 8},
+    "anonymous_adjudicator_id": {"type": "string", "minLength": 8},
+    "final_verdict": {
+      "enum": [
+        "equivalent_unique",
+        "not_equivalent",
+        "ambiguous",
+        "unsupported",
+        "malformed_or_meta"
+      ]
+    },
+    "final_canonical_ast_or_null": {"type": ["object", "null"]},
+    "construction_family_realized": {"type": "boolean"},
+    "source_target_order_preserved_or_null": {"type": ["boolean", "null"]},
+    "reason": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string", "format": "date-time", "pattern": "Z$"}
+  }
+}

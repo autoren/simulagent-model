@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "collect_evaluation_language": false,
+    "collect_pilot_language": false,
+    "generate_v58_blinded_author_packets_once": true,
+    "model_generated_writing_assistance": false,
+    "regenerate_v58_blinded_author_packets": false,
+    "release_evaluation_packets": false,
+    "release_pilot_packets": false,
+    "run_candidate_evaluation": false,
+    "write_candidate_parser": false
+  },
+  "experiment": "v58_author_packet_generator_lock",
+  "generator_audit": "outputs/v58-human-authored-known-ontology-language/author-packet-generator-audit.json",
+  "generator_audit_sha256": "430f0c55b6daf88a543a9c152b21af991e9ac253805b768ce1cd403ac27ef807",
+  "generator_files_sha256": {
+    "python/audit_v58_author_packet_generator.py": "70006af996b5a0eced74bcdb9c5151d6b33fd4536c13739bc1889f00bc61adf1",
+    "python/audit_v58_author_packets.py": "b7c18bfd5bbbe4575d45ee634849ac4c6e0dd3cb67f1b3b46d54b325e154fb5f",
+    "python/generate_v58_author_packets.py": "ecdd8fe8745782ab318f2dd32a3362ed850b0efd6cdf5010367cdbc079911f1b",
+    "python/seal_v58_author_packets.py": "f0911c54051c422257b3a1113ca7d3a5db06dd9ccab62d298fe0934dc3dd6b03"
+  },
+  "lock_payload_sha256": "fd6fd58de483c0dc87db21e01f38f29bb6cda82ec21928940ff2e88a94653bbe",
+  "packet_generation_seed": "e616962975b64a35f29bec5c37d826f3ebee44cb9a6c24b05bec38b3cfd3410c",
+  "protocol": "configs/v58-collection-and-adjudication-protocol.json",
+  "protocol_lock": "configs/v58-collection-protocol-lock.json",
+  "protocol_lock_sha256": "30f4068bfb9a634bcc4bd3dc214aa4d9a77988745c2ea6e4c277b8a0177dc4d1",
+  "protocol_sha256": "1cd739ea5d9d2a621950d85cd3c91292a6eaff9aa0b67f13ebf1e39df4df0afb",
+  "schema_version": 58,
+  "v40_core": "data/v40-independent-compiler-confirmation/independent_confirmation.jsonl",
+  "v40_core_sha256": "4a29826f59824f20011bd4a313c4ee8a09a21549b91aaa5c90f2051238ebd4f7"
+}

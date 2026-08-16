@@ -1,0 +1,132 @@
+{
+  "artifacts": [
+    {
+      "anonymous_writer_id": "pilot_writer_slot_00",
+      "packet_id": "v58packet_4efe60a4e7079d556de0",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/pilot_writer_slot_00.json",
+      "sha256": "02bc0bd6ef33d5a8eea73df2deee4feec6c697593830037ddce39362b3f6e0e5"
+    },
+    {
+      "anonymous_writer_id": "pilot_writer_slot_01",
+      "packet_id": "v58packet_c06e8fecbd691e4f13fe",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/pilot_writer_slot_01.json",
+      "sha256": "d42e6a3c1aab80fb9f9b45770bc2cf4d30de2d5811aa6638226990f19f12429a"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_00",
+      "packet_id": "v58packet_e269c68d7e6ceff3d58f",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_00.json",
+      "sha256": "b93ce25785a58647ed5a9a2d72204e55bc156a9c4206a15fffaad9ab9736370b"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_01",
+      "packet_id": "v58packet_3c316c7a70bd6eaa61fa",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_01.json",
+      "sha256": "403e3050265137c2735f09476d08e391d1454e90c99475e46496187f1e9a169f"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_02",
+      "packet_id": "v58packet_0f630531845f7aa181c9",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_02.json",
+      "sha256": "bb1e701d3620784781c99ee5ef53ad7d6ba1017427562ce8e101eeeb3003438e"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_03",
+      "packet_id": "v58packet_5ed87d793da87a0244f9",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_03.json",
+      "sha256": "3faa1cb2e7473eb3bd3577360b3e6e08fcf08475e8b9b15c38d6d6a7f27ee518"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_04",
+      "packet_id": "v58packet_89db1a1c8c122dd96932",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_04.json",
+      "sha256": "5ef46efa469d63ccb9d7114136bc052a82c0d3aace4575ae2a64d54a1aac48f5"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_05",
+      "packet_id": "v58packet_a4d659401dca26be05b7",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_05.json",
+      "sha256": "af51f4ff228fb136d214635bfd7dc741d58827c76b63fa6394bc225a7506780a"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_06",
+      "packet_id": "v58packet_4a4577e0efd3257fc7a2",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_06.json",
+      "sha256": "8318712cb15f69098f7788a5e05713a9c24e7325f66ee256cf80f791dc8d868a"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_07",
+      "packet_id": "v58packet_887103f8205dcb868a29",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_07.json",
+      "sha256": "e87e0cd7afc956756be469ebb0568946da0569267c0ae87703155c1373eaa6f3"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_08",
+      "packet_id": "v58packet_a9481f4173219967dabb",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_08.json",
+      "sha256": "fc2477e9900980b3c17f16bfa56be0c6cf481ca6902addaf30b453af86cabc76"
+    },
+    {
+      "anonymous_writer_id": "evaluation_writer_slot_09",
+      "packet_id": "v58packet_c24d12343b045978919a",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_writer_slot_09.json",
+      "sha256": "f0ef7278f94fa4fda167146528a69a0d93870e197ed2713571e0dd3e5d1029d4"
+    },
+    {
+      "anonymous_writer_id": "evaluation_reserve_slot_00",
+      "packet_id": "v58packet_ef60fa6b6a660a409765",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_reserve_slot_00.json",
+      "sha256": "fd8b433d06ff9b9c1392c44ecf4a602202fbbff6e2adbe4f73091fdfd15efc09"
+    },
+    {
+      "anonymous_writer_id": "evaluation_reserve_slot_01",
+      "packet_id": "v58packet_bf536b73fc73e45e5b2e",
+      "path": "data/v58-human-authored-known-ontology-language/author-packets/evaluation_reserve_slot_01.json",
+      "sha256": "7ffdd1eefe0146382666f257bba33a7543f5cf0ea2b9db4f1745e3dae22528f8"
+    }
+  ],
+  "author_packet_audit": "outputs/v58-human-authored-known-ontology-language/author-packet-audit.json",
+  "author_packet_audit_sha256": "0503d5eabdb16f806655ff91ad5232a0f413209f15697aa253a3499f072e2cb9",
+  "authorization": {
+    "activate_evaluation_reserve_packet": false,
+    "collect_evaluation_language": false,
+    "collect_pilot_language": false,
+    "human_authored_language_claim": false,
+    "model_generated_writing_assistance": false,
+    "prepare_pilot_collection_handoff": true,
+    "release_evaluation_packets": false,
+    "release_pilot_packets": false,
+    "run_candidate_evaluation": false,
+    "write_candidate_parser": false
+  },
+  "counts": {
+    "evaluation_active_packets": 10,
+    "evaluation_reserve_packets": 2,
+    "packets": 14,
+    "pilot_active_packets": 2,
+    "prompts": 960,
+    "unique_source_records": 960
+  },
+  "experiment": "v58_author_packet_seal",
+  "generator_lock": "configs/v58-author-packet-generator-lock.json",
+  "generator_lock_sha256": "d331efa317eb09a61a8d6a100c619878f1627cbf1e3f2942eae82c53f6a328ab",
+  "human_text": {
+    "accessed": 0,
+    "collected": 0,
+    "fields_present": 0
+  },
+  "manifest": "data/v58-human-authored-known-ontology-language/author-packets/manifest.json",
+  "manifest_sha256": "3645c1ed30e98d99fdad9a912c5b7359e620469eabab7633cdd86efc3c651fe7",
+  "packet_directory": "data/v58-human-authored-known-ontology-language/author-packets",
+  "protocol": "configs/v58-collection-and-adjudication-protocol.json",
+  "protocol_sha256": "1cd739ea5d9d2a621950d85cd3c91292a6eaff9aa0b67f13ebf1e39df4df0afb",
+  "release": {
+    "evaluation_packets_released": 0,
+    "pilot_packets_released": 0,
+    "reserve_packets_activated": 0
+  },
+  "schema_version": 58,
+  "seal_payload_sha256": "a915375cae3de1c5f38bbbb234b6354bdca93b084aa1d548def1e969130c1b7e",
+  "v40_core": "data/v40-independent-compiler-confirmation/independent_confirmation.jsonl",
+  "v40_core_sha256": "4a29826f59824f20011bd4a313c4ee8a09a21549b91aaa5c90f2051238ebd4f7"
+}

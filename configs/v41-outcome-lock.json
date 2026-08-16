@@ -1,0 +1,63 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "begin_architecture_breaking_benchmark": true,
+    "change_compiler": false,
+    "change_semantic_kernel": false,
+    "construct_architecture_breaking_benchmark": false,
+    "expand_declared_scope_claim": false,
+    "v22r2_evaluation": false,
+    "v28": false
+  },
+  "experiment": "v41_outcome_lock",
+  "gate_checks": {
+    "clause_exact_parse": true,
+    "complete_episode_exact": true,
+    "empirical_lookup_imperfect": true,
+    "empty_version_space": true,
+    "every_family": true,
+    "every_query_axis": true,
+    "query_exact_graph": true,
+    "schema_recovery": true,
+    "support_exact_graph": true,
+    "target_retention": true,
+    "transition_set_exact": true
+  },
+  "lock_payload_sha256": "b9d13f7dddf7497ecf7ad61e62ddf0a7bf4475e0639de13a8a107abbf8165e8b",
+  "metrics": {
+    "by_family_transition_set_exact": {
+      "existential_aggregation": 1.0,
+      "relation_conditioned": 1.0,
+      "two_hop_composition": 1.0,
+      "unary_selection": 1.0
+    },
+    "by_query_axis_transition_set_exact": {
+      "binding_recombination": 1.0,
+      "distractor_invariance": 1.0,
+      "entity_count_extrapolation": 1.0,
+      "graph_topology": 1.0,
+      "partial_observation": 1.0,
+      "permutation_equivariance": 1.0,
+      "relation_orientation": 1.0
+    },
+    "clause_exact_parse": 1.0,
+    "clauses": 7566,
+    "complete_episode_exact": 1.0,
+    "empirical_lookup_transition_set_exact": 0.023076923076923078,
+    "empty_version_space": 0.0,
+    "mechanics": 40,
+    "median_version_space": 1.0,
+    "query_exact_graph": 1.0,
+    "schema_recovery": 1.0,
+    "support_exact_graph": 1.0,
+    "target_retention": 1.0,
+    "transition_set_exact": 1.0
+  },
+  "post_result_audit": "outputs/v41-relational-mechanic-confirmation/post-result-audit.json",
+  "post_result_audit_sha256": "d40bf9dbf19c447143b133bcb42b02fd25773b5a6cb40a71086f0abbf3ebc08b",
+  "qualification_passed": true,
+  "result": "outputs/v41-relational-mechanic-confirmation/evaluation/result.json",
+  "result_sha256": "afdff20a40c1e6798ef6a4b5dcb273d8c5d858b62b33e0d01d25ff30173e50cc",
+  "schema_version": 41,
+  "scientific_decision": "accept_declared_scope_relational_mechanic_claim_begin_architecture_breaking_benchmark"
+}

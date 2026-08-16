@@ -1,0 +1,180 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_language_composition_population": false,
+    "continuous_probabilities": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "noisy_sensors": false,
+    "open_ontology": false,
+    "preregister_partial_observation_language_composition": true
+  },
+  "experiment": "v50r1_outcome_lock",
+  "gate_checks": {
+    "belief_normalization": true,
+    "calibration": true,
+    "condition_matched_regret": true,
+    "every_family_tv": true,
+    "finite_log_loss": true,
+    "latest_only_inadequate": true,
+    "likelihood_normalization": true,
+    "map_latent_collapse_inadequate": true,
+    "map_schema": true,
+    "measurement_identity": true,
+    "oracle_filter": true,
+    "oracle_history_fraction": true,
+    "oracle_history_tv": true,
+    "partial_full_condition_matched_regret": true,
+    "predictive_normalization": true,
+    "primary_tv": true,
+    "probability_mae": true,
+    "target_continuation_retention": true,
+    "target_program": true,
+    "time_shuffle_inadequate": true
+  },
+  "lock_payload_sha256": "c715f6062210b942ca64e2a6f7d98e425ca9b985db5eadfb857388cfe9c72c61",
+  "metrics": {
+    "all_mechanics": {
+      "belief_normalization": 1.0,
+      "calibration_error": 0.0002734081717565876,
+      "complete_history_condition_matched_regret": 0.0,
+      "complete_history_log_loss": 0.09565732356224768,
+      "every_earlier_evidence_distance_mean_tv": {
+        "1": 2.5044261079814384e-57
+      },
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 1.0017704431925754e-56,
+        "immediate_bernoulli_mutation": 5.3819444444444445e-102,
+        "interleaved_deterministic_and_stochastic": 3.298611111111111e-102,
+        "state_conditional_probability": 0.0
+      },
+      "every_prefix_length_mean_tv": {
+        "3": 1.1942587126912174e-63,
+        "4": 8.586601410276077e-57,
+        "5": 6.597222222222222e-102
+      },
+      "every_probability_mean_tv": {
+        "1/2": 7.513276233991567e-57,
+        "1/4": 2.0899527472096304e-63,
+        "3/4": 9.114583333333333e-103
+      },
+      "every_sequence_length_mean_tv": {
+        "4": 1.1942587126912173e-63,
+        "5": 5.151962211032747e-57,
+        "6": 1.6147936980519192e-57
+      },
+      "every_timing_mean_tv": {
+        "delayed": 5.008852215962877e-57,
+        "immediate": 2.6909722222222222e-102
+      },
+      "finite_log_loss_rate": 1.0,
+      "full_condition_regret": 0.0,
+      "latest_only_log_loss_disadvantage": 0.51641915282605,
+      "likelihood_normalization": 1.0,
+      "map_latent_collapse_log_loss_disadvantage": Infinity,
+      "map_schema_recovery": 1.0,
+      "mean_complete_history_conditional_suffix_tv": 2.5044261079814384e-57,
+      "mean_oracle_full_history_vs_latest_only_tv": 0.3782552083333333,
+      "mean_target_program_posterior": 1.0,
+      "mechanic_cluster_bootstrap_condition_matched_regret": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 1.3454861174792914e-102,
+        "mean": 2.504426107981438e-57,
+        "upper": 7.513277627293399e-57
+      },
+      "mechanics": 48,
+      "oracle_conditional_entropy_gap_non_gating": 0.09565732356224768,
+      "oracle_history_dependent_query_fraction": 1.0,
+      "oracle_program_mean_tv": 0.0,
+      "partial_condition_regret": 0.0,
+      "partial_minus_full_condition_matched_regret": 0.0,
+      "predictive_normalization": 1.0,
+      "probability_parameter_mae": 0.0,
+      "queries": 1152,
+      "raw_log_loss_vs_oracle_entropy_gap_discrepancy": 0.0,
+      "raw_partial_minus_full_log_loss_non_gating": 0.09565732356224768,
+      "target_continuation_retention": 1.0,
+      "time_shuffled_log_loss_disadvantage": Infinity
+    },
+    "development_evaluation": {
+      "belief_normalization": 1.0,
+      "calibration_error": 8.725094981409564e-58,
+      "complete_history_condition_matched_regret": 0.0,
+      "complete_history_log_loss": 0.04332169878499658,
+      "every_earlier_evidence_distance_mean_tv": {
+        "1": 5.008850822661045e-57
+      },
+      "every_family_mean_tv": {
+        "delayed_bernoulli_scheduling": 2.003540329064418e-56,
+        "immediate_bernoulli_mutation": 0.0,
+        "interleaved_deterministic_and_stochastic": 0.0,
+        "state_conditional_probability": 0.0
+      },
+      "every_prefix_length_mean_tv": {
+        "3": 0.0,
+        "4": 1.5026552467983134e-56,
+        "5": 0.0
+      },
+      "every_probability_mean_tv": {
+        "1/2": 1.5026552467983134e-56,
+        "3/4": 9.114583333333333e-103
+      },
+      "every_sequence_length_mean_tv": {
+        "4": 0.0,
+        "5": 1.0518586727588197e-56,
+        "6": 3.005310493596627e-57
+      },
+      "every_timing_mean_tv": {
+        "delayed": 1.001770164532209e-56,
+        "immediate": 0.0
+      },
+      "finite_log_loss_rate": 1.0,
+      "full_condition_regret": 0.0,
+      "latest_only_log_loss_disadvantage": 0.553090557653824,
+      "likelihood_normalization": 1.0,
+      "map_latent_collapse_log_loss_disadvantage": Infinity,
+      "map_schema_recovery": 1.0,
+      "mean_complete_history_conditional_suffix_tv": 5.008850822661045e-57,
+      "mean_oracle_full_history_vs_latest_only_tv": 0.3888888888888889,
+      "mean_target_program_posterior": 1.0,
+      "mechanic_cluster_bootstrap_condition_matched_regret": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "mechanic_cluster_bootstrap_mean_tv": {
+        "lower": 0.0,
+        "mean": 5.008850822661045e-57,
+        "upper": 1.5026552467983134e-56
+      },
+      "mechanics": 24,
+      "oracle_conditional_entropy_gap_non_gating": 0.04332169878499658,
+      "oracle_history_dependent_query_fraction": 1.0,
+      "oracle_program_mean_tv": 0.0,
+      "partial_condition_regret": 0.0,
+      "partial_minus_full_condition_matched_regret": 0.0,
+      "predictive_normalization": 1.0,
+      "probability_parameter_mae": 0.0,
+      "queries": 576,
+      "raw_log_loss_vs_oracle_entropy_gap_discrepancy": 0.0,
+      "raw_partial_minus_full_log_loss_non_gating": 0.04332169878499658,
+      "target_continuation_retention": 1.0,
+      "time_shuffled_log_loss_disadvantage": Infinity
+    }
+  },
+  "post_result_audit": "outputs/v50r1-execution-repair/post-result-audit.json",
+  "post_result_audit_sha256": "d433c94bf9b81b60ec61e9c41d5d48f7fdf188de181230ca3c9d35af5c3b4ebb",
+  "qualification_passed": true,
+  "repair_lock": "configs/v50r1-repair-lock.json",
+  "repair_lock_sha256": "0f0c49fd04d16c7fe7101c57d171c1cfe63c6e4c5d623fe9196d837852c67562",
+  "result": "outputs/v50r1-execution-repair/development/result.json",
+  "result_sha256": "21e0f74e150e58a1c72f2429f841d3282ee0aa23daade4a7d713ca76a5a25ebc",
+  "schema_version": "50r1",
+  "scientific_decision": "history_dependent_belief_filtering_pass_preregister_supported_language_composition",
+  "source_failed_attempt": "outputs/v50-history-dependent-belief-filtering/development-attempt.json",
+  "source_failed_attempt_sha256": "9810f651dd9255015eb566cbd957ac0629c2f92523c93d4290d6271067326fdb"
+}

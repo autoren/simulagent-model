@@ -1,0 +1,86 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "construct_stochastic_transition_foundation": false,
+    "final_evaluation": false,
+    "model_access": false,
+    "open_ontology": false,
+    "preregister_stochastic_transition_foundation": true
+  },
+  "experiment": "v45_outcome_lock",
+  "gate_checks": {
+    "action_command_exact_parse": true,
+    "action_sequence_exact": true,
+    "canonical_state_graph_exact": true,
+    "collapsed_delay_inadequate": true,
+    "compiled_empty_version_space": true,
+    "compiled_every_family": true,
+    "compiled_every_sequence_length": true,
+    "compiled_final_observation_exact": true,
+    "compiled_next_state_exact": true,
+    "compiled_schema_recovery": true,
+    "compiled_target_retention": true,
+    "compiled_wait_counterfactual_accuracy": true,
+    "end_flush_inadequate": true,
+    "literal_language_lookup_inadequate": true,
+    "safety_abstention": true,
+    "state_clause_exact_parse": true,
+    "wait_command_exact_parse": true
+  },
+  "lock_payload_sha256": "07abc53a678c2f41d7ce0ae2a7b8d64483647c8929d7de60a16852c18f02752c",
+  "metrics": {
+    "action_command_exact_parse": 1.0,
+    "action_sequence_exact": 1.0,
+    "action_sequences": 1006,
+    "bound_action_commands": 3051,
+    "canonical_state_graph_exact": 1.0,
+    "collapsed_delay_final_exact": 0.5,
+    "compiled_by_family_final_exact": {
+      "interleaved_immediate_and_delayed": 1.0,
+      "one_tick_unary_set_clear": 1.0,
+      "state_conditional_scheduling": 1.0,
+      "two_tick_relational_toggle": 1.0
+    },
+    "compiled_by_sequence_length_final_exact": {
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0,
+      "6": 1.0
+    },
+    "compiled_by_split_final_exact": {
+      "development_evaluation": 1.0,
+      "development_fit": 1.0
+    },
+    "compiled_complete_mechanic_exact": 1.0,
+    "compiled_empty_version_space": 0.0,
+    "compiled_final_observation_exact": 1.0,
+    "compiled_next_state_exact": 1.0,
+    "compiled_partial_initial_final_exact": {
+      "False": 1.0,
+      "True": 1.0
+    },
+    "compiled_schema_recovery": 1.0,
+    "compiled_target_retention": 1.0,
+    "compiled_wait_counterfactual_accuracy": 1.0,
+    "compiled_wait_counterfactual_pairs": 480,
+    "end_flush_final_exact": 0.5,
+    "literal_language_lookup_final_exact": 0.0,
+    "mechanics": 40,
+    "median_final_version_space": 1.0,
+    "queries": 960,
+    "safety_abstention": 1.0,
+    "safety_challenges": 360,
+    "state_clause_exact_parse": 1.0,
+    "state_clauses": 23148,
+    "state_graphs": 1236,
+    "wait_command_exact_parse": 1.0,
+    "wait_commands": 1499
+  },
+  "post_result_audit": "outputs/v45-delayed-language-grounding/post-result-audit.json",
+  "post_result_audit_sha256": "1b3236da0d7c059ee33f3e44dd4109a4db605a7e0d605b5b632e7916a2e76dd9",
+  "qualification_passed": true,
+  "result": "outputs/v45-delayed-language-grounding/development/result.json",
+  "result_sha256": "3de1bd63c913fef3efa0aa08e51c9619e52f6d36d592e13ce4fcc08e6da3e8d9",
+  "schema_version": 45,
+  "scientific_decision": "declared_delayed_interface_pass_preregister_stochastic_foundation"
+}

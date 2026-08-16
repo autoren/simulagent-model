@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 53,
+  "revision": "r2",
+  "experiment": "v53r2_prepopulation_ambiguity_probe_repair",
+  "sourceDesignLock": "configs/v53r1-design-lock.json",
+  "diagnosis": {
+    "stage": "implementation_fixture_before_population_construction",
+    "candidatePopulationRecordsAccessed": 0,
+    "evaluationRuns": 0,
+    "alteredSeedExactRecordsChecked": 8,
+    "recordsMeetingFrozenAmbiguityDefinition": 0,
+    "maximumProgramPosteriorByRecord": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.7864],
+    "frozenAmbiguityDefinition": "exact_max_program_posterior_at_most_0_60"
+  },
+  "authorizedDesignChanges": {
+    "ambiguityProbeReplicateOrdinalsPerTemplate": [0],
+    "ambiguityProbeActionSchedule": "all_wait_in_support_and_query",
+    "controlReplicateOrdinalsPerTemplate": [0, 1]
+  },
+  "rationale": [
+    "eight fixed ambiguity probes guarantee direct measurement of false program and theta collapse",
+    "the probe posterior is analytically uniform over program templates with the unchanged scaled-Beta theta prior",
+    "replicate one supplies a fixed informative partner for likelihood-squared and resampling controls",
+    "the remaining 24 exact records retain the original informative schedule"
+  ],
+  "invariants": [
+    "same total 32 exact records and four records per template",
+    "same eight fresh templates exact quadrature SMC-squared SBC PMCMC and scale specifications",
+    "same metrics gates controls firewalls random roots and claim boundary",
+    "no selection based on candidate or sealed outcomes",
+    "no active intervention selection reward planning verification language model access or training"
+  ],
+  "decision": {
+    "pass": "authorize_v53r2_implementation_audit_only",
+    "fail": "repair_ambiguity_coverage_without_constructing_populations"
+  }
+}

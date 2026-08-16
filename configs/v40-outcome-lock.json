@@ -1,0 +1,75 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "change_backbone": false,
+    "construct_relational_confirmation": false,
+    "expand_to_open_paraphrase": false,
+    "preregister_relational_mechanic_confirmation": true,
+    "v28": false,
+    "v32_evaluation": false
+  },
+  "confirmation": {
+    "compiled_truth": 1.0,
+    "coverage": 1.0,
+    "exact_parse": 1.0,
+    "minimum_ontology_pack_exact_parse": 1.0,
+    "minimum_operation_sign_exact_parse": 1.0,
+    "ontology_pack_exact_parse": {
+      "amber": 1.0,
+      "birch": 1.0,
+      "cobalt": 1.0,
+      "dune": 1.0,
+      "ember": 1.0,
+      "flint": 1.0,
+      "grove": 1.0,
+      "harbor": 1.0,
+      "indigo": 1.0,
+      "juniper": 1.0,
+      "kelp": 1.0,
+      "lumen": 1.0
+    },
+    "operation_sign_exact_parse": {
+      "assert|negative": 1.0,
+      "assert|positive": 1.0,
+      "contrast_select|negative": 1.0,
+      "contrast_select|positive": 1.0,
+      "deny|negative": 1.0,
+      "deny|positive": 1.0,
+      "double_deny|negative": 1.0,
+      "double_deny|positive": 1.0,
+      "unresolved|negative": 1.0,
+      "unresolved|positive": 1.0
+    },
+    "records": 1440
+  },
+  "experiment": "v40_outcome_lock",
+  "gate_checks": {
+    "every_ontology_pack": true,
+    "every_operation_sign_cell": true,
+    "every_safety_condition": true,
+    "overall_compiled_truth": true,
+    "overall_coverage": true,
+    "overall_exact_parse": true,
+    "overall_safety": true
+  },
+  "lock_payload_sha256": "f71db71e7699e2e3530f512ef04604b37b4cb6db8238efb2d57504cb94f29132",
+  "post_result_audit": "outputs/v40-independent-compiler-confirmation/post-result-audit.json",
+  "post_result_audit_sha256": "4878313edd27070ef53d7afb3e28ddf0d66aa6a6a4f8565ddd71de76ad5213ee",
+  "qualification_passed": true,
+  "result": "outputs/v40-independent-compiler-confirmation/evaluation/result.json",
+  "result_sha256": "f79cb8e280f8e5507248658ab6da6359f076010467b73928351d6a744288e8c3",
+  "safety": {
+    "condition_safe_rate": {
+      "duplicate_operation_fields": 1.0,
+      "mixed_separators": 1.0,
+      "two_complete_focus_fields": 1.0,
+      "unknown_operator_cue": 1.0,
+      "unknown_predicate_lexeme": 1.0
+    },
+    "minimum_condition_safe_rate": 1.0,
+    "records": 120,
+    "safe_rate": 1.0
+  },
+  "schema_version": 40,
+  "scientific_decision": "accept_declared_language_interface_preregister_relational_mechanic_confirmation"
+}

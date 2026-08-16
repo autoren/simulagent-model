@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 39,
+  "experiment": "v39_declared_language_compiler",
+  "scientificScope": "exact_supported_language_compilation_not_open_paraphrase_generalization",
+  "sourceV38OutcomeLock": "configs/v38-outcome-lock.json",
+  "fixedInterface": {
+    "predicateOntologyIncludesLexicalForms": true,
+    "operatorOntologyIncludesCueLexiconAndGrammar": true,
+    "compilerOutput": ["predicate", "arguments", "lexical_sign", "outer_operation"],
+    "truthCompiler": "v32_fixed_truth_table",
+    "unsupportedInputPolicy": "explicit_abstention",
+    "ambiguousInputPolicy": "return_all_supported_parses_or_abstain_never_arbitrary_first_match"
+  },
+  "supportedGrammar": {
+    "literalPositions": ["focus_first", "focus_second"],
+    "decoyKinds": ["exact_opposite", "different_grounded_atom", "non_state_distractor"],
+    "relationOrientations": ["direct", "inverse"],
+    "lexicalSigns": ["positive", "negative"],
+    "outerOperations": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+    "punctuationRealizations": ["period", "semicolon", "em_dash"],
+    "entityCounts": [3, 4, 5],
+    "argumentReversalControls": true,
+    "compositionalSplit": "hold_out_combinations_of_declared_primitives_not_undeclared_lexemes"
+  },
+  "challengeConditions": {
+    "malformedDeclaredGrammar": true,
+    "twoEquallyMarkedFocusLiterals": true,
+    "unknownPredicateLexeme": true,
+    "unknownOperatorCue": true,
+    "novelNaturalLanguageParaphrases": "secondary_non_gating"
+  },
+  "gates": {
+    "minimumSupportedCoverage": 1.0,
+    "minimumSupportedExactParse": 1.0,
+    "minimumSupportedCompiledTruth": 1.0,
+    "minimumEveryCompositionCellExactParse": 1.0,
+    "minimumMalformedAbstention": 1.0,
+    "minimumUnknownLexemeAbstention": 1.0,
+    "minimumAmbiguitySafety": 1.0
+  },
+  "comparison": {
+    "frozenNeuralFocusScorer": "secondary",
+    "frozenV37OperationReadout": "secondary",
+    "noSelectionFromSecondaryComparisons": true
+  },
+  "decisionHierarchy": [
+    "if_all_compiler_gates_pass_preregister_fresh_supported_language_confirmation",
+    "if_exact_parse_fails_repair_declared_grammar_or_compiler_only",
+    "if_safety_abstention_fails_repair_ambiguity_handling_before_any_confirmation",
+    "treat_novel_paraphrase_failure_as_scope_boundary_not_compiler_failure"
+  ],
+  "stageAuthorization": {
+    "writeAndAuditImplementation": true,
+    "constructEvaluation": false,
+    "scoreEvaluation": false,
+    "preregisterConfirmation": false
+  },
+  "firewall": {
+    "v32CalibrationOrEvaluationUse": "forbidden",
+    "v28Use": "forbidden",
+    "adapterTraining": "forbidden",
+    "backboneChange": "forbidden",
+    "endToEndRelationalSuite": "forbidden",
+    "claimExpansionBeyondDeclaredGrammar": "forbidden"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "authorization": {
+    "construct_calibration_replications": true,
+    "model_access": false,
+    "run_calibration": false
+  },
+  "config_payload": {
+    "bugSensitivityControls": {
+      "controlsNonScientific": true,
+      "latestOnlyQuery": "discard_earlier_query_prefix_observations",
+      "mapPosterior": "replace_each_exact_posterior_with_a_point_mass_at_its_map_value",
+      "minimumControlsRejected": 2,
+      "sameReplicationsAsPrimary": true,
+      "temperedLikelihood": "raise_each_support_likelihood_to_power_two_before_normalization"
+    },
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "adapterTraining": false,
+      "approximateParticleInference": false,
+      "continuousProbabilities": false,
+      "exactInference": true,
+      "finalEvaluation": false,
+      "independentExactReference": true,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "noisySensors": false,
+      "openOntology": false,
+      "primaryClaim": "prior_predictive_simulation_based_calibration_of_exact_discrete_joint_inference_with_independent_exact_path_agreement",
+      "rewardOrPlanning": false,
+      "simulationBasedCalibration": true
+    },
+    "decisionHierarchy": [
+      "if_exact_path_agreement_rank_uniformity_coverage_and_bug_sensitivity_pass_authorize_preregistration_of_scalable_rao_blackwellized_particle_inference",
+      "if_independent_exact_path_disagrees_repair_inference_semantics_before_any_approximation",
+      "if_rank_or_coverage_calibration_fails_repair_the_exact_inference_or_sbc_implementation",
+      "if_bug_controls_are_not_rejected_increase_sbc_test_quantity_sensitivity_before_interpreting_a_pass",
+      "do_not_add_particle_approximation_active_selection_reward_planning_language_or_model_access_in_v51"
+    ],
+    "experiment": "v51_simulation_based_calibration",
+    "firewall": {
+      "V50DevelopmentCasesReused": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "approximateParticleInference": "forbidden",
+      "calibrationOutcomeAccessDuringImplementation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "modelAccess": "forbidden",
+      "rewardOrPlanning": "forbidden"
+    },
+    "frozenModel": {
+      "initialWorldPrior": "deterministic_hash_generator_with_replication_specific_seed",
+      "observationSchedule": "known_value_independent_time_varying_masks_fixed_before_trajectory_sampling",
+      "ontology": "v44_declared_boolean_ontology",
+      "probabilityVocabulary": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "programPrior": "uniform_over_canonical_program_key_order",
+      "programRegistry": "frozen_fresh_v51_registry_of_48_programs_balanced_by_family_and_probability",
+      "stochasticDsl": "v49_exact_world_and_delayed_queue_semantics"
+    },
+    "gates": {
+      "maximumAbsoluteCoverageZ": 4.5,
+      "maximumAbsoluteRankBinZ": 4.5,
+      "maximumExactPathTv": 1e-12,
+      "minimumBugControlsRejected": 2,
+      "minimumCompletedReplicationFraction": 1.0,
+      "minimumNormalizationRate": 1.0,
+      "minimumRankChiSquarePValue": 0.001
+    },
+    "inferencePaths": {
+      "comparisonTargets": [
+        "program_posterior_after_support",
+        "program_posterior_after_query_prefix",
+        "joint_program_world_queue_belief_after_query_prefix",
+        "complete_suffix_predictive"
+      ],
+      "independent": "sequential_forward_configuration_filter_with_stepwise_observation_updates_and_no_full_trajectory_catalog",
+      "perReplicationOracleChoices": false,
+      "primary": "v50_exact_batch_trajectory_enumeration_and_log_space_program_normalization",
+      "selectionOnCalibrationReplications": false
+    },
+    "metrics": {
+      "calibration": [
+        "rank_histograms_by_test_quantity",
+        "rank_chi_square_p_values",
+        "maximum_absolute_rank_bin_z",
+        "central_posterior_set_coverage",
+        "maximum_absolute_coverage_z"
+      ],
+      "exactAgreement": [
+        "maximum_program_posterior_tv",
+        "maximum_query_program_posterior_tv",
+        "maximum_joint_configuration_belief_tv",
+        "maximum_suffix_predictive_tv"
+      ],
+      "integrity": [
+        "prior_and_likelihood_normalization",
+        "posterior_normalization",
+        "posterior_draw_independence_by_construction",
+        "all_replications_completed"
+      ],
+      "sensitivity": [
+        "bug_controls_rejected",
+        "bug_control_rank_or_coverage_failure_reasons"
+      ],
+      "strata": [
+        "family",
+        "probability",
+        "timing",
+        "sequence_length",
+        "prefix_length"
+      ]
+    },
+    "sbc": {
+      "coverageLevels": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "discreteTieHandling": "randomized_insertion_rank_among_equal_values_with_a_frozen_independent_tie_break_seed",
+      "jointSimulation": "draw_latents_from_prior_then_draw_observations_from_the_declared_likelihood",
+      "posteriorDraws": "independent_exact_categorical_draws_not_markov_chain_samples",
+      "reference": "Talts_et_al_2018_and_Stan_2_39_simulation_based_calibration_workflow",
+      "statisticalUnit": "independent_prior_predictive_replication",
+      "testQuantities": [
+        "canonical_program_ordinal",
+        "declared_probability_ordinal",
+        "canonical_world_queue_configuration_ordinal",
+        "target_program_posterior_probability",
+        "target_configuration_posterior_probability"
+      ],
+      "uniformity": "sixteen_bin_chi_square_and_simultaneous_max_standardized_bin_deviation"
+    },
+    "schemaVersion": 51,
+    "scientificQuestion": "does_the_exact_joint_program_probability_world_and_queue_inference_implementation_recover_prior_predictive_calibration_under_fresh_simulations_and_agree_with_an_independent_exact_computation_path",
+    "simulation": {
+      "entityCounts": [
+        2,
+        3,
+        4
+      ],
+      "expectedRanksPerBin": 128,
+      "generatorSeed": 5101,
+      "posteriorDrawSeed": 5119,
+      "posteriorDrawsPerReplication": 63,
+      "priorSeed": 5107,
+      "queryEpisodesPerReplication": 1,
+      "queryPrefixLengths": [
+        2,
+        3,
+        4
+      ],
+      "rankBins": 16,
+      "rankSupportSize": 64,
+      "realizedTrialsPerSupportIntervention": 1,
+      "replications": 2048,
+      "sequenceLengths": [
+        4,
+        5,
+        6
+      ],
+      "supportInterventionsPerReplication": 6,
+      "tieBreakSeed": 5123,
+      "trajectorySeed": 5113
+    },
+    "sourceV50r1OutcomeLock": "configs/v50r1-outcome-lock.json",
+    "stageAuthorization": {
+      "constructCalibrationReplications": false,
+      "modelAccess": false,
+      "runCalibration": false,
+      "writeAndAuditSbcImplementation": true
+    },
+    "v50r1Interpretation": {
+      "completeHistoryConditionMatchedRegret": 0.0,
+      "latestOnlyLogLossDisadvantage": 0.51641915282605,
+      "meanCompleteHistoryConditionalSuffixTv": 2.5044261079814384e-57,
+      "measurementIdentityDiscrepancy": 0.0,
+      "oracleHistoryDependentQueryFraction": 1.0,
+      "partialMinusFullConditionMatchedRegret": 0.0,
+      "qualificationPassed": true,
+      "rawInformationValueGapNonGating": 0.09565732356224768
+    }
+  },
+  "design_lock": "configs/v51-design-lock.json",
+  "design_lock_sha256": "cb6bb8f3d3fc8da5fc0e0429fe2572ddf2089c5dc2de97d9c1a544c7f7d3f94c",
+  "expected_corpus_sha256": "aeb5eb2c7164eaf258034a2c2b1382ccad3d7518a1016bdf7a2def116541bb58",
+  "experiment": "v51_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v51.py": "fdfb9446915854ef0c1b242056e63d861ac7561c385e0683c49b9479521f797e",
+    "python/audit_v51_corpus.py": "c0e4d7707c67a37be41b27fe06da0dd52e2c16eaf39e5739afb451adbbab7ddc",
+    "python/evaluate_v51_sbc.py": "b341b66ea338c75837a2e270bbbbd2632ace6728cd8c8cac95d6c41677988566",
+    "python/freeze_v51_outcome.py": "12c7cf6ab27784c501be8b8db9ae0fb1314070ba4a119479748458f9f1bfebcd",
+    "python/generate_v51_sbc.py": "142e356c9c87102c017e6f98d5690eefe5d7835a34664e2abedea86946e7b6be",
+    "python/seal_v51_corpus.py": "d44f153946fd868f2809414eadee17761b49b83d7fcb822de324a5a80c008568",
+    "python/test_v51_sbc.py": "c9e8c6f65730d65eee51ad5c4e40ccd5c2f71dafd1d2f8a7cf30a15e877f8e2d",
+    "python/v51_sbc.py": "b0cd222911ecbf6dc4219fb138fa8498da86f3b7bdfe79286f827ec9fde2799b",
+    "scripts/run-v51-simulation-based-calibration.sh": "984bed6e761155f9e130a1449692eb58dbb36e97fccd67a66563c3f6c53a31b0"
+  },
+  "implementation_audit": "outputs/v51-simulation-based-calibration/implementation-audit.json",
+  "implementation_audit_sha256": "0faffd26cfbceba6c9f1925ccdae5f5a96fa6e29eeb5790acc08eb4259520c6f",
+  "lock_payload_sha256": "2d47e5ebe272115b8e23779f09e2d224408b5c4d89b2c5ee28cb8667052a0975",
+  "schema_version": 51
+}

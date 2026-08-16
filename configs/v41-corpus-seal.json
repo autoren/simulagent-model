@@ -1,0 +1,22 @@
+{
+  "authorization": {
+    "confirmation_evaluations": 1,
+    "model_forward_passes": 0,
+    "v22r2_evaluation": false,
+    "v28": false
+  },
+  "corpus": {
+    "path": "data/v41-relational-mechanic-confirmation/relational_confirmation.jsonl",
+    "records": 40,
+    "sha256": "6dee411bc7745f44f715835f816631640fc1115e481708c8c056e2de4b47afc0"
+  },
+  "corpus_audit": "outputs/v41-relational-mechanic-confirmation/corpus-audit.json",
+  "corpus_audit_sha256": "94af133a7aea419551a817785dc7a0703d5737eb4647f4721d3a496c73d2bec6",
+  "experiment": "v41_corpus_seal",
+  "implementation_lock": "configs/v41-implementation-lock.json",
+  "implementation_lock_sha256": "ae04c8d61b8be8f78802b9c50aeb960e5a9b22e719387dd81705eef2f38581ac",
+  "lock_payload_sha256": "123b3d2a14314de361a5a02ae8b35cbad6e911f30a72ae40c073ee3b5ff560c4",
+  "manifest": "data/v41-relational-mechanic-confirmation/manifest.json",
+  "manifest_sha256": "927348784f16302c0cf37bbe8bae66d9e5c1ae908ed1ba8456b03d767ab5f6ff",
+  "schema_version": 41
+}

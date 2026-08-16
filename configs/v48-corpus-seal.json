@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "adapter_training_runs": 0,
+    "development_runs": 1,
+    "final_evaluations": 0,
+    "model_forward_passes": 0
+  },
+  "corpora": {
+    "development_evaluation": {
+      "path": "data/v48-stochastic-language-composition/development_evaluation.jsonl",
+      "records": 24,
+      "sha256": "1050f05768ea83dad66edf13e1773a9565efb659f32bf76da57a2f2c10d3ee7a"
+    },
+    "development_fit": {
+      "path": "data/v48-stochastic-language-composition/development_fit.jsonl",
+      "records": 24,
+      "sha256": "f1580229f68d2be3f19e10ab769505c64caa0767fadf820f73f0784dcd065c9f"
+    }
+  },
+  "corpus_audit": "outputs/v48-stochastic-language-composition/corpus-audit.json",
+  "corpus_audit_sha256": "71beca2b9338a8642dd8ac52791d17ed909c70f65ea6f13147399dd66b05ea5c",
+  "experiment": "v48_corpus_seal",
+  "implementation_lock": "configs/v48-implementation-lock.json",
+  "implementation_lock_sha256": "1d0931c57e231d3c5c71999dfd747701d4a7948e00f7c019a0e835001d544701",
+  "lock_payload_sha256": "c64878ee6eaa02c4b01203d94e8b08ce5a046b1a4a854d5d82b6e1362d3fe324",
+  "manifest": "data/v48-stochastic-language-composition/manifest.json",
+  "manifest_sha256": "1112df3c2b7350a6693907add0e45e280920c86d2a01fe0e2ea704663a66cede",
+  "schema_version": 48
+}

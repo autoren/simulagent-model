@@ -1,0 +1,11 @@
+{
+  "experiment": "v48_reporting_supplement_lock",
+  "lock_payload_sha256": "4d2d645586ef1b2c8713f154043ac04058f21158be6c41fb9ad42675223c421d",
+  "non_gating": true,
+  "required_before_implementation_lock": true,
+  "schema_version": 48,
+  "source_design_lock": "configs/v48-design-lock.json",
+  "source_design_lock_sha256": "8e1f0ff36d47ad98275bd575cf8117f22a28174cb7cd19805615e9e0c91d3f0e",
+  "supplement": "configs/v48-reporting-supplement.json",
+  "supplement_sha256": "b45b211c8e1140eb36c76b06641bd127576c7160265b32cb47000202f1b91f6e"
+}

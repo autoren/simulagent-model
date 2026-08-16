@@ -1,0 +1,20 @@
+{
+  "authorization": {
+    "construct_planning_population": false,
+    "language_grounding": false,
+    "model_access": false,
+    "preregister_short_horizon_exact_bayes_adaptive_planning": true,
+    "verification": false
+  },
+  "decision": "authorize_short_horizon_exact_bayes_adaptive_planning_preregistration_only",
+  "experiment": "v54_outcome_lock",
+  "lock_payload_sha256": "1686d7361dafe776b75e99f92ca5137e97203682de17ae9e1c77789b0f268418",
+  "post_result_audit": "outputs/v54-exact-one-step-eig/post-result-audit.json",
+  "post_result_audit_sha256": "4f6f638f0e324dc85df6fb4a9cf384dbe7cb2d1cc90eff6518a9c2d04574eb96",
+  "qualification_passed": true,
+  "result": "outputs/v54-exact-one-step-eig/evaluation/result.json",
+  "result_sha256": "fd0dde4e1a3fbe530552cf04b3060e51efcd79bc37c35e79059ac822f58b4b39",
+  "schema_version": 54,
+  "summary": "docs/v54-results.md",
+  "summary_sha256": "0ef9cfa7cd4a6057e6c38989270b18a147a8749f1351ad20acb50a5c5ec3ac81"
+}

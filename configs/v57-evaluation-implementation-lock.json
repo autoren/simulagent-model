@@ -1,0 +1,38 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "change_evaluation_implementation": false,
+    "collect_human_language": false,
+    "joint_new_surface_new_concept_claim": false,
+    "model_access": false,
+    "modify_v57_population": false,
+    "open_language_claim": false,
+    "probabilistic_or_planning_claim": false,
+    "run_additional_v57_candidate_evaluation": false,
+    "run_one_v57_candidate_evaluation": true
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v57.py": "f6dbf0e5d320ef04ee5d438e475f37436b3f58b5b83ac2cb2ee886a4818df645",
+    "python/audit_v57_evaluation_implementation.py": "15e6329fa75ae496e5c97057d12778b4a6822da4e2ccc2e86facefe8efa08390",
+    "python/evaluate_v57_definition_transfer.py": "79c7bc63c70627d4906c1dabc401f4f79d25afb76732c2cb1d2b8f42efd1908f",
+    "python/freeze_v57_outcome.py": "70acbcd0d940fa2977edae1c722dd8a76fc6303716db0ac7b3ee86efa930c0a7"
+  },
+  "evaluation_implementation_audit": "outputs/v57-definition-augmented-ontology-transfer/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "ec7106cee3c8a61b815ae1b6828f55f87b213c28cae5afd83b219013a8de4ed1",
+  "experiment": "v57_evaluation_implementation_lock",
+  "frozen_dependencies_sha256": {
+    "configs/v57-design-lock.json": "f9756869b08322e3d4a2d6b9cbc40254dd73e5bb17d0018eab2334d0f4624b95",
+    "configs/v57-implementation-lock.json": "016ecc12ba5d500b41733d7bc6d5d8296ab3cdcff2c15a5660818ef3db7b6212",
+    "configs/v57-population-seal.json": "ef592e100d752a012a6716916cd9cae7fd15f417a6a81012c221460821e478e2",
+    "python/generate_v57_definition_transfer.py": "72643e07799ff831c1d62f54caec5b56d79f23436dd246beec7895a054a747c2",
+    "python/v57_definition_compiler.py": "d648f907037bf24302aea50bb0b16424bf1e36453f7eaca8a8c860e6ca9df810"
+  },
+  "implementation_lock": "configs/v57-implementation-lock.json",
+  "implementation_lock_sha256": "016ecc12ba5d500b41733d7bc6d5d8296ab3cdcff2c15a5660818ef3db7b6212",
+  "lock_payload_sha256": "3fd1b5fed33877c5fcad6a376dd5771863b00ef40604f02cc636c15846c0977b",
+  "manifest": "data/v57-definition-augmented-ontology-transfer/manifest.json",
+  "manifest_sha256": "1342db8b75083659fe5c261001cb8d9bf19bcc2595460dfedf0938248364b755",
+  "population_seal": "configs/v57-population-seal.json",
+  "population_seal_sha256": "ef592e100d752a012a6716916cd9cae7fd15f417a6a81012c221460821e478e2",
+  "schema_version": 57
+}

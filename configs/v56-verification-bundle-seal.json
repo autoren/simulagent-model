@@ -1,0 +1,27 @@
+{
+  "authorization": {
+    "formal_safety_claim": false,
+    "language_grounding": false,
+    "model_access": false,
+    "modify_v56_bundle": false,
+    "run_v56_candidate_formal_verification": false,
+    "write_and_audit_v56_candidate_runner": true
+  },
+  "bundle": "data/v56-symbolic-probabilistic-policy-verification",
+  "bundle_audit": "outputs/v56-symbolic-probabilistic-policy-verification/bundle-audit.json",
+  "bundle_audit_sha256": "f0177d7fe6170c2e6e5f7c6fb791ccd40a8bb000ad855b7198d8065d8e5af541",
+  "bundle_content_payload_sha256": "74552b2e0018a1092dec4b4237cca0e9c3f63d5b7bd33b67303442b3f271af99",
+  "cohort_counts": {
+    "v55": 32,
+    "v55r1": 16
+  },
+  "experiment": "v56_verification_bundle_seal",
+  "implementation_lock": "configs/v56-implementation-lock.json",
+  "implementation_lock_sha256": "026a1677c2ea5705ffba422a2a52c6ac704dbeb55cdc7a770e354ca48fa6b1f8",
+  "manifest": "data/v56-symbolic-probabilistic-policy-verification/manifest.json",
+  "manifest_sha256": "47e3966da302ecbeb0cf5986aaf596bd7184d9460007ef1a1d263682fb3eee6b",
+  "policy_count": 48,
+  "schema_version": 56,
+  "seal_payload_sha256": "46e74f83f4306c53262fc1c55636a9a6ebdaf0676b00ed0ca54d67948b665c7c",
+  "sealed_files": 240
+}

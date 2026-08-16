@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 57,
+  "experiment": "v57_definition_augmented_ontology_transfer",
+  "sourceV56OutcomeLock": "configs/v56-outcome-lock.json",
+  "scientificQuestion": "can_a_schema_conditioned_compiler_map_uses_of_previously_unseen_typed_predicates_relations_and_actions_to_exact_executable_asts_when_the_definition_language_and_evidence_grammar_are_declared",
+  "claimBoundary": {
+    "newOpaqueConceptIdentifiers": true,
+    "definitionConditionedCompilation": true,
+    "unaryRelationAndActionConcepts": true,
+    "typedSignAndArgumentRoleTransfer": true,
+    "familiarDeclaredEvidenceGrammar": true,
+    "controlledDefinitionLanguage": true,
+    "exactExecutableAst": true,
+    "definitionDependenceControls": true,
+    "humanAuthoredLanguage": false,
+    "openNaturalLanguageDefinitions": false,
+    "jointNewConceptAndNewSurfaceClaim": false,
+    "probabilisticInferenceOrPlanningEvaluation": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "primaryClaim": "exact_definition_conditioned_transfer_to_unseen_typed_symbols_within_a_declared_definition_and_evidence_language"
+  },
+  "schemaContract": {
+    "conceptKinds": ["unary_predicate", "binary_relation", "bound_action"],
+    "requiredFields": ["opaque_id", "kind", "typed_signature", "controlled_definition", "positive_or_command_form"],
+    "negativeFormRequiredFor": ["unary_predicate", "binary_relation"],
+    "inverseFormRequiredFor": ["binary_relation"],
+    "roleOrderRequiredFor": ["binary_relation", "bound_action"],
+    "definitionTemplateFamiliesPerKind": 3,
+    "opaqueIdentifiersCarryNoLexicalSemantics": true,
+    "schemaSuppliedAtEvaluation": true
+  },
+  "population": {
+    "ontologyPacks": 16,
+    "conceptsPerPack": {"unary_predicate": 2, "binary_relation": 2, "bound_action": 2},
+    "coreRecordsPerPack": 120,
+    "coreRecords": 1920,
+    "statisticalUnit": "ontology_pack",
+    "factors": {
+      "definitionTemplateFamily": ["signature_first", "meaning_first", "example_first"],
+      "conceptKind": ["unary_predicate", "binary_relation", "bound_action"],
+      "lexicalSign": ["positive", "negative"],
+      "relationOrientation": ["direct", "inverse"],
+      "outerOperation": ["assert", "deny", "double_deny", "contrast_select", "unresolved"],
+      "argumentOrder": ["canonical", "surface_reversed"]
+    },
+    "independentGenerator": true,
+    "newEntityNamespaces": true,
+    "newConceptLexemes": true,
+    "newOpaqueIds": true,
+    "generatorSeed": 5707
+  },
+  "safetyPopulation": {
+    "conditions": ["missing_definition", "unknown_lexeme", "duplicate_lexeme", "incomplete_signature", "type_mismatch", "ambiguous_role_order", "contradictory_definition"],
+    "recordsPerConditionPerPack": 2,
+    "records": 224
+  },
+  "controls": {
+    "noDefinition": "remove_all_concept_definitions_and_require_abstention",
+    "opaqueNameOnly": "expose_only_random_opaque_identifiers_with_no_descriptions",
+    "shuffledSchema": "permute_complete_definitions_across_same_kind_symbols_within_pack",
+    "knownOntologyControl": "compile_equivalent_v40_known_concepts_without_definition_novelty",
+    "mutationControls": ["ignore_typed_signature", "swap_relation_roles", "drop_negative_form", "treat_action_as_relation", "ignore_definition_body", "accept_duplicate_lexeme"]
+  },
+  "metrics": ["coverage", "exact_ast", "compiled_truth", "exact_bound_action", "worst_ontology_pack_exact_ast", "worst_concept_kind_exact_ast", "worst_definition_template_exact_ast", "no_definition_abstention_rate", "opaque_name_only_abstention_rate", "shuffled_schema_exact_ast", "safety_rate", "worst_safety_condition_rate", "mutation_kill_rate", "truth_access_count", "unexpected_evaluation_attempt_count"],
+  "gates": {
+    "minimumCoreCoverage": 1.0,
+    "minimumCoreExactAst": 1.0,
+    "minimumPredicateCompiledTruth": 1.0,
+    "minimumExactBoundAction": 1.0,
+    "minimumEveryOntologyPackExactAst": 1.0,
+    "minimumEveryConceptKindExactAst": 1.0,
+    "minimumEveryDefinitionTemplateExactAst": 1.0,
+    "minimumNoDefinitionAbstentionRate": 1.0,
+    "minimumOpaqueNameOnlyAbstentionRate": 1.0,
+    "maximumShuffledSchemaExactAst": 0.0,
+    "minimumSafetyRate": 1.0,
+    "minimumEverySafetyConditionRate": 1.0,
+    "minimumMutationKillRate": 1.0,
+    "maximumTruthAccessCount": 0,
+    "maximumUnexpectedEvaluationAttemptCount": 0
+  },
+  "decisionHierarchy": [
+    "if_all_gates_pass_qualify_only_controlled_definition_augmented_new_concept_transfer_and_authorize_human_authored_known_ontology_collection",
+    "if_definition_dependence_controls_fail_reject_the_new_concept_claim_even_if_core_accuracy_is_high",
+    "if_role_sign_or_type_cells_fail_localize_the_definition_compiler_without_broadening_surface_language",
+    "a_pass_does_not_authorize_joint_new_surface_new_concept_transfer"
+  ],
+  "firewall": {
+    "candidateRecordsBeforePopulationSeal": "forbidden",
+    "targetAccessByCompiler": "forbidden",
+    "postSealMutation": "forbidden",
+    "evaluationBeforeRunnerLock": "forbidden",
+    "evaluationRepeats": "forbidden",
+    "humanAuthoredClaim": "forbidden",
+    "openLanguageClaim": "forbidden",
+    "jointTransferClaim": "forbidden",
+    "probabilisticOrPlanningClaim": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditDefinitionCompiler": true,
+    "writeAndAuditIndependentGenerator": true,
+    "constructPopulation": false,
+    "runCandidateEvaluation": false,
+    "collectHumanLanguage": false,
+    "modelAccess": false
+  }
+}

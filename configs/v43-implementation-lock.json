@@ -1,0 +1,158 @@
+{
+  "authorization": {
+    "construct_paired_language_corpus": true,
+    "model_access": false,
+    "preregister_delayed_effects": false,
+    "run_paired_development": false
+  },
+  "config_payload": {
+    "comparisons": {
+      "bagOfActionsOrderAblation": "registered_inadequacy_control",
+      "compiledStatefulPipeline": "primary",
+      "literalLanguageSequenceLookup": "non_lifted_control",
+      "pairedOracleV42Pipeline": "frozen_reference"
+    },
+    "decisionHierarchy": [
+      "if_all_language_and_end_to_end_gates_pass_accept_declared_sequential_interface_composition_and_preregister_one_new_temporal_axis",
+      "if_state_or_action_parse_gates_fail_repair_only_the_corresponding_declared_compiler_before_any_reasoner_change",
+      "if_parsing_passes_but_schema_or_execution_fails_audit_representation_translation_before_changing_the_frozen_v42_reasoner",
+      "if_bag_of_actions_passes_redesign_the_order_ablation_before_making_an_order_sensitive_language_claim",
+      "if_literal_lookup_passes_do_not_attribute_success_to_lifted_sequential_induction"
+    ],
+    "experiment": "v43_declared_sequential_language_grounding",
+    "firewall": {
+      "V42CaseOrTargetSelection": "forbidden",
+      "V42ReasonerModification": "forbidden",
+      "activeInterventionSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "delayedEffectsInV43": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "openParaphraseClaim": "forbidden",
+      "outcomeDrivenRepeat": "forbidden",
+      "stochasticEffects": "forbidden"
+    },
+    "frozenReasoning": {
+      "mechanicRegistry": "frozen_v42_registry",
+      "partialStateExecution": "exact_frozen_v42_union_semantics",
+      "reasonerModification": "forbidden",
+      "statefulDsl": "python/v42_stateful.py",
+      "supportSelection": "frozen_v42_support_sequences",
+      "versionSpaceInduction": "exact_frozen_v42_program_filtering"
+    },
+    "gates": {
+      "maximumBagOfActionsOrderCounterfactualAccuracy": 0.85,
+      "maximumCompiledEmptyVersionSpace": 0.0,
+      "maximumLiteralLanguageLookupFinalExact": 0.95,
+      "minimumActionCommandExactParse": 1.0,
+      "minimumActionSequenceExact": 1.0,
+      "minimumCompiledEveryFamilyExact": 1.0,
+      "minimumCompiledEverySequenceLengthExact": 1.0,
+      "minimumCompiledFinalObservationExact": 1.0,
+      "minimumCompiledNextStateExact": 1.0,
+      "minimumCompiledOrderCounterfactualAccuracy": 1.0,
+      "minimumCompiledSchemaRecovery": 1.0,
+      "minimumCompiledTargetRetention": 1.0,
+      "minimumSafetyAbstention": 1.0,
+      "minimumStateClauseExactParse": 1.0,
+      "minimumStateGraphExact": 1.0
+    },
+    "languageInterface": {
+      "actionCompiler": "declared_template_and_ordinal_compiler_to_be_frozen_in_v43",
+      "actionOrientations": [
+        "actor_first",
+        "target_first"
+      ],
+      "openParaphrase": false,
+      "partialUnknownEncoding": "v39_unresolved_operation",
+      "sequenceOrder": "explicit_contiguous_one_based_step_ordinals",
+      "stateCompiler": "frozen_v39_declared_language_compiler",
+      "statePackets": "one_declared_packet_per_ground_atom",
+      "stateTruthRealizations": [
+        "assert",
+        "deny",
+        "double_deny",
+        "contrast_select",
+        "unresolved"
+      ],
+      "unsupportedOrAmbiguousPolicy": "abstain_and_return_conservative_full_outcome_set"
+    },
+    "nextAxisIfPassed": {
+      "axis": "deterministic_delayed_effects",
+      "reason": "add_temporal_credit_and_scheduled_state_change_while_preserving_deterministic_exact_semantics",
+      "stage": "oracle_first_preregistration_only",
+      "stochasticityStillDeferred": true
+    },
+    "pairedDesign": {
+      "freshEpisodeActionCues": true,
+      "freshEpisodeOperatorCues": true,
+      "freshEpisodePredicateLexemes": true,
+      "mechanics": 40,
+      "newEntityNamespaces": true,
+      "noV42TargetDrivenSelection": true,
+      "querySequences": 960,
+      "reasonForPairing": "hold_the_mechanics_states_actions_and_targets_fixed_while_changing_only_the_exposed_representation",
+      "reuseSealedV42MechanicsAndCases": true,
+      "supportSequences": 43
+    },
+    "safetyChallenges": {
+      "ambiguousActionTemplate": true,
+      "duplicateStepOrdinal": true,
+      "malformedDeclaredGrammar": true,
+      "missingStepOrdinal": true,
+      "unknownActionCue": true,
+      "unknownPredicateLexeme": true,
+      "unknownStateOperatorCue": true
+    },
+    "schemaVersion": 43,
+    "scientificQuestion": "can_declared_controlled_language_for_states_and_ordered_actions_populate_the_frozen_v42_stateful_interface_without_losing_sequential_mechanic_induction_or_execution",
+    "sourceV42CorpusSeal": "configs/v42-corpus-seal.json",
+    "sourceV42OutcomeLock": "configs/v42-outcome-lock.json",
+    "stageAuthorization": {
+      "constructPairedLanguageCorpus": false,
+      "modelAccess": false,
+      "preregisterDelayedEffects": false,
+      "runPairedDevelopment": false,
+      "writeAndAuditImplementation": true
+    }
+  },
+  "design_lock": "configs/v43-design-lock.json",
+  "design_lock_sha256": "aeb129dded059daee0d692c0828d5ccd923eb4847d531c0715373cbdbbfe0b99",
+  "expected_corpus_sha256": "419bb8ae630d2b801f74e51266d9616ecff4f7ff657b12896f3562519aef29ed",
+  "expected_counts": {
+    "action_commands": 3024,
+    "causal_order_pairs": 88,
+    "mechanics": 40,
+    "query_sequences": 960,
+    "safety_challenges": 280,
+    "state_clauses": 22072,
+    "support_sequences": 43
+  },
+  "experiment": "v43_implementation_lock",
+  "implementation": {
+    "python/audit_and_summarize_v43.py": "a890b9405015c82fb7dde26e8a4a460772d64dae8076ec78ba3efdcc8e0f7db6",
+    "python/audit_v43_corpus.py": "185241ddb03d5a4856e016edad3b397e7372f367da9f899a47d43204b7949d91",
+    "python/audit_v43_implementation.py": "0a94235ededbfc569b60072064b6d09ad35729977e3df500cd8c21ddbd0a4088",
+    "python/evaluate_v42_sequential.py": "d7a29f5ee43323eaabe2faa4ebece93a9a9e9a9eb035a0bac7a17461549ccf9a",
+    "python/evaluate_v43_language.py": "c4125d0edbdaf065d209a8d0587dd803f5f1b76bac079db59093edc4a5eaea20",
+    "python/freeze_v43_implementation.py": "5a83edc55a7a279d5e5121be3e61d43c01b7ec66cf8291540fc53d74a87ca493",
+    "python/freeze_v43_outcome.py": "9b42a8243dcdc08083c54e079e8149f09cee51e15c670c62ad87c2648c6426c9",
+    "python/generate_v43_language.py": "6c6cf4586940b3805edbf7b4a56b78b22d635c0168d4a3521661042e8092ae96",
+    "python/seal_v43_corpus.py": "d1482fd90fe6fcf85062cc39549b02d7db6153467304195febeba3baa837ef35",
+    "python/test_v43_language.py": "dab1f8dbc8a475a0504a666c9728b2437fd25b50b56bfbf2752363c9f70d5cab",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22_relational.py": "4c2d617e009f221c8f5a2e2e8e4e30801952750fa7337db9dfcb6c29983c321c",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v38_focus_parser.py": "6055bec5885ac4fda8a3952be02daaddc2954bc9319c27a670c51879f3f241f1",
+    "python/v39_compiler.py": "8732ccf074a9a03af7b3879b44fbec5c5b9531130849ceb682df1e5109469c4b",
+    "python/v42_stateful.py": "500a7d2ade4a6be0714f6e1a5a93928d47a132283295d168b6128c049d9652ea",
+    "python/v43_language.py": "0fa72d852645b362aa9ae9d0ec5a45d36070420515bd851b4ec3a68cd7b09986"
+  },
+  "implementation_audit": "outputs/v43-sequential-language-grounding/implementation-audit.json",
+  "implementation_audit_sha256": "b78128bf55fa1a19c9396afc22519c6e2a3d587bed3c5bae1680944b549b159c",
+  "lock_payload_sha256": "b45a72d60fb6b3239fcf84e4d19984f2e6955b3ec24f6e0b5a5d5ca6d96b203b",
+  "schema_version": 43,
+  "source_v42_corpus_seal": "configs/v42-corpus-seal.json",
+  "source_v42_corpus_seal_sha256": "91595818d492da8cea112cde9b24f5cc3987704a553c8ba8f9916ea109650c62"
+}

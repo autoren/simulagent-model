@@ -1,0 +1,9 @@
+# V53r2 preregistration: fixed ambiguity-probe coverage
+
+V53r1 remained at the altered-seed implementation-fixture stage: no candidate population or evaluation existed. A direct exact-oracle check across one record per template found that seven program posteriors had maximum probability `1.0` and the remaining maximum was `0.7864`. Therefore none exercised the already-frozen ambiguity definition, exact maximum program probability at most `0.60`. False-collapse and ambiguous-entropy gates would be vacuous, and the MAP-program control would usually be indistinguishable from a correct posterior.
+
+V53r2 fixes replicate ordinal 0 of every template as an ambiguity probe before construction. Every support and query action in those eight records is `wait`, so observations are independent of both program identity and theta. The exact posterior is consequently analytic: uniform across the eight templates and equal to the unchanged scaled-Beta(2,2) theta prior. These records directly test whether SMC² invents program certainty or collapses a broad continuous posterior.
+
+Control evaluation uses fixed replicate ordinals 0 and 1 from every template. Replicate 0 tests MAP-program and theta-point-mass controls under known ambiguity; replicate 1 retains the original informative action schedule and tests likelihood squaring and outer-resampling removal. The collision control remains constructed directly from intentionally repeated stream coordinates.
+
+The other 24 exact records, all SBC records, and all scale records retain their original action scheduling. Total quotas, templates, seeds, exact quadrature, particle budgets, repeat aggregation, PMCMC configuration, metrics, gates, controls, firewalls, and claim boundaries do not change. Population construction remains forbidden until the revised implementation audit and lock pass.

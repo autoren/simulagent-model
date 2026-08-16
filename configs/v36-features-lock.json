@@ -1,0 +1,20 @@
+{
+  "authorization": {
+    "confirmation_evaluations": 1,
+    "construct_final_suite": false,
+    "model_forward_passes": 0,
+    "reuse_v32_evaluation": false,
+    "run_v28": false,
+    "selection_runs": 0,
+    "threshold_changes": 0
+  },
+  "confirmation_seal": "configs/v36-confirmation-seal.json",
+  "confirmation_seal_sha256": "abc1aba3c361b953aa9ff65a72a5aaa8c749dc385a322f4c47a25b6f497ad25d",
+  "experiment": "v36_features_lock",
+  "feature_artifact": "outputs/v36-independent-confirmation/features/features.npz",
+  "feature_artifact_sha256": "a67bd41c29b6d0facaed2800330f9ef32aee9cae99455d737e636b4003e985d3",
+  "feature_metadata": "outputs/v36-independent-confirmation/features/metadata.json",
+  "feature_metadata_sha256": "98520a7be0858477a020ed46b90ca279e6656bf975a4e6c1505677d7c06d5dd2",
+  "lock_payload_sha256": "1c03def5354dd03aa1036f39d346f6ef5039ce98c1857127a3ecd01eefbff137",
+  "schema_version": 36
+}

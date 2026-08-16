@@ -1,0 +1,147 @@
+{
+  "authorization": {
+    "construct_development_population": false,
+    "language_grounding": false,
+    "model_access": false,
+    "run_oracle_development": false,
+    "write_oracle_implementation": true
+  },
+  "config": "configs/v44-deterministic-delayed-effects.json",
+  "config_payload": {
+    "causalRequirements": {
+      "everyFamilyHasWaitPlacementCounterfactual": true,
+      "everyMechanicHasDelaySensitiveQuery": true,
+      "pairedQueriesUseSameInitialStateAndActionMultiset": true,
+      "supportQueryStructuralOverlap": 0,
+      "waitPlacementChangesAtLeastOneRegisteredFinalObservation": true
+    },
+    "comparisons": {
+      "collapsedDelayExecutor": "registered_inadequacy_control_applies_delayed_payload_immediately",
+      "endFlushExecutor": "registered_inadequacy_control_holds_all_delayed_payloads_until_sequence_end",
+      "jointNeuralChallenger": "deferred",
+      "literalSequenceLookup": "non_lifted_control",
+      "queuedVersionSpaceExecutor": "primary"
+    },
+    "decisionHierarchy": [
+      "if_queued_executor_passes_and_both_delay_controls_fail_authorize_preregistration_of_declared_delayed_effect_language_grounding",
+      "if_queued_executor_fails_repair_event_queue_semantics_or_delayed_dsl_before_language_or_stochastic_work",
+      "if_collapsed_delay_passes_redesign_cases_to_make_timing_causally_necessary",
+      "if_end_flush_passes_redesign_intermediate_and_wait_placement_queries",
+      "if_literal_lookup_passes_redesign_structural_generalization"
+    ],
+    "experiment": "v44_oracle_deterministic_delayed_effects",
+    "firewall": {
+      "V43LanguageCorpusReuse": "forbidden",
+      "activeSelection": "forbidden",
+      "adapterTraining": "forbidden",
+      "claimExpansionBeyondDeterministicDelayFoundation": "forbidden",
+      "finalEvaluation": "forbidden",
+      "languageGrounding": "forbidden",
+      "languageModelAccess": "forbidden",
+      "openOntology": "forbidden",
+      "stochasticEffects": "forbidden"
+    },
+    "gates": {
+      "maximumCollapsedDelayFinalExact": 0.85,
+      "maximumEndFlushFinalExact": 0.85,
+      "maximumLiteralLookupFinalExact": 0.95,
+      "maximumQueuedEmptyVersionSpace": 0.0,
+      "minimumOracleProgramValidation": 1.0,
+      "minimumQueuedEveryFamilyExact": 1.0,
+      "minimumQueuedEverySequenceLengthExact": 1.0,
+      "minimumQueuedFinalObservationExact": 1.0,
+      "minimumQueuedNextStateExact": 1.0,
+      "minimumQueuedSchemaRecovery": 1.0,
+      "minimumQueuedTargetRetention": 1.0,
+      "minimumWaitPlacementCounterfactualAccuracy": 1.0
+    },
+    "population": {
+      "actions": [
+        "pulse",
+        "route",
+        "wait"
+      ],
+      "developmentEvaluationMechanics": 16,
+      "entityCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "families": [
+        "one_tick_unary_set_clear",
+        "two_tick_relational_toggle",
+        "state_conditional_scheduling",
+        "interleaved_immediate_and_delayed"
+      ],
+      "fitMechanics": 24,
+      "generatorSeed": 4421,
+      "mechanics": 40,
+      "mechanicsPerFamily": 10,
+      "querySequencesPerMechanic": 24,
+      "sequenceLengths": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "supportSequencesPerMechanicMaximum": 20
+    },
+    "schemaVersion": 44,
+    "scientificQuestion": "can_a_hidden_event_queue_extension_represent_identify_and_execute_deterministic_effects_that_arrive_one_or_two_action_ticks_after_their_trigger",
+    "scope": {
+      "activeInterventionSelection": false,
+      "declaredBooleanOntology": true,
+      "delayTicks": [
+        1,
+        2
+      ],
+      "deterministicDelayedEffects": true,
+      "deterministicImmediateEffects": true,
+      "hiddenPendingEventQueue": true,
+      "languageGrounding": false,
+      "openConceptInventory": false,
+      "oracleFirst": true,
+      "partialObservation": true,
+      "persistentStateMutation": true,
+      "stochasticEffects": false
+    },
+    "sourceV43r1OutcomeLock": "configs/v43r1-outcome-lock.json",
+    "stageAuthorization": {
+      "constructDevelopmentPopulation": false,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "runOracleDevelopment": false,
+      "writeAndAuditOracleImplementation": true
+    },
+    "tickSemantics": {
+      "conditionEvaluation": "at_scheduling_tick_after_due_event_delivery",
+      "copyPayloads": "deferred",
+      "delayOneMeaning": "event_scheduled_at_tick_t_is_delivered_at_start_of_tick_t_plus_1",
+      "delayedPayloads": [
+        "set_true",
+        "set_false",
+        "toggle"
+      ],
+      "phaseOrder": [
+        "deliver_events_due_at_start_of_tick",
+        "evaluate_current_action_on_post_delivery_state",
+        "apply_immediate_action_effects_and_enqueue_delayed_effects",
+        "emit_post_action_state_observation"
+      ],
+      "sameTargetSameTickConflict": "forbidden_by_generator_and_program_validator",
+      "sequenceEnd": "pending_events_are_not_automatically_flushed",
+      "waitAction": "advances_one_tick_without_direct_effect"
+    }
+  },
+  "config_sha256": "39dfbf6e8a6bef40725bd0e80a13ae05c9cd9d07c1bd80d009af9b542bca71db",
+  "design_audit": "outputs/v44-deterministic-delayed-effects/design-audit.json",
+  "design_audit_sha256": "2fb8ecd48eb4fa8a003944f8a4fbea1747d58e8ccc43f8f53d58fe2e84b1f51a",
+  "experiment": "v44_design_lock",
+  "lock_payload_sha256": "61c338f136a023f6d193cfbdee439c4c1e430fa520aced3e1407e0a1556d6f6b",
+  "preregistration": "docs/v44-deterministic-delayed-effects-plan.md",
+  "preregistration_sha256": "841a7a17fe49863eaf28ca380136e52382d623dc534774c5d916b2fbf0e79da0",
+  "schema_version": 44,
+  "source_v43r1_outcome_lock": "configs/v43r1-outcome-lock.json",
+  "source_v43r1_outcome_lock_sha256": "24812550bfabf6dd264801d142fc4b347f881f242c29729d82926c9281b21ce6"
+}
