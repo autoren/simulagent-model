@@ -1,0 +1,24 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_continue_v65r2": false,
+    "preregister_v65r3_same_algorithmic_repair_with_synthetic_only_EIG_implementation_tests": true,
+    "reward_planning": false,
+    "run_v65r3_before_preregistration_and_locks": false
+  },
+  "decision": "reject_v65r2_before_implementation_lock_or_evaluation",
+  "design_lock": "configs/v65r2-design-lock.json",
+  "design_lock_sha256": "9850629da3cac3ed77ed05f7d5e6836a6a8b09c2704c17d78a35ec6f0d733674",
+  "development_access_violation": "outputs/v65r2-extinct-identity-repair/development-access-violation.json",
+  "development_access_violation_sha256": "663f8001d9b55d23b68b49e58f98c138fdf64b3301e093e2242317dd349acd76",
+  "development_outcome_audit": "outputs/v65r2-extinct-identity-repair/development-outcome-audit.json",
+  "development_outcome_audit_sha256": "420ccbdc0cfddbcfc87f725386e606db252a829ab5fd0be8a03ac5e203e3168c",
+  "experiment": "v65r2_rejected_development_outcome_lock",
+  "lock_payload_sha256": "0db9428d5ce1fbc68256a16e62f6aac43575013069c483dbc2b1670b1f812d34",
+  "outcome_auditor": "python/audit_and_freeze_v65r2_development_outcome.py",
+  "outcome_auditor_sha256": "a01169776ba88c46de60a789bbeed17fcdbfedf904295b3b437ddd1d8bd26be1",
+  "schema_version": "65r2"
+}

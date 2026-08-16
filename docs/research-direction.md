@@ -78,12 +78,17 @@ counterclockwise-failure identity. The joint posterior is well-defined and shoul
 identity zero mass; the frozen code incorrectly treats extinction of either identity branch as
 extinction of the full model. No V65r1 rerun or post-failure candidate EIG scoring occurred.
 
-The next direction is the narrow V65r2 extinct-identity repair. It must preserve the subset,
-budgets, pooling rule, exact reference, gates, and V65r1 failure, while allowing an exactly
-impossible identity to contribute log evidence `-Infinity` and zero posterior mass. It must continue
-to reject unexplained finite-particle collapse when exact support is positive, and must serialize
-future terminal exceptions as immutable failures. Only a preregistered V65r2 pass may unlock
-Bayes-adaptive reward decisions.
+V65r2 preregistered that narrow repair, but was rejected during implementation development. One
+unit test called the candidate four-action EIG scorer on the sealed fatal record, contrary to its
+explicit implementation-stage firewall. No values were printed or used, no implementation lock was
+written, and V65r2 had zero evaluation attempts, but the access claim cannot be retained.
+
+The next direction is V65r3 with the same narrow extinct-identity algorithmic repair and unchanged
+subset, budgets, pooling rule, exact reference, gates, and V65r1 failure. Implementation-stage EIG
+tests must be synthetic-only; the sealed fatal record may test support and posterior normalization
+but cannot reach a candidate scorer before the locked one-shot evaluation. V65r3 must still reject
+unexplained finite-particle collapse under positive support and serialize any terminal evaluation
+exception. Only a preregistered V65r3 pass may unlock Bayes-adaptive reward decisions.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
@@ -199,5 +204,6 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Freeze V65r1 as a one-shot runtime failure and preregister only the V65r2 extinct-identity repair.
-Do not rerun V65r1, alter its subset or gates, or begin Bayes-adaptive reward planning.
+Freeze V65r2 as a pre-evaluation access-boundary rejection and preregister V65r3 with synthetic-only
+implementation EIG tests. Do not rerun V65r1, continue V65r2, alter the subset or gates, or begin
+Bayes-adaptive reward planning.
