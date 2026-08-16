@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "continue_to_next_preregistered_stage": true,
+    "modify_v60_design_implementation_or_gates": false,
+    "rerun_v60_candidate_evaluation": false,
+    "treat_synthetic_v58_as_human": false
+  },
+  "claim_boundary": {
+    "exact_long_horizon_optimality": false,
+    "formal_or_worst_case_safety": false,
+    "frozen_smc2_to_budgeted_search_composition": true,
+    "general_purpose_or_amortized_inference": false,
+    "human_authored_language_robustness": false,
+    "model_or_adapter_performance": false
+  },
+  "evaluation_attempt": "outputs/v60-approximate-belief-decision-calibration/evaluation-attempt.json",
+  "evaluation_attempt_sha256": "de1600982787e77479f7bcba1f30f19aca63f545c58910a00f8fb53c7430b830",
+  "evaluation_implementation_lock": "configs/v60-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "120e161bc9155076a00eb3c8dda5b135208d7806033926d0611260bf1794ac73",
+  "experiment": "v60_outcome_lock",
+  "lock_payload_sha256": "0cb397e0ac2fca14ab52211c0ff922f440e2430cf5ffb18083e2e9d4959e5fe6",
+  "population_seal": "configs/v59-population-seal.json",
+  "population_seal_sha256": "10a6e7cacd5f3a984ef29afab26630dd4f911d45f0bed42a215ec798ffb32570",
+  "post_result_audit": "outputs/v60-approximate-belief-decision-calibration/post-result-audit.json",
+  "post_result_audit_sha256": "3ed1b7b003b3520de95af46a5da859fb2659c3b367b1af338a5c01a5ca75c0e7",
+  "qualification_passed": true,
+  "result": "outputs/v60-approximate-belief-decision-calibration/evaluation/result.json",
+  "result_sha256": "28b6682f7768ca2507928c2c5be5531765b86f7fe1ac244e9459fc37a5ed5acf",
+  "results_summary": "docs/v60-results.md",
+  "results_summary_sha256": "72ddedcc3af9761c04c411cc0b74deffb3c65632bc4ab5324532eb90ff6f4a72",
+  "schema_version": 60
+}

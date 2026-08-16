@@ -1,0 +1,44 @@
+{
+  "authorization": {
+    "access_v59_audit_truth": false,
+    "change_v60_evaluation_implementation": false,
+    "collect_human_language": false,
+    "construct_or_modify_population": false,
+    "exact_long_horizon_optimality_claim": false,
+    "formal_safety_claim": false,
+    "model_access": false,
+    "run_additional_v60_candidate_evaluation": false,
+    "run_one_v60_candidate_evaluation": true
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v60.py": "a1ec76562689f0eb839969c0125030ff0bb07de5402e8d4ea73efc0faa6b9d4b",
+    "python/audit_v60_evaluation_implementation.py": "9a5a3c6bfaec2f1b60491274fe08b0fca9d1639626d1c3c1cff766193f0f1ec1",
+    "python/evaluate_v60_decision_calibration.py": "f2bb4394d64b71999c0d9170a015809ad97379a24ce238eda58fdadd3978b1ea",
+    "python/freeze_v60_outcome.py": "d42ea390260b7f473f6ad321aa1365ffe5da0c5827feb031cfcc795da796aa02"
+  },
+  "evaluation_implementation_audit": "outputs/v60-approximate-belief-decision-calibration/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "99e747f0b96d6fb836ca2513be99687433472a952bf159ebca79cd04e2c672e1",
+  "experiment": "v60_evaluation_implementation_lock",
+  "frozen_dependencies_sha256": {
+    "configs/v53r2-design-lock.json": "72197ec7776ad92cc4d525b42054b993df6cf38a1781e0804daf56b0fbe6c90d",
+    "configs/v53r2-outcome-lock.json": "957761b11f0937ade483934b7ef2b2eccef75c7646d8dc25763e6caf8b9992da",
+    "configs/v59-design-lock.json": "a93020e9091587060262b31cdc2940a137d98835e8237353bdfe251b06d39161",
+    "configs/v59-outcome-lock.json": "4aca387e4e44fb00efe755326a9510f9502e76a1a523c7201ef19b85037e95df",
+    "configs/v59-population-seal.json": "10a6e7cacd5f3a984ef29afab26630dd4f911d45f0bed42a215ec798ffb32570",
+    "configs/v60-design-lock.json": "ee176d11150393de2f07d06207dd71af1bfd291c624af5dd69247f264eab9253",
+    "configs/v60-implementation-lock.json": "a167391fd5ec4a1a1c0daf1e9ed125f0a6f0b1779bcd3293b3a4ecec1b753a64",
+    "python/generate_v59_planning.py": "a2a81183ea4257a4caad6596dbc7c963d9c2dffbb178eff27824ce2bf95d87ad",
+    "python/v53_smc2.py": "34a52233605687c50b6962bb6e2f65faaa0a688ed2c124ad6e4e4ef7ea69e399",
+    "python/v54_eig.py": "7ea2ec4b8258e9650ce4e65ee74e8a266fd3bd067dde6f6c417de0618d5ec895",
+    "python/v55_planning.py": "b53da4c409dcef44c541180429981c4cd4719efacd5fc6ee59a2ca6a9432b500",
+    "python/v55r1_planning.py": "d631456311ad6c5493b65d7ddfaf33a7485dccdac89be7021a3e0ed857caed0b",
+    "python/v59_planning.py": "1097ecf2bb40d01678588bcfb1492bf61af7383416703076a09a383870e8f866",
+    "python/v60_decision_calibration.py": "02792aa68a6b74028ea1c4f183543443bceb45d15ba97d08c11cd310efc1cb36"
+  },
+  "implementation_lock": "configs/v60-implementation-lock.json",
+  "implementation_lock_sha256": "a167391fd5ec4a1a1c0daf1e9ed125f0a6f0b1779bcd3293b3a4ecec1b753a64",
+  "lock_payload_sha256": "bb7da4c9ccbbf5e832b0a1d7d5099861c30f8cd88156cfaee11d9861c676088a",
+  "population_seal": "configs/v59-population-seal.json",
+  "population_seal_sha256": "10a6e7cacd5f3a984ef29afab26630dd4f911d45f0bed42a215ec798ffb32570",
+  "schema_version": 60
+}
