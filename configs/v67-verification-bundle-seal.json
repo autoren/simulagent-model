@@ -1,0 +1,24 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v66": false,
+    "modify_v67_design_implementation_or_bundle": false,
+    "run_verification": false,
+    "truth_field_access": false,
+    "write_and_audit_durable_evaluator": true
+  },
+  "bundle_audit": "outputs/v67-independent-bounded-policy-verification/bundle-audit.json",
+  "bundle_audit_sha256": "f43621e407815ec12816d412f80d78a6f1dba7f4bebe3dc5eb22443447f3b86b",
+  "bundle_file_digest": "e91ecac0b00525ee5b44678df95c8c87dc8afc0ed2d5f4932b17fae227242dfc",
+  "bundle_manifest": "outputs/v67-independent-bounded-policy-verification/bundle/bundle-manifest.json",
+  "bundle_manifest_sha256": "bf0c5b73e03190686eeb41e848ba2c9c9fbbd59d9bd45994821b7bb333bd39ea",
+  "experiment": "v67_verification_bundle_seal",
+  "implementation_lock": "configs/v67-implementation-lock.json",
+  "implementation_lock_sha256": "08a9b592c078a09ef10106590ebbcb3c0cd69d6b002f6ac4c65be4fc513c2bc7",
+  "lock_payload_sha256": "1f13c06704e5040538c56c0692018a03341c4b27a660d0991b77550e932faeae",
+  "policy_count": 96,
+  "schema_version": "67",
+  "source_v66_record_cells_sha256": "2e34be0ef19f7ead638fe068e48783ce2520eae0a9942d19e653e5a69b0613ad"
+}
