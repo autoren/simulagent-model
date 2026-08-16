@@ -66,22 +66,24 @@ deployed approximate posterior preserves acquisition decisions.
 
 ## Next experimental direction
 
-The next substantive question is whether the deployed approximate posterior preserves **active
-acquisition decisions**. V65 should compare EIG computed from the frozen equal-weight pool of three
-SMC² repeats with the V64 exact reference at multiple inference budgets. Its primary unit must be a
-prospectively selected, prefix-length-stratified subset of the already sealed V64 histories, chosen
-without looking at their exact EIG values or optimal actions. Primary metrics should cover selected
-action membership and regret, the full four-action EIG vector, predictive distributions, and latent
-posterior quality. Single-repeat selection regret, repeat disagreement, wall-clock latency, and
-particle/simulator cost must be reported as nonqualifying diagnostics so that pooling cannot hide
-instability or impractical computation.
+V65r1 attempted the paired SMC²-to-exact acquisition-portability test after prospectively sealing 48
+public histories and freezing a Rao–Blackwellized acquisition repair. Its sole immutable evaluation
+did not produce accuracy results. One identity-conditioned outer filter reached zero likelihood for
+every particle and the implementation aborted before writing any record-budget cells. V65r1 is
+therefore frozen as a failed run and does not authorize Bayes-adaptive reward decisions.
 
-The pooled three-repeat rule is load-bearing: V63r1 established that this is the qualifying deployed
-posterior, while V63's separately scored repeats failed their registered joint-TV gate. V65 should
-therefore treat pooled performance as primary but preserve every repeat for transparent diagnostics.
-It may reuse V64 histories in a paired portability test because V64 is now immutable; it must not
-modify or rerun V64, select cases from V64 outcomes, or describe the result as an independent exact
-benchmark replication. Only a preregistered V65 pass should unlock Bayes-adaptive reward decisions.
+An exact support-only post-failure audit found one guaranteed fatal sealed history. It has positive
+likelihood under the clockwise-failure identity and exactly zero likelihood under the
+counterclockwise-failure identity. The joint posterior is well-defined and should assign the latter
+identity zero mass; the frozen code incorrectly treats extinction of either identity branch as
+extinction of the full model. No V65r1 rerun or post-failure candidate EIG scoring occurred.
+
+The next direction is the narrow V65r2 extinct-identity repair. It must preserve the subset,
+budgets, pooling rule, exact reference, gates, and V65r1 failure, while allowing an exactly
+impossible identity to contribute log evidence `-Infinity` and zero posterior mass. It must continue
+to reject unexplained finite-particle collapse when exact support is positive, and must serialize
+future terminal exceptions as immutable failures. Only a preregistered V65r2 pass may unlock
+Bayes-adaptive reward decisions.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
@@ -197,6 +199,5 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Preregister V65 as a paired SMC²-to-exact acquisition-portability test. Freeze the history-subset
-rule, particle budgets, three-repeat pooling, single-repeat and cost diagnostics, metrics, controls,
-gates, and staged authorization boundary before computing any V65 posterior or approximate EIG.
+Freeze V65r1 as a one-shot runtime failure and preregister only the V65r2 extinct-identity repair.
+Do not rerun V65r1, alter its subset or gates, or begin Bayes-adaptive reward planning.

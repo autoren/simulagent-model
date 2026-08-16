@@ -1,0 +1,24 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v65r1": false,
+    "preregister_v65r2_extinct_identity_repair": true,
+    "reward_planning": false,
+    "run_v65r2_before_preregistration_and_freeze": false
+  },
+  "decision": "do_not_authorize_reward_planning",
+  "evaluation_implementation_lock": "configs/v65r1-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "78342ebfd14bc736b08d4f9ac8bee19728d1a241662c57c7b771ea383e23da38",
+  "experiment": "v65r1_failed_outcome_lock",
+  "failure": "outputs/v65r1-nested-predictive-repair/evaluation/failure.json",
+  "failure_sha256": "9749cf256dd12a0a5db502dae4b9ccda323ff5923666bf03795edf4fad4ea603",
+  "lock_payload_sha256": "f668637147c518aeffcb336036248bc88c8fa24d960e70d6ad1db68b7f96a7e2",
+  "outcome_audit": "outputs/v65r1-nested-predictive-repair/outcome-audit.json",
+  "outcome_audit_sha256": "b67235542d13f92edc3a46f7d3db957c6f724198563cddfa16d4f2bc530caaf6",
+  "outcome_auditor": "python/audit_and_freeze_v65r1_outcome.py",
+  "outcome_auditor_sha256": "a03fff4dfff9f65ffb9257497da3e4929d0b741d83864694c29b0054eb0c41b7",
+  "schema_version": "65r1"
+}
