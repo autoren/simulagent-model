@@ -1,0 +1,49 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rebuild_subset": false,
+    "reward_planning": false,
+    "run_evaluation": false,
+    "write_and_audit_evaluator": true
+  },
+  "counts": {
+    "subset_provenance": 48,
+    "subset_public": 48
+  },
+  "experiment": "v65r1_subset_seal",
+  "files": {
+    "subset_provenance": {
+      "path": "data/v65-smc2-eig-portability/subset-provenance.jsonl",
+      "sha256": "93c81ed3394f420b27212e113899386ad02d0e4e80afc76625cb2a2352b071ba"
+    },
+    "subset_public": {
+      "path": "data/v65-smc2-eig-portability/subset-public.jsonl",
+      "sha256": "543e61686f6e07708b7d0f9025177b19df2e6578e846770050260d66d5179f25"
+    }
+  },
+  "implementation_lock": "configs/v65r1-implementation-lock.json",
+  "implementation_lock_sha256": "015a16458e4bf8de9108cdf0ec5861c1ca5ce494ace81a57b974bacb6288d512",
+  "lock_payload_sha256": "d7d8301bd88161eae7e14f3bee4598ed51eae19e00f9d0e3d9770a96b6423fb3",
+  "manifest": "data/v65-smc2-eig-portability/manifest.json",
+  "manifest_sha256": "8c0e52b576f4e93a6e92b4ef26b33d84c6b323372e38b0eff4f5e7108770d55c",
+  "materializer": "python/materialize_v65r1_subset.py",
+  "materializer_sha256": "5d2bce8eec5fd7a798321f5a4d7e4cf78e5f5438d4d260744f0b6ba92e875c95",
+  "prefix_counts": {
+    "0": 8,
+    "1": 8,
+    "2": 8,
+    "3": 8,
+    "4": 8,
+    "5": 8
+  },
+  "schema_version": "65r1",
+  "seal_auditor": "python/audit_and_seal_v65r1_subset.py",
+  "seal_auditor_sha256": "e7683b65d369706393b4fbc37ee710487d9f175db7ef1ca2de4d2d53f767046e",
+  "source_public": "data/v64-external-multi-action-eig/selection-public.jsonl",
+  "source_public_sha256": "844ba4355ac18f25eaa482b86cf60e7bd5a35a8d4353bf6e3bdd14e4079761ea",
+  "subset_audit": "outputs/v65r1-nested-predictive-repair/subset-audit.json",
+  "subset_audit_sha256": "e626be6ae89c5274caee15a9f02f91bf40c720b4778311e9c99d3819d2858149"
+}

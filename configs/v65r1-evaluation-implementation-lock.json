@@ -1,0 +1,35 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_evaluator": false,
+    "modify_implementation": false,
+    "modify_subset": false,
+    "reward_planning": false,
+    "run_additional_evaluation": false,
+    "run_one_immutable_evaluation": true
+  },
+  "evaluation_implementation_audit": "outputs/v65r1-nested-predictive-repair/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "af68a4609cbf7372992c17905a0d1c6014ec8bcbb1fdb55ab5f665e6db761b89",
+  "experiment": "v65r1_evaluation_implementation_lock",
+  "implementation_lock": "configs/v65r1-implementation-lock.json",
+  "implementation_lock_sha256": "015a16458e4bf8de9108cdf0ec5861c1ca5ce494ace81a57b974bacb6288d512",
+  "lock_payload_sha256": "211273edfbb1863ab1392b6fe94439d171d221274fad41dfb85c286f8e7fbcba",
+  "runtime": {
+    "numpy": "2.5.1",
+    "python": "3.14.7"
+  },
+  "schema_version": "65r1",
+  "source_sha256": {
+    "python/audit_and_freeze_v65r1_evaluator.py": "c47a05c8cc1e2825c922a8922d66e90defea4f86258d801182caa136cfa7d659",
+    "python/evaluate_v65r1_eig.py": "1b3ab176314b6ed95b03794e82c850f3274a6690ed2d1f34b2f4f9c49bb6ff34",
+    "python/test_v65r1_evaluator.py": "9c6f8c63b910ed0cfff9b0e467eaef507fa4207b31fd7ea063a75d19c221e8b1",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484",
+    "python/v64_external_eig.py": "a2a5135363d09dbc217c6c984cdcf5116871094dc10cbdc9b07e2316b64e8f18",
+    "python/v65_smc2_eig.py": "0b9468cc08ce6c846d682b532fab9acc6b0eb46fa7cedba3dbb2cdc8a403b62d"
+  },
+  "subset_seal": "configs/v65r1-subset-seal.json",
+  "subset_seal_sha256": "ce1e719b243f1cee1bbcac7c058b197e20b88f0ebdfab71fac9e5e2657255052"
+}
