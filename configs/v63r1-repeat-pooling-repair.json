@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "63r1",
+  "experiment": "v63r1_repeat_pooling_measurement_repair",
+  "sourceV63FailedOutcomeLock": "configs/v63-outcome-lock.json",
+  "diagnosis": "V63_scored_each_of_three_independent_SMC2_repeats_separately_and_averaged_convex_errors_where_frozen_V53r2_forms_one_equal_weight_posterior_mixture_before_scoring",
+  "authorizedChanges": {
+    "poolingRule": "equal_weight_posterior_mixture_of_all_three_frozen_repeats_before_every_exact_benchmark_accuracy_and_degeneracy_metric",
+    "metricRows": "one_row_per_record_and_outer_budget_after_pooling",
+    "logEvidence": "log_mean_exp_of_the_three_repeat_evidence_estimates",
+    "diagnostics": "merge_stream_ESS_ancestry_and_rejuvenation_diagnostics_across_the_unpooled_repeats",
+    "repairEvaluationScope": "rerun_only_the_32_exact_benchmark_records_with_the_identical_candidate_seeds_budgets_and_repeats"
+  },
+  "forbiddenChanges": [
+    "source_population_or_truth_sidecars",
+    "candidate_inference_implementation",
+    "external_source_or_runtime",
+    "identity_or_theta_family",
+    "exact_quadrature_reference",
+    "random_seeds",
+    "outer_or_inner_particle_budgets",
+    "repeat_count",
+    "resampling_rejuvenation_or_proposal_settings",
+    "joint_histogram_bins",
+    "metrics_thresholds_or_decision_hierarchy",
+    "SBC_scale_or_runtime_results",
+    "controls_or_claim_boundary"
+  ],
+  "reuseByHash": [
+    "V63_population_seal",
+    "V63_candidate_implementation_lock",
+    "V63_original_result",
+    "V63_SBC_summary",
+    "V63_scale_summary",
+    "V63_pinned_runtime_result",
+    "V63_implementation_audit"
+  ],
+  "qualificationRule": "replace_only_the_original_exact_benchmark_summary_and_exact_dependent_gate_checks_with_prospectively_pooled_values_then_require_every_original_noncompensatory_gate",
+  "claimBoundary": {
+    "originalV63RemainsFailed": true,
+    "measurementRepairNotIndependentReplication": true,
+    "activeInterventionSelection": false,
+    "rewardOrPlanningEvaluation": false,
+    "humanAuthoredLanguage": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeRepairDesign": true,
+    "writeAndAuditRepairEvaluator": false,
+    "runOneRepairEvaluation": false,
+    "activeInterventionSelection": false,
+    "modelAccess": false
+  }
+}

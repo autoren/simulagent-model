@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "active_intervention_selection": false,
+    "change_population_seeds_particles_bins_or_gates": false,
+    "model_access": false,
+    "modify_or_rerun_original_v63": false,
+    "reward_or_planning_evaluation": false,
+    "simulate_human_records": false,
+    "write_and_audit_narrow_repeat_pooling_repair": true
+  },
+  "decision": "repair_or_reject_v63_inference_before_active_selection",
+  "evaluation_implementation_lock": "configs/v63-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "0f827da9cd875563a4a912a0c1eb9abda45acf79f435d639f85871109752bcf6",
+  "experiment": "v63_failed_outcome_lock",
+  "failed_gates": [
+    "primary_mean_joint_tv"
+  ],
+  "lock_payload_sha256": "11fd850575bfcfd74c207c29b11cf1a9e5aa23566691d4f032263616bde51632",
+  "post_result_audit": "outputs/v63-external-unknown-dynamics/post-result-audit.json",
+  "post_result_audit_sha256": "49a812533d5969b269ae711df9ecf032b76e44236c3f51d53e803726048fc6da",
+  "qualification_passed": false,
+  "result": "outputs/v63-external-unknown-dynamics/evaluation/result.json",
+  "result_sha256": "38f1bd105022b6fc86f74d5c472e1b9e87d5bacb06b6a6ee756b65cf3f5ab769",
+  "schema_version": 63,
+  "summary": "docs/v63-results.md",
+  "summary_sha256": "94be6f1e1649a7bb3c7659da9daea5906c4e99e67245bf8ab23d5c2b03eb8519"
+}

@@ -1,0 +1,18 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "model_access": false,
+    "modify_v63_or_v63r1_artifacts": false,
+    "run_one_repair_evaluation": true
+  },
+  "design_lock": "configs/v63r1-design-lock.json",
+  "design_lock_sha256": "b5dc5a2e39995a959262fbc91644f24d82cf604de8e82fa401f27dcb7d3c76fd",
+  "evaluation_implementation_audit": "outputs/v63r1-repeat-pooling-repair/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "f00dc64110008f87242872ed084f4df25aed472461260f423d283fc349173b21",
+  "experiment": "v63r1_evaluation_implementation_lock",
+  "lock_payload_sha256": "07a96f08a4d0e92725b85e9595bb7dfdb51b2a98099446a70625fd93d68f4320",
+  "schema_version": "63r1",
+  "source_sha256": {
+    "python/evaluate_v63r1_repair.py": "2e90be98414bec26548b358cb9006208fb7be78cefbccd1ca34165cc9462ed1d"
+  }
+}

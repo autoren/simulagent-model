@@ -1,0 +1,22 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "active_intervention_selection": false,
+    "model_access": false,
+    "modify_design_implementation_population_or_evaluator": false,
+    "reward_or_planning_evaluation": false,
+    "run_one_candidate_evaluation": true,
+    "simulate_human_records": false
+  },
+  "evaluation_implementation_audit": "outputs/v63-external-unknown-dynamics/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "454366f562beec3cc3884c89b7fac8587603e68864cbb5824c510d17ff4c4440",
+  "experiment": "v63_evaluation_implementation_lock",
+  "lock_payload_sha256": "1af5ba6c3f35690a4de599f9960c9f36c5ab57e07f28068fff62f58cb1f5085f",
+  "population_seal": "configs/v63-population-seal.json",
+  "population_seal_sha256": "4198261790020dac554625858230cdcd3becc2fcbabd828459046aa0617303d2",
+  "schema_version": 63,
+  "source_sha256": {
+    "python/evaluate_v63_inference.py": "9f5df67575f6bd0d3502c3549d3e8a89ff842a6ebc0b65003b0655fecf5a06a7",
+    "python/official_v63_runtime_crosscheck.py": "19b79465c2107da95991eee636a505a9dd3aa03e0a79833e1b23c0507ee1cd6c"
+  }
+}

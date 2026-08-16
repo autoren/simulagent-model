@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "adapter_training": false,
+    "construct_or_run_EIG_population": false,
+    "formal_verification": false,
+    "model_access": false,
+    "modify_or_rerun_v63_or_v63r1": false,
+    "preregister_separate_multi_action_external_EIG_stage": true,
+    "reward_or_planning_evaluation": false,
+    "simulate_human_records": false,
+    "use_tiger_as_substantive_EIG_benchmark": false
+  },
+  "decision": "authorize_preregistration_of_separate_multi_action_external_EIG_stage",
+  "evaluation_implementation_lock": "configs/v63r1-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "3f67d809738d0a2bb2d182bc3354812f6f0f36431117ac071d1ca3c91efb42a5",
+  "experiment": "v63r1_outcome_lock",
+  "lock_payload_sha256": "35b39c7378b86c021d6990fd37594fca10a9ae839ef49add2006c6d9b406c27f",
+  "measurement_repair_not_independent_replication": true,
+  "original_v63_qualification_passed": false,
+  "post_result_audit": "outputs/v63r1-repeat-pooling-repair/post-result-audit.json",
+  "post_result_audit_sha256": "380ee4cebeb9d78668f78d42bb397a87dc13222ea30ee204be23d530ea7fda40",
+  "qualification_passed": true,
+  "result": "outputs/v63r1-repeat-pooling-repair/evaluation/result.json",
+  "result_sha256": "73680cf64a0fc23fdc64c187168a1b134925041f0d32dcfdc08cc843eda3bb16",
+  "schema_version": "63r1",
+  "source_v63_outcome_lock": "configs/v63-outcome-lock.json",
+  "source_v63_outcome_lock_sha256": "23c108d39b933fa588fb6ac3e78862730b1f9b99b8a9aa059f0bc04bd275e38f",
+  "summary": "docs/v63r1-results.md",
+  "summary_sha256": "ae8a39b84a4d2fc561ac7b065b96cf78def5284dc16dfa4a5e4ac625b47c5940"
+}

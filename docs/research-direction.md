@@ -7,7 +7,7 @@ from sparse language-mediated observations and interventions, a reusable, uncert
 executable model of how its environment changes—and transfer that model across mechanics and
 language while retaining enough structure to diagnose and verify its reasoning?
 
-## Status after V62r1 (2026-08-16)
+## Status after V63r1 (2026-08-16)
 
 The original staged core is now implemented through bounded verification. V50 established exact
 history-dependent belief filtering; V53r2 calibrated continuous-parameter SMC² against exact
@@ -31,15 +31,36 @@ The human-authored language track remains deferred under V58 because the require
 writers, validators, adjudicator, and coordinator are unavailable. Synthetic records must not be
 substituted for those roles.
 
+V63 then tested external system identification on a project-authored unknown-dynamics layer anchored
+to pinned POBAX Tiger arrays. The hidden family combined a discrete persistent-versus-alternating
+identity with a continuous transition parameter, and compared the frozen SMC² implementation with
+exact inference, SBC, scale stress, and the official external runtime. The immutable V63 run passed
+every gate except mean joint identity-parameter TV (`0.0731` against `0.06`). A post-result audit
+localized that failure to the evaluator: unlike the frozen V53r2 reference rule, it scored three
+repeat posteriors separately instead of first forming their equal-weight mixture.
+
+V63r1 preregistered only that aggregation repair and reused the original populations, posterior
+repeats, SBC, scale, runtime artifact, budgets, and gates by hash. Its single repair evaluation
+passed all gates: mean joint TV was `0.0444`, q95 joint TV was `0.0625`, mean identity TV was
+`0.000372`, and mean theta Wasserstein distance was `0.00214`. V63 remains a failed run and V63r1 is
+a measurement repair, not an independent replication. The evidence qualifies calibrated SMC²
+portability for this one externally anchored, project-authored family; POBAX itself does not supply
+unknown dynamics.
+
 ## Next experimental direction
 
-The next useful technical question is external **system identification**, not another known-model
-planning demonstration. A V63 design should pin a small external POMDP family but hide a
-prospectively fixed transition/observation parameter or discrete model identity from the candidate.
-It should compare exact posterior inference with the frozen SMC² path, compare active
-information-gain actions with fixed and random designs, and then measure whether posterior error is
-small in decision space under the unchanged external runtime. Model variants, priors, horizons,
-seeds, controls, and calibration/decision gates must be frozen before any candidate evaluation.
+The next useful technical question is external **active system identification**. V64 should use a
+separate pinned external model with at least two informative nonterminal interventions and a
+preregistered unknown-dynamics layer. Before constructing an evaluation population, it must prove
+that the interventions are structurally distinguishable, that the expected-information-gain
+maximizer varies across reachable histories, and that the hidden uncertainty changes a downstream
+decision. Exact EIG should then be compared with prospectively frozen fixed and random designs under
+matched interaction budgets. Model variants, priors, horizons, seeds, controls, aggregation rules,
+and noncompensatory gates must be frozen before any candidate evaluation.
+
+Tiger is ineligible as the substantive active-design benchmark because `listen` is its only
+informative nonterminal action. The current outcome lock authorizes only V64 design and
+preregistration; it does not yet authorize population construction or evaluation.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.

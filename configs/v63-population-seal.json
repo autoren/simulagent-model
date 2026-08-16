@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "active_intervention_selection": false,
+    "model_access": false,
+    "modify_v63_design_implementation_or_populations": false,
+    "reward_or_planning_evaluation": false,
+    "run_one_candidate_evaluation": false,
+    "simulate_human_records": false,
+    "write_and_audit_evaluation_implementation": true
+  },
+  "experiment": "v63_population_seal",
+  "file_sha256": {
+    "construction.json": "a1578d2eaf668c6fd981b9ab2e9ad716aa5221bb9d6c74866f561ab9113f3871",
+    "exact-public.jsonl": "1759c426697267cedb83f59cabd125a46de52fe20e0eb74c7bc32833af3a9991",
+    "exact-truth.jsonl": "06b38263c2728234207c849be6d6a213ddbd0911d0af594018eee2d20c1cfd6f",
+    "sbc-public.jsonl": "7af30fdb5e667f6f9dd4ed2e7f49922b9da4839d2d7d2e0a7aefac6cca34518e",
+    "sbc-truth.jsonl": "0b9dc9e6c8e38fc889e4172fe3fd61e13f66c380ecaaed697ebc77e42e04d31a",
+    "scale-public.jsonl": "e1a11ce789a50e0535d3103b50d37340c850477df9828eaceb962d7fe55ad12b",
+    "scale-truth.jsonl": "1b51386668214ab5602b68b87eac59da227ff8207b6d9651172278d945bee39e"
+  },
+  "implementation_lock": "configs/v63-implementation-lock.json",
+  "implementation_lock_sha256": "37a4663f0f275d8033b044d859534819e8f224996613c4f7bc75bff61ae680f8",
+  "lock_payload_sha256": "086de09b11801080a5dcf118daa5a3afc18161948dc709f60ed76dae06497825",
+  "manifest": "data/v63-external-unknown-dynamics/sealed-populations/manifest.json",
+  "manifest_sha256": "ba207fa042af1d697a7e06891220ddffeccc8bf45dee1a21d606f816ac4d0288",
+  "population_audit": "outputs/v63-external-unknown-dynamics/population-audit.json",
+  "population_audit_sha256": "90bb580fa079a1a1d28b8a90e710895912e90099e29f706340f35e5ee7265abd",
+  "schema_version": 63
+}

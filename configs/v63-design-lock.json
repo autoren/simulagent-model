@@ -1,0 +1,414 @@
+{
+  "authorization": {
+    "activeInterventionSelection": false,
+    "auditAndFreezeDesign": false,
+    "constructSealedPopulations": false,
+    "modelAccess": false,
+    "rewardOrPlanningEvaluation": false,
+    "runOneCandidateEvaluation": false,
+    "writeAndAuditImplementation": true
+  },
+  "config": "configs/v63-external-unknown-dynamics.json",
+  "config_payload": {
+    "claimBoundary": {
+      "activeInterventionSelection": false,
+      "adapterTraining": false,
+      "exactJointStateIdentityParameterInference": true,
+      "externalAnchor": "POBAX_tiger_alt_start_at_the_V62_pinned_commit",
+      "formalVerification": false,
+      "humanAuthoredLanguage": false,
+      "modelAccess": false,
+      "multipleInformativeActions": false,
+      "pinnedExternalRuntimeCrossCheck": true,
+      "primaryClaim": "calibrated_inference_portability_for_one_source_anchored_five_state_unknown_dynamics_family_not_an_upstream_benchmark_result",
+      "projectAddsPreregisteredUncertaintyLayer": true,
+      "rewardBearingPlanningEvaluation": false,
+      "simulationBasedCalibration": true,
+      "smcSquaredPortability": true,
+      "upstreamSuppliesUnknownDynamicsFamily": false
+    },
+    "controls": {
+      "identitySwapControl": "swap_persistent_and_alternating_transition_signs",
+      "iidObservationControl": "discard_temporal_dependence_by_treating_listen_reports_as_iid_from_the_symmetric_marginal",
+      "likelihoodSquaredControl": "square_each_observation_likelihood_increment",
+      "mapIdentityThetaPointControl": "replace_joint_model_posterior_with_MAP_identity_and_conditional_theta_mean",
+      "minimumControlsDetectedOrDominated": 5,
+      "outerResamplingDisabledControl": "disable_outer_resampling_and_rejuvenation",
+      "streamCollisionControl": "deliberately_reuse_one_outer_and_one_inner_stream_and_require_detection",
+      "thetaPointMassControl": "replace_theta_posterior_with_point_mass_at_its_posterior_mean"
+    },
+    "decisionHierarchy": [
+      "if_family_feasibility_exact_reference_sbc_smc2_degeneracy_stream_runtime_control_and_scale_gates_all_pass_authorize_only_preregistration_of_a_separate_multi_informative_action_external_EIG_stage",
+      "if_family_feasibility_fails_reject_this_unknown_dynamics_family_before_candidate_population_construction",
+      "if_exact_references_disagree_repair_exact_inference_before_running_particles",
+      "if_smc2_disagrees_with_exact_quadrature_repair_outer_weighting_identity_evidence_inner_filter_or_rejuvenation",
+      "if_sbc_fails_repair_inference_before_active_selection_or_planning",
+      "if_runtime_crosscheck_fails_repair_the_external_adapter_without_modifying_upstream_source",
+      "do_not_claim_that_POBAX_supplies_unknown_dynamics_or_that_Tiger_tests_nontrivial_intervention_choice",
+      "do_not_authorize_reward_planning_verification_language_model_access_or_adapter_training"
+    ],
+    "exactBenchmark": {
+      "actionSchedule": "listen_only",
+      "comparisonTargets": [
+        "identity_posterior",
+        "theta_marginal",
+        "binned_joint_identity_theta_posterior",
+        "current_hidden_side_marginal",
+        "next_listen_observation_predictive",
+        "record_log_evidence"
+      ],
+      "currentEpisodePrefixLengths": [
+        6,
+        10
+      ],
+      "hiddenStateReference": "exact_five_state_forward_algorithm",
+      "identityBalance": "sixteen_per_identity_shuffled_before_seal",
+      "independentReference": "separate_scalar_log_domain_forward_algorithm_and_separate_quadrature_construction",
+      "quadrature": "gauss_legendre_on_scaled_beta_support_with_scaled_beta_prior_weights",
+      "quadratureNodes": 257,
+      "records": 32,
+      "supportEpisodesPerRecord": 4,
+      "supportSequenceLengths": [
+        8,
+        12
+      ]
+    },
+    "experiment": "v63_external_unknown_dynamics_inference",
+    "externalSource": {
+      "commit": "a5e1d62d14e4efe783885b9d4f19cffa2a568eec",
+      "model": "pobax/envs/classic/POMDP/tiger-alt-start.POMDP",
+      "networkAccessDuringCandidateEvaluation": false,
+      "repository": "https://github.com/taodav/pobax.git",
+      "runtime": "data/v62-external-pomdp-transfer/bundle/source/pobax/envs/classic/pomdp.py",
+      "sealedModel": "data/v62-external-pomdp-transfer/bundle/models/tiger-alt-start/model.json",
+      "sealedModelSha256": "2f753c0679a1767d193978753328262592771b57f0ba75f4048985349b40044e",
+      "sourceSha256": "22b4f4313f45f275c8a51415c27ac2d37e93140e64e274f4f92a4c77f78e5768",
+      "upstreamSourceMutation": "forbidden"
+    },
+    "familyFeasibilityAudit": {
+      "controls": [
+        "map_identity_theta_plugin",
+        "posterior_mean_transition_mixture"
+      ],
+      "historyAlphabet": [
+        "tiger-left",
+        "tiger-right"
+      ],
+      "historyDepths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "minimumAbsoluteThetaCorrelationSlope": 0.98,
+      "minimumExactVersusCollapseActionDisagreements": 1,
+      "minimumIdentityCorrelationGap": 0.294,
+      "minimumMaximumCollapseRegret": 0.1,
+      "minimumPosteriorIdentityShift": 0.35,
+      "quadratureNodes": 33,
+      "remainingHorizons": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requireAtLeastOneExactListenAction": true,
+      "requireAtLeastOneExactOpenAction": true
+    },
+    "firewall": {
+      "accessHumanV58Records": "forbidden",
+      "activeSelectionOnTigerAsSubstantiveEIGTest": "forbidden",
+      "adapterTraining": "forbidden",
+      "candidateEvaluationBeforeEvaluationImplementationLock": "forbidden",
+      "candidateEvaluationBeforePopulationSeal": "forbidden",
+      "candidatePopulationBeforeImplementationLock": "forbidden",
+      "gateChangesAfterDesignLock": "forbidden",
+      "modelAccess": "forbidden",
+      "networkAccessDuringCandidateEvaluation": "forbidden",
+      "postSealSourceOrPopulationMutation": "forbidden",
+      "rewardOrPlanningEvaluation": "forbidden",
+      "simulateHumanRecords": "forbidden"
+    },
+    "gates": {
+      "maximumAbsoluteCoverageZ": 4.75,
+      "maximumAbsoluteRankBinZ": 4.75,
+      "maximumExactReferenceIdentityTv": 1e-10,
+      "maximumExactReferenceThetaWasserstein": 1e-06,
+      "maximumFalseIdentityCollapseRate": 0.02,
+      "maximumFalseThetaCollapseRate": 0.02,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumInnerFingerprintCollisionRate": 0.01,
+      "maximumMeanAbsoluteLogEvidenceError": 0.08,
+      "maximumMediumMinusLowMeanError": 0.02,
+      "maximumModelForwardPassCount": 0,
+      "maximumOuterFingerprintCollisionRate": 0.01,
+      "maximumPrimaryMeanBinnedIdentityThetaTv": 0.06,
+      "maximumPrimaryMeanCurrentSideTv": 0.05,
+      "maximumPrimaryMeanIdentityTv": 0.03,
+      "maximumPrimaryMeanNextObservationTv": 0.05,
+      "maximumPrimaryMeanThetaWasserstein": 0.03,
+      "maximumPrimaryMinusMediumMeanError": 0.01,
+      "maximumPrimaryQ95BinnedIdentityThetaTv": 0.18,
+      "maximumPrimaryQ95CurrentSideTv": 0.15,
+      "maximumPrimaryQ95IdentityTv": 0.1,
+      "maximumPrimaryQ95NextObservationTv": 0.15,
+      "maximumPrimaryQ95ThetaWasserstein": 0.1,
+      "maximumRuntimeEmpiricalProbabilityExcess": 0.03,
+      "maximumRuntimeObservationArrayError": 1e-12,
+      "maximumRuntimeTransitionArrayError": 1e-12,
+      "maximumTargetIdentityExtinctionRate": 0.02,
+      "maximumUnexpectedEvaluationAttemptCount": 0,
+      "maximumUnintendedStreamCollisions": 0,
+      "minimumAnalyticFixturePassRate": 1.0,
+      "minimumCompletedExactBenchmarkFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 5,
+      "minimumDistinctThetaAncestorFraction": 0.03,
+      "minimumFinalOuterEssFraction": 0.1,
+      "minimumImplementationMutantKillRate": 1.0,
+      "minimumNormalizationRate": 1.0,
+      "minimumRankChiSquarePValue": 0.001,
+      "minimumRuntimeCrosscheckCompletionFraction": 1.0,
+      "minimumScaleStressCompletionFraction": 1.0,
+      "minimumScaleStressNormalizationRate": 1.0
+    },
+    "implementationAudit": {
+      "mutants": [
+        "swap_identity_transition_sign",
+        "replace_theta_with_one_minus_theta",
+        "use_pretransition_observation",
+        "drop_observation_likelihood",
+        "reset_hidden_side_at_each_tick",
+        "share_inner_random_streams_across_theta_particles",
+        "omit_scaled_beta_prior_jacobian",
+        "normalize_identity_evidence_separately",
+        "factor_joint_state_model_posterior",
+        "disable_outer_rejuvenation",
+        "reverse_canonical_tie_break"
+      ],
+      "requiredAnalyticFixturePassRate": 1.0,
+      "requiredMutantKillRate": 1.0,
+      "sealedCandidateAccessibleToAudit": false
+    },
+    "parallelLanguageBranchStatus": "docs/v58-deferred-status.md",
+    "population": {
+      "allEvaluationSeedsFreshAgainst": [
+        "V46",
+        "V47",
+        "V48",
+        "V49",
+        "V50",
+        "V51",
+        "V52",
+        "V53",
+        "V54",
+        "V55",
+        "V56",
+        "V57",
+        "V59",
+        "V60",
+        "V61",
+        "V62"
+      ],
+      "generatorSeed": 6301,
+      "identitySeed": 6307,
+      "implementationFixtureSeedOffset": 1000000,
+      "innerParticleSeed": 6329,
+      "outerParticleSeed": 6323,
+      "posteriorDrawSeed": 6343,
+      "rejuvenationSeed": 6337,
+      "runtimeCrosscheckSeed": 6361,
+      "thetaSeed": 6311,
+      "tieBreakSeed": 6353,
+      "trajectorySeed": 6317
+    },
+    "runtimeCrosscheck": {
+      "candidateTruthAccess": false,
+      "cells": 64,
+      "identities": [
+        "persistent",
+        "alternating"
+      ],
+      "maximumEmpiricalProbabilityExcess": 0.03,
+      "maximumObservationArrayError": 1e-12,
+      "maximumTransitionArrayError": 1e-12,
+      "officialRuntime": "unchanged_pinned_POBAX_POMDP_class_receiving_only_preregistered_transition_arrays",
+      "thetaValues": [
+        0.65,
+        0.725,
+        0.8,
+        0.875,
+        0.95
+      ]
+    },
+    "scaleStress": {
+      "episodeCounts": [
+        4,
+        8
+      ],
+      "exactQuadratureRequired": false,
+      "innerStateParticleBudget": 127,
+      "outerThetaParticleBudget": 509,
+      "records": 32,
+      "sequenceLengths": [
+        24,
+        40,
+        64
+      ]
+    },
+    "schemaVersion": 63,
+    "scientificQuestion": "does_the_frozen_smc_squared_structure_transfer_to_a_pinned_external_finite_pomdp_after_adding_a_preregistered_identifiable_hidden_dynamics_identity_and_one_continuous_transition_parameter",
+    "simulationBasedCalibration": {
+      "coverageLevels": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "currentEpisodePrefixLengths": [
+        6,
+        10
+      ],
+      "discreteTieHandling": "randomized_insertion_rank_with_frozen_independent_seed",
+      "expectedRanksPerBin": 16,
+      "posteriorDrawsPerReplication": 127,
+      "rankBins": 16,
+      "rankSupportSize": 128,
+      "replications": 256,
+      "selectionOnReplications": false,
+      "supportEpisodesPerReplication": 4,
+      "supportSequenceLengths": [
+        8,
+        12
+      ],
+      "testQuantities": [
+        "identity_ordinal",
+        "continuous_theta",
+        "current_hidden_side_ordinal",
+        "target_identity_posterior_probability",
+        "target_side_posterior_probability"
+      ]
+    },
+    "smcSquared": {
+      "adaptiveProposal": false,
+      "identityLayer": "enumerate_both_identities_and_update_identity_evidence_from_each_identity_specific_smc_squared_normalizing_constant_estimate",
+      "independentRepeatsOnExactBenchmark": 3,
+      "inheritanceStatement": "budgets_resampling_thresholds_rejuvenation_steps_proposal_scale_and_repeat_count_are_unchanged_from_frozen_V53r2",
+      "innerEssThresholdFraction": 0.5,
+      "innerResampling": "systematic",
+      "innerStateParticleBudget": 127,
+      "outerEssThresholdFraction": 0.5,
+      "outerRejuvenation": "particle_marginal_metropolis_hastings",
+      "outerResampling": "systematic",
+      "outerThetaParticleBudgets": [
+        31,
+        127,
+        509
+      ],
+      "primaryOuterThetaParticleBudget": 509,
+      "proposalSpace": "logit_of_scaled_theta",
+      "proposalStandardDeviation": 0.4,
+      "randomStreamKey": [
+        "population",
+        "record",
+        "identity",
+        "outer_budget",
+        "repeat",
+        "outer_particle",
+        "episode",
+        "tick",
+        "purpose",
+        "move"
+      ],
+      "recomputeParticleFilterLikelihoodAtProposal": true,
+      "rejuvenationStepsPerOuterResampling": 2
+    },
+    "sourceV62ExternalBundleSeal": "configs/v62-external-bundle-seal.json",
+    "sourceV62r1OutcomeLock": "configs/v62r1-outcome-lock.json",
+    "stageAuthorization": {
+      "activeInterventionSelection": false,
+      "auditAndFreezeDesign": false,
+      "constructSealedPopulations": false,
+      "modelAccess": false,
+      "rewardOrPlanningEvaluation": false,
+      "runOneCandidateEvaluation": false,
+      "writeAndAuditImplementation": true
+    },
+    "unknownDynamicsFamily": {
+      "analyticReportLagOneCorrelation": "identity_sign_times_square_of_two_sensor_accuracy_minus_one_times_two_theta_minus_one",
+      "continuousParameter": {
+        "alpha": 2.0,
+        "beta": 2.0,
+        "boundaryMassAllowed": false,
+        "meaning": "probability_of_identity_characteristic_side_transition_on_listen",
+        "name": "theta",
+        "prior": "scaled_beta",
+        "support": [
+          0.65,
+          0.95
+        ]
+      },
+      "hiddenIdentity": {
+        "name": "transition_mode",
+        "prior": [
+          0.5,
+          0.5
+        ],
+        "values": [
+          "persistent",
+          "alternating"
+        ]
+      },
+      "identifiabilityDomainRestriction": "theta_strictly_above_one_half_prevents_identity_theta_aliasing",
+      "listenTransition": {
+        "alternating": "opposite_side_with_theta_and_same_side_with_one_minus_theta",
+        "appliesTo": [
+          "tiger-left-start",
+          "tiger-right-start",
+          "tiger-left",
+          "tiger-right"
+        ],
+        "persistent": "same_side_with_theta_and_opposite_side_with_one_minus_theta",
+        "successors": [
+          "tiger-left",
+          "tiger-right"
+        ]
+      },
+      "sensorAccuracy": 0.85,
+      "stepOrder": "action_then_transition_then_reward_then_observation",
+      "unchangedFromPinnedSource": [
+        "state_action_and_observation_names",
+        "initial_state_distribution",
+        "open_action_transitions",
+        "all_rewards",
+        "observation_kernel",
+        "discount",
+        "terminal_state_semantics"
+      ]
+    }
+  },
+  "config_sha256": "b46b1eeac1b075247a5f37f9819897f72f7534e450023f501c3486d3cc3a79fb",
+  "design_audit": "outputs/v63-external-unknown-dynamics/design-audit.json",
+  "design_audit_sha256": "1dbbbbc25339a21b38ac048bd9123b3295630952b5ba004e8ad137f2e3a50def",
+  "experiment": "v63_design_lock",
+  "family_feasibility_summary": {
+    "absolute_theta_correlation_slope": 0.9799999999999999,
+    "collapse_action_disagreement_count": 147,
+    "exact_action_names_seen": [
+      "listen",
+      "open-left",
+      "open-right"
+    ],
+    "identity_correlation_gap": 0.294,
+    "maximum_collapse_regret_under_exact_joint_posterior": 14.609244213161835,
+    "maximum_posterior_identity_shift": 0.44312588661903796
+  },
+  "lock_payload_sha256": "723f7e739b2575c6fff6688009f280c5cf015fe9efa1e2617adc863b7d3e680a",
+  "preregistration": "docs/v63-external-unknown-dynamics-plan.md",
+  "preregistration_sha256": "72851ef4dd194b332c01708c232f3b7698607ef05cdd67967b30b02bb9cac34a",
+  "schema_version": 63,
+  "source_v62_bundle_seal": "configs/v62-external-bundle-seal.json",
+  "source_v62_bundle_seal_sha256": "c9c0c67ea3b732a58df8366341930de350dbd0c72b5d2cdb470e743ecca87579",
+  "source_v62r1_outcome_lock": "configs/v62r1-outcome-lock.json",
+  "source_v62r1_outcome_lock_sha256": "4a119d8edcd2ee72f65955f2a85d1a43a6c0856a501bbb208ab8f819f47b20f1"
+}

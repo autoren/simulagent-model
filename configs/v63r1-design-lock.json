@@ -1,0 +1,22 @@
+{
+  "authorization": {
+    "active_intervention_selection": false,
+    "model_access": false,
+    "modify_v63_or_v63r1_design": false,
+    "run_one_repair_evaluation": false,
+    "write_and_audit_repair_evaluator": true
+  },
+  "design_audit": "outputs/v63r1-repeat-pooling-repair/design-audit.json",
+  "design_audit_sha256": "33ea2ab87ed13a4957fd023a6d7c31e6d43ed11dabc9fe8c12fdd183890e5d8f",
+  "experiment": "v63r1_design_lock",
+  "lock_payload_sha256": "b06ccea257129aa607c0a300d47858a6d7142a21aec2b4a79cdcc73d15d2993d",
+  "original_v63_result": "outputs/v63-external-unknown-dynamics/evaluation/result.json",
+  "original_v63_result_sha256": "38f1bd105022b6fc86f74d5c472e1b9e87d5bacb06b6a6ee756b65cf3f5ab769",
+  "preregistration": "docs/v63r1-repeat-pooling-repair-plan.md",
+  "preregistration_sha256": "4dc22d226feb5442d9fee14b635228b8e55a953b7fa6e7c45fc62dfa1155931b",
+  "repair": "configs/v63r1-repeat-pooling-repair.json",
+  "repair_sha256": "1e7787f6663024e17f5c5b8693686fd5eef378cad3e97406d6004e517d221fbf",
+  "schema_version": "63r1",
+  "source_v63_outcome_lock": "configs/v63-outcome-lock.json",
+  "source_v63_outcome_lock_sha256": "23c108d39b933fa588fb6ac3e78862730b1f9b99b8a9aa059f0bc04bd275e38f"
+}
