@@ -1,0 +1,26 @@
+{
+  "authorization": {
+    "access_human_data": false,
+    "adapter_training": false,
+    "construct_or_run_SMC2_EIG_population": false,
+    "formal_verification": false,
+    "model_access": false,
+    "modify_or_rerun_v64": false,
+    "preregister_pooled_three_repeat_SMC2_EIG_stage": true,
+    "reward_planning": false,
+    "simulate_human_data": false
+  },
+  "decision": "authorize_preregistration_of_pooled_three_repeat_SMC2_EIG_stage",
+  "evaluation_implementation_lock": "configs/v64-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "80a716ad95b85544af7066fd5894bdc5267ec9c56adef952776843ac596bb88f",
+  "experiment": "v64_outcome_lock",
+  "lock_payload_sha256": "dc1eb26048d3fd80ba9e32f5a670452a79366134fea8e6610b0d8e6789a22b7c",
+  "post_result_audit": "outputs/v64-external-multi-action-eig/post-result-audit.json",
+  "post_result_audit_sha256": "6cb68e57fc7b5faa274f07adc21ed27e3ca84130629fb163de7ab6babe842751",
+  "qualification_passed": true,
+  "result": "outputs/v64-external-multi-action-eig/evaluation/result.json",
+  "result_sha256": "74affc35f4cd53b8dab9f2a45a59655f73b7cc2548602777e45c1218bd7dd23d",
+  "schema_version": 64,
+  "summary": "docs/v64-results.md",
+  "summary_sha256": "82585f9635dd2cfdfb18560df09407205f705515ac1eac332b0731ea93eaee6f"
+}

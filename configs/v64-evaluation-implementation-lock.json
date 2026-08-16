@@ -1,0 +1,35 @@
+{
+  "authorization": {
+    "access_human_data": false,
+    "adapter_training": false,
+    "approximate_particle_acquisition": false,
+    "formal_verification": false,
+    "model_access": false,
+    "modify_v64_design_implementation_populations_or_evaluator": false,
+    "rerun_v64_evaluation": false,
+    "reward_planning": false,
+    "run_one_immutable_v64_evaluation": true,
+    "simulate_human_data": false
+  },
+  "evaluator_audit": "outputs/v64-external-multi-action-eig/evaluator-audit.json",
+  "evaluator_audit_sha256": "bb555aa5d2b96f5e79bea04a39670e1442315280b0ba389854ff987c4293cf87",
+  "experiment": "v64_evaluation_implementation_lock",
+  "lock_payload_sha256": "8e013ceaa5ae8cfc52e8f68b1bd6a0e85fa7f5e7c800323aca0a4e1d0806d1e2",
+  "operational_control_detection_rule": "mean_exact_EIG_regret_gt_0.001_nats_or_strict_selection_disagreement_gt_0.10_on_informative_records;_outcome_leakage_requires_firewall_rejection",
+  "population_seal": "configs/v64-population-seal.json",
+  "population_seal_sha256": "775f378780242412ae835642efdd8aac6123e79db8e6b16ffdbab850f7524d1c",
+  "runtime": {
+    "numpy": "2.5.1",
+    "python": "3.14.7",
+    "scipy": "1.18.0"
+  },
+  "schema_version": 64,
+  "source_sha256": {
+    "python/audit_and_freeze_v64_evaluator.py": "2eed1e52bc4ff31b688745e32a54b3ff2a7ebd58e7de9277feda49544880bca8",
+    "python/evaluate_v64_eig.py": "e20e14c2f12465b2c42100ebf5cc46c60ec4338caf415220b2fd513572fff13f",
+    "python/test_v64_evaluator.py": "cc96e2c65494e4b41b7ecc57095442e7b264b333c104465c90f2813d25c931d7",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484",
+    "python/v64_external_eig.py": "a2a5135363d09dbc217c6c984cdcf5116871094dc10cbdc9b07e2316b64e8f18",
+    "python/v64_scalar_reference.py": "f14ef0073c44b7f10338e7650b643aecc7d772925233c8cbe5c5380db8d2361c"
+  }
+}

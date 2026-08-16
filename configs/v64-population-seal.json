@@ -1,0 +1,61 @@
+{
+  "authorization": {
+    "access_human_data": false,
+    "adapter_training": false,
+    "approximate_particle_acquisition": false,
+    "formal_verification": false,
+    "model_access": false,
+    "modify_or_rebuild_populations": false,
+    "reward_planning": false,
+    "run_one_immutable_evaluation": false,
+    "simulate_human_data": false,
+    "write_and_audit_evaluation_implementation": true
+  },
+  "counts": {
+    "adaptive_audit": 512,
+    "adaptive_public": 512,
+    "sbc_audit": 256,
+    "sbc_public": 256,
+    "selection_audit": 192,
+    "selection_public": 192
+  },
+  "experiment": "v64_population_seal",
+  "files": {
+    "adaptive_audit": {
+      "path": "data/v64-external-multi-action-eig/adaptive-audit.jsonl",
+      "sha256": "35a9d92e9050b29294c87384fef4862b5f067c8776b9e46cf231728cd56a306f"
+    },
+    "adaptive_public": {
+      "path": "data/v64-external-multi-action-eig/adaptive-public.jsonl",
+      "sha256": "87150a33afdb2691cd15e4118e56e40eb45070eefc99b61f8bed9c5bd260f990"
+    },
+    "sbc_audit": {
+      "path": "data/v64-external-multi-action-eig/sbc-audit.jsonl",
+      "sha256": "db9ad6266379591f827d11446a03034eb8304b5f55ab0f163f2e902cc6ba07bc"
+    },
+    "sbc_public": {
+      "path": "data/v64-external-multi-action-eig/sbc-public.jsonl",
+      "sha256": "1a6dc917bb680ce0ed845ceec5cfd77e0b521c1a1c14f5f99329bca22debf161"
+    },
+    "selection_audit": {
+      "path": "data/v64-external-multi-action-eig/selection-audit.jsonl",
+      "sha256": "abb97dd279c8cc22616ef3e2802d50ec26f45e066dc741761fe028bb81d40e8e"
+    },
+    "selection_public": {
+      "path": "data/v64-external-multi-action-eig/selection-public.jsonl",
+      "sha256": "844ba4355ac18f25eaa482b86cf60e7bd5a35a8d4353bf6e3bdd14e4079761ea"
+    }
+  },
+  "generator": "python/generate_v64_populations.py",
+  "generator_sha256": "85e24642c7f50093d33a2e147a4a944e92daf397b29af9b5b15d15216d1bc07d",
+  "implementation_lock": "configs/v64-implementation-lock.json",
+  "implementation_lock_sha256": "4dcc47e9174975a5888a7eb7f5a3427db4155748c46a37140dfc86974fd16743",
+  "lock_payload_sha256": "ecc2cdc886ec1b2b0883121db68eb0e467207ff306f2bf2fdca7f1c499b2dcb4",
+  "manifest": "data/v64-external-multi-action-eig/manifest.json",
+  "manifest_sha256": "91c922735e03e3fb21841e3885822fbc53299353b6618c18d26440533affcc39",
+  "population_audit": "outputs/v64-external-multi-action-eig/population-audit.json",
+  "population_audit_sha256": "6da921fca8dfabc55d26ffc7a6981d63b3628ec72548084a9bf1819ebad65b6d",
+  "schema_version": 64,
+  "seal_auditor": "python/audit_and_seal_v64_populations.py",
+  "seal_auditor_sha256": "5404643e37cc759b790eb8f7fc89e9ffa3e0c80a6f3b7553a5ad9ca592878d95"
+}

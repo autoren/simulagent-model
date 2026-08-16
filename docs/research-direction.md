@@ -7,7 +7,7 @@ from sparse language-mediated observations and interventions, a reusable, uncert
 executable model of how its environment changes—and transfer that model across mechanics and
 language while retaining enough structure to diagnose and verify its reasoning?
 
-## Status after V63r1 (2026-08-16)
+## Status after V64 (2026-08-16)
 
 The original staged core is now implemented through bounded verification. V50 established exact
 history-dependent belief filtering; V53r2 calibrated continuous-parameter SMC² against exact
@@ -47,24 +47,41 @@ a measurement repair, not an independent replication. The evidence qualifies cal
 portability for this one externally anchored, project-authored family; POBAX itself does not supply
 unknown dynamics.
 
+V64 then moved active identification to pinned POBAX `4x3_nonterminating.POMDP` arrays with a
+project-authored actuator-failure family. Its two hidden identities map failed commands clockwise or
+counterclockwise, while a continuous transition parameter controls commanded-action reliability.
+The exact reference showed that all four interventions can be strict EIG maximizers across reachable
+histories and that the remaining uncertainty changes the downstream reward-optimal action in 4 of
+11 states. Independent scalar checks agreed with the candidate implementation to numerical
+precision, all 13 implementation mutants and all six evaluation controls were detected, and the
+sole immutable evaluation passed every noncompensatory gate.
+
+At interaction budget 8, exact adaptive EIG achieved mean latent-information gain `0.2561`, versus
+`0.1700` for the fixed cycle and `0.1820` for uniform random selection. Paired lower 95% bounds for
+the adaptive advantages were `0.0608` and `0.0502`, respectively. Candidate one-step EIG agreed
+with the independent reference to `5.42e-16`; the selected action was always an exact optimizer;
+and SBC, access, one-shot, source-binding, and truth-firewall checks all passed. This qualifies the
+external benchmark and exact acquisition reference only. It does not yet establish that the
+deployed approximate posterior preserves acquisition decisions.
+
 ## Next experimental direction
 
-The next useful technical question is external **active system identification**. V64 should use a
-separate pinned external model with at least two informative nonterminal interventions and a
-preregistered unknown-dynamics layer. Before constructing an evaluation population, it must prove
-that the interventions are structurally distinguishable, that the expected-information-gain
-maximizer varies across reachable histories, and that the hidden uncertainty changes a downstream
-decision. Exact EIG should then be compared with prospectively frozen fixed and random designs under
-matched interaction budgets. Model variants, priors, horizons, seeds, controls, aggregation rules,
-and noncompensatory gates must be frozen before any candidate evaluation.
+The next substantive question is whether the deployed approximate posterior preserves **active
+acquisition decisions**. V65 should compare EIG computed from the frozen equal-weight pool of three
+SMC² repeats with the V64 exact reference at multiple inference budgets. Its primary unit must be a
+prospectively selected, prefix-length-stratified subset of the already sealed V64 histories, chosen
+without looking at their exact EIG values or optimal actions. Primary metrics should cover selected
+action membership and regret, the full four-action EIG vector, predictive distributions, and latent
+posterior quality. Single-repeat selection regret, repeat disagreement, wall-clock latency, and
+particle/simulator cost must be reported as nonqualifying diagnostics so that pooling cannot hide
+instability or impractical computation.
 
-Tiger is ineligible as the substantive active-design benchmark because `listen` is its only
-informative nonterminal action. The current outcome lock authorizes only V64 design and
-preregistration; it does not yet authorize population construction or evaluation. An exact V64 pass
-would qualify the benchmark and acquisition reference only. The next substantive portability gate
-would then compare EIG computed from the deployed pooled three-repeat SMC² posterior with exact EIG
-at multiple inference budgets, while reporting single-repeat regret and computational cost. Only a
-pass there should unlock Bayes-adaptive reward decisions.
+The pooled three-repeat rule is load-bearing: V63r1 established that this is the qualifying deployed
+posterior, while V63's separately scored repeats failed their registered joint-TV gate. V65 should
+therefore treat pooled performance as primary but preserve every repeat for transparent diagnostics.
+It may reuse V64 histories in a paired portability test because V64 is now immutable; it must not
+modify or rerun V64, select cases from V64 outcomes, or describe the result as an independent exact
+benchmark replication. Only a preregistered V65 pass should unlock Bayes-adaptive reward decisions.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
@@ -180,7 +197,6 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Preregister the population final before constructing it. Develop the uncertainty-aware challenger
-only on exposed V15/V19 artifacts. Freeze both systems, the generator, delayed seed rule, metrics,
-decision hierarchy, and evaluation implementation before any final record is materialized or any
-final model feature is extracted.
+Preregister V65 as a paired SMC²-to-exact acquisition-portability test. Freeze the history-subset
+rule, particle budgets, three-repeat pooling, single-repeat and cost diagnostics, metrics, controls,
+gates, and staged authorization boundary before computing any V65 posterior or approximate EIG.
