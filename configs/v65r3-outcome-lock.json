@@ -1,0 +1,29 @@
+{
+  "attempt": "outputs/v65r3-synthetic-only-implementation/evaluation/attempt.json",
+  "attempt_sha256": "edaea57544115dba53b0b421b0fa75c31890a9c7cee7d5669f11528251b0592f",
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_continue_v65r2": false,
+    "modify_or_rerun_v65r1": false,
+    "modify_or_rerun_v65r3": false,
+    "preregister_external_Bayes_adaptive_reward_decisions": true,
+    "run_reward_decision_evaluation_before_preregistration_and_locks": false
+  },
+  "decision": "authorize_preregistration_of_external_Bayes_adaptive_reward_decisions",
+  "evaluation_implementation_lock": "configs/v65r3-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "72ea65ae2ba47d4085279a645396e455bf7a735f50cbc7b7d2b6b52de00c326b",
+  "experiment": "v65r3_successful_outcome_lock",
+  "lock_payload_sha256": "6719feefa883eb9066d6c25421f7487bd069aa66d122a1c065a5fd3d852f25b4",
+  "outcome_audit": "outputs/v65r3-synthetic-only-implementation/outcome-audit.json",
+  "outcome_audit_sha256": "bc009a8b2290b6ebe8ba2ce27ad9ee61d3d97766d790e60117390509235dcfc2",
+  "outcome_auditor": "python/audit_and_freeze_v65r3_outcome.py",
+  "outcome_auditor_sha256": "1fbc11b0d8292a1e7cc6f84b7c785e8dca4ba0b7137091b0d67a050ed0d0565c",
+  "record_budget_cells": "outputs/v65r3-synthetic-only-implementation/evaluation/record-budget-cells.jsonl",
+  "record_budget_cells_sha256": "d85eee8657818e54c9dc24264c99d9c17af3707567d2b86c02db5511f646bfbd",
+  "result": "outputs/v65r3-synthetic-only-implementation/evaluation/result.json",
+  "result_sha256": "069ef52850895fad39697dc8e54d80915850b85a88de251d553a7db4a6e0d8d1",
+  "schema_version": "65r3"
+}

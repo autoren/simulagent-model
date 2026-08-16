@@ -83,12 +83,20 @@ unit test called the candidate four-action EIG scorer on the sealed fatal record
 explicit implementation-stage firewall. No values were printed or used, no implementation lock was
 written, and V65r2 had zero evaluation attempts, but the access claim cannot be retained.
 
-The next direction is V65r3 with the same narrow extinct-identity algorithmic repair and unchanged
-subset, budgets, pooling rule, exact reference, gates, and V65r1 failure. Implementation-stage EIG
-tests must be synthetic-only; the sealed fatal record may test support and posterior normalization
-but cannot reach a candidate scorer before the locked one-shot evaluation. V65r3 must still reject
-unexplained finite-particle collapse under positive support and serialize any terminal evaluation
-exception. Only a preregistered V65r3 pass may unlock Bayes-adaptive reward decisions.
+V65r3 retained the same narrow repair with a synthetic-only implementation EIG firewall and a
+durable atomic attempt protocol. Its one immutable evaluation completed all 144 record-budget rows
+and 432 repeat cells and passed every original gate. At the primary 509-particle budget, mean/q95
+four-action EIG error was `0.000188/0.000688` nats, strict/ε-optimal membership was `0.979/1.000`,
+and mean selection regret was `1.88e-9` nats. Seven controls were detected or dominated. All nine
+expected exact-zero identity branches were handled with zero mass and no atom, with no
+positive-support particle collapse. An independent raw-cell reaggregation reproduced the result.
+
+The next direction is preregistered bounded-horizon Bayes-adaptive reward decision quality. Exact
+and pooled-SMC² belief-state planners should be compared with the true-model oracle, MAP-model
+certainty equivalence, and a valid posterior-mixture control that samples one static model per
+simulated episode. Reward, information, and computation must be reported separately; a posterior
+mean transition applied at every step is not a valid substitute for persistent unknown dynamics.
+Only a passing decision stage should unlock independent policy verification.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
@@ -204,6 +212,6 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Freeze V65r2 as a pre-evaluation access-boundary rejection and preregister V65r3 with synthetic-only
-implementation EIG tests. Do not rerun V65r1, continue V65r2, alter the subset or gates, or begin
-Bayes-adaptive reward planning.
+Freeze the successful V65r3 acquisition-portability result and preregister the external
+Bayes-adaptive reward-decision comparison. Preserve V65r1 and V65r2 outcomes, the static-model
+semantics, and separate downstream policy verification.
