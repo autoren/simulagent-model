@@ -1,0 +1,391 @@
+{
+  "authorization": {
+    "access_human_data": false,
+    "adapter_training": false,
+    "formal_verification": false,
+    "materialize_subset": false,
+    "model_access": false,
+    "modify_design": false,
+    "reward_planning": false,
+    "run_evaluation": false,
+    "simulate_human_data": false,
+    "write_and_audit_smc2_eig_implementation": true
+  },
+  "config": "configs/v65-smc2-eig-portability.json",
+  "config_payload": {
+    "approximateAcquisition": {
+      "candidateOrder": [
+        "n",
+        "e",
+        "s",
+        "w"
+      ],
+      "doNotTreatInnerStateOrRepeatIdentityAsTargetLatent": true,
+      "integrateInnerStateBeforeTreatingAnOuterParticleAsAStaticLatentAtom": true,
+      "objective": "mutual_information_between_joint_identity_theta_and_the_next_observation_conditioned_on_the_public_history_and_candidate_command",
+      "poolBeforeScore": true,
+      "scoreEveryCandidate": true,
+      "selectionBeforeOutcome": true,
+      "tieBreak": "first_action_in_canonical_n_e_s_w_order_within_tolerance",
+      "tieToleranceNats": 1e-12,
+      "units": "nats"
+    },
+    "claimBoundary": {
+      "adapterTraining": false,
+      "approximateOneStepStaticLatentEIG": true,
+      "externalModelArraysFromPOBAX": true,
+      "formalVerification": false,
+      "humanData": false,
+      "independentExactBenchmarkReplication": false,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "oneStepAcquisitionDecisionPortability": true,
+      "pairedReuseOfFrozenV64PublicHistories": true,
+      "pooledThreeRepeatSMC2Posterior": true,
+      "primaryClaim": "on_a_prospectively_hash_selected_subset_of_the_frozen_v64_public_histories_the_frozen_three_repeat_pooled_smc_squared_architecture_preserves_the_exact_one_step_external_EIG_decision_with_registered_posterior_predictive_and_regret_accuracy",
+      "rewardPlanning": false,
+      "sequentialApproximateAdaptiveRollout": false,
+      "unknownActuatorFamilyProjectAuthored": true
+    },
+    "comparisonTargets": {
+      "acquisition": [
+        "four_action_EIG_vector_absolute_error",
+        "strict_exact_optimal_set_membership",
+        "epsilon_optimal_membership_at_0.001_nats",
+        "exact_EIG_regret_of_approximate_selection"
+      ],
+      "aggregationUnit": "record_with_equal_weight_across_the_six_prefix_length_strata",
+      "posterior": [
+        "identity_posterior_total_variation",
+        "theta_marginal_wasserstein_1",
+        "sixteen_bin_joint_identity_theta_total_variation",
+        "current_state_marginal_total_variation"
+      ],
+      "prediction": [
+        "four_by_six_candidate_observation_predictive_total_variation"
+      ]
+    },
+    "controls": {
+      "averageRepeatEIGControl": "score_each_repeat_then_average_the_four_EIG_values_instead_of_pooling_the_repeat_posteriors",
+      "equalIdentityEvidenceControl": "force_identity_posterior_mass_to_one_half_per_identity",
+      "firstRepeatOnlyControl": "discard_repeats_one_and_two_before_scoring",
+      "mapIdentityControl": "collapse_each_repeat_to_its_MAP_identity_before_pooling",
+      "minimumDetectedOrDominated": 6,
+      "outcomeLeakageControl": "attempt_to_read_a_post_selection_observation_and_require_firewall_rejection",
+      "sharedStreamControl": "reuse_one_inner_propagation_stream_across_outer_theta_particles_and_require_collision_detection",
+      "stateAsTargetControl": "include_current_maze_state_in_the_information_target",
+      "thetaMeanControl": "collapse_each_repeat_theta_marginal_to_its_mean_before_pooling"
+    },
+    "decisionHierarchy": [
+      "if_all_pooled_primary_accuracy_scaling_control_integrity_and_one_shot_gates_pass_authorize_only_preregistration_of_external_Bayes_adaptive_reward_decisions_against_oracle_MAP_and_valid_mixture_controls",
+      "if_particle_posterior_metrics_fail_repair_the_external_state_filter_identity_evidence_outer_weighting_or_rejuvenation_without_modifying_v64",
+      "if_posterior_metrics_pass_but_EIG_fails_repair_static_latent_aggregation_pooling_or_predictive_scoring",
+      "if_compute_cost_is_high_but_accuracy_passes_preserve_the_pass_and_report_the_cost_limitation_without_relaxing_accuracy_gates",
+      "if_any_primary_gate_fails_do_not_remove_records_change_the_subset_change_budgets_or_unlock_reward_planning",
+      "do_not_describe_paired_reuse_as_an_independent_exact_benchmark_replication",
+      "do_not_authorize_formal_verification_language_human_model_or_training_work"
+    ],
+    "exactReference": {
+      "candidateActions": 4,
+      "inheritExactlyFrom": "python/v64_external_eig.py",
+      "outcomeEnumeration": 6,
+      "quadratureNodes": 257,
+      "recomputeOnlyOnFrozenV65Subset": true,
+      "rerunV64Evaluation": false,
+      "stateEnumeration": 11,
+      "tieBreak": "first_action_in_canonical_n_e_s_w_order_within_tolerance",
+      "tieToleranceNats": 1e-12
+    },
+    "experiment": "v65_pooled_smc2_external_eig_portability",
+    "externalFamily": {
+      "candidateActionsCanonical": [
+        "n",
+        "e",
+        "s",
+        "w"
+      ],
+      "identityNames": [
+        "clockwise_failure",
+        "counterclockwise_failure"
+      ],
+      "inheritExactlyFrom": "configs/v64-design-lock.json",
+      "knownObservationKernel": true,
+      "model": "POBAX_4x3_nonterminating_at_a5e1d62d14e4efe783885b9d4f19cffa2a568eec",
+      "modelSha256": "0fa62301931960d682b02961ffd38f4dd6b8e8835bc0203f4a12f849c267d6ff",
+      "nuisanceLatent": "current_maze_state",
+      "targetLatent": [
+        "actuator_identity",
+        "continuous_theta"
+      ],
+      "thetaPrior": "scaled_beta_2_2",
+      "thetaSupport": [
+        0.6,
+        0.95
+      ]
+    },
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "candidateEvaluationBeforeEvaluationImplementationLock": "forbidden",
+      "candidateEvaluationBeforeSubsetSeal": "forbidden",
+      "candidatePruning": "forbidden",
+      "formalVerification": "forbidden",
+      "humanData": "forbidden",
+      "languageGrounding": "forbidden",
+      "loadV64EvaluationResultDuringSubsetSelection": "forbidden",
+      "loadV64SelectionAudit": "forbidden",
+      "materializeSubsetBeforeImplementationLock": "forbidden",
+      "modelAccess": "forbidden",
+      "modifyOrRerunV64": "forbidden",
+      "postDesignGateOrBudgetChanges": "forbidden",
+      "rejectSelectedRecordAfterMaterialization": "forbidden",
+      "rewardPlanning": "forbidden",
+      "selectSubsetByExactEIGOrAction": "forbidden",
+      "selectionOnRealizedOutcome": "forbidden",
+      "selectionOnTruthFields": "forbidden",
+      "simulateHumanData": "forbidden"
+    },
+    "gates": {
+      "epsilonOptimalRegretNats": 0.001,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCandidateOmissionCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumPrimaryMeanAbsoluteEigVectorErrorNats": 0.004,
+      "maximumPrimaryMeanCandidatePredictiveTv": 0.05,
+      "maximumPrimaryMeanIdentityTv": 0.05,
+      "maximumPrimaryMeanJointIdentityThetaTv": 0.1,
+      "maximumPrimaryMeanSelectedEigRegretNats": 0.0015,
+      "maximumPrimaryMeanStateTv": 0.08,
+      "maximumPrimaryMeanThetaWasserstein": 0.04,
+      "maximumPrimaryMinusLowMeanEigVectorErrorNats": 0.001,
+      "maximumPrimaryMinusLowMeanSelectedEigRegretNats": 0.001,
+      "maximumPrimaryQ95AbsoluteEigVectorErrorNats": 0.015,
+      "maximumPrimaryQ95CandidatePredictiveTv": 0.15,
+      "maximumPrimaryQ95IdentityTv": 0.15,
+      "maximumPrimaryQ95JointIdentityThetaTv": 0.25,
+      "maximumPrimaryQ95SelectedEigRegretNats": 0.006,
+      "maximumPrimaryQ95StateTv": 0.2,
+      "maximumPrimaryQ95ThetaWasserstein": 0.12,
+      "maximumPrimarySelectedEigRegretNats": 0.02,
+      "maximumRealizedOutcomeAccessBeforeSelectionCount": 0,
+      "maximumTieBreakViolationCount": 0,
+      "maximumTruthFieldAccessCount": 0,
+      "maximumUnexpectedEvaluationAttemptCount": 0,
+      "maximumUnintendedRandomStreamCollisions": 0,
+      "maximumV64SelectionAuditRecordsLoaded": 0,
+      "minimumAnalyticFixturePassRate": 1.0,
+      "minimumCandidateAndPredictiveNormalizationRate": 1.0,
+      "minimumCompletedRecordBudgetRepeatFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 6,
+      "minimumFiniteValueRate": 1.0,
+      "minimumImplementationMutantKillRate": 1.0,
+      "minimumPooledPosteriorNormalizationRate": 1.0,
+      "minimumPrimaryEpsilonOptimalMembershipRate": 0.95,
+      "minimumPrimaryStrictOptimalSetMembershipRate": 0.8
+    },
+    "mandatoryDiagnostics": {
+      "compute": [
+        "wall_clock_seconds_by_record_budget_and_repeat",
+        "outer_particle_count",
+        "inner_transition_draw_count",
+        "observation_weight_evaluation_count",
+        "complete_history_likelihood_recomputation_count",
+        "outer_and_inner_resampling_counts",
+        "PMMH_attempt_and_accept_counts",
+        "final_posterior_atom_count"
+      ],
+      "qualificationRole": "reported_in_full_but_not_used_to_relax_or_compensate_for_primary_accuracy_gates",
+      "singleRepeat": [
+        "EIG_vector_error_by_repeat_and_budget",
+        "strict_and_epsilon_optimal_membership_by_repeat_and_budget",
+        "exact_selection_regret_by_repeat_and_budget",
+        "three_repeat_selected_action_disagreement_rate",
+        "best_minus_worst_repeat_regret_spread"
+      ]
+    },
+    "pairedReuseBoundary": {
+      "independentExactReplication": false,
+      "loadV64EvaluationResultDuringSubsetSelection": false,
+      "loadV64SelectionAudit": false,
+      "modifyOrRerunV64": false,
+      "reuseType": "paired_portability_test_against_an_immutable_exact_reference",
+      "selectByExactEIGOrAction": false,
+      "sourcePopulation": "data/v64-external-multi-action-eig/selection-public.jsonl",
+      "sourcePopulationSha256": "844ba4355ac18f25eaa482b86cf60e7bd5a35a8d4353bf6e3bdd14e4079761ea",
+      "sourcePrefixLengths": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sourceRecords": 192,
+      "sourceRecordsPerPrefixLength": 32
+    },
+    "schemaVersion": 65,
+    "scientificQuestion": "does_the_frozen_equal_weight_pool_of_three_smc_squared_repeats_preserve_external_four_action_one_step_expected_information_gain_and_its_acquisition_decision_against_the_frozen_v64_exact_reference",
+    "seeds": {
+      "fixtureSeed": 6551,
+      "freshAgainst": [
+        "V53",
+        "V60",
+        "V63",
+        "V64"
+      ],
+      "innerParticleSeed": 6527,
+      "mutationSeed": 6563,
+      "outerParticleSeed": 6521,
+      "rejuvenationSeed": 6533,
+      "resamplingSeed": 6547,
+      "subsetSelectionSeed": 6511,
+      "tieBreakSeed": 6569
+    },
+    "smcSquared": {
+      "adaptiveProposal": false,
+      "identityLayer": "enumerate_both_identities_and_update_identity_evidence_from_each_identity_specific_smc_squared_normalizing_constant_estimate",
+      "independentRepeatsPerBudget": 3,
+      "inheritanceStatement": "budgets_repeat_count_inner_budget_resampling_thresholds_rejuvenation_steps_and_proposal_scale_are_unchanged_from_frozen_v53r2_v63",
+      "initialObservationHandling": "bootstrap_initial_state_particles_from_the_source_initial_distribution_then_weight_and_normalize_by_the_public_reset_observation",
+      "innerEssThresholdFraction": 0.5,
+      "innerResampling": "systematic",
+      "innerStateParticleBudget": 127,
+      "observationWeight": "pinned_source_observation_kernel_for_the_public_command_and_successor_state",
+      "outerEssThresholdFraction": 0.5,
+      "outerRejuvenation": "particle_marginal_metropolis_hastings",
+      "outerResampling": "systematic",
+      "outerThetaParticleBudgets": [
+        31,
+        127,
+        509
+      ],
+      "primaryOuterThetaParticleBudget": 509,
+      "proposalSpace": "logit_of_scaled_theta",
+      "proposalStandardDeviation": 0.4,
+      "randomStreamKey": [
+        "stage",
+        "record",
+        "identity",
+        "outer_budget",
+        "repeat",
+        "outer_particle",
+        "phase",
+        "tick",
+        "inner_particle",
+        "purpose",
+        "resampling_ordinal",
+        "move"
+      ],
+      "recomputeCompleteBootstrapParticleFilterLikelihoodAtProposal": true,
+      "rejuvenationStepsPerOuterResampling": 2,
+      "repeatAggregation": "equal_weight_posterior_mixture_across_three_independent_normalized_repeat_measures_before_any_EIG_or_selection_computation",
+      "singleRepeatRole": "mandatory_nonqualifying_diagnostic_only",
+      "transitionProposal": "bootstrap_propagation_through_T_identity_theta_of_the_observed_public_command"
+    },
+    "sourceV63DesignLock": "configs/v63-design-lock.json",
+    "sourceV63r1OutcomeLock": "configs/v63r1-outcome-lock.json",
+    "sourceV64DesignLock": "configs/v64-design-lock.json",
+    "sourceV64ImplementationLock": "configs/v64-implementation-lock.json",
+    "sourceV64OutcomeLock": "configs/v64-outcome-lock.json",
+    "sourceV64PopulationSeal": "configs/v64-population-seal.json",
+    "stageAuthorization": {
+      "accessHumanData": false,
+      "adapterTraining": false,
+      "formalVerification": false,
+      "materializeSubset": false,
+      "modelAccess": false,
+      "rewardPlanning": false,
+      "runEvaluation": false,
+      "simulateHumanData": false,
+      "writeAndAuditSMC2EIGImplementation": true
+    },
+    "subset": {
+      "freshPopulation": false,
+      "prefixLengths": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "publicFieldsOnly": [
+        "record_id",
+        "prefix_length",
+        "initial_observation",
+        "actions",
+        "observations"
+      ],
+      "recordRejectionAfterSelection": false,
+      "records": 48,
+      "recordsPerPrefixLength": 8,
+      "retainEverySelectedRecord": true,
+      "selectionRule": "within_each_prefix_length_sort_all_public_records_by_SHA256_of_v65_vertical_bar_subset_vertical_bar_6511_vertical_bar_record_id_then_by_record_id_and_retain_the_first_eight",
+      "selectionSeed": 6511,
+      "truthFields": false
+    }
+  },
+  "config_sha256": "e6fd6f3fc1eeadda124905eb16355fbb2ecba8affef4a510f3d7cc9e18af2453",
+  "design_audit": "outputs/v65-smc2-eig-portability/design-audit.json",
+  "design_audit_sha256": "801fb6f227e72240cca89d723da120754c5dc3233c4e0ab53c4d2ec741ea448c",
+  "experiment": "v65_design_lock",
+  "frozen_design_summary": {
+    "all_inference_cells": 432,
+    "independent_repeats": 3,
+    "inner_state_particles": 127,
+    "outer_budgets": [
+      31,
+      127,
+      509
+    ],
+    "pooling_rule": "equal_weight_posterior_mixture_across_three_independent_normalized_repeat_measures_before_any_EIG_or_selection_computation",
+    "prefix_lengths": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "primary_cells": 144,
+    "primary_outer_budget": 509,
+    "records_per_prefix_length": 8,
+    "selected_records": 48,
+    "source_public_records": 192
+  },
+  "lock_payload_sha256": "2014e9b544f1df83da01f5293ead1a3a3819da5a263cb40cb2fdbaf99bfd517d",
+  "preregistration": "docs/v65-smc2-eig-portability-plan.md",
+  "preregistration_sha256": "c9ae761113ba43cafaa85489679414b5400365956b28eab54cc4ac27fd201535",
+  "schema_version": 65,
+  "source_bindings": {
+    "v63_design": {
+      "path": "configs/v63-design-lock.json",
+      "sha256": "72b5efb4f962692a3bde0e264c810df9ad0fdb294bc538c734c3d94d41655da0"
+    },
+    "v63r1_outcome": {
+      "path": "configs/v63r1-outcome-lock.json",
+      "sha256": "faa30255088a970729edae22bc9f29f2c5fe54d94c1fbc9119747ee585978fbb"
+    },
+    "v64_design": {
+      "path": "configs/v64-design-lock.json",
+      "sha256": "3b527fce75f62ad4729399e7341a00b59fdf4afef65d0500ef6e7f3a78b95cfd"
+    },
+    "v64_implementation": {
+      "path": "configs/v64-implementation-lock.json",
+      "sha256": "4dcc47e9174975a5888a7eb7f5a3427db4155748c46a37140dfc86974fd16743"
+    },
+    "v64_outcome": {
+      "path": "configs/v64-outcome-lock.json",
+      "sha256": "be329f70cf1816cd07362fecfca90857167b9d2695c7211bc0277b9f411a1182"
+    },
+    "v64_population": {
+      "path": "configs/v64-population-seal.json",
+      "sha256": "775f378780242412ae835642efdd8aac6123e79db8e6b16ffdbab850f7524d1c"
+    }
+  },
+  "v64_selection_public": {
+    "path": "data/v64-external-multi-action-eig/selection-public.jsonl",
+    "records": 192,
+    "sha256": "844ba4355ac18f25eaa482b86cf60e7bd5a35a8d4353bf6e3bdd14e4079761ea"
+  }
+}
