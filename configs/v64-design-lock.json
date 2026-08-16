@@ -1,0 +1,459 @@
+{
+  "authorization": {
+    "access_human_data": false,
+    "adapter_training": false,
+    "approximate_particle_acquisition": false,
+    "construct_adaptive_population": false,
+    "construct_selection_population": false,
+    "formal_verification": false,
+    "model_access": false,
+    "modify_design": false,
+    "reward_planning": false,
+    "run_evaluation": false,
+    "simulate_human_data": false,
+    "write_and_audit_exact_EIG_implementation": true
+  },
+  "config": "configs/v64-external-multi-action-eig.json",
+  "config_payload": {
+    "adaptiveSBC": {
+      "budget": 8,
+      "coverageLevels": [
+        0.5,
+        0.8,
+        0.95
+      ],
+      "expectedRanksPerBin": 16,
+      "policy": "frozen_exact_adaptive_EIG",
+      "posteriorDrawSeed": 6491,
+      "posteriorDrawsPerReplication": 127,
+      "rankBins": 16,
+      "rankSeed": 6481,
+      "rankSupportSize": 128,
+      "replications": 256,
+      "reuseOtherPopulations": false,
+      "selectionUsesOnlyPreOutcomePublicHistory": true,
+      "testQuantities": [
+        "identity_ordinal",
+        "continuous_theta",
+        "true_identity_posterior_probability"
+      ]
+    },
+    "claimBoundary": {
+      "adapterTraining": false,
+      "adaptivePolicyIsMyopicOneStepEIGRecomputedAfterEachObservation": true,
+      "approximateParticleAcquisition": false,
+      "exactHistoryDependentBelief": true,
+      "exactStaticLatentExpectedInformationGain": true,
+      "externalActiveSystemIdentification": true,
+      "formalVerification": false,
+      "fourCompleteNonterminalInterventions": true,
+      "humanData": false,
+      "knownObservationKernel": true,
+      "languageGrounding": false,
+      "learnedAcquisition": false,
+      "matchedFixedAndRandomDesignComparison": true,
+      "mazeStateIntegratedAsNuisance": true,
+      "modelAccess": false,
+      "multiStepBayesOptimalExperimentalDesign": false,
+      "primaryClaim": "the_external_four_action_family_and_exact_acquisition_reference_support_nontrivial_myopic_adaptive_EIG_that_improves_unknown_dynamics_information_over_fixed_and_random_navigation_designs",
+      "rewardPlanning": false,
+      "targetLatent": "joint_actuator_identity_and_continuous_theta"
+    },
+    "controls": {
+      "mapIdentityControl": "replace_identity_posterior_with_its_tie_broken_MAP_point_mass_before_scoring",
+      "minimumDetectedOrDominated": 5,
+      "outcomeLeakageControl": "attempt_selection_after_reading_realized_observation_and_require_firewall_rejection",
+      "predictiveEntropyControl": "maximize_next_observation_entropy_without_subtracting_conditional_entropy",
+      "stateOnlyInformationControl": "maximize_information_about_current_maze_state_instead_of_static_dynamics",
+      "thetaMeanControl": "replace_theta_posterior_with_a_point_mass_at_its_mean_before_scoring",
+      "wrongPermutationControl": "swap_only_one_of_the_four_clockwise_counterclockwise_mappings"
+    },
+    "decisionHierarchy": [
+      "if_oracle_agreement_information_efficiency_adaptive_advantage_SBC_controls_and_integrity_all_pass_authorize_only_preregistration_of_pooled_three_repeat_SMC2_EIG_against_the_frozen_exact_oracle",
+      "if_exact_EIG_disagrees_repair_static_latent_marginalization_or_outcome_enumeration",
+      "if_EIG_does_not_beat_fixed_and_random_do_not_change_the_family_or_gates_after_population_construction_and_stop_the_active_design_claim",
+      "if_adaptive_SBC_fails_repair_selection_conditioning_or_posterior_updates_before_reward_planning",
+      "do_not_treat_an_exact_EIG_pass_as_approximate_active_inference_portability",
+      "do_not_authorize_reward_planning_verification_language_model_access_or_training"
+    ],
+    "designPolicies": {
+      "adaptiveEIG": "recompute_exact_one_step_EIG_for_all_four_commands_after_every_observation_and_take_the_frozen_tie_broken_argmax",
+      "equalCost": "one_source_environment_transition_and_one_source_observation_per_command",
+      "fixed": "repeat_the_open_loop_cycle_n_e_s_w_without_reading_observations",
+      "interactionBudgets": [
+        1,
+        2,
+        4,
+        6,
+        8
+      ],
+      "pairedLatents": true,
+      "policyTransitionStreams": "separate_SHA256_derived_stream_per_replication_policy_and_step",
+      "random": "uniform_independent_draw_over_n_e_s_w_from_a_frozen_policy_stream_without_reading_observations",
+      "randomPolicyActionStream": "separate_from_latent_transition_and_outcome_streams",
+      "samePriorInitialDistributionAndBudget": true
+    },
+    "exactOracle": {
+      "analyticFixtures": [
+        "all_project_authored_transition_rows_are_normalized_convex_combinations",
+        "identical_clockwise_and_counterclockwise_permutations_force_zero_identity_information",
+        "point_mass_static_latent_forces_zero_static_latent_information",
+        "mutual_information_equals_expected_posterior_KL",
+        "permuting_action_storage_without_permuting_canonical_names_preserves_named_results"
+      ],
+      "dynamicStateReference": "exact_matrix_filter_over_all_11_source_states",
+      "independentReference": "scalar_nested_identity_theta_state_successor_observation_enumeration",
+      "outcomeSupport": "complete_enumeration_of_all_6_source_observations",
+      "primaryImplementation": "batched_joint_identity_theta_state_filter_and_predictive_mutual_information",
+      "primaryQuadrature": "257_node_Gauss_Legendre_weighted_by_scaled_beta_2_2_prior",
+      "quadratureNodes": 257
+    },
+    "experiment": "v64_external_multi_action_expected_information_gain",
+    "externalAnchor": {
+      "claimBoundary": "POBAX_supplies_the_pinned_known_model_arrays_only_and_does_not_supply_the_project_authored_unknown_actuator_family",
+      "commit": "a5e1d62d14e4efe783885b9d4f19cffa2a568eec",
+      "discount": 0.95,
+      "expectedActions": [
+        "n",
+        "s",
+        "e",
+        "w"
+      ],
+      "expectedObservations": [
+        "left",
+        "right",
+        "neither",
+        "both",
+        "good",
+        "bad"
+      ],
+      "expectedStates": 11,
+      "modelSha256": "0fa62301931960d682b02961ffd38f4dd6b8e8835bc0203f4a12f849c267d6ff",
+      "relativeModelPath": "pobax/envs/classic/POMDP/4x3_nonterminating.POMDP",
+      "repository": "https://github.com/taodav/pobax",
+      "workspaceModelPath": "data/v63-external-unknown-dynamics/source-checkout/pobax/envs/classic/POMDP/4x3_nonterminating.POMDP"
+    },
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "approximateParticleAcquisition": "forbidden",
+      "candidatePruning": "forbidden",
+      "evaluationBeforePopulationSeal": "forbidden",
+      "formalVerification": "forbidden",
+      "humanData": "forbidden",
+      "languageGrounding": "forbidden",
+      "learnedAcquisition": "forbidden",
+      "modelAccess": "forbidden",
+      "populationConstructionBeforeImplementationLock": "forbidden",
+      "postPopulationGateChanges": "forbidden",
+      "postPopulationPolicyChanges": "forbidden",
+      "recordRejectionByEIGOrSelectedAction": "forbidden",
+      "rewardPlanning": "forbidden",
+      "selectionOnRealizedOutcome": "forbidden",
+      "selectionOnTruthFields": "forbidden"
+    },
+    "gates": {
+      "informativeRecordMinimumOracleSpreadNats": 0.001,
+      "maximumAbsoluteCandidateEIGError": 1e-10,
+      "maximumAbsoluteCoverageZ": 4.75,
+      "maximumAbsoluteRankBinZ": 4.75,
+      "maximumCandidateOmissionCount": 0,
+      "maximumDominantCommandSelectionRate": 0.9,
+      "maximumMeanAbsoluteCandidateEIGError": 1e-12,
+      "maximumMutualInformationIdentityError": 1e-10,
+      "maximumRandomStreamCollisionCount": 0,
+      "maximumRealizedOutcomeAccessBeforeSelectionCount": 0,
+      "maximumSelectedEIGRegretNats": 1e-10,
+      "maximumTieBreakViolationCount": 0,
+      "maximumTruthFieldAccessCount": 0,
+      "minimumBudget8AdaptiveMinusFixedInformationLower95Nats": 0.02,
+      "minimumBudget8AdaptiveMinusRandomInformationLower95Nats": 0.02,
+      "minimumCandidateAndPredictiveNormalizationRate": 1.0,
+      "minimumCandidateEIG": -1e-10,
+      "minimumCompletedSelectionFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 5,
+      "minimumDistinctStrictlyOptimalCommands": 2,
+      "minimumFiniteValueRate": 1.0,
+      "minimumInformativeRecordFraction": 0.5,
+      "minimumMeanOracleMinusFixedCycleEIGNats": 0.002,
+      "minimumMeanOracleMinusUniformRandomEIGNats": 0.003,
+      "minimumOptimalSetMembershipRate": 1.0,
+      "minimumPostSelectionNormalizationRate": 1.0,
+      "minimumRankChiSquarePValue": 0.001
+    },
+    "pairedAdaptiveEvaluation": {
+      "identityBalance": "exact_256_per_identity_by_frozen_replication_parity",
+      "initialStateGeneration": "independent_draw_from_pinned_source_initial_distribution",
+      "pairedDifferenceInterval": "normal_95_percent_interval_over_replication_level_information_gain_differences",
+      "pairedEvaluationSeed": 6473,
+      "policies": [
+        "adaptiveEIG",
+        "fixed",
+        "random"
+      ],
+      "policySeed": 6451,
+      "primaryBudget": 8,
+      "primaryMetric": "mean_posterior_KL_from_the_joint_identity_theta_prior_in_nats",
+      "randomActionSeed": 6469,
+      "replications": 512,
+      "reuseSelectionPopulation": false,
+      "thetaGeneration": "independent_scaled_beta_2_2_draw_per_replication"
+    },
+    "preRegistrationFeasibilityAudit": {
+      "adaptivePilotReplications": 512,
+      "adaptivePilotSeed": 640031,
+      "decisionRelevanceHorizon": 5,
+      "freshEvaluationSeedsRequired": true,
+      "historyBehaviorPolicy": "uniform_random_over_all_four_commands",
+      "minimumDistinctStrictEIGMaximizers": 4,
+      "minimumKnownStateDecisionDisagreementStates": 2,
+      "minimumMeanOracleMinusFixedNats": 0.003,
+      "minimumMeanOracleMinusRandomNats": 0.006,
+      "minimumPilotBudget8AdaptiveMinusFixedLower95Nats": 0.03,
+      "minimumPilotBudget8AdaptiveMinusRandomLower95Nats": 0.035,
+      "minimumPositiveInformationCommands": 4,
+      "notAnEvaluationPopulation": true,
+      "quadratureNodes": 41,
+      "reachableHistoryCensusDepths": [
+        0,
+        1,
+        2
+      ],
+      "strictMarginNats": 0.0001
+    },
+    "schemaVersion": 64,
+    "scientificQuestion": "does_exact_history_adaptive_one_step_expected_information_gain_choose_among_multiple_external_navigation_interventions_and_gain_more_information_about_unknown_dynamics_than_matched_fixed_and_random_designs",
+    "selectionPopulation": {
+      "behaviorActionSeed": 6421,
+      "behaviorPolicy": "uniform_random_source_command_independent_of_truth_and_observations",
+      "freshAgainst": [
+        "V54",
+        "V63",
+        "V63r1"
+      ],
+      "generatorSeed": 6401,
+      "initialObservation": "always_included_before_the_first_command",
+      "initialStateSeed": 6413,
+      "latentSeed": 6407,
+      "noSelectionByEIGSpreadOrOptimalAction": true,
+      "oracleAuditSeed": 6449,
+      "publicPrefixLengths": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "records": 192,
+      "recordsPerPublicPrefixLength": 32,
+      "retainEveryGeneratedRecord": true,
+      "transitionSeed": 6427,
+      "truthFieldsAuditOnly": true
+    },
+    "sourceV63r1OutcomeLock": "configs/v63r1-outcome-lock.json",
+    "stageAuthorization": {
+      "accessHumanData": false,
+      "adapterTraining": false,
+      "constructAdaptivePopulation": false,
+      "constructSelectionPopulation": false,
+      "formalVerification": false,
+      "modelAccess": false,
+      "rewardPlanning": false,
+      "runEvaluation": false,
+      "simulateHumanData": false,
+      "writeAndAuditExactEIGImplementation": true
+    },
+    "targetAndObjective": {
+      "belief": "exact_normalized_joint_posterior_over_identity_theta_and_current_state_given_initial_observation_and_action_observation_history",
+      "candidateSet": [
+        "n",
+        "s",
+        "e",
+        "w"
+      ],
+      "logarithmBase": "natural",
+      "nuisanceLatent": "current_maze_state",
+      "objective": "mutual_information_between_joint_identity_theta_and_the_next_wall_or_reward_observation_conditioned_on_public_history_and_candidate_command",
+      "primaryTarget": [
+        "actuator_identity",
+        "continuous_theta"
+      ],
+      "selectionBeforeOutcome": true,
+      "tieBreak": "first_action_in_canonical_n_e_s_w_order_within_tolerance",
+      "tieToleranceNats": 1e-12,
+      "units": "nats"
+    },
+    "unknownDynamicsFamily": {
+      "canonicalActionOrder": [
+        "n",
+        "e",
+        "s",
+        "w"
+      ],
+      "clockwisePermutation": {
+        "e": "s",
+        "n": "e",
+        "s": "w",
+        "w": "n"
+      },
+      "counterclockwisePermutation": {
+        "e": "n",
+        "n": "w",
+        "s": "e",
+        "w": "s"
+      },
+      "dynamicNuisanceLatent": "current_maze_state",
+      "identityNames": [
+        "clockwise_failure",
+        "counterclockwise_failure"
+      ],
+      "identityPrior": [
+        0.5,
+        0.5
+      ],
+      "projectAuthoredLayer": true,
+      "staticLatentsWithinEpisode": [
+        "actuator_identity",
+        "theta"
+      ],
+      "terminalHandling": "use_the_pinned_nonterminating_model_in_which_good_and_bad_states_reset_on_the_next_command",
+      "thetaPrior": "scaled_beta_2_2",
+      "thetaSupport": [
+        0.6,
+        0.95
+      ],
+      "transitionDefinition": "T_identity_theta(command)=theta*T_source(command)+(1-theta)*T_source(permutation_identity(command))",
+      "unchangedSourceArrays": [
+        "initial_distribution",
+        "observation_kernel",
+        "reward_tensor",
+        "discount"
+      ]
+    }
+  },
+  "config_sha256": "4e071050c9223984e2a4c4bb98bf5b7dc764528856c2b3147d3d46165ff391e2",
+  "design_audit": "outputs/v64-external-multi-action-eig/design-audit.json",
+  "design_audit_sha256": "32aea93d804a4ddd2b83df4c86c0c37ea9db553d8837ebec222ad896e6595a86",
+  "experiment": "v64_design_lock",
+  "external_model": "data/v63-external-unknown-dynamics/source-checkout/pobax/envs/classic/POMDP/4x3_nonterminating.POMDP",
+  "external_model_sha256": "0fa62301931960d682b02961ffd38f4dd6b8e8835bc0203f4a12f849c267d6ff",
+  "family_feasibility_summary": {
+    "adaptive_budget_8_pilot": {
+      "action_counts": {
+        "adaptive_eig": {
+          "e": 130,
+          "n": 2905,
+          "s": 1051,
+          "w": 10
+        },
+        "fixed": {
+          "e": 1024,
+          "n": 1024,
+          "s": 1024,
+          "w": 1024
+        },
+        "random": {
+          "e": 993,
+          "n": 1023,
+          "s": 1073,
+          "w": 1007
+        }
+      },
+      "budget": 8,
+      "mean_information_nats": {
+        "adaptive_eig": 0.2440034668152347,
+        "fixed": 0.17928403392729886,
+        "random": 0.17925953068594785
+      },
+      "paired_differences": {
+        "adaptive_minus_fixed": {
+          "mean": 0.06471943288793583,
+          "normal_lower_95": 0.041798914795358966,
+          "standard_error": 0.011694141883967788
+        },
+        "adaptive_minus_random": {
+          "mean": 0.06474393612928685,
+          "normal_lower_95": 0.040795719760766125,
+          "standard_error": 0.012218477739041183
+        }
+      },
+      "replications": 512,
+      "seed": 640031
+    },
+    "census": {
+      "depth_rows": [
+        {
+          "depth": 0,
+          "mean_fixed_cycle_eig": 0.024637455838070445,
+          "mean_oracle_eig": 0.024637455838070556,
+          "mean_uniform_random_eig": 0.015760400484779058,
+          "probability_mass": 0.9999999999999999,
+          "reachable_history_nodes": 4
+        },
+        {
+          "depth": 1,
+          "mean_fixed_cycle_eig": 0.018516821841418785,
+          "mean_oracle_eig": 0.036392658568716325,
+          "mean_uniform_random_eig": 0.02238642796714933,
+          "probability_mass": 1.0,
+          "reachable_history_nodes": 52
+        },
+        {
+          "depth": 2,
+          "mean_fixed_cycle_eig": 0.030752486544818904,
+          "mean_oracle_eig": 0.03826362176486536,
+          "mean_uniform_random_eig": 0.02391791265525184,
+          "probability_mass": 0.9999999999999994,
+          "reachable_history_nodes": 704
+        }
+      ],
+      "equal_depth_mean_oracle_minus_fixed": 0.008462323982448037,
+      "equal_depth_mean_oracle_minus_random": 0.012409665021490672,
+      "identity_information_fraction_ranges": {
+        "e": [
+          -5.69602035292668e-14,
+          0.991639093348999
+        ],
+        "n": [
+          -2.9848312434571786e-14,
+          0.9713888237386024
+        ],
+        "s": [
+          -2.9848312434571786e-14,
+          0.9819628079654816
+        ],
+        "w": [
+          -1.9314689527676452e-13,
+          0.9678322098672701
+        ]
+      },
+      "positive_information_actions": [
+        "n",
+        "s",
+        "e",
+        "w"
+      ],
+      "strict_eig_maximizers": [
+        "n",
+        "s",
+        "e",
+        "w"
+      ]
+    },
+    "known_state_horizon_5_decision_disagreement_states": [
+      0,
+      2,
+      5,
+      10
+    ],
+    "maximum_transition_row_error": 2.220446049250313e-16,
+    "minimum_transition_probability": 0.0,
+    "pilot_is_not_evaluation_population": true
+  },
+  "lock_payload_sha256": "4fbf6bc9e4b8f7796a924df0c87dfe4760d3d62ef5aef38cb6d0fb2ae0f52763",
+  "preregistration": "docs/v64-external-multi-action-eig-plan.md",
+  "preregistration_sha256": "b21788a3ff052e05293b5c3c4bead6aeb43ae28ea6e053b169049ace6e3e91c4",
+  "schema_version": 64,
+  "source_v63r1_outcome_lock": "configs/v63r1-outcome-lock.json",
+  "source_v63r1_outcome_lock_sha256": "faa30255088a970729edae22bc9f29f2c5fe54d94c1fbc9119747ee585978fbb"
+}

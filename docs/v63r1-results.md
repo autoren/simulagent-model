@@ -1,6 +1,6 @@
 # V63r1 repeat-pooling measurement-repair results
 
-**Qualification:** PASS
+**Qualification:** PASS  
 **Decision:** `authorize_preregistration_of_separate_multi_action_external_EIG_stage`
 
 V63r1 restored the V53r2 aggregation rule that V63 had intended to transfer: form an equal-weight

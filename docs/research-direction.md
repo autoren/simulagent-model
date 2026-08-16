@@ -60,7 +60,11 @@ and noncompensatory gates must be frozen before any candidate evaluation.
 
 Tiger is ineligible as the substantive active-design benchmark because `listen` is its only
 informative nonterminal action. The current outcome lock authorizes only V64 design and
-preregistration; it does not yet authorize population construction or evaluation.
+preregistration; it does not yet authorize population construction or evaluation. An exact V64 pass
+would qualify the benchmark and acquisition reference only. The next substantive portability gate
+would then compare EIG computed from the deployed pooled three-repeat SMC² posterior with exact EIG
+at multiple inference budgets, while reporting single-repeat regret and computational cost. Only a
+pass there should unlock Bayes-adaptive reward decisions.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
