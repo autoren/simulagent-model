@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v66": false,
+    "modify_v67_design_implementation_bundle_or_evaluator": false,
+    "run_additional_verification": false,
+    "run_exactly_one_verification": true,
+    "truth_field_access": false
+  },
+  "bundle_manifest": "outputs/v67-independent-bounded-policy-verification/bundle/bundle-manifest.json",
+  "bundle_manifest_sha256": "bf0c5b73e03190686eeb41e848ba2c9c9fbbd59d9bd45994821b7bb333bd39ea",
+  "bundle_seal": "configs/v67-verification-bundle-seal.json",
+  "bundle_seal_sha256": "9dec46912727ec1c84be620a730b7161ad1e84177673308af9fa248c8e3a8950",
+  "evaluator": "python/evaluate_v67_verification.py",
+  "evaluator_audit": "outputs/v67-independent-bounded-policy-verification/evaluator-audit.json",
+  "evaluator_audit_sha256": "41b85c60adc8bb67ec159673539a34844bb1cfd5c86516175873561a38f23aac",
+  "evaluator_auditor": "python/audit_and_freeze_v67_evaluator.py",
+  "evaluator_auditor_sha256": "74e4671e7fbbcc2e549e86fb781d75c07e556e978b72d38cab16a6de6220be0f",
+  "evaluator_sha256": "c4f86ebaac1f71b430278e1ed9cf3e4727a0080df20c2f6fc18441b4bff5d895",
+  "experiment": "v67_evaluation_implementation_lock",
+  "lock_payload_sha256": "baa590c0f36c71e75188fddd12dff55ad3450c37e529665dfab7b5f32ce9c00c",
+  "schema_version": "67",
+  "tests": "python/test_v67_evaluator.py",
+  "tests_sha256": "7b2f2b1582b4f807a04ebb31ad877ef8147c68b89df04929d147ec3a5f0adecd",
+  "tool_versions": {
+    "Python": "3.14.7",
+    "Storm": "1.13.0"
+  }
+}
