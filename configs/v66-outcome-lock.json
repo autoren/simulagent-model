@@ -1,0 +1,30 @@
+{
+  "attempt": "outputs/v66-external-bayes-adaptive-reward/evaluation/attempt.json",
+  "attempt_sha256": "995b65df98e8a1764a94e3f542134d550a1261d1223558f8a639e0ae0ecd9605",
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "infinite_horizon_claim": false,
+    "model_access": false,
+    "modify_or_rerun_v65r3": false,
+    "modify_or_rerun_v66": false,
+    "preregister_independent_bounded_policy_verification": true,
+    "run_verification_before_preregistration_and_locks": false,
+    "safety_claim": false
+  },
+  "decision": "authorize_independent_bounded_policy_verification_only",
+  "evaluation_implementation_lock": "configs/v66-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "5c0cd3c8b79da1ee2e79217c63aec29c0e22dd3241e883f154f873e85650d342",
+  "experiment": "v66_successful_outcome_lock",
+  "lock_payload_sha256": "a954fa7d5550d2e958e889d7cbd1d33bb1f6602089856ef22a5143eafffc8fa9",
+  "outcome_audit": "outputs/v66-external-bayes-adaptive-reward/outcome-audit.json",
+  "outcome_audit_sha256": "e3cac87612a79ee7462d0f6dad90348105670afcd62e9b2fd8e2e1f16ff48fa9",
+  "outcome_auditor": "python/audit_and_freeze_v66_outcome.py",
+  "outcome_auditor_sha256": "fe1ec1a1a818ed223a1241ce80c38dba4b59acbb704ff47a8908fbb5196379fd",
+  "record_cells": "outputs/v66-external-bayes-adaptive-reward/evaluation/record-cells.jsonl",
+  "record_cells_sha256": "2e34be0ef19f7ead638fe068e48783ce2520eae0a9942d19e653e5a69b0613ad",
+  "result": "outputs/v66-external-bayes-adaptive-reward/evaluation/result.json",
+  "result_sha256": "3794d30ef63d7529bb2096498bd13fb874619042e02d2ce4238dd23b8799c42b",
+  "schema_version": "66"
+}

@@ -91,12 +91,27 @@ and mean selection regret was `1.88e-9` nats. Seven controls were detected or do
 expected exact-zero identity branches were handled with zero mass and no atom, with no
 positive-support particle collapse. An independent raw-cell reaggregation reproduced the result.
 
-The next direction is preregistered bounded-horizon Bayes-adaptive reward decision quality. Exact
-and pooled-SMC² belief-state planners should be compared with the true-model oracle, MAP-model
-certainty equivalence, and a valid posterior-mixture control that samples one static model per
-simulated episode. Reward, information, and computation must be reported separately; a posterior
-mean transition applied at every step is not a valid substitute for persistent unknown dynamics.
-Only a passing decision stage should unlock independent policy verification.
+V66 then tested bounded-horizon Bayes-adaptive reward decision quality on the unchanged 48 public
+histories. Fresh 509-particle, 127-inner-particle, three-repeat SMC² posteriors were pooled before
+horizon-three planning, and every resulting contingent policy was evaluated under the exact joint
+posterior predictive. The sole immutable run passed every gate: mean/q95/max exact value regret was
+`4.63e-18/2.78e-17/2.78e-17`, strict and epsilon-optimal root membership were both `1.000`, mean
+root-Q error was `3.27e-18`, and mean/q95 self-value calibration error was
+`0.000199/0.000570`. Five controls were detected or dominated, and independent raw-cell
+reaggregation reproduced the result.
+
+The control boundary matters. MAP certainty equivalence and the first repeat alone selected the same
+root actions and attained the same exact values on these records. The valid persistent
+posterior-sampling mixture was also not dominated under the registered rule, although its mean
+regret was `0.00245`. Information-only and myopic policies were materially worse. V66 therefore
+shows preservation by the deployed pooled posterior, not that pooling or Bayes adaptation is
+strictly necessary for every short-horizon reward decision in this family.
+
+The next direction is independent execution verification of the frozen V66 exact and pooled-SMC²
+policy trees. Verification must reconstruct the source transition, observation, reward, discount,
+and persistent static-model semantics independently from the planner, check every reachable
+observation branch and discounted value, and retain the horizon-three and one-family boundary. It
+must not relabel bounded value agreement as a safety property or formal infinite-horizon proof.
 
 Only after that external identification-to-decision bridge passes should the project spend effort
 on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
@@ -212,6 +227,7 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Freeze the successful V65r3 acquisition-portability result and preregister the external
-Bayes-adaptive reward-decision comparison. Preserve V65r1 and V65r2 outcomes, the static-model
-semantics, and separate downstream policy verification.
+Freeze the successful V66 reward-decision result and preregister independent bounded execution
+verification of its exact and pooled-SMC² policy trees. Preserve the unsuccessful V65r1/V65r2
+outcomes, the pooled-estimator qualification, the negative result for strict MAP/first-repeat
+separation, and the distinction between bounded value verification and safety.
