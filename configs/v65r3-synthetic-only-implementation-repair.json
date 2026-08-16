@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "65r3",
+  "experiment": "v65r3_synthetic_only_implementation_access_repair",
+  "sourceDevelopmentOutcomeLock": "configs/v65r2-development-outcome-lock.json",
+  "algorithmicRepair": "identical_to_the_frozen_v65r2_exact_zero_identity_support_repair",
+  "accessRepair": {
+    "sealedFatalRecordAllowedOperationsBeforeEvaluatorLock": [
+      "boolean_identity_support",
+      "SMC2_identity_evidence_and_posterior_inference",
+      "posterior_normalization",
+      "identity_mass_and_atom_exclusion_checks",
+      "work_and_random_stream_diagnostics"
+    ],
+    "sealedFatalRecordForbiddenOperationsBeforeEvaluatorLock": [
+      "Rao_Blackwellized_candidate_predictive_scoring",
+      "candidate_EIG_scoring",
+      "candidate_action_selection",
+      "exact_candidate_EIG_reference",
+      "selection_regret_or_gate_computation"
+    ],
+    "implementationEIGFixtures": "synthetic_public_histories_only_with_record_ids_and_histories_not_equal_to_any_of_the_48_sealed_records",
+    "sealedRecordFirewall": "assert_record_id_and_full_public_history_are_absent_from_the_sealed_subset_before_any_implementation_stage_candidate_scorer_call",
+    "evaluationBoundary": "sealed_candidate_scoring_becomes_eligible_only_after_separate_implementation_and_durable_evaluator_locks_and_one_atomic_attempt_marker"
+  },
+  "durableAttemptProtocol": "unchanged_from_v65r2_preregistration",
+  "unchanged": [
+    "V65r1_failed_evaluation_and_V65r2_rejected_development_outcome",
+    "all_48_sealed_subset_records_in_existing_order",
+    "outer_budgets_31_127_509_inner_budget_127_and_three_repeats",
+    "equal_weight_repeat_pooling_before_scoring",
+    "Rao_Blackwellized_known_state_acquisition",
+    "exact_reference_all_candidates_controls_and_gates",
+    "random_roots_stream_keys_resampling_and_PMMH",
+    "exact_zero_identity_positive_support_collapse_and_both_impossible_semantics",
+    "atomic_attempt_result_and_failure_protocol",
+    "claim_boundaries_and_no_reward_planning_authorization"
+  ],
+  "mandatoryImplementationFixtures": {
+    "sealedSupportOnly": "c55d371eada6c66063aa84e9",
+    "syntheticEIG": {
+      "record_id": "v65r3-synthetic-eig-fixture",
+      "prefix_length": 2,
+      "initial_observation": "left",
+      "actions": ["n", "e"],
+      "observations": ["left", "neither"]
+    },
+    "bothIdentitiesImpossible": "synthetic_reset_observation_good",
+    "positiveSupportParticleExtinction": "synthetic_forced_extinction_after_positive_boolean_support",
+    "repeatInvocationRejection": "synthetic_temporary_output_directory"
+  },
+  "claimBoundary": {
+    "targetedRepairOfFailedV65r1AndRejectedV65r2": true,
+    "independentExactBenchmarkReplication": false,
+    "sequentialApproximateAdaptiveRollout": false,
+    "rewardPlanning": false,
+    "formalVerification": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "primaryClaim": "the_unchanged_V65r1_paired_portability_test_completes_after_exact_zero_identity_repair_under_a_synthetic_only_implementation_stage_EIG_firewall"
+  },
+  "firewall": {
+    "modifyOrRerunV65r1": "forbidden",
+    "continueOrEvaluateV65r2": "forbidden",
+    "modifyReselectRejectOrReorderSubset": "forbidden",
+    "changeBudgetInnerParticlesRepeatsPoolingSeedOrGate": "forbidden",
+    "sealedCandidateScoringBeforeEvaluatorLock": "forbidden",
+    "sealedExactCandidateReferenceBeforeEvaluatorLock": "forbidden",
+    "runV65r3BeforeImplementationAndEvaluatorLocks": "forbidden",
+    "runV65r3MoreThanOnce": "forbidden",
+    "rewardPlanning": "forbidden",
+    "formalVerification": "forbidden",
+    "humanData": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditRepairImplementation": true,
+    "writeAndAuditDurableEvaluator": false,
+    "runEvaluation": false,
+    "rewardPlanning": false,
+    "formalVerification": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}
