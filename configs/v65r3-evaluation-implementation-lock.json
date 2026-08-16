@@ -1,0 +1,37 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_continue_v65r2": false,
+    "modify_or_rerun_v65r1": false,
+    "modify_v65r3_design_implementation_or_evaluator": false,
+    "reward_planning": false,
+    "run_additional_evaluation": false,
+    "run_one_immutable_evaluation": true
+  },
+  "evaluator_audit": "outputs/v65r3-synthetic-only-implementation/evaluator-audit.json",
+  "evaluator_audit_sha256": "65fa62d9c17af4a589cd8f9adc099dadab9c5974749cdc2ceaa0c9d3e50b5460",
+  "experiment": "v65r3_evaluation_implementation_lock",
+  "implementation_lock": "configs/v65r3-implementation-lock.json",
+  "implementation_lock_sha256": "969a29d009ce8e0f0369e36c8ec7c36a0a9cd53bfb542f78f2135345c7323f3e",
+  "inherited_v65r1_evaluator_lock": "configs/v65r1-evaluation-implementation-lock.json",
+  "inherited_v65r1_evaluator_lock_sha256": "78342ebfd14bc736b08d4f9ac8bee19728d1a241662c57c7b771ea383e23da38",
+  "lock_payload_sha256": "c825db5e6740c4c0514e6ce85d1f626b4e15ae97afcb9cee15a2e16f19662326",
+  "schema_version": "65r3",
+  "source_sha256": {
+    "python/audit_and_freeze_v65r3_evaluator.py": "9bce86a8a7f3298ec136f0bb47fe4ce2b67474a6e5aaf8e95227e557fcc21705",
+    "python/evaluate_v65r1_eig.py": "1b3ab176314b6ed95b03794e82c850f3274a6690ed2d1f34b2f4f9c49bb6ff34",
+    "python/evaluate_v65r3_eig.py": "7562c06c96237331c4902f6aab8a18352e7dc869eefaf4e23a723ebe86c7bcd1",
+    "python/test_v65r3_evaluator.py": "c8bb67a0ba3ee07b4ae7535e0c71f020711245011e49e91fe5f591b440fae954",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484",
+    "python/v64_external_eig.py": "a2a5135363d09dbc217c6c984cdcf5116871094dc10cbdc9b07e2316b64e8f18",
+    "python/v65_scalar_reference.py": "c6b20a17bd70df729781b2f38f149b2fb63a90d1a6fb27f68df56c81b4236a09",
+    "python/v65_smc2_eig.py": "0b9468cc08ce6c846d682b532fab9acc6b0eb46fa7cedba3dbb2cdc8a403b62d",
+    "python/v65r2_smc2_eig.py": "e829c995263596e9af7e25288abae270d85d06f55e0467a6278ca536531f1b5e",
+    "python/v65r3_smc2_eig.py": "9c108176eb518be65401fb7cf07250e5c14c58f2dad9776d505fe05802602c39"
+  },
+  "subset_seal": "configs/v65r1-subset-seal.json",
+  "subset_seal_sha256": "ce1e719b243f1cee1bbcac7c058b197e20b88f0ebdfab71fac9e5e2657255052"
+}
