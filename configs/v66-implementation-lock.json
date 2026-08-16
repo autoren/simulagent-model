@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v65r3": false,
+    "modify_v66_design_or_implementation": false,
+    "run_evaluation": false,
+    "write_and_audit_durable_evaluator": true
+  },
+  "design_lock": "configs/v66-design-lock.json",
+  "design_lock_sha256": "9cf8f2fcc50134d50b97b3f87928607d3245cdc03a39a6f1b39b59a09358b016",
+  "experiment": "v66_implementation_lock",
+  "implementation_audit": "outputs/v66-external-bayes-adaptive-reward/implementation-audit.json",
+  "implementation_audit_sha256": "59afc648fc93cba8fb761a907bc9d93f19508beb345b1ff188f76b6344fb795c",
+  "lock_payload_sha256": "a69cde3722c39418c6769c787f27b2448ae849a8f7f9ba20768a1d9e7a867a6c",
+  "runtime": {
+    "numpy": "2.5.1",
+    "python": "3.14.7"
+  },
+  "schema_version": "66",
+  "source_sha256": {
+    "python/audit_and_freeze_v66_implementation.py": "a2f0e9ab7db19897fdedd2b44e8c9922ce2aa6d9612c736b627133b063a745f4",
+    "python/test_v66_bayes_adaptive_reward.py": "ada129ef07643578ed0acf779a934630ddce0e0e43daa9b40ec6c8a18aacee1c",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484",
+    "python/v64_external_eig.py": "a2a5135363d09dbc217c6c984cdcf5116871094dc10cbdc9b07e2316b64e8f18",
+    "python/v65_smc2_eig.py": "0b9468cc08ce6c846d682b532fab9acc6b0eb46fa7cedba3dbb2cdc8a403b62d",
+    "python/v65r2_smc2_eig.py": "e829c995263596e9af7e25288abae270d85d06f55e0467a6278ca536531f1b5e",
+    "python/v65r3_smc2_eig.py": "9c108176eb518be65401fb7cf07250e5c14c58f2dad9776d505fe05802602c39",
+    "python/v66_bayes_adaptive_reward.py": "ea482dfb251845ef4b76c7e5e0363f62790e11bb72d001f1383c36164973553b"
+  }
+}
