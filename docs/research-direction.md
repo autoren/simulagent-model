@@ -107,16 +107,27 @@ regret was `0.00245`. Information-only and myopic policies were materially worse
 shows preservation by the deployed pooled posterior, not that pooling or Bayes adaptation is
 strictly necessary for every short-horizon reward decision in this family.
 
-The next direction is independent execution verification of the frozen V66 exact and pooled-SMC²
-policy trees. Verification must reconstruct the source transition, observation, reward, discount,
-and persistent static-model semantics independently from the planner, check every reachable
-observation branch and discounted value, and retain the horizon-three and one-family boundary. It
-must not relabel bounded value agreement as a safety property or formal infinite-horizon proof.
+V67 independently verified the frozen V66 execution layer. A new parser and exact posterior
+executor reconstructed the pinned arrays, quadrature, persistent actuator family, public-history
+conditioning, reachable observation branches, and discounted source rewards without calling the
+V62 parser, V64 filter, V66 planner, or V66 evaluator. Storm 1.13.0 then completed 192 property
+checks over 96 sealed DTMCs. Termination error was zero; maximum Storm-to-independent return error
+was `5.55e-16`; maximum independent-to-V66 value error was `5.00e-16`; and the exact-minus-SMC²
+paired result was reproduced within `2.78e-17`. Every binding, totality, normalization, deadlock,
+finite-value, mutation, one-shot, and access gate passed.
 
-Only after that external identification-to-decision bridge passes should the project spend effort
-on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
-Formal safety remains a separate specification task: bounded value verification is not a safety
-property. The V58 language branch should remain paused until real independent participants exist.
+The external identification-to-decision-to-verification bridge is therefore closed for this one
+pinned family and horizon. V67 verifies archived policy execution, not the V66 optimizer itself,
+and remains posterior-expected bounded model checking rather than a safety property or
+infinite-horizon proof.
+
+The next direction is a prospectively fixed multi-environment external replication across POMDPs
+with different observation structures, reward geometries, and terminal behavior. It should reuse
+one frozen unknown-dynamics construction and one evaluation pipeline across environments, include
+environment-level holdouts, and require the same exact-reference, SMC² calibration, acquisition,
+reward-decision, and independent-verification gates. Approximate longer-horizon scaling should come
+after family-level replication. The V58 language branch remains paused until real independent
+participants exist.
 
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
 a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
@@ -227,7 +238,8 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Freeze the successful V66 reward-decision result and preregister independent bounded execution
-verification of its exact and pooled-SMC² policy trees. Preserve the unsuccessful V65r1/V65r2
-outcomes, the pooled-estimator qualification, the negative result for strict MAP/first-repeat
-separation, and the distinction between bounded value verification and safety.
+Freeze the successful V67 bounded execution-verification result and authorize only preregistration
+of a multi-environment external replication. Preserve the unsuccessful V65r1/V65r2 outcomes, the
+pooled-estimator qualification, the negative result for strict MAP/first-repeat separation, the
+disclosed nonblinded interface inspection, and the distinction between bounded value verification,
+planner optimality, and safety.

@@ -1,0 +1,28 @@
+{
+  "attempt": "outputs/v67-independent-bounded-policy-verification/verification/attempt.json",
+  "attempt_sha256": "b5f9b57e22c002060ffb99263ac7466e5dddb26ad49601db531db18c880d86e6",
+  "authorization": {
+    "adapter_training": false,
+    "claim_infinite_horizon_or_worst_case_safety": false,
+    "claim_planner_optimality": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v66_or_v67": false,
+    "preregister_multi_environment_external_replication": true,
+    "run_replication_before_preregistration_and_locks": false
+  },
+  "decision": "authorize_preregistration_of_multi_environment_external_replication_only",
+  "evaluation_implementation_lock": "configs/v67-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "7c6cd81020a43e1977e99f8d462046937f2361f7cfe154d7f1e0903d4ad6bf35",
+  "experiment": "v67_successful_outcome_lock",
+  "lock_payload_sha256": "4a996c4db808a75d9adfcb269cb869fe747072c793c2cca06c65055b1510b3a5",
+  "outcome_audit": "outputs/v67-independent-bounded-policy-verification/outcome-audit.json",
+  "outcome_audit_sha256": "197a42d5213d80db6d9cac56fcd5e6b1976a030abf06fd192597d8e89b6e140f",
+  "outcome_auditor": "python/audit_and_freeze_v67_outcome.py",
+  "outcome_auditor_sha256": "0d8b0892c9308927c0644015d444de65f6ac27162bbcaf18d78c07eb01fa633f",
+  "policy_results": "outputs/v67-independent-bounded-policy-verification/verification/policy-results.jsonl",
+  "policy_results_sha256": "7b2ec0e2116c64f3776651ff495e30312ffd44ed1ca407b5820f831e28a89b21",
+  "result": "outputs/v67-independent-bounded-policy-verification/verification/result.json",
+  "result_sha256": "7db0d0b02d0ee7f1353e42eb25b41f344a18ec0d57b7f6e8719bfba3ee13d7a4",
+  "schema_version": "67"
+}
