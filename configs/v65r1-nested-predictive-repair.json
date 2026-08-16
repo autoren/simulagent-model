@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "65r1",
+  "experiment": "v65r1_pre_subset_nested_predictive_bias_repair",
+  "sourceV65DesignLock": "configs/v65-design-lock.json",
+  "defectDiscoveryStage": "candidate_implementation_fixtures_before_implementation_lock_or_subset_materialization",
+  "observedDefect": "independent_inner_state_particle_noise_varies_across_outer_identity_theta_particles_and_is_mistaken_by_plug_in_mutual_information_for_information_about_the_static_latent",
+  "repair": {
+    "scope": "approximate_acquisition_predictive_only",
+    "staticPosteriorSource": "unchanged_three_repeat_equal_weight_pooled_SMC2_identity_theta_weights",
+    "likelihoodSource": "unchanged_127_particle_inner_bootstrap_filters_inside_SMC2",
+    "posteriorStateAccuracySource": "unchanged_pooled_inner_particle_state_marginal",
+    "acquisitionConditionalState": "Rao_Blackwellized_exact_11_state_filter_conditioned_on_each_pooled_SMC2_identity_theta_atom_and_the_public_history",
+    "acquisitionPredictive": "propagate_each_Rao_Blackwellized_conditional_state_through_its_identity_theta_candidate_transition_and_the_pinned_observation_kernel",
+    "targetLatent": ["actuator_identity", "continuous_theta"],
+    "forbidParticleAncestryInnerStateAndRepeatIdentityAsTargets": true,
+    "pluginInnerStatePredictiveRole": "mandatory_negative_control_and_nonqualifying_diagnostic",
+    "poolBeforeRaoBlackwellizationAndScoring": true
+  },
+  "unchanged": [
+    "all_48_subset_records_and_hash_selection_rule",
+    "all_three_outer_particle_budgets",
+    "127_inner_state_particles",
+    "three_independent_repeats",
+    "equal_weight_repeat_posterior_pooling",
+    "outer_and_inner_resampling_thresholds",
+    "PMMH_rejuvenation",
+    "all_primary_posterior_predictive_EIG_regret_scaling_control_integrity_and_access_gates",
+    "all_random_roots",
+    "all_one_shot_and_claim_boundaries"
+  ],
+  "feasibilityFixture": {
+    "publicHistory": {
+      "record_id": "v65r1-pre-subset-root-fixture",
+      "prefix_length": 0,
+      "initial_observation": "left",
+      "actions": [],
+      "observations": []
+    },
+    "independentReplications": 12,
+    "outerParticles": 509,
+    "innerParticles": 127,
+    "repeats": 3,
+    "seed": 6571,
+    "minimumMeanPluginEIGVectorBiasNats": 0.005,
+    "maximumMeanRaoBlackwellizedEIGVectorErrorNats": 0.001,
+    "notEvaluationPopulation": true
+  },
+  "claimBoundary": {
+    "particleStatePosteriorStillEvaluated": true,
+    "particleStateUsedDirectlyForAcquisition": false,
+    "knownFiniteStateModelRaoBlackwellizedForAcquisition": true,
+    "staticIdentityThetaPosteriorRemainsSMC2Approximate": true,
+    "pairedV64HistoryReuse": true,
+    "independentExactBenchmarkReplication": false,
+    "sequentialApproximateAdaptiveRollout": false,
+    "rewardPlanning": false,
+    "formalVerification": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "primaryClaim": "the_three_repeat_pooled_SMC2_static_dynamics_posterior_combined_with_a_Rao_Blackwellized_known_11_state_conditional_filter_preserves_the_frozen_exact_one_step_EIG_decision_on_the_prospectively_selected_V65_subset"
+  },
+  "decisionHierarchy": [
+    "if_the_independent_pre_subset_fixture_confirms_plugin_bias_and_Rao_Blackwellized_repair_freeze_V65r1_and_continue_to_implementation_without_materializing_the_subset",
+    "if_the_fixture_does_not_confirm_both_conditions_reject_the_repair_and_do_not_materialize_the_subset",
+    "if_V65r1_later_passes_describe_the_method_as_Rao_Blackwellized_SMC2_EIG_not_as_a_pure_nested_particle_predictive",
+    "do_not_change_any_original_V65_gate_budget_subset_seed_pooling_or_downstream_authorization"
+  ],
+  "firewall": {
+    "modifyV65DesignLock": "forbidden",
+    "materializeSubsetBeforeV65r1ImplementationLock": "forbidden",
+    "loadV64SelectionAudit": "forbidden",
+    "loadV64EvaluationResultDuringSubsetSelection": "forbidden",
+    "evaluateV65CandidateDuringRepairAudit": "forbidden",
+    "relaxOriginalV65Gate": "forbidden",
+    "changeOriginalV65BudgetOrSeed": "forbidden",
+    "rewardPlanning": "forbidden",
+    "formalVerification": "forbidden",
+    "humanData": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "writeAndAuditRepairedImplementation": true,
+    "materializeSubset": false,
+    "runEvaluation": false,
+    "rewardPlanning": false,
+    "formalVerification": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

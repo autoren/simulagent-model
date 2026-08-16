@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "materialize_and_audit_subset": true,
+    "model_access": false,
+    "modify_v65_or_v65r1_design": false,
+    "modify_v65r1_implementation": false,
+    "reward_planning": false,
+    "run_evaluation": false,
+    "write_evaluator": false
+  },
+  "design_lock": "configs/v65r1-design-lock.json",
+  "design_lock_sha256": "2127d2853c4477fcd035a9e4dce5350d53d2768f740bf09d20b92400c8fb0501",
+  "experiment": "v65r1_implementation_lock",
+  "implementation_audit": "outputs/v65r1-nested-predictive-repair/implementation-audit.json",
+  "implementation_audit_sha256": "f62c142c5f46d661983d547cb4db2ccc13fc196b835ebc34857ac918d701df0c",
+  "lock_payload_sha256": "b206f0f657f163a1084fae779e416a7c671ef4f6d3fc151a506e97b2670192b2",
+  "runtime": {
+    "numpy": "2.5.1",
+    "python": "3.14.7"
+  },
+  "schema_version": "65r1",
+  "source_sha256": {
+    "python/audit_and_freeze_v65r1_implementation.py": "d226f4edfb59ebf270b4d7364db99c691d222de29a189694a4c5106814a40a39",
+    "python/test_v65_smc2_eig.py": "d291df9126f43feaa8b8c1c5c3bc4e48f4426d4aa2544b4435cf5a462bfc8025",
+    "python/v65_scalar_reference.py": "c6b20a17bd70df729781b2f38f149b2fb63a90d1a6fb27f68df56c81b4236a09",
+    "python/v65_smc2_eig.py": "0b9468cc08ce6c846d682b532fab9acc6b0eb46fa7cedba3dbb2cdc8a403b62d"
+  }
+}
