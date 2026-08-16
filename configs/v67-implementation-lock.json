@@ -1,0 +1,31 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "build_verification_bundle": true,
+    "human_data": false,
+    "load_and_execute_all_source_policies": true,
+    "model_access": false,
+    "modify_or_rerun_v66": false,
+    "modify_v67_design_or_implementation": false,
+    "run_verification": false,
+    "truth_field_access": false,
+    "write_and_audit_durable_evaluator": false
+  },
+  "design_lock": "configs/v67-design-lock.json",
+  "design_lock_sha256": "50a1f0f5e6a3543f716ff01c3da94e208e41a8d670874f18c26cc0be8b03982e",
+  "experiment": "v67_implementation_lock",
+  "implementation": "python/v67_verification.py",
+  "implementation_audit": "outputs/v67-independent-bounded-policy-verification/implementation-audit.json",
+  "implementation_audit_sha256": "45083f7484bc02873ecf8b006a0b69ea6670fae5fae0ecb72a395379ed78ba45",
+  "implementation_auditor": "python/audit_and_freeze_v67_implementation.py",
+  "implementation_auditor_sha256": "5df7142242e4fca0b4bd5d396f52a4ccb92243b42ffea2155ffc9b66196d2f2d",
+  "implementation_sha256": "b0592dc3e844ee3e356311a9e1683155d8898799e6b05156925e9ee5b36895c7",
+  "lock_payload_sha256": "ebb15909095fe1aaa6c362c52b563a6fb13be2d9aaaeb08d8827d644ae129284",
+  "schema_version": "67",
+  "tests": "python/test_v67_verification.py",
+  "tests_sha256": "46219bb91477b7a1703cacc11497e4ce3dc6365a5a42d21ec358b0a2f6ec58a4",
+  "tool_versions": {
+    "Python": "3.14.7",
+    "Storm": "1.13.0"
+  }
+}
