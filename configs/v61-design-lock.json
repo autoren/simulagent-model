@@ -1,0 +1,272 @@
+{
+  "authorization": {
+    "access_v59_audit_truth": false,
+    "build_v61_verification_bundle": false,
+    "model_access": false,
+    "reconstruct_v60_source_policies": false,
+    "run_v61_verification": false,
+    "simulate_human_v58_records": false,
+    "write_and_audit_v61_implementation": true
+  },
+  "config": "configs/v61-long-horizon-policy-verification.json",
+  "config_payload": {
+    "claimBoundary": {
+      "adapterTraining": false,
+      "boundedHorizons": [
+        3,
+        5,
+        7
+      ],
+      "catastrophicOutcomeClaim": false,
+      "exactPosteriorExecutionDistribution": true,
+      "externalStormProcess": true,
+      "formalSafetyContract": false,
+      "humanAuthoredLanguage": false,
+      "independentDeploymentPolicyInterpreter": true,
+      "independentTransitionInterpreter": true,
+      "independentZ3SupportEncoding": true,
+      "modelAccess": false,
+      "newPlanningEvaluation": false,
+      "parameterUniformGuarantee": false,
+      "plannerOptimality": false,
+      "policyCount": 72,
+      "policyVerificationNotSearchAlgorithmVerification": true,
+      "posteriorExpectedNotWorstCase": true,
+      "primaryClaim": "all_seventy_two_frozen_primary_v60_policies_are_total_and_well_formed_and_their_bounded_exact_posterior_values_are_reproduced_by_independent_execution_and_external_model_checking",
+      "unboundedTemporalClaim": false,
+      "verifyEveryPrimaryV60Policy": true
+    },
+    "decisionHierarchy": [
+      "if_all_gates_pass_qualify_only_bounded_exact_posterior_execution_verification_of_the_seventy_two_frozen_primary_v60_policies",
+      "if_source_binding_fails_stop_before_bundle_seal_and_repair_reconstruction_without_rerunning_v60",
+      "if_symbolic_support_or_independent_execution_disagrees_repair_the_new_verifier_then_create_a_revision_without_modifying_any_source_or_sealed_bundle",
+      "if_storm_disagrees_with_independent_execution_repair_model_probability_reward_or_label_compilation_then_create_a_revision",
+      "if_the_stored_v60_monte_carlo_mean_exceeds_its_simultaneous_bound_report_the_discrepancy_without_rerunning_or_replacing_v60",
+      "a_pass_does_not_establish_search_optimality_worst_case_safety_parameter_uniform_guarantees_unbounded_behavior_or_human_language_robustness"
+    ],
+    "experiment": "v61_bounded_long_horizon_approximate_belief_policy_verification",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "additionalV60Evaluation": "forbidden",
+      "candidateAccessToV59AuditTruth": "forbidden",
+      "candidateVerificationBeforeBundleSeal": "forbidden",
+      "candidateVerificationBeforeEvaluationImplementationLock": "forbidden",
+      "formalSafetyClaim": "forbidden",
+      "gateChangesAfterDesignLock": "forbidden",
+      "humanAuthoredClaim": "forbidden",
+      "modelAccess": "forbidden",
+      "postSealBundleMutation": "forbidden",
+      "sourcePolicyReconstructionBeforeImplementationLock": "forbidden",
+      "sourceResultMutation": "forbidden",
+      "verificationBundleConstructionBeforeImplementationLock": "forbidden"
+    },
+    "formalExecutor": {
+      "actionCosts": {
+        "pulse": 0.01,
+        "route": 0.01,
+        "wait": 0.0
+      },
+      "beliefForPolicyConstruction": "frozen_v53r2_smc_squared_primary_pooled_posterior",
+      "beliefForVerification": "frozen_257_node_exact_joint_posterior",
+      "deploymentAction": "maximum_visit_count_then_maximum_mean_return_then_canonical_key_with_frozen_public_history_hash_fallback",
+      "observation": "complete_world_signature_after_each_action_while_program_theta_and_queue_remain_hidden",
+      "semantics": "frozen_v53_continuous_transition_with_v46_typed_actions_delayed_queue_delivery_and_v42_boolean_relational_worlds",
+      "terminalGoal": "the_public_goal_atom_equals_the_public_goal_boolean_after_the_task_horizon"
+    },
+    "gates": {
+      "maximumExpectedReturnErrorAgainstIndependentExecutor": 1e-09,
+      "maximumNonterminalDeadlockCount": 0,
+      "maximumSourceResultMutationCount": 0,
+      "maximumSuccessProbabilityErrorAgainstIndependentExecutor": 1e-09,
+      "maximumTerminationProbabilityError": 1e-10,
+      "maximumToolVersionMismatchCount": 0,
+      "maximumTruthFieldAccessCount": 0,
+      "maximumUnexpectedVerificationAttemptCount": 0,
+      "maximumV60MonteCarloReturnExcessOverSimultaneousBound": 0.0,
+      "maximumVerificationBundleHashMismatchCount": 0,
+      "maximumZ3UnknownCount": 0,
+      "minimumAnalyticFixturePassRate": 1.0,
+      "minimumCompletedPolicyFraction": 1.0,
+      "minimumExactRootBeliefNormalizationRate": 1.0,
+      "minimumFiniteResultRate": 1.0,
+      "minimumImplementationMutantKillRate": 1.0,
+      "minimumPolicyCount": 72,
+      "minimumPolicyCountPerHorizon": 24,
+      "minimumPolicyObservationTotalityRate": 1.0,
+      "minimumReachableStateInvariantProofRate": 1.0,
+      "minimumReachableTransitionSupportEquivalenceProofRate": 1.0,
+      "minimumReconstructedRootActionMatchRate": 1.0,
+      "minimumReconstructedSearchMetadataMatchRate": 1.0,
+      "minimumReconstructedTreeHashMatchRate": 1.0,
+      "minimumStormCompletedModelFraction": 1.0,
+      "minimumTransitionDistributionNormalizationRate": 1.0,
+      "minimumV60MonteCarloReturnWithinSimultaneousBoundRate": 1.0
+    },
+    "implementationAudit": {
+      "alteredSeed": 6103,
+      "analyticFixtures": [
+        "deterministic_success_with_public_fallback",
+        "bernoulli_one_quarter_immediate_success",
+        "two_tick_delayed_success",
+        "observation_contingent_action_change",
+        "negative_action_cost_plus_terminal_reward",
+        "tree_child_missing_uses_public_history_fallback"
+      ],
+      "candidateSourcePoliciesAccessible": false,
+      "mutants": [
+        "swap_actor_and_target",
+        "omit_due_queue_delivery",
+        "complement_stochastic_probability",
+        "choose_maximum_mean_instead_of_maximum_visits",
+        "change_public_history_fallback_seed",
+        "merge_observation_routes",
+        "drop_one_stochastic_successor",
+        "flip_terminal_success_label",
+        "omit_action_cost_reward",
+        "corrupt_initial_distribution_mass"
+      ],
+      "requiredAnalyticFixturePassRate": 1.0,
+      "requiredMutantKillRate": 1.0
+    },
+    "independentVerification": {
+      "deploymentInterpreter": "separate_tree_and_public_history_interpreter_that_does_not_call_v59_deployment_action_or_policy_episode",
+      "directEvaluation": "recursive_exact_posterior_enumeration_with_independent_transition_and_deployment_interpreters",
+      "numericTransitionMass": "exact_fraction_from_each_instantiated_theta_text_then_double_only_at_explicit_model_boundary",
+      "reachableChecks": [
+        "complete_typed_boolean_world",
+        "legal_typed_action_binding",
+        "canonical_nonoverdue_delayed_queue",
+        "policy_depth_decreases_once_per_action",
+        "deployment_action_is_a_function_only_of_public_history_and_frozen_tree",
+        "every_reachable_observation_has_exactly_one_tree_child_or_declared_hash_fallback",
+        "independent_transition_support_equals_compiler_successor_support",
+        "terminal_success_label_equals_the_public_goal",
+        "no_reachable_nonterminal_state_is_deadlocked"
+      ],
+      "symbolicBackend": "Z3Py",
+      "transitionInterpreter": "separate_dsl_interpreter_that_does_not_call_continuous_unit_transition_or_any_v59_policy_episode_evaluator",
+      "z3PackageVersion": "4.16.0.0",
+      "z3SolverVersion": "4.16.0"
+    },
+    "metrics": [
+      "completed_policy_fraction",
+      "policy_count_by_horizon",
+      "reconstructed_tree_hash_match_rate",
+      "reconstructed_root_action_match_rate",
+      "reconstructed_search_metadata_match_rate",
+      "exact_root_belief_normalization_rate",
+      "reachable_state_invariant_proof_rate",
+      "reachable_transition_support_equivalence_proof_rate",
+      "policy_observation_totality_rate",
+      "nonterminal_deadlock_count",
+      "z3_unknown_count",
+      "storm_completed_model_fraction",
+      "maximum_termination_probability_error",
+      "maximum_success_probability_error_against_independent_executor",
+      "maximum_expected_return_error_against_independent_executor",
+      "v60_monte_carlo_return_within_simultaneous_bound_rate",
+      "maximum_v60_monte_carlo_return_excess_over_simultaneous_bound",
+      "transition_distribution_normalization_rate",
+      "finite_result_rate",
+      "implementation_mutant_kill_rate",
+      "analytic_fixture_pass_rate",
+      "truth_field_access_count",
+      "source_result_mutation_count",
+      "verification_bundle_hash_mismatch_count",
+      "tool_version_mismatch_count",
+      "unexpected_verification_attempt_count"
+    ],
+    "parallelLanguageBranchStatus": "docs/v58-deferred-status.md",
+    "probabilisticVerification": {
+      "backend": "Storm standalone CLI",
+      "independentReferences": {
+        "return": "independent_recursive_exact_posterior_executor",
+        "success": "independent_recursive_exact_posterior_executor",
+        "termination": 1.0,
+        "v60MonteCarloReturn": "stored_2048_episode_primary_approximate_policy_mean_checked_with_a_familywise_99_percent_Hoeffding_bound"
+      },
+      "initialDistribution": "one_root_transition_distribution_over_every_exact_joint_belief_atom",
+      "input": "one_explicit_dtmc_transition_label_and_transition_reward_bundle_per_policy",
+      "monteCarloBound": {
+        "comparisons": 72,
+        "episodesPerPolicy": 2048,
+        "familywiseAlpha": 0.01,
+        "formula": "reward_range_by_horizon_times_sqrt_log_two_comparisons_over_alpha_divided_by_two_episodes",
+        "rewardRangeByHorizon": {
+          "3": 1.03,
+          "5": 1.05,
+          "7": 1.07
+        }
+      },
+      "properties": {
+        "return": "R=? [F \"done\"]",
+        "success": "P=? [F \"success\"]",
+        "termination": "P=? [F \"done\"]"
+      },
+      "rewardConstruction": "negative_action_cost_on_action_transitions_and_one_for_goal_success_on_terminal_to_done",
+      "state": "synthetic_exact_posterior_root_or_program_theta_world_queue_public_history_tree_node_depth_or_done_absorber",
+      "terminalConstruction": "after_the_task_horizon_a_goal_labeled_or_failure_staging_state_transitions_to_done",
+      "version": "1.13.0"
+    },
+    "schemaVersion": 61,
+    "scientificQuestion": "do_independently_encoded_transition_semantics_and_an_external_probabilistic_model_checker_reproduce_the_exact_posterior_execution_values_of_every_primary_v60_approximate_belief_policy_through_horizon_seven",
+    "sourcePolicies": {
+      "inferenceBudget": 509,
+      "inferenceRepeats": 3,
+      "innerStateParticleBudget": 127,
+      "policiesPerHorizon": 24,
+      "populationSeal": "configs/v59-population-seal.json",
+      "reconstruction": "rerun_only_the_frozen_v60_primary_inference_and_search_and_require_tree_hash_root_action_root_statistics_and_census_binding",
+      "replicatesPerTask": 3,
+      "searchBudget": 1024,
+      "selection": "all_primary_inference_budget_cells_in_canonical_task_then_replicate_order",
+      "sourceEvaluationRerun": "forbidden",
+      "sourceResult": "outputs/v60-approximate-belief-decision-calibration/evaluation/result.json",
+      "sourceResultMutation": "forbidden",
+      "tasks": 24,
+      "totalPolicies": 72,
+      "truthFieldsAvailableToReconstructorOrCompiler": false
+    },
+    "sourceV56OutcomeLock": "configs/v56-outcome-lock.json",
+    "sourceV60OutcomeLock": "configs/v60-outcome-lock.json",
+    "stageAuthorization": {
+      "accessV59AuditTruth": false,
+      "auditAndFreezeDesign": true,
+      "buildVerificationBundle": false,
+      "modelAccess": false,
+      "reconstructSourcePolicies": false,
+      "runVerification": false,
+      "simulateHumanV58Records": false,
+      "writeAndAuditImplementation": false
+    },
+    "verificationBundle": {
+      "constructionBeforeImplementationLock": "forbidden",
+      "expectedModels": 72,
+      "manifest": "canonical_hash_size_state_transition_and_v60_source_binding_manifest",
+      "modelsPerPolicy": 1,
+      "postSealMutation": "forbidden",
+      "requiredFilesPerPolicy": [
+        "model.tra",
+        "model.lab",
+        "model.rew",
+        "model.meta.json",
+        "policy-tree.json"
+      ],
+      "sealBeforeVerification": true
+    }
+  },
+  "config_sha256": "29a62a7b537b711e086268584eb2e557906446b633311514e170ca9d0155b47d",
+  "design_audit": "outputs/v61-long-horizon-policy-verification/design-audit.json",
+  "design_audit_sha256": "89d047a59afae55f353ed07dd9d08b14d4b89c8cc9906b84476889e4ce529e37",
+  "experiment": "v61_design_lock",
+  "lock_payload_sha256": "044275820e6734dcb8c3938a286cee0462bde1895abe28c02da5607b9143bf49",
+  "population_seal": "configs/v59-population-seal.json",
+  "population_seal_sha256": "10a6e7cacd5f3a984ef29afab26630dd4f911d45f0bed42a215ec798ffb32570",
+  "preregistration": "docs/v61-long-horizon-policy-verification-plan.md",
+  "preregistration_sha256": "0c56edeb501a5a495a7f742663b501a101c32e6a066dfb630c57c5e09c84449e",
+  "schema_version": 61,
+  "source_outcome_locks_sha256": {
+    "configs/v56-outcome-lock.json": "c00bae6635f8408bd4af545acc989af51ff90291a7d87dd2c28efdc12363507e",
+    "configs/v60-outcome-lock.json": "21ddf271d62db823d534c068b76e802e539e31955c436f2fa2984a06b7e65d32"
+  }
+}

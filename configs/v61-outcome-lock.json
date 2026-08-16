@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "continue_to_next_preregistered_stage": true,
+    "modify_v61_design_implementation_bundle_or_gates": false,
+    "rerun_v61_candidate_verification": false,
+    "treat_synthetic_v58_as_human": false
+  },
+  "claim_boundary": {
+    "bounded_exact_posterior_execution_of_frozen_v60_policies": true,
+    "formal_or_worst_case_safety": false,
+    "human_authored_language_robustness": false,
+    "model_or_adapter_performance": false,
+    "parameter_uniform_or_unbounded_guarantee": false,
+    "search_algorithm_optimality": false
+  },
+  "evaluation_attempt": "outputs/v61-long-horizon-policy-verification/verification-attempt.json",
+  "evaluation_attempt_sha256": "0c558afe6cc24a7713c7fc871d88eb31ffe39bf33925afb4e57377f4844d0282",
+  "evaluation_implementation_lock": "configs/v61-evaluation-implementation-lock.json",
+  "evaluation_implementation_lock_sha256": "bf7ac348591e00c29129fd94de180ca9180da9406b55f208d7382b5467bc8b67",
+  "experiment": "v61_outcome_lock",
+  "lock_payload_sha256": "dc81dd04704716bc32872172c3b6cfc1833d0fe9d888f8c965cb6390ad03a2a5",
+  "post_result_audit": "outputs/v61-long-horizon-policy-verification/post-result-audit.json",
+  "post_result_audit_sha256": "53bf58848d52e93f5cd9bb3eb080d4731404964f7f52fc7a5fe9b5e1fb6737e0",
+  "qualification_passed": true,
+  "result": "outputs/v61-long-horizon-policy-verification/verification/result.json",
+  "result_sha256": "8c1d2f6bbeb527518d7aee9665ae849c661cf785912d5c6b5e0d68a5e7e338d0",
+  "results_summary": "docs/v61-results.md",
+  "results_summary_sha256": "93ffd0829940a4569ff42d707d88f47710ef1a90c0b7e6a9e136675dd3c1c586",
+  "schema_version": 61,
+  "verification_bundle_seal": "configs/v61-verification-bundle-seal.json",
+  "verification_bundle_seal_sha256": "5c0830d1d5a435a35bc75b5d1f7d461e74913e06445ccdf04f3cbce82a2eebfb"
+}

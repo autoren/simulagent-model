@@ -1,0 +1,29 @@
+{
+  "analytic_fixture_pass_rate": 1.0,
+  "authorization": {
+    "access_v59_audit_truth": false,
+    "construct_and_audit_v61_verification_bundle": true,
+    "formal_safety_claim": false,
+    "model_access": false,
+    "reconstruct_v60_source_policies": true,
+    "rerun_v60_evaluation": false,
+    "run_v61_candidate_verification": false,
+    "write_and_audit_v61_candidate_runner": true
+  },
+  "design_lock": "configs/v61-design-lock.json",
+  "design_lock_sha256": "673101ffdc3d63a8018550b1c088e750c389edee1a68819d82addff0e22a89fa",
+  "experiment": "v61_implementation_lock",
+  "implementation": "python/v61_verification.py",
+  "implementation_audit": "outputs/v61-long-horizon-policy-verification/implementation-audit.json",
+  "implementation_audit_sha256": "92010a0bbc5028e04b2c1b51e543f997085d2a7ef229dfda85aba7fdd41b5555",
+  "implementation_sha256": "e6f310d7f4a514b55fda219bfae5da38aa2fb8a318deb7d9e9ed095dc772b76d",
+  "lock_payload_sha256": "f5ea8124db303ff646abf9a0c3a17f9b92f94c279bb85f674385eaaa02c3c4b6",
+  "mutation_kill_rate": 1.0,
+  "schema_version": 61,
+  "tool_versions": {
+    "storm": "1.13.0",
+    "z3": "4.16.0"
+  },
+  "unit_tests": "python/test_v61_verification.py",
+  "unit_tests_sha256": "4e86be6f57b26f120485f6f0a8ecefbb1cd993033e6d6d25dc7234bd885d81a0"
+}

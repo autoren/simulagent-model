@@ -1,0 +1,29 @@
+{
+  "authorization": {
+    "access_v59_audit_truth": false,
+    "formal_safety_claim": false,
+    "model_access": false,
+    "modify_v61_bundle": false,
+    "rerun_v60_evaluation": false,
+    "run_v61_candidate_verification": false,
+    "write_and_audit_v61_candidate_runner": true
+  },
+  "bundle": "data/v61-long-horizon-policy-verification",
+  "bundle_audit": "outputs/v61-long-horizon-policy-verification/bundle-audit.json",
+  "bundle_audit_sha256": "0a15b895eab3d25021c2bfc84e51800d80afeb0b2892f150fa98c37dc767c385",
+  "bundle_content_payload_sha256": "79bf942d6086fbda0b20cbe1f10f23161b618ef24fefd9a890427c054edc7c9e",
+  "experiment": "v61_verification_bundle_seal",
+  "horizon_counts": {
+    "3": 24,
+    "5": 24,
+    "7": 24
+  },
+  "implementation_lock": "configs/v61-implementation-lock.json",
+  "implementation_lock_sha256": "9797d7c1854ceac8fe8aaf9452ea28b98ec7640587b78f16c491b1c0e7fa40ac",
+  "manifest": "data/v61-long-horizon-policy-verification/manifest.json",
+  "manifest_sha256": "06b6a4f12cc25756dd93e796f4f40cb640520d7bfe8bfed6335749f0fc07d168",
+  "policy_count": 72,
+  "schema_version": 61,
+  "seal_payload_sha256": "ddb33553f81cfa3e2cec27683736b02cfff0021bc40706b2311308c5e9364709",
+  "sealed_files": 360
+}

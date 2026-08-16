@@ -1,0 +1,43 @@
+{
+  "authorization": {
+    "access_v59_audit_truth": false,
+    "change_evaluation_implementation": false,
+    "formal_safety_claim": false,
+    "human_language_claim": false,
+    "model_access": false,
+    "modify_v61_bundle": false,
+    "parameter_uniform_claim": false,
+    "run_additional_v60_evaluation": false,
+    "run_additional_v61_candidate_verification": false,
+    "run_one_v61_candidate_verification": true,
+    "unbounded_temporal_claim": false,
+    "worst_case_safety_claim": false
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v61.py": "28354f6b0b391de2b3f60a98f5918390edec41df41751289b766e7d92e31d89a",
+    "python/audit_v61_evaluation_implementation.py": "9c770bec31525f7d37e75d112e3453b026dffeeb44054979d8a7ffa0fb68fe33",
+    "python/evaluate_v61_verification.py": "7138262c122169ca3dddece60464ba68865676576ba5b690b518f0f3d2bb21d0",
+    "python/freeze_v61_outcome.py": "2e86b25902bd8c4ebea81386ad00207cdcad3d96ad80254c46b5d41c65b3218e"
+  },
+  "evaluation_implementation_audit": "outputs/v61-long-horizon-policy-verification/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "568fa331b55fe013ccec327d51dc36e72164c1b0fa193b8ae3e4b1450523d550",
+  "experiment": "v61_evaluation_implementation_lock",
+  "frozen_dependencies_sha256": {
+    "configs/v61-design-lock.json": "673101ffdc3d63a8018550b1c088e750c389edee1a68819d82addff0e22a89fa",
+    "configs/v61-implementation-lock.json": "9797d7c1854ceac8fe8aaf9452ea28b98ec7640587b78f16c491b1c0e7fa40ac",
+    "configs/v61-verification-bundle-seal.json": "5c0830d1d5a435a35bc75b5d1f7d461e74913e06445ccdf04f3cbce82a2eebfb",
+    "python/v61_verification.py": "e6f310d7f4a514b55fda219bfae5da38aa2fb8a318deb7d9e9ed095dc772b76d"
+  },
+  "implementation_lock": "configs/v61-implementation-lock.json",
+  "implementation_lock_sha256": "9797d7c1854ceac8fe8aaf9452ea28b98ec7640587b78f16c491b1c0e7fa40ac",
+  "lock_payload_sha256": "698efad1718fd043dc1f79874e4d596706ca0b71876044e86484d423f37ad364",
+  "manifest": "data/v61-long-horizon-policy-verification/manifest.json",
+  "manifest_sha256": "06b6a4f12cc25756dd93e796f4f40cb640520d7bfe8bfed6335749f0fc07d168",
+  "schema_version": 61,
+  "tool_versions": {
+    "storm": "1.13.0",
+    "z3": "4.16.0"
+  },
+  "verification_bundle_seal": "configs/v61-verification-bundle-seal.json",
+  "verification_bundle_seal_sha256": "5c0830d1d5a435a35bc75b5d1f7d461e74913e06445ccdf04f3cbce82a2eebfb"
+}
