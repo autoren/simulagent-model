@@ -1,0 +1,36 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v65r3": false,
+    "modify_v66_design_implementation_or_evaluator": false,
+    "run_additional_evaluation": false,
+    "run_one_immutable_evaluation": true
+  },
+  "evaluator_audit": "outputs/v66-external-bayes-adaptive-reward/evaluator-audit.json",
+  "evaluator_audit_sha256": "6f66a0abb9d2971032737be6b1196dad42b1890ec6aee8caa23cf7a7646aeb3d",
+  "experiment": "v66_evaluation_implementation_lock",
+  "implementation_lock": "configs/v66-implementation-lock.json",
+  "implementation_lock_sha256": "448a41740a9c04a856192ddf59c1615d4fdc2b5ec8a3654f4ce271ad06d87e8a",
+  "lock_payload_sha256": "2a681900ca48f92298b4242fdb0e40b64500423a5a9d9fa6cd97c25ffd26c798",
+  "schema_version": "66",
+  "source_sha256": {
+    "python/audit_and_freeze_v66_evaluator.py": "fb2005956a403b63c2ac4b91cb4cbffb654eae3751492f3ab71f2ebb6d97724d",
+    "python/evaluate_v66_reward.py": "67d1eb022eb9172063237256b707396fbbea53a962947f9e3b1230f6efc98a5c",
+    "python/test_v66_evaluator.py": "65dd90872683db01043f5f5b11b7fa3e4a932130fc36adfca740065ae5a2f2e2",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484",
+    "python/v64_external_eig.py": "a2a5135363d09dbc217c6c984cdcf5116871094dc10cbdc9b07e2316b64e8f18",
+    "python/v65_smc2_eig.py": "0b9468cc08ce6c846d682b532fab9acc6b0eb46fa7cedba3dbb2cdc8a403b62d",
+    "python/v65r2_smc2_eig.py": "e829c995263596e9af7e25288abae270d85d06f55e0467a6278ca536531f1b5e",
+    "python/v65r3_smc2_eig.py": "9c108176eb518be65401fb7cf07250e5c14c58f2dad9776d505fe05802602c39",
+    "python/v66_bayes_adaptive_reward.py": "ea482dfb251845ef4b76c7e5e0363f62790e11bb72d001f1383c36164973553b"
+  },
+  "source_v65r3_design_lock": "configs/v65r3-design-lock.json",
+  "source_v65r3_design_lock_sha256": "ee03f77218f9471f030be64ad0f00bfe398d5d80c12607c93323d745eb7eec2e",
+  "source_v65r3_implementation_lock": "configs/v65r3-implementation-lock.json",
+  "source_v65r3_implementation_lock_sha256": "969a29d009ce8e0f0369e36c8ec7c36a0a9cd53bfb542f78f2135345c7323f3e",
+  "subset_seal": "configs/v65r1-subset-seal.json",
+  "subset_seal_sha256": "ce1e719b243f1cee1bbcac7c058b197e20b88f0ebdfab71fac9e5e2657255052"
+}
