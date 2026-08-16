@@ -1,0 +1,42 @@
+{
+  "audit_controls": {
+    "analytic_fixture_pass_rate": 1.0,
+    "mutant_kill_rate": 1.0,
+    "mutants_killed": {
+      "declare_terminal_if_any_action_absorbs": true,
+      "ignore_terminal_decision_value": true,
+      "ignore_terminal_q_values": true,
+      "omit_discount_from_nonterminal_backup": true,
+      "omit_terminal_support_base_case": true,
+      "use_pretransition_observation_likelihood": true
+    }
+  },
+  "authorization": {
+    "access_human_v58_records": false,
+    "change_repair_implementation": false,
+    "model_access": false,
+    "modify_v62_artifacts": false,
+    "rerun_external_rollouts": false,
+    "rerun_v62_candidate_evaluation": false,
+    "run_one_repair_rescore": true
+  },
+  "design_lock": "configs/v62r1-design-lock.json",
+  "design_lock_sha256": "22c7a4c979ff619109c41ab7600d0ef2eb2dc4379303d8e2487183f7a0f26d0e",
+  "experiment": "v62r1_implementation_lock",
+  "implementation": "python/v62r1_terminal_residual.py",
+  "implementation_audit": "outputs/v62r1-terminal-residual-repair/implementation-audit.json",
+  "implementation_audit_sha256": "2eafce998ff4ffbdffcff261f96b7e8757b8a103e6bf251ee2248226496e0aa7",
+  "implementation_sha256": "e588ae673676664652e1495a0ba089055ed4806788007b42818bc324f2d680a9",
+  "lock_payload_sha256": "397ff8d9edda3fe715f0c7de354c78b845ae1af34feb2d0c3a10a43aab936a49",
+  "schema_version": "62r1",
+  "source_post_hoc_diagnostic": "outputs/v62-external-pomdp-transfer/post-hoc-terminal-residual-diagnostic.json",
+  "source_post_hoc_diagnostic_sha256": "a775dbdc67af27bdd9702f199590029faa49d091ad500c54dcb9a00a8c7caaa4",
+  "source_v62_evaluation_implementation_lock": "configs/v62-evaluation-implementation-lock.json",
+  "source_v62_evaluation_implementation_lock_sha256": "e58cc2b047032e86ca4ab4598fb956507cb198a1495c8a2cad5c950db416218e",
+  "source_v62_external_bundle_seal": "configs/v62-external-bundle-seal.json",
+  "source_v62_external_bundle_seal_sha256": "c9c0c67ea3b732a58df8366341930de350dbd0c72b5d2cdb470e743ecca87579",
+  "source_v62_outcome_lock": "configs/v62-outcome-lock.json",
+  "source_v62_outcome_lock_sha256": "13373edfa2f20f3550040f2733ab429e3c7c86b2c45c999785deda35e4318a6c",
+  "tests": "python/test_v62r1_terminal_residual.py",
+  "tests_sha256": "83ff21374b9705c6a3da42251ef1d452bd8affe80009e0c984323a6238c66679"
+}

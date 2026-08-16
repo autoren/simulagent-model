@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "62r1",
+  "experiment": "v62r1_terminal_bellman_residual_measurement_repair",
+  "purpose": "correct_the_independent_residual_checker_terminal_base_case_without_changing_the_failed_v62_result_planner_models_tasks_rollouts_or_any_other_gate",
+  "sourceV62OutcomeLock": "configs/v62-outcome-lock.json",
+  "sourceV62EvaluationImplementationLock": "configs/v62-evaluation-implementation-lock.json",
+  "sourceV62ExternalBundleSeal": "configs/v62-external-bundle-seal.json",
+  "sourcePostHocDiagnostic": "outputs/v62-external-pomdp-transfer/post-hoc-terminal-residual-diagnostic.json",
+  "registeredChange": {
+    "oldMetric": "horizon_zero_is_the_only_zero_continuation_base_case",
+    "newMetric": "if_remaining_horizon_is_zero_or_positive_belief_support_is_entirely_absorbing_then_residual_is_the_maximum_absolute_stored_value_or_q_value_otherwise_independently_recompose_every_action_value",
+    "reason": "the_planner_and_pinned_runtime_stop_at_absorbing_states_but_the_old_checker_recomposed_a_counterfactual_post_terminal_reward",
+    "allowedImplementationChanges": [
+      "new_terminal_aware_residual_checker",
+      "repair_tests_mutation_audit_rescore_reporting_and_lock_plumbing"
+    ]
+  },
+  "immutableInputs": {
+    "v62Design": true,
+    "v62CandidateParserFilterAndPlanner": true,
+    "v62IndependentScalarPlanner": true,
+    "v62ExternalBundle": true,
+    "v62OfficialRuntime": true,
+    "v62Result": true,
+    "v62ExactRecords": true,
+    "v62OfficialRolloutRecords": true,
+    "v62TasksHorizonsPoliciesControlsSeedsMetricsAndGates": true,
+    "newExternalRollouts": false,
+    "newCandidateEvaluation": false,
+    "newCorpusOrModel": false,
+    "humanOrModelAccess": false
+  },
+  "repairRescore": {
+    "taskCells": 6,
+    "reachableBeliefNodes": 66,
+    "terminalSupportNodes": 4,
+    "oldResidualFailingNodes": 4,
+    "nonterminalOldResidualFailingNodes": 0,
+    "attempts": 1,
+    "maximumCorrectedResidual": 1e-10,
+    "oldResidualReproductionTolerance": 0.0,
+    "otherMetricReproductionTolerance": 0.0
+  },
+  "implementationAudit": {
+    "analyticFixtures": [
+      "positive_horizon_terminal_with_nonzero_counterfactual_reward",
+      "zero_horizon_nonterminal",
+      "nonterminal_one_step_reward",
+      "nonterminal_two_step_observation_branch",
+      "all_actions_required_for_terminal_status"
+    ],
+    "mutants": [
+      "omit_terminal_support_base_case",
+      "declare_terminal_if_any_action_absorbs",
+      "ignore_terminal_q_values",
+      "ignore_terminal_decision_value",
+      "omit_discount_from_nonterminal_backup",
+      "use_pretransition_observation_likelihood"
+    ],
+    "requiredFixturePassRate": 1.0,
+    "requiredMutantKillRate": 1.0,
+    "candidateSourceModelsAccessibleToAudit": false
+  },
+  "gates": {
+    "minimumSourceBindingRate": 1.0,
+    "minimumSourceOldResidualReproductionRate": 1.0,
+    "minimumOldFailureTerminalLocalizationRate": 1.0,
+    "maximumCorrectedResidual": 1e-10,
+    "maximumCorrectedTerminalResidual": 1e-10,
+    "maximumCorrectedNonterminalResidual": 1e-10,
+    "minimumOtherV62GateReproductionRate": 1.0,
+    "maximumExactRecordDelta": 0.0,
+    "maximumOfficialRolloutRecordDelta": 0.0,
+    "minimumRepairFixturePassRate": 1.0,
+    "minimumRepairMutantKillRate": 1.0,
+    "maximumRepairAttemptAndAccessViolationCount": 0
+  },
+  "decisionHierarchy": [
+    "if_all_twelve_noncompensatory_repair_gates_pass_accept_the_v62_external_exact_finite_pomdp_transfer_result_as_measurement_repaired_while_retaining_v62_as_an_immutable_failed_run",
+    "if_any_nonterminal_old_failure_exists_reject_the_terminal_only_diagnosis",
+    "if_any_other_v62_metric_gate_record_or_rollout_changes_reject_the_repair_as_non_isolated",
+    "if_the_corrected_checker_fails_any_fixture_or_mutant_reject_the_repair_implementation",
+    "never_rewrite_replace_or_relabel_the_original_v62_failed_outcome"
+  ],
+  "claimBoundary": {
+    "measurementRepairOnImmutableV62Artifacts": true,
+    "exactFiniteExternalPOMDPTransferIfPassed": true,
+    "independentExternalReplication": false,
+    "smc2UnknownMechanicPortability": false,
+    "genericPOMDPScalability": false,
+    "continuousOrLongHorizonControl": false,
+    "formalSafety": false,
+    "humanAuthoredLanguage": false,
+    "modelOrAdapterPerformance": false
+  },
+  "firewall": {
+    "modifyV62Artifacts": "forbidden",
+    "modifyCandidateParserFilterOrPlanner": "forbidden",
+    "modifyIndependentScalarPlanner": "forbidden",
+    "modifyExternalBundleOrOfficialRuntime": "forbidden",
+    "changeTasksHorizonsPoliciesControlsSeedsMetricsOrGates": "forbidden",
+    "rerunV62CandidateEvaluation": "forbidden",
+    "rerunOfficialExternalRollouts": "forbidden",
+    "replaceOriginalV62Result": "forbidden",
+    "accessHumanV58Records": "forbidden",
+    "simulateHumanRecords": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "writeAndAuditRepairImplementation": false,
+    "runOneRepairRescore": false,
+    "rerunExternalRollouts": false,
+    "modelAccess": false
+  }
+}

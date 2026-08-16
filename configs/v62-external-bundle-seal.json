@@ -1,0 +1,37 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "model_access": false,
+    "modify_external_bundle": false,
+    "network_access_during_candidate_evaluation": false,
+    "run_one_candidate_evaluation": false,
+    "write_and_audit_evaluation_implementation": true
+  },
+  "bundle": "data/v62-external-pomdp-transfer/bundle",
+  "bundle_audit": "outputs/v62-external-pomdp-transfer/bundle-audit.json",
+  "bundle_audit_sha256": "749b3b4cd4fac3c7ffa8d626d4561964f96353b29e5f877442cf4f8dc5d28c8d",
+  "bundle_content_sha256": "7a4b00f92a75c85d01833400332c2157e263ec421d402cc1886b73d36c1f3059",
+  "experiment": "v62_external_bundle_seal",
+  "implementation_lock": "configs/v62-implementation-lock.json",
+  "implementation_lock_sha256": "190ef9c7ebea9f7f09e9d4003ac9d3275cc68c10a9af187c604e3e8a5af4ac9f",
+  "independent_parser_agreement_rate": 1.0,
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "lock_payload_sha256": "e22d24221b810f393940a0302cb8f45229e037e7f448df7445a0210f635434f7",
+  "manifest": "data/v62-external-pomdp-transfer/bundle/manifest.json",
+  "manifest_sha256": "ca0f966eb6654e45d8f9db0019930f44785c3d439cd23929b79f1033af7c7d2c",
+  "maximum_array_errors": {
+    "discount": 0.0,
+    "initial": 0.0,
+    "observation": 0.0,
+    "reward": 0.0,
+    "transition": 0.0
+  },
+  "schema_version": 62,
+  "source_files_sha256": {
+    "pobax/envs/classic/POMDP/tiger-alt-start.POMDP": "22b4f4313f45f275c8a51415c27ac2d37e93140e64e274f4f92a4c77f78e5768",
+    "pobax/envs/classic/POMDP/tmaze2.POMDP": "5869171a62f27616e8acd05174e485921e0cd93da3708fdac8e10de5fcec7940",
+    "pobax/envs/classic/POMDP/tmaze5.POMDP": "1cb8b99fd91b30ac9b21a4d7f649dc26a3a735d3dd72cd458eb5dd43a78c4b39",
+    "pobax/envs/classic/__init__.py": "6b5ffb53816de6de935d4b803cec7e998640a0c27fc5b60b69a125cec4b57dd2",
+    "pobax/envs/classic/pomdp.py": "be90509140f08d443d6abbaabbc35f0cd56c3f61a6fa52a210872c30f67e343a"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "change_evaluation_implementation": false,
+    "model_access": false,
+    "modify_external_bundle": false,
+    "network_access_during_candidate_evaluation": false,
+    "run_additional_v62_candidate_evaluation": false,
+    "run_one_v62_candidate_evaluation": true
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v62.py": "75484a9b6ec750bf11b44ae4ea1b1777dd1dcc08c970dc325cfb7d2e09cdd506",
+    "python/evaluate_v62_external.py": "b5eaf0234c03edb7f6e269a0f920786c5cdfef6d14adc2473782e10fd1e31e34",
+    "python/freeze_v62_outcome.py": "7e67b80d789cc6dda515b649cecfc43c198c094ff161443cba3722aaa7dacbac",
+    "python/official_v62_rollout.py": "73e0ea80b9e8752855a34041f2495bf45c1fb5e46ea765b77c7a68de569c064f"
+  },
+  "evaluation_implementation_audit": "outputs/v62-external-pomdp-transfer/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "b375aff019b81cc5de1ebc67e068b23b88009e5f4d9e138e9d19627dbf7662c7",
+  "experiment": "v62_evaluation_implementation_lock",
+  "external_bundle_seal": "configs/v62-external-bundle-seal.json",
+  "external_bundle_seal_sha256": "c9c0c67ea3b732a58df8366341930de350dbd0c72b5d2cdb470e743ecca87579",
+  "frozen_dependencies_sha256": {
+    "python/audit_v62_implementation.py": "3d5b912c132aacad7f0d0ebac6d2976c3b521cb6012b91aa2301bda7f89355f2",
+    "python/v10_protocol.py": "73f80f89dc7def0680f48db59913aabd77f3f532563f053c8767ee977f81bea6",
+    "python/v22r2_grounding.py": "4941c2fcbf40399e1a61a0b93e3aa48389910b1571e4348a127b190aec2cffda",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484"
+  },
+  "implementation_lock": "configs/v62-implementation-lock.json",
+  "implementation_lock_sha256": "190ef9c7ebea9f7f09e9d4003ac9d3275cc68c10a9af187c604e3e8a5af4ac9f",
+  "lock_payload_sha256": "ea33426adffece462498801395126dda05c6002950a38789b2adbc132b9fe461",
+  "manifest": "data/v62-external-pomdp-transfer/bundle/manifest.json",
+  "manifest_sha256": "ca0f966eb6654e45d8f9db0019930f44785c3d439cd23929b79f1033af7c7d2c",
+  "runtime_versions": {
+    "chex": "0.1.92",
+    "gymnax": "0.0.9",
+    "jax": "0.11.0",
+    "jaxlib": "0.11.0",
+    "numpy": "2.5.2",
+    "python": "3.12.12"
+  },
+  "schema_version": 62
+}

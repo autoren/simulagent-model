@@ -1,0 +1,41 @@
+{
+  "analytic_fixture_pass_rate": 1.0,
+  "authorization": {
+    "access_human_v58_records": false,
+    "build_and_audit_one_external_source_bundle": true,
+    "change_candidate_implementation": false,
+    "change_tasks_horizons_metrics_gates_or_controls": false,
+    "model_access": false,
+    "run_candidate_evaluation": false,
+    "simulate_human_records": false
+  },
+  "design_lock": "configs/v62-design-lock.json",
+  "design_lock_sha256": "29d877f6391fa11a04e5cc666cc6d1fca70ec7c91318d785afab30393dc9b852",
+  "experiment": "v62_implementation_lock",
+  "implementation_audit": "outputs/v62-external-pomdp-transfer/implementation-audit.json",
+  "implementation_audit_sha256": "c86a47fc817b4302532e7664e6d60e6783c9be9da16b696e2feb245f9044503c",
+  "implementation_files_sha256": {
+    "python/test_v62_external_pomdp.py": "dbbd5129de8dfc0f72330a402956bbe5a4a80128e9aed40a280469a02bdd4a6e",
+    "python/v62_external_pomdp.py": "3ee0b1626a3805f03454aaa10b2861c8bee78aa3663ee0212f0ff6b6cc09b484"
+  },
+  "independent_parser_max_errors": {
+    "discount": 0.0,
+    "initial": 0.0,
+    "observation": 0.0,
+    "reward": 0.0,
+    "transition": 0.0
+  },
+  "independent_planner_action_agreement_rate": 1.0,
+  "independent_planner_max_value_error": 4.440892098500626e-16,
+  "lock_payload_sha256": "82a25b438ddc911178afab3ff15edf6b01cf347560f476b55dcbd02732bb703f",
+  "mutation_kill_rate": 1.0,
+  "runtime_versions": {
+    "chex": "0.1.92",
+    "gymnax": "0.0.9",
+    "jax": "0.11.0",
+    "jaxlib": "0.11.0",
+    "numpy": "2.5.2",
+    "python": "3.12.12"
+  },
+  "schema_version": 62
+}

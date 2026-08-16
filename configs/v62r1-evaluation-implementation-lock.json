@@ -1,0 +1,27 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "change_evaluation_implementation": false,
+    "model_access": false,
+    "modify_v62_or_v62r1_frozen_artifacts": false,
+    "rerun_external_rollouts": false,
+    "rerun_v62_candidate_evaluation": false,
+    "run_one_repair_rescore": true
+  },
+  "evaluation_files_sha256": {
+    "python/audit_and_summarize_v62r1.py": "286f52ee7d0e4c8c47af79599b856e408dfd1e544610b0fd800e2e060d75247e",
+    "python/evaluate_v62r1_repair.py": "934ce253b854db6acb3f3ac8ff1e68533d5487920aeeb8630fcce3f0a04d65cc",
+    "python/freeze_v62r1_outcome.py": "c2be9bdd76f7f7864c10da013eed17b158c5bafe55a26a45c0c7f8bf1eded285"
+  },
+  "evaluation_implementation_audit": "outputs/v62r1-terminal-residual-repair/evaluation-implementation-audit.json",
+  "evaluation_implementation_audit_sha256": "bf74d1f181224fa4b3832312aac0c7529ea01aab35705c3a7c9ab0ad2a77a4bb",
+  "experiment": "v62r1_evaluation_implementation_lock",
+  "implementation_lock": "configs/v62r1-implementation-lock.json",
+  "implementation_lock_sha256": "106b7f07c6c374e3693f4cbc3c2c1ff0e2f0d5d87874367956df002c9bdbfd35",
+  "lock_payload_sha256": "37647f2a60be1ef1de83dd5c7f8f01d6c4c5f313e77611f010425162075feba5",
+  "schema_version": "62r1",
+  "source_v62_external_bundle_seal": "configs/v62-external-bundle-seal.json",
+  "source_v62_external_bundle_seal_sha256": "c9c0c67ea3b732a58df8366341930de350dbd0c72b5d2cdb470e743ecca87579",
+  "source_v62_outcome_lock": "configs/v62-outcome-lock.json",
+  "source_v62_outcome_lock_sha256": "13373edfa2f20f3550040f2733ab429e3c7c86b2c45c999785deda35e4318a6c"
+}

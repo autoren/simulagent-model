@@ -7,10 +7,49 @@ from sparse language-mediated observations and interventions, a reusable, uncert
 executable model of how its environment changes—and transfer that model across mechanics and
 language while retaining enough structure to diagnose and verify its reasoning?
 
-The present project addresses a deliberately narrower instance of that question. It grounds a
-declared Boolean state ontology, infers a one-step executable outcome program from demonstrations,
-and answers queries under partial state information. It does not yet learn the ontology, discover
-a dynamics language, model persistent next-state mutation, or establish causal structure.
+## Status after V62r1 (2026-08-16)
+
+The original staged core is now implemented through bounded verification. V50 established exact
+history-dependent belief filtering; V53r2 calibrated continuous-parameter SMC² against exact
+quadrature and offline PMCMC; V54 validated exact expected-information-gain intervention
+selection; V55r1/V59 added delayed-consequence and budgeted observation-contingent planning; V60
+showed that the approximate posterior preserves the registered planning decisions; and V61 used an
+independent executor plus Storm to verify the bounded execution semantics of all 72 frozen
+horizon-3/5/7 policies.
+
+V62 then moved outside the project's internal symbolic DSL. A fresh exact parser, belief filter,
+and finite-horizon planner were evaluated on pinned POBAX Tiger and T-Maze models, with 24 official
+runtime rollout cells. The immutable V62 run passed 31 of 32 gates but failed a Bellman-residual
+measurement because the checker recomposed a reward after an absorbing terminal state. V62r1
+preregistered and mutation-tested only that terminal base-case correction. Its one immutable-node
+rescore passed all 12 repair gates, with maximum corrected residual `1.78e-15`, zero terminal
+residual, and no changes to the other 31 gates or any exact/rollout record. V62 remains recorded as
+a failed run; the combined V62/V62r1 evidence supports only measurement-repaired, exact,
+finite-state, finite-horizon transfer on those three pinned external models.
+
+The human-authored language track remains deferred under V58 because the required independent
+writers, validators, adjudicator, and coordinator are unavailable. Synthetic records must not be
+substituted for those roles.
+
+## Next experimental direction
+
+The next useful technical question is external **system identification**, not another known-model
+planning demonstration. A V63 design should pin a small external POMDP family but hide a
+prospectively fixed transition/observation parameter or discrete model identity from the candidate.
+It should compare exact posterior inference with the frozen SMC² path, compare active
+information-gain actions with fixed and random designs, and then measure whether posterior error is
+small in decision space under the unchanged external runtime. Model variants, priors, horizons,
+seeds, controls, and calibration/decision gates must be frozen before any candidate evaluation.
+
+Only after that external identification-to-decision bridge passes should the project spend effort
+on larger POMDP benchmark suites, approximate long-horizon optimality, or learned representations.
+Formal safety remains a separate specification task: bounded value verification is not a safety
+property. The V58 language branch should remain paused until real independent participants exist.
+
+The initial project addressed a deliberately narrower instance of the durable question. It grounded
+a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
+queries under partial state information. The historical evidence below records how that starting
+point motivated the later sequential, probabilistic, active, planning, and verification stages.
 
 ## Current evidence
 

@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 62,
+  "experiment": "v62_external_classic_pomdp_belief_planning_transfer",
+  "sourceV61OutcomeLock": "configs/v61-outcome-lock.json",
+  "parallelLanguageBranchStatus": "docs/v58-deferred-status.md",
+  "scientificQuestion": "does_a_generic_exact_history_dependent_belief_and_finite_horizon_planning_implementation_reproduce_independent_references_and_expected_control_separations_on_pinned_external_classic_pomdp_models",
+  "claimBoundary": {
+    "externalBenchmark": true,
+    "benchmarkSource": "POBAX_classic_POMDP_files",
+    "exactFiniteStateBelief": true,
+    "exactFiniteHorizonPlanning": true,
+    "noisyObservation": true,
+    "delayedMemory": true,
+    "informationGathering": true,
+    "externalRuntimeExecution": true,
+    "dslMechanicInference": false,
+    "unknownProgramOrParameterInference": false,
+    "smc2Portability": false,
+    "longHorizonOrContinuousControl": false,
+    "formalSafety": false,
+    "humanAuthoredLanguage": false,
+    "modelAccess": false,
+    "adapterTraining": false,
+    "primaryClaim": "the_projects_history_dependent_bayesian_decision_principle_transfers_to_three_pinned_external_finite_pomdp_instances_without_reusing_the_internal_symbolic_dsl"
+  },
+  "externalSource": {
+    "repository": "https://github.com/taodav/pobax.git",
+    "commit": "a5e1d62d14e4efe783885b9d4f19cffa2a568eec",
+    "license": "Apache-2.0",
+    "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "files": {
+      "pobax/envs/classic/POMDP/tiger-alt-start.POMDP": "22b4f4313f45f275c8a51415c27ac2d37e93140e64e274f4f92a4c77f78e5768",
+      "pobax/envs/classic/POMDP/tmaze2.POMDP": "5869171a62f27616e8acd05174e485921e0cd93da3708fdac8e10de5fcec7940",
+      "pobax/envs/classic/POMDP/tmaze5.POMDP": "1cb8b99fd91b30ac9b21a4d7f649dc26a3a735d3dd72cd458eb5dd43a78c4b39",
+      "pobax/envs/classic/__init__.py": "6b5ffb53816de6de935d4b803cec7e998640a0c27fc5b60b69a125cec4b57dd2",
+      "pobax/envs/classic/pomdp.py": "be90509140f08d443d6abbaabbc35f0cd56c3f61a6fa52a210872c30f67e343a"
+    },
+    "retrieval": "detached_checkout_at_exact_commit_then_copy_only_declared_files_and_license_into_an_ignored_hash_sealed_bundle",
+    "upstreamSourceMutation": "forbidden",
+    "networkAccessDuringCandidateEvaluation": false
+  },
+  "runtime": {
+    "isolation": "ignored_python_3_12_virtual_environment_used_only_for_the_pinned_external_runtime",
+    "python": "3.12.12",
+    "packages": {
+      "jax": "0.11.0",
+      "jaxlib": "0.11.0",
+      "chex": "0.1.92",
+      "gymnax": "0.0.9",
+      "numpy": "2.5.2"
+    },
+    "officialRuntimeModule": "pobax/envs/classic/pomdp.py_loaded_unchanged_by_file_path",
+    "jaxDoublePrecision": true,
+    "platform": "cpu"
+  },
+  "benchmark": {
+    "models": [
+      {
+        "id": "tiger-alt-start",
+        "category": "noisy_sensor_and_information_gathering",
+        "horizons": [1, 3, 5, 7]
+      },
+      {
+        "id": "tmaze2",
+        "category": "delayed_memory",
+        "horizons": [4]
+      },
+      {
+        "id": "tmaze5",
+        "category": "longer_delayed_memory",
+        "horizons": [7]
+      }
+    ],
+    "taskCells": 6,
+    "initialObservation": "sampled_from_the_external_observation_kernel_then_conditioned_before_the_first_action",
+    "stepOrder": "action_then_transition_then_reward_then_observation",
+    "return": "discounted_sum_using_each_external_file_discount",
+    "terminal": "state_is_absorbing_only_when_every_action_self_loops_with_probability_one",
+    "tieTolerance": 1e-12,
+    "tieBreak": "lowest_external_action_index_within_tolerance"
+  },
+  "candidateSystem": {
+    "parser": "independent_strict_parser_for_the_declared_subset_of_the_Cassandra_POMDP_file_format",
+    "beliefUpdate": "normalized_joint_transition_and_observation_likelihood_from_the_complete_public_action_observation_history",
+    "planner": "memoized_exact_belief_space_Bellman_recursion_over_all_actions_and_positive_probability_observations",
+    "policy": "replan_from_the_current_exact_belief_and_remaining_horizon",
+    "candidateDoesNotImport": [
+      "pobax.envs.classic.POMDPFile",
+      "pobax.envs.classic.pomdp.POMDP",
+      "v49_belief",
+      "v50_belief",
+      "v53_smc2",
+      "v59_planning"
+    ]
+  },
+  "independentReference": {
+    "parser": "separate_scalar_line_interpreter_in_the_audit_with_no_candidate_parser_calls",
+    "planner": "separate_scalar_public_history_recursion_with_no_candidate_value_or_belief_update_calls",
+    "bellmanCheck": "independent_one_step_recomposition_of_every_reachable_candidate_belief_node",
+    "externalExecution": "unchanged_pinned_POBAX_POMDP_runtime_in_a_separate_python_process",
+    "analyticFixtures": [
+      "deterministic_one_state_absorber",
+      "binary_noisy_sensor_bayes_update",
+      "discounted_delayed_reward",
+      "listen_before_commit_information_value",
+      "all_action_absorbing_terminal_rule",
+      "zero_probability_observation_is_omitted"
+    ]
+  },
+  "controls": {
+    "observationOnly": "discard_all_earlier_actions_and_observations_before_each_decision",
+    "mapCollapse": "replace_the_current_belief_with_a_point_mass_at_its_lowest_index_MAP_state_before_planning",
+    "fullyObservedOracle": "condition_on_the_latent_state_before_each_action",
+    "uniformRandom": "uniform_over_the_complete_external_action_set",
+    "interpretation": "controls_localize_memory_belief_collapse_privileged_state_and_action_selection_effects_and_are_not_competing_trained_agents"
+  },
+  "implementationAudit": {
+    "alteredFixtureSeed": 6203,
+    "mutants": [
+      "transpose_transition_axes",
+      "use_pretransition_observation",
+      "drop_observation_likelihood",
+      "replace_initial_prior_with_uniform",
+      "omit_discount_factor",
+      "choose_minimum_action_value",
+      "collapse_belief_to_map_state",
+      "ignore_initial_observation",
+      "declare_terminal_if_any_action_self_loops",
+      "swap_reward_source_and_successor_indices",
+      "apply_wildcard_to_only_first_action",
+      "reverse_canonical_tie_break"
+    ],
+    "requiredMutantKillRate": 1.0,
+    "requiredAnalyticFixturePassRate": 1.0,
+    "sourceModelsAccessibleToAudit": false
+  },
+  "externalRollout": {
+    "episodesPerTaskPolicy": 4096,
+    "policies": ["exact_history", "observation_only", "map_collapse", "fully_observed_oracle"],
+    "comparisons": 24,
+    "familywiseAlpha": 0.01,
+    "seed": 6211,
+    "bound": "Hoeffding_with_per_cell_discounted_return_range_and_Bonferroni_familywise_alpha",
+    "officialRuntimeConsumes": "only_sealed_arrays_public_policy_history_and_frozen_seeds",
+    "candidateTruthAccess": false
+  },
+  "metrics": [
+    "completed_task_fraction",
+    "external_source_binding_rate",
+    "license_binding_rate",
+    "independent_parser_agreement_rate",
+    "transition_normalization_rate",
+    "observation_normalization_rate",
+    "initial_belief_normalization_rate",
+    "finite_reward_and_discount_rate",
+    "maximum_transition_array_error",
+    "maximum_observation_array_error",
+    "maximum_reward_array_error",
+    "maximum_initial_belief_error",
+    "maximum_discount_error",
+    "maximum_candidate_reference_value_error",
+    "candidate_reference_optimal_set_membership_rate",
+    "reachable_belief_normalization_rate",
+    "maximum_independent_bellman_residual",
+    "terminal_detection_agreement_rate",
+    "official_runtime_completed_cell_fraction",
+    "official_runtime_return_within_simultaneous_bound_rate",
+    "maximum_official_runtime_return_excess_over_simultaneous_bound",
+    "tiger_information_gathering_action_rate",
+    "minimum_tmaze_exact_history_minus_observation_only_value",
+    "minimum_tiger_exact_history_minus_map_collapse_value",
+    "implementation_mutant_kill_rate",
+    "analytic_fixture_pass_rate",
+    "source_bundle_hash_mismatch_count",
+    "upstream_source_mutation_count",
+    "tool_version_mismatch_count",
+    "unexpected_evaluation_attempt_count",
+    "human_record_access_count",
+    "model_forward_pass_count"
+  ],
+  "gates": {
+    "minimumCompletedTaskFraction": 1.0,
+    "minimumExternalSourceBindingRate": 1.0,
+    "minimumLicenseBindingRate": 1.0,
+    "minimumIndependentParserAgreementRate": 1.0,
+    "minimumTransitionNormalizationRate": 1.0,
+    "minimumObservationNormalizationRate": 1.0,
+    "minimumInitialBeliefNormalizationRate": 1.0,
+    "minimumFiniteRewardAndDiscountRate": 1.0,
+    "maximumTransitionArrayError": 1e-12,
+    "maximumObservationArrayError": 1e-12,
+    "maximumRewardArrayError": 1e-12,
+    "maximumInitialBeliefError": 1e-12,
+    "maximumDiscountError": 1e-12,
+    "maximumCandidateReferenceValueError": 1e-10,
+    "minimumCandidateReferenceOptimalSetMembershipRate": 1.0,
+    "minimumReachableBeliefNormalizationRate": 1.0,
+    "maximumIndependentBellmanResidual": 1e-10,
+    "minimumTerminalDetectionAgreementRate": 1.0,
+    "minimumOfficialRuntimeCompletedCellFraction": 1.0,
+    "minimumOfficialRuntimeReturnWithinSimultaneousBoundRate": 1.0,
+    "maximumOfficialRuntimeReturnExcessOverSimultaneousBound": 0.0,
+    "minimumTigerInformationGatheringActionRate": 1.0,
+    "minimumTmazeExactHistoryMinusObservationOnlyValue": 0.9,
+    "minimumTigerExactHistoryMinusMapCollapseValue": 1.0,
+    "minimumImplementationMutantKillRate": 1.0,
+    "minimumAnalyticFixturePassRate": 1.0,
+    "maximumSourceBundleHashMismatchCount": 0,
+    "maximumUpstreamSourceMutationCount": 0,
+    "maximumToolVersionMismatchCount": 0,
+    "maximumUnexpectedEvaluationAttemptCount": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumModelForwardPassCount": 0
+  },
+  "decisionHierarchy": [
+    "if_all_thirty_two_noncompensatory_gates_pass_qualify_only_exact_finite_pomdp_belief_and_planning_transfer_on_the_three_pinned_external_models",
+    "if_source_parser_or_runtime_binding_fails_stop_and_repair_the_adapter_without_changing_external_files_tasks_horizons_or_gates",
+    "if_exact_and_independent_values_disagree_repair_belief_observation_discount_or_terminal_semantics_then_create_a_revision",
+    "if_official_rollouts_exceed_the_simultaneous_bound_report_the_discrepancy_without_reseeding_or_replacing_cells",
+    "if_control_separation_fails_report_that_the_selected_external_tasks_do_not_support_the_preregistered_memory_or_belief_collapse_diagnostic",
+    "a_pass_does_not_establish_smc2_portability_unknown_mechanic_inference_general_pomdp_scalability_safety_or_language_robustness"
+  ],
+  "firewall": {
+    "externalBundleConstructionBeforeImplementationLock": "forbidden",
+    "candidateEvaluationBeforeBundleSeal": "forbidden",
+    "candidateEvaluationBeforeEvaluationImplementationLock": "forbidden",
+    "postSealExternalSourceMutation": "forbidden",
+    "networkAccessDuringCandidateEvaluation": "forbidden",
+    "gateChangesAfterDesignLock": "forbidden",
+    "taskOrHorizonChangesAfterDesignLock": "forbidden",
+    "replaceExternalRuntimeWithCandidateSimulator": "forbidden",
+    "accessHumanV58Records": "forbidden",
+    "simulateHumanRecords": "forbidden",
+    "smc2PortabilityClaim": "forbidden",
+    "formalSafetyClaim": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "writeAndAuditImplementation": false,
+    "buildExternalBundle": false,
+    "runEvaluation": false,
+    "simulateHumanRecords": false,
+    "modelAccess": false
+  }
+}

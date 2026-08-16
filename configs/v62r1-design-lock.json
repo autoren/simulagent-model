@@ -1,0 +1,145 @@
+{
+  "authorization": {
+    "access_human_v58_records": false,
+    "model_access": false,
+    "modify_v62_artifacts": false,
+    "rerun_external_rollouts": false,
+    "rerun_v62_candidate_evaluation": false,
+    "run_repair_rescore": false,
+    "write_and_audit_repair_implementation": true
+  },
+  "config": "configs/v62r1-terminal-bellman-residual-repair.json",
+  "config_payload": {
+    "claimBoundary": {
+      "continuousOrLongHorizonControl": false,
+      "exactFiniteExternalPOMDPTransferIfPassed": true,
+      "formalSafety": false,
+      "genericPOMDPScalability": false,
+      "humanAuthoredLanguage": false,
+      "independentExternalReplication": false,
+      "measurementRepairOnImmutableV62Artifacts": true,
+      "modelOrAdapterPerformance": false,
+      "smc2UnknownMechanicPortability": false
+    },
+    "decisionHierarchy": [
+      "if_all_twelve_noncompensatory_repair_gates_pass_accept_the_v62_external_exact_finite_pomdp_transfer_result_as_measurement_repaired_while_retaining_v62_as_an_immutable_failed_run",
+      "if_any_nonterminal_old_failure_exists_reject_the_terminal_only_diagnosis",
+      "if_any_other_v62_metric_gate_record_or_rollout_changes_reject_the_repair_as_non_isolated",
+      "if_the_corrected_checker_fails_any_fixture_or_mutant_reject_the_repair_implementation",
+      "never_rewrite_replace_or_relabel_the_original_v62_failed_outcome"
+    ],
+    "experiment": "v62r1_terminal_bellman_residual_measurement_repair",
+    "firewall": {
+      "accessHumanV58Records": "forbidden",
+      "adapterTraining": "forbidden",
+      "changeTasksHorizonsPoliciesControlsSeedsMetricsOrGates": "forbidden",
+      "modelAccess": "forbidden",
+      "modifyCandidateParserFilterOrPlanner": "forbidden",
+      "modifyExternalBundleOrOfficialRuntime": "forbidden",
+      "modifyIndependentScalarPlanner": "forbidden",
+      "modifyV62Artifacts": "forbidden",
+      "replaceOriginalV62Result": "forbidden",
+      "rerunOfficialExternalRollouts": "forbidden",
+      "rerunV62CandidateEvaluation": "forbidden",
+      "simulateHumanRecords": "forbidden"
+    },
+    "gates": {
+      "maximumCorrectedNonterminalResidual": 1e-10,
+      "maximumCorrectedResidual": 1e-10,
+      "maximumCorrectedTerminalResidual": 1e-10,
+      "maximumExactRecordDelta": 0.0,
+      "maximumOfficialRolloutRecordDelta": 0.0,
+      "maximumRepairAttemptAndAccessViolationCount": 0,
+      "minimumOldFailureTerminalLocalizationRate": 1.0,
+      "minimumOtherV62GateReproductionRate": 1.0,
+      "minimumRepairFixturePassRate": 1.0,
+      "minimumRepairMutantKillRate": 1.0,
+      "minimumSourceBindingRate": 1.0,
+      "minimumSourceOldResidualReproductionRate": 1.0
+    },
+    "immutableInputs": {
+      "humanOrModelAccess": false,
+      "newCandidateEvaluation": false,
+      "newCorpusOrModel": false,
+      "newExternalRollouts": false,
+      "v62CandidateParserFilterAndPlanner": true,
+      "v62Design": true,
+      "v62ExactRecords": true,
+      "v62ExternalBundle": true,
+      "v62IndependentScalarPlanner": true,
+      "v62OfficialRolloutRecords": true,
+      "v62OfficialRuntime": true,
+      "v62Result": true,
+      "v62TasksHorizonsPoliciesControlsSeedsMetricsAndGates": true
+    },
+    "implementationAudit": {
+      "analyticFixtures": [
+        "positive_horizon_terminal_with_nonzero_counterfactual_reward",
+        "zero_horizon_nonterminal",
+        "nonterminal_one_step_reward",
+        "nonterminal_two_step_observation_branch",
+        "all_actions_required_for_terminal_status"
+      ],
+      "candidateSourceModelsAccessibleToAudit": false,
+      "mutants": [
+        "omit_terminal_support_base_case",
+        "declare_terminal_if_any_action_absorbs",
+        "ignore_terminal_q_values",
+        "ignore_terminal_decision_value",
+        "omit_discount_from_nonterminal_backup",
+        "use_pretransition_observation_likelihood"
+      ],
+      "requiredFixturePassRate": 1.0,
+      "requiredMutantKillRate": 1.0
+    },
+    "purpose": "correct_the_independent_residual_checker_terminal_base_case_without_changing_the_failed_v62_result_planner_models_tasks_rollouts_or_any_other_gate",
+    "registeredChange": {
+      "allowedImplementationChanges": [
+        "new_terminal_aware_residual_checker",
+        "repair_tests_mutation_audit_rescore_reporting_and_lock_plumbing"
+      ],
+      "newMetric": "if_remaining_horizon_is_zero_or_positive_belief_support_is_entirely_absorbing_then_residual_is_the_maximum_absolute_stored_value_or_q_value_otherwise_independently_recompose_every_action_value",
+      "oldMetric": "horizon_zero_is_the_only_zero_continuation_base_case",
+      "reason": "the_planner_and_pinned_runtime_stop_at_absorbing_states_but_the_old_checker_recomposed_a_counterfactual_post_terminal_reward"
+    },
+    "repairRescore": {
+      "attempts": 1,
+      "maximumCorrectedResidual": 1e-10,
+      "nonterminalOldResidualFailingNodes": 0,
+      "oldResidualFailingNodes": 4,
+      "oldResidualReproductionTolerance": 0.0,
+      "otherMetricReproductionTolerance": 0.0,
+      "reachableBeliefNodes": 66,
+      "taskCells": 6,
+      "terminalSupportNodes": 4
+    },
+    "schemaVersion": "62r1",
+    "sourcePostHocDiagnostic": "outputs/v62-external-pomdp-transfer/post-hoc-terminal-residual-diagnostic.json",
+    "sourceV62EvaluationImplementationLock": "configs/v62-evaluation-implementation-lock.json",
+    "sourceV62ExternalBundleSeal": "configs/v62-external-bundle-seal.json",
+    "sourceV62OutcomeLock": "configs/v62-outcome-lock.json",
+    "stageAuthorization": {
+      "auditAndFreezeDesign": true,
+      "modelAccess": false,
+      "rerunExternalRollouts": false,
+      "runOneRepairRescore": false,
+      "writeAndAuditRepairImplementation": false
+    }
+  },
+  "config_sha256": "0ea7dc978ec7eb503c7ba3440c08ded11914075c2a06dc2457bbd2d708be3950",
+  "design_audit": "outputs/v62r1-terminal-residual-repair/design-audit.json",
+  "design_audit_sha256": "8c8cb9d43849dcdbb3c91b00303c5329cd96ee487fdecf0e864b4ced21fe41a6",
+  "experiment": "v62r1_design_lock",
+  "lock_payload_sha256": "559591703c53f340a0003df541e7e7202a8e4f26560fdb3aaaa9aedc4792978a",
+  "preregistration": "docs/v62r1-terminal-bellman-residual-repair-plan.md",
+  "preregistration_sha256": "fa4bfd812f8b5eb68028974264c726a2da66161a6e485320179bca4d0e97f6aa",
+  "schema_version": "62r1",
+  "source_post_hoc_diagnostic": "outputs/v62-external-pomdp-transfer/post-hoc-terminal-residual-diagnostic.json",
+  "source_post_hoc_diagnostic_sha256": "a775dbdc67af27bdd9702f199590029faa49d091ad500c54dcb9a00a8c7caaa4",
+  "source_v62_evaluation_implementation_lock": "configs/v62-evaluation-implementation-lock.json",
+  "source_v62_evaluation_implementation_lock_sha256": "e58cc2b047032e86ca4ab4598fb956507cb198a1495c8a2cad5c950db416218e",
+  "source_v62_external_bundle_seal": "configs/v62-external-bundle-seal.json",
+  "source_v62_external_bundle_seal_sha256": "c9c0c67ea3b732a58df8366341930de350dbd0c72b5d2cdb470e743ecca87579",
+  "source_v62_outcome_lock": "configs/v62-outcome-lock.json",
+  "source_v62_outcome_lock_sha256": "13373edfa2f20f3550040f2733ab429e3c7c86b2c45c999785deda35e4318a6c"
+}
