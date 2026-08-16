@@ -1,0 +1,482 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "formal_verification": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v65r1": false,
+    "modify_v65r2_design": false,
+    "reward_planning": false,
+    "run_evaluation": false,
+    "write_and_audit_durable_evaluator": false,
+    "write_and_audit_repair_implementation": true
+  },
+  "config_payload": {
+    "approximateAcquisition": {
+      "candidateOrder": [
+        "n",
+        "e",
+        "s",
+        "w"
+      ],
+      "doNotTreatInnerStateOrRepeatIdentityAsTargetLatent": true,
+      "integrateInnerStateBeforeTreatingAnOuterParticleAsAStaticLatentAtom": false,
+      "objective": "mutual_information_between_joint_identity_theta_and_the_next_observation_conditioned_on_the_public_history_and_candidate_command",
+      "particleStatePredictiveRole": "mandatory_negative_control_and_diagnostic",
+      "poolBeforeScore": true,
+      "raoBlackwellizeKnownConditionalState": true,
+      "scoreEveryCandidate": true,
+      "selectionBeforeOutcome": true,
+      "tieBreak": "first_action_in_canonical_n_e_s_w_order_within_tolerance",
+      "tieToleranceNats": 1e-12,
+      "units": "nats"
+    },
+    "claimBoundary": {
+      "adapterTraining": false,
+      "approximateOneStepStaticLatentEIG": true,
+      "externalModelArraysFromPOBAX": true,
+      "formalVerification": false,
+      "humanData": false,
+      "independentExactBenchmarkReplication": false,
+      "knownFiniteStateModelRaoBlackwellizedForAcquisition": true,
+      "languageGrounding": false,
+      "modelAccess": false,
+      "oneStepAcquisitionDecisionPortability": true,
+      "pairedReuseOfFrozenV64PublicHistories": true,
+      "pairedV64HistoryReuse": true,
+      "particleStatePosteriorStillEvaluated": true,
+      "particleStateUsedDirectlyForAcquisition": false,
+      "pooledThreeRepeatSMC2Posterior": true,
+      "primaryClaim": "the_v65r1_paired_portability_test_completes_after_correctly_representing_exact_zero_likelihood_identity_branches_without_masking_positive_support_particle_collapse",
+      "rewardPlanning": false,
+      "sequentialApproximateAdaptiveRollout": false,
+      "staticIdentityThetaPosteriorRemainsSMC2Approximate": true,
+      "targetedRepairOfFailedV65r1": true,
+      "unknownActuatorFamilyProjectAuthored": true
+    },
+    "comparisonTargets": {
+      "acquisition": [
+        "four_action_EIG_vector_absolute_error",
+        "strict_exact_optimal_set_membership",
+        "epsilon_optimal_membership_at_0.001_nats",
+        "exact_EIG_regret_of_approximate_selection"
+      ],
+      "aggregationUnit": "record_with_equal_weight_across_the_six_prefix_length_strata",
+      "posterior": [
+        "identity_posterior_total_variation",
+        "theta_marginal_wasserstein_1",
+        "sixteen_bin_joint_identity_theta_total_variation",
+        "current_state_marginal_total_variation"
+      ],
+      "prediction": [
+        "four_by_six_candidate_observation_predictive_total_variation"
+      ]
+    },
+    "controls": {
+      "averageRepeatEIGControl": "score_each_repeat_then_average_the_four_EIG_values_instead_of_pooling_the_repeat_posteriors",
+      "equalIdentityEvidenceControl": "force_identity_posterior_mass_to_one_half_per_identity",
+      "firstRepeatOnlyControl": "discard_repeats_one_and_two_before_scoring",
+      "mapIdentityControl": "collapse_each_repeat_to_its_MAP_identity_before_pooling",
+      "minimumDetectedOrDominated": 6,
+      "outcomeLeakageControl": "attempt_to_read_a_post_selection_observation_and_require_firewall_rejection",
+      "sharedStreamControl": "reuse_one_inner_propagation_stream_across_outer_theta_particles_and_require_collision_detection",
+      "stateAsTargetControl": "include_current_maze_state_in_the_information_target",
+      "thetaMeanControl": "collapse_each_repeat_theta_marginal_to_its_mean_before_pooling"
+    },
+    "decisionHierarchy": [
+      "if_all_pooled_primary_accuracy_scaling_control_integrity_and_one_shot_gates_pass_authorize_only_preregistration_of_external_Bayes_adaptive_reward_decisions_against_oracle_MAP_and_valid_mixture_controls",
+      "if_particle_posterior_metrics_fail_repair_the_external_state_filter_identity_evidence_outer_weighting_or_rejuvenation_without_modifying_v64",
+      "if_posterior_metrics_pass_but_EIG_fails_repair_static_latent_aggregation_pooling_or_predictive_scoring",
+      "if_compute_cost_is_high_but_accuracy_passes_preserve_the_pass_and_report_the_cost_limitation_without_relaxing_accuracy_gates",
+      "if_any_primary_gate_fails_do_not_remove_records_change_the_subset_change_budgets_or_unlock_reward_planning",
+      "do_not_describe_paired_reuse_as_an_independent_exact_benchmark_replication",
+      "do_not_authorize_formal_verification_language_human_model_or_training_work"
+    ],
+    "durableAttemptProtocol": {
+      "attemptMarker": "atomically_write_attempt.json_before_loading_or_scoring_any_record",
+      "authorizationConsumption": "attempt_marker_consumes_the_one_shot_authorization_even_if_no_accuracy_result_is_materialized",
+      "exception": "atomically_write_failure.json_with_exception_stage_progress_access_and_binding_then_exit_nonzero_and_retain_attempt_marker",
+      "repeatInvocation": "reject_if_attempt.json_result.json_or_failure.json_already_exists",
+      "success": "atomically_write_raw_cells_then_result_and_retain_attempt_marker"
+    },
+    "exactReference": {
+      "candidateActions": 4,
+      "inheritExactlyFrom": "python/v64_external_eig.py",
+      "outcomeEnumeration": 6,
+      "quadratureNodes": 257,
+      "recomputeOnlyOnFrozenV65Subset": true,
+      "rerunV64Evaluation": false,
+      "stateEnumeration": 11,
+      "tieBreak": "first_action_in_canonical_n_e_s_w_order_within_tolerance",
+      "tieToleranceNats": 1e-12
+    },
+    "experiment": "v65_pooled_smc2_external_eig_portability",
+    "externalFamily": {
+      "candidateActionsCanonical": [
+        "n",
+        "e",
+        "s",
+        "w"
+      ],
+      "identityNames": [
+        "clockwise_failure",
+        "counterclockwise_failure"
+      ],
+      "inheritExactlyFrom": "configs/v64-design-lock.json",
+      "knownObservationKernel": true,
+      "model": "POBAX_4x3_nonterminating_at_a5e1d62d14e4efe783885b9d4f19cffa2a568eec",
+      "modelSha256": "0fa62301931960d682b02961ffd38f4dd6b8e8835bc0203f4a12f849c267d6ff",
+      "nuisanceLatent": "current_maze_state",
+      "targetLatent": [
+        "actuator_identity",
+        "continuous_theta"
+      ],
+      "thetaPrior": "scaled_beta_2_2",
+      "thetaSupport": [
+        0.6,
+        0.95
+      ]
+    },
+    "extinctIdentityRepair": {
+      "RaoBlackwellization": "unchanged_from_v65r1_and_applied_only_to_positive_weight_static_atoms",
+      "bothIdentitiesImpossibleHandling": "raise_impossible_public_history_before_joint_normalization",
+      "exactZeroIdentityHandling": "return_log_evidence_negative_infinity_zero_joint_posterior_mass_no_atoms_and_complete_zero_or_explicit_support_work_diagnostics",
+      "jointNormalization": "normalize_only_finite_identity_log_evidences_and_never_add_epsilon_mass_to_an_exact_zero_identity",
+      "positiveSupportParticleExtinctionHandling": "raise_a_distinct_particle_extinction_with_positive_exact_support_error",
+      "scope": "identity_branch_extinction_classification_and_joint_measure_assembly_only",
+      "subset": "reuse_the_immutable_v65r1_48_record_subset_without_reselection_rejection_or_reordering",
+      "supportOracle": "boolean_forward_reachability_over_the_pinned_initial_transition_and_observation_support_conditioned_on_identity_and_public_history",
+      "supportTolerance": "strict_positive_array_entry_with_no_floating_probability_threshold",
+      "thetaIndependenceJustification": "theta_is_in_closed_interval_0.6_to_0.95_so_both_command_success_and_failure_edges_have_strictly_positive_probability_and_transition_support_is_constant_over_theta"
+    },
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "candidateEvaluationBeforeEvaluationImplementationLock": "forbidden",
+      "candidateEvaluationBeforeSubsetSeal": "forbidden",
+      "candidatePruning": "forbidden",
+      "formalVerification": "forbidden",
+      "humanData": "forbidden",
+      "languageGrounding": "forbidden",
+      "loadV64EvaluationResultDuringSubsetSelection": "forbidden",
+      "loadV64SelectionAudit": "forbidden",
+      "materializeSubsetBeforeImplementationLock": "forbidden",
+      "modelAccess": "forbidden",
+      "modifyOrRerunV64": "forbidden",
+      "postDesignGateOrBudgetChanges": "forbidden",
+      "rejectSelectedRecordAfterMaterialization": "forbidden",
+      "rewardPlanning": "forbidden",
+      "selectSubsetByExactEIGOrAction": "forbidden",
+      "selectionOnRealizedOutcome": "forbidden",
+      "selectionOnTruthFields": "forbidden",
+      "simulateHumanData": "forbidden"
+    },
+    "gates": {
+      "epsilonOptimalRegretNats": 0.001,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCandidateOmissionCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumPrimaryMeanAbsoluteEigVectorErrorNats": 0.004,
+      "maximumPrimaryMeanCandidatePredictiveTv": 0.05,
+      "maximumPrimaryMeanIdentityTv": 0.05,
+      "maximumPrimaryMeanJointIdentityThetaTv": 0.1,
+      "maximumPrimaryMeanSelectedEigRegretNats": 0.0015,
+      "maximumPrimaryMeanStateTv": 0.08,
+      "maximumPrimaryMeanThetaWasserstein": 0.04,
+      "maximumPrimaryMinusLowMeanEigVectorErrorNats": 0.001,
+      "maximumPrimaryMinusLowMeanSelectedEigRegretNats": 0.001,
+      "maximumPrimaryQ95AbsoluteEigVectorErrorNats": 0.015,
+      "maximumPrimaryQ95CandidatePredictiveTv": 0.15,
+      "maximumPrimaryQ95IdentityTv": 0.15,
+      "maximumPrimaryQ95JointIdentityThetaTv": 0.25,
+      "maximumPrimaryQ95SelectedEigRegretNats": 0.006,
+      "maximumPrimaryQ95StateTv": 0.2,
+      "maximumPrimaryQ95ThetaWasserstein": 0.12,
+      "maximumPrimarySelectedEigRegretNats": 0.02,
+      "maximumRealizedOutcomeAccessBeforeSelectionCount": 0,
+      "maximumTieBreakViolationCount": 0,
+      "maximumTruthFieldAccessCount": 0,
+      "maximumUnexpectedEvaluationAttemptCount": 0,
+      "maximumUnintendedRandomStreamCollisions": 0,
+      "maximumV64SelectionAuditRecordsLoaded": 0,
+      "minimumAnalyticFixturePassRate": 1.0,
+      "minimumCandidateAndPredictiveNormalizationRate": 1.0,
+      "minimumCompletedRecordBudgetRepeatFraction": 1.0,
+      "minimumControlsDetectedOrDominated": 6,
+      "minimumFiniteValueRate": 1.0,
+      "minimumImplementationMutantKillRate": 1.0,
+      "minimumPooledPosteriorNormalizationRate": 1.0,
+      "minimumPrimaryEpsilonOptimalMembershipRate": 0.95,
+      "minimumPrimaryStrictOptimalSetMembershipRate": 0.8
+    },
+    "mandatoryDiagnostics": {
+      "compute": [
+        "wall_clock_seconds_by_record_budget_and_repeat",
+        "outer_particle_count",
+        "inner_transition_draw_count",
+        "observation_weight_evaluation_count",
+        "complete_history_likelihood_recomputation_count",
+        "outer_and_inner_resampling_counts",
+        "PMMH_attempt_and_accept_counts",
+        "final_posterior_atom_count"
+      ],
+      "qualificationRole": "reported_in_full_but_not_used_to_relax_or_compensate_for_primary_accuracy_gates",
+      "singleRepeat": [
+        "EIG_vector_error_by_repeat_and_budget",
+        "strict_and_epsilon_optimal_membership_by_repeat_and_budget",
+        "exact_selection_regret_by_repeat_and_budget",
+        "three_repeat_selected_action_disagreement_rate",
+        "best_minus_worst_repeat_regret_spread"
+      ]
+    },
+    "nestedPredictiveRepair": {
+      "acquisitionConditionalState": "Rao_Blackwellized_exact_11_state_filter_conditioned_on_each_pooled_SMC2_identity_theta_atom_and_the_public_history",
+      "acquisitionPredictive": "propagate_each_Rao_Blackwellized_conditional_state_through_its_identity_theta_candidate_transition_and_the_pinned_observation_kernel",
+      "forbidParticleAncestryInnerStateAndRepeatIdentityAsTargets": true,
+      "likelihoodSource": "unchanged_127_particle_inner_bootstrap_filters_inside_SMC2",
+      "pluginInnerStatePredictiveRole": "mandatory_negative_control_and_nonqualifying_diagnostic",
+      "poolBeforeRaoBlackwellizationAndScoring": true,
+      "posteriorStateAccuracySource": "unchanged_pooled_inner_particle_state_marginal",
+      "scope": "approximate_acquisition_predictive_only",
+      "staticPosteriorSource": "unchanged_three_repeat_equal_weight_pooled_SMC2_identity_theta_weights",
+      "targetLatent": [
+        "actuator_identity",
+        "continuous_theta"
+      ]
+    },
+    "pairedReuseBoundary": {
+      "independentExactReplication": false,
+      "loadV64EvaluationResultDuringSubsetSelection": false,
+      "loadV64SelectionAudit": false,
+      "modifyOrRerunV64": false,
+      "reuseType": "paired_portability_test_against_an_immutable_exact_reference",
+      "selectByExactEIGOrAction": false,
+      "sourcePopulation": "data/v64-external-multi-action-eig/selection-public.jsonl",
+      "sourcePopulationSha256": "844ba4355ac18f25eaa482b86cf60e7bd5a35a8d4353bf6e3bdd14e4079761ea",
+      "sourcePrefixLengths": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sourceRecords": 192,
+      "sourceRecordsPerPrefixLength": 32
+    },
+    "schemaVersion": "65r2",
+    "scientificQuestion": "does_the_frozen_equal_weight_pool_of_three_smc_squared_repeats_preserve_external_four_action_one_step_expected_information_gain_and_its_acquisition_decision_against_the_frozen_v64_exact_reference",
+    "seeds": {
+      "fixtureSeed": 6551,
+      "freshAgainst": [
+        "V53",
+        "V60",
+        "V63",
+        "V64"
+      ],
+      "innerParticleSeed": 6527,
+      "mutationSeed": 6563,
+      "outerParticleSeed": 6521,
+      "rejuvenationSeed": 6533,
+      "resamplingSeed": 6547,
+      "subsetSelectionSeed": 6511,
+      "tieBreakSeed": 6569
+    },
+    "smcSquared": {
+      "adaptiveProposal": false,
+      "identityLayer": "enumerate_both_identities_and_update_identity_evidence_from_each_identity_specific_smc_squared_normalizing_constant_estimate",
+      "independentRepeatsPerBudget": 3,
+      "inheritanceStatement": "budgets_repeat_count_inner_budget_resampling_thresholds_rejuvenation_steps_and_proposal_scale_are_unchanged_from_frozen_v53r2_v63",
+      "initialObservationHandling": "bootstrap_initial_state_particles_from_the_source_initial_distribution_then_weight_and_normalize_by_the_public_reset_observation",
+      "innerEssThresholdFraction": 0.5,
+      "innerResampling": "systematic",
+      "innerStateParticleBudget": 127,
+      "observationWeight": "pinned_source_observation_kernel_for_the_public_command_and_successor_state",
+      "outerEssThresholdFraction": 0.5,
+      "outerRejuvenation": "particle_marginal_metropolis_hastings",
+      "outerResampling": "systematic",
+      "outerThetaParticleBudgets": [
+        31,
+        127,
+        509
+      ],
+      "primaryOuterThetaParticleBudget": 509,
+      "proposalSpace": "logit_of_scaled_theta",
+      "proposalStandardDeviation": 0.4,
+      "randomStreamKey": [
+        "stage",
+        "record",
+        "identity",
+        "outer_budget",
+        "repeat",
+        "outer_particle",
+        "phase",
+        "tick",
+        "inner_particle",
+        "purpose",
+        "resampling_ordinal",
+        "move"
+      ],
+      "recomputeCompleteBootstrapParticleFilterLikelihoodAtProposal": true,
+      "rejuvenationStepsPerOuterResampling": 2,
+      "repeatAggregation": "equal_weight_posterior_mixture_across_three_independent_normalized_repeat_measures_before_any_EIG_or_selection_computation",
+      "singleRepeatRole": "mandatory_nonqualifying_diagnostic_only",
+      "transitionProposal": "bootstrap_propagation_through_T_identity_theta_of_the_observed_public_command"
+    },
+    "sourceV63DesignLock": "configs/v63-design-lock.json",
+    "sourceV63r1OutcomeLock": "configs/v63r1-outcome-lock.json",
+    "sourceV64DesignLock": "configs/v64-design-lock.json",
+    "sourceV64ImplementationLock": "configs/v64-implementation-lock.json",
+    "sourceV64OutcomeLock": "configs/v64-outcome-lock.json",
+    "sourceV64PopulationSeal": "configs/v64-population-seal.json",
+    "stageAuthorization": {
+      "accessHumanData": false,
+      "adapterTraining": false,
+      "formalVerification": false,
+      "materializeSubset": false,
+      "modelAccess": false,
+      "rewardPlanning": false,
+      "runEvaluation": false,
+      "simulateHumanData": false,
+      "writeAndAuditSMC2EIGImplementation": true
+    },
+    "subset": {
+      "freshPopulation": false,
+      "prefixLengths": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "publicFieldsOnly": [
+        "record_id",
+        "prefix_length",
+        "initial_observation",
+        "actions",
+        "observations"
+      ],
+      "recordRejectionAfterSelection": false,
+      "records": 48,
+      "recordsPerPrefixLength": 8,
+      "retainEverySelectedRecord": true,
+      "selectionRule": "within_each_prefix_length_sort_all_public_records_by_SHA256_of_v65_vertical_bar_subset_vertical_bar_6511_vertical_bar_record_id_then_by_record_id_and_retain_the_first_eight",
+      "selectionSeed": 6511,
+      "truthFields": false
+    }
+  },
+  "design_audit": "outputs/v65r2-extinct-identity-repair/design-audit.json",
+  "design_audit_sha256": "2082f0de8a72e38c2af1044e68f6cddf318952c1a1a7b2e890baee35a308ef10",
+  "experiment": "v65r2_design_lock",
+  "lock_payload_sha256": "94754b9bb2467aa5a532ed38fda1a38f812d66b49444d5f6f1fb9a8d6940ee36",
+  "preregistration": "docs/v65r2-extinct-identity-repair-plan.md",
+  "preregistration_sha256": "3ad203e0ea66e10ccd5943555dd85feaa92e9c77d6c97738eeec6ec0f167586d",
+  "repair": "configs/v65r2-extinct-identity-repair.json",
+  "repair_payload": {
+    "claimBoundary": {
+      "adapterTraining": false,
+      "formalVerification": false,
+      "humanData": false,
+      "independentExactBenchmarkReplication": false,
+      "modelAccess": false,
+      "primaryClaim": "the_v65r1_paired_portability_test_completes_after_correctly_representing_exact_zero_likelihood_identity_branches_without_masking_positive_support_particle_collapse",
+      "rewardPlanning": false,
+      "sequentialApproximateAdaptiveRollout": false,
+      "targetedRepairOfFailedV65r1": true
+    },
+    "decisionHierarchy": [
+      "if_the_repair_implementation_fixtures_mutation_audit_and_durable_attempt_tests_all_pass_freeze_the_v65r2_implementation_and_evaluator",
+      "then_run_exactly_one_v65r2_evaluation_on_the_unchanged_sealed_subset",
+      "if_v65r2_passes_every_original_noncompensatory_gate_authorize_only_preregistration_of_external_Bayes_adaptive_reward_decisions",
+      "if_v65r2_fails_or_throws_preserve_the_terminal_outcome_and_do_not_rerun_or_unlock_reward_planning"
+    ],
+    "defectDiscoveryStage": "sole_immutable_v65r1_evaluation_attempt_before_any_result_or_raw_cell_was_written",
+    "durableAttemptProtocol": {
+      "attemptMarker": "atomically_write_attempt.json_before_loading_or_scoring_any_record",
+      "authorizationConsumption": "attempt_marker_consumes_the_one_shot_authorization_even_if_no_accuracy_result_is_materialized",
+      "exception": "atomically_write_failure.json_with_exception_stage_progress_access_and_binding_then_exit_nonzero_and_retain_attempt_marker",
+      "repeatInvocation": "reject_if_attempt.json_result.json_or_failure.json_already_exists",
+      "success": "atomically_write_raw_cells_then_result_and_retain_attempt_marker"
+    },
+    "experiment": "v65r2_exact_zero_identity_support_repair",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "addEpsilonMassToExactZeroIdentity": "forbidden",
+      "changeBudgetInnerParticlesRepeatsPoolingSeedOrGate": "forbidden",
+      "formalVerification": "forbidden",
+      "humanData": "forbidden",
+      "modelAccess": "forbidden",
+      "modifyOrRerunV65r1": "forbidden",
+      "modifyReselectRejectOrReorderSubset": "forbidden",
+      "rewardPlanning": "forbidden",
+      "runV65r2BeforeImplementationAndEvaluatorLocks": "forbidden",
+      "runV65r2MoreThanOnce": "forbidden",
+      "scoreCandidateEIGDuringDesignOrImplementationAudit": "forbidden_on_the_sealed_subset",
+      "treatPositiveSupportParticleExtinctionAsZeroIdentityMass": "forbidden"
+    },
+    "mandatoryImplementationFixtures": {
+      "bothIdentitiesImpossible": "synthetic_public_history_with_reset_observation_outside_the_initial_state_observation_support",
+      "durableExceptionSerialization": "synthetic_exception_after_attempt_marker_before_first_record_completion",
+      "oneFiniteOneNegativeInfinityNormalization": "analytic_two_identity_log_weight_fixture",
+      "positiveSupportParticleExtinction": "inject_all_negative_infinity_particle_log_weights_after_the_boolean_support_oracle_returns_true",
+      "repeatInvocationRejection": "second_synthetic_invocation_against_existing_attempt_marker",
+      "sealedOneIdentityZeroSupport": "c55d371eada6c66063aa84e9"
+    },
+    "observedDefect": "an_identity_conditioned_SMC2_branch_with_exactly_zero_history_likelihood_aborts_joint_inference_even_when_the_other_identity_has_positive_likelihood",
+    "repair": {
+      "RaoBlackwellization": "unchanged_from_v65r1_and_applied_only_to_positive_weight_static_atoms",
+      "bothIdentitiesImpossibleHandling": "raise_impossible_public_history_before_joint_normalization",
+      "exactZeroIdentityHandling": "return_log_evidence_negative_infinity_zero_joint_posterior_mass_no_atoms_and_complete_zero_or_explicit_support_work_diagnostics",
+      "jointNormalization": "normalize_only_finite_identity_log_evidences_and_never_add_epsilon_mass_to_an_exact_zero_identity",
+      "positiveSupportParticleExtinctionHandling": "raise_a_distinct_particle_extinction_with_positive_exact_support_error",
+      "scope": "identity_branch_extinction_classification_and_joint_measure_assembly_only",
+      "subset": "reuse_the_immutable_v65r1_48_record_subset_without_reselection_rejection_or_reordering",
+      "supportOracle": "boolean_forward_reachability_over_the_pinned_initial_transition_and_observation_support_conditioned_on_identity_and_public_history",
+      "supportTolerance": "strict_positive_array_entry_with_no_floating_probability_threshold",
+      "thetaIndependenceJustification": "theta_is_in_closed_interval_0.6_to_0.95_so_both_command_success_and_failure_edges_have_strictly_positive_probability_and_transition_support_is_constant_over_theta"
+    },
+    "schemaVersion": "65r2",
+    "sourceOutcomeLock": "configs/v65r1-outcome-lock.json",
+    "stageAuthorization": {
+      "adapterTraining": false,
+      "formalVerification": false,
+      "humanData": false,
+      "modelAccess": false,
+      "rewardPlanning": false,
+      "runEvaluation": false,
+      "writeAndAuditDurableEvaluator": false,
+      "writeAndAuditRepairImplementation": true
+    },
+    "unchanged": [
+      "all_48_sealed_subset_records_in_their_existing_order",
+      "outer_particle_budgets_31_127_509",
+      "127_inner_state_particles",
+      "three_independent_repeats",
+      "equal_weight_repeat_posterior_pooling_before_scoring",
+      "outer_and_inner_resampling_thresholds_and_PMMH_rejuvenation",
+      "Rao_Blackwellized_known_11_state_acquisition_conditional",
+      "exact_V64_reference_and_all_four_candidate_actions",
+      "all_posterior_predictive_EIG_selection_regret_scaling_control_and_access_gates",
+      "all_random_roots_and_stream_keys",
+      "all_claim_boundaries_and_downstream_authorizations"
+    ]
+  },
+  "repair_sha256": "a5fff656054e34691ffbb7619d62948296d0a0ab4b237bc3ce2e09289d44163a",
+  "schema_version": "65r2",
+  "source_v65r1_design_lock": "configs/v65r1-design-lock.json",
+  "source_v65r1_design_lock_sha256": "2127d2853c4477fcd035a9e4dce5350d53d2768f740bf09d20b92400c8fb0501",
+  "source_v65r1_outcome_lock": "configs/v65r1-outcome-lock.json",
+  "source_v65r1_outcome_lock_sha256": "fa17f6bbc5a137001de378133b1e6dac38cd26486ab325a5b04bbba4c3aa4ac0",
+  "subset_seal": "configs/v65r1-subset-seal.json",
+  "subset_seal_sha256": "ce1e719b243f1cee1bbcac7c058b197e20b88f0ebdfab71fac9e5e2657255052",
+  "unchanged_payload_sha256": {
+    "comparisonTargets": "2ca6cab9ac9c6a1238092ffce34a54edf308addf3de6cda382315544ec5a0a15",
+    "controls": "65809c72914ac5bf4ea0e838c795cbc70979e0336652016d1d86d5abb7b3a836",
+    "exactReference": "92a3ff8142a94be4dcce28eb53c4bc35129ff9a7d32fa7c8ad16336621f32622",
+    "gates": "3a87fd3f8f2d8a1999df57464ebc9ec1450c634a501b528edfa0a391223438d3",
+    "seeds": "93948b8a6f73b031b1bbc70a3982553c94741ba6424e2ec9c051eef0cd17c37b",
+    "smcSquared": "5fd68a3a096d0051520c7cd8c00b769784606035b703ebcb50575c28c852f80f",
+    "subset": "99aeb1ca49ce4e134a38dd18852fd15b074d752eefe40db17f4e3809918ca88c"
+  }
+}
