@@ -1,0 +1,232 @@
+{
+  "authorization": {
+    "audit_and_freeze_resource_feasibility": true,
+    "construct_confirmatory_census": false,
+    "drop_or_replace_models": false,
+    "modify_confirmatory_design_or_prior_artifacts": false,
+    "run_confirmatory_outcomes": false,
+    "write_and_audit_confirmatory_evaluator": false
+  },
+  "config": "configs/v70-confirmatory-multi-environment.json",
+  "config_payload": {
+    "analysisHierarchy": [
+      "primary_replication_is_model_level_across_all_nine_Tier_A_confirmatory_environments",
+      "record_level_counts_and_effect_distributions_are_secondary_and_cannot_compensate_for_failed_model_level_gates",
+      "structurally_related_and_novel_strata_must_each_pass_their_frozen_subgates",
+      "the_cheese_terminating_nonterminating_pair_is_reported_as_a_separate_Tier_B_stress_comparison_without_pooling_into_an_external_uncertainty_claim",
+      "no_gate_or_threshold_changes_after_any_confirmatory_value_is_computed"
+    ],
+    "claimBoundary": {
+      "SMC2": false,
+      "TierAProjectAuthoredFamily": true,
+      "TierBExternalSourcePairReportedSeparately": true,
+      "adapterTraining": false,
+      "approximateInference": false,
+      "externalUncertaintyFamilyClaim": false,
+      "humanData": false,
+      "modelAccess": false
+    },
+    "confirmatoryGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumDevelopmentModelsRescored": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumPrimaryVsConvergenceNormalizedValueError": 1e-08,
+      "maximumRecordSelectionOrRejectionCount": 0,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumCompletedRecordFraction": 1.0,
+      "minimumConfirmatoryModels": 9,
+      "minimumFiniteMetricRate": 1.0,
+      "minimumMaximumNormalizedMAPRegret": 0.01,
+      "minimumModelsWithExactBAMAPRootActionDisagreement": 3,
+      "minimumModelsWithMaterialMAPRegret": 3,
+      "minimumModelsWithMaterialPosteriorSamplingRegret": 2,
+      "minimumNovelModels": 6,
+      "minimumNovelModelsWithExactBAMAPRootActionDisagreement": 2,
+      "minimumNovelModelsWithMaterialMAPRegret": 2,
+      "minimumPrimaryActionInConvergenceOptimalSetRate": 1.0,
+      "minimumSourceValidationRate": 1.0,
+      "minimumStructurallyRelatedModels": 3,
+      "minimumStructurallyRelatedModelsWithExactBAMAPRootActionDisagreement": 1,
+      "minimumStructurallyRelatedModelsWithMaterialMAPRegret": 1
+    },
+    "confirmatoryModels": [
+      {
+        "canonicalActionCycle": [
+          "n",
+          "e",
+          "s",
+          "w"
+        ],
+        "file": "4x3.POMDP",
+        "stratum": "structurally_related"
+      },
+      {
+        "canonicalActionCycle": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "file": "fully_observable_tmaze2.POMDP",
+        "stratum": "structurally_related"
+      },
+      {
+        "canonicalActionCycle": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "file": "fully_observable_tmaze5.POMDP",
+        "stratum": "structurally_related"
+      },
+      {
+        "canonicalActionCycle": [
+          "N0",
+          "E0",
+          "S0",
+          "W0"
+        ],
+        "file": "cheese.95.POMDP",
+        "stratum": "novel"
+      },
+      {
+        "canonicalActionCycle": [
+          "N0",
+          "E0",
+          "S0",
+          "W0"
+        ],
+        "file": "cheese.95_nonterminating.POMDP",
+        "stratum": "novel"
+      },
+      {
+        "canonicalActionCycle": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "file": "hallway.POMDP",
+        "stratum": "novel"
+      },
+      {
+        "canonicalActionCycle": [
+          "N",
+          "E",
+          "S",
+          "W"
+        ],
+        "file": "heavenhell.POMDP",
+        "stratum": "novel"
+      },
+      {
+        "canonicalActionCycle": [
+          "unrestrict",
+          "steady",
+          "restrict",
+          "reboot"
+        ],
+        "file": "network.POMDP",
+        "stratum": "novel"
+      },
+      {
+        "canonicalActionCycle": [
+          "TurnAround",
+          "GoForward",
+          "Backup"
+        ],
+        "file": "shuttle.POMDP",
+        "stratum": "novel"
+      }
+    ],
+    "controls": {
+      "inheritExactlyFrom": "V69",
+      "pointModelOffSupportRule": "after_an_exact_zero_point_model_observation_repeat_the_first_frozen_canonical_action_for_all_remaining_actions"
+    },
+    "decisionHierarchy": [
+      "if_every_confirmatory_gate_passes_claim_multi_environment_replication_for_the_project_authored_V69_family_within_the_pinned_source_suite",
+      "if_any_gate_fails_report_the_complete_negative_or_mixed_confirmatory_result_without_model_dropping_or_gate_revision",
+      "Tier_B_pair_results_never_override_the_Tier_A_primary_decision"
+    ],
+    "exactPlanning": {
+      "convergenceQuadratureNodes": 129,
+      "horizonActions": 3,
+      "primaryQuadratureNodes": 65,
+      "tieBreak": "first_action_in_the_frozen_per_model_canonical_cycle",
+      "tieTolerance": 1e-12
+    },
+    "experiment": "v70_confirmatory_dominant_remapping_multi_environment_replication",
+    "familyLock": "configs/v69-development-implementation-lock.json",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "changeFamilyCensusHorizonControlsNormalizationOrGates": "forbidden",
+      "dropOrReplaceAnyValidUntouchedModel": "forbidden",
+      "humanData": "forbidden",
+      "mergeTierAAndTierBClaims": "forbidden",
+      "modelAccess": "forbidden",
+      "rescoreDevelopmentModels": "forbidden",
+      "runSMC2": "forbidden",
+      "scoreConfirmatoryModelsBeforeDesignResourceCensusAndEvaluatorLocks": "forbidden"
+    },
+    "normalization": {
+      "materialNormalizedRegret": 0.005,
+      "normalizedRegret": "(exact_Bayes_adaptive_value-control_value)/returnScale",
+      "returnScale": "max(1,(maximum_source_reward-minimum_source_reward)*sum_discount_powers_zero_through_two)"
+    },
+    "publicPrefixCensus": {
+      "deduplication": false,
+      "depths": [
+        0,
+        1
+      ],
+      "minimumProbabilityThreshold": 0.0,
+      "resourceRule": "estimate_complete_census_and_exact_operation_bounds_before_constructing_or_scoring_but_do_not_drop_any_model",
+      "retainEveryReachableActionObservationHistory": true,
+      "selectionOrRejection": false,
+      "truthFields": false
+    },
+    "schemaVersion": "70-confirmatory-multi-environment",
+    "sourceFeasibilityLock": "configs/v68-source-feasibility-lock.json",
+    "sourcePositiveDevelopmentOutcomeLock": "configs/v69-development-outcome-lock.json",
+    "stageAuthorization": {
+      "auditAndFreezeConfirmatoryDesign": true,
+      "auditAndFreezeResourceFeasibility": false,
+      "constructConfirmatoryCensus": false,
+      "runConfirmatoryOutcomes": false,
+      "writeAndAuditConfirmatoryEvaluator": false
+    },
+    "unknownDynamicsFamily": {
+      "identityNames": [
+        "dominant_forward_cycle_remapping",
+        "dominant_backward_cycle_remapping"
+      ],
+      "identityPrior": [
+        0.5,
+        0.5
+      ],
+      "inheritExactlyFrom": "V69",
+      "observationAndReward": "unchanged_pinned_source_arrays",
+      "thetaPrior": "scaled_beta_2_2",
+      "thetaSupport": [
+        0.6,
+        0.95
+      ],
+      "transitionDefinition": "T_identity_theta(command)=theta*T_source(cycle_remapped_command_for_identity)+(1-theta)*T_source(command)"
+    }
+  },
+  "config_sha256": "f22ae3d2832a5c48799419109e664497597bf1b47a58b665fc97b495f828141d",
+  "design_audit": "outputs/v70-confirmatory/design-audit.json",
+  "design_audit_sha256": "a78bf93a6bb0b4e954024fd208de5c8b31ea74ebd4d8217d58e915924230e0af",
+  "experiment": "v70_confirmatory_design_lock",
+  "lock_payload_sha256": "1b531ee95227c6a76c08db76a5a71c1fd20731983dc19792f89d8b10e3d8d458",
+  "preregistration": "docs/v70-confirmatory-multi-environment-plan.md",
+  "preregistration_sha256": "69bec427ac4fd2185ae8671b66ce0dd8e50ac4f0018664f03066dde851cb62df",
+  "schema_version": "70-confirmatory-multi-environment",
+  "source_feasibility_lock": "configs/v68-source-feasibility-lock.json",
+  "source_feasibility_lock_sha256": "80fab1fb24686bd8af1089382b4a0e197ca5512ec1fa0fd9b15726c6b68816dc",
+  "source_positive_development_outcome_lock": "configs/v69-development-outcome-lock.json",
+  "source_positive_development_outcome_lock_sha256": "0c385335a1bf37f27598af868e592c60fabf53dd5b4733f98263cb74257767fb"
+}

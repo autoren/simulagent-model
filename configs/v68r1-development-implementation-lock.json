@@ -1,0 +1,25 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_repair_design_or_implementation": false,
+    "run_SMC2": false,
+    "run_repaired_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_repaired_durable_evaluator": true
+  },
+  "experiment": "v68r1_development_implementation_lock",
+  "implementation": "python/v68r1_posterior_sampling.py",
+  "implementation_audit": "outputs/v68r1-development-screening/implementation-audit.json",
+  "implementation_audit_sha256": "c694acd28c0fe170b3e85aca289d78f4aeb1f272223862be0e8da3cf54853a62",
+  "implementation_auditor": "python/audit_and_freeze_v68r1_repair_implementation.py",
+  "implementation_auditor_sha256": "18509f0936cb862650aa75b8b411253528fe96db789b617647cc6c4121b2894c",
+  "implementation_sha256": "40c0af5b8e3fa683308ff681f6c70802af8c61c50ebe7ab767bbb4ad53c03fd5",
+  "lock_payload_sha256": "26bb946896d2099a9377c3a7b0bae41e7eaa02299d5cdddab22e823c9c4ca9e7",
+  "repair_design_lock": "configs/v68r1-development-repair-design-lock.json",
+  "repair_design_lock_sha256": "05446931e6e8a0ab1f31adeb5897f130eceabe92273d85aeb5f0eddd1e8d8085",
+  "schema_version": "68r1-development-screening",
+  "tests": "python/test_v68r1_posterior_sampling.py",
+  "tests_sha256": "1e27e4f1e8d83dae7685bd3b09732baa575811596a09004ebdd4714d4eae2dd7"
+}

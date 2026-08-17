@@ -1,0 +1,38 @@
+{
+  "attempt": "outputs/v68r2-development-screening/evaluation/attempt.json",
+  "attempt_sha256": "3b242fe0c92e1d35d4f7f932bdc2447baa1a3c33e23b4347059ce969d5cae03f",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V68_V68r1_or_V68r2": false,
+    "preregister_materially_revised_development_family": true,
+    "run_SMC2": false,
+    "run_revised_family_before_new_locks": false,
+    "score_confirmatory_models_under_unchanged_family": false
+  },
+  "evaluator_lock": "configs/v68r2-development-evaluator-lock.json",
+  "evaluator_lock_sha256": "2c121c5f2a3e4d83ac1b552328488d3117205b443bb48e3102dc8f9c90be1bb6",
+  "experiment": "v68r2_development_outcome_lock",
+  "lock_payload_sha256": "1b351bab39e62be5005962b9186d3957dc3595673d98e01f295ee8f5e1225f70",
+  "outcome": {
+    "confirmatory_models_scored": 0,
+    "decision": "stop_unchanged_family_before_any_confirmatory_model_is_scored",
+    "failed_gates": [
+      "minimumExactBAMinusMAPMaterialRegretRecords",
+      "minimumExactBAMinusMAPRootActionDisagreementRecords",
+      "minimumExactBAMinusPosteriorSamplingMaterialRegretRecords",
+      "minimumMaximumNormalizedMAPRegret"
+    ],
+    "maximum_normalized_MAP_regret": 0.0015135820075061503,
+    "passed": false,
+    "records": 59
+  },
+  "outcome_audit": "outputs/v68r2-development-screening/outcome-audit.json",
+  "outcome_audit_sha256": "ce17618a48cdc54808faf31f5675800068c827acdbfa5aae0cdb3d5d4af8e6e9",
+  "record_results": "outputs/v68r2-development-screening/evaluation/record-results.jsonl",
+  "record_results_sha256": "461a1ab62f8d4e5c510dcc22558437425ab3851a50f179c2cdff65cd73a5548f",
+  "result": "outputs/v68r2-development-screening/evaluation/result.json",
+  "result_sha256": "62a7266d54401898037dd8347cdd97ed3757ab7972510272b1dbc4f8cb20e106",
+  "schema_version": "68r2-development-screening"
+}

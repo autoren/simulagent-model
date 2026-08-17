@@ -1,0 +1,111 @@
+{
+  "authorization": {
+    "modify_prior_failures_or_unchanged_artifacts": false,
+    "run_repaired_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_all_point_control_repair": true,
+    "write_and_audit_repaired_evaluator": false
+  },
+  "config": "configs/v68r2-development-point-control-repair.json",
+  "config_payload": {
+    "claimBoundary": {
+      "SMC2": false,
+      "adapterTraining": false,
+      "confirmatoryReplication": false,
+      "developmentOnly": true,
+      "exactBayesAdaptivePlannerChanged": false,
+      "humanData": false,
+      "modelAccess": false,
+      "pointModelControlTotalization": true,
+      "sealedCensusChanged": false
+    },
+    "decisionHierarchy": [
+      "if_all_unchanged_gates_pass_authorize_only_confirmatory_design_preregistration",
+      "if_any_gate_fails_stop_before_confirmatory_scoring",
+      "do_not_change_totalization_or_any_gate_after_the_V68r2_attempt"
+    ],
+    "experiment": "v68r2_all_point_model_controls_off_support_totalization",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "epsilonSmoothOffSupportBranches": "forbidden",
+      "humanData": "forbidden",
+      "modelAccess": "forbidden",
+      "modifyCensusOrGates": "forbidden",
+      "modifyExactBayesAdaptiveOpenLoopOrMyopicControls": "forbidden",
+      "modifyOrRerunPriorFailedEvaluators": "forbidden",
+      "reselectPointModelOnOffSupportObservation": "forbidden",
+      "runSMC2": "forbidden",
+      "scoreConfirmatoryModels": "forbidden"
+    },
+    "repair": {
+      "MAPSelection": "unchanged_first_argmax_static_atom",
+      "epsilonSmoothing": false,
+      "evaluation": "execute_each_total_policy_in_the_unchanged_exact_joint_static_model_and_state_environment",
+      "fallbackResamplesOrReselectsModel": false,
+      "fallbackUsesExactPosteriorForActionSelection": false,
+      "fallbackUsesObservations": false,
+      "offSupportRule": "after_the_triggering_observation_execute_the_first_action_in_the_frozen_per_model_canonical_cycle_for_every_remaining_action",
+      "offSupportTrigger": "selected_point_model_predictive_observation_probability_equals_exact_zero_and_exact_mixture_predictive_probability_is_strictly_positive",
+      "posteriorSamplingSelection": "unchanged_systematic_deterministic_17_point_quadrature_with_offset_one_over_34",
+      "scope": [
+        "MAP_point_model_control",
+        "persistent_posterior_sampling_point_model_control"
+      ],
+      "sourceArrayMutation": false,
+      "supportedHistoryRule": "continue_planning_under_and_updating_the_same_selected_point_model"
+    },
+    "schemaVersion": "68r2-development-screening",
+    "sourceFailedAttemptLock": "configs/v68r1-development-failed-attempt-lock.json",
+    "stageAuthorization": {
+      "auditAndFreezeRepairDesign": true,
+      "runRepairedDevelopmentScreen": false,
+      "scoreConfirmatoryModels": false,
+      "writeAndAuditRepairImplementation": false,
+      "writeAndAuditRepairedEvaluator": false
+    },
+    "unchanged": [
+      "four_development_models",
+      "all_59_sealed_records_and_order",
+      "identity_and_theta_prior",
+      "command_cycles",
+      "horizon_three",
+      "65_and_129_node_exact_Bayes_adaptive_planners",
+      "open_loop_myopic_reward_and_information_only_controls",
+      "return_normalization",
+      "all_19_noncompensatory_gates",
+      "zero_confirmatory_model_firewall"
+    ],
+    "unchangedCensusSeal": "configs/v68-development-census-seal.json",
+    "unchangedDevelopmentDesignLock": "configs/v68-development-design-lock.json",
+    "unchangedImplementationLock": "configs/v68-development-implementation-lock.json",
+    "unchangedV68EvaluatorLock": "configs/v68-development-evaluator-lock.json"
+  },
+  "config_sha256": "ec0020ed863aaa912c7bcfc14f85cbdb0ac1af0611e9e975cb041a72c8644198",
+  "design_audit": "outputs/v68r2-development-screening/design-audit.json",
+  "design_audit_sha256": "10866f5bb4587602642642b2ea4d36d91d95fb4d5dfd7a130c97b8ea6e0214bc",
+  "experiment": "v68r2_development_repair_design_lock",
+  "failed_attempt_lock": "configs/v68r1-development-failed-attempt-lock.json",
+  "failed_attempt_lock_sha256": "5073fb4c89c53fd88cb1a4e982dc71bc9ebb59ad1fb09c314e67576153da0758",
+  "lock_payload_sha256": "5bb670140c31b2e6d9dfec8a6227de8c0cc2620974543a7a6f458c28fdc05fdf",
+  "preregistration": "docs/v68r2-development-point-control-repair-plan.md",
+  "preregistration_sha256": "3c765804641279d4b09aa5b6eb8bd55b1ebdcf209a8f06fc42c02d593b14547e",
+  "schema_version": "68r2-development-screening",
+  "unchanged_artifacts": {
+    "census": {
+      "path": "configs/v68-development-census-seal.json",
+      "sha256": "97399962889490dcccb93bbce105cad38654746a7c9474e4acc35a701bcdc498"
+    },
+    "design": {
+      "path": "configs/v68-development-design-lock.json",
+      "sha256": "74d97d7171d2d8f4c82498d5ef3c0a786477cc31845db929fb1e1179c91dac16"
+    },
+    "evaluator": {
+      "path": "configs/v68-development-evaluator-lock.json",
+      "sha256": "dd23f4929b06b221c4db22f551416bccf37b501d19a3577947689b4d1e7f4b94"
+    },
+    "implementation": {
+      "path": "configs/v68-development-implementation-lock.json",
+      "sha256": "c5d189fa5631f781642a222d263b7d5c53b2fb67fc556ac6134020e12e269ed9"
+    }
+  }
+}

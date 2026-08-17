@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "70-confirmatory-multi-environment",
+  "experiment": "v70_confirmatory_dominant_remapping_multi_environment_replication",
+  "sourcePositiveDevelopmentOutcomeLock": "configs/v69-development-outcome-lock.json",
+  "sourceFeasibilityLock": "configs/v68-source-feasibility-lock.json",
+  "familyLock": "configs/v69-development-implementation-lock.json",
+  "confirmatoryModels": [
+    {
+      "file": "4x3.POMDP",
+      "stratum": "structurally_related",
+      "canonicalActionCycle": ["n", "e", "s", "w"]
+    },
+    {
+      "file": "fully_observable_tmaze2.POMDP",
+      "stratum": "structurally_related",
+      "canonicalActionCycle": ["0", "1", "2", "3"]
+    },
+    {
+      "file": "fully_observable_tmaze5.POMDP",
+      "stratum": "structurally_related",
+      "canonicalActionCycle": ["0", "1", "2", "3"]
+    },
+    {
+      "file": "cheese.95.POMDP",
+      "stratum": "novel",
+      "canonicalActionCycle": ["N0", "E0", "S0", "W0"]
+    },
+    {
+      "file": "cheese.95_nonterminating.POMDP",
+      "stratum": "novel",
+      "canonicalActionCycle": ["N0", "E0", "S0", "W0"]
+    },
+    {
+      "file": "hallway.POMDP",
+      "stratum": "novel",
+      "canonicalActionCycle": ["0", "1", "2", "3", "4"]
+    },
+    {
+      "file": "heavenhell.POMDP",
+      "stratum": "novel",
+      "canonicalActionCycle": ["N", "E", "S", "W"]
+    },
+    {
+      "file": "network.POMDP",
+      "stratum": "novel",
+      "canonicalActionCycle": ["unrestrict", "steady", "restrict", "reboot"]
+    },
+    {
+      "file": "shuttle.POMDP",
+      "stratum": "novel",
+      "canonicalActionCycle": ["TurnAround", "GoForward", "Backup"]
+    }
+  ],
+  "unknownDynamicsFamily": {
+    "inheritExactlyFrom": "V69",
+    "identityNames": [
+      "dominant_forward_cycle_remapping",
+      "dominant_backward_cycle_remapping"
+    ],
+    "identityPrior": [0.5, 0.5],
+    "thetaSupport": [0.6, 0.95],
+    "thetaPrior": "scaled_beta_2_2",
+    "transitionDefinition": "T_identity_theta(command)=theta*T_source(cycle_remapped_command_for_identity)+(1-theta)*T_source(command)",
+    "observationAndReward": "unchanged_pinned_source_arrays"
+  },
+  "publicPrefixCensus": {
+    "depths": [0, 1],
+    "retainEveryReachableActionObservationHistory": true,
+    "minimumProbabilityThreshold": 0.0,
+    "deduplication": false,
+    "selectionOrRejection": false,
+    "truthFields": false,
+    "resourceRule": "estimate_complete_census_and_exact_operation_bounds_before_constructing_or_scoring_but_do_not_drop_any_model"
+  },
+  "exactPlanning": {
+    "horizonActions": 3,
+    "primaryQuadratureNodes": 65,
+    "convergenceQuadratureNodes": 129,
+    "tieTolerance": 1e-12,
+    "tieBreak": "first_action_in_the_frozen_per_model_canonical_cycle"
+  },
+  "controls": {
+    "inheritExactlyFrom": "V69",
+    "pointModelOffSupportRule": "after_an_exact_zero_point_model_observation_repeat_the_first_frozen_canonical_action_for_all_remaining_actions"
+  },
+  "normalization": {
+    "returnScale": "max(1,(maximum_source_reward-minimum_source_reward)*sum_discount_powers_zero_through_two)",
+    "normalizedRegret": "(exact_Bayes_adaptive_value-control_value)/returnScale",
+    "materialNormalizedRegret": 0.005
+  },
+  "confirmatoryGates": {
+    "minimumConfirmatoryModels": 9,
+    "minimumStructurallyRelatedModels": 3,
+    "minimumNovelModels": 6,
+    "minimumCompletedRecordFraction": 1.0,
+    "minimumSourceValidationRate": 1.0,
+    "minimumBeliefNormalizationRate": 1.0,
+    "minimumFiniteMetricRate": 1.0,
+    "maximumPrimaryVsConvergenceNormalizedValueError": 1e-8,
+    "minimumPrimaryActionInConvergenceOptimalSetRate": 1.0,
+    "minimumModelsWithExactBAMAPRootActionDisagreement": 3,
+    "minimumStructurallyRelatedModelsWithExactBAMAPRootActionDisagreement": 1,
+    "minimumNovelModelsWithExactBAMAPRootActionDisagreement": 2,
+    "minimumModelsWithMaterialMAPRegret": 3,
+    "minimumStructurallyRelatedModelsWithMaterialMAPRegret": 1,
+    "minimumNovelModelsWithMaterialMAPRegret": 2,
+    "minimumModelsWithMaterialPosteriorSamplingRegret": 2,
+    "minimumMaximumNormalizedMAPRegret": 0.01,
+    "maximumRecordSelectionOrRejectionCount": 0,
+    "maximumDevelopmentModelsRescored": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumModelForwardPassCount": 0,
+    "maximumAdapterTrainingRunCount": 0
+  },
+  "analysisHierarchy": [
+    "primary_replication_is_model_level_across_all_nine_Tier_A_confirmatory_environments",
+    "record_level_counts_and_effect_distributions_are_secondary_and_cannot_compensate_for_failed_model_level_gates",
+    "structurally_related_and_novel_strata_must_each_pass_their_frozen_subgates",
+    "the_cheese_terminating_nonterminating_pair_is_reported_as_a_separate_Tier_B_stress_comparison_without_pooling_into_an_external_uncertainty_claim",
+    "no_gate_or_threshold_changes_after_any_confirmatory_value_is_computed"
+  ],
+  "decisionHierarchy": [
+    "if_every_confirmatory_gate_passes_claim_multi_environment_replication_for_the_project_authored_V69_family_within_the_pinned_source_suite",
+    "if_any_gate_fails_report_the_complete_negative_or_mixed_confirmatory_result_without_model_dropping_or_gate_revision",
+    "Tier_B_pair_results_never_override_the_Tier_A_primary_decision"
+  ],
+  "claimBoundary": {
+    "TierAProjectAuthoredFamily": true,
+    "TierBExternalSourcePairReportedSeparately": true,
+    "externalUncertaintyFamilyClaim": false,
+    "approximateInference": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  },
+  "firewall": {
+    "scoreConfirmatoryModelsBeforeDesignResourceCensusAndEvaluatorLocks": "forbidden",
+    "dropOrReplaceAnyValidUntouchedModel": "forbidden",
+    "rescoreDevelopmentModels": "forbidden",
+    "changeFamilyCensusHorizonControlsNormalizationOrGates": "forbidden",
+    "mergeTierAAndTierBClaims": "forbidden",
+    "runSMC2": "forbidden",
+    "humanData": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeConfirmatoryDesign": true,
+    "auditAndFreezeResourceFeasibility": false,
+    "constructConfirmatoryCensus": false,
+    "writeAndAuditConfirmatoryEvaluator": false,
+    "runConfirmatoryOutcomes": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "authorization": {
+    "construct_and_seal_development_census": true,
+    "modify_design_or_implementation": false,
+    "run_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_development_evaluator": false
+  },
+  "development_design_lock": "configs/v69-development-design-lock.json",
+  "development_design_lock_sha256": "6c193c8ba9b4cd651c7c4243be874b46fef9aea68d3c593d508a2621b3405278",
+  "experiment": "v69_development_implementation_lock",
+  "implementation": "python/v69_dominant_remapping.py",
+  "implementation_audit": "outputs/v69-development-screening/implementation-audit.json",
+  "implementation_audit_sha256": "63e25accd24ffb5b9538393898016e0105ac29868ebc837f73eac5e430df9507",
+  "implementation_auditor": "python/audit_and_freeze_v69_implementation.py",
+  "implementation_auditor_sha256": "62b85d05907b50a32f2c9dc2442f7c541a5fb1544f3b79383a6108fd9776cd88",
+  "implementation_sha256": "d1b690ddb833f0712d288a6bdca36bfd98e74cc8a78314eac9db757d44f0261b",
+  "lock_payload_sha256": "d7f58c9b58f493db257d305be7877c0f90df7cf94959f4de5c018edc079a406c",
+  "schema_version": "69-development-screening",
+  "tests": "python/test_v69_dominant_remapping.py",
+  "tests_sha256": "6c502050df832ee159a37a02c8969cffea415c0d370f196a720f9356e86b122c"
+}

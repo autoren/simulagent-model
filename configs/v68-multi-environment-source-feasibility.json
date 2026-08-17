@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "68-source-feasibility",
+  "experiment": "v68_multi_environment_source_feasibility",
+  "sourceV67OutcomeLock": "configs/v67-outcome-lock.json",
+  "scientificQuestion": "which_pinned_external_POBAX_models_can_support_a_prospective_multi_environment_replication_without_using_new_policy_or_inference_outcomes_to_select_environments",
+  "externalSource": {
+    "repository": "https://github.com/taodav/pobax.git",
+    "commit": "a5e1d62d14e4efe783885b9d4f19cffa2a568eec",
+    "license": "Apache-2.0",
+    "checkout": "data/v63-external-unknown-dynamics/source-checkout",
+    "modelDirectory": "data/v63-external-unknown-dynamics/source-checkout/pobax/envs/classic/POMDP",
+    "expectedModelCount": 14,
+    "expectedFilesSha256": {
+      "4x3.POMDP": "5ee222917940895738429c68dc2bcb965f348e5257c67f22909e46b9edf7a616",
+      "4x3_nonterminating.POMDP": "0fa62301931960d682b02961ffd38f4dd6b8e8835bc0203f4a12f849c267d6ff",
+      "cheese.95.POMDP": "5974e4bc1851e09ddfee2bdf9bea9c01db5c671f714121129ba880eec952bc61",
+      "cheese.95_nonterminating.POMDP": "fe0536a194591bdb02910721df0416145fe5a44d2412db4b7600533b1a45251b",
+      "fully_observable_tmaze2.POMDP": "71852ff8c317c3825dec6b54a6abe85d3515a1bbc78b9f87931d87c7f9850c99",
+      "fully_observable_tmaze5.POMDP": "d9cc668fef9807bf53a9a26b2149f5eee578c65b79a93f262bed590114cee7c0",
+      "hallway.POMDP": "410637d5f1c7e327671989691a357407e4cb50f59267c445e0798beb6ea5125e",
+      "heavenhell.POMDP": "69115cfae29041049e95406af0d0ed21e833f1fca20d8b50aca6e7965439e99c",
+      "network.POMDP": "5934af458a2e8d21345441697f48003a57069bee75dea6d825168b28f6f3370d",
+      "paint.POMDP": "142d4d969d5080d6641560019d9682adf52545808659601187d090a5e0876ad8",
+      "shuttle.POMDP": "be26842127b1f177d09ea6c74198920ce7665d616ad2f690cf59cafdfc2abb55",
+      "tiger-alt-start.POMDP": "22b4f4313f45f275c8a51415c27ac2d37e93140e64e274f4f92a4c77f78e5768",
+      "tmaze2.POMDP": "5869171a62f27616e8acd05174e485921e0cd93da3708fdac8e10de5fcec7940",
+      "tmaze5.POMDP": "1cb8b99fd91b30ac9b21a4d7f649dc26a3a735d3dd72cd458eb5dd43a78c4b39"
+    }
+  },
+  "parserAudit": {
+    "candidate": "python/v68_cassandra_pomdp.py",
+    "tests": "python/test_v68_cassandra_pomdp.py",
+    "reference": "the_POMDPFile_parser_class_extracted_from_the_pinned_POBAX_source_without_importing_optional_runtime_dependencies",
+    "requiredArrayParity": [
+      "initial",
+      "transition",
+      "observation",
+      "reward"
+    ],
+    "requiredMetadataParity": [
+      "states",
+      "actions",
+      "observations",
+      "discount"
+    ],
+    "expectedParserParityRate": 1.0,
+    "parserWrittenBeforeSourceAudit": true,
+    "policyValueEIGSMC2OrRewardPlanningExecutionAllowed": false
+  },
+  "prospectiveRoles": {
+    "developmentPreviouslyExposed": [
+      "4x3_nonterminating.POMDP",
+      "tiger-alt-start.POMDP",
+      "tmaze2.POMDP",
+      "tmaze5.POMDP"
+    ],
+    "confirmatoryStructurallyRelatedButOutcomeUntouched": [
+      "4x3.POMDP",
+      "fully_observable_tmaze2.POMDP",
+      "fully_observable_tmaze5.POMDP"
+    ],
+    "confirmatoryNovelAndOutcomeUntouched": [
+      "cheese.95.POMDP",
+      "cheese.95_nonterminating.POMDP",
+      "hallway.POMDP",
+      "heavenhell.POMDP",
+      "network.POMDP",
+      "shuttle.POMDP"
+    ],
+    "sourceDefectExclusion": [
+      "paint.POMDP"
+    ],
+    "assignmentRule": "prior_project_use_only_not_any_new_policy_value_information_gain_regret_or_approximate_inference_result",
+    "retainEveryValidUntouchedModel": true,
+    "futureResourceDeferralRule": "may_only_use_prospectively_frozen_state_observation_action_and_estimated_operation_bounds_not_policy_outcomes"
+  },
+  "sourceDefectRule": {
+    "requiredValidation": [
+      "initial_normalized",
+      "transition_normalized",
+      "observation_normalized",
+      "finite_reward_and_discount"
+    ],
+    "expectedExcludedModel": "paint.POMDP",
+    "expectedFailedCheck": "observation_normalized",
+    "knownSourceCause": "the_terminal_state_observation_row_retains_NBL_mass_from_an_earlier_wildcard_and_then_adds_terminal_mass_in_the_pinned_POBAX_parser",
+    "repairOrRenormalizeForbidden": true,
+    "excludeBeforeAnyPolicyOutcome": true
+  },
+  "replicationTiersToDesignAfterThisAudit": {
+    "tierA": {
+      "name": "cross_environment_project_authored_command_channel_uncertainty",
+      "purpose": "test_the_same_static_unknown_command_channel_family_across_valid_external_models_with_three_four_and_five_actions",
+      "externalClaimBoundary": "the_environment_arrays_are_external_but_the_unknown_command_channel_family_remains_project_authored"
+    },
+    "tierB": {
+      "name": "externally_supplied_model_identity_uncertainty",
+      "frozenPair": [
+        "cheese.95.POMDP",
+        "cheese.95_nonterminating.POMDP"
+      ],
+      "selectionReason": "the_pinned_files_have_matching_state_action_and_observation_labels_and_differ_in_external_termination_dynamics",
+      "purpose": "separate_environment_replication_from_an_uncertainty_family_whose_model_identity_is_supplied_by_external_source_files",
+      "noPolicyOutcomeUsedToSelectPair": true
+    }
+  },
+  "nextStageDesignRequirements": {
+    "developmentOnlyOutcomeScreening": true,
+    "confirmatoryModelsRemainOutcomeUntouchedUntilFullDesignImplementationAndPopulationLocks": true,
+    "exactShortHorizonReferenceRequired": true,
+    "fullSuitePrimaryReportingRequired": true,
+    "environmentLevelReportingRequired": true,
+    "worstEnvironmentGateRequired": true,
+    "posteriorSensitiveStratumMustBeDefinedFromExactOracleBeforeAnySMC2Scoring": true,
+    "fullGeneratedPopulationRetained": true,
+    "MAPFirstRepeatPosteriorSamplingAndOpenLoopControlsRequired": true,
+    "materialProspectiveSeparationRequiredForAtLeastOnePredeclaredStratum": true,
+    "tierAAndTierBClaimsMustRemainSeparate": true
+  },
+  "claimBoundary": {
+    "pinnedExternalSourceInventory": true,
+    "independentParserParity": true,
+    "prospectiveProvenanceSplit": true,
+    "sourceNormalizationAudit": true,
+    "policyEvaluation": false,
+    "expectedInformationGainEvaluation": false,
+    "rewardPlanningEvaluation": false,
+    "SMC2Evaluation": false,
+    "multiEnvironmentReplicationResult": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  },
+  "firewall": {
+    "runPolicyValueOnConfirmatoryModels": "forbidden",
+    "runEIGOnConfirmatoryModels": "forbidden",
+    "runSMC2OnConfirmatoryModels": "forbidden",
+    "repairOrNormalizeExternalSourceDefect": "forbidden",
+    "dropValidUntouchedModelsBasedOnOutcomes": "forbidden",
+    "mergeTierAAndTierBClaims": "forbidden",
+    "humanData": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeSourceFeasibility": true,
+    "writeDevelopmentOnlyExactInfrastructure": false,
+    "runDevelopmentOnlyOutcomeScreening": false,
+    "runConfirmatoryOutcomes": false,
+    "runSMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

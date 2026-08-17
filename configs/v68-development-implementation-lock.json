@@ -1,0 +1,28 @@
+{
+  "analytic_fixture_pass_rate": 1.0,
+  "authorization": {
+    "adapter_training": false,
+    "construct_and_seal_complete_development_census": true,
+    "human_data": false,
+    "model_access": false,
+    "modify_design_or_exact_infrastructure": false,
+    "run_SMC2": false,
+    "run_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_development_evaluator": false
+  },
+  "development_design_lock": "configs/v68-development-design-lock.json",
+  "development_design_lock_sha256": "74d97d7171d2d8f4c82498d5ef3c0a786477cc31845db929fb1e1179c91dac16",
+  "experiment": "v68_development_implementation_lock",
+  "implementation": "python/v68_multi_environment_exact.py",
+  "implementation_audit": "outputs/v68-development-screening/implementation-audit.json",
+  "implementation_audit_sha256": "96b80cf1751e1585901ed1d3442e29989bd54b18bdab57622244b9793315804c",
+  "implementation_auditor": "python/audit_and_freeze_v68_development_implementation.py",
+  "implementation_auditor_sha256": "1e4582e8daf676a77fb3471f38df28fa83e317e8aeebd42f01a6c33b3285589c",
+  "implementation_sha256": "210279663ad2808d2624ae384f3cc6c4f221f9562a63d39f672857bc950a899e",
+  "lock_payload_sha256": "846125c00a4b1bfdc71cd0132316807e7cb0cfd564cbb6ab30bf42d0a16ecc34",
+  "mutant_kill_rate": 1.0,
+  "schema_version": "68-development-screening",
+  "tests": "python/test_v68_multi_environment_exact.py",
+  "tests_sha256": "4535ae9112624c782b2f1a912c5d16124d4524321c534298d2c1397abb8f892a"
+}

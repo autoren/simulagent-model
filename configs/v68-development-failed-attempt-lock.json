@@ -1,0 +1,26 @@
+{
+  "aggregate_result_persisted": false,
+  "attempt": "outputs/v68-development-screening/evaluation/attempt.json",
+  "attempt_sha256": "2c5cc2b95d00cc2224c0df94f4246753effb9f56284d62c6280abaebd4bef550",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_failed_V68_evaluator": false,
+    "preregister_off_support_totalization_repair": true,
+    "run_SMC2": false,
+    "run_repaired_development_screen_before_new_locks": false,
+    "score_confirmatory_models": false
+  },
+  "confirmatory_models_scored": 0,
+  "evaluator_lock": "configs/v68-development-evaluator-lock.json",
+  "evaluator_lock_sha256": "dd23f4929b06b221c4db22f551416bccf37b501d19a3577947689b4d1e7f4b94",
+  "experiment": "v68_development_failed_attempt_lock",
+  "failed_attempt_audit": "outputs/v68-development-screening/failed-attempt-audit.json",
+  "failed_attempt_audit_sha256": "6444b8f7e33452888c1b76c2cccac1db2e243aee2d18ada5c265fe3aa799ab35",
+  "failure": "outputs/v68-development-screening/evaluation/failure.json",
+  "failure_sha256": "002e14c4200a5313472d84049cdaf7422b0f9b1e3801b6ef76b2f0bade7db2a3",
+  "lock_payload_sha256": "0dcdbf3b580d7f4be8d12ccb24e7ea1a75b47683ca98fbdd86fe7d1fc77c1d44",
+  "record_results_persisted": 0,
+  "schema_version": "68-development-screening"
+}

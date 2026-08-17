@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "modify_design_implementation_or_census": false,
+    "run_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_durable_development_evaluator": true
+  },
+  "census": "outputs/v69-development-screening/census.jsonl",
+  "census_audit": "outputs/v69-development-screening/census-audit.json",
+  "census_audit_sha256": "6ae09745bf375d8cecdc29e93d61659051d3c53048231f4d103f86b2f79ed32a",
+  "census_sha256": "b47b62b528716ccb29bcff9532b53ec5e568b1d4d9564a2035dc48380132564b",
+  "confirmatory_models_scored": 0,
+  "depth_counts": {
+    "0": 4,
+    "1": 55
+  },
+  "development_design_lock": "configs/v69-development-design-lock.json",
+  "development_design_lock_sha256": "6c193c8ba9b4cd651c7c4243be874b46fef9aea68d3c593d508a2621b3405278",
+  "experiment": "v69_development_census_seal",
+  "implementation_lock": "configs/v69-development-implementation-lock.json",
+  "implementation_lock_sha256": "3a36f9be9f83407f4be759a5bc5b381c8d50cad8b577fee60ffbb1f990ef4758",
+  "lock_payload_sha256": "dfd8319db871fd4e94b91a38dbb237aaa2157792b9e2a152ac93fc55326ebca6",
+  "model_counts": {
+    "4x3_nonterminating.POMDP": 25,
+    "tiger-alt-start.POMDP": 10,
+    "tmaze2.POMDP": 12,
+    "tmaze5.POMDP": 12
+  },
+  "record_count": 59,
+  "record_ids_sha256": "db70e3e03f9a8dca3c9dd6af7d9687d42916c26e25bfab81fb58548d6aca8bd9",
+  "schema_version": "69-development-screening",
+  "selection_rejection_or_replacement_count": 0
+}

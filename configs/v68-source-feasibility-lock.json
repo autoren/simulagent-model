@@ -1,0 +1,46 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_v62_through_v67": false,
+    "modify_v68_source_inventory_or_roles": false,
+    "repair_or_normalize_paint_source": false,
+    "run_confirmatory_policy_EIG_regret_or_SMC2_outcomes": false,
+    "run_development_only_outcome_screening": false,
+    "write_and_audit_development_only_exact_infrastructure": true
+  },
+  "config": "configs/v68-multi-environment-source-feasibility.json",
+  "config_sha256": "f2ab6c7aa447989e536db9a813d10399f60fdbcdc3f8135abaecdbf3ee737f11",
+  "experiment": "v68_source_feasibility_lock",
+  "external_uncertainty_pair": [
+    "cheese.95.POMDP",
+    "cheese.95_nonterminating.POMDP"
+  ],
+  "lock_payload_sha256": "009aa6d8ca130d08b1ab10032c229aa1041d002233cdef0336a2b7dbe9a692e4",
+  "parser": "python/v68_cassandra_pomdp.py",
+  "parser_sha256": "0e7a61eed8ce185fac97ff6154c6375c5347996c68c43fb4114a72f08f7497ef",
+  "parser_tests": "python/test_v68_cassandra_pomdp.py",
+  "parser_tests_sha256": "1dacc8b338fbb7015875c1857f4adf494789d8df5d0f4a0282ea6cc3c8f287a6",
+  "preregistration": "docs/v68-multi-environment-source-feasibility-plan.md",
+  "preregistration_sha256": "4f8aed3b69b9c22aed95875320e3ac97cc5fac1a850c6f074200930ead5d1ad6",
+  "prospective_role_census": {
+    "confirmatoryNovelAndOutcomeUntouched": 6,
+    "confirmatoryStructurallyRelatedButOutcomeUntouched": 3,
+    "developmentPreviouslyExposed": 4,
+    "sourceDefectExclusion": 1
+  },
+  "schema_version": "68-source-feasibility",
+  "source_audit": "outputs/v68-multi-environment-source-feasibility/source-audit.json",
+  "source_audit_sha256": "5bb13cb07d43e85fbb910a59a70f2589ec1f9efacd2de6db3a224a7206708ba9",
+  "source_auditor": "python/audit_and_freeze_v68_source_feasibility.py",
+  "source_auditor_sha256": "b8219cade1cb4dfc7ce6363803b37407d3bd8e954b10d8269c8a9f51f9ee8c5e",
+  "source_defect_exclusions": [
+    "paint.POMDP"
+  ],
+  "source_inventory": "outputs/v68-multi-environment-source-feasibility/source-inventory.json",
+  "source_inventory_sha256": "d35afe7914155ed3d52c62b70c8e6a53e01c7abf310249e86a6ae1897f0a3871",
+  "source_v67_outcome_lock": "configs/v67-outcome-lock.json",
+  "source_v67_outcome_lock_sha256": "25f7a0b2588ec70f8107da38737c1cdea79fb079e660d54b81cdb80aeb633097",
+  "valid_source_models": 13
+}

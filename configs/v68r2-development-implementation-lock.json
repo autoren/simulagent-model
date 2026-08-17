@@ -1,0 +1,21 @@
+{
+  "authorization": {
+    "modify_repair_design_or_implementation": false,
+    "run_repaired_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_repaired_durable_evaluator": true
+  },
+  "experiment": "v68r2_development_implementation_lock",
+  "implementation": "python/v68r2_point_model_controls.py",
+  "implementation_audit": "outputs/v68r2-development-screening/implementation-audit.json",
+  "implementation_audit_sha256": "5f0488f3992112fa22ced7f610db331c183bee47078e09c12d2d820af4cad79f",
+  "implementation_auditor": "python/audit_and_freeze_v68r2_repair_implementation.py",
+  "implementation_auditor_sha256": "bd31ba383ff9c8c530ac702d774ffeab3e3498b7b49c45d5546435df871dc2e8",
+  "implementation_sha256": "522debccc2f3d5dfe206a9138abe28e9fe7143ab882becd40251a66f5dbdbf43",
+  "lock_payload_sha256": "b235ae5d3d58e89188fdd0de39f33fb9c69ff1c22de41311181e90d2dc601005",
+  "repair_design_lock": "configs/v68r2-development-repair-design-lock.json",
+  "repair_design_lock_sha256": "eb98d4ba011e5fe41d8d4976b2921b83902165092af031ce047a0afbd83dd0b2",
+  "schema_version": "68r2-development-screening",
+  "tests": "python/test_v68r2_point_model_controls.py",
+  "tests_sha256": "8914678c150ecbfa1fc83cff127f0bcaed0e04f0cc06bb634c1bc3e941e9cc86"
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "68r1-development-screening",
+  "experiment": "v68r1_posterior_sampling_off_support_totalization_repair",
+  "sourceFailedAttemptLock": "configs/v68-development-failed-attempt-lock.json",
+  "unchangedDevelopmentDesignLock": "configs/v68-development-design-lock.json",
+  "unchangedImplementationLock": "configs/v68-development-implementation-lock.json",
+  "unchangedCensusSeal": "configs/v68-development-census-seal.json",
+  "failure": {
+    "class": "partial_posterior_sampled_point_model_policy",
+    "trigger": "an_observation_has_zero_probability_under_the_sampled_point_model_but_positive_probability_under_the_full_exact_evaluation_mixture",
+    "failedEvaluatorModifiedOrRerun": false,
+    "failedAttemptProducedRecordResults": false,
+    "confirmatoryModelsScored": 0
+  },
+  "repair": {
+    "scope": "persistent_posterior_sampling_control_only",
+    "sampleSelection": "unchanged_systematic_deterministic_17_point_quadrature_with_offset_one_over_34",
+    "supportedHistoryRule": "continue_planning_under_and_updating_the_same_sampled_static_model",
+    "offSupportTrigger": "sampled_model_predictive_observation_probability_equals_exact_zero_and_exact_mixture_predictive_probability_is_strictly_positive",
+    "offSupportRule": "after_the_triggering_observation_execute_the_first_action_in_the_frozen_per_model_canonical_cycle_for_every_remaining_action",
+    "fallbackUsesObservations": false,
+    "fallbackResamplesModel": false,
+    "fallbackUsesExactPosteriorForActionSelection": false,
+    "evaluation": "execute_the_total_policy_in_the_unchanged_exact_joint_static_model_and_state_environment",
+    "diagnostics": [
+      "off_support_branch_count",
+      "expected_off_support_entry_probability",
+      "sampled_atom_root_action_distribution"
+    ],
+    "epsilonSmoothing": false,
+    "sourceArrayMutation": false
+  },
+  "unchanged": [
+    "four_development_models",
+    "all_59_sealed_records_and_order",
+    "identity_and_theta_prior",
+    "command_cycles",
+    "horizon_three",
+    "65_and_129_node_exact_Bayes_adaptive_planners",
+    "MAP_open_loop_myopic_reward_and_information_only_controls",
+    "return_normalization",
+    "all_19_noncompensatory_gates",
+    "zero_confirmatory_model_firewall"
+  ],
+  "decisionHierarchy": [
+    "if_the_repaired_evaluator_passes_all_unchanged_gates_authorize_only_confirmatory_design_preregistration",
+    "if_the_posterior_sampling_gate_or_any_other_gate_fails_stop_before_confirmatory_scoring",
+    "do_not_change_the_fallback_or_any_gate_after_the_repaired_attempt",
+    "do_not_interpret_fallback_performance_as_a_claim_about_any_other_posterior_sampling_totalization"
+  ],
+  "claimBoundary": {
+    "developmentOnly": true,
+    "posteriorSamplingControlTotalization": true,
+    "exactBayesAdaptivePlannerChanged": false,
+    "MAPControlChanged": false,
+    "sealedCensusChanged": false,
+    "confirmatoryReplication": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  },
+  "firewall": {
+    "modifyOrRerunFailedV68Evaluator": "forbidden",
+    "modifyExactBayesAdaptiveMAPOpenLoopOrMyopicControls": "forbidden",
+    "modifyCensusOrGates": "forbidden",
+    "scoreConfirmatoryModels": "forbidden",
+    "epsilonSmoothOffSupportBranches": "forbidden",
+    "resampleModelOnOffSupportObservation": "forbidden",
+    "runSMC2": "forbidden",
+    "humanData": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeRepairDesign": true,
+    "writeAndAuditRepairImplementation": false,
+    "writeAndAuditRepairedEvaluator": false,
+    "runRepairedDevelopmentScreen": false,
+    "scoreConfirmatoryModels": false,
+    "runSMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

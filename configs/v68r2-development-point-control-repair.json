@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "68r2-development-screening",
+  "experiment": "v68r2_all_point_model_controls_off_support_totalization",
+  "sourceFailedAttemptLock": "configs/v68r1-development-failed-attempt-lock.json",
+  "unchangedDevelopmentDesignLock": "configs/v68-development-design-lock.json",
+  "unchangedImplementationLock": "configs/v68-development-implementation-lock.json",
+  "unchangedCensusSeal": "configs/v68-development-census-seal.json",
+  "unchangedV68EvaluatorLock": "configs/v68-development-evaluator-lock.json",
+  "repair": {
+    "scope": [
+      "MAP_point_model_control",
+      "persistent_posterior_sampling_point_model_control"
+    ],
+    "supportedHistoryRule": "continue_planning_under_and_updating_the_same_selected_point_model",
+    "offSupportTrigger": "selected_point_model_predictive_observation_probability_equals_exact_zero_and_exact_mixture_predictive_probability_is_strictly_positive",
+    "offSupportRule": "after_the_triggering_observation_execute_the_first_action_in_the_frozen_per_model_canonical_cycle_for_every_remaining_action",
+    "fallbackUsesObservations": false,
+    "fallbackResamplesOrReselectsModel": false,
+    "fallbackUsesExactPosteriorForActionSelection": false,
+    "MAPSelection": "unchanged_first_argmax_static_atom",
+    "posteriorSamplingSelection": "unchanged_systematic_deterministic_17_point_quadrature_with_offset_one_over_34",
+    "evaluation": "execute_each_total_policy_in_the_unchanged_exact_joint_static_model_and_state_environment",
+    "epsilonSmoothing": false,
+    "sourceArrayMutation": false
+  },
+  "unchanged": [
+    "four_development_models",
+    "all_59_sealed_records_and_order",
+    "identity_and_theta_prior",
+    "command_cycles",
+    "horizon_three",
+    "65_and_129_node_exact_Bayes_adaptive_planners",
+    "open_loop_myopic_reward_and_information_only_controls",
+    "return_normalization",
+    "all_19_noncompensatory_gates",
+    "zero_confirmatory_model_firewall"
+  ],
+  "decisionHierarchy": [
+    "if_all_unchanged_gates_pass_authorize_only_confirmatory_design_preregistration",
+    "if_any_gate_fails_stop_before_confirmatory_scoring",
+    "do_not_change_totalization_or_any_gate_after_the_V68r2_attempt"
+  ],
+  "claimBoundary": {
+    "developmentOnly": true,
+    "pointModelControlTotalization": true,
+    "exactBayesAdaptivePlannerChanged": false,
+    "sealedCensusChanged": false,
+    "confirmatoryReplication": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  },
+  "firewall": {
+    "modifyOrRerunPriorFailedEvaluators": "forbidden",
+    "modifyExactBayesAdaptiveOpenLoopOrMyopicControls": "forbidden",
+    "modifyCensusOrGates": "forbidden",
+    "scoreConfirmatoryModels": "forbidden",
+    "epsilonSmoothOffSupportBranches": "forbidden",
+    "reselectPointModelOnOffSupportObservation": "forbidden",
+    "runSMC2": "forbidden",
+    "humanData": "forbidden",
+    "modelAccess": "forbidden",
+    "adapterTraining": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeRepairDesign": true,
+    "writeAndAuditRepairImplementation": false,
+    "writeAndAuditRepairedEvaluator": false,
+    "runRepairedDevelopmentScreen": false,
+    "scoreConfirmatoryModels": false
+  }
+}

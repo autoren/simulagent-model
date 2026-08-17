@@ -1,0 +1,208 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "construct_development_census": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_source_inventory_or_development_design": false,
+    "run_SMC2": false,
+    "run_development_screen": false,
+    "score_confirmatory_models": false,
+    "write_and_audit_development_evaluator": false,
+    "write_and_audit_exact_infrastructure": true
+  },
+  "config": "configs/v68-development-screening.json",
+  "config_payload": {
+    "claimBoundary": {
+      "SMC2": false,
+      "adapterTraining": false,
+      "approximateInference": false,
+      "confirmatoryReplication": false,
+      "developmentOnly": true,
+      "exactOracleSensitivityScreen": true,
+      "externalUncertaintyFamily": false,
+      "humanData": false,
+      "modelAccess": false,
+      "previouslyExposedModelsOnly": true
+    },
+    "controls": {
+      "informationOnly": "replan_by_one_step_static_latent_EIG_after_each_observation",
+      "map": "plan_under_the_tie_broken_maximum_posterior_quadrature_atom_then_execute_that_policy_in_the_exact_joint_environment",
+      "myopicReward": "replan_by_one_step_expected_reward_after_each_observation",
+      "openLoop": "best_complete_length_three_action_sequence_evaluated_in_the_exact_joint_environment_without_observation_adaptation",
+      "posteriorSampling": "systematic_deterministic_17_point_quadrature_of_persistent_single_model_policies_with_offset_one_over_34"
+    },
+    "decisionHierarchy": [
+      "if_all_gates_pass_freeze_the_unchanged_family_census_rule_horizon_controls_normalization_and_materiality_threshold_for_confirmatory_design",
+      "if_exact_Bayes_adaptive_and_MAP_do_not_separate_materially_stop_without_scoring_any_confirmatory_model",
+      "a_failed_development_screen_may_authorize_only_a_new_prospectively_registered_family_revision_not_post_hoc_environment_selection",
+      "do_not_use_development_effect_sizes_to_change_the_frozen_materiality_threshold",
+      "do_not_claim_multi_environment_replication_from_a_development_screen"
+    ],
+    "developmentModels": [
+      {
+        "canonicalActionCycle": [
+          "n",
+          "e",
+          "s",
+          "w"
+        ],
+        "file": "4x3_nonterminating.POMDP",
+        "priorProjectExposure": [
+          "V64",
+          "V65",
+          "V66",
+          "V67"
+        ]
+      },
+      {
+        "canonicalActionCycle": [
+          "listen",
+          "open-left",
+          "open-right"
+        ],
+        "file": "tiger-alt-start.POMDP",
+        "priorProjectExposure": [
+          "V62",
+          "V63"
+        ]
+      },
+      {
+        "canonicalActionCycle": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "file": "tmaze2.POMDP",
+        "priorProjectExposure": [
+          "V62"
+        ]
+      },
+      {
+        "canonicalActionCycle": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "file": "tmaze5.POMDP",
+        "priorProjectExposure": [
+          "V62"
+        ]
+      }
+    ],
+    "exactPlanning": {
+      "convergenceQuadratureNodes": 129,
+      "discount": "use_each_pinned_source_discount",
+      "horizonActions": 3,
+      "planner": "exact_finite_horizon_Bellman_recursion_over_joint_persistent_identity_theta_and_source_state_belief",
+      "primaryQuadratureNodes": 65,
+      "rewardTiming": "source_reward_for_action_current_state_successor",
+      "terminalHandling": "retain_the_pinned_absorbing_transitions_without_early_truncation_inside_the_three_action_return",
+      "tieBreak": "first_action_in_the_frozen_per_model_canonical_cycle",
+      "tieTolerance": 1e-12
+    },
+    "experiment": "v68_development_only_exact_sensitivity_screening",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "changeFamilyAfterDevelopmentOutcomes": "forbidden",
+      "changeGatesAfterDevelopmentOutcomes": "forbidden",
+      "dropReachableDevelopmentRecords": "forbidden",
+      "humanData": "forbidden",
+      "mergeTierAAndTierBClaims": "forbidden",
+      "modelAccess": "forbidden",
+      "runSMC2": "forbidden",
+      "scoreConfirmatoryModels": "forbidden"
+    },
+    "gates": {
+      "materialNormalizedRegret": 0.005,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumConfirmatoryModelsScored": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumPrimaryVsConvergenceNormalizedValueError": 1e-08,
+      "maximumRecordSelectionOrRejectionCount": 0,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumCompletedRecordFraction": 1.0,
+      "minimumDevelopmentModels": 4,
+      "minimumExactBAMinusMAPMaterialRegretRecords": 2,
+      "minimumExactBAMinusMAPRootActionDisagreementRecords": 3,
+      "minimumExactBAMinusOpenLoopMaterialRegretRecords": 2,
+      "minimumExactBAMinusPosteriorSamplingMaterialRegretRecords": 1,
+      "minimumFiniteMetricRate": 1.0,
+      "minimumMaximumNormalizedMAPRegret": 0.01,
+      "minimumPrimaryActionInConvergenceOptimalSetRate": 1.0,
+      "minimumRetainedRecords": 20,
+      "minimumSourceValidationRate": 1.0
+    },
+    "normalization": {
+      "normalizedRegret": "(exact_Bayes_adaptive_value-control_value)/returnScale",
+      "rationale": "freeze_one_dimensionless_materiality_scale_before_development_results_across_different_reward_units",
+      "returnScale": "max(1,(maximum_source_reward-minimum_source_reward)*sum_discount_powers_zero_through_two)"
+    },
+    "publicPrefixCensus": {
+      "deduplication": false,
+      "depthZero": "one_empty_history_per_development_model",
+      "depths": [
+        0,
+        1
+      ],
+      "expansion": "every_canonical_action_cross_every_strictly_positive_source_observation",
+      "minimumProbabilityThreshold": 0.0,
+      "retainEveryReachableActionObservationHistory": true,
+      "selectionOrRejection": false,
+      "truthFields": false
+    },
+    "schemaVersion": "68-development-screening",
+    "scientificQuestion": "does_the_unchanged_V64_static_command_channel_family_create_prospectively_material_Bayes_adaptive_reward_decisions_on_previously_exposed_development_environments_before_any_confirmatory_model_is_scored",
+    "sourceFeasibilityLock": "configs/v68-source-feasibility-lock.json",
+    "stageAuthorization": {
+      "adapterTraining": false,
+      "auditAndFreezeDevelopmentDesign": true,
+      "constructDevelopmentCensus": false,
+      "humanData": false,
+      "modelAccess": false,
+      "runDevelopmentScreen": false,
+      "runSMC2": false,
+      "scoreConfirmatoryModels": false,
+      "writeAndAuditDevelopmentEvaluator": false,
+      "writeAndAuditExactInfrastructure": false
+    },
+    "unknownDynamicsFamily": {
+      "commandChannelLayerProjectAuthored": true,
+      "identityNames": [
+        "forward_cycle_failure",
+        "backward_cycle_failure"
+      ],
+      "identityPrior": [
+        0.5,
+        0.5
+      ],
+      "inheritParametersFrom": "V64",
+      "initialBelief": "identity_theta_prior_times_the_pinned_source_start_distribution_with_no_project_authored_reset_observation",
+      "nuisanceLatent": "source_state",
+      "observationAndReward": "unchanged_pinned_source_arrays",
+      "staticWithinTask": [
+        "cycle_failure_identity",
+        "theta"
+      ],
+      "thetaPrior": "scaled_beta_2_2",
+      "thetaSupport": [
+        0.6,
+        0.95
+      ],
+      "transitionDefinition": "T_identity_theta(command)=theta*T_source(command)+(1-theta)*T_source(adjacent_command_selected_by_the_persistent_forward_or_backward_cycle_identity)"
+    }
+  },
+  "config_sha256": "1862ab9fc6a79f012094887f6f57cac5ff18a2f1698d1688fb422fa79363bad0",
+  "design_audit": "outputs/v68-development-screening/design-audit.json",
+  "design_audit_sha256": "5b43af3c48e756501eddf621344155e415fe24995cb08ffc79c28b2438cb48da",
+  "experiment": "v68_development_design_lock",
+  "lock_payload_sha256": "b0a6fc8603587ff58e651d56c179b3d3a2e8f2f97d1e83cf14d498267ea2fc7f",
+  "preregistration": "docs/v68-development-screening-plan.md",
+  "preregistration_sha256": "3acf1e3f2f4a7822ba1c214018a39715a90bf00d418094dfba0bb921825afcd2",
+  "schema_version": "68-development-screening",
+  "source_feasibility_lock": "configs/v68-source-feasibility-lock.json",
+  "source_feasibility_lock_sha256": "80fab1fb24686bd8af1089382b4a0e197ca5512ec1fa0fd9b15726c6b68816dc"
+}

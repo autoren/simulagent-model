@@ -1,0 +1,34 @@
+{
+  "attempt": "outputs/v69-development-screening/evaluation/attempt.json",
+  "attempt_sha256": "7bdabe4754812b5e5547c07d178292785188d684022b62fb043aac41d1b371ae",
+  "authorization": {
+    "adapter_training": false,
+    "construct_confirmatory_census_before_design_lock": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V69": false,
+    "preregister_confirmatory_multi_environment_design": true,
+    "run_SMC2": false,
+    "score_confirmatory_models_before_all_new_locks": false
+  },
+  "evaluator_lock": "configs/v69-development-evaluator-lock.json",
+  "evaluator_lock_sha256": "27edaecc44215bc2ae91abb326dab3c83dc52b0281ab752323344196215fdb5b",
+  "experiment": "v69_development_outcome_lock",
+  "lock_payload_sha256": "c7d6f0cec4c549a0f4709e8dae97b7ca4f5b98ce5234e62824692bc045a50273",
+  "outcome": {
+    "confirmatory_models_scored": 0,
+    "decision": "authorize_preregistration_of_confirmatory_multi_environment_design_only",
+    "material_MAP_regret_records": 8,
+    "maximum_normalized_MAP_regret": 0.027595609725981726,
+    "passed": true,
+    "records": 59,
+    "root_action_disagreements": 8
+  },
+  "outcome_audit": "outputs/v69-development-screening/outcome-audit.json",
+  "outcome_audit_sha256": "e835de7db58be867edaa053be4adc362463e1f64fd4599b47fc00226bea79a5d",
+  "record_results": "outputs/v69-development-screening/evaluation/record-results.jsonl",
+  "record_results_sha256": "d8519a9615b42bee2a0ce769132099a90bb785d94af6ce4467550941c0c563d6",
+  "result": "outputs/v69-development-screening/evaluation/result.json",
+  "result_sha256": "c3197ff13bcc5432fe0b402fcb342600aa43ef414012e10327910a361a5fb1b7",
+  "schema_version": "69-development-screening"
+}
