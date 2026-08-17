@@ -7,7 +7,7 @@ from sparse language-mediated observations and interventions, a reusable, uncert
 executable model of how its environment changes—and transfer that model across mechanics and
 language while retaining enough structure to diagnose and verify its reasoning?
 
-## Status after V64 (2026-08-16)
+## Status after V70 (2026-08-17)
 
 The original staged core is now implemented through bounded verification. V50 established exact
 history-dependent belief filtering; V53r2 calibrated continuous-parameter SMC² against exact
@@ -64,7 +64,7 @@ and SBC, access, one-shot, source-binding, and truth-firewall checks all passed.
 external benchmark and exact acquisition reference only. It does not yet establish that the
 deployed approximate posterior preserves acquisition decisions.
 
-## Next experimental direction
+## External inference-to-confirmation sequence
 
 V65r1 attempted the paired SMC²-to-exact acquisition-portability test after prospectively sealing 48
 public histories and freezing a Rao–Blackwellized acquisition repair. Its sole immutable evaluation
@@ -121,12 +121,51 @@ pinned family and horizon. V67 verifies archived policy execution, not the V66 o
 and remains posterior-expected bounded model checking rather than a safety property or
 infinite-horizon proof.
 
-The next direction is a prospectively fixed multi-environment external replication across POMDPs
-with different observation structures, reward geometries, and terminal behavior. It should reuse
-one frozen unknown-dynamics construction and one evaluation pipeline across environments, include
-environment-level holdouts, and require the same exact-reference, SMC² calibration, acquisition,
-reward-decision, and independent-verification gates. Approximate longer-horizon scaling should come
-after family-level replication. The V58 language branch remains paused until real independent
+V68 then screened the unchanged V64 command-channel uncertainty family for exact decision
+sensitivity on 59 records from four previously exposed development models. Its first attempt stopped
+before persisting any result when a posterior-sampling point policy encountered an observation with
+zero probability under its selected model but positive probability under the full mixture. V68r1
+prospectively totalized that control and then exposed the same mathematical partiality in the MAP
+point policy, again before any record result or confirmatory-model access. V68r2 locked one common,
+non-smoothing totalization rule for both point controls and completed the full development census.
+
+V68r2 was a valid negative result. Exact Bayes-adaptive and MAP root actions disagreed on zero
+records, neither MAP nor posterior sampling had a material-regret record, and maximum normalized
+MAP regret was `0.00151`, below the frozen `0.01` gate. The family stopped without scoring any
+confirmatory model. The negative outcome motivated a materially different dominant latent
+action-remapping family, which V69 preregistered and evaluated only on the same four exposed models.
+V69 passed all development gates: it produced eight BA/MAP root-action disagreements, eight
+material MAP-regret records, sixteen material posterior-sampling records, and maximum normalized
+MAP regret `0.0276`. It authorized only prospective confirmatory locking; no holdout was scored.
+
+V70 then applied the unchanged V69 family and frozen reporting hierarchy to a sealed census of 244
+records from nine previously untouched, externally sourced POMDP base models. The single evaluation
+retained every record and passed all 22 gates. Four models met the paired action-disagreement and
+material-MAP-regret criterion, where three were required; the qualifying set contained two of three
+structurally related and two of six novel models. Six models showed material posterior-sampling
+regret, and maximum normalized MAP regret was `0.09545`. The independent outcome audit reproduced
+every aggregate and gate and verified the one-shot, census, source, and access chain.
+
+The evidence is deliberately tiered. `4x3.POMDP` and the novel `network.POMDP` qualified without the
+MAP control ever entering its totalization rule, establishing that the central effect is not solely
+a fallback artifact. The qualifying `fully_observable_tmaze2.POMDP` and `hallway.POMDP` effects
+overlap totalization and support the complete locked point-control comparison, not an isolated
+theorem about MAP collapse. The two cheese models are Tier B only: they showed material point-control
+regret but no first-action disagreement, and every material effect overlapped totalization.
+
+The V68r2–V70 sequence therefore confirms a finite-horizon decision benefit for retaining the exact
+posterior over one project-authored latent action-remapping family across multiple external base
+environments. It does not establish an externally supplied uncertainty family, approximate-inference
+portability, long-horizon scaling, or unrestricted real-world control. The canonical synthesis is
+recorded in `docs/v68r2-v70-development-confirmation-synthesis.md`.
+
+The next direction is synthesis and fresh boundary testing. The V69 family and all V70 models are
+closed for development: they must not be rerun, rescored, tuned, or converted into a new development
+set. Any broader study must preregister a materially different uncertainty family and fresh
+development and confirmatory models before outcomes are computed. Fallback-free and complete-
+procedure effects should be separate registered estimands. Approximate inference, longer horizons,
+human interaction, and model or adapter experiments remain separate future programs with their own
+feasibility and validation gates. The V58 language branch remains paused until real independent
 participants exist.
 
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
@@ -238,8 +277,15 @@ without degrading supported operators or surfaces.
 
 ## Immediate decision
 
-Freeze the successful V67 bounded execution-verification result and authorize only preregistration
-of a multi-environment external replication. Preserve the unsuccessful V65r1/V65r2 outcomes, the
-pooled-estimator qualification, the negative result for strict MAP/first-repeat separation, the
-disclosed nonblinded interface inspection, and the distinction between bounded value verification,
-planner optimality, and safety.
+Freeze the complete V68r2–V70 development-to-confirmation sequence and authorize reporting and
+synthesis only for the completed V69 family. Preserve V68 and V68r1 as pre-result policy-domain
+failures, V68r2 as the negative command-channel development result, V69 as a positive development
+screen rather than replication evidence, and V70 as the sole confirmatory evaluation. Keep
+fallback-free, complete-procedure, and Tier B evidence visibly separate.
+
+Do not modify or rerun V69 or V70, revise their gates, rescore development or confirmatory models,
+or use the V70 suite for retrospective family design. A broader claim requires a new preregistered
+uncertainty family and fresh protected models. Preserve the unsuccessful V65r1/V65r2 outcomes, the
+pooled-estimator qualification, the negative V66 MAP/first-repeat separation result, the disclosed
+nonblinded interface inspection, and the distinction between bounded value verification, planner
+optimality, and safety.

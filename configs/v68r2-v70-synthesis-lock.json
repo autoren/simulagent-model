@@ -1,0 +1,97 @@
+{
+  "auditor": "python/audit_and_freeze_v68r2_v70_synthesis.py",
+  "auditor_sha256": "8500c89c99f44c41a54a8835bd503166cf57e57b5d5d1c2f3da0d4e87c5dc61a",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V69_or_V70": false,
+    "new_family_only_after_new_preregistration_and_fresh_models": true,
+    "report_and_synthesize_completed_sequence": true,
+    "rescore_or_replace_V70_models": false,
+    "revise_frozen_gates": false,
+    "run_SMC2": false,
+    "use_V70_as_development_data": false
+  },
+  "checks": {
+    "cheese_pair_is_tier_b_only": true,
+    "fallback_free_and_complete_procedure_evidence_are_separated": true,
+    "research_direction_records_closed_sequence": true,
+    "source_outcome_locks_and_results_are_hash_bound": true,
+    "source_outcomes_match_durable_locks": true,
+    "synthesis_contains_required_claim_boundaries": true,
+    "v68r2_negative_development_decision": true,
+    "v69_positive_development_only_decision": true,
+    "v70_positive_model_level_confirmation": true,
+    "zero_SMC2_human_model_and_adapter_access": true
+  },
+  "claim_boundary": {
+    "V68r2_to_V69_magnitude_comparison": false,
+    "approximate_inference_portability_claim": false,
+    "external_uncertainty_family_claim": false,
+    "externally_sourced_base_environments": true,
+    "finite_horizon_posterior_expected_value_only": true,
+    "long_horizon_or_real_world_claim": false,
+    "project_authored_uncertainty_family": true
+  },
+  "evidence": {
+    "V70_complete_procedure_qualifying_models": [
+      "fully_observable_tmaze2.POMDP",
+      "hallway.POMDP"
+    ],
+    "V70_confirmatory_models": 9,
+    "V70_fallback_free_qualifying_models": [
+      "4x3.POMDP",
+      "network.POMDP"
+    ],
+    "V70_material_posterior_sampling_models": 6,
+    "V70_paired_MAP_qualifying_models": 4,
+    "V70_paired_MAP_qualifying_novel_models": 2,
+    "V70_paired_MAP_qualifying_related_models": 2,
+    "V70_records": 244,
+    "V70_tier_B_models": [
+      "cheese.95.POMDP",
+      "cheese.95_nonterminating.POMDP"
+    ],
+    "negative_development_stage": "V68r2",
+    "positive_confirmation_stage": "V70",
+    "positive_development_stage": "V69"
+  },
+  "experiment": "v68r2_v70_development_confirmation_synthesis_lock",
+  "lock_payload_sha256": "518998a4c63aa5d6143c43abbd5637204697b69eb5c7f3c5b2d166d361642e12",
+  "passed": true,
+  "research_direction_snapshot": "docs/research-direction.md",
+  "research_direction_snapshot_sha256": "1f5ed95f37d58280ee046392018f62ca8368903e89ebcf2ca74dd02d2f18c41a",
+  "schema_version": "68r2-70-development-confirmation-synthesis",
+  "source_outcomes": {
+    "V68r2": {
+      "decision": "stop_unchanged_family_before_any_confirmatory_model_is_scored",
+      "outcome_lock": "configs/v68r2-development-outcome-lock.json",
+      "outcome_lock_sha256": "279d721f04c8c0ed5f900c5e82b4d7107cb267e0a2783cdb6bce71e62b023911",
+      "passed": false,
+      "records": 59,
+      "result": "outputs/v68r2-development-screening/evaluation/result.json",
+      "result_sha256": "62a7266d54401898037dd8347cdd97ed3757ab7972510272b1dbc4f8cb20e106"
+    },
+    "V69": {
+      "decision": "authorize_preregistration_of_confirmatory_multi_environment_design_only",
+      "outcome_lock": "configs/v69-development-outcome-lock.json",
+      "outcome_lock_sha256": "0c385335a1bf37f27598af868e592c60fabf53dd5b4733f98263cb74257767fb",
+      "passed": true,
+      "records": 59,
+      "result": "outputs/v69-development-screening/evaluation/result.json",
+      "result_sha256": "c3197ff13bcc5432fe0b402fcb342600aa43ef414012e10327910a361a5fb1b7"
+    },
+    "V70": {
+      "decision": "confirm_multi_environment_replication_for_project_authored_V69_family",
+      "outcome_lock": "configs/v70-confirmatory-outcome-lock.json",
+      "outcome_lock_sha256": "873c8ba87ac27215543c274b899c8d84d0a7c27d08921cdc00f296c21f593c06",
+      "passed": true,
+      "records": 244,
+      "result": "outputs/v70-confirmatory/evaluation/result.json",
+      "result_sha256": "0e92a0c66019848d1b8e01b9f89ac2a52036ccbec4f2e1db4fbae161776bf115"
+    }
+  },
+  "synthesis_document": "docs/v68r2-v70-development-confirmation-synthesis.md",
+  "synthesis_document_sha256": "503b88d01c9aa1fadf926e28e3b41ab07aa7682be2f5d4cc275889f24ea4386c"
+}
