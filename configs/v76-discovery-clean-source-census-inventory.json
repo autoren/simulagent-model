@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "76-discovery-clean-source-census-inventory",
+  "experiment": "v76_metadata_only_active_sensing_source_census",
+  "preregistrationLock": "configs/v76-active-sensing-synthesis-lock.json",
+  "preregistrationGitCommit": "293bb769147b5b6c2856667155d71ab7faf89639",
+  "censusDate": "2026-08-17",
+  "searchScope": {
+    "queryCount": 16,
+    "queries": [
+      "site:github.com POMDP active sensing calibration inspection benchmark repository",
+      "site:github.com POMDP diagnostic test treatment repository partially observable",
+      "site:github.com POMDP sensor calibration localization repository",
+      "site:github.com partially observable inspection control POMDP benchmark",
+      "POMDP diagnostic test GitHub code",
+      "POMDP inspection action GitHub",
+      "POMDP calibration GitHub active sensing",
+      "POMDP reference sensor code GitHub",
+      "POMDP-Guided Active Force-Based Search GitHub",
+      "GitHub POMDP active tactile sensing object recognition manipulation",
+      "GitHub POMDP inspection target sequence benchmark code",
+      "GitHub active sensing POMDP localization beacon discrete",
+      "site:github.com POMDP sensor fault diagnosis active calibration action",
+      "site:github.com POMDP unknown observation model active sensing",
+      "site:github.com POMDP multiple sensors diagnostic action treatment",
+      "site:github.com POMDP inspection repair calibration beacon"
+    ],
+    "metadataSources": [
+      "public search index results",
+      "official repository landing pages and top-level descriptions",
+      "official project documentation surfaced by search results",
+      "GitHub repository and latest-commit metadata APIs"
+    ],
+    "candidateRepositoryCount": 14,
+    "eligibleRepositoryDistinctFamilyCount": 0
+  },
+  "unexpectedSnippetDisclosure": {
+    "count": 1,
+    "candidate": "infer-actively/pymdp#cue-chaining",
+    "disclosure": "a search result unexpectedly included official tutorial tensor shapes and the configured grid/cue sizes",
+    "treatment": "candidate marked development-exposed and ineligible; no repository file was opened and no source or policy computation was run"
+  },
+  "priorExposureRegistryHits": [
+    "https://github.com/AdaCompNUS/sarsop",
+    "https://github.com/sisl/SBO_AIPPMS",
+    "https://github.com/sisl/BetaZero.jl",
+    "https://github.com/h2r/pomdp-py",
+    "https://github.com/cassandra/pomdp-solve"
+  ],
+  "gateNames": [
+    "publiclyIdentifiableLicenseOrReuseTerms",
+    "repositoryAndDomainFamilyAbsentFromExposureRegistry",
+    "explicitPartialObservabilityOrLatentPhysicalCondition",
+    "sourceDescribesAStateInformativeSensingOrInspectionAction",
+    "sourceDescribesADelayedStateDependentControlConsequence",
+    "sourceDescribesAReferenceCalibrationOrCrossSensorComparisonPathway",
+    "appearsFiniteOrExactlyEnumerableWithinTheRegisteredResourceEnvelope",
+    "noPolicyValueOrImplementationEvidenceUsedForEligibility"
+  ],
+  "candidates": [
+    {
+      "candidateIdentity": "https://github.com/lsmcolab/ib-pomcp@c825e524c71b7c77c113219f28bcb935ddf9177f#entropy-guided-foraging",
+      "repository": "https://github.com/lsmcolab/ib-pomcp",
+      "commit": "c825e524c71b7c77c113219f28bcb935ddf9177f",
+      "license": "GPL-3.0",
+      "domainFamily": "entropy-guided foraging",
+      "gateResults": [true, true, true, false, false, false, false, true],
+      "eligible": false,
+      "reason": "landing metadata describes entropy-guided online planning and a foraging simulator, not a source-native reference/comparison action or an exact finite candidate"
+    },
+    {
+      "candidateIdentity": "https://github.com/proroklab/popgym@410d5aa626dae8024f498354d8781a0d1870c399#memory-process-suite",
+      "repository": "https://github.com/proroklab/popgym",
+      "commit": "410d5aa626dae8024f498354d8781a0d1870c399",
+      "license": "MIT",
+      "domainFamily": "memory process suite",
+      "gateResults": [true, true, true, false, false, false, false, true],
+      "eligible": false,
+      "reason": "suite metadata emphasizes memory tasks and does not identify the required sensing-reference-delayed-control structure"
+    },
+    {
+      "candidateIdentity": "https://github.com/twni2016/pomdp-baselines@e7c19c32a20033d75414b29fbc466c77c211e968#continuous-control-partial-observation",
+      "repository": "https://github.com/twni2016/pomdp-baselines",
+      "commit": "e7c19c32a20033d75414b29fbc466c77c211e968",
+      "license": "MIT",
+      "domainFamily": "continuous-control partial observation",
+      "gateResults": [true, true, true, false, true, false, false, true],
+      "eligible": false,
+      "reason": "PyBullet and MuJoCo control families are outside the exact finite envelope and expose no source-native reference pathway"
+    },
+    {
+      "candidateIdentity": "https://github.com/penn-pal-lab/scaffolder@80958717ded5e7f96043ffbffd268b46bb8cb7f9#sensory-scaffolding-suite",
+      "repository": "https://github.com/penn-pal-lab/scaffolder",
+      "commit": "80958717ded5e7f96043ffbffd268b46bb8cb7f9",
+      "license": "MIT",
+      "domainFamily": "sensory scaffolding suite",
+      "gateResults": [true, true, true, false, true, false, false, true],
+      "eligible": false,
+      "reason": "privileged locomotion and manipulation tasks are not an exact finite source family and do not describe an in-episode reference pathway"
+    },
+    {
+      "candidateIdentity": "https://github.com/TimSchneider42/tactile-mnist@9e4e59139e9349ab361a3b9297f4815724ad6387#active-tactile-classification",
+      "repository": "https://github.com/TimSchneider42/tactile-mnist",
+      "commit": "9e4e59139e9349ab361a3b9297f4815724ad6387",
+      "license": "MIT",
+      "domainFamily": "active tactile classification",
+      "gateResults": [true, true, true, true, false, false, false, true],
+      "eligible": false,
+      "reason": "active tactile perception is image-based classification rather than a finite delayed physical-control problem with a reference pathway"
+    },
+    {
+      "candidateIdentity": "https://github.com/neuroergoISAE/POMDP-BCI@9d576c3eae3e05d8bbe5fec1286d89c958242856#active-bci-command-issuance",
+      "repository": "https://github.com/neuroergoISAE/POMDP-BCI",
+      "commit": "9d576c3eae3e05d8bbe5fec1286d89c958242856",
+      "license": null,
+      "domainFamily": "active BCI command issuance",
+      "gateResults": [false, true, true, true, true, false, true, true],
+      "eligible": false,
+      "reason": "repository metadata supplies no license; calibration is offline and the benchmark depends on human BCI data rather than a source-native in-episode reference action"
+    },
+    {
+      "candidateIdentity": "https://github.com/gamma-opt/DecisionProgramming.jl@105a25ee898cc806db65d5b475e4f1a613265653#pig-farm-diagnostic-treatment",
+      "repository": "https://github.com/gamma-opt/DecisionProgramming.jl",
+      "commit": "105a25ee898cc806db65d5b475e4f1a613265653",
+      "license": "MIT",
+      "domainFamily": "pig-farm diagnostic treatment",
+      "gateResults": [true, true, true, true, true, false, true, true],
+      "eligible": false,
+      "reason": "diagnostic tests precede treatment, but public metadata does not describe a reference, calibration, or cross-sensor comparison pathway"
+    },
+    {
+      "candidateIdentity": "https://github.com/bonetblai/gpt-rewards@b6a46c8bea7cd9b8244026d31ce4c259287c7da7#sequencing-goal-pomdp",
+      "repository": "https://github.com/bonetblai/gpt-rewards",
+      "commit": "b6a46c8bea7cd9b8244026d31ce4c259287c7da7",
+      "license": null,
+      "domainFamily": "sequencing goal POMDP",
+      "gateResults": [false, true, true, true, true, false, true, true],
+      "eligible": false,
+      "reason": "the linked sequencing family has inspection and delayed order penalties, but no repository license or source-described reference pathway"
+    },
+    {
+      "candidateIdentity": "https://github.com/infer-actively/pymdp@58483604e56e330d3429df133a41e801099f6e9c#cue-chaining",
+      "repository": "https://github.com/infer-actively/pymdp",
+      "commit": "58483604e56e330d3429df133a41e801099f6e9c",
+      "license": "MIT",
+      "domainFamily": "cue chaining",
+      "gateResults": [true, false, true, true, true, true, false, true],
+      "eligible": false,
+      "reason": "the two-cue/reward chain is structurally closest, but official metadata exposed 35x4x2 joint latent configurations, above the 64-state envelope; the unexpected detailed snippet also makes it development-exposed"
+    },
+    {
+      "candidateIdentity": "https://github.com/ComputationalPsychiatry/ActiveInference.jl@21216affd7f3ac20e28a4f7a11d68e13bc202f4f#active-inference-maze",
+      "repository": "https://github.com/ComputationalPsychiatry/ActiveInference.jl",
+      "commit": "21216affd7f3ac20e28a4f7a11d68e13bc202f4f",
+      "license": "MIT",
+      "domainFamily": "active-inference maze",
+      "gateResults": [true, true, true, false, true, false, true, true],
+      "eligible": false,
+      "reason": "the small maze description has partial state and delayed navigation preferences but no state-informative sensing action or reference pathway"
+    },
+    {
+      "candidateIdentity": "https://github.com/callmespring/Confounded-POMDP-OPE@a6a5aa0fc2a7b9dbaa58670abea191684a327453#confounded-off-policy-evaluation",
+      "repository": "https://github.com/callmespring/Confounded-POMDP-OPE",
+      "commit": "a6a5aa0fc2a7b9dbaa58670abea191684a327453",
+      "license": null,
+      "domainFamily": "confounded off-policy evaluation",
+      "gateResults": [false, true, true, false, false, false, false, true],
+      "eligible": false,
+      "reason": "the repository is an off-policy-evaluation implementation, not a source family with active sensing and delayed contingent control"
+    },
+    {
+      "candidateIdentity": "https://github.com/opendatalab/Earth-Agent@ca1dfaef750654331308a434966d307f1728fd90#earth-observation-tool-agent",
+      "repository": "https://github.com/opendatalab/Earth-Agent",
+      "commit": "ca1dfaef750654331308a434966d307f1728fd90",
+      "license": "MIT",
+      "domainFamily": "earth-observation tool agent",
+      "gateResults": [true, true, true, true, true, true, false, true],
+      "eligible": false,
+      "reason": "the LLM and 104-tool system is neither exactly enumerable nor within the no-model-access resource boundary"
+    },
+    {
+      "candidateIdentity": "https://github.com/pemami4911/POMDPy@ffa74ad627aade19cfa1773b01305e7736b2044d#tiger-rocksample-examples",
+      "repository": "https://github.com/pemami4911/POMDPy",
+      "commit": "ffa74ad627aade19cfa1773b01305e7736b2044d",
+      "license": "MIT",
+      "domainFamily": "Tiger and RockSample examples",
+      "gateResults": [true, false, true, true, true, false, true, true],
+      "eligible": false,
+      "reason": "the only source-described examples are domain-family exclusions already exposed in V72 and V74"
+    },
+    {
+      "candidateIdentity": "https://github.com/yaacovpariente/POMDPPlanners@f18c5c9c214fab99f6e4c1e5b0ae31421e855ff7#planner-framework",
+      "repository": "https://github.com/yaacovpariente/POMDPPlanners",
+      "commit": "f18c5c9c214fab99f6e4c1e5b0ae31421e855ff7",
+      "license": "MIT",
+      "domainFamily": "planner framework",
+      "gateResults": [true, true, false, false, false, false, false, true],
+      "eligible": false,
+      "reason": "public metadata identifies a planner package but no qualifying source domain family"
+    }
+  ],
+  "rolePartition": {
+    "development": null,
+    "protectedConfirmation": [],
+    "reason": "zero eligible repository-distinct families; the registered minimum is two"
+  },
+  "access": {
+    "repositoryCloneOrDownloadCount": 0,
+    "candidateSourceModelConfigTestNotebookOrDataFileOpenCount": 0,
+    "candidateSimulatorParserExporterOrPlannerRunCount": 0,
+    "candidatePolicyValueOptimalActionRegretEIGOrMutualInformationCount": 0,
+    "candidateTransitionObservationRewardOrBeliefArrayInspectionCount": 0,
+    "humanRecordAccessCount": 0,
+    "modelForwardPassCount": 0,
+    "adapterTrainingRunCount": 0,
+    "SMC2RunCount": 0
+  },
+  "decision": "freeze_source_feasibility_deferral_before_any_candidate_implementation",
+  "passed": false
+}

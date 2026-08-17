@@ -446,3 +446,20 @@ the frozen SHA-256 ordering across at least two repository-disjoint eligible fam
 implementation may be opened, cloned, executed, or scored before the complete metadata inventory and
 role partition are durably locked. If fewer than two families qualify, defer without relaxing the
 exposure, structural, resource, economic, or role-assignment gates.
+
+## V76 metadata-census outcome (2026-08-17)
+
+The prospectively authorized metadata-only census completed without opening or running a candidate
+implementation and without computing any candidate decision statistic. Fourteen repository candidates
+were recorded after 16 queries; zero passed all eight provisional metadata gates. The closest structural
+lead, `pymdp` cue chaining, exceeded the registered 64-state envelope in the official dimensions exposed
+by a search result and was conservatively marked development-exposed. Other candidates lacked a source-
+native reference/comparison pathway, an exact finite model, delayed physical control, reuse terms, or an
+unexposed domain family.
+
+No development or protected-confirmation role was assigned because the frozen minimum was two eligible
+repository-disjoint families. Freeze the source-feasibility deferral before candidate implementation.
+Do not weaken or rerun the census, inspect a rejected candidate, return to Tiger/RockSample/paint/
+maintenance or V71 protected models, or add a project-authored beacon/noise layer. The correct current
+decision is to report and defer the active-sensing empirical branch until a new preregistration is
+justified by a materially different target or genuinely new public source-native benchmarks.
