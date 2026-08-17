@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "74-active-sensing-economic-feasibility",
+  "experiment": "v74_pomdppy_tiger_prospective_economic_screen",
+  "authorizationSource": "configs/v73-active-sensing-structural-outcome-lock.json",
+  "selectedDevelopmentSource": {
+    "repository": "https://github.com/h2r/pomdp-py",
+    "commit": "bd0e4392247aebfe9a95b449275237dcc25e7737",
+    "license": "MIT",
+    "environment": "pomdp_py.problems.tiger",
+    "repositoryRole": "development-only",
+    "freshRelativeToV72AndV73": true
+  },
+  "sourceGrounding": {
+    "states": ["tiger-left", "tiger-right"],
+    "actions": ["open-left", "open-right", "listen"],
+    "observations": ["tiger-left", "tiger-right"],
+    "initialBelief": [0.5, 0.5],
+    "configuredObservationNoise": 0.01,
+    "configuredObservationAccuracy": 0.99,
+    "safeOpenReward": 10.0,
+    "tigerOpenReward": -100.0,
+    "targetListenReward": -1.0,
+    "openTransition": "uniform reset",
+    "listenTransition": "source probability implementation: 1-1e-9 persistence and 1e-9 flip",
+    "discount": 0.95,
+    "discountSource": "pomdp_py/algorithms/value_function.py Tiger example"
+  },
+  "prospectiveProjectLayer": {
+    "latentCodebooks": ["canonical", "reverse-left-right-labels"],
+    "latentPrior": [0.5, 0.5],
+    "addedAction": "calibrate-beacon",
+    "knownBeaconCondition": "tiger-left",
+    "beaconObservationAccuracy": 0.99,
+    "beaconReward": -0.5,
+    "beaconHarvestable": false,
+    "beaconControlReward": false,
+    "beaconTargetTransition": "source listen transition",
+    "beaconCostRationale": "a dedicated reference channel has half the acquisition cost of listening at the target",
+    "planningHorizonActions": 3
+  },
+  "fixedEconomicPolicy": {
+    "action0": "calibrate-beacon",
+    "action1": "listen-target",
+    "action2Rule": "open the door inferred safe from the parity of beacon and target labels",
+    "optimizationUsed": false
+  },
+  "prospectiveEconomicFormula": {
+    "pairedInferenceCorrectProbability": "p^2 + (1-p)^2",
+    "expectedTerminalOpenReward": "paired_correct*safe_reward + (1-paired_correct)*tiger_reward",
+    "fixedPolicyValue": "beacon_reward + discount*listen_reward + discount^2*expected_terminal_open_reward",
+    "bestOpenLoopValue": "beacon_reward*(1 + discount + discount^2)",
+    "bestOpenLoopJustification": "under the uniform state prior and symmetric source transitions, every unconditioned open has expectation -45, target listening costs -1, and the non-harvestable beacon costs -0.5 without changing the marginal target belief",
+    "returnScale": "(safe_reward - tiger_reward)*(1 + discount + discount^2)",
+    "normalizedAdvantage": "(fixed_policy_value - best_open_loop_value)/return_scale"
+  },
+  "economicGates": {
+    "minimumObservationAccuracy": 0.95,
+    "requiredPairedCorrectProbabilityAboveSafeOpenThreshold": true,
+    "requiredFixedPolicyValueStrictlyPositive": true,
+    "minimumRawFixedPolicyOverBestOpenLoopAdvantage": 5.0,
+    "minimumNormalizedFixedPolicyOverBestOpenLoopAdvantage": 0.015,
+    "minimumNormalizedMarginAboveThreshold": 0.005,
+    "requiredCalibrationBeaconHarvestable": false,
+    "requiredOpenLoopOptimalAction": "calibrate-beacon",
+    "maximumAdapterImplementationCount": 0,
+    "maximumOptimalPlannerCalls": 0,
+    "maximumProtectedSourceAccessCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the source and economic screen, then authorize preregistration of the adapter, structural tests, and development evaluator",
+    "ifAnyGateFails": "freeze a negative V74 economic result and stop before adapter implementation or optimal planning",
+    "noRetrospectiveChanges": true
+  },
+  "claimBoundary": {
+    "externalSourceStructureRewardsAndParameterizedObservationSemantics": true,
+    "unchangedExternalEnvironment": false,
+    "projectAuthoredBeaconCodebookAndNoiseConfiguration": true,
+    "developmentEvidenceOnly": true,
+    "confirmationEvidence": false,
+    "humanData": false,
+    "modelAccess": false
+  }
+}

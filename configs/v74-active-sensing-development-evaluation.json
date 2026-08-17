@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "74-active-sensing-development-evaluation",
+  "structuralLock": "configs/v74-active-sensing-structural-lock.json",
+  "modelCount": 1,
+  "horizonActions": 3,
+  "tieTolerance": 1e-12,
+  "materialRegretThreshold": 0.1,
+  "gates": {
+    "requiredExactRootAction": "calibrate_beacon",
+    "requiredExactRootOptimalActions": ["calibrate_beacon"],
+    "minimumExactRootActionMargin": 0.02,
+    "minimumNormalizedExactRootActionMargin": 0.00005,
+    "requiredMAPRootAction": "listen_target",
+    "requiredPosteriorSamplingRootAction": "listen_target",
+    "requiredSecondActionAfterEveryCalibrationObservation": "listen_target",
+    "minimumDistinctFinalControlActionsAcrossReachablePairedLabels": 2,
+    "requiredFinalControlActions": ["open_left", "open_right"],
+    "requiredFinalActionWhenLabelsMatch": "open_right",
+    "requiredFinalActionWhenLabelsDiffer": "open_left",
+    "minimumExactValue": 0.0,
+    "minimumNormalizedMAPRegret": 0.1,
+    "minimumNormalizedPosteriorSamplingRegret": 0.1,
+    "minimumNormalizedExactOverOpenLoopAdvantage": 0.015,
+    "minimumNormalizedMyopicRegret": 0.015,
+    "minimumPointModelOnSupportRate": 1.0,
+    "maximumFallbackCount": 0,
+    "maximumProtectedConfirmationPolicyValueCount": 0,
+    "maximumPriorProtectedAccessCount": 0,
+    "maximumCandidateEIGValueCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze a positive source-grounded development result and authorize only a new confirmation-design phase",
+    "ifAnyGateFails": "freeze a negative V74 development result and stop before protected-source discovery or confirmation",
+    "noRetrospectiveChanges": true
+  },
+  "claimBoundary": {
+    "sourceGroundedDevelopmentEvidence": true,
+    "unchangedExternalEnvironment": false,
+    "externalConfirmationEvidence": false,
+    "approximateInference": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "attempt": "outputs/v74-active-sensing/development-evaluation/attempt.json",
+  "attempt_sha256": "90777b8a0bac67d3ec58c5c197a0de85b06acf64381edd11627a496c09274a94",
+  "auditor": "python/audit_and_freeze_v74_development_outcome.py",
+  "auditor_sha256": "e3459e2dd9493d0d91552bed416ecb0e783d0afb8eb30fe590bfefe941d95b7d",
+  "authorization": {
+    "adapter_training": false,
+    "compute_confirmation_policy_values": false,
+    "design_confirmation_successor_after_fresh_preregistration": true,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V74": false,
+    "reuse_V74_source_noise_beacon_cost_horizon_or_gates_for_tuning": false,
+    "run_SMC2": false,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "evaluator_lock": "configs/v74-active-sensing-development-evaluator-lock.json",
+  "evaluator_lock_sha256": "5ea6ea2a7d2d59f6f99a7e56797c26d06483e4782a73ccf439e920910f3e863b",
+  "experiment": "v74_development_outcome_lock",
+  "lock_payload_sha256": "8ff32b45c1e9e5f74618186d0079da0b0d353d7ffbd99e0fc3e5bb797cc1db73",
+  "outcome": {
+    "exact_value": 5.609354999999997,
+    "fallback_count": 0,
+    "map_value": -44.20125,
+    "normalized_exact_over_open_loop_advantage": 0.02242245239423153,
+    "normalized_map_regret": 0.15874625129471756,
+    "normalized_posterior_sampling_regret": 0.15874625129471756,
+    "passed_all_development_gates": true,
+    "posterior_sampling_value": -44.20125,
+    "protected_confirmation_policy_value_count": 0
+  },
+  "outcome_audit": "outputs/v74-active-sensing/development-outcome-audit.json",
+  "outcome_audit_sha256": "acf9b14a05e0bdbcb8f0738039c2ce543084c1368550bd21176323903e6a96d6",
+  "report": "docs/v74-active-sensing-development-results.md",
+  "report_sha256": "88b55977efc5b623b369c1ffc72cfb6204520002dcf60c1997ad224305ed7ab1",
+  "result": "outputs/v74-active-sensing/development-evaluation/result.json",
+  "result_sha256": "aed9903dca7512dd79d62265dc9efd690894ce9959d324f50a9c44876d73223f",
+  "schema_version": "74-active-sensing-development-outcome"
+}

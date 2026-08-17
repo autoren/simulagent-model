@@ -1,0 +1,37 @@
+{
+  "audit": "outputs/v74-active-sensing/source-economic-audit.json",
+  "audit_sha256": "278445ec8cb0ff8b7bb9b37c841f2a41d9f829a5a3e8eab3680dec58150bba8e",
+  "auditor": "python/audit_and_freeze_v74_economic_feasibility.py",
+  "auditor_sha256": "993a639ccd972be9ae67fd34efa463e552481209d6709d0a096273bf878725d1",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_adapter_and_structural_tests": false,
+    "model_access": false,
+    "modify_source_economic_blueprint_or_gates": false,
+    "preregister_adapter_structural_and_development_design": true,
+    "run_SMC2": false,
+    "run_optimal_planners": false,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "config": "configs/v74-active-sensing-economic-feasibility.json",
+  "config_sha256": "43938a80b7a359b83e9df6de83a25a978b1d75143196f655d8719008f1a3a0d7",
+  "experiment": "v74_pomdppy_tiger_economic_lock",
+  "inventory": "outputs/v74-active-sensing/source-economic-inventory.json",
+  "inventory_sha256": "2f05a0d608ad25f9b05c4dff59b5f7cc44a9ea17469ba48fb93157a574e3ae8c",
+  "lock_payload_sha256": "9b74a5053656d60fa33022313f1832b0172538223798e7cefc87f596608e8748",
+  "outcome": {
+    "best_open_loop_value": -1.42625,
+    "failed_gate_count": 0,
+    "fixed_policy_value": 5.609354999999995,
+    "normalized_advantage": 0.02242245239423152,
+    "normalized_margin": 0.007422452394231522,
+    "passed_all_economic_gates": true
+  },
+  "plan": "docs/v74-active-sensing-economic-feasibility-plan.md",
+  "plan_sha256": "a66e22aae55bb7646afa6000cd14fa0a1809414a12b847b2c74e6e2e6321312a",
+  "prior_lock": "configs/v73-active-sensing-structural-outcome-lock.json",
+  "prior_lock_sha256": "64c2d1a7482f2cbb71dee127a3c9ef7a98d4f7cb3963cdef84c61fdfda1136e6",
+  "repository_commit": "bd0e4392247aebfe9a95b449275237dcc25e7737",
+  "schema_version": "74-active-sensing-economic-feasibility"
+}

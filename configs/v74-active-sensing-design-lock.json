@@ -1,0 +1,29 @@
+{
+  "auditor": "python/audit_and_freeze_v74_design.py",
+  "auditor_sha256": "a623d7e78f33ecc59c5f3ace2f021989c40d1c75ea790034e653acbe10291ac5",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_and_test_source_grounded_adapter": true,
+    "model_access": false,
+    "modify_source_economic_structural_or_evaluation_design": false,
+    "run_SMC2": false,
+    "run_optimal_planner_outcomes": false,
+    "run_structural_audit_once": true,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "economic_lock": "configs/v74-active-sensing-economic-lock.json",
+  "economic_lock_sha256": "189c74b0a09c73b474e064b69f3e103135730bde779f65c215136bde59888a02",
+  "evaluation_config": "configs/v74-active-sensing-development-evaluation.json",
+  "evaluation_config_sha256": "4c4ebb6aa087905829947bb93743b339626ebde7052e4501d6e06d939af1d438",
+  "evaluation_plan": "docs/v74-active-sensing-development-evaluation-plan.md",
+  "evaluation_plan_sha256": "e9ede80a43a439b2f1248da884d0c5c1c144729cbfc36497f30e743e6ea6fd97",
+  "experiment": "v74_structural_and_development_design_lock",
+  "lock_payload_sha256": "0b69efb5ed81a58a20b979c27d37607595e660575f44ca901d8646e5795a5029",
+  "preimplementation_file_count": 0,
+  "schema_version": "74-active-sensing-design",
+  "structural_config": "configs/v74-active-sensing-structural-design.json",
+  "structural_config_sha256": "97dc726cadd0661b803641b24065a1ce359fe9dd83caa43e030905531f00fa39",
+  "structural_plan": "docs/v74-active-sensing-structural-design-plan.md",
+  "structural_plan_sha256": "e7f020144c45e3f1bb63a29e303d957e56a7d457c36e61263bd2ba4c19107625"
+}

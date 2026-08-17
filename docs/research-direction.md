@@ -243,6 +243,36 @@ bound must clear the material-effect threshold by margin before an adapter or op
 implemented. V73's repository, component, parameters, adapter, horizon, fixed policy, and gates are
 closed and cannot be tuned or reused for successor outcomes.
 
+V74 applied that economic gate before writing an adapter. A fresh MIT-licensed pomdp-py Tiger source
+supplied two hidden states, listen/open dynamics, parameterized observations, `+10/-100` opening
+rewards, a `-1` target-listen cost, and a `0.95` discount. The source-exposed observation noise was
+prospectively fixed at `0.01`; a project-authored non-harvestable reference beacon cost `-0.5`, and a
+persistent binary codebook either preserved or reversed the two observation labels. This is a
+source-grounded development configuration, not an unchanged external environment.
+
+The closed-form pre-implementation screen passed: the fixed calibrate-listen-open policy had value
+`5.609355`, versus `-1.42625` for the best open loop, a raw advantage of `7.035605` and normalized
+advantage `0.0224225`, with `0.0074225` margin over the registered threshold. The implementation
+reproduced the result after all ten structural tests passed; both point models had common support,
+the beacon remained non-harvestable, paired decision accuracy was `0.9802`, and the best of all 64
+open-loop sequences was three beacon actions.
+
+The single locked development evaluation then passed every gate. Exact Bayes-adaptive planning
+uniquely calibrated first, listened to the target after either beacon label, and used both final door
+actions with value `5.609355`. MAP and persistent posterior sampling listened immediately and each
+had exact mixture value `-44.20125`, normalized regret `0.158746`, common support, and zero fallback.
+Best open loop and myopic control each retained value `-1.42625`. An independent reference recursion
+reconstructed all root Q-values, control values, actions, scale, and gates.
+
+V74 therefore closes the V71-V73 design loop in one configured development model: sensor-codebook
+uncertainty becomes control-relevant when calibration is non-harvestable, accurate enough, and
+economically worthwhile relative to delayed state-dependent loss. The result does not validate the
+chosen `0.99` accuracy or `-0.5` beacon cost externally, and its `0.0250` raw root margin depends on
+that prospectively fixed cost asymmetry. The next stage is a fresh confirmation-design program that
+must seek source-native sensing fidelity, calibration cost, and delayed control loss, pass the same
+economic screen before outcomes, and remain untouched until a new source and evaluator are locked.
+V74's source, noise, beacon, horizon, adapter, controls, and gates are closed to tuning or rerun.
+
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
 a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
 queries under partial state information. The historical evidence below records how that starting

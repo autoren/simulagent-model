@@ -1,0 +1,37 @@
+{
+  "attempt": "outputs/v74-active-sensing/structural-attempt.json",
+  "attempt_sha256": "a4950e5a77780c5599e8c038c5ed2170f3de5c937383729aade8aa1b857b5458",
+  "audit": "outputs/v74-active-sensing/structural-audit.json",
+  "audit_sha256": "12bbbfaabff91dd264350cbd09d3ed4a40100db921228330bf89a1897d49fdbd",
+  "auditor": "python/audit_and_freeze_v74_structural_feasibility.py",
+  "auditor_sha256": "5b0fb38fb5397f24ffbc60f5f175285ef66ed80323f29c544923d3ebc8e54812",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_and_lock_development_evaluator": true,
+    "model_access": false,
+    "modify_source_adapter_structural_or_evaluation_design": false,
+    "run_SMC2": false,
+    "run_exact_development_evaluation": false,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "config": "configs/v74-active-sensing-structural-design.json",
+  "config_sha256": "97dc726cadd0661b803641b24065a1ce359fe9dd83caa43e030905531f00fa39",
+  "design_lock": "configs/v74-active-sensing-design-lock.json",
+  "design_lock_sha256": "65a155dcd4e54154993de327146bd0a86c441a36758292977387e8a0e89671fe",
+  "experiment": "v74_pomdppy_tiger_structural_lock",
+  "exporter": "python/v74_pomdppy_tiger_source.py",
+  "exporter_sha256": "7a6565f4964454af0286b4b21cbc6dbcc261eb9d40eeb516e0b7c357601bf3de",
+  "exporter_tests": "python/test_v74_pomdppy_tiger_source.py",
+  "exporter_tests_sha256": "820aeeeec2e4b9f6aeb40d3518e57ecaf33d95e2343a334ef822c177992ee23f",
+  "lock_payload_sha256": "3001e377e40e4b338efc1bdbd781cbdc8e9b9ee2ebd83925f85a2486156230b9",
+  "outcome": {
+    "best_open_loop_value": -1.42625,
+    "failed_gate_count": 0,
+    "fixed_policy_value": 5.609354999999997,
+    "normalized_advantage": 0.02242245239423153,
+    "passed_all_structural_gates": true,
+    "point_model_supports_identical": true
+  },
+  "schema_version": "74-active-sensing-structural-feasibility"
+}
