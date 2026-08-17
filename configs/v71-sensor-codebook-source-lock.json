@@ -1,0 +1,278 @@
+{
+  "authorization": {
+    "adapter_training": false,
+    "audit_and_freeze_development_resource_feasibility": true,
+    "construct_development_census": false,
+    "drop_repair_renormalize_or_replace_models": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_source_family_partition_or_development_gates": false,
+    "read_protected_confirmation_outcomes": false,
+    "run_SMC2": false,
+    "run_development_outcomes": false,
+    "write_development_evaluator": false
+  },
+  "config": "configs/v71-sensor-codebook-source-feasibility.json",
+  "config_payload": {
+    "claimBoundary": {
+      "SMC2": false,
+      "adapterTraining": false,
+      "approximateInference": false,
+      "commercialUseAuthorizedBySourceLicense": false,
+      "externalUncertaintyFamilyClaim": false,
+      "freshExternalModels": true,
+      "humanData": false,
+      "modelAccess": false,
+      "prospectiveNewUncertaintyMechanism": true
+    },
+    "decisionRule": {
+      "ifAnyDevelopmentGateFails": "report the complete negative or mixed development result and stop before protected confirmation",
+      "ifEveryDevelopmentGatePasses": "preregister a separate protected-confirmation design without reading protected outcomes",
+      "noModelReplacement": true,
+      "noThresholdRevision": true
+    },
+    "directionalSourceLock": "configs/v68r2-v70-synthesis-lock.json",
+    "experiment": "v71_sensor_codebook_source_feasibility",
+    "firewall": {
+      "adapterTraining": "forbidden",
+      "changePartitionFamilyReliabilityHorizonControlsNormalizationOrDevelopmentGatesAfterLock": "forbidden",
+      "humanData": "forbidden",
+      "modelAccess": "forbidden",
+      "readAnyPolicyValueRegretEIGOrOptimalActionDuringSourceFeasibility": "forbidden",
+      "readProtectedConfirmationOutcomesBeforeDevelopmentPassAndSeparateLock": "forbidden",
+      "repairRenormalizeOrReplaceSourceModels": "forbidden",
+      "runSMC2": "forbidden"
+    },
+    "prospectiveDevelopmentDesign": {
+      "controls": [
+        "exact_Bayes_adaptive",
+        "posterior_MAP_point_model",
+        "posterior_sampling_point_model",
+        "open_loop_sequence",
+        "myopic_one_step"
+      ],
+      "deduplication": false,
+      "exactBelief": "normalized categorical distribution over latent_sensor_codebook x source_state",
+      "horizonActions": 3,
+      "materialNormalizedRegret": 0.005,
+      "minimumProbabilityThreshold": 0.0,
+      "normalizedRegret": "(exact_Bayes_adaptive_value-control_value)/returnScale",
+      "pointModelFallback": "forbidden; identical point-model support must make every retained history on-support",
+      "publicPrefixDepths": [
+        0,
+        1
+      ],
+      "retainEveryReachableActionObservationHistory": true,
+      "returnScale": "max(1,(maximum_source_reward-minimum_source_reward)*sum_discount_powers_zero_through_two)",
+      "selectionOrRejection": false,
+      "tieBreak": "first action in pinned source-file order",
+      "tieTolerance": 1e-12,
+      "truthFields": false
+    },
+    "prospectiveDevelopmentGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumProtectedConfirmationPolicyValueCount": 0,
+      "maximumRecordSelectionOrRejectionCount": 0,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumCompletedRecordFraction": 1.0,
+      "minimumDevelopmentModels": 3,
+      "minimumFiniteMetricRate": 1.0,
+      "minimumMaximumNormalizedMAPRegret": 0.01,
+      "minimumModelsWithExactBAMAPRootActionDisagreement": 3,
+      "minimumModelsWithMaterialMAPRegret": 2,
+      "minimumModelsWithMaterialPosteriorSamplingRegret": 1,
+      "minimumPointModelOnSupportRate": 1.0,
+      "minimumSourceValidationRate": 1.0
+    },
+    "prospectivePartition": {
+      "developmentFresh": [
+        "concert.POMDP",
+        "ejs1.POMDP",
+        "manuel-hartman.2013-09-19.POMDP"
+      ],
+      "protectedConfirmationNovel": [
+        "bridge-repair.POMDP",
+        "parr95.95.POMDP",
+        "uav-search.raissa-bravo.orig.POMDP"
+      ],
+      "protectedConfirmationRelated": [
+        "ejs2.POMDP",
+        "ejs3.POMDP"
+      ]
+    },
+    "schemaVersion": "71-sensor-codebook-source-feasibility",
+    "source": {
+      "checkout": "data/v71-sensor-codebook/source-checkout",
+      "commit": "4f5d399f260f7789bc1d95baab069eef5c93aaf9",
+      "license": "CC-BY-NC-4.0",
+      "licenseFile": "LICENSE.md",
+      "licenseSha256": "a3c9c0d5435a5487c003076e35da55d1fe52d600f23a7ebe584a0edaf92bfe24",
+      "modelDirectory": "examples/pomdp-files",
+      "repository": "https://github.com/cassandra/pomdp-solve.git"
+    },
+    "sourceInventory": [
+      {
+        "file": "1d.POMDP",
+        "reason": "transition rows sum to 0.999999; no repair or renormalization permitted",
+        "role": "sourceDefectExclusion",
+        "sha256": "73e22df6b5a805afcf6493960dffa92239e200d3a75d09d122b9cfcdd6ecfc2d"
+      },
+      {
+        "file": "4x3.95.POMDP",
+        "reason": "byte-identical to the previously evaluated 4x3_nonterminating.POMDP source",
+        "role": "priorProjectExposureExclusion",
+        "sha256": "0fa62301931960d682b02961ffd38f4dd6b8e8835bc0203f4a12f849c267d6ff"
+      },
+      {
+        "file": "aloha-10max.POMDP",
+        "reason": "rounded transition rows are not normalized; no repair or renormalization permitted",
+        "role": "sourceDefectExclusion",
+        "sha256": "ea65046e17f42b5b33a047caa417affe61d962623023f98afc58849f0cb55d08"
+      },
+      {
+        "file": "bridge-repair.POMDP",
+        "role": "protectedConfirmationNovel",
+        "sha256": "2a31d9e786814d5b3fcf2b70781809aea9f5a88eb0a64a4165376bbd3abe8cbb"
+      },
+      {
+        "file": "cheese.95.POMDP",
+        "reason": "cheese domain was evaluated in V70",
+        "role": "priorProjectExposureExclusion",
+        "sha256": "ccda4da997cca14e98d2a83873082cebfde9f053790c877f8768f0c658a8b93c"
+      },
+      {
+        "file": "concert.POMDP",
+        "role": "developmentFresh",
+        "sha256": "910d02a4014ce7ac22c64a5fd19d8298ac6849d92f839b47190da903d454f308"
+      },
+      {
+        "file": "ejs1.POMDP",
+        "role": "developmentFresh",
+        "sha256": "0c1202c3cc4175072f2ea86db20bc57268863f7af715eee99a6564376caa9624"
+      },
+      {
+        "file": "ejs2.POMDP",
+        "role": "protectedConfirmationRelated",
+        "sha256": "113653a436ea6b31ce7063b981ef5f416867a8b9f5af6c5af1c9bbb140e26ca4"
+      },
+      {
+        "file": "ejs3.POMDP",
+        "role": "protectedConfirmationRelated",
+        "sha256": "cdda79bfccde1e816175ebf54c8f4255292be4ef78ceef0db87638c9ccabc358"
+      },
+      {
+        "file": "ejs4.POMDP",
+        "reason": "missing required discount header",
+        "role": "sourceDefectExclusion",
+        "sha256": "2b341290602bd7b48606aeb79db4eafb4c138f1f28e8d9c05d79c823e468c4e8"
+      },
+      {
+        "file": "ejs5.POMDP",
+        "reason": "missing required discount header",
+        "role": "sourceDefectExclusion",
+        "sha256": "ac0e0ac1ca6ce497de38608c4e0f299265e42ce438f62d086ff956fea9dabeb9"
+      },
+      {
+        "file": "ejs6.POMDP",
+        "reason": "missing required discount header",
+        "role": "sourceDefectExclusion",
+        "sha256": "09f327e26fd25ae60a1b543b589c0c924d599c7255ba4fcc74b6002c068e4553"
+      },
+      {
+        "file": "ejs7.POMDP",
+        "reason": "missing required discount header and contains a non-normalized observation row",
+        "role": "sourceDefectExclusion",
+        "sha256": "77c4deae7b90c69619fedbda3ecc002355b2bdb927c569f14f0f91b404067552"
+      },
+      {
+        "file": "manuel-hartman.2013-09-19.POMDP",
+        "role": "developmentFresh",
+        "sha256": "56b1fec63ed701b6b68e49470417ec5c76c91138553aa6a244bc337035ce2b42"
+      },
+      {
+        "file": "parr95.95.POMDP",
+        "role": "protectedConfirmationNovel",
+        "sha256": "f96875c1b71d58af6bd4279f10df46f25b4bb7d1fe0249472a717fe071fd5265"
+      },
+      {
+        "file": "shuttle.95.POMDP",
+        "reason": "shuttle domain was evaluated in V70",
+        "role": "priorProjectExposureExclusion",
+        "sha256": "a69baec2d6e83e239bafa4c6b74faead794e7c91400bf69c7d3813ed114cea94"
+      },
+      {
+        "file": "tiger.95.POMDP",
+        "reason": "tiger domain was used in prior project development",
+        "role": "priorProjectExposureExclusion",
+        "sha256": "ef15515a230f600a9e5c5f1636708e15aca7a962d1095356652f8ebe82053ba0"
+      },
+      {
+        "file": "tiger.aaai.POMDP",
+        "reason": "tiger domain was used in prior project development",
+        "role": "priorProjectExposureExclusion",
+        "sha256": "61454b9bf84faf427c8275feea26d81d8e69fea30a727bed5cfb63b3a1c21ae1"
+      },
+      {
+        "file": "uav-search.raissa-bravo.orig.POMDP",
+        "role": "protectedConfirmationNovel",
+        "sha256": "986270729735974b9c7a5a654736025273e107899bb6d0b32db8b824d9231949"
+      }
+    ],
+    "stageAuthorization": {
+      "auditAndFreezeDevelopmentResourceFeasibility": false,
+      "auditAndFreezeSourceFeasibility": true,
+      "constructDevelopmentCensus": false,
+      "readProtectedConfirmationOutcomes": false,
+      "runDevelopmentOutcomes": false,
+      "writeDevelopmentEvaluator": false
+    },
+    "unknownSensorFamily": {
+      "canonicalDominant": "O_z(j|a,s')=rho*O_source(j|a,s')+(1-rho)*O_source(reverse(j)|a,s')",
+      "latentNames": [
+        "canonical_dominant",
+        "reversed_dominant"
+      ],
+      "latentPrior": [
+        0.5,
+        0.5
+      ],
+      "reliability": 0.85,
+      "reverseIndex": "reverse(j)=observation_count-1-j in pinned source-file order",
+      "reversedDominant": "O_z(j|a,s')=rho*O_source(reverse(j)|a,s')+(1-rho)*O_source(j|a,s')",
+      "rewards": "source observation-conditioned immediate values are collapsed exactly under O_source before the delivered-label transformation; all other rewards are unchanged",
+      "supportRule": "both point models must have identical delivered-observation support for every action and successor state; any violation is a hard design failure",
+      "transitions": "unchanged pinned source transition arrays for both latent values"
+    }
+  },
+  "config_sha256": "88074bbe9c0ded51075db21f294f942a6c50398717498b3cb3614211d3ff9fd6",
+  "directional_source_lock": "configs/v68r2-v70-synthesis-lock.json",
+  "directional_source_lock_sha256": "efca10ef338cbcf73cb97574f757e970dd04f34274836d1b5336f864ca32cc12",
+  "experiment": "v71_sensor_codebook_source_lock",
+  "lock_payload_sha256": "7e91c106b60155b336f595c26901c82841e566b0722cf829afa2f812f11ece4e",
+  "parser": "python/v71_cassandra_pomdp.py",
+  "parser_sha256": "9d1c17c72a1f01f8f7378bd423eb70840ceab05a9067d3d9eb73fa00e50e9ff7",
+  "parser_tests": "python/test_v71_cassandra_pomdp.py",
+  "parser_tests_sha256": "1ffec5f1c9d5b5c12c45f18eb19d65094066a2306a3d532338a7715765842169",
+  "preregistration": "docs/v71-sensor-codebook-source-feasibility-plan.md",
+  "preregistration_sha256": "8075acbc989beb464b926d83e52fec87bad041c7587097505eedd22e60259892",
+  "prospective_role_census": {
+    "developmentFresh": 3,
+    "priorProjectExposureExclusion": 5,
+    "protectedConfirmationNovel": 3,
+    "protectedConfirmationRelated": 2,
+    "sourceDefectExclusion": 6
+  },
+  "schema_version": "71-sensor-codebook-source-feasibility",
+  "source_audit": "outputs/v71-sensor-codebook/source-feasibility-audit.json",
+  "source_audit_sha256": "03e755a49fef8f4ec5b24515cf8b8b087e62af19fd4c17056582f916bbeccc82",
+  "source_auditor": "python/audit_and_freeze_v71_source_feasibility.py",
+  "source_auditor_sha256": "82e2fedce8da17878c47690a62cc7c89db3110b89b8d8ad220dbeb64887d35eb",
+  "source_commit": "4f5d399f260f7789bc1d95baab069eef5c93aaf9",
+  "source_inventory": "outputs/v71-sensor-codebook/source-feasibility-inventory.json",
+  "source_inventory_sha256": "eaa7f58ffb61436c9db3d0f47112286e5e4e4904d1f3811082349a2ee75d37de",
+  "source_license": "CC-BY-NC-4.0",
+  "source_license_sha256": "a3c9c0d5435a5487c003076e35da55d1fe52d600f23a7ebe584a0edaf92bfe24",
+  "source_repository": "https://github.com/cassandra/pomdp-solve.git"
+}

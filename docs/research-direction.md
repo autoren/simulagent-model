@@ -168,6 +168,28 @@ human interaction, and model or adapter experiments remain separate future progr
 feasibility and validation gates. The V58 language branch remains paused until real independent
 participants exist.
 
+V71 performed that fresh boundary test with a binary latent observation-label codebook rather than
+action or transition remapping. The construction mixed canonical and reversed source observation
+labels at a prospectively fixed reliability of `0.85`; its two point models had identical support by
+construction, so fallback was forbidden. A new official `pomdp-solve` source census produced three
+fresh development models and five protected confirmation models after excluding prior-domain reuse
+and malformed or non-normalized files without repair. Source, resource, census, and evaluator locks
+were completed before the one authorized development outcome.
+
+The V71 development result was cleanly negative. All 21 root/depth-1 records were complete,
+fallback-free, normalized, finite, and source-valid, but exact Bayes-adaptive, MAP, open-loop, and
+myopic control had identical values throughout. All three root policies agreed, no model had material
+MAP or posterior-sampling regret, and maximum normalized MAP regret was zero. The independent audit
+reproduced the four failed scientific gates and verified zero protected-confirmation access.
+
+V71 therefore stops before confirmation; its reliability, horizon, models, controls, and gates must
+not be tuned retrospectively, and its five protected models must remain unopened. A successor sensor-
+semantics study is justified only after fresh environments are sourced whose declared structure
+contains action-dependent sensing, delayed state-dependent reward, and a genuine sensing-versus-
+control tradeoff. Those properties must be audited from source metadata before outcomes. Until then,
+the correct action is to preserve V71 as a negative boundary result rather than search its protected
+set or relax the protocol.
+
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
 a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
 queries under partial state information. The historical evidence below records how that starting
@@ -289,3 +311,9 @@ uncertainty family and fresh protected models. Preserve the unsuccessful V65r1/V
 pooled-estimator qualification, the negative V66 MAP/first-repeat separation result, the disclosed
 nonblinded interface inspection, and the distinction between bounded value verification, planner
 optimality, and safety.
+
+Also freeze V71 as a failed, fallback-free development boundary study. Do not open its protected
+confirmation set, change its sensor reliability or horizon, replace its models, or reinterpret its
+zero-regret result as confirmation evidence. The next sensor-semantics attempt requires a new source
+census and preregistration that establishes an active-sensing tradeoff structurally before any policy
+outcome is computed.

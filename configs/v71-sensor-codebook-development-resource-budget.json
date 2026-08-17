@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "71-sensor-codebook-development-resource-feasibility",
+  "experiment": "v71_sensor_codebook_development_resource_only_preflight",
+  "sourceLock": "configs/v71-sensor-codebook-source-lock.json",
+  "estimationOnly": true,
+  "bounds": {
+    "perModelCensusRecordUpperBound": "1 + actions * observations",
+    "perRecordBellmanBranchNodeUpperBound": "1 + actions*observations + (actions*observations)^2",
+    "perModelAllPlannerBranchNodeUpperBound": "control_count * census_record_upper_bound * per_record_branch_node_upper_bound",
+    "jointTransitionBytes": "latent_count * actions * states^2 * 8",
+    "jointObservationBytes": "latent_count * actions * states * observations * 8",
+    "jointBeliefBytes": "latent_count * states * 8"
+  },
+  "constants": {
+    "latentCount": 2,
+    "controlCountIncludingExact": 5
+  },
+  "nonOutcomeThresholds": {
+    "maximumTotalCensusRecordUpperBound": 64,
+    "maximumPerModelCensusRecordUpperBound": 32,
+    "maximumPerRecordBellmanBranchNodeUpperBound": 512,
+    "maximumPerModelAllPlannerBranchNodeUpperBound": 50000,
+    "maximumTotalAllPlannerBranchNodeUpperBound": 100000,
+    "maximumPerModelJointTransitionBytes": 1048576,
+    "maximumPerModelJointObservationBytes": 1048576,
+    "maximumPerModelJointBeliefBytes": 1048576
+  },
+  "decisionRule": {
+    "ifEveryBoundPasses": "authorize construction and sealing of the complete three-model development census",
+    "ifAnyBoundFails": "defer the entire V71 development run without dropping, replacing, or simplifying a model"
+  },
+  "forbidden": [
+    "construct_policy_or_value_function",
+    "compute_reward_return_regret_optimal_action_or_EIG",
+    "construct_or_filter_development_histories",
+    "read_any_protected_confirmation_history_or_outcome",
+    "drop_replace_repair_or_renormalize_a_model"
+  ]
+}

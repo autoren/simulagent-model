@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "modify_source_family_partition_resource_or_census": false,
+    "read_protected_confirmation_histories_or_outcomes": false,
+    "run_development_outcomes": false,
+    "select_filter_drop_or_replace_records_or_models": false,
+    "write_and_audit_development_evaluator": true
+  },
+  "belief_core": "python/v71_sensor_codebook.py",
+  "belief_core_sha256": "d502ff714c68613219426e15ab8f259eceb7abf4c83bdfe057be56dc35fd5138",
+  "belief_core_tests": "python/test_v71_sensor_codebook.py",
+  "belief_core_tests_sha256": "9b327011e2ff45deab5a24df4433bb0769507ab19fcad147267fc603c3f3fbe6",
+  "census": "outputs/v71-sensor-codebook/development-census.jsonl",
+  "census_audit": "outputs/v71-sensor-codebook/development-census-audit.json",
+  "census_audit_sha256": "23665878b2ced273e28399ffb7a430d2a9e4e2a769abd9a627bd4b9bfa82892f",
+  "census_builder": "python/build_and_seal_v71_development_census.py",
+  "census_builder_sha256": "10405c83adb3c1e84dc7b043aa95820c91c6da913cd3db0beac0d1f0b0e65f3d",
+  "census_sha256": "2b1729b0bb3f4f75360e9731b1ade17264c95523036e015ced7f82e402d0d1b4",
+  "experiment": "v71_sensor_codebook_development_census_seal",
+  "lock_payload_sha256": "8c1da6133f10d54da068959d031ca459a0178e550356d5f427a18253a1cc015f",
+  "per_model_record_counts": {
+    "concert.POMDP": 7,
+    "ejs1.POMDP": 9,
+    "manuel-hartman.2013-09-19.POMDP": 5
+  },
+  "record_count": 21,
+  "resource_lock": "configs/v71-sensor-codebook-development-resource-lock.json",
+  "resource_lock_sha256": "52ba13bd3ce74971423fc06ad0244f95763b03361493122ebe7af390fa2ef972",
+  "schema_version": "71-sensor-codebook-development-census",
+  "source_lock": "configs/v71-sensor-codebook-source-lock.json",
+  "source_lock_sha256": "f8b59b128fa7ad0fa9c126413681133cde10d76f4c04078e3ec4f9c0817a5673"
+}

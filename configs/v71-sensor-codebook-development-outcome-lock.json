@@ -1,0 +1,40 @@
+{
+  "attempt": "outputs/v71-sensor-codebook/development-evaluation/attempt.json",
+  "attempt_sha256": "60b8f3f5aac504a3cb4011d5b27d68424a01f0c53f949e206684aa314e3fda4a",
+  "authorization": {
+    "adapter_training": false,
+    "begin_new_family_only_after_fresh_source_and_preregistration": true,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V71": false,
+    "read_V71_protected_confirmation_histories_or_outcomes": false,
+    "report_and_synthesize_negative_development_result": true,
+    "revise_V71_family_reliability_horizon_models_controls_normalization_or_gates": false,
+    "run_SMC2": false
+  },
+  "evaluator_lock": "configs/v71-sensor-codebook-development-evaluator-lock.json",
+  "evaluator_lock_sha256": "a2c527357b8e7dac0304bb93085eb258cf397ceca33487bcabf2384ae68adf33",
+  "experiment": "v71_sensor_codebook_development_outcome_lock",
+  "lock_payload_sha256": "2e3066692697c13d15b8e2efc8f4f7060f1768d1b53b1655ad73f618c30674c8",
+  "outcome": {
+    "development_models": 3,
+    "development_records": 21,
+    "maximum_normalized_MAP_regret": 0.0,
+    "models_with_exact_BA_MAP_root_action_disagreement": 0,
+    "models_with_material_MAP_regret": 0,
+    "models_with_material_posterior_sampling_regret": 0,
+    "passed_development_gates": false,
+    "protected_confirmation_policy_value_count": 0
+  },
+  "outcome_audit": "outputs/v71-sensor-codebook/development-outcome-audit.json",
+  "outcome_audit_sha256": "ff5cc3ce47f0404c79a81d8efc5772914a0d88650c4ffaaa2fbed0bcf0a1ec35",
+  "outcome_auditor": "python/audit_and_freeze_v71_development_outcome.py",
+  "outcome_auditor_sha256": "4902836a61e80790853b21fee89c839458136ab3ca367cb9ea90dd592a0bcc1b",
+  "record_results": "outputs/v71-sensor-codebook/development-evaluation/record-results.jsonl",
+  "record_results_sha256": "4f44cb441ccea0da0ff79bcbdf1364a67f06caeb0fd342d929be554e89b52760",
+  "report": "docs/v71-sensor-codebook-development-results.md",
+  "report_sha256": "05ee9cdd6751523944376c5eea36a6f11409311f8e24856eebf40efda234c0ba",
+  "result": "outputs/v71-sensor-codebook/development-evaluation/result.json",
+  "result_sha256": "3b3c815aed2ad9296b1aa124b91a7cd7b3a442adde4748b573ee5b34b60a1a02",
+  "schema_version": "71-sensor-codebook-development"
+}

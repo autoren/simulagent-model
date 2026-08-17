@@ -1,0 +1,71 @@
+{
+  "authorization": {
+    "construct_and_seal_complete_development_census": true,
+    "drop_replace_repair_renormalize_or_simplify_models": false,
+    "modify_source_family_partition_resource_budget_or_gates": false,
+    "read_protected_confirmation_histories_or_outcomes": false,
+    "run_development_outcomes": false,
+    "write_development_evaluator": false
+  },
+  "experiment": "v71_sensor_codebook_development_resource_lock",
+  "lock_payload_sha256": "c57097b243dec46e6b0ff947f4da7c00ebbff11928d785aef897f05db1163ff0",
+  "model_bounds": [
+    {
+      "actions": 3,
+      "all_planner_branch_node_upper_bound": 1505,
+      "census_record_upper_bound": 7,
+      "file": "concert.POMDP",
+      "joint_belief_bytes": 32,
+      "joint_observation_bytes": 192,
+      "joint_transition_bytes": 192,
+      "observations": 2,
+      "per_record_bellman_branch_node_upper_bound": 43,
+      "states": 2
+    },
+    {
+      "actions": 4,
+      "all_planner_branch_node_upper_bound": 3285,
+      "census_record_upper_bound": 9,
+      "file": "ejs1.POMDP",
+      "joint_belief_bytes": 48,
+      "joint_observation_bytes": 384,
+      "joint_transition_bytes": 576,
+      "observations": 2,
+      "per_record_bellman_branch_node_upper_bound": 73,
+      "states": 3
+    },
+    {
+      "actions": 2,
+      "all_planner_branch_node_upper_bound": 525,
+      "census_record_upper_bound": 5,
+      "file": "manuel-hartman.2013-09-19.POMDP",
+      "joint_belief_bytes": 32,
+      "joint_observation_bytes": 128,
+      "joint_transition_bytes": 128,
+      "observations": 2,
+      "per_record_bellman_branch_node_upper_bound": 21,
+      "states": 2
+    }
+  ],
+  "resource_audit": "outputs/v71-sensor-codebook/development-resource-audit.json",
+  "resource_audit_sha256": "e07343d5d6b7e2d7eaa0e15dd5749e64e70f754d72723e6c29389940b6edf6c7",
+  "resource_auditor": "python/audit_and_freeze_v71_development_resource_feasibility.py",
+  "resource_auditor_sha256": "de3f334c4cca8bfb01b078106955bfc47ed8666c7ebf5cbc98cc75a5cc6da450",
+  "resource_budget": "configs/v71-sensor-codebook-development-resource-budget.json",
+  "resource_budget_sha256": "f5fde36bb4f403372391ac51d181f0b0d5807533f707c2f094426fc9e44c8c90",
+  "resource_plan": "docs/v71-sensor-codebook-development-resource-feasibility-plan.md",
+  "resource_plan_sha256": "0889b93b0256dab778fe9a0f96ba7e74588922fe884a4b1353fdeb88196ae98f",
+  "schema_version": "71-sensor-codebook-development-resource-feasibility",
+  "source_lock": "configs/v71-sensor-codebook-source-lock.json",
+  "source_lock_sha256": "f8b59b128fa7ad0fa9c126413681133cde10d76f4c04078e3ec4f9c0817a5673",
+  "totals": {
+    "maximum_per_model_all_planner_branch_node_upper_bound": 3285,
+    "maximum_per_model_census_record_upper_bound": 9,
+    "maximum_per_model_joint_belief_bytes": 48,
+    "maximum_per_model_joint_observation_bytes": 384,
+    "maximum_per_model_joint_transition_bytes": 576,
+    "maximum_per_record_bellman_branch_node_upper_bound": 73,
+    "total_all_planner_branch_node_upper_bound": 5315,
+    "total_census_record_upper_bound": 21
+  }
+}
