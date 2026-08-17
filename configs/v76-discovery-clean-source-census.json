@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "76-discovery-clean-source-census",
+  "experiment": "v76_discovery_clean_active_sensing_source_census_preregistration",
+  "authorizationSource": "configs/v75-active-sensing-confirmation-outcome-lock.json",
+  "currentStage": "metadata-only discovery; no new source implementation or policy outcome may be inspected",
+  "scientificTarget": "prospectively partition one development source family and at least one repository-disjoint protected confirmation family for a discovery-clean test of the V74-V75 active-sensing mechanism",
+  "metadataOnlyAllowedOperations": [
+    "search public scholarly indexes, package indexes, benchmark catalogs, and repository landing pages",
+    "record canonical project and repository URLs, license metadata, publication metadata, release tags, and remote commit identifiers",
+    "record only high-level task descriptions and feature claims exposed by landing pages, abstracts, package metadata, or top-level README text",
+    "deduplicate candidates by repository, publication, benchmark lineage, and domain family",
+    "apply the frozen exposure exclusions and provisional metadata gates",
+    "freeze the complete eligible inventory and deterministic role partition"
+  ],
+  "forbiddenBeforeTheMetadataCensusLock": [
+    "clone or download a candidate repository or model bundle",
+    "open candidate implementation, model, configuration, test, notebook, or data files",
+    "run a candidate simulator, parser, exporter, planner, or environment",
+    "inspect transition, observation, reward, or initial-belief arrays",
+    "compute candidate policy values, optimal actions, regret, EIG, mutual information, thresholds, or open-loop returns",
+    "modify any V71-V75 source, model, adapter, horizon, control, threshold, or gate",
+    "select a candidate because of a favorable outcome or implementation-level diagnostic"
+  ],
+  "priorExposureExclusions": {
+    "repositoryWide": [
+      "https://github.com/taodav/pobax",
+      "https://github.com/cassandra/pomdp-solve",
+      "https://github.com/AdaCompNUS/sarsop",
+      "https://github.com/JuliaPOMDP/POMDPModels.jl",
+      "https://github.com/JuliaPOMDP/RockSample.jl",
+      "https://github.com/sisl/BetaZero.jl",
+      "https://github.com/sisl/SBO_AIPPMS",
+      "https://github.com/prateekbhustali/IMPRL",
+      "https://github.com/prateekbhustali/jax-imprl",
+      "https://github.com/prateekbhustali/optimality-of-decentralization",
+      "https://github.com/h2r/pomdp-py",
+      "https://github.com/kylewray/nova"
+    ],
+    "domainFamilyWide": [
+      "all classic POBAX and Cassandra POMDP files inspected or partitioned in V62-V71",
+      "Tiger and Tiger-like door-opening domains",
+      "RockSample and reference-rock variants",
+      "paint, part-painting, inspection-painting, and related manufacturing paint domains",
+      "IMPRL component-maintenance and k-out-of-n deterioration domains",
+      "the V72 engineered calibrate-inspect-repair oracle and all project-authored synthetic variants"
+    ],
+    "treatment": "any repository, benchmark lineage, or domain family previously previewed, structurally inspected, parsed, executed, partitioned, or scored by this project is development-exposed and cannot contribute discovery-clean evidence"
+  },
+  "provisionalMetadataGates": {
+    "publiclyIdentifiableLicenseOrReuseTerms": true,
+    "repositoryAndDomainFamilyAbsentFromExposureRegistry": true,
+    "explicitPartialObservabilityOrLatentPhysicalCondition": true,
+    "sourceDescribesAStateInformativeSensingOrInspectionAction": true,
+    "sourceDescribesADelayedStateDependentControlConsequence": true,
+    "sourceDescribesAReferenceCalibrationOrCrossSensorComparisonPathway": true,
+    "appearsFiniteOrExactlyEnumerableWithinTheRegisteredResourceEnvelope": true,
+    "noPolicyValueOrImplementationEvidenceUsedForEligibility": true
+  },
+  "deterministicRolePartition": {
+    "minimumEligibleRepositoryDistinctFamilies": 2,
+    "candidateIdentity": "canonical_repository_url + '@' + pinned_remote_commit + '#' + canonical_domain_family_name",
+    "ordering": "ascending SHA-256 hexadecimal digest of UTF-8 candidateIdentity",
+    "developmentRole": "first eligible candidate in deterministic order",
+    "protectedConfirmationRole": "second and later eligible candidates in deterministic order",
+    "repositoryDisjointRoles": true,
+    "noManualRoleSwap": true,
+    "ifFewerThanTwoEligibleFamilies": "freeze source-feasibility deferral without relaxing gates, reusing exposed sources, or inspecting implementations"
+  },
+  "postPartitionStructuralGates": {
+    "stageBoundary": "these gates are preregistered now but may be evaluated only after the metadata inventory and roles are durably locked",
+    "sourceNativeActionsDynamicsRewardsAndObservationLikelihoods": true,
+    "sourceNativeReferenceCalibrationPathway": true,
+    "onlyPermittedProjectLayer": "a persistent uniform-prior permutation over source-native observation labels; label renaming and belief augmentation only",
+    "addedActionsRewardsTransitionsObservationNoiseOrBeacon": false,
+    "commonPositiveSupportOnEveryReachablePointModelBranch": true,
+    "knownRewardSensingBypass": false,
+    "differentPlausibleCodebooksCanRequireDifferentLaterControlActions": true,
+    "horizonRule": "shortest source-valid action sequence containing reference sensing, target sensing, and a delayed state-dependent control, capped at six actions",
+    "maximumPhysicalStates": 64,
+    "maximumActions": 10,
+    "maximumObservations": 8,
+    "maximumPlanningHorizonActions": 6,
+    "maximumExactBellmanNodeUpperBound": 2000000,
+    "maximumDenseKernelBytes": 67108864
+  },
+  "prospectiveEconomicGate": {
+    "stageBoundary": "evaluate after structural parity and resource locks but before any optimal contingent planner, MAP, posterior-sampling, myopic, EIG, development, or confirmation outcome",
+    "fixedPolicy": "source-native reference sense, then target sense, then the source-native state-contingent control implied by their joint labels, with any source-required movement or delay inserted deterministically",
+    "comparator": "exhaustive best open-loop sequence at the same horizon under the joint prior",
+    "minimumRawAdvantage": 0.0,
+    "minimumNormalizedAdvantage": 0.015,
+    "minimumNormalizedMarginAboveThreshold": 0.005,
+    "normalization": "finite-horizon source reward span",
+    "ifAnyGateFails": "freeze the candidate as a negative feasibility result; do not tune, replace it after structural inspection, or open its protected counterpart"
+  },
+  "developmentAndConfirmationFirewall": {
+    "inspectDevelopmentImplementationFirst": true,
+    "protectedConfirmationImplementationRemainsUnopenedUntilDevelopmentPasses": true,
+    "developmentFailureStopsTheRegisteredFamily": true,
+    "developmentPassAuthorizesSeparateConfirmationDesignLockOnly": true,
+    "oneOutcomeAttemptPerRole": true,
+    "noCandidateDroppingReplacementOrThresholdRevisionAfterRoleLock": true
+  },
+  "claimBoundary": {
+    "thisFileSelectsAnySource": false,
+    "thisFileContainsAnyCandidateOutcome": false,
+    "metadataEligibilityImpliesStructuralEligibility": false,
+    "metadataEligibilityImpliesEconomicEligibility": false,
+    "discoveryCleanConfirmationExists": false,
+    "humanDataModelAccessAdapterTrainingOrSMC2": false
+  }
+}

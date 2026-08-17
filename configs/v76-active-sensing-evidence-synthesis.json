@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "76-active-sensing-evidence-synthesis",
+  "experiment": "v76_v71_v75_active_sensing_mechanism_synthesis",
+  "evidenceInputs": [
+    {
+      "stage": "V71",
+      "role": "fallback-free negative boundary",
+      "outcomeLock": "configs/v71-sensor-codebook-development-outcome-lock.json"
+    },
+    {
+      "stage": "V72-oracle",
+      "role": "engineered mechanism validation only",
+      "outcomeLock": "configs/v72-active-sensing-oracle-outcome-lock.json"
+    },
+    {
+      "stage": "V72-external",
+      "role": "harvestable-reference bypass negative boundary",
+      "outcomeLock": "configs/v72-active-sensing-development-outcome-lock.json"
+    },
+    {
+      "stage": "V73",
+      "role": "economic-materiality negative boundary before optimal planning",
+      "outcomeLock": "configs/v73-active-sensing-structural-outcome-lock.json"
+    },
+    {
+      "stage": "V74",
+      "role": "positive source-grounded development mechanism",
+      "outcomeLock": "configs/v74-active-sensing-development-outcome-lock.json"
+    },
+    {
+      "stage": "V75",
+      "role": "positive outcome-untouched external-domain replication",
+      "outcomeLock": "configs/v75-active-sensing-confirmation-outcome-lock.json"
+    }
+  ],
+  "registeredEvidenceLadder": [
+    "V71: uncertainty over sensor labels plus common support is insufficient when one control remains dominant",
+    "V72-oracle: a non-harvestable calibration-inspection-control mechanism is sufficient in an engineered fixture but is not scientific evidence",
+    "V72-external: explicit sensing and delayed control loss are insufficient when a known-reward route bypasses sensing",
+    "V73: non-harvestability, information gain, sensor separation, and control-threshold crossing are insufficient when their lower-bound economic advantage is immaterial",
+    "V74: the mechanism is positive in one prospectively screened, source-grounded development adapter",
+    "V75: the mechanism replicates in an outcome-untouched external domain, but prior structural exposure to the paint family prevents a discovery-clean confirmation label"
+  ],
+  "bestDefensibleClaim": "In the locked finite-horizon exact models, retaining the joint posterior over a persistent unknown observation-label codebook can materially improve posterior-expected control value over fixed MAP and persistent posterior-sampling controls when calibration is non-harvestable, observations retain common point-model support, the information changes a later state-dependent control decision, and a prospectively fixed adaptive policy materially beats open loop after sensing and delay costs.",
+  "necessaryDesignConditionsSupportedByTheSequence": [
+    "common point-model support with zero fallback",
+    "persistent uncertainty over observation-label semantics",
+    "source-grounded hidden state and state-dependent delayed control consequence",
+    "source-native or prospectively fixed non-harvestable calibration pathway",
+    "no known-reward control route that bypasses sensing",
+    "history-dependent observations that can change the later optimal control action",
+    "a prospective fixed-policy economic lower bound that materially exceeds best open loop"
+  ],
+  "conditionsNotSufficientInIsolation": [
+    "uncertainty",
+    "common support",
+    "an explicit sensing action",
+    "mutual information",
+    "sensor separation",
+    "control-threshold crossing",
+    "non-harvestability"
+  ],
+  "claimBoundary": {
+    "universalBayesAdaptiveAdvantage": false,
+    "unchangedExternalEnvironmentResult": false,
+    "discoveryCleanIndependentConfirmation": false,
+    "approximateInferenceOrSMC2Portability": false,
+    "longHorizonOrContinuousControl": false,
+    "humanInteractionOrNaturalLanguage": false,
+    "modelAccessOrAdapterTraining": false,
+    "realWorldSafetyOrPerformance": false,
+    "finiteHorizonPosteriorExpectedValueUnderLockedModels": true,
+    "sourceGroundedProjectAuthoredCodebookMechanism": true
+  },
+  "sequenceClosure": {
+    "modifyOrRerunV71ThroughV75": false,
+    "openV71ProtectedModels": false,
+    "computeAdditionalV71ThroughV75PolicyValues": false,
+    "reuseExposedSourcesForDiscoveryCleanEvidence": false,
+    "retrospectivelyTuneReliabilityNoiseBeaconCostsHorizonsControlsOrGates": false,
+    "reportAndSynthesizeCompletedSequence": true,
+    "beginDiscoveryCleanSuccessorOnlyAfterFreshPreregistration": true
+  }
+}

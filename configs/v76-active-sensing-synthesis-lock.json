@@ -1,0 +1,165 @@
+{
+  "audit": "outputs/v76-active-sensing-synthesis/audit.json",
+  "audit_sha256": "3b99133a420fc535d145ae78d4b9fef79c1736788a776dcede94daa7dfc04ae3",
+  "auditor": "python/audit_and_freeze_v76_active_sensing_synthesis.py",
+  "auditor_sha256": "0237e64945e8fde110fbc7fee54d481e39053c942d540b120f02042fdd89612d",
+  "authorization": {
+    "adapter_training": false,
+    "clone_or_download_candidate_sources": false,
+    "compute_candidate_policy_values_actions_regrets_EIG_or_mutual_information": false,
+    "execute_metadata_only_source_census": true,
+    "freeze_complete_eligible_inventory_and_deterministic_role_partition": true,
+    "human_data": false,
+    "inspect_candidate_implementation_model_config_test_notebook_or_data_files": false,
+    "model_access": false,
+    "modify_or_rerun_V71_through_V75": false,
+    "open_protected_confirmation_implementation_or_outcomes": false,
+    "read_public_landing_pages_abstracts_package_and_repository_metadata": true,
+    "report_and_synthesize_V71_through_V75": true,
+    "reuse_prior_exposed_repositories_or_domain_families": false,
+    "revise_V76_exposure_structural_resource_economic_or_role_gates": false,
+    "run_SMC2": false,
+    "run_candidate_simulators_parsers_exporters_or_planners": false
+  },
+  "checks": {
+    "all_source_outcome_chains_are_hash_bound": true,
+    "census_excludes_every_v62_v75_repository_family": true,
+    "documents_state_bounded_claim_and_firewall": true,
+    "later_resource_and_economic_gates_are_fixed": true,
+    "later_structural_gate_forbids_new_beacon_noise_or_rewards": true,
+    "metadata_stage_forbids_implementation_and_outcomes": true,
+    "research_direction_records_v76_decision": true,
+    "roles_are_repository_disjoint_and_deterministic": true,
+    "synthesis_preserves_discovery_clean_boundary": true,
+    "synthesis_registers_complete_stage_order": true,
+    "v71_is_clean_zero_regret_negative_boundary": true,
+    "v72_external_is_harvestable_bypass_negative": true,
+    "v72_oracle_validates_mechanism_only": true,
+    "v73_stops_on_immaterial_economic_lower_bound": true,
+    "v74_is_positive_source_grounded_development": true,
+    "v75_is_positive_outcome_untouched_not_discovery_clean_replication": true,
+    "zero_human_model_and_adapter_access_after_v71": true
+  },
+  "claim_boundary": {
+    "approximate_inference_human_model_or_real_world_claim": false,
+    "discovery_clean_confirmation": false,
+    "finite_horizon_exact_joint_model_mechanism": true,
+    "unchanged_external_environment": false,
+    "universal_advantage": false
+  },
+  "evidence": {
+    "discovery_clean_confirmation_stage": null,
+    "mechanism_only_stage": "V72-oracle",
+    "negative_boundary_stages": [
+      "V71",
+      "V72-external",
+      "V73"
+    ],
+    "positive_development_stage": "V74",
+    "positive_outcome_untouched_replication_stage": "V75"
+  },
+  "experiment": "v76_active_sensing_synthesis_and_source_census_lock",
+  "lock_payload_sha256": "bf02486abfd7878520adb15f2c8e9f5d70a94be7cb26a2f1d57b23b8805dd23d",
+  "passed": true,
+  "research_direction_snapshot": "docs/research-direction.md",
+  "research_direction_snapshot_sha256": "905ba1d4cb238b78484e06f37dafefd4296824d8ca65bddd1802af423aec2f73",
+  "schema_version": "76-active-sensing-synthesis-and-source-census",
+  "source_census_config": "configs/v76-discovery-clean-source-census.json",
+  "source_census_config_sha256": "d259f03d3aa84ffbbcb29335637e67c7f5ee59a64aeecfa80a5e1e01f72be331",
+  "source_census_plan": "docs/v76-discovery-clean-source-census-plan.md",
+  "source_census_plan_sha256": "b8d2598a8badce8bc14caadf0f2efc5deb9b09b27c82a7d9d6bba5355a19f47b",
+  "source_outcomes": {
+    "V71": {
+      "outcome": {
+        "development_models": 3,
+        "development_records": 21,
+        "maximum_normalized_MAP_regret": 0.0,
+        "models_with_exact_BA_MAP_root_action_disagreement": 0,
+        "models_with_material_MAP_regret": 0,
+        "models_with_material_posterior_sampling_regret": 0,
+        "passed_development_gates": false,
+        "protected_confirmation_policy_value_count": 0
+      },
+      "outcome_lock": "configs/v71-sensor-codebook-development-outcome-lock.json",
+      "outcome_lock_sha256": "1bd16ee82378d9eaf1368ffca5fa49dd6ebb3b8dbae4953af32d61397b4b99e5",
+      "schema_version": "71-sensor-codebook-development"
+    },
+    "V72-external": {
+      "outcome": {
+        "V71_protected_access_count": 0,
+        "development_model_count": 1,
+        "failed_gate_count": 7,
+        "maximum_normalized_MAP_regret": 0.0,
+        "maximum_normalized_posterior_sampling_regret": 0.0,
+        "passed_development_gates": false,
+        "passed_gate_count": 2,
+        "protected_confirmation_policy_value_count": 0
+      },
+      "outcome_lock": "configs/v72-active-sensing-development-outcome-lock.json",
+      "outcome_lock_sha256": "3fda409b9893bb5fa7fe3a8532120351ab0b1a38b6cdf74c30c19b50893c15d8",
+      "schema_version": "72-active-sensing-development-evaluation"
+    },
+    "V72-oracle": {
+      "outcome": {
+        "V71_protected_access_count": 0,
+        "external_candidate_metadata_record_count": 0,
+        "external_candidate_policy_value_count": 0,
+        "oracle_gate_count": 13,
+        "passed_all_oracle_gates": true,
+        "scientific_evidence": false
+      },
+      "outcome_lock": "configs/v72-active-sensing-oracle-outcome-lock.json",
+      "outcome_lock_sha256": "6e4431c8826c1740774b2499446fb1b5f230d18eed1f413984a50fe8e49e6699",
+      "schema_version": "72-active-sensing-oracle"
+    },
+    "V73": {
+      "outcome": {
+        "exact_development_evaluation_count": 0,
+        "failed_gate_count": 1,
+        "fixed_adaptive_over_open_loop_normalized_advantage": 0.000402659100899113,
+        "passed_all_structural_gates": false,
+        "protected_source_access_count": 0
+      },
+      "outcome_lock": "configs/v73-active-sensing-structural-outcome-lock.json",
+      "outcome_lock_sha256": "64c2d1a7482f2cbb71dee127a3c9ef7a98d4f7cb3963cdef84c61fdfda1136e6",
+      "schema_version": "73-active-sensing-structural-outcome"
+    },
+    "V74": {
+      "outcome": {
+        "exact_value": 5.609354999999997,
+        "fallback_count": 0,
+        "map_value": -44.20125,
+        "normalized_exact_over_open_loop_advantage": 0.02242245239423153,
+        "normalized_map_regret": 0.15874625129471756,
+        "normalized_posterior_sampling_regret": 0.15874625129471756,
+        "passed_all_development_gates": true,
+        "posterior_sampling_value": -44.20125,
+        "protected_confirmation_policy_value_count": 0
+      },
+      "outcome_lock": "configs/v74-active-sensing-development-outcome-lock.json",
+      "outcome_lock_sha256": "be499ff3a89100732d97eb7e444226ce31e15b9328b0c39fb7feea2c03991ab2",
+      "schema_version": "74-active-sensing-development-outcome"
+    },
+    "V75": {
+      "outcome": {
+        "exact_value": 0.1663984375,
+        "fallback_count": 0,
+        "map_value": -0.004286875000000003,
+        "normalized_exact_over_open_loop_advantage": 0.022426421038444694,
+        "normalized_map_regret": 0.02300418646180801,
+        "normalized_posterior_sampling_regret": 0.02300418646180801,
+        "passed_all_replication_gates": true,
+        "posterior_sampling_value": -0.004286875000000003,
+        "source_discovery_clean": false,
+        "source_policy_outcome_untouched": true
+      },
+      "outcome_lock": "configs/v75-active-sensing-confirmation-outcome-lock.json",
+      "outcome_lock_sha256": "4ebd67f2f925a8a1b6c5a2cd9738fe2ef97ec1063e6606c9e5d38ffe0f0df48b",
+      "schema_version": "75-active-sensing-confirmation-outcome"
+    }
+  },
+  "synthesis_config": "configs/v76-active-sensing-evidence-synthesis.json",
+  "synthesis_config_sha256": "150c6bacd8ce204ee1f5c64af28b1784d08b08ae841dc7b29194b756d1298f11",
+  "synthesis_document": "docs/v76-active-sensing-evidence-synthesis.md",
+  "synthesis_document_sha256": "a54e17da38f3811fb47f6cd9e4aefac14d2e33f87df2d3d80e975892cecde3d3"
+}

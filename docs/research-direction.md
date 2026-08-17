@@ -430,3 +430,19 @@ and V75's positive outcome-untouched external-domain replication. Do not modify 
 its source, beacon, horizon, controls, or thresholds, or relabel it as discovery-clean confirmation.
 Authorize reporting and synthesis now. Any further empirical stage must begin with a fresh
 preregistration and a domain family not previously inspected anywhere in this project.
+
+## Status after V76 (2026-08-17)
+
+V71-V75 now form a frozen falsification sequence with a bounded mechanism claim. Uncertainty and
+common support alone failed in V71; active sensing was bypassed by a harvestable known-reward route in
+V72; non-harvestability, information, and threshold crossing remained economically immaterial in V73;
+and the complete prospectively screened mechanism passed in V74 development and V75 outcome-untouched
+external-domain replication. V75 remains explicitly short of discovery-clean confirmation because the
+paint family was structurally exposed in V68.
+
+The next authorized action is metadata-only source discovery under the V76 census preregistration.
+Every repository and domain family exposed in V62-V75 is excluded. Candidate roles must be assigned by
+the frozen SHA-256 ordering across at least two repository-disjoint eligible families. No candidate
+implementation may be opened, cloned, executed, or scored before the complete metadata inventory and
+role partition are durably locked. If fewer than two families qualify, defer without relaxing the
+exposure, structural, resource, economic, or role-assignment gates.
