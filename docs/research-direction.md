@@ -220,6 +220,29 @@ reject any immediately available known-reward route that bypasses sensing. The s
 that the frozen sensor discriminability can cross the final good/bad control threshold. V72's source,
 model, parameters, horizon, controls, and gates must not be tuned or reused for successor outcomes.
 
+V73 implemented that successor gate before running any optimal planner. A fresh Apache-2.0 IMPRL
+maintenance source supplied three-state deterioration, inspection, replacement, cost, initial-belief,
+and discount parameters. The project-authored adapter added a non-harvestable calibration beacon and
+binary label-codebook uncertainty. The beacon used the source do-nothing transition, cost `-8`, had no
+positive reward, and could not be controlled or harvested. All ten structural exporter tests passed;
+the point models had identical support; calibration mutual information was `0.3681` nats; inspection
+healthy/degraded TV was `0.85`; and paired label histories crossed the registered replacement
+threshold.
+
+The preregistered dominance gate nevertheless failed. The fixed calibrate-then-inspect adaptive policy
+had value `-118.9418`, versus `-119.4345` for the best of 1,024 open-loop sequences, a raw improvement
+of `0.4927` but only `0.000403` of the frozen return scale, below the `0.005` minimum. An independent
+implementation reproduced the policy value, open-loop optimum, sequence, scale, and failed gate.
+V73 therefore stopped before exact Bayes-adaptive, MAP, posterior-sampling, myopic, EIG, protected-
+source, human, or model outcomes.
+
+This sharpens the next constraint again. Non-harvestability, mutual information, sensor separation,
+and threshold crossing are still insufficient: a fresh source must pass a prospective *economic value
+of information* lower bound after all sensing, delay, deterioration, and control costs. That lower
+bound must clear the material-effect threshold by margin before an adapter or optimal evaluator is
+implemented. V73's repository, component, parameters, adapter, horizon, fixed policy, and gates are
+closed and cannot be tuned or reused for successor outcomes.
+
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
 a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
 queries under partial state information. The historical evidence below records how that starting

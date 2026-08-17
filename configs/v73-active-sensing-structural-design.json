@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "73-active-sensing-structural-design",
+  "sourceLock": "configs/v73-active-sensing-source-lock.json",
+  "horizonActions": 5,
+  "tieTolerance": 1e-12,
+  "structuralGates": {
+    "requiredStructuralUnitTests": 10,
+    "maximumStates": 3,
+    "maximumActions": 4,
+    "maximumObservations": 4,
+    "maximumDenseKernelBytes": 8192,
+    "maximumExactBellmanNodeUpperBound": 5000,
+    "maximumKnownPositiveImmediateRewardCount": 0,
+    "requiredCalibrationBeaconHarvestable": false,
+    "requiredCalibrationControlTransition": "source_do_nothing_transition",
+    "requiredPointModelSupportIdentity": true,
+    "minimumCalibrationMutualInformationNats": 0.3,
+    "minimumHealthyDegradedInspectionTotalVariation": 0.75,
+    "requiredReplacementThresholdStraddledByPairedLabelPosteriors": true,
+    "minimumFixedAdaptivePolicyOverBestOpenLoopNormalizedAdvantage": 0.005,
+    "maximumExactBayesAdaptiveCalls": 0,
+    "maximumMAPCalls": 0,
+    "maximumPosteriorSamplingCalls": 0,
+    "maximumMyopicCalls": 0,
+    "maximumProtectedSourceAccessCount": 0
+  },
+  "fixedDominanceAudit": {
+    "knownRewardEnumeration": "enumerate every state-action immediate reward and reject any strictly positive reward",
+    "openLoopEnumeration": "enumerate all 4^5 action sequences under the exact joint initial belief",
+    "fixedAdaptivePolicy": "calibrate, inspect, replace on label_2 or label mismatch, otherwise do nothing, then do nothing",
+    "normalization": "frozen finite-horizon return scale",
+    "purpose": "reject another sensing-bypass design before any optimal contingent planner is run"
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the adapter/resource/structural audit and authorize implementation locking of the already preregistered development evaluator",
+    "ifAnyGateFails": "freeze a negative V73 structural-feasibility result and stop before exact Bayes-adaptive, MAP, posterior-sampling, or myopic evaluation",
+    "noRetrospectiveChanges": [
+      "source commit or component",
+      "adapter actions or observations",
+      "transition observation or reward parameters",
+      "initial belief",
+      "horizon",
+      "fixed structural policy",
+      "structural gates",
+      "development evaluation gates"
+    ]
+  }
+}

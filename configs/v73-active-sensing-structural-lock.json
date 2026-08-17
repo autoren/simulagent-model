@@ -1,0 +1,36 @@
+{
+  "attempt": "outputs/v73-active-sensing/structural-attempt.json",
+  "attempt_sha256": "74af0d6aae63b4a25385a3de90a76cb5740a10127b1acaec037eedde1e832def",
+  "audit": "outputs/v73-active-sensing/structural-audit.json",
+  "audit_sha256": "96d0847f45a604581d089afedbbbdbb74bb677e88ed62d223bfa09d675b3438f",
+  "auditor": "python/audit_and_freeze_v73_structural_feasibility.py",
+  "auditor_sha256": "99c7bd0aceef44a1921efad00b388836ee9d545fe5fdfde3dd9c3506ba12c6e4",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_and_lock_development_evaluator": false,
+    "model_access": false,
+    "modify_source_adapter_structural_or_evaluation_design": false,
+    "run_SMC2": false,
+    "run_exact_development_evaluation": false,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "config": "configs/v73-active-sensing-structural-design.json",
+  "config_sha256": "c94bf86fee8a1d76e019f0ccc9508246059e6510cb785f95e1528ed0e4340302",
+  "design_lock": "configs/v73-active-sensing-design-lock.json",
+  "design_lock_sha256": "8476171ee87d98487f61386319c281d5c902bb4d7a4bb6c9744e5ffb89536d20",
+  "experiment": "v73_imprl_structural_lock",
+  "exporter": "python/v73_imprl_maintenance_source.py",
+  "exporter_sha256": "13423cf0c9eba18865a63c945f630ffaba1bbdf692ca673895e5421b780f8e77",
+  "exporter_tests": "python/test_v73_imprl_maintenance_source.py",
+  "exporter_tests_sha256": "1be6b1df01b091c01c536f5a135562cf3994bce8ed70d551839530b1daee9908",
+  "lock_payload_sha256": "d6d27987e1b5466a07bf7580da586633f034b3212801ddd98bfcc818095c3a79",
+  "outcome": {
+    "failed_gate_count": 1,
+    "fixed_adaptive_over_open_loop_normalized_advantage": 0.0004026591008991246,
+    "known_positive_immediate_reward_count": 0,
+    "passed_all_structural_gates": false,
+    "point_model_supports_identical": true
+  },
+  "schema_version": "73-active-sensing-structural-feasibility"
+}

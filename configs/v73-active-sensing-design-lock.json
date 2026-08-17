@@ -1,0 +1,29 @@
+{
+  "auditor": "python/audit_and_freeze_v73_structural_design.py",
+  "auditor_sha256": "253627426d8a144cfb2788f9005669a4b0021d60d56b3d1a1e18861ee3eebffc",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_and_test_source_grounded_adapter": true,
+    "model_access": false,
+    "modify_source_blueprint_structural_or_evaluation_design": false,
+    "run_SMC2": false,
+    "run_exact_development_evaluation": false,
+    "run_structural_dominance_audit_once": true,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "evaluation_config": "configs/v73-active-sensing-development-evaluation.json",
+  "evaluation_config_sha256": "e388d5c4720ab4ec18fc61f8233d21bc5b19f72853fe22fa857921a098de1adc",
+  "evaluation_plan": "docs/v73-active-sensing-development-evaluation-plan.md",
+  "evaluation_plan_sha256": "63b18ca7d9bdf912cdcba74e53a565a6e5bd484caf5f083174216b95ee3dd965",
+  "experiment": "v73_structural_and_development_design_lock",
+  "lock_payload_sha256": "71f922b0f7644bc6e4bf48e2e1a93e2f13a2cae77bdf6891880b342ecbbe78b1",
+  "preimplementation_file_count": 0,
+  "schema_version": "73-active-sensing-design",
+  "source_lock": "configs/v73-active-sensing-source-lock.json",
+  "source_lock_sha256": "d855a6a1d1184daa50a38273c6d3789e738f9e319ff568a53e9b2b7b5a65bc5f",
+  "structural_config": "configs/v73-active-sensing-structural-design.json",
+  "structural_config_sha256": "c94bf86fee8a1d76e019f0ccc9508246059e6510cb785f95e1528ed0e4340302",
+  "structural_plan": "docs/v73-active-sensing-structural-design-plan.md",
+  "structural_plan_sha256": "bb3b0edd757df6c5602eb0039ef8b59c2a3a16a3a8df21b470eba86fc9f7e149"
+}

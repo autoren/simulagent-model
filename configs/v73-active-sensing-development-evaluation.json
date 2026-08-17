@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "73-active-sensing-development-evaluation",
+  "structuralLock": "configs/v73-active-sensing-structural-lock.json",
+  "modelCount": 1,
+  "horizonActions": 5,
+  "tieTolerance": 1e-12,
+  "gates": {
+    "requiredExactRootAction": "calibrate_beacon",
+    "requiredMAPRootAction": "inspect_target",
+    "minimumExactRootActionMargin": 0.001,
+    "requiredSecondActionAfterEveryCalibrationLabel": "inspect_target",
+    "minimumDistinctMaintenanceActionsAcrossReachableHistories": 2,
+    "requiredMaintenanceActions": ["do_nothing", "replace_target"],
+    "minimumNormalizedMAPRegret": 0.005,
+    "minimumNormalizedPosteriorSamplingRegret": 0.005,
+    "minimumNormalizedExactOverOpenLoopAdvantage": 0.005,
+    "minimumPointModelOnSupportRate": 1.0,
+    "maximumFallbackCount": 0,
+    "maximumProtectedConfirmationPolicyValueCount": 0,
+    "maximumV71OrV72ProtectedAccessCount": 0,
+    "maximumCandidateEIGValueCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the development result and authorize fresh protected-source discovery only",
+    "ifAnyGateFails": "freeze a negative development result and stop V73 before protected-source discovery or confirmation",
+    "noRetrospectiveChanges": true
+  },
+  "claimBoundary": {
+    "sourceGroundedDevelopmentEvidence": true,
+    "unchangedExternalEnvironment": false,
+    "externalConfirmationEvidence": false,
+    "approximateInference": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

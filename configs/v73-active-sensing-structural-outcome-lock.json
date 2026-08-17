@@ -1,0 +1,33 @@
+{
+  "auditor": "python/audit_and_freeze_v73_structural_outcome.py",
+  "auditor_sha256": "03d4472214e5eaa2055de64dd3ed09e790c0ba30c13eef8f89474e0335130295",
+  "authorization": {
+    "adapter_training": false,
+    "design_materially_new_successor_after_fresh_preregistration": true,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V73": false,
+    "reuse_V73_source_component_adapter_or_parameters_for_successor_outcomes": false,
+    "run_SMC2": false,
+    "run_V73_exact_development_evaluation": false,
+    "select_or_inspect_V73_confirmation_sources": false
+  },
+  "experiment": "v73_structural_outcome_lock",
+  "lock_payload_sha256": "f9cc336ef64d313e9dbd03966bbea170b837bdc090a9e8d6a6c4f000470771b3",
+  "outcome": {
+    "exact_development_evaluation_count": 0,
+    "failed_gate_count": 1,
+    "fixed_adaptive_over_open_loop_normalized_advantage": 0.000402659100899113,
+    "passed_all_structural_gates": false,
+    "protected_source_access_count": 0
+  },
+  "outcome_audit": "outputs/v73-active-sensing/structural-outcome-audit.json",
+  "outcome_audit_sha256": "29601496e1659c68cd0e8d0d2b34045ba14dd97a4effbca8be83dda4cb0fc72a",
+  "report": "docs/v73-active-sensing-structural-results.md",
+  "report_sha256": "f3379b70f68ab4839b07b395cbfd1a2da6d68c0314d75d7e3e48c2aed6cb3b5c",
+  "schema_version": "73-active-sensing-structural-outcome",
+  "structural_audit": "outputs/v73-active-sensing/structural-audit.json",
+  "structural_audit_sha256": "96d0847f45a604581d089afedbbbdbb74bb677e88ed62d223bfa09d675b3438f",
+  "structural_lock": "configs/v73-active-sensing-structural-lock.json",
+  "structural_lock_sha256": "3b9f9886c44169d481f7cd9ee837358a5afed0574e18572280b5587b7c5f7c5e"
+}

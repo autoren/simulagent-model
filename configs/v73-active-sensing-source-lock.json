@@ -1,0 +1,29 @@
+{
+  "audit": "outputs/v73-active-sensing/source-audit.json",
+  "audit_sha256": "68823173f5cdd584024c969e2d31e9573ea06b1f3f7813254a2dbf0fe0cc1112",
+  "auditor": "python/audit_and_freeze_v73_source_feasibility.py",
+  "auditor_sha256": "31d47ab474abb20a45599051cdc32c105fafb92f04a5fbaeac66b96eab794c8c",
+  "authorization": {
+    "adapter_training": false,
+    "compute_exact_BA_MAP_PS_or_myopic_outcomes": false,
+    "human_data": false,
+    "implement_adapter_and_structural_tests": true,
+    "model_access": false,
+    "modify_source_selection_or_blueprint": false,
+    "run_SMC2": false,
+    "run_preregistered_structural_dominance_audit": true,
+    "select_or_inspect_confirmation_sources": false
+  },
+  "config": "configs/v73-active-sensing-source-feasibility.json",
+  "config_sha256": "ba6647da0acc5f4b60ae5c25a419e5fc8ec0b203bfcc666c1ffdc0af161a3c36",
+  "experiment": "v73_imprl_source_lock",
+  "inventory": "outputs/v73-active-sensing/source-inventory.json",
+  "inventory_sha256": "6510eba1381cfa4e12de8b9be7dcbee0bd13fa0d5df353c137278f7bf2c76378",
+  "lock_payload_sha256": "ef900336f423c6bd0f9e1b8f87f62e359394532f007d29a886248d52ad4186c1",
+  "plan": "docs/v73-active-sensing-source-feasibility-plan.md",
+  "plan_sha256": "b136222e8ac69c6b677bca1d1b845cf79c3c63ef7a51a1cb62cdcd809f2038a3",
+  "prior_lock": "configs/v72-active-sensing-development-outcome-lock.json",
+  "prior_lock_sha256": "3fda409b9893bb5fa7fe3a8532120351ab0b1a38b6cdf74c30c19b50893c15d8",
+  "repository_commit": "3c9cde75b48a2cba54f62330ead1e1dbc054d0cf",
+  "schema_version": "73-active-sensing-source-feasibility"
+}

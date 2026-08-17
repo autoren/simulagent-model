@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "73-active-sensing-source-feasibility",
+  "experiment": "v73_imprl_nonharvestable_calibration_source_selection",
+  "authorizationSource": "configs/v72-active-sensing-development-outcome-lock.json",
+  "preInventoryDisclosure": {
+    "publicRepositoryLandingPagesPreviewed": [
+      "https://github.com/prateekbhustali/IMPRL",
+      "https://github.com/prateekbhustali/jax-imprl",
+      "https://github.com/prateekbhustali/optimality-of-decentralization"
+    ],
+    "previewPurpose": "fresh maintenance-POMDP lead discovery after V72",
+    "candidatePolicyValuesComputed": 0,
+    "candidateOptimalActionsComputed": 0,
+    "candidateRegretsComputed": 0,
+    "candidateEIGComputed": 0,
+    "treatment": "all previewed repositories are exposed development leads and cannot supply confirmation evidence"
+  },
+  "selectedDevelopmentSource": {
+    "repository": "https://github.com/prateekbhustali/IMPRL",
+    "commit": "3c9cde75b48a2cba54f62330ead1e1dbc054d0cf",
+    "license": "Apache-2.0",
+    "environment": "k_out_of_n_infinite",
+    "configuration": "hard-4-of-4_infinite.yaml",
+    "componentIndexZeroBased": 3,
+    "repositoryRole": "development-only"
+  },
+  "fixedAdapterBlueprint": {
+    "sourceGrounding": {
+      "damageStates": ["healthy", "degraded", "failed"],
+      "sourceComponentActions": ["do_nothing", "replace", "inspect"],
+      "sourceComponentTransitionRows": [
+        [0.72, 0.28, 0.0],
+        [0.0, 0.78, 0.22],
+        [0.0, 0.0, 1.0]
+      ],
+      "initialBelief": [0.6, 0.4, 0.0],
+      "inspectionAccuracy": 0.9,
+      "failureObservationAccuracy": 1.0,
+      "replacementAccuracy": 1.0,
+      "replacementReward": -90.0,
+      "inspectionReward": -4.0,
+      "mobilisationReward": -4.0,
+      "failurePenaltyFactor": 3.0,
+      "projectedSingleComponentFailureReward": -270.0,
+      "discount": 0.8
+    },
+    "projectAuthoredLayer": {
+      "addedAction": "calibrate_beacon",
+      "beaconCondition": "healthy",
+      "beaconHarvestable": false,
+      "calibrationTargetTransition": "source_do_nothing_transition",
+      "calibrationImmediateReward": -8.0,
+      "calibrationObservation": "source component-3 inspection row for known healthy condition",
+      "latentCodebooks": ["canonical", "swap_labels_0_and_1"],
+      "latentPrior": [0.5, 0.5],
+      "preservedLabels": ["label_2", "none"],
+      "collapsedNoInspectionObservation": "source state-independent no-inspection observation is represented by one equivalent none symbol"
+    },
+    "finiteModel": {
+      "states": 3,
+      "actions": ["do_nothing", "replace_target", "inspect_target", "calibrate_beacon"],
+      "observations": ["label_0", "label_1", "label_2", "none"],
+      "planningHorizonActions": 5
+    },
+    "fixedStructuralPolicy": {
+      "action0": "calibrate_beacon",
+      "action1": "inspect_target",
+      "action2Rule": "replace_target if target label is label_2 or differs from the calibration label; otherwise do_nothing",
+      "remainingActions": "do_nothing"
+    }
+  },
+  "sourceSelectionGates": {
+    "pinnedSourceAndPermissiveLicense": true,
+    "freshRepositoryRelativeToV72": true,
+    "finiteDamageStateModel": true,
+    "distinctInspectionReplacementAndDoNothingActions": true,
+    "stateDependentFailureConsequence": true,
+    "actionDependentInspectionObservation": true,
+    "noPolicyOutcomeUsedForSelection": true
+  },
+  "claimBoundary": {
+    "externalSourceParametersAndSemantics": true,
+    "unchangedExternalEnvironment": false,
+    "projectAuthoredCalibrationAndCodebookLayer": true,
+    "developmentEvidenceOnly": true,
+    "confirmationEvidence": false,
+    "approximateInference": false,
+    "humanData": false,
+    "modelAccess": false
+  },
+  "stageAuthorization": {
+    "inspectAndPinSourceMetadata": true,
+    "freezeSourceInventory": true,
+    "implementAdapterAndStructuralAudit": false,
+    "computePlannerOutcomes": false,
+    "selectConfirmationSource": false
+  }
+}
