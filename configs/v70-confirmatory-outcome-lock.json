@@ -1,0 +1,51 @@
+{
+  "attempt": "outputs/v70-confirmatory/evaluation/attempt.json",
+  "attempt_sha256": "9016521b46422339f8a9c73311795509a5c38c90bd8b84accef1f8f92e0a9610",
+  "authorization": {
+    "adapter_training": false,
+    "develop_new_family_only_under_new_preregistration_and_fresh_data": true,
+    "drop_replace_or_rescore_confirmatory_models": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V70": false,
+    "report_and_synthesize_complete_result": true,
+    "revise_frozen_gates_after_outcome": false,
+    "run_SMC2": false
+  },
+  "evaluator_lock": "configs/v70-confirmatory-evaluator-lock.json",
+  "evaluator_lock_sha256": "745917aa734daa2df9329454a399bc5e05b284335b5fdf71cbf675c3c4b8c025",
+  "experiment": "v70_confirmatory_outcome_lock",
+  "lock_payload_sha256": "c81109d9cef03aad10dfbe155943ca5ad5b144e9fa4bd31d97cbb29a1aca5048",
+  "outcome": {
+    "confirmatory_models": 9,
+    "decision": "confirm_multi_environment_replication_for_project_authored_V69_family",
+    "material_posterior_sampling_models": 6,
+    "maximum_normalized_MAP_regret": 0.09544903686417067,
+    "paired_MAP_qualifying_models": 4,
+    "paired_MAP_qualifying_novel_models": 2,
+    "paired_MAP_qualifying_structurally_related_models": 2,
+    "passed": true,
+    "posterior_sampling_material_models": [
+      "4x3.POMDP",
+      "cheese.95.POMDP",
+      "cheese.95_nonterminating.POMDP",
+      "fully_observable_tmaze2.POMDP",
+      "hallway.POMDP",
+      "network.POMDP"
+    ],
+    "qualified_models": [
+      "4x3.POMDP",
+      "fully_observable_tmaze2.POMDP",
+      "hallway.POMDP",
+      "network.POMDP"
+    ],
+    "records": 244
+  },
+  "outcome_audit": "outputs/v70-confirmatory/outcome-audit.json",
+  "outcome_audit_sha256": "0d5af7817fdbb23d7a14db82da9b0801d2704922ec23d820b476f9455b7d0346",
+  "record_results": "outputs/v70-confirmatory/evaluation/record-results.jsonl",
+  "record_results_sha256": "0624664593e44903d6f2092d2b07234b299da1d498f922270f6ba221f641ba0d",
+  "result": "outputs/v70-confirmatory/evaluation/result.json",
+  "result_sha256": "0e92a0c66019848d1b8e01b9f89ac2a52036ccbec4f2e1db4fbae161776bf115",
+  "schema_version": "70-confirmatory-multi-environment"
+}

@@ -1,0 +1,130 @@
+{
+  "authorization": {
+    "construct_and_seal_complete_confirmatory_census": true,
+    "drop_or_replace_models": false,
+    "modify_design_resource_budget_or_model_set": false,
+    "run_confirmatory_outcomes": false,
+    "write_reporting_or_evaluator": false
+  },
+  "confirmatory_design_lock": "configs/v70-confirmatory-design-lock.json",
+  "confirmatory_design_lock_sha256": "c0b823ce8f1023dfe6bcd7122009ef4f17895454ab521f331960a8facb59f259",
+  "experiment": "v70_confirmatory_resource_lock",
+  "lock_payload_sha256": "d630103325dd9b00f1d1069eee3db3b7e4804c27964ffaff773f7b8908d4159e",
+  "model_bounds": [
+    {
+      "actions": 4,
+      "census_record_upper_bound": 29,
+      "convergence_joint_belief_bytes": 24768,
+      "convergence_transition_tensor_bytes": 1188864,
+      "file": "4x3.POMDP",
+      "observations": 7,
+      "per_record_bellman_branch_node_upper_bound": 813,
+      "states": 12,
+      "stratum": "structurally_related"
+    },
+    {
+      "actions": 4,
+      "census_record_upper_bound": 37,
+      "convergence_joint_belief_bytes": 18576,
+      "convergence_transition_tensor_bytes": 668736,
+      "file": "fully_observable_tmaze2.POMDP",
+      "observations": 9,
+      "per_record_bellman_branch_node_upper_bound": 1333,
+      "states": 9,
+      "stratum": "structurally_related"
+    },
+    {
+      "actions": 4,
+      "census_record_upper_bound": 61,
+      "convergence_joint_belief_bytes": 30960,
+      "convergence_transition_tensor_bytes": 1857600,
+      "file": "fully_observable_tmaze5.POMDP",
+      "observations": 15,
+      "per_record_bellman_branch_node_upper_bound": 3661,
+      "states": 15,
+      "stratum": "structurally_related"
+    },
+    {
+      "actions": 4,
+      "census_record_upper_bound": 29,
+      "convergence_joint_belief_bytes": 22704,
+      "convergence_transition_tensor_bytes": 998976,
+      "file": "cheese.95.POMDP",
+      "observations": 7,
+      "per_record_bellman_branch_node_upper_bound": 813,
+      "states": 11,
+      "stratum": "novel"
+    },
+    {
+      "actions": 4,
+      "census_record_upper_bound": 29,
+      "convergence_joint_belief_bytes": 22704,
+      "convergence_transition_tensor_bytes": 998976,
+      "file": "cheese.95_nonterminating.POMDP",
+      "observations": 7,
+      "per_record_bellman_branch_node_upper_bound": 813,
+      "states": 11,
+      "stratum": "novel"
+    },
+    {
+      "actions": 5,
+      "census_record_upper_bound": 106,
+      "convergence_joint_belief_bytes": 123840,
+      "convergence_transition_tensor_bytes": 37152000,
+      "file": "hallway.POMDP",
+      "observations": 21,
+      "per_record_bellman_branch_node_upper_bound": 11131,
+      "states": 60,
+      "stratum": "novel"
+    },
+    {
+      "actions": 4,
+      "census_record_upper_bound": 49,
+      "convergence_joint_belief_bytes": 43344,
+      "convergence_transition_tensor_bytes": 3640896,
+      "file": "heavenhell.POMDP",
+      "observations": 12,
+      "per_record_bellman_branch_node_upper_bound": 2353,
+      "states": 21,
+      "stratum": "novel"
+    },
+    {
+      "actions": 4,
+      "census_record_upper_bound": 9,
+      "convergence_joint_belief_bytes": 14448,
+      "convergence_transition_tensor_bytes": 404544,
+      "file": "network.POMDP",
+      "observations": 2,
+      "per_record_bellman_branch_node_upper_bound": 73,
+      "states": 7,
+      "stratum": "novel"
+    },
+    {
+      "actions": 3,
+      "census_record_upper_bound": 19,
+      "convergence_joint_belief_bytes": 18576,
+      "convergence_transition_tensor_bytes": 501552,
+      "file": "shuttle.POMDP",
+      "observations": 6,
+      "per_record_bellman_branch_node_upper_bound": 343,
+      "states": 9,
+      "stratum": "novel"
+    }
+  ],
+  "resource_audit": "outputs/v70-confirmatory/resource-audit.json",
+  "resource_audit_sha256": "9e61f808d481944269a5f6389b4df086171ad3c7c6e155762f07eb29ab5a9f4b",
+  "resource_budget": "configs/v70-confirmatory-resource-budget.json",
+  "resource_budget_sha256": "cfcee92396d55d4335ee4475b1e7c68d20b0736f991072e5bd89791c58b8454b",
+  "resource_plan": "docs/v70-confirmatory-resource-feasibility-plan.md",
+  "resource_plan_sha256": "65c7886d07660e2e44b97f14814750752671885818972f9e2465e643c67bee1b",
+  "schema_version": "70-confirmatory-resource-feasibility",
+  "totals": {
+    "dual_resolution_total_branch_node_upper_bound": 3291460,
+    "maximum_per_model_census_record_upper_bound": 106,
+    "maximum_per_model_convergence_joint_belief_bytes": 123840,
+    "maximum_per_model_convergence_transition_tensor_bytes": 37152000,
+    "maximum_per_record_bellman_branch_node_upper_bound": 11131,
+    "total_census_record_upper_bound": 368,
+    "total_convergence_transition_tensor_bytes": 47412144
+  }
+}

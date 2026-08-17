@@ -1,0 +1,43 @@
+{
+  "aggregation": "python/v70_confirmatory_aggregation.py",
+  "aggregation_sha256": "c1b3dc80d156254535921b5b8944895449bbebb2a97185a6accd254fe82a8bbc",
+  "attempt_path": "outputs/v70-confirmatory/evaluation/attempt.json",
+  "authorization": {
+    "adapter_training": false,
+    "drop_or_replace_models": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_prior_locks_code_census_reporting_or_gates": false,
+    "rescore_development_models": false,
+    "run_SMC2": false,
+    "run_confirmatory_outcome_once": true
+  },
+  "evaluator": "python/evaluate_v70_confirmatory.py",
+  "evaluator_audit": "outputs/v70-confirmatory/evaluator-audit.json",
+  "evaluator_audit_sha256": "77737ad3519edfd75204def9a257f57656a5d4102154908d4de6619d859e7ff0",
+  "evaluator_auditor": "python/audit_and_freeze_v70_confirmatory_evaluator.py",
+  "evaluator_auditor_sha256": "b4b1e2b832f6cc31a960ee390ff80bde784c0608e7c34537e4ce46a9bb3c6c8f",
+  "evaluator_sha256": "3270a39fbe7a7c2467265c0d32273264c7e2c83bd2c18ec635005ad9a3bfbc60",
+  "evaluator_tests": [
+    "python/test_v70_confirmatory_aggregation.py",
+    "python/test_v70_confirmatory_evaluator.py"
+  ],
+  "evaluator_tests_sha256": [
+    "def5dfc627ed398450baa0db70426b86f5c50c0c177a876c3a4498cbbeac2d39",
+    "d34e50d58399ce1ab2fbccc92b882f567ff35c2838c55f7df34ae7825b2803f4"
+  ],
+  "expected_attempt_number": 1,
+  "expected_confirmatory_models": 9,
+  "expected_records": 244,
+  "experiment": "v70_confirmatory_evaluator_lock",
+  "family_implementation": "python/v69_dominant_remapping.py",
+  "family_implementation_sha256": "d1b690ddb833f0712d288a6bdca36bfd98e74cc8a78314eac9db757d44f0261b",
+  "lock_payload_sha256": "459690bf4c7b96999072f55b6ea679f97289c05827a51426a4a8998c64ebe2a9",
+  "point_control_implementation": "python/v68r2_point_model_controls.py",
+  "point_control_implementation_sha256": "522debccc2f3d5dfe206a9138abe28e9fe7143ab882becd40251a66f5dbdbf43",
+  "reporting_lock": "configs/v70-confirmatory-reporting-lock.json",
+  "reporting_lock_sha256": "b8f74d425222f11f20d571874ce0b10c499afba7a13c8fb6b4c3043de7c35862",
+  "schema_version": "70-confirmatory-multi-environment",
+  "unchanged_exact_record_evaluator": "python/evaluate_v68r2_development_screen.py",
+  "unchanged_exact_record_evaluator_sha256": "9ee0d63950e2157c3b88256cf4af5edc76937ef36ae55ed30189f922548f5290"
+}

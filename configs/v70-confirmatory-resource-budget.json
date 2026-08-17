@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "70-confirmatory-resource-feasibility",
+  "experiment": "v70_confirmatory_resource_only_preflight",
+  "sourceConfirmatoryDesignLock": "configs/v70-confirmatory-design-lock.json",
+  "estimationOnly": true,
+  "bounds": {
+    "perModelCensusRecordUpperBound": "1 + actions * observations",
+    "perRecordBellmanBranchNodeUpperBound": "1 + actions*observations + (actions*observations)^2",
+    "convergenceTransitionTensorBytes": "2 * convergence_quadrature_nodes * actions * states^2 * 8",
+    "convergenceJointBeliefBytes": "2 * convergence_quadrature_nodes * states * 8",
+    "dualResolutionTotalBranchNodeUpperBound": "sum_over_models(2 * census_record_upper_bound * per_record_branch_node_upper_bound)"
+  },
+  "nonOutcomeThresholds": {
+    "maximumTotalCensusRecordUpperBound": 512,
+    "maximumPerModelCensusRecordUpperBound": 128,
+    "maximumPerRecordBellmanBranchNodeUpperBound": 20000,
+    "maximumDualResolutionTotalBranchNodeUpperBound": 5000000,
+    "maximumPerModelConvergenceTransitionTensorBytes": 67108864,
+    "maximumTotalConvergenceTransitionTensorBytes": 134217728,
+    "maximumPerModelConvergenceJointBeliefBytes": 1048576
+  },
+  "decisionRule": {
+    "ifEveryBoundPasses": "authorize_complete_census_construction_for_all_nine_models",
+    "ifAnyBoundFails": "defer_the_entire_confirmatory_run_without_dropping_or_replacing_any_model"
+  },
+  "forbidden": [
+    "construct_policy_or_value_function",
+    "compute_reward_return_regret_or_EIG",
+    "generate_or_filter_confirmatory_histories",
+    "drop_or_replace_a_model",
+    "rescore_a_development_model"
+  ]
+}

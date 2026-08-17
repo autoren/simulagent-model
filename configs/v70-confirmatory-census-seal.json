@@ -1,0 +1,43 @@
+{
+  "authorization": {
+    "drop_or_replace_models": false,
+    "modify_design_resource_or_census": false,
+    "run_confirmatory_outcomes": false,
+    "write_and_audit_confirmatory_reporting_specification": true,
+    "write_confirmatory_evaluator_before_reporting_lock": false
+  },
+  "census": "outputs/v70-confirmatory/census.jsonl",
+  "census_audit": "outputs/v70-confirmatory/census-audit.json",
+  "census_audit_sha256": "4220cee1aa9f26763d35b6b0a42fa5bc9c3e9394d6b64266e0022f794ec20d5a",
+  "census_sha256": "e88b7e665166b4c130fca570e9da390d60ccffba84182e4c4f0bb7398383dd40",
+  "confirmatory_design_lock": "configs/v70-confirmatory-design-lock.json",
+  "confirmatory_design_lock_sha256": "c0b823ce8f1023dfe6bcd7122009ef4f17895454ab521f331960a8facb59f259",
+  "depth_counts": {
+    "0": 9,
+    "1": 235
+  },
+  "development_models_rescored": 0,
+  "experiment": "v70_confirmatory_census_seal",
+  "lock_payload_sha256": "f1256dd5e314170758a82f8cd6bb0a854f433865a16bb0ff44fb6e7a9270da81",
+  "model_counts": {
+    "4x3.POMDP": 25,
+    "cheese.95.POMDP": 28,
+    "cheese.95_nonterminating.POMDP": 28,
+    "fully_observable_tmaze2.POMDP": 15,
+    "fully_observable_tmaze5.POMDP": 15,
+    "hallway.POMDP": 104,
+    "heavenhell.POMDP": 11,
+    "network.POMDP": 8,
+    "shuttle.POMDP": 10
+  },
+  "record_count": 244,
+  "record_ids_sha256": "9a74a50c31ce7f24d36c9829140bfec0eb2dbe8f8c49adc9658ab7d5a95ca9cd",
+  "resource_lock": "configs/v70-confirmatory-resource-lock.json",
+  "resource_lock_sha256": "00f5c62b2ac1529fd43aa4369efd8e5c60cd121a0a51aa0538d6b6befa615ce7",
+  "schema_version": "70-confirmatory-multi-environment",
+  "selection_rejection_or_replacement_count": 0,
+  "stratum_record_counts": {
+    "novel": 189,
+    "structurally_related": 55
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "70-confirmatory-reporting",
+  "experiment": "v70_confirmatory_primary_and_fallback_diagnostics",
+  "sourceCensusSeal": "configs/v70-confirmatory-census-seal.json",
+  "primaryDecision": {
+    "materialRegretComparison": "greater_than_or_equal_to_0.005",
+    "qualifyingMAPRecord": "exact_BA_MAP_root_action_disagreement_and_normalized_MAP_regret_greater_than_or_equal_to_0.005_on_the_same_record",
+    "qualifyingMAPModel": "at_least_one_qualifying_MAP_record",
+    "pairedGateInterpretation": "the_overall_and_stratum_MAP_disagreement_and_material_regret_model_gates_are_each_evaluated_on_the_same_conservatively_qualified_model_set",
+    "posteriorSamplingModel": "at_least_one_record_with_normalized_posterior_sampling_regret_greater_than_or_equal_to_0.005",
+    "includeEverySealedRecord": true,
+    "fallbackAffectedRecordsRemainInPrimary": true,
+    "recordCountsCannotCompensateForModelLevelGateFailure": true
+  },
+  "requiredPerModelReporting": [
+    "stratum",
+    "retained_record_count",
+    "root_action_disagreement_count",
+    "qualifying_MAP_record_count",
+    "material_regret_count_by_control",
+    "mean_and_maximum_normalized_regret_by_control",
+    "first_action_disagreement_records_with_action_names_and_regret",
+    "MAP_and_posterior_sampling_fallback_diagnostics"
+  ],
+  "fallbackDiagnostics": {
+    "primaryStatus": "secondary_non_decisional_diagnostics_only",
+    "affectedRecordRule": "off_support_branch_count_greater_than_zero_or_expected_off_support_entry_probability_greater_than_zero",
+    "reportByModelAndControl": [
+      "affected_record_count",
+      "maximum_expected_entry_probability",
+      "material_regret_overlap_count",
+      "qualifying_MAP_overlap_count_for_MAP_control"
+    ],
+    "fallbackFreeSubset": "report_record_count_and_regret_summaries_for_records_with_zero_off_support_branches_for_that_control",
+    "forbiddenUses": [
+      "change_any_primary_gate",
+      "remove_a_record_from_the_primary_result",
+      "reverse_a_primary_decision",
+      "select_or_drop_a_model"
+    ]
+  },
+  "tierReporting": {
+    "TierA": "primary_nine_model_project_authored_family_replication",
+    "TierB": "side_by_side_cheese_terminating_nonterminating_stress_comparison",
+    "TierBFields": [
+      "record_counts",
+      "qualifying_MAP_record_counts",
+      "maximum_and_mean_MAP_regret",
+      "maximum_and_mean_posterior_sampling_regret",
+      "fallback_diagnostics"
+    ],
+    "TierBPrimaryGateContribution": "the_two_models_contribute_individually_to_Tier_A_like_other_novel_models_but_the_pair_comparison_has_no_separate_override_gate",
+    "externalUncertaintyFamilyClaim": false
+  },
+  "outcomePersistence": {
+    "writeAttemptBeforeAnyRecordEvaluation": true,
+    "writeAllRowsOnlyAfterEveryRecordCompletes": true,
+    "writeAggregateOnlyAfterRows": true,
+    "independentPostOutcomeRecomputationRequired": true
+  },
+  "firewall": {
+    "computeConfirmatoryOutcomeBeforeEvaluatorLock": "forbidden",
+    "rescoreDevelopmentModels": "forbidden",
+    "changeFamilyCensusGatesOrThresholds": "forbidden",
+    "changeFallbackSemantics": "forbidden",
+    "mergeTierAAndTierBClaims": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeReporting": true,
+    "writeAndAuditEvaluator": false,
+    "runConfirmatoryOutcome": false
+  }
+}

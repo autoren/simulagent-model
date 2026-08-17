@@ -1,0 +1,21 @@
+{
+  "authorization": {
+    "drop_or_replace_models": false,
+    "modify_design_resource_census_reporting_or_gates": false,
+    "rescore_development_models": false,
+    "run_confirmatory_outcome": false,
+    "write_and_audit_confirmatory_evaluator": true
+  },
+  "census_seal": "configs/v70-confirmatory-census-seal.json",
+  "census_seal_sha256": "7e61bfa5faef90d7687acc7b6fb0cf10d60a643d4397931387778159329b8850",
+  "experiment": "v70_confirmatory_reporting_lock",
+  "lock_payload_sha256": "e0e4d283c5f8d03b2cd6b0f945cbe3d0676cb7aad51cb9798cb6e4e4c05f5329",
+  "material_normalized_regret": 0.005,
+  "reporting_audit": "outputs/v70-confirmatory/reporting-audit.json",
+  "reporting_audit_sha256": "3da480bcaa98fbf97995ab197f9814e018c9c5d29d49b22acaff7b8e0f523f8b",
+  "reporting_config": "configs/v70-confirmatory-reporting.json",
+  "reporting_config_sha256": "35f160db114a7998640f6fec8323769ee73a8481c791594e8ee37afd4afa87d5",
+  "reporting_plan": "docs/v70-confirmatory-reporting-plan.md",
+  "reporting_plan_sha256": "548dee81e21221810567565cc09185fc9e7486ff5dc225bb650f16e0a27d328a",
+  "schema_version": "70-confirmatory-reporting"
+}
