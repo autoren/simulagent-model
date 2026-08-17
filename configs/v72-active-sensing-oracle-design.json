@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "72-active-sensing-oracle-design",
+  "experiment": "v72_shared_support_active_sensing_oracle",
+  "directionalSourceLock": "configs/v71-sensor-codebook-development-outcome-lock.json",
+  "purpose": "engineered implementation oracle only; not candidate, development, confirmation, or external evidence",
+  "sharedParameters": {
+    "latentCodebooks": ["canonical", "reversed"],
+    "latentPrior": [0.5, 0.5],
+    "hiddenConditions": ["A", "B"],
+    "conditionPrior": [0.5, 0.5],
+    "sensorReliability": 0.9,
+    "discount": 1.0,
+    "horizonActions": 3,
+    "tieTolerance": 1e-12,
+    "actionsInTieBreakOrder": [
+      "calibrate",
+      "inspect",
+      "repair_A",
+      "repair_B"
+    ],
+    "observationsInSourceOrder": ["red", "blue"],
+    "statesInSourceOrder": [
+      "ready_A",
+      "ready_B",
+      "calibrated_A",
+      "calibrated_B",
+      "inspected_A",
+      "inspected_B",
+      "terminal"
+    ]
+  },
+  "positiveFixture": {
+    "name": "calibrate_inspect_repair",
+    "transitionRules": [
+      "calibrate maps ready_A/ready_B to calibrated_A/calibrated_B and otherwise preserves state",
+      "inspect maps ready or calibrated condition states to inspected_A/inspected_B and otherwise preserves state",
+      "repair_A and repair_B map every nonterminal state to terminal",
+      "terminal is absorbing"
+    ],
+    "observationRules": [
+      "calibrate emits the codebook reference label only after a ready-to-calibrated transition",
+      "calibrate after inspection emits an uninformative uniform label",
+      "inspect emits the condition label in inspected_A or inspected_B",
+      "repair observations are uninformative uniform labels",
+      "canonical/reversed codebooks swap red and blue probabilities but retain identical full support"
+    ],
+    "rewardRules": {
+      "calibrateOrInspectNonterminal": -1.0,
+      "correctRepair": 10.0,
+      "wrongRepair": -20.0,
+      "terminal": 0.0
+    },
+    "mechanism": "calibration must precede inspection to identify both codebook and condition before the final repair; calibrating after inspection is deliberately uninformative"
+  },
+  "negativeControlFixture": {
+    "name": "dominant_safe_repair",
+    "inheritsTransitionsAndObservations": "calibrate_inspect_repair",
+    "rewardRules": {
+      "calibrateOrInspectNonterminal": -1.0,
+      "repair_AEveryCondition": 5.0,
+      "repair_BEveryCondition": 4.0,
+      "terminal": 0.0
+    },
+    "mechanism": "repair_A is deliberately dominant, so sensor uncertainty must have zero decision value"
+  },
+  "oracleGates": {
+    "minimumPositiveCalibrationMutualInformationNats": 0.1,
+    "minimumPositiveInspectionStateMutualInformationGivenCodebookNats": 0.1,
+    "requiredPositiveExactRootAction": "calibrate",
+    "requiredPositiveMAPRootAction": "inspect",
+    "minimumPositiveExactRootActionMargin": 1.0,
+    "requiredPositiveSecondActionAfterEveryCalibrationObservation": "inspect",
+    "minimumDistinctPositiveTerminalRepairActionsAcrossReachableHistories": 2,
+    "minimumPositiveNormalizedMAPRegret": 0.05,
+    "minimumPositiveNormalizedPosteriorSamplingRegret": 0.05,
+    "maximumNegativeControlNormalizedMAPRegret": 1e-12,
+    "maximumNegativeControlNormalizedPosteriorSamplingRegret": 1e-12,
+    "requiredNegativeControlExactMAPRootAgreement": true,
+    "minimumPointModelOnSupportRate": 1.0,
+    "maximumFallbackCount": 0,
+    "maximumExternalCandidatePolicyValueCount": 0,
+    "maximumV71ProtectedAccessCount": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumModelForwardPassCount": 0,
+    "maximumAdapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOracleGatePasses": "freeze the mechanism implementation and authorize metadata-only external source discovery",
+    "ifAnyOracleGateFails": "repair the engineered fixture or implementation without inspecting any external candidate outcome",
+    "oraclePassIsScientificEvidence": false,
+    "oraclePassAuthorizesExternalOutcomeEvaluation": false
+  },
+  "claimBoundary": {
+    "engineeredMechanismOracle": true,
+    "externalBenchmarkEvidence": false,
+    "developmentEvidence": false,
+    "confirmationEvidence": false,
+    "approximateInference": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  },
+  "firewall": {
+    "modifyOrRerunV71": "forbidden",
+    "readV71ProtectedModelsHistoriesOrOutcomes": "forbidden",
+    "useOracleOutputsToSelectAmongAlreadyScoredExternalCandidates": "forbidden",
+    "computeAnyExternalCandidatePolicyValueActionRegretOrEIG": "forbidden",
+    "describeOraclePassAsExternalOrConfirmatoryEvidence": "forbidden"
+  },
+  "stageAuthorization": {
+    "auditAndFreezeOracleDesign": true,
+    "implementAndAuditOracleEvaluator": false,
+    "runOracleOutcomes": false,
+    "inspectExternalCandidateMetadata": false,
+    "computeExternalCandidateOutcomes": false
+  }
+}

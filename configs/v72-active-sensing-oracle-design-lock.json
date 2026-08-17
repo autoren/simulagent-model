@@ -1,0 +1,157 @@
+{
+  "V71_outcome_lock": "configs/v71-sensor-codebook-development-outcome-lock.json",
+  "V71_outcome_lock_sha256": "1bd16ee82378d9eaf1368ffca5fa49dd6ebb3b8dbae4953af32d61397b4b99e5",
+  "authorization": {
+    "compute_external_candidate_policy_values_actions_regrets_or_EIG": false,
+    "implement_and_audit_oracle_evaluator": true,
+    "inspect_external_candidate_metadata": false,
+    "modify_V72_oracle_design_or_gates": false,
+    "modify_or_rerun_V71": false,
+    "read_V71_protected_models_histories_or_outcomes": false,
+    "run_oracle_outcomes": false
+  },
+  "config": "configs/v72-active-sensing-oracle-design.json",
+  "config_payload": {
+    "claimBoundary": {
+      "SMC2": false,
+      "adapterTraining": false,
+      "approximateInference": false,
+      "confirmationEvidence": false,
+      "developmentEvidence": false,
+      "engineeredMechanismOracle": true,
+      "externalBenchmarkEvidence": false,
+      "humanData": false,
+      "modelAccess": false
+    },
+    "decisionRule": {
+      "ifAnyOracleGateFails": "repair the engineered fixture or implementation without inspecting any external candidate outcome",
+      "ifEveryOracleGatePasses": "freeze the mechanism implementation and authorize metadata-only external source discovery",
+      "oraclePassAuthorizesExternalOutcomeEvaluation": false,
+      "oraclePassIsScientificEvidence": false
+    },
+    "directionalSourceLock": "configs/v71-sensor-codebook-development-outcome-lock.json",
+    "experiment": "v72_shared_support_active_sensing_oracle",
+    "firewall": {
+      "computeAnyExternalCandidatePolicyValueActionRegretOrEIG": "forbidden",
+      "describeOraclePassAsExternalOrConfirmatoryEvidence": "forbidden",
+      "modifyOrRerunV71": "forbidden",
+      "readV71ProtectedModelsHistoriesOrOutcomes": "forbidden",
+      "useOracleOutputsToSelectAmongAlreadyScoredExternalCandidates": "forbidden"
+    },
+    "negativeControlFixture": {
+      "inheritsTransitionsAndObservations": "calibrate_inspect_repair",
+      "mechanism": "repair_A is deliberately dominant, so sensor uncertainty must have zero decision value",
+      "name": "dominant_safe_repair",
+      "rewardRules": {
+        "calibrateOrInspectNonterminal": -1.0,
+        "repair_AEveryCondition": 5.0,
+        "repair_BEveryCondition": 4.0,
+        "terminal": 0.0
+      }
+    },
+    "oracleGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalCandidatePolicyValueCount": 0,
+      "maximumFallbackCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumNegativeControlNormalizedMAPRegret": 1e-12,
+      "maximumNegativeControlNormalizedPosteriorSamplingRegret": 1e-12,
+      "maximumV71ProtectedAccessCount": 0,
+      "minimumDistinctPositiveTerminalRepairActionsAcrossReachableHistories": 2,
+      "minimumPointModelOnSupportRate": 1.0,
+      "minimumPositiveCalibrationMutualInformationNats": 0.1,
+      "minimumPositiveExactRootActionMargin": 1.0,
+      "minimumPositiveInspectionStateMutualInformationGivenCodebookNats": 0.1,
+      "minimumPositiveNormalizedMAPRegret": 0.05,
+      "minimumPositiveNormalizedPosteriorSamplingRegret": 0.05,
+      "requiredNegativeControlExactMAPRootAgreement": true,
+      "requiredPositiveExactRootAction": "calibrate",
+      "requiredPositiveMAPRootAction": "inspect",
+      "requiredPositiveSecondActionAfterEveryCalibrationObservation": "inspect"
+    },
+    "positiveFixture": {
+      "mechanism": "calibration must precede inspection to identify both codebook and condition before the final repair; calibrating after inspection is deliberately uninformative",
+      "name": "calibrate_inspect_repair",
+      "observationRules": [
+        "calibrate emits the codebook reference label only after a ready-to-calibrated transition",
+        "calibrate after inspection emits an uninformative uniform label",
+        "inspect emits the condition label in inspected_A or inspected_B",
+        "repair observations are uninformative uniform labels",
+        "canonical/reversed codebooks swap red and blue probabilities but retain identical full support"
+      ],
+      "rewardRules": {
+        "calibrateOrInspectNonterminal": -1.0,
+        "correctRepair": 10.0,
+        "terminal": 0.0,
+        "wrongRepair": -20.0
+      },
+      "transitionRules": [
+        "calibrate maps ready_A/ready_B to calibrated_A/calibrated_B and otherwise preserves state",
+        "inspect maps ready or calibrated condition states to inspected_A/inspected_B and otherwise preserves state",
+        "repair_A and repair_B map every nonterminal state to terminal",
+        "terminal is absorbing"
+      ]
+    },
+    "purpose": "engineered implementation oracle only; not candidate, development, confirmation, or external evidence",
+    "schemaVersion": "72-active-sensing-oracle-design",
+    "sharedParameters": {
+      "actionsInTieBreakOrder": [
+        "calibrate",
+        "inspect",
+        "repair_A",
+        "repair_B"
+      ],
+      "conditionPrior": [
+        0.5,
+        0.5
+      ],
+      "discount": 1.0,
+      "hiddenConditions": [
+        "A",
+        "B"
+      ],
+      "horizonActions": 3,
+      "latentCodebooks": [
+        "canonical",
+        "reversed"
+      ],
+      "latentPrior": [
+        0.5,
+        0.5
+      ],
+      "observationsInSourceOrder": [
+        "red",
+        "blue"
+      ],
+      "sensorReliability": 0.9,
+      "statesInSourceOrder": [
+        "ready_A",
+        "ready_B",
+        "calibrated_A",
+        "calibrated_B",
+        "inspected_A",
+        "inspected_B",
+        "terminal"
+      ],
+      "tieTolerance": 1e-12
+    },
+    "stageAuthorization": {
+      "auditAndFreezeOracleDesign": true,
+      "computeExternalCandidateOutcomes": false,
+      "implementAndAuditOracleEvaluator": false,
+      "inspectExternalCandidateMetadata": false,
+      "runOracleOutcomes": false
+    }
+  },
+  "config_sha256": "c8207d631f201e40415a0ce0e4f67843cb29c1af94e4a02600881e20fa6c8f9d",
+  "design_audit": "outputs/v72-active-sensing/oracle-design-audit.json",
+  "design_audit_sha256": "f779cec3ccbe47a7f145929607a4659eea32ecc2f0d28e4dd2af85d2f90b5afb",
+  "design_auditor": "python/audit_and_freeze_v72_oracle_design.py",
+  "design_auditor_sha256": "6977a8a963f179e3706892cd9577238e7d00f6b53ac401d27bd30ee31a57b778",
+  "experiment": "v72_active_sensing_oracle_design_lock",
+  "lock_payload_sha256": "a021a827c773f10a9df77aebc2b5d288c405e1621b5c8266b0f28a567fee4458",
+  "preregistration": "docs/v72-active-sensing-oracle-plan.md",
+  "preregistration_sha256": "ab0ea54cce22e1467d9ace3f8c4a571d5cf44cebb41da4e9e358db41dbc1913d",
+  "schema_version": "72-active-sensing-oracle-design"
+}

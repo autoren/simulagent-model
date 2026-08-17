@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "72-active-sensing-development-evaluation",
+  "resourceLock": "configs/v72-active-sensing-development-resource-lock.json",
+  "modelCount": 1,
+  "horizonActions": 4,
+  "tieTolerance": 1e-12,
+  "materialRegretThreshold": 0.02,
+  "gates": {
+    "requiredExactRootAction": "check_reference",
+    "requiredMAPRootAction": "check_target",
+    "minimumExactRootActionMargin": 0.01,
+    "requiredSecondActionAfterEveryReferenceCheckObservation": "check_target",
+    "minimumDistinctFinalControlActionsAcrossReachableReferenceTargetHistories": 2,
+    "requiredFinalControlActions": ["sample", "east"],
+    "minimumNormalizedMAPRegret": 0.02,
+    "minimumNormalizedPosteriorSamplingRegret": 0.02,
+    "minimumNormalizedExactOverOpenLoopAdvantage": 0.01,
+    "minimumPointModelOnSupportRate": 1.0,
+    "maximumFallbackCount": 0,
+    "maximumProtectedConfirmationPolicyValueCount": 0,
+    "maximumV71ProtectedAccessCount": 0,
+    "maximumCandidateEIGValueCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the development result and authorize fresh protected-source discovery only",
+    "ifAnyGateFails": "freeze a negative development result and stop V72 before any protected-source discovery or outcome",
+    "noRetrospectiveChanges": [
+      "sensor efficiency",
+      "noise-floor weight",
+      "rewards",
+      "horizon",
+      "initial state or belief",
+      "model configuration",
+      "controls",
+      "gates"
+    ]
+  },
+  "claimBoundary": {
+    "externalDevelopmentEvidence": true,
+    "externalConfirmationEvidence": false,
+    "approximateInference": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "audit": "outputs/v72-active-sensing/external-source-audit.json",
+  "audit_sha256": "691bd4d1fe78aac072752b1d745c52d054bf952de2eba8834eab0c24c4738029",
+  "auditor": "python/audit_and_freeze_v72_external_source_feasibility.py",
+  "auditor_sha256": "1a4aeaea5c26bad9551e058b4e851738bd11c1f5167c09102ba950561c37aaa4",
+  "authorization": {
+    "adapter_training": false,
+    "compute_candidate_policy_values_actions_regrets_or_EIG": false,
+    "human_data": false,
+    "implement_and_test_deterministic_source_exporter": true,
+    "model_access": false,
+    "modify_or_rerun_V71_or_V72_oracle": false,
+    "modify_source_inventory_selection_or_blueprint": false,
+    "run_SMC2": false,
+    "run_structural_resource_census": true,
+    "select_protected_confirmation_models": false
+  },
+  "config": "configs/v72-active-sensing-external-source-feasibility.json",
+  "config_payload": {
+    "authorizationSource": "configs/v72-active-sensing-oracle-outcome-lock.json",
+    "experiment": "v72_metadata_only_external_active_sensing_discovery",
+    "firewall": {
+      "adapterTraining": false,
+      "computeCandidateEIG": false,
+      "computeCandidateOptimalActions": false,
+      "computeCandidatePolicyValues": false,
+      "computeCandidateRegrets": false,
+      "humanData": false,
+      "modelAccess": false,
+      "readV71ProtectedModels": false,
+      "runCandidateSimulator": false
+    },
+    "metadataFields": [
+      "repository URL",
+      "pinned commit",
+      "license file and SPDX-compatible classification",
+      "model or environment paths",
+      "declared state action observation and reward interfaces",
+      "presence of distinct sensing and control actions",
+      "observation dependence on state and sensing action",
+      "delayed state-dependent control consequence",
+      "finite exact export availability",
+      "source-family overlap and prior exposure"
+    ],
+    "noncompensatoryStructuralGates": {
+      "actionDependentObservationChannel": true,
+      "atLeastTwoHiddenStatesRequireDifferentControlActions": true,
+      "delayedStateDependentControlReward": true,
+      "distinctSensingAndControlActions": true,
+      "finiteExactRepresentationOrDeterministicFiniteExporter": true,
+      "freshModelFilesRelativeToV62ThroughV71": true,
+      "noPolicyValueActionRegretOrEIGUsedForSelection": true,
+      "pinnedSourceAndLicense": true
+    },
+    "partitionRule": {
+      "exposedRepositories": "development-only",
+      "protectedConfirmation": "must come from a later fresh repository or prospectively sealed untouched model files not named or inspected during development",
+      "selectionInputs": "structural metadata only",
+      "selectionOutputs": "eligible, development-only, deferred, or excluded with fixed reason codes"
+    },
+    "preInventoryDisclosure": {
+      "candidateEIGComputed": 0,
+      "candidateOptimalActionsComputed": 0,
+      "candidatePoliciesRead": 0,
+      "candidatePolicyValuesComputed": 0,
+      "candidateRegretsComputed": 0,
+      "modelFilesRead": 0,
+      "previewPurpose": "general lead discovery before source-tree inspection",
+      "publicRepositoryLandingPagesPreviewed": [
+        "https://github.com/sisl/SBO_AIPPMS",
+        "https://github.com/AdaCompNUS/sarsop",
+        "https://github.com/sisl/BetaZero.jl"
+      ],
+      "treatment": "all previewed repositories are exposed development leads and cannot supply protected confirmation evidence"
+    },
+    "reasonCodes": [
+      "eligible_active_sensing_structure",
+      "no_distinct_sensing_action",
+      "no_delayed_state_dependent_control_reward",
+      "no_finite_exact_representation",
+      "license_unresolved",
+      "prior_family_overlap",
+      "development_exposed",
+      "resource_deferred"
+    ],
+    "schemaVersion": "72-active-sensing-external-source-feasibility",
+    "selectedDevelopmentBlueprint": {
+      "expectedFiniteDimensionsBeforeLatentAugmentation": {
+        "actions": 7,
+        "observations": 3,
+        "states": 17
+      },
+      "initialBelief": {
+        "referenceGoodProbability": 1.0,
+        "targetGoodProbability": 0.5
+      },
+      "initialPosition": [
+        2,
+        1
+      ],
+      "mapSize": [
+        2,
+        2
+      ],
+      "outcomeClaims": "none; this blueprint is selected by source structure only",
+      "planningHorizonActions": 4,
+      "repository": "https://github.com/JuliaPOMDP/RockSample.jl",
+      "repositoryRole": "development-only",
+      "rocksInOrder": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "role": "known_good_reference"
+        },
+        {
+          "position": [
+            2,
+            2
+          ],
+          "role": "unknown_target"
+        }
+      ],
+      "sensorCodebookWrapper": {
+        "latentCodebooks": [
+          "canonical",
+          "reversed"
+        ],
+        "latentPrior": [
+          0.5,
+          0.5
+        ],
+        "observationNoiseFloorMixtureWeight": 0.2,
+        "preserveNoneForMovementSamplingAndExit": true,
+        "purposeOfNoiseFloor": "retain identical full support even when source accuracy reaches one at zero distance",
+        "swapOnlyGoodBadLabelsForCheckActions": true
+      },
+      "sourceModel": "RockSamplePOMDP",
+      "sourceParameters": {
+        "badRockPenalty": -10.0,
+        "discount": 0.95,
+        "exitReward": 5.0,
+        "goodRockReward": 10.0,
+        "sensorEfficiency": 1.0,
+        "sensorUsePenalty": -0.5,
+        "stepPenalty": 0.0
+      },
+      "structuralSequence": [
+        "check known-good reference to learn the codebook",
+        "check unknown target to learn its condition",
+        "move north to the target",
+        "sample a good target or exit east instead of sampling a bad target"
+      ]
+    },
+    "stageAuthorization": {
+      "computeCandidateOutcomes": false,
+      "implementCandidateEvaluator": false,
+      "inspectAndPinSourceMetadata": true,
+      "selectDevelopmentModelsByStructuralMetadata": true,
+      "selectProtectedConfirmationModels": false,
+      "writeAndAuditSourceInventory": true
+    }
+  },
+  "config_sha256": "66649ba01cc514309f7d9fc6757f0a15091bcede53e59acc38ee63fc0d2bba93",
+  "experiment": "v72_external_active_sensing_source_lock",
+  "inventory": "outputs/v72-active-sensing/external-source-inventory.json",
+  "inventory_sha256": "3aab2d8ba255e50a1e5d46f7042e205d3f9c193c8aaa44689a4d259277b2ec38",
+  "lock_payload_sha256": "250db7f39ab45ebe18ce31970962e2d2f1974d08d24b1d3816beb7034bf812d6",
+  "oracle_outcome_lock": "configs/v72-active-sensing-oracle-outcome-lock.json",
+  "oracle_outcome_lock_sha256": "6e4431c8826c1740774b2499446fb1b5f230d18eed1f413984a50fe8e49e6699",
+  "plan": "docs/v72-active-sensing-external-source-feasibility-plan.md",
+  "plan_sha256": "96350692d8bc82b82e9fbe89a309e85e0159f7e642dfc55fbd3c6ec43e85e48e",
+  "protected_confirmation_candidate_count": 0,
+  "repository_commits": {
+    "https://github.com/AdaCompNUS/sarsop": "d9141104392fd0a7b35327fdf7d40ef4b71a13ca",
+    "https://github.com/JuliaPOMDP/POMDPModels.jl": "d4edb2fb25ee880bf4d9326de17ad8dc38a88fdc",
+    "https://github.com/JuliaPOMDP/RockSample.jl": "c8b3566d30c5dd7be6c7790b4b9a54ebfcdeecde",
+    "https://github.com/sisl/BetaZero.jl": "386306ae7011cb35a7e3215daaaf7b88dc5b96d8",
+    "https://github.com/sisl/SBO_AIPPMS": "24db0a618a98f7c0c9bed470d25cc68fe6dc9b50"
+  },
+  "schema_version": "72-active-sensing-external-source-feasibility",
+  "selected_development_blueprint": {
+    "expectedFiniteDimensionsBeforeLatentAugmentation": {
+      "actions": 7,
+      "observations": 3,
+      "states": 17
+    },
+    "initialBelief": {
+      "referenceGoodProbability": 1.0,
+      "targetGoodProbability": 0.5
+    },
+    "initialPosition": [
+      2,
+      1
+    ],
+    "mapSize": [
+      2,
+      2
+    ],
+    "outcomeClaims": "none; this blueprint is selected by source structure only",
+    "planningHorizonActions": 4,
+    "repository": "https://github.com/JuliaPOMDP/RockSample.jl",
+    "repositoryRole": "development-only",
+    "rocksInOrder": [
+      {
+        "position": [
+          1,
+          1
+        ],
+        "role": "known_good_reference"
+      },
+      {
+        "position": [
+          2,
+          2
+        ],
+        "role": "unknown_target"
+      }
+    ],
+    "sensorCodebookWrapper": {
+      "latentCodebooks": [
+        "canonical",
+        "reversed"
+      ],
+      "latentPrior": [
+        0.5,
+        0.5
+      ],
+      "observationNoiseFloorMixtureWeight": 0.2,
+      "preserveNoneForMovementSamplingAndExit": true,
+      "purposeOfNoiseFloor": "retain identical full support even when source accuracy reaches one at zero distance",
+      "swapOnlyGoodBadLabelsForCheckActions": true
+    },
+    "sourceModel": "RockSamplePOMDP",
+    "sourceParameters": {
+      "badRockPenalty": -10.0,
+      "discount": 0.95,
+      "exitReward": 5.0,
+      "goodRockReward": 10.0,
+      "sensorEfficiency": 1.0,
+      "sensorUsePenalty": -0.5,
+      "stepPenalty": 0.0
+    },
+    "structuralSequence": [
+      "check known-good reference to learn the codebook",
+      "check unknown target to learn its condition",
+      "move north to the target",
+      "sample a good target or exit east instead of sampling a bad target"
+    ]
+  },
+  "selected_development_candidate": "rocksample_jl_configurable_small"
+}

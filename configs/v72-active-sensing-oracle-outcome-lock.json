@@ -1,0 +1,38 @@
+{
+  "attempt": "outputs/v72-active-sensing/oracle-evaluation/attempt.json",
+  "attempt_sha256": "41a67b5b50c650ef95a0499385c49dd2b3f1dea72e98722a2bc06644e1eac67d",
+  "authorization": {
+    "adapter_training": false,
+    "compute_external_candidate_policy_values_actions_regrets_or_EIG": false,
+    "describe_oracle_as_scientific_external_development_or_confirmation_evidence": false,
+    "freeze_external_source_inventory_and_structural_partition": true,
+    "human_data": false,
+    "inspect_fresh_external_candidate_metadata": true,
+    "model_access": false,
+    "modify_or_rerun_V71": false,
+    "modify_or_rerun_V72_oracle": false,
+    "read_V71_protected_models_histories_or_outcomes": false,
+    "run_SMC2": false
+  },
+  "evaluator_lock": "configs/v72-active-sensing-oracle-evaluator-lock.json",
+  "evaluator_lock_sha256": "7dcd6328e2bf6b6bb2ca0035bb1f31994242cd942bc99de21dd026c6ff92b5a9",
+  "experiment": "v72_active_sensing_oracle_outcome_lock",
+  "lock_payload_sha256": "3e9533948e511870666b5451a5156df1bec50ca8b75c3dbb12bab8cf44a5db91",
+  "outcome": {
+    "V71_protected_access_count": 0,
+    "external_candidate_metadata_record_count": 0,
+    "external_candidate_policy_value_count": 0,
+    "oracle_gate_count": 13,
+    "passed_all_oracle_gates": true,
+    "scientific_evidence": false
+  },
+  "outcome_audit": "outputs/v72-active-sensing/oracle-outcome-audit.json",
+  "outcome_audit_sha256": "d29e3390da07cda506aaef30def08f9b4a62896bf53e8ab23ff0eaae938a4ccc",
+  "outcome_auditor": "python/audit_and_freeze_v72_oracle_outcome.py",
+  "outcome_auditor_sha256": "ee9ab4639b350312f25290553206c09e6a33ddb8cbf0855cd6dd02a40ce6cae5",
+  "report": "docs/v72-active-sensing-oracle-results.md",
+  "report_sha256": "f7b51d17ac503b083232538be978cb5d86ce55af1462c395649353c8add15f2a",
+  "result": "outputs/v72-active-sensing/oracle-evaluation/result.json",
+  "result_sha256": "b9d419021c2c417b72ddfba32c85888e22b60b9e18976df5f96797116d9f199f",
+  "schema_version": "72-active-sensing-oracle"
+}

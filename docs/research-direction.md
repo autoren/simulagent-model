@@ -190,6 +190,36 @@ control tradeoff. Those properties must be audited from source metadata before o
 the correct action is to preserve V71 as a negative boundary result rather than search its protected
 set or relax the protocol.
 
+V72 first built a preregistered shared-support mechanism oracle with an explicit calibration action,
+target inspection, and condition-dependent repair. The one authorized oracle run passed all 13 gates:
+exact Bayes-adaptive planning chose calibration and then inspection, MAP and persistent posterior
+sampling chose inspection immediately, and each point control had normalized regret `0.0956`. A
+dominant-action negative control had exactly zero regret. Both latent observation models had common
+support and zero fallback. This is an implementation/mechanism check only, not scientific evidence.
+
+V72 then performed metadata-only discovery across five pinned repositories and six candidate source
+families. Public landing pages for three leads had been previewed during initial planning, so every
+inspected repository was conservatively treated as development-exposed. The continuous or simulator-
+oriented SBO_AIPPMS models were not exact-exportable, SARSOP's 12,545-state RockSample was resource-
+deferred, BetaZero's root license was unresolved, and POMDPModels MiniHallway lacked a distinct sensing
+action. The pinned MIT-licensed `RockSample.jl` source supplied the only small configurable exact
+candidate. Its frozen 2x2 export passed ten structural tests and the resource audit with 17 states,
+7 actions, 3 observations, 38,080 dense-kernel bytes, and a horizon-four Bellman upper bound of 820.
+
+The sole V72 external development outcome was nevertheless cleanly negative. Exact, MAP, persistent
+posterior sampling, and best open loop all chose `west`; the common policy moved to the known-good
+reference rock, sampled its guaranteed reward, and exited. Its value `13.786875` was independently
+reproduced as `0.95*10 + 0.95^3*5`. MAP and posterior-sampling regret and the exact-over-open-loop
+advantage were all zero. Seven of nine scientific gates failed, while common support, zero fallback,
+and a strict root margin held. V72 is closed before protected-source discovery or confirmation.
+
+The successor constraint is now sharper than V71's. It is not enough to provide explicit sensing and
+delayed state-dependent reward: the calibration reference must itself be non-harvestable (for example,
+a known-bad reference or observation-only beacon), and a pre-outcome structural dominance audit must
+reject any immediately available known-reward route that bypasses sensing. The same audit must certify
+that the frozen sensor discriminability can cross the final good/bad control threshold. V72's source,
+model, parameters, horizon, controls, and gates must not be tuned or reused for successor outcomes.
+
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
 a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
 queries under partial state information. The historical evidence below records how that starting

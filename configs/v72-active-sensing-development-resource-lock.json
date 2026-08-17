@@ -1,0 +1,39 @@
+{
+  "audit": "outputs/v72-active-sensing/development-resource-audit.json",
+  "audit_sha256": "12f30a7defcd66918f28a0ac50b69eeaa9385a52d4d1ba54af79f6fef4d171b2",
+  "auditor": "python/audit_and_freeze_v72_development_resource.py",
+  "auditor_sha256": "4c4a4757db2f06551605fc8fdb22c2cc581b6024461130e0fe5e43ae23b22b94",
+  "authorization": {
+    "adapter_training": false,
+    "compute_candidate_policy_values_actions_regrets_or_EIG": false,
+    "human_data": false,
+    "model_access": false,
+    "modify_source_inventory_blueprint_exporter_or_resource_budget": false,
+    "run_SMC2": false,
+    "run_development_outcomes": false,
+    "select_or_inspect_protected_confirmation_models": false,
+    "write_and_audit_development_evaluator": true
+  },
+  "budget": "configs/v72-active-sensing-development-resource-budget.json",
+  "budget_sha256": "e83d321af5c432fd6c3cb9dfd333b1f7e7302b44ff15d20f5d8410c53db75b8e",
+  "expected_development_model_count": 1,
+  "expected_horizon": 4,
+  "experiment": "v72_rocksample_development_resource_lock",
+  "exporter": "python/v72_rocksample_source.py",
+  "exporter_sha256": "e50ee49b8790446b3af642edb050b31cbf60dcd0945074fc094e0da8abaf1a4d",
+  "exporter_tests": "python/test_v72_rocksample_source.py",
+  "exporter_tests_sha256": "64c4f2bce9924d2b3e6cdea3f99b971769fa18f74edf92257ebe6e5091ee9afb",
+  "lock_payload_sha256": "26bfd3432fe35add22efd6a4351104eff78043876e575ee6b3d7a32644e0d2df",
+  "metrics": {
+    "actions": 7,
+    "dense_kernel_bytes": 38080,
+    "exact_bellman_node_upper_bound": 820,
+    "observations": 3,
+    "states": 17
+  },
+  "plan": "docs/v72-active-sensing-development-resource-plan.md",
+  "plan_sha256": "832df880176d9bf76d7a13e3fc39cf47131d636d842cde3f13d08b6feb0592cc",
+  "schema_version": "72-active-sensing-development-resource",
+  "source_lock": "configs/v72-active-sensing-external-source-lock.json",
+  "source_lock_sha256": "f11aac9d5447c1ad024be6b000648f39d6203e49b308a0b5b2e4fa8cc923a748"
+}

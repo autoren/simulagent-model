@@ -1,0 +1,38 @@
+{
+  "attempt": "outputs/v72-active-sensing/development-evaluation/attempt.json",
+  "attempt_sha256": "1f4339cb3441ba3dc7f76a4cdcf512cb1bed1164bb443f0958d7748438ecd6ce",
+  "authorization": {
+    "adapter_training": false,
+    "begin_successor_only_after_fresh_preregistration_and_structural_dominance_audit": true,
+    "human_data": false,
+    "inspect_or_score_V72_protected_confirmation_sources": false,
+    "model_access": false,
+    "modify_or_rerun_V71_or_V72": false,
+    "reuse_V72_development_model_for_successor_outcomes": false,
+    "run_SMC2": false,
+    "tune_V72_sensor_reward_horizon_model_controls_or_gates": false
+  },
+  "evaluator_lock": "configs/v72-active-sensing-development-evaluator-lock.json",
+  "evaluator_lock_sha256": "4705d0948304399523356133ed82678411fc6d42f542cf93ac601a04d8ef5e55",
+  "experiment": "v72_rocksample_development_outcome_lock",
+  "lock_payload_sha256": "1b07d6c97b6c83b38787dfd7baf5b537dc1a9ed1f065921df9115235057ea051",
+  "outcome": {
+    "V71_protected_access_count": 0,
+    "development_model_count": 1,
+    "failed_gate_count": 7,
+    "maximum_normalized_MAP_regret": 0.0,
+    "maximum_normalized_posterior_sampling_regret": 0.0,
+    "passed_development_gates": false,
+    "passed_gate_count": 2,
+    "protected_confirmation_policy_value_count": 0
+  },
+  "outcome_audit": "outputs/v72-active-sensing/development-outcome-audit.json",
+  "outcome_audit_sha256": "63875cc49bfa30009773471a3bd42511676993ea89ff6aef11eefa0296dad3a9",
+  "outcome_auditor": "python/audit_and_freeze_v72_development_outcome.py",
+  "outcome_auditor_sha256": "878bf2e935d290a1ca8e9087caefb330db3893f1fb98902f827582e1aa9cd025",
+  "report": "docs/v72-active-sensing-development-results.md",
+  "report_sha256": "be80c8aed6c3b2afc7e99900eb28de9886464681eec247c5f8cb196a4aae3548",
+  "result": "outputs/v72-active-sensing/development-evaluation/result.json",
+  "result_sha256": "782555f82dec0703376ed3c7d700b7bf99a497a3db6a906637c068f8511707ed",
+  "schema_version": "72-active-sensing-development-evaluation"
+}

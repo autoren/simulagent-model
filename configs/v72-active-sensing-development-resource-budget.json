@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "72-active-sensing-development-resource",
+  "sourceLock": "configs/v72-active-sensing-external-source-lock.json",
+  "maximumStates": 64,
+  "maximumActions": 8,
+  "maximumObservations": 3,
+  "maximumDenseKernelBytes": 100000,
+  "maximumExactBellmanNodesAtLockedHorizon": 10000,
+  "requiredStructuralTests": 10,
+  "forbiddenDuringResourceStage": [
+    "candidate policy values",
+    "candidate optimal actions",
+    "candidate regrets",
+    "candidate EIG",
+    "candidate simulator rollout"
+  ]
+}
