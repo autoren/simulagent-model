@@ -273,6 +273,29 @@ must seek source-native sensing fidelity, calibration cost, and delayed control 
 economic screen before outcomes, and remain untouched until a new source and evaluator are locked.
 V74's source, noise, beacon, horizon, adapter, controls, and gates are closed to tuning or rerun.
 
+V75 then tested the mechanism in the valid four-state NOVA paint/inspect model. Source-level
+economics were frozen before implementation: a fixed reference-inspect-contingent-control policy
+had value `0.166398`, versus `0` open loop, for normalized advantage `0.0224264`. The source supplied
+`0.75/0.25` inspection accuracy, paint dynamics, unit ship/reject rewards, reset dynamics, and
+discount `0.95`; the project added only a zero-reward identity reference inspection and persistent
+canonical/reversed label codebook. All ten source-parity and structural tests passed with common
+point-model support.
+
+The sole exact replication attempt passed every gate. Reference-first and target-first sensing tied
+at the root; deterministic tie-breaking selected reference calibration. Matching labels led to
+paint then ship, while differing labels led to reject. Exact value was `0.166398`; MAP and persistent
+posterior sampling each inspected the target immediately and had true-mixture value `-0.00428688`,
+normalized regret `0.0230042`, and zero fallback. Myopic and open-loop values were both zero. An
+independent recursion reproduced all values, root actions, contingent controls, and gates.
+
+This is outcome-untouched external-domain replication, not discovery-clean confirmation. V68 had
+previously inspected and excluded a malformed POBAX variant of the same classic paint problem before
+any policy result. V75 used a separately pinned valid MIT source and accessed no prior paint policy
+outcome, but the prior structural exposure remains a real limitation. V75 is closed to tuning or
+rerun. A broader claim requires a newly preregistered source census over domain families never
+previously inspected by the project, with common support and source-level economic screening before
+adapter implementation.
+
 The initial project addressed a deliberately narrower instance of the durable question. It grounded
 a declared Boolean state ontology, inferred one-step executable outcome programs, and answered
 queries under partial state information. The historical evidence below records how that starting
@@ -400,3 +423,10 @@ confirmation set, change its sensor reliability or horizon, replace its models, 
 zero-regret result as confirmation evidence. The next sensor-semantics attempt requires a new source
 census and preregistration that establishes an active-sensing tradeoff structurally before any policy
 outcome is computed.
+
+Freeze V72-V75 as the completed active-sensing design sequence: V72's harvestable-reference bypass,
+V73's economically immaterial sensing result, V74's positive source-grounded development mechanism,
+and V75's positive outcome-untouched external-domain replication. Do not modify or rerun V75, change
+its source, beacon, horizon, controls, or thresholds, or relabel it as discovery-clean confirmation.
+Authorize reporting and synthesis now. Any further empirical stage must begin with a fresh
+preregistration and a domain family not previously inspected anywhere in this project.

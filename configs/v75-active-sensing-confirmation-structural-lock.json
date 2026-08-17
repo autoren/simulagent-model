@@ -1,0 +1,36 @@
+{
+  "attempt": "outputs/v75-active-sensing-confirmation/structural-attempt.json",
+  "attempt_sha256": "6e39740f92a5c946446b40f192d02547f7b9fa3b0bd0c6d89a18ac7a9388ac0b",
+  "audit": "outputs/v75-active-sensing-confirmation/structural-audit.json",
+  "audit_sha256": "9f073a998c0282d0a71b324d64316c88523af75342c440187f69a81c39c0a262",
+  "auditor": "python/audit_and_freeze_v75_confirmation_structural.py",
+  "auditor_sha256": "bb3ee487785ebb9b2aaa823d172bd1e22055974dac3a693d5b9fc31671bd03de",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_and_lock_replication_evaluator": true,
+    "model_access": false,
+    "modify_source_adapter_structural_or_evaluation_design": false,
+    "run_SMC2": false,
+    "run_exact_replication": false
+  },
+  "config": "configs/v75-active-sensing-confirmation-structural.json",
+  "config_sha256": "f5d74c62586969188b831d3a7a9a988c7655c5da48c44c3fef957b86485e10c4",
+  "design_lock": "configs/v75-active-sensing-confirmation-design-lock.json",
+  "design_lock_sha256": "ee1ca531771cd441a2a7b5038e42c2cf8af22de43f8555a52bc130a1473abb36",
+  "experiment": "v75_nova_paint_structural_lock",
+  "exporter": "python/v75_nova_paint_source.py",
+  "exporter_sha256": "a8305d3a0dd5bcc1ae42e3135f73cf399ba4d8a322abbfd4b4c84347260ee495",
+  "exporter_tests": "python/test_v75_nova_paint_source.py",
+  "exporter_tests_sha256": "5f313a5ab13505894bf234d051306130b46af0c1a4d928e4f71b9a8f39dbac98",
+  "lock_payload_sha256": "e44912d40dd8a88c4e40660bbc6e8dcfbd3e313dc746d10fab30c687500d5421",
+  "outcome": {
+    "best_open_loop_value": 0.0,
+    "failed_gate_count": 0,
+    "fixed_policy_value": 0.1663984375,
+    "normalized_advantage": 0.022426421038444694,
+    "passed_all_structural_gates": true,
+    "point_model_supports_identical": true
+  },
+  "schema_version": "75-active-sensing-confirmation-structural"
+}

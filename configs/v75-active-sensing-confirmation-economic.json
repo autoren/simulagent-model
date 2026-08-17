@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "75-active-sensing-confirmation-economic",
+  "experiment": "v75_nova_paint_outcome_untouched_replication_screen",
+  "authorizationSource": "configs/v74-active-sensing-development-outcome-lock.json",
+  "selectedConfirmationSource": {
+    "repository": "https://github.com/kylewray/nova",
+    "commit": "fa6f0bf038509cb7bb94fb79e38e691c6e6d83e9",
+    "license": "MIT",
+    "sourceFile": "tests/benchmarks/algorithms/domains/paint_95.pomdp",
+    "sourceFileSha256": "2293f505297e6265c002c448c009f3a548d12590bcdb7234c188b7b1a68cd516",
+    "repositoryRole": "outcome-untouched replication source",
+    "priorExposure": "the malformed POBAX paint.POMDP variant was structurally audited and excluded in V68 before all policy outcomes; this valid four-state NOVA copy has no prior project policy, value, regret, or EIG outcome",
+    "freshRelativeToV74Environment": true,
+    "sourceDiscoveryClean": false
+  },
+  "sourceGrounding": {
+    "states": ["NFL-NBL-NPA", "NFL-NBL-PA", "FL-NBL-PA", "FL-BL-NPA"],
+    "actions": ["paint", "inspect", "ship", "reject"],
+    "observations": ["NBL", "BL"],
+    "initialBelief": [0.5, 0.0, 0.0, 0.5],
+    "inspectionAccuracy": 0.75,
+    "paintSuccessProbability": 0.9,
+    "shipPaintedNonflawedReward": 1.0,
+    "rejectFlawedBlemishedReward": 1.0,
+    "specifiedWrongControlReward": -1.0,
+    "unspecifiedReward": 0.0,
+    "shipAndRejectTransition": "reset to the source initial distribution",
+    "discount": 0.95
+  },
+  "prospectiveProjectLayer": {
+    "latentCodebooks": ["canonical", "reverse-NBL-BL-labels"],
+    "latentPrior": [0.5, 0.5],
+    "addedAction": "calibrate-beacon",
+    "knownBeaconCondition": "NBL",
+    "beaconObservationAccuracy": 0.75,
+    "beaconReward": 0.0,
+    "beaconHarvestable": false,
+    "beaconControlReward": false,
+    "beaconTargetTransition": "identity",
+    "unmodifiedTargetInspection": true,
+    "uninformativeSourceControlObservationsCollapsedTo": "none",
+    "planningHorizonActions": 4
+  },
+  "fixedEconomicPolicy": {
+    "action0": "calibrate-beacon",
+    "action1": "inspect-target",
+    "ifLabelsMatch": ["paint", "ship"],
+    "ifLabelsDiffer": ["reject", "calibrate-beacon"],
+    "optimizationUsed": false
+  },
+  "prospectiveEconomicFormula": {
+    "pairedInferenceCorrectProbability": "p^2 + (1-p)^2",
+    "unconditionalRejectContributionAtAction2": "discount^2 * 0.5 * (2*paired_correct-1) * reject_reward",
+    "unconditionalPaintShipContributionAtAction3": "discount^3 * 0.5 * (paired_correct*(2*paint_success-1)*ship_reward + (1-paired_correct)*wrong_ship_reward)",
+    "fixedPolicyValue": "reject_contribution + paint_ship_contribution",
+    "bestOpenLoopValue": "0",
+    "bestOpenLoopJustification": "sensing and paint have zero immediate reward; every unconditioned reject is zero at the reset prior; unconditioned ship is negative before painting and at most zero after any number of paints; a control resets the prior",
+    "returnScale": "(maximum_reward-minimum_reward)*(1+discount+discount^2+discount^3)",
+    "normalizedAdvantage": "fixed_policy_value/return_scale"
+  },
+  "economicGates": {
+    "minimumSourceInspectionAccuracy": 0.7,
+    "requiredSourceNormalization": true,
+    "requiredPointModelMarginalObservationSupport": true,
+    "requiredFixedPolicyValueStrictlyPositive": true,
+    "minimumRawFixedPolicyOverBestOpenLoopAdvantage": 0.1,
+    "minimumNormalizedFixedPolicyOverBestOpenLoopAdvantage": 0.015,
+    "minimumNormalizedMarginAboveThreshold": 0.005,
+    "requiredCalibrationBeaconHarvestable": false,
+    "requiredBestOpenLoopValue": 0.0,
+    "maximumAdapterImplementationCount": 0,
+    "maximumOptimalPlannerCalls": 0,
+    "maximumMAPCalls": 0,
+    "maximumPosteriorSamplingCalls": 0,
+    "maximumPriorPolicyOutcomeAccessCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the source and economic pass, then authorize preregistration of one exact outcome-untouched replication",
+    "ifAnyGateFails": "freeze a negative V75 feasibility result and stop before adapter implementation or policy optimization",
+    "noRetrospectiveChanges": true
+  },
+  "claimBoundary": {
+    "externalSourceDynamicsObservationAccuracyRewardsAndDiscount": true,
+    "unchangedExternalEnvironment": false,
+    "projectAuthoredBeaconAndLatentCodebook": true,
+    "outcomeUntouchedExternalDomainReplication": true,
+    "sourceDiscoveryCleanConfirmation": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

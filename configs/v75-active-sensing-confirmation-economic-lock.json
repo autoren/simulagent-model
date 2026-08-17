@@ -1,0 +1,38 @@
+{
+  "audit": "outputs/v75-active-sensing-confirmation/source-economic-audit.json",
+  "audit_sha256": "7dc7ee98dcd9c192790937eaf886248bbeb0badc3a663795c26b9073a1b2d429",
+  "auditor": "python/audit_and_freeze_v75_confirmation_economic.py",
+  "auditor_sha256": "d8d5875fd66eeae08484fd2c4b95a2613cf44e4d22a2d40672d2743215424391",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_adapter_and_structural_tests": false,
+    "model_access": false,
+    "modify_source_economic_blueprint_or_gates": false,
+    "preregister_exact_replication_design": true,
+    "run_SMC2": false,
+    "run_policy_outcomes": false
+  },
+  "config": "configs/v75-active-sensing-confirmation-economic.json",
+  "config_sha256": "281dafc06daa801d0617c31196923c79a9d3f82d315fc50c58085be3caff7af7",
+  "experiment": "v75_nova_paint_confirmation_economic_lock",
+  "inventory": "outputs/v75-active-sensing-confirmation/source-economic-inventory.json",
+  "inventory_sha256": "83515e0bcc78db3dc245168e82c1010f1ef96d05e797048b740311c88cf13a9f",
+  "lock_payload_sha256": "75b92bd012727832041ebfde1bcfd12e0f9c18b83d4a2d81b2e31f2774dcd467",
+  "outcome": {
+    "best_open_loop_value": 0.0,
+    "failed_gate_count": 0,
+    "fixed_policy_value": 0.1663984375,
+    "normalized_advantage": 0.022426421038444694,
+    "normalized_margin": 0.007426421038444694,
+    "passed_all_economic_gates": true,
+    "source_discovery_clean": false,
+    "source_policy_outcome_untouched": true
+  },
+  "plan": "docs/v75-active-sensing-confirmation-economic-plan.md",
+  "plan_sha256": "606cefed76e735b19323af80cd117a50c1fa4490c0b186bfe7f5929b007b819b",
+  "prior_lock": "configs/v74-active-sensing-development-outcome-lock.json",
+  "prior_lock_sha256": "be499ff3a89100732d97eb7e444226ce31e15b9328b0c39fb7feea2c03991ab2",
+  "repository_commit": "fa6f0bf038509cb7bb94fb79e38e691c6e6d83e9",
+  "schema_version": "75-active-sensing-confirmation-economic"
+}

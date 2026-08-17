@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "75-active-sensing-confirmation-evaluation",
+  "structuralLock": "configs/v75-active-sensing-confirmation-structural-lock.json",
+  "modelCount": 1,
+  "horizonActions": 4,
+  "tieTolerance": 1e-12,
+  "materialRegretThreshold": 0.015,
+  "gates": {
+    "requiredExactRootAction": "calibrate_beacon",
+    "requiredExactRootOptimalActions": ["calibrate_beacon", "inspect_target"],
+    "requiredMAPRootAction": "inspect_target",
+    "requiredPosteriorSamplingRootAction": "inspect_target",
+    "requiredSecondActionAfterEveryCalibrationObservation": "inspect_target",
+    "requiredActionWhenLabelsMatch": "paint",
+    "requiredActionWhenLabelsDiffer": "reject",
+    "requiredFinalActionAfterMatchedPaint": "ship",
+    "minimumDistinctThirdActionsAcrossPairedLabels": 2,
+    "requiredDistinctThirdActions": ["paint", "reject"],
+    "minimumExactValue": 0.1663984375,
+    "minimumNormalizedMAPRegret": 0.015,
+    "minimumNormalizedPosteriorSamplingRegret": 0.015,
+    "minimumNormalizedExactOverOpenLoopAdvantage": 0.015,
+    "minimumNormalizedMyopicRegret": 0.015,
+    "minimumPointModelOnSupportRate": 1.0,
+    "maximumFallbackCount": 0,
+    "maximumEvaluationAttempts": 1,
+    "maximumPriorPaintPolicyOutcomeAccessCount": 0,
+    "maximumCandidateEIGValueCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze a positive outcome-untouched external-domain replication and authorize synthesis only",
+    "ifAnyGateFails": "freeze a negative V75 replication result without tuning, source replacement, or rerun",
+    "noRetrospectiveChanges": true
+  },
+  "claimBoundary": {
+    "externalSourceDynamicsObservationAccuracyRewardsAndDiscount": true,
+    "projectAuthoredBeaconAndLatentCodebook": true,
+    "outcomeUntouchedExternalDomainReplication": true,
+    "sourceDiscoveryCleanConfirmation": false,
+    "unchangedExternalEnvironment": false,
+    "approximateInference": false,
+    "SMC2": false,
+    "humanData": false,
+    "modelAccess": false,
+    "adapterTraining": false
+  }
+}

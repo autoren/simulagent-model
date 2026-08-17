@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "75-active-sensing-confirmation-structural",
+  "economicLock": "configs/v75-active-sensing-confirmation-economic-lock.json",
+  "horizonActions": 4,
+  "tieTolerance": 1e-12,
+  "structuralGates": {
+    "requiredStructuralUnitTests": 10,
+    "maximumStates": 4,
+    "maximumActions": 5,
+    "maximumObservations": 3,
+    "maximumDenseKernelBytes": 4096,
+    "maximumExactBellmanNodeUpperBound": 400,
+    "requiredInitialBestUnconditionedAction": "calibrate_beacon",
+    "maximumInitialBestUnconditionedExpectedReward": 0.0,
+    "requiredCalibrationBeaconHarvestable": false,
+    "requiredCalibrationTargetTransition": "identity",
+    "requiredSourceArrayParity": true,
+    "requiredPointModelSupportIdentity": true,
+    "minimumCalibrationMutualInformationNats": 0.1,
+    "minimumTargetInspectionTotalVariation": 0.5,
+    "minimumPairedDecisionCorrectProbability": 0.625,
+    "minimumFixedAdaptivePolicyOverBestOpenLoopRawAdvantage": 0.1,
+    "minimumFixedAdaptivePolicyOverBestOpenLoopNormalizedAdvantage": 0.015,
+    "minimumNormalizedMarginAboveEconomicThreshold": 0.005,
+    "maximumExactBayesAdaptiveCalls": 0,
+    "maximumMAPCalls": 0,
+    "maximumPosteriorSamplingCalls": 0,
+    "maximumMyopicCalls": 0,
+    "maximumPriorPolicyOutcomeAccessCount": 0
+  },
+  "fixedStructuralPolicy": {
+    "action0": "calibrate_beacon",
+    "action1AfterEitherBeaconLabel": "inspect_target",
+    "actions2And3IfLabelsMatch": ["paint", "ship"],
+    "actions2And3IfLabelsDiffer": ["reject", "calibrate_beacon"]
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the adapter structural pass and authorize locking the already preregistered one-shot replication evaluator",
+    "ifAnyGateFails": "freeze a negative V75 structural result and stop before exact Bayes-adaptive, MAP, posterior-sampling, or myopic outcomes",
+    "noRetrospectiveChanges": true
+  }
+}

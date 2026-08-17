@@ -1,0 +1,26 @@
+{
+  "auditor": "python/audit_and_freeze_v75_confirmation_design.py",
+  "auditor_sha256": "cb42b92ec3c828a0ea244aa74d9b695246fffdea4573f07a8b9fa0ee70b9b2f8",
+  "authorization": {
+    "adapter_training": false,
+    "human_data": false,
+    "implement_and_test_source_grounded_adapter": true,
+    "model_access": false,
+    "modify_source_economic_structural_or_evaluation_design": false,
+    "run_SMC2": false,
+    "run_policy_outcomes": false,
+    "run_structural_audit_once": true
+  },
+  "economic_lock": "configs/v75-active-sensing-confirmation-economic-lock.json",
+  "economic_lock_sha256": "3891c21e1004e715816854c7a348ea07efd643cf4511ced3c47c6747fcd71a92",
+  "evaluation_config": "configs/v75-active-sensing-confirmation-evaluation.json",
+  "evaluation_config_sha256": "ff0e2c76b85948921aeced8fb91cc4e89a030b6766b66c4e353faea6a85fb394",
+  "experiment": "v75_structural_and_replication_design_lock",
+  "lock_payload_sha256": "0f7e168fe2f2cdb72cbc87248a3575126aae105c072aa19419978826166d4db3",
+  "plan": "docs/v75-active-sensing-confirmation-design-plan.md",
+  "plan_sha256": "740dcf7bff78ff93fbbfa9922ed0f6afad44f198b089e676f48c78c390aca53c",
+  "preimplementation_file_count": 0,
+  "schema_version": "75-active-sensing-confirmation-design",
+  "structural_config": "configs/v75-active-sensing-confirmation-structural.json",
+  "structural_config_sha256": "f5d74c62586969188b831d3a7a9a988c7655c5da48c44c3fef957b86485e10c4"
+}

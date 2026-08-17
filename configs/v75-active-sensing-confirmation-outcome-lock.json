@@ -1,0 +1,40 @@
+{
+  "attempt": "outputs/v75-active-sensing-confirmation/evaluation/attempt.json",
+  "attempt_sha256": "fd13e0403c57a2d3afd95af6c5ae425404373778a31a9f6493b116c50ba1c452",
+  "auditor": "python/audit_and_freeze_v75_confirmation_outcome.py",
+  "auditor_sha256": "b5948e988a29186dafb2853c8ce39306b4f31d01c48ff6f62bc398138eae364f",
+  "authorization": {
+    "adapter_training": false,
+    "compute_additional_V75_policy_values": false,
+    "design_discovery_clean_successor_after_fresh_preregistration": true,
+    "human_data": false,
+    "model_access": false,
+    "modify_or_rerun_V75": false,
+    "report_and_synthesize_V75": true,
+    "run_SMC2": false,
+    "tune_V75_source_beacon_horizon_controls_or_gates": false
+  },
+  "evaluator_lock": "configs/v75-active-sensing-confirmation-evaluator-lock.json",
+  "evaluator_lock_sha256": "e5647d4de6c3d80de44898794683a556aa3645ca37399af9db4477a19f41fe10",
+  "experiment": "v75_replication_outcome_lock",
+  "lock_payload_sha256": "c116319fa5861d74a1da9b8001580476c4e0f23b5add8974c9816c877ea83195",
+  "outcome": {
+    "exact_value": 0.1663984375,
+    "fallback_count": 0,
+    "map_value": -0.004286875000000003,
+    "normalized_exact_over_open_loop_advantage": 0.022426421038444694,
+    "normalized_map_regret": 0.02300418646180801,
+    "normalized_posterior_sampling_regret": 0.02300418646180801,
+    "passed_all_replication_gates": true,
+    "posterior_sampling_value": -0.004286875000000003,
+    "source_discovery_clean": false,
+    "source_policy_outcome_untouched": true
+  },
+  "outcome_audit": "outputs/v75-active-sensing-confirmation/outcome-audit.json",
+  "outcome_audit_sha256": "31efd95c088632345f16d8afc1c602919641a442fa75e77c60f895c5f915d365",
+  "report": "docs/v75-active-sensing-confirmation-results.md",
+  "report_sha256": "e271d8fdb01c37bdff5643e85346ea4840ed80f8b6a7783917cf8c3806c5e745",
+  "result": "outputs/v75-active-sensing-confirmation/evaluation/result.json",
+  "result_sha256": "f9ffec3d29cee4cc423b670389afbe3d9448c44d9bbba88c2e6e012a3067ce4a",
+  "schema_version": "75-active-sensing-confirmation-outcome"
+}
