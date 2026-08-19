@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "207r2-agentabstain-outcome-verification-repair-design",
+  "experiment": "v207r2_verification_only_repair_for_postlock_roadmap_mutation",
+  "sourceV207r1Lock": "configs/v207r1-agentabstain-shadow-feasibility-lock.json",
+  "sourceFailedOutcomeAudit": "outputs/v207r1-agentabstain-shadow-feasibility/outcome-audit.json",
+  "sourceSummary": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/summary.json",
+  "sourceResult": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/result.json",
+  "sourceResultsDocument": "docs/v207r1-agentabstain-shadow-feasibility-results.md",
+  "claimBoundary": "verification-only repair after restoring the living roadmap to the exact V207r1-locked bytes; preserve the V207 technical nonresult, V207r1 scientific negative, source artifacts, scientific gates, and access boundary unchanged",
+  "repairContract": {
+    "requiredFalseChecks": ["design_lock_and_dependencies_are_exact"],
+    "requiredScientificFeasibility": false,
+    "requiredTransportIntegrity": true,
+    "sourceArtifactsMayBeModified": false,
+    "networkMetadataMayBeReadAgain": false,
+    "scientificEvaluationOrModelMayBeRerun": false,
+    "roadmapMustMatchSourceLockDuringVerification": true
+  },
+  "preLockExposure": {
+    "sourceSummaryAutomaticReadCount": 0,
+    "sourceResultAutomaticReadCount": 0,
+    "taskInstructionExampleDialogueRationaleReadCount": 0,
+    "networkMetadataReadCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "toolCallCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifExactBookkeepingFailureAndEverySubstantiveV207r1CheckPasses": "freeze_V207r2_verification_repair_and_preserve_V207r1_scientific_negative",
+    "otherwise": "freeze_V207r2_failure_without_source_mutation_or_rerun",
+    "passAuthorizesRoadmapUpdateAndSeparateF1SourceCensusDesignOnly": true,
+    "passAuthorizesTaskLanguageModelAPITrainingToolAuthorityActionOrExecution": false
+  }
+}

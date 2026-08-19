@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "164-local-residual-open-set-transfer-design",
+  "experiment": "v164_qwen38_27b_non_authoritative_external_open_set_residual_development",
+  "parentDeterministicOutcomeLock": "configs/v163-deterministic-open-set-transfer-baselines-outcome-lock.json",
+  "historicalInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+  "directDecodingEvidenceLock": "configs/v154r1-outcome-verifier-repair-outcome-lock.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "modelManifestSha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "condition": {
+    "id": "qwen38_27b_4bit_direct_residual",
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "weightBytes": 16054541349,
+    "modelLoadLimit": 1,
+    "generationLimit": 76
+  },
+  "corpus": {
+    "frozenEvaluationCount": 96,
+    "deterministicNonResidualCount": 20,
+    "modelEligibleResidualCount": 76,
+    "controlledMissingObservationCount": 24,
+    "totalModelGenerationCount": 76,
+    "residualManifestPayloadSha256": "360b9cc079726a06405fc7d331b578dc985133a361d4a210fb891671c0d1a19c",
+    "excludeCalibrationRecords": true,
+    "excludeDeterministicNonResidualRecordsFromModel": true,
+    "excludeProtectedTransferRecords": true,
+    "manualUtteranceInspection": false
+  },
+  "prompt": {
+    "system": "You are an offline, permanently non-authoritative semantic proposer. Classify only the supplied request against the supplied frozen catalog. You cannot define capabilities, remove hypotheses, choose actions, call tools, or execute anything. Return exactly one JSON object and no explanation.",
+    "instruction": "Return exactly the keys status, known_intent, novel_scenario, and confidence. Use KNOWN only when exactly one listed intent matches; copy its exact intent_id into known_intent and set novel_scenario to null. Use NOVEL only for a plausible unlisted capability inside one listed scenario; set known_intent to null and copy that scenario into novel_scenario. Use UNSUPPORTED only when the request is outside every listed scenario; set both other fields to null. Use ABSTAIN when evidence is insufficient or several answers remain possible; set both other fields to null. confidence must be a number from 0 to 1.",
+    "demonstrationCount": 0,
+    "maximumPromptTokens": 4096,
+    "visibleFields": ["instruction", "visible_catalog", "user_utterance", "response_contract"],
+    "hiddenFields": ["record_id", "class_label", "truth", "source_intent", "source_scenario", "deterministic_predictions"]
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "maximumNewTokens": 160,
+    "samplesPerRecord": 1,
+    "retryCount": 0,
+    "enableThinking": false,
+    "reasoningEffort": null
+  },
+  "validation": {
+    "useExactV105ResponseValidator": true,
+    "invalidOutputMapsToV105ZeroConfidenceAbstain": true,
+    "rawResponseStoredForAutomaticIntegrityAuditOnly": true,
+    "manualRawResponseInspection": false,
+    "completeSafeHypothesisUniverseAlwaysRetained": true
+  },
+  "hybridDecisionRule": {
+    "nonResidual": "retain the frozen V163 deterministic consensus prediction",
+    "residual": "use the validated shadow model proposal or zero-confidence ABSTAIN fallback",
+    "missingObservation": "deterministic ABSTAIN without model invocation",
+    "modelMayOverrideNonResidual": false,
+    "modelMayPruneHypothesesOrAuthorizeAction": false
+  },
+  "registeredMetrics": [
+    "structured response validity and validation-reason counts",
+    "residual exact decision accuracy and status macro F1",
+    "residual known exact-intent accuracy",
+    "residual novel precision recall and exact-scenario accuracy",
+    "residual unsupported precision and recall",
+    "residual false-known acceptance rate",
+    "residual confidence ECE and top-confidence error",
+    "residual mean shadow decision regret",
+    "combined hybrid exactness false-known rate and regret",
+    "controlled missing-observation abstention and true-hypothesis retention"
+  ],
+  "qualityGates": {
+    "minimumStructuredResponseValidity": 0.98,
+    "minimumResidualStatusMacroF1": 0.65,
+    "minimumResidualExactDecisionAccuracy": 0.60,
+    "minimumResidualKnownExactIntentAccuracy": 0.65,
+    "minimumResidualNovelStatusRecall": 0.70,
+    "minimumResidualNovelStatusPrecision": 0.70,
+    "minimumResidualNovelExactScenarioAccuracy": 0.70,
+    "minimumResidualUnsupportedStatusRecall": 0.80,
+    "minimumResidualUnsupportedStatusPrecision": 0.80,
+    "maximumResidualFalseKnownAcceptanceRate": 0.10,
+    "maximumResidualConfidenceECE": 0.15,
+    "maximumResidualTopConfidence80PercentError": 0.30,
+    "maximumResidualMeanDecisionRegret": 1.00,
+    "minimumCombinedHybridExactDecisionAccuracy": 0.65,
+    "maximumCombinedHybridFalseKnownAcceptanceRate": 0.05,
+    "maximumCombinedHybridMeanDecisionRegret": 0.85,
+    "minimumCombinedRegretImprovementOverFrozenConsensus": 0.10,
+    "requiredControlledMissingObservationAbstentionAccuracy": 1.0,
+    "requiredTrueHypothesisRetention": 1.0
+  },
+  "accessGates": {
+    "requiredResidualFixtureCount": 76,
+    "maximumDevelopmentLanguageReadCount": 1,
+    "maximumProtectedLanguageReadCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumManualRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 76,
+    "maximumRetryCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "permanentlyNonAuthoritative": true,
+    "completeSafeHypothesisUniverseRetained": true,
+    "authoritativeCapabilityStatePosteriorAndPolicyImmutable": true,
+    "modelDefinesOrRegistersCapabilities": false,
+    "modelUpdatesPosterior": false,
+    "modelSelectsAction": false,
+    "modelExecutesTool": false,
+    "allCostsAndActionsAreCounterfactualShadowQuantities": true,
+    "realExecutionCount": 0
+  },
+  "preLockExposure": {
+    "developmentLanguageReadCount": 0,
+    "protectedLanguageReadCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "manualRawResponseInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "retryCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "completedCondition": "all 76 independent no-retry residual generations complete within every access gate regardless of quality",
+    "qualifyingCondition": "every quality and access gate passes noncompensatorily",
+    "ifQualifying": "freeze positive development outcome and authorize only separate preregistration of the identical deterministic-plus-model protocol on protected transfer",
+    "ifNonqualifying": "freeze negative development outcome, keep protected transfer sealed, and close this residual model protocol without prompt model decoding threshold or gate tuning",
+    "passAuthorizesProtectedAccessImmediately": false,
+    "passAuthorizesAPITrainingOntologyPlanningActionOrExecution": false
+  },
+  "claimBoundary": "single-model record-disjoint MASSIVE development evidence for a deterministic-first shadow residual proposer; not protected evidence, unrestricted open-world understanding, ontology learning, calibration transfer, action, execution, or deployment safety"
+}

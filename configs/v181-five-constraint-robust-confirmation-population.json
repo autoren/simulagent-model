@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "181-five-constraint-robust-confirmation-population-design",
+  "experiment": "v181_complete_five_constraint_exact_context_disjoint_robust_confirmation_population",
+  "parentV180OutcomeLock": "configs/v180-triple-repetition-robust-planner-development-outcome-lock.json",
+  "sourceV172OutcomeLock": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "sourceV176OutcomeLock": "configs/v176-four-constraint-confirmation-population-outcome-lock.json",
+  "sourceV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "roadmap": "docs/research-roadmap-after-v180.md",
+  "claimBoundary": "project-authored complete five-constraint exact-context-disjoint finite-DSL robust-confirmation population only; ontology identities are reused, so this is not unseen-concept, language, learned-observation, external, human, policy-performance, sandbox-performance, deployment, or execution evidence",
+  "generator": {
+    "candidateTruthTableCount": 256,
+    "valuationCount": 8,
+    "constraintCountPerState": 5,
+    "outcomesPerConstraint": [0, 1],
+    "completeValuationQuintupleAndOutcomeEnumeration": true,
+    "requiredSourceStateCount": 1792,
+    "retainEverySourceState": true,
+    "selectionUsesPlannerScoresPoliciesSandboxOutcomesOrTargetClass": false
+  },
+  "confirmationEligibility": {
+    "rule": "exact version space contains alias composition and provisional_primitive candidates",
+    "reason": "unchanged V167 class-balanced prior requires every frozen prior class",
+    "usesOnlyFrozenCandidateClassMetadata": true,
+    "ineligibleStatesRetainedInPopulation": true,
+    "policyOrSandboxScoringDuringEligibility": false
+  },
+  "targetCases": {
+    "includeEveryCandidateInEveryEligibleVersionSpace": true,
+    "targetSelectionOrSubsampling": false,
+    "targetWeights": "unchanged V167 class-balanced prior: one third per class then uniform within class",
+    "targetWeightsUsePolicyOutcomes": false,
+    "targetIdentitiesFrozenBeforeConfirmationScoring": true
+  },
+  "freshnessDefinition": {
+    "exactTargetContextSignature": "canonical five-constraint signature concatenated with the target candidate complete eight-valuation truth table",
+    "compareAgainstEveryV172TargetContextSignature": true,
+    "compareAgainstEveryV176TargetContextSignature": true,
+    "requiredExactSignatureOverlapWithV172": 0,
+    "requiredExactSignatureOverlapWithV176": 0,
+    "candidateIdentityDisjointnessRequired": false,
+    "candidateOntologyIsIntentionallyReused": true,
+    "freshnessClaim": "new exact evidence contexts for the same fixed ontology, not new candidate concepts"
+  },
+  "populationGates": {
+    "requiredSourceStateCount": 1792,
+    "requiredSelectedStateCount": 1792,
+    "requiredCandidatesPerState": 8,
+    "requiredEligibleStateCount": 66,
+    "requiredIneligibleStateCount": 1726,
+    "requiredTargetCaseCount": 528,
+    "requiredTargetClassCounts": {
+      "alias": 66,
+      "composition": 72,
+      "provisional_primitive": 390
+    },
+    "requiredClassCoverageCounts": {
+      "1": 1388,
+      "2": 338,
+      "3": 66
+    },
+    "requiredConstraintSignatureUniqueness": 1.0,
+    "requiredVersionSpaceExactness": 1.0,
+    "requiredTargetMembershipExactness": 1.0,
+    "requiredPriorWeightNormalization": 1.0,
+    "requiredExactTargetContextSignatureUniqueness": 1.0,
+    "requiredExactTargetContextSignatureOverlapWithV172": 0,
+    "requiredExactTargetContextSignatureOverlapWithV176": 0,
+    "maximumPlannerPolicyScoreCount": 0,
+    "maximumSandboxTransactionCount": 0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedRealStateMutationCount": 0,
+    "maximumRealSensorOrServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "implementationStructuralCensusCount": 1,
+    "implementationPopulationTestBuildCount": 1,
+    "formalPopulationBuildCount": 0,
+    "plannerPolicyScoreCount": 0,
+    "sandboxTransactionCount": 0,
+    "aggregateConfirmationMetricInspectionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedRealStateMutationCount": 0,
+    "realSensorOrServiceCallCount": 0,
+    "actualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "populationContainsOnlyShadowVersionSpacesAndTargetIdentities": true,
+    "authoritativeOntologyAndStateImmutable": true,
+    "plannerNotRun": true,
+    "sandboxNotRun": true,
+    "modelNotRun": true,
+    "provisionalRegistrationAllowed": false,
+    "actionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationGatePasses": "freeze_V181_and_preregister_one_unchanged_V180_robust_confirmation_on_all_eligible_states_and_targets",
+    "otherwise": "freeze_V181_boundary_result_without_confirmation_scoring",
+    "passAuthorizesImmediateConfirmationRun": false,
+    "passAuthorizesPolicyTuning": false,
+    "passAuthorizesModelRegistrationAuthorityActionOrExecution": false
+  }
+}

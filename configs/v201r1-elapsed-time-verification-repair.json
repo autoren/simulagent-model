@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "201r1-elapsed-time-verification-repair-design",
+  "experiment": "v201r1_verification_only_repair_for_post_aggregation_elapsed_time_update",
+  "sourceV201Lock": "configs/v201-local-menu-presentation-robustness-lock.json",
+  "sourceFailedOutcomeAudit": "outputs/v201-local-menu-presentation-robustness/outcome-audit.json",
+  "sourceResult": "outputs/v201-local-menu-presentation-robustness/model-realization/result.json",
+  "sourceEvaluationSummary": "outputs/v201-local-menu-presentation-robustness/model-realization/evaluation-summary.json",
+  "sourceScoredRecords": "outputs/v201-local-menu-presentation-robustness/model-realization/scored-records.json",
+  "sourceAccess": "outputs/v201-local-menu-presentation-robustness/model-realization/access.json",
+  "sourceCensusResult": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+  "sourceResultsDocument": "docs/v201-local-menu-presentation-robustness-results.md",
+  "claimBoundary": "verification-only repair for one volatile elapsed_seconds presentation field written after scientific aggregation; no fixture, proposal, score, metric, gate, decision, access count, model output, or scientific interpretation may change",
+  "repairContract": {
+    "requiredFalseChecks": ["evaluation_summary_reconstructs_exactly", "result_reconstructs_exactly"],
+    "allowedTopLevelSummaryDifferenceKeys": ["elapsed_seconds"],
+    "maximumAllowedElapsedSecondsDelta": 0.01,
+    "finalAccessElapsedMustBeAtLeastAggregationElapsed": true,
+    "repairComparisonUsesPersistedAggregationElapsedOnly": true,
+    "sourceArtifactsMayBeModified": false,
+    "modelOrPolicyMayBeRerun": false
+  },
+  "preLockExposure": {
+    "rawModelResponseReadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifExactSingleFieldRepairAndAllOtherVerificationChecksPass": "freeze_V201r1_verification_repair_and_preserve_V201_negative_presentation_invariance_result",
+    "otherwise": "freeze_V201r1_repair_failure_without_mutation_or_rerun",
+    "passAuthorizesProtectedRobustnessRun": false,
+    "passAuthorizesRoadmapUpdateAndSeparateModelFreeDecisionSufficiencyDesignOnly": true,
+    "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

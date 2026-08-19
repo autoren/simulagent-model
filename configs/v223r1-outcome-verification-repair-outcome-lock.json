@@ -1,0 +1,148 @@
+{
+  "authorization": {
+    "design_V224_Mondo_metadata_first_record_disposition_census": true,
+    "open_task_record_language_or_run_model": false,
+    "register_mutate_service_act_execute": false
+  },
+  "experiment": "v223r1_outcome_verification_only_repair",
+  "frozen_auditor": "python/audit_and_freeze_v223r1_outcome_verification_repair.py",
+  "frozen_auditor_sha256": "2435a9fef71e56938d62b34351c7b4d4a6232b72fdd02e5264cf4a1670fbd833",
+  "frozen_config": "configs/v223r1-outcome-verification-repair.json",
+  "frozen_config_sha256": "caa00d587563e64d9b393fddd9da46329a686decadbcd0308e0bd91ad2113254",
+  "frozen_design_audit": "outputs/v223r1-outcome-verification-repair/design-audit.json",
+  "frozen_design_audit_sha256": "ddc7031327a7168458ef26a587565c1297d259987ac01530231fe5ec2116ae93",
+  "frozen_parent_V223_design_lock": "configs/v223-archived-semantic-adjudication-metadata-census-lock.json",
+  "frozen_parent_V223_design_lock_sha256": "a0dae40bf6fc95d9a06e47d7b69c610e8cb710b0c742d04ef4dc97288313837a",
+  "frozen_parent_V223_failed_outcome_audit": "outputs/v223-archived-semantic-adjudication-metadata-census/outcome-audit.json",
+  "frozen_parent_V223_failed_outcome_audit_sha256": "b7741a5aa53930e6a1749248af5b8a97dbf122a8292f5762cce6711287486e11",
+  "frozen_parent_V223_result": "outputs/v223-archived-semantic-adjudication-metadata-census/census/result.json",
+  "frozen_parent_V223_result_sha256": "757b7fb95dfefa26eb6ffe59d1fba63b3c991a237bb275a14d4eb3a8f065ffa8",
+  "frozen_parent_V223_results_document": "docs/v223-archived-semantic-adjudication-metadata-census-results.md",
+  "frozen_parent_V223_results_document_sha256": "73a66a254e8f74a8107990e021c8da37b3a7159ff47697583cd6ed21502faa9f",
+  "frozen_parent_V223_summary": "outputs/v223-archived-semantic-adjudication-metadata-census/census/summary.json",
+  "frozen_parent_V223_summary_sha256": "defd1d0bef172e8bbb1497b59ae7e1392a8e3694c6860e4877ea0e96e27b8f05",
+  "frozen_plan": "docs/v223r1-outcome-verification-repair-plan.md",
+  "frozen_plan_sha256": "0918612d1eaef08d10cf827c059cf7879b391ab0517cb61724112c32566af23f",
+  "frozen_protocol": "python/v223r1_outcome_verification_repair.py",
+  "frozen_protocol_sha256": "304200ebe3a2c19f29bc05f40194c2706a502b336bbb415cbc1b962ce27959c2",
+  "frozen_tests": "python/test_v223r1_outcome_verification_repair.py",
+  "frozen_tests_sha256": "ebeccd02166d2c1f53c107fcf1865e7cfdc8a51744e65b55e05f9a5ff101db02",
+  "frozen_verifier": "python/verify_and_freeze_v223r1_outcome_verification_repair.py",
+  "frozen_verifier_sha256": "2c4d7f06cae60b0d24948ff824a8e196cb0c9c1a1a6d89b2980056d4f11ee085",
+  "lock_payload_sha256": "0afbf31bd6676bb69276db62e9ccbbd297c3ebbaabfd693fa38ca0af88f44f91",
+  "outcome": {
+    "V223_branch": "SOURCE_SPECIFIC_ACQUISITION_DESIGN_ELIGIBLE",
+    "V223_decision": "freeze_V223_positive_and_authorize_separate_source_specific_metadata_first_acquisition_and_identifiability_design_only",
+    "V223_scientific_passed": true,
+    "formal_task_record_body_read_count": 0,
+    "metrics": {
+      "assessment_dimension_coverage": 1.0,
+      "claim_narrowed_to_structured_semantic_change_requests": true,
+      "eligible_source_specific_candidate_count": 1,
+      "eligible_source_specific_candidate_ids": [
+        "MONDO_GITHUB_TERM_REQUESTS"
+      ],
+      "failed_url_count": 0,
+      "finite_metrics": true,
+      "formal_task_record_body_read_count": 0,
+      "frozen_url_attempt_count": 21,
+      "issue_proposal_comment_pull_or_archive_record_request_count": 0,
+      "metadata_only_url_rate": 1.0,
+      "recommended_source_specific_candidate_ids": [
+        "MONDO_GITHUB_TERM_REQUESTS"
+      ],
+      "recorded_url_attempt_count": 21,
+      "selected_candidate_missing_mandatory_dimension_count": 0,
+      "source_unit_count": 4,
+      "successful_snapshot_hash_coverage": 1.0,
+      "successful_snapshot_total_bytes": 549788,
+      "successful_url_count": 21,
+      "true_assessment_evidence_coverage": 1.0,
+      "unexpected_url_attempt_count": 0,
+      "unit_metrics": {
+        "GO_GITHUB_TERM_REQUESTS": {
+          "eligible_for_source_specific_acquisition_design": false,
+          "false_dimension_count": 8,
+          "missing_mandatory_dimensions": [
+            "accepted_change_linked_to_versioned_catalog",
+            "accepted_novel_outcome",
+            "existing_or_duplicate_outcome",
+            "human_rather_than_model_gold",
+            "independent_adjudication_role",
+            "insufficient_evidence_outcome",
+            "public_review_or_consensus",
+            "unsupported_or_out_of_scope_outcome"
+          ],
+          "successful_url_count": 5,
+          "true_dimension_count": 9
+        },
+        "MONDO_GITHUB_TERM_REQUESTS": {
+          "eligible_for_source_specific_acquisition_design": true,
+          "false_dimension_count": 0,
+          "missing_mandatory_dimensions": [],
+          "successful_url_count": 7,
+          "true_dimension_count": 17
+        },
+        "SCHEMAORG_GITHUB_PROPOSALS": {
+          "eligible_for_source_specific_acquisition_design": false,
+          "false_dimension_count": 4,
+          "missing_mandatory_dimensions": [
+            "existing_or_duplicate_outcome",
+            "insufficient_evidence_outcome",
+            "structured_request_schema",
+            "unsupported_or_out_of_scope_outcome"
+          ],
+          "successful_url_count": 4,
+          "true_dimension_count": 13
+        },
+        "WIKIDATA_PROPERTY_PROPOSALS": {
+          "eligible_for_source_specific_acquisition_design": false,
+          "false_dimension_count": 3,
+          "missing_mandatory_dimensions": [
+            "existing_or_duplicate_outcome",
+            "insufficient_evidence_outcome",
+            "unsupported_or_out_of_scope_outcome"
+          ],
+          "successful_url_count": 5,
+          "true_dimension_count": 14
+        }
+      },
+      "url_accounting_rate": 1.0
+    },
+    "original_failed_checks": [
+      "design_lock_and_dependencies_are_exact"
+    ],
+    "repair_passed": true,
+    "selected_source_specific_candidate_ids": [
+      "MONDO_GITHUB_TERM_REQUESTS"
+    ]
+  },
+  "repair_audit": "outputs/v223r1-outcome-verification-repair/outcome-audit.json",
+  "repair_audit_sha256": "208ff0bb6ecebb6c080221194c03ea0301c0aa2b8ae5d71f008aae395820217c",
+  "repair_design_lock": "configs/v223r1-outcome-verification-repair-lock.json",
+  "repair_design_lock_sha256": "384e420751e0234b2ea1ba1af4fdb727b55cc85580eb282b8e4dfa80307228da",
+  "schema_version": "223r1-outcome-verification-repair-outcome-lock",
+  "snapshot_hashes": {
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/036534cf4e2a5b1c48cb.snapshot": "7c0e22abd1e22f25050c1fb1f0111ab8a5d63bf893da60774d220b9c57b38139",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/06fd70db8ac1fbbae0eb.snapshot": "83cbdcde05be737df493287a32898a02044d80d7bb899c85feb0461cd389f0a3",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/07ae2c2a475920da6277.snapshot": "b31a9cd1933f9e96a24e9f556d0d477d110ab106ac356fb06f477fb8616f95cc",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/0c3729c99a97fab11a5c.snapshot": "f38960c98ff267d8f30163fd023da8f6166bb6b2359310d768da2d7e849af3d4",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/220643a5602d3cb96084.snapshot": "eea76dc2e8abfb494f0ac2ed6de624aa724520569902f1f61bf5074a27e66fc3",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/26dc2284a6a74bebca81.snapshot": "a9dc3a1e46bf80c590d5c0e3f8eaf3704ddee16ec39e36e52906d71c7d14b1ff",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/2d6e7b5682b6b4113d19.snapshot": "bf6cf9b017a7cf267d1a1fa36a73947feb100c8ced9380980a556c3e4133e654",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/55d9033c4c6a3294ccfd.snapshot": "ece809f763fee48111560bab2fee40d10e821f1a4ba9b9346cdcb5387420ec81",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/58e2f89c1aff6b245792.snapshot": "d40702ee85532e60b13a858e699794947ae15d31acd955136e75dbe7b1039f59",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/6d57af653ee11619269a.snapshot": "c7883faa2b9efa705dbc68afedec816cf84780bdd2903551e745df4fdacc19a6",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/7b17e75ee3e00b4c44c8.snapshot": "f5bc4bde86d873b9212f107500fc6f8a6857cb07912d1dfba98b5d59cd5c1f8f",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/811cfd3cf910a2e0fa88.snapshot": "22de999c1399c8a7333021aad564d08eff6e2b362248bb1f6588ebcf46a9f1f7",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/9e7fb4abc26ff3de9068.snapshot": "d79a64949c48ac9365fd6a78bab2820ba79f2e19d0d5eaa98dc384d97c0d1d97",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/b3651adb346f8489d2d0.snapshot": "3654943b3614c8fe9b8c4d1e9f5ab7e1371e7c22c746b2aa24fb2e328e34454f",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/bb00df2fc426f8e9a334.snapshot": "f7e4162423dd08c5489bd636f9829bf2020d10876940cbedf8c9cdc81ff5b6ad",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/ceabff1de402da200d1b.snapshot": "185334c1ae8ba087867bce397d6301579b894008eb1f015d3073b15dc69b3e7c",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/d24ef23163104182a9b2.snapshot": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/da726f2427f97900ced4.snapshot": "3bc375d82c4f8ff35d915e0f1f0dbb3999371c222fe337d8fefc102b5d90c11c",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/e55a23e29befd8203046.snapshot": "832adc58f66378e17e6e81efeb4a8b88e17004a77b33bf4f307400e7f2c7a8aa",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/e65084186f8394cf0d96.snapshot": "77f6a7fa3f9cc8492b1dd992920b5e679b1553c5b066032769c08c1d98c134e8",
+    "outputs/v223-archived-semantic-adjudication-metadata-census/metadata-snapshots/f6a6c83603fff868c1e2.snapshot": "3d8bbeebd81dfe98f50fadedaaaa0bf11c044092e6a2930a98f4c12f41e10bff"
+  }
+}

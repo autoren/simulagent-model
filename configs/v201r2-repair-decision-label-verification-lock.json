@@ -1,0 +1,83 @@
+{
+  "auditor": "python/audit_and_freeze_v201r2_repair_decision_label_verification.py",
+  "auditor_sha256": "0f2a8d213984d886c768cad6d778c2d8e9b20965e79b0ee328d662da5abda290",
+  "authorization": {
+    "modify_sources_or_rerun": false,
+    "protected_API_training_registration_authority_action_or_execution": false,
+    "run_exact_single_serialization_verification": true
+  },
+  "config": "configs/v201r2-repair-decision-label-verification.json",
+  "config_payload": {
+    "claimBoundary": "verification-only repair of one overwritten repair-stage decision label; preserve the source V201 negative scientific decision and every source artifact unchanged",
+    "decisionRule": {
+      "ifExactDecisionOverwriteAndEverySubstantiveRepairCheckPasses": "freeze_V201r2_serialization_repair_and_preserve_V201_negative_result",
+      "otherwise": "freeze_V201r2_failure_without_mutation_or_rerun",
+      "passAuthorizesProtectedAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesRoadmapUpdateAndSeparateModelFreeDecisionSufficiencyDesignOnly": true
+    },
+    "experiment": "v201r2_verification_only_repair_for_V201r1_decision_label_overwrite",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "modelGenerationCount": 0,
+      "rawModelResponseReadCount": 0,
+      "trainingRunCount": 0
+    },
+    "repairContract": {
+      "modelPolicyOrScoringMayBeRerun": false,
+      "requiredFalseChecks": [
+        "repair_reconstructs_exactly"
+      ],
+      "requiredRepairStageDecision": "freeze_V201r1_verification_repair_and_preserve_V201_negative_presentation_invariance_result",
+      "requiredStoredResultDecision": "freeze_V201_negative_or_presentation_sensitive_without_retry_reprompt_model_selection_or_API",
+      "sourceArtifactsMayBeModified": false
+    },
+    "schemaVersion": "201r2-repair-decision-label-verification-design",
+    "sourceFailedOutcomeAudit": "outputs/v201r1-elapsed-time-verification-repair/outcome-audit.json",
+    "sourceRepairResult": "outputs/v201r1-elapsed-time-verification-repair/repair/result.json",
+    "sourceV201Access": "outputs/v201-local-menu-presentation-robustness/model-realization/access.json",
+    "sourceV201Census": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+    "sourceV201Result": "outputs/v201-local-menu-presentation-robustness/model-realization/result.json",
+    "sourceV201ResultsDocument": "docs/v201-local-menu-presentation-robustness-results.md",
+    "sourceV201ScoredRecords": "outputs/v201-local-menu-presentation-robustness/model-realization/scored-records.json",
+    "sourceV201Summary": "outputs/v201-local-menu-presentation-robustness/model-realization/evaluation-summary.json",
+    "sourceV201r1Lock": "configs/v201r1-elapsed-time-verification-repair-lock.json",
+    "sourceV201r1ResultsDocument": "docs/v201r1-elapsed-time-verification-repair-results.md"
+  },
+  "config_sha256": "0c96a8c29704906a1c76b9ce1d459cc17231f4ae557264bb9a8baedc9db8cbc5",
+  "design_audit": "outputs/v201r2-repair-decision-label-verification/design-audit.json",
+  "design_audit_sha256": "c6934c3212ffd07e41a27cba6cdf3837dc171274e69d803a68a17b7b4d46bbc5",
+  "experiment": "v201r2_verification_only_repair_for_V201r1_decision_label_overwrite",
+  "lock_payload_sha256": "f3ab68b2e057660dcd427c2d3629b7b217b2ac44af276c80a89299223d73c029",
+  "plan": "docs/v201r2-repair-decision-label-verification-plan.md",
+  "plan_sha256": "dac3c271e95a12d9be6d7e321c186c418234c0099a821d7e7da34fcd67a88d64",
+  "protocol": "python/v201r2_repair_decision_label_verification.py",
+  "protocol_sha256": "c30ff99c8996d112eef0002d4eef0161387b2d86bf61b3864c6c5ed638b63bf0",
+  "runner": "python/run_v201r2_repair_decision_label_verification.py",
+  "runner_sha256": "236cea6d2b199e06901b368ff1655f7a3655504c0060412f08e131a52f6bc688",
+  "schema_version": "201r2-repair-decision-label-verification-lock",
+  "source_V201_access": "outputs/v201-local-menu-presentation-robustness/model-realization/access.json",
+  "source_V201_access_sha256": "a4d27df162b09d2fc7b1638e1255c80bb10c32797f055a704f4da873f35ebe01",
+  "source_V201_census": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+  "source_V201_census_sha256": "6eea9a3e0f402abf1dc6d056a2671cf51de345390a490bb09a8c826475453328",
+  "source_V201_result": "outputs/v201-local-menu-presentation-robustness/model-realization/result.json",
+  "source_V201_result_sha256": "2cf7e2a033a7d455bc2fc8f3ddd63dbf446f9b6abf15f45175d96f78ec78ee6f",
+  "source_V201_results_document": "docs/v201-local-menu-presentation-robustness-results.md",
+  "source_V201_results_document_sha256": "171f67bb4f3c81b78b5fab4055bdf0f5c172d6bf71a446f60490ac47126ca92f",
+  "source_V201_scored_records": "outputs/v201-local-menu-presentation-robustness/model-realization/scored-records.json",
+  "source_V201_scored_records_sha256": "68432d9f12ca4d303da85af4aa0016495e52320f42d89f3751268035fc150239",
+  "source_V201_summary": "outputs/v201-local-menu-presentation-robustness/model-realization/evaluation-summary.json",
+  "source_V201_summary_sha256": "00f22beb4764d6e95adb633f7bbf5d9e6a9be6cce25c8c0ba7807715852bd871",
+  "source_V201r1_lock": "configs/v201r1-elapsed-time-verification-repair-lock.json",
+  "source_V201r1_lock_sha256": "e5117e28f8976d7137261377e467ee0700e075dad4e12e537a454c928ab38d07",
+  "source_V201r1_results_document": "docs/v201r1-elapsed-time-verification-repair-results.md",
+  "source_V201r1_results_document_sha256": "e9a126c25874b3ba505ca6d3af25dd6599ae59ab2e95d2455d13228960e19bd4",
+  "source_failed_outcome_audit": "outputs/v201r1-elapsed-time-verification-repair/outcome-audit.json",
+  "source_failed_outcome_audit_sha256": "05dbe2ea04d4fdcc650b279660fb1ef292f27232aec3a248382a20859cbd6d7f",
+  "source_repair_result": "outputs/v201r1-elapsed-time-verification-repair/repair/result.json",
+  "source_repair_result_sha256": "1d92491cf5605608cab0ac4758448d88990b68fb416cfd03c4e0d260c604c23c",
+  "tests": "python/test_v201r2_repair_decision_label_verification.py",
+  "tests_sha256": "65fbea555d31ff6b82e394cc92a273047332a6f3bab00ec413bd0d43ae38ced8",
+  "verifier": "python/verify_and_freeze_v201r2_repair_decision_label_verification_outcome.py",
+  "verifier_sha256": "9ca98588969aa442245519682686dfaf8fe664f848f3aa8be0006ebc492f7be0"
+}

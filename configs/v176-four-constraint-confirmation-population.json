@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "176-four-constraint-confirmation-population-design",
+  "experiment": "v176_complete_four_constraint_exact_context_signature_disjoint_confirmation_population",
+  "parentV175OutcomeLock": "configs/v175-certification-aware-planner-development-outcome-lock.json",
+  "sourceV172OutcomeLock": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "sourceV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "roadmap": "docs/research-roadmap-after-v175.md",
+  "claimBoundary": "project-authored four-constraint context-disjoint finite-DSL confirmation population only; candidate ontology identities are reused, so this is not unseen-concept, language, external, human, policy-performance, sandbox-performance, deployment, or execution evidence",
+  "generator": {
+    "candidateTruthTableCount": 256,
+    "valuationCount": 8,
+    "constraintCountPerState": 4,
+    "outcomesPerConstraint": [0, 1],
+    "completeValuationQuadrupleAndOutcomeEnumeration": true,
+    "requiredSourceStateCount": 1120,
+    "retainEverySourceState": true,
+    "selectionUsesPlannerScoresPoliciesSandboxOutcomesOrTargetClass": false
+  },
+  "confirmationEligibility": {
+    "rule": "exact version space contains alias composition and provisional_primitive candidates",
+    "reason": "unchanged V167 class-balanced prior requires every frozen prior class",
+    "usesOnlyFrozenCandidateClassMetadata": true,
+    "ineligibleStatesRetainedInPopulation": true,
+    "policyOrSandboxScoringDuringEligibility": false
+  },
+  "targetCases": {
+    "includeEveryCandidateInEveryEligibleVersionSpace": true,
+    "targetSelectionOrSubsampling": false,
+    "targetWeights": "unchanged V167 class-balanced prior: one third per class then uniform within class",
+    "targetWeightsUsePolicyOutcomes": false,
+    "targetIdentitiesFrozenBeforeConfirmationScoring": true
+  },
+  "freshnessDefinition": {
+    "exactTargetContextSignature": "canonical four-constraint signature concatenated with the target candidate's complete eight-valuation truth table",
+    "compareAgainstEveryV172TargetContextSignature": true,
+    "requiredExactSignatureOverlapCount": 0,
+    "candidateIdentityDisjointnessRequired": false,
+    "candidateOntologyIsIntentionallyReused": true,
+    "freshnessClaim": "new exact evidence contexts for the same fixed ontology, not new candidate concepts"
+  },
+  "populationGates": {
+    "requiredSourceStateCount": 1120,
+    "requiredSelectedStateCount": 1120,
+    "requiredCandidatesPerState": 16,
+    "requiredEligibleStateCount": 135,
+    "requiredIneligibleStateCount": 985,
+    "requiredTargetCaseCount": 2160,
+    "requiredTargetClassCounts": {
+      "alias": 138,
+      "composition": 180,
+      "provisional_primitive": 1842
+    },
+    "requiredClassCoverageCounts": {
+      "1": 717,
+      "2": 268,
+      "3": 135
+    },
+    "requiredConstraintSignatureUniqueness": 1.0,
+    "requiredVersionSpaceExactness": 1.0,
+    "requiredTargetMembershipExactness": 1.0,
+    "requiredPriorWeightNormalization": 1.0,
+    "requiredExactTargetContextSignatureUniqueness": 1.0,
+    "requiredExactTargetContextSignatureOverlapWithV172": 0,
+    "maximumPlannerPolicyScoreCount": 0,
+    "maximumSandboxTransactionCount": 0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedRealStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "implementationStructuralCensusCount": 1,
+    "implementationPopulationTestBuildCount": 1,
+    "formalPopulationBuildCount": 0,
+    "plannerPolicyScoreCount": 0,
+    "sandboxTransactionCount": 0,
+    "aggregateConfirmationMetricInspectionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedRealStateMutationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "populationContainsOnlyShadowVersionSpacesAndTargetIdentities": true,
+    "authoritativeOntologyAndStateImmutable": true,
+    "plannerNotRun": true,
+    "sandboxNotRun": true,
+    "modelNotRun": true,
+    "provisionalRegistrationAllowed": false,
+    "actionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationGatePasses": "freeze_V176_and_preregister_one_unchanged_V175_confirmation_on_all_eligible_states_and_targets",
+    "otherwise": "freeze_V176_boundary_result_without_confirmation_scoring",
+    "passAuthorizesImmediateConfirmationRun": false,
+    "passAuthorizesPolicyTuning": false,
+    "passAuthorizesModelRegistrationAuthorityActionOrExecution": false
+  }
+}

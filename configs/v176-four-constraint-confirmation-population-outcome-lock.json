@@ -1,0 +1,66 @@
+{
+  "audit": "outputs/v176-four-constraint-confirmation-population/outcome-audit.json",
+  "audit_sha256": "ca6dcc729beb67a5af5a244dcb431a7996dfb92dd376a5c33bcbd4c6aec52e18",
+  "authorization": {
+    "modify_or_rebuild_V176": false,
+    "preregister_one_unchanged_V175_confirmation": true,
+    "run_model_register_mutate_real_state_call_service_or_execute": false,
+    "score_or_run_confirmation_without_separate_lock": false,
+    "select_subsample_or_tune_using_V176_outcomes": false
+  },
+  "constraint_states": "outputs/v176-four-constraint-confirmation-population/population/constraint-states.json",
+  "constraint_states_sha256": "7992c11f106b084744486ede90feeb90046721a13a72bb8dfaf9bff68da9b00d",
+  "eligible_state_ids": "outputs/v176-four-constraint-confirmation-population/population/confirmation-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "0f27aa4faa180a7d68f9c266cefa5d1d6142d1018c1fcbf100fbe326902c9b32",
+  "experiment": "v176_complete_four_constraint_exact_context_signature_disjoint_confirmation_population",
+  "lock_payload_sha256": "005c681e6c2a74148f1299fb5a69d1d82550d9b39e395c2aff0b99f27daccedb",
+  "outcome": {
+    "decision": "freeze_V176_and_preregister_one_unchanged_V175_confirmation_on_all_eligible_states_and_targets",
+    "passed": true,
+    "scientific_population_gates_passed": true,
+    "summary": {
+      "candidate_count_values": [
+        16
+      ],
+      "candidate_identity_overlap_with_V172_count": 204,
+      "class_coverage_counts": {
+        "1": 717,
+        "2": 268,
+        "3": 135
+      },
+      "confirmation_eligible_state_count": 135,
+      "confirmation_ineligible_state_count": 985,
+      "evaluation_record_count": 0,
+      "exact_target_context_signature_count": 2160,
+      "exact_target_context_signature_overlap_with_V172": 0,
+      "planner_policy_score_count": 0,
+      "project_authored_procedural": true,
+      "sandbox_transaction_count": 0,
+      "selected_state_count": 1120,
+      "source_state_count": 1120,
+      "state_membership_sha256": "bfa87c0bbce5730a2f3fa8671e83f3554188c89af26a47ad793ff13f11ef780f",
+      "target_case_count": 2160,
+      "target_class_counts": {
+        "alias": 138,
+        "composition": 180,
+        "provisional_primitive": 1842
+      },
+      "target_context_membership_sha256": "34dbf208d55e214189b0ca4900766e5cf80e8d3e7ed3991456d503ca106f6953",
+      "target_membership_sha256": "7a40939a88f4aea9e574c756cbde76dbce679d27baf2554b5cdca10fd55c96b6",
+      "unique_target_candidate_count": 204
+    }
+  },
+  "population_lock": "configs/v176-four-constraint-confirmation-population-lock.json",
+  "population_lock_sha256": "43db78febb4de8f64688cdcae8b24fd9565870ec6cbcc5a13e9668785fb3976b",
+  "population_summary": "outputs/v176-four-constraint-confirmation-population/population/population-summary.json",
+  "population_summary_sha256": "76cd27008d18cd79c6465c555836dbdbefe05107360bca9eae812d0dac946191",
+  "result": "outputs/v176-four-constraint-confirmation-population/population/result.json",
+  "result_sha256": "b8471dce1888c1e80cf83114b9bf70adceb60a6581a9d554cb3ef4324162757c",
+  "results_document": "docs/v176-four-constraint-confirmation-population-results.md",
+  "results_document_sha256": "4bfcbc822050ae0384b32d1f6e9187ab60fa852b7055cdccd49e173ea0b3a041",
+  "schema_version": "176-four-constraint-confirmation-population-outcome-lock",
+  "target_cases": "outputs/v176-four-constraint-confirmation-population/population/target-cases.json",
+  "target_cases_sha256": "3d6621226ee5762c7b62374a99f96f39dd08c9048bbf7114c5ba66c1c8199d78",
+  "verifier": "python/verify_and_freeze_v176_four_constraint_confirmation_population_outcome.py",
+  "verifier_sha256": "7b02933708607987f2307825ee7cdf8ba5134ba8d0862f12aa33259479b18c67"
+}

@@ -1,0 +1,489 @@
+{
+  "V167_config_payload": {
+    "authorityBoundary": {
+      "actionOrExecutionAllowed": false,
+      "authoritativeOntologyImmutable": true,
+      "candidateBeliefsAndTerminalDecisionsAreShadowOnly": true,
+      "modelUseAllowed": false,
+      "provisionalRegistrationAllowed": false,
+      "realExecutionCount": 0,
+      "realQueryOrServiceCallAllowed": false,
+      "trustedStateMutationAllowed": false
+    },
+    "caseSelection": {
+      "requiredCandidateCount": 64,
+      "requiredCaseCount": 48,
+      "requiredEvidenceStatus": "ambiguous",
+      "selectionUsesFrozenV166PredictionsOnly": true,
+      "sourceBaseline": "exact_parser_plus_version_space"
+    },
+    "claimBoundary": "development-informed exact finite-DSL shadow-planning result only; not fresh confirmation, unrestricted ontology learning, language understanding, registration, trusted-state control, action, or execution",
+    "decisionRule": {
+      "ifEveryPlannerGatePasses": "freeze_V167_as_development_evidence_and_preregister_fixed_ontology_reversible_sandbox",
+      "otherwise": "freeze_V167_boundary_result_and_do_not_tune_on_frozen_cases",
+      "passAuthorizesImmediateSandboxRun": false,
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesRegistrationTrustedStateActionOrExecution": false
+    },
+    "developmentDesignDisclosure": {
+      "confirmatoryClaimAllowed": false,
+      "costsHorizonAndLossesChosenAfterDevelopmentFeasibilityInspection": true,
+      "formalPolicyScoresWrittenBeforeLock": false,
+      "hiddenDevelopmentTruthReadCount": 2,
+      "oracleFeasibilityAnalysisRunCount": 2,
+      "projectAuthoredDevelopmentOnly": true,
+      "protectedOrEvaluationPopulationExists": false
+    },
+    "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+    "formalRunPreLockAccess": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalPolicyScoreCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "lossOrientation": "terminalLoss[actual_class][decision]",
+    "parentV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+    "plannerGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumHistoryDependentSecondActionCaseCount": 1,
+      "minimumStrictBayesImprovementOverOpenLoopCaseCount": 1,
+      "minimumUniqueBayesRootQueryCount": 2,
+      "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+      "requiredCandidatesPerCase": 64,
+      "requiredCaseCount": 48,
+      "requiredExpressibilityClassCoverage": 3,
+      "requiredPositiveValueOfInformationCaseCount": 48,
+      "requiredRenamingRiskInvariance": 1.0,
+      "requiredTargetCandidateRetention": 1.0
+    },
+    "policies": {
+      "exact_bayes_adaptive": "minimize exact expected query cost plus terminal loss with optional stopping over a two-query policy tree",
+      "forced_map_no_query": "choose the maximum-posterior class without defer, using terminal decision order for ties",
+      "greedy_class_information_gain": "adaptively choose maximum expected Shannon class-entropy reduction for two queries, then take the Bayes terminal decision",
+      "no_query_bayes_terminal": "take the minimum-risk terminal decision immediately",
+      "optimal_open_loop_pair": "choose the minimum-risk unordered query pair at the root, use both regardless of the first outcome, then take the Bayes terminal decision",
+      "oracle_class": "observe the actual expressibility class without cost; scoring lower bound only",
+      "random_open_loop_pair": "uniform expected risk over every unordered pair of available queries, always using both"
+    },
+    "prior": {
+      "classMass": {
+        "alias": "1/3",
+        "composition": "1/3",
+        "provisional_primitive": "1/3"
+      },
+      "expressibilityClasses": [
+        "alias",
+        "composition",
+        "provisional_primitive"
+      ],
+      "kind": "class_balanced_then_uniform_within_class",
+      "meaning": "normative development prior chosen to prevent the 247-member provisional class from winning solely by enumeration multiplicity"
+    },
+    "queryModel": {
+      "action": "query one currently variable truth-table valuation",
+      "candidateUpdate": "exact Bayesian conditioning with zero inconsistent-candidate mass",
+      "earlyStopAllowed": true,
+      "maximumQueries": 2,
+      "outcomeNoise": 0.0,
+      "outcomes": [
+        0,
+        1
+      ],
+      "queryCost": "1/10",
+      "repeatedQueryAllowed": false
+    },
+    "registeredMetrics": [
+      "expected total risk by policy",
+      "regret relative to exact Bayes-adaptive policy",
+      "positive value-of-information case count",
+      "strict improvement over optimal open-loop case count",
+      "unique exact-Bayes root query count",
+      "history-dependent second-action case count",
+      "expected query count",
+      "terminal defer probability",
+      "false provisional decision probability",
+      "target candidate retention",
+      "renaming invariance",
+      "model and execution access"
+    ],
+    "schemaVersion": "167-exact-evidence-gathering-planner-design",
+    "terminalDecisions": [
+      "alias",
+      "composition",
+      "provisional_primitive",
+      "defer"
+    ],
+    "terminalLoss": {
+      "alias": {
+        "alias": 0,
+        "composition": 4,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "composition": {
+        "alias": 4,
+        "composition": 0,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "provisional_primitive": {
+        "alias": 6,
+        "composition": 6,
+        "defer": 2,
+        "provisional_primitive": 0
+      }
+    },
+    "tieBreaks": {
+      "equalInformationGainPrefersLowestValuationIndex": true,
+      "equalOpenLoopRiskPrefersLexicographicallyLowestPair": true,
+      "equalQueryRiskPrefersLowestValuationIndex": true,
+      "stopPreferredToEqualRiskQuery": true,
+      "terminalDecisionOrder": [
+        "alias",
+        "composition",
+        "provisional_primitive",
+        "defer"
+      ]
+    }
+  },
+  "V171_config_payload": {
+    "authorityBoundary": {
+      "independentVerifierCannotBeBypassed": true,
+      "learnedConfidenceCannotAuthorizeCommit": true,
+      "onlyFixedTrustedOntologyMayBeUsed": true,
+      "provisionalConceptsMayNotEnterSandbox": true,
+      "realExecutionCount": 0,
+      "realServiceOrToolTargetExists": false,
+      "stateStoreIsLocalInMemorySimulation": true
+    },
+    "claimBoundary": "project-authored deterministic simulated transaction-development result only; not language understanding, provisional ontology integration, deployment, real service control, or real execution",
+    "decisionRule": {
+      "ifEverySandboxGatePasses": "freeze_V168_as_positive_fixed_ontology_reversible_sandbox_development_evidence",
+      "otherwise": "freeze_V168_boundary_result_and_do_not_integrate_or_tune_on_frozen_fixtures",
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesProvisionalOntologyIntegration": false,
+      "passAuthorizesRealServiceOrExecution": false
+    },
+    "experiment": "v168_model_free_fixed_ontology_reversible_transaction_sandbox_development",
+    "faultModel": {
+      "faultInjectionIsNotARealServiceOrExternalSideEffect": true,
+      "post_commit_corruption": "development harness mutates an untargeted mutable field after commit; independent verifier must detect and restore the complete pre-transaction state",
+      "preview_token_tamper": "replace the accepted preview token before commit; commit must reject without mutation"
+    },
+    "fixedOntology": {
+      "entityIds": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "entityType": "Device",
+      "immutableRootFields": [
+        "schema_version",
+        "environment"
+      ],
+      "mutableFields": {
+        "mode": {
+          "type": "enum",
+          "values": [
+            "active",
+            "maintenance",
+            "offline"
+          ]
+        },
+        "owner_team": {
+          "type": "enum",
+          "values": [
+            "red",
+            "blue",
+            "green"
+          ]
+        },
+        "quota": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "provisionalConceptsAllowed": false,
+      "systemManagedFields": [
+        "revision"
+      ]
+    },
+    "invariants": [
+      "every entity has exactly mode quota owner_team and revision",
+      "offline devices have quota zero",
+      "maintenance devices have quota at most two",
+      "active devices have quota at least one",
+      "total quota is at most twelve",
+      "at least one device is active",
+      "all revisions are nonnegative integers"
+    ],
+    "parentV167r1OutcomeLock": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+    "population": {
+      "evaluationPopulationCreated": false,
+      "projectAuthoredSynthetic": true,
+      "recordsPerScenario": 12,
+      "requiredRecordCount": 132,
+      "scenarios": [
+        "valid_retain",
+        "valid_explicit_rollback",
+        "valid_multi_entity_atomic",
+        "invariant_violation",
+        "unauthorized_field",
+        "stale_revision",
+        "malformed_type",
+        "contradictory_duplicate_patch",
+        "unknown_entity",
+        "preview_token_tamper",
+        "post_commit_corruption"
+      ],
+      "split": "development_only"
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "formalCensusRunCount": 0,
+      "implementationTestCensusRunCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "provisionalOntologyUseCount": 0,
+      "realExecutionCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0
+    },
+    "registeredMetrics": [
+      "exact expected disposition",
+      "exact final target state",
+      "rejected-state immutability",
+      "preview nonmutation",
+      "preview-commit parity",
+      "atomic multi-entity commit",
+      "complete explicit rollback recovery",
+      "complete verification-failure rollback recovery",
+      "invariant preservation",
+      "zero unauthorized commit mutation",
+      "fault detection",
+      "provenance chain validity",
+      "scenario coverage",
+      "model and real-execution access"
+    ],
+    "sandboxGates": {
+      "maximumAPICallCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProvisionalOntologyUseCount": 0,
+      "maximumRealExecutionCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "requiredAtomicMultiEntityCommit": 1.0,
+      "requiredExactFinalTargetState": 1.0,
+      "requiredExpectedDispositionAccuracy": 1.0,
+      "requiredExplicitRollbackRecovery": 1.0,
+      "requiredFaultDetection": 1.0,
+      "requiredInvariantPreservation": 1.0,
+      "requiredPreviewCommitParity": 1.0,
+      "requiredPreviewNonmutation": 1.0,
+      "requiredProvenanceChainValidity": 1.0,
+      "requiredRecordCount": 132,
+      "requiredRecordsPerScenario": 12,
+      "requiredRejectedStateImmutability": 1.0,
+      "requiredScenarioCount": 11,
+      "requiredVerificationFailureRollbackRecovery": 1.0,
+      "requiredZeroUnauthorizedCommitMutation": 1.0
+    },
+    "schemaVersion": "168-fixed-ontology-reversible-sandbox-design",
+    "transactionProtocol": {
+      "commitIsAtomic": true,
+      "commitRequiresExactPreviewTokenAndUnchangedBaseState": true,
+      "duplicateEntityFieldOperationRejected": true,
+      "explicitRollbackSupported": true,
+      "independentVerificationAfterCommit": true,
+      "previewBindsBaseStatePatchAndExpectedPostState": true,
+      "previewMutatesState": false,
+      "proposalContainsExpectedRevisionForEveryAndOnlyTouchedEntity": true,
+      "provenanceLogHashChainedAndAppendOnly": true,
+      "touchedEntityRevisionIncrement": 1,
+      "verificationFailureTriggersAutomaticRollback": true
+    }
+  },
+  "auditor": "python/audit_and_freeze_v175_certification_aware_planner_development.py",
+  "auditor_sha256": "0b76ba76eb61ee024436fc56364b5f12db801ecde1e2d98d8d539b2138841f1a",
+  "authorization": {
+    "allow_planner_model_hidden_target_or_provisional_commit_authority": false,
+    "modify_objective_horizon_cost_gate_policies_population_metrics_thresholds_or_decision": false,
+    "run_formal_V175_development_once": true,
+    "run_fresh_confirmation_without_separate_population_and_lock": false,
+    "run_model_register_mutate_real_state_call_service_or_execute": false,
+    "select_exclude_subsample_or_tune_after_scores": false
+  },
+  "config": "configs/v175-certification-aware-planner-development.json",
+  "config_payload": {
+    "benefitThresholds": {
+      "exactCertificationMeanRiskStrictlyBelowImmediateDefer": true,
+      "exactCertificationMeanRiskStrictlyBelowV167Routed": true,
+      "exactCertificationTrustedCompletionStrictlyPositive": true,
+      "failureInvalidatesSafety": false,
+      "minimumStateCountStrictlyImprovedOverImmediateDefer": 1
+    },
+    "claimBoundary": "V172 development-population certification-aware planner mechanism evidence only; not fresh confirmation, language understanding, ontology induction, deployment, real service control, or execution",
+    "decisionRule": {
+      "ifSafetyAndBenefitPassButStrongFails": "freeze_V175_as_beneficial_mixed_certification_aware_development_mechanism",
+      "ifSafetyBenefitAndStrongPass": "freeze_V175_as_strong_positive_certification_aware_development_mechanism",
+      "ifSafetyPassesButBenefitFails": "freeze_V175_as_safe_nonbeneficial_boundary_and_stop",
+      "otherwise": "freeze_V175_as_safety_failure_and_stop",
+      "passAuthorizesImmediateFreshConfirmation": false,
+      "passAuthorizesModelRegistrationRealServiceOrExecution": false,
+      "retainNegativeOrMixedWithoutTuning": true
+    },
+    "experiment": "v175_exact_certification_aware_routed_risk_planner_development",
+    "frozenRoutedObjective": {
+      "deferLossForEveryTrueClass": 2,
+      "equalQueryRiskPrefersLowestValuationIndex": true,
+      "equalRiskPrefersStop": true,
+      "falseTrustedRouteAllowed": false,
+      "horizonSelectionRule": "first V174 horizon with positive target-blind adaptive trusted completion",
+      "maximumQueries": 5,
+      "provisionalSandboxEntryAllowed": false,
+      "queryCost": "1/10",
+      "stopAction": "route only if surviving exact version space is unanimously alias or unanimously composition; otherwise defer",
+      "trustedCorrectRouteLoss": 0
+    },
+    "integrityAndSafetyGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedRealStateMutationCount": 0,
+      "requiredExactDPRiskReconstruction": 1.0,
+      "requiredFalseTrustedRouteProbability": 0.0,
+      "requiredInvariantPreservation": 1.0,
+      "requiredPlannerCommitAuthorizationCount": 0,
+      "requiredPopulationCoverage": 1.0,
+      "requiredPriorWeightNormalization": 1.0,
+      "requiredProvenanceAndRestartVerification": 1.0,
+      "requiredProvisionalSandboxEntryProbability": 0.0,
+      "requiredSandboxExactness": 1.0,
+      "requiredStateCount": 132,
+      "requiredTargetCount": 4224,
+      "requiredTargetPolicyScoreCount": 29568
+    },
+    "parentV174OutcomeLock": "configs/v174-certificate-depth-feasibility-census-outcome-lock.json",
+    "policies": {
+      "V167_exact_adaptive_horizon2": "unchanged V167 exact recommendation planner routed through deterministic gate",
+      "exact_certification_adaptive": "dynamic programming minimizing expected routed loss plus query cost with optional stopping",
+      "greedy_class_information_gain_horizon5": "choose maximum class entropy reduction and stop as soon as any class is unanimous or horizon is exhausted",
+      "immediate_defer": "zero queries then deterministic gate",
+      "optimal_open_loop_subset": "choose exact minimum routed-risk-plus-cost fixed query subset including the empty subset",
+      "random_query_order_consensus_stop": "exact uniform average over all remaining-query permutations, stopping at first unanimous class",
+      "target_informed_certificate_oracle": "non-operational comparator using V174 minimal target certificate"
+    },
+    "populationUse": {
+      "V172IsDevelopment": true,
+      "requiredStateCount": 132,
+      "requiredTargetCount": 4224,
+      "selectionSubsamplingOrExclusionAllowed": false,
+      "useAllEligibleStates": true,
+      "useAllTargets": true,
+      "useFrozenClassBalancedWeights": true
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "aggregateFormalMetricInspectionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalTargetPolicyScoreCount": 0,
+      "implementationUnitPolicyCount": 2,
+      "implementationUnitTargetCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "trainingRunCount": 0,
+      "trustedRealStateMutationCount": 0
+    },
+    "sandboxBoundary": {
+      "deterministicConsensusGateRetainsAuthority": true,
+      "independentVerifierRequired": true,
+      "plannerMayNotAuthorizeCommit": true,
+      "postCommitRestartVerificationRequired": true,
+      "realServiceOrToolTargetExists": false,
+      "reuseV171TrustedTypedRoutesAndDurabilityContract": true
+    },
+    "schemaVersion": "175-certification-aware-planner-development-design",
+    "sourceV171OutcomeLock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+    "sourceV172OutcomeLock": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+    "sourceV173OutcomeLock": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+    "strongDevelopmentThresholds": {
+      "exactCertificationMeanRiskNoWorseThanGreedy": true,
+      "exactCertificationMeanRiskNoWorseThanOptimalOpenLoop": true,
+      "exactCertificationMeanRiskNoWorseThanRandomOrder": true,
+      "failureInvalidatesSafetyOrBenefit": false,
+      "requiredStatewiseNoWorseThanEveryOperationalControlRate": 1.0
+    }
+  },
+  "config_sha256": "2ac68607efd2556321caee9c210bda26cb5815809060cc97458e732f8be345d2",
+  "constraint_states": "outputs/v172-trusted-shadow-integration-population/population/constraint-states.json",
+  "constraint_states_sha256": "524fd70bae1af58f47251a9f26cb3cb0e47fa4a6ba440f4d7cb0393e346e5cf6",
+  "design_audit": "outputs/v175-certification-aware-planner-development/design-audit.json",
+  "design_audit_sha256": "a61d66e291b972e9bfb4084ccde2270fc44dffbcc8e582d301e02feb3258536a",
+  "eligible_state_ids": "outputs/v172-trusted-shadow-integration-population/population/integration-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "9a4250cc2f22bfd4d66c4681b7654314d0fb48aa93739e9815072af77585e43c",
+  "experiment": "v175_exact_certification_aware_routed_risk_planner_development",
+  "lock_payload_sha256": "764373bd9175378811a10dac85c87b7bcdf6cfcba7f3d6f4f53469cb96568df5",
+  "parent_V174_outcome": "configs/v174-certificate-depth-feasibility-census-outcome-lock.json",
+  "parent_V174_outcome_sha256": "92bc3fa9b3bb68693b5a89f4e5f884aad89198f2dd4ae22ff6a5bc50d2b03d3d",
+  "plan": "docs/v175-certification-aware-planner-development-plan.md",
+  "plan_sha256": "4c26e42a875aba659bb053e711d005160ab325e298b11e6ac092736842acce9f",
+  "protocol": "python/v175_certification_aware_planner_development.py",
+  "protocol_sha256": "1ff707494d51ee20fcf19423c314df7fb0d59b6da4db8769b665916caafda15b",
+  "roadmap": "docs/research-roadmap-after-v173.md",
+  "roadmap_sha256": "ffd01290cb2aa3bc7d7fd7003c65d7f94dacfdc755645436e223c77e00c89eb8",
+  "runner": "python/run_v175_certification_aware_planner_development.py",
+  "runner_sha256": "eeabafa06614e41f3ec8ae54e33d7b1f41bc903c403db8425788e8a48d9d8284",
+  "schema_version": "175-certification-aware-planner-development-lock",
+  "source_V167_planner_lock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "source_V167_planner_lock_sha256": "9ea702e7fd6be86d30ba72cad6fa4d5b5e891be32bae1a30d8adc992c0dd9d28",
+  "source_V171_lock": "configs/v171-stateful-sandbox-sequence-confirmation-lock.json",
+  "source_V171_lock_sha256": "c52fdaac862414f76c06abb0a38b98930d27e1eed9d755f026fb936e7c8a71be",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "source_V172_outcome": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "source_V172_outcome_sha256": "689c73b050805591a9d2eda4f2330d5443bbbad0aac59efa7084ca57a443b7fb",
+  "source_V173_outcome": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+  "source_V173_outcome_sha256": "fd05ea46e03f2a2bb91e606e3d510bcce62afd52ffbb981433e4e5b2b2d74a8a",
+  "target_cases": "outputs/v172-trusted-shadow-integration-population/population/target-cases.json",
+  "target_cases_sha256": "ee6694c46798e1bab69417b7bea39c237f8dc5f368cf3c368998d4659d9414ca",
+  "target_certificate_results": "outputs/v174-certificate-depth-feasibility-census/census/target-certificate-results.json",
+  "target_certificate_results_sha256": "4bc9c337f407c7a090ace9b5a4f0371ec46699bf6ce9509302004ad18c7f6da4",
+  "tests": "python/test_v175_certification_aware_planner_development.py",
+  "tests_sha256": "37046abb201d4715eb67c6926e9beb6273e32cea800e21d1e00a34f40932ea38",
+  "verifier": "python/verify_and_freeze_v175_certification_aware_planner_development_outcome.py",
+  "verifier_sha256": "7d1390fc23e6afe04e6a93ef99002937c7a2fbd57d9f9c059dc69b61e503b0d2"
+}

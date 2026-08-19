@@ -1,0 +1,496 @@
+{
+  "V167_config_payload": {
+    "authorityBoundary": {
+      "actionOrExecutionAllowed": false,
+      "authoritativeOntologyImmutable": true,
+      "candidateBeliefsAndTerminalDecisionsAreShadowOnly": true,
+      "modelUseAllowed": false,
+      "provisionalRegistrationAllowed": false,
+      "realExecutionCount": 0,
+      "realQueryOrServiceCallAllowed": false,
+      "trustedStateMutationAllowed": false
+    },
+    "caseSelection": {
+      "requiredCandidateCount": 64,
+      "requiredCaseCount": 48,
+      "requiredEvidenceStatus": "ambiguous",
+      "selectionUsesFrozenV166PredictionsOnly": true,
+      "sourceBaseline": "exact_parser_plus_version_space"
+    },
+    "claimBoundary": "development-informed exact finite-DSL shadow-planning result only; not fresh confirmation, unrestricted ontology learning, language understanding, registration, trusted-state control, action, or execution",
+    "decisionRule": {
+      "ifEveryPlannerGatePasses": "freeze_V167_as_development_evidence_and_preregister_fixed_ontology_reversible_sandbox",
+      "otherwise": "freeze_V167_boundary_result_and_do_not_tune_on_frozen_cases",
+      "passAuthorizesImmediateSandboxRun": false,
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesRegistrationTrustedStateActionOrExecution": false
+    },
+    "developmentDesignDisclosure": {
+      "confirmatoryClaimAllowed": false,
+      "costsHorizonAndLossesChosenAfterDevelopmentFeasibilityInspection": true,
+      "formalPolicyScoresWrittenBeforeLock": false,
+      "hiddenDevelopmentTruthReadCount": 2,
+      "oracleFeasibilityAnalysisRunCount": 2,
+      "projectAuthoredDevelopmentOnly": true,
+      "protectedOrEvaluationPopulationExists": false
+    },
+    "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+    "formalRunPreLockAccess": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalPolicyScoreCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "lossOrientation": "terminalLoss[actual_class][decision]",
+    "parentV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+    "plannerGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumHistoryDependentSecondActionCaseCount": 1,
+      "minimumStrictBayesImprovementOverOpenLoopCaseCount": 1,
+      "minimumUniqueBayesRootQueryCount": 2,
+      "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+      "requiredCandidatesPerCase": 64,
+      "requiredCaseCount": 48,
+      "requiredExpressibilityClassCoverage": 3,
+      "requiredPositiveValueOfInformationCaseCount": 48,
+      "requiredRenamingRiskInvariance": 1.0,
+      "requiredTargetCandidateRetention": 1.0
+    },
+    "policies": {
+      "exact_bayes_adaptive": "minimize exact expected query cost plus terminal loss with optional stopping over a two-query policy tree",
+      "forced_map_no_query": "choose the maximum-posterior class without defer, using terminal decision order for ties",
+      "greedy_class_information_gain": "adaptively choose maximum expected Shannon class-entropy reduction for two queries, then take the Bayes terminal decision",
+      "no_query_bayes_terminal": "take the minimum-risk terminal decision immediately",
+      "optimal_open_loop_pair": "choose the minimum-risk unordered query pair at the root, use both regardless of the first outcome, then take the Bayes terminal decision",
+      "oracle_class": "observe the actual expressibility class without cost; scoring lower bound only",
+      "random_open_loop_pair": "uniform expected risk over every unordered pair of available queries, always using both"
+    },
+    "prior": {
+      "classMass": {
+        "alias": "1/3",
+        "composition": "1/3",
+        "provisional_primitive": "1/3"
+      },
+      "expressibilityClasses": [
+        "alias",
+        "composition",
+        "provisional_primitive"
+      ],
+      "kind": "class_balanced_then_uniform_within_class",
+      "meaning": "normative development prior chosen to prevent the 247-member provisional class from winning solely by enumeration multiplicity"
+    },
+    "queryModel": {
+      "action": "query one currently variable truth-table valuation",
+      "candidateUpdate": "exact Bayesian conditioning with zero inconsistent-candidate mass",
+      "earlyStopAllowed": true,
+      "maximumQueries": 2,
+      "outcomeNoise": 0.0,
+      "outcomes": [
+        0,
+        1
+      ],
+      "queryCost": "1/10",
+      "repeatedQueryAllowed": false
+    },
+    "registeredMetrics": [
+      "expected total risk by policy",
+      "regret relative to exact Bayes-adaptive policy",
+      "positive value-of-information case count",
+      "strict improvement over optimal open-loop case count",
+      "unique exact-Bayes root query count",
+      "history-dependent second-action case count",
+      "expected query count",
+      "terminal defer probability",
+      "false provisional decision probability",
+      "target candidate retention",
+      "renaming invariance",
+      "model and execution access"
+    ],
+    "schemaVersion": "167-exact-evidence-gathering-planner-design",
+    "terminalDecisions": [
+      "alias",
+      "composition",
+      "provisional_primitive",
+      "defer"
+    ],
+    "terminalLoss": {
+      "alias": {
+        "alias": 0,
+        "composition": 4,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "composition": {
+        "alias": 4,
+        "composition": 0,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "provisional_primitive": {
+        "alias": 6,
+        "composition": 6,
+        "defer": 2,
+        "provisional_primitive": 0
+      }
+    },
+    "tieBreaks": {
+      "equalInformationGainPrefersLowestValuationIndex": true,
+      "equalOpenLoopRiskPrefersLexicographicallyLowestPair": true,
+      "equalQueryRiskPrefersLowestValuationIndex": true,
+      "stopPreferredToEqualRiskQuery": true,
+      "terminalDecisionOrder": [
+        "alias",
+        "composition",
+        "provisional_primitive",
+        "defer"
+      ]
+    }
+  },
+  "V171_config_payload": {
+    "authorityBoundary": {
+      "independentVerifierCannotBeBypassed": true,
+      "learnedConfidenceCannotAuthorizeCommit": true,
+      "onlyFixedTrustedOntologyMayBeUsed": true,
+      "provisionalConceptsMayNotEnterSandbox": true,
+      "realExecutionCount": 0,
+      "realServiceOrToolTargetExists": false,
+      "stateStoreIsLocalInMemorySimulation": true
+    },
+    "claimBoundary": "project-authored deterministic simulated transaction-development result only; not language understanding, provisional ontology integration, deployment, real service control, or real execution",
+    "decisionRule": {
+      "ifEverySandboxGatePasses": "freeze_V168_as_positive_fixed_ontology_reversible_sandbox_development_evidence",
+      "otherwise": "freeze_V168_boundary_result_and_do_not_integrate_or_tune_on_frozen_fixtures",
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesProvisionalOntologyIntegration": false,
+      "passAuthorizesRealServiceOrExecution": false
+    },
+    "experiment": "v168_model_free_fixed_ontology_reversible_transaction_sandbox_development",
+    "faultModel": {
+      "faultInjectionIsNotARealServiceOrExternalSideEffect": true,
+      "post_commit_corruption": "development harness mutates an untargeted mutable field after commit; independent verifier must detect and restore the complete pre-transaction state",
+      "preview_token_tamper": "replace the accepted preview token before commit; commit must reject without mutation"
+    },
+    "fixedOntology": {
+      "entityIds": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "entityType": "Device",
+      "immutableRootFields": [
+        "schema_version",
+        "environment"
+      ],
+      "mutableFields": {
+        "mode": {
+          "type": "enum",
+          "values": [
+            "active",
+            "maintenance",
+            "offline"
+          ]
+        },
+        "owner_team": {
+          "type": "enum",
+          "values": [
+            "red",
+            "blue",
+            "green"
+          ]
+        },
+        "quota": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "provisionalConceptsAllowed": false,
+      "systemManagedFields": [
+        "revision"
+      ]
+    },
+    "invariants": [
+      "every entity has exactly mode quota owner_team and revision",
+      "offline devices have quota zero",
+      "maintenance devices have quota at most two",
+      "active devices have quota at least one",
+      "total quota is at most twelve",
+      "at least one device is active",
+      "all revisions are nonnegative integers"
+    ],
+    "parentV167r1OutcomeLock": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+    "population": {
+      "evaluationPopulationCreated": false,
+      "projectAuthoredSynthetic": true,
+      "recordsPerScenario": 12,
+      "requiredRecordCount": 132,
+      "scenarios": [
+        "valid_retain",
+        "valid_explicit_rollback",
+        "valid_multi_entity_atomic",
+        "invariant_violation",
+        "unauthorized_field",
+        "stale_revision",
+        "malformed_type",
+        "contradictory_duplicate_patch",
+        "unknown_entity",
+        "preview_token_tamper",
+        "post_commit_corruption"
+      ],
+      "split": "development_only"
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "formalCensusRunCount": 0,
+      "implementationTestCensusRunCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "provisionalOntologyUseCount": 0,
+      "realExecutionCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0
+    },
+    "registeredMetrics": [
+      "exact expected disposition",
+      "exact final target state",
+      "rejected-state immutability",
+      "preview nonmutation",
+      "preview-commit parity",
+      "atomic multi-entity commit",
+      "complete explicit rollback recovery",
+      "complete verification-failure rollback recovery",
+      "invariant preservation",
+      "zero unauthorized commit mutation",
+      "fault detection",
+      "provenance chain validity",
+      "scenario coverage",
+      "model and real-execution access"
+    ],
+    "sandboxGates": {
+      "maximumAPICallCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProvisionalOntologyUseCount": 0,
+      "maximumRealExecutionCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "requiredAtomicMultiEntityCommit": 1.0,
+      "requiredExactFinalTargetState": 1.0,
+      "requiredExpectedDispositionAccuracy": 1.0,
+      "requiredExplicitRollbackRecovery": 1.0,
+      "requiredFaultDetection": 1.0,
+      "requiredInvariantPreservation": 1.0,
+      "requiredPreviewCommitParity": 1.0,
+      "requiredPreviewNonmutation": 1.0,
+      "requiredProvenanceChainValidity": 1.0,
+      "requiredRecordCount": 132,
+      "requiredRecordsPerScenario": 12,
+      "requiredRejectedStateImmutability": 1.0,
+      "requiredScenarioCount": 11,
+      "requiredVerificationFailureRollbackRecovery": 1.0,
+      "requiredZeroUnauthorizedCommitMutation": 1.0
+    },
+    "schemaVersion": "168-fixed-ontology-reversible-sandbox-design",
+    "transactionProtocol": {
+      "commitIsAtomic": true,
+      "commitRequiresExactPreviewTokenAndUnchangedBaseState": true,
+      "duplicateEntityFieldOperationRejected": true,
+      "explicitRollbackSupported": true,
+      "independentVerificationAfterCommit": true,
+      "previewBindsBaseStatePatchAndExpectedPostState": true,
+      "previewMutatesState": false,
+      "proposalContainsExpectedRevisionForEveryAndOnlyTouchedEntity": true,
+      "provenanceLogHashChainedAndAppendOnly": true,
+      "touchedEntityRevisionIncrement": 1,
+      "verificationFailureTriggersAutomaticRollback": true
+    }
+  },
+  "auditor": "python/audit_and_freeze_v182_triple_repetition_robust_planner_fresh_confirmation.py",
+  "auditor_sha256": "c00b569da5f606bb0444f77acfedc80d7dccec8b0b3179a881d912245a4e46ab",
+  "authorization": {
+    "allow_planner_model_hidden_target_or_provisional_commit_authority": false,
+    "modify_code_objective_horizon_cost_decoder_gate_policies_population_metrics_thresholds_or_decision": false,
+    "run_additional_robustness_without_new_question_population_and_lock": false,
+    "run_formal_V182_confirmation_once": true,
+    "run_model_register_mutate_real_state_call_sensor_service_or_execute": false,
+    "select_exclude_subsample_or_tune_after_scores": false
+  },
+  "config": "configs/v182-triple-repetition-robust-planner-fresh-confirmation.json",
+  "config_payload": {
+    "claimBoundary": "fresh exact target-context-disjoint confirmation of the unchanged V180 triple-repetition one-corruption-robust mechanism within the same fixed finite ontology; not unseen-concept, language, learned observation, external sensor, deployment, real service, or execution evidence",
+    "decisionRule": {
+      "ifSafetyAndPrimaryPassButStrongFails": "freeze_V182_as_primary_positive_mixed_fresh_robust_confirmation",
+      "ifSafetyPassesButPrimaryFails": "freeze_V182_as_safe_nonconfirming_robust_boundary_and_close_branch",
+      "ifSafetyPrimaryAndStrongPass": "freeze_V182_as_strong_fresh_confirmation_of_the_V180_triple_repetition_robust_mechanism",
+      "otherwise": "freeze_V182_as_safety_failure_and_stop",
+      "passAuthorizesModelRegistrationRealSensorServiceOrExecution": false,
+      "passClosesFixedOntologyOneCorruptionBranch": true,
+      "retainNegativeOrMixedWithoutTuning": true
+    },
+    "experiment": "v182_unchanged_V180_triple_repetition_robust_planner_on_frozen_five_constraint_population",
+    "integrityAndSafetyGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealSensorOrServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedRealStateMutationCount": 0,
+      "requiredCorruptionScenarioRouteInvariance": 1.0,
+      "requiredExactDPRiskReconstruction": 1.0,
+      "requiredFalseTrustedRouteProbability": 0.0,
+      "requiredInvariantPreservation": 1.0,
+      "requiredOracleCertificateValidity": 1.0,
+      "requiredPlannerCommitAuthorizationCount": 0,
+      "requiredPopulationCoverage": 1.0,
+      "requiredPriorWeightNormalization": 1.0,
+      "requiredProvenanceAndRestartVerification": 1.0,
+      "requiredProvisionalSandboxEntryProbability": 0.0,
+      "requiredSandboxExactness": 1.0,
+      "requiredStateCount": 66,
+      "requiredTargetCount": 528,
+      "requiredTargetPolicyScoreCount": 3696
+    },
+    "parentV181OutcomeLock": "configs/v181-five-constraint-robust-confirmation-population-outcome-lock.json",
+    "populationUse": {
+      "requiredExactTargetContextSignatureOverlapWithV172": 0,
+      "requiredExactTargetContextSignatureOverlapWithV176": 0,
+      "requiredStateCount": 66,
+      "requiredTargetCount": 528,
+      "selectionSubsamplingOrExclusionAllowed": false,
+      "useEveryV181EligibleState": true,
+      "useEveryV181Target": true,
+      "useFrozenClassBalancedWeights": true
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "aggregateFormalMetricInspectionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalTargetPolicyScoreCount": 0,
+      "implementationUnitPolicyCount": 2,
+      "implementationUnitTargetCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "realSensorOrServiceCallCount": 0,
+      "trainingRunCount": 0,
+      "trustedRealStateMutationCount": 0
+    },
+    "primaryConfirmationThresholds": {
+      "exactRobustMeanRiskStrictlyBelowImmediateDefer": true,
+      "exactRobustTrustedCompletionStrictlyPositive": true,
+      "failureInvalidatesSafety": false,
+      "minimumStateCountStrictlyImprovedOverImmediateDefer": 1
+    },
+    "robustnessOracleAndSandboxBoundary": {
+      "computeExactMinimalTargetCertificatesDuringConfirmation": true,
+      "deterministicConsensusGateRetainsAuthority": true,
+      "oracleCannotAuthorizeCommit": true,
+      "oracleIsNonOperational": true,
+      "plannerModelHiddenTargetOrOracleCannotAuthorizeCommit": true,
+      "provisionalPrimitiveMayNotEnterSandbox": true,
+      "realSensorServiceOrToolTargetExists": false,
+      "requiredCorruptionScenarioRouteInvariance": 1.0,
+      "reuseV171TrustedTypedRoutesAndDurabilityContract": true,
+      "reuseV179TripleMajorityAndRobustCleanEquivalence": true
+    },
+    "schemaVersion": "182-triple-repetition-robust-planner-fresh-confirmation-design",
+    "sourceV171OutcomeLock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+    "sourceV180OutcomeLock": "configs/v180-triple-repetition-robust-planner-development-outcome-lock.json",
+    "strongConfirmationThresholds": {
+      "exactRobustMeanRiskNoWorseThanGreedy": true,
+      "exactRobustMeanRiskNoWorseThanOptimalOpenLoop": true,
+      "exactRobustMeanRiskNoWorseThanRandomOrder": true,
+      "exactRobustMeanRiskNoWorseThanRepricedCleanPolicy": true,
+      "failureInvalidatesSafetyOrPrimaryConfirmation": false,
+      "requiredStatewiseNoWorseThanEveryOperationalControlRate": 1.0
+    },
+    "unchangedPolicies": [
+      "immediate_defer",
+      "V175_clean_policy_repriced_at_triple_cost",
+      "greedy_information_gain_triple_blocks",
+      "optimal_open_loop_triple_blocks",
+      "random_block_order_consensus_stop",
+      "exact_robust_certification_adaptive",
+      "target_informed_robust_certificate_oracle"
+    ],
+    "unchangedRobustObjective": {
+      "deferLossForEveryTrueClass": 2,
+      "deferMixedAndUnanimousProvisional": true,
+      "equalBlockRiskPrefersLowestValuationIndex": true,
+      "equalRiskPrefersStop": true,
+      "maximumMeasurementBlocks": 4,
+      "measurementBlockCost": "3/10",
+      "rawInspectionCost": "1/10",
+      "rawInspectionsPerBlock": 3,
+      "routeOnlyUnanimousAliasOrComposition": true,
+      "trustedCorrectRouteLoss": 0
+    }
+  },
+  "config_sha256": "5c4b8a2354ed0d59074caa1a68aec37d830cb336b657f098b930dbdad2c3867d",
+  "constraint_states": "outputs/v181-five-constraint-robust-confirmation-population/population/constraint-states.json",
+  "constraint_states_sha256": "9dd39f247265cbb90ad94f5f91feb718150f9f4e03b27bce46d2c855c71df333",
+  "design_audit": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/design-audit.json",
+  "design_audit_sha256": "5508753102887b22ea2a444d7c067897e311a82c6f2bcf27de3377d6d5c7c72c",
+  "eligible_state_ids": "outputs/v181-five-constraint-robust-confirmation-population/population/confirmation-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "f8905c237ef328ded5eca86235e462efbce930c4c120e45894636c56990cb8c1",
+  "experiment": "v182_unchanged_V180_triple_repetition_robust_planner_on_frozen_five_constraint_population",
+  "lock_payload_sha256": "efa21e6fe2b3475fbabba9a725a183663405027f41a6bfeaedb0748ec67b57b3",
+  "parent_V181_outcome": "configs/v181-five-constraint-robust-confirmation-population-outcome-lock.json",
+  "parent_V181_outcome_sha256": "a808aa059270769f3378fa6bd3827ea0dc0df56991a602be3296f80589ac69b4",
+  "plan": "docs/v182-triple-repetition-robust-planner-fresh-confirmation-plan.md",
+  "plan_sha256": "d25a80f0ae6d5085c445c869e26674868570eb013fb31f12c34d767e9dc64dc8",
+  "protocol": "python/v182_triple_repetition_robust_planner_fresh_confirmation.py",
+  "protocol_sha256": "452ba4a4c43d212e83123b2e5cb7a20d454e8298b0a66fba4770c62042974b13",
+  "roadmap": "docs/research-roadmap-after-v180.md",
+  "roadmap_sha256": "9fee4063f2f505c41f5edbeedb95c17e1a88bf5ce9d106bb73774fbd0d2a7b53",
+  "runner": "python/run_v182_triple_repetition_robust_planner_fresh_confirmation.py",
+  "runner_sha256": "ed44cf1893e0dc06e2a7c92c7b23cfda4eb2f23dbad1f0ea937727e249a7be6f",
+  "schema_version": "182-triple-repetition-robust-planner-fresh-confirmation-lock",
+  "source_V167_planner_lock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "source_V167_planner_lock_sha256": "9ea702e7fd6be86d30ba72cad6fa4d5b5e891be32bae1a30d8adc992c0dd9d28",
+  "source_V171_lock": "configs/v171-stateful-sandbox-sequence-confirmation-lock.json",
+  "source_V171_lock_sha256": "c52fdaac862414f76c06abb0a38b98930d27e1eed9d755f026fb936e7c8a71be",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "source_V180_lock": "configs/v180-triple-repetition-robust-planner-development-lock.json",
+  "source_V180_lock_sha256": "fc8449a13bd467a79f1eb54fb47d9e8b29ed0f5378bcc01bddea1cedea5835e9",
+  "source_V180_outcome": "configs/v180-triple-repetition-robust-planner-development-outcome-lock.json",
+  "source_V180_outcome_sha256": "f9a9e00c911477ad5ed5e5bcdffdd19e9fa79015e0818ca8b7d7ce9a46fb4210",
+  "source_V180_protocol": "python/v180_triple_repetition_robust_planner_development.py",
+  "source_V180_protocol_sha256": "61e2f1765fa2b7afcf2fc79dcebc1eb73e6bf4c7a9a571fde9fa5230d5170534",
+  "target_cases": "outputs/v181-five-constraint-robust-confirmation-population/population/target-cases.json",
+  "target_cases_sha256": "087806df7e72ddc4e288b4daa7c8457242e85d6260e6d0279a730fd02d57f3ae",
+  "tests": "python/test_v182_triple_repetition_robust_planner_fresh_confirmation.py",
+  "tests_sha256": "c0e1e14fe9d13e8099410078209d8b9ec175a0e9fa44dcf48043e6962623aeba",
+  "verifier": "python/verify_and_freeze_v182_triple_repetition_robust_planner_fresh_confirmation_outcome.py",
+  "verifier_sha256": "0df6a1965d744f57dfda32cc7879dcc4307d03d8a869007930289595575c6a42"
+}

@@ -1,0 +1,327 @@
+{
+  "audit": "outputs/v206-fresh-external-analogue-feasibility/outcome-audit.json",
+  "audit_sha256": "c055f9fc4b32324cc2196cf3a8f7fc04acf00328cefe09dea7b93c1422346deb",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "language_task_record_or_model_evaluation": false,
+    "preregister_separate_source_file_structural_inspection_only": false,
+    "repository_clone_archive_or_implementation_inspection": false
+  },
+  "evaluation_lock": "configs/v206-fresh-external-analogue-feasibility-lock.json",
+  "evaluation_lock_sha256": "b723c9f3f6e4a0b9fe0f476bb18ca39a123b84dc6b9206c1f355931864332585",
+  "experiment": "v206_metadata_only_fresh_external_terminal_open_world_analogue_feasibility",
+  "lock_payload_sha256": "0ce4b73f7294e65e0ddd68bc567679c734c31be9ea5ecd3584bac656f17e6b00",
+  "outcome": {
+    "decision": "freeze_V206_negative_and_keep_external_grounding_deferred_without_weakening_the_V205_analogue_contract",
+    "passed": true,
+    "scientific_feasibility_passed": false,
+    "summary": {
+      "access": {
+        "actual_execution_count": 0,
+        "candidate_implementation_file_read_count": 0,
+        "external_side_effect_count": 0,
+        "license_fetch_attempt_count": 6,
+        "model_API_call_count": 0,
+        "model_generation_count": 0,
+        "model_load_count": 0,
+        "official_README_fetch_attempt_count": 6,
+        "ontology_registration_count": 0,
+        "protected_access_count": 0,
+        "repository_clone_or_archive_download_count": 0,
+        "repository_head_read_count": 6,
+        "service_call_count": 0,
+        "simulator_planner_or_policy_evaluation_count": 0,
+        "task_dialogue_utterance_or_example_record_read_count": 0,
+        "training_run_count": 0,
+        "transition_observation_reward_or_belief_array_read_count": 0,
+        "trusted_state_mutation_count": 0
+      },
+      "candidate_count": 6,
+      "qualified_candidate_ids": [],
+      "qualified_repository_distinct_family_count": 0,
+      "records": [
+        {
+          "candidate_id": "AGENT_ABSTAIN",
+          "commit": "f581249704b26804e28a39e37396f1be00b71a4d",
+          "domain_family": "paired executable agent abstention sandboxes",
+          "gate_results": {
+            "action_dependent_information_gathering": false,
+            "all_critical_elements_source_native": false,
+            "delayed_state_dependent_or_irreversible_consequence": true,
+            "exact_simulator_or_validated_generative_likelihood_path": false,
+            "explicit_open_world_outside_invalid_or_abstention_regime": true,
+            "fresh_repository_and_domain_family": true,
+            "in_episode_reference_calibration_or_cross_sensor_pathway": false,
+            "official_license": true,
+            "safe_defer_abstain_or_hold_action": true
+          },
+          "license": "MIT",
+          "license_file": {
+            "byte_count": 1081,
+            "fetch_succeeded": true,
+            "path": "LICENSE",
+            "sha256": "ae23741b50e4cb70f5e4eddf4878f4623899d467fa97012d505bf5b5272c5d91",
+            "url": "https://raw.githubusercontent.com/AntiQuality/agentabstain/f581249704b26804e28a39e37396f1be00b71a4d/LICENSE"
+          },
+          "matched_documentation_markers": {
+            "action_dependent_information": [],
+            "delayed_consequence": [
+              "irreversible action",
+              "runtime trigger"
+            ],
+            "generative_model_conjunctions": [],
+            "open_world": [
+              "abstain",
+              "should-abstain"
+            ],
+            "reference_calibration": [],
+            "safe_defer": [
+              "abstain",
+              "refuse",
+              "knowing when to stop"
+            ]
+          },
+          "qualified": false,
+          "readme": {
+            "byte_count": 9991,
+            "fetch_succeeded": true,
+            "path": "README.md",
+            "sha256": "f42e49fb621278a15eeb5e87c7f3dbbe1e8d13e2f2aa6d1a1670f663479203f9",
+            "url": "https://raw.githubusercontent.com/AntiQuality/agentabstain/f581249704b26804e28a39e37396f1be00b71a4d/README.md"
+          },
+          "repository": "https://github.com/AntiQuality/agentabstain"
+        },
+        {
+          "candidate_id": "OPEN_AGENT",
+          "commit": "769692c14719d28c491fae992a3f814f1bb46f52",
+          "domain_family": "open-world tool-use environment shifts",
+          "gate_results": {
+            "action_dependent_information_gathering": true,
+            "all_critical_elements_source_native": false,
+            "delayed_state_dependent_or_irreversible_consequence": false,
+            "exact_simulator_or_validated_generative_likelihood_path": false,
+            "explicit_open_world_outside_invalid_or_abstention_regime": true,
+            "fresh_repository_and_domain_family": true,
+            "in_episode_reference_calibration_or_cross_sensor_pathway": false,
+            "official_license": true,
+            "safe_defer_abstain_or_hold_action": false
+          },
+          "license": "MIT",
+          "license_file": {
+            "byte_count": 1088,
+            "fetch_succeeded": true,
+            "path": "LICENSE",
+            "sha256": "67e9fee426828eeeac6055dfec274df9fd4ae57f710f68734f07bb97ffffe059",
+            "url": "https://raw.githubusercontent.com/LAMDA-NeSy/OpenAgent/769692c14719d28c491fae992a3f814f1bb46f52/LICENSE"
+          },
+          "matched_documentation_markers": {
+            "action_dependent_information": [
+              "tool-use",
+              "tool use"
+            ],
+            "delayed_consequence": [],
+            "generative_model_conjunctions": [],
+            "open_world": [
+              "open-world"
+            ],
+            "reference_calibration": [],
+            "safe_defer": []
+          },
+          "qualified": false,
+          "readme": {
+            "byte_count": 8410,
+            "fetch_succeeded": true,
+            "path": "README.md",
+            "sha256": "fdbb03df6e203bc53e40b3fd103771a368124c1b5bdb893c7f28f6564a9484bc",
+            "url": "https://raw.githubusercontent.com/LAMDA-NeSy/OpenAgent/769692c14719d28c491fae992a3f814f1bb46f52/README.md"
+          },
+          "repository": "https://github.com/LAMDA-NeSy/OpenAgent"
+        },
+        {
+          "candidate_id": "MINTREC_2",
+          "commit": "38cb8bf1841cfb9b410aa6a8731394ca5ba74a39",
+          "domain_family": "multimodal intent and out-of-scope detection",
+          "gate_results": {
+            "action_dependent_information_gathering": false,
+            "all_critical_elements_source_native": false,
+            "delayed_state_dependent_or_irreversible_consequence": false,
+            "exact_simulator_or_validated_generative_likelihood_path": false,
+            "explicit_open_world_outside_invalid_or_abstention_regime": true,
+            "fresh_repository_and_domain_family": true,
+            "in_episode_reference_calibration_or_cross_sensor_pathway": false,
+            "official_license": false,
+            "safe_defer_abstain_or_hold_action": true
+          },
+          "license": null,
+          "license_file": {
+            "byte_count": 0,
+            "fetch_succeeded": false,
+            "path": "LICENSE",
+            "sha256": null,
+            "url": "https://raw.githubusercontent.com/thuiar/MIntRec2.0/38cb8bf1841cfb9b410aa6a8731394ca5ba74a39/LICENSE"
+          },
+          "matched_documentation_markers": {
+            "action_dependent_information": [],
+            "delayed_consequence": [],
+            "generative_model_conjunctions": [],
+            "open_world": [
+              "open-world",
+              "out-of-scope"
+            ],
+            "reference_calibration": [],
+            "safe_defer": [
+              "refuse"
+            ]
+          },
+          "qualified": false,
+          "readme": {
+            "byte_count": 8210,
+            "fetch_succeeded": true,
+            "path": "README.md",
+            "sha256": "249fdd77eed4ef38dfb6e72dbc780e0b597766ce8d23b34150de7a2b8a94b645",
+            "url": "https://raw.githubusercontent.com/thuiar/MIntRec2.0/38cb8bf1841cfb9b410aa6a8731394ca5ba74a39/README.md"
+          },
+          "repository": "https://github.com/thuiar/MIntRec2.0"
+        },
+        {
+          "candidate_id": "FAILURE_SENSOR_IQ",
+          "commit": "5c8e933dbf50807ab8dfcd439b16f452ad066158",
+          "domain_family": "industrial sensor-failure semantic reasoning",
+          "gate_results": {
+            "action_dependent_information_gathering": false,
+            "all_critical_elements_source_native": false,
+            "delayed_state_dependent_or_irreversible_consequence": false,
+            "exact_simulator_or_validated_generative_likelihood_path": false,
+            "explicit_open_world_outside_invalid_or_abstention_regime": false,
+            "fresh_repository_and_domain_family": true,
+            "in_episode_reference_calibration_or_cross_sensor_pathway": false,
+            "official_license": true,
+            "safe_defer_abstain_or_hold_action": false
+          },
+          "license": "CC-BY",
+          "license_file": {
+            "byte_count": 18657,
+            "fetch_succeeded": true,
+            "path": "LICENSE",
+            "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+            "url": "https://raw.githubusercontent.com/IBM/FailureSensorIQ/5c8e933dbf50807ab8dfcd439b16f452ad066158/LICENSE"
+          },
+          "matched_documentation_markers": {
+            "action_dependent_information": [],
+            "delayed_consequence": [],
+            "generative_model_conjunctions": [],
+            "open_world": [],
+            "reference_calibration": [],
+            "safe_defer": []
+          },
+          "qualified": false,
+          "readme": {
+            "byte_count": 7937,
+            "fetch_succeeded": true,
+            "path": "README.md",
+            "sha256": "5170e1f03dffccf85f783e0450de764158c8660f76839e6cc62fb9a50fc8a2c5",
+            "url": "https://raw.githubusercontent.com/IBM/FailureSensorIQ/5c8e933dbf50807ab8dfcd439b16f452ad066158/README.md"
+          },
+          "repository": "https://github.com/IBM/FailureSensorIQ"
+        },
+        {
+          "candidate_id": "THEORY_OF_SPACE",
+          "commit": "d48f52fb2c07d7a440a5ce76486d115cd85f37a3",
+          "domain_family": "active spatial belief construction",
+          "gate_results": {
+            "action_dependent_information_gathering": true,
+            "all_critical_elements_source_native": false,
+            "delayed_state_dependent_or_irreversible_consequence": false,
+            "exact_simulator_or_validated_generative_likelihood_path": false,
+            "explicit_open_world_outside_invalid_or_abstention_regime": false,
+            "fresh_repository_and_domain_family": true,
+            "in_episode_reference_calibration_or_cross_sensor_pathway": false,
+            "official_license": true,
+            "safe_defer_abstain_or_hold_action": false
+          },
+          "license": "MIT",
+          "license_file": {
+            "byte_count": 1080,
+            "fetch_succeeded": true,
+            "path": "LICENSE",
+            "sha256": "4529e24b0fa2520abe6307bcff54ead4e1df4ad32f17ae775a2c4b14dbbd4d68",
+            "url": "https://raw.githubusercontent.com/mll-lab-nu/Theory-of-Space/d48f52fb2c07d7a440a5ce76486d115cd85f37a3/LICENSE"
+          },
+          "matched_documentation_markers": {
+            "action_dependent_information": [
+              "actively explore",
+              "active perception"
+            ],
+            "delayed_consequence": [],
+            "generative_model_conjunctions": [],
+            "open_world": [],
+            "reference_calibration": [],
+            "safe_defer": []
+          },
+          "qualified": false,
+          "readme": {
+            "byte_count": 24290,
+            "fetch_succeeded": true,
+            "path": "README.md",
+            "sha256": "e6e908be72cb55e0b1d6264fc5c90e4a6720ac6cae876b2fc6f474e09c0903cb",
+            "url": "https://raw.githubusercontent.com/mll-lab-nu/Theory-of-Space/d48f52fb2c07d7a440a5ce76486d115cd85f37a3/README.md"
+          },
+          "repository": "https://github.com/mll-lab-nu/Theory-of-Space"
+        },
+        {
+          "candidate_id": "ACE_BENCH",
+          "commit": "0f9eac1c1a376a411ad807bd974555055f08e6c5",
+          "domain_family": "ambiguous incomplete and infeasible tool use",
+          "gate_results": {
+            "action_dependent_information_gathering": true,
+            "all_critical_elements_source_native": false,
+            "delayed_state_dependent_or_irreversible_consequence": false,
+            "exact_simulator_or_validated_generative_likelihood_path": false,
+            "explicit_open_world_outside_invalid_or_abstention_regime": false,
+            "fresh_repository_and_domain_family": true,
+            "in_episode_reference_calibration_or_cross_sensor_pathway": false,
+            "official_license": false,
+            "safe_defer_abstain_or_hold_action": false
+          },
+          "license": null,
+          "license_file": {
+            "byte_count": 0,
+            "fetch_succeeded": false,
+            "path": "LICENSE",
+            "sha256": null,
+            "url": "https://raw.githubusercontent.com/Agent-Suite/AgentSuite/0f9eac1c1a376a411ad807bd974555055f08e6c5/LICENSE"
+          },
+          "matched_documentation_markers": {
+            "action_dependent_information": [
+              "tool-use"
+            ],
+            "delayed_consequence": [],
+            "generative_model_conjunctions": [],
+            "open_world": [],
+            "reference_calibration": [],
+            "safe_defer": []
+          },
+          "qualified": false,
+          "readme": {
+            "byte_count": 9772,
+            "fetch_succeeded": true,
+            "path": "ACEBench/README.md",
+            "sha256": "0133c596d510232698baeba570896163bb99b9997cfc882ef98e638619f024f1",
+            "url": "https://raw.githubusercontent.com/Agent-Suite/AgentSuite/0f9eac1c1a376a411ad807bd974555055f08e6c5/ACEBench/README.md"
+          },
+          "repository": "https://github.com/Agent-Suite/AgentSuite"
+        }
+      ],
+      "scientific_feasibility_passed": false
+    }
+  },
+  "result": "outputs/v206-fresh-external-analogue-feasibility/evaluation/result.json",
+  "result_sha256": "275543f418236d5ab0115c0caaf8036f7d469151ee1f45dcebde5b1593566366",
+  "results_document": "docs/v206-fresh-external-analogue-feasibility-results.md",
+  "results_document_sha256": "2204ff961f4d8f476e01f0d19349bcde952d426b54458c13b2b564c29935c953",
+  "schema_version": "206-fresh-external-analogue-source-feasibility-outcome-lock",
+  "summary": "outputs/v206-fresh-external-analogue-feasibility/evaluation/summary.json",
+  "summary_sha256": "49a453b8a4de46509503a227b5fe49b50aec38742cfd1a4634985038ca465836",
+  "verifier": "python/verify_and_freeze_v206_fresh_external_analogue_feasibility_outcome.py",
+  "verifier_sha256": "3818512e3ef054c58aa430cf49800115f9b0677c6ea03c1d21c9a65eeb54110c"
+}

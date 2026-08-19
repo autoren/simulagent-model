@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "186-typed-contract-question-codebook-feasibility-design",
+  "experiment": "v186_text_free_typed_binary_question_codebook_and_role_binding",
+  "parentV185OutcomeLock": "configs/v185-deterministic-sgd-candidate-set-controls-outcome-lock.json",
+  "sourceV183OutcomeLock": "configs/v183-sgd-contract-identifiability-population-outcome-lock.json",
+  "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "hiddenIdentifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+  "developmentIdentities": "outputs/v183-sgd-contract-identifiability-population/population/development-identities.json",
+  "protectedIdentities": "outputs/v183-sgd-contract-identifiability-population/population/protected-identities.json",
+  "roadmap": "docs/research-roadmap-after-v185.md",
+  "claimBoundary": "text-free finite binary clarification-codebook feasibility and frozen identity-role binding over 14 externally grounded capability contracts; answers are deterministic contract attributes, not human, model, deployed-sensor, policy-performance, authority, action, or execution evidence",
+  "questionFamilies": {
+    "intent_concept": {
+      "template": "Does the requested operation have normalized intent concept VALUE?",
+      "values": "every distinct normalized_intent_name in the frozen contracts"
+    },
+    "domain": {
+      "template": "Is the requested operation in domain VALUE?",
+      "values": "every distinct domain in the frozen contracts"
+    },
+    "slot_any": {
+      "template": "Can the requested operation use or return slot VALUE?",
+      "values": "every distinct service slot name in the frozen contracts"
+    },
+    "slot_required": {
+      "template": "Does the requested operation require slot VALUE?",
+      "values": "every distinct required slot name in the frozen contracts"
+    },
+    "slot_result": {
+      "template": "Can the requested operation return slot VALUE as a result?",
+      "values": "every distinct result slot name in the frozen contracts"
+    },
+    "transactional": {
+      "template": "Is the requested operation transactional?",
+      "values": [true]
+    },
+    "removeInvariantQuestions": true,
+    "binaryAnswers": [0, 1],
+    "questionOrder": "family then normalized value",
+    "questionDerivationUsesOnlyFrozenSemanticPayload": true,
+    "questionDerivationMayNotUseServiceVersionSourceDefinitionTruthKindPresentedCandidateLanguageOrOutcomes": true
+  },
+  "equivalenceRule": {
+    "contractsEquivalentOnlyIfCompleteAnswerVectorsAreEqual": true,
+    "neverForceSeparationWithinAnEqualVectorClass": true,
+    "singletonClassesRequiredForFullIdentification": true,
+    "pairwiseSeparationAuditedExhaustively": true
+  },
+  "roleBinding": {
+    "bindEveryV183RecordByOpaqueIdentifier": true,
+    "observedRecordTargetAnswerVectorFromFrozenContract": true,
+    "missingRecordHasNoAnswerVectorAndRemainsINSUFFICIENT": true,
+    "developmentAndProtectedBindingsSeparate": true,
+    "protectedUtteranceLanguageReadCount": 0,
+    "selectionOrQuestionDesignUsesNoRoleOutcome": true
+  },
+  "feasibilityGates": {
+    "requiredCapabilityContractCount": 14,
+    "requiredContractTruthKindCounts": {
+      "KNOWN": 6,
+      "PROVISIONAL": 6,
+      "UNSUPPORTED": 2
+    },
+    "requiredContractPairCount": 91,
+    "minimumQuestionCount": 14,
+    "minimumQuestionFamilyCount": 3,
+    "requiredNontrivialQuestionRate": 1.0,
+    "requiredUniqueQuestionIdentifierRate": 1.0,
+    "requiredUniqueAnswerVectorCount": 14,
+    "requiredEquivalenceClassCount": 14,
+    "requiredLargestEquivalenceClassSize": 1,
+    "requiredPairwiseSeparationRate": 1.0,
+    "requiredTargetVectorReconstructionRate": 1.0,
+    "requiredDevelopmentBindingCount": 132,
+    "requiredProtectedBindingCount": 132,
+    "requiredDevelopmentObservedBindingCount": 120,
+    "requiredProtectedObservedBindingCount": 120,
+    "requiredDevelopmentMissingBindingCount": 12,
+    "requiredProtectedMissingBindingCount": 12,
+    "requiredRoleIdentifierOverlap": 0,
+    "maximumPlannerPolicyScoreCount": 0,
+    "maximumUtteranceOrDialogueLanguageReadCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "contractQuestionCensusCount": 0,
+    "pairwiseSeparationScoreCount": 0,
+    "formalCodebookBuildCount": 0,
+    "utteranceOrDialogueLanguageReadCount": 0,
+    "plannerPolicyScoreCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryCodebookSeparabilityBindingAndSafetyGatePasses": "freeze_V186_identifying_codebook_and_authorize_clean_exact_planner_preregistration_only",
+    "otherwise": "freeze_V186_nonidentifying_contract_equivalence_classes_without_planner",
+    "passAuthorizesImmediatePlannerScoring": false,
+    "passAuthorizesLanguageModelOrProtectedLanguageAccess": false,
+    "passAuthorizesRegistrationAuthorityActionOrExecution": false
+  }
+}

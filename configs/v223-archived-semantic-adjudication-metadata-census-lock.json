@@ -1,0 +1,233 @@
+{
+  "auditor": "python/audit_and_freeze_v223_archived_semantic_adjudication_metadata_census.py",
+  "auditor_sha256": "70c8b7fdd6e7614df99ebfcc20c2256b5b98459ed83448147b128dd9620947ee",
+  "authorization": {
+    "capture_frozen_metadata_URLs_once": true,
+    "open_task_record_language_or_record_endpoint": false,
+    "run_model_train_register_mutate_service_act_execute": false,
+    "score_one_metadata_census": true
+  },
+  "capture": "python/capture_v223_archived_semantic_adjudication_metadata.py",
+  "capture_sha256": "1bd8c97617cc6d8931fcd7b227db50490312b99e96117b89162ef974699f9d33",
+  "config": "configs/v223-archived-semantic-adjudication-metadata-census.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFormalTaskRecordBodyReadCount": 0,
+      "maximumIssueProposalCommentPullOrArchiveRecordRequestCount": 0,
+      "maximumModelAPICallCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedResearchRecordReadCount": 0,
+      "maximumServiceActionCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredMetadataCensusRunCount": 1
+    },
+    "artifacts": {
+      "evidence": "outputs/v223-archived-semantic-adjudication-metadata-census/census/evidence.json",
+      "result": "outputs/v223-archived-semantic-adjudication-metadata-census/census/result.json",
+      "retrievalManifest": "outputs/v223-archived-semantic-adjudication-metadata-census/census/retrieval-manifest.json",
+      "summary": "outputs/v223-archived-semantic-adjudication-metadata-census/census/summary.json"
+    },
+    "censusGates": {
+      "maximumSelectedCandidateMissingMandatoryDimensionCount": 0,
+      "minimumEligibleSourceSpecificAcquisitionCandidateCount": 1,
+      "requiredAssessmentDimensionCoverage": 1.0,
+      "requiredClaimNarrowingToStructuredSemanticChangeRequests": true,
+      "requiredFiniteMetrics": true,
+      "requiredFormalTaskRecordBodyReadCount": 0,
+      "requiredFrozenURLAttemptCount": 21,
+      "requiredSourceUnitCount": 4,
+      "requiredSuccessfulSnapshotHashCoverage": 1.0,
+      "requiredTrueAssessmentEvidenceCoverage": 1.0,
+      "requiredURLAccountingRate": 1.0
+    },
+    "claimBoundary": "metadata and workflow feasibility for archived human-requester and curator/community semantic adjudication in structured versioned-vocabulary change requests; not task-record language evidence, unrestricted conversational understanding, prospective human intent validation, model performance, ontology truth, registration, authority, action, or execution",
+    "decisionRule": {
+      "ifAtLeastOneSourcePassesEveryMandatoryDimension": "freeze_V223_positive_and_authorize_separate_source_specific_metadata_first_acquisition_and_identifiability_design_only",
+      "otherwise": "freeze_V223_negative_and_keep_B2c_externally_unvalidated",
+      "passAuthorizesModelOrAPI": false,
+      "passAuthorizesRegistrationMutationActionOrExecution": false,
+      "passAuthorizesTaskRecordLanguageAccess": false
+    },
+    "dimensions": [
+      "official_authority",
+      "immutable_or_content_hashed_revision",
+      "compatible_reuse_terms",
+      "real_requester_language",
+      "structured_request_schema",
+      "independent_adjudication_role",
+      "public_review_or_consensus",
+      "accepted_novel_outcome",
+      "existing_or_duplicate_outcome",
+      "insufficient_evidence_outcome",
+      "unsupported_or_out_of_scope_outcome",
+      "accepted_change_linked_to_versioned_catalog",
+      "pre_request_catalog_state_recoverable",
+      "record_provenance_and_grouping",
+      "credible_multi_stratum_scale",
+      "language_and_outcome_metadata_separable",
+      "human_rather_than_model_gold"
+    ],
+    "evidenceContract": {
+      "catalogAbsenceDoesNotImplyNovelty": true,
+      "closedIssueDoesNotImplyRejection": true,
+      "everyTrueAssessmentCitesSuccessfulFrozenSnapshot": true,
+      "generalAvailabilityDoesNotImplyLicense": true,
+      "labelNameWithoutWorkflowSupportIsNotSufficientGold": true,
+      "maximumRedirects": 5,
+      "maximumTotalSuccessfulSnapshotBytes": 5242880,
+      "missingAmbiguousConventionalOrFreeTextOnlyEvidenceScoresFalse": true,
+      "requestTimeoutSeconds": 30,
+      "retrievalDate": "2026-08-19",
+      "sha256EverySuccessfulSnapshot": true,
+      "userAgent": "simulagent-v223-metadata-census/1.0"
+    },
+    "experiment": "v223_archived_semantic_adjudication_metadata_census",
+    "languageFirewall": {
+      "allowCommentPullRequestDiscussionOrArchiveRecordEndpoint": false,
+      "allowIssueOrProposalRecordEndpoint": false,
+      "allowIssueTemplates": true,
+      "allowLabelVocabularies": true,
+      "allowPolicyTemplateModuleAndCategoryMetadata": true,
+      "allowRecordTitleEnumeration": false,
+      "allowReleaseAndTagMetadata": true,
+      "allowRepositoryMetadata": true,
+      "allowTaskRecordBody": false,
+      "allowWorkflowDocumentation": true
+    },
+    "parents": {
+      "V208Outcome": "configs/v208-external-behavioral-abstention-source-census-outcome-lock.json",
+      "V215Outcome": "configs/v215-external-semantic-resource-metadata-census-outcome-lock.json",
+      "V221r1Outcome": "configs/v221r1-parser-config-repair-outcome-lock.json"
+    },
+    "priorExposure": {
+      "blindSourceDiscoveryClaim": false,
+      "discoverySearchSnippetsWereSeen": true,
+      "excludedFromEverySuccessorPopulation": [
+        "github:monarch-initiative/mondo#503",
+        "github:monarch-initiative/mondo#673",
+        "github:monarch-initiative/mondo#10448",
+        "github:geneontology/go-ontology#21939",
+        "github:obophenotype/uberon#2714",
+        "github:schemaorg/schemaorg#915",
+        "github:schemaorg/schemaorg#987",
+        "github:schemaorg/schemaorg#1525",
+        "github:schemaorg/schemaorg#1797",
+        "github:schemaorg/schemaorg#1810",
+        "github:schemaorg/schemaorg#1891",
+        "github:schemaorg/schemaorg#4468",
+        "wikidata:Property_proposal/EU_Surface_Water_Body_Code"
+      ],
+      "formalIssueProposalCommentOrPullPayloadDownloadCount": 0,
+      "formalTaskRecordBodyReadCount": 0,
+      "formalTaskRecordScoreCount": 0,
+      "schemaOrgIssueListingIdentifiersToExclude": [
+        4815,
+        4816,
+        4817,
+        4824,
+        4825,
+        4827,
+        4828,
+        4829,
+        4830,
+        4833,
+        4835,
+        4839
+      ]
+    },
+    "schemaVersion": "223-archived-semantic-adjudication-metadata-census-design",
+    "sourceUnits": [
+      {
+        "catalogScope": "Mondo disease ontology",
+        "pinnedRevision": "0056dc115d6d1e33a39075a6c699f661f7866478",
+        "sourceFamily": "OBO_GITHUB_CHANGE_REQUEST",
+        "unitId": "MONDO_GITHUB_TERM_REQUESTS",
+        "urls": [
+          "https://api.github.com/repos/monarch-initiative/mondo",
+          "https://raw.githubusercontent.com/monarch-initiative/mondo/0056dc115d6d1e33a39075a6c699f661f7866478/.github/ISSUE_TEMPLATE/add-term.yml",
+          "https://raw.githubusercontent.com/monarch-initiative/mondo/0056dc115d6d1e33a39075a6c699f661f7866478/docs/editors-guide/c-make-good-term-request.md",
+          "https://raw.githubusercontent.com/monarch-initiative/mondo/0056dc115d6d1e33a39075a6c699f661f7866478/docs/editors-guide/curation-workflow-overview.md",
+          "https://raw.githubusercontent.com/monarch-initiative/mondo/0056dc115d6d1e33a39075a6c699f661f7866478/docs/editors-guide/d-github-pr-workflow.md",
+          "https://api.github.com/repos/monarch-initiative/mondo/labels?per_page=100&page=1",
+          "https://api.github.com/repos/monarch-initiative/mondo/tags?per_page=20&page=1"
+        ]
+      },
+      {
+        "catalogScope": "Gene Ontology",
+        "pinnedRevision": "feb35522809eff783d35a152cfcb46200125a842",
+        "sourceFamily": "OBO_GITHUB_CHANGE_REQUEST",
+        "unitId": "GO_GITHUB_TERM_REQUESTS",
+        "urls": [
+          "https://api.github.com/repos/geneontology/go-ontology",
+          "https://raw.githubusercontent.com/geneontology/go-ontology/feb35522809eff783d35a152cfcb46200125a842/.github/ISSUE_TEMPLATE/new-term-request.md",
+          "https://raw.githubusercontent.com/geneontology/go-ontology/feb35522809eff783d35a152cfcb46200125a842/README.md",
+          "https://api.github.com/repos/geneontology/go-ontology/labels?per_page=100&page=1",
+          "https://api.github.com/repos/geneontology/go-ontology/tags?per_page=20&page=1"
+        ]
+      },
+      {
+        "catalogScope": "Schema.org vocabulary",
+        "pinnedRevision": "8091003a3c693eec34d029f3bc67d605c1399dfa",
+        "sourceFamily": "PUBLIC_VOCABULARY_GITHUB_PROPOSAL",
+        "unitId": "SCHEMAORG_GITHUB_PROPOSALS",
+        "urls": [
+          "https://api.github.com/repos/schemaorg/schemaorg",
+          "https://raw.githubusercontent.com/schemaorg/schemaorg/8091003a3c693eec34d029f3bc67d605c1399dfa/README.md",
+          "https://api.github.com/repos/schemaorg/schemaorg/labels?per_page=100&page=1",
+          "https://api.github.com/repos/schemaorg/schemaorg/tags?per_page=20&page=1"
+        ]
+      },
+      {
+        "catalogScope": "Wikidata property vocabulary",
+        "pinnedRevision": "mixed_exact_oldids_listed_in_URLs",
+        "sourceFamily": "COMMUNITY_PROPERTY_PROPOSAL",
+        "unitId": "WIKIDATA_PROPERTY_PROPOSALS",
+        "urls": [
+          "https://www.wikidata.org/w/index.php?title=Template:Property_proposal&oldid=2503356297",
+          "https://www.wikidata.org/w/index.php?title=Module:Property_proposal&oldid=2391211177",
+          "https://www.wikidata.org/w/index.php?title=Wikidata:Property_creation&oldid=2479350299",
+          "https://www.wikidata.org/w/index.php?title=Wikidata:Property_proposal/en&oldid=2479351342",
+          "https://www.wikidata.org/w/api.php?action=query&prop=categoryinfo&titles=Category%3ADone%20proposals%7CCategory%3ANot%20done%20proposals%7CCategory%3AProperties%20ready%20for%20creation&format=json&formatversion=2"
+        ]
+      }
+    ],
+    "successorContract": {
+      "deterministicControlsBeforeAnyModel": true,
+      "freezeExactRecordWindowAndExclusions": true,
+      "linkAcceptedRequestsToExactCatalogChangeAndRelease": true,
+      "metadataFirstBeforeRequestLanguage": true,
+      "proveMinimumGroupDisjointDispositionCounts": true,
+      "proveOutcomeTaxonomyFromStructuredMetadata": true,
+      "separateStructuredTermRequestClaimFromConversationalUnderstanding": true
+    }
+  },
+  "config_sha256": "69002bdf8d3a5ba0091c42700208f981af7eadf019923c6278d8ebb63e03ab81",
+  "design_audit": "outputs/v223-archived-semantic-adjudication-metadata-census/design-audit.json",
+  "design_audit_sha256": "dd769279cc167886f20ef68958a8a01d53fa278927b884b017f0e529570681d0",
+  "experiment": "v223_archived_semantic_adjudication_metadata_census",
+  "lock_payload_sha256": "17749bfc1e385ab0b2afa3d13defc53d1a26c5d7a49bc36bbf5269ff5c5778c2",
+  "parent_V208Outcome": "configs/v208-external-behavioral-abstention-source-census-outcome-lock.json",
+  "parent_V208Outcome_sha256": "17e2e934580d4146bf8f41e078341919b38dcce4ef9464ef2a8a65cdc295d6b1",
+  "parent_V215Outcome": "configs/v215-external-semantic-resource-metadata-census-outcome-lock.json",
+  "parent_V215Outcome_sha256": "2580169c6bf4e2ddcfb24340cf8eddf297a05ef06acd2a599532993c3b935857",
+  "parent_V221r1Outcome": "configs/v221r1-parser-config-repair-outcome-lock.json",
+  "parent_V221r1Outcome_sha256": "1f4b5044cfa86eb3337649470329b1e3b898ce0854f768590f24ec1d0a7192a7",
+  "plan": "docs/v223-archived-semantic-adjudication-metadata-census-plan.md",
+  "plan_sha256": "7f3cff835e9082faf2bbf3dbdcac0d2a72b38c8dcf5fe2e50fb4bfacac8f7404",
+  "protocol": "python/v223_archived_semantic_adjudication_metadata_census.py",
+  "protocol_sha256": "a8f938a539636ec22817625ca109d17b133c60592cddb2a4baf22e733ce580c9",
+  "roadmap": "docs/research-roadmap-after-v221r1.md",
+  "roadmap_sha256": "443c88868ff2409769ebab2f9d204cda29ffe4776afa6f84b1568fae4080ed85",
+  "runner": "python/run_v223_archived_semantic_adjudication_metadata_census.py",
+  "runner_sha256": "3aad1f89c5f5746c8729bb15d6bb93c6b6dd0348e12603dd0352f8d346132204",
+  "schema_version": "223-archived-semantic-adjudication-metadata-census-lock",
+  "tests": "python/test_v223_archived_semantic_adjudication_metadata_census.py",
+  "tests_sha256": "6348099afecaba92c95d2ddd49d298a82c6a329cdaf62c3e8f489dc9ff773836",
+  "verifier": "python/verify_and_freeze_v223_archived_semantic_adjudication_metadata_census_outcome.py",
+  "verifier_sha256": "f6287b1f52bfecdbdb3c5282ca2e948d17c45217068abbac9cf321ddb9895265"
+}

@@ -1,0 +1,190 @@
+{
+  "audit": "outputs/v209r1-controlled-language-observation-pomdp-shape-repair/outcome-audit.json",
+  "audit_sha256": "62ae8347545af95545cd464353604bf8638182769db91f0b4a98bde5187d96ae",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "open_language_population_or_run_model": false,
+    "preregister_fresh_controlled_language_population_design_only": true
+  },
+  "experiment": "v209r1_dynamic_regime_shape_validation_repair",
+  "lock_payload_sha256": "df58ed97b99b8a57e4ecaeeb473490c8f90056ba72d25c46cd5f6df4f1ecaead",
+  "outcome": {
+    "decision": "freeze_V209_positive_controlled_language_decision_mechanism_and_authorize_separate_fresh_controlled_language_population_design_only",
+    "passed": true,
+    "scientific_oracle_passed": true,
+    "summary": {
+      "access": {
+        "API_call_count": 0,
+        "actual_execution_count": 0,
+        "controlled_surface_family_count": 2,
+        "external_language_record_read_count": 0,
+        "external_side_effect_count": 0,
+        "model_generation_count": 0,
+        "model_load_count": 0,
+        "ontology_registration_count": 0,
+        "oracle_evaluation_count": 1,
+        "protected_access_count": 0,
+        "raw_model_response_read_count": 0,
+        "service_call_count": 0,
+        "training_run_count": 0,
+        "trusted_state_mutation_count": 0
+      },
+      "closed_world": {
+        "action_after_root_unresolved": "ask_target",
+        "normalized_regret": 0.014988546666666666,
+        "root_action": "ask_reference",
+        "true_environment_value": 0.22826399999999963
+      },
+      "decision_nodes": 16,
+      "exact": {
+        "action_after_root_alpha": "ask_target",
+        "action_after_root_beta": "ask_target",
+        "action_after_root_unresolved": "defer",
+        "distinct_post_reference_selected_actions": [
+          "ask_target",
+          "defer"
+        ],
+        "distinct_reachable_control_actions": [
+          "act_A",
+          "act_B"
+        ],
+        "normalized_advantage_over_immediate_defer": 0.03355741333333333,
+        "reachable_defer_history_count": 3,
+        "reachable_selected_actions": [
+          "act_A",
+          "act_B",
+          "ask_reference",
+          "ask_target",
+          "defer"
+        ],
+        "root_action": "ask_reference",
+        "root_optimal_actions": [
+          "ask_reference"
+        ],
+        "root_q_values": {
+          "act_A": -10.0,
+          "act_B": -10.0,
+          "ask_reference": 2.0268895999999996,
+          "ask_target": -2.5,
+          "defer": -2.0
+        },
+        "value": 2.0268895999999996
+      },
+      "forced_commit": {
+        "normalized_regret": 0.014988546666666668,
+        "root_action": "ask_reference",
+        "true_environment_value": 0.2282639999999994
+      },
+      "immediate_defer": {
+        "value": -2.0
+      },
+      "map": {
+        "normalized_regret": 0.10439074666666667,
+        "regime": "CANONICAL",
+        "root_action": "ask_target",
+        "true_environment_value": -10.500000000000002
+      },
+      "myopic": {
+        "normalized_regret": 0.10022408000000001,
+        "root_action": "act_A",
+        "true_environment_value": -10.0
+      },
+      "open_loop": {
+        "normalized_exact_advantage": 0.03355741333333333,
+        "optimal_programs": [
+          [
+            "defer"
+          ]
+        ],
+        "program_count": 12,
+        "selected_program": [
+          "defer"
+        ],
+        "value": -2.0
+      },
+      "posterior_sampling": {
+        "models": [
+          {
+            "mass": 0.35,
+            "regime": "CANONICAL",
+            "root_action": "ask_target",
+            "true_value": -10.500000000000002
+          },
+          {
+            "mass": 0.35,
+            "regime": "ALTERNATIVE",
+            "root_action": "ask_target",
+            "true_value": -10.500000000000002
+          },
+          {
+            "mass": 0.3,
+            "regime": "OUTSIDE_UNKNOWN",
+            "root_action": "defer",
+            "true_value": -2.0
+          }
+        ],
+        "normalized_regret": 0.08314074666666667,
+        "true_environment_value": -7.95
+      },
+      "return_scale": 120.0,
+      "structural": {
+        "belief_normalization_rate": 1.0,
+        "clarification_cost_latent_range": 0.01200000000000001,
+        "common_positive_support": true,
+        "control_immediate_rewards": {
+          "act_A": 0.0,
+          "act_B": 0.0
+        },
+        "exact_policy_terminal_audit": {
+          "automatic_settlement_paths": 4,
+          "safe_deferral_paths": 3,
+          "terminal_paths": 7,
+          "unsettled_paths": 0
+        },
+        "fallback_count": 0,
+        "final_stage_allowed_actions": [
+          "act_A",
+          "act_B",
+          "defer"
+        ],
+        "history_dependent_target_likelihood": true,
+        "horizon_escape_path_count": 0,
+        "known_target_total_variation": 0.8999999999999999,
+        "latent_dependent_clarification_cost": true,
+        "mandatory_automatic_settlement_rate": 1.0,
+        "matched_surface_counterfactual_families": [
+          "DIRECT",
+          "MATCHED_PARAPHRASE"
+        ],
+        "matched_surface_counterfactual_policy_mismatch_count": 0,
+        "matched_surface_counterfactual_value_difference": 0.0,
+        "maximum_clarification_or_control_immediate_reward": 0.0,
+        "maximum_history_dependent_target_likelihood_difference": 0.0050000000000000044,
+        "minimum_observation_probability_on_support": 0.02,
+        "reference_mutual_information_nats": 0.5192531842106446,
+        "renaming_permutation": [
+          1,
+          0,
+          2
+        ],
+        "renaming_policy_mismatch_count": 0,
+        "renaming_value_difference": 0.0,
+        "unfinished_clarification_safe_deferral_rate": 1.0,
+        "unsettled_control_terminal_count": 0
+      }
+    }
+  },
+  "repair_diagnostics": "outputs/v209r1-controlled-language-observation-pomdp-shape-repair/evaluation/repair-diagnostics.json",
+  "repair_diagnostics_sha256": "b63a63da1dfa2c266a81062d45be8b9dc1bdc586cf78dd045459b81492e23aed",
+  "repair_lock": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-lock.json",
+  "repair_lock_sha256": "a713d178da574b774c3d7849922b5954e93cb49571184d8be918fc3a930ccd1c",
+  "result": "outputs/v209r1-controlled-language-observation-pomdp-shape-repair/evaluation/result.json",
+  "result_sha256": "6ddb31092cdc18e0dc9f82b1613e63ffd569cac9365595f5f8e1426fccc51732",
+  "results_document": "docs/v209r1-controlled-language-observation-pomdp-shape-repair-results.md",
+  "results_document_sha256": "f9712888661d376c858b15f8afd89317055cb8262de217657fc947655e1e93f8",
+  "schema_version": "209r1-controlled-language-observation-POMDP-shape-repair-outcome-lock",
+  "summary": "outputs/v209r1-controlled-language-observation-pomdp-shape-repair/evaluation/summary.json",
+  "summary_sha256": "736a4dbb54c37b10c74cf58e417a5f585438ddf11fd0d2efd429325cec580198",
+  "verifier": "python/verify_and_freeze_v209r1_dynamic_regime_shape_repair_outcome.py",
+  "verifier_sha256": "f80701a3b6ab9a12aea7fb634d8cfaf328d378ce148cdf9d970bf2e2d49b7613"
+}

@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "208-external-behavioral-abstention-source-census-design",
+  "experiment": "v208_fresh_external_behavioral_abstention_source_availability_census",
+  "parentV207r2OutcomeLock": "configs/v207r2-agentabstain-outcome-verification-repair-outcome-lock.json",
+  "claimBoundary": "source availability for a separate external text-only pre-execution act-versus-abstain shadow study; not LLM performance, V205 likelihood validation, posterior calibration, ontology acquisition, authority, action, or execution",
+  "candidates": [
+    {
+      "candidateId": "OVERSEARCH_QA",
+      "codeRepository": "https://github.com/apple/ml-over-searching",
+      "datasetRepository": null,
+      "declaredPublicUnitCount": 1188,
+      "declaredPairCount": 0,
+      "declaredScenarioCount": 3,
+      "landingFacts": {
+        "pairedOrMatchedControlsClaimed": false,
+        "explicitMachineReadablePairIdentityFieldClaimed": false,
+        "explicitPreExecutionPhaseIdentityClaimed": true,
+        "deterministicActAbstainGoldFieldClaimed": true,
+        "promptLabelSeparationClaimed": true,
+        "balancedActAbstainControlsClaimed": true,
+        "textOnlyShadowClassificationSupported": true,
+        "goldIndependentOfLLMJudgeClaimed": true,
+        "runtimeInteractionRequired": false
+      }
+    },
+    {
+      "candidateId": "ABSTENTION_BENCH",
+      "codeRepository": "https://github.com/facebookresearch/AbstentionBench",
+      "datasetRepository": "https://huggingface.co/datasets/facebook/AbstentionBench",
+      "declaredPublicUnitCount": 0,
+      "declaredPairCount": 0,
+      "declaredScenarioCount": 6,
+      "landingFacts": {
+        "pairedOrMatchedControlsClaimed": false,
+        "explicitMachineReadablePairIdentityFieldClaimed": false,
+        "explicitPreExecutionPhaseIdentityClaimed": true,
+        "deterministicActAbstainGoldFieldClaimed": true,
+        "promptLabelSeparationClaimed": true,
+        "balancedActAbstainControlsClaimed": false,
+        "textOnlyShadowClassificationSupported": true,
+        "goldIndependentOfLLMJudgeClaimed": true,
+        "runtimeInteractionRequired": false
+      }
+    },
+    {
+      "candidateId": "ABSTAIN_EQA",
+      "codeRepository": "https://github.com/gibrantaowu/AbstainEQA",
+      "datasetRepository": null,
+      "declaredPublicUnitCount": 3272,
+      "declaredPairCount": 1636,
+      "declaredScenarioCount": 5,
+      "landingFacts": {
+        "pairedOrMatchedControlsClaimed": true,
+        "explicitMachineReadablePairIdentityFieldClaimed": false,
+        "explicitPreExecutionPhaseIdentityClaimed": false,
+        "deterministicActAbstainGoldFieldClaimed": true,
+        "promptLabelSeparationClaimed": true,
+        "balancedActAbstainControlsClaimed": true,
+        "textOnlyShadowClassificationSupported": false,
+        "goldIndependentOfLLMJudgeClaimed": true,
+        "runtimeInteractionRequired": true
+      }
+    },
+    {
+      "candidateId": "HIL_BENCH",
+      "codeRepository": "https://github.com/hilbenchauthors/hil-bench",
+      "datasetRepository": "https://huggingface.co/datasets/ScaleAI/hil-bench",
+      "declaredPublicUnitCount": 200,
+      "declaredPairCount": 200,
+      "declaredScenarioCount": 3,
+      "landingFacts": {
+        "pairedOrMatchedControlsClaimed": true,
+        "explicitMachineReadablePairIdentityFieldClaimed": true,
+        "explicitPreExecutionPhaseIdentityClaimed": false,
+        "deterministicActAbstainGoldFieldClaimed": false,
+        "promptLabelSeparationClaimed": true,
+        "balancedActAbstainControlsClaimed": true,
+        "textOnlyShadowClassificationSupported": false,
+        "goldIndependentOfLLMJudgeClaimed": false,
+        "runtimeInteractionRequired": true
+      }
+    },
+    {
+      "candidateId": "CLARIFY_CODE_BENCH",
+      "codeRepository": "https://github.com/fangz-cs/ClarifyCodeBench",
+      "datasetRepository": null,
+      "declaredPublicUnitCount": 419,
+      "declaredPairCount": 0,
+      "declaredScenarioCount": 1,
+      "landingFacts": {
+        "pairedOrMatchedControlsClaimed": false,
+        "explicitMachineReadablePairIdentityFieldClaimed": false,
+        "explicitPreExecutionPhaseIdentityClaimed": true,
+        "deterministicActAbstainGoldFieldClaimed": false,
+        "promptLabelSeparationClaimed": true,
+        "balancedActAbstainControlsClaimed": false,
+        "textOnlyShadowClassificationSupported": true,
+        "goldIndependentOfLLMJudgeClaimed": false,
+        "runtimeInteractionRequired": false
+      }
+    },
+    {
+      "candidateId": "ASK_OR_ASSUME",
+      "codeRepository": "https://github.com/nedwards99/ask-or-assume",
+      "datasetRepository": "https://huggingface.co/datasets/cmu-lti/interactive-swe",
+      "declaredPublicUnitCount": 500,
+      "declaredPairCount": 500,
+      "declaredScenarioCount": 1,
+      "landingFacts": {
+        "pairedOrMatchedControlsClaimed": true,
+        "explicitMachineReadablePairIdentityFieldClaimed": true,
+        "explicitPreExecutionPhaseIdentityClaimed": false,
+        "deterministicActAbstainGoldFieldClaimed": false,
+        "promptLabelSeparationClaimed": true,
+        "balancedActAbstainControlsClaimed": true,
+        "textOnlyShadowClassificationSupported": false,
+        "goldIndependentOfLLMJudgeClaimed": false,
+        "runtimeInteractionRequired": true
+      }
+    }
+  ],
+  "fixedTreePathMarkerGroups": {
+    "pair": ["pair_id", "pair-id", "matched_control", "original_id", "source_id"],
+    "gold": ["should_abstain", "should_act", "answerable", "unanswerable", "needs_clarification"],
+    "phase": ["pre_execution", "pre-execution", "runtime", "baseline", "full_info", "full-info"],
+    "prompt": ["prompt", "question", "instruction", "task"],
+    "rationale": ["rationale", "explanation", "resolution", "answer"]
+  },
+  "qualificationGates": {
+    "minimumCandidateCount": 6,
+    "minimumDeclaredPublicUnitCount": 40,
+    "minimumDeclaredPairCount": 20,
+    "minimumDeclaredScenarioCount": 2,
+    "requiredDistinctRepositoryPerCandidate": true,
+    "requiredImmutableCodeRevision": true,
+    "requiredImmutableExternalDatasetRevisionWhenDeclared": true,
+    "requiredRecognizedCodeLicenseMetadata": true,
+    "requiredRecognizedDatasetLicenseMetadataWhenDeclared": true,
+    "requiredPairedOrMatchedControls": true,
+    "requiredExplicitMachineReadablePairIdentityField": true,
+    "requiredExplicitPreExecutionPhaseIdentity": true,
+    "requiredDeterministicActAbstainGoldField": true,
+    "requiredPromptLabelSeparation": true,
+    "requiredBalancedActAbstainControls": true,
+    "requiredTextOnlyShadowClassification": true,
+    "requiredGoldIndependentOfLLMJudge": true,
+    "maximumRuntimeInteractionRequired": false
+  },
+  "allowedEvaluationReads": {
+    "githubRepositoryObjectMetadata": true,
+    "githubRecursiveTreePathsOnly": true,
+    "githubREADMEOrOtherBlobBodyReadCount": 0,
+    "githubLicenseBlobBodyReadCount": 0,
+    "huggingFaceDatasetHeadOnly": true,
+    "huggingFaceCardDataObjectMetadataOnly": true,
+    "huggingFaceTreeOrPayloadReadCount": 0,
+    "taskInstructionExampleDialogueRationaleResponseReadCount": 0,
+    "modelOrPolicyEvaluationCount": 0
+  },
+  "preLockExposure": {
+    "webSearchCallCount": 3,
+    "uniqueOfficialCandidateLandingPagePreviewCount": 6,
+    "officialProjectPagePreviewCount": 1,
+    "incidentalIllustrativeTaskExamplePreviewCount": 1,
+    "candidateRecursiveRepositoryTreeReadCount": 0,
+    "candidateDatasetHeadReadCount": 0,
+    "candidateDatasetCardMetadataReadCount": 0,
+    "candidateTaskPayloadFileReadCount": 0,
+    "manualFullTaskInstructionExampleDialogueRationaleResponseReadCount": 0,
+    "modelOrPolicyEvaluationCount": 0
+  },
+  "decisionRule": {
+    "ifAtLeastOneCandidatePassesEveryGate": "freeze_V208_positive_and_authorize_separate_exact_identifier_selection_and_text_extraction_preregistration_only",
+    "otherwise": "freeze_V208_negative_park_external_behavioral_abstention_and_return_to_model_free_decision_interface_track",
+    "passAuthorizesImmediateTaskTextAccessOrModelRun": false,
+    "passAuthorizesAPITrainingToolServiceRegistrationAuthorityActionOrExecution": false
+  }
+}

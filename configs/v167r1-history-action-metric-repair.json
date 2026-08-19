@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "167r1-history-action-metric-repair-design",
+  "experiment": "v167r1_verifier_only_history_action_projection_repair",
+  "parentV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "v167Result": "outputs/v167-exact-evidence-gathering/planner/result.json",
+  "v167PolicyTrees": "outputs/v167-exact-evidence-gathering/planner/case-policy-trees.json",
+  "nominalV167Outcome": "configs/v167-exact-evidence-gathering-planner-outcome-lock.json",
+  "diagnosis": {
+    "affectedMetric": "history_dependent_second_action_case_count",
+    "persistedValue": 48,
+    "correctedValue": 28,
+    "cause": "child policy tuple projection included terminal decision, treating STOP with different terminal decisions as different second actions",
+    "correctProjection": "compare child policy action only: STOP or QUERY_Vi",
+    "minimumFrozenGate": 1,
+    "gateStillPasses": true
+  },
+  "repairBoundary": {
+    "modifyOriginalV167Artifacts": false,
+    "rerunFormalPlanner": false,
+    "changePriorQueriesCostsLossesHorizonPoliciesOrRisks": false,
+    "changeAnyOtherMetricGateDecisionOrClaimBoundary": false,
+    "createNominalV167Outcome": false,
+    "repairOnlyActionProjectionAndFreezeUnderV167r1": true
+  },
+  "accessGates": {
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedStateMutationCount": 0,
+    "realServiceCallCount": 0,
+    "externalSideEffectCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifRepairReconstructsExactlyAndAllCorrectedGatesPass": "freeze_corrected_V167_through_V167r1_and_authorize_separate_fixed_ontology_sandbox_preregistration",
+    "otherwise": "reject_V167r1_and_leave_V167_unfrozen",
+    "passAuthorizesImmediateSandboxRun": false,
+    "passAuthorizesModelRegistrationTrustedStateActionOrExecution": false
+  }
+}

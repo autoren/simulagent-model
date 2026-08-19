@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "187r1-clean-planner-outcome-verification-repair",
+  "experiment": "v187r1_verification_only_repair_of_V187_problem_summary_raw_count",
+  "sourceV187Lock": "configs/v187-clean-typed-clarification-planner-lock.json",
+  "sourceV187Result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json",
+  "sourceV187FailedOutcomeAudit": "outputs/v187-clean-typed-clarification-planner/outcome-audit.json",
+  "repair": {
+    "rerunPolicyEvaluation": false,
+    "modifySourceResultOrOutputs": false,
+    "onlyCorrectExpectedProblemSummaryRawQuestionCount": true,
+    "frozenRunnerSerializedRawQuestionCountFromUnaugmentedConfigAsZero": true,
+    "policySummaryIndependentlyRetainsReconstructedRawQuestionCount164": true,
+    "allOtherExpectedPayloadsUnchanged": true
+  },
+  "decisionRule": {
+    "ifEveryOriginalOutputAndScientificDecisionReconstructsUnderTheOneDeclaredSerializationCorrection": "freeze_V187_negative_outcome_through_V187r1_verification_repair",
+    "otherwise": "reject_V187r1_repair",
+    "authorizeCorrelatedErrorOrModelSuccessor": false,
+    "authorizeProtectedOrUtteranceLanguageAccess": false,
+    "authorizeRegistrationAuthorityActionOrExecution": false
+  },
+  "preLockExposure": {
+    "policyBuildCount": 0,
+    "policyScoreCount": 0,
+    "developmentTargetPathEvaluationCount": 0,
+    "protectedUtteranceLanguageReadCount": 0,
+    "modelLoadCount": 0,
+    "actualExecutionCount": 0
+  },
+  "claimBoundary": "verification-only repair of one frozen V187 metadata serialization mismatch; no policy rerun, result change, gate change, protected/language/model access, registration, authority, action, or execution"
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "199-exact-menu-presentation-robustness-design",
+  "experiment": "v199_text_free_record_keyed_menu_order_and_opaque_ID_robustness_census",
+  "parentV198OutcomeLock": "configs/v198-protected-language-menu-ranker-confirmation-outcome-lock.json",
+  "sourceV195OutcomeLock": "configs/v195-bounded-local-language-menu-ranker-outcome-lock.json",
+  "sourceV193OutcomeLock": "configs/v193-shadow-menu-interface-frontier-outcome-lock.json",
+  "sourceV191OutcomeLock": "configs/v191-fresh-language-to-menu-population-outcome-lock.json",
+  "developmentIdentities": "outputs/v191-fresh-language-to-menu-population/population/fresh-development-identities.json",
+  "hiddenTargets": "outputs/v191-fresh-language-to-menu-population/population/hidden-targets.json",
+  "canonicalVisibleMenu": "outputs/v193-shadow-menu-interface-frontier/interface/visible-menu.json",
+  "canonicalHiddenOptionMap": "outputs/v193-shadow-menu-interface-frontier/interface/hidden-option-map.json",
+  "roadmap": "docs/research-roadmap-after-v198.md",
+  "claimBoundary": "text-free exact feasibility and prospective gates for semantic-preserving finite-menu presentation shift; not language robustness, paraphrase equivalence, open-world recognition, model performance, protected evidence, ontology truth, authority, action, or execution",
+  "population": {
+    "role": "development",
+    "requiredFixtureCount": 98,
+    "requiredObservedCount": 84,
+    "requiredMissingCount": 14,
+    "requiredContractCount": 14,
+    "requiredObservedRecordsPerContract": 6
+  },
+  "transformationFamily": [
+    {
+      "variantId": "ORDER_ONLY",
+      "orderSalt": "v199-order-only-sha256-v1",
+      "preserveCanonicalOptionIds": true,
+      "opaqueOptionIdPrefix": null,
+      "IDAssignmentSalt": null
+    },
+    {
+      "variantId": "ORDER_AND_OPAQUE_ID",
+      "orderSalt": "v199-opaque-presentation-order-sha256-v1",
+      "preserveCanonicalOptionIds": false,
+      "opaqueOptionIdPrefix": "Q",
+      "IDAssignmentSalt": "v199-opaque-contract-ID-assignment-sha256-v1"
+    }
+  ],
+  "transformationContract": {
+    "assignmentInputs": ["fixed salt", "record_id", "canonical option_id"],
+    "utteranceConversationTruthKindAndPriorNeverUsedForAssignment": true,
+    "sameSemanticDomainAndIntentMultisetRequired": true,
+    "optionToContractBijectionRequired": true,
+    "hiddenTargetExpressibleExactlyOnceRequired": true,
+    "ORDER_ONLYPreservesCanonicalIDMapping": true,
+    "ORDER_AND_OPAQUE_IDUsesExactlyQ01ThroughQ14": true,
+    "everyVariantMustChangeCanonicalSemanticPresentationOrder": true,
+    "trustedOTHERAndCompleteAuthoritativeFallbackUnchanged": true
+  },
+  "trustedController": {
+    "rankedOutputLength": 3,
+    "top3QuestionCost": 0.20,
+    "missThenGenericAdditionalCost": 0.40,
+    "invalidOrInsufficientUsesFrozenTargetSpecificHierarchyCost": true,
+    "proposalNeverPrunesCandidateUniverse": true,
+    "trustedAnswerRequiredForEveryExactTerminal": true
+  },
+  "futurePairedDevelopmentGates": {
+    "canonicalPrimaryTop3Recall": 0.9291666666666667,
+    "canonicalMacroTop3Recall": 0.9404761904761905,
+    "canonicalPrimaryTop3MeanCost": 0.21416666666666667,
+    "maximumPerVariantPrimaryTop3RecallDrop": 0.05,
+    "maximumPerVariantMacroTop3RecallDrop": 0.05,
+    "maximumPerVariantPrimaryTop3CostIncrease": 0.02,
+    "minimumPerVariantTop1ContractAgreementWithCanonical": 0.80,
+    "minimumPerVariantMeanTop3ContractSetJaccardWithCanonical": 0.80,
+    "maximumPerVariantTargetTop3HitDisagreementRate": 0.05,
+    "minimumPerVariantIncrementalPrimaryImprovementOverTransformedCHAR_LAST": 0.01,
+    "minimumPerVariantObservedStructuralValidityRate": 0.98,
+    "maximumPerVariantFinalPhaseTokenLimitHitRate": 0.0,
+    "requiredPerVariantTargetRetentionRate": 1.0,
+    "requiredPerVariantFinalExactnessAfterTrustedAnswers": 1.0,
+    "maximumFalseTerminalFromModelOutput": 0
+  },
+  "feasibilityGates": {
+    "requiredFixtureCount": 98,
+    "requiredObservedCount": 84,
+    "requiredMissingCount": 14,
+    "requiredVariantCount": 2,
+    "requiredRecordVariantCount": 196,
+    "requiredObservedRecordVariantCount": 168,
+    "requiredOptionsPerMenu": 14,
+    "requiredSemanticMultisetPreservationRate": 1.0,
+    "requiredHiddenBijectionRate": 1.0,
+    "requiredTargetUniqueExpressibilityRate": 1.0,
+    "requiredChangedPresentationOrderRate": 1.0,
+    "requiredORDERONLYCanonicalIDMappingRate": 1.0,
+    "requiredOpaqueExactIDSetRate": 1.0,
+    "requiredVisibleForbiddenFieldCount": 0,
+    "requiredDynamicParserFailClosedRate": 1.0,
+    "requiredOracleTop3MeanCost": 0.20,
+    "requiredOracleTargetRetentionRate": 1.0,
+    "maximumUtteranceOrDialogueLanguageReadCount": 0,
+    "maximumDeterministicLanguageScoreCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumProtectedLanguageReadCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "developmentUtteranceOrDialogueReadCount": 0,
+    "protectedLanguageReadCount": 0,
+    "deterministicLanguageScoreCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryExactFeasibilityAndAccessGatePasses": "freeze_V199_exact_menu_presentation_robustness_family_and_authorize_separate_deterministic_development_evaluation_only",
+    "otherwise": "freeze_V199_infeasible_without_language_scoring_or_model",
+    "passAuthorizesImmediateLanguageScoringOrModelRun": false,
+    "passAuthorizesProtectedAccessAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

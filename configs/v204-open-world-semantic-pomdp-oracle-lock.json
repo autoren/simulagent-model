@@ -1,0 +1,179 @@
+{
+  "auditor": "python/audit_and_freeze_v204_open_world_semantic_pomdp_oracle.py",
+  "auditor_sha256": "014b934c151dd85919bcf53b3ab355a939e4a4574a52b43773c0b82bf487040b",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "modify_hypotheses_channel_rewards_horizon_comparators_gates_or_decision": false,
+    "read_language_load_or_run_model_or_access_protected_data": false,
+    "run_exact_single_model_free_oracle_evaluation": true
+  },
+  "config": "configs/v204-open-world-semantic-pomdp-oracle.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLanguageRecordReadCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedAccessCount": 0,
+      "maximumRawModelResponseReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredOracleEvaluationCount": 1
+    },
+    "channel": {
+      "calibrationAndInspectionHaveCommonSupportAcrossEveryCodebook": true,
+      "calibrationReferenceCondition": "A",
+      "knownCodebookLogicalA": [
+        0.94,
+        0.05,
+        0.01
+      ],
+      "knownCodebookLogicalB": [
+        0.05,
+        0.94,
+        0.01
+      ],
+      "observationNames": [
+        "red",
+        "blue",
+        "green",
+        "none"
+      ],
+      "outsideUnknownForEitherCondition": [
+        0.2,
+        0.2,
+        0.6
+      ]
+    },
+    "claimBoundary": "project-authored model-free mechanism oracle for exact planning with explicit outside-semantics uncertainty, action-dependent sensing, safe deferral, and delayed state-dependent control loss; not external confirmation, an empirical LLM likelihood model, calibrated model confidence, human behavior, ontology truth, authority, action, or execution",
+    "decisionProcess": {
+      "actionNames": [
+        "calibrate",
+        "inspect",
+        "repair_A",
+        "repair_B",
+        "defer",
+        "settle"
+      ],
+      "correctSettlementReward": 10.0,
+      "discount": 1.0,
+      "horizon": 5,
+      "invalidPhaseReward": -30.0,
+      "repairImmediateReward": 0.0,
+      "safeDeferralReward": -2.0,
+      "sensingCost": -0.5,
+      "settlementIsRequiredToRevealControlConsequence": true,
+      "stateNames": [
+        "ready_A",
+        "ready_B",
+        "pending_good",
+        "pending_bad",
+        "terminal"
+      ],
+      "tieTolerance": 1e-12,
+      "wrongSettlementReward": -30.0
+    },
+    "decisionRule": {
+      "ifEveryOracleIntegrityScientificAndAccessGatePasses": "freeze_V204_positive_open_world_abstention_mechanism_and_authorize_separate_fresh_source_design_only",
+      "otherwise": "freeze_V204_negative_without_parameter_horizon_reward_channel_or_gate_tuning",
+      "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesImmediateExternalCandidateEvaluationOrModelRun": false
+    },
+    "experiment": "v204_exact_open_world_semantic_codebook_abstention_oracle",
+    "fixedComparators": [
+      "FULL_OPEN_WORLD_EXACT",
+      "CLOSED_WORLD_BAYES_ADAPTIVE_EXCLUDING_OUTSIDE",
+      "FULL_BELIEF_FORCED_COMMIT_WITHOUT_DEFER",
+      "MAP_CERTAINTY_EQUIVALENCE",
+      "PERSISTENT_POSTERIOR_SAMPLING",
+      "BEST_OPEN_LOOP",
+      "MYOPIC",
+      "IMMEDIATE_DEFER"
+    ],
+    "hypotheses": {
+      "codebookPrior": [
+        0.35,
+        0.35,
+        0.3
+      ],
+      "conditionNames": [
+        "A",
+        "B"
+      ],
+      "conditionPrior": [
+        0.5,
+        0.5
+      ],
+      "fullHypothesisUniverseAlwaysRetained": true,
+      "priorComesFromLLMRanks": false,
+      "semanticCodebooks": [
+        "CANONICAL",
+        "REVERSED",
+        "OUTSIDE_UNKNOWN"
+      ]
+    },
+    "oracleGates": {
+      "closedWorldActionAfterRootGreenMustNotBeDefer": true,
+      "maximumFallbackCount": 0,
+      "maximumInitialSensingOrRepairImmediateReward": 0.0,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumCalibrationMutualInformationNats": 0.3,
+      "minimumDistinctReachableRepairActions": 2,
+      "minimumKnownCodebookInspectionTotalVariation": 0.8,
+      "minimumNormalizedExactOverImmediateDeferAdvantage": 0.01,
+      "minimumNormalizedExactOverOpenLoopAdvantage": 0.01,
+      "minimumNormalizedForcedCommitRegret": 0.005,
+      "minimumNormalizedMAPRegret": 0.02,
+      "minimumNormalizedPosteriorSamplingRegret": 0.01,
+      "minimumObservationProbabilityOnSensingSupport": 0.01,
+      "minimumReachableDeferHistoryCount": 1,
+      "requiredCorrectConsequenceOnlyAtSettlement": true,
+      "requiredExactActionAfterRootGreen": "defer",
+      "requiredFiniteMetrics": true,
+      "requiredLatentCount": 3,
+      "requiredPointModelCommonSupport": true,
+      "requiredRepairImmediateReward": 0.0,
+      "requiredSelectedExactRootAction": "calibrate",
+      "requiredWrongConsequenceOnlyAtSettlement": true
+    },
+    "parentV203OutcomeLock": "configs/v203-independent-confirmation-feasibility-outcome-lock.json",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "conceptualParameterDesignCount": 1,
+      "exactPolicyValueOrActionEvaluationCount": 0,
+      "languageRecordReadCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedAccessCount": 0,
+      "rawModelResponseReadCount": 0,
+      "trainingRunCount": 0
+    },
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "204-open-world-semantic-POMDP-oracle-design"
+  },
+  "config_sha256": "b4869410e0103cf15b33784b01afca68895614b4758a8b89b559125fd5e03483",
+  "design_audit": "outputs/v204-open-world-semantic-pomdp-oracle/design-audit.json",
+  "design_audit_sha256": "d2f2f3e33abdde32bb9e219d88b71fc49af89ef0358d26df01100abe337164ed",
+  "experiment": "v204_exact_open_world_semantic_codebook_abstention_oracle",
+  "lock_payload_sha256": "65d719613024df47a4d3418edc85eeba25adf832ad2775273d9bb9a40cd54ae9",
+  "parent_V203_outcome": "configs/v203-independent-confirmation-feasibility-outcome-lock.json",
+  "parent_V203_outcome_sha256": "802553e62686083fec18d722c09c8a6aa7d0e579b8d43330f0b69771b956a4d2",
+  "plan": "docs/v204-open-world-semantic-pomdp-oracle-plan.md",
+  "plan_sha256": "6c2ebcd0c91c20f7e99e2b29064c4868a85108028588ade292e54b52140dc7d3",
+  "protocol": "python/v204_open_world_semantic_pomdp_oracle.py",
+  "protocol_sha256": "3a77f77ee9c964d25ea16e8be44b69854a7ede2eaaffe47be353923ce4387f78",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "roadmap_sha256": "3975ba9e3cb02bc8fe15b57faf3c3ab72871f2d2262bdd6cdd8b70664d92a69c",
+  "runner": "python/run_v204_open_world_semantic_pomdp_oracle.py",
+  "runner_sha256": "2a7171e16dc1731400c03b92ae0a0437c2318ed3d148f13b5b7422b4cde5f17c",
+  "schema_version": "204-open-world-semantic-POMDP-oracle-lock",
+  "tests": "python/test_v204_open_world_semantic_pomdp_oracle.py",
+  "tests_sha256": "2f9b328cb8305bb2dd4563ee9ae6c25b0a11a0a1af079739a7b8f010a3f617f5",
+  "verifier": "python/verify_and_freeze_v204_open_world_semantic_pomdp_oracle_outcome.py",
+  "verifier_sha256": "266d81acb8096274cc0e3b6f2a0fd8abdbac44d6119c6fe3498173c8ff1691c7"
+}

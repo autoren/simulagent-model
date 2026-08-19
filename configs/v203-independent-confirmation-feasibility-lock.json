@@ -1,0 +1,161 @@
+{
+  "V183_consumed_population": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+  "V183_consumed_population_sha256": "62a9ef2ac1b1512a1396b72a0fbcd3fe4b8478ad765ebf56057480ab7469cf1f",
+  "V191_consumed_population": "outputs/v191-fresh-language-to-menu-population/population/hidden-targets.json",
+  "V191_consumed_population_sha256": "6e6028bf5c01a9b1b526ff0815bd2d47862824b4e6f1766da54e467a35e9267f",
+  "auditor": "python/audit_and_freeze_v203_independent_confirmation_feasibility.py",
+  "auditor_sha256": "2cb5a5b3221b038456bb35d0eaa33e39e6b031848e59137c6be2e0b47403d2b4",
+  "authorization": {
+    "modify_sources_contracts_exclusions_families_thresholds_or_decision": false,
+    "protected_API_training_registration_authority_action_or_execution": false,
+    "run_exact_single_metadata_schema_feasibility_census": true,
+    "select_population_read_utterances_or_run_model": false
+  },
+  "config": "configs/v203-independent-confirmation-feasibility.json",
+  "config_payload": {
+    "V183ConsumedPopulation": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+    "V191ConsumedPopulation": "outputs/v191-fresh-language-to-menu-population/population/hidden-targets.json",
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualLanguageInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumPolicyScoreCount": 0,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumUtteranceOrDialogueTextReadOrEmissionCount": 0,
+      "requiredArchiveReadCount": 1,
+      "requiredCandidateInventoryReadCount": 1,
+      "requiredConsumedIdentityArtifactReadCount": 2,
+      "requiredSchemaMetadataFileReadCount": 3
+    },
+    "candidateFamilies": [
+      {
+        "eligibleForSelection": true,
+        "evaluation": "exact schema-contract and source-annotation census over frozen train/test candidate metadata",
+        "familyId": "SGD_SAME_REVISION_NON_DEV_EXACT_CONTRACTS"
+      },
+      {
+        "eligibleForSelection": false,
+        "evaluation": "exact schema-contract census after prior exclusions across dev/train/test",
+        "familyId": "SGD_MIXED_PARTITION_REMAINDER_DIAGNOSTIC",
+        "reason": "diagnostic only because reuse of the development partition is not partition-independent"
+      },
+      {
+        "eligibleForSelection": false,
+        "evaluation": "reuse frozen V87 source-gate result",
+        "familyId": "TASKMASTER_1_FROZEN_V87"
+      },
+      {
+        "eligibleForSelection": false,
+        "evaluation": "reuse frozen V87 source-gate result",
+        "familyId": "MULTIWOZ_REFERENCE_FROZEN_V87"
+      }
+    ],
+    "claimBoundary": "metadata-and-schema-only feasibility of a genuinely partition-independent confirmation population for the exact frozen 14 semantic contracts; source annotations are benchmark-screening labels, not proof of utterance-alone human identifiability; not language extraction, model performance, protected evidence, ontology truth, authority, action, or execution",
+    "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+    "decisionRule": {
+      "ifEligibleFamilyPassesEveryQualificationAndAccessGate": "freeze_V203_positive_and_authorize_separate_text_free_V204_population_selection_preregistration_only",
+      "otherwise": "freeze_V203_negative_park_B1_confirmation_and_authorize_separate_richer_model_free_POMDP_preregistration_only",
+      "passAuthorizesImmediatePopulationSelectionLanguageExtractionOrModelRun": false,
+      "passAuthorizesProtectedReuseAPITrainingRegistrationAuthorityActionOrExecution": false
+    },
+    "exactContractIdentity": {
+      "allCandidateMappingsMustBeSingleton": true,
+      "intentNameSimilarityIsInsufficient": true,
+      "rule": "reuse the frozen V183 semantic capability-contract hash over domain, normalized schema descriptions, normalized intent name, transactionality, slot sets, and complete slot metadata",
+      "serviceVersionLabelIsExcludedFromIdentity": true
+    },
+    "experiment": "v203_metadata_first_independent_14_contract_confirmation_feasibility",
+    "independenceContract": {
+      "allowedPartitions": [
+        "train",
+        "test"
+      ],
+      "eligibleSourceFamily": "SGD_SAME_REVISION_NON_DEV_EXACT_CONTRACTS",
+      "excludeEveryV183SourceRecordAndPartitionDialogue": true,
+      "excludeEveryV191SourceRecordAndPartitionDialogue": true,
+      "forbiddenPartitions": [
+        "dev"
+      ],
+      "futureSelectionMayUseOnlyFrozenIdentifiersContractMappingAndSalt": true,
+      "futureSelectionSalt": "simulagent-v204-independent-top3-controller-confirmation-v1",
+      "minimumUniqueDialoguesPerContract": 6,
+      "requiredContractCount": 14,
+      "requiredSourceRecordsPerContract": 6,
+      "selectedPartitionDialogueKeysMustBeUnique": true
+    },
+    "parentV202OutcomeLock": "configs/v202-model-free-controller-decision-sufficiency-outcome-lock.json",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "aggregateV191AvailabilityReadCount": 1,
+      "formalExactCrossPartitionContractCensusCount": 0,
+      "frozenSourceGateResultReadCount": 1,
+      "manualLanguageInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "policyScoreCount": 0,
+      "protectedLanguageReadCount": 0,
+      "trainingRunCount": 0,
+      "utteranceOrDialogueTextReadOrEmissionCount": 0
+    },
+    "qualificationGates": {
+      "minimumUniquePartitionDialoguesPerContract": 6,
+      "requiredAllowedPartitionRate": 1.0,
+      "requiredCompleteTargetExpressibility": true,
+      "requiredExactContractCoverage": 14,
+      "requiredLicensedIndependentHumanLanguageSourceGate": true,
+      "requiredPriorPartitionDialogueOverlap": 0,
+      "requiredPriorSourceRecordOverlap": 0,
+      "requiredSingletonSourceAnnotationMappingRate": 1.0
+    },
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "203-independent-confirmation-feasibility-design",
+    "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+    "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+    "sourceV124OutcomeLock": "configs/v124-sgd-source-feasibility-outcome-lock.json",
+    "sourceV183OutcomeLock": "configs/v183-sgd-contract-identifiability-population-outcome-lock.json",
+    "sourceV191OutcomeLock": "configs/v191-fresh-language-to-menu-population-outcome-lock.json",
+    "sourceV87DesignLock": "configs/v87-external-language-source-design-lock.json"
+  },
+  "config_sha256": "5e52d12492396ecb05fce205eadc432c6a931a069536792a7d6f2e6498447dea",
+  "contract_catalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "contract_catalog_sha256": "23c7d5550db98927751aa5cdbf0926f773cbe40e6b95250dc8086e39bf873839",
+  "design_audit": "outputs/v203-independent-confirmation-feasibility/design-audit.json",
+  "design_audit_sha256": "7e4929f752ab75870d903be1f1789b15d442c3fb5b5cc7cb8778753ccf347281",
+  "experiment": "v203_metadata_first_independent_14_contract_confirmation_feasibility",
+  "lock_payload_sha256": "686d6006ae6b44e903e8dbf5784edfb00c019604d63c539e2574f9c1d469ea5a",
+  "parent_V202_outcome": "configs/v202-model-free-controller-decision-sufficiency-outcome-lock.json",
+  "parent_V202_outcome_sha256": "adfb49a5540fff2093b42c78b85896002d1eeb5b17443aead35135c1f5396a7e",
+  "plan": "docs/v203-independent-confirmation-feasibility-plan.md",
+  "plan_sha256": "5161700362ffaa5f723189cf42b82c2a2a7e75c19d1b50249cc49a35b0bd6eff",
+  "protocol": "python/v203_independent_confirmation_feasibility.py",
+  "protocol_sha256": "41ff94d3f894be80b69bcf2fbc3c6ec2844dadd3c7b3ff36ca0ab91d51333bbd",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "roadmap_sha256": "3975ba9e3cb02bc8fe15b57faf3c3ab72871f2d2262bdd6cdd8b70664d92a69c",
+  "runner": "python/run_v203_independent_confirmation_feasibility.py",
+  "runner_sha256": "cb7d46f073a9da6a368e32a1c8a588bf2f7dfda784ae3cd9cf27a5808b803667",
+  "schema_version": "203-independent-confirmation-feasibility-lock",
+  "source_V124_outcome": "configs/v124-sgd-source-feasibility-outcome-lock.json",
+  "source_V124_outcome_sha256": "e346060d40bfb4a255f7cc686d89163af28044f9a9941e2e15e55da4f7ba9b6f",
+  "source_V183_outcome": "configs/v183-sgd-contract-identifiability-population-outcome-lock.json",
+  "source_V183_outcome_sha256": "c32f80bf80f99183b8c17b4af16f25ba4bbed31fa00eb7fa2f2081bcff840da7",
+  "source_V191_outcome": "configs/v191-fresh-language-to-menu-population-outcome-lock.json",
+  "source_V191_outcome_sha256": "0d76fb2305fae51c42d4920c90a81d12d47037dddde057bd69452728fb25fe37",
+  "source_V87_design_lock": "configs/v87-external-language-source-design-lock.json",
+  "source_V87_design_lock_sha256": "09d377aff1dd145cf37a77116a122b7765f6663a7ee86857998f2976767c772b",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "source_inventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "source_inventory_sha256": "3cf2f5b5a43e340b0b4723baf728e49882286429c35fd3b111e28306ab029e5f",
+  "tests": "python/test_v203_independent_confirmation_feasibility.py",
+  "tests_sha256": "139477cf477077d2e9fdab3c5189ee3e4c1094c31222dfd7883bcc7c244873dc",
+  "verifier": "python/verify_and_freeze_v203_independent_confirmation_feasibility_outcome.py",
+  "verifier_sha256": "0c5f1817c758c7722eabb97fdf0bac9d5ed08a6d8f906d33c73b32cd7f4efcae"
+}

@@ -1,0 +1,99 @@
+{
+  "audit": "outputs/v186-typed-contract-question-codebook-feasibility/outcome-audit.json",
+  "audit_sha256": "fbeab91312c9255ff3c102dd71bcd2432cc257ad0ca34a009a2bb120af09938f",
+  "authorization": {
+    "modify_rebuild_or_redefine_V186": false,
+    "preregister_clean_exact_planner_comparison": true,
+    "read_utterance_or_protected_language_run_model_API_or_training": false,
+    "register_mutate_call_service_act_or_execute": false,
+    "score_planner_without_separate_lock": false
+  },
+  "codebook_lock": "configs/v186-typed-contract-question-codebook-feasibility-lock.json",
+  "codebook_lock_sha256": "776120bd4598ab38dca29c0a80302a3aa386e021e100bbf32695d521ffce8f13",
+  "codebook_summary": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/codebook-summary.json",
+  "codebook_summary_sha256": "0aba6a47fe8f28e35d93dc1fa287e04ab73c8f546c5296e460ad9f50a49e5f40",
+  "contract_answer_vectors": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/contract-answer-vectors.json",
+  "contract_answer_vectors_sha256": "1c66ccea6ce07d0ee9da98e8e99c7ac54cbb1c9a2ce8c0fa6d832b21d0b3f778",
+  "development_bindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/development-bindings.json",
+  "development_bindings_sha256": "114abf3c2351be24e01fa1b69419813c6b31ea74fbb3f559fbd24e2323a5a4d0",
+  "equivalence_classes": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/equivalence-classes.json",
+  "equivalence_classes_sha256": "60847d4ad1acf07299a6d4a73176990f93a09f4a7f14f00efb41db813aef1012",
+  "experiment": "v186_text_free_typed_binary_question_codebook_and_role_binding",
+  "lock_payload_sha256": "b36e7e2519405d77598a141bee89d6eda8785b9aed0e80139fe4a15ef2c2c6b4",
+  "outcome": {
+    "decision": "freeze_V186_identifying_codebook_and_authorize_clean_exact_planner_preregistration_only",
+    "passed": true,
+    "scientific_feasibility_gates_passed": true,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "capability_contract_count": 14,
+      "contract_pair_count": 91,
+      "contract_truth_kind_counts": {
+        "KNOWN": 6,
+        "PROVISIONAL": 6,
+        "UNSUPPORTED": 2
+      },
+      "equivalence_class_count": 14,
+      "external_side_effect_count": 0,
+      "largest_equivalence_class_size": 1,
+      "manual_judgment_count": 0,
+      "maximum_separating_question_count_per_pair": 63,
+      "minimum_separating_question_count_per_pair": 5,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "nontrivial_question_rate": 1.0,
+      "ontology_registration_count": 0,
+      "pairwise_separation_rate": 1.0,
+      "planner_policy_score_count": 0,
+      "question_count": 164,
+      "question_family_count": 6,
+      "question_family_counts": {
+        "domain": 8,
+        "intent_concept": 14,
+        "slot_any": 59,
+        "slot_required": 23,
+        "slot_result": 59,
+        "transactional": 1
+      },
+      "role_identifier_overlap": 0,
+      "roles": {
+        "development": {
+          "binding_count": 132,
+          "missing_binding_count": 12,
+          "missing_insufficient_rate": 1.0,
+          "observed_binding_count": 120,
+          "target_vector_reconstruction_rate": 1.0
+        },
+        "protected": {
+          "binding_count": 132,
+          "missing_binding_count": 12,
+          "missing_insufficient_rate": 1.0,
+          "observed_binding_count": 120,
+          "target_vector_reconstruction_rate": 1.0
+        }
+      },
+      "service_call_count": 0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "unique_answer_vector_count": 14,
+      "unique_question_identifier_rate": 1.0,
+      "utterance_or_dialogue_language_read_count": 0
+    }
+  },
+  "pairwise_separation": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/pairwise-separation.json",
+  "pairwise_separation_sha256": "57449b758b8f0bf02b8aed1f1d04640a11139fd1491b3e5414372559814f441f",
+  "parent_V185_outcome": "configs/v185-deterministic-sgd-candidate-set-controls-outcome-lock.json",
+  "parent_V185_outcome_sha256": "b0fd4a5ea7399ad3a8b0d274b8baf6ae22de9322a9060ac5dad0b4ca33d9289c",
+  "protected_bindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/protected-bindings.json",
+  "protected_bindings_sha256": "697a4a90ae285bbd5bc7abdd3c05a591fbca8f9f616bc9cff7e301b03cf8e4ba",
+  "question_codebook": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/question-codebook.json",
+  "question_codebook_sha256": "e999c6a768d2c3651d12f062d99e537e247a235ff29bfbf1bece2f1ccb7cecd7",
+  "result": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/result.json",
+  "result_sha256": "df8d3c5aaea5d89795b1dc2a77aca96613732e8ab8d3a09d9e1b60d97fa8630f",
+  "results_document": "docs/v186-typed-contract-question-codebook-feasibility-results.md",
+  "results_document_sha256": "5a6d4ae5f1eff79f7faa30df0a625afe5f0139ace56a1788b6450743cd73468f",
+  "schema_version": "186-typed-contract-question-codebook-feasibility-outcome-lock",
+  "verifier": "python/verify_and_freeze_v186_typed_contract_question_codebook_feasibility_outcome.py",
+  "verifier_sha256": "785007f36b6a09e8eeae0d9d06f6ea3e6ee9434b2813947edace448627972a63"
+}

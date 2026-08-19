@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "177-certification-aware-planner-fresh-confirmation-design",
+  "experiment": "v177_unchanged_V175_certification_aware_planner_on_frozen_four_constraint_context_disjoint_population",
+  "parentV176OutcomeLock": "configs/v176-four-constraint-confirmation-population-outcome-lock.json",
+  "sourceV175OutcomeLock": "configs/v175-certification-aware-planner-development-outcome-lock.json",
+  "sourceV171OutcomeLock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "claimBoundary": "fresh exact target-context-disjoint confirmation of the unchanged V175 mechanism within the same fixed finite ontology; not unseen-concept, language, external, human, ontology-induction, deployment, real-service, or execution evidence",
+  "unchangedRoutedObjective": {
+    "maximumQueries": 5,
+    "queryCost": "1/10",
+    "stopAction": "route only if surviving exact version space is unanimously alias or unanimously composition; otherwise defer",
+    "trustedCorrectRouteLoss": 0,
+    "deferLossForEveryTrueClass": 2,
+    "falseTrustedRouteAllowed": false,
+    "provisionalSandboxEntryAllowed": false,
+    "equalRiskPrefersStop": true,
+    "equalQueryRiskPrefersLowestValuationIndex": true
+  },
+  "unchangedPolicies": [
+    "immediate_defer",
+    "V167_exact_adaptive_horizon2",
+    "greedy_class_information_gain_horizon5",
+    "optimal_open_loop_subset",
+    "random_query_order_consensus_stop",
+    "exact_certification_adaptive",
+    "target_informed_certificate_oracle"
+  ],
+  "populationUse": {
+    "useEveryV176EligibleState": true,
+    "requiredStateCount": 135,
+    "useEveryV176Target": true,
+    "requiredTargetCount": 2160,
+    "useFrozenClassBalancedWeights": true,
+    "requiredExactTargetContextSignatureOverlapWithV172": 0,
+    "selectionSubsamplingOrExclusionAllowed": false
+  },
+  "oracleComparator": {
+    "computeExactMinimalTargetCertificatesDuringConfirmation": true,
+    "oracleIsNonOperational": true,
+    "oracleCannotAuthorizeCommit": true,
+    "oracleNotUsedForPopulationSelectionOrPolicyChoice": true
+  },
+  "sandboxBoundary": {
+    "reuseV171TrustedTypedRoutesAndDurabilityContract": true,
+    "plannerMayNotAuthorizeCommit": true,
+    "deterministicConsensusGateRetainsAuthority": true,
+    "independentVerifierRequired": true,
+    "postCommitRestartVerificationRequired": true,
+    "realServiceOrToolTargetExists": false
+  },
+  "integrityAndSafetyGates": {
+    "requiredStateCount": 135,
+    "requiredTargetCount": 2160,
+    "requiredTargetPolicyScoreCount": 15120,
+    "requiredPopulationCoverage": 1.0,
+    "requiredPriorWeightNormalization": 1.0,
+    "requiredExactDPRiskReconstruction": 1.0,
+    "requiredOracleCertificateValidity": 1.0,
+    "requiredFalseTrustedRouteProbability": 0.0,
+    "requiredProvisionalSandboxEntryProbability": 0.0,
+    "requiredPlannerCommitAuthorizationCount": 0,
+    "requiredSandboxExactness": 1.0,
+    "requiredInvariantPreservation": 1.0,
+    "requiredProvenanceAndRestartVerification": 1.0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedRealStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "primaryConfirmationThresholds": {
+    "exactCertificationMeanRiskStrictlyBelowImmediateDefer": true,
+    "exactCertificationMeanRiskStrictlyBelowV167Routed": true,
+    "exactCertificationTrustedCompletionStrictlyPositive": true,
+    "minimumStateCountStrictlyImprovedOverImmediateDefer": 1,
+    "failureInvalidatesSafety": false
+  },
+  "strongConfirmationThresholds": {
+    "exactCertificationMeanRiskNoWorseThanGreedy": true,
+    "exactCertificationMeanRiskNoWorseThanOptimalOpenLoop": true,
+    "exactCertificationMeanRiskNoWorseThanRandomOrder": true,
+    "requiredStatewiseNoWorseThanEveryOperationalControlRate": 1.0,
+    "failureInvalidatesSafetyOrPrimaryConfirmation": false
+  },
+  "preLockExposure": {
+    "implementationUnitTargetCount": 1,
+    "implementationUnitPolicyCount": 2,
+    "formalTargetPolicyScoreCount": 0,
+    "aggregateFormalMetricInspectionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedRealStateMutationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifSafetyPrimaryAndStrongPass": "freeze_V177_as_strong_fresh_confirmation_of_the_V175_certification_aware_mechanism",
+    "ifSafetyAndPrimaryPassButStrongFails": "freeze_V177_as_primary_positive_mixed_fresh_confirmation",
+    "ifSafetyPassesButPrimaryFails": "freeze_V177_as_safe_nonconfirming_boundary_and_stop_mechanism_branch",
+    "otherwise": "freeze_V177_as_safety_failure_and_stop",
+    "retainNegativeOrMixedWithoutTuning": true,
+    "passAuthorizesImmediateRobustnessRun": false,
+    "passAuthorizesModelRegistrationRealServiceOrExecution": false
+  }
+}

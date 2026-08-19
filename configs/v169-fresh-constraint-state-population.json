@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "169-fresh-constraint-state-population-design",
+  "experiment": "v169_procedural_nonoverlapping_finite_DSL_constraint_state_population",
+  "parentV168OutcomeLock": "configs/v168-fixed-ontology-reversible-sandbox-outcome-lock.json",
+  "sourceV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v168.md",
+  "claimBoundary": "procedurally generated nonoverlapping finite-DSL confirmation population only; not planner performance, external data, human evidence, language understanding, ontology registration, authority, action, or execution",
+  "generator": {
+    "candidateTruthTableCount": 256,
+    "valuationCount": 8,
+    "constraintCountPerState": 2,
+    "outcomesPerConstraint": [0, 1],
+    "completeValuationPairAndOutcomeEnumeration": true,
+    "requiredSourceStateCount": 112,
+    "excludeEveryV165AmbiguousConstraintSignature": true,
+    "selectionUsesPlannerScoresOrPolicies": false,
+    "retainEveryNonoverlappingSourceState": true
+  },
+  "plannerEligibility": {
+    "rule": "version space contains alias composition and provisional_primitive candidates",
+    "usesOnlyFrozenCandidateClassMetadata": true,
+    "minimumEligibleStateCount": 48,
+    "ineligibleStatesRetainedInPopulation": true,
+    "policyScoringDuringEligibility": false
+  },
+  "populationGates": {
+    "requiredSourceStateCount": 112,
+    "minimumExcludedV165SignatureCount": 1,
+    "requiredOverlapWithV165AmbiguousSignatures": 0,
+    "requiredCandidatesPerSelectedState": 64,
+    "minimumSelectedStateCount": 1,
+    "minimumPlannerEligibleStateCount": 48,
+    "requiredConstraintSignatureUniqueness": 1.0,
+    "requiredVersionSpaceExactness": 1.0,
+    "requiredClassCountSumExactness": 1.0,
+    "requiredAllNonoverlappingStatesRetained": 1.0,
+    "maximumPlannerPolicyScoreCount": 0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "implementationTestPopulationBuildCount": 1,
+    "formalPopulationBuildCount": 0,
+    "plannerPolicyScoreCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "populationContainsOnlyShadowVersionSpaces": true,
+    "authoritativeOntologyAndStateImmutable": true,
+    "plannerNotRun": true,
+    "modelNotRun": true,
+    "provisionalRegistrationAllowed": false,
+    "actionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationGatePasses": "freeze_V169_and_preregister_unchanged_V167_planner_on_all_eligible_states",
+    "otherwise": "freeze_V169_boundary_result_without_planner_scoring",
+    "passAuthorizesImmediatePlannerRun": false,
+    "passAuthorizesModelRegistrationAuthorityActionOrExecution": false
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "audit": "outputs/v184-sgd-role-isolated-language-extraction/outcome-audit.json",
+  "audit_sha256": "a27aded7abebddeac3f580b36fdd2d5950f94aacf511002df2a83d2c754b1cac",
+  "authorization": {
+    "modify_reextract_or_repartition_V184": false,
+    "preregister_deterministic_interface_and_development_controls": true,
+    "read_protected_language_during_development": false,
+    "run_model_API_training_register_mutate_call_service_act_or_execute": false,
+    "score_development_language_without_separate_lock": false
+  },
+  "declared_catalog_language": "outputs/v184-sgd-role-isolated-language-extraction/extraction/declared-known-catalog-language.json",
+  "declared_catalog_language_sha256": "d37a7125a23ea85144fac76be4909e3512adc837d64352ec99d8dd52c32facb0",
+  "development_language": "outputs/v184-sgd-role-isolated-language-extraction/extraction/development-language.json",
+  "development_language_sha256": "33d106833ceaffd4b9fe6fe2f4e7941700eadb61d523af49420addb247e93048",
+  "experiment": "v184_exact_role_isolated_SGD_language_and_declared_catalog_extraction",
+  "extraction_lock": "configs/v184-sgd-role-isolated-language-extraction-lock.json",
+  "extraction_lock_sha256": "9f0521d8b196dfdf22050a85854450a56a646dc7437ff0b07ef704bb310bda05",
+  "extraction_summary": "outputs/v184-sgd-role-isolated-language-extraction/extraction/extraction-summary.json",
+  "extraction_summary_sha256": "b4c78a0e861c24da31510f529fbf3092365b4622096fde1dfb592378313d011f",
+  "lock_payload_sha256": "7f54012823ae1209d8fa9fd21b777d93afdd916c92e87cf03e35e306198f47e8",
+  "outcome": {
+    "decision": "freeze_V184_role_isolated_language_and_authorize_deterministic_interface_preregistration_only",
+    "passed": true,
+    "scientific_extraction_gates_passed": true,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "conversation_prefix_exactness": 1.0,
+      "declared_known_choice_count": 6,
+      "external_side_effect_count": 0,
+      "forbidden_field_occurrence_count": 0,
+      "known_catalog_contract_hash_match_rate": 1.0,
+      "manual_development_language_inspection_count": 0,
+      "manual_protected_language_inspection_count": 0,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "ontology_registration_count": 0,
+      "policy_score_count": 0,
+      "protected_language_read_during_development_count": 0,
+      "public_projection_exactness": 1.0,
+      "record_identifier_reconstruction_rate": 1.0,
+      "role_identifier_overlap": 0,
+      "roles": {
+        "development": {
+          "conversation_prefix_nonempty_rate": 1.0,
+          "fixture_count": 132,
+          "forbidden_field_occurrence_count": 0,
+          "missing_control_count": 12,
+          "missing_conversation_null_rate": 1.0,
+          "source_record_count": 120,
+          "unique_source_identifier_count": 120
+        },
+        "protected": {
+          "conversation_prefix_nonempty_rate": 1.0,
+          "fixture_count": 132,
+          "forbidden_field_occurrence_count": 0,
+          "missing_control_count": 12,
+          "missing_conversation_null_rate": 1.0,
+          "source_record_count": 120,
+          "unique_source_identifier_count": 120
+        }
+      },
+      "service_call_count": 0,
+      "source_identifier_overlap": 0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "unselected_language_record_count": 0
+    }
+  },
+  "parent_V183_outcome": "configs/v183-sgd-contract-identifiability-population-outcome-lock.json",
+  "parent_V183_outcome_sha256": "c32f80bf80f99183b8c17b4af16f25ba4bbed31fa00eb7fa2f2081bcff840da7",
+  "protected_language": "outputs/v184-sgd-role-isolated-language-extraction/extraction/protected-language.json",
+  "protected_language_sha256": "f5c483ebe46ad0035c7c47f60a32eb3fb153ac0454bfe75414e3475f16dcdeef",
+  "result": "outputs/v184-sgd-role-isolated-language-extraction/extraction/result.json",
+  "result_sha256": "055fbdfb291f337b397b79e0153373337d9b87746706fc1d973e42fe7a5fff57",
+  "results_document": "docs/v184-sgd-role-isolated-language-extraction-results.md",
+  "results_document_sha256": "c1363764c04db02f58dd6a7d3feb2be314872a0b2a23b7012b7e82f46c4e1d90",
+  "schema_version": "184-sgd-role-isolated-language-extraction-outcome-lock",
+  "verifier": "python/verify_and_freeze_v184_sgd_role_isolated_language_extraction_outcome.py",
+  "verifier_sha256": "5fb5af15ee99c66b0ce31a8309faa4e3e7e315ee4a20b5633080e922906fa9be"
+}

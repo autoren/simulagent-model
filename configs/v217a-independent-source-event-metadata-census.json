@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "217a-independent-source-event-metadata-census-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v217a_prospective_independent_source_event_metadata_census",
+  "parentV216r1OutcomeLock": "configs/v216r1-negative-outcome-verification-repair-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v216.md",
+  "plan": "docs/v217a-independent-source-event-metadata-census-plan.md",
+  "claimBoundary": "official metadata feasibility for at most one fresh independent retrospective artifact source; not payload evidence, a reopened V216 branch, inferred semantic equivalence, correct new-speaker intent, expert validation, model evidence, registration, authority, action, or execution",
+  "priorExposure": {
+    "candidateFamilyNamesFromRoadmap": ["MONDO", "GENE_ONTOLOGY", "CELL_ONTOLOGY"],
+    "blindFamilyDiscoveryClaim": false,
+    "sourceSpecificReleaseMetadataReadCount": 0,
+    "candidatePayloadBodyByteReadCount": 0,
+    "formalSourceAssessmentCount": 0,
+    "V216ProtectedReadCount": 0
+  },
+  "sourceUnits": [
+    {
+      "unitId": "MONDO",
+      "selectionPriority": 1,
+      "urls": [
+        "https://obofoundry.org/ontology/mondo.html",
+        "https://api.github.com/repos/monarch-initiative/mondo/releases?per_page=5",
+        "https://mondo.monarchinitiative.org/pages/releases/"
+      ]
+    },
+    {
+      "unitId": "GENE_ONTOLOGY",
+      "selectionPriority": 2,
+      "urls": [
+        "https://obofoundry.org/ontology/go.html",
+        "https://api.github.com/repos/geneontology/go-ontology/releases?per_page=5",
+        "https://geneontology.org/docs/download-ontology/"
+      ]
+    },
+    {
+      "unitId": "CELL_ONTOLOGY",
+      "selectionPriority": 3,
+      "urls": [
+        "https://obofoundry.org/ontology/cl.html",
+        "https://api.github.com/repos/obophenotype/cell-ontology/releases?per_page=5",
+        "https://obophenotype.github.io/cell-ontology/"
+      ]
+    }
+  ],
+  "dimensions": [
+    "official_authority",
+    "stable_exact_historical_releases",
+    "explicit_license_or_open_policy",
+    "bounded_release_assets",
+    "textual_semantic_content",
+    "machine_readable_asserted_semantics",
+    "published_release_diff_or_change_summary",
+    "multi_type_semantic_change_evidence",
+    "replacement_obsoletion_merge_or_mapping_provenance",
+    "plausible_observational_ambiguity",
+    "separable_provenance_roles",
+    "credible_group_disjoint_event_scale",
+    "retrospective_reconstruction_support"
+  ],
+  "eventCategories": [
+    "ADDITION",
+    "TEXT_DEFINITION",
+    "SYNONYM_OR_LABEL",
+    "LOGICAL_AXIOM",
+    "OBSOLETION_OR_REPLACEMENT",
+    "MAPPING_OR_MERGE_SPLIT"
+  ],
+  "textEventCategories": ["TEXT_DEFINITION", "SYNONYM_OR_LABEL"],
+  "lifecycleOrMappingEventCategories": ["OBSOLETION_OR_REPLACEMENT", "MAPPING_OR_MERGE_SPLIT"],
+  "ambiguityIndicators": [
+    "MULTIPLE_SYNONYMS_OR_LABELS",
+    "MULTIPLE_OR_CONTESTED_MAPPINGS",
+    "MERGE_OR_SPLIT_HISTORY",
+    "OBSOLETE_WITH_REPLACEMENT_OR_CONSIDER",
+    "EXPLICIT_UNRESOLVED_OR_AMBIGUOUS_MAPPING"
+  ],
+  "eligibilityRequirements": {
+    "requiredDimensions": [
+      "official_authority",
+      "stable_exact_historical_releases",
+      "explicit_license_or_open_policy",
+      "bounded_release_assets",
+      "textual_semantic_content",
+      "machine_readable_asserted_semantics",
+      "published_release_diff_or_change_summary",
+      "multi_type_semantic_change_evidence",
+      "replacement_obsoletion_merge_or_mapping_provenance",
+      "plausible_observational_ambiguity",
+      "separable_provenance_roles",
+      "credible_group_disjoint_event_scale",
+      "retrospective_reconstruction_support"
+    ],
+    "minimumExactHistoricalReleaseCount": 2,
+    "minimumDocumentedEventCategoryCount": 3,
+    "requireTextEventCategory": true,
+    "requireLifecycleOrMappingEventCategory": true,
+    "minimumAmbiguityIndicatorCount": 1,
+    "maximumSingleAssetBytes": 50000000,
+    "maximumTwoReleasePayloadBytes": 100000000,
+    "totalOntologyTermCountIsEligibilityCriterion": false
+  },
+  "selectionRule": {
+    "selectAtMostOne": true,
+    "selectLowestFrozenPriorityAmongEligible": true,
+    "priorityOrder": ["MONDO", "GENE_ONTOLOGY", "CELL_ONTOLOGY"],
+    "doNotUseV216PayloadOrProtectedRecordsForSelection": true
+  },
+  "evidenceContract": {
+    "oneRecordPerFrozenURLAttempt": true,
+    "storeSuccessfulMetadataSnapshot": true,
+    "sha256EverySuccessfulSnapshot": true,
+    "eachTrueAssessmentRequiresSuccessfulFrozenURL": true,
+    "eachEventAndAmbiguityClaimRequiresSuccessfulFrozenURL": true,
+    "missingAmbiguousOrUnsupportedScoresFalse": true,
+    "generalAvailabilityDoesNotImplyLicense": true,
+    "assetURLAndByteCountMustAppearInFrozenMetadata": true,
+    "doNotFollowAssetDownloadLinks": true,
+    "maximumMetadataBytesPerURL": 5000000,
+    "maximumTotalMetadataBytes": 15000000,
+    "retrievalDate": "2026-08-19",
+    "maximumRedirects": 10,
+    "requestTimeoutSeconds": 30,
+    "userAgent": "simulagent-v217a-independent-source-event-census/1.0"
+  },
+  "censusGates": {
+    "requiredSourceUnitCount": 3,
+    "requiredFrozenURLAttemptCount": 9,
+    "requiredURLAccountingRate": 1.0,
+    "requiredSuccessfulSnapshotHashCoverage": 1.0,
+    "requiredAssessmentDimensionCoverage": 1.0,
+    "requiredTrueClaimEvidenceCoverage": 1.0,
+    "minimumEligibleSourceCount": 1,
+    "maximumSelectedSourceCount": 1,
+    "requiredSelectionPriorityCorrectness": 1.0,
+    "requiredRetrospectiveNotSpeakerIntentBoundary": true,
+    "requiredFiniteMetrics": true
+  },
+  "accessGates": {
+    "requiredMetadataCaptureRunCount": 1,
+    "requiredMetadataCensusRunCount": 1,
+    "maximumCandidatePayloadDownloadCount": 0,
+    "maximumV216ProtectedAccessCount": 0,
+    "maximumV213ProtectedAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumModelAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceActionCount": 0,
+    "maximumExternalSideEffectCountBeyondReadOnlyMetadata": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "artifacts": {
+    "snapshotDirectory": "outputs/v217a-independent-source-event-metadata-census/metadata-snapshots",
+    "retrievalManifest": "outputs/v217a-independent-source-event-metadata-census/census/retrieval-manifest.json",
+    "evidence": "outputs/v217a-independent-source-event-metadata-census/census/evidence.json",
+    "summary": "outputs/v217a-independent-source-event-metadata-census/census/summary.json",
+    "result": "outputs/v217a-independent-source-event-metadata-census/census/result.json"
+  },
+  "decisionRule": {
+    "ifEveryIntegrityEligibilitySelectionAndAccessGatePasses": "freeze_V217A_positive_and_authorize_one_separate_fresh_source_payload_design_only",
+    "otherwise": "freeze_V217A_negative_and_stop_external_retrospective_source_branch_without_URL_source_dimension_threshold_or_gate_tuning",
+    "passAuthorizesPayloadDesignOnly": true,
+    "passAuthorizesPayloadDownloadOrModelRun": false,
+    "passAuthorizesV216V217ProtectedUseRegistrationMutationActionOrExecution": false
+  }
+}
+

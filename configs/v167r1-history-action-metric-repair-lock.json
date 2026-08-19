@@ -1,0 +1,80 @@
+{
+  "V167_policy_trees": "outputs/v167-exact-evidence-gathering/planner/case-policy-trees.json",
+  "V167_policy_trees_sha256": "58f297c24b6841e1bb95e4464781fcf59d1bfa010f8110b2600d4b58064805e2",
+  "V167_result": "outputs/v167-exact-evidence-gathering/planner/result.json",
+  "V167_result_sha256": "7c86d8e903b3f5170eea2c811c976fc4a013cb1bf73c1bba9912e647d5475a25",
+  "auditor": "python/audit_and_freeze_v167r1_history_action_metric_repair.py",
+  "auditor_sha256": "40a3ee60792868fb9cea011769e66e6b91e73dcd3a234bf0a4475bddb6f2d399",
+  "authorization": {
+    "create_nominal_V167_outcome": false,
+    "freeze_corrected_outcome_under_V167r1": true,
+    "modify_or_rerun_original_V167": false,
+    "repair_history_action_summary_projection_only": true,
+    "run_model_register_mutate_trusted_state_act_or_execute": false
+  },
+  "config": "configs/v167r1-history-action-metric-repair.json",
+  "config_payload": {
+    "accessGates": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "decisionRule": {
+      "ifRepairReconstructsExactlyAndAllCorrectedGatesPass": "freeze_corrected_V167_through_V167r1_and_authorize_separate_fixed_ontology_sandbox_preregistration",
+      "otherwise": "reject_V167r1_and_leave_V167_unfrozen",
+      "passAuthorizesImmediateSandboxRun": false,
+      "passAuthorizesModelRegistrationTrustedStateActionOrExecution": false
+    },
+    "diagnosis": {
+      "affectedMetric": "history_dependent_second_action_case_count",
+      "cause": "child policy tuple projection included terminal decision, treating STOP with different terminal decisions as different second actions",
+      "correctProjection": "compare child policy action only: STOP or QUERY_Vi",
+      "correctedValue": 28,
+      "gateStillPasses": true,
+      "minimumFrozenGate": 1,
+      "persistedValue": 48
+    },
+    "experiment": "v167r1_verifier_only_history_action_projection_repair",
+    "nominalV167Outcome": "configs/v167-exact-evidence-gathering-planner-outcome-lock.json",
+    "parentV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+    "repairBoundary": {
+      "changeAnyOtherMetricGateDecisionOrClaimBoundary": false,
+      "changePriorQueriesCostsLossesHorizonPoliciesOrRisks": false,
+      "createNominalV167Outcome": false,
+      "modifyOriginalV167Artifacts": false,
+      "repairOnlyActionProjectionAndFreezeUnderV167r1": true,
+      "rerunFormalPlanner": false
+    },
+    "schemaVersion": "167r1-history-action-metric-repair-design",
+    "v167PolicyTrees": "outputs/v167-exact-evidence-gathering/planner/case-policy-trees.json",
+    "v167Result": "outputs/v167-exact-evidence-gathering/planner/result.json"
+  },
+  "config_sha256": "95b4fac0467c33e7d2c84d61c25e744558cf909566efc8fdf802f0eda7c249df",
+  "design_audit": "outputs/v167r1-history-action-metric-repair/design-audit.json",
+  "design_audit_sha256": "de5f10738b0c6b954f58c29fe10be81e5c34635fdd5f71cd7e74ea4563bd0350",
+  "experiment": "v167r1_verifier_only_history_action_projection_repair",
+  "lock_payload_sha256": "4109bf006b679300e42d7951f9e47998f17265a70c386ff3bbbcdc3ce9ece99c",
+  "original_V167_verifier": "python/verify_and_freeze_v167_exact_evidence_gathering_outcome.py",
+  "original_V167_verifier_sha256": "ac36b60f7e7725fdcf9b7bac17e36ee5ebe8431be1a0a32d74e62c6b10099063",
+  "parent_V167_planner_lock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "parent_V167_planner_lock_sha256": "9ea702e7fd6be86d30ba72cad6fa4d5b5e891be32bae1a30d8adc992c0dd9d28",
+  "plan": "docs/v167r1-history-action-metric-repair-plan.md",
+  "plan_sha256": "e25fe92178d73be23b5c2a1a5b7bfb29f902dcf83b32be075e3a5759e4f0c54e",
+  "protocol": "python/v167r1_history_action_metric_repair.py",
+  "protocol_sha256": "44875200744b834866722872179d7452275bafd7f47af1a2b68bec0970c8160f",
+  "results_document": "docs/v167-exact-evidence-gathering-planner-results.md",
+  "results_document_sha256": "319b54669e982f0c74983fb417a96214f0e2a3f6a90808e952e2f7be02a40fad",
+  "schema_version": "167r1-history-action-metric-repair-lock",
+  "tests": "python/test_v167r1_history_action_metric_repair.py",
+  "tests_sha256": "136a25a7cbe0ee370eaf30d66072c495ec3007789796928342c3241f844c1fea",
+  "verifier": "python/verify_and_freeze_v167r1_history_action_metric_repair.py",
+  "verifier_sha256": "9d279971dfe95005a060b89bf5b6937923277fd1a13f746495572809d738282a"
+}

@@ -1,0 +1,55 @@
+{
+  "artifacts": {
+    "docs/cross-track-evidence-synthesis-through-v224.md": "12ca3150375795ff8c6f11b1b7f839c95ddfa72ae3cbc36549ad052256629939",
+    "docs/research-stopping-rule-after-v224.md": "214c3926e4de9179b0d7e82d1db83f2f7c766632eae24ec3dd5b1dda92565c7d",
+    "outputs/cross-track-evidence-audit-through-v224/claim-and-risk-matrix.json": "a72e2232623007b0ce9e98aaaa0b51874af05cecc42241acaac52b6c3e897cc3",
+    "outputs/cross-track-evidence-audit-through-v224/critical-chain.json": "1ddd0341a7a0fbe367071f08d76ef4ced6d581c3eb7b16178be93afc3d420a76",
+    "outputs/cross-track-evidence-audit-through-v224/experiment-ledger.json": "fba0ec4837f394e0f5e4d17975f77e2bec6ddd519f1f77f7bb0184cf68b63497",
+    "outputs/cross-track-evidence-audit-through-v224/family-ledger.json": "9868bb2afd4b0e63cbbcbd8647b6a7e7d889eca3e5383e43be8edb413ca643d8",
+    "outputs/cross-track-evidence-audit-through-v224/manifest.json": "23b8b304b77089b310cbc07d848d2e060166e180ff88cc26cf2fa5cee0067995",
+    "outputs/cross-track-evidence-audit-through-v224/reproducibility-audit.json": "09ce9f113fd65864a30ae875ad794522188e3152b4336fe232854aaa2179059f",
+    "outputs/cross-track-evidence-audit-through-v224/stopping-decision.json": "9b05be02365807898c07f3b6d14907c2331fb7cdb2d0b10d9b007ebd43e0d6e6"
+  },
+  "audit_config": "configs/cross-track-evidence-audit-through-v224.json",
+  "audit_config_sha256": "86d62fa97b2de6cbc55cc20885fb6c646bb4332052ca01bfd7af1921f9cf395d",
+  "authorization": {
+    "action_or_execution": false,
+    "local_or_api_model_run": false,
+    "new_experiment": false,
+    "ontology_registration_or_trusted_state_mutation": false,
+    "protected_or_request_language_access": false,
+    "training_or_tuning": false
+  },
+  "experiment": "cross_track_evidence_audit_through_v224",
+  "implementation": "python/cross_track_evidence_audit.py",
+  "implementation_sha256": "5f08377ce230dd805be10f1a40cd4aa0aa7e28b0a0af1be68f94edfb27fb867b",
+  "lock_payload_sha256": "1f1e9080f362dd3d4bb0337652a52d5f02857692045b99e4216b0cc91bf96fa9",
+  "outcome": {
+    "authorized_next_experiment_count": 0,
+    "critical_chain_count": 18,
+    "decision": "freeze_cross_track_synthesis_and_experimental_escalation_until_external_reopening_condition_changes",
+    "expected_living_document_drift_count": 4,
+    "family_count": 17,
+    "missing_outcome_versions": [
+      58,
+      76,
+      77,
+      93,
+      99,
+      222
+    ],
+    "model_or_api_run_count": 0,
+    "non_sensitive_dependency_drift_count": 8,
+    "outcome_lock_count": 198,
+    "payload_valid_count": 198,
+    "protected_body_read_count": 0,
+    "request_language_read_count": 0
+  },
+  "runner": "python/run_cross_track_evidence_audit.py",
+  "runner_sha256": "25e9af4e46bf109c30d1894415cab9b7294a1f6bbcc0d275a1c280d3478385a8",
+  "schema_version": "cross_track_evidence_audit_outcome_lock.v1",
+  "tests": "python/test_cross_track_evidence_audit.py",
+  "tests_sha256": "0cce6ef57068ac20d4ac4897c47501240a70915677c90d9087c3e724aed099b7",
+  "verifier": "python/verify_and_freeze_cross_track_evidence_audit.py",
+  "verifier_sha256": "a61f04ac45aaa4cf49acbfe3971c1d164a8cef9f74ea21762218d1fedbb0b1bf"
+}

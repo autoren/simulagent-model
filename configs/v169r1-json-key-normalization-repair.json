@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "169r1-json-key-normalization-repair-design",
+  "experiment": "v169r1_verifier_only_JSON_object_key_normalization_repair",
+  "parentV169PopulationLock": "configs/v169-fresh-constraint-state-population-lock.json",
+  "v169Result": "outputs/v169-fresh-constraint-state-population/population/result.json",
+  "failedV169OutcomeAudit": "outputs/v169-fresh-constraint-state-population/outcome-audit.json",
+  "nominalV169Outcome": "configs/v169-fresh-constraint-state-population-outcome-lock.json",
+  "diagnosis": {
+    "expectedFailedChecks": ["gates_summary_and_decision_reconstruct_exactly", "population_outputs_reconstruct_exactly"],
+    "soleMismatchPath": "summary.class_coverage_counts object keys",
+    "persistedKeys": ["1", "2", "3"],
+    "reconstructedInMemoryKeys": [1, 2, 3],
+    "repair": "compare independently reconstructed artifacts after canonical JSON round-trip normalization",
+    "scientificPopulationPassed": true,
+    "decisionChanges": false
+  },
+  "repairBoundary": {
+    "modifyOrRebuildV169": false,
+    "changePopulationMembershipEligibilityMetricsGatesOrDecision": false,
+    "createNominalV169Outcome": false,
+    "freezeOnlyUnderV169r1": true
+  },
+  "accessGates": {
+    "plannerPolicyScoreCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "realServiceCallCount": 0,
+    "externalSideEffectCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifRepairReconstructsExactly": "freeze_corrected_V169_through_V169r1_and_authorize_separate_unchanged_planner_preregistration",
+    "otherwise": "reject_V169r1_and_leave_population_unfrozen",
+    "passAuthorizesImmediatePlannerRun": false,
+    "passAuthorizesModelRegistrationAuthorityActionOrExecution": false
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "215-external-semantic-resource-metadata-census-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v215_prospective_metadata_first_external_semantic_resource_census",
+  "parentV214OutcomeLock": "configs/v214-deterministic-candidate-version-space-controls-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v214.md",
+  "plan": "docs/v215-external-semantic-resource-metadata-census-plan.md",
+  "claimBoundary": "official metadata feasibility for a future retrospective artifact-reconstruction benchmark; not ontology payload evidence, natural-language performance, correct new-speaker intent, expert validation, model evidence, registration, authority, action, or execution",
+  "priorExposure": {
+    "highLevelSourceFamiliesPreviouslyKnown": ["OBO_FOUNDRY", "EMBL_EBI_OLS", "OAEI", "W3C_OWL"],
+    "blindSourceDiscoveryClaim": false,
+    "formalMetadataRecordScoreCount": 0,
+    "bulkOntologyAlignmentOrTestPayloadDownloadCount": 0
+  },
+  "sourceUnits": [
+    {
+      "unitId": "OBO_UBERON_VIA_OLS_COMPOSITE",
+      "intendedRole": "PAYLOAD_BENCHMARK_CANDIDATE",
+      "urls": [
+        "https://obofoundry.org/principles/fp-001-open.html",
+        "https://obofoundry.org/principles/fp-000-versioning.html",
+        "https://obofoundry.org/ontology/uberon.html",
+        "https://www.ebi.ac.uk/ols4/about"
+      ]
+    },
+    {
+      "unitId": "OAEI_ANATOMY_REFERENCE_ALIGNMENT",
+      "intendedRole": "PAYLOAD_BENCHMARK_CANDIDATE",
+      "urls": [
+        "https://oaei.ontologymatching.org/2025/anatomy/index.html",
+        "https://oaei.ontologymatching.org/2025/results/anatomy/index.html",
+        "https://oaei.ontologymatching.org/2024/anatomy/index.html"
+      ]
+    },
+    {
+      "unitId": "W3C_OWL2_CONFORMANCE_TESTS",
+      "intendedRole": "VALIDATION_CONTROL",
+      "urls": [
+        "https://www.w3.org/TR/owl2-conformance/",
+        "https://www.w3.org/TR/owl2-test/"
+      ]
+    },
+    {
+      "unitId": "EMBL_EBI_OLS_INFRASTRUCTURE",
+      "intendedRole": "INFRASTRUCTURE_ONLY",
+      "urls": [
+        "https://www.ebi.ac.uk/ols4/about",
+        "https://www.ebi.ac.uk/ols4/help",
+        "https://www.ebi.ac.uk/ols4/api"
+      ]
+    }
+  ],
+  "dimensions": ["official_authority", "stable_retrieval", "versioned_or_archived", "explicit_license_or_open_policy", "textual_semantic_content", "machine_readable_logical_semantics", "reference_mapping_or_change_history", "separable_provenance_roles", "credible_group_disjoint_scale", "retrospective_reconstruction_support"],
+  "roleRequirements": {
+    "PAYLOAD_BENCHMARK_CANDIDATE": ["official_authority", "stable_retrieval", "versioned_or_archived", "explicit_license_or_open_policy", "textual_semantic_content", "machine_readable_logical_semantics", "reference_mapping_or_change_history", "separable_provenance_roles", "credible_group_disjoint_scale", "retrospective_reconstruction_support"],
+    "VALIDATION_CONTROL": ["official_authority", "stable_retrieval", "explicit_license_or_open_policy", "machine_readable_logical_semantics", "separable_provenance_roles", "retrospective_reconstruction_support"],
+    "INFRASTRUCTURE_ONLY": ["official_authority", "stable_retrieval", "separable_provenance_roles"]
+  },
+  "evidenceContract": {
+    "oneRecordPerFrozenURLAttempt": true,
+    "storeSuccessfulMetadataSnapshot": true,
+    "sha256EverySuccessfulSnapshot": true,
+    "eachTrueAssessmentRequiresAtLeastOneSuccessfulFrozenURL": true,
+    "missingAmbiguousOrUnsupportedScoresFalse": true,
+    "generalAvailabilityDoesNotImplyLicense": true,
+    "paraphraseEvidenceNoLongVerbatimQuotes": true,
+    "retrievalDate": "2026-08-19",
+    "maximumRedirects": 10,
+    "requestTimeoutSeconds": 30,
+    "userAgent": "simulagent-v215-metadata-census/1.0"
+  },
+  "censusGates": {
+    "requiredSourceUnitCount": 4,
+    "requiredFrozenURLAttemptCount": 12,
+    "requiredURLAccountingRate": 1.0,
+    "requiredSuccessfulSnapshotHashCoverage": 1.0,
+    "requiredAssessmentDimensionCoverage": 1.0,
+    "requiredTrueAssessmentEvidenceCoverage": 1.0,
+    "minimumEligiblePayloadBenchmarkCandidateCount": 1,
+    "minimumEligibleValidationControlCount": 1,
+    "maximumSelectedPayloadCandidateUnresolvedMandatoryDimensionCount": 0,
+    "requiredRecommendationRoleSeparation": true,
+    "requiredRetrospectiveNotSpeakerIntentBoundary": true,
+    "requiredFiniteMetrics": true
+  },
+  "accessGates": {
+    "requiredMetadataCensusRunCount": 1,
+    "maximumBulkOntologyPayloadDownloadCount": 0,
+    "maximumAlignmentPayloadDownloadCount": 0,
+    "maximumTestSuitePayloadDownloadCount": 0,
+    "maximumV213ProtectedAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceActionCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "artifacts": {
+    "snapshotDirectory": "outputs/v215-external-resource-metadata-census/metadata-snapshots",
+    "retrievalManifest": "outputs/v215-external-resource-metadata-census/census/retrieval-manifest.json",
+    "evidence": "outputs/v215-external-resource-metadata-census/census/evidence.json",
+    "summary": "outputs/v215-external-resource-metadata-census/census/summary.json",
+    "result": "outputs/v215-external-resource-metadata-census/census/result.json"
+  },
+  "preLockExposure": {
+    "formalMetadataRecordScoreCount": 0,
+    "bulkOntologyPayloadDownloadCount": 0,
+    "alignmentPayloadDownloadCount": 0,
+    "testSuitePayloadDownloadCount": 0,
+    "V213ProtectedAccessCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryIntegrityCensusAndAccessGatePasses": "freeze_V215_positive_metadata_feasibility_and_authorize_separate_bounded_payload_retrieval_population_design_only",
+    "otherwise": "freeze_V215_negative_metadata_feasibility_without_source_URL_dimension_role_threshold_or_gate_tuning",
+    "passAuthorizesPayloadDesignOnly": true,
+    "passAuthorizesPayloadDownloadOrModelRun": false,
+    "passAuthorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}

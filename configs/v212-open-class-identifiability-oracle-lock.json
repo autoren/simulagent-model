@@ -1,0 +1,873 @@
+{
+  "auditor": "python/audit_and_freeze_v212_open_class_identifiability_oracle.py",
+  "auditor_sha256": "78b17ab625902c96584c2be9af766a081d552417668b0d70e7c6994884c975d6",
+  "authorization": {
+    "mutate_register_call_act_or_execute": false,
+    "read_natural_language_or_external_ontology_payload": false,
+    "read_protected_or_run_model_API_training": false,
+    "run_one_model_free_oracle": true
+  },
+  "config": "configs/v212-open-class-identifiability-oracle.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalOntologyPayloadReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumNaturalLanguageSurfaceReadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedAccessCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredModelFreeOracleRunCount": 1
+    },
+    "artifacts": {
+      "predictionFreeze": "outputs/v212-representational-diagnosis/oracle/prediction-freeze.json",
+      "predictions": "outputs/v212-representational-diagnosis/oracle/predictions.jsonl",
+      "publicCases": "outputs/v212-representational-diagnosis/oracle/public-cases.jsonl",
+      "publicSemantics": "outputs/v212-representational-diagnosis/oracle/public-semantics.json",
+      "result": "outputs/v212-representational-diagnosis/oracle/result.json",
+      "sealedTruth": "outputs/v212-representational-diagnosis/oracle/sealed-truth.jsonl",
+      "summary": "outputs/v212-representational-diagnosis/oracle/summary.json"
+    },
+    "claimBoundary": "project-authored model-free mechanism oracle over a complete finite behavioral domain; establishes exact equivalence classes, representation-relative expressibility, evidence status, boundary witnesses, and non-authoritative decision consequences; not evidence about natural-language understanding, real-world ontology truth, language-model ability, external resources, human intent, registration, authority, action, or execution",
+    "decisionProcess": {
+      "actionBySingletonExpressibility": {
+        "EXISTING_COMPOSITION": "USE_COMPOSITION",
+        "EXISTING_PRIMITIVE": "REUSE_PRIMITIVE",
+        "IRREDUCIBLE_PROVISIONAL": "RETAIN_PROVISIONAL_SHADOW",
+        "MISSING_OPERATOR": "DIAGNOSE_MISSING_OPERATOR"
+      },
+      "allSemanticActionsAreShadowOnlyAndTerminal": true,
+      "boundaryRequestCost": -1.0,
+      "boundaryRequestRevealsOneDistinguishingWorldAndThenSettles": true,
+      "comparators": [
+        "EXACT_EQUIVALENCE_SET",
+        "FORCED_NEW_PRIMITIVE",
+        "FORCED_NEAREST_MERGE",
+        "CLOSED_WORLD_L0",
+        "ABSTAIN_ALWAYS"
+      ],
+      "correctDiagnosisReward": 10.0,
+      "maximumControllableDecisionCount": 2,
+      "normalizationRange": 40.0,
+      "outsideBoundaryRequestReward": -3.0,
+      "safeDeferralReward": -2.0,
+      "shadowActions": [
+        "REUSE_PRIMITIVE",
+        "USE_COMPOSITION",
+        "DIAGNOSE_MISSING_OPERATOR",
+        "RETAIN_PROVISIONAL_SHADOW",
+        "REQUEST_BOUNDARY",
+        "DEFER_ADJUDICATE",
+        "DEFER_OUTSIDE"
+      ],
+      "wrongDiagnosisReward": -30.0
+    },
+    "decisionRule": {
+      "ifEveryIntegrityScientificAndAccessGatePasses": "freeze_V212_positive_representational_diagnosis_oracle_and_authorize_V213_programmatic_concept_population_design_only",
+      "otherwise": "freeze_V212_negative_without_language_case_evidence_reward_comparator_or_gate_tuning_and_diagnose_model_free_structure",
+      "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesImmediatePopulationGenerationExternalPayloadOrModelRun": false,
+      "passAuthorizesV213DesignOnly": true
+    },
+    "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+    "evidenceContract": {
+      "candidateSetContainsBehavioralEquivalenceClassIdsNotSyntaxIds": true,
+      "contradictionsAreNeverRepaired": true,
+      "definitionKinds": [
+        "EXPRESSION",
+        "UNCONSTRAINED",
+        "SYMBOL",
+        "OUTSIDE_DESCRIPTION"
+      ],
+      "observationFields": [
+        "world",
+        "output"
+      ],
+      "outsideDescriptionImposesNoBehavioralConstraintAndHasNoAuthorizedClarification": true,
+      "referenceRelations": [
+        "SAME_BEHAVIOR",
+        "COMPLEMENT_BEHAVIOR"
+      ],
+      "statusBySurvivingEquivalenceClassCount": {
+        "moreThanOne": "AMBIGUOUS",
+        "one": "SUFFICIENT",
+        "zero": "CONTRADICTORY"
+      },
+      "unknownSymbolsReceiveMeaningOnlyFromEpisodeReferenceFacts": true
+    },
+    "experiment": "v212_model_free_behavioral_equivalence_and_representational_diagnosis_oracle",
+    "oracleGates": {
+      "maximumExactFalseMergeRate": 0.0,
+      "maximumExactFalsePrimitiveRate": 0.0,
+      "maximumHorizonEscapeCount": 0,
+      "maximumUnsettledTerminalCount": 0,
+      "minimumNormalizedAbstainAlwaysRegret": 0.2,
+      "minimumNormalizedClosedWorldRegret": 0.2,
+      "minimumNormalizedForcedNearestMergeRegret": 0.5,
+      "minimumNormalizedForcedNewPrimitiveRegret": 0.5,
+      "minimumOutsideDeferralAdvantage": 28.0,
+      "requiredCaseCount": 40,
+      "requiredCommutativeOrderInvariance": 1.0,
+      "requiredComparisonAnchorBoundaryWitnessRate": 1.0,
+      "requiredCompleteBehaviorCount": 256,
+      "requiredCompleteObservationNecessityRate": 1.0,
+      "requiredDistinctPairBoundaryWitnessCoverage": 1.0,
+      "requiredEquivalenceCollapseAccuracy": 1.0,
+      "requiredEquivalentRewriteInvariance": 1.0,
+      "requiredEvidenceOrderInvariance": 1.0,
+      "requiredEvidenceStatusAccuracy": 1.0,
+      "requiredExactCandidateSetAccuracy": 1.0,
+      "requiredExpressibilitySetAccuracy": 1.0,
+      "requiredFiniteMetrics": true,
+      "requiredPerFamilyCount": 4,
+      "requiredPredictionFreezeBeforeTruthJoin": true,
+      "requiredReferenceFactNecessityRate": 1.0,
+      "requiredReferenceGroundingSufficiencyRate": 1.0,
+      "requiredShadowActionAccuracy": 1.0,
+      "requiredTerminallyProperPathRate": 1.0,
+      "requiredVocabularyRenamingInvariance": 1.0
+    },
+    "parentV211r1OutcomeLock": "configs/v211r1-compositional-baseline-name-repair-outcome-lock.json",
+    "plan": "docs/v212-open-class-identifiability-oracle-plan.md",
+    "population": {
+      "calibrationRecordCount": 0,
+      "caseCount": 40,
+      "conceptFamilyCounts": {
+        "BROADER_NARROWER": 4,
+        "CONTRADICTORY": 4,
+        "EXACT_ALIAS": 4,
+        "EXISTING_COMPOSITION": 4,
+        "GENUINELY_AMBIGUOUS": 4,
+        "IRREDUCIBLE_RELATIVE_TO_LANGUAGES": 4,
+        "MISSING_OPERATOR": 4,
+        "NEAR_ALIAS_BOUNDARY": 4,
+        "OUTSIDE_DESCRIPTION": 4,
+        "REFERENCE_GROUNDED_SYMBOL": 4
+      },
+      "externalOntologyPayloadReadCount": 0,
+      "hiddenFields": [
+        "case_id",
+        "concept_family",
+        "target_behavior_id",
+        "expected_candidate_ids",
+        "expected_evidence_status",
+        "expected_expressibility_set",
+        "expected_shadow_action",
+        "comparison_relation",
+        "expected_comparison_boundary_world"
+      ],
+      "identifierSalt": "v212-opaque-case-id-2026-08-19",
+      "naturalLanguageSurfaceRecordCount": 0,
+      "publicFields": [
+        "case_id",
+        "definition",
+        "references",
+        "reference_facts",
+        "observations",
+        "comparison_anchor"
+      ],
+      "publicHiddenFieldsDisjointExceptIdentifier": true,
+      "recipes": {
+        "BROADER_NARROWER": [
+          {
+            "comparisonAnchor": {
+              "name": "P",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "BROADER_THAN_ANCHOR",
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "OR"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00111111"
+          },
+          {
+            "comparisonAnchor": {
+              "name": "P",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "NARROWER_THAN_ANCHOR",
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "AND"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00000011"
+          },
+          {
+            "comparisonAnchor": {
+              "name": "Q",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "BROADER_THAN_ANCHOR",
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "R",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "OR"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "01110111"
+          },
+          {
+            "comparisonAnchor": {
+              "name": "P",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "NARROWER_THAN_ANCHOR",
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "R",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "AND"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00000101"
+          }
+        ],
+        "CONTRADICTORY": [
+          {
+            "contradictWorld": 4,
+            "definition": {
+              "expression": {
+                "name": "P",
+                "op": "PRIMITIVE"
+              },
+              "kind": "EXPRESSION"
+            },
+            "evidenceMode": "CONTRADICT_TARGET_AT_WORLD",
+            "targetBits": "00001111"
+          },
+          {
+            "contradictWorld": 6,
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "AND"
+              },
+              "kind": "EXPRESSION"
+            },
+            "evidenceMode": "CONTRADICT_TARGET_AT_WORLD",
+            "targetBits": "00000011"
+          },
+          {
+            "definition": {
+              "kind": "SYMBOL",
+              "name": "sigil_conflict"
+            },
+            "reference": {
+              "definition": {
+                "expression": {
+                  "name": "P",
+                  "op": "PRIMITIVE"
+                },
+                "kind": "EXPRESSION"
+              },
+              "referenceId": "reference_conflict"
+            },
+            "referenceRelations": [
+              "SAME_BEHAVIOR",
+              "COMPLEMENT_BEHAVIOR"
+            ],
+            "targetBits": "00001111"
+          },
+          {
+            "contradictWorld": 0,
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "DIRECT_CONFLICT_AT_WORLD",
+            "targetBits": "00001111"
+          }
+        ],
+        "EXACT_ALIAS": [
+          {
+            "definition": {
+              "expression": {
+                "name": "P",
+                "op": "PRIMITIVE"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00001111"
+          },
+          {
+            "definition": {
+              "expression": {
+                "arg": {
+                  "name": "Q",
+                  "op": "PRIMITIVE"
+                },
+                "op": "IDENTITY"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00110011"
+          },
+          {
+            "definition": {
+              "expression": {
+                "arg": {
+                  "arg": {
+                    "name": "R",
+                    "op": "PRIMITIVE"
+                  },
+                  "op": "IDENTITY"
+                },
+                "op": "IDENTITY"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "01010101"
+          },
+          {
+            "definition": {
+              "expression": {
+                "arg": {
+                  "name": "P",
+                  "op": "PRIMITIVE"
+                },
+                "op": "IDENTITY"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00001111"
+          }
+        ],
+        "EXISTING_COMPOSITION": [
+          {
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "AND"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00000011"
+          },
+          {
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "OR"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00111111"
+          },
+          {
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "R",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "AND"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00010001"
+          },
+          {
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "R",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "OR"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "01011111"
+          }
+        ],
+        "GENUINELY_AMBIGUOUS": [
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "ALL_EXCEPT_WORLD",
+            "heldOutWorld": 0,
+            "targetBits": "00001111"
+          },
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "ALL_EXCEPT_WORLD",
+            "heldOutWorld": 5,
+            "targetBits": "00000011"
+          },
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "ALL_EXCEPT_WORLD",
+            "heldOutWorld": 0,
+            "targetBits": "00111100"
+          },
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "ALL_EXCEPT_WORLD",
+            "heldOutWorld": 0,
+            "targetBits": "00010111"
+          }
+        ],
+        "IRREDUCIBLE_RELATIVE_TO_LANGUAGES": [
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "00010111"
+          },
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "01101000"
+          },
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "11110011"
+          },
+          {
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "00100111"
+          }
+        ],
+        "MISSING_OPERATOR": [
+          {
+            "definition": {
+              "expression": {
+                "arg": {
+                  "name": "P",
+                  "op": "PRIMITIVE"
+                },
+                "op": "NOT"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "11110000"
+          },
+          {
+            "definition": {
+              "expression": {
+                "arg": {
+                  "name": "Q",
+                  "op": "PRIMITIVE"
+                },
+                "op": "NOT"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "11001100"
+          },
+          {
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "P",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "XOR"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "00111100"
+          },
+          {
+            "definition": {
+              "expression": {
+                "args": [
+                  {
+                    "name": "Q",
+                    "op": "PRIMITIVE"
+                  },
+                  {
+                    "name": "R",
+                    "op": "PRIMITIVE"
+                  }
+                ],
+                "op": "XOR"
+              },
+              "kind": "EXPRESSION"
+            },
+            "targetBits": "01100110"
+          }
+        ],
+        "NEAR_ALIAS_BOUNDARY": [
+          {
+            "comparisonAnchor": {
+              "name": "P",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "NEAR_ALIAS_NOT_EQUAL",
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "00000111"
+          },
+          {
+            "comparisonAnchor": {
+              "name": "P",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "NEAR_ALIAS_NOT_EQUAL",
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "10001111"
+          },
+          {
+            "comparisonAnchor": {
+              "name": "Q",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "NEAR_ALIAS_NOT_EQUAL",
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "00010011"
+          },
+          {
+            "comparisonAnchor": {
+              "name": "R",
+              "op": "PRIMITIVE"
+            },
+            "comparisonRelation": "NEAR_ALIAS_NOT_EQUAL",
+            "definition": {
+              "kind": "UNCONSTRAINED"
+            },
+            "evidenceMode": "COMPLETE_TARGET",
+            "targetBits": "00010101"
+          }
+        ],
+        "OUTSIDE_DESCRIPTION": [
+          {
+            "definition": {
+              "kind": "OUTSIDE_DESCRIPTION",
+              "token": "outside_zephyr"
+            }
+          },
+          {
+            "definition": {
+              "kind": "OUTSIDE_DESCRIPTION",
+              "token": "outside_kestrel"
+            }
+          },
+          {
+            "definition": {
+              "kind": "OUTSIDE_DESCRIPTION",
+              "token": "outside_orchid"
+            }
+          },
+          {
+            "definition": {
+              "kind": "OUTSIDE_DESCRIPTION",
+              "token": "outside_tundra"
+            }
+          }
+        ],
+        "REFERENCE_GROUNDED_SYMBOL": [
+          {
+            "definition": {
+              "kind": "SYMBOL",
+              "name": "sigil_sable"
+            },
+            "reference": {
+              "definition": {
+                "expression": {
+                  "name": "P",
+                  "op": "PRIMITIVE"
+                },
+                "kind": "EXPRESSION"
+              },
+              "referenceId": "reference_sable"
+            },
+            "referenceRelation": "SAME_BEHAVIOR",
+            "targetBits": "00001111"
+          },
+          {
+            "definition": {
+              "kind": "SYMBOL",
+              "name": "sigil_ember"
+            },
+            "reference": {
+              "definition": {
+                "expression": {
+                  "args": [
+                    {
+                      "name": "P",
+                      "op": "PRIMITIVE"
+                    },
+                    {
+                      "name": "Q",
+                      "op": "PRIMITIVE"
+                    }
+                  ],
+                  "op": "AND"
+                },
+                "kind": "EXPRESSION"
+              },
+              "referenceId": "reference_ember"
+            },
+            "referenceRelation": "SAME_BEHAVIOR",
+            "targetBits": "00000011"
+          },
+          {
+            "definition": {
+              "kind": "SYMBOL",
+              "name": "sigil_lumen"
+            },
+            "reference": {
+              "definition": {
+                "expression": {
+                  "args": [
+                    {
+                      "name": "P",
+                      "op": "PRIMITIVE"
+                    },
+                    {
+                      "name": "Q",
+                      "op": "PRIMITIVE"
+                    }
+                  ],
+                  "op": "XOR"
+                },
+                "kind": "EXPRESSION"
+              },
+              "referenceId": "reference_lumen"
+            },
+            "referenceRelation": "SAME_BEHAVIOR",
+            "targetBits": "00111100"
+          },
+          {
+            "definition": {
+              "kind": "SYMBOL",
+              "name": "sigil_nadir"
+            },
+            "reference": {
+              "definition": {
+                "kind": "UNCONSTRAINED"
+              },
+              "observationsMode": "COMPLETE_TARGET",
+              "referenceId": "reference_nadir",
+              "targetBits": "00010111"
+            },
+            "referenceRelation": "SAME_BEHAVIOR",
+            "targetBits": "00010111"
+          }
+        ]
+      },
+      "role": "development_oracle_only"
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "conceptualDesignCount": 2,
+      "exactCandidateSetEvaluationCount": 0,
+      "exactDecisionScoreCount": 0,
+      "externalOntologyPayloadReadCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "naturalLanguageSurfaceReadCount": 0,
+      "protectedAccessCount": 0,
+      "supersededUnexecutedDraftCount": 1,
+      "trainingRunCount": 0
+    },
+    "representationLanguages": {
+      "allSyntacticProgramsCollapseByCompleteBehaviorBeforeScoring": true,
+      "baseLanguage": {
+        "binaryOperatorsRequireDistinctPrimitiveArguments": true,
+        "maximumNonIdentityOperationDepth": 1,
+        "name": "L0",
+        "operators": [
+          "PRIMITIVE",
+          "IDENTITY",
+          "AND",
+          "OR"
+        ]
+      },
+      "diagnosticExtensionLanguage": {
+        "addsOperators": [
+          "NOT",
+          "XOR"
+        ],
+        "maximumNonIdentityOperationDepth": 1,
+        "name": "LPLUS",
+        "operatorArgumentsAreRegisteredPrimitives": true
+      },
+      "expressibilityDefinitions": {
+        "EXISTING_COMPOSITION": "behavior is expressible in L0 but is not a registered primitive",
+        "EXISTING_PRIMITIVE": "behavior equals one registered primitive",
+        "IRREDUCIBLE_PROVISIONAL": "behavior is not expressible in either frozen language and is retained only as a shadow truth table",
+        "MISSING_OPERATOR": "behavior is not expressible in L0 but is expressible in frozen LPLUS"
+      },
+      "expressibilityPrecedence": [
+        "EXISTING_PRIMITIVE",
+        "EXISTING_COMPOSITION",
+        "MISSING_OPERATOR",
+        "IRREDUCIBLE_PROVISIONAL"
+      ],
+      "irreducibleMeansRelativeToFrozenLanguagesNotAbsoluteNovelty": true
+    },
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "212-representational-diagnosis-oracle-design",
+    "semanticDomain": {
+      "behaviorIdFormat": "TT-{eight_binary_outputs_in_world_order}",
+      "completeBooleanBehaviorCount": 256,
+      "featureNames": [
+        "P",
+        "Q",
+        "R"
+      ],
+      "registeredPrimitiveTruthTables": {
+        "P": "00001111",
+        "Q": "00110011",
+        "R": "01010101"
+      },
+      "worldCount": 8,
+      "worldOrder": [
+        "000",
+        "001",
+        "010",
+        "011",
+        "100",
+        "101",
+        "110",
+        "111"
+      ]
+    }
+  },
+  "config_sha256": "c5dd3d5ddc34aeed20a2e83e350bf67ec78d494077c7aa624c7199fbde7956a9",
+  "design_audit": "outputs/v212-representational-diagnosis/design-audit.json",
+  "design_audit_sha256": "c41d22bb9bde8566261c6d2241a22499056025873ac8aefb03c8cd5efe08817f",
+  "experiment": "v212_model_free_behavioral_equivalence_and_representational_diagnosis_oracle",
+  "lock_payload_sha256": "d0a53219c70c2138656d42f1cdf5edc953368f2f552097edd836b73714a9542a",
+  "open_world_direction": "docs/open-world-language-research-direction.md",
+  "open_world_direction_sha256": "c83d3912e0eb83916ad83f997e6c5dd1a0ec531224aac4fa7f256ea09c4ff2de",
+  "parent_V211r1_outcome": "configs/v211r1-compositional-baseline-name-repair-outcome-lock.json",
+  "parent_V211r1_outcome_sha256": "f984831958c24bf0415b983b01337ae4e47333091fb4a3c50f30749b6ffe70a3",
+  "plan": "docs/v212-open-class-identifiability-oracle-plan.md",
+  "plan_sha256": "9d4c7e074a55f7952f84a639df5dae6f0a4b5260cd8da4b9643d7c9197015921",
+  "protocol": "python/v212_open_class_identifiability_oracle.py",
+  "protocol_sha256": "6d046e59595dbf63fc95a81ad126e53d2c92249f2ca19fc8232ce2fd5fedfda9",
+  "research_direction": "docs/research-direction.md",
+  "research_direction_sha256": "0e10ac58c61cc82547935fa86359367484671276556b9223ab20ef7b8e866aad",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "roadmap_sha256": "d2013b00104e4713143a90be299c01f0933a727b918cd81e56b876301bcdeb2f",
+  "runner": "python/run_v212_open_class_identifiability_oracle.py",
+  "runner_sha256": "82a1455c9a53e392e9525de973807abf66402c269354bc0a3c0286944bcff3ca",
+  "schema_version": "212-representational-diagnosis-oracle-lock",
+  "tests": "python/test_v212_open_class_identifiability_oracle.py",
+  "tests_sha256": "24bfa025afdc8f39746c3f7db3fef7b29f0effc4edd6258723e09116dc54d9c2",
+  "verifier": "python/verify_and_freeze_v212_open_class_identifiability_oracle_outcome.py",
+  "verifier_sha256": "7729f499751263bb3ebe73ad3374c1144882d319a26f059d1a679328d306be60",
+  "worker": "python/v212_oracle_worker.py",
+  "worker_sha256": "81c9a93dfefdd22758b49bc06d92f3be732cddb8e4b5af9099e959d82ccee347"
+}

@@ -1,0 +1,324 @@
+{
+  "audit": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/outcome-audit.json",
+  "audit_sha256": "74cddfed83bab9d2fcbecb9d414938bcb9ae0c8e7a9a5a0be3d0caa2eff6861f",
+  "authorization": {
+    "allow_planner_model_hidden_target_or_provisional_commit_authority": false,
+    "fixed_ontology_one_corruption_branch_closed_as_confirmed": true,
+    "modify_rerun_select_subsample_or_tune_V182": false,
+    "run_additional_robustness_without_new_question_population_and_lock": false,
+    "run_model_register_mutate_real_state_call_sensor_service_or_execute": false
+  },
+  "confirmation_lock": "configs/v182-triple-repetition-robust-planner-fresh-confirmation-lock.json",
+  "confirmation_lock_sha256": "66c8658be9d0eba93acef12ac35c198ecde3ad263ed1670d12416fbc4ae75eb0",
+  "confirmation_summary": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/confirmation/confirmation-summary.json",
+  "confirmation_summary_sha256": "a4e8fff9d3a057f0e1437a662d0c4c6299dd9e20fe745b4672925dd8cf9e1b1e",
+  "experiment": "v182_unchanged_V180_triple_repetition_robust_planner_on_frozen_five_constraint_population",
+  "lock_payload_sha256": "46f88caa6446824e42276963976ac64781d1c3f023f6a64129142956b4f8caff",
+  "oracle_certificate_digest": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/confirmation/oracle-certificate-digest.json",
+  "oracle_certificate_digest_sha256": "3dc380523ee7f1edd454ee84196b86097bdfda3caeea5076f5f4fc27e7bc6eb0",
+  "outcome": {
+    "confirmed": true,
+    "decision": "freeze_V182_as_strong_fresh_confirmation_of_the_V180_triple_repetition_robust_mechanism",
+    "passed": true,
+    "scientific_safety_gates_passed": true,
+    "strong_confirmation": true,
+    "summary": {
+      "corruption_scenario_route_invariance_rate": 1.0,
+      "exact_DP_risk_reconstruction_rate": 1.0,
+      "false_trusted_route_probability": 0.0,
+      "invariant_preservation": 1.0,
+      "oracle_certificate_validity_rate": 1.0,
+      "planner_commit_authorization_count": 0,
+      "policy_metrics": {
+        "V175_clean_policy_repriced_at_triple_cost": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 2.583838383838384,
+            "denominator": 495,
+            "numerator": 1279
+          },
+          "expected_raw_inspections": {
+            "decimal": 7.751515151515152,
+            "denominator": 165,
+            "numerator": 1279
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.4418181818181819,
+            "denominator": 550,
+            "numerator": 793
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "exact_robust_certification_adaptive": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 2.583838383838384,
+            "denominator": 495,
+            "numerator": 1279
+          },
+          "expected_raw_inspections": {
+            "decimal": 7.751515151515152,
+            "denominator": 165,
+            "numerator": 1279
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.4418181818181819,
+            "denominator": 550,
+            "numerator": 793
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "greedy_information_gain_triple_blocks": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 2.785858585858586,
+            "denominator": 495,
+            "numerator": 1379
+          },
+          "expected_raw_inspections": {
+            "decimal": 8.357575757575757,
+            "denominator": 165,
+            "numerator": 1379
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.5024242424242424,
+            "denominator": 1650,
+            "numerator": 2479
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "immediate_defer": {
+          "deferred": {
+            "decimal": 1.0,
+            "denominator": 1,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "expected_raw_inspections": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 2.0,
+            "denominator": 1,
+            "numerator": 2
+          },
+          "trusted_completion": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "optimal_open_loop_triple_blocks": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 3.0,
+            "denominator": 1,
+            "numerator": 3
+          },
+          "expected_raw_inspections": {
+            "decimal": 9.0,
+            "denominator": 1,
+            "numerator": 9
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.5666666666666667,
+            "denominator": 30,
+            "numerator": 47
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "random_block_order_consensus_stop": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 2.7185185185185183,
+            "denominator": 135,
+            "numerator": 367
+          },
+          "expected_raw_inspections": {
+            "decimal": 8.155555555555555,
+            "denominator": 45,
+            "numerator": 367
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.4822222222222223,
+            "denominator": 450,
+            "numerator": 667
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "target_informed_robust_certificate_oracle": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_blocks": {
+            "decimal": 2.470707070707071,
+            "denominator": 495,
+            "numerator": 1223
+          },
+          "expected_raw_inspections": {
+            "decimal": 7.412121212121212,
+            "denominator": 165,
+            "numerator": 1223
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.407878787878788,
+            "denominator": 1650,
+            "numerator": 2323
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        }
+      },
+      "population_coverage": 1.0,
+      "prior_weight_normalization_rate": 1.0,
+      "provenance_and_restart_verification": 1.0,
+      "provisional_sandbox_entry_probability": 0.0,
+      "sandbox_exactness": 1.0,
+      "simulated_sandbox_transaction_count": 828,
+      "state_count": 66,
+      "state_count_strictly_improved_over_immediate_defer": 66,
+      "statewise_no_worse_than_every_operational_control_rate": 1.0,
+      "target_count": 528,
+      "target_policy_score_count": 3696,
+      "target_result_payload_sha256": "a5aaafa2bc054d1bbba66c9974976c3872538b2ab043866033e1caf68c34148b"
+    }
+  },
+  "parent_V181_outcome": "configs/v181-five-constraint-robust-confirmation-population-outcome-lock.json",
+  "parent_V181_outcome_sha256": "a808aa059270769f3378fa6bd3827ea0dc0df56991a602be3296f80589ac69b4",
+  "result": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/confirmation/result.json",
+  "result_sha256": "b55d746f3098869ae5c966b27f7598210eb5d3576d37462a5d954d0a34d73649",
+  "results_document": "docs/v182-triple-repetition-robust-planner-fresh-confirmation-results.md",
+  "results_document_sha256": "b7c725d171e6156b618e39f55ab6fb599f9fd2154b4ba8698f1e0279bd002b4e",
+  "schema_version": "182-triple-repetition-robust-planner-fresh-confirmation-outcome-lock",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "source_V180_outcome": "configs/v180-triple-repetition-robust-planner-development-outcome-lock.json",
+  "source_V180_outcome_sha256": "f9a9e00c911477ad5ed5e5bcdffdd19e9fa79015e0818ca8b7d7ce9a46fb4210",
+  "state_policy_results": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/confirmation/state-policy-results.json",
+  "state_policy_results_sha256": "3606f91edac3764c382c5edee11b5c3fc3b381049993e25cda4ca96cbdf5d403",
+  "target_result_digest": "outputs/v182-triple-repetition-robust-planner-fresh-confirmation/confirmation/target-result-digest.json",
+  "target_result_digest_sha256": "8655bd3af13d33916a0bc8537e9f7dde908161662f0c66a1a645b99ae050c1c8",
+  "verifier": "python/verify_and_freeze_v182_triple_repetition_robust_planner_fresh_confirmation_outcome.py",
+  "verifier_sha256": "0df6a1965d744f57dfda32cc7879dcc4307d03d8a869007930289595575c6a42"
+}

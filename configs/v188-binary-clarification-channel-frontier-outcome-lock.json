@@ -1,0 +1,167 @@
+{
+  "audit": "outputs/v188-binary-clarification-channel-frontier/outcome-audit.json",
+  "audit_sha256": "db178ae98ac76958e705bb5452036845f8cb037e6de7351f5d02025d81e92b7e",
+  "authorization": {
+    "modify_rerun_or_redefine_V188": false,
+    "preregister_multiway_typed_channel_feasibility": true,
+    "read_protected_or_utterance_language_run_model_API_or_training": false,
+    "register_mutate_call_service_act_or_execute": false,
+    "run_multiway_without_separate_lock": false
+  },
+  "cost_frontier": "outputs/v188-binary-clarification-channel-frontier/frontier/cost-frontier.json",
+  "cost_frontier_sha256": "177890314677ee2ff6d0940f31f33b12785195f109b61148dbfa0a8ee4bce8c7",
+  "experiment": "v188_text_free_binary_clarification_information_and_cost_frontier",
+  "frontier_lock": "configs/v188-binary-clarification-channel-frontier-lock.json",
+  "frontier_lock_sha256": "49053096b8bcf0953ef7cbfd5878e236142d66d6300dce3e8203926bf62b4bdd",
+  "frontier_summary": "outputs/v188-binary-clarification-channel-frontier/frontier/frontier-summary.json",
+  "frontier_summary_sha256": "03838e4c0056bd801f00825cc17a38aa9d55b3b8b3b8bcb22e79e4cf74048b22",
+  "information_controls": "outputs/v188-binary-clarification-channel-frontier/frontier/information-controls.json",
+  "information_controls_sha256": "6b2c181b1fd62cbfc5ea9337d6229929d0f91cdd32292aeea6cc1fb4bf096f51",
+  "lock_payload_sha256": "6c917ab86e682e12d778f04dff145e6a87a18bcea6ee96beb92027278b5474ee",
+  "outcome": {
+    "decision": "freeze_V188_frontier_and_authorize_multiway_feasibility_protocol_design_only",
+    "passed": true,
+    "scientific_frontier_gates_passed": true,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "authorize_multiway_feasibility_design": true,
+      "contract_count": 14,
+      "cost_frontier": {
+        "adaptive_advantage_cell_count": 36,
+        "largest_adaptive_advantage_question_cost": 0.0875,
+        "largest_positive_value_question_cost": 0.0875,
+        "policy_breakpoints": [
+          {
+            "complete_policy_signature_sha256": "d8c350bad2b5b671ba2f9d57bf106676210b72bee5f6d9d3d249a427cee8feac",
+            "exact_root_action": "Q186_02_4952d69a856397fe",
+            "grid_index": 0,
+            "open_loop_sequence": [
+              "Q186_01_9a6041a260acd131",
+              "Q186_02_4952d69a856397fe",
+              "Q186_02_be2b1dd2c0673800",
+              "Q186_05_787878024d5987e1"
+            ],
+            "question_cost": 0.0,
+            "question_cost_fraction": "0/400"
+          },
+          {
+            "complete_policy_signature_sha256": "eed098cec564cb0fd2bc255e9cbdaf8adbe14bf967c0b208ac07d4ea333f5302",
+            "exact_root_action": "Q186_02_4952d69a856397fe",
+            "grid_index": 1,
+            "open_loop_sequence": [
+              "Q186_02_4952d69a856397fe",
+              "Q186_02_be2b1dd2c0673800",
+              "Q186_05_787878024d5987e1",
+              "Q186_01_9a6041a260acd131"
+            ],
+            "question_cost": 0.0025,
+            "question_cost_fraction": "1/400"
+          },
+          {
+            "complete_policy_signature_sha256": "816c9a13c51c27580710e193b20659a6062060a9f8b82eb8d667672b916fb545",
+            "exact_root_action": "Q186_02_4952d69a856397fe",
+            "grid_index": 29,
+            "open_loop_sequence": [],
+            "question_cost": 0.0725,
+            "question_cost_fraction": "29/400"
+          },
+          {
+            "complete_policy_signature_sha256": "e80e74b827a52e5e1631ff1f069733dd30c45bc1730ba587fe37427c6bea40c7",
+            "exact_root_action": "GENERIC",
+            "grid_index": 36,
+            "open_loop_sequence": [],
+            "question_cost": 0.09,
+            "question_cost_fraction": "36/400"
+          }
+        ],
+        "positive_value_cell_count": 36,
+        "v187_control_cell": {
+          "complete_policy_signature_sha256": "e80e74b827a52e5e1631ff1f069733dd30c45bc1730ba587fe37427c6bea40c7",
+          "exact_advantage_over_open_loop": 0.0,
+          "exact_cost": 0.4,
+          "exact_cost_fraction": "2/5",
+          "exact_final_exactness_rate": 1.0,
+          "exact_improvement_over_generic": 0.0,
+          "exact_mean_question_count": 0.0,
+          "exact_root_action": "GENERIC",
+          "exact_target_retention_rate": 1.0,
+          "exact_typed_completion_rate": 0.0,
+          "open_loop_cost": 0.4,
+          "open_loop_cost_fraction": "2/5",
+          "open_loop_final_exactness_rate": 1.0,
+          "open_loop_sequence": [],
+          "open_loop_target_retention_rate": 1.0,
+          "question_cost": 0.1,
+          "question_cost_fraction": "40/400"
+        }
+      },
+      "external_side_effect_count": 0,
+      "information_controls": {
+        "entropy_lower_bound_pass": true,
+        "entropy_plus_one_upper_bound_pass": true,
+        "huffman_depth_by_contract": {
+          "C_1b099ede5d276d0d7e686863": 6,
+          "C_3952cb7117dfccd4faa65fe1": 4,
+          "C_4ab8adeabddfae28cdfd8586": 4,
+          "C_5e8838e0afa2cb9fb11797de": 4,
+          "C_6bf4a7fc35cd0004e9177b09": 4,
+          "C_6dee36329eb9039b7fc7ab52": 3,
+          "C_921e592a9360e0f6763b4faa": 5,
+          "C_9e40b8c76ec62bd62e010c18": 6,
+          "C_a449e2daa6d62796f299baa7": 4,
+          "C_b0fc70d7abe5fe162310f6cf": 4,
+          "C_c1b57d05f1a0c1576c78ff0c": 3,
+          "C_c3b772e901e67c804d681253": 3,
+          "C_c967f1c0f09afaef3cf4896e": 4,
+          "C_fc5db8c638cd224d137e71c7": 3
+        },
+        "huffman_expected_depth": 3.7,
+        "huffman_expected_depth_fraction": "37/10",
+        "huffman_maximum_depth": 6,
+        "huffman_minimum_depth": 3,
+        "shannon_entropy_bits": 3.6342540514342034
+      },
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "ontology_registration_count": 0,
+      "partition_distinct_question_count": 25,
+      "positive_prior_contract_count": 14,
+      "protected_utterance_language_read_count": 0,
+      "raw_question_count": 164,
+      "restricted_exact_tree": {
+        "exactness_rate": 1.0,
+        "expected_depth": 3.941666666666667,
+        "expected_depth_fraction": "473/120",
+        "leaf_count": 14,
+        "maximum_depth": 7,
+        "minimum_depth": 2,
+        "reachable_state_count": 16383,
+        "target_retention_rate": 1.0
+      },
+      "service_call_count": 0,
+      "successor_checks": {
+        "V187_is_at_generic_boundary": true,
+        "binary_break_even_is_below_V187_question_cost": true,
+        "some_lower_binary_cost_has_positive_value": true,
+        "target_informed_oracle_gap_is_positive": true
+      },
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "utterance_or_dialogue_language_read_count": 0
+    }
+  },
+  "parent_V187r1_outcome": "configs/v187r1-clean-planner-outcome-verification-repair-outcome-lock.json",
+  "parent_V187r1_outcome_sha256": "93f6dec0498618ee7dce6636084dabd1e61d47ce8c4855083955ec46d1d6557b",
+  "policy_breakpoints": "outputs/v188-binary-clarification-channel-frontier/frontier/policy-breakpoints.json",
+  "policy_breakpoints_sha256": "008beba712d0543f0fab5b07be8baed50be8f4adee339778233d0d2f81f2ec3b",
+  "restricted_exact_tree": "outputs/v188-binary-clarification-channel-frontier/frontier/restricted-exact-tree.json",
+  "restricted_exact_tree_sha256": "9c08c986d3a15cd2450132f9278356bc4a59a6f1e7458f541fb87a5a0c3ccd30",
+  "result": "outputs/v188-binary-clarification-channel-frontier/frontier/result.json",
+  "result_sha256": "1b1f000ba5245a19f1ccad245d230fc1b432acef1fcd5980a7890eb289fd979c",
+  "results_document": "docs/v188-binary-clarification-channel-frontier-results.md",
+  "results_document_sha256": "bc5532eaecc7d404832b341c100fe09eecbf193b9c92910e32e91aee8df111ff",
+  "schema_version": "188-binary-clarification-channel-frontier-outcome-lock",
+  "verifier": "python/verify_and_freeze_v188_binary_clarification_channel_frontier_outcome.py",
+  "verifier_sha256": "e2ddc4beb3c1e4f4da778c7793b1b735b328a602e4616bbf5443502606967875"
+}

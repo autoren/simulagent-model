@@ -1,0 +1,160 @@
+{
+  "auditor": "python/audit_and_freeze_v194_deterministic_language_menu_rankers.py",
+  "auditor_sha256": "22764d6912c20a0cca1af874df33a0d9b77e6435f8412edaa901b95c79b68c7f",
+  "authorization": {
+    "modify_queries_rankers_costs_gates_champion_or_decision": false,
+    "read_protected_language_or_run_model_API_training": false,
+    "register_prune_mutate_call_service_act_or_execute": false,
+    "run_deterministic_development_evaluation_once": true
+  },
+  "config": "configs/v194-deterministic-language-menu-rankers.json",
+  "config_payload": {
+    "claimBoundary": "fresh-development deterministic character/token menu-ranking controls under the frozen V193 trusted-answer controller; not model performance, unrestricted open-world recognition, protected confirmation, human reliability, ontology truth, authority, action, or execution",
+    "decisionRule": {
+      "deterministicMaterialValueIsReportedNotRequiredForModelAuthorization": true,
+      "ifEveryIntegritySafetyAndMinimumSignalGatePasses": "freeze_V194_controls_and_authorize_one_separately_preregistered_bounded_local_model_shadow_comparator",
+      "otherwise": "freeze_V194_negative_without_model_or_protected_access",
+      "passAuthorizesAPIFallback": false,
+      "passAuthorizesImmediateModelRun": false,
+      "passAuthorizesProtectedAccessRegistrationAuthorityActionOrExecution": false
+    },
+    "developmentLanguage": "outputs/v192-fresh-language-to-menu-extraction/extraction/development-language.json",
+    "evaluation": {
+      "balancedMacroWeights": "equal across 84 observed records",
+      "championRule": "minimum primary top3 mean cost, then primary top1 mean cost, then macro top3 mean cost, then ranker_id",
+      "insufficientUsesFrozenTargetSpecificHierarchyCost": true,
+      "materialPrimaryMeanCost": 0.36,
+      "missThenGenericAdditionalCost": 0.4,
+      "policies": [
+        "TOP1_PLUS_OTHER",
+        "TOP3_PLUS_OTHER"
+      ],
+      "primaryWeights": "frozen V193 prior divided equally across the six V191 records for each contract",
+      "randomTop1RecallControl": 0.07142857142857142,
+      "randomTop3RecallControl": 0.21428571428571427,
+      "rankedOutputLength": 3,
+      "top1QuestionCost": 0.1,
+      "top3QuestionCost": 0.2
+    },
+    "evaluationGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualLanguageInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumBestMacroTop3RecallForSignal": 0.3,
+      "minimumBestPrimaryTop3RecallForSignal": 0.3,
+      "requiredAlwaysGenericPrimaryMeanCost": 0.4,
+      "requiredFinalExactnessAfterTrustedAnswers": 1.0,
+      "requiredFixedHierarchyPrimaryMeanCost": 0.38,
+      "requiredFixtureCount": 98,
+      "requiredMissingCount": 14,
+      "requiredMissingInsufficientRate": 1.0,
+      "requiredObservedCount": 84,
+      "requiredObservedRecordsPerContract": 6,
+      "requiredOracleTop1PrimaryMeanCost": 0.1,
+      "requiredOracleTop3PrimaryMeanCost": 0.2,
+      "requiredRankerCount": 4,
+      "requiredStructuredRankingRate": 1.0,
+      "requiredTargetRetentionRate": 1.0
+    },
+    "experiment": "v194_fresh_development_deterministic_language_to_menu_ranking_controls",
+    "fixedHierarchyTargetCosts": "outputs/v193-shadow-menu-interface-frontier/interface/fixed-hierarchy-target-costs.json",
+    "hiddenOptionMap": "outputs/v193-shadow-menu-interface-frontier/interface/hidden-option-map.json",
+    "hiddenTargets": "outputs/v191-fresh-language-to-menu-population/population/hidden-targets.json",
+    "normalization": {
+      "case": "casefold",
+      "characterView": "retain alphanumeric characters only then raw 3/4/5-gram counts",
+      "similarity": "cosine over raw counts",
+      "tieBreak": "ascending option_id",
+      "tokenView": "alphanumeric whitespace tokens; menu intent_concept remains one token",
+      "unicode": "NFKC"
+    },
+    "observableQuery": {
+      "allUser": "all USER utterances in order joined by one space",
+      "goldTargetsSourceMetadataTruthKindsAndHiddenMapExcludedFromRanking": true,
+      "lastUser": "exact final USER utterance in the frozen conversation prefix",
+      "missingObservationProducesInsufficient": true,
+      "systemUtterancesExcluded": true
+    },
+    "parentV193OutcomeLock": "configs/v193-shadow-menu-interface-frontier-outcome-lock.json",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "deterministicLanguageScoreCount": 0,
+      "developmentLanguageReadCount": 0,
+      "manualLanguageInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedLanguageReadCount": 0,
+      "trainingRunCount": 0
+    },
+    "primaryPrior": "outputs/v193-shadow-menu-interface-frontier/interface/primary-prior.json",
+    "rankers": [
+      {
+        "query": "lastUser",
+        "ranker_id": "CHAR_LAST",
+        "view": "character"
+      },
+      {
+        "query": "allUser",
+        "ranker_id": "CHAR_ALL",
+        "view": "character"
+      },
+      {
+        "query": "allUser",
+        "ranker_id": "TOKEN_ALL",
+        "view": "token"
+      },
+      {
+        "query": "allUser",
+        "ranker_id": "RRF_ALL",
+        "rrfConstant": 60,
+        "view": "reciprocal_rank_fusion_CHAR_ALL_TOKEN_ALL"
+      }
+    ],
+    "schemaVersion": "194-deterministic-language-menu-rankers-design",
+    "sourceV192OutcomeLock": "configs/v192-fresh-language-to-menu-extraction-outcome-lock.json",
+    "visibleMenu": "outputs/v193-shadow-menu-interface-frontier/interface/visible-menu.json"
+  },
+  "config_sha256": "87c3b61b5985d1dd337dd739987282d2024c44bda5a425fa3a6a6a33ad48544d",
+  "design_audit": "outputs/v194-deterministic-language-menu-rankers/design-audit.json",
+  "design_audit_sha256": "d9d9fad09a34400ecf8917b926ba5087d6c6ea4d9760e75c0a3ca684c88d5f98",
+  "development_language": "outputs/v192-fresh-language-to-menu-extraction/extraction/development-language.json",
+  "development_language_sha256": "db72cf7ecc7bb65f935b08d142108bce8cf028a605f0e192ed7c07aaeb6a538f",
+  "experiment": "v194_fresh_development_deterministic_language_to_menu_ranking_controls",
+  "fixed_hierarchy_target_costs": "outputs/v193-shadow-menu-interface-frontier/interface/fixed-hierarchy-target-costs.json",
+  "fixed_hierarchy_target_costs_sha256": "493c51009b520b0c2f585037d927e21c6f5462b681a536e3486216175621bb66",
+  "hidden_option_map": "outputs/v193-shadow-menu-interface-frontier/interface/hidden-option-map.json",
+  "hidden_option_map_sha256": "56e7bf1526832442e845edb4a53e3274a78b8e9cd3141350af3948e4637a55d7",
+  "hidden_targets": "outputs/v191-fresh-language-to-menu-population/population/hidden-targets.json",
+  "hidden_targets_sha256": "6e6028bf5c01a9b1b526ff0815bd2d47862824b4e6f1766da54e467a35e9267f",
+  "lock_payload_sha256": "f8874c5f93ef59b0f17425216a28450630dbb9d12098d239be4c9f61c15534a7",
+  "parent_V193_outcome": "configs/v193-shadow-menu-interface-frontier-outcome-lock.json",
+  "parent_V193_outcome_sha256": "e5ba3cb8ada8ec7c869113d1c42cb5510964f70dff45242f7bc9ab87b5f19a25",
+  "plan": "docs/v194-deterministic-language-menu-rankers-plan.md",
+  "plan_sha256": "7ab0e6000c83c6e12667499b8c78ef18a2958f86e5651a56e2ff2afcd95067c6",
+  "primary_prior": "outputs/v193-shadow-menu-interface-frontier/interface/primary-prior.json",
+  "primary_prior_sha256": "2419c41fb23a0b9a16825d2819237622662608d50f5d15c6ffb1faff85133c92",
+  "protocol": "python/v194_deterministic_language_menu_rankers.py",
+  "protocol_sha256": "3220b3f41ba4d33edc460b453a9ed88d93dbefff3c16d538ec67cd4749a7bca7",
+  "runner": "python/run_v194_deterministic_language_menu_rankers.py",
+  "runner_sha256": "9a081ed0c64e9d7cb81cc5fe1bbb28c2121f1c841160d8196490d3537b811cb3",
+  "schema_version": "194-deterministic-language-menu-rankers-lock",
+  "source_V192_extraction_lock": "configs/v192-fresh-language-to-menu-extraction-lock.json",
+  "source_V192_extraction_lock_sha256": "0eb067ba49f0513896f6b8c7166cf2f90252bdd59c19a29cdb2cd45beb399528",
+  "source_V192_outcome": "configs/v192-fresh-language-to-menu-extraction-outcome-lock.json",
+  "source_V192_outcome_sha256": "f19d5eb6de15ee22a2312ba4aaac66245e35df110a7e86be54cb15038b3815dc",
+  "tests": "python/test_v194_deterministic_language_menu_rankers.py",
+  "tests_sha256": "c7ed8cd3751bea45476d013d828a5fc5165d0774daea13334d0ec9086eaaa09e",
+  "verifier": "python/verify_and_freeze_v194_deterministic_language_menu_rankers_outcome.py",
+  "verifier_sha256": "c9e24efb30752d81b19dc06b29aea53897d0149df3b87edfc3813fcb9fc57310",
+  "visible_menu": "outputs/v193-shadow-menu-interface-frontier/interface/visible-menu.json",
+  "visible_menu_sha256": "982530494050bc9bd9f86b1f2b6b8eddf83d1ad0894a59c374296491a768166f"
+}

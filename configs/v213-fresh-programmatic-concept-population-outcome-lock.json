@@ -1,0 +1,143 @@
+{
+  "audit": "outputs/v213-programmatic-concept-population/outcome-audit.json",
+  "audit_sha256": "5e29998485aad18645d50267317baedc564ac23562f921540c8c7175e519fb80",
+  "authorization": {
+    "design_V214_deterministic_candidate_and_version_space_controls": true,
+    "open_protected_downstream_or_run_model": false,
+    "read_external_payload_register_mutate_call_act_or_execute": false,
+    "run_V214_without_separate_lock": false
+  },
+  "design_lock": "configs/v213-fresh-programmatic-concept-population-lock.json",
+  "design_lock_sha256": "6aa9f22e30b57fa04550490edb2e38e9d196eee3c1dfde3109807254276efafc",
+  "experiment": "v213_fresh_role_separated_programmatic_concept_population",
+  "generator_manifest": "outputs/v213-programmatic-concept-population/population/generator-manifest.json",
+  "generator_manifest_sha256": "1d07332675d58cb936100be02ce942e5871627a7dd3b29349d55ce4739c6ac66",
+  "lock_payload_sha256": "78f954a0a426ccade7567595de9328e0f0025410b7840c630676abb8abf35f95",
+  "outcome": {
+    "branch": "V214_DETERMINISTIC_CONTROL_DESIGN_ELIGIBLE",
+    "decision": "freeze_V213_positive_fresh_programmatic_population_and_authorize_V214_deterministic_candidate_control_design_only",
+    "metrics": {
+      "blueprint_reconstruction_accuracy": 1.0,
+      "candidate_pair_count": 1566768,
+      "comparison_anchor_boundary_witness_rate": 1.0,
+      "cross_split_group_overlap_count": 0,
+      "distinct_pair_boundary_witness_coverage": 1.0,
+      "duplicate_case_identifier_count": 0,
+      "duplicate_group_identifier_count": 0,
+      "evidence_status_accuracy": 1.0,
+      "exact_candidate_set_accuracy": 1.0,
+      "expressibility_set_accuracy": 1.0,
+      "family_count": 10,
+      "family_group_counts": {
+        "BROADER_NARROWER": 12,
+        "CONTRADICTORY": 12,
+        "EXACT_ALIAS": 12,
+        "EXISTING_COMPOSITION": 12,
+        "GENUINELY_AMBIGUOUS": 12,
+        "IRREDUCIBLE_RELATIVE_TO_LANGUAGES": 12,
+        "MISSING_OPERATOR": 12,
+        "NEAR_ALIAS_BOUNDARY": 12,
+        "OUTSIDE_DESCRIPTION": 12,
+        "REFERENCE_GROUNDED_SYMBOL": 12
+      },
+      "family_record_counts": {
+        "BROADER_NARROWER": 48,
+        "CONTRADICTORY": 48,
+        "EXACT_ALIAS": 48,
+        "EXISTING_COMPOSITION": 48,
+        "GENUINELY_AMBIGUOUS": 48,
+        "IRREDUCIBLE_RELATIVE_TO_LANGUAGES": 48,
+        "MISSING_OPERATOR": 48,
+        "NEAR_ALIAS_BOUNDARY": 48,
+        "OUTSIDE_DESCRIPTION": 48,
+        "REFERENCE_GROUNDED_SYMBOL": 48
+      },
+      "family_split_group_counts": {
+        "BROADER_NARROWER": {
+          "development": 8,
+          "protected": 4
+        },
+        "CONTRADICTORY": {
+          "development": 8,
+          "protected": 4
+        },
+        "EXACT_ALIAS": {
+          "development": 8,
+          "protected": 4
+        },
+        "EXISTING_COMPOSITION": {
+          "development": 8,
+          "protected": 4
+        },
+        "GENUINELY_AMBIGUOUS": {
+          "development": 8,
+          "protected": 4
+        },
+        "IRREDUCIBLE_RELATIVE_TO_LANGUAGES": {
+          "development": 8,
+          "protected": 4
+        },
+        "MISSING_OPERATOR": {
+          "development": 8,
+          "protected": 4
+        },
+        "NEAR_ALIAS_BOUNDARY": {
+          "development": 8,
+          "protected": 4
+        },
+        "OUTSIDE_DESCRIPTION": {
+          "development": 8,
+          "protected": 4
+        },
+        "REFERENCE_GROUNDED_SYMBOL": {
+          "development": 8,
+          "protected": 4
+        }
+      },
+      "finite_metrics": true,
+      "group_count": 120,
+      "nonopaque_identifier_count": 0,
+      "parent_identifier_reuse_count": 0,
+      "provenance_hash_coverage": 1.0,
+      "public_forbidden_token_count": 0,
+      "public_hidden_field_leakage_count": 0,
+      "public_projection_freeze_before_truth_join": true,
+      "public_schema_exact": true,
+      "record_count": 480,
+      "shadow_action_accuracy": 1.0,
+      "split_artifact_exact": true,
+      "split_group_counts": {
+        "development": 80,
+        "protected": 40
+      },
+      "split_record_counts": {
+        "development": 320,
+        "protected": 160
+      },
+      "variant_completeness_rate": 1.0,
+      "variant_resolution_invariance": 1.0,
+      "within_group_semantic_consistency": 1.0,
+      "witnessed_candidate_pair_count": 1566768
+    },
+    "passed": true
+  },
+  "public_blueprints": "outputs/v213-programmatic-concept-population/population/public-blueprints.jsonl",
+  "public_blueprints_sha256": "eb54329e4370bf92c6e5e2750cd62ac15bf324bb7ef5b5be89311a7be8d6699a",
+  "public_projection_freeze": "outputs/v213-programmatic-concept-population/population/public-projection-freeze.json",
+  "public_projection_freeze_sha256": "125b322a1ef0ecad5e283a5637f68183a9f8b4123a7f0e5036d19f48ac00502d",
+  "public_records": "outputs/v213-programmatic-concept-population/population/public-records.jsonl",
+  "public_records_sha256": "a1cf4a3acd8c69b0cedb0454a689db956de96e22f6185e0d2eb8d80b15bfd10e",
+  "result": "outputs/v213-programmatic-concept-population/population/result.json",
+  "result_sha256": "d72ff6d66522da7721e5d7854e99e31417437da1ddb929a0a5cd1af937ea7054",
+  "results_document": "docs/v213-fresh-programmatic-concept-population-results.md",
+  "results_document_sha256": "ceca2d4bd7249bde115e06850e5f207e3a957d8e652451fbacc4b44b3a16d362",
+  "schema_version": "213-fresh-programmatic-concept-population-outcome-lock",
+  "sealed_truth": "outputs/v213-programmatic-concept-population/population/sealed-truth.jsonl",
+  "sealed_truth_sha256": "b7be74dfe947f0cdfb9059f5db5f45e6d3967543778631c5a15fd7d734d676f6",
+  "split": "outputs/v213-programmatic-concept-population/population/split.json",
+  "split_sha256": "8df9d321dc66deba89e26bc0eac05016b61a54a618764cd4488c18b12dedf3a9",
+  "summary": "outputs/v213-programmatic-concept-population/population/summary.json",
+  "summary_sha256": "7e6372a30fffd7688ea9921143dfebbce35a74b3fd950af605d368b8ddde44e6",
+  "verifier": "python/verify_and_freeze_v213_fresh_programmatic_concept_population_outcome.py",
+  "verifier_sha256": "4a65f08fea6d1b4f6ee66a3d4109c0e32c25f5f28921a8c74562cd6b0a8d4829"
+}

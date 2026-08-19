@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "224-mondo-record-disposition-metadata-census-design",
+  "experiment": "v224_mondo_record_disposition_metadata_census",
+  "parentV223r1Outcome": "configs/v223r1-outcome-verification-repair-outcome-lock.json",
+  "claimBoundary": "metadata-only feasibility of archived independently human-adjudicated structured Mondo term requests across four catalog-relative semantic dispositions; not request-language performance, spontaneous conversation, ontology truth, model performance, registration, authority, action, or execution",
+  "source": {
+    "repository": "monarch-initiative/mondo",
+    "workflowRevision": "0056dc115d6d1e33a39075a6c699f661f7866478",
+    "creationWindowStart": "2021-01-01T00:00:00Z",
+    "creationWindowEnd": "2024-12-31T23:59:59Z",
+    "eventCutoff": "2025-12-31T23:59:59Z",
+    "maximumUpdatedAtExclusive": "2026-01-01T00:00:00Z",
+    "searchSlice": "CALENDAR_MONTH",
+    "expectedSearchSliceCount": 48,
+    "maximumSearchResultsPerSlice": 1000,
+    "pageSize": 100,
+    "maximumPagesPerSlice": 10,
+    "releaseWindowStart": "2020-12-01T00:00:00Z",
+    "releaseWindowEnd": "2025-12-31T23:59:59Z",
+    "pinnedScopePolicyUrl": "https://raw.githubusercontent.com/monarch-initiative/mondo/0056dc115d6d1e33a39075a6c699f661f7866478/docs/editors-guide/exclusion-reasons.md",
+    "requiredReleaseAssetName": "mondo_release_diff_new_terms.tsv"
+  },
+  "priorExposure": {
+    "blindRecordDiscoveryClaim": false,
+    "recordTitleOrBodyReadCount": 0,
+    "formalRecordMetadataReadCount": 0,
+    "schemaIntrospectionOnlyBeforeLock": true,
+    "excludedIssueNumbers": [503, 673, 10448]
+  },
+  "labels": {
+    "request": "new term request",
+    "accepted": "approved",
+    "duplicate": "duplicate",
+    "clarification": "needs clarification",
+    "clarificationAloneInsufficient": "blocked",
+    "outOfScope": "non-human animal",
+    "aiOrAutomationExclusions": [
+      "ai-curation",
+      "ai-success",
+      "ai-failure",
+      "ai-needed-some-guidance",
+      "claude",
+      "automated",
+      "hallucination"
+    ]
+  },
+  "humanActorContract": {
+    "requiredTypename": "User",
+    "requesterAndAdjudicatorMustDiffer": true,
+    "requesterAndMergerMustDiffer": true,
+    "excludedLoginPatterns": ["[bot]", "-bot", "_bot", "bot-", "github-actions", "dependabot"]
+  },
+  "paginationContract": {
+    "maximumLabelEventsPerIssue": 100,
+    "maximumRelevantTimelineEventsPerIssue": 100,
+    "maximumClosingPullRequestsPerIssue": 20,
+    "maximumReviewsPerPullRequest": 100,
+    "maximumChangedFilesPerPullRequest": 100,
+    "excludeRatherThanPaginateNestedOverflow": true
+  },
+  "dispositionContract": {
+    "substantiveStrata": [
+      "ACCEPTED_NEW",
+      "EXISTING_OR_DUPLICATE",
+      "INSUFFICIENT_OR_CLARIFY",
+      "UNSUPPORTED_OR_OUT_OF_SCOPE"
+    ],
+    "fallback": "AMBIGUOUS_EXCLUDE",
+    "acceptedRequiresExactlyOneAddedMondoId": true,
+    "duplicateRequiresCanonicalAcceptedTermReleasedBeforeDuplicateCreation": true,
+    "clarificationRequiresOpenAtCutoffAndNoLaterBodyEdit": true,
+    "outOfScopeRequiresTerminalHumanClosureAndNoLaterBodyEdit": true,
+    "closureAloneNeverDefinesDisposition": true,
+    "labelAloneNeverOverridesActorTimelineOrProvenanceFailure": true
+  },
+  "samplingContract": {
+    "seed": "v224-mondo-metadata-deep-audit-v1",
+    "maximumDeepAuditRecordsPerStratum": 64,
+    "minimumPreliminaryRecordsPerStratum": 24,
+    "minimumFinalRetainedRecordsPerStratum": 24,
+    "groupKey": "issue_number",
+    "selection": "ascending_sha256_of_seed_colon_issue_number",
+    "poolAcrossStrata": false
+  },
+  "languageFirewall": {
+    "allowGraphQLSchemaIntrospection": true,
+    "allowIssueIdentifiersTimestampsStatesActorTypesActorLoginsAndLabelNames": true,
+    "allowLabelCloseReopenDuplicateAndCrossReferenceEvents": true,
+    "allowClosingPullMergeReviewAndChangedFileMetadata": true,
+    "allowReleaseTagAssetHashSizeAndTermIdIndex": true,
+    "allowFilteredAddedMondoIdentifiersFromPullFilePatches": true,
+    "allowIssueOrPullTitle": false,
+    "allowIssueOrPullBody": false,
+    "allowCommentOrReviewText": false,
+    "allowCommitMessage": false,
+    "allowOntologyLabelDefinitionOrSynonymPersistence": false,
+    "allowProtectedResearchRecord": false,
+    "allowModelOrAPIModel": false
+  },
+  "gates": {
+    "requiredSearchSliceCount": 48,
+    "requiredSearchSliceAccountingRate": 1.0,
+    "requiredRecordDeduplicationRate": 1.0,
+    "requiredForbiddenSelectedFieldCount": 0,
+    "requiredExcludedIssueLeakCount": 0,
+    "requiredTaskLanguagePersistenceCount": 0,
+    "requiredHumanIndependenceRatePerFinalStratum": 1.0,
+    "requiredProvenanceCompletenessRatePerFinalStratum": 1.0,
+    "minimumFinalRetainedRecordsPerStratum": 24,
+    "requiredFiniteMetrics": true
+  },
+  "accessGates": {
+    "requiredFormalCensusRunCount": 1,
+    "maximumTaskRecordTitleReadCount": 0,
+    "maximumTaskRecordBodyReadCount": 0,
+    "maximumCommentOrReviewTextReadCount": 0,
+    "maximumProtectedResearchRecordReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumModelAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceActionCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEverySubstantiveStratumPasses": "freeze_V224_positive_and_authorize_separate_V225_language_acquisition_and_identifiability_design_only",
+    "otherwise": "freeze_V224_negative_and_keep_Mondo_B2c_language_closed_without_taxonomy_relaxation",
+    "passAuthorizesTaskLanguageAccess": false,
+    "passAuthorizesModelOrAPI": false,
+    "passAuthorizesRegistrationMutationActionOrExecution": false
+  },
+  "artifacts": {
+    "scopePolicySnapshot": "outputs/v224-mondo-record-disposition-metadata-census/metadata/scope-policy.snapshot",
+    "queryManifest": "outputs/v224-mondo-record-disposition-metadata-census/census/query-manifest.json",
+    "recordMetadata": "outputs/v224-mondo-record-disposition-metadata-census/census/record-metadata.jsonl",
+    "preliminaryCensus": "outputs/v224-mondo-record-disposition-metadata-census/census/preliminary-census.json",
+    "releaseMetadata": "outputs/v224-mondo-record-disposition-metadata-census/census/release-metadata.json",
+    "releaseIdIndex": "outputs/v224-mondo-record-disposition-metadata-census/census/release-id-index.json",
+    "deepAudit": "outputs/v224-mondo-record-disposition-metadata-census/census/deep-audit.jsonl",
+    "summary": "outputs/v224-mondo-record-disposition-metadata-census/census/summary.json",
+    "result": "outputs/v224-mondo-record-disposition-metadata-census/census/result.json"
+  }
+}
+

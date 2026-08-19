@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "160-model-free-controlled-relational-grammar-policy",
+  "experiment": "v160_model_free_controlled_relational_grammar_policy",
+  "parentV159OutcomeLock": "configs/v159-fresh-controlled-relational-grammar-population-outcome-lock.json",
+  "claimBoundary": "single prospectively locked model-free development policy using only visible request text, public registered relation aliases, and state-free retrieval metadata to choose a specific clarification question or generic route; no unrestricted language claim, state proposal, model, evaluation, induction, authority, action, or execution",
+  "population": {
+    "split": "development",
+    "groupCount": 16,
+    "requestFixtureCount": 64,
+    "metadataFixtureCount": 128,
+    "sequentialEpisodeCount": 64,
+    "evaluationPolicyReadCount": 0,
+    "candidateProposalFieldCount": 0
+  },
+  "retrieval": {
+    "anchorPhraseWeight": 8.0,
+    "primaryTermWeight": 3.0,
+    "secondaryTermWeight": 1.0,
+    "visibleQuestionSurfaceTokenWeight": 0.25,
+    "minimumTopScoreForSpecific": 6.0,
+    "minimumTopTwoMarginForSpecific": 4.0,
+    "requireUniqueTopScore": true,
+    "sourceOrderTieBreak": true,
+    "fallbackToGenericAfterWrongSpecific": true,
+    "stateChoiceWitnessTruthOrOracleFieldsAvailableToPolicy": false,
+    "fittingLearnedParametersOrCalibration": false
+  },
+  "grammar": {
+    "quotedAliasPattern": "\\\"([^\\\"]+)\\\"",
+    "normalizeUnicodeNFKC": true,
+    "normalizeCaseAndWhitespace": true,
+    "registeredAliasSource": "public_state_free_query_catalog",
+    "specificOnlyWhenEveryQuotedAliasIsRegistered": true,
+    "specificOnlyWhenAliasesMapToExactlyOneQuery": true,
+    "genericOnZeroRegisteredAliasesAfterQuotedSurface": true,
+    "genericOnUnknownAlias": true,
+    "genericOnCrossQueryConflict": true,
+    "useStrictRetrievalOnlyWhenNoQuotedSurfaceExists": true,
+    "fittingLearningOrTruthAccess": false
+  },
+  "policy": {
+    "specificQueryCost": 0.3,
+    "genericRouteQueryCost": 0.2,
+    "noQueryAction": "A00",
+    "genericQueryId": "Q80",
+    "comparators": [
+      "NO_QUERY",
+      "SOURCE_SPECIFIC_THEN_GENERIC",
+      "LEXICAL_MARGIN_ROUTER",
+      "ALWAYS_GENERIC",
+      "INFORMATION_ORACLE",
+      "GRAMMAR_RETRIEVAL_ROUTER"
+    ],
+    "completeAuthoritativeHypothesisUniverseRetained": true,
+    "trustedClosedAnswerReliability": 1.0
+  },
+  "decisionCosts": {
+    "correct": 0.0,
+    "safeAbstentionOnDecidableTruth": 1.0,
+    "wrongKnownOnNonKnownTruth": 5.0,
+    "wrongKnownOnKnownTruth": 3.0,
+    "otherWrongState": 2.0
+  },
+  "gates": {
+    "requiredGroupCount": 16,
+    "requiredRequestFixtureCount": 64,
+    "requiredSequentialEpisodeCount": 64,
+    "requiredComparatorCount": 6,
+    "requiredGrammarRouterInitialActionAccuracy": 1.0,
+    "requiredLexicalControlSpecificRate": 1.0,
+    "requiredGrammarUniqueSpecificRate": 1.0,
+    "requiredGrammarConflictGenericRate": 1.0,
+    "requiredInsufficientGenericRate": 1.0,
+    "requiredUnknownAliasGenericRateInUnitContract": 1.0,
+    "requiredIncorrectSpecificRateOnGrammarFallbackStrata": 0.0,
+    "maximumGrammarRouterMeanDecisionCost": 0.25,
+    "minimumImprovementOverNoQuery": 0.25,
+    "minimumImprovementOverAlwaysGeneric": 0.1,
+    "maximumCostGapFromInformationOracle": 0.0,
+    "requiredFinalExactAccuracy": 1.0,
+    "requiredIrrelevantIntermediateFailClosedRate": 1.0,
+    "requiredAuthoritativeHypothesisRetention": 1.0,
+    "requiredCandidateProposalFieldCount": 0,
+    "maximumEvaluationPolicyReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGrammarSelectivityCostFirewallAndAccessGatePasses": "controlled_relational_grammar_router_qualifies_on_synthetic_development_authorize_fresh_external_style_transfer_population_design_only",
+    "otherwise": "controlled_relational_grammar_router_fails_development_gates_close_without_tuning_or_model",
+    "passingAuthorizesOnlyFreshExternalStyleTransferPopulationDesign": true,
+    "passingDoesNotAuthorizeV159EvaluationModelHybridAPIThresholdFitCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

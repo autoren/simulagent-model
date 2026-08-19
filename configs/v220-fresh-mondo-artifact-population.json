@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "220-fresh-mondo-artifact-population-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v220_prospective_fresh_mondo_artifact_population",
+  "parentV219AOutcomeLock": "configs/v219a-untouched-mondo-pair-metadata-census-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v219a.md",
+  "plan": "docs/v220-fresh-mondo-artifact-population-plan.md",
+  "claimBoundary": "bounded retrospective reconstruction and representational diagnosis of asserted fields and lifecycle states in untouched published Mondo base OBO releases v2026-05-05 and v2026-06-02; not repair or reuse of V218 records, inferred OWL equivalence, complete curator rationale, correct new-speaker intent, expert validation, deterministic method or model evidence, ontology registration, authority, action, or execution",
+  "priorExposure": {
+    "blindPayloadDiscoveryClaim": false,
+    "V219AMetadataInspectedBeforeLock": true,
+    "selectedPairId": "v2026-05-05__to__v2026-06-02",
+    "openedV218ReleaseTags": ["v2026-07-06", "v2026-08-04"],
+    "selectedPayloadBodyByteReadCount": 0,
+    "selectedOntologyTermOrAxiomRecordReadCount": 0,
+    "formalV220PopulationRecordCount": 0,
+    "V218DevelopmentRecordReadCount": 0,
+    "V218ProtectedRecordReadCount": 0,
+    "V216ProtectedReadCount": 0,
+    "V213ProtectedReadCount": 0
+  },
+  "releaseSummaryControl": {
+    "snapshotPath": "outputs/v217a-independent-source-event-metadata-census/metadata-snapshots/f1e464db2cd1cdc3df7e.json",
+    "snapshotSha256": "2cdcb1f171bf912c57d1b5a48364da7afeb211cd8bd00af6e6a1b70209d63072",
+    "newerReleaseTag": "v2026-06-02",
+    "bodySha256": "76b1133b7196e1547ca91470bcbb8e59422e8fe2fe815e7ebab250473d72050a",
+    "requiredCategories": ["NEW_TERMS", "RENAMED_TERMS", "TEXT_DEFINITIONS", "OBSOLETIONS_WITH_REPLACEMENT"],
+    "categoryPatterns": {
+      "NEW_TERMS": "(?i)<summary>(new terms|classes added):",
+      "RENAMED_TERMS": "(?i)<summary>terms renamed",
+      "TEXT_DEFINITIONS": "(?i)<summary>text definitions? (added|changed)",
+      "OBSOLETIONS_WITH_REPLACEMENT": "(?i)<summary>terms obsoleted with replacement"
+    },
+    "networkRequestCount": 0,
+    "repositoryReadmeUsed": false
+  },
+  "payloads": [
+    {
+      "payloadId": "MONDO_BASE_2026_05_05", "role": "OLDER_RETROSPECTIVE_SOURCE",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-05-05/mondo-base.obo",
+      "releaseTag": "v2026-05-05", "mediaType": "application/octet-stream", "expectedByteCount": 47474428,
+      "declaredSha256": "57e4563920b922dc952ed954d36368319592f3a32946504728665c248000a3ac",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-base-v2026-05-05.obo"
+    },
+    {
+      "payloadId": "MONDO_BASE_2026_06_02", "role": "NEWER_RETROSPECTIVE_TARGET",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo-base.obo",
+      "releaseTag": "v2026-06-02", "mediaType": "application/octet-stream", "expectedByteCount": 48298257,
+      "declaredSha256": "363a2dd9e653e12db0182332a974a6e3c3621a4556ab32c70eaa592cd37a376d",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-base-v2026-06-02.obo"
+    },
+    {
+      "payloadId": "MONDO_DIFF_CHANGED_2026_06_02", "role": "PAIR_CHANGED_TERM_CONTROL",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo_release_diff_changed_terms.tsv",
+      "releaseTag": "v2026-06-02", "mediaType": "text/tab-separated-values", "expectedByteCount": 5891,
+      "declaredSha256": "63aa226f56bd5ab6aa94c65a02c3c249b9cc5bfe7155efa9bcb65e8d1568a553",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-release-diff-changed-v2026-06-02.tsv"
+    },
+    {
+      "payloadId": "MONDO_DIFF_NEW_2026_06_02", "role": "PAIR_NEW_TERM_CONTROL",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo_release_diff_new_terms.tsv",
+      "releaseTag": "v2026-06-02", "mediaType": "text/tab-separated-values", "expectedByteCount": 125701,
+      "declaredSha256": "1fc7c53bed11c3a96732dba0ff6fd5655c5a1d8138b4e8ae0f874fb67ce677c3",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-release-diff-new-v2026-06-02.tsv"
+    },
+    {
+      "payloadId": "MONDO_OBSOLETION_CANDIDATES_2026_05_05", "role": "OLDER_CANDIDATE_STATUS_CONTROL",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-05-05/mondo_obsoletioncandidates.tsv",
+      "releaseTag": "v2026-05-05", "mediaType": "text/tab-separated-values", "expectedByteCount": 94222,
+      "declaredSha256": "c4c7d52941d4478cd9392ef82530394e4e481c0a86b5b5ad54474a2de1835c67",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-obsoletion-candidates-v2026-05-05.tsv"
+    },
+    {
+      "payloadId": "MONDO_OBSOLETION_CANDIDATES_2026_06_02", "role": "NEWER_CANDIDATE_STATUS_CONTROL",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo_obsoletioncandidates.tsv",
+      "releaseTag": "v2026-06-02", "mediaType": "text/tab-separated-values", "expectedByteCount": 95091,
+      "declaredSha256": "392880f93470a3f361efa408a9fc1202a1f294309a1dcada64075ad474039a74",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-obsoletion-candidates-v2026-06-02.tsv"
+    },
+    {
+      "payloadId": "MONDO_SOURCE_VERSIONS_2026_05_05", "role": "OLDER_SOURCE_PROVENANCE_CONTROL",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-05-05/source-versions.tsv",
+      "releaseTag": "v2026-05-05", "mediaType": "text/tab-separated-values", "expectedByteCount": 865,
+      "declaredSha256": "35e627f3985481a198e373ccb4c747198597f71308a66691fd1eb21031f72c45",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/source-versions-v2026-05-05.tsv"
+    },
+    {
+      "payloadId": "MONDO_SOURCE_VERSIONS_2026_06_02", "role": "NEWER_SOURCE_PROVENANCE_CONTROL",
+      "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/source-versions.tsv",
+      "releaseTag": "v2026-06-02", "mediaType": "text/tab-separated-values", "expectedByteCount": 865,
+      "declaredSha256": "c5094c1125b4f9a578e29e8fc82550fadcb797bd15c295545fd553f65546b840",
+      "license": "CC-BY-4.0", "rawPath": "outputs/v220-fresh-mondo-artifact-population/raw/source-versions-v2026-06-02.tsv"
+    }
+  ],
+  "retrievalContract": {
+    "exactlyOneAttemptPerPayload": true, "maximumPayloadCount": 8,
+    "expectedTotalPayloadBytes": 96095320, "maximumTotalPayloadBytes": 97000000,
+    "requireExactExpectedByteCount": true, "sha256EveryRawPayloadBeforeParsing": true,
+    "requireEveryDeclaredSha256": true, "requireDeclaredSha256Accuracy": true,
+    "maximumRedirects": 10, "requestTimeoutSeconds": 120, "chunkBytes": 1048576,
+    "userAgent": "simulagent-v220-fresh-mondo-artifact-population/1.0",
+    "noUnlistedNetworkRequest": true, "noRemoteImportResolution": true, "preserveRawFilesUnmodified": true
+  },
+  "parserDesign": {
+    "oboEncoding": "utf-8", "termStanza": "Term", "requiredOBOFields": ["id", "name"],
+    "textFields": ["name", "def", "synonym"],
+    "logicalFields": ["is_a", "relationship", "intersection_of", "equivalent_to", "disjoint_from"],
+    "mappingFields": ["xref"], "statusFields": ["is_obsolete", "replaced_by", "consider"],
+    "stripOBOCommentsAfterBang": true, "normalizeWhitespace": true, "sortSetValuedFields": true,
+    "duplicateTermIdPolicy": "FAIL", "remoteImportPolicy": "FORBID_AND_DO_NOT_RESOLVE",
+    "assertedStateIsInferredOWLEquivalence": false,
+    "tabularControlPolicy": "UTF8_TSV_HEADER_REQUIRED_AND_MONDO_ID_CENSUS",
+    "releaseSummaryPolicy": "CONTENT_HASHED_OFFICIAL_API_BODY_FROZEN_CATEGORY_CENSUS"
+  },
+  "eventDesign": {
+    "eligibleEventTypes": ["ADDED", "REMOVED", "NAME_CHANGED", "DEFINITION_CHANGED", "SYNONYM_CHANGED", "LOGICAL_AXIOM_CHANGED", "MAPPING_CHANGED", "OBSOLETION_CHANGED", "REPLACEMENT_CHANGED", "OBSOLETION_CANDIDATE_STATUS_CHANGED"],
+    "primaryEventPrecedence": ["REPLACEMENT_CHANGED", "OBSOLETION_CHANGED", "OBSOLETION_CANDIDATE_STATUS_CHANGED", "ADDED", "REMOVED", "NAME_CHANGED", "DEFINITION_CHANGED", "SYNONYM_CHANGED", "LOGICAL_AXIOM_CHANGED", "MAPPING_CHANGED"]
+  },
+  "populationDesign": {
+    "olderPayloadId": "MONDO_BASE_2026_05_05", "newerPayloadId": "MONDO_BASE_2026_06_02",
+    "olderCandidatePayloadId": "MONDO_OBSOLETION_CANDIDATES_2026_05_05",
+    "newerCandidatePayloadId": "MONDO_OBSOLETION_CANDIDATES_2026_06_02",
+    "changedControlPayloadId": "MONDO_DIFF_CHANGED_2026_06_02", "newControlPayloadId": "MONDO_DIFF_NEW_2026_06_02",
+    "newerReleaseTag": "v2026-06-02", "oneFamilyPerUnionOfStableIdReplacementAndConsiderLinks": true,
+    "oneRecordPerEvidenceModePerEligibleFamily": true,
+    "evidenceModes": ["VERSION_UNSPECIFIED", "CURRENT_RELEASE_DECLARED"],
+    "requiredAnyNormalizedSurfaceText": true,
+    "redactSourceIdentifiersFromPublicText": true,
+    "semanticStateClassDefinition": "sha256_of_normalized_asserted_text_logical_mapping_and_lifecycle_state_or_explicit_ABSENT_state",
+    "equivalenceClassDefinition": "exact_identity_of_normalized_asserted_state_signature_not_inferred_OWL_equivalence",
+    "versionSpaceDefinition": "all_old_current_and_linked_replacement_state_classes_compatible_with_the_public_surface_and_release_evidence",
+    "expressibilityStates": ["OLD_AND_CURRENT", "NEW_ONLY", "OLD_ONLY", "CURRENT_OBSOLETE_WITH_REPLACEMENT", "CURRENT_OBSOLETE_WITHOUT_REPLACEMENT"],
+    "boundaryWitnessDefinition": "lexicographically_first_changed_asserted_field_value_or_presence_state_between_two_candidate_classes",
+    "unspecifiedCorrectDecision": "PRESERVE_VERSION_SPACE_OR_CLARIFY",
+    "currentLiveCorrectDecision": "RESOLVE_CURRENT_STATE",
+    "currentReplacementCorrectDecision": "FOLLOW_ASSERTED_REPLACEMENT",
+    "currentAbsentCorrectDecision": "ABSTAIN_NOT_EXPRESSIBLE",
+    "decisionConsequenceDefinition": "unit loss for forced singleton or wrong lifecycle action when frozen candidate states require preservation replacement-following or abstention; zero for exact oracle decision",
+    "excludeUnchangedFamilies": true, "excludeFamiliesWithoutSurfaceText": true
+  },
+  "controlAgreement": {
+    "newTermControlMustExactlyMatchParsedAddedIds": true,
+    "changedTermControlIdsMustAllBelongToParsedChangedFamilies": true,
+    "obsoletionCandidateControlsMustParseAndHaveUniqueIds": true,
+    "sourceVersionControlsMustParseWithNonemptyRows": true,
+    "releaseSummaryRequiredCategories": ["NEW_TERMS", "RENAMED_TERMS", "TEXT_DEFINITIONS", "OBSOLETIONS_WITH_REPLACEMENT"]
+  },
+  "splitDesign": {
+    "groupKey": "concept_family_id", "allRecordsAndLinkedIdentifiersInFamilyRemainTogether": true,
+    "assignment": "sha256_rank_all_concept_families_with_every_fourth_family_protected",
+    "developmentFractionTarget": 0.75, "minimumDevelopmentGroups": 18, "minimumProtectedGroups": 6,
+    "protectedDownstreamMethodEvaluationCount": 0, "protectedManualSemanticInspectionCount": 0
+  },
+  "populationGates": {
+    "oracleEvaluationScope": "DEVELOPMENT_ONLY_WITH_PROTECTED_FILES_HASHED_BUT_NOT_LOADED",
+    "requiredPayloadCount": 8, "requiredSuccessfulPayloadRetrievalRate": 1.0, "requiredRawHashCoverage": 1.0,
+    "requiredExpectedByteCountAccuracy": 1.0, "requiredDeclaredDigestAccuracy": 1.0,
+    "maximumTotalPayloadBytes": 97000000, "minimumParsedTermCountPerRelease": 1,
+    "requiredUniqueTermIdRate": 1.0, "requiredRemoteImportResolutionCount": 0,
+    "requiredTabularControlParseRate": 1.0, "requiredNewTermControlAgreement": 1.0,
+    "requiredChangedTermControlPrecision": 1.0, "requiredReleaseSummaryCategoryCoverage": 1.0,
+    "minimumEligibleConceptFamilyCount": 24, "minimumEligibleRecordCount": 48,
+    "minimumDistinctPrimaryEventTypeCount": 4,
+    "minimumAdditionEventFamilyCount": 24, "minimumTextChangeFamilyCount": 4,
+    "minimumLifecycleEventFamilyCount": 3, "minimumMappingEventFamilyCount": 12,
+    "minimumAmbiguousUnspecifiedFamilyCount": 12, "minimumDecisionContrastFamilyCount": 12,
+    "minimumDevelopmentGroupCount": 18, "minimumProtectedGroupCount": 6,
+    "requiredSemanticStateReconstructionAccuracy": 1.0, "requiredVersionSpaceReconstructionAccuracy": 1.0,
+    "requiredBoundaryWitnessCoverage": 1.0, "requiredDecisionConsequenceCoverage": 1.0,
+    "maximumCrossSplitGroupOverlapCount": 0, "maximumDuplicateCaseIdCount": 0,
+    "maximumPublicSourceIdentifierLeakageCount": 0, "requiredPublicTruthCaseAlignment": true,
+    "requiredSplitManifestExact": true, "requiredFiniteMetrics": true
+  },
+  "futureMethodEligibility": {
+    "nextStage": "V221_DEVELOPMENT_ONLY_DETERMINISTIC_MONDO_RESIDUAL_CONTROLS",
+    "localModelMayBeConsideredOnlyAfterSeparateResidualLock": true,
+    "minimumPostDeterministicResidualDevelopmentGroups": 12,
+    "requiresIncrementalOracleClassRecallAtFixedCandidateBudget": true,
+    "requiresDecisionRelevantResidualBeforePlannerClaim": true,
+    "top1AccuracyAloneIsInsufficient": true, "apiModelRequired": false
+  },
+  "accessGates": {
+    "requiredBoundedRetrievalRunCount": 1, "requiredPopulationBuildRunCount": 1,
+    "maximumUnlistedNetworkRequestCount": 0, "maximumPayloadCount": 8,
+    "maximumRemoteImportResolutionCount": 0, "maximumV218DevelopmentRecordReadCount": 0,
+    "maximumV218ProtectedRecordReadCount": 0, "maximumV216ProtectedAccessCount": 0,
+    "maximumV213ProtectedAccessCount": 0, "maximumProtectedDownstreamMethodEvaluationCount": 0,
+    "maximumProtectedManualSemanticInspectionCount": 0, "maximumProtectedFileLoadForScoringCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0, "maximumModelAPICallCount": 0, "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0, "maximumTrustedStateMutationCount": 0,
+    "maximumServiceActionCount": 0, "maximumExternalSideEffectCountBeyondReadOnlyRetrieval": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "artifacts": {
+    "retrievalManifest": "outputs/v220-fresh-mondo-artifact-population/retrieval-manifest.json",
+    "parserControl": "outputs/v220-fresh-mondo-artifact-population/parser-control.json",
+    "developmentPublic": "outputs/v220-fresh-mondo-artifact-population/population/development-public.jsonl",
+    "developmentTruth": "outputs/v220-fresh-mondo-artifact-population/population/development-truth.jsonl",
+    "protectedPublic": "outputs/v220-fresh-mondo-artifact-population/population/protected-public.jsonl",
+    "protectedTruth": "outputs/v220-fresh-mondo-artifact-population/population/protected-truth.jsonl",
+    "split": "outputs/v220-fresh-mondo-artifact-population/population/split.json",
+    "populationManifest": "outputs/v220-fresh-mondo-artifact-population/population/manifest.json",
+    "summary": "outputs/v220-fresh-mondo-artifact-population/summary.json",
+    "result": "outputs/v220-fresh-mondo-artifact-population/result.json"
+  },
+  "decisionRule": {
+    "ifEveryPayloadControlPopulationStratumIntegrityAndAccessGatePasses": "freeze_V220_population_and_authorize_V221_development_only_deterministic_control_design",
+    "otherwise": "freeze_V220_negative_without_payload_parser_source_event_population_split_threshold_or_gate_tuning",
+    "passAuthorizesV221DevelopmentOnlyDesign": true,
+    "passAuthorizesProtectedMethodEvaluationOrModelRun": false,
+    "passAuthorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}

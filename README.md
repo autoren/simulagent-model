@@ -1,5 +1,13 @@
 # Simulagent QLoRA
 
+> **Current research status (2026-08-19):** The sequence through V224 is consolidated and experimental/model
+> escalation is frozen. The supported result is a model-free mechanism architecture, not externally validated
+> open-world language understanding. Start with
+> [`docs/README.md`](docs/README.md),
+> [`docs/cross-track-evidence-synthesis-through-v224.md`](docs/cross-track-evidence-synthesis-through-v224.md), and
+> [`docs/research-stopping-rule-after-v224.md`](docs/research-stopping-rule-after-v224.md). Older roadmap files are
+> historical snapshots and do not authorize work.
+
 This project turns Simulagent's deterministic world engine into a counterfactual transition
 dataset and a reproducible Qwen3.5 LoRA/QLoRA experiment.
 

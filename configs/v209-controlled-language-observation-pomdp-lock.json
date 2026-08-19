@@ -1,0 +1,312 @@
+{
+  "auditor": "python/audit_and_freeze_v209_controlled_language_observation_pomdp.py",
+  "auditor_sha256": "6c54b64724cac3e9026b1b9b6f0d391d46e8ab1d114b3ef1266728d971c3ae16",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "modify_hypotheses_grammar_channel_stages_rewards_comparators_gates_or_decision": false,
+    "read_external_language_load_or_run_model_or_access_protected_data": false,
+    "run_exact_single_model_free_oracle_evaluation": true
+  },
+  "config": "configs/v209-controlled-language-observation-pomdp.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalLanguageRecordReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedAccessCount": 0,
+      "maximumRawModelResponseReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredOracleEvaluationCount": 1
+    },
+    "channel": {
+      "commonPositiveSupport": true,
+      "everyActionRegimeStateHistoryDistributionIsNormalized": true,
+      "knownLogicalA": [
+        0.94,
+        0.04,
+        0.02
+      ],
+      "knownLogicalB": [
+        0.04,
+        0.86,
+        0.1
+      ],
+      "outsideEitherState": [
+        0.2,
+        0.2,
+        0.6
+      ],
+      "postReferenceHistoryAnchors": {
+        "UTTERANCE_ALPHA": [
+          0.45,
+          0.45,
+          0.1
+        ],
+        "UTTERANCE_BETA": [
+          0.44,
+          0.46,
+          0.1
+        ],
+        "UTTERANCE_UNRESOLVED": [
+          0.2,
+          0.2,
+          0.6
+        ]
+      },
+      "postReferenceHistoryMixWeight": 0.01,
+      "referenceKnownLogicalState": "A"
+    },
+    "claimBoundary": "project-authored model-free mechanism oracle for exact planning over a finite probabilistic controlled-language channel with explicit outside semantics, adaptive clarification, safe deferral, and mandatory automatic settlement; not evidence about natural-language understanding, an LLM, calibrated model confidence, external language, human behavior, ontology truth, authority, action, or execution",
+    "decisionProcess": {
+      "actionNames": [
+        "ask_reference",
+        "ask_target",
+        "act_A",
+        "act_B",
+        "defer"
+      ],
+      "allowedActionsByStage": {
+        "POST_REFERENCE": [
+          "ask_target",
+          "act_A",
+          "act_B",
+          "defer"
+        ],
+        "POST_TARGET": [
+          "act_A",
+          "act_B",
+          "defer"
+        ],
+        "PRE_REFERENCE": [
+          "ask_reference",
+          "ask_target",
+          "act_A",
+          "act_B",
+          "defer"
+        ]
+      },
+      "askReferenceNextStage": "POST_REFERENCE",
+      "askTargetNextStage": "POST_TARGET",
+      "automaticCorrectSettlementReward": 10.0,
+      "automaticSettlementConsumesNoControllableDecision": true,
+      "automaticWrongSettlementReward": -30.0,
+      "baseClarificationCost": -0.5,
+      "clarificationCostRegimeStateOffsets": {
+        "ask_reference": [
+          [
+            -0.006,
+            -0.004
+          ],
+          [
+            0.004,
+            0.006
+          ],
+          [
+            -0.002,
+            0.002
+          ]
+        ],
+        "ask_target": [
+          [
+            -0.005,
+            0.005
+          ],
+          [
+            0.005,
+            -0.005
+          ],
+          [
+            -0.003,
+            0.003
+          ]
+        ]
+      },
+      "controlAlwaysTransitionsThroughAutomaticSettlement": true,
+      "controlImmediateReward": 0.0,
+      "discount": 1.0,
+      "maximumControllableDecisionCount": 3,
+      "postReferenceHistoryCostOffsets": {
+        "UTTERANCE_ALPHA": -0.004,
+        "UTTERANCE_BETA": 0.004,
+        "UTTERANCE_UNRESOLVED": 0.008
+      },
+      "safeDeferralReward": -2.0,
+      "stageNames": [
+        "PRE_REFERENCE",
+        "POST_REFERENCE",
+        "POST_TARGET"
+      ],
+      "tieTolerance": 1e-12,
+      "unfinishedClarificationAlwaysTerminatesBySafeDeferral": true,
+      "unfinishedClarificationTerminalValue": -2.0
+    },
+    "decisionRule": {
+      "ifEveryOracleIntegrityScientificAndAccessGatePasses": "freeze_V209_positive_controlled_language_decision_mechanism_and_authorize_separate_fresh_controlled_language_population_design_only",
+      "otherwise": "freeze_V209_negative_without_parameter_grammar_stage_reward_channel_comparator_or_gate_tuning_and_diagnose_model_free_structure",
+      "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesFreshControlledLanguagePopulationDesignOnly": true,
+      "passAuthorizesImmediateLanguagePopulationOpeningOrModelRun": false
+    },
+    "experiment": "v209_terminally_proper_controlled_probabilistic_language_observation_oracle",
+    "fixedComparators": [
+      "FULL_OPEN_WORLD_EXACT",
+      "CLOSED_WORLD_BAYES_ADAPTIVE_EXCLUDING_OUTSIDE",
+      "FULL_BELIEF_FORCED_COMMIT_WITHOUT_DEFER",
+      "MAP_CERTAINTY_EQUIVALENCE",
+      "PERSISTENT_POSTERIOR_SAMPLING",
+      "BEST_OPEN_LOOP",
+      "MYOPIC_IMMEDIATE_REWARD",
+      "IMMEDIATE_DEFER"
+    ],
+    "grammar": {
+      "clarificationActions": [
+        "ask_reference",
+        "ask_target"
+      ],
+      "matchedSurfaceCounterfactualFamilies": [
+        "DIRECT",
+        "MATCHED_PARAPHRASE"
+      ],
+      "observationRenamingPermutation": [
+        1,
+        0,
+        2
+      ],
+      "semanticObservationIds": [
+        "UTTERANCE_ALPHA",
+        "UTTERANCE_BETA",
+        "UTTERANCE_UNRESOLVED"
+      ],
+      "surfaceFamilies": {
+        "DIRECT": {
+          "ask_reference": {
+            "UTTERANCE_ALPHA": "The reference uses alpha.",
+            "UTTERANCE_BETA": "The reference uses beta.",
+            "UTTERANCE_UNRESOLVED": "The reference convention is unclear."
+          },
+          "ask_target": {
+            "UTTERANCE_ALPHA": "The target appears to be alpha.",
+            "UTTERANCE_BETA": "The target appears to be beta.",
+            "UTTERANCE_UNRESOLVED": "The target description is inconclusive."
+          }
+        },
+        "MATCHED_PARAPHRASE": {
+          "ask_reference": {
+            "UTTERANCE_ALPHA": "For the known example, choose alpha.",
+            "UTTERANCE_BETA": "For the known example, choose beta.",
+            "UTTERANCE_UNRESOLVED": "For the known example, no convention can be selected."
+          },
+          "ask_target": {
+            "UTTERANCE_ALPHA": "For the item in question, choose alpha.",
+            "UTTERANCE_BETA": "For the item in question, choose beta.",
+            "UTTERANCE_UNRESOLVED": "For the item in question, the evidence does not decide."
+          }
+        }
+      },
+      "surfaceProjectionIsDeterministicAndNonAuthoritative": true,
+      "surfaceTextNeverEntersPlanner": true
+    },
+    "hypotheses": {
+      "fullHypothesisUniverseAlwaysRetained": true,
+      "priorComesFromModelScoresOrRanks": false,
+      "semanticRegimePrior": [
+        0.35,
+        0.35,
+        0.3
+      ],
+      "semanticRegimes": [
+        "CANONICAL",
+        "ALTERNATIVE",
+        "OUTSIDE_UNKNOWN"
+      ],
+      "taskStatePrior": [
+        0.5,
+        0.5
+      ],
+      "taskStates": [
+        "A",
+        "B"
+      ]
+    },
+    "oracleGates": {
+      "maximumClarificationOrControlImmediateReward": 0.0,
+      "maximumFallbackCount": 0,
+      "maximumHorizonEscapePathCount": 0,
+      "maximumRenamingValueDifference": 1e-12,
+      "maximumUnsettledControlTerminalCount": 0,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumDistinctPostReferenceSelectedActions": 2,
+      "minimumDistinctReachableControlActions": 2,
+      "minimumKnownTargetTotalVariation": 0.79,
+      "minimumNormalizedClosedWorldRegret": 0.004,
+      "minimumNormalizedExactOverImmediateDeferAdvantage": 0.015,
+      "minimumNormalizedExactOverOpenLoopAdvantage": 0.015,
+      "minimumNormalizedForcedCommitRegret": 0.004,
+      "minimumNormalizedMAPRegret": 0.015,
+      "minimumNormalizedMyopicRegret": 0.04,
+      "minimumNormalizedPosteriorSamplingRegret": 0.008,
+      "minimumObservationProbabilityOnSupport": 0.019,
+      "minimumReachableDeferHistoryCount": 1,
+      "minimumReferenceMutualInformationNats": 0.29,
+      "requiredClarificationActionCount": 2,
+      "requiredClosedWorldActionAfterRootUnresolved": "ask_target",
+      "requiredCommonPositiveSupport": true,
+      "requiredControlImmediateReward": 0.0,
+      "requiredExactActionAfterRootAlpha": "ask_target",
+      "requiredExactActionAfterRootBeta": "ask_target",
+      "requiredExactActionAfterRootUnresolved": "defer",
+      "requiredFiniteMetrics": true,
+      "requiredHistoryDependentTargetLikelihood": true,
+      "requiredLatentDependentClarificationCost": true,
+      "requiredLatentRegimeCount": 3,
+      "requiredMandatoryAutomaticSettlementRate": 1.0,
+      "requiredMatchedSurfaceCounterfactualPolicyMismatchCount": 0,
+      "requiredMatchedSurfaceCounterfactualValueDifference": 0.0,
+      "requiredRenamingPolicyMismatchCount": 0,
+      "requiredSelectedExactRootAction": "ask_reference",
+      "requiredUnfinishedClarificationSafeDeferralRate": 1.0
+    },
+    "parentV208OutcomeLock": "configs/v208-external-behavioral-abstention-source-census-outcome-lock.json",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "conceptualParameterDesignCount": 1,
+      "exactPolicyValueOrActionEvaluationCount": 0,
+      "externalLanguageRecordReadCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedAccessCount": 0,
+      "rawModelResponseReadCount": 0,
+      "trainingRunCount": 0
+    },
+    "referenceV205OutcomeLock": "configs/v205-terminally-proper-open-world-semantic-pomdp-outcome-lock.json",
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "209-controlled-language-observation-POMDP-design"
+  },
+  "config_sha256": "7ea4d1747177a1ee1c12c506daeb2a791095c9397a29183a5baff2c0d2801a6f",
+  "design_audit": "outputs/v209-controlled-language-observation-pomdp/design-audit.json",
+  "design_audit_sha256": "aea8223fc613ce2962f3e360be150f072b16f65fadc9e04779664e7091f8f72d",
+  "experiment": "v209_terminally_proper_controlled_probabilistic_language_observation_oracle",
+  "lock_payload_sha256": "2298d4fc747e3177d753766831774b8a8379b2739c2d7349d313ee151afd406d",
+  "parent_V208_outcome": "configs/v208-external-behavioral-abstention-source-census-outcome-lock.json",
+  "parent_V208_outcome_sha256": "17e2e934580d4146bf8f41e078341919b38dcce4ef9464ef2a8a65cdc295d6b1",
+  "plan": "docs/v209-controlled-language-observation-pomdp-plan.md",
+  "plan_sha256": "dfaff3fa6820b97514bfec2352dd1799aa5510269adac6cec2bb0448e955604a",
+  "protocol": "python/v209_controlled_language_observation_pomdp.py",
+  "protocol_sha256": "16c214d0867b960c2fa45608b58db75518c74fa7c82cf9b3b04658558971bc92",
+  "reference_V205_outcome": "configs/v205-terminally-proper-open-world-semantic-pomdp-outcome-lock.json",
+  "reference_V205_outcome_sha256": "44d20f756247d39aa65efa81b1a05e8965c1e3986f2af67265f5cf6dffdc270c",
+  "runner": "python/run_v209_controlled_language_observation_pomdp.py",
+  "runner_sha256": "fb00b71e8196ba6a7a5dadb469062f48079e8bb7a348d15739799d01bc9a5338",
+  "schema_version": "209-controlled-language-observation-POMDP-lock",
+  "tests": "python/test_v209_controlled_language_observation_pomdp.py",
+  "tests_sha256": "59569954604a5d9d69f3c77a7ab8b8c38e86f609f8c7bd69871c29b2d80ad608",
+  "verifier": "python/verify_and_freeze_v209_controlled_language_observation_pomdp_outcome.py",
+  "verifier_sha256": "6326fd1f0b285f78bcc25c5589a5a7e6716f6bf20048242fc1e19986ed02e4f9"
+}

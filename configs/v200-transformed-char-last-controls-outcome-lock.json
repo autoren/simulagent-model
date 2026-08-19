@@ -1,0 +1,76 @@
+{
+  "audit": "outputs/v200-transformed-char-last-controls/outcome-audit.json",
+  "audit_sha256": "2a059b61e27f9947d3ad990ace780e255fd34d4c6f0692af1a1a51d96a7eb6e1",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "immediate_model_run_or_protected_access": false,
+    "preregister_separate_unchanged_local_model_development_robustness_only": true
+  },
+  "evaluation_lock": "configs/v200-transformed-char-last-controls-lock.json",
+  "evaluation_lock_sha256": "a857575eaac213459da4ed9cfefd38aa16947e17a31e76e11e0e58f83efdc7cf",
+  "experiment": "v200_unchanged_CHAR_LAST_on_exact_menu_presentation_variants",
+  "lock_payload_sha256": "184130d434151e0d7819fcc7347ca94a4db6d115c7568e0ae7dbeb0b42b66a73",
+  "outcome": {
+    "decision": "freeze_V200_controls_and_allow_separate_unchanged_local_model_development_robustness_preregistration_only",
+    "evaluation_gates_passed": true,
+    "passed": true,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "deterministic_language_score_count": 2352,
+      "development_language_read_count": 98,
+      "external_side_effect_count": 0,
+      "final_exactness_after_trusted_answers": 1.0,
+      "manual_language_inspection_count": 0,
+      "missing_count": 14,
+      "missing_insufficient_rate": 1.0,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "observed_count": 84,
+      "ontology_registration_count": 0,
+      "protected_language_read_count": 0,
+      "scored_record_variant_count": 168,
+      "service_call_count": 0,
+      "structured_ranking_rate": 1.0,
+      "target_retention_rate": 1.0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "variant_count": 2,
+      "variants": [
+        {
+          "count": 84,
+          "macro_top3_mean_cost": 0.24761904761904763,
+          "macro_top3_recall": 0.8809523809523809,
+          "mean_top3_contract_set_jaccard_with_canonical": 1.0,
+          "primary_top3_mean_cost": 0.25833333333333336,
+          "primary_top3_recall": 0.8541666666666666,
+          "target_top3_hit_disagreement_rate": 0.0,
+          "top1_contract_agreement_with_canonical": 1.0,
+          "variant_id": "ORDER_ONLY"
+        },
+        {
+          "count": 84,
+          "macro_top3_mean_cost": 0.25238095238095243,
+          "macro_top3_recall": 0.8690476190476191,
+          "mean_top3_contract_set_jaccard_with_canonical": 0.9226190476190477,
+          "primary_top3_mean_cost": 0.2644444444444445,
+          "primary_top3_recall": 0.8388888888888889,
+          "target_top3_hit_disagreement_rate": 0.03571428571428571,
+          "top1_contract_agreement_with_canonical": 0.9880952380952381,
+          "variant_id": "ORDER_AND_OPAQUE_ID"
+        }
+      ]
+    }
+  },
+  "result": "outputs/v200-transformed-char-last-controls/evaluation/result.json",
+  "result_sha256": "d29ee4a5dc6c2921e4fdc18c6d6fa41da1c56f48047e0b5f5cc5d310ed937e63",
+  "results_document": "docs/v200-transformed-char-last-controls-results.md",
+  "results_document_sha256": "0e8273c4099f1e30b3e8a77a859c2f45b160c9bc23fc2e8510005ae9bad3b41b",
+  "schema_version": "200-transformed-char-last-controls-outcome-lock",
+  "scored_records": "outputs/v200-transformed-char-last-controls/evaluation/scored-records.json",
+  "scored_records_sha256": "04c54eaf3992f1d15c6b3efb72c7b93a5bb213befade6007e021015b04917ee8",
+  "summary": "outputs/v200-transformed-char-last-controls/evaluation/summary.json",
+  "summary_sha256": "df3bfb7f04bbd8d3aba885c7f3844c1725e97363608f3fe4f263838667bad16e",
+  "verifier": "python/verify_and_freeze_v200_transformed_char_last_controls_outcome.py",
+  "verifier_sha256": "3732af35f1f7cd574956e2082c66fc78635db239ac910c4cb4ce063c02b11160"
+}

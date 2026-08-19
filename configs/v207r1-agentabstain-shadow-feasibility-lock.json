@@ -1,0 +1,243 @@
+{
+  "V207_transport_failure": "outputs/v207-agentabstain-shadow-feasibility/transport-failure.json",
+  "V207_transport_failure_sha256": "9071a8a86a8abb55a2f0dd32b3b0c22581a83f1e54be63b4b45230df2645a5ca",
+  "auditor": "python/audit_and_freeze_v207r1_agentabstain_shadow_feasibility.py",
+  "auditor_sha256": "10562d900e3002c8cd9d6884703fa1d2513713b03e69c10023f63c91187381d5",
+  "authorization": {
+    "model_tool_execution_API_training_registration_authority_or_side_effect": false,
+    "modify_scientific_source_patterns_thresholds_selection_or_decision": false,
+    "open_task_payload_instruction_example_dialogue_or_rationale": false,
+    "run_one_paginated_metadata_schema_feasibility_audit": true
+  },
+  "config": "configs/v207r1-agentabstain-shadow-feasibility.json",
+  "config_payload": {
+    "claimBoundary": "transport-only repair of V207 metadata and schema feasibility; no change to source, pair identity, pre-execution definition, qualification thresholds, language firewall, contamination treatment, future selection, shadow-only boundary, or scientific claim",
+    "decisionRule": {
+      "ifOriginalScientificGateFails": "freeze_V207r1_scientific_negative_without_opening_task_payload_or_weakening_gates",
+      "ifTransportFailsAgain": "freeze_another_technical_nonresult_before_any_further_change",
+      "ifTransportIntegrityAndOriginalV207GatesPass": "freeze_V207r1_positive_and_authorize_separate_deterministic_text_extraction_preregistration_only",
+      "passAuthorizesImmediateTaskTextAccessOrModelRun": false,
+      "passAuthorizesToolsExecutionAPITrainingRegistrationAuthorityOrSideEffects": false
+    },
+    "experiment": "v207r1_agentabstain_paired_preexecution_shadow_subset_feasibility_transport_repair",
+    "failedAttemptRecord": "outputs/v207-agentabstain-shadow-feasibility/transport-failure.json",
+    "parentV207DesignLock": "configs/v207-agentabstain-shadow-feasibility-lock.json",
+    "parentV207DesignLockSha256": "685fbcf02a500e6f6a28a63fbf17b4c772f9171dc8bdff2bb0c2cf4705d5ceb1",
+    "preLockExposure": {
+      "V207r1DatasetCardHeaderReadCount": 0,
+      "V207r1DatasetTreePageReadCount": 0,
+      "V207r1ModelOrPolicyEvaluationCount": 0,
+      "V207r1TaskInstructionExampleDialogueRationaleReadCount": 0,
+      "priorCodeSchemaFileReadCount": 8,
+      "priorCodeTreeMetadataReadCount": 2,
+      "priorDatasetCardHeaderReadCount": 0,
+      "priorDatasetHeadReadCount": 3,
+      "priorDatasetTreeMetadataHTTP400Count": 2,
+      "priorDatasetTreeMetadataRequestCount": 9,
+      "priorDatasetTreeMetadataSuccessCount": 7,
+      "priorModelOrPolicyEvaluationCount": 0,
+      "priorTaskInstructionExampleDialogueRationaleReadCount": 0,
+      "priorV207ScientificOutcomeAvailable": false
+    },
+    "repairPolicy": {
+      "combineOnlyTreeObjectMetadata": true,
+      "countEveryPhysicalPageRead": true,
+      "followOnlyExplicitRelNextLinks": true,
+      "huggingFaceTreePageSize": 1000,
+      "maximumAllowedPageCount": 20,
+      "minimumExpectedPageCount": 2,
+      "persistNoResponseBodyOrCursorURL": true,
+      "preserveEveryScientificQualificationGate": true,
+      "preserveOneLogicalDatasetTreeCensus": true,
+      "preserveTaskLanguageModelToolAndExecutionFirewall": true,
+      "rejectRepeatedPageURLOrCursorCycle": true,
+      "requireSameHTTPSHostAndPinnedRevisionPath": true,
+      "requireTerminalPageWithoutNextLink": true
+    },
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "207r1-agentabstain-shadow-metadata-schema-transport-repair-design",
+    "unchangedScientificConfig": "configs/v207-agentabstain-shadow-feasibility.json",
+    "unchangedScientificConfigSha256": "92125210a4f89d262b83b5d449eaed47a94057408a39622b18f2f3734b8d952d"
+  },
+  "config_sha256": "1d3b77ed1f2a1daff718c63eac36d5079f524ca9c42c2ade56698099740f0e33",
+  "design_audit": "outputs/v207r1-agentabstain-shadow-feasibility/design-audit.json",
+  "design_audit_sha256": "d903f8cc26fb1eebbf39ca64511dc76a4e06a72c23ec4d8b2433d29c84dcf013",
+  "experiment": "v207r1_agentabstain_paired_preexecution_shadow_subset_feasibility_transport_repair",
+  "lock_payload_sha256": "9ab9b6ba723813d21fe29e6bbd599e9378f21776d780d3f64becd4906ddeebde",
+  "parent_V207_design_lock": "configs/v207-agentabstain-shadow-feasibility-lock.json",
+  "parent_V207_design_lock_sha256": "685fbcf02a500e6f6a28a63fbf17b4c772f9171dc8bdff2bb0c2cf4705d5ceb1",
+  "plan": "docs/v207r1-agentabstain-shadow-feasibility-plan.md",
+  "plan_sha256": "7f98c074b4b1743e4ccc136465cec2623427c62da69c53e0e2ea7d2ff506fac2",
+  "protocol": "python/v207r1_agentabstain_shadow_feasibility.py",
+  "protocol_sha256": "859a83ce4020cb704d078a93263cb010ad5a7ffff0b2c2b9d52a6de1c66f71e3",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "roadmap_sha256": "f575e5f1cbc2d375c4eeecfc4c10fcfd182419faa39b04bee93b2a1e6dd26fca",
+  "runner": "python/run_v207r1_agentabstain_shadow_feasibility.py",
+  "runner_sha256": "4630d4bde34bd4a881344fbd5c54225df29440155626aeb564797b632a829447",
+  "schema_version": "207r1-agentabstain-shadow-metadata-schema-transport-repair-lock",
+  "scientific_config_payload": {
+    "accessGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumCodeSchemaFileReadCount": 20,
+      "maximumDatasetTaskPayloadFileReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelAPICallCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedAccessCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTaskInstructionExampleDialogueRationaleReadCount": 0,
+      "maximumToolCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "minimumCodeSchemaFileReadCount": 1,
+      "requiredCodeTreeMetadataReadCount": 1,
+      "requiredDatasetCardHeaderReadCount": 1,
+      "requiredDatasetHeadReadCount": 1,
+      "requiredDatasetTreeMetadataReadCount": 1
+    },
+    "allowedMetadataReads": {
+      "codeFiles": [
+        "src/configs/tasks.yaml"
+      ],
+      "codeGlobPrefixes": [
+        "src/types/",
+        "eval/evaluators/"
+      ],
+      "codeGlobSuffix": ".py",
+      "datasetCardYAMLFrontMatterOnly": true,
+      "datasetTreePathsAndObjectMetadataOnly": true,
+      "githubTreePathsOnly": true,
+      "maximumAllowedCodeSchemaFiles": 20,
+      "persistFetchedCodeOrCardText": false,
+      "persistOnlyHashesByteCountsPathsAndExtractedSchemaIdentifiers": true
+    },
+    "claimBoundary": "metadata and schema feasibility for a separate behavioral act-versus-abstain study on a deterministic paired pre-execution AgentAbstain subset; not V205 likelihood validation, task-language evaluation, LLM performance, execution safety, posterior calibration, ontology truth, authority, action, or execution",
+    "decisionRule": {
+      "ifEveryIntegrityQualificationAndAccessGatePasses": "freeze_V207_positive_and_authorize_separate_deterministic_text_extraction_preregistration_only",
+      "otherwise": "freeze_V207_negative_without_opening_task_payload_or_weakening_pair_preexecution_or_noexecution_gates",
+      "passAuthorizesImmediateTaskTextAccessOrModelRun": false,
+      "passAuthorizesToolsExecutionAPITrainingRegistrationAuthorityOrSideEffects": false
+    },
+    "experiment": "v207_agentabstain_paired_preexecution_shadow_subset_feasibility",
+    "fixedMetadataPatterns": {
+      "goldSchemaIdentifiers": [
+        "should_abstain",
+        "should_act",
+        "expected_decision",
+        "gold_decision",
+        "abstention_label"
+      ],
+      "identitySchemaIdentifiers": [
+        "task_id",
+        "taskid",
+        "pair_id",
+        "pairid",
+        "environment_id",
+        "env_id"
+      ],
+      "preExecutionPathMarkers": [
+        "pre_execution",
+        "pre-execution",
+        "preexecution"
+      ],
+      "promptSchemaIdentifiers": [
+        "instruction",
+        "prompt",
+        "query",
+        "task_description"
+      ],
+      "rationaleSchemaIdentifiers": [
+        "rationale",
+        "explanation",
+        "judge_reason"
+      ],
+      "runtimePathMarkers": [
+        "runtime",
+        "post_tool",
+        "post-tool"
+      ],
+      "scenarioSchemaIdentifiers": [
+        "scenario",
+        "category",
+        "trigger",
+        "phase",
+        "abstention_type"
+      ],
+      "shouldAbstainPathMarkers": [
+        "should_abstain",
+        "should-abstain",
+        "shouldabstain"
+      ],
+      "shouldActPathMarkers": [
+        "should_act",
+        "should-act",
+        "shouldact"
+      ],
+      "taskConfigIdentifierPattern": "[A-Za-z0-9][A-Za-z0-9_.:/-]{3,}"
+    },
+    "futureSelectionIfQualified": {
+      "balance": "retain both sides of every pair and round-robin across source scenario identifiers",
+      "futureTextExtractionRequiresSeparateLock": true,
+      "maximumPairs": 96,
+      "minimumPairs": 20,
+      "ordering": "ascending SHA-256 of UTF-8 dataset_commit + ':' + canonical_pair_identity",
+      "population": "all tree-proven complete pre-execution should-act/should-abstain pairs",
+      "selectionMayReadTaskText": false
+    },
+    "parentV206OutcomeLock": "configs/v206-fresh-external-analogue-feasibility-outcome-lock.json",
+    "preLockExposure": {
+      "codeTreeOrSchemaFileReadCount": 0,
+      "datasetIdentifierObservedCount": 1,
+      "datasetTreeOrCardReadCount": 0,
+      "exactDatasetHeadReadCount": 0,
+      "modelOrPolicyEvaluationCount": 0,
+      "observedPublicReleaseMonth": "2026-07",
+      "officialLandingPagePreviewCount": 1,
+      "taskInstructionExampleDialogueRationaleReadCount": 0
+    },
+    "qualificationGates": {
+      "minimumTreeIdentifiedCompletePairCount": 40,
+      "minimumTreeIdentifiedPreExecutionPairCount": 20,
+      "minimumTreeIdentifiedPreExecutionScenarioCount": 2,
+      "requiredBothPairSidesIdentifiableWithoutTaskPayload": true,
+      "requiredCodeCommitMatchesV206": true,
+      "requiredCodeREADMEAndLicenseHashesMatchV206": true,
+      "requiredContaminationTreatment": "freeze source and model revisions; make no contamination-free claim because the July-2026 benchmark predates the August-2026 local-model evaluation; require paired perturbation controls and no training or finetuning on the source",
+      "requiredDatasetCardLicense": "cc-by-4.0",
+      "requiredDatasetRevisionPinned": true,
+      "requiredDeclaredPairEnvironmentAndScenarioCountsPresent": true,
+      "requiredGoldDecisionIdentifiableWithoutLLMJudge": true,
+      "requiredIdentityGoldScenarioAndPromptSchemaFields": true,
+      "requiredPreExecutionSubsetSelectableBeforeTaskText": true,
+      "requiredRationaleSeparableFromPrompt": true,
+      "requiredShadowNoToolNoExecutionEvaluationPath": true
+    },
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "207-agentabstain-shadow-metadata-schema-feasibility-design",
+    "source": {
+      "codeCommitFromV206": "f581249704b26804e28a39e37396f1be00b71a4d",
+      "codeLicensePath": "LICENSE",
+      "codeLicenseSha256FromV206": "ae23741b50e4cb70f5e4eddf4878f4623899d467fa97012d505bf5b5272c5d91",
+      "codeREADMEPath": "README.md",
+      "codeREADMESha256FromV206": "f42e49fb621278a15eeb5e87c7f3dbbe1e8d13e2f2aa6d1a1670f663479203f9",
+      "codeRepository": "https://github.com/AntiQuality/agentabstain",
+      "datasetId": "antiquality/agentabstain",
+      "datasetRepository": "https://huggingface.co/datasets/antiquality/agentabstain",
+      "datasetRevisionPinnedAtEvaluation": true,
+      "declaredDatasetLicense": "CC-BY-4.0",
+      "declaredEnvironmentCount": 42,
+      "declaredPairCount": 263,
+      "declaredScenarioCount": 8,
+      "declaredScenarioSpan": [
+        "pre-execution",
+        "runtime"
+      ]
+    }
+  },
+  "tests": "python/test_v207r1_agentabstain_shadow_feasibility.py",
+  "tests_sha256": "86c47b9c7e5e3bdcc694ed56fdf03672ed6f8a306e74d3088feb45ef47f45b6a",
+  "unchanged_scientific_config": "configs/v207-agentabstain-shadow-feasibility.json",
+  "unchanged_scientific_config_sha256": "92125210a4f89d262b83b5d449eaed47a94057408a39622b18f2f3734b8d952d",
+  "verifier": "python/verify_and_freeze_v207r1_agentabstain_shadow_feasibility_outcome.py",
+  "verifier_sha256": "3e83357c4170f3477e5c4fccd6a9c9e7a9de94762506c72cf63282cc080678e0"
+}

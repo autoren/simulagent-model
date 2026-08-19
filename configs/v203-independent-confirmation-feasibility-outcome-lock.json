@@ -1,0 +1,259 @@
+{
+  "audit": "outputs/v203-independent-confirmation-feasibility/outcome-audit.json",
+  "audit_sha256": "abff5a83f17fb48f4f7dcefc2d46edda37c994a9f06eb58e20aabacca885957e",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "immediate_population_language_model_or_protected_access": false,
+    "preregister_separate_richer_model_free_POMDP_only": true,
+    "preregister_separate_text_free_population_selection_only": false
+  },
+  "evaluation_lock": "configs/v203-independent-confirmation-feasibility-lock.json",
+  "evaluation_lock_sha256": "ac71894b825dd8cb0b87c26ae1971affb5c45b4dce60b06c84822dce9c7bafd4",
+  "experiment": "v203_metadata_first_independent_14_contract_confirmation_feasibility",
+  "lock_payload_sha256": "b5539c71d554f0fb7c802ab52c739313a51e20487624601137fd27105bbe6b33",
+  "outcome": {
+    "decision": "freeze_V203_negative_park_B1_confirmation_and_authorize_separate_richer_model_free_POMDP_preregistration_only",
+    "passed": true,
+    "scientific_feasibility_passed": false,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "archive_read_count": 1,
+      "candidate_inventory_read_count": 1,
+      "consumed_identity_artifact_read_count": 2,
+      "consumed_partition_dialogue_count": 314,
+      "consumed_source_record_count": 324,
+      "external_side_effect_count": 0,
+      "frozen_external_alternatives": [
+        {
+          "all_frozen_source_gates_pass": false,
+          "candidate_id": "taskmaster_1",
+          "eligible": false,
+          "exact_14_contract_mapping_artifact_available": false,
+          "failed_source_gates": [
+            "deterministic_utterance_to_schema_and_state_linkage",
+            "turn_level_typed_intent_and_slot_state"
+          ]
+        },
+        {
+          "all_frozen_source_gates_pass": false,
+          "candidate_id": "multiwoz_reference_repository",
+          "eligible": false,
+          "exact_14_contract_mapping_artifact_available": false,
+          "failed_source_gates": [
+            "deterministic_utterance_to_schema_and_state_linkage",
+            "machine_readable_service_schema",
+            "synthetic_family_exclusion_can_be_applied_before_text_scoring",
+            "turn_level_typed_intent_and_slot_state"
+          ]
+        }
+      ],
+      "manual_language_inspection_count": 0,
+      "mixed_partition_diagnostic": {
+        "allowed_partition_rate": 1.0,
+        "eligible_for_selection": false,
+        "exact_contract_coverage": 14,
+        "family_id": "SGD_MIXED_PARTITION_REMAINDER_DIAGNOSTIC",
+        "minimum_partition_dialogue_count": 47,
+        "prior_partition_dialogue_overlap": 0,
+        "prior_source_record_overlap": 0,
+        "qualified": false,
+        "records": [
+          {
+            "capability_contract_id": "C_1b099ede5d276d0d7e686863",
+            "eligible_partition_dialogue_count": 47,
+            "eligible_source_record_count": 47
+          },
+          {
+            "capability_contract_id": "C_3952cb7117dfccd4faa65fe1",
+            "eligible_partition_dialogue_count": 691,
+            "eligible_source_record_count": 698
+          },
+          {
+            "capability_contract_id": "C_4ab8adeabddfae28cdfd8586",
+            "eligible_partition_dialogue_count": 247,
+            "eligible_source_record_count": 247
+          },
+          {
+            "capability_contract_id": "C_5e8838e0afa2cb9fb11797de",
+            "eligible_partition_dialogue_count": 1716,
+            "eligible_source_record_count": 1719
+          },
+          {
+            "capability_contract_id": "C_6bf4a7fc35cd0004e9177b09",
+            "eligible_partition_dialogue_count": 74,
+            "eligible_source_record_count": 96
+          },
+          {
+            "capability_contract_id": "C_6dee36329eb9039b7fc7ab52",
+            "eligible_partition_dialogue_count": 1010,
+            "eligible_source_record_count": 1021
+          },
+          {
+            "capability_contract_id": "C_921e592a9360e0f6763b4faa",
+            "eligible_partition_dialogue_count": 58,
+            "eligible_source_record_count": 58
+          },
+          {
+            "capability_contract_id": "C_9e40b8c76ec62bd62e010c18",
+            "eligible_partition_dialogue_count": 250,
+            "eligible_source_record_count": 251
+          },
+          {
+            "capability_contract_id": "C_a449e2daa6d62796f299baa7",
+            "eligible_partition_dialogue_count": 271,
+            "eligible_source_record_count": 271
+          },
+          {
+            "capability_contract_id": "C_b0fc70d7abe5fe162310f6cf",
+            "eligible_partition_dialogue_count": 137,
+            "eligible_source_record_count": 139
+          },
+          {
+            "capability_contract_id": "C_c1b57d05f1a0c1576c78ff0c",
+            "eligible_partition_dialogue_count": 2757,
+            "eligible_source_record_count": 2763
+          },
+          {
+            "capability_contract_id": "C_c3b772e901e67c804d681253",
+            "eligible_partition_dialogue_count": 1065,
+            "eligible_source_record_count": 1071
+          },
+          {
+            "capability_contract_id": "C_c967f1c0f09afaef3cf4896e",
+            "eligible_partition_dialogue_count": 109,
+            "eligible_source_record_count": 109
+          },
+          {
+            "capability_contract_id": "C_fc5db8c638cd224d137e71c7",
+            "eligible_partition_dialogue_count": 872,
+            "eligible_source_record_count": 887
+          }
+        ],
+        "singleton_source_annotation_mapping_rate": 1.0,
+        "source_annotation_candidate_count_before_prior_exclusion": 10007
+      },
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "ontology_registration_count": 0,
+      "partition_schema_contract_definition_counts": {
+        "dev": 30,
+        "test": 38,
+        "train": 53
+      },
+      "policy_score_count": 0,
+      "protected_language_read_count": 0,
+      "schema_metadata_file_read_count": 3,
+      "scientific_feasibility_passed": false,
+      "selectable_family": {
+        "allowed_partition_rate": 1.0,
+        "eligible_for_selection": true,
+        "exact_contract_coverage": 8,
+        "family_id": "SGD_SAME_REVISION_NON_DEV_EXACT_CONTRACTS",
+        "minimum_partition_dialogue_count": 0,
+        "prior_partition_dialogue_overlap": 0,
+        "prior_source_record_overlap": 0,
+        "qualification_gates": {
+          "allowed_partition_rate": true,
+          "complete_target_expressibility": false,
+          "exact_contract_coverage": false,
+          "licensed_independent_human_language_source": true,
+          "minimum_unique_partition_dialogues": false,
+          "prior_partition_dialogue_overlap": true,
+          "prior_source_record_overlap": true,
+          "singleton_source_annotation_mapping": true
+        },
+        "qualified": false,
+        "records": [
+          {
+            "capability_contract_id": "C_1b099ede5d276d0d7e686863",
+            "eligible_partition_dialogue_count": 0,
+            "eligible_source_record_count": 0
+          },
+          {
+            "capability_contract_id": "C_3952cb7117dfccd4faa65fe1",
+            "eligible_partition_dialogue_count": 535,
+            "eligible_source_record_count": 542
+          },
+          {
+            "capability_contract_id": "C_4ab8adeabddfae28cdfd8586",
+            "eligible_partition_dialogue_count": 0,
+            "eligible_source_record_count": 0
+          },
+          {
+            "capability_contract_id": "C_5e8838e0afa2cb9fb11797de",
+            "eligible_partition_dialogue_count": 1426,
+            "eligible_source_record_count": 1429
+          },
+          {
+            "capability_contract_id": "C_6bf4a7fc35cd0004e9177b09",
+            "eligible_partition_dialogue_count": 74,
+            "eligible_source_record_count": 96
+          },
+          {
+            "capability_contract_id": "C_6dee36329eb9039b7fc7ab52",
+            "eligible_partition_dialogue_count": 749,
+            "eligible_source_record_count": 758
+          },
+          {
+            "capability_contract_id": "C_921e592a9360e0f6763b4faa",
+            "eligible_partition_dialogue_count": 0,
+            "eligible_source_record_count": 0
+          },
+          {
+            "capability_contract_id": "C_9e40b8c76ec62bd62e010c18",
+            "eligible_partition_dialogue_count": 0,
+            "eligible_source_record_count": 0
+          },
+          {
+            "capability_contract_id": "C_a449e2daa6d62796f299baa7",
+            "eligible_partition_dialogue_count": 266,
+            "eligible_source_record_count": 266
+          },
+          {
+            "capability_contract_id": "C_b0fc70d7abe5fe162310f6cf",
+            "eligible_partition_dialogue_count": 0,
+            "eligible_source_record_count": 0
+          },
+          {
+            "capability_contract_id": "C_c1b57d05f1a0c1576c78ff0c",
+            "eligible_partition_dialogue_count": 2525,
+            "eligible_source_record_count": 2529
+          },
+          {
+            "capability_contract_id": "C_c3b772e901e67c804d681253",
+            "eligible_partition_dialogue_count": 755,
+            "eligible_source_record_count": 760
+          },
+          {
+            "capability_contract_id": "C_c967f1c0f09afaef3cf4896e",
+            "eligible_partition_dialogue_count": 0,
+            "eligible_source_record_count": 0
+          },
+          {
+            "capability_contract_id": "C_fc5db8c638cd224d137e71c7",
+            "eligible_partition_dialogue_count": 649,
+            "eligible_source_record_count": 664
+          }
+        ],
+        "singleton_source_annotation_mapping_rate": 1.0,
+        "source_annotation_candidate_count_before_prior_exclusion": 7044
+      },
+      "selected_source_family": null,
+      "service_call_count": 0,
+      "target_contract_count": 14,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "utterance_or_dialogue_text_read_or_emission_count": 0
+    }
+  },
+  "result": "outputs/v203-independent-confirmation-feasibility/evaluation/result.json",
+  "result_sha256": "c17536d4be53b2ac4fa7ffd555e7d405c25d0b2fb6c6254378bb56fe271c1314",
+  "results_document": "docs/v203-independent-confirmation-feasibility-results.md",
+  "results_document_sha256": "6b448ae36bba795c0e187acd6c8497aa3c7bad717ac0044fe65befe5e5972b51",
+  "schema_version": "203-independent-confirmation-feasibility-outcome-lock",
+  "summary": "outputs/v203-independent-confirmation-feasibility/evaluation/summary.json",
+  "summary_sha256": "84217aa000924eed9c7f68d280b23f61c0ff9cb7c81f23b069177268520b88e1",
+  "verifier": "python/verify_and_freeze_v203_independent_confirmation_feasibility_outcome.py",
+  "verifier_sha256": "0c5f1817c758c7722eabb97fdf0bac9d5ed08a6d8f906d33c73b32cd7f4efcae"
+}

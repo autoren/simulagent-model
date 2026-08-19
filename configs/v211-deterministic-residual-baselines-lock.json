@@ -1,0 +1,183 @@
+{
+  "auditor": "python/audit_and_freeze_v211_deterministic_residual_baselines.py",
+  "auditor_sha256": "bb644e7cf9befe3ee10c3474044489f65aef23d2e951ca3bfe22e60adee6caeb",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "modify_split_baselines_metrics_gates_or_decision": false,
+    "read_protected_or_run_model": false,
+    "run_one_development_only_deterministic_evaluation": true
+  },
+  "config": "configs/v211-deterministic-residual-baselines.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationTruthReadDuringFitOrPredictionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedSurfaceOrTruthReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredDeterministicEvaluationCount": 1
+    },
+    "artifacts": {
+      "calibrationSurface": "outputs/v211-deterministic-residual-baselines/firewall/calibration-surfaces.jsonl",
+      "calibrationTruth": "outputs/v211-deterministic-residual-baselines/firewall/calibration-truth.jsonl",
+      "evaluationSurface": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-surfaces.jsonl",
+      "evaluationTruthSealed": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-truth-sealed.jsonl",
+      "learnedLexicon": "outputs/v211-deterministic-residual-baselines/evaluation/learned-lexicon.json",
+      "predictionFreeze": "outputs/v211-deterministic-residual-baselines/evaluation/prediction-freeze.json",
+      "predictions": "outputs/v211-deterministic-residual-baselines/evaluation/predictions.jsonl",
+      "result": "outputs/v211-deterministic-residual-baselines/evaluation/result.json",
+      "split": "outputs/v211-deterministic-residual-baselines/evaluation/split.json",
+      "summary": "outputs/v211-deterministic-residual-baselines/evaluation/summary.json"
+    },
+    "baselines": {
+      "ABSTAIN_ALWAYS": {
+        "predict": "ABSTAIN"
+      },
+      "ABSTENTION_FIRST_CONSENSUS": {
+        "predict": "accept only identical non-ABSTAIN RAW_LEXICAL and CONTEXT_CONTRAST predictions; otherwise ABSTAIN"
+      },
+      "COMPOSITIONAL_RESPONSE_SPAN": {
+        "fit": "learn context-span tokens as tokens observed under at least two labels within each context; remove them, then retain globally label-pure response tokens at minimum count",
+        "predict": "compose a context-specific span remover with the learned response-token map; emit the unique remaining label or ABSTAIN without matching a sentence template"
+      },
+      "RAW_LEXICAL": {
+        "fit": "retain tokens seen at least minimum count and with exactly one semantic observation across calibration truth",
+        "predict": "emit the unique label among retained tokens in the utterance; otherwise ABSTAIN"
+      },
+      "evaluationTruthReadDuringFitOrPrediction": false,
+      "forbiddenPredictionFields": [
+        "group_id",
+        "semantic_regime",
+        "task_state",
+        "semantic_observation_id",
+        "source_probability",
+        "history",
+        "stage",
+        "clarification_action"
+      ],
+      "minimumCalibrationTokenCount": 2,
+      "predictionInputFields": [
+        "record_id",
+        "context_id",
+        "utterance"
+      ],
+      "protectedReadDuringFitPredictionOrScoring": false,
+      "tokenization": "casefold_unicode_alphanumeric_tokens"
+    },
+    "claimBoundary": "development-only deterministic analysis of whether the V210 paraphrase/opaque residual is genuinely model-relevant, with calibration truth allowed only for fitting lexical mappings and evaluation truth joined only after prediction freeze; not protected transfer, natural-language generalization, model evaluation, empirical likelihood calibration, authority, action, or execution",
+    "decisionImpact": {
+      "modelScoresOrRanksUsedAsLikelihoods": false,
+      "observationUseRule": "a non-ABSTAIN projection selects the frozen V209r1 exact continuation associated with that observation; ABSTAIN selects safe defer",
+      "returnScale": 120.0,
+      "safeDeferralReward": -2.0,
+      "weighting": "within each evaluation context and counterfactual type, normalize semantic-regime prior times state prior times true source probability over included support records; macro-average context-counterfactual cells",
+      "wrongProjectionEvaluation": "evaluate the selected continuation under the posterior induced by the true observation and preceding context history"
+    },
+    "decisionRule": {
+      "ifAllIntegritySafetyDecisionAndAccessGatesPassAndConsensusResidualIsZero": "freeze_V211_positive_deterministic_closure_with_zero_model_eligibility_and_design_new_identifiable_open_class_population",
+      "ifAllIntegritySafetyDecisionAndAccessGatesPassAndResidualMeetsEveryModelEligibilityGate": "freeze_V211_positive_nontrivial_model_eligible_residual_and_authorize_separate_local_model_design_only",
+      "nontrivialEligibleResidualAuthorizesOnlySeparateLocalModelDesign": true,
+      "otherwise": "freeze_V211_negative_or_ineligible_without_split_baseline_metric_gate_or_protected_tuning",
+      "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesProtectedOpeningOrImmediateModelRun": false,
+      "zeroResidualAuthorizesModel": false
+    },
+    "experiment": "v211_group_disjoint_deterministic_residual_baselines_and_decision_impact",
+    "gates": {
+      "maximumConsensusCounterfactualDisagreementRate": 0.0,
+      "maximumConsensusNormalizedDecisionRegret": 0.0,
+      "maximumFallbackCount": 0,
+      "maximumFalseAcceptanceCountForAnyBaseline": 0,
+      "minimumAbstainAlwaysNormalizedDecisionRegret": 0.001,
+      "minimumAcceptedAccuracyForAnyAcceptingBaseline": 1.0,
+      "modelEligibleResidualMaximumCount": 72,
+      "modelEligibleResidualMinimumCount": 18,
+      "modelEligibleResidualMinimumNormalizedDecisionRegret": 0.001,
+      "modelEligibleResidualRequiredContextCount": 5,
+      "modelEligibleResidualRequiredObservationCount": 3,
+      "modelEligibleResidualRequiredRegimeCount": 3,
+      "modelEligibleResidualRequiredStateCount": 2,
+      "requiredCalibrationRecordCount": 90,
+      "requiredEvaluationPredictionCountPerBaseline": 90,
+      "requiredEvaluationRecordCount": 90,
+      "requiredEvaluationTruthReadDuringFitOrPredictionCount": 0,
+      "requiredFiniteMetrics": true,
+      "requiredGroupDisjointness": true,
+      "requiredInputResidualCount": 180,
+      "requiredPredictionFreezeBeforeTruthJoin": true,
+      "requiredPredictionWorkerEvaluationTruthPathCount": 0,
+      "requiredPredictionWorkerGroupIdReadCount": 0,
+      "requiredProtectedReadCount": 0
+    },
+    "parentV210OutcomeLock": "configs/v210-controlled-language-population-projection-outcome-lock.json",
+    "population": {
+      "calibrationGroupCount": 45,
+      "calibrationGroupIdHash": "635cd2852bc3e8a0ecf14d42bf750080d16e63e366ccb86d962f31546c884b7e",
+      "calibrationRecordCount": 90,
+      "calibrationRecordIdHash": "8caacc63848afc4c4d87b09a5a3fd4743b94d868f37e9fe4d30d8a71f2601388",
+      "eligibleCounterfactualTypes": [
+        "MATCHED_PARAPHRASE",
+        "OPAQUE_RENAMING"
+      ],
+      "evaluationGroupCount": 45,
+      "evaluationGroupIdHash": "0e45d60ada33abc4eb06cdbcaab1c78bdecb94b6c9658dba3755cf59e9eecbec",
+      "evaluationRecordCount": 90,
+      "evaluationRecordIdHash": "f9176844547535aafd655bdfaeb4db4b2125600da3dec829835d79f64960d170",
+      "groupCount": 90,
+      "groupDisjoint": true,
+      "inputDevelopmentProjection": "outputs/v210-controlled-language-population-projection/evaluation/development-projection.jsonl",
+      "inputDevelopmentSurface": "outputs/v210-controlled-language-population-projection/population/development-surfaces.jsonl",
+      "inputDevelopmentTruth": "outputs/v210-controlled-language-population-projection/population/development-truth.jsonl",
+      "inputResidualCount": 180,
+      "protectedArtifactsRemainClosed": true,
+      "recordsPerGroup": 2,
+      "splitSeed": 21101,
+      "splitUsesIdentifiersOnly": true
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "baselineFitOrPredictionCount": 0,
+      "developmentResidualSurfaceReadCount": 0,
+      "developmentResidualTruthReadCount": 0,
+      "identifierOnlySplitEnumerationCount": 180,
+      "modelLoadOrGenerationCount": 0,
+      "protectedSurfaceOrTruthReadCount": 0,
+      "splitHashComputationCount": 4,
+      "trainingRunCount": 0
+    },
+    "referenceV209r1OutcomeLock": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json",
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "211-deterministic-residual-baselines-design"
+  },
+  "config_sha256": "7a3fdc5262d6fafcf5e269fea1db8e9e57931be9c41fe12023dd17f247b6e00e",
+  "design_audit": "outputs/v211-deterministic-residual-baselines/design-audit.json",
+  "design_audit_sha256": "c0cfcaed976acbf1da5b5f0ca83a7ec2760fd0a07e646a8f556c266fb5f21cf8",
+  "experiment": "v211_group_disjoint_deterministic_residual_baselines_and_decision_impact",
+  "firewall_worker": "python/v211_firewall_worker.py",
+  "firewall_worker_sha256": "9a777b8e5bc5891f48441ab74ffce961ed6d8ded1b1fa5ba417f9178765dfe4e",
+  "lock_payload_sha256": "a65092097c53d09bee9bb277fbe6e4e052d0f2eaa6bca3418421c63ae1400303",
+  "parent_V210_outcome": "configs/v210-controlled-language-population-projection-outcome-lock.json",
+  "parent_V210_outcome_sha256": "8b7b5e80a658fb9ecdb0a0dfa8fe56862ce13a1aa80681f4821851879f50c398",
+  "plan": "docs/v211-deterministic-residual-baselines-plan.md",
+  "plan_sha256": "cfad8d9edf453eb892c1c6a4ee9c454dd5655997d099365563011a3e6b8b423b",
+  "prediction_worker": "python/v211_prediction_worker.py",
+  "prediction_worker_sha256": "8fd34a022740dcc0ed5576b96203149d46bacec4e079dca9466c26b7d62ded13",
+  "protocol": "python/v211_deterministic_residual_baselines.py",
+  "protocol_sha256": "45abac26cef279c2264d4313d72d559878a431ebebbcbf7a0b31ec3969e53cc4",
+  "reference_V209r1_outcome": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json",
+  "reference_V209r1_outcome_sha256": "61d13d813299925d0ad5dbba2903ecc0b07c99a2811e077a154c9129b1c726e7",
+  "runner": "python/run_v211_deterministic_residual_baselines.py",
+  "runner_sha256": "86373837a4ab58b29e84e5f0bcc5455675644ed3dad2d367c171b748574cdbf9",
+  "schema_version": "211-deterministic-residual-baselines-lock",
+  "tests": "python/test_v211_deterministic_residual_baselines.py",
+  "tests_sha256": "4225c07b5830609a3f91e4d0e6281a01da500e540d41de07d7f22c8dc9876700",
+  "verifier": "python/verify_and_freeze_v211_deterministic_residual_baselines_outcome.py",
+  "verifier_sha256": "8ccbe0a67ceaba7e7be260d9e9626d68c01d8e021b96beb659bc691644ddaf52"
+}

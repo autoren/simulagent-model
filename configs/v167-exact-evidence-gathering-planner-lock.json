@@ -1,0 +1,203 @@
+{
+  "auditor": "python/audit_and_freeze_v167_exact_evidence_gathering_planner.py",
+  "auditor_sha256": "46569f97cf3f0eb7347cf0150c7b76f65aa3f6a808ef68dcf76442295fbfd318",
+  "authorization": {
+    "create_or_open_evaluation_population": false,
+    "grant_candidate_state_belief_action_or_execution_authority": false,
+    "load_or_run_local_or_API_model": false,
+    "modify_prior_queries_costs_losses_horizon_policies_metrics_gates_or_decision": false,
+    "mutate_trusted_state_or_call_real_service": false,
+    "perform_external_side_effect_or_execution": false,
+    "read_frozen_predictions_and_hidden_development_truth_once": true,
+    "register_provisional_primitive": false,
+    "run_formal_exact_development_planner_once": true
+  },
+  "baseline_predictions": "outputs/v166-model-free-factored-ontology/baselines/baseline-predictions.json",
+  "baseline_predictions_sha256": "e25d5df853d5d94ff6dc2239e5af0220441e2d214ad49bb2abc4440707f44033",
+  "config": "configs/v167-exact-evidence-gathering-planner.json",
+  "config_payload": {
+    "authorityBoundary": {
+      "actionOrExecutionAllowed": false,
+      "authoritativeOntologyImmutable": true,
+      "candidateBeliefsAndTerminalDecisionsAreShadowOnly": true,
+      "modelUseAllowed": false,
+      "provisionalRegistrationAllowed": false,
+      "realExecutionCount": 0,
+      "realQueryOrServiceCallAllowed": false,
+      "trustedStateMutationAllowed": false
+    },
+    "caseSelection": {
+      "requiredCandidateCount": 64,
+      "requiredCaseCount": 48,
+      "requiredEvidenceStatus": "ambiguous",
+      "selectionUsesFrozenV166PredictionsOnly": true,
+      "sourceBaseline": "exact_parser_plus_version_space"
+    },
+    "claimBoundary": "development-informed exact finite-DSL shadow-planning result only; not fresh confirmation, unrestricted ontology learning, language understanding, registration, trusted-state control, action, or execution",
+    "decisionRule": {
+      "ifEveryPlannerGatePasses": "freeze_V167_as_development_evidence_and_preregister_fixed_ontology_reversible_sandbox",
+      "otherwise": "freeze_V167_boundary_result_and_do_not_tune_on_frozen_cases",
+      "passAuthorizesImmediateSandboxRun": false,
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesRegistrationTrustedStateActionOrExecution": false
+    },
+    "developmentDesignDisclosure": {
+      "confirmatoryClaimAllowed": false,
+      "costsHorizonAndLossesChosenAfterDevelopmentFeasibilityInspection": true,
+      "formalPolicyScoresWrittenBeforeLock": false,
+      "hiddenDevelopmentTruthReadCount": 2,
+      "oracleFeasibilityAnalysisRunCount": 2,
+      "projectAuthoredDevelopmentOnly": true,
+      "protectedOrEvaluationPopulationExists": false
+    },
+    "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+    "formalRunPreLockAccess": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalPolicyScoreCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "lossOrientation": "terminalLoss[actual_class][decision]",
+    "parentV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+    "plannerGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumHistoryDependentSecondActionCaseCount": 1,
+      "minimumStrictBayesImprovementOverOpenLoopCaseCount": 1,
+      "minimumUniqueBayesRootQueryCount": 2,
+      "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+      "requiredCandidatesPerCase": 64,
+      "requiredCaseCount": 48,
+      "requiredExpressibilityClassCoverage": 3,
+      "requiredPositiveValueOfInformationCaseCount": 48,
+      "requiredRenamingRiskInvariance": 1.0,
+      "requiredTargetCandidateRetention": 1.0
+    },
+    "policies": {
+      "exact_bayes_adaptive": "minimize exact expected query cost plus terminal loss with optional stopping over a two-query policy tree",
+      "forced_map_no_query": "choose the maximum-posterior class without defer, using terminal decision order for ties",
+      "greedy_class_information_gain": "adaptively choose maximum expected Shannon class-entropy reduction for two queries, then take the Bayes terminal decision",
+      "no_query_bayes_terminal": "take the minimum-risk terminal decision immediately",
+      "optimal_open_loop_pair": "choose the minimum-risk unordered query pair at the root, use both regardless of the first outcome, then take the Bayes terminal decision",
+      "oracle_class": "observe the actual expressibility class without cost; scoring lower bound only",
+      "random_open_loop_pair": "uniform expected risk over every unordered pair of available queries, always using both"
+    },
+    "prior": {
+      "classMass": {
+        "alias": "1/3",
+        "composition": "1/3",
+        "provisional_primitive": "1/3"
+      },
+      "expressibilityClasses": [
+        "alias",
+        "composition",
+        "provisional_primitive"
+      ],
+      "kind": "class_balanced_then_uniform_within_class",
+      "meaning": "normative development prior chosen to prevent the 247-member provisional class from winning solely by enumeration multiplicity"
+    },
+    "queryModel": {
+      "action": "query one currently variable truth-table valuation",
+      "candidateUpdate": "exact Bayesian conditioning with zero inconsistent-candidate mass",
+      "earlyStopAllowed": true,
+      "maximumQueries": 2,
+      "outcomeNoise": 0.0,
+      "outcomes": [
+        0,
+        1
+      ],
+      "queryCost": "1/10",
+      "repeatedQueryAllowed": false
+    },
+    "registeredMetrics": [
+      "expected total risk by policy",
+      "regret relative to exact Bayes-adaptive policy",
+      "positive value-of-information case count",
+      "strict improvement over optimal open-loop case count",
+      "unique exact-Bayes root query count",
+      "history-dependent second-action case count",
+      "expected query count",
+      "terminal defer probability",
+      "false provisional decision probability",
+      "target candidate retention",
+      "renaming invariance",
+      "model and execution access"
+    ],
+    "schemaVersion": "167-exact-evidence-gathering-planner-design",
+    "terminalDecisions": [
+      "alias",
+      "composition",
+      "provisional_primitive",
+      "defer"
+    ],
+    "terminalLoss": {
+      "alias": {
+        "alias": 0,
+        "composition": 4,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "composition": {
+        "alias": 4,
+        "composition": 0,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "provisional_primitive": {
+        "alias": 6,
+        "composition": 6,
+        "defer": 2,
+        "provisional_primitive": 0
+      }
+    },
+    "tieBreaks": {
+      "equalInformationGainPrefersLowestValuationIndex": true,
+      "equalOpenLoopRiskPrefersLexicographicallyLowestPair": true,
+      "equalQueryRiskPrefersLowestValuationIndex": true,
+      "stopPreferredToEqualRiskQuery": true,
+      "terminalDecisionOrder": [
+        "alias",
+        "composition",
+        "provisional_primitive",
+        "defer"
+      ]
+    }
+  },
+  "config_sha256": "bc1f9bbe42d6d428d20c99c6b9d90e6cc474f8f526fe7e75117f5390648eb598",
+  "design_audit": "outputs/v167-exact-evidence-gathering/design-audit.json",
+  "design_audit_sha256": "6512816e2165058b8e5c87ad3df3d1d14b67389522d544fca67ad2d8dca52057",
+  "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+  "hidden_records": "outputs/v165-factored-ontology-identifiability/population/hidden-records.json",
+  "hidden_records_sha256": "d65751fc4445e1443f88997a57e3b519d6423ff336745faf36ab6c84eed9b264",
+  "lock_payload_sha256": "35f9c29737109ade838fba746ef989cd372f9beeb34ba1ed927ad924de496fc6",
+  "parent_V166_outcome": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+  "parent_V166_outcome_sha256": "fbced4ba45b0daec532332137a8db6c3d3d8336512ea0340b1c2fc2500d11f5a",
+  "plan": "docs/v167-exact-evidence-gathering-planner-plan.md",
+  "plan_sha256": "7c3737ae81d606fc6a2f061831bb6d0f2f161a8c240c52fed768b9388677011e",
+  "protocol": "python/v167_exact_evidence_gathering_planner.py",
+  "protocol_sha256": "4a155d8d456bc61e31e2bd25b1d8d0cec7a294647348eeb93bd95a7e68f1a336",
+  "roadmap": "docs/research-roadmap-after-v166.md",
+  "roadmap_sha256": "bab8f588807c0a19586660ea2f29bb7f92418962a07f9bd37d3cab4701d4e1df",
+  "runner": "python/run_v167_exact_evidence_gathering_planner.py",
+  "runner_sha256": "b452bfbd8aebd765b37d37bd0a3b8f6fafdec05cb9bca6605230b790468903cb",
+  "schema_version": "167-exact-evidence-gathering-planner-lock",
+  "tests": "python/test_v167_exact_evidence_gathering_planner.py",
+  "tests_sha256": "7ee12fa294b68513cd68ab83d6636ef1486853b9001569d2809bd2653305901f",
+  "verifier": "python/verify_and_freeze_v167_exact_evidence_gathering_outcome.py",
+  "verifier_sha256": "ac36b60f7e7725fdcf9b7bac17e36ee5ebe8431be1a0a32d74e62c6b10099063"
+}

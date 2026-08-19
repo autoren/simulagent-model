@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "185-deterministic-SGD-candidate-set-controls-design",
+  "experiment": "v185_development_only_deterministic_candidate_sets_and_safe_clarification_routing",
+  "parentV184OutcomeLock": "configs/v184-sgd-role-isolated-language-extraction-outcome-lock.json",
+  "developmentLanguage": "outputs/v184-sgd-role-isolated-language-extraction/extraction/development-language.json",
+  "protectedLanguage": "outputs/v184-sgd-role-isolated-language-extraction/extraction/protected-language.json",
+  "declaredCatalogLanguage": "outputs/v184-sgd-role-isolated-language-extraction/extraction/declared-known-catalog-language.json",
+  "hiddenIdentifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+  "claimBoundary": "development-only deterministic shadow candidate-set and clarification-routing controls on externally authored SGD language; trusted answers, not retrieval, determine terminal state; not protected evidence, semantic authority, general open-world understanding, model performance, ontology registration, action, or execution evidence",
+  "developmentSplit": {
+    "baseSalt": "simulagent-v185-SGD-calibration-evaluation-v1",
+    "calibrationFractionWithinEachTruthKind": 0.5,
+    "requiredCalibrationCounts": {
+      "KNOWN": 36,
+      "PROVISIONAL": 18,
+      "UNSUPPORTED": 6,
+      "INSUFFICIENT_CONTROL": 6
+    },
+    "requiredEvaluationCounts": {
+      "KNOWN": 36,
+      "PROVISIONAL": 18,
+      "UNSUPPORTED": 6,
+      "INSUFFICIENT_CONTROL": 6
+    },
+    "splitUsesOnlyFrozenRecordIdentifierTruthKindAndSalt": true,
+    "splitUsesNoLanguagePredictionScoreOrPolicyOutcome": true
+  },
+  "observableQuery": {
+    "useOnlyUserUtterancesInConversationPrefix": true,
+    "systemUtterancesExcluded": true,
+    "missingObservationProducesNoQueryText": true,
+    "goldSemanticFramesLabelsContractsAndSourceIdentifiersExcluded": true
+  },
+  "deterministicViews": {
+    "characterNgram": {
+      "normalization": "NFKC casefold alphanumeric whitespace",
+      "ngramWidths": [3, 4, 5],
+      "score": "cosine over raw character ngram counts",
+      "minimumTopScoreGrid": [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50],
+      "topRelativeMarginGrid": [0.00, 0.02, 0.05, 0.10]
+    },
+    "tokenSchemaOverlap": {
+      "normalization": "NFKC casefold alphanumeric tokens plus camel-case intent tokens",
+      "score": "cosine over raw token counts",
+      "minimumTopScoreGrid": [0.05, 0.10, 0.15, 0.20, 0.30, 0.40],
+      "topRelativeMarginGrid": [0.00, 0.02, 0.05, 0.10]
+    },
+    "exactIntentAliasLookup": {
+      "rule": "return a singleton only when exactly one complete normalized known intent alias occurs in user language; otherwise return the complete six-choice set"
+    },
+    "belowThresholdOrTie": "return a multi-choice shadow set and mark evidence insufficient",
+    "allCandidateSetsAreShadowOnly": true,
+    "authoritativeHypothesisUniverseAlwaysComplete": true
+  },
+  "calibrationRule": {
+    "jointGridSearchOverTwoDeterministicViews": true,
+    "candidateSpecificRouteOnlyOnSameSingletonAgreement": true,
+    "otherwiseGenericClarification": true,
+    "requiredCalibrationCandidateSpecificPrecision": 0.95,
+    "maximumCalibrationFalseSpecificRateOnNonKnown": 0.05,
+    "minimumCalibrationKnownSpecificCoverage": 0.20,
+    "objective": "minimum mean trusted-clarification cost then maximum precision then maximum known coverage then lexicographic parameter tuple",
+    "ifNoConfigurationQualifies": "use always-generic fallback and freeze nonqualification",
+    "noPostEvaluationThresholdChange": true
+  },
+  "trustedClarificationPolicy": {
+    "candidateSpecificQuestionCost": 0.25,
+    "genericClarificationCost": 0.40,
+    "wrongSpecificThenGenericCost": 0.65,
+    "missingObservationCost": 0.0,
+    "trustedCandidateConfirmationSucceedsOnlyForExactKnownTruth": true,
+    "wrongOrNonKnownCandidateConfirmationProducesNoWitnessAndFallsBackGeneric": true,
+    "trustedGenericClarificationReturnsExactSafeHiddenContractStatus": true,
+    "retrievalNeverDeterminesTerminalState": true,
+    "finalExactnessAfterTrustedAnswerRequired": 1.0
+  },
+  "evaluationGates": {
+    "requiredEvaluationRecordCount": 66,
+    "requiredObservedEvaluationRecordCount": 60,
+    "requiredMissingEvaluationRecordCount": 6,
+    "requiredStructuredPredictionRate": 1.0,
+    "requiredMissingInsufficientRate": 1.0,
+    "minimumCandidateSpecificPrecision": 0.95,
+    "maximumFalseSpecificRateOnNonKnown": 0.05,
+    "minimumKnownSpecificCoverage": 0.20,
+    "maximumMeanClarificationCost": 0.34363636363636363,
+    "minimumImprovementOverAlwaysGeneric": 0.02,
+    "requiredFinalExactnessAfterTrustedAnswers": 1.0,
+    "requiredAuthoritativeHypothesisRetentionRate": 1.0,
+    "minimumPredictionDefinedResidualCount": 24,
+    "maximumPredictionDefinedResidualCount": 100,
+    "requiredResidualTruthKindCoverage": ["KNOWN", "PROVISIONAL", "UNSUPPORTED"],
+    "requiredResidualMembershipUsesPredictionsOnly": true,
+    "maximumProtectedLanguageReadCount": 0,
+    "maximumManualLanguageInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "comparators": [
+    "complete_safe_enumeration_then_generic_clarification",
+    "always_generic_clarification",
+    "exact_intent_alias_lookup_then_safe_fallback",
+    "character_ngram_view_then_safe_fallback",
+    "token_schema_view_then_safe_fallback",
+    "same_singleton_consensus_then_safe_fallback",
+    "hidden_information_oracle"
+  ],
+  "preLockExposure": {
+    "developmentLanguageReadCount": 0,
+    "protectedLanguageReadCount": 0,
+    "deterministicScoreCount": 0,
+    "thresholdEvaluationCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryEvaluationSafetySelectivityCostAndResidualGatePasses": "freeze_V185_deterministic_router_and_authorize_one_local_residual_protocol_design_only",
+    "otherwise": "freeze_V185_boundary_result_without_protected_or_model_access",
+    "passAuthorizesImmediateModelRun": false,
+    "passAuthorizesProtectedAccess": false,
+    "passAuthorizesRegistrationAuthorityActionOrExecution": false
+  }
+}

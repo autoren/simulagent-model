@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "221-deterministic-mondo-residual-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v221_prospective_deterministic_mondo_residual",
+  "parentV220OutcomeLock": "configs/v220-fresh-mondo-artifact-population-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v220.md",
+  "plan": "docs/v221-deterministic-mondo-residual-plan.md",
+  "claimBoundary": "development-only deterministic retrieval and residual diagnosis over retrospective asserted Mondo states from V220; not protected evidence, inferred OWL equivalence, complete curator rationale, correct new-speaker intent, expert validation, model evidence, ontology registration, authority, action, or execution",
+  "inputContract": {
+    "developmentPublic": "outputs/v220-fresh-mondo-artifact-population/population/development-public.jsonl",
+    "developmentPublicSha256": "732cf17693aa593e1c0f0097faa1cb6afd754f52efe37cad605bd00967698d81",
+    "developmentTruth": "outputs/v220-fresh-mondo-artifact-population/population/development-truth.jsonl",
+    "developmentTruthSha256": "bcb23ce7504e89c0e52fc8aa521167a6094314676839615f4acd68cbdd35603e",
+    "populationManifest": "outputs/v220-fresh-mondo-artifact-population/population/manifest.json",
+    "populationManifestSha256": "f2e983238eddab26d50b7fae3883c3cda0ba2d6235a4a76f04068b8df48c70d2",
+    "olderOBO": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-base-v2026-05-05.obo",
+    "olderOBOSha256": "57e4563920b922dc952ed954d36368319592f3a32946504728665c248000a3ac",
+    "newerOBO": "outputs/v220-fresh-mondo-artifact-population/raw/mondo-base-v2026-06-02.obo",
+    "newerOBOSha256": "363a2dd9e653e12db0182332a974a6e3c3621a4556ab32c70eaa592cd37a376d",
+    "protectedPublic": "outputs/v220-fresh-mondo-artifact-population/population/protected-public.jsonl",
+    "protectedPublicSha256": "3fdf8d52606b4e18ed6059daa5e7dde9b09d4bc6de04f43909c0cf924b186e46",
+    "protectedTruth": "outputs/v220-fresh-mondo-artifact-population/population/protected-truth.jsonl",
+    "protectedTruthSha256": "9ee3b2d918337feb9190bac738426738be7667bb8247ce0ad482a411f619efa3",
+    "expectedDevelopmentGroupCount": 1621,
+    "expectedProtectedGroupCount": 540,
+    "protectedJSONLMayBeHashedButNotLoaded": true
+  },
+  "roleSplit": {
+    "unit": "group_id",
+    "source": "V220_population_manifest_development_group_ids_only",
+    "ordering": "sha256_of_V221_ROLE_vertical_bar_group_id_ascending",
+    "assignment": "ordered_index_modulo_5_equals_0_is_EVALUATION_else_CALIBRATION",
+    "expectedCalibrationGroupCount": 1296,
+    "expectedEvaluationGroupCount": 325,
+    "groupDisjoint": true,
+    "evaluationRecordsMayNotTuneMethodsBudgetsThresholdsOrController": true
+  },
+  "catalogDesign": {
+    "sourcePopulationExperiment": "v220_prospective_fresh_mondo_artifact_population",
+    "sources": ["OLDER_OBO", "NEWER_OBO"],
+    "surfaceFields": ["name", "synonym"],
+    "normalize": "unicode_casefold_then_non_alphanumeric_to_single_space",
+    "tokenization": "normalized_whitespace_tokens",
+    "characterNgrams": [3, 4, 5],
+    "familyDefinition": "union_stable_term_id_asserted_replaced_by_and_consider_links_across_both_releases",
+    "stateClassDefinition": "exact_sha256_class_of_V220_normalized_asserted_state_signature",
+    "equivalenceCollapse": "exact_state_class_identity",
+    "declaredReleaseFilter": "CURRENT_RELEASE_DECLARED_uses_current_or_asserted_replacement_classes_only",
+    "unspecifiedVersionSpace": "VERSION_UNSPECIFIED_uses_all_old_current_and_asserted_replacement_classes",
+    "remoteImportResolution": false
+  },
+  "methodPortfolio": [
+    {
+      "methodId": "M0_NORMALIZED_EXACT",
+      "description": "exact normalized surface lookup with exact state-class collapse and no family expansion"
+    },
+    {
+      "methodId": "M1_EXACT_FAMILY",
+      "description": "exact normalized lookup followed by atomic stable-ID/replacement/consider family expansion and declared-release filtering"
+    },
+    {
+      "methodId": "M2_HYBRID_RETRIEVAL",
+      "description": "M1 plus deterministic token-Jaccard then character-ngram-Dice retrieval with lexicographic ties and atomic family expansion"
+    },
+    {
+      "methodId": "M3_FINAL_FAIL_CLOSED",
+      "description": "M2 with exact-family overflow and lifecycle contradiction detection; retrieval-only or conflicting evidence cannot authorize a singleton action"
+    }
+  ],
+  "retrievalScoring": {
+    "exactNormalizedScore": 3.0,
+    "tokenJaccardWeight": 1.0,
+    "characterNgramDiceWeight": 1.0,
+    "tieBreak": "score_descending_then_normalized_surface_then_release_then_term_id_then_state_class",
+    "exactFamiliesProcessedBeforeRetrievedFamilies": true,
+    "familyExpansionIsAtomic": true,
+    "partialFamilyInsertionForbidden": true
+  },
+  "candidateBudgets": [1, 4, 8, 16],
+  "primaryAcceptedBudget": 8,
+  "controller": {
+    "versionUnspecifiedDecision": "PRESERVE_VERSION_SPACE_OR_CLARIFY",
+    "noCandidateDecision": "PRESERVE_VERSION_SPACE_OR_CLARIFY",
+    "retrievalOnlyDecision": "PRESERVE_VERSION_SPACE_OR_CLARIFY",
+    "overflowDecision": "PRESERVE_VERSION_SPACE_OR_CLARIFY",
+    "conflictingLifecycleDecision": "PRESERVE_VERSION_SPACE_OR_CLARIFY",
+    "authoritativeCurrentDecisionRequiresExactSurfaceFamilyEvidence": true,
+    "compatibleLiveDecision": "RESOLVE_CURRENT_STATE",
+    "compatibleReplacementDecision": "FOLLOW_ASSERTED_REPLACEMENT",
+    "compatibleNotExpressibleDecision": "ABSTAIN_NOT_EXPRESSIBLE",
+    "unknownWrongDecisionLoss": 1.0,
+    "safeFallbackUsesTruthPreserveLossWhenPresent": true
+  },
+  "metrics": {
+    "requiredByRole": ["CALIBRATION", "EVALUATION"],
+    "requiredByMethod": ["M0_NORMALIZED_EXACT", "M1_EXACT_FAMILY", "M2_HYBRID_RETRIEVAL", "M3_FINAL_FAIL_CLOSED"],
+    "requiredByBudget": [1, 4, 8, 16],
+    "requiredByEvidenceMode": ["VERSION_UNSPECIFIED", "CURRENT_RELEASE_DECLARED"],
+    "eventStrata": ["ADDED", "TEXT_CHANGE", "LIFECYCLE_CHANGE", "MAPPING_CHANGED", "LOGICAL_AXIOM_CHANGED", "OTHER"],
+    "measures": ["oracle_class_recall", "full_version_space_retention", "candidate_set_size", "singleton_under_ambiguous_truth", "unsafe_singleton_collapse", "exact_decision", "decision_regret"]
+  },
+  "residualDefinition": {
+    "methodId": "M3_FINAL_FAIL_CLOSED",
+    "budget": 8,
+    "unit": "evaluation_group",
+    "groupIsResidualIf": "at_least_one_evaluation_record_has_oracle_class_recall_below_1_after_all_allowed_deterministic_controls",
+    "decisionRelevant": "every_missing_frozen_candidate_class_has_a_V220_boundary_witness_or_is_the_only_class_supporting_the_frozen_correct_decision",
+    "minimumModelEligibleResidualGroupCount": 12,
+    "requiresZeroUnsafeSingletonCollapse": true,
+    "requiresFailClosedConflictHandlingAccuracy": 1.0,
+    "ifBelowMinimum": "DETERMINISTIC_SUFFICIENT_CLOSE_MODEL_ESCALATION_FOR_RETROSPECTIVE_TASK",
+    "ifAtOrAboveMinimumAndSafetyPasses": "MEANINGFUL_DETERMINISTIC_RESIDUAL_ELIGIBLE_FOR_SEPARATE_LOCAL_MODEL_DESIGN"
+  },
+  "evaluationGates": {
+    "requiredDevelopmentGroupAccounting": 1.0,
+    "requiredRoleAssignmentAccuracy": 1.0,
+    "requiredRoleDisjointness": true,
+    "requiredCatalogStateClassAccuracy": 1.0,
+    "requiredCandidateClassValidity": 1.0,
+    "requiredCandidateBudgetCompliance": 1.0,
+    "requiredAtomicFamilyExpansionAccuracy": 1.0,
+    "requiredContradictionFailClosedAccuracy": 1.0,
+    "maximumUnsafeSingletonCollapseRate": 0.0,
+    "maximumPrimaryEvaluationMeanDecisionRegret": 0.1,
+    "requiredMetricCellCoverage": 1.0,
+    "requiredNoEvaluationTuning": true,
+    "requiredProtectedFilesLoadedCount": 0,
+    "requiredFiniteMetrics": true
+  },
+  "accessGates": {
+    "requiredCatalogBuildCount": 1,
+    "requiredDevelopmentEvaluationRunCount": 1,
+    "requiredDevelopmentPublicLoadCount": 1,
+    "requiredDevelopmentTruthLoadCount": 1,
+    "maximumProtectedPublicLoadCount": 0,
+    "maximumProtectedTruthLoadCount": 0,
+    "maximumV218DevelopmentRecordReadCount": 0,
+    "maximumV218ProtectedRecordReadCount": 0,
+    "maximumV216ProtectedAccessCount": 0,
+    "maximumV213ProtectedAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumModelAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumNetworkRequestCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceActionCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "artifacts": {
+    "roleManifest": "outputs/v221-deterministic-mondo-residual/design/role-manifest.json",
+    "catalogManifest": "outputs/v221-deterministic-mondo-residual/catalog-manifest.json",
+    "observations": "outputs/v221-deterministic-mondo-residual/observations.jsonl",
+    "residualManifest": "outputs/v221-deterministic-mondo-residual/residual-manifest.json",
+    "summary": "outputs/v221-deterministic-mondo-residual/summary.json",
+    "result": "outputs/v221-deterministic-mondo-residual/result.json"
+  },
+  "decisionRule": {
+    "ifIntegritySafetyAndEvaluationGatesFail": "freeze_V221_negative_without_method_budget_threshold_controller_or_residual_tuning",
+    "ifGatesPassAndResidualBelowTwelveGroups": "freeze_V221_deterministic_sufficiency_and_close_model_escalation_for_this_retrospective_task",
+    "ifGatesPassAndResidualAtLeastTwelveGroups": "freeze_V221_meaningful_residual_and_authorize_one_separate_local_model_candidate_design_only",
+    "residualPassAuthorizesLocalModelDesignOnly": true,
+    "passAuthorizesProtectedAccessOrModelRun": false,
+    "passAuthorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}

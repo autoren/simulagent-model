@@ -1,0 +1,428 @@
+{
+  "schema_version": "cross_track_evidence_audit.v1",
+  "audit_id": "cross_track_evidence_audit_through_v224",
+  "frozen_at_utc": "2026-08-19T00:00:00Z",
+  "scope": {
+    "first_version": 33,
+    "last_version": 224,
+    "outcome_lock_glob": "configs/v*-outcome-lock.json",
+    "known_versions_without_frozen_outcome": [
+      58,
+      76,
+      77,
+      93,
+      99,
+      222
+    ],
+    "unit_of_evidence": "a self-validating frozen outcome lock; an unfrozen results document is not promoted to this status"
+  },
+  "prohibitions": {
+    "open_protected_record_bodies": false,
+    "open_request_language": false,
+    "rehash_declared_protected_data": false,
+    "run_local_or_api_model": false,
+    "train_or_tune": false,
+    "register_or_mutate_ontology": false,
+    "act_or_execute": false
+  },
+  "dependency_hash_policy": {
+    "verify_referenced_code_config_document_and_summary_artifacts": true,
+    "living_documents_expected_to_change": [
+      "docs/open-world-language-research-direction.md",
+      "docs/research-direction.md"
+    ],
+    "skip_extensions": [
+      ".jsonl",
+      ".csv",
+      ".tsv",
+      ".parquet",
+      ".arrow",
+      ".obo",
+      ".sqlite",
+      ".db",
+      ".gguf",
+      ".safetensors"
+    ],
+    "skip_path_components": [
+      "raw",
+      "protected",
+      "holdout"
+    ],
+    "skip_reason": "The audit records the hash asserted by the lock but does not read protected, raw, holdout, record-language, or model-weight bodies. Living direction documents are checked but reported separately from reproducibility-breaking drift."
+  },
+  "families": [
+    {
+      "family_id": "F01_FOUNDATIONS",
+      "title": "Executable semantics, belief filtering, inference, and planning foundations",
+      "version_min": 33,
+      "version_max": 62,
+      "evidence_source": "project-authored controlled corpora, exact simulators, and frozen external-transfer interfaces",
+      "status": "mixed_positive_mechanism_chain",
+      "claim_boundary": "Supports controlled executable-language composition, history-dependent belief filtering, calibrated exact/particle inference, and bounded planning mechanics. It does not establish unrestricted open-world language grounding.",
+      "composability": "Retain exact state, belief, inference, and planning modules; treat declaration-conditioned language results as controlled-interface evidence only.",
+      "protected_boundary": "Later confirmation and transfer bodies remain governed by their original locks; only lock metadata and non-sensitive dependencies are audited here.",
+      "model_involvement": "Some early language conditions used bounded models, but no model output becomes trusted state or execution authority.",
+      "unresolved_premise": "Independent prospective semantics for language outside a declared catalog.",
+      "continuation": "stop_repeating_foundational_reskins"
+    },
+    {
+      "family_id": "F02_EXTERNAL_POMDP",
+      "title": "External POMDP information value and Bayes-adaptive planning",
+      "version_min": 63,
+      "version_max": 75,
+      "evidence_source": "external POMDP models plus project-authored active-sensing constructions",
+      "status": "positive_with_sensor_semantics_boundary",
+      "claim_boundary": "Confirms information value and Bayes-adaptive control when uncertainty changes action consequences; V71 is a negative boundary where sensor-codebook uncertainty leaves a dominant action; V75 confirms the repaired active-sensing mechanism.",
+      "composability": "Retain the exact belief-space planning and action-dependent sensing mechanism.",
+      "protected_boundary": "Protected confirmation models are not reopened.",
+      "model_involvement": "No language model is required for the scientific mechanism.",
+      "unresolved_premise": "A prospectively grounded semantic observation channel connecting language evidence to planner beliefs.",
+      "continuation": "closed_positive_mechanism"
+    },
+    {
+      "family_id": "F03_LOCAL_LLM_INTERFACE",
+      "title": "Initial local-LLM candidate and clarification interfaces",
+      "version_min": 76,
+      "version_max": 92,
+      "evidence_source": "controlled and external shadow language subsets with bounded local generation",
+      "status": "negative_model_branch_with_positive_deterministic_interfaces",
+      "claim_boundary": "Local models failed candidate recall, adversarial, or rank-only gates; deterministic typed validators remain useful for shadow proposal handling. These runs do not calibrate semantic posteriors.",
+      "composability": "Retain schema validation, exhaustive deterministic controls, and non-authoritative proposal boundaries; discard autonomous classification claims.",
+      "protected_boundary": "No protected evaluation is reopened; V76/V77 have no frozen outcome lock in the present tree.",
+      "model_involvement": "Direct bounded local-model generation and ranking, never execution authority.",
+      "unresolved_premise": "Reliable open-world boundary recognition and calibrated abstention.",
+      "continuation": "closed_for_unstructured_model_retries"
+    },
+    {
+      "family_id": "F04_OPEN_SET_SOURCE",
+      "title": "External open-set source construction and first benchmark",
+      "version_min": 93,
+      "version_max": 107,
+      "evidence_source": "SGD, MASSIVE, PRESTO, and frozen source metadata/language projections",
+      "status": "mixed_source_success_model_failure",
+      "claim_boundary": "MASSIVE supports the frozen source/population construction while several alternatives fail feasibility; the local model fails the resulting open-world decision gates. Source availability is not semantic identifiability.",
+      "composability": "Retain source provenance and role-separation machinery, not V107 as a general language-capability estimate.",
+      "protected_boundary": "Protected test bodies remain closed; V93 lacks a frozen outcome lock.",
+      "model_involvement": "One bounded local-model benchmark after deterministic source construction.",
+      "unresolved_premise": "Whether observed errors arise from format, policy, identifiability, or model semantics.",
+      "continuation": "superseded_by_interface_forensics"
+    },
+    {
+      "family_id": "F05_INTERFACE_FORENSICS",
+      "title": "Typed-choice forensics and policy-repair studies",
+      "version_min": 108,
+      "version_max": 115,
+      "evidence_source": "persisted model outputs, deterministic rescoring, and fresh policy-transfer populations",
+      "status": "diagnostic_mixed_negative_transfer",
+      "claim_boundary": "Serialization was repairable, but semantic risk and novel-evidence transfer remained. Retrospective policy rescue does not prove an independently generalizing abstention policy.",
+      "composability": "Retain typed normalization and forensic decomposition; do not compose post-hoc rescue selection as fresh model evidence.",
+      "protected_boundary": "Uses persisted outputs and locked populations; no new protected/model access in the audit.",
+      "model_involvement": "Model behavior is diagnosed from frozen outputs; deterministic policy layers remain authoritative.",
+      "unresolved_premise": "An independently valid, pre-query signal for when clarification is worth requesting.",
+      "continuation": "closed_after_nontransfer"
+    },
+    {
+      "family_id": "F06_CLARIFICATION_CAUSALITY",
+      "title": "Clarification value, identifiability, and selective-query mechanics",
+      "version_min": 116,
+      "version_max": 122,
+      "evidence_source": "model-free causal simulators and exact value/selectivity envelopes",
+      "status": "boundary_mechanisms_positive_realization_negative",
+      "claim_boundary": "Derives when typed clarification can have decision value and how demanding answer reliability must be. It does not show that a model or simulated person supplies sufficiently reliable independent answers.",
+      "composability": "Retain VOI equations, asymmetric evidence requirements, and selective-query stopping logic.",
+      "protected_boundary": "No language bodies are needed for these mechanism calculations.",
+      "model_involvement": "None in the authoritative causal calculations.",
+      "unresolved_premise": "A real independently grounded answer channel meeting the required reliability and identifiability threshold.",
+      "continuation": "mechanism_retained_realization_deferred"
+    },
+    {
+      "family_id": "F07_SGD_CLARIFICATION",
+      "title": "Fresh SGD clarification populations and identifiability audits",
+      "version_min": 123,
+      "version_max": 134,
+      "evidence_source": "role-separated SGD metadata/language and controlled clarification constructions",
+      "status": "mixed_with_capability_confound",
+      "claim_boundary": "Clarification evidence can be strong in controlled interfaces, but local realization fails and SGD service novelty is capability-confounded. Hidden schema/version distinctions are not always identifiable from an utterance.",
+      "composability": "Retain role-separation and evidence-strength controls; retract pure capability-novelty interpretation.",
+      "protected_boundary": "Fresh roles remain separated and protected language is not reopened.",
+      "model_involvement": "A bounded local answer-realization condition fails; model output is not gold.",
+      "unresolved_premise": "Utterance-level boundary judgments whose distinctions are actually observable to a speaker/model.",
+      "continuation": "superseded_by_identifiability_protocol"
+    },
+    {
+      "family_id": "F08_THINKING_CERTIFICATES",
+      "title": "Thinking controls, certificates, and closed interaction",
+      "version_min": 135,
+      "version_max": 151,
+      "evidence_source": "controlled minimal pairs, finite certificates, exact oracle policies, and bounded local realizations",
+      "status": "positive_controller_mechanics_negative_local_realization",
+      "claim_boundary": "Thinking effort and parser repair do not solve the semantic boundary. Finite certificate and witness-firewall mechanics are feasible, while local proposal/scoring conditions fail development gates.",
+      "composability": "Retain certificates, witness firewalls, closed alternatives, and exact query policies; do not infer that longer reasoning improves semantic identification.",
+      "protected_boundary": "Fresh codebooks/interactions remain role-separated; no evaluation reopening.",
+      "model_involvement": "Direct-versus-thinking and local proposal conditions are bounded negative evidence.",
+      "unresolved_premise": "A proposal mechanism with incremental oracle-class recall beyond deterministic candidates.",
+      "continuation": "close_reasoning_effort_and_local_recovery_cycles"
+    },
+    {
+      "family_id": "F09_DETERMINISTIC_ROUTING",
+      "title": "Question ordering, retrieval, hard ties, and controlled grammar",
+      "version_min": 152,
+      "version_max": 160,
+      "evidence_source": "fresh synthetic populations with explicit metadata and controlled relational grammar",
+      "status": "mixed_positive_deterministic_mechanisms",
+      "claim_boundary": "Explicit metadata retrieval and grammar-aware routing can qualify; generic margin routing and local ordering do not. Results are structural and synthetic, not open-world semantic grounding.",
+      "composability": "Retain deterministic retrieval/grammar operators when their metadata is truly available.",
+      "protected_boundary": "No protected language is opened in the audit.",
+      "model_involvement": "One bounded local ordering branch fails; successful controls are model-free.",
+      "unresolved_premise": "Transfer of explicit structural signals to an independent natural-language source.",
+      "continuation": "only_transfer_not_reskin"
+    },
+    {
+      "family_id": "F10_MASSIVE_TRANSFER_RESIDUAL",
+      "title": "Fresh MASSIVE transfer and local residual proposal",
+      "version_min": 161,
+      "version_max": 164,
+      "evidence_source": "fresh MASSIVE role-separated transfer population with deterministic controls and bounded local residual",
+      "status": "positive_population_negative_novel_model_residual",
+      "claim_boundary": "The transfer population is sound, but deterministic plus local proposals do not recover the novel-valid class reliably enough. Hybrid proposal quality is not semantic authority.",
+      "composability": "Retain population/provenance artifacts and deterministic controls; close model escalation for this residual.",
+      "protected_boundary": "Protected transfer remains sealed after nonqualification.",
+      "model_involvement": "Bounded local residual candidate generation only.",
+      "unresolved_premise": "A representation where a meaningful deterministic residual exists and is prospectively identifiable.",
+      "continuation": "closed_model_residual"
+    },
+    {
+      "family_id": "F11_ONTOLOGY_SANDBOX",
+      "title": "Factored ontology evidence planning, reversible sandbox, and robust certificates",
+      "version_min": 165,
+      "version_max": 182,
+      "evidence_source": "fresh executable synthetic ontology/constraint populations and exact stateful sandbox simulations",
+      "status": "strong_positive_mechanism_chain",
+      "claim_boundary": "Confirms exact evidence gathering, reversible provisional execution, certificate-aware planning, and triple-repetition robustness on fresh procedural populations. It does not validate natural-language semantics or real external services.",
+      "composability": "Core decision architecture: retain belief updates, exact evidence policy, sandbox transaction semantics, certificates, deferral, and corruption robustness.",
+      "protected_boundary": "All transactions are simulated/reversible; trusted state and external services are never mutated.",
+      "model_involvement": "None required for the positive mechanism chain.",
+      "unresolved_premise": "An independently grounded semantic observation model feeding the same exact architecture.",
+      "continuation": "closed_positive_mechanism"
+    },
+    {
+      "family_id": "F12_TYPED_CHANNEL",
+      "title": "SGD contract identifiability and typed clarification-channel frontier",
+      "version_min": 183,
+      "version_max": 190,
+      "evidence_source": "role-isolated SGD contracts, deterministic candidate controls, and exact typed channel simulations",
+      "status": "mixed_binary_boundary_and_menu_compression",
+      "claim_boundary": "A finite typed codebook can identify some distinctions; binary and multiway channel limits are explicit, and protected menu compression is confirmed. This is not proof of an adaptive human semantic channel.",
+      "composability": "Retain exact typed questions, OTHER/clarify outcomes, menu compression, and conservative fallback.",
+      "protected_boundary": "Protected confirmation remains sealed; no model access in this family.",
+      "model_involvement": "None in the authoritative channel frontier.",
+      "unresolved_premise": "Natural-language projection into the trusted finite menu with independent confirmation.",
+      "continuation": "retain_finite_channel_only"
+    },
+    {
+      "family_id": "F13_LANGUAGE_TO_MENU",
+      "title": "Language-to-menu projection, local ranking, confirmation, and robustness",
+      "version_min": 191,
+      "version_max": 203,
+      "evidence_source": "fresh/protected SGD language projections, deterministic rankers, bounded local ranking, and exact presentation transforms",
+      "status": "narrow_positive_non_authoritative_model_result_with_robustness_boundary",
+      "claim_boundary": "A local model improves finite-menu proposal reduction and is independently confirmed, while full candidate sets are presentation-sensitive. A deterministic trusted controller preserves decision sufficiency; no calibrated open-world posterior or autonomous action is established.",
+      "composability": "Retain one-call top-3-plus-OTHER as optional non-authoritative proposal aid and keep the full trusted hypothesis set/controller.",
+      "protected_boundary": "Protected confirmations stay sealed; persisted normalized proposals may be analyzed without reopening language.",
+      "model_involvement": "Bounded local model as proposal/ranker only; no API, posterior, authority, action, or execution.",
+      "unresolved_premise": "Independent external confirmation covering every exact contract; V203 finds none.",
+      "continuation": "development_claim_frozen_no_scaling"
+    },
+    {
+      "family_id": "F14_OPEN_WORLD_POMDP",
+      "title": "Open-world semantic POMDP and external-analogue search",
+      "version_min": 204,
+      "version_max": 211,
+      "evidence_source": "project-authored exact semantic POMDPs, controlled-language projections, and metadata-only external-source censuses",
+      "status": "positive_terminal_mechanism_external_validation_negative",
+      "claim_boundary": "V205/V209 establish a terminally proper mechanism where outside-semantics uncertainty makes calibration, inspection, state-specific repair, and deferral optimal. External analogue/source attempts fail, and controlled projections close deterministically with zero model eligibility.",
+      "composability": "Core decision layer: explicit outside hypothesis, action-dependent sensing, terminal settlement, and safe defer compose with the sandbox/certificate chain.",
+      "protected_boundary": "External task language remains closed after metadata feasibility failures.",
+      "model_involvement": "No model is used in the positive oracle mechanism; external behavior/model branches remain closed.",
+      "unresolved_premise": "Empirical likelihoods or adjudications for prospective new-speaker semantic states.",
+      "continuation": "mechanism_retained_external_grounding_deferred"
+    },
+    {
+      "family_id": "F15_REPRESENTATIONAL_DIAGNOSIS",
+      "title": "Open-class representational diagnosis and deterministic version-space controls",
+      "version_min": 212,
+      "version_max": 214,
+      "evidence_source": "hidden executable program semantics, role-separated concept populations, and exact deterministic candidate/version-space controls",
+      "status": "positive_deterministic_closure",
+      "claim_boundary": "Exact equivalence, expressibility, evidence state, boundary witness, and decision consequence can be diagnosed; the frozen typed-program population leaves zero meaningful model residual. It is a programmatic mechanism study, not external natural-language validation.",
+      "composability": "Required pre-language protocol: diagnose representability, freeze roles, exhaust deterministic candidates, collapse equivalence, and preserve residual uncertainty.",
+      "protected_boundary": "Hidden executable semantics remain role-separated; no model or ontology registration.",
+      "model_involvement": "Zero model eligibility after deterministic closure.",
+      "unresolved_premise": "An external prospective language source with the same observable distinctions and a nonzero deterministic residual.",
+      "continuation": "reuse_protocol_do_not_repeat_same_operator"
+    },
+    {
+      "family_id": "F16_EXTERNAL_ONTOLOGY",
+      "title": "External semantic resources and retrospective Mondo reconstruction",
+      "version_min": 215,
+      "version_max": 221,
+      "evidence_source": "external resource metadata and immutable versioned Mondo ontology artifacts",
+      "status": "retrospective_positive_after_source_failures",
+      "claim_boundary": "Mondo artifacts support retrospective catalog-version reconstruction, solved by deterministic exact-family expansion. Metadata/payload feasibility failures and retrospective closure prevent any inference to new-speaker intent.",
+      "composability": "Retain external provenance and deterministic version-space reconstruction as catalog-state evidence only.",
+      "protected_boundary": "Protected Mondo projections remain sealed; no request language, human simulation, or model escalation.",
+      "model_involvement": "Zero model-eligible residual in V221.",
+      "unresolved_premise": "Per-record independent semantic judgments tied to immutable requester language and catalog consequences.",
+      "continuation": "retrospective_track_closed"
+    },
+    {
+      "family_id": "F17_ARCHIVED_ADJUDICATION",
+      "title": "Archived adjudication workflow and record-level feasibility",
+      "version_min": 223,
+      "version_max": 224,
+      "evidence_source": "workflow documentation followed by structured Mondo record metadata only",
+      "status": "workflow_positive_record_level_negative",
+      "claim_boundary": "Mondo qualifies at workflow level, but 2,397 record metadata rows populate none of the four frozen substantive strata. No request language, model, or deep provenance is opened. B2c remains externally unvalidated.",
+      "composability": "Use only as a stopping result and source-screening template; it supplies no observation likelihood or gold labels.",
+      "protected_boundary": "Task titles, bodies, comments, and request language remain sealed; declared hashes are recorded without rehashing bodies.",
+      "model_involvement": "Zero model/API use.",
+      "unresolved_premise": "A prospectively admissible independent source for known/new/insufficient/unsupported record-level semantics.",
+      "continuation": "deferred_until_external_state_changes"
+    }
+  ],
+  "critical_chain": [
+    {
+      "outcome_lock": "configs/v50r1-outcome-lock.json",
+      "role": "history-dependent belief filtering",
+      "evidence_class": "controlled_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v51r1-outcome-lock.json",
+      "role": "calibrated exact inference",
+      "evidence_class": "controlled_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v54-outcome-lock.json",
+      "role": "short-horizon exact Bayes-adaptive planning",
+      "evidence_class": "controlled_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v70-confirmatory-outcome-lock.json",
+      "role": "fresh multi-environment action-uncertainty confirmation",
+      "evidence_class": "confirmatory_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v75-active-sensing-confirmation-outcome-lock.json",
+      "role": "action-dependent sensing and delayed control confirmation",
+      "evidence_class": "confirmatory_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v118-evidence-identifiability-audit-outcome-lock.json",
+      "role": "clarification identifiability boundary",
+      "evidence_class": "model_free_boundary"
+    },
+    {
+      "outcome_lock": "configs/v168-fixed-ontology-reversible-sandbox-outcome-lock.json",
+      "role": "reversible provisional sandbox",
+      "evidence_class": "development_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+      "role": "fresh stateful sandbox confirmation",
+      "evidence_class": "confirmatory_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v177-certification-aware-planner-fresh-confirmation-outcome-lock.json",
+      "role": "certificate-aware planner confirmation",
+      "evidence_class": "confirmatory_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v182-triple-repetition-robust-planner-fresh-confirmation-outcome-lock.json",
+      "role": "one-corruption robust confirmation",
+      "evidence_class": "confirmatory_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v190-protected-multiway-menu-compression-confirmation-outcome-lock.json",
+      "role": "finite typed-menu compression boundary",
+      "evidence_class": "protected_confirmation"
+    },
+    {
+      "outcome_lock": "configs/v198-protected-language-menu-ranker-confirmation-outcome-lock.json",
+      "role": "non-authoritative local proposal confirmation",
+      "evidence_class": "protected_model_confirmation"
+    },
+    {
+      "outcome_lock": "configs/v202-model-free-controller-decision-sufficiency-outcome-lock.json",
+      "role": "trusted controller sufficiency over proposals",
+      "evidence_class": "model_free_decision_layer"
+    },
+    {
+      "outcome_lock": "configs/v205-terminally-proper-open-world-semantic-pomdp-outcome-lock.json",
+      "role": "terminally proper outside-semantics planning",
+      "evidence_class": "oracle_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json",
+      "role": "controlled-language observation mechanism",
+      "evidence_class": "controlled_mechanism"
+    },
+    {
+      "outcome_lock": "configs/v214-deterministic-candidate-version-space-controls-outcome-lock.json",
+      "role": "deterministic representational closure before model use",
+      "evidence_class": "model_free_control"
+    },
+    {
+      "outcome_lock": "configs/v221r1-parser-config-repair-outcome-lock.json",
+      "role": "external retrospective deterministic closure",
+      "evidence_class": "retrospective_external_validation"
+    },
+    {
+      "outcome_lock": "configs/v224r2-two-stage-query-execution-repair-outcome-lock.json",
+      "role": "record-level external-semantic feasibility stopping result",
+      "evidence_class": "external_source_failure"
+    }
+  ],
+  "known_cross_track_risks": [
+    {
+      "risk_id": "R01_REPAIR_DOUBLE_COUNTING",
+      "description": "Repair locks can be mistaken for independent scientific replications.",
+      "resolution": "Repairs remain linked to the originating version and are counted separately only as provenance/integrity events."
+    },
+    {
+      "risk_id": "R02_LOCAL_RECOVERY_MULTIPLICITY",
+      "description": "V80-V92, V107-V115, V132-V164 contain multiple local-model recovery/interface variants over related unresolved premises.",
+      "resolution": "Treat them as bounded diagnostics, not independent confirmations of open-world semantics."
+    },
+    {
+      "risk_id": "R03_SYNTHETIC_TO_EXTERNAL",
+      "description": "Synthetic or controlled-language mechanism success can be overgeneralized to prospective natural language.",
+      "resolution": "Keep mechanism and external-validation claims in separate ledger fields."
+    },
+    {
+      "risk_id": "R04_RETROSPECTIVE_TO_SPEAKER",
+      "description": "Retrospective ontology reconstruction can be overgeneralized to new-speaker intent.",
+      "resolution": "V221 remains catalog-state evidence only; V224 is the negative record-level boundary."
+    },
+    {
+      "risk_id": "R05_WORKFLOW_TO_RECORD",
+      "description": "V223 workflow eligibility can be quoted without V224's record-level failure.",
+      "resolution": "V223 is always paired with and narrowed by V224."
+    },
+    {
+      "risk_id": "R06_FINITE_MENU_TO_OPEN_WORLD",
+      "description": "V195/V198 finite-menu ranking can be misreported as open-world classification or calibrated abstention.",
+      "resolution": "Retain the one-call proposal-plus-trusted-controller boundary and V201 robustness failure."
+    }
+  ],
+  "next_experiment_gate": {
+    "maximum_authorized_experiments": 1,
+    "mandatory_conditions": [
+      "nonduplicative unresolved premise",
+      "independent evidence source already obtainable under current constraints",
+      "prospectively frozen record-level feasibility gate",
+      "observable gold distinction without model or simulated-human judgment",
+      "meaningful deterministic residual after exact controls"
+    ],
+    "default_if_any_condition_fails": "authorize_zero_and_freeze_experimental_escalation"
+  }
+}

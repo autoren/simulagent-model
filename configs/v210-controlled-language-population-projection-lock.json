@@ -1,0 +1,327 @@
+{
+  "auditor": "python/audit_and_freeze_v210_controlled_language_population_projection.py",
+  "auditor_sha256": "c197f627eaf2d12cd92aa3e11e7f7a00802e4b45cfac48aa45b9136594e013c0",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "generate_population_and_run_development_projection_once": true,
+    "manually_read_protected_surface_or_run_model": false,
+    "modify_generator_seed_population_template_lexicon_projection_or_gates": false
+  },
+  "config": "configs/v210-controlled-language-population-projection.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalLanguageRecordReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedSurfaceBaselineReadCount": 0,
+      "maximumProtectedSurfaceManualReadCount": 0,
+      "maximumRawModelResponseReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredDevelopmentProjectionEvaluationCount": 1,
+      "requiredPopulationGenerationCount": 1
+    },
+    "artifacts": {
+      "developmentProjection": "outputs/v210-controlled-language-population-projection/evaluation/development-projection.jsonl",
+      "developmentSurface": "outputs/v210-controlled-language-population-projection/population/development-surfaces.jsonl",
+      "developmentTruth": "outputs/v210-controlled-language-population-projection/population/development-truth.jsonl",
+      "protectedSurface": "outputs/v210-controlled-language-population-projection/population/protected-surfaces.jsonl",
+      "protectedTruth": "outputs/v210-controlled-language-population-projection/population/protected-truth.jsonl",
+      "result": "outputs/v210-controlled-language-population-projection/evaluation/result.json",
+      "summary": "outputs/v210-controlled-language-population-projection/evaluation/summary.json"
+    },
+    "claimBoundary": "project-authored population and deterministic-projection feasibility for the verified V209r1 finite language channel; not natural-language validation, model evaluation, empirical likelihood calibration, human behavior, ontology acquisition, authority, action, or execution",
+    "decisionRule": {
+      "ifEveryIntegrityPopulationProjectionAndAccessGatePasses": "freeze_V210_positive_population_projection_feasibility_and_authorize_separate_deterministic_development_baseline_design_only",
+      "otherwise": "freeze_V210_negative_without_generator_seed_population_template_lexicon_projection_or_gate_tuning",
+      "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesModelRunOrProtectedOpening": false,
+      "passAuthorizesSeparateDeterministicDevelopmentBaselineDesignOnly": true
+    },
+    "experiment": "v210_fresh_role_separated_controlled_language_population_and_projection",
+    "parentV209r1OutcomeLock": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json",
+    "population": {
+      "contexts": [
+        {
+          "action": "ask_reference",
+          "history": [],
+          "id": "REFERENCE_ROOT",
+          "stage": "PRE_REFERENCE"
+        },
+        {
+          "action": "ask_target",
+          "history": [],
+          "id": "TARGET_ROOT",
+          "stage": "PRE_REFERENCE"
+        },
+        {
+          "action": "ask_target",
+          "history": [
+            "UTTERANCE_ALPHA"
+          ],
+          "id": "TARGET_AFTER_ALPHA",
+          "stage": "POST_REFERENCE"
+        },
+        {
+          "action": "ask_target",
+          "history": [
+            "UTTERANCE_BETA"
+          ],
+          "id": "TARGET_AFTER_BETA",
+          "stage": "POST_REFERENCE"
+        },
+        {
+          "action": "ask_target",
+          "history": [
+            "UTTERANCE_UNRESOLVED"
+          ],
+          "id": "TARGET_AFTER_UNRESOLVED",
+          "stage": "POST_REFERENCE"
+        }
+      ],
+      "counterfactualTypes": [
+        "DIRECT",
+        "MATCHED_PARAPHRASE",
+        "OPAQUE_RENAMING"
+      ],
+      "fullFactorKeysMustBeUnique": true,
+      "generatorVersion": "v210-generator-1",
+      "groupsPerRole": 90,
+      "protectedSurfaceTextSealedFromBaselineAndManualInspection": true,
+      "recordIdHashes": {
+        "ALL": "d129c2f70eb292d6241a9b1903dca3d293b0ffb036f22ea6f01b94d4bb94b11a",
+        "DEVELOPMENT": "08c073c7b66310b7c30656a46ea1667e8c95a4d01c23324fa4acce83b116c181",
+        "PROTECTED": "ffdf2f3f7a20b8e83afe762ac974d7795ec67079d45cb1f48cd3d4a91e5e7175"
+      },
+      "recordsPerCounterfactualGroup": 3,
+      "recordsPerRole": 270,
+      "roleSeeds": {
+        "DEVELOPMENT": 21001,
+        "PROTECTED": 21002
+      },
+      "roles": [
+        "DEVELOPMENT",
+        "PROTECTED"
+      ],
+      "semanticObservationIds": [
+        "UTTERANCE_ALPHA",
+        "UTTERANCE_BETA",
+        "UTTERANCE_UNRESOLVED"
+      ],
+      "semanticRegimes": [
+        "CANONICAL",
+        "ALTERNATIVE",
+        "OUTSIDE_UNKNOWN"
+      ],
+      "surfaceAndTruthArtifactsAreSeparate": true,
+      "surfaceMayRepeatAcrossLatentHypotheses": true,
+      "taskStates": [
+        "A",
+        "B"
+      ],
+      "totalRecords": 540
+    },
+    "populationGates": {
+      "maximumFallbackCount": 0,
+      "minimumRecordsPerRegimeStateContextObservationCell": 3,
+      "requiredContextCountPerRole": 5,
+      "requiredCounterfactualProbabilityMismatchCount": 0,
+      "requiredCounterfactualTruthMismatchCount": 0,
+      "requiredCounterfactualTypeCountPerRole": 3,
+      "requiredDeterministicRegenerationMatch": true,
+      "requiredGroupsPerRole": 90,
+      "requiredObservationCountPerRole": 3,
+      "requiredOpaqueRenamingMismatchCount": 0,
+      "requiredProbabilityNormalizationRate": 1.0,
+      "requiredProtectedSurfaceBaselineReadCount": 0,
+      "requiredProtectedSurfaceManualReadCount": 0,
+      "requiredRecordsPerGroup": 3,
+      "requiredRecordsPerRole": 270,
+      "requiredRegimeCountPerRole": 3,
+      "requiredRoleCount": 2,
+      "requiredRoleDisjointGroupIdRate": 1.0,
+      "requiredRoleDisjointRecordIdRate": 1.0,
+      "requiredRoleLexicalLabelOverlapCount": 0,
+      "requiredRoleTemplateSkeletonOverlapCount": 0,
+      "requiredStateCountPerRole": 2,
+      "requiredSurfaceTruthFieldLeakCount": 0,
+      "requiredTruthSurfaceRoundTripRate": 1.0,
+      "requiredUniqueFullFactorKeyRate": 1.0,
+      "requiredUniqueRecordIdRate": 1.0
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "identifierEnumerationCount": 540,
+      "identifierHashComputationCount": 3,
+      "modelLoadOrGenerationCount": 0,
+      "projectionEvaluationCount": 0,
+      "surfaceRecordGenerationCount": 0,
+      "surfaceRecordReadCount": 0,
+      "trainingRunCount": 0,
+      "truthRecordGenerationCount": 0,
+      "truthRecordReadCount": 0
+    },
+    "projection": {
+      "acceptedCounterfactualType": "DIRECT",
+      "acceptedPattern": "<OBS=(ALPHA|BETA|UNRESOLVED)>",
+      "inputFields": [
+        "record_id",
+        "utterance"
+      ],
+      "name": "EXPLICIT_DEVELOPMENT_MARKER_ONLY",
+      "outputAlphabet": [
+        "UTTERANCE_ALPHA",
+        "UTTERANCE_BETA",
+        "UTTERANCE_UNRESOLVED",
+        "ABSTAIN"
+      ],
+      "paraphraseAndOpaqueDefault": "ABSTAIN",
+      "readsProtectedSurfaceDuringPrediction": false,
+      "readsProtectedTruthDuringPrediction": false,
+      "readsTruthDuringPrediction": false,
+      "residualDefinedFromPredictionOnly": true
+    },
+    "projectionGates": {
+      "requiredAcceptedAccuracy": 1.0,
+      "requiredAcceptedCount": 90,
+      "requiredCoverage": 0.3333333333333333,
+      "requiredDevelopmentPredictionCount": 270,
+      "requiredFalseAcceptanceCount": 0,
+      "requiredPredictionTruthReadCount": 0,
+      "requiredProtectedPredictionReadCount": 0,
+      "requiredResidualContextCount": 5,
+      "requiredResidualCount": 180,
+      "requiredResidualCounterfactualTypes": [
+        "MATCHED_PARAPHRASE",
+        "OPAQUE_RENAMING"
+      ],
+      "requiredResidualObservationCount": 3,
+      "requiredResidualRegimeCount": 3,
+      "requiredResidualStateCount": 2
+    },
+    "roadmap": "docs/research-roadmap-after-v202.md",
+    "schemaVersion": "210-controlled-language-population-projection-design",
+    "surfaceGrammar": {
+      "constructionFamiliesByRole": {
+        "DEVELOPMENT": [
+          "DEV_DIRECT_CLAUSE",
+          "DEV_REPORT_PARAPHRASE",
+          "DEV_OPAQUE_SIGNAL"
+        ],
+        "PROTECTED": [
+          "PROTECTED_IMPERATIVE",
+          "PROTECTED_RESOLUTION_PARAPHRASE",
+          "PROTECTED_OPAQUE_ASSIGNMENT"
+        ]
+      },
+      "contextPhrases": {
+        "DEVELOPMENT": {
+          "REFERENCE_ROOT": "the known reference",
+          "TARGET_AFTER_ALPHA": "the target after an alpha reference reply",
+          "TARGET_AFTER_BETA": "the target after a beta reference reply",
+          "TARGET_AFTER_UNRESOLVED": "the target after an unresolved reference reply",
+          "TARGET_ROOT": "the target before reference context"
+        },
+        "PROTECTED": {
+          "REFERENCE_ROOT": "the anchor example",
+          "TARGET_AFTER_ALPHA": "the item following the leading anchor reply",
+          "TARGET_AFTER_BETA": "the item following the trailing anchor reply",
+          "TARGET_AFTER_UNRESOLVED": "the item following the open anchor reply",
+          "TARGET_ROOT": "the item without an anchor reply"
+        }
+      },
+      "lexicons": {
+        "DEVELOPMENT": {
+          "direct": {
+            "UTTERANCE_ALPHA": "ALPHA",
+            "UTTERANCE_BETA": "BETA",
+            "UTTERANCE_UNRESOLVED": "UNRESOLVED"
+          },
+          "opaque": {
+            "UTTERANCE_ALPHA": "dax",
+            "UTTERANCE_BETA": "wug",
+            "UTTERANCE_UNRESOLVED": "mep"
+          },
+          "paraphrase": {
+            "UTTERANCE_ALPHA": "the first interpretation",
+            "UTTERANCE_BETA": "the second interpretation",
+            "UTTERANCE_UNRESOLVED": "not settled by the evidence"
+          }
+        },
+        "PROTECTED": {
+          "protected_direct": {
+            "UTTERANCE_ALPHA": "NORTH",
+            "UTTERANCE_BETA": "SOUTH",
+            "UTTERANCE_UNRESOLVED": "OPEN"
+          },
+          "protected_opaque": {
+            "UTTERANCE_ALPHA": "kiv",
+            "UTTERANCE_BETA": "zot",
+            "UTTERANCE_UNRESOLVED": "pel"
+          },
+          "protected_paraphrase": {
+            "UTTERANCE_ALPHA": "the leading reading",
+            "UTTERANCE_BETA": "the trailing reading",
+            "UTTERANCE_UNRESOLVED": "an indeterminate reading"
+          }
+        }
+      },
+      "roleTemplateSkeletonsAndLexicalLabelsMustBeDisjoint": true,
+      "surfaceContainsNoRegimeStateOrProbabilityField": true,
+      "templates": {
+        "DEVELOPMENT": {
+          "DIRECT": [
+            "{context}: <OBS={direct}>.",
+            "For {context}, <OBS={direct}>."
+          ],
+          "MATCHED_PARAPHRASE": [
+            "{context} is reported as {paraphrase}.",
+            "Regarding {context}, the description is {paraphrase}."
+          ],
+          "OPAQUE_RENAMING": [
+            "{context} carries signal {opaque}.",
+            "Signal {opaque} applies to {context}."
+          ]
+        },
+        "PROTECTED": {
+          "DIRECT": [
+            "Use [{protected_direct}] when describing {context}.",
+            "Describe {context} with [{protected_direct}]."
+          ],
+          "MATCHED_PARAPHRASE": [
+            "The account for {context} resolves to {protected_paraphrase}.",
+            "The available wording places {context} under {protected_paraphrase}."
+          ],
+          "OPAQUE_RENAMING": [
+            "Assign cipher {protected_opaque} to {context}.",
+            "{context_capitalized}: choose cipher {protected_opaque}."
+          ]
+        }
+      }
+    }
+  },
+  "config_sha256": "02425d8d9c799abf227c66bf758d9ff40c64a4633e5755a6f0e5f04811afd966",
+  "design_audit": "outputs/v210-controlled-language-population-projection/design-audit.json",
+  "design_audit_sha256": "174880f99147ec55780bbcaaaeaefcbe87f6d925fbcb41d390adf9f5a64392f2",
+  "experiment": "v210_fresh_role_separated_controlled_language_population_and_projection",
+  "lock_payload_sha256": "b4023b958babc3f871c39a2eb5c977910c87c8d1e829c401a402b57ac0a7508c",
+  "parent_V209r1_outcome": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json",
+  "parent_V209r1_outcome_sha256": "61d13d813299925d0ad5dbba2903ecc0b07c99a2811e077a154c9129b1c726e7",
+  "plan": "docs/v210-controlled-language-population-projection-plan.md",
+  "plan_sha256": "607ad66dd09a4a34c9c1e63b4bcdc86e7deab35350957b1ef8f221974c92d2ff",
+  "protocol": "python/v210_controlled_language_population_projection.py",
+  "protocol_sha256": "5843daaa3cec476357cab8cfa2e84b13e54abe2ca305ddcc309f81f9346c531f",
+  "runner": "python/run_v210_controlled_language_population_projection.py",
+  "runner_sha256": "6233bad00bc5fac48644063f1bb8b3376863bb6cbb7af2cdedfb0e726ec412d4",
+  "schema_version": "210-controlled-language-population-projection-lock",
+  "tests": "python/test_v210_controlled_language_population_projection.py",
+  "tests_sha256": "32f9bd340c88e4fa5134d1e200865e329dc4e91d13e3a20f09d91b16a94cb15e",
+  "verifier": "python/verify_and_freeze_v210_controlled_language_population_projection_outcome.py",
+  "verifier_sha256": "06392180e4059ccf4c3c3247aaa67c7d1062499c058079ce44c6423198c8bfdd"
+}

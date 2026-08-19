@@ -1,0 +1,199 @@
+{
+  "auditor": "python/audit_and_freeze_v215_external_semantic_resource_metadata_census.py",
+  "auditor_sha256": "dab629f7c1845e4a6e02388ef3b48fba964c08b00ce3455bdee117a8835becce",
+  "authorization": {
+    "capture_frozen_official_metadata_URLs_once": true,
+    "download_bulk_ontology_alignment_or_test_payload": false,
+    "open_protected_run_model_register_mutate_service_act_execute": false,
+    "score_one_frozen_metadata_census": true
+  },
+  "capture": "python/capture_v215_external_resource_metadata.py",
+  "capture_sha256": "58ad5268a8932795de5dcbdd361d8d2ae03cc930259ce82fd46b0b87b9ebe9a5",
+  "config": "configs/v215-external-semantic-resource-metadata-census.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumAlignmentPayloadDownloadCount": 0,
+      "maximumBulkOntologyPayloadDownloadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumServiceActionCount": 0,
+      "maximumTestSuitePayloadDownloadCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumV213ProtectedAccessCount": 0,
+      "requiredMetadataCensusRunCount": 1
+    },
+    "artifacts": {
+      "evidence": "outputs/v215-external-resource-metadata-census/census/evidence.json",
+      "result": "outputs/v215-external-resource-metadata-census/census/result.json",
+      "retrievalManifest": "outputs/v215-external-resource-metadata-census/census/retrieval-manifest.json",
+      "snapshotDirectory": "outputs/v215-external-resource-metadata-census/metadata-snapshots",
+      "summary": "outputs/v215-external-resource-metadata-census/census/summary.json"
+    },
+    "censusGates": {
+      "maximumSelectedPayloadCandidateUnresolvedMandatoryDimensionCount": 0,
+      "minimumEligiblePayloadBenchmarkCandidateCount": 1,
+      "minimumEligibleValidationControlCount": 1,
+      "requiredAssessmentDimensionCoverage": 1.0,
+      "requiredFiniteMetrics": true,
+      "requiredFrozenURLAttemptCount": 12,
+      "requiredRecommendationRoleSeparation": true,
+      "requiredRetrospectiveNotSpeakerIntentBoundary": true,
+      "requiredSourceUnitCount": 4,
+      "requiredSuccessfulSnapshotHashCoverage": 1.0,
+      "requiredTrueAssessmentEvidenceCoverage": 1.0,
+      "requiredURLAccountingRate": 1.0
+    },
+    "claimBoundary": "official metadata feasibility for a future retrospective artifact-reconstruction benchmark; not ontology payload evidence, natural-language performance, correct new-speaker intent, expert validation, model evidence, registration, authority, action, or execution",
+    "decisionRule": {
+      "ifEveryIntegrityCensusAndAccessGatePasses": "freeze_V215_positive_metadata_feasibility_and_authorize_separate_bounded_payload_retrieval_population_design_only",
+      "otherwise": "freeze_V215_negative_metadata_feasibility_without_source_URL_dimension_role_threshold_or_gate_tuning",
+      "passAuthorizesPayloadDesignOnly": true,
+      "passAuthorizesPayloadDownloadOrModelRun": false,
+      "passAuthorizesRegistrationMutationServiceActionOrExecution": false
+    },
+    "dimensions": [
+      "official_authority",
+      "stable_retrieval",
+      "versioned_or_archived",
+      "explicit_license_or_open_policy",
+      "textual_semantic_content",
+      "machine_readable_logical_semantics",
+      "reference_mapping_or_change_history",
+      "separable_provenance_roles",
+      "credible_group_disjoint_scale",
+      "retrospective_reconstruction_support"
+    ],
+    "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+    "evidenceContract": {
+      "eachTrueAssessmentRequiresAtLeastOneSuccessfulFrozenURL": true,
+      "generalAvailabilityDoesNotImplyLicense": true,
+      "maximumRedirects": 10,
+      "missingAmbiguousOrUnsupportedScoresFalse": true,
+      "oneRecordPerFrozenURLAttempt": true,
+      "paraphraseEvidenceNoLongVerbatimQuotes": true,
+      "requestTimeoutSeconds": 30,
+      "retrievalDate": "2026-08-19",
+      "sha256EverySuccessfulSnapshot": true,
+      "storeSuccessfulMetadataSnapshot": true,
+      "userAgent": "simulagent-v215-metadata-census/1.0"
+    },
+    "experiment": "v215_prospective_metadata_first_external_semantic_resource_census",
+    "parentV214OutcomeLock": "configs/v214-deterministic-candidate-version-space-controls-outcome-lock.json",
+    "plan": "docs/v215-external-semantic-resource-metadata-census-plan.md",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "V213ProtectedAccessCount": 0,
+      "actualExecutionCount": 0,
+      "alignmentPayloadDownloadCount": 0,
+      "bulkOntologyPayloadDownloadCount": 0,
+      "formalMetadataRecordScoreCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "testSuitePayloadDownloadCount": 0,
+      "trainingRunCount": 0
+    },
+    "priorExposure": {
+      "blindSourceDiscoveryClaim": false,
+      "bulkOntologyAlignmentOrTestPayloadDownloadCount": 0,
+      "formalMetadataRecordScoreCount": 0,
+      "highLevelSourceFamiliesPreviouslyKnown": [
+        "OBO_FOUNDRY",
+        "EMBL_EBI_OLS",
+        "OAEI",
+        "W3C_OWL"
+      ]
+    },
+    "roadmap": "docs/research-roadmap-after-v214.md",
+    "roleRequirements": {
+      "INFRASTRUCTURE_ONLY": [
+        "official_authority",
+        "stable_retrieval",
+        "separable_provenance_roles"
+      ],
+      "PAYLOAD_BENCHMARK_CANDIDATE": [
+        "official_authority",
+        "stable_retrieval",
+        "versioned_or_archived",
+        "explicit_license_or_open_policy",
+        "textual_semantic_content",
+        "machine_readable_logical_semantics",
+        "reference_mapping_or_change_history",
+        "separable_provenance_roles",
+        "credible_group_disjoint_scale",
+        "retrospective_reconstruction_support"
+      ],
+      "VALIDATION_CONTROL": [
+        "official_authority",
+        "stable_retrieval",
+        "explicit_license_or_open_policy",
+        "machine_readable_logical_semantics",
+        "separable_provenance_roles",
+        "retrospective_reconstruction_support"
+      ]
+    },
+    "schemaVersion": "215-external-semantic-resource-metadata-census-design",
+    "sourceUnits": [
+      {
+        "intendedRole": "PAYLOAD_BENCHMARK_CANDIDATE",
+        "unitId": "OBO_UBERON_VIA_OLS_COMPOSITE",
+        "urls": [
+          "https://obofoundry.org/principles/fp-001-open.html",
+          "https://obofoundry.org/principles/fp-000-versioning.html",
+          "https://obofoundry.org/ontology/uberon.html",
+          "https://www.ebi.ac.uk/ols4/about"
+        ]
+      },
+      {
+        "intendedRole": "PAYLOAD_BENCHMARK_CANDIDATE",
+        "unitId": "OAEI_ANATOMY_REFERENCE_ALIGNMENT",
+        "urls": [
+          "https://oaei.ontologymatching.org/2025/anatomy/index.html",
+          "https://oaei.ontologymatching.org/2025/results/anatomy/index.html",
+          "https://oaei.ontologymatching.org/2024/anatomy/index.html"
+        ]
+      },
+      {
+        "intendedRole": "VALIDATION_CONTROL",
+        "unitId": "W3C_OWL2_CONFORMANCE_TESTS",
+        "urls": [
+          "https://www.w3.org/TR/owl2-conformance/",
+          "https://www.w3.org/TR/owl2-test/"
+        ]
+      },
+      {
+        "intendedRole": "INFRASTRUCTURE_ONLY",
+        "unitId": "EMBL_EBI_OLS_INFRASTRUCTURE",
+        "urls": [
+          "https://www.ebi.ac.uk/ols4/about",
+          "https://www.ebi.ac.uk/ols4/help",
+          "https://www.ebi.ac.uk/ols4/api"
+        ]
+      }
+    ]
+  },
+  "config_sha256": "ce4b5178a0addbd3184c3928a721dbf3b56fde67e9e7749ff3d02886e77a0535",
+  "design_audit": "outputs/v215-external-resource-metadata-census/design-audit.json",
+  "design_audit_sha256": "08c37e5d86c8a916423b36f382761d308db022172c2cb66c0c756e281e3dba72",
+  "experiment": "v215_prospective_metadata_first_external_semantic_resource_census",
+  "lock_payload_sha256": "f604a4ca0aa4c798049a8af9aa37dfdf0cbb3d7a9d4bd7e159349757be05b3bd",
+  "parent_V214_outcome": "configs/v214-deterministic-candidate-version-space-controls-outcome-lock.json",
+  "parent_V214_outcome_sha256": "0d22967ff4e91fdabe9d092e00bb48d29d2889ef0de865868acf0e9b78282cc9",
+  "plan": "docs/v215-external-semantic-resource-metadata-census-plan.md",
+  "plan_sha256": "6909678aac6501e892fc1e65a60e666e520b519708b6c1ae7c8cf43fc2fc2f06",
+  "protocol": "python/v215_external_semantic_resource_metadata_census.py",
+  "protocol_sha256": "ae8910344d6144aa34a868830958def9c154dff0c24af0fbd98473b120ef6e5b",
+  "roadmap": "docs/research-roadmap-after-v214.md",
+  "roadmap_sha256": "44bb751ef0a03eaf53e1c2251c27360381748ff74172b7993954a8f3eeee9ed2",
+  "runner": "python/run_v215_external_semantic_resource_metadata_census.py",
+  "runner_sha256": "7866e45495df58b671685e8930159fea131646a4811c35d26237aef6d29651a6",
+  "schema_version": "215-external-semantic-resource-metadata-census-lock",
+  "tests": "python/test_v215_external_semantic_resource_metadata_census.py",
+  "tests_sha256": "8ba4e8185b4b555452b5ca7313a1d3b4dec5ff49a4b6d1e33f713598dd113570",
+  "verifier": "python/verify_and_freeze_v215_external_semantic_resource_metadata_census_outcome.py",
+  "verifier_sha256": "4a2cf92ff15775ffeb90dbed6f2e765dcdcb8c7c4e5a7fc38a5856b311e966ab"
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "175-certification-aware-planner-development-design",
+  "experiment": "v175_exact_certification_aware_routed_risk_planner_development",
+  "parentV174OutcomeLock": "configs/v174-certificate-depth-feasibility-census-outcome-lock.json",
+  "sourceV173OutcomeLock": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+  "sourceV171OutcomeLock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "sourceV172OutcomeLock": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "claimBoundary": "V172 development-population certification-aware planner mechanism evidence only; not fresh confirmation, language understanding, ontology induction, deployment, real service control, or execution",
+  "frozenRoutedObjective": {
+    "maximumQueries": 5,
+    "horizonSelectionRule": "first V174 horizon with positive target-blind adaptive trusted completion",
+    "queryCost": "1/10",
+    "stopAction": "route only if surviving exact version space is unanimously alias or unanimously composition; otherwise defer",
+    "trustedCorrectRouteLoss": 0,
+    "deferLossForEveryTrueClass": 2,
+    "falseTrustedRouteAllowed": false,
+    "provisionalSandboxEntryAllowed": false,
+    "equalRiskPrefersStop": true,
+    "equalQueryRiskPrefersLowestValuationIndex": true
+  },
+  "policies": {
+    "immediate_defer": "zero queries then deterministic gate",
+    "V167_exact_adaptive_horizon2": "unchanged V167 exact recommendation planner routed through deterministic gate",
+    "greedy_class_information_gain_horizon5": "choose maximum class entropy reduction and stop as soon as any class is unanimous or horizon is exhausted",
+    "optimal_open_loop_subset": "choose exact minimum routed-risk-plus-cost fixed query subset including the empty subset",
+    "random_query_order_consensus_stop": "exact uniform average over all remaining-query permutations, stopping at first unanimous class",
+    "exact_certification_adaptive": "dynamic programming minimizing expected routed loss plus query cost with optional stopping",
+    "target_informed_certificate_oracle": "non-operational comparator using V174 minimal target certificate"
+  },
+  "populationUse": {
+    "V172IsDevelopment": true,
+    "useAllEligibleStates": true,
+    "requiredStateCount": 132,
+    "useAllTargets": true,
+    "requiredTargetCount": 4224,
+    "useFrozenClassBalancedWeights": true,
+    "selectionSubsamplingOrExclusionAllowed": false
+  },
+  "sandboxBoundary": {
+    "reuseV171TrustedTypedRoutesAndDurabilityContract": true,
+    "plannerMayNotAuthorizeCommit": true,
+    "deterministicConsensusGateRetainsAuthority": true,
+    "independentVerifierRequired": true,
+    "postCommitRestartVerificationRequired": true,
+    "realServiceOrToolTargetExists": false
+  },
+  "integrityAndSafetyGates": {
+    "requiredStateCount": 132,
+    "requiredTargetCount": 4224,
+    "requiredTargetPolicyScoreCount": 29568,
+    "requiredPopulationCoverage": 1.0,
+    "requiredPriorWeightNormalization": 1.0,
+    "requiredExactDPRiskReconstruction": 1.0,
+    "requiredFalseTrustedRouteProbability": 0.0,
+    "requiredProvisionalSandboxEntryProbability": 0.0,
+    "requiredPlannerCommitAuthorizationCount": 0,
+    "requiredSandboxExactness": 1.0,
+    "requiredInvariantPreservation": 1.0,
+    "requiredProvenanceAndRestartVerification": 1.0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedRealStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "benefitThresholds": {
+    "exactCertificationMeanRiskStrictlyBelowImmediateDefer": true,
+    "exactCertificationMeanRiskStrictlyBelowV167Routed": true,
+    "exactCertificationTrustedCompletionStrictlyPositive": true,
+    "minimumStateCountStrictlyImprovedOverImmediateDefer": 1,
+    "failureInvalidatesSafety": false
+  },
+  "strongDevelopmentThresholds": {
+    "exactCertificationMeanRiskNoWorseThanGreedy": true,
+    "exactCertificationMeanRiskNoWorseThanOptimalOpenLoop": true,
+    "exactCertificationMeanRiskNoWorseThanRandomOrder": true,
+    "requiredStatewiseNoWorseThanEveryOperationalControlRate": 1.0,
+    "failureInvalidatesSafetyOrBenefit": false
+  },
+  "preLockExposure": {
+    "implementationUnitTargetCount": 1,
+    "implementationUnitPolicyCount": 2,
+    "formalTargetPolicyScoreCount": 0,
+    "aggregateFormalMetricInspectionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedRealStateMutationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifSafetyBenefitAndStrongPass": "freeze_V175_as_strong_positive_certification_aware_development_mechanism",
+    "ifSafetyAndBenefitPassButStrongFails": "freeze_V175_as_beneficial_mixed_certification_aware_development_mechanism",
+    "ifSafetyPassesButBenefitFails": "freeze_V175_as_safe_nonbeneficial_boundary_and_stop",
+    "otherwise": "freeze_V175_as_safety_failure_and_stop",
+    "retainNegativeOrMixedWithoutTuning": true,
+    "passAuthorizesImmediateFreshConfirmation": false,
+    "passAuthorizesModelRegistrationRealServiceOrExecution": false
+  }
+}

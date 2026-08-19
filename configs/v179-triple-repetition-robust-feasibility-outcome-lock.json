@@ -1,0 +1,116 @@
+{
+  "audit": "outputs/v179-triple-repetition-robust-feasibility/outcome-audit.json",
+  "audit_sha256": "5318607bf96350ee713721451806c53169c5689239e6362587de96acf54a8e03",
+  "authorization": {
+    "change_repetition_decoder_or_unanimity_gate": false,
+    "design_separate_triple_repetition_robust_planner_development": true,
+    "modify_rerun_select_subsample_or_tune_V179": false,
+    "run_model_register_mutate_real_state_call_service_or_execute": false,
+    "run_planner_without_separate_design_lock": false
+  },
+  "experiment": "v179_exact_triple_repetition_one_corruption_robust_certificate_feasibility_census",
+  "feasibility_lock": "configs/v179-triple-repetition-robust-feasibility-lock.json",
+  "feasibility_lock_sha256": "984a144e0caf88a1fa30891596ce8dd8ff00b5618b5581341515d738a5d72021",
+  "feasibility_summary": "outputs/v179-triple-repetition-robust-feasibility/census/feasibility-summary.json",
+  "feasibility_summary_sha256": "bbb835e4258d138080cdcc56a313ca8969a0666ec84e1466976dfb31ba00d26c",
+  "lock_payload_sha256": "f96cdadd43a8f895085cb749e642bed66322200231648e5fec225c693f07f7a9",
+  "outcome": {
+    "decision": "freeze_positive_triple_repetition_feasibility_and_preregister_separate_robust_planner_development",
+    "passed": true,
+    "scientific_feasibility_gates_passed": true,
+    "summary": {
+      "adaptive_no_greater_than_target_informed_rate": 1.0,
+      "adaptive_worst_case_trusted_completion_by_block_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "2": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "3": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "4": {
+          "decimal": 0.6666666666666666,
+          "denominator": 3,
+          "numerator": 2
+        }
+      },
+      "certificate_minimality_rate": 1.0,
+      "certificate_validity_rate": 1.0,
+      "false_trusted_route_probability": 0.0,
+      "full_measurement_adversarial_scenario_count": 28080,
+      "horizon_monotonicity_rate": 1.0,
+      "majority_decode_exactness_rate": 1.0,
+      "minimal_block_depth_counts": {
+        "1": 1344,
+        "2": 462,
+        "3": 36,
+        "4": 318
+      },
+      "minimal_raw_inspection_counts": {
+        "12": 318,
+        "3": 1344,
+        "6": 462,
+        "9": 36
+      },
+      "prior_weight_normalization_rate": 1.0,
+      "robust_clean_version_space_equivalence_rate": 1.0,
+      "state_count": 135,
+      "target_count": 2160,
+      "target_coverage": 1.0,
+      "target_informed_trusted_upper_bound_by_block_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "2": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "3": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "4": {
+          "decimal": 0.6666666666666666,
+          "denominator": 3,
+          "numerator": 2
+        }
+      }
+    },
+    "triple_repetition_target_blind_robust_feasibility_positive": true
+  },
+  "parent_V178_outcome": "configs/v178-one-corruption-robust-certificate-feasibility-outcome-lock.json",
+  "parent_V178_outcome_sha256": "48a637665095d3b637148858dd635972e57a03a3a93820259fbcc5d7cae4f09c",
+  "result": "outputs/v179-triple-repetition-robust-feasibility/census/result.json",
+  "result_sha256": "d3083be49471221e8ed8ad2d61ff5e6f45ca313944323d899fa7f529c302977d",
+  "results_document": "docs/v179-triple-repetition-robust-feasibility-results.md",
+  "results_document_sha256": "b3e8262ff48b7d56fa708fabf6009d9d8e0c18b715ad91c05d85d34352a8d8c9",
+  "schema_version": "179-triple-repetition-robust-feasibility-outcome-lock",
+  "state_adaptive_opportunity_results": "outputs/v179-triple-repetition-robust-feasibility/census/state-adaptive-opportunity-results.json",
+  "state_adaptive_opportunity_results_sha256": "c00e5892afc134202812e32254b1e951432999f1be7bcb86e02cc72caa0804ae",
+  "target_certificate_results": "outputs/v179-triple-repetition-robust-feasibility/census/target-certificate-results.json",
+  "target_certificate_results_sha256": "fc70fc245f5c687c9ed4c9edbdc1be5113e93ef0b7d229a9cce0d2e9df12a709",
+  "verifier": "python/verify_and_freeze_v179_triple_repetition_robust_feasibility_outcome.py",
+  "verifier_sha256": "08a99cbedaf5e935bde81b461f7e47fb73819deab767bed0af7320dd074c8f34"
+}

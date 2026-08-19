@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "165r1-outcome-verifier-repair",
+  "experiment": "v165r1_population_access_alias_outcome_verifier_repair",
+  "parentV165PopulationLock": "configs/v165-factored-ontology-identifiability-population-lock.json",
+  "failedV165OutcomeAudit": "outputs/v165-factored-ontology-identifiability/outcome-audit.json",
+  "v165Result": "outputs/v165-factored-ontology-identifiability/population/result.json",
+  "v165ResultsDocument": "docs/v165-factored-ontology-identifiability-population-results.md",
+  "claimBoundary": "technical outcome-verifier repair only: compare the persisted embedded population audit after removing the runner-added population_build_count access field; do not rebuild outputs, rerun a scientific condition, modify the original V165 lock/verifier/audit/result/assets, change any factor, record, version space, metric, gate, decision, or claim, or access any model, evaluation, registration, authority, action, or execution",
+  "diagnosis": {
+    "expectedFailedChecks": ["audit_pass_and_decision_reconstruct_exactly"],
+    "expectedSoleMismatchPath": "population_audit.access.population_build_count",
+    "expectedPersistedValue": 1,
+    "requiredExactEqualityAfterRemovingField": true,
+    "requiredResultAccessPopulationBuildCount": 1
+  },
+  "frozenScientificOutcome": {
+    "passed": true,
+    "decision": "freeze_V165_and_authorize_separate_model_free_deterministic_baseline_preregistration_only",
+    "recordCount": 144,
+    "candidateTruthTableCount": 256,
+    "targetRetention": 1.0,
+    "evidenceStatusAccuracy": 1.0,
+    "renamingInvariance": 1.0
+  },
+  "accessGates": {
+    "maximumPopulationRebuildOrRewriteCount": 0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "authorization": {
+    "writeRepairedTechnicalOutcomeAuditAndLock": true,
+    "modifyOriginalV165Artifacts": false,
+    "rerunPopulationBuild": false,
+    "changeScientificRecordsMetricsGatesDecisionOrClaims": false,
+    "createNominalV165OutcomeLock": false,
+    "createEvaluationPopulation": false,
+    "runModelAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

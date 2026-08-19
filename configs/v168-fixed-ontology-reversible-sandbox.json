@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "168-fixed-ontology-reversible-sandbox-design",
+  "experiment": "v168_model_free_fixed_ontology_reversible_transaction_sandbox_development",
+  "parentV167r1OutcomeLock": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+  "claimBoundary": "project-authored deterministic simulated transaction-development result only; not language understanding, provisional ontology integration, deployment, real service control, or real execution",
+  "fixedOntology": {
+    "entityType": "Device",
+    "entityIds": ["D1", "D2", "D3"],
+    "mutableFields": {
+      "mode": {"type": "enum", "values": ["active", "maintenance", "offline"]},
+      "quota": {"type": "integer", "minimum": 0, "maximum": 8},
+      "owner_team": {"type": "enum", "values": ["red", "blue", "green"]}
+    },
+    "systemManagedFields": ["revision"],
+    "immutableRootFields": ["schema_version", "environment"],
+    "provisionalConceptsAllowed": false
+  },
+  "invariants": [
+    "every entity has exactly mode quota owner_team and revision",
+    "offline devices have quota zero",
+    "maintenance devices have quota at most two",
+    "active devices have quota at least one",
+    "total quota is at most twelve",
+    "at least one device is active",
+    "all revisions are nonnegative integers"
+  ],
+  "transactionProtocol": {
+    "proposalContainsExpectedRevisionForEveryAndOnlyTouchedEntity": true,
+    "duplicateEntityFieldOperationRejected": true,
+    "previewMutatesState": false,
+    "previewBindsBaseStatePatchAndExpectedPostState": true,
+    "commitRequiresExactPreviewTokenAndUnchangedBaseState": true,
+    "commitIsAtomic": true,
+    "touchedEntityRevisionIncrement": 1,
+    "independentVerificationAfterCommit": true,
+    "verificationFailureTriggersAutomaticRollback": true,
+    "explicitRollbackSupported": true,
+    "provenanceLogHashChainedAndAppendOnly": true
+  },
+  "population": {
+    "split": "development_only",
+    "recordsPerScenario": 12,
+    "scenarios": [
+      "valid_retain", "valid_explicit_rollback", "valid_multi_entity_atomic",
+      "invariant_violation", "unauthorized_field", "stale_revision",
+      "malformed_type", "contradictory_duplicate_patch", "unknown_entity",
+      "preview_token_tamper", "post_commit_corruption"
+    ],
+    "requiredRecordCount": 132,
+    "projectAuthoredSynthetic": true,
+    "evaluationPopulationCreated": false
+  },
+  "faultModel": {
+    "preview_token_tamper": "replace the accepted preview token before commit; commit must reject without mutation",
+    "post_commit_corruption": "development harness mutates an untargeted mutable field after commit; independent verifier must detect and restore the complete pre-transaction state",
+    "faultInjectionIsNotARealServiceOrExternalSideEffect": true
+  },
+  "registeredMetrics": [
+    "exact expected disposition", "exact final target state", "rejected-state immutability",
+    "preview nonmutation", "preview-commit parity", "atomic multi-entity commit",
+    "complete explicit rollback recovery", "complete verification-failure rollback recovery",
+    "invariant preservation", "zero unauthorized commit mutation", "fault detection",
+    "provenance chain validity", "scenario coverage", "model and real-execution access"
+  ],
+  "sandboxGates": {
+    "requiredRecordCount": 132,
+    "requiredScenarioCount": 11,
+    "requiredRecordsPerScenario": 12,
+    "requiredExpectedDispositionAccuracy": 1.0,
+    "requiredExactFinalTargetState": 1.0,
+    "requiredRejectedStateImmutability": 1.0,
+    "requiredPreviewNonmutation": 1.0,
+    "requiredPreviewCommitParity": 1.0,
+    "requiredAtomicMultiEntityCommit": 1.0,
+    "requiredExplicitRollbackRecovery": 1.0,
+    "requiredVerificationFailureRollbackRecovery": 1.0,
+    "requiredInvariantPreservation": 1.0,
+    "requiredZeroUnauthorizedCommitMutation": 1.0,
+    "requiredFaultDetection": 1.0,
+    "requiredProvenanceChainValidity": 1.0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumProvisionalOntologyUseCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumRealExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "stateStoreIsLocalInMemorySimulation": true,
+    "onlyFixedTrustedOntologyMayBeUsed": true,
+    "provisionalConceptsMayNotEnterSandbox": true,
+    "learnedConfidenceCannotAuthorizeCommit": true,
+    "independentVerifierCannotBeBypassed": true,
+    "realServiceOrToolTargetExists": false,
+    "realExecutionCount": 0
+  },
+  "preLockExposure": {
+    "implementationTestCensusRunCount": 1,
+    "formalCensusRunCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "provisionalOntologyUseCount": 0,
+    "realServiceCallCount": 0,
+    "externalSideEffectCount": 0,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEverySandboxGatePasses": "freeze_V168_as_positive_fixed_ontology_reversible_sandbox_development_evidence",
+    "otherwise": "freeze_V168_boundary_result_and_do_not_integrate_or_tune_on_frozen_fixtures",
+    "passAuthorizesRealServiceOrExecution": false,
+    "passAuthorizesProvisionalOntologyIntegration": false,
+    "passAuthorizesModelOrEvaluationPopulation": false
+  }
+}

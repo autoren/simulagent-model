@@ -1,0 +1,81 @@
+{
+  "audit": "outputs/v162-fresh-massive-transfer-language/language-outcome-audit.json",
+  "audit_sha256": "206372569824e725d9c035fc0141c972ff1dfdeab1a5cf84a8b3209f6bf9a240",
+  "authorization": {
+    "automatically_read_development_language_after_interface_lock": true,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "induce_or_register_ontology": false,
+    "load_model_before_deterministic_baseline_outcome": false,
+    "manually_inspect_protected_transfer_language": false,
+    "modify_or_rerun_V162_extraction": false,
+    "perform_real_service_call_external_side_effect_or_execution": false,
+    "preregister_deterministic_development_interface_controls_metrics_and_gates": true,
+    "read_protected_transfer_during_development": false,
+    "run_API_model_or_train_adapter": false
+  },
+  "development_transfer_language": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+  "development_transfer_language_sha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+  "experiment": "v162_fresh_massive_transfer_language_outcome_lock",
+  "extraction_lock": "configs/v162-fresh-massive-transfer-language-extraction-lock.json",
+  "extraction_lock_sha256": "ebae256d781353e9f0cedb8c1eda60a335813d2a371bdfa08043c11fb7e1fd64",
+  "lock_payload_sha256": "8ec943f2be85f69568f5d515f0eb1ef12a2a94571fd430473bcde459e5b95bbd",
+  "outcome": {
+    "decision": "freeze_positive_V162_role_separated_language_artifacts",
+    "extraction_summary": {
+      "development_protected_role_disjoint": true,
+      "exact_familiarity_reconstruction": true,
+      "exact_selected_identifier_set": true,
+      "exact_slot_type_count_reconstruction": true,
+      "exact_structural_ground_truth_match": true,
+      "role_class_record_counts": {
+        "development_transfer": {
+          "known_familiar": 48,
+          "known_unfamiliar": 48,
+          "novel_valid": 48,
+          "unsupported": 48
+        },
+        "protected_transfer": {
+          "known_familiar": 48,
+          "known_unfamiliar": 48,
+          "novel_valid": 48,
+          "unsupported": 48
+        }
+      },
+      "role_payload_sha256": {
+        "development_transfer": "7dafff957bfcb473eb0bf96109d2ae97922295e12b27c4a1eacec083a7cf9e98",
+        "protected_transfer": "f675d348e9e99735a86bd20093162b401e8a91573d7efa06ccba3352c58eccd1"
+      },
+      "role_record_counts": {
+        "development_transfer": 192,
+        "protected_transfer": 192
+      },
+      "total_record_count": 384,
+      "unselected_language_record_count": 0
+    },
+    "output_integrity": {
+      "development_transfer": {
+        "file_sha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+        "path": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+        "payload_sha256": "7dafff957bfcb473eb0bf96109d2ae97922295e12b27c4a1eacec083a7cf9e98",
+        "record_count": 192
+      },
+      "protected_transfer": {
+        "file_sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41",
+        "path": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+        "payload_sha256": "f675d348e9e99735a86bd20093162b401e8a91573d7efa06ccba3352c58eccd1",
+        "record_count": 192
+      }
+    },
+    "passed": true,
+    "scientific_extraction_passed": true
+  },
+  "protected_transfer_language": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+  "protected_transfer_language_sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41",
+  "result": "outputs/v162-fresh-massive-transfer-language/selected-language/result.json",
+  "result_sha256": "6696f8e47ad9b23949e33903e76ab4c29d1bea51ed256a97ac7c9d7204c09bef",
+  "results_document": "docs/v162-fresh-massive-transfer-language-extraction-results.md",
+  "results_document_sha256": "aef327acf6b53898073b7a2f586d2284613842070d988a94018d5d37fd361dcf",
+  "schema_version": "162-fresh-massive-transfer-language-outcome-lock",
+  "verifier": "python/verify_and_freeze_v162_fresh_massive_transfer_language_outcome.py",
+  "verifier_sha256": "1b110ddcc19b324da6d95ba6103ee2ab05573ab3c3a071260b8ae8355c9c8d16"
+}

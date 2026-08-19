@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "209r1-controlled-language-observation-POMDP-shape-repair-design",
+  "experiment": "v209r1_dynamic_regime_shape_validation_repair",
+  "parentV209DesignLock": "configs/v209-controlled-language-observation-pomdp-lock.json",
+  "parentV209TechnicalFailure": "outputs/v209-controlled-language-observation-pomdp/technical-failure.json",
+  "claimBoundary": "implementation-only repair of comparator regime-dimension validation after V209 stopped without a scientific result; every locked V209 hypothesis, grammar, likelihood, cost, stage, reward, comparator, gate, access limit, and decision rule remains byte-identical through the parent config payload",
+  "repair": {
+    "oldValidation": "reference and target shape must equal (3, 2, 3)",
+    "newValidation": "reference regime count must be positive; target must equal reference shape; fixed state count remains 2 and fixed observation count remains 3",
+    "permittedChangedFunction": "LanguageKernel.__post_init__",
+    "permittedChangedBehavior": "one-regime and two-regime comparator kernels pass shape validation",
+    "maximumChangedScientificParameterCount": 0,
+    "maximumChangedGateCount": 0,
+    "maximumChangedComparatorCount": 0,
+    "maximumChangedDecisionRuleCount": 0
+  },
+  "preLockExposure": {
+    "failedOracleAttemptCount": 1,
+    "scientificResultCount": 0,
+    "fullExactPolicyComputedInMemoryCount": 1,
+    "fullExactPolicyReturnedOrWrittenCount": 0,
+    "comparatorPolicyOrRegretComputedCount": 0,
+    "scientificGateEvaluationCount": 0,
+    "externalLanguageRecordReadCount": 0,
+    "modelLoadOrGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "authorization": {
+    "runUnitTestsAfterRepairLock": true,
+    "runOneRepairedExactOracleEvaluation": true,
+    "modifyParentScientificDesign": false,
+    "openExternalLanguageOrRunModel": false,
+    "APITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

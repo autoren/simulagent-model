@@ -1,0 +1,135 @@
+{
+  "auditor": "python/audit_and_freeze_v189_multiway_typed_channel_feasibility.py",
+  "auditor_sha256": "7e5a4034fb938bbca6414653305902329669a6c2cb0393c4f30d61b215ebe60f",
+  "authorization": {
+    "modify_questions_pricing_controls_gates_or_interpretation": false,
+    "read_protected_or_utterance_language_run_model_API_or_training": false,
+    "register_mutate_call_service_act_or_execute": false,
+    "run_feasibility_census_once": true
+  },
+  "config": "configs/v189-multiway-typed-channel-feasibility.json",
+  "config_payload": {
+    "claimBoundary": "text-free oracle-answer feasibility and pricing sensitivity for three finite multiway semantic questions over the frozen 14-contract universe; not human/UI burden evidence, raw-language understanding, model/deployed answer reliability, open-world discovery outside the universe, protected evidence, registration, authority, action, or execution",
+    "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+    "decisionRule": {
+      "ifOnlyConditionalMultiwayValuePasses": "freeze_conditional_multiway_feasibility_and_require_external_cost_or_proposal_evidence",
+      "ifRobustMultiwayValuePasses": "freeze_robust_multiway_feasibility_and_authorize_separate_clean_protocol_design_only",
+      "otherwise": "freeze_negative_multiway_feasibility_and_close_channel_track",
+      "passAuthorizesImmediateLanguageModelOrProtectedRun": false,
+      "passAuthorizesRegistrationAuthorityActionOrExecution": false
+    },
+    "developmentBindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/development-bindings.json",
+    "experiment": "v189_text_free_multiway_typed_clarification_bandwidth_feasibility",
+    "feasibilityGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumMeanTurnCount": 2.0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedUtteranceLanguageReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumUtteranceOrDialogueLanguageReadCount": 0,
+      "minimumPositiveConditionalScenarioCount": 1,
+      "requiredAllQuestionCount": 3,
+      "requiredCoarseQuestionCount": 2,
+      "requiredContractCount": 14,
+      "requiredObservedFinalExactnessRate": 1.0,
+      "requiredPositivePriorContractCount": 14,
+      "requiredPricingScenarioCount": 11,
+      "requiredPureBitSlotAllQuestionCostNotBelowGeneric": true,
+      "requiredTargetRetentionRate": 1.0,
+      "requiredV187GenericCost": 0.4
+    },
+    "interpretationRule": {
+      "coarseOnlyControlMustBeReportedSeparately": true,
+      "conditionalMultiwayValueMeansImprovementOnlyWithPositiveTurnOverheadOrEntropyLowerBound": true,
+      "globalIntentMenuBenefitMustNotBeCalledAdaptiveIfExactAndOpenLoopTie": true,
+      "robustMultiwayValueRequiresStrictImprovementUnderPureBitSlotUpperPricing": true
+    },
+    "multiwayQuestions": {
+      "allQuestionSet": [
+        "domain",
+        "intent_concept",
+        "transactionality"
+      ],
+      "coarseQuestionSet": [
+        "domain",
+        "transactionality"
+      ],
+      "deriveOnlyFromFrozenAllowedSemanticPayload": true,
+      "domain": "categorical declared domain over the current version space",
+      "excludeServiceVersionSourceTruthPresentedCandidateLanguageAndOutcomes": true,
+      "intent_concept": "categorical normalized intent concept over the current version space",
+      "transactionality": "categorical boolean transactionality over the current version space"
+    },
+    "parentV188OutcomeLock": "configs/v188-binary-clarification-channel-frontier-outcome-lock.json",
+    "policies": [
+      "exact_adaptive_all_multiway_questions",
+      "best_fixed_open_loop_all_multiway_questions",
+      "exact_adaptive_coarse_questions_only",
+      "always_generic_trusted_clarification"
+    ],
+    "preLockExposure": {
+      "actualExecutionCount": 0,
+      "modelLoadCount": 0,
+      "multiwayQuestionBuildCount": 0,
+      "policyScoreCount": 0,
+      "pricingScenarioScoreCount": 0,
+      "protectedUtteranceLanguageReadCount": 0,
+      "utteranceOrDialogueLanguageReadCount": 0
+    },
+    "pricing": {
+      "binaryQuestionAnchorCost": 0.1,
+      "bitSlotRule": "cost(k,o)=o+(0.10-o)*ceil(log2(k)), where k is the number of reachable answer categories",
+      "costIsComputedBeforePolicyScoring": true,
+      "doNotEquateOneCategoricalAnswerWithOneBinaryBit": true,
+      "entropyLowerBoundRule": "cost=0.10*H(answer|current version space) with zero turn overhead",
+      "genericTrustedClarificationCost": 0.4,
+      "maximumMultiwayTurns": 2,
+      "turnOverheadGridDenominator": 100,
+      "turnOverheadGridNumeratorsInclusive": [
+        0,
+        9
+      ],
+      "turnOverheadGridStep": 0.01
+    },
+    "schemaVersion": "189-multiway-typed-channel-feasibility",
+    "sourceV187Result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json"
+  },
+  "config_sha256": "a0f89dd1ea810a21059961f5ec5e4cf20e07023cd213beb58ed4cf6606426690",
+  "contract_catalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "contract_catalog_sha256": "23c7d5550db98927751aa5cdbf0926f773cbe40e6b95250dc8086e39bf873839",
+  "design_audit": "outputs/v189-multiway-typed-channel-feasibility/design-audit.json",
+  "design_audit_sha256": "0057a2f5b3f275d7e12d05a5f8baa24336f5246520c36697b8dcb700b9d4339e",
+  "development_bindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/development-bindings.json",
+  "development_bindings_sha256": "114abf3c2351be24e01fa1b69419813c6b31ea74fbb3f559fbd24e2323a5a4d0",
+  "experiment": "v189_text_free_multiway_typed_clarification_bandwidth_feasibility",
+  "lock_payload_sha256": "7521192d287c773d6dc8bb2cf8bec23872f18518beabf197a8d13455520d1a82",
+  "parent_V188_outcome": "configs/v188-binary-clarification-channel-frontier-outcome-lock.json",
+  "parent_V188_outcome_sha256": "5d69f574575d2cef7a4d2f62a8b4bd4c5f870da39723b9548285d0a33ea64dd7",
+  "plan": "docs/v189-multiway-typed-channel-feasibility-plan.md",
+  "plan_sha256": "258bc2b9a191687e98f1c680331a65c7394adf87efa19f9896076bd2a7496079",
+  "protocol": "python/v189_multiway_typed_channel_feasibility.py",
+  "protocol_sha256": "bd56a75ef11c0169995980aefbabe13f65a965d02d10185a8e4497bac485cd71",
+  "runner": "python/run_v189_multiway_typed_channel_feasibility.py",
+  "runner_sha256": "bbd74b3d9543ff124e4fd61aef4b6b94b0625e6c02121d3651062cac2f2b517a",
+  "schema_version": "189-multiway-typed-channel-feasibility-lock",
+  "source_V186_lock": "configs/v186-typed-contract-question-codebook-feasibility-lock.json",
+  "source_V186_lock_sha256": "776120bd4598ab38dca29c0a80302a3aa386e021e100bbf32695d521ffce8f13",
+  "source_V186_outcome": "configs/v186-typed-contract-question-codebook-feasibility-outcome-lock.json",
+  "source_V186_outcome_sha256": "b814ab03c545f3b52d21f9b74b168bd1be86f925a49b30056a13d90181705293",
+  "source_V187_lock": "configs/v187-clean-typed-clarification-planner-lock.json",
+  "source_V187_lock_sha256": "1c3ef3117e3093ca58ea7405244e070f0e603883612cee3882648695c96289a4",
+  "source_V187_result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json",
+  "source_V187_result_sha256": "ba32e55be1283fc38315dd2ee953fd0bd68c80103953a9a3c98b011df5e288e0",
+  "source_V188_lock": "configs/v188-binary-clarification-channel-frontier-lock.json",
+  "source_V188_lock_sha256": "49053096b8bcf0953ef7cbfd5878e236142d66d6300dce3e8203926bf62b4bdd",
+  "tests": "python/test_v189_multiway_typed_channel_feasibility.py",
+  "tests_sha256": "cb42baac5d87ad90413dcdc89d882ac85428ed529b38bde445231540e2e7830e",
+  "verifier": "python/verify_and_freeze_v189_multiway_typed_channel_feasibility_outcome.py",
+  "verifier_sha256": "f6a29f82c64f213be3380410c23ae4fc9e2c1c7e4f2f6dd8e38be9889784879d"
+}

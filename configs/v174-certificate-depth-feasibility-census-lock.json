@@ -1,0 +1,306 @@
+{
+  "V167_config_payload": {
+    "authorityBoundary": {
+      "actionOrExecutionAllowed": false,
+      "authoritativeOntologyImmutable": true,
+      "candidateBeliefsAndTerminalDecisionsAreShadowOnly": true,
+      "modelUseAllowed": false,
+      "provisionalRegistrationAllowed": false,
+      "realExecutionCount": 0,
+      "realQueryOrServiceCallAllowed": false,
+      "trustedStateMutationAllowed": false
+    },
+    "caseSelection": {
+      "requiredCandidateCount": 64,
+      "requiredCaseCount": 48,
+      "requiredEvidenceStatus": "ambiguous",
+      "selectionUsesFrozenV166PredictionsOnly": true,
+      "sourceBaseline": "exact_parser_plus_version_space"
+    },
+    "claimBoundary": "development-informed exact finite-DSL shadow-planning result only; not fresh confirmation, unrestricted ontology learning, language understanding, registration, trusted-state control, action, or execution",
+    "decisionRule": {
+      "ifEveryPlannerGatePasses": "freeze_V167_as_development_evidence_and_preregister_fixed_ontology_reversible_sandbox",
+      "otherwise": "freeze_V167_boundary_result_and_do_not_tune_on_frozen_cases",
+      "passAuthorizesImmediateSandboxRun": false,
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesRegistrationTrustedStateActionOrExecution": false
+    },
+    "developmentDesignDisclosure": {
+      "confirmatoryClaimAllowed": false,
+      "costsHorizonAndLossesChosenAfterDevelopmentFeasibilityInspection": true,
+      "formalPolicyScoresWrittenBeforeLock": false,
+      "hiddenDevelopmentTruthReadCount": 2,
+      "oracleFeasibilityAnalysisRunCount": 2,
+      "projectAuthoredDevelopmentOnly": true,
+      "protectedOrEvaluationPopulationExists": false
+    },
+    "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+    "formalRunPreLockAccess": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalPolicyScoreCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "lossOrientation": "terminalLoss[actual_class][decision]",
+    "parentV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+    "plannerGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumHistoryDependentSecondActionCaseCount": 1,
+      "minimumStrictBayesImprovementOverOpenLoopCaseCount": 1,
+      "minimumUniqueBayesRootQueryCount": 2,
+      "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+      "requiredCandidatesPerCase": 64,
+      "requiredCaseCount": 48,
+      "requiredExpressibilityClassCoverage": 3,
+      "requiredPositiveValueOfInformationCaseCount": 48,
+      "requiredRenamingRiskInvariance": 1.0,
+      "requiredTargetCandidateRetention": 1.0
+    },
+    "policies": {
+      "exact_bayes_adaptive": "minimize exact expected query cost plus terminal loss with optional stopping over a two-query policy tree",
+      "forced_map_no_query": "choose the maximum-posterior class without defer, using terminal decision order for ties",
+      "greedy_class_information_gain": "adaptively choose maximum expected Shannon class-entropy reduction for two queries, then take the Bayes terminal decision",
+      "no_query_bayes_terminal": "take the minimum-risk terminal decision immediately",
+      "optimal_open_loop_pair": "choose the minimum-risk unordered query pair at the root, use both regardless of the first outcome, then take the Bayes terminal decision",
+      "oracle_class": "observe the actual expressibility class without cost; scoring lower bound only",
+      "random_open_loop_pair": "uniform expected risk over every unordered pair of available queries, always using both"
+    },
+    "prior": {
+      "classMass": {
+        "alias": "1/3",
+        "composition": "1/3",
+        "provisional_primitive": "1/3"
+      },
+      "expressibilityClasses": [
+        "alias",
+        "composition",
+        "provisional_primitive"
+      ],
+      "kind": "class_balanced_then_uniform_within_class",
+      "meaning": "normative development prior chosen to prevent the 247-member provisional class from winning solely by enumeration multiplicity"
+    },
+    "queryModel": {
+      "action": "query one currently variable truth-table valuation",
+      "candidateUpdate": "exact Bayesian conditioning with zero inconsistent-candidate mass",
+      "earlyStopAllowed": true,
+      "maximumQueries": 2,
+      "outcomeNoise": 0.0,
+      "outcomes": [
+        0,
+        1
+      ],
+      "queryCost": "1/10",
+      "repeatedQueryAllowed": false
+    },
+    "registeredMetrics": [
+      "expected total risk by policy",
+      "regret relative to exact Bayes-adaptive policy",
+      "positive value-of-information case count",
+      "strict improvement over optimal open-loop case count",
+      "unique exact-Bayes root query count",
+      "history-dependent second-action case count",
+      "expected query count",
+      "terminal defer probability",
+      "false provisional decision probability",
+      "target candidate retention",
+      "renaming invariance",
+      "model and execution access"
+    ],
+    "schemaVersion": "167-exact-evidence-gathering-planner-design",
+    "terminalDecisions": [
+      "alias",
+      "composition",
+      "provisional_primitive",
+      "defer"
+    ],
+    "terminalLoss": {
+      "alias": {
+        "alias": 0,
+        "composition": 4,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "composition": {
+        "alias": 4,
+        "composition": 0,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "provisional_primitive": {
+        "alias": 6,
+        "composition": 6,
+        "defer": 2,
+        "provisional_primitive": 0
+      }
+    },
+    "tieBreaks": {
+      "equalInformationGainPrefersLowestValuationIndex": true,
+      "equalOpenLoopRiskPrefersLexicographicallyLowestPair": true,
+      "equalQueryRiskPrefersLowestValuationIndex": true,
+      "stopPreferredToEqualRiskQuery": true,
+      "terminalDecisionOrder": [
+        "alias",
+        "composition",
+        "provisional_primitive",
+        "defer"
+      ]
+    }
+  },
+  "auditor": "python/audit_and_freeze_v174_certificate_depth_feasibility_census.py",
+  "auditor_sha256": "fd96b50a3c62431c9c6b76c7aee1ab4fe7c035ff15be64095f1ab7003abd7e8f",
+  "authorization": {
+    "modify_population_certificate_definition_horizons_metrics_gates_or_decision": false,
+    "run_formal_certificate_census_once": true,
+    "run_model_register_mutate_state_call_service_or_execute": false,
+    "score_planner_risk_or_cost_or_run_sandbox": false,
+    "select_exclude_tune_or_change_V173": false
+  },
+  "config": "configs/v174-certificate-depth-feasibility-census.json",
+  "config_payload": {
+    "adaptiveOpportunity": {
+      "dynamicProgramMaximizesExpectedTrustedCompletion": true,
+      "hiddenTargetNotAvailableToAdaptivePolicy": true,
+      "horizons": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prior": "unchanged V167 class-balanced then uniform within class",
+      "queryCostUsed": false,
+      "terminalUtility": "one only for a unanimously alias or unanimously composition version space; zero otherwise",
+      "tieBreak": "lowest valuation index"
+    },
+    "certificateDefinition": {
+      "availableQueries": "valuation indices whose outcomes are not fixed by the initial exact version space",
+      "enumerateEveryQuerySubset": true,
+      "maximumDepth": 5,
+      "minimalDepth": "smallest unordered available-query subset that is a valid certificate, lexicographic tie recorded",
+      "targetIdentityMayChooseCertificate": true,
+      "targetInformedCertificateIsOnlyAnUpperBoundNotAnOperationalPolicy": true,
+      "targetOutcomeSource": "frozen target truth table",
+      "validCertificate": "conditioning on the queried target outcomes leaves candidates from exactly one expressibility class"
+    },
+    "claimBoundary": "V172 development-population structural certificate feasibility only; not certification-aware policy performance, fresh confirmation, language understanding, registration, authority, action, or execution",
+    "decisionRule": {
+      "ifEveryFeasibilityGatePasses": "freeze_V174_and_use_only_its_structural_horizon_curve_to_preregister_V175",
+      "otherwise": "freeze_V174_boundary_result_and_stop_certification_aware_planner_design",
+      "passAuthorizesChangeToV173": false,
+      "passAuthorizesImmediatePlannerScoring": false,
+      "passAuthorizesModelRegistrationRealServiceOrExecution": false
+    },
+    "experiment": "v174_exact_unanimous_class_certificate_depth_and_adaptive_opportunity_census",
+    "feasibilityGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumPlannerRiskOrCostScoreCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSandboxTransactionCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "requiredAdaptiveNoGreaterThanTargetInformedUpperBound": 1.0,
+      "requiredCertificateMinimality": 1.0,
+      "requiredCertificateValidity": 1.0,
+      "requiredFullDepthCertifiability": 1.0,
+      "requiredHorizonMonotonicity": 1.0,
+      "requiredPriorWeightNormalization": 1.0,
+      "requiredStateCount": 132,
+      "requiredTargetCount": 4224,
+      "requiredTargetCoverage": 1.0,
+      "requiredZeroHorizonTrustedCompletion": 0.0
+    },
+    "parentV173OutcomeLock": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+    "populationUse": {
+      "V172IsDevelopmentForV174": true,
+      "requiredStateCount": 132,
+      "requiredTargetCount": 4224,
+      "selectionSubsamplingOrExclusionAllowed": false,
+      "useAllV172EligibleStates": true,
+      "useAllV172TargetCases": true,
+      "useFrozenClassBalancedWeights": true
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "aggregateFormalMetricInspectionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalStateCount": 0,
+      "implementationUnitStateCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "plannerRiskOrCostScoreCount": 0,
+      "sandboxTransactionCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "registeredMetrics": [
+      "minimal certificate depth by target and class",
+      "minimal certificate query subset",
+      "target-informed trusted certificate upper bound by horizon",
+      "optimal adaptive trusted completion by horizon",
+      "unanimous provisional certificate opportunity by horizon",
+      "certificate-depth distribution",
+      "monotonicity and upper-bound consistency",
+      "model sandbox authority and execution access"
+    ],
+    "roadmap": "docs/research-roadmap-after-v173.md",
+    "schemaVersion": "174-certificate-depth-feasibility-census-design",
+    "sourceV172OutcomeLock": "configs/v172-trusted-shadow-integration-population-outcome-lock.json"
+  },
+  "config_sha256": "acfd9c66fc2d6a92c425c7c732c9566f687cb69e5fa30575b565031006381e31",
+  "constraint_states": "outputs/v172-trusted-shadow-integration-population/population/constraint-states.json",
+  "constraint_states_sha256": "524fd70bae1af58f47251a9f26cb3cb0e47fa4a6ba440f4d7cb0393e346e5cf6",
+  "design_audit": "outputs/v174-certificate-depth-feasibility-census/design-audit.json",
+  "design_audit_sha256": "a5df32abeed98a84db45b8318e6676a99029c69151b195a3280d6c9e135479dc",
+  "eligible_state_ids": "outputs/v172-trusted-shadow-integration-population/population/integration-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "9a4250cc2f22bfd4d66c4681b7654314d0fb48aa93739e9815072af77585e43c",
+  "experiment": "v174_exact_unanimous_class_certificate_depth_and_adaptive_opportunity_census",
+  "lock_payload_sha256": "4e825cc07aaac1b75a527eb5392804acdc80167aa78935da26cf89f6a41ab24d",
+  "parent_V173_outcome": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+  "parent_V173_outcome_sha256": "fd05ea46e03f2a2bb91e606e3d510bcce62afd52ffbb981433e4e5b2b2d74a8a",
+  "plan": "docs/v174-certificate-depth-feasibility-census-plan.md",
+  "plan_sha256": "b04e42309b9573a90510e8c067a40bd1c6fc119aa08a462f3bac69db06c86b81",
+  "protocol": "python/v174_certificate_depth_feasibility_census.py",
+  "protocol_sha256": "ade2dd7d94af0aa91a8da29c94f5308b3b5c82fbd0634ce1169d5ed8c1ed192f",
+  "roadmap": "docs/research-roadmap-after-v173.md",
+  "roadmap_sha256": "ffd01290cb2aa3bc7d7fd7003c65d7f94dacfdc755645436e223c77e00c89eb8",
+  "runner": "python/run_v174_certificate_depth_feasibility_census.py",
+  "runner_sha256": "c2bc80e9b599427f6eb774a1e0a5a958d5705842198b79e617d2825419fcf96e",
+  "schema_version": "174-certificate-depth-feasibility-census-lock",
+  "source_V167_planner_lock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "source_V167_planner_lock_sha256": "9ea702e7fd6be86d30ba72cad6fa4d5b5e891be32bae1a30d8adc992c0dd9d28",
+  "source_V172_outcome": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "source_V172_outcome_sha256": "689c73b050805591a9d2eda4f2330d5443bbbad0aac59efa7084ca57a443b7fb",
+  "target_cases": "outputs/v172-trusted-shadow-integration-population/population/target-cases.json",
+  "target_cases_sha256": "ee6694c46798e1bab69417b7bea39c237f8dc5f368cf3c368998d4659d9414ca",
+  "tests": "python/test_v174_certificate_depth_feasibility_census.py",
+  "tests_sha256": "52e02273f572d607cf96278215a3e80d1d190d56668117bb58f615a8320018c1",
+  "verifier": "python/verify_and_freeze_v174_certificate_depth_feasibility_census_outcome.py",
+  "verifier_sha256": "c1d621f2d86ae53831a448d2bb8b07c011fa9fcb4fb4cc36497c3c15337e9349"
+}

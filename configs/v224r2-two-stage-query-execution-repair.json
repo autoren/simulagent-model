@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "224r2-two-stage-query-execution-repair-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v224r2_two_stage_query_execution_repair",
+  "parentV224DesignLock": "configs/v224-mondo-record-disposition-metadata-census-lock.json",
+  "parentV224DesignLockSha256": "7fc39f446524833b170e816b707190f46a3ce5a9e83b279e888a3e7d6de40d2f",
+  "parentV224r1RepairLock": "configs/v224r1-graphql-transport-repair-lock.json",
+  "parentV224r1RepairLockSha256": "b1497d1dfc398759a14ba299c07333c36ab46046fd131f8197b25f27f8047094",
+  "V224InitialFailureRecord": "docs/v224-initial-capture-failure.md",
+  "V224r1FailureRecord": "docs/v224r1-capture-failure.md",
+  "plan": "docs/v224r2-two-stage-query-execution-repair-plan.md",
+  "failureBoundary": {
+    "V224FailedAttemptCount": 1,
+    "V224r1FailedAttemptCount": 1,
+    "V224r1Exception": "HTTP_502",
+    "V224r1PersistedRecordMetadataCount": 0,
+    "V224r1PersistedScientificArtifactCount": 0,
+    "V224r1ExactSuccessfulSafeResponseCountKnown": false,
+    "V224r1TaskLanguagePersistenceOrResearchExposureCount": 0,
+    "scopePolicySnapshot": "outputs/v224-mondo-record-disposition-metadata-census/metadata/scope-policy.snapshot",
+    "scopePolicySnapshotSha256": "4773e510e784cdf7063743f010f5c3a0f8b21d2e55d73f0d2e5f38893bfa234e",
+    "modelRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "repair": {
+    "operation": "execute_locked_preliminary_enumeration_before_hash_selected_deep_provenance_queries",
+    "thinQueryIsStrictFieldSubsetOfOriginalSafeQuery": true,
+    "deepNodeQueryIsByteExactOriginalNodeQuery": true,
+    "maximumIdenticalTransientRetries": 3,
+    "retryableHttpStatuses": [502, 503, 504],
+    "sourceWindowChanged": false,
+    "exclusionsChanged": false,
+    "dispositionContractChanged": false,
+    "samplingChanged": false,
+    "gatesChanged": false,
+    "decisionRuleChanged": false
+  },
+  "decisionRule": {
+    "ifRepairAuditPasses": "run_one_completed_two_stage_V224_metadata_census",
+    "otherwise": "stop_V224_without_scientific_result",
+    "authorizesTaskLanguageOrModel": false,
+    "authorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}
+

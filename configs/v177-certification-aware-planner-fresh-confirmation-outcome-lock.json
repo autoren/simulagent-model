@@ -1,0 +1,288 @@
+{
+  "audit": "outputs/v177-certification-aware-planner-fresh-confirmation/outcome-audit.json",
+  "audit_sha256": "6b2059cf80e1724d6512f2f2c4162ded36c8fd8cce576140624220f59bd74ded",
+  "authorization": {
+    "allow_planner_model_hidden_target_or_provisional_commit_authority": false,
+    "design_separate_exact_robustness_branch": true,
+    "modify_rerun_select_subsample_or_tune_V177": false,
+    "run_model_register_mutate_real_state_call_service_or_execute": false,
+    "run_robustness_without_separate_population_and_lock": false
+  },
+  "confirmation_lock": "configs/v177-certification-aware-planner-fresh-confirmation-lock.json",
+  "confirmation_lock_sha256": "3f88161be28b00b6628b42debf26d079e8fe410e8d4ce2f4cc259984a106ac9e",
+  "confirmation_summary": "outputs/v177-certification-aware-planner-fresh-confirmation/confirmation/confirmation-summary.json",
+  "confirmation_summary_sha256": "f58a904b1767ce57d4c4cacd59504b3b1185f3e7b2471c0f6ccd13fe2a92d0ff",
+  "experiment": "v177_unchanged_V175_certification_aware_planner_on_frozen_four_constraint_context_disjoint_population",
+  "lock_payload_sha256": "cdf918ee1841e873ee5220580d9f2aecde44154ae20eb09cb5839b6d047e42d2",
+  "oracle_certificate_digest": "outputs/v177-certification-aware-planner-fresh-confirmation/confirmation/oracle-certificate-digest.json",
+  "oracle_certificate_digest_sha256": "4f0097f354f03975073f45d750fffa44a0e48aa35a45f73d914d34fe97bd7cf9",
+  "outcome": {
+    "confirmed": true,
+    "decision": "freeze_V177_as_strong_fresh_confirmation_of_the_V175_certification_aware_mechanism",
+    "passed": true,
+    "scientific_safety_gates_passed": true,
+    "strong_confirmation": true,
+    "summary": {
+      "exact_DP_risk_reconstruction_rate": 1.0,
+      "false_trusted_route_probability": 0.0,
+      "invariant_preservation": 1.0,
+      "oracle_certificate_validity_rate": 1.0,
+      "planner_commit_authorization_count": 0,
+      "policy_metrics": {
+        "V167_exact_adaptive_horizon2": {
+          "deferred": {
+            "decimal": 1.0,
+            "denominator": 1,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 1.828083028083028,
+            "denominator": 4095,
+            "numerator": 7486
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 2.182808302808303,
+            "denominator": 20475,
+            "numerator": 44693
+          },
+          "trusted_completion": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "exact_certification_adaptive": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 3.2895400895400897,
+            "denominator": 12285,
+            "numerator": 40412
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 0.9956206756206756,
+            "denominator": 61425,
+            "numerator": 61156
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "greedy_class_information_gain_horizon5": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 3.5436168769502103,
+            "denominator": 7371,
+            "numerator": 26120
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.0210283543616876,
+            "denominator": 7371,
+            "numerator": 7526
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "immediate_defer": {
+          "deferred": {
+            "decimal": 1.0,
+            "denominator": 1,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 2.0,
+            "denominator": 1,
+            "numerator": 2
+          },
+          "trusted_completion": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "optimal_open_loop_subset": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 4.0,
+            "denominator": 1,
+            "numerator": 4
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.0666666666666667,
+            "denominator": 15,
+            "numerator": 16
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "random_query_order_consensus_stop": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 3.4622620178175736,
+            "denominator": 22113,
+            "numerator": 76561
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.012892868448424,
+            "denominator": 221130,
+            "numerator": 223981
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "target_informed_certificate_oracle": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 3.1007190340523674,
+            "denominator": 36855,
+            "numerator": 114277
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 0.9767385700719035,
+            "denominator": 368550,
+            "numerator": 359977
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        }
+      },
+      "population_coverage": 1.0,
+      "prior_weight_normalization_rate": 1.0,
+      "provenance_and_restart_verification": 1.0,
+      "provisional_sandbox_entry_probability": 0.0,
+      "sandbox_exactness": 1.0,
+      "simulated_sandbox_transaction_count": 1590,
+      "state_count": 135,
+      "state_count_strictly_improved_over_immediate_defer": 135,
+      "statewise_no_worse_than_every_operational_control_rate": 1.0,
+      "target_count": 2160,
+      "target_policy_score_count": 15120,
+      "target_result_payload_sha256": "c4e1760f4ef0592b224deba29f7b076fb0129403763a2fd53070bf751e0d0128"
+    }
+  },
+  "parent_V176_outcome": "configs/v176-four-constraint-confirmation-population-outcome-lock.json",
+  "parent_V176_outcome_sha256": "a7919f5544984ac510a3022ce74f3e8be9386273741e015cfaa7325ede27e879",
+  "result": "outputs/v177-certification-aware-planner-fresh-confirmation/confirmation/result.json",
+  "result_sha256": "c6e7754e6a27b018c78d810023d2a03646087610ba692fdfe35080005fb568b4",
+  "results_document": "docs/v177-certification-aware-planner-fresh-confirmation-results.md",
+  "results_document_sha256": "21dfd22f329c281419078b46e05d5df55bac5de6db1e2879b4f73c658b88bbc6",
+  "schema_version": "177-certification-aware-planner-fresh-confirmation-outcome-lock",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "source_V175_outcome": "configs/v175-certification-aware-planner-development-outcome-lock.json",
+  "source_V175_outcome_sha256": "e09ee48b1fc5f0239b3c79fcf5823f2197d2494f0d9087d16f57fc971bf74b1f",
+  "state_policy_results": "outputs/v177-certification-aware-planner-fresh-confirmation/confirmation/state-policy-results.json",
+  "state_policy_results_sha256": "1924c4674277a142df9630a03637bd374b20b05db582993744fa14949b044a11",
+  "target_result_digest": "outputs/v177-certification-aware-planner-fresh-confirmation/confirmation/target-result-digest.json",
+  "target_result_digest_sha256": "efc0e876e23243cfab48372c8804fb7ea705940ac6cbd185a256a365d8830a2f",
+  "verifier": "python/verify_and_freeze_v177_certification_aware_planner_fresh_confirmation_outcome.py",
+  "verifier_sha256": "3d18e7de4e591af1c2508e1bb7b1096da819ca82412d91036ab941222accb411"
+}

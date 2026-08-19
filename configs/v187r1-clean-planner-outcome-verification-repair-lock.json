@@ -1,0 +1,58 @@
+{
+  "auditor": "python/audit_and_freeze_v187r1_clean_planner_outcome_verification_repair.py",
+  "auditor_sha256": "c44b98f6d5c6d8db80f52d170a1b180b2de44b8a671c41df9d02a8afb6c53dba",
+  "authorization": {
+    "modify_or_rerun_V187": false,
+    "read_protected_or_utterance_language_run_model_API_or_training": false,
+    "register_mutate_call_service_act_or_execute": false,
+    "run_verification_repair_once": true
+  },
+  "config": "configs/v187r1-clean-planner-outcome-verification-repair.json",
+  "config_payload": {
+    "claimBoundary": "verification-only repair of one frozen V187 metadata serialization mismatch; no policy rerun, result change, gate change, protected/language/model access, registration, authority, action, or execution",
+    "decisionRule": {
+      "authorizeCorrelatedErrorOrModelSuccessor": false,
+      "authorizeProtectedOrUtteranceLanguageAccess": false,
+      "authorizeRegistrationAuthorityActionOrExecution": false,
+      "ifEveryOriginalOutputAndScientificDecisionReconstructsUnderTheOneDeclaredSerializationCorrection": "freeze_V187_negative_outcome_through_V187r1_verification_repair",
+      "otherwise": "reject_V187r1_repair"
+    },
+    "experiment": "v187r1_verification_only_repair_of_V187_problem_summary_raw_count",
+    "preLockExposure": {
+      "actualExecutionCount": 0,
+      "developmentTargetPathEvaluationCount": 0,
+      "modelLoadCount": 0,
+      "policyBuildCount": 0,
+      "policyScoreCount": 0,
+      "protectedUtteranceLanguageReadCount": 0
+    },
+    "repair": {
+      "allOtherExpectedPayloadsUnchanged": true,
+      "frozenRunnerSerializedRawQuestionCountFromUnaugmentedConfigAsZero": true,
+      "modifySourceResultOrOutputs": false,
+      "onlyCorrectExpectedProblemSummaryRawQuestionCount": true,
+      "policySummaryIndependentlyRetainsReconstructedRawQuestionCount164": true,
+      "rerunPolicyEvaluation": false
+    },
+    "schemaVersion": "187r1-clean-planner-outcome-verification-repair",
+    "sourceV187FailedOutcomeAudit": "outputs/v187-clean-typed-clarification-planner/outcome-audit.json",
+    "sourceV187Lock": "configs/v187-clean-typed-clarification-planner-lock.json",
+    "sourceV187Result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json"
+  },
+  "config_sha256": "9f6b7d6a49dac76c14596310b0b8baeff8caa54fdbf06294d8ee9bac63beaa0a",
+  "design_audit": "outputs/v187r1-clean-planner-outcome-verification-repair/design-audit.json",
+  "design_audit_sha256": "7ee2083d354c0b13320a61d3ab85741a0c68b1c0046f2960df10122395cb25d6",
+  "experiment": "v187r1_verification_only_repair_of_V187_problem_summary_raw_count",
+  "lock_payload_sha256": "c0143270a44f9f4bfc152af790c495ad30e9a26e04222cbea073dcafeba9a27c",
+  "plan": "docs/v187r1-clean-planner-outcome-verification-repair-plan.md",
+  "plan_sha256": "f73c27c153137689fff5cb88ac410f858aeebdc0503d0c48923132e4c04db64c",
+  "schema_version": "187r1-clean-planner-outcome-verification-repair-lock",
+  "source_V187_failed_outcome_audit": "outputs/v187-clean-typed-clarification-planner/outcome-audit.json",
+  "source_V187_failed_outcome_audit_sha256": "7d57dce0e370384a898fa45aa99edb88d4ffbfcc1eb7763e254bfa5ce9a3482a",
+  "source_V187_lock": "configs/v187-clean-typed-clarification-planner-lock.json",
+  "source_V187_lock_sha256": "1c3ef3117e3093ca58ea7405244e070f0e603883612cee3882648695c96289a4",
+  "source_V187_result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json",
+  "source_V187_result_sha256": "ba32e55be1283fc38315dd2ee953fd0bd68c80103953a9a3c98b011df5e288e0",
+  "verifier": "python/verify_and_freeze_v187r1_clean_planner_outcome_verification_repair.py",
+  "verifier_sha256": "ff068330be7a9668d10ee7e54c1c35cca97c11d79e5cdf0199171892924e2039"
+}

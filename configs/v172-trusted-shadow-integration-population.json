@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "172-trusted-shadow-integration-population-design",
+  "experiment": "v172_complete_three_constraint_truth_table_population_before_trusted_shadow_integration",
+  "parentV171OutcomeLock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "sourceV170OutcomeLock": "configs/v170-unchanged-planner-fresh-confirmation-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v171.md",
+  "claimBoundary": "procedurally generated finite-DSL integration population only; not policy performance, transaction performance, language understanding, ontology registration, authority, action, or execution",
+  "generator": {
+    "candidateTruthTableCount": 256,
+    "valuationCount": 8,
+    "constraintCountPerState": 3,
+    "outcomesPerConstraint": [0, 1],
+    "completeValuationTripleAndOutcomeEnumeration": true,
+    "requiredSourceStateCount": 448,
+    "retainEverySourceState": true,
+    "selectionUsesPlannerScoresPoliciesSandboxOutcomesOrTargetClass": false
+  },
+  "integrationEligibility": {
+    "rule": "exact version space contains alias composition and provisional_primitive candidates",
+    "usesOnlyFrozenCandidateClassMetadata": true,
+    "ineligibleStatesRetainedInPopulation": true,
+    "policyOrSandboxScoringDuringEligibility": false
+  },
+  "targetCases": {
+    "includeEveryCandidateInEveryEligibleVersionSpace": true,
+    "targetSelectionOrSubsampling": false,
+    "targetWeights": "V167 class-balanced prior: one third per class then uniform within class",
+    "targetWeightsUsePolicyOutcomes": false,
+    "targetIdentitiesFrozenBeforeIntegrationScoring": true
+  },
+  "populationGates": {
+    "requiredSourceStateCount": 448,
+    "requiredSelectedStateCount": 448,
+    "requiredCandidatesPerState": 32,
+    "requiredEligibleStateCount": 132,
+    "requiredIneligibleStateCount": 316,
+    "requiredTargetCaseCount": 4224,
+    "requiredConstraintSignatureUniqueness": 1.0,
+    "requiredVersionSpaceExactness": 1.0,
+    "requiredTargetMembershipExactness": 1.0,
+    "requiredPriorWeightNormalization": 1.0,
+    "maximumPlannerPolicyScoreCount": 0,
+    "maximumSandboxTransactionCount": 0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "implementationPopulationBuildCount": 1,
+    "formalPopulationBuildCount": 0,
+    "plannerPolicyScoreCount": 0,
+    "sandboxTransactionCount": 0,
+    "aggregateIntegrationMetricInspectionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedStateMutationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "populationContainsOnlyShadowVersionSpacesAndTargetIdentities": true,
+    "authoritativeOntologyAndStateImmutable": true,
+    "plannerNotRun": true,
+    "sandboxNotRun": true,
+    "modelNotRun": true,
+    "provisionalRegistrationAllowed": false,
+    "actionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationGatePasses": "freeze_V172_and_preregister_trusted_only_shadow_integration_on_all_eligible_states_and_targets",
+    "otherwise": "freeze_V172_boundary_result_without_integration_scoring",
+    "passAuthorizesImmediateIntegrationRun": false,
+    "passAuthorizesPolicyTuning": false,
+    "passAuthorizesModelRegistrationAuthorityActionOrExecution": false
+  }
+}

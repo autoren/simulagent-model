@@ -1,0 +1,158 @@
+{
+  "audit": "outputs/v212-representational-diagnosis/outcome-audit.json",
+  "audit_sha256": "ddb506b711bf4278940034fa4065854bf0d100856dcfe0a44ebd0323ba091647",
+  "authorization": {
+    "design_V213_fresh_programmatic_concept_population": true,
+    "design_metadata_first_external_resource_census": true,
+    "generate_V213_population_without_separate_lock": false,
+    "read_external_ontology_payload_without_separate_lock": false,
+    "register_mutate_call_act_or_execute": false,
+    "run_local_or_API_model_or_training": false
+  },
+  "design_lock": "configs/v212-open-class-identifiability-oracle-lock.json",
+  "design_lock_sha256": "388bf4ba2ab922f8ef1094c707123033e72fba15fa86a9f84817472f89ef09ba",
+  "experiment": "v212_model_free_behavioral_equivalence_and_representational_diagnosis_oracle",
+  "lock_payload_sha256": "2399121532bf257aaa11c8465778ca6397591939d9a00aa97e647c89590e1d72",
+  "outcome": {
+    "branch": "V213_DESIGN_ELIGIBLE",
+    "decision": "freeze_V212_positive_representational_diagnosis_oracle_and_authorize_V213_programmatic_concept_population_design_only",
+    "metrics": {
+      "candidate_pair_count": 130564,
+      "commutative_order_invariance": 1.0,
+      "comparison_anchor_boundary_witness_rate": 1.0,
+      "complete_behavior_count": 256,
+      "complete_observation_necessity_rate": 1.0,
+      "distinct_pair_boundary_witness_coverage": 1.0,
+      "distinct_program_behavior_count": 15,
+      "equivalence_collapse_accuracy": 1.0,
+      "equivalent_rewrite_invariance": 1.0,
+      "evidence_order_invariance": 1.0,
+      "evidence_status_accuracy": 1.0,
+      "exact_candidate_set_accuracy": 1.0,
+      "exact_false_merge_rate": 0.0,
+      "exact_false_primitive_rate": 0.0,
+      "expressibility_set_accuracy": 1.0,
+      "family_counts": {
+        "BROADER_NARROWER": 4,
+        "CONTRADICTORY": 4,
+        "EXACT_ALIAS": 4,
+        "EXISTING_COMPOSITION": 4,
+        "GENUINELY_AMBIGUOUS": 4,
+        "IRREDUCIBLE_RELATIVE_TO_LANGUAGES": 4,
+        "MISSING_OPERATOR": 4,
+        "NEAR_ALIAS_BOUNDARY": 4,
+        "OUTSIDE_DESCRIPTION": 4,
+        "REFERENCE_GROUNDED_SYMBOL": 4
+      },
+      "finite_metrics": true,
+      "outside_deferral_advantage": 28.0,
+      "policies": {
+        "ABSTAIN_ALWAYS": {
+          "action_counts": {
+            "DEFER_ADJUDICATE": 36,
+            "DEFER_OUTSIDE": 4,
+            "DIAGNOSE_MISSING_OPERATOR": 0,
+            "REQUEST_BOUNDARY": 0,
+            "RETAIN_PROVISIONAL_SHADOW": 0,
+            "REUSE_PRIMITIVE": 0,
+            "USE_COMPOSITION": 0
+          },
+          "average_value": -2.0,
+          "normalized_regret": 0.2375,
+          "regret": 9.5
+        },
+        "CLOSED_WORLD_L0": {
+          "action_counts": {
+            "DEFER_ADJUDICATE": 0,
+            "DEFER_OUTSIDE": 0,
+            "DIAGNOSE_MISSING_OPERATOR": 0,
+            "REQUEST_BOUNDARY": 0,
+            "RETAIN_PROVISIONAL_SHADOW": 0,
+            "REUSE_PRIMITIVE": 6,
+            "USE_COMPOSITION": 34
+          },
+          "average_value": -15.0,
+          "normalized_regret": 0.5625,
+          "regret": 22.5
+        },
+        "EXACT_EQUIVALENCE_SET": {
+          "action_counts": {
+            "DEFER_ADJUDICATE": 4,
+            "DEFER_OUTSIDE": 4,
+            "DIAGNOSE_MISSING_OPERATOR": 5,
+            "REQUEST_BOUNDARY": 4,
+            "RETAIN_PROVISIONAL_SHADOW": 9,
+            "REUSE_PRIMITIVE": 5,
+            "USE_COMPOSITION": 9
+          },
+          "average_value": 7.5,
+          "normalized_regret": 0.0,
+          "regret": 0.0
+        },
+        "FORCED_NEAREST_MERGE": {
+          "action_counts": {
+            "DEFER_ADJUDICATE": 0,
+            "DEFER_OUTSIDE": 0,
+            "DIAGNOSE_MISSING_OPERATOR": 0,
+            "REQUEST_BOUNDARY": 0,
+            "RETAIN_PROVISIONAL_SHADOW": 0,
+            "REUSE_PRIMITIVE": 40,
+            "USE_COMPOSITION": 0
+          },
+          "average_value": -24.5,
+          "normalized_regret": 0.8,
+          "regret": 32.0
+        },
+        "FORCED_NEW_PRIMITIVE": {
+          "action_counts": {
+            "DEFER_ADJUDICATE": 0,
+            "DEFER_OUTSIDE": 0,
+            "DIAGNOSE_MISSING_OPERATOR": 0,
+            "REQUEST_BOUNDARY": 0,
+            "RETAIN_PROVISIONAL_SHADOW": 40,
+            "REUSE_PRIMITIVE": 0,
+            "USE_COMPOSITION": 0
+          },
+          "average_value": -18.5,
+          "normalized_regret": 0.65,
+          "regret": 26.0
+        }
+      },
+      "record_count": 40,
+      "reference_fact_necessity_rate": 1.0,
+      "reference_grounding_sufficiency_rate": 1.0,
+      "shadow_action_accuracy": 1.0,
+      "syntactic_program_count": 51,
+      "terminal": {
+        "horizon_escape_count": 0,
+        "safe_deferral_path_count": 8,
+        "settlement_path_count": 36,
+        "terminal_path_count": 44,
+        "terminally_proper_path_rate": 1.0,
+        "unsettled_terminal_count": 0
+      },
+      "vocabulary_renaming_invariance": 1.0,
+      "witnessed_candidate_pair_count": 130564
+    },
+    "passed": true
+  },
+  "prediction_freeze": "outputs/v212-representational-diagnosis/oracle/prediction-freeze.json",
+  "prediction_freeze_sha256": "489bac2703b9826985cd63ee400a45603ac1a510c0542b90fed1d6f79e0606aa",
+  "predictions": "outputs/v212-representational-diagnosis/oracle/predictions.jsonl",
+  "predictions_sha256": "9ea31714e4dc87812a36b03bcd9e19ca20a0f4e514414c4f7595bd3b9dcedc67",
+  "public_cases": "outputs/v212-representational-diagnosis/oracle/public-cases.jsonl",
+  "public_cases_sha256": "b4178a4195acbe7beaac2e6576d0142cf7f0cc26b12218e5eb3cb6fcfebbfd17",
+  "public_semantics": "outputs/v212-representational-diagnosis/oracle/public-semantics.json",
+  "public_semantics_sha256": "b5eaf2d1dc61dfc29448369c5c530dd6fe046e280d24104b1edcfafecda0a7f1",
+  "result": "outputs/v212-representational-diagnosis/oracle/result.json",
+  "result_sha256": "6d9c3a160b831c14921cdbe52455e128a2aa7d04ecad81ed11374603ed086daa",
+  "results_document": "docs/v212-open-class-identifiability-oracle-results.md",
+  "results_document_sha256": "792c8bf137252587746a158ba66eb8cb1512e6b10f7fd04bbd112fbe9eee9c40",
+  "schema_version": "212-representational-diagnosis-oracle-outcome-lock",
+  "sealed_truth": "outputs/v212-representational-diagnosis/oracle/sealed-truth.jsonl",
+  "sealed_truth_sha256": "3b459a9bf06d80c98f6e2a576e26697b21ddf2a9bdbd336a353f9a7a747ad7c5",
+  "summary": "outputs/v212-representational-diagnosis/oracle/summary.json",
+  "summary_sha256": "fa8b7aa43c648755c8341839502c45f4d209320142da601d07c887a23a6223ba",
+  "verifier": "python/verify_and_freeze_v212_open_class_identifiability_oracle_outcome.py",
+  "verifier_sha256": "7729f499751263bb3ebe73ad3374c1144882d319a26f059d1a679328d306be60"
+}

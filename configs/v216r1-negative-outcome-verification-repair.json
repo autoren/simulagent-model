@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "216r1-negative-outcome-verification-repair-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v216r1_negative_outcome_verification_only_repair",
+  "parentV216DesignLock": "configs/v216-bounded-external-artifact-population-lock.json",
+  "parentV216Summary": "outputs/v216-external-artifact-population/summary.json",
+  "parentV216Result": "outputs/v216-external-artifact-population/result.json",
+  "parentV216ResultsDocument": "docs/v216-bounded-external-artifact-population-results.md",
+  "originalVerifier": "python/verify_and_freeze_v216_bounded_external_artifact_population_outcome.py",
+  "plan": "docs/v216r1-negative-outcome-verification-repair-plan.md",
+  "claimBoundary": "verification-only repair that freezes the exact existing V216 negative outcome; no payload retrieval, population rebuild, gate change, reinterpretation as a pass, V217 authorization, protected method evaluation, model, registration, action, or execution",
+  "repairInvariant": {
+    "expectedV216ScientificPassed": false,
+    "expectedV216Branch": "NEGATIVE_EXTERNAL_PAYLOAD_OR_POPULATION_FEASIBILITY",
+    "expectedV216Decision": "freeze_V216_negative_payload_or_population_feasibility_without_source_release_inclusion_split_threshold_or_gate_tuning",
+    "expectedFailedScientificChecks": ["uberon_and_W3C_parser_controls_pass"],
+    "expectedOlderTermCount": 15719,
+    "expectedNewerTermCount": 15763,
+    "expectedEligibleRecordCount": 197,
+    "expectedDevelopmentGroupCount": 148,
+    "expectedProtectedGroupCount": 49,
+    "expectedOriginalVerifierPositiveOnlyPredicateCount": 3,
+    "requireExactMetricAuditResultReconstruction": true,
+    "requireAllV216ArtifactsAndRawHashesUnchanged": true,
+    "authorizeNegativeOutcomeFreezeOnly": true
+  },
+  "preLockExposure": {
+    "V216RerunCount": 0,
+    "payloadRetrievalCount": 0,
+    "populationRebuildCount": 0,
+    "gateOrThresholdChangeCount": 0,
+    "protectedMethodEvaluationCount": 0,
+    "modelLoadOrGenerationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifRepairIntegrityPasses": "freeze_exact_V216_negative_outcome_and_select_non_V217_roadmap",
+    "otherwise": "reject_V216r1_repair_without_modifying_V216",
+    "repairCanAuthorizeV217": false,
+    "repairCanAlterScientificOutcome": false
+  }
+}

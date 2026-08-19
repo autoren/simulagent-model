@@ -1,0 +1,44 @@
+{
+  "artifacts": {
+    "docs/post-v224-consolidation-results.md": "8f28189e72a1d77f8b745b3da858b6603f18d738763d36daa3c70cade14a03a6",
+    "outputs/post-v224-consolidation/access.json": "75055021fe3fc0d5578f2430cf16482693ac519d4388bf110dd1127c1a6a28c6",
+    "outputs/post-v224-consolidation/audit.json": "12ce67d4e3344cdd2ff053bbe60130c31d4465bb9e5d4bac36e029a5c0b5209e",
+    "outputs/post-v224-consolidation/manifest.json": "75cb5bf9a3ff8daa3a680775e8b4b729701210d6aeaca637a6bb14c7dab1bdda",
+    "outputs/post-v224-consolidation/result.json": "fe20ff1001332c7fda0f1bb6d4f8e1deb39f7c7f0ad0a6c2d263ee0743caef59"
+  },
+  "authorization": {
+    "model_or_api": false,
+    "new_experiment": false,
+    "ontology_registration_or_trusted_state_mutation": false,
+    "protected_or_request_language_access": false,
+    "service_action_or_execution": false,
+    "training_or_tuning": false
+  },
+  "consolidation_config": "configs/post-v224-consolidation.json",
+  "consolidation_config_sha256": "0103532e377693f911440c4d0a0e826c4a7018f7547f457f2c4193e569a15509",
+  "experiment": "none_post_v224_maintenance_consolidation",
+  "implementation": "python/post_v224_consolidation.py",
+  "implementation_sha256": "94e02c3367b5fb10dda97b213deed1e5b08c9eecde247a589d65ba7f1d26c8e1",
+  "lock_payload_sha256": "9602f99258824dc1b79f91d94cb85052bbee1c18ccb0141f6cb260057435177b",
+  "outcome": {
+    "actual_execution_count": 0,
+    "authorized_next_experiment_count": 0,
+    "decision": "freeze_post_V224_reproducibility_architecture_and_navigation_consolidation_without_experimental_escalation",
+    "dependency_drift_addendum_count": 8,
+    "gate_count": 9,
+    "historical_roadmap_count": 27,
+    "model_or_api_run_count": 0,
+    "passed": true,
+    "protected_body_read_count": 0,
+    "reference_architecture_component_count": 8,
+    "reference_architecture_integration_gate_count": 10,
+    "request_language_read_count": 0
+  },
+  "runner": "python/run_post_v224_consolidation.py",
+  "runner_sha256": "5328136fcecde9e508789f719ee9944807fe98c86eef70668f9f0677fd566b7e",
+  "schema_version": "post_v224_consolidation_outcome_lock.v1",
+  "tests": "python/test_post_v224_consolidation.py",
+  "tests_sha256": "0d77e054a2aac92d715012dc79dbf51ddac1e508efc13534bb5a23ceda9d0a1d",
+  "verifier": "python/verify_and_freeze_post_v224_consolidation.py",
+  "verifier_sha256": "50ce6768ab27d7e4224623808fac3baddd07752682d566ac2f97e97d5f2c6cc0"
+}

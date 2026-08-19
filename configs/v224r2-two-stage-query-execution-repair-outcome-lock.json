@@ -1,0 +1,86 @@
+{
+  "audit": "outputs/v224r2-two-stage-query-execution-repair/outcome-audit.json",
+  "audit_sha256": "aef5d0d96bf6c6a1015c81042d62ce8999d8a6cca5ccf2916eb5b720468266c6",
+  "authorization": {
+    "design_V225_role_separated_language_acquisition_and_identifiability": false,
+    "open_task_record_language_or_run_model": false,
+    "register_mutate_service_act_execute": false
+  },
+  "capture_artifact_hashes": {
+    "deepAudit": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preliminaryCensus": "d5b092cf170c7188e1cdf36f1a68b46a409b41e8ec2c61598f8c1a665c80be01",
+    "queryManifest": "6c268e5e56f4ef4e5f3aaa3604ff36b89e12d0aeab77e22707bec2365f7dce14",
+    "recordMetadata": "4ee55462114b1d6378fe0a7ffb0693dbb72f09883f85fe3b90c562c7e71d61b4",
+    "releaseIdIndex": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "releaseMetadata": "a1f091c8641c8b7853502a14c874be9bd66efd8882b9a990b0902e40425601cf",
+    "scopePolicySnapshot": "4773e510e784cdf7063743f010f5c3a0f8b21d2e55d73f0d2e5f38893bfa234e"
+  },
+  "experiment": "v224r2_two_stage_query_execution_repair",
+  "lock_payload_sha256": "eac2817864cfd13a59b417db6b1527dedf7406927e7544269ec1e90f6ee0e633",
+  "outcome": {
+    "V224_branch": "MONDO_B2C_EXTERNAL_VALIDATION_INSUFFICIENT",
+    "V224_decision": "freeze_V224_negative_and_keep_Mondo_B2c_language_closed_without_taxonomy_relaxation",
+    "V224_scientific_passed": true,
+    "metrics": {
+      "all_strata_meet_final_gate": false,
+      "ambiguous_exclude_count": 2397,
+      "deep_audit_row_count": 0,
+      "excluded_issue_leak_count": 0,
+      "expected_search_slice_count": 48,
+      "final_retained_counts": {
+        "ACCEPTED_NEW": 0,
+        "EXISTING_OR_DUPLICATE": 0,
+        "INSUFFICIENT_OR_CLARIFY": 0,
+        "UNSUPPORTED_OR_OUT_OF_SCOPE": 0
+      },
+      "finite_metrics": true,
+      "forbidden_selected_field_count": 0,
+      "human_independence_rates": {
+        "ACCEPTED_NEW": 0.0,
+        "EXISTING_OR_DUPLICATE": 0.0,
+        "INSUFFICIENT_OR_CLARIFY": 0.0,
+        "UNSUPPORTED_OR_OUT_OF_SCOPE": 0.0
+      },
+      "preliminary_artifact_reconstructs_exactly": true,
+      "preliminary_counts": {
+        "ACCEPTED_NEW": 0,
+        "EXISTING_OR_DUPLICATE": 0,
+        "INSUFFICIENT_OR_CLARIFY": 0,
+        "UNSUPPORTED_OR_OUT_OF_SCOPE": 0
+      },
+      "preliminary_exclusion_reason_counts": {
+        "ADJUDICATOR_NOT_INDEPENDENT_HUMAN": 1,
+        "NON_HUMAN_OR_MISSING_REQUESTER": 4,
+        "NOT_FINAL_NEW_TERM_REQUEST": 2032,
+        "NO_SINGLE_SUBSTANTIVE_SIGNATURE": 360
+      },
+      "preliminary_gate_passed": false,
+      "provenance_completeness_rates": {
+        "ACCEPTED_NEW": 0.0,
+        "EXISTING_OR_DUPLICATE": 0.0,
+        "INSUFFICIENT_OR_CLARIFY": 0.0,
+        "UNSUPPORTED_OR_OUT_OF_SCOPE": 0.0
+      },
+      "record_deduplication_rate": 1.0,
+      "record_row_count": 2397,
+      "recorded_search_slice_count": 48,
+      "search_slice_accounting_rate": 1.0,
+      "task_language_persistence_count": 0,
+      "unique_record_count": 2397
+    },
+    "prior_failed_capture_attempt_count": 2,
+    "repair_passed": true,
+    "task_record_title_or_body_read_count": 0
+  },
+  "repair_design_lock": "configs/v224r2-two-stage-query-execution-repair-lock.json",
+  "repair_design_lock_sha256": "0aa2116e7ca6cc4caccccf3765ac39e091e839dde378384492dab22d224c8a2e",
+  "result": "outputs/v224-mondo-record-disposition-metadata-census/census/result.json",
+  "result_sha256": "2bda19e7cd82b0e2f30162045194d01e093768d94d0ac35f7c3975f5e67b366c",
+  "results_document": "docs/v224-mondo-record-disposition-metadata-census-results.md",
+  "results_document_sha256": "d904c2095b9c7a149c28a50664962d5b7a711e8767a594b311ef2a40477690b8",
+  "schema_version": "224r2-two-stage-query-execution-repair-outcome-lock",
+  "summary": "outputs/v224-mondo-record-disposition-metadata-census/census/summary.json",
+  "summary_sha256": "bd9ce594e04a899d5f3da856054dd794ede98190691e5fd3f1435f96d72642fc",
+  "verifier": "python/verify_and_freeze_v224r2_two_stage_query_execution_repair_outcome.py",
+  "verifier_sha256": "01403c65d8f70bc5315e8d70f6368bd7e8fdc7262cac67d303f4fa3a2e43271d"
+}

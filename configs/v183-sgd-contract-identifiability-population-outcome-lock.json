@@ -1,0 +1,114 @@
+{
+  "audit": "outputs/v183-sgd-contract-identifiability-population/outcome-audit.json",
+  "audit_sha256": "b75c90d69011fba1fac49f62afa6efc0133b7db81146c8c8f4ddb26608b87f7f",
+  "authorization": {
+    "extract_language_without_separate_lock": false,
+    "modify_rebuild_reselect_or_reclassify_V183": false,
+    "open_protected_language_during_development": false,
+    "preregister_role_isolated_language_extraction": true,
+    "register_capability_mutate_trusted_state_call_service_act_or_execute": false,
+    "score_deterministic_policy_or_run_model_API_training_without_later_authorization": false
+  },
+  "contract_catalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "contract_catalog_sha256": "23c7d5550db98927751aa5cdbf0926f773cbe40e6b95250dc8086e39bf873839",
+  "development_identities": "outputs/v183-sgd-contract-identifiability-population/population/development-identities.json",
+  "development_identities_sha256": "b3cebb8956e927e3776e4dbb7d4790a376d720476815efd159194ef669b9dc2c",
+  "experiment": "v183_text_free_full_contract_SGD_identifiability_population",
+  "hidden_identifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+  "hidden_identifiability_sha256": "62a9ef2ac1b1512a1396b72a0fbcd3fe4b8478ad765ebf56057480ab7469cf1f",
+  "lock_payload_sha256": "f1fe4c79773f8d4908d5b97ae3a1998a595ce8c99d83c0bf10d163426e2d9dd9",
+  "outcome": {
+    "decision": "freeze_V183_and_authorize_separate_role_isolated_language_extraction_preregistration_only",
+    "passed": true,
+    "scientific_population_gates_passed": true,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "capability_contract_count": 14,
+      "contract_truth_kind_counts": {
+        "KNOWN": 6,
+        "PROVISIONAL": 6,
+        "UNSUPPORTED": 2
+      },
+      "cross_truth_kind_contract_collision_count": 0,
+      "external_side_effect_count": 0,
+      "invalid_source_record_count": 0,
+      "manual_language_inspection_count": 0,
+      "missing_control_count": 24,
+      "missing_control_insufficient_rate": 1.0,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "ontology_registration_count": 0,
+      "persisted_slot_value_or_span_count": 0,
+      "persisted_utterance_or_dialogue_text_count": 0,
+      "role_identifier_overlap": 0,
+      "role_source_identifier_overlap": 0,
+      "roles": {
+        "development": {
+          "cell_count": 66,
+          "compatibility_size_counts": {
+            "1": 120
+          },
+          "fixture_count": 132,
+          "identifiable_by_truth_kind": {
+            "KNOWN": 72,
+            "PROVISIONAL": 36,
+            "UNSUPPORTED": 12
+          },
+          "identifiable_source_record_count": 120,
+          "insufficient_source_record_count": 0,
+          "invalid_source_record_count": 0,
+          "missing_control_count": 12,
+          "records_per_cell_values": [
+            2
+          ],
+          "source_record_count": 120
+        },
+        "protected": {
+          "cell_count": 66,
+          "compatibility_size_counts": {
+            "1": 120
+          },
+          "fixture_count": 132,
+          "identifiable_by_truth_kind": {
+            "KNOWN": 72,
+            "PROVISIONAL": 36,
+            "UNSUPPORTED": 12
+          },
+          "identifiable_source_record_count": 120,
+          "insufficient_source_record_count": 0,
+          "invalid_source_record_count": 0,
+          "missing_control_count": 12,
+          "records_per_cell_values": [
+            2
+          ],
+          "source_record_count": 120
+        }
+      },
+      "selected_source_reconstruction_rate": 1.0,
+      "service_or_sensor_call_count": 0,
+      "source_fixture_count": 264,
+      "source_record_count": 240,
+      "target_contract_retention_rate": 1.0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0
+    }
+  },
+  "parent_V182_outcome": "configs/v182-triple-repetition-robust-planner-fresh-confirmation-outcome-lock.json",
+  "parent_V182_outcome_sha256": "4290e6a45d771f5f57bd61028bb6164edf741f43645bf88fddc2efb4f4983cbe",
+  "population_lock": "configs/v183-sgd-contract-identifiability-population-lock.json",
+  "population_lock_sha256": "03c39f1bda7a7f5d276789d8026627d00107405eb09d10e8320d8b76772a4c9a",
+  "population_summary": "outputs/v183-sgd-contract-identifiability-population/population/population-summary.json",
+  "population_summary_sha256": "dc525447e2ad437e84b2a9fbf15877cad04f59fc4edc6a1bcf21763f7e3b4dbd",
+  "protected_identities": "outputs/v183-sgd-contract-identifiability-population/population/protected-identities.json",
+  "protected_identities_sha256": "5caddcd7e46ae6399c1814de4a4f10f633aedae3149e89fd022408306824962f",
+  "result": "outputs/v183-sgd-contract-identifiability-population/population/result.json",
+  "result_sha256": "6cb53261ef95ef184cddb9010f3cbb116d2f3e2fd283ca0a2c3dae4c51039d25",
+  "results_document": "docs/v183-sgd-contract-identifiability-population-results.md",
+  "results_document_sha256": "5e50970cc89887864a212b239a6e672de9a398ba8a553411ba1a2e9f9d883cf7",
+  "schema_version": "183-sgd-contract-identifiability-population-outcome-lock",
+  "source_V134_outcome": "configs/v134-semantic-novelty-source-design-outcome-lock.json",
+  "source_V134_outcome_sha256": "0cead7097790c8193b7fe8a97452332be3221cbcfc8834370d79a3334ee8d94d",
+  "verifier": "python/verify_and_freeze_v183_sgd_contract_identifiability_population_outcome.py",
+  "verifier_sha256": "744d803ad667459c4a0ab3a2c8e4c999b772dbebf3d807f76102ce9c37cab6e5"
+}

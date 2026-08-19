@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "178-one-corruption-robust-certificate-feasibility-design",
+  "experiment": "v178_exact_single_pass_one_corruption_robust_certificate_feasibility_census",
+  "parentV177OutcomeLock": "configs/v177-certification-aware-planner-fresh-confirmation-outcome-lock.json",
+  "sourceV176OutcomeLock": "configs/v176-four-constraint-confirmation-population-outcome-lock.json",
+  "sourceV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "roadmap": "docs/research-roadmap-after-v177.md",
+  "claimBoundary": "cost-free structural feasibility of conservative one-corruption set-membership certification on a declared reused development population; not robust planner performance, fresh confirmation, stochastic calibration, language, external evidence, deployment, or execution",
+  "populationUse": {
+    "V176IsDevelopmentForV178": true,
+    "useEveryV176EligibleState": true,
+    "requiredStateCount": 135,
+    "useEveryV176Target": true,
+    "requiredTargetCount": 2160,
+    "useFrozenClassBalancedWeights": true,
+    "selectionSubsamplingOrExclusionAllowed": false
+  },
+  "corruptionModel": {
+    "initialFourConstraintsAreTrusted": true,
+    "onlySubsequentDistinctValuationInspectionsMayBeCorrupted": true,
+    "maximumCorruptedInspectionOutcomes": 1,
+    "singlePassNoRepeatedInspection": true,
+    "adversarialEnumerationIncludesNoCorruptionAndEverySingleQueriedFlip": true,
+    "robustVersionSpaceRule": "retain every initial-state candidate whose predictions disagree with observed inspection outcomes at no more than one queried valuation",
+    "posteriorThresholdOrMAPRoutingAllowed": false
+  },
+  "certificateDefinition": {
+    "horizons": [0, 1, 2, 3, 4],
+    "enumerateEveryRemainingValuationSubset": true,
+    "targetInformedCertificateRequiresCorrectUnanimousClassForEveryAdmissibleCorruption": true,
+    "uncertifiableTargetsRetained": true,
+    "targetInformedCertificateIsOnlyAnUpperBoundNotAnOperationalPolicy": true
+  },
+  "targetBlindAdaptiveOpportunity": {
+    "enumerateEveryDeterministicAdaptiveQueryTree": true,
+    "successForTargetRequiresCorrectTrustedRouteForNoFlipAndEveryPossibleSingleFlip": true,
+    "maximizeFrozenPriorMassOfWorstCaseSuccessfulTrustedTargets": true,
+    "tieBreak": "canonical lexicographic policy tree",
+    "queryCostUsed": false,
+    "hiddenTargetUnavailableToPolicy": true
+  },
+  "robustAuthorityGate": {
+    "routeAliasOnlyIfEveryRobustCandidateClassIsAlias": true,
+    "routeCompositionOnlyIfEveryRobustCandidateClassIsComposition": true,
+    "deferMixedRobustVersionSpaces": true,
+    "deferUnanimousProvisionalRobustVersionSpaces": true,
+    "plannerPosteriorOracleOrHiddenTargetCanAuthorizeCommit": false,
+    "provisionalPrimitiveMayEnterSandbox": false
+  },
+  "feasibilityGates": {
+    "requiredStateCount": 135,
+    "requiredTargetCount": 2160,
+    "requiredTargetCoverage": 1.0,
+    "requiredPriorWeightNormalization": 1.0,
+    "requiredAdversarialTargetScenarioCount": 10800,
+    "requiredRobustTargetContainment": 1.0,
+    "requiredCertifiableWitnessValidity": 1.0,
+    "requiredCertifiableWitnessMinimality": 1.0,
+    "requiredHorizonMonotonicity": 1.0,
+    "requiredAdaptiveNoGreaterThanTargetInformedUpperBound": 1.0,
+    "requiredFalseTrustedRouteProbability": 0.0,
+    "maximumPlannerRiskOrCostScoreCount": 0,
+    "maximumSandboxTransactionCount": 0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedRealStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "implementationUnitStateCount": 1,
+    "formalStateCount": 0,
+    "aggregateFormalMetricInspectionCount": 0,
+    "plannerRiskOrCostScoreCount": 0,
+    "sandboxTransactionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedRealStateMutationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePassesAndTargetBlindTrustedCompletionIsPositive": "freeze_positive_single_pass_robust_feasibility_and_preregister_separate_robust_planner_development",
+    "ifEveryGatePassesButTargetBlindTrustedCompletionIsZero": "freeze_single_pass_robust_infeasibility_and_preregister_fixed_repeated_measurement_feasibility",
+    "otherwise": "freeze_invalid_or_incomplete_V178_boundary_and_stop",
+    "passAuthorizesImmediatePlannerScoring": false,
+    "passAuthorizesWeakeningUnanimityOrAddingPosteriorThreshold": false,
+    "passAuthorizesModelRegistrationRealServiceOrExecution": false
+  }
+}

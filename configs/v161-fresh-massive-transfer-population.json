@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "161-fresh-massive-transfer-population",
+  "experiment": "v161_fresh_disjoint_massive_controlled_open_set_transfer_population",
+  "parentV160OutcomeLock": "configs/v160-model-free-controlled-relational-grammar-policy-outcome-lock.json",
+  "sourceOutcomeLock": "configs/v100-massive-source-outcome-lock.json",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "sourceCandidateIndexSha256": "d436b27715aa3daa6d03116428d41a401c51a5a051792fdf5673aea107c9b46f",
+  "excludedPopulationOutcomeLock": "configs/v101-massive-population-outcome-lock.json",
+  "excludedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+  "excludedPopulationFileSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "excludedPopulationPayloadSha256": "284e7d464967a385f711e10c8919a31dc4c36f7ab288dd99721d0b96dcc7d8dc",
+  "requiredClasses": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+  "classSemantics": {
+    "known_familiar": "externally authored utterance for a declared catalog intent with current-utterance intent-token overlap",
+    "known_unfamiliar": "externally authored utterance for a declared catalog intent without current-utterance intent-token overlap",
+    "novel_valid": "externally authored utterance for one of two valid intents hidden from the declared catalog",
+    "unsupported": "externally authored utterance from the completely withheld email scenario"
+  },
+  "selection": {
+    "baseSalt": "simulagent-v161-fresh-massive-transfer-v1",
+    "selectedCandidateCountPerClassPerRole": 48,
+    "scenarioMinimumPerClass": {
+      "known_familiar": 1,
+      "known_unfamiliar": 4,
+      "novel_valid": 1,
+      "unsupported": 0
+    },
+    "roles": {
+      "development_transfer": {
+        "sourcePartition": "validation",
+        "languageAccessAfterOutcomeLock": "automatic_selected_record_extraction_after_separate_extraction_lock_only"
+      },
+      "protected_transfer": {
+        "sourcePartition": "test",
+        "languageAccessAfterOutcomeLock": "sealed_until_interface_controls_metrics_and_gates_are_locked"
+      }
+    },
+    "excludeEveryV101CandidateBeforeHashSelection": true,
+    "hashSelectionUsesOnlyCandidateIdentifierClassRoleAndScenario": true,
+    "selectionBeforeAnyNewSelectedLanguageExtraction": true
+  },
+  "populationGates": {
+    "requiredExcludedCandidateCount": 512,
+    "requiredCandidateCountPerClassPerRole": 48,
+    "requiredCandidateCountPerRole": 192,
+    "requiredTotalCandidateCount": 384,
+    "minimumRemainingCandidateCountPerClassPerRole": 48,
+    "requiredKnownScenarioCoverage": 3,
+    "requiredNovelScenarioCoverage": 2,
+    "requiredUnsupportedScenarioCoverage": 1,
+    "minimumIntentCoveragePerClass": {
+      "known_familiar": 6,
+      "known_unfamiliar": 8,
+      "novel_valid": 2,
+      "unsupported": 4
+    },
+    "requireRoleIdentifierDisjointness": true,
+    "requiredOverlapWithExcludedPopulation": 0,
+    "maximumTrainPartitionCandidateCount": 0,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumSourceArchiveReopenCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "textFreeCandidateIndexAggregateInspectionCount": 1,
+    "excludedPopulationAggregateInspectionCount": 1,
+    "individualCandidateIdentifierInspectionCount": 0,
+    "sourceArchiveReopenCount": 0,
+    "selectedLanguageRecordExtractionCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationAndDisjointnessGatePasses": "freeze_fresh_text_free_massive_transfer_population_authorize_separate_selected_language_extraction_preregistration_only",
+    "otherwise": "close_fresh_massive_transfer_population_before_language_or_model_access",
+    "passingAuthorizesOnlySeparateLanguageExtractionPreregistration": true,
+    "passingDoesNotAuthorizeImmediateLanguageExtractionInterfaceScoringModelAPITrainingInductionAuthorityActionOrExecution": true
+  },
+  "claimBoundary": "text-free hash selection of unused externally authored MASSIVE identifiers for future controlled open-set transfer; no utterance, interface, policy, model, novelty, calibration, planning, or execution evidence"
+}

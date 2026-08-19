@@ -1,0 +1,219 @@
+{
+  "auditor": "python/audit_and_freeze_v165_factored_ontology_identifiability_population.py",
+  "auditor_sha256": "3e21e724659f978a15a492bf620f04ceeae54316f3b5032d025288df96abeabd",
+  "authorization": {
+    "build_and_audit_population_once": true,
+    "create_or_open_evaluation_population": false,
+    "grant_candidate_state_belief_action_or_execution_authority": false,
+    "load_or_run_local_or_API_model": false,
+    "make_manual_judgments": false,
+    "modify_DSL_factors_population_evidence_parser_version_space_gates_or_decision": false,
+    "perform_real_service_call_external_side_effect_or_execution": false,
+    "register_provisional_primitive": false,
+    "train_or_fit_learned_component": false
+  },
+  "config": "configs/v165-factored-ontology-identifiability-population.json",
+  "config_payload": {
+    "authorityBoundary": {
+      "allCandidateTruthTablesRemainShadowOnly": true,
+      "authoritativeOntologyImmutable": true,
+      "candidateCanSelectActionOrExecute": false,
+      "candidateCanUpdateAuthoritativeStateOrBelief": false,
+      "observationallyEquivalentCandidatesRetained": true,
+      "provisionalPrimitiveCanBeRegistered": false,
+      "realExecutionCount": 0
+    },
+    "claimBoundary": "project-authored finite-DSL development population and automatic identifiability proof only; no external language, human judgment, model performance, absolute novelty, ontology registration, authority, action, or execution claim",
+    "decisionRule": {
+      "ifEveryPopulationAndIdentifiabilityGatePasses": "freeze_V165_and_authorize_separate_model_free_deterministic_baseline_preregistration_only",
+      "otherwise": "close_V165_before_baselines_or_model_use",
+      "passAuthorizesImmediateBaselineScoring": false,
+      "passAuthorizesModelEvaluationOrProtectedPopulation": false,
+      "passAuthorizesOntologyRegistrationAuthorityActionOrExecution": false
+    },
+    "definitionGrammar": {
+      "aliasTemplate": "A {entity_noun} is {concept_name} exactly when it is {atom}.",
+      "andTemplate": "A {entity_noun} is {concept_name} exactly when it is both {left_atom} and {right_atom}.",
+      "contradictoryTemplate": "The submitted evidence for {concept_name} must be checked for consistency before any rule is retained.",
+      "orTemplate": "A {entity_noun} is {concept_name} exactly when it is either {left_atom} or {right_atom} or both.",
+      "tableTemplate": "The rule for {concept_name} is determined only by the complete registered intervention table.",
+      "underspecifiedTemplate": "The available evidence constrains {concept_name}, but its exact rule is not specified."
+    },
+    "evidenceConstruction": {
+      "allObservationsContainExplicitTypedInterventions": true,
+      "ambiguous": "underspecified definition plus the lexicographically first nontrivial observation subset retaining the target and candidates from all three expressibility classes",
+      "contradictory": "consistency-check definition plus duplicate identical intervention with opposite observed labels",
+      "counterexamplesAreNegativeLabels": true,
+      "examplesArePositiveLabels": true,
+      "sufficientAliasOrComposition": "exact controlled definition plus deterministic positive and negative intervention observations",
+      "sufficientProvisional": "complete eight-valuation intervention table identifying one non-DSL truth table"
+    },
+    "experiment": "v165_model_free_factored_ontology_identifiability_development_population",
+    "factorialDesign": {
+      "cellCount": 9,
+      "evaluationPopulationCreated": false,
+      "evidenceStatuses": [
+        "sufficient",
+        "ambiguous",
+        "contradictory"
+      ],
+      "expressibilityClasses": [
+        "alias",
+        "composition",
+        "provisional_primitive"
+      ],
+      "logicalTargetGroupsPerCell": 4,
+      "recordCount": 144,
+      "recordsPerCell": 16,
+      "renamingsPerLogicalTarget": 4,
+      "split": "development_only"
+    },
+    "hiddenFields": [
+      "factor_cell",
+      "logical_target_group",
+      "namespace_id",
+      "target_truth_table",
+      "target_candidate_id",
+      "generative_expressibility",
+      "evidence_status",
+      "version_space_candidate_ids",
+      "version_space_size",
+      "version_space_classes",
+      "definition_parse",
+      "identifiability_contract"
+    ],
+    "parentTrackAOutcomeLock": "configs/v164-local-residual-open-set-transfer-outcome-lock.json",
+    "populationGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "minimumAmbiguousVersionSpaceSize": 2,
+      "requiredAmbiguousExpressibilityClassCoverage": 3,
+      "requiredCandidateTruthTableCount": 256,
+      "requiredCellCount": 9,
+      "requiredContradictoryVersionSpaceSize": 0,
+      "requiredEvidenceStatusClassificationAccuracy": 1.0,
+      "requiredLogicalTargetGroupCount": 36,
+      "requiredProjectAuthoredDevelopmentDisclosure": true,
+      "requiredProvisionalTruthTableCount": 247,
+      "requiredPublicHiddenFieldLeakCount": 0,
+      "requiredRecordCount": 144,
+      "requiredRecordsPerCell": 16,
+      "requiredRegisteredAliasTruthTableCount": 3,
+      "requiredRegisteredCompositionTruthTableCount": 6,
+      "requiredRenamingVersionSpaceInvariance": 1.0,
+      "requiredRenamingsPerLogicalTarget": 4,
+      "requiredSufficientExpressibilityClassificationAccuracy": 1.0,
+      "requiredSufficientVersionSpaceSize": 1,
+      "requiredTargetRetentionWhenNonContradictory": 1.0
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "populationBuildCount": 0,
+      "trainingRunCount": 0
+    },
+    "primitiveNamespaces": [
+      {
+        "entity_noun": "relay",
+        "namespace_id": "N1",
+        "primitive_names": [
+          "sealed",
+          "powered",
+          "linked"
+        ]
+      },
+      {
+        "entity_noun": "sensor",
+        "namespace_id": "N2",
+        "primitive_names": [
+          "verified",
+          "charged",
+          "paired"
+        ]
+      },
+      {
+        "entity_noun": "terminal",
+        "namespace_id": "N3",
+        "primitive_names": [
+          "licensed",
+          "awake",
+          "synced"
+        ]
+      },
+      {
+        "entity_noun": "module",
+        "namespace_id": "N4",
+        "primitive_names": [
+          "approved",
+          "energized",
+          "connected"
+        ]
+      }
+    ],
+    "publicFields": [
+      "record_id",
+      "split",
+      "entity_type",
+      "entity_noun",
+      "concept_name",
+      "registered_primitives",
+      "definition",
+      "observations"
+    ],
+    "roadmap": "docs/research-branches-after-v161.md",
+    "schemaVersion": "165-factored-ontology-identifiability-population-design",
+    "typedDSL": {
+      "candidateTruthTableCount": 256,
+      "constantsRegistered": false,
+      "entityType": "Device",
+      "maximumCompositionDepth": 1,
+      "negationRegistered": false,
+      "primitiveArity": 1,
+      "primitiveCount": 3,
+      "primitiveValueType": "Boolean",
+      "provisionalMeaning": "not extensionally expressible by one registered atom or one registered binary AND/OR composition on the exhaustive eight-valuation domain",
+      "provisionalTruthTableCount": 247,
+      "registeredAliasTruthTableCount": 3,
+      "registeredCompositionTruthTableCount": 6,
+      "registeredForms": [
+        "ATOM",
+        "AND_DISTINCT_ATOMS",
+        "OR_DISTINCT_ATOMS"
+      ],
+      "valuationCount": 8
+    }
+  },
+  "config_sha256": "1de2c09d93848bdcc2a71ff2340c62ea283f4ff4998ed184235dd8fe2b142b3e",
+  "design_audit": "outputs/v165-factored-ontology-identifiability/implementation-audit.json",
+  "design_audit_sha256": "c07d988ea40ac4ecfdd666f867963668db9cc4500cb0fc052ef6871a9cdb57da",
+  "experiment": "v165_factored_ontology_identifiability_population_lock",
+  "lock_payload_sha256": "54f02244e36676d62b9f675bc8974131cf6d5a72e529e27f561211f1f5f9d404",
+  "parent_track_A_outcome": "configs/v164-local-residual-open-set-transfer-outcome-lock.json",
+  "parent_track_A_outcome_sha256": "5820f1f7f5031b69a146a15a707ce323eb76e3e7fbd5b7cdf22e50944594bf98",
+  "plan": "docs/v165-factored-ontology-identifiability-population-plan.md",
+  "plan_sha256": "29f7fb847bfcac6cd0887eb7c840d92c2025dffac6d2bae3046aac59eb482902",
+  "protocol": "python/v165_factored_ontology_identifiability_population.py",
+  "protocol_sha256": "048b9818aac8fb7d1b0d626b7fa73de4ade138037545323399b9b02df2396021",
+  "roadmap": "docs/research-branches-after-v161.md",
+  "roadmap_sha256": "def01aaea8bcb14595ed2be3119209741c7667b91e47ec230d3f555c9ea1d273",
+  "runner": "python/run_v165_factored_ontology_identifiability_population.py",
+  "runner_sha256": "bfcd150a909cf2f9bff30cdc2c71311d428871ab3a7d12c8fa0436265a20e04d",
+  "schema_version": "165-factored-ontology-identifiability-population-lock",
+  "tests": "python/test_v165_factored_ontology_identifiability_population.py",
+  "tests_sha256": "1a5264a3ad4c7d7274438e655e34fa7199b4d89085fa5c25ee03cc4e3d2de681",
+  "verifier": "python/verify_and_freeze_v165_factored_ontology_identifiability_outcome.py",
+  "verifier_sha256": "95fdba9b2e9d456f7ae04ba78b6818b85b3b3e549f4e22c551eabf5d5e1889dc"
+}

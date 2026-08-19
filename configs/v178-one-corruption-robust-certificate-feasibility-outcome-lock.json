@@ -1,0 +1,143 @@
+{
+  "audit": "outputs/v178-one-corruption-robust-certificate-feasibility/outcome-audit.json",
+  "audit_sha256": "9155d32978092a83b37a52b7b54a66ae90be0d267204702d1e7a0e033b29adea",
+  "authorization": {
+    "design_fixed_repeated_measurement_feasibility": true,
+    "design_separate_robust_planner_development": false,
+    "modify_rerun_select_subsample_or_tune_V178": false,
+    "run_model_register_mutate_real_state_call_service_or_execute": false,
+    "weaken_unanimity_or_add_posterior_threshold": false
+  },
+  "experiment": "v178_exact_single_pass_one_corruption_robust_certificate_feasibility_census",
+  "feasibility_lock": "configs/v178-one-corruption-robust-certificate-feasibility-lock.json",
+  "feasibility_lock_sha256": "1d2ef9d0bec77d047b8ec6a8b4f8439c5c69efe4f399711ab5eea4d0e05d944d",
+  "feasibility_summary": "outputs/v178-one-corruption-robust-certificate-feasibility/census/feasibility-summary.json",
+  "feasibility_summary_sha256": "25cde81ed1d894332a71e9992251af3eab348ba181b943832ede1f10e02cbef2",
+  "lock_payload_sha256": "8475b0ce0738673972710d139d9bfefb7ad99867ce40834b09bfea1a4cc25f4e",
+  "outcome": {
+    "decision": "freeze_single_pass_robust_infeasibility_and_preregister_fixed_repeated_measurement_feasibility",
+    "passed": true,
+    "scientific_feasibility_gates_passed": true,
+    "single_pass_target_blind_robust_feasibility_positive": false,
+    "summary": {
+      "adaptive_no_greater_than_target_informed_rate": 1.0,
+      "adaptive_worst_case_trusted_completion_by_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "2": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "3": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "4": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "adversarial_target_scenario_count": 10800,
+      "certifiable_target_count": 216,
+      "certifiable_witness_minimality_rate": 1.0,
+      "certifiable_witness_validity_rate": 1.0,
+      "class_certifiability": {
+        "alias": {
+          "certifiable_target_count": 0,
+          "minimal_depth_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0
+          },
+          "raw_target_count": 138,
+          "uncertifiable_target_count": 138
+        },
+        "composition": {
+          "certifiable_target_count": 0,
+          "minimal_depth_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0
+          },
+          "raw_target_count": 180,
+          "uncertifiable_target_count": 180
+        },
+        "provisional_primitive": {
+          "certifiable_target_count": 216,
+          "minimal_depth_counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 216
+          },
+          "raw_target_count": 1842,
+          "uncertifiable_target_count": 1626
+        }
+      },
+      "false_trusted_route_probability": 0.0,
+      "horizon_monotonicity_rate": 1.0,
+      "prior_weight_normalization_rate": 1.0,
+      "robust_target_containment_rate": 1.0,
+      "state_count": 135,
+      "target_count": 2160,
+      "target_coverage": 1.0,
+      "target_informed_trusted_upper_bound_by_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "2": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "3": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "4": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "uncertifiable_target_count": 1944
+    }
+  },
+  "parent_V177_outcome": "configs/v177-certification-aware-planner-fresh-confirmation-outcome-lock.json",
+  "parent_V177_outcome_sha256": "165c8f67ddcf18dd27fa304762c4db00423e9de14843c8bc13e1888b700832ef",
+  "result": "outputs/v178-one-corruption-robust-certificate-feasibility/census/result.json",
+  "result_sha256": "e68e8166438e8fad46e8d97c41a5f44b892aae535d6d2ee87ebd09155e9037b1",
+  "results_document": "docs/v178-one-corruption-robust-certificate-feasibility-results.md",
+  "results_document_sha256": "c439b454a9828a9b95eb859d1210d3b3cf35154611fdc4a86d197943a36bef24",
+  "schema_version": "178-one-corruption-robust-certificate-feasibility-outcome-lock",
+  "state_adaptive_opportunity_results": "outputs/v178-one-corruption-robust-certificate-feasibility/census/state-adaptive-opportunity-results.json",
+  "state_adaptive_opportunity_results_sha256": "4f9327c5d06de82fa1fdf009892d100813ad5c6541a0b205fe7a7729a52cb775",
+  "target_robust_certificate_results": "outputs/v178-one-corruption-robust-certificate-feasibility/census/target-robust-certificate-results.json",
+  "target_robust_certificate_results_sha256": "97e3b4dd4691b0969ae910ed5f0cbe99e13258003ff68c25b719e41e34e1a4b1",
+  "verifier": "python/verify_and_freeze_v178_one_corruption_robust_certificate_feasibility_outcome.py",
+  "verifier_sha256": "1ccfc7887f588ce88cd9ff43a6a91c834931628b88125b44329a27aee61356bd"
+}

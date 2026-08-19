@@ -1,0 +1,204 @@
+{
+  "auditor": "python/audit_and_freeze_v185_deterministic_sgd_candidate_set_controls.py",
+  "auditor_sha256": "58f3de3e15993a66d0f3eb42ddac6d6ec2876c5078cb60eb042606d5f3b68917",
+  "authorization": {
+    "accept_prune_register_mutate_call_service_act_or_execute": false,
+    "evaluate_development_once": true,
+    "modify_split_features_grids_calibration_costs_gates_or_decision": false,
+    "read_protected_language": false,
+    "run_model_API_training": false
+  },
+  "config": "configs/v185-deterministic-sgd-candidate-set-controls.json",
+  "config_payload": {
+    "calibrationRule": {
+      "candidateSpecificRouteOnlyOnSameSingletonAgreement": true,
+      "ifNoConfigurationQualifies": "use always-generic fallback and freeze nonqualification",
+      "jointGridSearchOverTwoDeterministicViews": true,
+      "maximumCalibrationFalseSpecificRateOnNonKnown": 0.05,
+      "minimumCalibrationKnownSpecificCoverage": 0.2,
+      "noPostEvaluationThresholdChange": true,
+      "objective": "minimum mean trusted-clarification cost then maximum precision then maximum known coverage then lexicographic parameter tuple",
+      "otherwiseGenericClarification": true,
+      "requiredCalibrationCandidateSpecificPrecision": 0.95
+    },
+    "claimBoundary": "development-only deterministic shadow candidate-set and clarification-routing controls on externally authored SGD language; trusted answers, not retrieval, determine terminal state; not protected evidence, semantic authority, general open-world understanding, model performance, ontology registration, action, or execution evidence",
+    "comparators": [
+      "complete_safe_enumeration_then_generic_clarification",
+      "always_generic_clarification",
+      "exact_intent_alias_lookup_then_safe_fallback",
+      "character_ngram_view_then_safe_fallback",
+      "token_schema_view_then_safe_fallback",
+      "same_singleton_consensus_then_safe_fallback",
+      "hidden_information_oracle"
+    ],
+    "decisionRule": {
+      "ifEveryEvaluationSafetySelectivityCostAndResidualGatePasses": "freeze_V185_deterministic_router_and_authorize_one_local_residual_protocol_design_only",
+      "otherwise": "freeze_V185_boundary_result_without_protected_or_model_access",
+      "passAuthorizesImmediateModelRun": false,
+      "passAuthorizesProtectedAccess": false,
+      "passAuthorizesRegistrationAuthorityActionOrExecution": false
+    },
+    "declaredCatalogLanguage": "outputs/v184-sgd-role-isolated-language-extraction/extraction/declared-known-catalog-language.json",
+    "deterministicViews": {
+      "allCandidateSetsAreShadowOnly": true,
+      "authoritativeHypothesisUniverseAlwaysComplete": true,
+      "belowThresholdOrTie": "return a multi-choice shadow set and mark evidence insufficient",
+      "characterNgram": {
+        "minimumTopScoreGrid": [
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5
+        ],
+        "ngramWidths": [
+          3,
+          4,
+          5
+        ],
+        "normalization": "NFKC casefold alphanumeric whitespace",
+        "score": "cosine over raw character ngram counts",
+        "topRelativeMarginGrid": [
+          0.0,
+          0.02,
+          0.05,
+          0.1
+        ]
+      },
+      "exactIntentAliasLookup": {
+        "rule": "return a singleton only when exactly one complete normalized known intent alias occurs in user language; otherwise return the complete six-choice set"
+      },
+      "tokenSchemaOverlap": {
+        "minimumTopScoreGrid": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.3,
+          0.4
+        ],
+        "normalization": "NFKC casefold alphanumeric tokens plus camel-case intent tokens",
+        "score": "cosine over raw token counts",
+        "topRelativeMarginGrid": [
+          0.0,
+          0.02,
+          0.05,
+          0.1
+        ]
+      }
+    },
+    "developmentLanguage": "outputs/v184-sgd-role-isolated-language-extraction/extraction/development-language.json",
+    "developmentSplit": {
+      "baseSalt": "simulagent-v185-SGD-calibration-evaluation-v1",
+      "calibrationFractionWithinEachTruthKind": 0.5,
+      "requiredCalibrationCounts": {
+        "INSUFFICIENT_CONTROL": 6,
+        "KNOWN": 36,
+        "PROVISIONAL": 18,
+        "UNSUPPORTED": 6
+      },
+      "requiredEvaluationCounts": {
+        "INSUFFICIENT_CONTROL": 6,
+        "KNOWN": 36,
+        "PROVISIONAL": 18,
+        "UNSUPPORTED": 6
+      },
+      "splitUsesNoLanguagePredictionScoreOrPolicyOutcome": true,
+      "splitUsesOnlyFrozenRecordIdentifierTruthKindAndSalt": true
+    },
+    "evaluationGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFalseSpecificRateOnNonKnown": 0.05,
+      "maximumManualLanguageInspectionCount": 0,
+      "maximumMeanClarificationCost": 0.34363636363636363,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumPredictionDefinedResidualCount": 100,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumCandidateSpecificPrecision": 0.95,
+      "minimumImprovementOverAlwaysGeneric": 0.02,
+      "minimumKnownSpecificCoverage": 0.2,
+      "minimumPredictionDefinedResidualCount": 24,
+      "requiredAuthoritativeHypothesisRetentionRate": 1.0,
+      "requiredEvaluationRecordCount": 66,
+      "requiredFinalExactnessAfterTrustedAnswers": 1.0,
+      "requiredMissingEvaluationRecordCount": 6,
+      "requiredMissingInsufficientRate": 1.0,
+      "requiredObservedEvaluationRecordCount": 60,
+      "requiredResidualMembershipUsesPredictionsOnly": true,
+      "requiredResidualTruthKindCoverage": [
+        "KNOWN",
+        "PROVISIONAL",
+        "UNSUPPORTED"
+      ],
+      "requiredStructuredPredictionRate": 1.0
+    },
+    "experiment": "v185_development_only_deterministic_candidate_sets_and_safe_clarification_routing",
+    "hiddenIdentifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+    "observableQuery": {
+      "goldSemanticFramesLabelsContractsAndSourceIdentifiersExcluded": true,
+      "missingObservationProducesNoQueryText": true,
+      "systemUtterancesExcluded": true,
+      "useOnlyUserUtterancesInConversationPrefix": true
+    },
+    "parentV184OutcomeLock": "configs/v184-sgd-role-isolated-language-extraction-outcome-lock.json",
+    "preLockExposure": {
+      "actualExecutionCount": 0,
+      "deterministicScoreCount": 0,
+      "developmentLanguageReadCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedLanguageReadCount": 0,
+      "thresholdEvaluationCount": 0
+    },
+    "protectedLanguage": "outputs/v184-sgd-role-isolated-language-extraction/extraction/protected-language.json",
+    "schemaVersion": "185-deterministic-SGD-candidate-set-controls-design",
+    "trustedClarificationPolicy": {
+      "candidateSpecificQuestionCost": 0.25,
+      "finalExactnessAfterTrustedAnswerRequired": 1.0,
+      "genericClarificationCost": 0.4,
+      "missingObservationCost": 0.0,
+      "retrievalNeverDeterminesTerminalState": true,
+      "trustedCandidateConfirmationSucceedsOnlyForExactKnownTruth": true,
+      "trustedGenericClarificationReturnsExactSafeHiddenContractStatus": true,
+      "wrongOrNonKnownCandidateConfirmationProducesNoWitnessAndFallsBackGeneric": true,
+      "wrongSpecificThenGenericCost": 0.65
+    }
+  },
+  "config_sha256": "9d5dd6c5293764e558b2d997278f5154783867a44a1fc24aa6f16dbfa4ed8815",
+  "declared_catalog_language": "outputs/v184-sgd-role-isolated-language-extraction/extraction/declared-known-catalog-language.json",
+  "declared_catalog_language_sha256": "d37a7125a23ea85144fac76be4909e3512adc837d64352ec99d8dd52c32facb0",
+  "design_audit": "outputs/v185-deterministic-sgd-candidate-set-controls/design-audit.json",
+  "design_audit_sha256": "0d7e14c6a995f1e776cd1feea157bbaa100be7fa359a4bbe084a619df0ceca75",
+  "development_language": "outputs/v184-sgd-role-isolated-language-extraction/extraction/development-language.json",
+  "development_language_sha256": "33d106833ceaffd4b9fe6fe2f4e7941700eadb61d523af49420addb247e93048",
+  "experiment": "v185_development_only_deterministic_candidate_sets_and_safe_clarification_routing",
+  "hidden_identifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+  "hidden_identifiability_sha256": "62a9ef2ac1b1512a1396b72a0fbcd3fe4b8478ad765ebf56057480ab7469cf1f",
+  "lock_payload_sha256": "8e86ab0e8a57d13106e0925e13b4ecb0d58eb5cb1d9897d34a98dc7c7a323058",
+  "parent_V184_outcome": "configs/v184-sgd-role-isolated-language-extraction-outcome-lock.json",
+  "parent_V184_outcome_sha256": "d4bb637128355e5257313cf336fd7ec9f9d7ef458d1f3f98d62929b0d0c50092",
+  "plan": "docs/v185-deterministic-sgd-candidate-set-controls-plan.md",
+  "plan_sha256": "ea40869a7ceb84c83e891f799b5ac82460522f5b55611844de32623fa0943e86",
+  "protected_language": "outputs/v184-sgd-role-isolated-language-extraction/extraction/protected-language.json",
+  "protected_language_sha256": "f5c483ebe46ad0035c7c47f60a32eb3fb153ac0454bfe75414e3475f16dcdeef",
+  "protocol": "python/v185_deterministic_sgd_candidate_set_controls.py",
+  "protocol_sha256": "e3739826d58eb1343c4941a23324d98d3ef330d775a106106cfb89a46cdaa5be",
+  "runner": "python/run_v185_deterministic_sgd_candidate_set_controls.py",
+  "runner_sha256": "0c6a390052633f20e1c77a4a56290f9cc1bbb5437ce2dbea43e9ebc03e23f52d",
+  "schema_version": "185-deterministic-SGD-candidate-set-controls-lock",
+  "tests": "python/test_v185_deterministic_sgd_candidate_set_controls.py",
+  "tests_sha256": "a80cff37c190105b5e743ce8b93f2fb0b40eaaa94bb4afba0ce6b3ae96480d6b",
+  "verifier": "python/verify_and_freeze_v185_deterministic_sgd_candidate_set_controls_outcome.py",
+  "verifier_sha256": "a58ae1ee0f66ecdfc12f9297cdf82e806e2e6f96b2643bbd7e024cd6ae389bc0"
+}

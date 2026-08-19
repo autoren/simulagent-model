@@ -1,0 +1,75 @@
+{
+  "auditor": "python/audit_and_freeze_v207r2_agentabstain_outcome_verification_repair.py",
+  "auditor_sha256": "70485d632853001fd3afc4f3d5f0903951ac32ebe822f9d96c0abe74ddff96c2",
+  "authorization": {
+    "modify_sources_or_rerun": false,
+    "run_one_local_stored_artifact_verification": true,
+    "task_language_model_API_training_tool_authority_action_or_execution": false
+  },
+  "config": "configs/v207r2-agentabstain-outcome-verification-repair.json",
+  "config_payload": {
+    "claimBoundary": "verification-only repair after restoring the living roadmap to the exact V207r1-locked bytes; preserve the V207 technical nonresult, V207r1 scientific negative, source artifacts, scientific gates, and access boundary unchanged",
+    "decisionRule": {
+      "ifExactBookkeepingFailureAndEverySubstantiveV207r1CheckPasses": "freeze_V207r2_verification_repair_and_preserve_V207r1_scientific_negative",
+      "otherwise": "freeze_V207r2_failure_without_source_mutation_or_rerun",
+      "passAuthorizesRoadmapUpdateAndSeparateF1SourceCensusDesignOnly": true,
+      "passAuthorizesTaskLanguageModelAPITrainingToolAuthorityActionOrExecution": false
+    },
+    "experiment": "v207r2_verification_only_repair_for_postlock_roadmap_mutation",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "networkMetadataReadCount": 0,
+      "sourceResultAutomaticReadCount": 0,
+      "sourceSummaryAutomaticReadCount": 0,
+      "taskInstructionExampleDialogueRationaleReadCount": 0,
+      "toolCallCount": 0,
+      "trainingRunCount": 0
+    },
+    "repairContract": {
+      "networkMetadataMayBeReadAgain": false,
+      "requiredFalseChecks": [
+        "design_lock_and_dependencies_are_exact"
+      ],
+      "requiredScientificFeasibility": false,
+      "requiredTransportIntegrity": true,
+      "roadmapMustMatchSourceLockDuringVerification": true,
+      "scientificEvaluationOrModelMayBeRerun": false,
+      "sourceArtifactsMayBeModified": false
+    },
+    "schemaVersion": "207r2-agentabstain-outcome-verification-repair-design",
+    "sourceFailedOutcomeAudit": "outputs/v207r1-agentabstain-shadow-feasibility/outcome-audit.json",
+    "sourceResult": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/result.json",
+    "sourceResultsDocument": "docs/v207r1-agentabstain-shadow-feasibility-results.md",
+    "sourceSummary": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/summary.json",
+    "sourceV207r1Lock": "configs/v207r1-agentabstain-shadow-feasibility-lock.json"
+  },
+  "config_sha256": "21c19068ac3567e761339cd88492c968cf125406b2cfe196c962b517b17db6c9",
+  "design_audit": "outputs/v207r2-agentabstain-outcome-verification-repair/design-audit.json",
+  "design_audit_sha256": "0b6fcae4ac0752b65ed623e1342e99cc9b1c3e5b362764869d2454396da23c9f",
+  "experiment": "v207r2_verification_only_repair_for_postlock_roadmap_mutation",
+  "lock_payload_sha256": "5687fc8556cc1952821a26afec92e2ae621d8dc500e0ad1243ea52a788a62af0",
+  "plan": "docs/v207r2-agentabstain-outcome-verification-repair-plan.md",
+  "plan_sha256": "cbbf246b8e2630a1e71790b82e96c493a06b8c247d77b25460ac1b379edfecb6",
+  "protocol": "python/v207r2_agentabstain_outcome_verification_repair.py",
+  "protocol_sha256": "1c134b7235e6c7dd82a1b74987ab4aa54470f7765bd3dd4a0ef4068e8e3c4b39",
+  "runner": "python/run_v207r2_agentabstain_outcome_verification_repair.py",
+  "runner_sha256": "ed3e5d84b2cc72c23d80914ad6fe37e2b311a9a20c6cc6ff0408186b783fe89b",
+  "schema_version": "207r2-agentabstain-outcome-verification-repair-lock",
+  "source_V207r1_lock": "configs/v207r1-agentabstain-shadow-feasibility-lock.json",
+  "source_V207r1_lock_sha256": "0981e35a93de115e5e155c97282862d3760061547d753e7b4b5ea0d5c9d7047d",
+  "source_failed_outcome_audit": "outputs/v207r1-agentabstain-shadow-feasibility/outcome-audit.json",
+  "source_failed_outcome_audit_sha256": "e462f028ec6ab93da51c2d2adcb62885e0190c416a84abe317265e586ab3ef99",
+  "source_result": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/result.json",
+  "source_result_sha256": "8901872135964abd0c0152e704bb1ffa9410b77b5586bac4e0baeb97eeb7da41",
+  "source_results_document": "docs/v207r1-agentabstain-shadow-feasibility-results.md",
+  "source_results_document_sha256": "a2d63b2e7f91a0f85fcd14da743436635ddf3396baefbc319f7c90ce230989f1",
+  "source_summary": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/summary.json",
+  "source_summary_sha256": "c1f320e43b0d4880216878ffb92655261fa54281a7afee62ee40f9251a2a4d3e",
+  "tests": "python/test_v207r2_agentabstain_outcome_verification_repair.py",
+  "tests_sha256": "17c51e48633b840fb6c500fd1a721f942a0513f64c014609b6adf4332ff75d2a",
+  "verifier": "python/verify_and_freeze_v207r2_agentabstain_outcome_verification_repair_outcome.py",
+  "verifier_sha256": "34f2fd63a916817c013fd14ae060c5e18ea4d99dc23f7f35407ba8900900a179"
+}

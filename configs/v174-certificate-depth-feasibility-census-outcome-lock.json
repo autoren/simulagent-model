@@ -1,0 +1,275 @@
+{
+  "audit": "outputs/v174-certificate-depth-feasibility-census/outcome-audit.json",
+  "audit_sha256": "a02550d8466677eb794d9c84fd5b7387560f4b6c059e67f03f1f042c0c535785",
+  "authorization": {
+    "change_or_rerun_V173": false,
+    "modify_rerun_select_or_tune_V174": false,
+    "run_model_register_mutate_state_call_service_or_execute": false,
+    "score_V175_without_separate_design_lock": false,
+    "use_structural_horizon_curve_to_preregister_V175": true
+  },
+  "experiment": "v174_exact_unanimous_class_certificate_depth_and_adaptive_opportunity_census",
+  "feasibility_lock": "configs/v174-certificate-depth-feasibility-census-lock.json",
+  "feasibility_lock_sha256": "7ea1959e133d6bd95d7d1643887aff72a2b80f10aa0ee0bb6dc953d5d513d039",
+  "feasibility_summary": "outputs/v174-certificate-depth-feasibility-census/census/feasibility-summary.json",
+  "feasibility_summary_sha256": "53f22b7db66195569114728d35be230e2053a4a8b8e502637ecf0d9ca5942280",
+  "lock_payload_sha256": "f563808e33ca469ffce25a999c1327e99a1b7d797771447412ffc594052affcc",
+  "outcome": {
+    "decision": "freeze_V174_and_use_only_its_structural_horizon_curve_to_preregister_V175",
+    "passed": true,
+    "scientific_feasibility_gates_passed": true,
+    "summary": {
+      "adaptive_no_greater_than_target_informed_rate": 1.0,
+      "adaptive_trusted_completion_by_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "2": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "3": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "4": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "5": {
+          "decimal": 0.6666666666666666,
+          "denominator": 3,
+          "numerator": 2
+        }
+      },
+      "certificate_minimality_rate": 1.0,
+      "certificate_validity_rate": 1.0,
+      "class_certificate_depth": {
+        "alias": {
+          "conditional_depth_distribution": {
+            "0": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "1": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "2": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "3": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "4": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "5": {
+              "decimal": 1.0,
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "conditional_mean_depth": {
+            "decimal": 5.0,
+            "denominator": 1,
+            "numerator": 5
+          },
+          "raw_target_count": 144
+        },
+        "composition": {
+          "conditional_depth_distribution": {
+            "0": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "1": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "2": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "3": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "4": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "5": {
+              "decimal": 1.0,
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "conditional_mean_depth": {
+            "decimal": 5.0,
+            "denominator": 1,
+            "numerator": 5
+          },
+          "raw_target_count": 228
+        },
+        "provisional_primitive": {
+          "conditional_depth_distribution": {
+            "0": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "1": {
+              "decimal": 0.7780265711300194,
+              "denominator": 6699,
+              "numerator": 5212
+            },
+            "2": {
+              "decimal": 0.19383777142397832,
+              "denominator": 348348,
+              "numerator": 67523
+            },
+            "3": {
+              "decimal": 0.028135657446002275,
+              "denominator": 10556,
+              "numerator": 297
+            },
+            "4": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "5": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "conditional_mean_depth": {
+            "decimal": 1.250109086315983,
+            "denominator": 348348,
+            "numerator": 435473
+          },
+          "raw_target_count": 3852
+        }
+      },
+      "full_depth_certifiability_rate": 1.0,
+      "horizon_monotonicity_rate": 1.0,
+      "minimal_depth_raw_counts": {
+        "1": 3024,
+        "2": 726,
+        "3": 102,
+        "5": 372
+      },
+      "prior_weight_normalization_rate": 1.0,
+      "state_count": 132,
+      "target_count": 4224,
+      "target_coverage": 1.0,
+      "target_informed_provisional_certificate_probability_by_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.2593421903766731,
+          "denominator": 20097,
+          "numerator": 5212
+        },
+        "2": {
+          "decimal": 0.32395478085133256,
+          "denominator": 31668,
+          "numerator": 10259
+        },
+        "3": {
+          "decimal": 0.3333333333333333,
+          "denominator": 3,
+          "numerator": 1
+        },
+        "4": {
+          "decimal": 0.3333333333333333,
+          "denominator": 3,
+          "numerator": 1
+        },
+        "5": {
+          "decimal": 0.3333333333333333,
+          "denominator": 3,
+          "numerator": 1
+        }
+      },
+      "target_informed_trusted_upper_bound_by_horizon": {
+        "0": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "1": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "2": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "3": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "4": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "5": {
+          "decimal": 0.6666666666666666,
+          "denominator": 3,
+          "numerator": 2
+        }
+      },
+      "zero_horizon_trusted_completion": {
+        "decimal": 0.0,
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  },
+  "parent_V173_outcome": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+  "parent_V173_outcome_sha256": "fd05ea46e03f2a2bb91e606e3d510bcce62afd52ffbb981433e4e5b2b2d74a8a",
+  "result": "outputs/v174-certificate-depth-feasibility-census/census/result.json",
+  "result_sha256": "8c0bfdfaa0bd5ece261506b6cc2f6cb9fa007cabe2b68652c656de45d974e7b5",
+  "results_document": "docs/v174-certificate-depth-feasibility-census-results.md",
+  "results_document_sha256": "79270ebf1cd55414378c28c3ee1a973001105cbab3f167840ba0263fb07a0ae3",
+  "schema_version": "174-certificate-depth-feasibility-census-outcome-lock",
+  "state_horizon_results": "outputs/v174-certificate-depth-feasibility-census/census/state-horizon-results.json",
+  "state_horizon_results_sha256": "f2b9e2bcc37b22e6db7a9de1d34955323c9bd3b035dc6129e29ebd3f79cc6b5b",
+  "target_certificate_results": "outputs/v174-certificate-depth-feasibility-census/census/target-certificate-results.json",
+  "target_certificate_results_sha256": "4bc9c337f407c7a090ace9b5a4f0371ec46699bf6ce9509302004ad18c7f6da4",
+  "verifier": "python/verify_and_freeze_v174_certificate_depth_feasibility_census_outcome.py",
+  "verifier_sha256": "c1d621f2d86ae53831a448d2bb8b07c011fa9fcb4fb4cc36497c3c15337e9349"
+}

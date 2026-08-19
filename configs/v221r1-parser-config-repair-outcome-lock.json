@@ -1,0 +1,808 @@
+{
+  "audit": "outputs/v221r1-parser-config-repair/outcome-audit.json",
+  "audit_sha256": "7f385169fedf686bb7030b8eb34ef3ff292897278a747eac145f9c3b14ec5b45",
+  "authorization": {
+    "design_one_local_model_candidate_study": false,
+    "open_protected_or_run_model": false,
+    "register_mutate_service_act_execute": false
+  },
+  "base_design_lock": "configs/v221-deterministic-mondo-residual-lock.json",
+  "base_design_lock_sha256": "83fb85a7f202fbd75708424e3552460a47d68d8bf5ac6761adee95181bbf4c4e",
+  "catalog_manifest": "outputs/v221r1-parser-config-repair/catalog-manifest.json",
+  "catalog_manifest_sha256": "e4a6c548bd35d0c579d87b20265f5272fc0e1dbf5fecbece4e7729194578e0f9",
+  "experiment": "v221r1_parser_config_repair",
+  "lock_payload_sha256": "6cd497869d4155de4a9afcb54e944dd1f42059651d6bebb7d1c7fa58aac61a9b",
+  "observations": "outputs/v221r1-parser-config-repair/observations.jsonl",
+  "observations_sha256": "c942645ab82bedf6b831cd1e1282885a1d8d3461ff1a38665187d50477ebd6ae",
+  "outcome": {
+    "branch": "DETERMINISTIC_SUFFICIENT_CLOSE_MODEL_ESCALATION",
+    "decision": "freeze_V221_deterministic_sufficiency_and_close_model_escalation_for_this_retrospective_task",
+    "metrics": {
+      "atomic_family_expansion_accuracy": 1.0,
+      "calibration_group_count": 1296,
+      "candidate_budget_compliance": 1.0,
+      "candidate_class_validity": 1.0,
+      "cells": {
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9938271604938271,
+          "mean_candidate_set_size": 1.0007716049382716,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9942129629629629,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.12037037037037036,
+          "mean_candidate_set_size": 1.1242283950617284,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.5588477366255143,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.8726851851851852,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9922839506172839,
+          "mean_candidate_set_size": 0.9984567901234568,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9922839506172839,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0007716049382716049,
+          "unsafe_singleton_collapse_rate": 0.0007716049382716049
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.0023148148148148147,
+          "mean_candidate_set_size": 0.9984567901234568,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.497608024691358,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.996141975308642,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9938271604938271,
+          "mean_candidate_set_size": 1.0007716049382716,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9942129629629629,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.12037037037037036,
+          "mean_candidate_set_size": 1.1242283950617284,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.5588477366255143,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.8726851851851852,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9938271604938271,
+          "mean_candidate_set_size": 1.0007716049382716,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9942129629629629,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M0_NORMALIZED_EXACT|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.12037037037037036,
+          "mean_candidate_set_size": 1.1242283950617284,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.5588477366255143,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.8726851851851852,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0007716049382716,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 2.013117283950617,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9976851851851852,
+          "mean_candidate_set_size": 0.9976851851851852,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9976851851851852,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.0023148148148148147,
+          "mean_candidate_set_size": 0.0030864197530864196,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.0023148148148148147,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0007716049382716049,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0007716049382716,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9969135802469136,
+          "mean_candidate_set_size": 2.003086419753086,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9969135802469136,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0007716049382716,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M1_EXACT_FAMILY|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 2.013117283950617,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.025462962962963,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 2.0378086419753085,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9976851851851852,
+          "mean_candidate_set_size": 0.9992283950617284,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9976851851851852,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0007716049382716049,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.0023148148148148147,
+          "mean_candidate_set_size": 0.004629629629629629,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.0023148148148148147,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0023148148148148147,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0069444444444444,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9969135802469136,
+          "mean_candidate_set_size": 2.009259259259259,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9969135802469136,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0131172839506173,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M2_HYBRID_RETRIEVAL|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 2.025462962962963,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.025462962962963,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 2.0378086419753085,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9976851851851852,
+          "mean_candidate_set_size": 0.9992283950617284,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9976851851851852,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0007716049382716049,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.0023148148148148147,
+          "mean_candidate_set_size": 0.004629629629629629,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.0023148148148148147,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0023148148148148147,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0069444444444444,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9969135802469136,
+          "mean_candidate_set_size": 2.009259259259259,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9969135802469136,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9976851851851852,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 1.0131172839506173,
+          "mean_decision_regret": 0.00023148148148148152,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CALIBRATION|M3_FINAL_FAIL_CLOSED|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9984567901234568,
+          "mean_candidate_set_size": 2.025462962962963,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9984567901234568,
+          "record_count": 1296,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9907692307692307,
+          "mean_candidate_set_size": 1.003076923076923,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 0.9907692307692307,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.08923076923076922,
+          "mean_candidate_set_size": 1.1015384615384616,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.5441025641025641,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.9015384615384615,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9907692307692307,
+          "mean_candidate_set_size": 1.0,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 0.9907692307692307,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.003076923076923077,
+          "mean_candidate_set_size": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.4982051282051282,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.9969230769230769,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9907692307692307,
+          "mean_candidate_set_size": 1.003076923076923,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 0.9907692307692307,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.08923076923076922,
+          "mean_candidate_set_size": 1.1015384615384616,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.5441025641025641,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.9015384615384615,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9907692307692307,
+          "mean_candidate_set_size": 1.003076923076923,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 0.9907692307692307,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M0_NORMALIZED_EXACT|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.08923076923076922,
+          "mean_candidate_set_size": 1.1015384615384616,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.5441025641025641,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.9015384615384615,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 2.0338461538461536,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9969230769230769,
+          "mean_candidate_set_size": 1.0,
+          "mean_decision_regret": 0.003076923076923077,
+          "oracle_class_recall": 0.9969230769230769,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.003076923076923077,
+          "mean_candidate_set_size": 0.003076923076923077,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.003076923076923077,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9969230769230769,
+          "mean_candidate_set_size": 2.0215384615384617,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9969230769230769,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M1_EXACT_FAMILY|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 2.0338461538461536,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 2.0338461538461536,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9969230769230769,
+          "mean_candidate_set_size": 1.0,
+          "mean_decision_regret": 0.003076923076923077,
+          "oracle_class_recall": 0.9969230769230769,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.003076923076923077,
+          "mean_candidate_set_size": 0.003076923076923077,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.003076923076923077,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9969230769230769,
+          "mean_candidate_set_size": 2.0215384615384617,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9969230769230769,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M2_HYBRID_RETRIEVAL|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 2.0338461538461536,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=16|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=16|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 2.0338461538461536,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=1|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 0.9969230769230769,
+          "mean_candidate_set_size": 1.0,
+          "mean_decision_regret": 0.003076923076923077,
+          "oracle_class_recall": 0.9969230769230769,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=1|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.003076923076923077,
+          "mean_candidate_set_size": 0.003076923076923077,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.003076923076923077,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=4|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=4|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 0.9969230769230769,
+          "mean_candidate_set_size": 2.0215384615384617,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.9969230769230769,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=8|CURRENT_RELEASE_DECLARED": {
+          "exact_decision_rate": 0.9969230769230769,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 1.0061538461538462,
+          "mean_decision_regret": 0.0003076923076923077,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "EVALUATION|M3_FINAL_FAIL_CLOSED|k=8|VERSION_UNSPECIFIED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_candidate_set_size": 2.0338461538461536,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 325,
+          "singleton_under_ambiguous_truth_rate": 0.0,
+          "unsafe_singleton_collapse_rate": 0.0
+        }
+      },
+      "contradiction_fail_closed_accuracy": 1.0,
+      "development_group_count": 1621,
+      "evaluation_group_count": 325,
+      "evaluation_tuning_count": 0,
+      "expected_metric_cell_count": 64,
+      "finite_metrics": true,
+      "metric_cell_count": 64,
+      "metric_cell_coverage": 1.0,
+      "model_eligible_residual": false,
+      "observation_count": 51872,
+      "primary_evaluation_exact_decision_rate": 0.9984615384615385,
+      "primary_evaluation_full_version_space_retention": 1.0,
+      "primary_evaluation_mean_decision_regret": 0.00015384615384615385,
+      "primary_evaluation_oracle_class_recall": 1.0,
+      "primary_evaluation_strata": {
+        "CURRENT_RELEASE_DECLARED|ADDED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 290,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CURRENT_RELEASE_DECLARED|LIFECYCLE_CHANGE": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 1,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CURRENT_RELEASE_DECLARED|LOGICAL_AXIOM_CHANGED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 8,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CURRENT_RELEASE_DECLARED|MAPPING_CHANGED": {
+          "exact_decision_rate": 0.5,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.05,
+          "oracle_class_recall": 1.0,
+          "record_count": 2,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CURRENT_RELEASE_DECLARED|OTHER": {
+          "exact_decision_rate": 0.0,
+          "full_version_space_retention": 0.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.0,
+          "record_count": 0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "CURRENT_RELEASE_DECLARED|TEXT_CHANGE": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 24,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "VERSION_UNSPECIFIED|ADDED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 290,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "VERSION_UNSPECIFIED|LIFECYCLE_CHANGE": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 1,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "VERSION_UNSPECIFIED|LOGICAL_AXIOM_CHANGED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 8,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "VERSION_UNSPECIFIED|MAPPING_CHANGED": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 2,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "VERSION_UNSPECIFIED|OTHER": {
+          "exact_decision_rate": 0.0,
+          "full_version_space_retention": 0.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 0.0,
+          "record_count": 0,
+          "unsafe_singleton_collapse_rate": 0.0
+        },
+        "VERSION_UNSPECIFIED|TEXT_CHANGE": {
+          "exact_decision_rate": 1.0,
+          "full_version_space_retention": 1.0,
+          "mean_decision_regret": 0.0,
+          "oracle_class_recall": 1.0,
+          "record_count": 24,
+          "unsafe_singleton_collapse_rate": 0.0
+        }
+      },
+      "residual_evaluation_group_count": 0,
+      "residual_evaluation_group_ids": [],
+      "role_overlap_count": 0,
+      "role_source_accounting_exact": true,
+      "unsafe_singleton_collapse_rate": 0.0
+    },
+    "model_eligible_residual": false,
+    "protected_JSONL_body_load_count": 0,
+    "residual_evaluation_group_count": 0,
+    "scientific_passed": true,
+    "verification_passed": true
+  },
+  "protected_hashes": {
+    "outputs/v220-fresh-mondo-artifact-population/population/protected-public.jsonl": "3fdf8d52606b4e18ed6059daa5e7dde9b09d4bc6de04f43909c0cf924b186e46",
+    "outputs/v220-fresh-mondo-artifact-population/population/protected-truth.jsonl": "9ee3b2d918337feb9190bac738426738be7667bb8247ce0ad482a411f619efa3"
+  },
+  "repair_lock": "configs/v221r1-parser-config-repair-lock.json",
+  "repair_lock_sha256": "7d43269b02330beeddbb1350c467097b710f725f611c8b15258e0de2b7696571",
+  "residual_manifest": "outputs/v221r1-parser-config-repair/residual-manifest.json",
+  "residual_manifest_sha256": "7f5e38a5f213b0f1b20b1eacc0c5982a42d4637cb6cb0f047214e19dbc2d0963",
+  "result": "outputs/v221r1-parser-config-repair/result.json",
+  "result_sha256": "54b101abea541cbd60d4adf3cb8859dc799d1218e93e20ebf88c0321684371f4",
+  "results_document": "docs/v221r1-parser-config-repair-results.md",
+  "results_document_sha256": "e7f349448a25be9b64b658a19cf5411f7f0f9eef143bac45d0b7b6c776d89309",
+  "schema_version": "221r1-parser-config-repair-outcome-lock",
+  "summary": "outputs/v221r1-parser-config-repair/summary.json",
+  "summary_sha256": "e44cb6d9e232071ac7f8e6265cccc9c07da0b46d5a2a23142fd9b3438e60a57f",
+  "verifier": "python/verify_and_freeze_v221r1_parser_config_repair_outcome.py",
+  "verifier_sha256": "c4c46560a2f9d8f3ee075fe805a761a3b270027e103530179c5acebe5a28e5ef"
+}

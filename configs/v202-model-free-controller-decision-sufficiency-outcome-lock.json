@@ -1,0 +1,238 @@
+{
+  "audit": "outputs/v202-model-free-controller-decision-sufficiency/outcome-audit.json",
+  "audit_sha256": "ab7764e91b90c9e98e143cd107cb5a48a98b8dacb8e74a3aee56e5eace5389f9",
+  "authorization": {
+    "API_model_generation_training_registration_authority_action_or_execution": false,
+    "immediate_confirmation_or_protected_reuse": false,
+    "preregister_new_fresh_confirmation_design_only": true,
+    "update_roadmap_and_preregister_next_model_free_track": true
+  },
+  "evaluation_lock": "configs/v202-model-free-controller-decision-sufficiency-lock.json",
+  "evaluation_lock_sha256": "dd97cbc806c8ad3ce45aa20484e6990fc960b869e72e097707dc29edd0ea7baf",
+  "experiment": "v202_model_free_decision_sufficiency_of_presentation_sensitive_normalized_proposals",
+  "lock_payload_sha256": "b1afa4f4e3f76d22b42981617214ccf6689f285dbad3c7c4e5204c4152232d24",
+  "outcome": {
+    "decision": "freeze_V202_selected_development_controller_and_require_new_fresh_confirmation_design",
+    "passed": true,
+    "scientific_selection_made": true,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "external_side_effect_count": 0,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "normalized_CHAR_LAST_prediction_read_count": 252,
+      "normalized_model_fixture_read_count": 252,
+      "ontology_registration_count": 0,
+      "policies": [
+        {
+          "conditions": [
+            {
+              "condition": "CANONICAL",
+              "macro_mean_cost": 0.14166666666666666,
+              "matched_CHAR_LAST_macro_mean_cost": 0.23809523809523808,
+              "matched_CHAR_LAST_primary_mean_cost": 0.2588888888888889,
+              "mean_proposal_set_size": 0.9404761904761905,
+              "primary_mean_cost": 0.14791666666666667,
+              "target_hit_rate": 0.8809523809523809
+            },
+            {
+              "condition": "ORDER_ONLY",
+              "macro_mean_cost": 0.13690476190476192,
+              "matched_CHAR_LAST_macro_mean_cost": 0.23809523809523808,
+              "matched_CHAR_LAST_primary_mean_cost": 0.2588888888888889,
+              "mean_proposal_set_size": 0.9404761904761905,
+              "primary_mean_cost": 0.14569444444444446,
+              "target_hit_rate": 0.8928571428571429
+            },
+            {
+              "condition": "ORDER_AND_OPAQUE_ID",
+              "macro_mean_cost": 0.1285714285714286,
+              "matched_CHAR_LAST_macro_mean_cost": 0.23809523809523808,
+              "matched_CHAR_LAST_primary_mean_cost": 0.2588888888888889,
+              "mean_proposal_set_size": 0.9523809523809523,
+              "primary_mean_cost": 0.13958333333333334,
+              "target_hit_rate": 0.9166666666666666
+            }
+          ],
+          "eligible_as_single_call": true,
+          "false_terminal_decisions": 0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "mean_per_record_cost_range_across_presentations": 0.041666666666666664,
+          "mean_proposal_set_size": 0.9444444444444443,
+          "model_calls_per_decision": 1,
+          "policy_id": "SINGLE_PRESENTATION_TOP1_FAMILY",
+          "qualification_gates": {
+            "final_exactness": true,
+            "incremental_over_matched_CHAR_LAST": true,
+            "per_record_cost_range": true,
+            "proposal_set_size": true,
+            "robust_macro_cost": true,
+            "robust_primary_cost": true,
+            "target_hit_disagreement": false,
+            "target_retention": true,
+            "zero_false_terminal": true
+          },
+          "qualified": false,
+          "robust_macro_mean_cost": 0.14166666666666666,
+          "robust_primary_mean_cost": 0.14791666666666667,
+          "target_hit_disagreement_rate_across_presentations": 0.10714285714285714,
+          "target_retention_rate": 1.0,
+          "worst_condition_incremental_primary_improvement_over_matched_CHAR_LAST": 0.11097222222222222
+        },
+        {
+          "conditions": [
+            {
+              "condition": "CANONICAL",
+              "macro_mean_cost": 0.2119047619047619,
+              "matched_CHAR_LAST_macro_mean_cost": 0.24761904761904763,
+              "matched_CHAR_LAST_primary_mean_cost": 0.25833333333333336,
+              "mean_proposal_set_size": 2.8214285714285716,
+              "primary_mean_cost": 0.21416666666666667,
+              "target_hit_rate": 0.9404761904761905
+            },
+            {
+              "condition": "ORDER_ONLY",
+              "macro_mean_cost": 0.2119047619047619,
+              "matched_CHAR_LAST_macro_mean_cost": 0.24761904761904763,
+              "matched_CHAR_LAST_primary_mean_cost": 0.25833333333333336,
+              "mean_proposal_set_size": 2.8214285714285716,
+              "primary_mean_cost": 0.21416666666666667,
+              "target_hit_rate": 0.9404761904761905
+            },
+            {
+              "condition": "ORDER_AND_OPAQUE_ID",
+              "macro_mean_cost": 0.20952380952380953,
+              "matched_CHAR_LAST_macro_mean_cost": 0.25238095238095243,
+              "matched_CHAR_LAST_primary_mean_cost": 0.2644444444444445,
+              "mean_proposal_set_size": 2.857142857142857,
+              "primary_mean_cost": 0.21305555555555555,
+              "target_hit_rate": 0.9523809523809523
+            }
+          ],
+          "eligible_as_single_call": true,
+          "false_terminal_decisions": 0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "mean_per_record_cost_range_across_presentations": 0.002380952380952381,
+          "mean_proposal_set_size": 2.8333333333333335,
+          "model_calls_per_decision": 1,
+          "policy_id": "SINGLE_PRESENTATION_TOP3_FAMILY",
+          "qualification_gates": {
+            "final_exactness": true,
+            "incremental_over_matched_CHAR_LAST": true,
+            "per_record_cost_range": true,
+            "proposal_set_size": true,
+            "robust_macro_cost": true,
+            "robust_primary_cost": true,
+            "target_hit_disagreement": true,
+            "target_retention": true,
+            "zero_false_terminal": true
+          },
+          "qualified": true,
+          "robust_macro_mean_cost": 0.2119047619047619,
+          "robust_primary_mean_cost": 0.21416666666666667,
+          "target_hit_disagreement_rate_across_presentations": 0.011904761904761904,
+          "target_retention_rate": 1.0,
+          "worst_condition_incremental_primary_improvement_over_matched_CHAR_LAST": 0.04416666666666669
+        },
+        {
+          "conditions": [
+            {
+              "condition": "TOP1_PLURALITY_3X",
+              "macro_mean_cost": 0.13333333333333336,
+              "matched_CHAR_LAST_macro_mean_cost": 0.23809523809523808,
+              "matched_CHAR_LAST_primary_mean_cost": 0.2588888888888889,
+              "mean_proposal_set_size": 0.9523809523809523,
+              "primary_mean_cost": 0.14402777777777778,
+              "target_hit_rate": 0.9047619047619048
+            }
+          ],
+          "eligible_as_single_call": false,
+          "false_terminal_decisions": 0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "mean_per_record_cost_range_across_presentations": 0.0,
+          "mean_proposal_set_size": 0.9523809523809523,
+          "model_calls_per_decision": 3,
+          "policy_id": "TOP1_PLURALITY_3X",
+          "qualification_gates": {
+            "final_exactness": true,
+            "incremental_over_matched_CHAR_LAST": true,
+            "per_record_cost_range": true,
+            "proposal_set_size": true,
+            "robust_macro_cost": true,
+            "robust_primary_cost": true,
+            "target_hit_disagreement": true,
+            "target_retention": true,
+            "zero_false_terminal": true
+          },
+          "qualified": true,
+          "robust_macro_mean_cost": 0.13333333333333336,
+          "robust_primary_mean_cost": 0.14402777777777778,
+          "target_hit_disagreement_rate_across_presentations": 0.0,
+          "target_retention_rate": 1.0,
+          "worst_condition_incremental_primary_improvement_over_matched_CHAR_LAST": 0.11486111111111111
+        },
+        {
+          "conditions": [
+            {
+              "condition": "TOP3_INCLUSION_CONSENSUS_3X",
+              "macro_mean_cost": 0.2119047619047619,
+              "matched_CHAR_LAST_macro_mean_cost": 0.24761904761904763,
+              "matched_CHAR_LAST_primary_mean_cost": 0.25833333333333336,
+              "mean_proposal_set_size": 2.488095238095238,
+              "primary_mean_cost": 0.21416666666666667,
+              "target_hit_rate": 0.9404761904761905
+            }
+          ],
+          "eligible_as_single_call": false,
+          "false_terminal_decisions": 0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "mean_per_record_cost_range_across_presentations": 0.0,
+          "mean_proposal_set_size": 2.488095238095238,
+          "model_calls_per_decision": 3,
+          "policy_id": "TOP3_INCLUSION_CONSENSUS_3X",
+          "qualification_gates": {
+            "final_exactness": true,
+            "incremental_over_matched_CHAR_LAST": true,
+            "per_record_cost_range": true,
+            "proposal_set_size": true,
+            "robust_macro_cost": true,
+            "robust_primary_cost": true,
+            "target_hit_disagreement": true,
+            "target_retention": true,
+            "zero_false_terminal": true
+          },
+          "qualified": true,
+          "robust_macro_mean_cost": 0.2119047619047619,
+          "robust_primary_mean_cost": 0.21416666666666667,
+          "target_hit_disagreement_rate_across_presentations": 0.0,
+          "target_retention_rate": 1.0,
+          "worst_condition_incremental_primary_improvement_over_matched_CHAR_LAST": 0.04416666666666669
+        }
+      ],
+      "policy_count": 4,
+      "presentation_count": 3,
+      "protected_language_read_count": 0,
+      "qualified_policy_count": 3,
+      "raw_model_response_read_count": 0,
+      "record_count": 84,
+      "selected_policy_id": "SINGLE_PRESENTATION_TOP3_FAMILY",
+      "selected_policy_uses_single_call_tier": true,
+      "service_call_count": 0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "utterance_or_dialogue_language_read_count": 0
+    }
+  },
+  "result": "outputs/v202-model-free-controller-decision-sufficiency/evaluation/result.json",
+  "result_sha256": "3f326706cad739198a98543cbde05ddfe1d47325d15e21981575500170955f53",
+  "results_document": "docs/v202-model-free-controller-decision-sufficiency-results.md",
+  "results_document_sha256": "50b6e66c43c5e03d17213a58b8349b948091eecf84be82b615a1eef0f5be3e27",
+  "schema_version": "202-model-free-controller-decision-sufficiency-outcome-lock",
+  "scored_records": "outputs/v202-model-free-controller-decision-sufficiency/evaluation/scored-records.json",
+  "scored_records_sha256": "9cce7d8fa3fd5504048a10daa56242317d6ae94dae863265ba385242a9ab5621",
+  "summary": "outputs/v202-model-free-controller-decision-sufficiency/evaluation/summary.json",
+  "summary_sha256": "e664ba8e730a94d52c3befd0f594c6943fd83a3014a3ea526897f952939bf987",
+  "verifier": "python/verify_and_freeze_v202_model_free_controller_decision_sufficiency_outcome.py",
+  "verifier_sha256": "717983b26de504e444c4d9a970eb2f85c1f587bfeeed19471cecdc00d3c85ead"
+}

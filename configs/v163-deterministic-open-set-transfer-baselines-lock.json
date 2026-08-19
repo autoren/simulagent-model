@@ -1,0 +1,267 @@
+{
+  "auditor": "python/audit_and_freeze_v163_deterministic_open_set_transfer_baselines.py",
+  "auditor_sha256": "1d208feec50ec4fccd39be643a55b618de3d7a6c29817b73f3d05f77d54d39ce",
+  "authorization": {
+    "automatically_read_declared_training_language_once": true,
+    "automatically_read_development_language_once": true,
+    "grant_capability_state_belief_action_or_execution_authority": false,
+    "load_or_run_local_or_API_model": false,
+    "manually_inspect_any_utterance": false,
+    "modify_split_baselines_costs_metrics_residual_rule_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "read_protected_language": false,
+    "run_deterministic_development_baselines_once": true,
+    "train_adapter_induce_ontology_plan_act_or_execute": false
+  },
+  "config": "configs/v163-deterministic-open-set-transfer-baselines.json",
+  "config_payload": {
+    "authorityBoundary": {
+      "allActionsAreCounterfactualShadowActions": true,
+      "authoritativeCapabilityStatePosteriorAndPolicyAreImmutable": true,
+      "deterministicPredictionsDoNotAuthorizeAction": true,
+      "futureModelMayNotSelectActionOrExecuteTool": true,
+      "realExecutionCount": 0,
+      "safeHypothesisUniverseMayNotBePruned": true
+    },
+    "baselinePipelineGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumTrainingRecordCountPerDeclaredIntent": 1,
+      "requiredBaselineNames": [
+        "complete_safe_enumeration",
+        "ask_always",
+        "identifier_grammar",
+        "character_ngram_retrieval",
+        "deterministic_consensus",
+        "oracle"
+      ],
+      "requiredCalibrationRecordCount": 96,
+      "requiredCompleteSafeEnumerationTrueHypothesisRetention": 1.0,
+      "requiredControlledMissingObservationCount": 24,
+      "requiredEvaluationRecordCount": 96,
+      "requiredOracleExactDecisionAccuracy": 1.0,
+      "requiredOracleMeanRegret": 0.0,
+      "requiredTrainingDeclaredIntentCount": 12
+    },
+    "claimBoundary": "record-disjoint MASSIVE deterministic development evidence for controlled open-set capability recognition and a prospectively defined residual; not V160 relation-codebook confirmation, unrestricted open-world understanding, ontology learning, action, or execution",
+    "controlledMissingObservation": {
+      "authoritativeDecision": "ABSTAIN",
+      "count": 24,
+      "selectionSalt": "simulagent-v163-controlled-missing-observation-v1",
+      "selectionUsesRecordIdentifierOnly": true,
+      "utteranceExposureCount": 0
+    },
+    "decisionCosts": {
+      "insufficient": {
+        "abstain": 0.0,
+        "known": 10.0,
+        "novel": 6.0,
+        "unsupported": 4.0
+      },
+      "known": {
+        "abstain": 1.0,
+        "exact_known": 0.0,
+        "novel": 3.0,
+        "unsupported": 6.0,
+        "wrong_known": 10.0
+      },
+      "novel": {
+        "abstain": 1.5,
+        "exact_novel": 0.0,
+        "known": 10.0,
+        "unsupported": 4.0,
+        "wrong_novel_scenario": 5.0
+      },
+      "unsupported": {
+        "abstain": 1.0,
+        "known": 10.0,
+        "novel": 4.0,
+        "unsupported": 0.0
+      }
+    },
+    "decisionRule": {
+      "baselinePassAuthorizesAPITrainingOntologyPlanningActionOrExecution": false,
+      "baselinePassAuthorizesImmediateModelRun": false,
+      "baselinePassAuthorizesProtectedAccess": false,
+      "ifEveryBaselinePipelineGatePasses": "freeze_deterministic_development_outcome",
+      "ifResidualQualificationAlsoPasses": "authorize_separate_pinned_local_model_residual_protocol_preregistration_only",
+      "ifResidualQualificationFails": "close_local_model_residual_branch_without_threshold_or_rule_tuning"
+    },
+    "deterministicBaselines": {
+      "ask_always": "ABSTAIN for every observed request",
+      "character_ngram_retrieval": {
+        "constraint": "unsupported threshold must be strictly below known threshold",
+        "knownThresholdGrid": [
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8
+        ],
+        "nearestNeighborTieBreak": "first record in frozen intent/source-id order through numpy argmax",
+        "selectionObjective": "minimum calibration mean decision regret; ties use maximum exact accuracy, minimum false-known acceptance, then lexicographically smallest thresholds",
+        "trainingData": "MASSIVE train utterances for the 12 declared intents only",
+        "unsupportedThresholdGrid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6
+        ],
+        "vectorizer": "sklearn TfidfVectorizer analyzer=char_wb ngram_range=(3,5) lowercase=true min_df=1 norm=l2 dtype=float64"
+      },
+      "complete_safe_enumeration": "retain all 17 safe hypotheses and abstain",
+      "deterministic_consensus": {
+        "abstainConfidence": 0.0,
+        "acceptRule": "accept only when identifier grammar and calibrated character retrieval return the identical complete non-ABSTAIN structured decision",
+        "acceptedConfidence": "minimum component confidence",
+        "otherwise": "ABSTAIN"
+      },
+      "identifier_grammar": "unchanged V106 token-overlap rule over visible intent and scenario identifiers",
+      "oracle": "exact frozen truth contract for scoring only"
+    },
+    "deterministicRuntime": {
+      "numpyVersion": "2.5.1",
+      "scikitLearnVersion": "1.9.0"
+    },
+    "developmentLanguage": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+    "developmentLanguageSha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+    "developmentSplit": {
+      "calibrationCountPerClass": 24,
+      "classes": [
+        "known_familiar",
+        "known_unfamiliar",
+        "novel_valid",
+        "unsupported"
+      ],
+      "evaluationCountPerClass": 24,
+      "manualLanguageInspection": false,
+      "salt": "simulagent-v163-development-calibration-evaluation-v1",
+      "splitUsesOnlyFrozenRecordIdentifierAndClass": true
+    },
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "experiment": "v163_fresh_massive_deterministic_open_set_transfer_development_baselines",
+    "historicalInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+    "parentLanguageOutcomeLock": "configs/v162-fresh-massive-transfer-language-extraction-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "actualExecutionCount": 0,
+      "adapterTrainingRunCount": 0,
+      "developmentLanguageReadCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedLanguageReadCount": 0
+    },
+    "protectedLanguageIdentityOnly": {
+      "fileOpenCount": 0,
+      "path": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+      "sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41"
+    },
+    "registeredMetrics": [
+      "exact decision accuracy",
+      "status precision recall and macro F1",
+      "known exact-intent accuracy",
+      "novel exact-scenario accuracy",
+      "false-known acceptance on non-known requests",
+      "confidence ECE with ten fixed bins",
+      "predicted-decision correctness Brier score",
+      "top-confidence 80 percent error",
+      "mean shadow decision regret",
+      "per-class exactness and regret",
+      "controlled missing-observation abstention",
+      "complete safe-hypothesis retention",
+      "deterministic residual count and class coverage",
+      "nonresidual exactness false-known rate and regret"
+    ],
+    "residualQualificationGates": {
+      "maximumConsensusOverallFalseKnownAcceptanceRate": 0.05,
+      "maximumConsensusRegretAboveAskAlways": 0.0,
+      "maximumNonResidualFalseKnownAcceptanceRate": 0.0,
+      "maximumNonResidualMeanRegret": 0.25,
+      "maximumResidualRecordCount": 88,
+      "minimumNonResidualExactDecisionAccuracy": 0.95,
+      "minimumNonResidualRecordCount": 8,
+      "minimumResidualClassCoverage": 3,
+      "minimumResidualRecordCount": 24
+    },
+    "residualRule": {
+      "definition": "evaluation records on which deterministic_consensus returns ABSTAIN",
+      "futureModelMayReceiveLanguageOnlyAfterSeparateResidualModelLock": true,
+      "manifestFields": [
+        "record_id"
+      ],
+      "truthOrLanguageMayNotAffectMembership": true
+    },
+    "safeHypothesisUniverse": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+    "safeHypothesisUniverseSha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8",
+    "schemaVersion": "163-deterministic-open-set-transfer-baselines-design",
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+    "truthContract": {
+      "controlled_missing_observation": "ABSTAIN",
+      "known_familiar": "KNOWN with exact declared scenario::intent",
+      "known_unfamiliar": "KNOWN with exact declared scenario::intent",
+      "novel_valid": "NOVEL with exact visible scenario",
+      "unsupported": "UNSUPPORTED"
+    },
+    "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+    "visibleCatalogSha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+  },
+  "config_sha256": "149956cfe5e6a0844b751fd09517da31410e0dedd3b646ee1bdbef079b59d903",
+  "design_audit": "outputs/v163-deterministic-open-set-transfer/development-design-audit.json",
+  "design_audit_sha256": "e1e42c54537b92baa0abe685754b3ce6eb226fec07f0f865c609489c59f60242",
+  "development_language": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+  "development_language_sha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+  "experiment": "v163_deterministic_open_set_transfer_baselines_lock",
+  "historical_interface_outcome": "configs/v105-open-world-interface-outcome-lock.json",
+  "historical_interface_outcome_sha256": "b7529f4d53338af099b82aa5aaaa6df2cb04f776f412afa44c7b6c064b6f48c3",
+  "lock_payload_sha256": "f47b4b556ce1bbdb985b493a903a6b6180c6df0962f5f3279e19ac73b42cd67c",
+  "parent_language_outcome": "configs/v162-fresh-massive-transfer-language-extraction-outcome-lock.json",
+  "parent_language_outcome_sha256": "c865ca4593dd1a1b4ec4f6f83fd7497696703c1e14d42bbbf8b002ff610c5875",
+  "plan": "docs/v163-deterministic-open-set-transfer-baselines-plan.md",
+  "plan_sha256": "212b6dbce0d6a18680a9b83c1bd0eef25152fc7ab6a147005d0f497e30c8405f",
+  "protected_language_identity_only": {
+    "fileOpenCount": 0,
+    "path": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+    "sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41"
+  },
+  "protocol": "python/v163_deterministic_open_set_transfer_baselines.py",
+  "protocol_sha256": "d87596bf68366b1496c03d313d9796c1343836d2d9d6b1abc9c2ee1790f5917d",
+  "runner": "python/run_v163_deterministic_open_set_transfer_baselines.py",
+  "runner_sha256": "9b8fe6581d524cf950e3f4d7bd86678a8f905041d6fce68675259746071e647c",
+  "safe_hypothesis_universe": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+  "safe_hypothesis_universe_sha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8",
+  "schema_version": "163-deterministic-open-set-transfer-baselines-lock",
+  "source_archive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "source_archive_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "tests": "python/test_v163_deterministic_open_set_transfer_baselines.py",
+  "tests_sha256": "18ba832f18d2e1ccf7c62775d3bb06694a3ef4d365234d7e094c0b8e43cd4f56",
+  "verifier": "python/verify_and_freeze_v163_deterministic_open_set_transfer_outcome.py",
+  "verifier_sha256": "58a1d9392820df637cd3bb3dc37226dca13b75ade0d5cd93c6470f68b1415cc5",
+  "visible_catalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "visible_catalog_sha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+}

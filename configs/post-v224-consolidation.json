@@ -1,0 +1,52 @@
+{
+  "schema_version": "post_v224_consolidation.v1",
+  "consolidation_id": "post_v224_reproducibility_architecture_and_navigation",
+  "artifact_role": "maintenance_and_consolidation_not_experiment",
+  "source_cross_track_outcome": "configs/cross-track-evidence-audit-through-v224-outcome-lock.json",
+  "source_stopping_rule": "docs/research-stopping-rule-after-v224.md",
+  "required_gates": [
+    "cross_track_audit_reconstructs_and_outcome_lock_valid",
+    "all_eight_dependency_drifts_have_exact_append_only_provenance",
+    "no_unavailable_frozen_dependency_is_guessed_or_overwritten",
+    "model_free_reference_architecture_reconstructs_and_outcome_lock_valid",
+    "reference_architecture_covers_all_required_mechanism_interfaces",
+    "integration_is_explicitly_non_experimental_and_non_external_language_evidence",
+    "canonical_navigation_marks_pre_V224_roadmaps_historical_without_editing_them",
+    "V224_stopping_rule_remains_canonical",
+    "protected_request_language_model_API_training_registration_real_action_and_execution_counts_zero"
+  ],
+  "required_architecture_components": [
+    "typed_hypothesis_and_version_space",
+    "outside_semantic_belief_and_terminal_planning",
+    "value_of_information_and_certificate_policy",
+    "one_corruption_robust_evidence",
+    "conservative_other_defer_controller",
+    "reversible_sandbox",
+    "optional_non_authoritative_proposal_provider",
+    "external_catalog_reconstruction_adapter"
+  ],
+  "canonical_documents": [
+    "README.md",
+    "docs/README.md",
+    "docs/cross-track-evidence-synthesis-through-v224.md",
+    "docs/research-stopping-rule-after-v224.md",
+    "docs/research-roadmap-after-v224.md",
+    "docs/dependency-drift-provenance-addendum-through-v224.md",
+    "docs/model-free-reference-architecture.md",
+    "docs/model-free-reference-architecture-integration-results.md"
+  ],
+  "historical_roadmap_glob": "docs/research-roadmap-after-v*.md",
+  "only_canonical_roadmap": "docs/research-roadmap-after-v224.md",
+  "authority_boundary": {
+    "new_experiment": false,
+    "protected_or_request_language_access": false,
+    "local_or_API_model_run": false,
+    "training_or_tuning": false,
+    "simulated_human_semantic_gold": false,
+    "ontology_registration": false,
+    "trusted_real_state_mutation": false,
+    "external_service_action": false,
+    "actual_execution": false
+  },
+  "decision_rule": "freeze_consolidation_if_every_gate_passes; otherwise retain failure and repair maintenance artifacts only"
+}

@@ -1,0 +1,569 @@
+{
+  "auditor": "python/audit_and_freeze_v164_local_residual_open_set_transfer.py",
+  "auditor_sha256": "dfddebd9a10599e3e385ee687ee9fb36f0f6549f95e09400d8775ea374984227",
+  "authorization": {
+    "induce_register_or_execute_capability": false,
+    "manually_inspect_source_or_model_language": false,
+    "maximum_model_generation_count": 76,
+    "maximum_model_load_count": 1,
+    "modify_residual_prompt_model_decoding_validation_costs_metrics_gates_or_decision": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "prune_hypotheses_or_grant_model_state_belief_action_or_execution_authority": false,
+    "read_protected_transfer_language": false,
+    "retry_or_rerun_any_fixture": false,
+    "run_API_model_or_train_adapter": false,
+    "run_model_on_nonresidual_or_missing_control": false,
+    "run_one_local_residual_development_shadow_condition_once": true
+  },
+  "baseline_config_payload": {
+    "authorityBoundary": {
+      "allActionsAreCounterfactualShadowActions": true,
+      "authoritativeCapabilityStatePosteriorAndPolicyAreImmutable": true,
+      "deterministicPredictionsDoNotAuthorizeAction": true,
+      "futureModelMayNotSelectActionOrExecuteTool": true,
+      "realExecutionCount": 0,
+      "safeHypothesisUniverseMayNotBePruned": true
+    },
+    "baselinePipelineGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumTrainingRecordCountPerDeclaredIntent": 1,
+      "requiredBaselineNames": [
+        "complete_safe_enumeration",
+        "ask_always",
+        "identifier_grammar",
+        "character_ngram_retrieval",
+        "deterministic_consensus",
+        "oracle"
+      ],
+      "requiredCalibrationRecordCount": 96,
+      "requiredCompleteSafeEnumerationTrueHypothesisRetention": 1.0,
+      "requiredControlledMissingObservationCount": 24,
+      "requiredEvaluationRecordCount": 96,
+      "requiredOracleExactDecisionAccuracy": 1.0,
+      "requiredOracleMeanRegret": 0.0,
+      "requiredTrainingDeclaredIntentCount": 12
+    },
+    "claimBoundary": "record-disjoint MASSIVE deterministic development evidence for controlled open-set capability recognition and a prospectively defined residual; not V160 relation-codebook confirmation, unrestricted open-world understanding, ontology learning, action, or execution",
+    "controlledMissingObservation": {
+      "authoritativeDecision": "ABSTAIN",
+      "count": 24,
+      "selectionSalt": "simulagent-v163-controlled-missing-observation-v1",
+      "selectionUsesRecordIdentifierOnly": true,
+      "utteranceExposureCount": 0
+    },
+    "decisionCosts": {
+      "insufficient": {
+        "abstain": 0.0,
+        "known": 10.0,
+        "novel": 6.0,
+        "unsupported": 4.0
+      },
+      "known": {
+        "abstain": 1.0,
+        "exact_known": 0.0,
+        "novel": 3.0,
+        "unsupported": 6.0,
+        "wrong_known": 10.0
+      },
+      "novel": {
+        "abstain": 1.5,
+        "exact_novel": 0.0,
+        "known": 10.0,
+        "unsupported": 4.0,
+        "wrong_novel_scenario": 5.0
+      },
+      "unsupported": {
+        "abstain": 1.0,
+        "known": 10.0,
+        "novel": 4.0,
+        "unsupported": 0.0
+      }
+    },
+    "decisionRule": {
+      "baselinePassAuthorizesAPITrainingOntologyPlanningActionOrExecution": false,
+      "baselinePassAuthorizesImmediateModelRun": false,
+      "baselinePassAuthorizesProtectedAccess": false,
+      "ifEveryBaselinePipelineGatePasses": "freeze_deterministic_development_outcome",
+      "ifResidualQualificationAlsoPasses": "authorize_separate_pinned_local_model_residual_protocol_preregistration_only",
+      "ifResidualQualificationFails": "close_local_model_residual_branch_without_threshold_or_rule_tuning"
+    },
+    "deterministicBaselines": {
+      "ask_always": "ABSTAIN for every observed request",
+      "character_ngram_retrieval": {
+        "constraint": "unsupported threshold must be strictly below known threshold",
+        "knownThresholdGrid": [
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8
+        ],
+        "nearestNeighborTieBreak": "first record in frozen intent/source-id order through numpy argmax",
+        "selectionObjective": "minimum calibration mean decision regret; ties use maximum exact accuracy, minimum false-known acceptance, then lexicographically smallest thresholds",
+        "trainingData": "MASSIVE train utterances for the 12 declared intents only",
+        "unsupportedThresholdGrid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6
+        ],
+        "vectorizer": "sklearn TfidfVectorizer analyzer=char_wb ngram_range=(3,5) lowercase=true min_df=1 norm=l2 dtype=float64"
+      },
+      "complete_safe_enumeration": "retain all 17 safe hypotheses and abstain",
+      "deterministic_consensus": {
+        "abstainConfidence": 0.0,
+        "acceptRule": "accept only when identifier grammar and calibrated character retrieval return the identical complete non-ABSTAIN structured decision",
+        "acceptedConfidence": "minimum component confidence",
+        "otherwise": "ABSTAIN"
+      },
+      "identifier_grammar": "unchanged V106 token-overlap rule over visible intent and scenario identifiers",
+      "oracle": "exact frozen truth contract for scoring only"
+    },
+    "deterministicRuntime": {
+      "numpyVersion": "2.5.1",
+      "scikitLearnVersion": "1.9.0"
+    },
+    "developmentLanguage": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+    "developmentLanguageSha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+    "developmentSplit": {
+      "calibrationCountPerClass": 24,
+      "classes": [
+        "known_familiar",
+        "known_unfamiliar",
+        "novel_valid",
+        "unsupported"
+      ],
+      "evaluationCountPerClass": 24,
+      "manualLanguageInspection": false,
+      "salt": "simulagent-v163-development-calibration-evaluation-v1",
+      "splitUsesOnlyFrozenRecordIdentifierAndClass": true
+    },
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "experiment": "v163_fresh_massive_deterministic_open_set_transfer_development_baselines",
+    "historicalInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+    "parentLanguageOutcomeLock": "configs/v162-fresh-massive-transfer-language-extraction-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "actualExecutionCount": 0,
+      "adapterTrainingRunCount": 0,
+      "developmentLanguageReadCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedLanguageReadCount": 0
+    },
+    "protectedLanguageIdentityOnly": {
+      "fileOpenCount": 0,
+      "path": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+      "sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41"
+    },
+    "registeredMetrics": [
+      "exact decision accuracy",
+      "status precision recall and macro F1",
+      "known exact-intent accuracy",
+      "novel exact-scenario accuracy",
+      "false-known acceptance on non-known requests",
+      "confidence ECE with ten fixed bins",
+      "predicted-decision correctness Brier score",
+      "top-confidence 80 percent error",
+      "mean shadow decision regret",
+      "per-class exactness and regret",
+      "controlled missing-observation abstention",
+      "complete safe-hypothesis retention",
+      "deterministic residual count and class coverage",
+      "nonresidual exactness false-known rate and regret"
+    ],
+    "residualQualificationGates": {
+      "maximumConsensusOverallFalseKnownAcceptanceRate": 0.05,
+      "maximumConsensusRegretAboveAskAlways": 0.0,
+      "maximumNonResidualFalseKnownAcceptanceRate": 0.0,
+      "maximumNonResidualMeanRegret": 0.25,
+      "maximumResidualRecordCount": 88,
+      "minimumNonResidualExactDecisionAccuracy": 0.95,
+      "minimumNonResidualRecordCount": 8,
+      "minimumResidualClassCoverage": 3,
+      "minimumResidualRecordCount": 24
+    },
+    "residualRule": {
+      "definition": "evaluation records on which deterministic_consensus returns ABSTAIN",
+      "futureModelMayReceiveLanguageOnlyAfterSeparateResidualModelLock": true,
+      "manifestFields": [
+        "record_id"
+      ],
+      "truthOrLanguageMayNotAffectMembership": true
+    },
+    "safeHypothesisUniverse": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+    "safeHypothesisUniverseSha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8",
+    "schemaVersion": "163-deterministic-open-set-transfer-baselines-design",
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+    "truthContract": {
+      "controlled_missing_observation": "ABSTAIN",
+      "known_familiar": "KNOWN with exact declared scenario::intent",
+      "known_unfamiliar": "KNOWN with exact declared scenario::intent",
+      "novel_valid": "NOVEL with exact visible scenario",
+      "unsupported": "UNSUPPORTED"
+    },
+    "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+    "visibleCatalogSha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+  },
+  "baseline_predictions": "outputs/v163-deterministic-open-set-transfer/development-baselines/baseline-predictions.json",
+  "baseline_predictions_sha256": "65facd02aa0e13beb743b22cdd4ccf3a2ab11b52d9788a9e07b49107cdeea7d6",
+  "census_harness": "python/locked_census_harness.py",
+  "census_harness_sha256": "f871015ac91f3bcc66633cb8c6c2027891df14649fef3a82d8679b0748f6cf9f",
+  "config": "configs/v164-local-residual-open-set-transfer.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumDevelopmentLanguageReadCount": 1,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualRawResponseInspectionCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 76,
+      "maximumModelLoadCount": 1,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumRetryCount": 0,
+      "requiredResidualFixtureCount": 76
+    },
+    "authorityBoundary": {
+      "allCostsAndActionsAreCounterfactualShadowQuantities": true,
+      "authoritativeCapabilityStatePosteriorAndPolicyImmutable": true,
+      "completeSafeHypothesisUniverseRetained": true,
+      "modelDefinesOrRegistersCapabilities": false,
+      "modelExecutesTool": false,
+      "modelSelectsAction": false,
+      "modelUpdatesPosterior": false,
+      "permanentlyNonAuthoritative": true,
+      "realExecutionCount": 0
+    },
+    "claimBoundary": "single-model record-disjoint MASSIVE development evidence for a deterministic-first shadow residual proposer; not protected evidence, unrestricted open-world understanding, ontology learning, calibration transfer, action, execution, or deployment safety",
+    "condition": {
+      "generationLimit": 76,
+      "id": "qwen38_27b_4bit_direct_residual",
+      "modelLoadLimit": 1,
+      "quantizationBits": 4,
+      "repository": "mlx-community/Qwen3.8-27B-4bit",
+      "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+      "weightBytes": 16054541349
+    },
+    "corpus": {
+      "controlledMissingObservationCount": 24,
+      "deterministicNonResidualCount": 20,
+      "excludeCalibrationRecords": true,
+      "excludeDeterministicNonResidualRecordsFromModel": true,
+      "excludeProtectedTransferRecords": true,
+      "frozenEvaluationCount": 96,
+      "manualUtteranceInspection": false,
+      "modelEligibleResidualCount": 76,
+      "residualManifestPayloadSha256": "360b9cc079726a06405fc7d331b578dc985133a361d4a210fb891671c0d1a19c",
+      "totalModelGenerationCount": 76
+    },
+    "decisionRule": {
+      "completedCondition": "all 76 independent no-retry residual generations complete within every access gate regardless of quality",
+      "ifNonqualifying": "freeze negative development outcome, keep protected transfer sealed, and close this residual model protocol without prompt model decoding threshold or gate tuning",
+      "ifQualifying": "freeze positive development outcome and authorize only separate preregistration of the identical deterministic-plus-model protocol on protected transfer",
+      "passAuthorizesAPITrainingOntologyPlanningActionOrExecution": false,
+      "passAuthorizesProtectedAccessImmediately": false,
+      "qualifyingCondition": "every quality and access gate passes noncompensatorily"
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 160,
+      "reasoningEffort": null,
+      "retryCount": 0,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "directDecodingEvidenceLock": "configs/v154r1-outcome-verifier-repair-outcome-lock.json",
+    "experiment": "v164_qwen38_27b_non_authoritative_external_open_set_residual_development",
+    "historicalInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+    "hybridDecisionRule": {
+      "missingObservation": "deterministic ABSTAIN without model invocation",
+      "modelMayOverrideNonResidual": false,
+      "modelMayPruneHypothesesOrAuthorizeAction": false,
+      "nonResidual": "retain the frozen V163 deterministic consensus prediction",
+      "residual": "use the validated shadow model proposal or zero-confidence ABSTAIN fallback"
+    },
+    "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+    "modelManifestSha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+    "parentDeterministicOutcomeLock": "configs/v163-deterministic-open-set-transfer-baselines-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "actualExecutionCount": 0,
+      "adapterTrainingRunCount": 0,
+      "developmentLanguageReadCount": 0,
+      "manualRawResponseInspectionCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedLanguageReadCount": 0,
+      "retryCount": 0
+    },
+    "prompt": {
+      "demonstrationCount": 0,
+      "hiddenFields": [
+        "record_id",
+        "class_label",
+        "truth",
+        "source_intent",
+        "source_scenario",
+        "deterministic_predictions"
+      ],
+      "instruction": "Return exactly the keys status, known_intent, novel_scenario, and confidence. Use KNOWN only when exactly one listed intent matches; copy its exact intent_id into known_intent and set novel_scenario to null. Use NOVEL only for a plausible unlisted capability inside one listed scenario; set known_intent to null and copy that scenario into novel_scenario. Use UNSUPPORTED only when the request is outside every listed scenario; set both other fields to null. Use ABSTAIN when evidence is insufficient or several answers remain possible; set both other fields to null. confidence must be a number from 0 to 1.",
+      "maximumPromptTokens": 4096,
+      "system": "You are an offline, permanently non-authoritative semantic proposer. Classify only the supplied request against the supplied frozen catalog. You cannot define capabilities, remove hypotheses, choose actions, call tools, or execute anything. Return exactly one JSON object and no explanation.",
+      "visibleFields": [
+        "instruction",
+        "visible_catalog",
+        "user_utterance",
+        "response_contract"
+      ]
+    },
+    "qualityGates": {
+      "maximumCombinedHybridFalseKnownAcceptanceRate": 0.05,
+      "maximumCombinedHybridMeanDecisionRegret": 0.85,
+      "maximumResidualConfidenceECE": 0.15,
+      "maximumResidualFalseKnownAcceptanceRate": 0.1,
+      "maximumResidualMeanDecisionRegret": 1.0,
+      "maximumResidualTopConfidence80PercentError": 0.3,
+      "minimumCombinedHybridExactDecisionAccuracy": 0.65,
+      "minimumCombinedRegretImprovementOverFrozenConsensus": 0.1,
+      "minimumResidualExactDecisionAccuracy": 0.6,
+      "minimumResidualKnownExactIntentAccuracy": 0.65,
+      "minimumResidualNovelExactScenarioAccuracy": 0.7,
+      "minimumResidualNovelStatusPrecision": 0.7,
+      "minimumResidualNovelStatusRecall": 0.7,
+      "minimumResidualStatusMacroF1": 0.65,
+      "minimumResidualUnsupportedStatusPrecision": 0.8,
+      "minimumResidualUnsupportedStatusRecall": 0.8,
+      "minimumStructuredResponseValidity": 0.98,
+      "requiredControlledMissingObservationAbstentionAccuracy": 1.0,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "registeredMetrics": [
+      "structured response validity and validation-reason counts",
+      "residual exact decision accuracy and status macro F1",
+      "residual known exact-intent accuracy",
+      "residual novel precision recall and exact-scenario accuracy",
+      "residual unsupported precision and recall",
+      "residual false-known acceptance rate",
+      "residual confidence ECE and top-confidence error",
+      "residual mean shadow decision regret",
+      "combined hybrid exactness false-known rate and regret",
+      "controlled missing-observation abstention and true-hypothesis retention"
+    ],
+    "schemaVersion": "164-local-residual-open-set-transfer-design",
+    "validation": {
+      "completeSafeHypothesisUniverseAlwaysRetained": true,
+      "invalidOutputMapsToV105ZeroConfidenceAbstain": true,
+      "manualRawResponseInspection": false,
+      "rawResponseStoredForAutomaticIntegrityAuditOnly": true,
+      "useExactV105ResponseValidator": true
+    }
+  },
+  "config_sha256": "074185d9ad641027450d6ea89c44a7f3209957c3228a1336ad17723ddafe4ed7",
+  "development_language": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+  "development_language_sha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+  "direct_decoding_evidence": "configs/v154r1-outcome-verifier-repair-outcome-lock.json",
+  "direct_decoding_evidence_sha256": "6b4d819bb89fcb31571d0983735cfa4eb2bf56bcab553ac060a5fbfa4c06d567",
+  "experiment": "v164_local_residual_open_set_transfer_lock",
+  "historical_interface_lock": "configs/v105-open-world-interface-lock.json",
+  "historical_interface_lock_sha256": "7ac661f4d33c6a2ca4c18ebfdd0e151f929b694461ff9f38ef2be0fb5b476671",
+  "historical_interface_outcome": "configs/v105-open-world-interface-outcome-lock.json",
+  "historical_interface_outcome_sha256": "b7529f4d53338af099b82aa5aaaa6df2cb04f776f412afa44c7b6c064b6f48c3",
+  "implementation_audit": "outputs/v164-local-residual-open-set-transfer/implementation-audit.json",
+  "implementation_audit_sha256": "03bb84c2d07d13fb2ff46d2234ca2ed50b52e6d39e71764521d2ff9441a6d454",
+  "interface_config_payload": {
+    "authorityBoundary": {
+      "LLMDefinesCapabilities": false,
+      "LLMExecutesActionOrTool": false,
+      "LLMPrunesHypotheses": false,
+      "LLMSelectsAction": false,
+      "LLMUpdatesPosterior": false,
+      "authoritativeStateIsImmutable": true,
+      "invalidOrMissingOutputCanRemoveTrueHypothesis": false,
+      "realToolAndServiceAccess": false
+    },
+    "controlledInsufficientEvidence": {
+      "construction": "same_frozen_record_identifier_with_observation_available_false_and_no_utterance_exposure",
+      "deterministicRuntimeAction": "ABSTAIN_AND_ASK",
+      "evidenceClaim": "controlled_missing_observation_intervention_only",
+      "modelInvocationRole": "shadow_only",
+      "naturalLanguageEvidenceClaimAllowed": false,
+      "recordsPerRole": 64,
+      "selectionSalt": "simulagent-v105-controlled-missing-observation-v1"
+    },
+    "decisionRule": {
+      "ifAnyInterfaceGateFails": "stop before selected language, baseline, or model access",
+      "ifEveryInterfaceGatePasses": "freeze catalog interface and controlled missing-observation identifiers, then preregister baselines metrics costs calibration and model",
+      "passAuthorizesAPITrainingPlanningOrExecution": false,
+      "passAuthorizesSelectedLanguageOrModelAccess": false
+    },
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "experiment": "v105_massive_typed_open_world_non_authoritative_interface",
+    "hiddenGroundTruthMustNotAppearInVisibleCatalog": [
+      "calendar::calendar_query",
+      "iot::iot_hue_lightoff",
+      "email"
+    ],
+    "interfaceGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHiddenOrUnsupportedSchemaLeakCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSelectedDevelopmentLanguageReadCount": 0,
+      "minimumVisibleUniqueSlotTypeCount": 8,
+      "requiredControlledInsufficientRecordsPerRole": 64,
+      "requiredSafeHypothesisCount": 17,
+      "requiredVisibleIntentCount": 12,
+      "requiredVisibleScenarioCount": 3
+    },
+    "parentLanguageOutcomeLock": "configs/v104-massive-language-extraction-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedTestLanguageReadCount": 0,
+      "selectedDevelopmentLanguageReadCount": 0,
+      "sourceArchiveReadCount": 0
+    },
+    "promptContract": {
+      "includeNoDemonstrations": true,
+      "includeRawUtteranceOnlyWhenObservationAvailable": true,
+      "includeVisibleTypedCatalog": true,
+      "instruction": "Classify the user request against the visible catalog. Use KNOWN only for one listed intent. Use NOVEL when the request is a plausible new capability inside one visible scenario but no listed intent matches. Use UNSUPPORTED when it belongs outside every visible scenario. Use ABSTAIN when evidence is insufficient. Return exactly one JSON object and no explanation.",
+      "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]"
+    },
+    "responseContract": {
+      "allowedStatuses": [
+        "KNOWN",
+        "NOVEL",
+        "UNSUPPORTED",
+        "ABSTAIN"
+      ],
+      "confidenceMaximum": 1.0,
+      "confidenceMinimum": 0.0,
+      "extraKeysAllowed": false,
+      "invalidResponseFallback": {
+        "confidence": 0.0,
+        "known_intent": null,
+        "novel_scenario": null,
+        "status": "ABSTAIN"
+      },
+      "knownStatusRequiresDeclaredKnownIntent": true,
+      "novelStatusRequiresVisibleScenario": true,
+      "requiredKeys": [
+        "status",
+        "known_intent",
+        "novel_scenario",
+        "confidence"
+      ],
+      "unsupportedAndAbstainRequireNullIntentAndScenario": true
+    },
+    "safeHypothesisUniverse": {
+      "LLMMayRankButNeverDeleteHypotheses": true,
+      "declaredKnownHypothesisCount": 12,
+      "insufficientEvidenceHypothesisCount": 1,
+      "scenarioNovelHypothesisCount": 3,
+      "totalHypothesisCount": 17,
+      "trueHypothesisRetentionIsDeterministicallyComplete": true,
+      "unsupportedHypothesisCount": 1
+    },
+    "schemaVersion": "105-open-world-interface-design",
+    "selectedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+    "selectedPopulationSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+    "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+    "visibleDeclaredIntents": [
+      "calendar::calendar_remove",
+      "calendar::calendar_set",
+      "iot::iot_cleaning",
+      "iot::iot_coffee",
+      "iot::iot_hue_lightchange",
+      "iot::iot_hue_lightdim",
+      "iot::iot_hue_lightup",
+      "iot::iot_wemo_off",
+      "iot::iot_wemo_on",
+      "recommendation::recommendation_events",
+      "recommendation::recommendation_locations",
+      "recommendation::recommendation_movies"
+    ],
+    "visibleScenarios": [
+      "calendar",
+      "iot",
+      "recommendation"
+    ]
+  },
+  "lock_payload_sha256": "b673b69b44d14589cb77967b077a6359483ce012a45953f3a876113528c7e7a3",
+  "model_manifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "model_manifest_sha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "parent_baseline_lock": "configs/v163-deterministic-open-set-transfer-baselines-lock.json",
+  "parent_baseline_lock_sha256": "2aa458909b7f17785dbe952c66c79dcc3d448e30cc2111a78598bf5f5861983d",
+  "parent_deterministic_outcome": "configs/v163-deterministic-open-set-transfer-baselines-outcome-lock.json",
+  "parent_deterministic_outcome_sha256": "874ff00c10372c39fe57157feb3b1c6ef685b61204c9e7a18d95d92ab6e905a5",
+  "plan": "docs/v164-local-residual-open-set-transfer-plan.md",
+  "plan_sha256": "e3210b7264e27de135263ed0ab3313bdc0e593e217fd920cb546b24a71de19e7",
+  "protected_language_identity_only": {
+    "fileOpenCount": 0,
+    "path": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+    "sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41"
+  },
+  "protocol": "python/v164_local_residual_open_set_transfer.py",
+  "protocol_sha256": "765ffe3430046aa5c447c1596ff021e270776bce0ea6da2af199c784aa21bc82",
+  "residual_manifest": "outputs/v163-deterministic-open-set-transfer/development-baselines/model-eligible-residual.json",
+  "residual_manifest_sha256": "402c74effa932e0434a62b9cd06e41456a25f3755e312d3cb9bfcd08b16b4750",
+  "runner": "python/run_v164_local_residual_open_set_transfer.py",
+  "runner_sha256": "7e52a4cd911959b378f49bf2ec57bb31c76834395518c3b0d1cd6d3d39691b48",
+  "runtime_versions": {
+    "huggingface-hub": "1.26.0",
+    "mlx": "0.32.0",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.14.1"
+  },
+  "safe_hypothesis_universe": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+  "safe_hypothesis_universe_sha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8",
+  "schema_version": "164-local-residual-open-set-transfer-lock",
+  "tests": "python/test_v164_local_residual_open_set_transfer.py",
+  "tests_sha256": "19fff93e62cf71901e26f2994f63eb3b070533b36bfbf563bfd2e3393c44ed23",
+  "verifier": "python/verify_and_freeze_v164_local_residual_open_set_transfer_outcome.py",
+  "verifier_sha256": "f3f3ed6dcac8cfb471280b6b951ebfb72397ce692144526cef2299b54e3f2359",
+  "visible_catalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "visible_catalog_sha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+}

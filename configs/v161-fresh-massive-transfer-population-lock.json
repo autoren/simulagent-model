@@ -1,0 +1,136 @@
+{
+  "auditor": "python/audit_and_freeze_v161_fresh_massive_transfer_population.py",
+  "auditor_sha256": "241ab6e36fcd0b42dbc29c68a90f622d3d51a5b4ad12071be51c539adc234f92",
+  "authorization": {
+    "manually_inspect_language": false,
+    "modify_salt_exclusions_quotas_roles_or_gates": false,
+    "read_protected_transfer_language": false,
+    "reopen_source_archive_or_extract_selected_language": false,
+    "run_interface_policy_model_hybrid_API_training_induction_authority_action_or_execution": false,
+    "select_and_emit_one_text_free_fresh_transfer_population": true
+  },
+  "config": "configs/v161-fresh-massive-transfer-population.json",
+  "config_payload": {
+    "claimBoundary": "text-free hash selection of unused externally authored MASSIVE identifiers for future controlled open-set transfer; no utterance, interface, policy, model, novelty, calibration, planning, or execution evidence",
+    "classSemantics": {
+      "known_familiar": "externally authored utterance for a declared catalog intent with current-utterance intent-token overlap",
+      "known_unfamiliar": "externally authored utterance for a declared catalog intent without current-utterance intent-token overlap",
+      "novel_valid": "externally authored utterance for one of two valid intents hidden from the declared catalog",
+      "unsupported": "externally authored utterance from the completely withheld email scenario"
+    },
+    "decisionRule": {
+      "ifEveryPopulationAndDisjointnessGatePasses": "freeze_fresh_text_free_massive_transfer_population_authorize_separate_selected_language_extraction_preregistration_only",
+      "otherwise": "close_fresh_massive_transfer_population_before_language_or_model_access",
+      "passingAuthorizesOnlySeparateLanguageExtractionPreregistration": true,
+      "passingDoesNotAuthorizeImmediateLanguageExtractionInterfaceScoringModelAPITrainingInductionAuthorityActionOrExecution": true
+    },
+    "excludedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+    "excludedPopulationFileSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+    "excludedPopulationOutcomeLock": "configs/v101-massive-population-outcome-lock.json",
+    "excludedPopulationPayloadSha256": "284e7d464967a385f711e10c8919a31dc4c36f7ab288dd99721d0b96dcc7d8dc",
+    "experiment": "v161_fresh_disjoint_massive_controlled_open_set_transfer_population",
+    "parentV160OutcomeLock": "configs/v160-model-free-controlled-relational-grammar-policy-outcome-lock.json",
+    "populationGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceArchiveReopenCount": 0,
+      "maximumTrainPartitionCandidateCount": 0,
+      "maximumTrainingRunCount": 0,
+      "minimumIntentCoveragePerClass": {
+        "known_familiar": 6,
+        "known_unfamiliar": 8,
+        "novel_valid": 2,
+        "unsupported": 4
+      },
+      "minimumRemainingCandidateCountPerClassPerRole": 48,
+      "requireRoleIdentifierDisjointness": true,
+      "requiredCandidateCountPerClassPerRole": 48,
+      "requiredCandidateCountPerRole": 192,
+      "requiredExcludedCandidateCount": 512,
+      "requiredKnownScenarioCoverage": 3,
+      "requiredNovelScenarioCoverage": 2,
+      "requiredOverlapWithExcludedPopulation": 0,
+      "requiredTotalCandidateCount": 384,
+      "requiredUnsupportedScenarioCoverage": 1
+    },
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "actualExecutionCount": 0,
+      "excludedPopulationAggregateInspectionCount": 1,
+      "individualCandidateIdentifierInspectionCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "selectedLanguageRecordExtractionCount": 0,
+      "sourceArchiveReopenCount": 0,
+      "textFreeCandidateIndexAggregateInspectionCount": 1,
+      "trainingRunCount": 0
+    },
+    "requiredClasses": [
+      "known_familiar",
+      "known_unfamiliar",
+      "novel_valid",
+      "unsupported"
+    ],
+    "schemaVersion": "161-fresh-massive-transfer-population",
+    "selection": {
+      "baseSalt": "simulagent-v161-fresh-massive-transfer-v1",
+      "excludeEveryV101CandidateBeforeHashSelection": true,
+      "hashSelectionUsesOnlyCandidateIdentifierClassRoleAndScenario": true,
+      "roles": {
+        "development_transfer": {
+          "languageAccessAfterOutcomeLock": "automatic_selected_record_extraction_after_separate_extraction_lock_only",
+          "sourcePartition": "validation"
+        },
+        "protected_transfer": {
+          "languageAccessAfterOutcomeLock": "sealed_until_interface_controls_metrics_and_gates_are_locked",
+          "sourcePartition": "test"
+        }
+      },
+      "scenarioMinimumPerClass": {
+        "known_familiar": 1,
+        "known_unfamiliar": 4,
+        "novel_valid": 1,
+        "unsupported": 0
+      },
+      "selectedCandidateCountPerClassPerRole": 48,
+      "selectionBeforeAnyNewSelectedLanguageExtraction": true
+    },
+    "sourceCandidateIndexSha256": "d436b27715aa3daa6d03116428d41a401c51a5a051792fdf5673aea107c9b46f",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+    "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+    "sourceOutcomeLock": "configs/v100-massive-source-outcome-lock.json"
+  },
+  "config_sha256": "b8ecc59bd0a1832e630a97906806a2eba1768771ac851af464585e5c0ff5c2e2",
+  "design_audit": "outputs/v161-fresh-massive-transfer-population/design-audit.json",
+  "design_audit_sha256": "1e3496126a1c6c50d74ee5ae4956cdfd28403856e1736559c9cd758a1a214a3c",
+  "excluded_population": "outputs/v101-massive-population/population/selected-population.json",
+  "excluded_population_sha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "exclusion_outcome": "configs/v101-massive-population-outcome-lock.json",
+  "exclusion_outcome_sha256": "ed584eb48d9b4412c759c9ce43af07de7b5427e875ac9899141301ee6239c130",
+  "experiment": "v161_fresh_disjoint_massive_controlled_open_set_transfer_population",
+  "lock_payload_sha256": "d20d5a2dfa335bc4a2c9e13c131fb0f9406901754d3962988cbbb377bbdb19df",
+  "parent_V160_outcome": "configs/v160-model-free-controlled-relational-grammar-policy-outcome-lock.json",
+  "parent_V160_outcome_sha256": "e18c575c09b1530ecc54ecada495d22fa94247c12cf569ee227d0b50bb06b7fe",
+  "plan": "docs/v161-fresh-massive-transfer-population-plan.md",
+  "plan_sha256": "f7a2b70779b65d0434090fb2159e47ea0765f9e3dec45406bb3170a156331731",
+  "protocol": "python/v161_fresh_massive_transfer_population.py",
+  "protocol_sha256": "9076498479b75b253201ff63d0d841d753a5f0b244b45b19dd3c5036884de225",
+  "runner": "python/run_v161_fresh_massive_transfer_population.py",
+  "runner_sha256": "64b8a3c85d87cdd8b04943722bcc6f90dc58c17036f86e979ff25b8f941191dd",
+  "schema_version": "161-fresh-massive-transfer-population-lock",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "source_outcome": "configs/v100-massive-source-outcome-lock.json",
+  "source_outcome_sha256": "8a39a298da37891dd1d2654e475aec92789e282a60579a1362590ebd08fe51ab",
+  "tests": "python/test_v161_fresh_massive_transfer_population.py",
+  "tests_sha256": "3d4a159c5620e0dc88e3d499764ed84a63aa91b2614a2a7cb0d2f8d07793710d",
+  "verifier": "python/verify_and_freeze_v161_fresh_massive_transfer_population_outcome.py",
+  "verifier_sha256": "24ccd18a3425976e6e9c5cd54d0a536e5b54ef195e0a3477775115b75fc0af5a"
+}

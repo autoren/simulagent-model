@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "190-protected-multiway-menu-compression-confirmation",
+  "experiment": "v190_fresh_protected_identity_confirmation_of_fixed_multiway_menu_compression",
+  "parentV189OutcomeLock": "configs/v189-multiway-typed-channel-feasibility-outcome-lock.json",
+  "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "protectedBindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/protected-bindings.json",
+  "sourceV189Result": "outputs/v189-multiway-typed-channel-feasibility/feasibility/result.json",
+  "fixedPolicy": {
+    "questionSequence": ["M189_domain", "M189_intent_concept"],
+    "singletonEarlyStopping": true,
+    "questionSelectionUsesNoProtectedPriorTargetOrOutcome": true,
+    "noPolicyOptimizationOrReselection": true,
+    "pricingRule": "zero-overhead bit-slot cost 0.10*ceil(log2(k)) over reachable categories",
+    "genericTrustedClarificationCost": 0.40,
+    "missingObservationCost": 0.0
+  },
+  "controls": [
+    "always_generic_trusted_clarification",
+    "flat_global_intent_menu",
+    "domain_only_then_generic"
+  ],
+  "confirmationGates": {
+    "requiredProtectedBindingCount": 132,
+    "requiredObservedProtectedCount": 120,
+    "requiredMissingProtectedCount": 12,
+    "requiredContractCount": 14,
+    "requiredPositivePriorContractCount": 14,
+    "requiredFixedSequence": ["M189_domain", "M189_intent_concept"],
+    "requiredObservedFinalExactnessRate": 1.0,
+    "requiredTargetRetentionRate": 1.0,
+    "requiredTypedCompletionRate": 1.0,
+    "requiredMissingInsufficientRate": 1.0,
+    "maximumFixedPolicyMeanCost": 0.395,
+    "minimumImprovementOverAlwaysGeneric": 0.005,
+    "maximumMeanTurnCount": 1.90,
+    "maximumAbsoluteDevelopmentProtectedCostDifference": 0.02,
+    "requiredFlatIntentMenuCost": 0.40,
+    "requiredPolicyOptimizationCount": 0,
+    "maximumProtectedUtteranceLanguageReadCount": 0,
+    "maximumUtteranceOrDialogueLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryFreshCompressionSafetyAndCostGatePasses": "freeze_V190_confirmed_multiway_menu_compression_without_adaptive_claim",
+    "otherwise": "freeze_V190_negative_or_mixed_confirmation_and_close_multiway_channel",
+    "passAuthorizesImmediateLanguageModelUIOrHumanClaim": false,
+    "passAuthorizesProtectedUtteranceAccess": false,
+    "passAuthorizesRegistrationAuthorityActionOrExecution": false
+  },
+  "preLockExposure": {
+    "protectedBindingRecordReadCount": 0,
+    "protectedTargetPathScoreCount": 0,
+    "policyOptimizationCount": 0,
+    "protectedUtteranceLanguageReadCount": 0,
+    "modelLoadCount": 0,
+    "actualExecutionCount": 0
+  },
+  "claimBoundary": "fresh text-free confirmation of fixed hierarchical menu compression over protected identities; not repair of V189, adaptive planning value, raw-language understanding, human/UI burden evidence, model/deployed answer reliability, open-world discovery, protected utterance evidence, registration, authority, action, or execution"
+}

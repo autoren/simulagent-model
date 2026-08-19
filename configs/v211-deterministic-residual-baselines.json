@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "211-deterministic-residual-baselines-design",
+  "experiment": "v211_group_disjoint_deterministic_residual_baselines_and_decision_impact",
+  "parentV210OutcomeLock": "configs/v210-controlled-language-population-projection-outcome-lock.json",
+  "referenceV209r1OutcomeLock": "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "claimBoundary": "development-only deterministic analysis of whether the V210 paraphrase/opaque residual is genuinely model-relevant, with calibration truth allowed only for fitting lexical mappings and evaluation truth joined only after prediction freeze; not protected transfer, natural-language generalization, model evaluation, empirical likelihood calibration, authority, action, or execution",
+  "population": {
+    "inputDevelopmentSurface": "outputs/v210-controlled-language-population-projection/population/development-surfaces.jsonl",
+    "inputDevelopmentTruth": "outputs/v210-controlled-language-population-projection/population/development-truth.jsonl",
+    "inputDevelopmentProjection": "outputs/v210-controlled-language-population-projection/evaluation/development-projection.jsonl",
+    "eligibleCounterfactualTypes": ["MATCHED_PARAPHRASE", "OPAQUE_RENAMING"],
+    "inputResidualCount": 180,
+    "groupCount": 90,
+    "recordsPerGroup": 2,
+    "splitSeed": 21101,
+    "calibrationGroupCount": 45,
+    "evaluationGroupCount": 45,
+    "calibrationRecordCount": 90,
+    "evaluationRecordCount": 90,
+    "calibrationGroupIdHash": "635cd2852bc3e8a0ecf14d42bf750080d16e63e366ccb86d962f31546c884b7e",
+    "evaluationGroupIdHash": "0e45d60ada33abc4eb06cdbcaab1c78bdecb94b6c9658dba3755cf59e9eecbec",
+    "calibrationRecordIdHash": "8caacc63848afc4c4d87b09a5a3fd4743b94d868f37e9fe4d30d8a71f2601388",
+    "evaluationRecordIdHash": "f9176844547535aafd655bdfaeb4db4b2125600da3dec829835d79f64960d170",
+    "splitUsesIdentifiersOnly": true,
+    "groupDisjoint": true,
+    "protectedArtifactsRemainClosed": true
+  },
+  "baselines": {
+    "tokenization": "casefold_unicode_alphanumeric_tokens",
+    "minimumCalibrationTokenCount": 2,
+    "RAW_LEXICAL": {
+      "fit": "retain tokens seen at least minimum count and with exactly one semantic observation across calibration truth",
+      "predict": "emit the unique label among retained tokens in the utterance; otherwise ABSTAIN"
+    },
+    "COMPOSITIONAL_RESPONSE_SPAN": {
+      "fit": "learn context-span tokens as tokens observed under at least two labels within each context; remove them, then retain globally label-pure response tokens at minimum count",
+      "predict": "compose a context-specific span remover with the learned response-token map; emit the unique remaining label or ABSTAIN without matching a sentence template"
+    },
+    "ABSTENTION_FIRST_CONSENSUS": {
+      "predict": "accept only identical non-ABSTAIN RAW_LEXICAL and CONTEXT_CONTRAST predictions; otherwise ABSTAIN"
+    },
+    "ABSTAIN_ALWAYS": {"predict": "ABSTAIN"},
+    "predictionInputFields": ["record_id", "context_id", "utterance"],
+    "forbiddenPredictionFields": ["group_id", "semantic_regime", "task_state", "semantic_observation_id", "source_probability", "history", "stage", "clarification_action"],
+    "evaluationTruthReadDuringFitOrPrediction": false,
+    "protectedReadDuringFitPredictionOrScoring": false
+  },
+  "decisionImpact": {
+    "observationUseRule": "a non-ABSTAIN projection selects the frozen V209r1 exact continuation associated with that observation; ABSTAIN selects safe defer",
+    "wrongProjectionEvaluation": "evaluate the selected continuation under the posterior induced by the true observation and preceding context history",
+    "weighting": "within each evaluation context and counterfactual type, normalize semantic-regime prior times state prior times true source probability over included support records; macro-average context-counterfactual cells",
+    "safeDeferralReward": -2.0,
+    "returnScale": 120.0,
+    "modelScoresOrRanksUsedAsLikelihoods": false
+  },
+  "artifacts": {
+    "split": "outputs/v211-deterministic-residual-baselines/evaluation/split.json",
+    "calibrationSurface": "outputs/v211-deterministic-residual-baselines/firewall/calibration-surfaces.jsonl",
+    "calibrationTruth": "outputs/v211-deterministic-residual-baselines/firewall/calibration-truth.jsonl",
+    "evaluationSurface": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-surfaces.jsonl",
+    "evaluationTruthSealed": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-truth-sealed.jsonl",
+    "learnedLexicon": "outputs/v211-deterministic-residual-baselines/evaluation/learned-lexicon.json",
+    "predictions": "outputs/v211-deterministic-residual-baselines/evaluation/predictions.jsonl",
+    "predictionFreeze": "outputs/v211-deterministic-residual-baselines/evaluation/prediction-freeze.json",
+    "summary": "outputs/v211-deterministic-residual-baselines/evaluation/summary.json",
+    "result": "outputs/v211-deterministic-residual-baselines/evaluation/result.json"
+  },
+  "gates": {
+    "requiredInputResidualCount": 180,
+    "requiredGroupDisjointness": true,
+    "requiredCalibrationRecordCount": 90,
+    "requiredEvaluationRecordCount": 90,
+    "requiredEvaluationPredictionCountPerBaseline": 90,
+    "requiredEvaluationTruthReadDuringFitOrPredictionCount": 0,
+    "requiredProtectedReadCount": 0,
+    "minimumAcceptedAccuracyForAnyAcceptingBaseline": 1.0,
+    "maximumFalseAcceptanceCountForAnyBaseline": 0,
+    "maximumConsensusCounterfactualDisagreementRate": 0.0,
+    "maximumConsensusNormalizedDecisionRegret": 0.0,
+    "minimumAbstainAlwaysNormalizedDecisionRegret": 0.001,
+    "requiredPredictionFreezeBeforeTruthJoin": true,
+    "requiredPredictionWorkerEvaluationTruthPathCount": 0,
+    "requiredPredictionWorkerGroupIdReadCount": 0,
+    "requiredFiniteMetrics": true,
+    "maximumFallbackCount": 0,
+    "modelEligibleResidualMinimumCount": 18,
+    "modelEligibleResidualMaximumCount": 72,
+    "modelEligibleResidualRequiredRegimeCount": 3,
+    "modelEligibleResidualRequiredStateCount": 2,
+    "modelEligibleResidualRequiredContextCount": 5,
+    "modelEligibleResidualRequiredObservationCount": 3,
+    "modelEligibleResidualMinimumNormalizedDecisionRegret": 0.001
+  },
+  "accessGates": {
+    "requiredDeterministicEvaluationCount": 1,
+    "maximumProtectedSurfaceOrTruthReadCount": 0,
+    "maximumEvaluationTruthReadDuringFitOrPredictionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "identifierOnlySplitEnumerationCount": 180,
+    "splitHashComputationCount": 4,
+    "developmentResidualSurfaceReadCount": 0,
+    "developmentResidualTruthReadCount": 0,
+    "protectedSurfaceOrTruthReadCount": 0,
+    "baselineFitOrPredictionCount": 0,
+    "modelLoadOrGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifAllIntegritySafetyDecisionAndAccessGatesPassAndConsensusResidualIsZero": "freeze_V211_positive_deterministic_closure_with_zero_model_eligibility_and_design_new_identifiable_open_class_population",
+    "ifAllIntegritySafetyDecisionAndAccessGatesPassAndResidualMeetsEveryModelEligibilityGate": "freeze_V211_positive_nontrivial_model_eligible_residual_and_authorize_separate_local_model_design_only",
+    "otherwise": "freeze_V211_negative_or_ineligible_without_split_baseline_metric_gate_or_protected_tuning",
+    "zeroResidualAuthorizesModel": false,
+    "nontrivialEligibleResidualAuthorizesOnlySeparateLocalModelDesign": true,
+    "passAuthorizesProtectedOpeningOrImmediateModelRun": false,
+    "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

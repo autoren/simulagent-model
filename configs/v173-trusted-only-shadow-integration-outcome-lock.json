@@ -1,0 +1,745 @@
+{
+  "audit": "outputs/v173-trusted-only-shadow-integration/outcome-audit.json",
+  "audit_sha256": "f7420eb0d800f26a9c9f44e3c0db1169bf4947ad1576bc6478e8e40bd7839b46",
+  "authorization": {
+    "allow_planner_model_hidden_target_or_provisional_commit_authority": false,
+    "call_real_service_mutate_real_state_or_execute": false,
+    "design_nonoverlapping_integration_confirmation": false,
+    "modify_rerun_select_subsample_or_tune_V173": false,
+    "retain_outcome_without_posthoc_selection": true,
+    "run_confirmation_without_separate_population_and_lock": false
+  },
+  "experiment": "v173_unchanged_planner_policies_through_deterministic_consensus_gate_and_reversible_sandbox",
+  "integration_lock": "configs/v173-trusted-only-shadow-integration-lock.json",
+  "integration_lock_sha256": "e9d20e42d149c1299a753889f60a39e29d111521124a341a81d989f6481b1652",
+  "integration_summary": "outputs/v173-trusted-only-shadow-integration/evaluation/integration-summary.json",
+  "integration_summary_sha256": "3719a84bca188b376b39a17ff2d802659754f7e0a72388a161be40d7e6f3a6e6",
+  "lock_payload_sha256": "909b611aaaa93f38fbd4dc25ff6b1d9c39ca6aef89fcc78ed7a224c5625a625b",
+  "outcome": {
+    "beneficial": false,
+    "decision": "freeze_V173_as_safe_nonbeneficial_boundary_and_stop_before_confirmation",
+    "passed": true,
+    "scientific_safety_gates_passed": true,
+    "strong_integration": false,
+    "summary": {
+      "deterministic_gate_reconstruction_rate": 1.0,
+      "eligible_state_count": 132,
+      "per_class_policy_metrics": {
+        "alias": {
+          "exact_bayes_adaptive": {
+            "expected_queries": {
+              "decimal": 1.9545454545454546,
+              "denominator": 22,
+              "numerator": 43
+            },
+            "routed_total_risk": {
+              "decimal": 2.1954545454545453,
+              "denominator": 220,
+              "numerator": 483
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "forced_map_no_query": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "greedy_class_information_gain": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "no_query_bayes_terminal": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "optimal_open_loop_pair": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "oracle_class": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "trusted_completion": {
+              "decimal": 1.0,
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "random_open_loop_pair": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          }
+        },
+        "composition": {
+          "exact_bayes_adaptive": {
+            "expected_queries": {
+              "decimal": 1.9545454545454546,
+              "denominator": 22,
+              "numerator": 43
+            },
+            "routed_total_risk": {
+              "decimal": 2.1954545454545453,
+              "denominator": 220,
+              "numerator": 483
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "forced_map_no_query": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "greedy_class_information_gain": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "no_query_bayes_terminal": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "optimal_open_loop_pair": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "oracle_class": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "trusted_completion": {
+              "decimal": 1.0,
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "random_open_loop_pair": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          }
+        },
+        "provisional_primitive": {
+          "exact_bayes_adaptive": {
+            "expected_queries": {
+              "decimal": 1.5097029407374234,
+              "denominator": 13398,
+              "numerator": 20227
+            },
+            "routed_total_risk": {
+              "decimal": 2.1509702940737423,
+              "denominator": 133980,
+              "numerator": 288187
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "forced_map_no_query": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "greedy_class_information_gain": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "no_query_bayes_terminal": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "optimal_open_loop_pair": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "oracle_class": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "random_open_loop_pair": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          }
+        }
+      },
+      "planner_commit_authorization_count": 0,
+      "policy_count": 7,
+      "policy_coverage": 1.0,
+      "policy_metrics": {
+        "exact_bayes_adaptive": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 1.8062646166094443,
+              "denominator": 40194,
+              "numerator": 72601
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 0.8300396921086576,
+              "denominator": 261261,
+              "numerator": 216857
+            },
+            "provisional_deferral": {
+              "decimal": 0.16996030789134237,
+              "denominator": 261261,
+              "numerator": 44404
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 1.2030724065206824,
+              "denominator": 2612610,
+              "numerator": 3143159
+            },
+            "routed_total_risk": {
+              "decimal": 2.1806264616609443,
+              "denominator": 401940,
+              "numerator": 876481
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "state_count": 132
+        },
+        "forced_map_no_query": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 1.0,
+              "denominator": 1,
+              "numerator": 1
+            },
+            "provisional_deferral": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 3.3333333333333335,
+              "denominator": 3,
+              "numerator": 10
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "state_count": 132
+        },
+        "greedy_class_information_gain": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 0.8216802354733389,
+              "denominator": 261261,
+              "numerator": 214673
+            },
+            "provisional_deferral": {
+              "decimal": 0.17831976452666107,
+              "denominator": 261261,
+              "numerator": 46588
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 1.2428020255606462,
+              "denominator": 41470,
+              "numerator": 51539
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "state_count": 132
+        },
+        "no_query_bayes_terminal": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 1.0,
+              "denominator": 1,
+              "numerator": 1
+            },
+            "provisional_deferral": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "routed_total_risk": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "state_count": 132
+        },
+        "optimal_open_loop_pair": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 0.8347016967706623,
+              "denominator": 1827,
+              "numerator": 1525
+            },
+            "provisional_deferral": {
+              "decimal": 0.16529830322933772,
+              "denominator": 1827,
+              "numerator": 302
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 1.2317699541837472,
+              "denominator": 82940,
+              "numerator": 102163
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "state_count": 132
+        },
+        "oracle_class": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "provisional_deferral": {
+              "decimal": 0.3333333333333333,
+              "denominator": 3,
+              "numerator": 1
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "routed_total_risk": {
+              "decimal": 0.6666666666666666,
+              "denominator": 3,
+              "numerator": 2
+            },
+            "trusted_completion": {
+              "decimal": 0.6666666666666666,
+              "denominator": 3,
+              "numerator": 2
+            }
+          },
+          "state_count": 132
+        },
+        "random_open_loop_pair": {
+          "metrics": {
+            "expected_queries": {
+              "decimal": 2.0,
+              "denominator": 1,
+              "numerator": 2
+            },
+            "false_trusted_route": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "mixed_deferral": {
+              "decimal": 0.8302394923084578,
+              "denominator": 1306305,
+              "numerator": 1084546
+            },
+            "provisional_deferral": {
+              "decimal": 0.16976050769154216,
+              "denominator": 1306305,
+              "numerator": 221759
+            },
+            "provisional_sandbox_entry": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            },
+            "recommendation_total_risk": {
+              "decimal": 1.5057284669353634,
+              "denominator": 53592,
+              "numerator": 80695
+            },
+            "routed_total_risk": {
+              "decimal": 2.2,
+              "denominator": 5,
+              "numerator": 11
+            },
+            "trusted_completion": {
+              "decimal": 0.0,
+              "denominator": 1,
+              "numerator": 0
+            }
+          },
+          "state_count": 132
+        }
+      },
+      "prior_weight_normalization_rate": 1.0,
+      "sandbox_authorized_mutations": 1.0,
+      "sandbox_exact_final_state": 1.0,
+      "sandbox_invariant_preservation": 1.0,
+      "sandbox_provenance_validity": 1.0,
+      "sandbox_restart_verification": 1.0,
+      "simulated_sandbox_transaction_count": 372,
+      "source_V167_recommendation_risk_reconstruction_rate": 1.0,
+      "state_count_with_strict_exact_routed_risk_improvement_over_no_query": 0,
+      "statewise_exact_no_worse_than_every_nonoracle_policy_rate": 0.0,
+      "target_case_count": 4224,
+      "target_membership_coverage": 1.0,
+      "target_policy_score_count": 29568,
+      "target_result_payload_sha256": "295b8584f7ac1a875213b28d853fb94324c0cbfd7c8b91352a51b9448f71f482"
+    }
+  },
+  "parent_V172_outcome": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "parent_V172_outcome_sha256": "689c73b050805591a9d2eda4f2330d5443bbbad0aac59efa7084ca57a443b7fb",
+  "result": "outputs/v173-trusted-only-shadow-integration/evaluation/result.json",
+  "result_sha256": "215ae1bb849a6ffab8e6e618c32152d18adbb6c164cb76aed29fd70c2c8e6880",
+  "results_document": "docs/v173-trusted-only-shadow-integration-results.md",
+  "results_document_sha256": "e4ab149b1bbd76c3e23cd9fd8b74bfded244a983ddf2fe11523df45186ec29ff",
+  "schema_version": "173-trusted-only-shadow-integration-outcome-lock",
+  "source_V170_outcome": "configs/v170-unchanged-planner-fresh-confirmation-outcome-lock.json",
+  "source_V170_outcome_sha256": "47a6dff2b6a6189470ed6376c0f5b97b0b945f48f8a399c1d14b1ae8843428e4",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "state_policy_results": "outputs/v173-trusted-only-shadow-integration/evaluation/state-policy-results.json",
+  "state_policy_results_sha256": "821ee1408321548287d31a81118815e5232f4e90b7b8e36dd59b5aef5d57fc9e",
+  "target_result_digest": "outputs/v173-trusted-only-shadow-integration/evaluation/target-result-digest.json",
+  "target_result_digest_sha256": "9adaf7d9326a1df8e21632065997f7876d4a4c2deff0f43ba3faa33a037c340d",
+  "verifier": "python/verify_and_freeze_v173_trusted_only_shadow_integration_outcome.py",
+  "verifier_sha256": "b358942138ec1a7e4e3342fe37f7587d1611f7a41568c2bdae7979dd746617b2"
+}

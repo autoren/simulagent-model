@@ -1,0 +1,130 @@
+{
+  "schema_version": "model_free_reference_architecture.v1",
+  "architecture_id": "simulagent_model_free_uncertainty_aware_reference",
+  "artifact_role": "software_and_claim_consolidation_only_not_a_new_experiment",
+  "claim_boundary": "A deterministic integration of already-frozen project-authored mechanisms. Passing the harness demonstrates interface compatibility and preserved invariants, not new scientific evidence, end-to-end external validation, natural-language understanding, empirical semantic likelihoods, human behavior, deployment, authority, action, or execution.",
+  "components": [
+    {
+      "component_id": "typed_hypothesis_and_version_space",
+      "implementation": "python/v165_factored_ontology_identifiability_population.py and python/v167_exact_evidence_gathering_planner.py",
+      "frozen_outcomes": [
+        "configs/v165r1-outcome-verifier-repair-outcome-lock.json",
+        "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+        "configs/v214-deterministic-candidate-version-space-controls-outcome-lock.json"
+      ],
+      "interface": "finite typed candidate IDs, exact class-balanced weights, exact conditioning, no similarity-based singleton collapse",
+      "invariant": "weights normalize; inconsistent candidates receive zero mass; every candidate remains provisional until a trusted unanimous route"
+    },
+    {
+      "component_id": "outside_semantic_belief_and_terminal_planning",
+      "implementation": "python/v205_terminally_proper_open_world_semantic_pomdp.py",
+      "frozen_outcomes": [
+        "configs/v205-terminally-proper-open-world-semantic-pomdp-outcome-lock.json",
+        "configs/v209r1-controlled-language-observation-pomdp-shape-repair-outcome-lock.json"
+      ],
+      "interface": "belief over state crossed with known codebooks plus OUTSIDE_UNKNOWN; calibrate/inspect/repair/defer actions",
+      "invariant": "common-support sensing, explicit outside regime, normalized posterior, mandatory repair settlement, unfinished sensing terminates by safe defer"
+    },
+    {
+      "component_id": "value_of_information_and_certificate_policy",
+      "implementation": "python/v175_certification_aware_planner_development.py",
+      "frozen_outcomes": [
+        "configs/v175-certification-aware-planner-development-outcome-lock.json",
+        "configs/v177-certification-aware-planner-fresh-confirmation-outcome-lock.json"
+      ],
+      "interface": "exact optional-stopping policy over available binary evidence queries and terminal route risk",
+      "invariant": "query only when expected routed-risk reduction exceeds cost; false trusted route and provisional sandbox entry remain forbidden"
+    },
+    {
+      "component_id": "one_corruption_robust_evidence",
+      "implementation": "python/v179_triple_repetition_robust_feasibility.py and python/v180_triple_repetition_robust_planner_development.py",
+      "frozen_outcomes": [
+        "configs/v179-triple-repetition-robust-feasibility-outcome-lock.json",
+        "configs/v180-triple-repetition-robust-planner-development-outcome-lock.json",
+        "configs/v182-triple-repetition-robust-planner-fresh-confirmation-outcome-lock.json"
+      ],
+      "interface": "three raw inspections per selected binary query, majority decoding, clean-version-space conditioning",
+      "invariant": "any one flipped raw inspection per triple leaves the decoded query outcome and surviving exact version space unchanged"
+    },
+    {
+      "component_id": "conservative_other_defer_controller",
+      "implementation": "python/v173_trusted_only_shadow_integration.py plus finite-channel boundary from V190 and decision controller from V202",
+      "frozen_outcomes": [
+        "configs/v190-protected-multiway-menu-compression-confirmation-outcome-lock.json",
+        "configs/v202-model-free-controller-decision-sufficiency-outcome-lock.json"
+      ],
+      "interface": "route only a unanimously trusted registered class; otherwise preserve the version space and return OTHER_DEFER",
+      "invariant": "proposal rank cannot remove hypotheses, become posterior mass, or authorize sandbox entry"
+    },
+    {
+      "component_id": "reversible_sandbox",
+      "implementation": "python/v168_fixed_ontology_reversible_sandbox.py",
+      "frozen_outcomes": [
+        "configs/v168-fixed-ontology-reversible-sandbox-outcome-lock.json",
+        "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json"
+      ],
+      "interface": "preview-bound local in-memory transaction, exact commit parity, independent verification, rollback, hash-chained provenance",
+      "invariant": "only fixed trusted ontology enters; preview is nonmutating; invalid/stale/tampered commits do not mutate; verification failure restores the complete prior state"
+    },
+    {
+      "component_id": "optional_non_authoritative_proposal_provider",
+      "implementation": "not invoked by the reference harness",
+      "frozen_outcomes": [
+        "configs/v198-protected-language-menu-ranker-confirmation-outcome-lock.json",
+        "configs/v201r2-repair-decision-label-verification-outcome-lock.json"
+      ],
+      "interface": "optional bounded top-k finite-menu proposals normalized before the trusted controller",
+      "invariant": "disabled by default; full trusted hypothesis set is retained; no confidence-to-likelihood conversion; no authority"
+    },
+    {
+      "component_id": "external_catalog_reconstruction_adapter",
+      "implementation": "not invoked by the reference harness",
+      "frozen_outcomes": [
+        "configs/v221r1-parser-config-repair-outcome-lock.json",
+        "configs/v224r2-two-stage-query-execution-repair-outcome-lock.json"
+      ],
+      "interface": "retrospective versioned catalog candidates only",
+      "invariant": "catalog reconstruction is never relabeled as prospective speaker semantics; V224 leaves the empirical semantic adapter absent"
+    }
+  ],
+  "integration_fixture": {
+    "role": "deterministic_software_fixture_only_not_scientific_population",
+    "candidate_ids": [
+      "C015",
+      "C003",
+      "C001"
+    ],
+    "target_candidate_id": "C015",
+    "expected_target_class": "alias",
+    "certificate_horizon": 5,
+    "query_cost": "1/10",
+    "corrupt_exactly_one_raw_inspection": true,
+    "other_or_uninterpretable_observation": "OTHER",
+    "expected_other_route": "defer",
+    "sandbox_scenario": "valid_retain",
+    "semantic_pomdp_config": "configs/v205-terminally-proper-open-world-semantic-pomdp.json",
+    "sandbox_config": "configs/v168-fixed-ontology-reversible-sandbox.json",
+    "planner_config": "configs/v167-exact-evidence-gathering-planner.json"
+  },
+  "integration_gates": {
+    "all_source_outcome_payload_locks_valid": true,
+    "initial_and_conditioned_beliefs_normalize": true,
+    "certificate_policy_reaches_unanimous_expected_trusted_class": true,
+    "single_corruption_majority_decode_matches_clean_truth": true,
+    "raw_robust_and_clean_decoded_survivors_match": true,
+    "OTHER_preserves_full_version_space_and_defers": true,
+    "only_trusted_unanimous_route_enters_sandbox": true,
+    "sandbox_preview_commit_verification_and_provenance_pass": true,
+    "outside_semantic_oracle_and_terminal_settlement_audit_pass": true,
+    "model_API_training_protected_language_registration_real_action_and_execution_counts_zero": true
+  },
+  "authority_boundary": {
+    "candidate_registration_allowed": false,
+    "model_or_API_required": false,
+    "model_rank_is_likelihood": false,
+    "protected_or_request_language_access_allowed": false,
+    "trusted_state_mutation_allowed": false,
+    "external_service_or_tool_target_exists": false,
+    "actual_execution_allowed": false
+  }
+}

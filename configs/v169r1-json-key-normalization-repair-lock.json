@@ -1,0 +1,80 @@
+{
+  "V169_result": "outputs/v169-fresh-constraint-state-population/population/result.json",
+  "V169_result_sha256": "ad80dea60f3c3a6c68c994c6d96cfddb2ae09233828028427c6930bfe640b1b5",
+  "auditor": "python/audit_and_freeze_v169r1_json_key_normalization_repair.py",
+  "auditor_sha256": "a827d66df4e3513928c1029e26cad424ccbae86bcdaa8e2ca2cc6262371e9319",
+  "config": "configs/v169r1-json-key-normalization-repair.json",
+  "config_payload": {
+    "accessGates": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "plannerPolicyScoreCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0
+    },
+    "decisionRule": {
+      "ifRepairReconstructsExactly": "freeze_corrected_V169_through_V169r1_and_authorize_separate_unchanged_planner_preregistration",
+      "otherwise": "reject_V169r1_and_leave_population_unfrozen",
+      "passAuthorizesImmediatePlannerRun": false,
+      "passAuthorizesModelRegistrationAuthorityActionOrExecution": false
+    },
+    "diagnosis": {
+      "decisionChanges": false,
+      "expectedFailedChecks": [
+        "gates_summary_and_decision_reconstruct_exactly",
+        "population_outputs_reconstruct_exactly"
+      ],
+      "persistedKeys": [
+        "1",
+        "2",
+        "3"
+      ],
+      "reconstructedInMemoryKeys": [
+        1,
+        2,
+        3
+      ],
+      "repair": "compare independently reconstructed artifacts after canonical JSON round-trip normalization",
+      "scientificPopulationPassed": true,
+      "soleMismatchPath": "summary.class_coverage_counts object keys"
+    },
+    "experiment": "v169r1_verifier_only_JSON_object_key_normalization_repair",
+    "failedV169OutcomeAudit": "outputs/v169-fresh-constraint-state-population/outcome-audit.json",
+    "nominalV169Outcome": "configs/v169-fresh-constraint-state-population-outcome-lock.json",
+    "parentV169PopulationLock": "configs/v169-fresh-constraint-state-population-lock.json",
+    "repairBoundary": {
+      "changePopulationMembershipEligibilityMetricsGatesOrDecision": false,
+      "createNominalV169Outcome": false,
+      "freezeOnlyUnderV169r1": true,
+      "modifyOrRebuildV169": false
+    },
+    "schemaVersion": "169r1-json-key-normalization-repair-design",
+    "v169Result": "outputs/v169-fresh-constraint-state-population/population/result.json"
+  },
+  "config_sha256": "0e48b65ba4034ffa7be09f861aec12185101170930af8f98a4b0bf873f47c77e",
+  "design_audit": "outputs/v169r1-json-key-normalization-repair/design-audit.json",
+  "design_audit_sha256": "f5af497afd25dfbbe4f2e88d69adf610decc675158f5ac8b63b0a7da9c281765",
+  "experiment": "v169r1_verifier_only_JSON_object_key_normalization_repair",
+  "failed_V169_outcome_audit": "outputs/v169-fresh-constraint-state-population/outcome-audit.json",
+  "failed_V169_outcome_audit_sha256": "656c0192bab18a0776bf9d49a6a35e339394f0afcc212ee02c256b24e73fc7b6",
+  "lock_payload_sha256": "e6701c5f69ecaa66aef89adb55a28feadec6aa53836d2b68049afa8acd33c395",
+  "parent_V169_population_lock": "configs/v169-fresh-constraint-state-population-lock.json",
+  "parent_V169_population_lock_sha256": "f42eaf0136d1c3274f6826841fc6fa704813c7c7f9df57d01926342f9a5406ae",
+  "plan": "docs/v169r1-json-key-normalization-repair-plan.md",
+  "plan_sha256": "fe335769ca98ea385fa3cf293e959c19a24e917542e8957346ec2e4ddc69fa7c",
+  "protocol": "python/v169r1_json_key_normalization_repair.py",
+  "protocol_sha256": "827fb21154a38ae5bebfedf5c1552601fbaa05796a7fc095af845fff7d4a3fb4",
+  "results_document": "docs/v169-fresh-constraint-state-population-results.md",
+  "results_document_sha256": "47a38c2c1050eb9ba1a7185f6c6de0936e4a78c2531183733d80f7e1ef24e865",
+  "schema_version": "169r1-json-key-normalization-repair-lock",
+  "tests": "python/test_v169r1_json_key_normalization_repair.py",
+  "tests_sha256": "90616ce2b15c59bfc25f3242d2bdbb42927547c5bccfdc3dc9943db7f3c6ec17",
+  "verifier": "python/verify_and_freeze_v169r1_json_key_normalization_repair.py",
+  "verifier_sha256": "c9127e9ed66bd03898eb979751c542e8e69226ab431089f7f16c10d8e390ffab"
+}

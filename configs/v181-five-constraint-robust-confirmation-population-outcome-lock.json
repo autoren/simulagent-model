@@ -1,0 +1,70 @@
+{
+  "audit": "outputs/v181-five-constraint-robust-confirmation-population/outcome-audit.json",
+  "audit_sha256": "79d43ca4c95ff3eed7b2bc60f55d7f07c5b1a8ed5b09a89d3e672d47108bced9",
+  "authorization": {
+    "modify_or_rebuild_V181": false,
+    "preregister_one_unchanged_V180_robust_confirmation": true,
+    "run_model_register_mutate_real_state_call_sensor_service_or_execute": false,
+    "score_or_run_confirmation_without_separate_lock": false,
+    "select_subsample_or_tune_using_V181_outcomes": false
+  },
+  "constraint_states": "outputs/v181-five-constraint-robust-confirmation-population/population/constraint-states.json",
+  "constraint_states_sha256": "9dd39f247265cbb90ad94f5f91feb718150f9f4e03b27bce46d2c855c71df333",
+  "eligible_state_ids": "outputs/v181-five-constraint-robust-confirmation-population/population/confirmation-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "f8905c237ef328ded5eca86235e462efbce930c4c120e45894636c56990cb8c1",
+  "experiment": "v181_complete_five_constraint_exact_context_disjoint_robust_confirmation_population",
+  "lock_payload_sha256": "64ca0161724f75f9258c7a5c397b80430ec45003648f0e435c968050e1f010dd",
+  "outcome": {
+    "decision": "freeze_V181_and_preregister_one_unchanged_V180_robust_confirmation_on_all_eligible_states_and_targets",
+    "passed": true,
+    "scientific_population_gates_passed": true,
+    "summary": {
+      "candidate_count_values": [
+        8
+      ],
+      "candidate_identity_overlap_with_V172_count": 111,
+      "candidate_identity_overlap_with_V176_count": 111,
+      "class_coverage_counts": {
+        "1": 1388,
+        "2": 338,
+        "3": 66
+      },
+      "confirmation_eligible_state_count": 66,
+      "confirmation_ineligible_state_count": 1726,
+      "evaluation_record_count": 0,
+      "exact_target_context_signature_count": 528,
+      "exact_target_context_signature_overlap_with_V172": 0,
+      "exact_target_context_signature_overlap_with_V176": 0,
+      "planner_policy_score_count": 0,
+      "project_authored_procedural": true,
+      "sandbox_transaction_count": 0,
+      "selected_state_count": 1792,
+      "source_state_count": 1792,
+      "state_membership_sha256": "87d6e967aade2567ff3aeee9c8aafa3a3935a98e5e17946772e36906992bfed3",
+      "target_case_count": 528,
+      "target_class_counts": {
+        "alias": 66,
+        "composition": 72,
+        "provisional_primitive": 390
+      },
+      "target_context_membership_sha256": "6cea08945c9f4b89ec727a3c8ed57df6b7e4ef2d12c3d1ff0e13af086fc7d69b",
+      "target_membership_sha256": "1d4b90418b903ed18abe69b7e37eb5ee9293551721d4883d018b133527e0bead",
+      "unique_target_candidate_count": 111
+    }
+  },
+  "parent_V180_outcome": "configs/v180-triple-repetition-robust-planner-development-outcome-lock.json",
+  "parent_V180_outcome_sha256": "f9a9e00c911477ad5ed5e5bcdffdd19e9fa79015e0818ca8b7d7ce9a46fb4210",
+  "population_lock": "configs/v181-five-constraint-robust-confirmation-population-lock.json",
+  "population_lock_sha256": "3e97fcf503b73ae603ae718685efe59d1911e05f53264276c6009b6ce428a28d",
+  "population_summary": "outputs/v181-five-constraint-robust-confirmation-population/population/population-summary.json",
+  "population_summary_sha256": "c2a6e1234bc5bfdbb88b6bbbfe5909b5b6130fc02f2db166ff313ba7191d82a8",
+  "result": "outputs/v181-five-constraint-robust-confirmation-population/population/result.json",
+  "result_sha256": "b63007ab436d556e47d073fa943dbfcca132123b505d920ab09ed42e84d09fd2",
+  "results_document": "docs/v181-five-constraint-robust-confirmation-population-results.md",
+  "results_document_sha256": "02b024c257a31f25d4f3684f658d5283e88c2d2969e6cc28fb3eee0423e24b50",
+  "schema_version": "181-five-constraint-robust-confirmation-population-outcome-lock",
+  "target_cases": "outputs/v181-five-constraint-robust-confirmation-population/population/target-cases.json",
+  "target_cases_sha256": "087806df7e72ddc4e288b4daa7c8457242e85d6260e6d0279a730fd02d57f3ae",
+  "verifier": "python/verify_and_freeze_v181_five_constraint_robust_confirmation_population_outcome.py",
+  "verifier_sha256": "58c3ce6c5061def5a16f0e07d9c2c3e6a461327fcced832df96efe24f398f0cf"
+}

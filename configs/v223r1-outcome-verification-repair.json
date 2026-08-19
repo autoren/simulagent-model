@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "223r1-outcome-verification-repair-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v223r1_outcome_verification_only_repair",
+  "parentV223DesignLock": "configs/v223-archived-semantic-adjudication-metadata-census-lock.json",
+  "parentV223DesignLockSha256": "a0dae40bf6fc95d9a06e47d7b69c610e8cb710b0c742d04ef4dc97288313837a",
+  "parentV223FailedOutcomeAudit": "outputs/v223-archived-semantic-adjudication-metadata-census/outcome-audit.json",
+  "parentV223FailedOutcomeAuditSha256": "b7741a5aa53930e6a1749248af5b8a97dbf122a8292f5762cce6711287486e11",
+  "parentV223Summary": "outputs/v223-archived-semantic-adjudication-metadata-census/census/summary.json",
+  "parentV223Result": "outputs/v223-archived-semantic-adjudication-metadata-census/census/result.json",
+  "parentV223ResultsDocument": "docs/v223-archived-semantic-adjudication-metadata-census-results.md",
+  "plan": "docs/v223r1-outcome-verification-repair-plan.md",
+  "claimBoundary": "verification-only repair that freezes the exact existing positive V223 result after restoring one transiently edited locked roadmap dependency; no retrieval, reassessment, gate change, task language, record endpoint, model, training, registration, action, side effect, or execution",
+  "repairInvariant": {
+    "expectedOriginalFailedChecks": [
+      "design_lock_and_dependencies_are_exact"
+    ],
+    "expectedV223ScientificPassed": true,
+    "expectedV223Branch": "SOURCE_SPECIFIC_ACQUISITION_DESIGN_ELIGIBLE",
+    "expectedSelectedCandidateIds": [
+      "MONDO_GITHUB_TERM_REQUESTS"
+    ],
+    "expectedSourceUnitCount": 4,
+    "expectedFrozenUrlAttemptCount": 21,
+    "expectedSuccessfulUrlCount": 21,
+    "expectedEligibleCandidateCount": 1,
+    "expectedFormalTaskRecordBodyReadCount": 0,
+    "requireExactMetricAuditResultReconstruction": true,
+    "requireAllV223DependenciesAndSnapshotsExact": true,
+    "authorizeExistingPositiveOutcomeFreezeOnly": true
+  },
+  "preLockExposure": {
+    "V223CensusRerunCount": 0,
+    "newMetadataRetrievalCount": 0,
+    "taskRecordBodyReadCount": 0,
+    "recordEndpointRequestCount": 0,
+    "sourceAssessmentChangeCount": 0,
+    "gateOrThresholdChangeCount": 0,
+    "modelLoadOrGenerationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifRepairIntegrityPasses": "freeze_exact_existing_positive_V223_outcome_and_authorize_V224_design_only",
+    "otherwise": "reject_V223r1_repair_without_modifying_V223",
+    "repairCanAlterScientificOutcome": false,
+    "repairCanOpenTaskLanguageOrRunModel": false
+  }
+}
+

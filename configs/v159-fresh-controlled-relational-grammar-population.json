@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "159-fresh-controlled-relational-grammar-population",
+  "experiment": "v159_fresh_controlled_relational_grammar_population",
+  "parentV158OutcomeLock": "configs/v158-model-free-hard-tie-routing-policy-outcome-lock.json",
+  "claimBoundary": "fresh project-authored synthetic controlled-language population testing only whether public registered relation aliases and explicit relation cardinality can select a clarification question or force generic fallback; no unrestricted language understanding, evaluation performance, model, induction, authority, action, or execution claim",
+  "outputIds": ["K81", "K82", "K83", "K84", "N80", "U80", "A00"],
+  "knownIds": ["K81", "K82", "K83", "K84"],
+  "novelCandidateId": "N80",
+  "unsupportedId": "U80",
+  "insufficientId": "A00",
+  "trustedSource": "CLOSED_TYPED_CLARIFICATION",
+  "genericQueryId": "Q80",
+  "genericUnclearOptionId": "UNCLEAR",
+  "allowedValues": {
+    "operation": ["authorize_works", "register_survey", "reserve_access", "reserve_supply", "loan_access_device", "loan_tactile_guide", "calibrate_sensor", "erase_certified_record"],
+    "object_class": ["street_tree_permit", "roof_habitat_count", "harbor_berth_pass", "dock_power_slot", "caption_receiver", "touch_layout_guide", "watershed_gauge", "certified_history"],
+    "scope": ["public_realm", "ecology", "harbor", "utility", "access", "museum", "monitoring", "retroactive"]
+  },
+  "knownWitnesses": [
+    {"choice_id": "K81", "operation": "authorize_works", "object_class": "street_tree_permit", "scope": "public_realm"},
+    {"choice_id": "K82", "operation": "reserve_access", "object_class": "harbor_berth_pass", "scope": "harbor"},
+    {"choice_id": "K83", "operation": "loan_access_device", "object_class": "caption_receiver", "scope": "access"},
+    {"choice_id": "K84", "operation": "calibrate_sensor", "object_class": "watershed_gauge", "scope": "monitoring"}
+  ],
+  "novelWitnesses": [
+    {"operation": "register_survey", "object_class": "roof_habitat_count", "scope": "ecology"},
+    {"operation": "reserve_supply", "object_class": "dock_power_slot", "scope": "utility"},
+    {"operation": "loan_tactile_guide", "object_class": "touch_layout_guide", "scope": "museum"}
+  ],
+  "unsupportedWitnesses": [
+    {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"}
+  ],
+  "catalog": {
+    "choices": [
+      {"choice_id": "K81", "kind": "KNOWN", "title": "authorize_street_tree_works", "boundary": "Authorize registered work affecting a municipal street tree."},
+      {"choice_id": "K82", "kind": "KNOWN", "title": "reserve_harbor_berth_access", "boundary": "Reserve registered vessel access to a municipal harbor berth."},
+      {"choice_id": "K83", "kind": "KNOWN", "title": "loan_caption_receiver", "boundary": "Loan a registered live-caption receiver for a performance."},
+      {"choice_id": "K84", "kind": "KNOWN", "title": "calibrate_watershed_gauge", "boundary": "Calibrate a registered watershed monitoring gauge."},
+      {"choice_id": "N80", "kind": "NOVEL_CANDIDATE", "title": "valid_unregistered_mechanic_candidate", "boundary": "Trusted evidence identifies a coherent mechanic outside the known catalog; non-executable and not registered."},
+      {"choice_id": "U80", "kind": "UNSUPPORTED", "title": "retroactively_erase_certified_history", "boundary": "Make a completed certified event or record never have occurred."},
+      {"choice_id": "A00", "kind": "INSUFFICIENT_EVIDENCE", "title": "insufficient_evidence", "boundary": "Visible evidence does not safely identify one registered state."}
+    ]
+  },
+  "genericQuery": {
+    "query_id": "Q80",
+    "title": "identify_registered_relation",
+    "question": "Which registered relation does this request use?",
+    "unclear_option_text": "No single registered relation is established"
+  },
+  "grammar": {
+    "uniqueTemplates": [
+      "Case {code} relates only to \"{right_alias}\".",
+      "For {code}, the sole relation is \"{right_alias}\".",
+      "Assign {code} exclusively under \"{right_alias}\".",
+      "The relation for {code} is uniquely \"{right_alias}\"."
+    ],
+    "conflictTemplates": [
+      "Case {code} relates to either \"{left_alias}\" or \"{decoy_alias}\"; the relation is unresolved.",
+      "For {code}, the relation is one of \"{left_alias}\" and \"{decoy_alias}\", but is not distinguished.",
+      "Route {code} under \"{left_alias}\" or \"{decoy_alias}\"; the evidence does not choose.",
+      "The unresolved alternatives for {code} are \"{left_alias}\" versus \"{decoy_alias}\"."
+    ],
+    "insufficientTemplates": [
+      "Case {code} has an unspecified registered relation and no relation alias is available.",
+      "For {code}, the service relation is missing from the request.",
+      "Assign {code} only after its registered relation is supplied.",
+      "The relation for {code} is unknown and no registered alias is stated."
+    ]
+  },
+  "families": [
+    {
+      "family_id": "street_tree_vs_roof_habitat",
+      "query_id": "Q81",
+      "decoy_query_id": "Q83",
+      "left_choice_id": "K81",
+      "right_choice_id": "N80",
+      "route_label": "public-realm planting or roof-habitat work",
+      "query_title": "identify_urban_ecology_work",
+      "question": "Which urban ecology work is requested?",
+      "left_option_text": "Authorize municipal street-tree work",
+      "right_option_text": "Register a roof-habitat species count",
+      "grammar_aliases": ["canopy works file", "roof habitat count"],
+      "retrieval_profile": {"anchor_phrases": ["street tree", "roof habitat"], "primary_terms": ["tree", "canopy", "roof", "habitat"], "secondary_terms": ["permit", "survey", "species", "works"]},
+      "left_witness": {"operation": "authorize_works", "object_class": "street_tree_permit", "scope": "public_realm"},
+      "right_witness": {"operation": "register_survey", "object_class": "roof_habitat_count", "scope": "ecology"},
+      "lexical_control": "Authorize street-tree works file {code} beside {place}.",
+      "route_answer": "It uses the public-realm planting or roof-habitat relation.",
+      "left_answer": "It is municipal street-tree work.",
+      "right_answer": "It is a roof-habitat species count.",
+      "slot_columns": {"code": ["T-101", "T-212", "T-323", "T-434", "T-545", "T-656", "T-767", "T-878"], "place": ["Aster Row", "Birch Square", "Clover Lane", "Dogwood Court", "Elm Walk", "Fern Place", "Grove Road", "Hazel Yard"]}
+    },
+    {
+      "family_id": "harbor_berth_vs_dock_power",
+      "query_id": "Q82",
+      "decoy_query_id": "Q84",
+      "left_choice_id": "K82",
+      "right_choice_id": "N80",
+      "route_label": "harbor access or dockside utility reservation",
+      "query_title": "identify_harbor_reservation",
+      "question": "Which harbor resource should be reserved?",
+      "left_option_text": "A municipal harbor-berth access pass",
+      "right_option_text": "A dockside shore-power slot",
+      "grammar_aliases": ["quay access credential", "shore supply slot"],
+      "retrieval_profile": {"anchor_phrases": ["harbor berth", "shore power"], "primary_terms": ["harbor", "berth", "dock", "power"], "secondary_terms": ["vessel", "access", "utility", "reserve"]},
+      "left_witness": {"operation": "reserve_access", "object_class": "harbor_berth_pass", "scope": "harbor"},
+      "right_witness": {"operation": "reserve_supply", "object_class": "dock_power_slot", "scope": "utility"},
+      "lexical_control": "Reserve harbor-berth access {code} for vessel {vessel}.",
+      "route_answer": "It uses the harbor access or dockside utility relation.",
+      "left_answer": "It is the municipal harbor-berth pass.",
+      "right_answer": "It is the dockside shore-power slot.",
+      "slot_columns": {"code": ["B-110", "B-221", "B-332", "B-443", "B-554", "B-665", "B-776", "B-887"], "vessel": ["Ariel", "Beacon", "Caspian", "Drift", "Estuary", "Fathom", "Gannet", "Harrier"]}
+    },
+    {
+      "family_id": "caption_receiver_vs_tactile_guide",
+      "query_id": "Q83",
+      "decoy_query_id": "Q81",
+      "left_choice_id": "K83",
+      "right_choice_id": "N80",
+      "route_label": "performance captioning or museum tactile access",
+      "query_title": "identify_cultural_access_loan",
+      "question": "Which cultural-access device should be loaned?",
+      "left_option_text": "A live-caption receiver for a performance",
+      "right_option_text": "A tactile museum-layout guide",
+      "grammar_aliases": ["caption receiver loan", "touch layout guide"],
+      "retrieval_profile": {"anchor_phrases": ["caption receiver", "tactile guide"], "primary_terms": ["caption", "receiver", "tactile", "guide"], "secondary_terms": ["performance", "museum", "access", "loan"]},
+      "left_witness": {"operation": "loan_access_device", "object_class": "caption_receiver", "scope": "access"},
+      "right_witness": {"operation": "loan_tactile_guide", "object_class": "touch_layout_guide", "scope": "museum"},
+      "lexical_control": "Loan caption receiver {code} for performance {event}.",
+      "route_answer": "It uses the performance captioning or museum tactile-access relation.",
+      "left_answer": "It is the live-caption receiver.",
+      "right_answer": "It is the tactile museum-layout guide.",
+      "slot_columns": {"code": ["A-129", "A-230", "A-341", "A-452", "A-563", "A-674", "A-785", "A-896"], "event": ["North Light", "Open Stage", "Paper Moon", "Quiet Chorus", "River Play", "Stone Song", "Turning Point", "Winter Room"]}
+    },
+    {
+      "family_id": "watershed_gauge_vs_record_erasure",
+      "query_id": "Q84",
+      "decoy_query_id": "Q82",
+      "left_choice_id": "K84",
+      "right_choice_id": "U80",
+      "route_label": "watershed telemetry or certified-history handling",
+      "query_title": "identify_watershed_record_operation",
+      "question": "What should happen to the watershed record?",
+      "left_option_text": "Calibrate a watershed monitoring gauge",
+      "right_option_text": "Erase a completed certified record retroactively",
+      "grammar_aliases": ["basin telemetry unit", "voided audit history"],
+      "retrieval_profile": {"anchor_phrases": ["watershed gauge", "certified record"], "primary_terms": ["watershed", "gauge", "certified", "record"], "secondary_terms": ["river", "sensor", "erase", "history"]},
+      "left_witness": {"operation": "calibrate_sensor", "object_class": "watershed_gauge", "scope": "monitoring"},
+      "right_witness": {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"},
+      "lexical_control": "Calibrate watershed gauge {code} after {issue}.",
+      "route_answer": "It uses the watershed telemetry or certified-history relation.",
+      "left_answer": "It is the watershed monitoring gauge.",
+      "right_answer": "Erase the completed certified record retroactively.",
+      "slot_columns": {"code": ["W-138", "W-249", "W-350", "W-461", "W-572", "W-683", "W-794", "W-805"], "issue": ["level drift", "signal loss", "pressure error", "battery warning", "flow mismatch", "sampling delay", "baseline shift", "telemetry noise"]}
+    }
+  ],
+  "population": {
+    "familyCount": 4,
+    "groupsPerFamily": 8,
+    "groupCount": 32,
+    "fixturesPerGroup": 8,
+    "fixtureCount": 256,
+    "developmentGroupCount": 16,
+    "evaluationGroupCount": 16,
+    "developmentFixtureCount": 128,
+    "evaluationFixtureCount": 128,
+    "stageNames": ["request_lexical_control", "request_grammar_unique", "request_grammar_conflict", "request_insufficient", "closed_route_family", "closed_route_unclear", "closed_specific_left", "closed_specific_right"]
+  },
+  "priorPublicPaths": [
+    "outputs/v135-controlled-open-world-minimal-pairs/design/public-fixtures.json",
+    "outputs/v142-certificate-interface-population/design/public-fixtures.json",
+    "outputs/v146-fresh-codebook-population/design/public-fixtures.json",
+    "outputs/v149-fresh-closed-interaction-population/design/public-fixtures.json",
+    "outputs/v152-fresh-question-order-population/design/public-fixtures.json",
+    "outputs/v155-fresh-deterministic-question-retrieval-population/design/public-fixtures.json",
+    "outputs/v157-fresh-hard-tie-routing-population/design/public-fixtures.json"
+  ],
+  "gates": {
+    "requiredChoiceCount": 7,
+    "requiredKnownChoiceCount": 4,
+    "requiredQueryCountIncludingGeneric": 5,
+    "requiredSpecificQueryCount": 4,
+    "requiredGroupCount": 32,
+    "requiredFixtureCount": 256,
+    "requiredSplitFixtureCount": 128,
+    "requiredStageCountPerGroup": 8,
+    "requiredRequestFixtureCount": 128,
+    "requiredRouteFixtureCount": 64,
+    "requiredSpecificAnswerFixtureCount": 64,
+    "requiredSpecificAnswerWitnessRouting": 1.0,
+    "requiredGenericRouteValidity": 1.0,
+    "requiredGenericRouteSemanticWitnessCount": 0,
+    "requiredGrammarAliasUniqueness": 1.0,
+    "requiredConflictDistinctQueryRate": 1.0,
+    "requiredPreanswerAndGenericFinalFailClosedRate": 1.0,
+    "requiredMalformedEventFailClosedRate": 1.0,
+    "requiredExactConversationOverlapWithPriorControlledPopulations": 0,
+    "requiredCandidateProposalFieldCount": 0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumPolicyScoreCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGrammarPopulationFreshnessFirewallAndAccessGatePasses": "freeze_fresh_controlled_relational_grammar_population_authorize_separate_model_free_grammar_policy_preregistration_only",
+    "otherwise": "close_fresh_controlled_relational_grammar_population_branch",
+    "passingAuthorizesOnlySeparateModelFreeDevelopmentPolicyPreregistration": true,
+    "passingDoesNotAuthorizeEvaluationModelHybridCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

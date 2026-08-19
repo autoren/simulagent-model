@@ -1,0 +1,56 @@
+{
+  "auditor": "python/audit_and_freeze_v211r1_compositional_baseline_name_repair.py",
+  "auditor_sha256": "6fa8bc709c99feb6439f3edb684a62b6eac4ed8e962a95e3251e421b84f4f97a",
+  "authorization": {
+    "modify_parent_science_or_predictions": false,
+    "read_protected_or_run_model": false,
+    "run_one_corrected_prediction_rescore": true
+  },
+  "design_audit": "outputs/v211r1-compositional-baseline-name-repair/design-audit.json",
+  "design_audit_sha256": "533e62e7a03e7e35d5494df2387c93397826bec7b36cfcd1c5b9129d9286dc87",
+  "experiment": "v211r1_compositional_prediction_key_repair",
+  "lock_payload_sha256": "7c507eb42bb7a3a5ee5d68fe662b5c64d8adecf10db45a0717ecca3f1e7eeb6d",
+  "parent_V211_design_lock": "configs/v211-deterministic-residual-baselines-lock.json",
+  "parent_V211_design_lock_sha256": "34ebfa797e33e9df5cf84f42fa11c7f91456c85b3cc508bbf9a5e13b15fac0d8",
+  "parent_V211_technical_failure": "outputs/v211-deterministic-residual-baselines/technical-failure.json",
+  "parent_V211_technical_failure_sha256": "65c4b63a1516db8515dfb1942db8ded678893cd1c17398b117ac7f4c0104af68",
+  "plan": "docs/v211r1-compositional-baseline-name-repair-plan.md",
+  "plan_sha256": "61e33b5eda1a8283c838cd3bdb8f1b63e2bb9133db2b7432519e862fca3dabbc",
+  "prediction_worker": "python/v211r1_prediction_worker.py",
+  "prediction_worker_sha256": "b708fc310b16df96d422723bf80e05467747046586a9652abfb3ff52ab3ce6d2",
+  "protocol": "python/v211r1_compositional_baseline_name_repair.py",
+  "protocol_sha256": "22ccc166a47203c23533898b22c85fde69ff3de16070f79edda970662f2a873d",
+  "repair_config": "configs/v211r1-compositional-baseline-name-repair.json",
+  "repair_config_payload": {
+    "authorization": {
+      "APITrainingRegistrationAuthorityActionOrExecution": false,
+      "readProtectedOrRunModel": false,
+      "refitBaselineOrReadCalibrationAgain": false,
+      "rerunCorrectedPredictionAndScoringOnce": true
+    },
+    "experiment": "v211r1_compositional_prediction_key_repair",
+    "parentEvaluationSurface": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-surfaces.jsonl",
+    "parentEvaluationTruthSealed": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-truth-sealed.jsonl",
+    "parentLearnedLexicon": "outputs/v211-deterministic-residual-baselines/evaluation/learned-lexicon.json",
+    "parentPredictionFreeze": "outputs/v211-deterministic-residual-baselines/evaluation/prediction-freeze.json",
+    "parentSplit": "outputs/v211-deterministic-residual-baselines/evaluation/split.json",
+    "parentV211DesignLock": "configs/v211-deterministic-residual-baselines-lock.json",
+    "parentV211TechnicalFailure": "outputs/v211-deterministic-residual-baselines/technical-failure.json",
+    "repair": {
+      "maximumChangedMetricGateOrDecisionCount": 0,
+      "maximumChangedPredictionValueCount": 0,
+      "maximumChangedSplitOrLearnedLexiconCount": 0,
+      "newEmittedKey": "COMPOSITIONAL_RESPONSE_SPAN",
+      "oldEmittedKey": "CONTEXT_CONTRAST"
+    },
+    "schemaVersion": "211r1-compositional-baseline-name-repair-design"
+  },
+  "repair_config_sha256": "2f5d7d8d109ad6390e23a7911edd81548c932ca8a29aa12a5aa6ef9f23060e3e",
+  "runner": "python/run_v211r1_compositional_baseline_name_repair.py",
+  "runner_sha256": "3c547f1dc449a7faafc73eb6f9926513a753c25aeae15ad754b918f83eb0cde0",
+  "schema_version": "211r1-compositional-baseline-name-repair-lock",
+  "tests": "python/test_v211r1_compositional_baseline_name_repair.py",
+  "tests_sha256": "35578c5759d49d912d7a2cdc74711194d1341c3061cdad1e93a955b858daefab",
+  "verifier": "python/verify_and_freeze_v211r1_compositional_baseline_name_repair_outcome.py",
+  "verifier_sha256": "9554d00ed6b00cd9cc9602e164b6bb6b528d7aa69ae37cb86b87e86712579667"
+}

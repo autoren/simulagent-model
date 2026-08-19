@@ -1,0 +1,84 @@
+{
+  "auditor": "python/audit_and_freeze_v201r1_elapsed_time_verification_repair.py",
+  "auditor_sha256": "870853751286152ee9dfc3088e06e9e652dee5e9a1ae04ff494867d09845ac44",
+  "authorization": {
+    "modify_source_artifacts_metrics_gates_or_decision": false,
+    "protected_API_training_registration_authority_action_or_execution": false,
+    "rerun_model_policy_or_language_scoring": false,
+    "run_exact_single_verification_repair": true
+  },
+  "config": "configs/v201r1-elapsed-time-verification-repair.json",
+  "config_payload": {
+    "claimBoundary": "verification-only repair for one volatile elapsed_seconds presentation field written after scientific aggregation; no fixture, proposal, score, metric, gate, decision, access count, model output, or scientific interpretation may change",
+    "decisionRule": {
+      "ifExactSingleFieldRepairAndAllOtherVerificationChecksPass": "freeze_V201r1_verification_repair_and_preserve_V201_negative_presentation_invariance_result",
+      "otherwise": "freeze_V201r1_repair_failure_without_mutation_or_rerun",
+      "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesProtectedRobustnessRun": false,
+      "passAuthorizesRoadmapUpdateAndSeparateModelFreeDecisionSufficiencyDesignOnly": true
+    },
+    "experiment": "v201r1_verification_only_repair_for_post_aggregation_elapsed_time_update",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "modelGenerationCount": 0,
+      "rawModelResponseReadCount": 0,
+      "trainingRunCount": 0
+    },
+    "repairContract": {
+      "allowedTopLevelSummaryDifferenceKeys": [
+        "elapsed_seconds"
+      ],
+      "finalAccessElapsedMustBeAtLeastAggregationElapsed": true,
+      "maximumAllowedElapsedSecondsDelta": 0.01,
+      "modelOrPolicyMayBeRerun": false,
+      "repairComparisonUsesPersistedAggregationElapsedOnly": true,
+      "requiredFalseChecks": [
+        "evaluation_summary_reconstructs_exactly",
+        "result_reconstructs_exactly"
+      ],
+      "sourceArtifactsMayBeModified": false
+    },
+    "schemaVersion": "201r1-elapsed-time-verification-repair-design",
+    "sourceAccess": "outputs/v201-local-menu-presentation-robustness/model-realization/access.json",
+    "sourceCensusResult": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+    "sourceEvaluationSummary": "outputs/v201-local-menu-presentation-robustness/model-realization/evaluation-summary.json",
+    "sourceFailedOutcomeAudit": "outputs/v201-local-menu-presentation-robustness/outcome-audit.json",
+    "sourceResult": "outputs/v201-local-menu-presentation-robustness/model-realization/result.json",
+    "sourceResultsDocument": "docs/v201-local-menu-presentation-robustness-results.md",
+    "sourceScoredRecords": "outputs/v201-local-menu-presentation-robustness/model-realization/scored-records.json",
+    "sourceV201Lock": "configs/v201-local-menu-presentation-robustness-lock.json"
+  },
+  "config_sha256": "fd0160c05af73e9cf02060d13d61cd5498a3d5a40c7b0209c050062fa40d2e18",
+  "design_audit": "outputs/v201r1-elapsed-time-verification-repair/design-audit.json",
+  "design_audit_sha256": "2adfc5e43432b64719901d2c070f73cdfb95117156f0c4121d31e45b4a7df770",
+  "experiment": "v201r1_verification_only_repair_for_post_aggregation_elapsed_time_update",
+  "lock_payload_sha256": "0c6184d8eabf099df7fab188c431a1ebd437d0118abd7bf426a812e68fd213f1",
+  "plan": "docs/v201r1-elapsed-time-verification-repair-plan.md",
+  "plan_sha256": "4bfe69968ba9077736af81d8db2978e58be47b07f8d3eb18321d059510e0133b",
+  "protocol": "python/v201r1_elapsed_time_verification_repair.py",
+  "protocol_sha256": "b5fd2494d92451428855caa73d94d8983c63046db8989bc869a459a8ca5cdef8",
+  "runner": "python/run_v201r1_elapsed_time_verification_repair.py",
+  "runner_sha256": "7166575debc5752f831f2e0ddcae16632c6821526239d7733ee4e17b526fca04",
+  "schema_version": "201r1-elapsed-time-verification-repair-lock",
+  "source_V201_lock": "configs/v201-local-menu-presentation-robustness-lock.json",
+  "source_V201_lock_sha256": "5236189fa687ffffb00995c8788e03d110742885cc433e57228ee37d9c88dc68",
+  "source_access": "outputs/v201-local-menu-presentation-robustness/model-realization/access.json",
+  "source_access_sha256": "a4d27df162b09d2fc7b1638e1255c80bb10c32797f055a704f4da873f35ebe01",
+  "source_census_result": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+  "source_census_result_sha256": "6eea9a3e0f402abf1dc6d056a2671cf51de345390a490bb09a8c826475453328",
+  "source_evaluation_summary": "outputs/v201-local-menu-presentation-robustness/model-realization/evaluation-summary.json",
+  "source_evaluation_summary_sha256": "00f22beb4764d6e95adb633f7bbf5d9e6a9be6cce25c8c0ba7807715852bd871",
+  "source_failed_outcome_audit": "outputs/v201-local-menu-presentation-robustness/outcome-audit.json",
+  "source_failed_outcome_audit_sha256": "6a9af974de796e99596245e4219366cba9d5c43bde2478c70fea21f3240baf24",
+  "source_result": "outputs/v201-local-menu-presentation-robustness/model-realization/result.json",
+  "source_result_sha256": "2cf7e2a033a7d455bc2fc8f3ddd63dbf446f9b6abf15f45175d96f78ec78ee6f",
+  "source_results_document": "docs/v201-local-menu-presentation-robustness-results.md",
+  "source_results_document_sha256": "171f67bb4f3c81b78b5fab4055bdf0f5c172d6bf71a446f60490ac47126ca92f",
+  "source_scored_records": "outputs/v201-local-menu-presentation-robustness/model-realization/scored-records.json",
+  "source_scored_records_sha256": "68432d9f12ca4d303da85af4aa0016495e52320f42d89f3751268035fc150239",
+  "tests": "python/test_v201r1_elapsed_time_verification_repair.py",
+  "tests_sha256": "be86f52afc40c63a7e8090ec72f52bdf85eb21678ec5d913bcde3ca18e68aee3",
+  "verifier": "python/verify_and_freeze_v201r1_elapsed_time_verification_repair_outcome.py",
+  "verifier_sha256": "f735ae4111e5d9ee7f6b76ce2da3a090544fed405ffaa02f4f09064e7dd6bef6"
+}

@@ -1,0 +1,95 @@
+{
+  "V167_policy_trees": "outputs/v167-exact-evidence-gathering/planner/case-policy-trees.json",
+  "V167_policy_trees_sha256": "58f297c24b6841e1bb95e4464781fcf59d1bfa010f8110b2600d4b58064805e2",
+  "V167_result": "outputs/v167-exact-evidence-gathering/planner/result.json",
+  "V167_result_sha256": "7c86d8e903b3f5170eea2c811c976fc4a013cb1bf73c1bba9912e647d5475a25",
+  "audit": "outputs/v167r1-history-action-metric-repair/outcome-audit.json",
+  "audit_sha256": "455359aecaf376368f7d908a6b32d806a850c57667b36074d9df3a4c939f1d4b",
+  "authorization": {
+    "claim_fresh_or_external_confirmation": false,
+    "create_nominal_V167_outcome": false,
+    "grant_candidate_or_planner_trusted_state_action_or_execution_authority": false,
+    "modify_or_rerun_V167": false,
+    "perform_real_service_call_external_side_effect_or_execution": false,
+    "preregister_fixed_ontology_reversible_sandbox": true,
+    "register_provisional_primitive": false,
+    "retain_corrected_V167_as_project_authored_development_mechanism_evidence": true,
+    "run_local_or_API_model": false,
+    "run_sandbox_without_separate_lock": false
+  },
+  "experiment": "v167r1_verifier_only_history_action_projection_repair",
+  "lock_payload_sha256": "e0218c78f3ebb834454ae267f8518e3d8f5bf95a7851d125b5c4c5a8118632b4",
+  "outcome": {
+    "V167_scientific_planner_gates_passed": true,
+    "corrected_summary": {
+      "bayes_no_worse_than_every_nonoracle_baseline_case_rate": 1.0,
+      "candidate_count_values": [
+        64
+      ],
+      "case_count": 48,
+      "class_coverage_values": [
+        3
+      ],
+      "history_dependent_second_action_case_count": 28,
+      "mean_expected_risk": {
+        "exact_bayes_adaptive": {
+          "decimal": 1.382854406130268,
+          "denominator": 10440,
+          "numerator": 14437
+        },
+        "forced_map_no_query": {
+          "decimal": 3.3333333333333335,
+          "denominator": 3,
+          "numerator": 10
+        },
+        "greedy_class_information_gain": {
+          "decimal": 1.4059858049117517,
+          "denominator": 159210,
+          "numerator": 223847
+        },
+        "no_query_bayes_terminal": {
+          "decimal": 2.0,
+          "denominator": 1,
+          "numerator": 2
+        },
+        "optimal_open_loop_pair": {
+          "decimal": 1.4059858049117517,
+          "denominator": 159210,
+          "numerator": 223847
+        },
+        "oracle_class": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "random_open_loop_pair": {
+          "decimal": 1.785637941502837,
+          "denominator": 1910520,
+          "numerator": 3411497
+        }
+      },
+      "positive_value_of_information_case_count": 48,
+      "renaming_risk_invariance": 1.0,
+      "strict_improvement_over_optimal_open_loop_case_count": 48,
+      "target_candidate_retention": 1.0,
+      "unique_exact_bayes_root_queries": [
+        3,
+        5,
+        7
+      ]
+    },
+    "decision": "freeze_corrected_V167_through_V167r1_and_authorize_separate_fixed_ontology_sandbox_preregistration",
+    "development_informed_not_confirmatory": true,
+    "passed": true,
+    "technical_metric_projection_repair_only": true
+  },
+  "parent_V167_planner_lock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "parent_V167_planner_lock_sha256": "9ea702e7fd6be86d30ba72cad6fa4d5b5e891be32bae1a30d8adc992c0dd9d28",
+  "repair_lock": "configs/v167r1-history-action-metric-repair-lock.json",
+  "repair_lock_sha256": "95d707e1cbe44396455b6c5a08697296149edac1c88d662cf7a7971a231d69a3",
+  "results_document": "docs/v167-exact-evidence-gathering-planner-results.md",
+  "results_document_sha256": "319b54669e982f0c74983fb417a96214f0e2a3f6a90808e952e2f7be02a40fad",
+  "schema_version": "167r1-history-action-metric-repair-outcome-lock",
+  "verifier": "python/verify_and_freeze_v167r1_history_action_metric_repair.py",
+  "verifier_sha256": "9d279971dfe95005a060b89bf5b6937923277fd1a13f746495572809d738282a"
+}

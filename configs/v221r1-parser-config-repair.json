@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "221r1-parser-config-repair-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v221r1_parser_config_repair",
+  "parentV221DesignLock": "configs/v221-deterministic-mondo-residual-lock.json",
+  "parentV221DesignLockSha256": "83fb85a7f202fbd75708424e3552460a47d68d8bf5ac6761adee95181bbf4c4e",
+  "sourceV220DesignLock": "configs/v220-fresh-mondo-artifact-population-lock.json",
+  "sourceV220DesignLockSha256": "f45dd3da394bb12ca84c453416299e2f161cb99f94bb36925cba150b33118b9b",
+  "plan": "docs/v221r1-parser-config-repair-plan.md",
+  "failureBoundary": {
+    "exceptionType": "KeyError",
+    "missingKey": "parserDesign",
+    "failedFunction": "build_catalog",
+    "catalogManifestWritten": false,
+    "observationCount": 0,
+    "candidateMethodEvaluationCount": 0,
+    "developmentPublicPriorLoadCount": 1,
+    "developmentTruthPriorLoadCount": 1,
+    "protectedJSONLBodyLoadCount": 0,
+    "modelRunCount": 0
+  },
+  "repair": {
+    "operation": "inject_exact_V220_parserDesign_into_runtime_copy_of_locked_V221_config",
+    "parserDesign": {
+      "assertedStateIsInferredOWLEquivalence": false,
+      "duplicateTermIdPolicy": "FAIL",
+      "logicalFields": ["is_a", "relationship", "intersection_of", "equivalent_to", "disjoint_from"],
+      "mappingFields": ["xref"],
+      "normalizeWhitespace": true,
+      "oboEncoding": "utf-8",
+      "releaseSummaryPolicy": "CONTENT_HASHED_OFFICIAL_API_BODY_FROZEN_CATEGORY_CENSUS",
+      "remoteImportPolicy": "FORBID_AND_DO_NOT_RESOLVE",
+      "requiredOBOFields": ["id", "name"],
+      "sortSetValuedFields": true,
+      "statusFields": ["is_obsolete", "replaced_by", "consider"],
+      "stripOBOCommentsAfterBang": true,
+      "tabularControlPolicy": "UTF8_TSV_HEADER_REQUIRED_AND_MONDO_ID_CENSUS",
+      "termStanza": "Term",
+      "textFields": ["name", "def", "synonym"]
+    },
+    "roleManifestChanged": false,
+    "methodPortfolioChanged": false,
+    "candidateBudgetsChanged": false,
+    "primaryBudgetChanged": false,
+    "controllerChanged": false,
+    "evaluationGatesChanged": false,
+    "residualDefinitionChanged": false,
+    "inputHashesChanged": false
+  },
+  "artifacts": {
+    "catalogManifest": "outputs/v221r1-parser-config-repair/catalog-manifest.json",
+    "observations": "outputs/v221r1-parser-config-repair/observations.jsonl",
+    "residualManifest": "outputs/v221r1-parser-config-repair/residual-manifest.json",
+    "summary": "outputs/v221r1-parser-config-repair/summary.json",
+    "result": "outputs/v221r1-parser-config-repair/result.json"
+  },
+  "decisionRule": {
+    "ifRepairAuditPasses": "run_one_repaired_V221_development_evaluation_with_all_scientific_rules_unchanged",
+    "otherwise": "stop_V221_without_scientific_result",
+    "authorizesProtectedOrModelRun": false,
+    "authorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}

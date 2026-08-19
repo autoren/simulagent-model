@@ -1,0 +1,43 @@
+{
+  "architecture_config": "configs/model-free-reference-architecture.json",
+  "architecture_config_sha256": "3db0c38d511100709d3b2a4d75c78697b1bcae389464e213c7dfadf7cff29897",
+  "artifacts": {
+    "docs/model-free-reference-architecture-integration-results.md": "f70c38bbe67de5a8358e4cf130c230fb57b608ea27fd97b9a7040624c98973cb",
+    "outputs/model-free-reference-architecture/access.json": "0f17a828b2bb05ea19b09174b596347a4eed6a2982472b13e72c8a9680797c9e",
+    "outputs/model-free-reference-architecture/audit.json": "be6df2e67958a9375f07fece476f81ee747bd57d5103bc37c57d812d8d7e9214",
+    "outputs/model-free-reference-architecture/manifest.json": "bcceab628df06f9ab1d2b4818bd89c785bae9d7ee8e3efdaa530344f1bdcb953",
+    "outputs/model-free-reference-architecture/result.json": "ee40944884521c0dd58532db075c4114508ae27c12e4e25ff5debcc4975bedfd"
+  },
+  "authorization": {
+    "external_language_claim": false,
+    "model_or_api": false,
+    "new_experiment": false,
+    "ontology_registration_or_trusted_state_mutation": false,
+    "service_action_or_execution": false
+  },
+  "experiment": "none_software_consolidation_only",
+  "implementation": "python/model_free_reference_architecture.py",
+  "implementation_sha256": "274139926735d6819dfe843ebc3fc11b4a3bd1d734a81384a4ebdd731c68cb05",
+  "lock_payload_sha256": "083546fd44637d21b08eb45984bc838662f33994bb742b2a4e643654933f7b11",
+  "outcome": {
+    "actual_execution_count": 0,
+    "decision": "freeze_reference_architecture_software_integration_without_new_scientific_or_external_language_claim",
+    "gate_count": 10,
+    "model_or_api_run_count": 0,
+    "new_scientific_experiment_count": 0,
+    "other_route": "defer",
+    "passed": true,
+    "protected_body_read_count": 0,
+    "request_language_read_count": 0,
+    "semantic_root_action": "calibrate",
+    "source_outcome_lock_count": 18,
+    "trusted_route": "alias"
+  },
+  "runner": "python/run_model_free_reference_architecture.py",
+  "runner_sha256": "40e955959fc408c545f3bb2efaab9f8078d36dcdc15836a1c6d0d50f1e11410f",
+  "schema_version": "model_free_reference_architecture_integration_outcome_lock.v1",
+  "tests": "python/test_model_free_reference_architecture.py",
+  "tests_sha256": "10405ac180c5dba1f3469296eea02b0984f952a95c9cd2a9c28760129501c786",
+  "verifier": "python/verify_and_freeze_model_free_reference_architecture.py",
+  "verifier_sha256": "eade344baf4a33a808cf0bceaa352f8703a47d148769b73aee42b79de450a827"
+}

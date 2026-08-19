@@ -1,0 +1,91 @@
+{
+  "audit": "outputs/v170-unchanged-planner-fresh-confirmation/outcome-audit.json",
+  "audit_sha256": "49a298b33b9df9731ba89fa22aed8fca151b607d9818190e7bd5d909961e29e2",
+  "authorization": {
+    "advance_to_stateful_sandbox_confirmation": true,
+    "design_cross_track_integration_now": false,
+    "modify_rerun_or_tune_V170": false,
+    "retain_outcome_without_posthoc_selection": true,
+    "run_model_register_mutate_real_state_act_or_execute": false
+  },
+  "case_policy_results": "outputs/v170-unchanged-planner-fresh-confirmation/scoring/case-policy-results.json",
+  "case_policy_results_sha256": "da6ad2e26653e1df2a292b72886a4f8ae95a600305e860d7df41fc35a3bf6b54",
+  "confirmation_summary": "outputs/v170-unchanged-planner-fresh-confirmation/scoring/confirmation-summary.json",
+  "confirmation_summary_sha256": "64cdb3ce07c59a896d86a186c67de2a0d589dfc60f41f162a7f704adb7301462",
+  "experiment": "v170_unchanged_V167_planner_on_nonoverlapping_V169_states",
+  "lock_payload_sha256": "97a2f989125b70b675864fdd07d1031ff87fba9ca0eaf8a52e84a0a56835d8fe",
+  "outcome": {
+    "decision": "freeze_V170_as_strong_nonoverlapping_procedural_planner_confirmation",
+    "passed": true,
+    "scientific_integrity_passed": true,
+    "strong_confirmation": true,
+    "summary": {
+      "bayes_no_worse_than_every_nonoracle_baseline_case_rate": 1.0,
+      "candidate_count_values": [
+        64
+      ],
+      "case_count": 58,
+      "class_coverage_values": [
+        3
+      ],
+      "eligible_membership_coverage": 1.0,
+      "history_dependent_second_action_case_count": 49,
+      "mean_expected_risk": {
+        "exact_bayes_adaptive": {
+          "decimal": 1.322922523358313,
+          "denominator": 629771076,
+          "numerator": 833138341
+        },
+        "forced_map_no_query": {
+          "decimal": 3.3333333333333335,
+          "denominator": 3,
+          "numerator": 10
+        },
+        "greedy_class_information_gain": {
+          "decimal": 1.346578290934403,
+          "denominator": 7951655,
+          "numerator": 10707526
+        },
+        "no_query_bayes_terminal": {
+          "decimal": 2.0,
+          "denominator": 1,
+          "numerator": 2
+        },
+        "optimal_open_loop_pair": {
+          "decimal": 1.3432345082802755,
+          "denominator": 262404615,
+          "numerator": 352470934
+        },
+        "oracle_class": {
+          "decimal": 0.0,
+          "denominator": 1,
+          "numerator": 0
+        },
+        "random_open_loop_pair": {
+          "decimal": 1.6715999928202483,
+          "denominator": 1749364100,
+          "numerator": 2924237017
+        }
+      },
+      "positive_value_of_information_case_count": 58,
+      "strict_improvement_over_optimal_open_loop_case_count": 58,
+      "unique_exact_bayes_root_queries": [
+        0,
+        1,
+        2,
+        7
+      ]
+    }
+  },
+  "parent_V169r1_outcome": "configs/v169r1-json-key-normalization-repair-outcome-lock.json",
+  "parent_V169r1_outcome_sha256": "92ca75b46995d32fb58e26589cc75e79c648c28b21732beff4b9f4201da736df",
+  "planner_lock": "configs/v170-unchanged-planner-fresh-confirmation-lock.json",
+  "planner_lock_sha256": "19716aa9bd83e6cf620df57d365a0207a9dbbf3b98771d0c38461074e9c8f3bd",
+  "result": "outputs/v170-unchanged-planner-fresh-confirmation/scoring/result.json",
+  "result_sha256": "1377405eb2bdd1e95d9fa490cd8523b44b000fbab46b11db7c1abef068943922",
+  "results_document": "docs/v170-unchanged-planner-fresh-confirmation-results.md",
+  "results_document_sha256": "6a58f3bf527d6cfe65cdf39750c126444ba8fa35a3c275f727d44bbe1a871c09",
+  "schema_version": "170-unchanged-planner-fresh-confirmation-outcome-lock",
+  "verifier": "python/verify_and_freeze_v170_unchanged_planner_fresh_confirmation_outcome.py",
+  "verifier_sha256": "881256212327f5922b843300beaa27dd955d1664fc820927c973eaf9925e28e1"
+}

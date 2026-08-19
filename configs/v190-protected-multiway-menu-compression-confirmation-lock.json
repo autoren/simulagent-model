@@ -1,0 +1,111 @@
+{
+  "auditor": "python/audit_and_freeze_v190_protected_multiway_menu_compression_confirmation.py",
+  "auditor_sha256": "d02dea5aa2764c46c8a397858a4a5bdddb15479d474f74c5ff208ffd26931a5a",
+  "authorization": {
+    "modify_policy_pricing_controls_gates_or_decision": false,
+    "optimize_policy_or_read_protected_utterance_language": false,
+    "register_mutate_call_service_act_or_execute": false,
+    "run_fixed_protected_identity_confirmation_once": true,
+    "run_model_API_training_UI_or_human_study": false
+  },
+  "config": "configs/v190-protected-multiway-menu-compression-confirmation.json",
+  "config_payload": {
+    "claimBoundary": "fresh text-free confirmation of fixed hierarchical menu compression over protected identities; not repair of V189, adaptive planning value, raw-language understanding, human/UI burden evidence, model/deployed answer reliability, open-world discovery, protected utterance evidence, registration, authority, action, or execution",
+    "confirmationGates": {
+      "maximumAPICallCount": 0,
+      "maximumAbsoluteDevelopmentProtectedCostDifference": 0.02,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFixedPolicyMeanCost": 0.395,
+      "maximumMeanTurnCount": 1.9,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedUtteranceLanguageReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumUtteranceOrDialogueLanguageReadCount": 0,
+      "minimumImprovementOverAlwaysGeneric": 0.005,
+      "requiredContractCount": 14,
+      "requiredFixedSequence": [
+        "M189_domain",
+        "M189_intent_concept"
+      ],
+      "requiredFlatIntentMenuCost": 0.4,
+      "requiredMissingInsufficientRate": 1.0,
+      "requiredMissingProtectedCount": 12,
+      "requiredObservedFinalExactnessRate": 1.0,
+      "requiredObservedProtectedCount": 120,
+      "requiredPolicyOptimizationCount": 0,
+      "requiredPositivePriorContractCount": 14,
+      "requiredProtectedBindingCount": 132,
+      "requiredTargetRetentionRate": 1.0,
+      "requiredTypedCompletionRate": 1.0
+    },
+    "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+    "controls": [
+      "always_generic_trusted_clarification",
+      "flat_global_intent_menu",
+      "domain_only_then_generic"
+    ],
+    "decisionRule": {
+      "ifEveryFreshCompressionSafetyAndCostGatePasses": "freeze_V190_confirmed_multiway_menu_compression_without_adaptive_claim",
+      "otherwise": "freeze_V190_negative_or_mixed_confirmation_and_close_multiway_channel",
+      "passAuthorizesImmediateLanguageModelUIOrHumanClaim": false,
+      "passAuthorizesProtectedUtteranceAccess": false,
+      "passAuthorizesRegistrationAuthorityActionOrExecution": false
+    },
+    "experiment": "v190_fresh_protected_identity_confirmation_of_fixed_multiway_menu_compression",
+    "fixedPolicy": {
+      "genericTrustedClarificationCost": 0.4,
+      "missingObservationCost": 0.0,
+      "noPolicyOptimizationOrReselection": true,
+      "pricingRule": "zero-overhead bit-slot cost 0.10*ceil(log2(k)) over reachable categories",
+      "questionSelectionUsesNoProtectedPriorTargetOrOutcome": true,
+      "questionSequence": [
+        "M189_domain",
+        "M189_intent_concept"
+      ],
+      "singletonEarlyStopping": true
+    },
+    "parentV189OutcomeLock": "configs/v189-multiway-typed-channel-feasibility-outcome-lock.json",
+    "preLockExposure": {
+      "actualExecutionCount": 0,
+      "modelLoadCount": 0,
+      "policyOptimizationCount": 0,
+      "protectedBindingRecordReadCount": 0,
+      "protectedTargetPathScoreCount": 0,
+      "protectedUtteranceLanguageReadCount": 0
+    },
+    "protectedBindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/protected-bindings.json",
+    "schemaVersion": "190-protected-multiway-menu-compression-confirmation",
+    "sourceV189Result": "outputs/v189-multiway-typed-channel-feasibility/feasibility/result.json"
+  },
+  "config_sha256": "b193954d85d1c5734703289aed17a38c63bd8aa5f77e3746acf479610809cd18",
+  "contract_catalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "contract_catalog_sha256": "23c7d5550db98927751aa5cdbf0926f773cbe40e6b95250dc8086e39bf873839",
+  "design_audit": "outputs/v190-protected-multiway-menu-compression-confirmation/design-audit.json",
+  "design_audit_sha256": "2c41d18c0b82317ea6d758e46b10f9f1a3f0a42139e164c8ec4437ee8bc5ffa1",
+  "experiment": "v190_fresh_protected_identity_confirmation_of_fixed_multiway_menu_compression",
+  "lock_payload_sha256": "f8072ca36ef6d6ca4ba36dce50475c1e16c8ca2bbd7f0b0e84a8b2b90e2c2824",
+  "parent_V189_outcome": "configs/v189-multiway-typed-channel-feasibility-outcome-lock.json",
+  "parent_V189_outcome_sha256": "7b9e5e4fb0410200f72da7b7a20df2f9c2fa7a2da19ee877a4cc25203522d1cd",
+  "plan": "docs/v190-protected-multiway-menu-compression-confirmation-plan.md",
+  "plan_sha256": "88139844ac30f3bd48573458e9c2f6b1cc9b3f1ca6e84d6a0c98f328918616af",
+  "protected_bindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/protected-bindings.json",
+  "protected_bindings_sha256": "697a4a90ae285bbd5bc7abdd3c05a591fbca8f9f616bc9cff7e301b03cf8e4ba",
+  "protocol": "python/v190_protected_multiway_menu_compression_confirmation.py",
+  "protocol_sha256": "dbfecce9d8a2fd2a403a6e9fbb064691065bc0021d7fc34b096cb97577616fab",
+  "runner": "python/run_v190_protected_multiway_menu_compression_confirmation.py",
+  "runner_sha256": "cc38cb79615428d950ed303f141dda7178feca3b0005730774de2e90a10cb034",
+  "schema_version": "190-protected-multiway-menu-compression-confirmation-lock",
+  "source_V189_lock": "configs/v189-multiway-typed-channel-feasibility-lock.json",
+  "source_V189_lock_sha256": "0a577745d595bd9cdca31587c1c06b23bcc575aee3d8d50a103be7ce31ed03cb",
+  "source_V189_result": "outputs/v189-multiway-typed-channel-feasibility/feasibility/result.json",
+  "source_V189_result_sha256": "ebb2e143aab4e918109b7c297ffd4963568bca068de6bf2c526c0b121149802f",
+  "tests": "python/test_v190_protected_multiway_menu_compression_confirmation.py",
+  "tests_sha256": "3680ea7975827caccf52d45f27cb9a383f56aeb59717095dc122be9327d52ef9",
+  "verifier": "python/verify_and_freeze_v190_protected_multiway_menu_compression_confirmation_outcome.py",
+  "verifier_sha256": "e29653fc9ab55b461d4b2db031e9c0be86e40480c0ed48df91cc8f0521022440"
+}

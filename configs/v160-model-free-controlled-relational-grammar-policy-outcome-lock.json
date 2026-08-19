@@ -1,0 +1,137 @@
+{
+  "access": "outputs/v160-model-free-controlled-relational-grammar-policy/model-free-realization/access.json",
+  "access_sha256": "6b51f1ee28dc2fa1142ca8356fa9cd2f9bdff20cc1ee93839587b652dfa32ff7",
+  "analysis_lock": "configs/v160-model-free-controlled-relational-grammar-policy-lock.json",
+  "analysis_lock_sha256": "fbe3b190c320b8979664449ee2cf437d891312ffd15ecd021da970f1639b3f2b",
+  "audit": "outputs/v160-model-free-controlled-relational-grammar-policy/outcome-audit.json",
+  "audit_sha256": "5868346526217d258f6ab848274ff16e13ee57e4f91912f543203e1d6f1dbf0e",
+  "authorization": {
+    "change_aliases_grammar_retrieval_thresholds_costs_gates_or_rerun": false,
+    "design_fresh_external_style_transfer_population_if_policy_qualified": true,
+    "fit_calibration_or_learned_retrieval": false,
+    "open_or_score_V159_evaluation": false,
+    "retain_as_project_authored_synthetic_controlled_grammar_development_evidence": true,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_local_model_or_hybrid": false,
+    "run_transfer_policy_before_separate_preregistration": false
+  },
+  "experiment": "v160_model_free_controlled_relational_grammar_policy",
+  "lock_payload_sha256": "2caf813e8d30e4e836535ee68ce4a6655d0a1e8ba6ebf196f1d8175a40bbe3cc",
+  "outcome": {
+    "candidate_proposal_field_count": 0,
+    "comparator_metrics": {
+      "ALWAYS_GENERIC": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 64,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.35,
+        "mean_interaction_cost": 0.35,
+        "wrong_specific_question_count": 0
+      },
+      "GRAMMAR_RETRIEVAL_ROUTER": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 64,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.25,
+        "mean_interaction_cost": 0.25,
+        "wrong_specific_question_count": 0
+      },
+      "INFORMATION_ORACLE": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 64,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.25,
+        "mean_interaction_cost": 0.25,
+        "wrong_specific_question_count": 0
+      },
+      "LEXICAL_MARGIN_ROUTER": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 64,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 8,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.325,
+        "mean_interaction_cost": 0.325,
+        "wrong_specific_question_count": 8
+      },
+      "NO_QUERY": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 64,
+        "final_exact_accuracy": 0.5,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.5,
+        "mean_interaction_cost": 0.0,
+        "wrong_specific_question_count": 0
+      },
+      "SOURCE_SPECIFIC_THEN_GENERIC": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 64,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 176,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 1.075,
+        "mean_interaction_cost": 1.075,
+        "wrong_specific_question_count": 176
+      }
+    },
+    "decision": "controlled_relational_grammar_router_qualifies_on_synthetic_development_authorize_fresh_external_style_transfer_population_design_only",
+    "passed": true,
+    "policy_qualified": true,
+    "routing_metrics": {
+      "cost_gap_from_information_oracle": 0.0,
+      "grammar_conflict_generic_rate": 1.0,
+      "grammar_decision_source_counts": {
+        "REGISTERED_RELATION_GRAMMAR": 32,
+        "STRICT_RETRIEVAL": 32
+      },
+      "grammar_initial_action_accuracy": 1.0,
+      "grammar_initial_action_counts": {
+        "Q80": 32,
+        "Q81": 8,
+        "Q82": 8,
+        "Q83": 8,
+        "Q84": 8
+      },
+      "grammar_status_counts": {
+        "CROSS_QUERY_CONFLICT": 16,
+        "NOT_APPLICABLE": 32,
+        "UNIQUE_REGISTERED_QUERY": 16
+      },
+      "grammar_unique_specific_rate": 1.0,
+      "improvement_over_always_generic": 0.09999999999999998,
+      "improvement_over_no_query": 0.25,
+      "incorrect_specific_rate_on_grammar_fallback_strata": 0.0,
+      "insufficient_generic_rate": 1.0,
+      "lexical_control_specific_rate": 1.0,
+      "lexical_initial_action_accuracy": 0.6875,
+      "lexical_initial_action_counts": {
+        "Q80": 36,
+        "Q81": 8,
+        "Q82": 4,
+        "Q83": 12,
+        "Q84": 4
+      },
+      "request_count": 64
+    }
+  },
+  "result": "outputs/v160-model-free-controlled-relational-grammar-policy/model-free-realization/result.json",
+  "result_sha256": "95437626527cbf61a098181753a5ec31e341f1a535605410fc1f021f675e57bd",
+  "results_document": "docs/v160-model-free-controlled-relational-grammar-policy-results.md",
+  "results_document_sha256": "ab55d315e656bafa73a5baf3c5e5ec2a6614ddce33978b770cbe85966d638980",
+  "schema_version": "160-model-free-controlled-relational-grammar-policy-outcome-lock",
+  "verifier": "python/verify_and_freeze_v160_model_free_controlled_relational_grammar_policy_outcome.py",
+  "verifier_sha256": "03d2ffea056d8273f3e0f2174ff412db953d93ece1a6448d53214997caba48a7"
+}

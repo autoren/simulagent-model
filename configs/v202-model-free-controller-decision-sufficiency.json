@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "202-model-free-controller-decision-sufficiency-design",
+  "experiment": "v202_model_free_decision_sufficiency_of_presentation_sensitive_normalized_proposals",
+  "parentV201r2OutcomeLock": "configs/v201r2-repair-decision-label-verification-outcome-lock.json",
+  "canonicalModelCensus": "outputs/v195-bounded-local-language-menu-ranker/model-realization/census/result.json",
+  "transformedModelCensus": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+  "canonicalCHARLASTPredictions": "outputs/v194-deterministic-language-menu-rankers/evaluation/shadow-predictions.json",
+  "transformedCHARLASTScoredRecords": "outputs/v200-transformed-char-last-controls/evaluation/scored-records.json",
+  "hiddenTargets": "outputs/v191-fresh-language-to-menu-population/population/hidden-targets.json",
+  "canonicalHiddenOptionMap": "outputs/v193-shadow-menu-interface-frontier/interface/hidden-option-map.json",
+  "hiddenVariantMaps": "outputs/v199-exact-menu-presentation-robustness/census/hidden-variant-maps.json",
+  "primaryPrior": "outputs/v193-shadow-menu-interface-frontier/interface/primary-prior.json",
+  "fixedHierarchyTargetCosts": "outputs/v193-shadow-menu-interface-frontier/interface/fixed-hierarchy-target-costs.json",
+  "claimBoundary": "development-only model-free controller sufficiency over already persisted normalized proposals; not a repair or reinterpretation of V201, not new model or protected evidence, not calibrated semantic posterior, human behavior, ontology truth, authority, action, or execution",
+  "presentations": ["CANONICAL", "ORDER_ONLY", "ORDER_AND_OPAQUE_ID"],
+  "controllerPolicies": [
+    {"policyId": "SINGLE_PRESENTATION_TOP1_FAMILY", "kind": "single_presentation_family", "rankLimit": 1, "modelCallsPerDecision": 1, "eligibleAsSingleCall": true, "selectedImplementationIfChosen": "CANONICAL"},
+    {"policyId": "SINGLE_PRESENTATION_TOP3_FAMILY", "kind": "single_presentation_family", "rankLimit": 3, "modelCallsPerDecision": 1, "eligibleAsSingleCall": true, "selectedImplementationIfChosen": "CANONICAL"},
+    {"policyId": "TOP1_PLURALITY_3X", "kind": "top1_plurality", "canonicalTieBreak": true, "modelCallsPerDecision": 3, "eligibleAsSingleCall": false},
+    {"policyId": "TOP3_INCLUSION_CONSENSUS_3X", "kind": "top3_inclusion_consensus", "minimumPresentationVotes": 2, "maximumMenuSize": 4, "canonicalRankThenContractTieBreak": true, "modelCallsPerDecision": 3, "eligibleAsSingleCall": false}
+  ],
+  "trustedController": {
+    "bitCost": 0.10,
+    "questionCostByProposalSize": "bitCost * ceil(log2(size + 1_OTHER))",
+    "targetOutsideProposalAdditionalGenericCost": 0.40,
+    "emptyInvalidOrInsufficientUsesFrozenTargetSpecificHierarchyCost": true,
+    "fullAuthoritativeHypothesisUniverseAlwaysRetained": true,
+    "trustedAnswerRequiredForEveryExactTerminal": true
+  },
+  "qualificationGates": {
+    "maximumRobustPrimaryMeanCost": 0.24,
+    "maximumRobustMacroMeanCost": 0.25,
+    "minimumWorstConditionIncrementalPrimaryImprovementOverMatchedCHARLAST": 0.01,
+    "maximumTargetHitDisagreementRateAcrossPresentations": 0.10,
+    "maximumMeanPerRecordCostRangeAcrossPresentations": 0.05,
+    "maximumMeanProposalSetSize": 4.0,
+    "requiredTargetRetentionRate": 1.0,
+    "requiredFinalExactnessAfterTrustedAnswers": 1.0,
+    "maximumFalseTerminalDecisions": 0
+  },
+  "selectionRule": {
+    "firstTier": "qualified eligibleAsSingleCall policies only",
+    "secondTierOnlyIfNoFirstTierQualifies": "qualified three-call policies",
+    "withinTierOrder": ["minimum robust_primary_mean_cost", "minimum robust_macro_mean_cost", "minimum mean_proposal_set_size", "policy_id"],
+    "noQualifiedPolicy": "freeze_no_decision_sufficient_controller"
+  },
+  "accessGates": {
+    "requiredNormalizedModelFixtureReadCount": 252,
+    "requiredNormalizedCHARLASTPredictionReadCount": 252,
+    "maximumRawModelResponseReadCount": 0,
+    "maximumUtteranceOrDialogueLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumProtectedLanguageReadCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {"normalizedProposalControllerEvaluationCount": 0, "rawModelResponseReadCount": 0, "utteranceOrDialogueLanguageReadCount": 0, "modelGenerationCount": 0, "APICallCount": 0, "trainingRunCount": 0, "actualExecutionCount": 0},
+  "decisionRule": {
+    "ifAtLeastOnePolicyQualifies": "freeze_V202_selected_development_controller_and_require_new_fresh_confirmation_design",
+    "otherwise": "freeze_V202_no_decision_sufficient_controller_and_advance_to_model_free_richer_POMDP_design",
+    "passAuthorizesImmediateConfirmationOrProtectedReuse": false,
+    "passAuthorizesAPIModelGenerationTrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

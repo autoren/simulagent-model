@@ -1,0 +1,172 @@
+{
+  "audit": "outputs/v185-deterministic-sgd-candidate-set-controls/outcome-audit.json",
+  "audit_sha256": "d8ca55e205859e204bb297e2e2890f5d3c4b48c17f7705466ca3d1edb5566347",
+  "authorization": {
+    "modify_rerun_recalibrate_or_redefine_V185": false,
+    "preregister_one_local_residual_protocol": false,
+    "read_protected_language": false,
+    "run_model_without_separate_lock": false,
+    "use_predictions_as_terminal_authority_register_mutate_call_service_act_or_execute": false
+  },
+  "evaluation_lock": "configs/v185-deterministic-sgd-candidate-set-controls-lock.json",
+  "evaluation_lock_sha256": "79c9419d2edd27b753c915b9c2476755c531a083d70b206b150da1c9bdb5add7",
+  "evaluation_summary": "outputs/v185-deterministic-sgd-candidate-set-controls/evaluation/evaluation-summary.json",
+  "evaluation_summary_sha256": "6b730ceaf5e5303ba37be3579b457ccc369a85622c1a87c6530857db594c2023",
+  "experiment": "v185_development_only_deterministic_candidate_sets_and_safe_clarification_routing",
+  "lock_payload_sha256": "cfecc77c7d11b1792863cbfb80a2925796a825a825fcd181cc327750dc2b04fa",
+  "outcome": {
+    "decision": "freeze_V185_boundary_result_without_protected_or_model_access",
+    "passed": true,
+    "scientific_evaluation_gates_passed": false,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "calibration": {
+        "grid_point_count": 864,
+        "qualified": false,
+        "qualifying_grid_point_count": 0,
+        "selected_metrics": null,
+        "selected_params": null
+      },
+      "comparators": {
+        "always_generic_clarification": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 0.0,
+          "correct_specific_count": 0,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 0.0,
+          "mean_clarification_cost": 0.3636363636363633,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 0
+        },
+        "character_ngram_view_then_safe_fallback": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 0.0,
+          "correct_specific_count": 0,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 0.0,
+          "mean_clarification_cost": 0.3636363636363633,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 0
+        },
+        "complete_safe_enumeration_then_generic_clarification": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 0.0,
+          "correct_specific_count": 0,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 0.0,
+          "mean_clarification_cost": 0.3636363636363633,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 0
+        },
+        "exact_intent_alias_lookup_then_safe_fallback": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 0.0,
+          "correct_specific_count": 0,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 0.0,
+          "mean_clarification_cost": 0.3636363636363633,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 0
+        },
+        "hidden_information_oracle": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 1.0,
+          "correct_specific_count": 36,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 1.0,
+          "mean_clarification_cost": 0.28181818181818186,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 36
+        },
+        "same_singleton_consensus_then_safe_fallback": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 0.0,
+          "correct_specific_count": 0,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 0.0,
+          "mean_clarification_cost": 0.3636363636363633,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 0
+        },
+        "token_schema_view_then_safe_fallback": {
+          "authoritative_hypothesis_retention_rate": 1.0,
+          "candidate_specific_precision": 0.0,
+          "correct_specific_count": 0,
+          "false_specific_rate_on_nonknown": 0.0,
+          "final_exactness_after_trusted_answers": 1.0,
+          "known_specific_coverage": 0.0,
+          "mean_clarification_cost": 0.3636363636363633,
+          "observed_record_count": 60,
+          "record_count": 66,
+          "specific_route_count": 0
+        }
+      },
+      "development_language_read_count": 1,
+      "evaluation_record_count": 66,
+      "external_side_effect_count": 0,
+      "manual_language_inspection_count": 0,
+      "missing_evaluation_record_count": 6,
+      "missing_insufficient_rate": 1.0,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "observed_evaluation_record_count": 60,
+      "ontology_registration_count": 0,
+      "prediction_payload_sha256": "4be258a4c555db9249c583d83b2ba04074d39e41378b65d76372cf7fdbee90c8",
+      "protected_language_read_count": 0,
+      "residual_count": 60,
+      "residual_membership_uses_predictions_only": true,
+      "residual_truth_kind_coverage": [
+        "KNOWN",
+        "PROVISIONAL",
+        "UNSUPPORTED"
+      ],
+      "selected_parameters": null,
+      "service_call_count": 0,
+      "split_counts": {
+        "calibration": {
+          "INSUFFICIENT_CONTROL": 6,
+          "KNOWN": 36,
+          "PROVISIONAL": 18,
+          "UNSUPPORTED": 6
+        },
+        "evaluation": {
+          "INSUFFICIENT_CONTROL": 6,
+          "KNOWN": 36,
+          "PROVISIONAL": 18,
+          "UNSUPPORTED": 6
+        }
+      },
+      "structured_prediction_rate": 1.0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0
+    }
+  },
+  "parent_V184_outcome": "configs/v184-sgd-role-isolated-language-extraction-outcome-lock.json",
+  "parent_V184_outcome_sha256": "d4bb637128355e5257313cf336fd7ec9f9d7ef458d1f3f98d62929b0d0c50092",
+  "residual_identifiers": "outputs/v185-deterministic-sgd-candidate-set-controls/evaluation/residual-identifiers.json",
+  "residual_identifiers_sha256": "f2e2d9551dc7b5849bca743cc35be65492e208165e67479959cd488f67537928",
+  "result": "outputs/v185-deterministic-sgd-candidate-set-controls/evaluation/result.json",
+  "result_sha256": "2e5f618704309c5b2e4c8689f36abb70ab522f36a6b935fd29abcb248c06ba99",
+  "results_document": "docs/v185-deterministic-sgd-candidate-set-controls-results.md",
+  "results_document_sha256": "7c53e216a5068c0b0f3a509114c380662b25ec13f8e91deab3324a081a6b576e",
+  "schema_version": "185-deterministic-SGD-candidate-set-controls-outcome-lock",
+  "shadow_predictions": "outputs/v185-deterministic-sgd-candidate-set-controls/evaluation/shadow-predictions.json",
+  "shadow_predictions_sha256": "adf54cfd88314cf6fd1af13d0fb6a6f37045026838d5f6084bea91316e9f5d04",
+  "split_manifest": "outputs/v185-deterministic-sgd-candidate-set-controls/evaluation/split-manifest.json",
+  "split_manifest_sha256": "ec871712c2ba7b9ce32016d2f12593700f1aeffed465e4ce8cbff6777833d55d",
+  "verifier": "python/verify_and_freeze_v185_deterministic_sgd_candidate_set_controls_outcome.py",
+  "verifier_sha256": "a58ae1ee0f66ecdfc12f9297cdf82e806e2e6f96b2643bbd7e024cd6ae389bc0"
+}

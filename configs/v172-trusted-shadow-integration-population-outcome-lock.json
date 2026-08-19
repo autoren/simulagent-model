@@ -1,0 +1,61 @@
+{
+  "audit": "outputs/v172-trusted-shadow-integration-population/outcome-audit.json",
+  "audit_sha256": "0bb8899860450af9512edfc5795268b63321e79c55e655f448e53a523453de70",
+  "authorization": {
+    "modify_or_rebuild_V172": false,
+    "preregister_trusted_only_shadow_integration_on_all_eligible_states_and_targets": true,
+    "run_model_register_mutate_real_state_act_or_execute": false,
+    "score_or_run_integration_without_separate_lock": false,
+    "select_subsample_or_tune_using_V172_outcomes": false
+  },
+  "constraint_states": "outputs/v172-trusted-shadow-integration-population/population/constraint-states.json",
+  "constraint_states_sha256": "524fd70bae1af58f47251a9f26cb3cb0e47fa4a6ba440f4d7cb0393e346e5cf6",
+  "eligible_state_ids": "outputs/v172-trusted-shadow-integration-population/population/integration-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "9a4250cc2f22bfd4d66c4681b7654314d0fb48aa93739e9815072af77585e43c",
+  "experiment": "v172_complete_three_constraint_truth_table_population_before_trusted_shadow_integration",
+  "lock_payload_sha256": "24bb62844db7de2cb3046f39b2d94f45d4f6ab45156e8e41a235237635ed9e78",
+  "outcome": {
+    "decision": "freeze_V172_and_preregister_trusted_only_shadow_integration_on_all_eligible_states_and_targets",
+    "passed": true,
+    "scientific_population_gates_passed": true,
+    "summary": {
+      "candidate_count_values": [
+        32
+      ],
+      "class_coverage_counts": {
+        "1": 212,
+        "2": 104,
+        "3": 132
+      },
+      "evaluation_record_count": 0,
+      "integration_eligible_state_count": 132,
+      "integration_ineligible_state_count": 316,
+      "planner_policy_score_count": 0,
+      "project_authored_procedural": true,
+      "sandbox_transaction_count": 0,
+      "selected_state_count": 448,
+      "source_state_count": 448,
+      "state_membership_sha256": "c71b1517bdc05aa09443bdc9e376d3e51474e8013bbdefc81e05988c3af5a7a5",
+      "target_case_count": 4224,
+      "target_class_counts": {
+        "alias": 144,
+        "composition": 228,
+        "provisional_primitive": 3852
+      },
+      "target_membership_sha256": "181d0019981467df1b445bea6044a346c7a44abfe3be0fa8226646785c314ffd"
+    }
+  },
+  "population_lock": "configs/v172-trusted-shadow-integration-population-lock.json",
+  "population_lock_sha256": "eeb090708837b7acab9d3a16964904aa842527ffd6684f62dea619f7589a7c42",
+  "population_summary": "outputs/v172-trusted-shadow-integration-population/population/population-summary.json",
+  "population_summary_sha256": "447069ba9a431815a6f90fde76a1e814481740061c5f4bd5d3394d7b42295d45",
+  "result": "outputs/v172-trusted-shadow-integration-population/population/result.json",
+  "result_sha256": "cb4faeab6df7998d022585736ee82d11e8cd20786e2c68ef3ca9ccc598a35405",
+  "results_document": "docs/v172-trusted-shadow-integration-population-results.md",
+  "results_document_sha256": "a3548395453941e72442efd6e8030319230712865203671ec5f240dcc7b15142",
+  "schema_version": "172-trusted-shadow-integration-population-outcome-lock",
+  "target_cases": "outputs/v172-trusted-shadow-integration-population/population/target-cases.json",
+  "target_cases_sha256": "ee6694c46798e1bab69417b7bea39c237f8dc5f368cf3c368998d4659d9414ca",
+  "verifier": "python/verify_and_freeze_v172_trusted_shadow_integration_population_outcome.py",
+  "verifier_sha256": "72d370c012a49a7e361c22a35038f78978952c928772068a9ef74e795b40c9a7"
+}

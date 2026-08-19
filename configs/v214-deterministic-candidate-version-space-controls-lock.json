@@ -1,0 +1,220 @@
+{
+  "auditor": "python/audit_and_freeze_v214_deterministic_candidate_version_space_controls.py",
+  "auditor_sha256": "58f0bb4ac74a0ec58dde70fc5cfe0f4d3112a344b54de3bd5ef187133eab526b",
+  "authorization": {
+    "open_V213_protected_public_or_truth": false,
+    "read_external_payload_register_mutate_call_act_execute": false,
+    "run_local_API_model_or_training": false,
+    "run_one_development_only_deterministic_control_study": true
+  },
+  "config": "configs/v214-deterministic-candidate-version-space-controls.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalOntologyPayloadReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumNaturalLanguageSurfaceReadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedGroupConstructionCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumV213ProtectedPublicAccessCount": 0,
+      "maximumV213ProtectedTruthAccessCount": 0,
+      "requiredDeterministicControlRunCount": 1
+    },
+    "artifacts": {
+      "developmentSubsplit": "outputs/v214-deterministic-controls/evaluation/development-subsplit.json",
+      "evaluationPublic": "outputs/v214-deterministic-controls/evaluation/evaluation-public.jsonl",
+      "evaluationTruthSealed": "outputs/v214-deterministic-controls/evaluation/evaluation-truth-sealed.jsonl",
+      "fitPublic": "outputs/v214-deterministic-controls/evaluation/fit-public.jsonl",
+      "fitTruth": "outputs/v214-deterministic-controls/evaluation/fit-truth.jsonl",
+      "predictionFreeze": "outputs/v214-deterministic-controls/evaluation/prediction-freeze.json",
+      "predictions": "outputs/v214-deterministic-controls/evaluation/predictions.json",
+      "result": "outputs/v214-deterministic-controls/evaluation/result.json",
+      "summary": "outputs/v214-deterministic-controls/evaluation/summary.json"
+    },
+    "claimBoundary": "development-only deterministic controls over fresh typed program evidence; establishes candidate/version-space residuals and model eligibility for this representation only; not natural-language understanding, protected confirmation, real-world ontology truth, human intent, model evidence, authority, action, or execution",
+    "decisionRule": {
+      "ifStudyPassesAndModelEligibilityRuleFails": "freeze_V214_deterministic_closure_with_zero_model_eligibility_for_typed_program_representation",
+      "ifStudyPassesAndModelEligibilityRulePasses": "freeze_V214_meaningful_deterministic_residual_and_authorize_separate_bounded_local_candidate_generator_design_only",
+      "otherwise": "freeze_V214_negative_control_study_without_method_budget_split_metric_or_gate_tuning",
+      "passAuthorizesExternalPayloadRegistrationMutationActionOrExecution": false,
+      "passAuthorizesOnlySeparateSuccessorDesign": true,
+      "passAuthorizesProtectedAccessOrModelRun": false
+    },
+    "decisionScoring": {
+      "boundaryRequestCost": -1.0,
+      "correctDiagnosisReward": 10.0,
+      "normalizationRange": 40.0,
+      "outsideBoundaryRequestReward": -3.0,
+      "safeDeferralReward": -2.0,
+      "wrongDiagnosisReward": -30.0
+    },
+    "developmentSubsplit": {
+      "allVariantsRemainTogether": true,
+      "evaluationGroupCount": 40,
+      "evaluationGroupsPerFamily": 4,
+      "evaluationRecordCount": 160,
+      "familyBalancedByFrozenHashRanking": true,
+      "fitGroupCount": 40,
+      "fitGroupsPerFamily": 4,
+      "fitRecordCount": 160,
+      "seed": "v214-development-fit-evaluation-split-2026-08-19",
+      "unit": "opaque_concept_group"
+    },
+    "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+    "evaluationGates": {
+      "maximumControlWorkerEvaluationTruthPathCount": 0,
+      "maximumControlWorkerHiddenEvaluationFieldCount": 0,
+      "maximumDeterministicStackNormalizedDecisionRegret": 0.0,
+      "maximumFitEvaluationGroupOverlapCount": 0,
+      "minimumImperfectBoundedControlCount": 1,
+      "requiredCandidateBudgetCompliance": 1.0,
+      "requiredDeterministicStackActionAccuracy": 1.0,
+      "requiredDeterministicStackExactVersionSpaceAccuracy": 1.0,
+      "requiredDeterministicStackStatusAccuracy": 1.0,
+      "requiredEvaluationGroupCount": 40,
+      "requiredEvaluationRecordCount": 160,
+      "requiredFiniteMetrics": true,
+      "requiredFitAndEvaluationGroupsPerFamily": 4,
+      "requiredFitGroupCount": 40,
+      "requiredFitRecordCount": 160,
+      "requiredFullConstraintExactVersionSpaceAccuracy": 1.0,
+      "requiredFullConstraintStatusAccuracy": 1.0,
+      "requiredGroupVariantInvariance": 1.0,
+      "requiredPredictionCountPerMethod": 160,
+      "requiredPredictionFreezeBeforeEvaluationTruthJoin": true,
+      "requiredStructuralCeilingExactVersionSpaceAccuracy": 1.0,
+      "requiredStructuralCeilingStatusAccuracy": 1.0
+    },
+    "experiment": "v214_deterministic_candidate_and_version_space_controls",
+    "inputContract": {
+      "constructProtectedGroupRecords": false,
+      "developmentGroupCount": 80,
+      "developmentRecordCount": 320,
+      "openV213FrozenPublicRecords": false,
+      "openV213FrozenSealedTruth": false,
+      "openV213FrozenSplit": false,
+      "reconstructOnlyV213DevelopmentGroupsFromFrozenGenerator": true,
+      "reuseV213PublicSemanticsExactly": true
+    },
+    "methods": {
+      "BOUNDED_L0_LPLUS_SYNTHESIS": {
+        "detectDirectExpressionAndReferenceContradictions": true,
+        "noProposalDistinctFromContradiction": true,
+        "representedBehaviorBudget": 15
+      },
+      "DETERMINISTIC_STACK": {
+        "outsideAndContradictionHandledBeforeSemanticCommitment": true,
+        "useTypedParsingThenBoundedSynthesisThenFullConstraintFallback": true
+      },
+      "EXACT_STRUCTURAL_CEILING": {
+        "behaviorDomainSize": 256,
+        "role": "oracle_aligned_ceiling"
+      },
+      "FULL_CONSTRAINT_PROPAGATION": {
+        "behaviorDomainSize": 256,
+        "enumerateEveryEquivalenceClass": true
+      },
+      "NORMALIZED_EXACT_RETRIEVAL_K8": {
+        "candidateBudget": 8,
+        "canonicalizeIdentityCommutativityEvidenceOrderAndArbitraryNames": true,
+        "excludeEvaluationGroupAndAllVariants": true,
+        "tieBreak": "fit_group_hash_then_behavior_id"
+      },
+      "TYPED_APPROX_RETRIEVAL_K8": {
+        "candidateBudget": 8,
+        "distance": "one_minus_typed_feature_jaccard",
+        "nearestFitGroupCount": 4,
+        "tieBreak": "distance_then_fit_group_id_then_behavior_id"
+      },
+      "ordered": [
+        "EXACT_STRUCTURAL_CEILING",
+        "NORMALIZED_EXACT_RETRIEVAL_K8",
+        "TYPED_APPROX_RETRIEVAL_K8",
+        "BOUNDED_L0_LPLUS_SYNTHESIS",
+        "FULL_CONSTRAINT_PROPAGATION",
+        "DETERMINISTIC_STACK"
+      ]
+    },
+    "modelEligibilityRule": {
+      "excludedTruthFamilies": [
+        "GENUINELY_AMBIGUOUS",
+        "CONTRADICTORY",
+        "OUTSIDE_DESCRIPTION"
+      ],
+      "minimumAverageNormalizedDecisionRegret": 0.02,
+      "minimumResidualGroupCount": 8,
+      "requiresCorrectOracleClassAbsentOrShadowActionWrong": true,
+      "requiresPositiveNormalizedDecisionRegret": true,
+      "requiresPublicTypedEvidenceExpressible": true,
+      "selectorMethod": "DETERMINISTIC_STACK"
+    },
+    "parentV213OutcomeLock": "configs/v213-fresh-programmatic-concept-population-outcome-lock.json",
+    "plan": "docs/v214-deterministic-candidate-version-space-controls-plan.md",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "V213ProtectedPublicAccessCount": 0,
+      "V213ProtectedTruthAccessCount": 0,
+      "actualExecutionCount": 0,
+      "deterministicControlRunCount": 0,
+      "developmentProjectionRunCount": 0,
+      "exactMetricCount": 0,
+      "externalOntologyPayloadReadCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "naturalLanguageSurfaceReadCount": 0,
+      "protectedGroupConstructionCount": 0,
+      "trainingRunCount": 0
+    },
+    "roadmap": "docs/research-roadmap-after-v213.md",
+    "schemaVersion": "214-deterministic-candidate-version-space-controls-design",
+    "statusContract": {
+      "candidateIdsAreBehavioralEquivalenceClasses": true,
+      "noProposalAction": "DEFER_ADJUDICATE",
+      "outsideAction": "DEFER_OUTSIDE",
+      "outsideInterfaceSentinelDoesNotConsumeCandidateBudget": true,
+      "proposalStatuses": [
+        "SUFFICIENT",
+        "AMBIGUOUS",
+        "CONTRADICTORY",
+        "NO_PROPOSAL",
+        "OUTSIDE_INTERFACE"
+      ]
+    }
+  },
+  "config_sha256": "eedf5283f70bd2c6b05e4f0dae040796edacfab8ffb9009a17b09ff68478ec72",
+  "control_worker": "python/v214_control_worker.py",
+  "control_worker_sha256": "643ee50744bbfd1db97f476ca4fe6c5daffc84fc35114c63866138a97a425e60",
+  "design_audit": "outputs/v214-deterministic-controls/design-audit.json",
+  "design_audit_sha256": "8316bad8412e6b963a0aa0f6464f3752896a444c8871817d9a1eb05b7fde6c14",
+  "experiment": "v214_deterministic_candidate_and_version_space_controls",
+  "lock_payload_sha256": "150b130548063037f16d28c32216451ef5223d624623766cb2a074c063e7911b",
+  "parent_V213_config": "configs/v213-fresh-programmatic-concept-population.json",
+  "parent_V213_config_sha256": "656942338ad7003a2f3b592382b9f72dac47c812015bd1efbcdea9b7bf54193b",
+  "parent_V213_design_lock": "configs/v213-fresh-programmatic-concept-population-lock.json",
+  "parent_V213_design_lock_sha256": "6aa9f22e30b57fa04550490edb2e38e9d196eee3c1dfde3109807254276efafc",
+  "parent_V213_outcome": "configs/v213-fresh-programmatic-concept-population-outcome-lock.json",
+  "parent_V213_outcome_sha256": "41c8bd9bd18e4f03f050eb3cc972b1121d0d8314dbbd5d82c2c0581df1283001",
+  "parent_V213_protocol": "python/v213_fresh_programmatic_concept_population.py",
+  "parent_V213_protocol_sha256": "95ab7752742997b6a0391751aa897e0005788469f7ad4e4a7a76e62a2978c72a",
+  "parent_public_semantics": "outputs/v212-representational-diagnosis/oracle/public-semantics.json",
+  "parent_public_semantics_sha256": "b5eaf2d1dc61dfc29448369c5c530dd6fe046e280d24104b1edcfafecda0a7f1",
+  "plan": "docs/v214-deterministic-candidate-version-space-controls-plan.md",
+  "plan_sha256": "a6cc2d3ee3a1e1e5b13d2c7e6198730f78170ef3b5601a205cb6df5a73a2e156",
+  "protocol": "python/v214_deterministic_candidate_version_space_controls.py",
+  "protocol_sha256": "86718f6c8332b8ec16809d11a1822003800183b2c6d9eac5eb5f42fd85340d88",
+  "roadmap": "docs/research-roadmap-after-v213.md",
+  "roadmap_sha256": "2e309b7f74e2b3239bf42cb6a0094c496ce55988e3d56f1ec950f12d5e45ab00",
+  "runner": "python/run_v214_deterministic_candidate_version_space_controls.py",
+  "runner_sha256": "c049a4a291fa2e85243bec46b0ce4fcc4b4e8b09ab05c468339427f323c5bd82",
+  "schema_version": "214-deterministic-candidate-version-space-controls-lock",
+  "tests": "python/test_v214_deterministic_candidate_version_space_controls.py",
+  "tests_sha256": "7c3ccf7865204a6f821384d41401e852efac6406200e8e2185c872c38fdbbeca",
+  "verifier": "python/verify_and_freeze_v214_deterministic_candidate_version_space_controls_outcome.py",
+  "verifier_sha256": "e5339b54d28e44b78722e9ed772ff396fb4dec78ff5724bed602a7f467759ac7"
+}

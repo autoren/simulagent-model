@@ -1,0 +1,158 @@
+{
+  "auditor": "python/audit_and_freeze_v186_typed_contract_question_codebook_feasibility.py",
+  "auditor_sha256": "5a28c3102366f32dc8069f8313fd356ec0405621df5c7e508102cb30bbd80758",
+  "authorization": {
+    "build_codebook_once": true,
+    "modify_contracts_question_families_equivalence_binding_gates_or_decision": false,
+    "register_mutate_call_service_act_or_execute": false,
+    "run_model_API_or_training": false,
+    "score_planner_or_read_utterance_language": false
+  },
+  "config": "configs/v186-typed-contract-question-codebook-feasibility.json",
+  "config_payload": {
+    "claimBoundary": "text-free finite binary clarification-codebook feasibility and frozen identity-role binding over 14 externally grounded capability contracts; answers are deterministic contract attributes, not human, model, deployed-sensor, policy-performance, authority, action, or execution evidence",
+    "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+    "decisionRule": {
+      "ifEveryCodebookSeparabilityBindingAndSafetyGatePasses": "freeze_V186_identifying_codebook_and_authorize_clean_exact_planner_preregistration_only",
+      "otherwise": "freeze_V186_nonidentifying_contract_equivalence_classes_without_planner",
+      "passAuthorizesImmediatePlannerScoring": false,
+      "passAuthorizesLanguageModelOrProtectedLanguageAccess": false,
+      "passAuthorizesRegistrationAuthorityActionOrExecution": false
+    },
+    "developmentIdentities": "outputs/v183-sgd-contract-identifiability-population/population/development-identities.json",
+    "equivalenceRule": {
+      "contractsEquivalentOnlyIfCompleteAnswerVectorsAreEqual": true,
+      "neverForceSeparationWithinAnEqualVectorClass": true,
+      "pairwiseSeparationAuditedExhaustively": true,
+      "singletonClassesRequiredForFullIdentification": true
+    },
+    "experiment": "v186_text_free_typed_binary_question_codebook_and_role_binding",
+    "feasibilityGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumPlannerPolicyScoreCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumUtteranceOrDialogueLanguageReadCount": 0,
+      "minimumQuestionCount": 14,
+      "minimumQuestionFamilyCount": 3,
+      "requiredCapabilityContractCount": 14,
+      "requiredContractPairCount": 91,
+      "requiredContractTruthKindCounts": {
+        "KNOWN": 6,
+        "PROVISIONAL": 6,
+        "UNSUPPORTED": 2
+      },
+      "requiredDevelopmentBindingCount": 132,
+      "requiredDevelopmentMissingBindingCount": 12,
+      "requiredDevelopmentObservedBindingCount": 120,
+      "requiredEquivalenceClassCount": 14,
+      "requiredLargestEquivalenceClassSize": 1,
+      "requiredNontrivialQuestionRate": 1.0,
+      "requiredPairwiseSeparationRate": 1.0,
+      "requiredProtectedBindingCount": 132,
+      "requiredProtectedMissingBindingCount": 12,
+      "requiredProtectedObservedBindingCount": 120,
+      "requiredRoleIdentifierOverlap": 0,
+      "requiredTargetVectorReconstructionRate": 1.0,
+      "requiredUniqueAnswerVectorCount": 14,
+      "requiredUniqueQuestionIdentifierRate": 1.0
+    },
+    "hiddenIdentifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+    "parentV185OutcomeLock": "configs/v185-deterministic-sgd-candidate-set-controls-outcome-lock.json",
+    "preLockExposure": {
+      "actualExecutionCount": 0,
+      "contractQuestionCensusCount": 0,
+      "formalCodebookBuildCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "pairwiseSeparationScoreCount": 0,
+      "plannerPolicyScoreCount": 0,
+      "utteranceOrDialogueLanguageReadCount": 0
+    },
+    "protectedIdentities": "outputs/v183-sgd-contract-identifiability-population/population/protected-identities.json",
+    "questionFamilies": {
+      "binaryAnswers": [
+        0,
+        1
+      ],
+      "domain": {
+        "template": "Is the requested operation in domain VALUE?",
+        "values": "every distinct domain in the frozen contracts"
+      },
+      "intent_concept": {
+        "template": "Does the requested operation have normalized intent concept VALUE?",
+        "values": "every distinct normalized_intent_name in the frozen contracts"
+      },
+      "questionDerivationMayNotUseServiceVersionSourceDefinitionTruthKindPresentedCandidateLanguageOrOutcomes": true,
+      "questionDerivationUsesOnlyFrozenSemanticPayload": true,
+      "questionOrder": "family then normalized value",
+      "removeInvariantQuestions": true,
+      "slot_any": {
+        "template": "Can the requested operation use or return slot VALUE?",
+        "values": "every distinct service slot name in the frozen contracts"
+      },
+      "slot_required": {
+        "template": "Does the requested operation require slot VALUE?",
+        "values": "every distinct required slot name in the frozen contracts"
+      },
+      "slot_result": {
+        "template": "Can the requested operation return slot VALUE as a result?",
+        "values": "every distinct result slot name in the frozen contracts"
+      },
+      "transactional": {
+        "template": "Is the requested operation transactional?",
+        "values": [
+          true
+        ]
+      }
+    },
+    "roadmap": "docs/research-roadmap-after-v185.md",
+    "roleBinding": {
+      "bindEveryV183RecordByOpaqueIdentifier": true,
+      "developmentAndProtectedBindingsSeparate": true,
+      "missingRecordHasNoAnswerVectorAndRemainsINSUFFICIENT": true,
+      "observedRecordTargetAnswerVectorFromFrozenContract": true,
+      "protectedUtteranceLanguageReadCount": 0,
+      "selectionOrQuestionDesignUsesNoRoleOutcome": true
+    },
+    "schemaVersion": "186-typed-contract-question-codebook-feasibility-design",
+    "sourceV183OutcomeLock": "configs/v183-sgd-contract-identifiability-population-outcome-lock.json"
+  },
+  "config_sha256": "4a929d7b1e2d331f7dd48d289b05016f1424901c424084015e71823e37ca82ff",
+  "contract_catalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "contract_catalog_sha256": "23c7d5550db98927751aa5cdbf0926f773cbe40e6b95250dc8086e39bf873839",
+  "design_audit": "outputs/v186-typed-contract-question-codebook-feasibility/design-audit.json",
+  "design_audit_sha256": "8f8021b7ab38d4e7f8ee0a2a1b24152efcedf3ce756e0c30232029e158b7b312",
+  "development_identities": "outputs/v183-sgd-contract-identifiability-population/population/development-identities.json",
+  "development_identities_sha256": "b3cebb8956e927e3776e4dbb7d4790a376d720476815efd159194ef669b9dc2c",
+  "experiment": "v186_text_free_typed_binary_question_codebook_and_role_binding",
+  "hidden_identifiability": "outputs/v183-sgd-contract-identifiability-population/population/hidden-identifiability.json",
+  "hidden_identifiability_sha256": "62a9ef2ac1b1512a1396b72a0fbcd3fe4b8478ad765ebf56057480ab7469cf1f",
+  "lock_payload_sha256": "aef365ac02ea8c0ab7b8d1b76dbb744ecd8a668aed693ca56f18bcf5c4c7df42",
+  "parent_V185_outcome": "configs/v185-deterministic-sgd-candidate-set-controls-outcome-lock.json",
+  "parent_V185_outcome_sha256": "b0fd4a5ea7399ad3a8b0d274b8baf6ae22de9322a9060ac5dad0b4ca33d9289c",
+  "plan": "docs/v186-typed-contract-question-codebook-feasibility-plan.md",
+  "plan_sha256": "acfdf410e860d8ff0ba1b4435c668c9dbeec08426c7970e49b18e17b7ea18007",
+  "protected_identities": "outputs/v183-sgd-contract-identifiability-population/population/protected-identities.json",
+  "protected_identities_sha256": "5caddcd7e46ae6399c1814de4a4f10f633aedae3149e89fd022408306824962f",
+  "protocol": "python/v186_typed_contract_question_codebook_feasibility.py",
+  "protocol_sha256": "0380e30138915bf23d563eae89cb74872d09f6a2b8041b2efa7b19d4205122be",
+  "roadmap": "docs/research-roadmap-after-v185.md",
+  "roadmap_sha256": "f4115c416b81bd453cec37bb394931630231c8bc61cb3cc477d127802ac7f8e0",
+  "runner": "python/run_v186_typed_contract_question_codebook_feasibility.py",
+  "runner_sha256": "23fea571d138927c55bbffaeadfb72a04e07d75366d2b6cf49c04e2762a47185",
+  "schema_version": "186-typed-contract-question-codebook-feasibility-lock",
+  "source_V183_outcome": "configs/v183-sgd-contract-identifiability-population-outcome-lock.json",
+  "source_V183_outcome_sha256": "c32f80bf80f99183b8c17b4af16f25ba4bbed31fa00eb7fa2f2081bcff840da7",
+  "tests": "python/test_v186_typed_contract_question_codebook_feasibility.py",
+  "tests_sha256": "a492c7e438d038be17813cbe9bfa609a3035287c20929d785cd4ef0b8210fbd9",
+  "verifier": "python/verify_and_freeze_v186_typed_contract_question_codebook_feasibility_outcome.py",
+  "verifier_sha256": "785007f36b6a09e8eeae0d9d06f6ea3e6ee9434b2813947edace448627972a63"
+}

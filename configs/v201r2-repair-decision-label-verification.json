@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "201r2-repair-decision-label-verification-design",
+  "experiment": "v201r2_verification_only_repair_for_V201r1_decision_label_overwrite",
+  "sourceV201r1Lock": "configs/v201r1-elapsed-time-verification-repair-lock.json",
+  "sourceFailedOutcomeAudit": "outputs/v201r1-elapsed-time-verification-repair/outcome-audit.json",
+  "sourceRepairResult": "outputs/v201r1-elapsed-time-verification-repair/repair/result.json",
+  "sourceV201Result": "outputs/v201-local-menu-presentation-robustness/model-realization/result.json",
+  "sourceV201Summary": "outputs/v201-local-menu-presentation-robustness/model-realization/evaluation-summary.json",
+  "sourceV201ScoredRecords": "outputs/v201-local-menu-presentation-robustness/model-realization/scored-records.json",
+  "sourceV201Access": "outputs/v201-local-menu-presentation-robustness/model-realization/access.json",
+  "sourceV201Census": "outputs/v201-local-menu-presentation-robustness/model-realization/census/result.json",
+  "sourceV201ResultsDocument": "docs/v201-local-menu-presentation-robustness-results.md",
+  "sourceV201r1ResultsDocument": "docs/v201r1-elapsed-time-verification-repair-results.md",
+  "claimBoundary": "verification-only repair of one overwritten repair-stage decision label; preserve the source V201 negative scientific decision and every source artifact unchanged",
+  "repairContract": {
+    "requiredFalseChecks": ["repair_reconstructs_exactly"],
+    "requiredStoredResultDecision": "freeze_V201_negative_or_presentation_sensitive_without_retry_reprompt_model_selection_or_API",
+    "requiredRepairStageDecision": "freeze_V201r1_verification_repair_and_preserve_V201_negative_presentation_invariance_result",
+    "sourceArtifactsMayBeModified": false,
+    "modelPolicyOrScoringMayBeRerun": false
+  },
+  "preLockExposure": {"rawModelResponseReadCount": 0, "modelGenerationCount": 0, "APICallCount": 0, "trainingRunCount": 0, "actualExecutionCount": 0},
+  "decisionRule": {
+    "ifExactDecisionOverwriteAndEverySubstantiveRepairCheckPasses": "freeze_V201r2_serialization_repair_and_preserve_V201_negative_result",
+    "otherwise": "freeze_V201r2_failure_without_mutation_or_rerun",
+    "passAuthorizesRoadmapUpdateAndSeparateModelFreeDecisionSufficiencyDesignOnly": true,
+    "passAuthorizesProtectedAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

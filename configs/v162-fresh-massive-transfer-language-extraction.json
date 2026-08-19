@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "162-fresh-massive-transfer-selected-language-extraction-design",
+  "experiment": "v162_exact_v161_selected_language_extraction_with_role_isolation",
+  "parentPopulationOutcomeLock": "configs/v161-fresh-massive-transfer-population-outcome-lock.json",
+  "selectedPopulation": "outputs/v161-fresh-massive-transfer-population/population/selected-population.json",
+  "selectedPopulationSha256": "9720f1e8ce5807b5fec19d62591b0ab74e7d8261ff2ae911cfaeaf446c33069f",
+  "selectedPopulationPayloadSha256": "bad597e1b0b05bd5bb7d17ccd22fe3f33213fc04c317367c7e70df448cefef35",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "expectedLocaleMemberSuffix": "en-US.jsonl",
+  "canonicalSourcePartitionMap": {"train": "train", "dev": "validation", "test": "test"},
+  "roles": {
+    "development_transfer": {
+      "expectedRecordCount": 192,
+      "output": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+      "postExtractionAccess": "automatic_development_read_after_separate_deterministic_interface_lock_only"
+    },
+    "protected_transfer": {
+      "expectedRecordCount": 192,
+      "output": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+      "postExtractionAccess": "sealed_until_development_policy_controls_metrics_gates_and_evaluator_are_frozen"
+    }
+  },
+  "expectedClassCountPerRole": 48,
+  "requiredClasses": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+  "emittedRecordFields": [
+    "record_id", "candidate_id", "source_id", "role", "source_partition", "class_label",
+    "schema_visibility", "scenario", "intent", "utterance", "annotated_utterance", "slots",
+    "current_utterance_intent_overlap_count"
+  ],
+  "extractionGates": {
+    "requiredTotalRecordCount": 384,
+    "requiredRecordCountPerRole": 192,
+    "requiredRecordCountPerClassPerRole": 48,
+    "requireExactSelectedIdentifierSet": true,
+    "requireExactStructuralGroundTruthMatch": true,
+    "requireExactFamiliarityReconstruction": true,
+    "requireExactSlotTypeCountReconstruction": true,
+    "requireDevelopmentProtectedRoleDisjointness": true,
+    "maximumUnselectedLanguageRecordCount": 0,
+    "maximumManualDevelopmentUtteranceInspectionCount": 0,
+    "maximumManualProtectedUtteranceInspectionCount": 0,
+    "maximumProtectedLanguageReadDuringDevelopmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "sourceArchiveReadCount": 0,
+    "selectedLanguageRecordExtractionCount": 0,
+    "manualDevelopmentUtteranceInspectionCount": 0,
+    "manualProtectedUtteranceInspectionCount": 0,
+    "protectedLanguageReadDuringDevelopmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryExtractionGatePasses": "freeze_role_separated_language_artifacts_and_authorize_separate_deterministic_development_interface_preregistration_only",
+    "ifAnyExtractionGateFails": "stop_before_manual_inspection_interface_scoring_or_model_access",
+    "passAuthorizesManualDevelopmentInspection": false,
+    "passAuthorizesManualProtectedInspection": false,
+    "passAuthorizesImmediateInterfaceScoring": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingInductionPlanningActionOrExecution": false
+  },
+  "claimBoundary": "exact automatic language reconstruction for the V161-selected record-disjoint MASSIVE population; no interface, policy, model, open-set performance, relation-codebook transfer, calibration, planning, ontology, action, or execution evidence"
+}

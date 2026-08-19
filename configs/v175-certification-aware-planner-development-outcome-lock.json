@@ -1,0 +1,285 @@
+{
+  "audit": "outputs/v175-certification-aware-planner-development/outcome-audit.json",
+  "audit_sha256": "48f1a079d00697dca0ec818bedb28e9b45a3054310f37f14eb15a2b900e5b1ef",
+  "authorization": {
+    "allow_planner_model_hidden_target_or_provisional_commit_authority": false,
+    "design_fresh_exact_signature_disjoint_confirmation": true,
+    "modify_rerun_select_subsample_or_tune_V175": false,
+    "run_confirmation_without_separate_population_and_lock": false,
+    "run_model_register_mutate_real_state_call_service_or_execute": false
+  },
+  "development_lock": "configs/v175-certification-aware-planner-development-lock.json",
+  "development_lock_sha256": "183ccc290de2270ffe91201e78fc1da1cb8e7261820d5fd54b10ef11c05dc05d",
+  "development_summary": "outputs/v175-certification-aware-planner-development/evaluation/development-summary.json",
+  "development_summary_sha256": "2bb2a8e7564716224b3fdaccfc449d8b074231943f2b365eef44b763d43c7924",
+  "experiment": "v175_exact_certification_aware_routed_risk_planner_development",
+  "lock_payload_sha256": "526dbac15dc739d52fc447eedfc367c268f9dd4e7206e3b1c1e38daee10184fd",
+  "outcome": {
+    "beneficial": true,
+    "decision": "freeze_V175_as_strong_positive_certification_aware_development_mechanism",
+    "passed": true,
+    "scientific_safety_gates_passed": true,
+    "strong_development": true,
+    "summary": {
+      "exact_DP_risk_reconstruction_rate": 1.0,
+      "false_trusted_route_probability": 0.0,
+      "invariant_preservation": 1.0,
+      "planner_commit_authorization_count": 0,
+      "policy_metrics": {
+        "V167_exact_adaptive_horizon2": {
+          "deferred": {
+            "decimal": 1.0,
+            "denominator": 1,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 1.8062646166094443,
+            "denominator": 40194,
+            "numerator": 72601
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 2.1806264616609443,
+            "denominator": 401940,
+            "numerator": 876481
+          },
+          "trusted_completion": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "exact_certification_adaptive": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 3.989493265355334,
+            "denominator": 29029,
+            "numerator": 115811
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.0656159932022,
+            "denominator": 870870,
+            "numerator": 928013
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "greedy_class_information_gain_horizon5": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 4.240958275441034,
+            "denominator": 23751,
+            "numerator": 100727
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.09076249421077,
+            "denominator": 237510,
+            "numerator": 259067
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "immediate_defer": {
+          "deferred": {
+            "decimal": 1.0,
+            "denominator": 1,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 2.0,
+            "denominator": 1,
+            "numerator": 2
+          },
+          "trusted_completion": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "optimal_open_loop_subset": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 5.0,
+            "denominator": 1,
+            "numerator": 5
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.1666666666666667,
+            "denominator": 6,
+            "numerator": 7
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "random_query_order_consensus_stop": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 4.205261405261405,
+            "denominator": 15015,
+            "numerator": 63142
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.0871928071928072,
+            "denominator": 25025,
+            "numerator": 27207
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "target_informed_certificate_oracle": {
+          "deferred": {
+            "decimal": 0.3333333333333333,
+            "denominator": 3,
+            "numerator": 1
+          },
+          "expected_queries": {
+            "decimal": 3.7500363621053276,
+            "denominator": 1045044,
+            "numerator": 3918953
+          },
+          "false_trusted_route": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "provisional_sandbox_entry": {
+            "decimal": 0.0,
+            "denominator": 1,
+            "numerator": 0
+          },
+          "routed_total_risk": {
+            "decimal": 1.0416703028771994,
+            "denominator": 10450440,
+            "numerator": 10885913
+          },
+          "trusted_completion": {
+            "decimal": 0.6666666666666666,
+            "denominator": 3,
+            "numerator": 2
+          }
+        }
+      },
+      "population_coverage": 1.0,
+      "prior_weight_normalization_rate": 1.0,
+      "provenance_and_restart_verification": 1.0,
+      "provisional_sandbox_entry_probability": 0.0,
+      "sandbox_exactness": 1.0,
+      "simulated_sandbox_transaction_count": 1860,
+      "state_count": 132,
+      "state_count_strictly_improved_over_immediate_defer": 132,
+      "statewise_no_worse_than_every_operational_control_rate": 1.0,
+      "target_count": 4224,
+      "target_policy_score_count": 29568,
+      "target_result_payload_sha256": "fc50bf6029279e93efca6df1c42712f5a51d6b69c5878d68fda7811f0655aa2e"
+    }
+  },
+  "parent_V174_outcome": "configs/v174-certificate-depth-feasibility-census-outcome-lock.json",
+  "parent_V174_outcome_sha256": "92bc3fa9b3bb68693b5a89f4e5f884aad89198f2dd4ae22ff6a5bc50d2b03d3d",
+  "result": "outputs/v175-certification-aware-planner-development/evaluation/result.json",
+  "result_sha256": "790d32046972b4c0054a9cb3076b72d49488ea8a4b4f162fb9132bceb43329d1",
+  "results_document": "docs/v175-certification-aware-planner-development-results.md",
+  "results_document_sha256": "22f854cdba3ccbb62dbf010ed8da3dd10ef8674394018fad634a1aabad9480c3",
+  "schema_version": "175-certification-aware-planner-development-outcome-lock",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "source_V173_outcome": "configs/v173-trusted-only-shadow-integration-outcome-lock.json",
+  "source_V173_outcome_sha256": "fd05ea46e03f2a2bb91e606e3d510bcce62afd52ffbb981433e4e5b2b2d74a8a",
+  "state_policy_results": "outputs/v175-certification-aware-planner-development/evaluation/state-policy-results.json",
+  "state_policy_results_sha256": "5fb640def85313020d9e7df91bb380d4fa63e9e901b1af17c8a540f2cdc6f5eb",
+  "target_result_digest": "outputs/v175-certification-aware-planner-development/evaluation/target-result-digest.json",
+  "target_result_digest_sha256": "e26f2c8282e744132fe41cd5d93230ef26789ee1e39a6dda7df7d36df1276109",
+  "verifier": "python/verify_and_freeze_v175_certification_aware_planner_development_outcome.py",
+  "verifier_sha256": "7d1390fc23e6afe04e6a93ef99002937c7a2fbd57d9f9c059dc69b61e503b0d2"
+}

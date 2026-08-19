@@ -1,5 +1,194 @@
 # Controlled Open-World Language Research Direction
 
+## Canonical status after the cross-track audit (2026-08-19)
+
+The evidence sequence through V224/V224r2 is now consolidated in
+`docs/cross-track-evidence-synthesis-through-v224.md`. All 198 frozen outcome-lock payloads validate, while eight
+non-sensitive referenced dependencies have changed since their locks and are preserved as reproducibility gaps. The
+model-free decision architecture is coherent, but its prospective real-language semantic observation channel remains
+externally unvalidated.
+
+No new language, local-model, API, or ontology-acquisition experiment is authorized. The live reopening rule is
+`docs/research-stopping-rule-after-v224.md`. Every older "current update" below is retained as a historical research
+snapshot and cannot override this status.
+
+## Current update after V224/V224r2 (2026-08-19)
+
+V224 tested whether the Mondo workflow selected by V223 yields a usable record-level four-way semantic population.
+After two provenance-preserved implementation repairs, the completed two-stage metadata census enumerated 2,397
+records across the frozen 48-month frame without selecting or persisting task language. There were 362 final new-term
+requests, but zero records satisfied any frozen substantive stratum. Broad all-issue counts were only 13 for final
+`duplicate`, 2 for final `needs clarification`, and 20 for final `non-human animal`; there were no `approved` label
+events or GitHub duplicate-marking events in the frame.
+
+The preliminary gate therefore failed and deep provenance retrieval was skipped. Keep request language and models
+closed. B2c returns to externally unvalidated status: Mondo documents human curation, but its historical structured
+metadata cannot substitute for the independently adjudicated four-way gold required here. See
+`docs/research-roadmap-after-v224.md`.
+
+## Current update after V223 (2026-08-19)
+
+V223 completed a prospectively frozen metadata-only census of Mondo term requests, Gene Ontology term requests,
+Schema.org proposals, and Wikidata property proposals. All 21 allowed workflow/documentation URLs were captured and
+hashed; no task record, issue, proposal, comment, pull request, archive entry, or request language was opened. Mondo
+alone passed all 17 noncompensatory eligibility dimensions.
+
+This conditionally reopens B2c only for structured Mondo ontology-change requests. The external semantic evidence
+would be archived requester language plus independently attributable human curator decisions and catalog-release
+consequences—not simulated reviewers or model self-judgment. The next stage is V224, a separately locked Mondo-only
+record/disposition metadata census. It must prove exact four-way strata, per-record human independence, usable counts,
+and issue-to-term-to-release provenance before any request language is opened. See
+`docs/research-roadmap-after-v223.md`.
+
+## Current update after V221/V221r1 (2026-08-19)
+
+The fresh Mondo retrospective branch is now scientifically complete. V221 prospectively froze a development-only
+deterministic candidate/version-space study; its initial runner stopped before candidate evaluation because the runtime
+config omitted an already-frozen parser object. V221r1 injected that exact parser config without changing any
+scientific rule. At the accepted budget of eight, exact family expansion achieved 1.0 oracle-class recall and 1.0 full
+version-space retention over all 325 evaluation groups. The model-eligible residual was zero, unsafe singleton collapse
+was zero, and the only decision mismatch was a conservative clarification on one surface collision.
+
+Close model escalation for this retrospective task. The result establishes deterministic sufficiency for published
+versioned artifacts, not new-speaker intent. The next justified branch is a metadata- and provenance-first census for
+external resources with independently grounded utterance-to-versioned-concept boundary judgments. If none qualifies,
+B2c remains deferred; simulated reviewers cannot substitute for that evidence. See
+`docs/research-roadmap-after-v221r1.md`.
+
+## Current update after V206 (2026-08-19)
+
+No fresh screened source documents the full V205 decision mechanism. The most relevant behavioral source is
+AgentAbstain, which provides paired should-act/should-abstain tasks, executable sandboxes, deterministic commit checks,
+and irreversible-action distinctions. It lacks the calibration/reference and generative-likelihood structure needed
+to confirm V205, so it must be treated as a separate LLM behavior branch.
+
+Before opening its task language, a metadata/schema audit must prove that a deterministic pre-execution subset can be
+selected without labels leaking into prompts, that paired identities and gold act/abstain decisions are exact, that
+evaluation can remain shadow-only with zero tool execution, and that the source revision and reuse terms are frozen.
+The first model condition, if later authorized, should remain the established local Qwen runtime with bounded
+reasoning and a mechanically closed final channel; API comparison remains unnecessary unless a later preregistered
+capacity question requires it.
+
+## Current update after V205 (2026-08-19)
+
+The terminally proper V205 oracle passed all gates. It cleanly separates histories where semantic calibration makes
+target inspection and control worthwhile from histories where evidence for an outside semantic regime makes deferral
+optimal. Closed-world planning, forced commitment, MAP, posterior sampling, myopic control, and open-loop control all
+incurred preregistered material loss. Every repair was automatically settled and no finite-horizon escape remained.
+
+This establishes the decision architecture only. The channel probabilities remain project-authored and cannot be
+replaced by LLM rank, confidence, or agreement. The language branch stays closed while a separate metadata-only audit
+asks whether a fresh external source natively provides the required sensing, outside-regime, defer, consequence, and
+validation structure.
+
+## Current update after V203/V204 (2026-08-19)
+
+V203 found no partition-independent source population for all 14 exact contracts, so the bounded top-3 language
+proposal branch is now parked as development-only. V204 then tested a model-free open-world semantic POMDP with an
+explicit outside-codebook hypothesis, active sensing, safe deferral, and delayed control loss. Exact planning beat the
+point-model and open-loop comparators, but the intended abstention mechanism failed because repair consequences could
+fall beyond the finite horizon. No defer history was reachable and forced commitment had zero regret.
+
+The active branch remains model-free. Its successor must use a fixed-stage protocol with an unavoidable automatic
+settlement after repair and safe deferral as the terminal value of unfinished sensing. It must pass an explicit
+no-horizon-escape gate before source language or an LLM is introduced. V204 authorizes no model run, API, ontology
+mutation, authority, action, or execution.
+
+## Current update after V202 (2026-08-19)
+
+V202 selected a one-call top-3-plus-`OTHER` clarification controller using only persisted normalized proposals. It
+passed every frozen decision-cost and safety gate despite V201's negative full-set Jaccard result. Worst-presentation
+primary cost was `0.2141666667`, matched-`CHAR_LAST` improvement was at least `0.0441666667`, and target-hit
+disagreement was `0.0119047619`. The cheaper top-1 family failed its disagreement gate; qualified three-call
+ensembles were not selected because one call was already sufficient.
+
+This supports a narrow proposal-plus-trusted-question architecture, not calibrated model uncertainty or autonomous
+open-world classification. The next step is a preregistered metadata-only availability audit for an independent
+14-contract confirmation population. If the pinned source cannot supply complete exact-contract coverage after all
+V183/V191 exclusions, freeze the branch as development-only and move to the richer model-free POMDP track. See
+`docs/research-roadmap-after-v202.md`.
+
+## Current update after V201/V201r2 (2026-08-19)
+
+The confirmed local ranker preserved its downstream clarification value under exact menu-order and opaque-ID shifts,
+but not the complete membership of its top-three semantic set. Primary top-3 cost stayed near `0.214`, target-hit
+disagreement stayed at or below `0.0119047619`, and top-1 contract agreement was `0.9166666667`; mean top-3 set
+Jaccard fell to `0.6666666667` and `0.6369047619`, below the frozen `0.80` gate.
+
+The correct interpretation is narrower than stable understanding: model rankings can help a trusted controller choose
+a clarification question, but lower ranks are not a calibrated or presentation-invariant belief state. The next branch
+is model-free decision sufficiency over existing normalized proposals, with top-1, top-3, plurality, and consensus
+controllers compared under expected and worst-presentation cost. Protected reuse, menu expansion, ontology mutation,
+API comparison, action, and execution remain closed. See `docs/research-roadmap-after-v201.md`.
+
+## Current update after V198 (2026-08-19)
+
+V198 confirmed the complete V195 bounded local policy without tuning on protected language. On 113 dialogue-isolated
+observed records, primary top-3 recall was `0.95625` and controller cost was `0.20875`, versus `0.2322186147` for
+unchanged `CHAR_LAST`. The paired local-model improvement was `0.0234686147`; target retention and trusted exact
+completion were `1.0`, final truncation was zero, and the model received no terminal authority.
+
+This closes the confirmation question for the finite 14-option interface. It does not solve unrestricted novelty or
+catalog-boundary recognition. The next branch therefore tests whether the gain is invariant to exact menu
+presentation changes before attempting menu expansion, synthetic paraphrase, ontology acquisition, or a richer
+decision problem. Option-order and opaque-ID variants will be frozen as bijections without language access, and every
+target must remain expressible exactly once. See `docs/research-roadmap-after-v198.md`.
+
+## Current update after V195 (2026-08-19)
+
+V191–V195 completed the development half of a safer language-to-decision interface. The learned component does not
+classify a request as known, novel, or unsupported and does not choose an action. It only ranks three options from a
+complete visible 14-contract finite menu. A trusted clarification answer then either identifies the contract or uses
+`OTHER` to fall back to generic clarification; invalid, truncated, missing, or explicit-insufficient model output
+falls back to the unchanged V190 hierarchy. The complete target set is never pruned by model output.
+
+The best deterministic control, final-utterance character 3/4/5-gram retrieval, already reduced primary clarification
+cost from `0.38` to `0.2583333333`. A single frozen local `Qwen3.8-27B-4bit` condition improved it further to
+`0.2141666667`, with primary top-3 recall `0.9291666667`, balanced top-3 recall `0.9404761905`, structural validity
+`1.0`, target retention `1.0`, and exact trusted completion `1.0`. The gain covered known, provisional, and unsupported
+hidden benchmark strata.
+
+The bounded-reasoning result also resolves the Qwen overthinking concern operationally. Low effort did not naturally
+stop: all 84 reasoning phases hit the 48-token cap. The harness forcibly closed reasoning and reserved a distinct
+64-token final continuation; all final answers then completed without hitting their limit. Future comparisons must
+preserve that two-phase mechanism rather than silently increasing a shared output allowance.
+
+The next stage is independent confirmation with the exact V195 policy unchanged and no language-dependent tuning.
+Until that passes, the supported claim remains development-only finite-menu ranking. Even after confirmation, it will
+not by itself establish unrestricted novelty detection, hidden service-version recovery, schema induction, ontology
+truth, human clarification reliability, or safe execution. See `docs/research-roadmap-after-v195.md`.
+
+## Current update after V190 (2026-08-19)
+
+V183 repaired the earlier SGD label confound at the full capability-contract level and froze balanced, disjoint
+development and protected roles. V184 extracted their external conversations and the six declared known schemas into
+separate immutable artifacts without gold-field leakage or manual inspection. V185 then tested development-only
+character n-gram and token/schema candidate sets as non-authoritative clarification routers. None of 864 prospective
+calibration configurations met the joint 95% precision, 5% non-known false-specific, and 20% known-coverage gates.
+
+The safe fallback asked generic clarification on all observed evaluation cases and retained exact terminal safety, but
+it had no selectivity or cost benefit. Freeze the similarity-based routing family and keep protected language sealed.
+Do not run a local/API model on the V185 residual. V186 subsequently proved that a finite typed binary codebook can
+separate all 14 contracts, but V187 showed that this does not make target-blind questioning economical. At the frozen
+0.10 question and 0.40 generic-answer costs, exact adaptive, greedy, and best open-loop policies all choose the generic
+answer immediately; the target-informed oracle's 0.10 value depends on knowing the hidden target. V187r1 froze that
+negative result through a verification-only metadata repair and no policy rerun.
+
+V188 completed the text-free frontier. The frozen prior has entropy `3.6342540514` bits; unrestricted Huffman and
+frozen-codebook exact trees cost `3.7` and `3.9416666667` expected binary answers. Exact binary questioning beats
+generic clarification through question cost `0.0875` and switches to generic at `0.09`, reproducing V187 at `0.10`.
+V189 remains formally failed because its preregistered gate contradicted its decision rule. V190 separately confirmed
+the unexpected fixed hierarchy on sealed protected identity bindings: `domain -> normalized intent concept` costs
+`0.38` versus `0.40` generic, with exact target retention and typed completion `1.0`.
+
+This is finite menu compression, not adaptive planning or open-world language evidence. The next justified branch is
+a fresh unprotected language-to-menu feasibility study. It must freeze record-disjoint visible utterances and hidden
+targets, establish oracle proposal-quality and retention thresholds, and evaluate deterministic retrieval before any
+model. If authorized later, one bounded local model may rank menus only; invalid or truncated output becomes
+`INSUFFICIENT`, and the full contract set remains the authoritative fallback. Protected utterance language, API
+fallback, ontology promotion, trusted mutation, action, and execution remain closed. The canonical roadmap is
+`docs/research-roadmap-after-v190.md`.
+
 The current evidence supports one constrained next step. V111 found that a frozen local model's typed
 `ABSTAIN` response transfers as a useful but incomplete novelty signal: 80% precision and 50% recall on a
 separate development subset. This signal is evidence, not a semantic decision. It cannot define a novel
@@ -598,3 +787,277 @@ V157 evaluation or introduce a local/API model. The next branch must use fresh l
 relational/grammar conflict mechanism that detects asserted alternative relations rather than interpreting
 score margin as confidence. Model-free grammar and deterministic fallback must be tested before any LLM
 tie-breaker. Training, calibration fitting, induction, authority, action, and execution remain closed.
+
+## V159–V160 controlled relational grammar (2026-08-18)
+
+V159 froze a wholly fresh 256-fixture synthetic population in 32 complete groups, balanced between
+development and evaluation. Four specific questions expose ordinary retrieval profiles plus eight unique
+public relation aliases. A generic query can route to a question family or remain unclear but contains no
+state or witness. Unique-grammar requests name one alias, conflict requests name aliases from two distinct
+questions, and insufficient requests name none. Public rows hide grammar cardinality, truth, compatibility,
+oracle routing, and witnesses. Exact overlap with seven prior controlled populations was zero.
+
+All 64 specific closed answers routed exactly. All 64 generic answers were valid and produced zero semantic
+witnesses. Requests, route-only evidence, and malformed events remained `A00`; the complete authoritative
+hypothesis universe was retained; candidate fields and execution were zero. V159 ran no policy or model.
+
+V160 then prospectively locked a finite deterministic rule. Double-quoted surfaces are normalized and
+looked up in the public alias registry. A specific question is allowed only when every quoted surface is
+registered and all aliases map to exactly one query. Unknown aliases and cross-query aliases force generic
+routing. Requests without quoted surfaces use the unchanged strict retrieval rule from V158. Grammar has
+precedence, so a lexical decoy cannot override an explicit conflict.
+
+The single development census passed every gate. The grammar-plus-retrieval policy made the exact initial
+choice on all 64 requests: all lexical controls and unique aliases went to a specific question, while every
+cross-query conflict and insufficient request went to generic `Q80`. It asked zero wrong specific questions,
+had mean cost 0.25, improved by 0.25 over no-query and 0.10 over always-generic, and exactly matched the
+information oracle.
+
+The unchanged lexical-margin comparator achieved only 68.75% initial accuracy and cost 0.325. It deferred
+generically on 12 unique-alias requests and overcommitted to `Q83` on eight cross-query conflicts. The
+firewall kept all final outcomes exact, but the extra questions exposed the mechanism difference: grammar
+checked registered relation cardinality, while lexical margin measured only topical separation.
+
+This is positive controlled-interface evidence, not general semantic parsing. The synthetic benchmark
+supplied both quotation syntax and the alias codebook. Freeze V160 without opening V159 evaluation or
+tuning the grammar, aliases, thresholds, costs, or gates. Do not add an LLM to a deterministic interface
+that already matches oracle. The next branch may only design a separately locked fresh transfer population
+whose utterances are not generated from V159 templates. It must test translation into the finite relation
+codebook and unknown-alias fallback before any model is considered. APIs, training, induction, authority,
+action, and execution remain closed.
+
+## V161 external transfer population and three-track program (2026-08-18)
+
+V161 froze 384 previously unused MASSIVE identifiers without extracting language: 192 development-transfer
+and 192 protected-transfer records, each balanced across familiar known, unfamiliar known, valid undeclared,
+and unsupported classes. The roles are identifier-disjoint, exclude every V101 record, and cover all locked
+source scenarios and required intent minima. The source archive remained closed; utterance, prompt, model,
+API, training, policy, action, and execution counts were zero.
+
+This is a positive population-feasibility result only. V161 does not yet contain language or evaluate a
+system. It also does not directly confirm V160's relation-codebook mechanism: MASSIVE supplies source intent
+and scenario truth for controlled open-set capability recognition, not relation-alias truth. Report any
+later V161 evidence as record-disjoint controlled open-set transfer. A separate externally grounded
+relation-level population is required to test V160's actual transfer claim.
+
+The research program now has three isolated tracks, specified in
+`docs/research-branches-after-v161.md`:
+
+1. controlled external open-set language transfer, beginning with exact V161 selected-language extraction
+   and deterministic development controls;
+2. fixed-ontology reversible sandbox execution with preview, invariant validation, commit, independent
+   verification, and rollback; and
+3. shadow-only definition-conditioned ontology acquisition, factorizing expressibility from evidence
+   sufficiency and retaining a posterior or version space over candidate schemas.
+
+The immediate critical path remains the first track. The next operation must separately lock automatic
+extraction of exactly the selected V161 development and protected records into immutable role-separated
+artifacts. Protected language remains unread during development. No interface, grammar, retrieval policy,
+novelty gate, LLM, calibration fit, ontology induction, planner, action, or execution is authorized by V161.
+
+## V162 exact role-separated transfer-language extraction (2026-08-18)
+
+V162 prospectively froze the exact selected-language contract, then automatically reconstructed the 384
+V161 records from the pinned English MASSIVE archive. Development-transfer and protected-transfer artifacts
+each contain 192 records and exactly 48 records per structural class. Selected identifiers, source
+partition, scenario, intent, schema visibility, familiarity, and unique slot-type counts reconstruct
+exactly; the roles remain disjoint; no unselected language was emitted.
+
+The development and protected file SHA-256 identities are respectively
+`29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148` and
+`a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41`. Manual language
+inspection, protected-language reading during development, model/API access, training, service calls, side
+effects, and execution were zero. An independent automatic reconstruction confirmed every gate.
+
+Freeze V162. It authorizes only prospective design of deterministic development interfaces, controls,
+metrics, noncompensatory gates, and an exact evaluator. Development language may be read automatically only
+after that design is locked; protected language remains sealed. V162 is extraction evidence, not open-set
+performance or relation-codebook transfer evidence.
+
+## V163 deterministic transfer baselines and residual (2026-08-18)
+
+V163 hash-split the fresh development-transfer role into 96 calibration and 96 evaluation records, balanced
+24 per class in each. The unchanged 12-intent training-only catalog supplied 2,149 declared training
+utterances. Calibration selected character-retrieval thresholds 0.80 for known and 0.35 for unsupported.
+
+Standalone identifier grammar and retrieval achieved 46.875% and 45.833% exact decisions but had mean
+regret 3.1875 and 1.9375 because their false acceptances were expensive. Ask-always cost 1.125. The frozen
+deterministic consensus accepted only identical complete decisions from both methods; it achieved 19.792%
+overall exactness, zero false-known acceptance, and mean regret 0.953125, improving on ask-always.
+
+Consensus handled 20 records without a model at 95% exactness, zero false-known acceptance, and mean regret
+0.20. It abstained on a truth- and language-free residual of 76 identifiers spanning all four classes. The
+residual contains 13 familiar known, 24 unfamiliar known, 23 valid undeclared, and 16 unsupported records;
+its payload SHA-256 is `360b9cc079726a06405fc7d331b578dc985133a361d4a210fb891671c0d1a19c`.
+
+All prospective residual gates passed. Freeze V163 and authorize only separate preregistration of one pinned
+local model on those 76 identifiers. The model cannot alter nonresidual decisions, prune hypotheses, update
+authoritative state or belief, act, or execute. Protected language, APIs, training, ontology induction,
+planning, services, side effects, and execution remain closed.
+
+## V164 deterministic-first local residual result (2026-08-18)
+
+V164 locked one direct/no-thinking Qwen3.8-27B 4-bit condition on only the 76 V163 residual records. The
+explicit conditional JSON contract removed the earlier formatting confound: all 76 responses were valid, versus
+52.34% observed-language validity in V107. Residual exactness was 63.16%; exact known-intent accuracy was
+86.49%; all familiar-known and unsupported residual requests were correct.
+
+The central open-world boundary nevertheless failed. The model made zero NOVEL predictions and resolved none
+of 23 valid undeclared residual capabilities. Unsupported recall was 100% but precision was only 61.54%.
+Residual confidence ECE was 0.2458 and mean regret was 1.2303. The combined deterministic-plus-model hybrid
+reached 69.79% exactness and only 2.08% false-known acceptance, but its mean regret was 1.015625—worse than the
+frozen deterministic consensus's 0.953125.
+
+Outcome lock `5820f1f7f5031b69a146a15a707ce323eb76e3e7fbd5b7cdf22e50944594bf98` freezes V164 as
+a nonqualifying external-development result. Protected transfer remains sealed. Do not retune the prompt,
+reasoning, model, confidence, parser, residual, costs, thresholds, or gates.
+
+The result closes Track A's current protocol and changes the next scientific question. A one-axis status asks
+the model to conflate two distinct judgments: whether a request is expressible by the current catalog, and
+whether current evidence is sufficient to choose among interpretations. The next primary branch must factor
+those axes explicitly in a model-free typed DSL before any further LLM test. Track B's reversible fixed-ontology
+sandbox follows using only trusted concepts; provisional ontology candidates remain shadow-only.
+
+## V165–V166 factored ontology representation and controls (2026-08-18)
+
+V165 froze a 144-record project-authored finite-DSL development population crossing three expressibility classes
+with sufficient, ambiguous, and contradictory evidence. Exhaustive enumeration over 256 Boolean truth tables
+proved all contracts: sufficient version spaces had size one, ambiguous spaces had size 64 and spanned all three
+classes, contradictory spaces were empty, and every noncontradictory target was retained. The labels are relative
+to a bounded DSL, not claims of absolute novelty.
+
+V166 compared six model-free controls. Definition parsing and ontology retrieval alone each reproduced 22.22% of
+exact version spaces; observation filtering alone reproduced 77.78%. Their exact combination matched the
+hidden-contract oracle on all 144 records and achieved perfect status, sufficient-candidate, expressibility,
+ambiguity, contradiction, target-retention, and renaming metrics. False provisional creation and false resolution
+were zero.
+
+All 48 ambiguous records correctly retained 64 candidates, so the prospectively defined model residual was empty.
+No local or API LLM is justified for this bounded step. Freeze V166 under outcome lock
+`fbced4ba45b0daec532332137a8db6c3d3d8336512ea0340b1c2fc2500d11f5a`. The next Track C question is
+whether costly interventions have positive decision value and require history-dependent selection. Track B's
+fixed-ontology reversible sandbox follows under a separate lock. Models, registration, trusted-state updates,
+real services, side effects, and execution remain closed.
+
+## V203–V207r1 external-evidence and behavioral-abstention update (2026-08-19)
+
+The program now distinguishes three claims that must not be merged: finite-menu language proposal quality, the V205
+model-free open-world semantic decision mechanism, and external behavioral act/abstain performance. V203 could not
+find an independent confirmation population for the first. V205 established the second only in an exact synthetic
+oracle. V206 found no external source implementing all of V205's likelihood and control requirements.
+
+AgentAbstain was then considered only for the third claim. V207 failed technically at a dataset-tree page limit and
+produced no scientific outcome. The separately locked V207r1 pagination repair succeeded, but metadata/schema
+feasibility was negative: zero pairs and zero pre-execution cases were identifiable without task payload, and the
+allowed schema did not expose an independent deterministic act/abstain label. Opening task text to construct the
+population or accepting an LLM judge as gold would invalidate the intended test.
+
+The next language step is therefore source discovery, not model scaling. A source must expose immutable,
+machine-readable pair ID, phase/scenario ID, and gold decision independently of prompt and rationale before language is
+opened. Only a positive source audit can authorize a separate extraction lock and, later, one established local Qwen
+low-effort shadow condition. APIs, training, ontology mutation, tools, action, and execution remain closed.
+
+## V208 source-census closure and controlled-channel successor (2026-08-19)
+
+V208 tested six fresh external sources at the metadata boundary. The census found no source that jointly supports
+matched text-only pre-execution act/abstain controls, explicit pair and phase identities, deterministic labels
+independent of an LLM judge, balanced coverage, and immutable licensing. External behavioral confirmation is parked;
+the negative does not justify opening payloads or relaxing label independence.
+
+The next language research stage is a controlled probabilistic grammar connected to the exact V205 decision process.
+It must include canonical, alternative-valid, and outside semantic regimes; action-dependent clarification channels;
+known normalized likelihoods; adaptive history-dependent query value; mandatory settlement of final actions; and safe
+deferral. This is a model-free contract test, not a claim about unrestricted natural language.
+
+If that contract passes, a later fresh split may test one local Qwen low-effort mapper into the fixed observation
+alphabet. The model remains an untrusted sensor. Its outputs cannot become posterior likelihoods merely because they
+are ranked or confident; any probabilistic use requires separately frozen calibration evidence and conservative
+fallback. APIs, training, ontology registration, authority, action, and execution remain closed.
+
+## V209/V209r1 controlled-language mechanism result (2026-08-19)
+
+The model-free contract passed after one narrowly scoped implementation repair. Exact planning used the reference
+utterance to decide whether a target question still had value, deferred on unresolved outside-semantics evidence, and
+reached both correct final actions on informative histories. The result survived matched paraphrases and a complete
+semantic-observation label permutation with zero policy or value change. Collapsing the outside regime or committing
+to one regime produced material regret.
+
+The supported interpretation is architectural: a language-facing system can represent utterances as stochastic,
+non-authoritative evidence and let an exact controller decide whether to ask, act, or defer. It does not show that a
+language model can recover the semantic observation ID from unseen wording.
+
+V210 will therefore create a fresh, role-separated controlled-language population under a deterministic generator and
+projection contract. Surface variation must be held out compositionally, counterfactual groups must share latent truth,
+and protected surfaces must stay sealed. The first evaluation after population freeze is a deterministic projection
+baseline. Only a prospectively defined residual can justify a later local Qwen condition; model outputs remain labels
+or proposals, not posterior probabilities, authority, or execution.
+
+## V210 population/projection result (2026-08-19)
+
+V210 passed. Its 540 records form exact matched direct/paraphrase/opaque groups across every finite-channel factor,
+with separate development/protected roles and separate surface/truth artifacts. All construction, identifier, surface,
+and lexical overlap checks across roles were zero; probability, counterfactual, renaming, and regeneration checks were
+exact. Protected surfaces were not opened manually or by the baseline.
+
+The explicit-marker projector accepted 90 development records perfectly and abstained on 180 non-direct records. The
+residual was defined without truth and remains factor-complete. This creates a legitimate deterministic-baseline
+question rather than immediately routing every difficult utterance to a model.
+
+V211 will freeze lexical, compositional, and consensus rules on that residual, predict before truth is joined, and
+score both semantic labels and their effect on the V209 policy/value. A later model is eligible only if V211 leaves a
+nontrivial, prediction-defined residual whose decision relevance cannot be answered by these exact rules.
+
+## V211/V211r1 deterministic-residual result (2026-08-19)
+
+V211 showed that the apparent 180-record V210 residual was not yet an open-world language challenge. After a frozen
+group-disjoint calibration/evaluation split, the lexical, compositional response-span, and abstention-first consensus
+views each mapped all 90 evaluation surfaces to the exact semantic observation. False acceptance and matched
+counterfactual disagreement were zero, and the induced V209 continuation regret was numerical zero. Always abstaining
+was safe but measurably costly.
+
+The first run's sole failure was an obsolete compositional-baseline dictionary key. V211r1 changed that name only and
+verified that every prediction value was unchanged before freezing the scientific outcome. No protected artifact or
+model was opened. The resulting model-eligible residual is empty.
+
+This changes the benchmark design requirement. Difficulty cannot come merely from substituting a finite vocabulary
+that calibration reveals, and an undifferentiated `OUTSIDE_UNKNOWN` label is also insufficient. Track G2/B2a must
+first establish a model-free representational-diagnosis contract over executable behavioral equivalence classes.
+
+The contract separates whether a meaning is an existing primitive, an existing composition, expressible only with a
+withheld operator, or irreducible relative to the frozen diagnostic language from whether the available evidence is
+sufficient, ambiguous, or contradictory. Arbitrary names remain usable only through explicit episode grounding.
+Distinguishable hypotheses require solver- or enumeration-produced boundary witnesses; behavioral equivalents are
+one semantic candidate even when their syntax differs.
+
+Revised V212 proves the oracle. V213 then creates a fresh development/protected programmatic concept population, and
+V214 applies the strongest deterministic retrieval, parsing, synthesis, equivalence, contradiction, and safe-retention
+controls. False primitive creation and false merging are independent gates. Only a meaningful V214 residual can
+authorize one separately locked, bounded local-model candidate-generator study.
+
+The prior sandbox and certificate-aware planner remain reusable downstream components, not immediate experiments.
+They reconnect only after candidates survive semantic validation. Historical ontology releases and curated mappings
+may later provide independent retrospective confirmation without new participants, but cannot establish prospective
+speaker or expert intent. Models, registration, trusted mutation, action, and execution remain closed.
+## Current roadmap after V219A (2026-08-19)
+
+V219A positively selected the fully untouched Mondo pair `v2026-05-05 -> v2026-06-02` using only the already-frozen
+V217A API metadata snapshot. Both eligible adjacent pairs passed every metadata gate; the selected eight-asset contract
+totals 96,095,320 bytes, and the official newer-release API body covers all four required event categories. No network
+request or payload/protected/model access occurred.
+
+The next authorized step is a separately audited V220 payload/population design for that one pair. It must use the
+frozen API body as the release-summary control, preserve event-stratified gates and group-disjoint protection, and keep
+V218 records sealed. Deterministic residual analysis comes only after a verified V220 population; a bounded local LLM
+is conditional on a meaningful residual and remains a candidate generator only. The canonical roadmap is
+`docs/research-roadmap-after-v219a.md`.
+## Current roadmap after V220 (2026-08-19)
+
+V220 positively confirmed the retrospective representational-diagnosis population on the untouched Mondo pair
+`v2026-05-05 -> v2026-06-02`: 2,161 families, 4,322 paired records, exact payload/control integrity, and direct addition,
+text, lifecycle, mapping, ambiguity, and decision strata. Development-only oracle checks passed exactly. The 540
+protected groups were hashed but not loaded for scoring.
+
+The next step is V221: a prospectively frozen development-only deterministic candidate/version-space residual study.
+Only a meaningful decision-relevant residual may later authorize a bounded local candidate generator. Strong new-
+speaker semantics remains a separate external-evidence track. The canonical roadmap is
+`docs/research-roadmap-after-v220.md`.

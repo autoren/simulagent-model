@@ -1,0 +1,125 @@
+{
+  "schemaVersion": "165-factored-ontology-identifiability-population-design",
+  "experiment": "v165_model_free_factored_ontology_identifiability_development_population",
+  "parentTrackAOutcomeLock": "configs/v164-local-residual-open-set-transfer-outcome-lock.json",
+  "roadmap": "docs/research-branches-after-v161.md",
+  "claimBoundary": "project-authored finite-DSL development population and automatic identifiability proof only; no external language, human judgment, model performance, absolute novelty, ontology registration, authority, action, or execution claim",
+  "typedDSL": {
+    "entityType": "Device",
+    "primitiveArity": 1,
+    "primitiveValueType": "Boolean",
+    "primitiveCount": 3,
+    "valuationCount": 8,
+    "registeredForms": ["ATOM", "AND_DISTINCT_ATOMS", "OR_DISTINCT_ATOMS"],
+    "negationRegistered": false,
+    "constantsRegistered": false,
+    "maximumCompositionDepth": 1,
+    "candidateTruthTableCount": 256,
+    "registeredAliasTruthTableCount": 3,
+    "registeredCompositionTruthTableCount": 6,
+    "provisionalTruthTableCount": 247,
+    "provisionalMeaning": "not extensionally expressible by one registered atom or one registered binary AND/OR composition on the exhaustive eight-valuation domain"
+  },
+  "primitiveNamespaces": [
+    {"namespace_id": "N1", "entity_noun": "relay", "primitive_names": ["sealed", "powered", "linked"]},
+    {"namespace_id": "N2", "entity_noun": "sensor", "primitive_names": ["verified", "charged", "paired"]},
+    {"namespace_id": "N3", "entity_noun": "terminal", "primitive_names": ["licensed", "awake", "synced"]},
+    {"namespace_id": "N4", "entity_noun": "module", "primitive_names": ["approved", "energized", "connected"]}
+  ],
+  "definitionGrammar": {
+    "aliasTemplate": "A {entity_noun} is {concept_name} exactly when it is {atom}.",
+    "andTemplate": "A {entity_noun} is {concept_name} exactly when it is both {left_atom} and {right_atom}.",
+    "orTemplate": "A {entity_noun} is {concept_name} exactly when it is either {left_atom} or {right_atom} or both.",
+    "tableTemplate": "The rule for {concept_name} is determined only by the complete registered intervention table.",
+    "underspecifiedTemplate": "The available evidence constrains {concept_name}, but its exact rule is not specified.",
+    "contradictoryTemplate": "The submitted evidence for {concept_name} must be checked for consistency before any rule is retained."
+  },
+  "factorialDesign": {
+    "expressibilityClasses": ["alias", "composition", "provisional_primitive"],
+    "evidenceStatuses": ["sufficient", "ambiguous", "contradictory"],
+    "logicalTargetGroupsPerCell": 4,
+    "renamingsPerLogicalTarget": 4,
+    "recordsPerCell": 16,
+    "cellCount": 9,
+    "recordCount": 144,
+    "split": "development_only",
+    "evaluationPopulationCreated": false
+  },
+  "evidenceConstruction": {
+    "sufficientAliasOrComposition": "exact controlled definition plus deterministic positive and negative intervention observations",
+    "sufficientProvisional": "complete eight-valuation intervention table identifying one non-DSL truth table",
+    "ambiguous": "underspecified definition plus the lexicographically first nontrivial observation subset retaining the target and candidates from all three expressibility classes",
+    "contradictory": "consistency-check definition plus duplicate identical intervention with opposite observed labels",
+    "examplesArePositiveLabels": true,
+    "counterexamplesAreNegativeLabels": true,
+    "allObservationsContainExplicitTypedInterventions": true
+  },
+  "publicFields": [
+    "record_id", "split", "entity_type", "entity_noun", "concept_name",
+    "registered_primitives", "definition", "observations"
+  ],
+  "hiddenFields": [
+    "factor_cell", "logical_target_group", "namespace_id", "target_truth_table",
+    "target_candidate_id", "generative_expressibility", "evidence_status",
+    "version_space_candidate_ids", "version_space_size", "version_space_classes",
+    "definition_parse", "identifiability_contract"
+  ],
+  "populationGates": {
+    "requiredRecordCount": 144,
+    "requiredCellCount": 9,
+    "requiredRecordsPerCell": 16,
+    "requiredLogicalTargetGroupCount": 36,
+    "requiredRenamingsPerLogicalTarget": 4,
+    "requiredCandidateTruthTableCount": 256,
+    "requiredRegisteredAliasTruthTableCount": 3,
+    "requiredRegisteredCompositionTruthTableCount": 6,
+    "requiredProvisionalTruthTableCount": 247,
+    "requiredSufficientVersionSpaceSize": 1,
+    "minimumAmbiguousVersionSpaceSize": 2,
+    "requiredAmbiguousExpressibilityClassCoverage": 3,
+    "requiredContradictoryVersionSpaceSize": 0,
+    "requiredTargetRetentionWhenNonContradictory": 1.0,
+    "requiredSufficientExpressibilityClassificationAccuracy": 1.0,
+    "requiredEvidenceStatusClassificationAccuracy": 1.0,
+    "requiredRenamingVersionSpaceInvariance": 1.0,
+    "requiredPublicHiddenFieldLeakCount": 0,
+    "requiredProjectAuthoredDevelopmentDisclosure": true,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "authoritativeOntologyImmutable": true,
+    "allCandidateTruthTablesRemainShadowOnly": true,
+    "observationallyEquivalentCandidatesRetained": true,
+    "provisionalPrimitiveCanBeRegistered": false,
+    "candidateCanUpdateAuthoritativeStateOrBelief": false,
+    "candidateCanSelectActionOrExecute": false,
+    "realExecutionCount": 0
+  },
+  "preLockExposure": {
+    "populationBuildCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationAndIdentifiabilityGatePasses": "freeze_V165_and_authorize_separate_model_free_deterministic_baseline_preregistration_only",
+    "otherwise": "close_V165_before_baselines_or_model_use",
+    "passAuthorizesImmediateBaselineScoring": false,
+    "passAuthorizesModelEvaluationOrProtectedPopulation": false,
+    "passAuthorizesOntologyRegistrationAuthorityActionOrExecution": false
+  }
+}

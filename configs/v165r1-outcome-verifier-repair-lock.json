@@ -1,0 +1,87 @@
+{
+  "V165_result": "outputs/v165-factored-ontology-identifiability/population/result.json",
+  "V165_result_sha256": "30738d6a9f1fe78832cc8c4f2e8e780ae4b9d9dbb31b792dd60ee8ffff6d6f9b",
+  "auditor": "python/audit_and_freeze_v165r1_outcome_verifier_repair.py",
+  "auditor_sha256": "96dfddfd29622b075ff618224136f4ef0e530d8b8aadc6655777b602889a2aaf",
+  "authorization": {
+    "changeScientificRecordsMetricsGatesDecisionOrClaims": false,
+    "createEvaluationPopulation": false,
+    "createNominalV165OutcomeLock": false,
+    "modifyOriginalV165Artifacts": false,
+    "rerunPopulationBuild": false,
+    "runModelAPITrainingRegistrationAuthorityActionOrExecution": false,
+    "writeRepairedTechnicalOutcomeAuditAndLock": true
+  },
+  "config": "configs/v165r1-outcome-verifier-repair.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumPopulationRebuildOrRewriteCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0
+    },
+    "authorization": {
+      "changeScientificRecordsMetricsGatesDecisionOrClaims": false,
+      "createEvaluationPopulation": false,
+      "createNominalV165OutcomeLock": false,
+      "modifyOriginalV165Artifacts": false,
+      "rerunPopulationBuild": false,
+      "runModelAPITrainingRegistrationAuthorityActionOrExecution": false,
+      "writeRepairedTechnicalOutcomeAuditAndLock": true
+    },
+    "claimBoundary": "technical outcome-verifier repair only: compare the persisted embedded population audit after removing the runner-added population_build_count access field; do not rebuild outputs, rerun a scientific condition, modify the original V165 lock/verifier/audit/result/assets, change any factor, record, version space, metric, gate, decision, or claim, or access any model, evaluation, registration, authority, action, or execution",
+    "diagnosis": {
+      "expectedFailedChecks": [
+        "audit_pass_and_decision_reconstruct_exactly"
+      ],
+      "expectedPersistedValue": 1,
+      "expectedSoleMismatchPath": "population_audit.access.population_build_count",
+      "requiredExactEqualityAfterRemovingField": true,
+      "requiredResultAccessPopulationBuildCount": 1
+    },
+    "experiment": "v165r1_population_access_alias_outcome_verifier_repair",
+    "failedV165OutcomeAudit": "outputs/v165-factored-ontology-identifiability/outcome-audit.json",
+    "frozenScientificOutcome": {
+      "candidateTruthTableCount": 256,
+      "decision": "freeze_V165_and_authorize_separate_model_free_deterministic_baseline_preregistration_only",
+      "evidenceStatusAccuracy": 1.0,
+      "passed": true,
+      "recordCount": 144,
+      "renamingInvariance": 1.0,
+      "targetRetention": 1.0
+    },
+    "parentV165PopulationLock": "configs/v165-factored-ontology-identifiability-population-lock.json",
+    "schemaVersion": "165r1-outcome-verifier-repair",
+    "v165Result": "outputs/v165-factored-ontology-identifiability/population/result.json",
+    "v165ResultsDocument": "docs/v165-factored-ontology-identifiability-population-results.md"
+  },
+  "config_sha256": "addbf5204045144ccbe83e675307308be22fa5c6554f94adbefe64cab3415705",
+  "design_audit": "outputs/v165r1-outcome-verifier-repair/design-audit.json",
+  "design_audit_sha256": "b19a49eb863fc3f0f19add6c8d42793187ff82b0c124c9f2d61b7818655dfb87",
+  "experiment": "v165r1_population_access_alias_outcome_verifier_repair",
+  "failed_V165_outcome_audit": "outputs/v165-factored-ontology-identifiability/outcome-audit.json",
+  "failed_V165_outcome_audit_sha256": "1985c49a1747dcac2cf68e11eeccc681120f591e2fdb0136dee18030da013797",
+  "lock_payload_sha256": "6e9bf5e2286155d39c7db37384bab8c7818a4409c4fe4e5b428dbec0d9c4baea",
+  "original_V165_verifier": "python/verify_and_freeze_v165_factored_ontology_identifiability_outcome.py",
+  "original_V165_verifier_sha256": "95fdba9b2e9d456f7ae04ba78b6818b85b3b3e549f4e22c551eabf5d5e1889dc",
+  "parent_population_lock": "configs/v165-factored-ontology-identifiability-population-lock.json",
+  "parent_population_lock_sha256": "325d8ec610ce9191d1740d730ef20ef6b84926d1b26f0c9c3dc3b0a0d325b06b",
+  "plan": "docs/v165r1-outcome-verifier-repair-plan.md",
+  "plan_sha256": "f15da03c5ddf07781d938a33330a74e4a632069834d5963c034ba1da0d703cb4",
+  "protocol": "python/v165r1_outcome_verifier_repair.py",
+  "protocol_sha256": "7756c663ff278ccbe96989529fa2471464f629419bbe4630fa000b280a65a22e",
+  "results_document": "docs/v165r1-outcome-verifier-repair-results.md",
+  "results_document_sha256": "4a194ff841e2df00c562dc5218bcde8b9af544e0aae97df54760daae878913a5",
+  "schema_version": "165r1-outcome-verifier-repair-lock",
+  "tests": "python/test_v165r1_outcome_verifier_repair.py",
+  "tests_sha256": "23ab0b4d69731690336f4c4cb83403176ec39cc3e3089506e7d9a828d4cd3c7b",
+  "verifier": "python/verify_and_freeze_v165r1_outcome_verifier_repair.py",
+  "verifier_sha256": "e0d81276c81f3a31c75d872263111a5ac2714f12a0c940c2b9281af1d9f21b53"
+}

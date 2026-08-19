@@ -1,0 +1,59 @@
+{
+  "V169_result": "outputs/v169-fresh-constraint-state-population/population/result.json",
+  "V169_result_sha256": "ad80dea60f3c3a6c68c994c6d96cfddb2ae09233828028427c6930bfe640b1b5",
+  "audit": "outputs/v169r1-json-key-normalization-repair/outcome-audit.json",
+  "audit_sha256": "59be5cad6ddbefb7256c12595512bf391d0bcf99e611c976b7869a18ab41d563",
+  "authorization": {
+    "create_nominal_V169_outcome": false,
+    "modify_or_rebuild_V169": false,
+    "preregister_unchanged_V167_planner_on_all_eligible_states": true,
+    "score_planner_without_separate_lock": false,
+    "tune_planner_or_run_model_register_act_or_execute": false
+  },
+  "constraint_states": "outputs/v169-fresh-constraint-state-population/population/constraint-states.json",
+  "constraint_states_sha256": "5f2d17c3621563153e649596b4d27a824f7be05d8e34c6f8a29cd6b51770a850",
+  "eligible_state_ids": "outputs/v169-fresh-constraint-state-population/population/planner-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "bb0bf96dab602e46deb4646ecf69b0618df09ad0215f1dde0693ff903d4e3c46",
+  "excluded_signatures": "outputs/v169-fresh-constraint-state-population/population/excluded-v165-signatures.json",
+  "excluded_signatures_sha256": "fe2bb77b8bb60600d69ab45f69e0d879490425ae427acf99ca93c0a28edc02ee",
+  "experiment": "v169r1_verifier_only_JSON_object_key_normalization_repair",
+  "failed_V169_outcome_audit": "outputs/v169-fresh-constraint-state-population/outcome-audit.json",
+  "failed_V169_outcome_audit_sha256": "656c0192bab18a0776bf9d49a6a35e339394f0afcc212ee02c256b24e73fc7b6",
+  "lock_payload_sha256": "0f3266dcf9cdc84ff820bef679a3b9921994fa92f1e30c134faed3c394944fff",
+  "outcome": {
+    "decision": "freeze_corrected_V169_through_V169r1_and_authorize_separate_unchanged_planner_preregistration",
+    "passed": true,
+    "scientific_population_gates_passed": true,
+    "summary": {
+      "candidate_count_values": [
+        64
+      ],
+      "class_coverage_counts": {
+        "1": 33,
+        "2": 15,
+        "3": 58
+      },
+      "evaluation_record_count": 0,
+      "excluded_V165_signature_count": 6,
+      "planner_eligible_state_count": 58,
+      "planner_ineligible_state_count": 48,
+      "planner_policy_score_count": 0,
+      "project_authored_procedural": true,
+      "selected_membership_sha256": "157e47072ef3ab08f77375bdab9db090abf86e2511e1ec206529cc0460591b99",
+      "selected_state_count": 106,
+      "source_state_count": 112
+    },
+    "technical_serialization_repair_only": true
+  },
+  "parent_V169_population_lock": "configs/v169-fresh-constraint-state-population-lock.json",
+  "parent_V169_population_lock_sha256": "f42eaf0136d1c3274f6826841fc6fa704813c7c7f9df57d01926342f9a5406ae",
+  "population_summary": "outputs/v169-fresh-constraint-state-population/population/population-summary.json",
+  "population_summary_sha256": "a5cb579da5e7bf1c53cf98823e64650e7c2ee8de60763dc45adaf6dc880b142a",
+  "repair_lock": "configs/v169r1-json-key-normalization-repair-lock.json",
+  "repair_lock_sha256": "567e5e5f09043ad4920b754236f45082e40872b5ba631ed219f2c65ae5362b97",
+  "results_document": "docs/v169-fresh-constraint-state-population-results.md",
+  "results_document_sha256": "47a38c2c1050eb9ba1a7185f6c6de0936e4a78c2531183733d80f7e1ef24e865",
+  "schema_version": "169r1-json-key-normalization-repair-outcome-lock",
+  "verifier": "python/verify_and_freeze_v169r1_json_key_normalization_repair.py",
+  "verifier_sha256": "c9127e9ed66bd03898eb979751c542e8e69226ab431089f7f16c10d8e390ffab"
+}

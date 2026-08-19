@@ -1,0 +1,177 @@
+{
+  "audit": "outputs/v207r2-agentabstain-outcome-verification-repair/outcome-audit.json",
+  "audit_sha256": "806fe27db566cc152cf10797ae81ce8b6b512bce0554ddc3999d6f80893314f5",
+  "authorization": {
+    "API_training_tool_registration_authority_action_or_execution": false,
+    "AgentAbstain_task_text_or_model_run": false,
+    "update_roadmap_and_preregister_separate_F1_source_census_design": true
+  },
+  "experiment": "v207r2_verification_only_repair_for_postlock_roadmap_mutation",
+  "lock_payload_sha256": "94e24e1ab2f251ad477baee341b10f32f967cc633aaf8a66d91eb30b8a0369f2",
+  "outcome": {
+    "V207_scientific_outcome_available": false,
+    "V207r1_scientific_feasibility_passed": false,
+    "V207r1_summary": {
+      "access": {
+        "actual_execution_count": 0,
+        "code_schema_file_read_count": 8,
+        "code_tree_metadata_read_count": 1,
+        "dataset_card_header_read_count": 1,
+        "dataset_head_read_count": 1,
+        "dataset_task_payload_file_read_count": 0,
+        "dataset_tree_logical_census_count": 1,
+        "dataset_tree_metadata_page_read_count": 3,
+        "external_side_effect_count": 0,
+        "model_API_call_count": 0,
+        "model_generation_count": 0,
+        "model_load_count": 0,
+        "protected_access_count": 0,
+        "service_call_count": 0,
+        "task_instruction_example_dialogue_rationale_read_count": 0,
+        "tool_call_count": 0,
+        "training_run_count": 0
+      },
+      "code": {
+        "commit": "f581249704b26804e28a39e37396f1be00b71a4d",
+        "repository": "https://github.com/AntiQuality/agentabstain",
+        "schema_evidence": {
+          "gold": [],
+          "identity": [
+            "task_id"
+          ],
+          "prompt": [
+            "instruction",
+            "prompt"
+          ],
+          "rationale": [
+            "explanation"
+          ],
+          "scenario": [
+            "category",
+            "scenario"
+          ]
+        },
+        "schema_file_count": 8,
+        "schema_files": [
+          {
+            "byte_count": 279,
+            "path": "eval/evaluators/__init__.py",
+            "sha256": "1a12472f37ff2b06f314983c8852ba4c1ee9a6c93bce7e51c7b6305006acb0f1"
+          },
+          {
+            "byte_count": 298,
+            "path": "eval/evaluators/base.py",
+            "sha256": "e047de943d28ac0178284b5d42b35408d24fe25c63f497deee599dd2196aa46e"
+          },
+          {
+            "byte_count": 2114,
+            "path": "eval/evaluators/commit_check.py",
+            "sha256": "bcf03d9c7323af1d0b2592f0c3853a5abc2916d15d6a72c641b3e564a4489c24"
+          },
+          {
+            "byte_count": 15586,
+            "path": "eval/evaluators/response_llm_judge.py",
+            "sha256": "d9aa8cf0171e09086b25c70ab99591c105286f1df3907da74f18b1129d443359"
+          },
+          {
+            "byte_count": 1706,
+            "path": "src/configs/tasks.yaml",
+            "sha256": "f370401872468a0bd73eeb1283972c3e17236e5ad55970edf552dbe5014ebdec"
+          },
+          {
+            "byte_count": 7122,
+            "path": "src/types/BaseAgent.py",
+            "sha256": "97c9432a60fe59a296551783611e2e94157d99f425dc914559acc9abf05dfed2"
+          },
+          {
+            "byte_count": 240,
+            "path": "src/types/__init__.py",
+            "sha256": "c1069644d0addd94b10b3e566c6ace4766ac4fa72f5235f1fff0c81b4c1d5f0f"
+          },
+          {
+            "byte_count": 1713,
+            "path": "src/types/trajectory.py",
+            "sha256": "6097a16a92a50445e0b238b73e1eb2835fa8dc23af03fde160b2669955a79071"
+          }
+        ],
+        "task_config_identifier_count": 6,
+        "tree_blob_count": 120,
+        "tree_path_sha256": "647a1cd3547195beee78f849815d257a8d24eeb2971ef2edd4330f74e8b15233",
+        "tree_url": "https://api.github.com/repos/AntiQuality/agentabstain/git/trees/f581249704b26804e28a39e37396f1be00b71a4d?recursive=1"
+      },
+      "dataset": {
+        "card_license": "cc-by-4.0",
+        "commit": "842228426c2a703347396501af61c7890972c7ee",
+        "pair_evidence": {
+          "complete_pair_count": 0,
+          "pair_identity_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "preexecution_pair_count": 0,
+          "preexecution_pair_identity_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "preexecution_scenario_count": 0,
+          "preexecution_scenario_identifiers": [],
+          "runtime_pair_count": 0
+        },
+        "repository": "https://huggingface.co/datasets/antiquality/agentabstain",
+        "tree_file_count": 1586,
+        "tree_first_page_url": "https://huggingface.co/api/datasets/antiquality/agentabstain/tree/842228426c2a703347396501af61c7890972c7ee?recursive=true&expand=false&limit=1000",
+        "tree_pagination": {
+          "page_count": 3,
+          "page_item_counts": [
+            1000,
+            1000,
+            954
+          ],
+          "page_url_sha256": "0402e25efd53c2a9bc90569c8359687353c2f3fb6525f5d4d3d0fe16d5d5fa91",
+          "terminal_page_reached": true
+        },
+        "tree_path_sha256": "37400c7e0be550d2e1206c1dbe0343ee2c1191ad3909204acbdee0a90d51a30f"
+      },
+      "qualification_checks": {
+        "both_pair_sides_identifiable_without_payload": false,
+        "code_README_and_license_hashes_match_V206": true,
+        "code_commit_matches_V206": true,
+        "contamination_treatment_is_explicit": true,
+        "dataset_card_license": true,
+        "dataset_revision_pinned": true,
+        "declared_counts_present": true,
+        "gold_decision_identifiable_without_LLM_judge": false,
+        "identity_gold_scenario_and_prompt_schema_fields": false,
+        "minimum_complete_pairs": false,
+        "minimum_preexecution_pairs": false,
+        "minimum_preexecution_scenarios": false,
+        "preexecution_subset_selectable_before_task_text": false,
+        "rationale_separable_from_prompt": true,
+        "shadow_no_tool_no_execution_path": false
+      },
+      "scientific_feasibility_passed": false,
+      "transport_checks": {
+        "maximum_page_count": true,
+        "minimum_page_count": true,
+        "one_logical_tree_census": true,
+        "page_size_is_endpoint_max": true,
+        "terminal_page_reached": true
+      },
+      "transport_integrity_passed": true
+    },
+    "V207r1_transport_integrity_passed": true,
+    "decision": "freeze_V207r1_scientific_negative_without_opening_task_payload_or_weakening_gates",
+    "passed": true
+  },
+  "repair_lock": "configs/v207r2-agentabstain-outcome-verification-repair-lock.json",
+  "repair_lock_sha256": "28b33af03465d0a27d80b2781b6f35ba738eb50cc13b464e19a2c6193eb85b25",
+  "result": "outputs/v207r2-agentabstain-outcome-verification-repair/repair/result.json",
+  "result_sha256": "f77266758acb20d044899cd868da70504f5cf216cd744d5525c70044490baf0c",
+  "results_document": "docs/v207r2-agentabstain-outcome-verification-repair-results.md",
+  "results_document_sha256": "f18d3decd1c9848cf1232c522101fd417277497a59d5746ad8ee3ebf3808e9b1",
+  "schema_version": "207r2-agentabstain-outcome-verification-repair-outcome-lock",
+  "source_failed_outcome_audit": "outputs/v207r1-agentabstain-shadow-feasibility/outcome-audit.json",
+  "source_failed_outcome_audit_sha256": "e462f028ec6ab93da51c2d2adcb62885e0190c416a84abe317265e586ab3ef99",
+  "source_result": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/result.json",
+  "source_result_sha256": "8901872135964abd0c0152e704bb1ffa9410b77b5586bac4e0baeb97eeb7da41",
+  "source_results_document": "docs/v207r1-agentabstain-shadow-feasibility-results.md",
+  "source_results_document_sha256": "a2d63b2e7f91a0f85fcd14da743436635ddf3396baefbc319f7c90ce230989f1",
+  "source_summary": "outputs/v207r1-agentabstain-shadow-feasibility/evaluation/summary.json",
+  "source_summary_sha256": "c1f320e43b0d4880216878ffb92655261fa54281a7afee62ee40f9251a2a4d3e",
+  "verifier": "python/verify_and_freeze_v207r2_agentabstain_outcome_verification_repair_outcome.py",
+  "verifier_sha256": "34f2fd63a916817c013fd14ae060c5e18ea4d99dc23f7f35407ba8900900a179"
+}

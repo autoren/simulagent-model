@@ -1,0 +1,409 @@
+{
+  "audit": "outputs/v208-external-behavioral-abstention-source-census/outcome-audit.json",
+  "audit_sha256": "67801a4a264b709732e807d77b4337b626b1b8d2671b8da1f210c573b9b5a2f0",
+  "authorization": {
+    "park_external_behavioral_abstention_if_negative": true,
+    "preregister_exact_identifier_selection_and_text_extraction_only": false,
+    "task_text_model_API_training_tool_service_registration_authority_action_or_execution": false
+  },
+  "evaluation_lock": "configs/v208-external-behavioral-abstention-source-census-lock.json",
+  "evaluation_lock_sha256": "d36f9b99bb14e4a483cb96083650b94b06092098c8ebad1eb5c96efe56212634",
+  "experiment": "v208_fresh_external_behavioral_abstention_source_availability_census",
+  "lock_payload_sha256": "bcc4d02bd135611c4037886526ea1b27a47353e44c1d42b1a26505ea8a9130a4",
+  "outcome": {
+    "decision": "freeze_V208_negative_park_external_behavioral_abstention_and_return_to_model_free_decision_interface_track",
+    "passed": true,
+    "scientific_feasibility_passed": false,
+    "summary": {
+      "access": {
+        "API_call_count": 0,
+        "actual_execution_count": 0,
+        "external_side_effect_count": 0,
+        "github_README_or_other_blob_body_read_count": 0,
+        "github_license_blob_body_read_count": 0,
+        "github_recursive_tree_metadata_read_count": 6,
+        "github_repository_object_metadata_read_count": 6,
+        "huggingFace_card_data_object_metadata_read_count": 3,
+        "huggingFace_dataset_head_read_count": 3,
+        "huggingFace_tree_or_payload_read_count": 0,
+        "model_or_policy_evaluation_count": 0,
+        "task_instruction_example_dialogue_rationale_response_read_count": 0,
+        "tool_or_service_call_count": 0,
+        "training_run_count": 0
+      },
+      "census_checks": {
+        "AgentAbstain_not_reopened": true,
+        "distinct_repository_per_candidate": true,
+        "minimum_candidate_count": true
+      },
+      "eligible_candidate_count": 0,
+      "eligible_candidate_ids": [],
+      "records": [
+        {
+          "candidate_id": "OVERSEARCH_QA",
+          "code": {
+            "commit": "6b6a964bde646d89c7d8efc466026fcdec1d1483",
+            "license_spdx": "NOASSERTION",
+            "repository": "https://github.com/apple/ml-over-searching",
+            "tree_blob_count": 6,
+            "tree_marker_counts": {
+              "gold": 0,
+              "pair": 0,
+              "phase": 0,
+              "prompt": 0,
+              "rationale": 0
+            },
+            "tree_path_sha256": "2f8c822724de22c73142a4df0ae45a44f3928f5453b1a24f8813d9c11c93f8a0",
+            "tree_truncated": false
+          },
+          "dataset": {
+            "commit": null,
+            "license": null,
+            "metadata_available": true,
+            "repository": null
+          },
+          "declared_counts": {
+            "pairs": 0,
+            "public_units": 1188,
+            "scenarios": 3
+          },
+          "landing_facts": {
+            "balancedActAbstainControlsClaimed": true,
+            "deterministicActAbstainGoldFieldClaimed": true,
+            "explicitMachineReadablePairIdentityFieldClaimed": false,
+            "explicitPreExecutionPhaseIdentityClaimed": true,
+            "goldIndependentOfLLMJudgeClaimed": true,
+            "pairedOrMatchedControlsClaimed": false,
+            "promptLabelSeparationClaimed": true,
+            "runtimeInteractionRequired": false,
+            "textOnlyShadowClassificationSupported": true
+          },
+          "qualification_checks": {
+            "balanced_act_abstain_controls": true,
+            "deterministic_act_abstain_gold_field": true,
+            "explicit_machine_readable_pair_identity_field": false,
+            "explicit_preexecution_phase_identity": true,
+            "gold_independent_of_LLM_judge": true,
+            "immutable_code_revision": true,
+            "immutable_external_dataset_revision_when_declared": true,
+            "minimum_pairs": false,
+            "minimum_public_units": true,
+            "minimum_scenarios": true,
+            "paired_or_matched_controls": false,
+            "prompt_label_separation": true,
+            "recognized_code_license_metadata": false,
+            "recognized_dataset_license_metadata_when_declared": true,
+            "runtime_interaction_not_required": true,
+            "text_only_shadow_classification": true
+          },
+          "scientific_feasibility_passed": false
+        },
+        {
+          "candidate_id": "ABSTENTION_BENCH",
+          "code": {
+            "commit": "e29184174c69bc95139b8c33dcca09aacab9442a",
+            "license_spdx": "NOASSERTION",
+            "repository": "https://github.com/facebookresearch/AbstentionBench",
+            "tree_blob_count": 125,
+            "tree_marker_counts": {
+              "gold": 1,
+              "pair": 0,
+              "phase": 0,
+              "prompt": 3,
+              "rationale": 1
+            },
+            "tree_path_sha256": "12ce086e7db1133d09faef26f67dde06148ec05849b19608f2f7ba748b9d1660",
+            "tree_truncated": false
+          },
+          "dataset": {
+            "commit": "af06080e2cbfff73f02a7c33135e5567d6f7ce6a",
+            "license": "cc-by-nc-4.0",
+            "metadata_available": true,
+            "repository": "https://huggingface.co/datasets/facebook/AbstentionBench"
+          },
+          "declared_counts": {
+            "pairs": 0,
+            "public_units": 0,
+            "scenarios": 6
+          },
+          "landing_facts": {
+            "balancedActAbstainControlsClaimed": false,
+            "deterministicActAbstainGoldFieldClaimed": true,
+            "explicitMachineReadablePairIdentityFieldClaimed": false,
+            "explicitPreExecutionPhaseIdentityClaimed": true,
+            "goldIndependentOfLLMJudgeClaimed": true,
+            "pairedOrMatchedControlsClaimed": false,
+            "promptLabelSeparationClaimed": true,
+            "runtimeInteractionRequired": false,
+            "textOnlyShadowClassificationSupported": true
+          },
+          "qualification_checks": {
+            "balanced_act_abstain_controls": false,
+            "deterministic_act_abstain_gold_field": true,
+            "explicit_machine_readable_pair_identity_field": false,
+            "explicit_preexecution_phase_identity": true,
+            "gold_independent_of_LLM_judge": true,
+            "immutable_code_revision": true,
+            "immutable_external_dataset_revision_when_declared": true,
+            "minimum_pairs": false,
+            "minimum_public_units": false,
+            "minimum_scenarios": true,
+            "paired_or_matched_controls": false,
+            "prompt_label_separation": true,
+            "recognized_code_license_metadata": false,
+            "recognized_dataset_license_metadata_when_declared": true,
+            "runtime_interaction_not_required": true,
+            "text_only_shadow_classification": true
+          },
+          "scientific_feasibility_passed": false
+        },
+        {
+          "candidate_id": "ABSTAIN_EQA",
+          "code": {
+            "commit": "b970eb97aa6afce7020a0d57baaef79c53e05303",
+            "license_spdx": "MIT",
+            "repository": "https://github.com/gibrantaowu/AbstainEQA",
+            "tree_blob_count": 81,
+            "tree_marker_counts": {
+              "gold": 6,
+              "pair": 0,
+              "phase": 5,
+              "prompt": 8,
+              "rationale": 6
+            },
+            "tree_path_sha256": "024e5b4152d1ed1ad92a7d1ea68342575f54aaac489832c540c3ab48396c58cf",
+            "tree_truncated": false
+          },
+          "dataset": {
+            "commit": null,
+            "license": null,
+            "metadata_available": true,
+            "repository": null
+          },
+          "declared_counts": {
+            "pairs": 1636,
+            "public_units": 3272,
+            "scenarios": 5
+          },
+          "landing_facts": {
+            "balancedActAbstainControlsClaimed": true,
+            "deterministicActAbstainGoldFieldClaimed": true,
+            "explicitMachineReadablePairIdentityFieldClaimed": false,
+            "explicitPreExecutionPhaseIdentityClaimed": false,
+            "goldIndependentOfLLMJudgeClaimed": true,
+            "pairedOrMatchedControlsClaimed": true,
+            "promptLabelSeparationClaimed": true,
+            "runtimeInteractionRequired": true,
+            "textOnlyShadowClassificationSupported": false
+          },
+          "qualification_checks": {
+            "balanced_act_abstain_controls": true,
+            "deterministic_act_abstain_gold_field": true,
+            "explicit_machine_readable_pair_identity_field": false,
+            "explicit_preexecution_phase_identity": false,
+            "gold_independent_of_LLM_judge": true,
+            "immutable_code_revision": true,
+            "immutable_external_dataset_revision_when_declared": true,
+            "minimum_pairs": true,
+            "minimum_public_units": true,
+            "minimum_scenarios": true,
+            "paired_or_matched_controls": true,
+            "prompt_label_separation": true,
+            "recognized_code_license_metadata": true,
+            "recognized_dataset_license_metadata_when_declared": true,
+            "runtime_interaction_not_required": false,
+            "text_only_shadow_classification": false
+          },
+          "scientific_feasibility_passed": false
+        },
+        {
+          "candidate_id": "HIL_BENCH",
+          "code": {
+            "commit": "352d14c861f2531949dfa91848d4b2fe46b8a247",
+            "license_spdx": "",
+            "repository": "https://github.com/hilbenchauthors/hil-bench",
+            "tree_blob_count": 5745,
+            "tree_marker_counts": {
+              "gold": 0,
+              "pair": 0,
+              "phase": 2801,
+              "prompt": 1204,
+              "rationale": 0
+            },
+            "tree_path_sha256": "f7c5146c17881b7c9078b36398f70b88ab7af9aef10a6c74d7635fb9f4f221a1",
+            "tree_truncated": false
+          },
+          "dataset": {
+            "commit": "045419da0f51f10efc621efdb481a6502df810d5",
+            "license": "",
+            "metadata_available": true,
+            "repository": "https://huggingface.co/datasets/ScaleAI/hil-bench"
+          },
+          "declared_counts": {
+            "pairs": 200,
+            "public_units": 200,
+            "scenarios": 3
+          },
+          "landing_facts": {
+            "balancedActAbstainControlsClaimed": true,
+            "deterministicActAbstainGoldFieldClaimed": false,
+            "explicitMachineReadablePairIdentityFieldClaimed": true,
+            "explicitPreExecutionPhaseIdentityClaimed": false,
+            "goldIndependentOfLLMJudgeClaimed": false,
+            "pairedOrMatchedControlsClaimed": true,
+            "promptLabelSeparationClaimed": true,
+            "runtimeInteractionRequired": true,
+            "textOnlyShadowClassificationSupported": false
+          },
+          "qualification_checks": {
+            "balanced_act_abstain_controls": true,
+            "deterministic_act_abstain_gold_field": false,
+            "explicit_machine_readable_pair_identity_field": true,
+            "explicit_preexecution_phase_identity": false,
+            "gold_independent_of_LLM_judge": false,
+            "immutable_code_revision": true,
+            "immutable_external_dataset_revision_when_declared": true,
+            "minimum_pairs": true,
+            "minimum_public_units": true,
+            "minimum_scenarios": true,
+            "paired_or_matched_controls": true,
+            "prompt_label_separation": true,
+            "recognized_code_license_metadata": false,
+            "recognized_dataset_license_metadata_when_declared": false,
+            "runtime_interaction_not_required": false,
+            "text_only_shadow_classification": false
+          },
+          "scientific_feasibility_passed": false
+        },
+        {
+          "candidate_id": "CLARIFY_CODE_BENCH",
+          "code": {
+            "commit": "5e2d5b5ce6259daa034cebb69f65e5e4c6dec3e9",
+            "license_spdx": "MIT",
+            "repository": "https://github.com/fangz-cs/ClarifyCodeBench",
+            "tree_blob_count": 23,
+            "tree_marker_counts": {
+              "gold": 0,
+              "pair": 0,
+              "phase": 0,
+              "prompt": 1,
+              "rationale": 0
+            },
+            "tree_path_sha256": "5756d5c7a0fd74cd1906551d5358ce0dbf4bbc16c2105dbdc9563359d21e5683",
+            "tree_truncated": false
+          },
+          "dataset": {
+            "commit": null,
+            "license": null,
+            "metadata_available": true,
+            "repository": null
+          },
+          "declared_counts": {
+            "pairs": 0,
+            "public_units": 419,
+            "scenarios": 1
+          },
+          "landing_facts": {
+            "balancedActAbstainControlsClaimed": false,
+            "deterministicActAbstainGoldFieldClaimed": false,
+            "explicitMachineReadablePairIdentityFieldClaimed": false,
+            "explicitPreExecutionPhaseIdentityClaimed": true,
+            "goldIndependentOfLLMJudgeClaimed": false,
+            "pairedOrMatchedControlsClaimed": false,
+            "promptLabelSeparationClaimed": true,
+            "runtimeInteractionRequired": false,
+            "textOnlyShadowClassificationSupported": true
+          },
+          "qualification_checks": {
+            "balanced_act_abstain_controls": false,
+            "deterministic_act_abstain_gold_field": false,
+            "explicit_machine_readable_pair_identity_field": false,
+            "explicit_preexecution_phase_identity": true,
+            "gold_independent_of_LLM_judge": false,
+            "immutable_code_revision": true,
+            "immutable_external_dataset_revision_when_declared": true,
+            "minimum_pairs": false,
+            "minimum_public_units": true,
+            "minimum_scenarios": false,
+            "paired_or_matched_controls": false,
+            "prompt_label_separation": true,
+            "recognized_code_license_metadata": true,
+            "recognized_dataset_license_metadata_when_declared": true,
+            "runtime_interaction_not_required": true,
+            "text_only_shadow_classification": true
+          },
+          "scientific_feasibility_passed": false
+        },
+        {
+          "candidate_id": "ASK_OR_ASSUME",
+          "code": {
+            "commit": "728464a755f15fd448aff61a5cb32dce97fd9c1d",
+            "license_spdx": "NOASSERTION",
+            "repository": "https://github.com/nedwards99/ask-or-assume",
+            "tree_blob_count": 2726,
+            "tree_marker_counts": {
+              "gold": 0,
+              "pair": 0,
+              "phase": 151,
+              "prompt": 166,
+              "rationale": 0
+            },
+            "tree_path_sha256": "4529b7ab608fd34df5a07bb64302cf340b9bbe1b192f6b53c17d6d4407c70dd1",
+            "tree_truncated": false
+          },
+          "dataset": {
+            "commit": "a56830ede5eee0925cb7d735d422a207927925bd",
+            "license": "",
+            "metadata_available": true,
+            "repository": "https://huggingface.co/datasets/cmu-lti/interactive-swe"
+          },
+          "declared_counts": {
+            "pairs": 500,
+            "public_units": 500,
+            "scenarios": 1
+          },
+          "landing_facts": {
+            "balancedActAbstainControlsClaimed": true,
+            "deterministicActAbstainGoldFieldClaimed": false,
+            "explicitMachineReadablePairIdentityFieldClaimed": true,
+            "explicitPreExecutionPhaseIdentityClaimed": false,
+            "goldIndependentOfLLMJudgeClaimed": false,
+            "pairedOrMatchedControlsClaimed": true,
+            "promptLabelSeparationClaimed": true,
+            "runtimeInteractionRequired": true,
+            "textOnlyShadowClassificationSupported": false
+          },
+          "qualification_checks": {
+            "balanced_act_abstain_controls": true,
+            "deterministic_act_abstain_gold_field": false,
+            "explicit_machine_readable_pair_identity_field": true,
+            "explicit_preexecution_phase_identity": false,
+            "gold_independent_of_LLM_judge": false,
+            "immutable_code_revision": true,
+            "immutable_external_dataset_revision_when_declared": true,
+            "minimum_pairs": true,
+            "minimum_public_units": true,
+            "minimum_scenarios": false,
+            "paired_or_matched_controls": true,
+            "prompt_label_separation": true,
+            "recognized_code_license_metadata": false,
+            "recognized_dataset_license_metadata_when_declared": false,
+            "runtime_interaction_not_required": false,
+            "text_only_shadow_classification": false
+          },
+          "scientific_feasibility_passed": false
+        }
+      ],
+      "scientific_feasibility_passed": false
+    }
+  },
+  "result": "outputs/v208-external-behavioral-abstention-source-census/evaluation/result.json",
+  "result_sha256": "ae2fdcdd4a11ec7641e380b1c4566c79429aa464f5d90597fae27dfbcf6b22f0",
+  "results_document": "docs/v208-external-behavioral-abstention-source-census-results.md",
+  "results_document_sha256": "bfdb2871b256e58abff0738018bd730e248a135f484e37df97fa189d902935f3",
+  "schema_version": "208-external-behavioral-abstention-source-census-outcome-lock",
+  "summary": "outputs/v208-external-behavioral-abstention-source-census/evaluation/summary.json",
+  "summary_sha256": "ad3ca5ff2246ee09db62597cde1738f7e05aa7afb4ef9ef5f9b950223b885b35",
+  "verifier": "python/verify_and_freeze_v208_external_behavioral_abstention_source_census_outcome.py",
+  "verifier_sha256": "0e7f58135505661f151eeb958bd50f88d15016432d7790a95161e5d2da661abb"
+}

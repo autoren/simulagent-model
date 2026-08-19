@@ -1,0 +1,108 @@
+{
+  "audit": "outputs/v161-fresh-massive-transfer-population/outcome-audit.json",
+  "audit_sha256": "d72a386a4ee7c5976050c067d1c52ad167c99fd9e62ce5da8e812d91d824241c",
+  "authorization": {
+    "manually_inspect_selected_language": false,
+    "modify_or_rerun_V161_population": false,
+    "preregister_automatic_selected_language_extraction": true,
+    "read_protected_transfer_language_during_development": false,
+    "reopen_archive_or_extract_language_before_extraction_lock": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_interface_policy_or_model_before_separate_locks": false
+  },
+  "excluded_population": "outputs/v101-massive-population/population/selected-population.json",
+  "excluded_population_sha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "experiment": "v161_fresh_disjoint_massive_controlled_open_set_transfer_population",
+  "lock_payload_sha256": "8f93be255308b27bea5237675e2c4f68537ef693d4f04896402a3b0ba25f336f",
+  "outcome": {
+    "decision": "freeze_positive_V161_fresh_MASSIVE_transfer_population",
+    "passed": true,
+    "population_summary": {
+      "contains_language_tokens_slot_values_or_prompts": false,
+      "excluded_candidate_count": 512,
+      "excluded_population_overlap_count": 0,
+      "remaining_pool_counts": {
+        "development_transfer": {
+          "known_familiar": 54,
+          "known_unfamiliar": 161,
+          "novel_valid": 55,
+          "unsupported": 93
+        },
+        "protected_transfer": {
+          "known_familiar": 134,
+          "known_unfamiliar": 282,
+          "novel_valid": 105,
+          "unsupported": 207
+        }
+      },
+      "role_class_counts": {
+        "development_transfer": {
+          "known_familiar": 48,
+          "known_unfamiliar": 48,
+          "novel_valid": 48,
+          "unsupported": 48
+        },
+        "protected_transfer": {
+          "known_familiar": 48,
+          "known_unfamiliar": 48,
+          "novel_valid": 48,
+          "unsupported": 48
+        }
+      },
+      "role_class_intent_counts": {
+        "development_transfer": {
+          "known_familiar": 7,
+          "known_unfamiliar": 9,
+          "novel_valid": 2,
+          "unsupported": 4
+        },
+        "protected_transfer": {
+          "known_familiar": 6,
+          "known_unfamiliar": 11,
+          "novel_valid": 2,
+          "unsupported": 4
+        }
+      },
+      "role_class_scenario_counts": {
+        "development_transfer": {
+          "known_familiar": 3,
+          "known_unfamiliar": 3,
+          "novel_valid": 2,
+          "unsupported": 1
+        },
+        "protected_transfer": {
+          "known_familiar": 3,
+          "known_unfamiliar": 3,
+          "novel_valid": 2,
+          "unsupported": 1
+        }
+      },
+      "role_counts": {
+        "development_transfer": 192,
+        "protected_transfer": 192
+      },
+      "role_identifiers_are_disjoint": true,
+      "selected_candidate_count": 384,
+      "selected_population_sha256": "bad597e1b0b05bd5bb7d17ccd22fe3f33213fc04c317367c7e70df448cefef35",
+      "source_partition_counts": {
+        "test": 192,
+        "validation": 192
+      }
+    },
+    "scientific_population_feasibility_passed": true
+  },
+  "population": "outputs/v161-fresh-massive-transfer-population/population/selected-population.json",
+  "population_lock": "configs/v161-fresh-massive-transfer-population-lock.json",
+  "population_lock_sha256": "9bad83aded8fb259ed9f092151219c645883a9615d58aa8a61289000fbffd13e",
+  "population_sha256": "9720f1e8ce5807b5fec19d62591b0ab74e7d8261ff2ae911cfaeaf446c33069f",
+  "result": "outputs/v161-fresh-massive-transfer-population/population/result.json",
+  "result_sha256": "68c341795cc1a02ee4cdeff71ca3d95746b8af1fc046c61cf46d46b5fb23faff",
+  "results_document": "docs/v161-fresh-massive-transfer-population-results.md",
+  "results_document_sha256": "5754cd00eaeb04e395e9b01b7ccd7ea38335b4cb3b0316b1e6533eda5f72dab5",
+  "schema_version": "161-fresh-massive-transfer-population-outcome-lock",
+  "selected_population_payload_sha256": "bad597e1b0b05bd5bb7d17ccd22fe3f33213fc04c317367c7e70df448cefef35",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "verifier": "python/verify_and_freeze_v161_fresh_massive_transfer_population_outcome.py",
+  "verifier_sha256": "24ccd18a3425976e6e9c5cd54d0a536e5b54ef195e0a3477775115b75fc0af5a"
+}

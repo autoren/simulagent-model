@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "167-exact-evidence-gathering-planner-design",
+  "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+  "parentV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+  "claimBoundary": "development-informed exact finite-DSL shadow-planning result only; not fresh confirmation, unrestricted ontology learning, language understanding, registration, trusted-state control, action, or execution",
+  "developmentDesignDisclosure": {
+    "projectAuthoredDevelopmentOnly": true,
+    "protectedOrEvaluationPopulationExists": false,
+    "hiddenDevelopmentTruthReadCount": 2,
+    "oracleFeasibilityAnalysisRunCount": 2,
+    "costsHorizonAndLossesChosenAfterDevelopmentFeasibilityInspection": true,
+    "formalPolicyScoresWrittenBeforeLock": false,
+    "confirmatoryClaimAllowed": false
+  },
+  "caseSelection": {
+    "sourceBaseline": "exact_parser_plus_version_space",
+    "requiredEvidenceStatus": "ambiguous",
+    "requiredCandidateCount": 64,
+    "requiredCaseCount": 48,
+    "selectionUsesFrozenV166PredictionsOnly": true
+  },
+  "prior": {
+    "kind": "class_balanced_then_uniform_within_class",
+    "expressibilityClasses": ["alias", "composition", "provisional_primitive"],
+    "classMass": {"alias": "1/3", "composition": "1/3", "provisional_primitive": "1/3"},
+    "meaning": "normative development prior chosen to prevent the 247-member provisional class from winning solely by enumeration multiplicity"
+  },
+  "queryModel": {
+    "action": "query one currently variable truth-table valuation",
+    "outcomes": [0, 1],
+    "outcomeNoise": 0.0,
+    "repeatedQueryAllowed": false,
+    "queryCost": "1/10",
+    "maximumQueries": 2,
+    "earlyStopAllowed": true,
+    "candidateUpdate": "exact Bayesian conditioning with zero inconsistent-candidate mass"
+  },
+  "terminalDecisions": ["alias", "composition", "provisional_primitive", "defer"],
+  "terminalLoss": {
+    "alias": {"alias": 0, "composition": 4, "provisional_primitive": 12, "defer": 2},
+    "composition": {"alias": 4, "composition": 0, "provisional_primitive": 12, "defer": 2},
+    "provisional_primitive": {"alias": 6, "composition": 6, "provisional_primitive": 0, "defer": 2}
+  },
+  "lossOrientation": "terminalLoss[actual_class][decision]",
+  "tieBreaks": {
+    "terminalDecisionOrder": ["alias", "composition", "provisional_primitive", "defer"],
+    "equalQueryRiskPrefersLowestValuationIndex": true,
+    "stopPreferredToEqualRiskQuery": true,
+    "equalInformationGainPrefersLowestValuationIndex": true,
+    "equalOpenLoopRiskPrefersLexicographicallyLowestPair": true
+  },
+  "policies": {
+    "no_query_bayes_terminal": "take the minimum-risk terminal decision immediately",
+    "forced_map_no_query": "choose the maximum-posterior class without defer, using terminal decision order for ties",
+    "random_open_loop_pair": "uniform expected risk over every unordered pair of available queries, always using both",
+    "greedy_class_information_gain": "adaptively choose maximum expected Shannon class-entropy reduction for two queries, then take the Bayes terminal decision",
+    "optimal_open_loop_pair": "choose the minimum-risk unordered query pair at the root, use both regardless of the first outcome, then take the Bayes terminal decision",
+    "exact_bayes_adaptive": "minimize exact expected query cost plus terminal loss with optional stopping over a two-query policy tree",
+    "oracle_class": "observe the actual expressibility class without cost; scoring lower bound only"
+  },
+  "registeredMetrics": [
+    "expected total risk by policy", "regret relative to exact Bayes-adaptive policy",
+    "positive value-of-information case count", "strict improvement over optimal open-loop case count",
+    "unique exact-Bayes root query count", "history-dependent second-action case count",
+    "expected query count", "terminal defer probability", "false provisional decision probability",
+    "target candidate retention", "renaming invariance", "model and execution access"
+  ],
+  "plannerGates": {
+    "requiredCaseCount": 48,
+    "requiredCandidatesPerCase": 64,
+    "requiredExpressibilityClassCoverage": 3,
+    "requiredTargetCandidateRetention": 1.0,
+    "requiredPositiveValueOfInformationCaseCount": 48,
+    "minimumUniqueBayesRootQueryCount": 2,
+    "minimumHistoryDependentSecondActionCaseCount": 1,
+    "minimumStrictBayesImprovementOverOpenLoopCaseCount": 1,
+    "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+    "requiredRenamingRiskInvariance": 1.0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "candidateBeliefsAndTerminalDecisionsAreShadowOnly": true,
+    "authoritativeOntologyImmutable": true,
+    "provisionalRegistrationAllowed": false,
+    "trustedStateMutationAllowed": false,
+    "realQueryOrServiceCallAllowed": false,
+    "modelUseAllowed": false,
+    "actionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "formalRunPreLockAccess": {
+    "formalPolicyScoreCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "trustedStateMutationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPlannerGatePasses": "freeze_V167_as_development_evidence_and_preregister_fixed_ontology_reversible_sandbox",
+    "otherwise": "freeze_V167_boundary_result_and_do_not_tune_on_frozen_cases",
+    "passAuthorizesImmediateSandboxRun": false,
+    "passAuthorizesModelOrEvaluationPopulation": false,
+    "passAuthorizesRegistrationTrustedStateActionOrExecution": false
+  }
+}

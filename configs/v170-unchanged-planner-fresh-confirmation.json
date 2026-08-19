@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "170-unchanged-planner-fresh-confirmation-design",
+  "experiment": "v170_unchanged_V167_planner_on_nonoverlapping_V169_states",
+  "parentV169r1OutcomeLock": "configs/v169r1-json-key-normalization-repair-outcome-lock.json",
+  "sourceV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "sourceV167r1OutcomeLock": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+  "claimBoundary": "nonoverlapping procedural finite-DSL planner confirmation only; not external transfer, unrestricted ontology learning, language understanding, registration, trusted-state authority, action, or execution",
+  "frozenPlannerContract": {
+    "priorKind": "class_balanced_then_uniform_within_class",
+    "classMass": {"alias": "1/3", "composition": "1/3", "provisional_primitive": "1/3"},
+    "queryCost": "1/10",
+    "maximumQueries": 2,
+    "outcomeNoise": 0.0,
+    "terminalDecisions": ["alias", "composition", "provisional_primitive", "defer"],
+    "terminalLoss": {
+      "alias": {"alias": 0, "composition": 4, "provisional_primitive": 12, "defer": 2},
+      "composition": {"alias": 4, "composition": 0, "provisional_primitive": 12, "defer": 2},
+      "provisional_primitive": {"alias": 6, "composition": 6, "provisional_primitive": 0, "defer": 2}
+    },
+    "policies": [
+      "no_query_bayes_terminal", "forced_map_no_query", "random_open_loop_pair",
+      "greedy_class_information_gain", "optimal_open_loop_pair", "exact_bayes_adaptive", "oracle_class"
+    ],
+    "metricRepair": "V167r1 action-only history dependence projection"
+  },
+  "caseSelection": {
+    "useEveryV169PlannerEligibleState": true,
+    "requiredCaseCount": 58,
+    "requiredCandidateCount": 64,
+    "requiredClassCoverage": 3,
+    "selectionMayUsePolicyOrRiskScore": false
+  },
+  "integrityGates": {
+    "requiredCaseCount": 58,
+    "requiredCandidateCount": 64,
+    "requiredClassCoverage": 3,
+    "requiredEligibleMembershipCoverage": 1.0,
+    "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+    "requiredExactRiskReconstruction": 1.0,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "strongConfirmationThresholds": {
+    "minimumPositiveValueOfInformationCaseCount": 44,
+    "minimumHistoryDependentSecondActionCaseCount": 15,
+    "minimumStrictImprovementOverOptimalOpenLoopCaseCount": 15,
+    "minimumUniqueExactBayesRootQueryCount": 2,
+    "thresholdFailureInvalidatesIntegrity": false,
+    "mixedOrNegativeOutcomeMustBeRetainedWithoutTuning": true
+  },
+  "preLockExposure": {
+    "implementationUnitPolicyScoreCount": 1,
+    "formalFreshPolicyScoreCount": 0,
+    "aggregateFreshMetricInspectionCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "allBeliefsQueriesAndDecisionsShadowOnly": true,
+    "authoritativeOntologyAndStateImmutable": true,
+    "modelUseAllowed": false,
+    "provisionalRegistrationAllowed": false,
+    "trustedStateMutationAllowed": false,
+    "realServiceActionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifIntegrityAndStrongThresholdsPass": "freeze_V170_as_strong_nonoverlapping_procedural_planner_confirmation",
+    "ifIntegrityPassesButStrongThresholdsFail": "freeze_V170_as_mixed_or_negative_nonoverlapping_boundary_result_without_tuning",
+    "otherwise": "reject_V170_integrity_and_stop_before_other_tracks",
+    "passAuthorizesPlannerTuning": false,
+    "passAuthorizesModelRegistrationStateMutationActionOrExecution": false
+  }
+}

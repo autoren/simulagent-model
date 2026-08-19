@@ -1,0 +1,82 @@
+{
+  "auditor": "python/audit_and_freeze_v223r1_outcome_verification_repair.py",
+  "auditor_sha256": "2435a9fef71e56938d62b34351c7b4d4a6232b72fdd02e5264cf4a1670fbd833",
+  "authorization": {
+    "register_mutate_service_act_execute": false,
+    "retrieve_reassess_change_gate_open_language_or_run_model": false,
+    "verify_and_freeze_exact_existing_V223_positive_once": true
+  },
+  "config": "configs/v223r1-outcome-verification-repair.json",
+  "config_payload": {
+    "claimBoundary": "verification-only repair that freezes the exact existing positive V223 result after restoring one transiently edited locked roadmap dependency; no retrieval, reassessment, gate change, task language, record endpoint, model, training, registration, action, side effect, or execution",
+    "decisionRule": {
+      "ifRepairIntegrityPasses": "freeze_exact_existing_positive_V223_outcome_and_authorize_V224_design_only",
+      "otherwise": "reject_V223r1_repair_without_modifying_V223",
+      "repairCanAlterScientificOutcome": false,
+      "repairCanOpenTaskLanguageOrRunModel": false
+    },
+    "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+    "experiment": "v223r1_outcome_verification_only_repair",
+    "parentV223DesignLock": "configs/v223-archived-semantic-adjudication-metadata-census-lock.json",
+    "parentV223DesignLockSha256": "a0dae40bf6fc95d9a06e47d7b69c610e8cb710b0c742d04ef4dc97288313837a",
+    "parentV223FailedOutcomeAudit": "outputs/v223-archived-semantic-adjudication-metadata-census/outcome-audit.json",
+    "parentV223FailedOutcomeAuditSha256": "b7741a5aa53930e6a1749248af5b8a97dbf122a8292f5762cce6711287486e11",
+    "parentV223Result": "outputs/v223-archived-semantic-adjudication-metadata-census/census/result.json",
+    "parentV223ResultsDocument": "docs/v223-archived-semantic-adjudication-metadata-census-results.md",
+    "parentV223Summary": "outputs/v223-archived-semantic-adjudication-metadata-census/census/summary.json",
+    "plan": "docs/v223r1-outcome-verification-repair-plan.md",
+    "preLockExposure": {
+      "V223CensusRerunCount": 0,
+      "actualExecutionCount": 0,
+      "gateOrThresholdChangeCount": 0,
+      "modelLoadOrGenerationCount": 0,
+      "newMetadataRetrievalCount": 0,
+      "recordEndpointRequestCount": 0,
+      "sourceAssessmentChangeCount": 0,
+      "taskRecordBodyReadCount": 0
+    },
+    "repairInvariant": {
+      "authorizeExistingPositiveOutcomeFreezeOnly": true,
+      "expectedEligibleCandidateCount": 1,
+      "expectedFormalTaskRecordBodyReadCount": 0,
+      "expectedFrozenUrlAttemptCount": 21,
+      "expectedOriginalFailedChecks": [
+        "design_lock_and_dependencies_are_exact"
+      ],
+      "expectedSelectedCandidateIds": [
+        "MONDO_GITHUB_TERM_REQUESTS"
+      ],
+      "expectedSourceUnitCount": 4,
+      "expectedSuccessfulUrlCount": 21,
+      "expectedV223Branch": "SOURCE_SPECIFIC_ACQUISITION_DESIGN_ELIGIBLE",
+      "expectedV223ScientificPassed": true,
+      "requireAllV223DependenciesAndSnapshotsExact": true,
+      "requireExactMetricAuditResultReconstruction": true
+    },
+    "schemaVersion": "223r1-outcome-verification-repair-design"
+  },
+  "config_sha256": "caa00d587563e64d9b393fddd9da46329a686decadbcd0308e0bd91ad2113254",
+  "design_audit": "outputs/v223r1-outcome-verification-repair/design-audit.json",
+  "design_audit_sha256": "ddc7031327a7168458ef26a587565c1297d259987ac01530231fe5ec2116ae93",
+  "experiment": "v223r1_outcome_verification_only_repair",
+  "lock_payload_sha256": "ee64b35b9421aeabbbadcad5a181313e4adf09ea7b1e5fdb8d5e576b1763e3d2",
+  "parent_V223_design_lock": "configs/v223-archived-semantic-adjudication-metadata-census-lock.json",
+  "parent_V223_design_lock_sha256": "a0dae40bf6fc95d9a06e47d7b69c610e8cb710b0c742d04ef4dc97288313837a",
+  "parent_V223_failed_outcome_audit": "outputs/v223-archived-semantic-adjudication-metadata-census/outcome-audit.json",
+  "parent_V223_failed_outcome_audit_sha256": "b7741a5aa53930e6a1749248af5b8a97dbf122a8292f5762cce6711287486e11",
+  "parent_V223_result": "outputs/v223-archived-semantic-adjudication-metadata-census/census/result.json",
+  "parent_V223_result_sha256": "757b7fb95dfefa26eb6ffe59d1fba63b3c991a237bb275a14d4eb3a8f065ffa8",
+  "parent_V223_results_document": "docs/v223-archived-semantic-adjudication-metadata-census-results.md",
+  "parent_V223_results_document_sha256": "73a66a254e8f74a8107990e021c8da37b3a7159ff47697583cd6ed21502faa9f",
+  "parent_V223_summary": "outputs/v223-archived-semantic-adjudication-metadata-census/census/summary.json",
+  "parent_V223_summary_sha256": "defd1d0bef172e8bbb1497b59ae7e1392a8e3694c6860e4877ea0e96e27b8f05",
+  "plan": "docs/v223r1-outcome-verification-repair-plan.md",
+  "plan_sha256": "0918612d1eaef08d10cf827c059cf7879b391ab0517cb61724112c32566af23f",
+  "protocol": "python/v223r1_outcome_verification_repair.py",
+  "protocol_sha256": "304200ebe3a2c19f29bc05f40194c2706a502b336bbb415cbc1b962ce27959c2",
+  "schema_version": "223r1-outcome-verification-repair-lock",
+  "tests": "python/test_v223r1_outcome_verification_repair.py",
+  "tests_sha256": "ebeccd02166d2c1f53c107fcf1865e7cfdc8a51744e65b55e05f9a5ff101db02",
+  "verifier": "python/verify_and_freeze_v223r1_outcome_verification_repair.py",
+  "verifier_sha256": "2c4d7f06cae60b0d24948ff824a8e196cb0c9c1a1a6d89b2980056d4f11ee085"
+}

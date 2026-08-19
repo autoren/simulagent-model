@@ -1,0 +1,115 @@
+{
+  "audit": "outputs/v215-external-resource-metadata-census/outcome-audit.json",
+  "audit_sha256": "8f60af706d278dac47b38fa2bc728fd8961045d950fcb3d60c7c4d0b4436ea16",
+  "authorization": {
+    "design_bounded_external_payload_population": true,
+    "download_payload_without_separate_lock": false,
+    "open_protected_or_run_model": false,
+    "register_mutate_service_act_execute": false
+  },
+  "design_lock": "configs/v215-external-semantic-resource-metadata-census-lock.json",
+  "design_lock_sha256": "ca438c5e6b8e8c25402ba26ebef08268b4f7fa812959985dce079cbe57719b4b",
+  "evidence": "outputs/v215-external-resource-metadata-census/census/evidence.json",
+  "evidence_sha256": "edb958393c138dc53e93e5eec96094c27a0e4b8dad0c022aa1c51203f1e6c66f",
+  "experiment": "v215_prospective_metadata_first_external_semantic_resource_census",
+  "lock_payload_sha256": "d4591a74b9d215239e279b502bd16809a25e7d773ab4ea5814673a99290b7da5",
+  "outcome": {
+    "branch": "BOUNDED_EXTERNAL_PAYLOAD_DESIGN_ELIGIBLE",
+    "decision": "freeze_V215_positive_metadata_feasibility_and_authorize_separate_bounded_payload_retrieval_population_design_only",
+    "metrics": {
+      "assessment_dimension_coverage": 1.0,
+      "eligible_payload_benchmark_candidate_count": 1,
+      "eligible_payload_benchmark_candidate_ids": [
+        "OBO_UBERON_VIA_OLS_COMPOSITE"
+      ],
+      "eligible_validation_control_count": 1,
+      "eligible_validation_control_ids": [
+        "W3C_OWL2_CONFORMANCE_TESTS"
+      ],
+      "failed_url_count": 1,
+      "finite_metrics": true,
+      "frozen_url_attempt_count": 12,
+      "recommendation_role_separation": true,
+      "recorded_url_attempt_count": 12,
+      "retrospective_not_speaker_intent_boundary": true,
+      "selected_payload_candidate_unresolved_mandatory_dimension_count": 0,
+      "source_unit_count": 4,
+      "successful_snapshot_hash_coverage": 1.0,
+      "successful_url_count": 11,
+      "true_assessment_evidence_coverage": 1.0,
+      "unexpected_url_attempt_count": 0,
+      "unit_metrics": {
+        "EMBL_EBI_OLS_INFRASTRUCTURE": {
+          "eligible_for_intended_role": true,
+          "false_dimension_count": 5,
+          "intended_role": "INFRASTRUCTURE_ONLY",
+          "mandatory_dimension_count": 3,
+          "missing_mandatory_dimensions": [],
+          "successful_url_count": 3,
+          "true_dimension_count": 5
+        },
+        "OAEI_ANATOMY_REFERENCE_ALIGNMENT": {
+          "eligible_for_intended_role": false,
+          "false_dimension_count": 1,
+          "intended_role": "PAYLOAD_BENCHMARK_CANDIDATE",
+          "mandatory_dimension_count": 10,
+          "missing_mandatory_dimensions": [
+            "explicit_license_or_open_policy"
+          ],
+          "successful_url_count": 3,
+          "true_dimension_count": 9
+        },
+        "OBO_UBERON_VIA_OLS_COMPOSITE": {
+          "eligible_for_intended_role": true,
+          "false_dimension_count": 0,
+          "intended_role": "PAYLOAD_BENCHMARK_CANDIDATE",
+          "mandatory_dimension_count": 10,
+          "missing_mandatory_dimensions": [],
+          "successful_url_count": 3,
+          "true_dimension_count": 10
+        },
+        "W3C_OWL2_CONFORMANCE_TESTS": {
+          "eligible_for_intended_role": true,
+          "false_dimension_count": 1,
+          "intended_role": "VALIDATION_CONTROL",
+          "mandatory_dimension_count": 6,
+          "missing_mandatory_dimensions": [],
+          "successful_url_count": 2,
+          "true_dimension_count": 9
+        }
+      },
+      "url_accounting_rate": 1.0
+    },
+    "passed": true,
+    "selected_payload_candidate_ids": [
+      "OBO_UBERON_VIA_OLS_COMPOSITE"
+    ],
+    "selected_validation_control_ids": [
+      "W3C_OWL2_CONFORMANCE_TESTS"
+    ]
+  },
+  "result": "outputs/v215-external-resource-metadata-census/census/result.json",
+  "result_sha256": "baee283f6778e06c097b4b2e42ffb827ed69079123005b32a4b85e67a55f2efb",
+  "results_document": "docs/v215-external-semantic-resource-metadata-census-results.md",
+  "results_document_sha256": "2e6721214a35010f8219481f734879f3a823733dda8bd4a9849de932f02ac287",
+  "retrieval_manifest": "outputs/v215-external-resource-metadata-census/census/retrieval-manifest.json",
+  "retrieval_manifest_sha256": "dae4c1bbb34c4a1f2fc3353bdef6492fb9dd6f3560cf8dd42b9ce9b392fa9cf8",
+  "schema_version": "215-external-semantic-resource-metadata-census-outcome-lock",
+  "snapshot_hashes": {
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/09a3c4860d9131f2ff3c.html": "80486ab771f3059ba6e96fa054baeb716b4a2878cd19c369f3f98ce707c912d1",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/31d4276542030205f993.html": "80486ab771f3059ba6e96fa054baeb716b4a2878cd19c369f3f98ce707c912d1",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/4d273a6be575f08b14be.html": "dc6f6b1ba3335adc170e34bbe9f7145056cbe809bcbbb48b2068341e8e9dee8e",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/51169cd546ff9e0d89f5.html": "c81d5460c836cada26ee07505ea517a7b4ff464d32e8aa669782bdfb384e7780",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/64b5ab93616570ab77a7.html": "80486ab771f3059ba6e96fa054baeb716b4a2878cd19c369f3f98ce707c912d1",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/6f32c3c22c4e98446bb4.html": "413648a7b4d23ab8c92b1f4803e883f850cbf02a0889df4e8d3539a326a41664",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/a7e03e5d16faf09f8094.html": "7318cbe75d0b1de527c2d56e8854f043a610de1eeeab87a9762d3f109e724ec4",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/b74f4966664022438047.html": "4cec1b65c4acca912b9937a0f26f88fe0318915a0d05061c9522342faefdc22c",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/bb5f0670e9e2426ba854.html": "0ecc0dc6f96e4d25250f9f282b1c3a14954b96632fdf6fb503a1719191ce4d45",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/e73c33ef8aba23b28704.html": "343757752ffa22843418ae49a11015867938f99410a4060b509b0d4f4bd5d349",
+    "/Users/kkmini/Desktop/projects/simulagent-qlora/outputs/v215-external-resource-metadata-census/metadata-snapshots/ec5f2b70fc7aaaf9db63.html": "0ecc0dc6f96e4d25250f9f282b1c3a14954b96632fdf6fb503a1719191ce4d45"
+  },
+  "summary": "outputs/v215-external-resource-metadata-census/census/summary.json",
+  "summary_sha256": "02bff4ea2872ed5e9e3dc6485e406cf2c836f7fc9cb0de7d7b7a0fa1b6dfaf33",
+  "verifier": "python/verify_and_freeze_v215_external_semantic_resource_metadata_census_outcome.py",
+  "verifier_sha256": "4a2cf92ff15775ffeb90dbed6f2e765dcdcb8c7c4e5a7fc38a5856b311e966ab"
+}

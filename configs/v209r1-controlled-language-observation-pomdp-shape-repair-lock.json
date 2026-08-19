@@ -1,0 +1,69 @@
+{
+  "auditor": "python/audit_and_freeze_v209r1_dynamic_regime_shape_repair.py",
+  "auditor_sha256": "f9c8a32f0d1ebebc0419b3e9bd1fafa7ce18e2e889fb88cbf187a20fd767b61a",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "modify_parent_scientific_design": false,
+    "open_external_language_or_run_model": false,
+    "run_unit_tests_and_one_repaired_oracle": true
+  },
+  "design_audit": "outputs/v209r1-controlled-language-observation-pomdp-shape-repair/design-audit.json",
+  "design_audit_sha256": "c0d4cdc5107321895b7891d7f35625f974a0b85d5ed3b30d8973f19d64d34ce7",
+  "experiment": "v209r1_dynamic_regime_shape_validation_repair",
+  "lock_payload_sha256": "28ded13b5a1ab8f81d655fdb9fe006201c8b46d1b975bdb36f2fa7c70cda4f80",
+  "parent_V209_design_lock": "configs/v209-controlled-language-observation-pomdp-lock.json",
+  "parent_V209_design_lock_sha256": "cecd5e0d057cb4d519e7920b07a444c68f90672cf35a6403772e099fd4fc9dd1",
+  "parent_V209_technical_failure": "outputs/v209-controlled-language-observation-pomdp/technical-failure.json",
+  "parent_V209_technical_failure_sha256": "00277c7891f62b8c02bfdd9e73b968007281bd19afe567aee98ad1e4da6c3cb5",
+  "parent_config_payload_sha256": "7ea4d1747177a1ee1c12c506daeb2a791095c9397a29183a5baff2c0d2801a6f",
+  "plan": "docs/v209r1-controlled-language-observation-pomdp-shape-repair-plan.md",
+  "plan_sha256": "c41000fadf785b2af4b0c658eef2e42e73289b27272a471ef80e309bfe89dac9",
+  "repair_config": "configs/v209r1-controlled-language-observation-pomdp-shape-repair.json",
+  "repair_config_payload": {
+    "authorization": {
+      "APITrainingRegistrationAuthorityActionOrExecution": false,
+      "modifyParentScientificDesign": false,
+      "openExternalLanguageOrRunModel": false,
+      "runOneRepairedExactOracleEvaluation": true,
+      "runUnitTestsAfterRepairLock": true
+    },
+    "claimBoundary": "implementation-only repair of comparator regime-dimension validation after V209 stopped without a scientific result; every locked V209 hypothesis, grammar, likelihood, cost, stage, reward, comparator, gate, access limit, and decision rule remains byte-identical through the parent config payload",
+    "experiment": "v209r1_dynamic_regime_shape_validation_repair",
+    "parentV209DesignLock": "configs/v209-controlled-language-observation-pomdp-lock.json",
+    "parentV209TechnicalFailure": "outputs/v209-controlled-language-observation-pomdp/technical-failure.json",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "comparatorPolicyOrRegretComputedCount": 0,
+      "externalLanguageRecordReadCount": 0,
+      "failedOracleAttemptCount": 1,
+      "fullExactPolicyComputedInMemoryCount": 1,
+      "fullExactPolicyReturnedOrWrittenCount": 0,
+      "modelLoadOrGenerationCount": 0,
+      "scientificGateEvaluationCount": 0,
+      "scientificResultCount": 0,
+      "trainingRunCount": 0
+    },
+    "repair": {
+      "maximumChangedComparatorCount": 0,
+      "maximumChangedDecisionRuleCount": 0,
+      "maximumChangedGateCount": 0,
+      "maximumChangedScientificParameterCount": 0,
+      "newValidation": "reference regime count must be positive; target must equal reference shape; fixed state count remains 2 and fixed observation count remains 3",
+      "oldValidation": "reference and target shape must equal (3, 2, 3)",
+      "permittedChangedBehavior": "one-regime and two-regime comparator kernels pass shape validation",
+      "permittedChangedFunction": "LanguageKernel.__post_init__"
+    },
+    "schemaVersion": "209r1-controlled-language-observation-POMDP-shape-repair-design"
+  },
+  "repair_config_sha256": "61a79156b787515850f81ca3f7566132bc98e8b2dcd0f27c0bb286c553772443",
+  "repair_protocol": "python/v209r1_dynamic_regime_shape_repair.py",
+  "repair_protocol_sha256": "0a417c28b636740e9d2408a0a5a3a39d180f39fa65166c9fec4a936d2e87464f",
+  "runner": "python/run_v209r1_dynamic_regime_shape_repair.py",
+  "runner_sha256": "0decf78f36fc1eebc19f610638ab81d0a6e4d8204d2f543973e26f95268bfa9b",
+  "schema_version": "209r1-controlled-language-observation-POMDP-shape-repair-lock",
+  "tests": "python/test_v209r1_dynamic_regime_shape_repair.py",
+  "tests_sha256": "d69046ccc5549410d7f49937c69fd84d3a75ffc1d6f4137492191f314cf24cd5",
+  "verifier": "python/verify_and_freeze_v209r1_dynamic_regime_shape_repair_outcome.py",
+  "verifier_sha256": "f80701a3b6ab9a12aea7fb634d8cfaf328d378ce148cdf9d970bf2e2d49b7613"
+}

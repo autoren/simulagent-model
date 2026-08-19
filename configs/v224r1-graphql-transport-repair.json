@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "224r1-graphql-transport-repair-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v224r1_graphql_transport_repair",
+  "parentV224DesignLock": "configs/v224-mondo-record-disposition-metadata-census-lock.json",
+  "parentV224DesignLockSha256": "7fc39f446524833b170e816b707190f46a3ce5a9e83b279e888a3e7d6de40d2f",
+  "failureRecord": "docs/v224-initial-capture-failure.md",
+  "plan": "docs/v224r1-graphql-transport-repair-plan.md",
+  "failureBoundary": {
+    "exceptionType": "CalledProcessError",
+    "failedOperation": "first_record_GraphQL_page",
+    "cause": "GraphQL_document_and_variable_both_encoded_as_gh_form_field_query",
+    "successfulRecordGraphQLResponseCount": 0,
+    "formalRecordMetadataReadCount": 0,
+    "completedSearchSliceCount": 0,
+    "scopePolicyRetrievalCount": 1,
+    "scopePolicySnapshot": "outputs/v224-mondo-record-disposition-metadata-census/metadata/scope-policy.snapshot",
+    "scopePolicySnapshotSha256": "4773e510e784cdf7063743f010f5c3a0f8b21d2e55d73f0d2e5f38893bfa234e",
+    "otherFormalArtifactCount": 0,
+    "taskRecordTitleOrBodyReadCount": 0,
+    "commentOrReviewTextReadCount": 0,
+    "modelRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "repair": {
+    "operation": "send_exact_locked_GraphQL_document_and_variables_as_separate_JSON_members_to_official_endpoint",
+    "endpoint": "https://api.github.com/graphql",
+    "reuseExactExistingScopePolicySnapshot": true,
+    "GraphQLDocumentChanged": false,
+    "GraphQLSelectedFieldsChanged": false,
+    "sourceWindowChanged": false,
+    "exclusionsChanged": false,
+    "dispositionContractChanged": false,
+    "samplingChanged": false,
+    "gatesChanged": false,
+    "decisionRuleChanged": false
+  },
+  "decisionRule": {
+    "ifRepairAuditPasses": "run_one_repaired_V224_metadata_capture_then_the_original_locked_scorer",
+    "otherwise": "stop_V224_without_record_metadata",
+    "authorizesTaskLanguageOrModel": false,
+    "authorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}
+

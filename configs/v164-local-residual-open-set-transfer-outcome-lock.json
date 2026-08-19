@@ -1,0 +1,1757 @@
+{
+  "access": "outputs/v164-local-residual-open-set-transfer/development/access.json",
+  "access_sha256": "68746ec7e24884cc460125583e877b1a2d874888ebbc43674d9cf01900c2528e",
+  "audit": "outputs/v164-local-residual-open-set-transfer/outcome-audit.json",
+  "audit_sha256": "644ed8bc4c5f3d5a1a8afe7830999e1465b42f1265c1f5ce935b353f21ba4c9b",
+  "authorization": {
+    "close_residual_model_protocol_without_protected_test": true,
+    "combine_models_or_train_adapter": false,
+    "induce_register_or_execute_capability": false,
+    "modify_rerun_retry_reprompt_or_retune_V164": false,
+    "perform_real_service_call_external_side_effect_or_execution": false,
+    "preregister_identical_protected_deterministic_plus_residual_model_protocol": false,
+    "prune_hypotheses_or_grant_model_state_belief_action_or_execution_authority": false,
+    "read_protected_transfer_before_separate_lock": false,
+    "run_additional_local_or_API_models": false
+  },
+  "experiment": "v164_local_residual_open_set_transfer_outcome_lock",
+  "implementation_lock": "configs/v164-local-residual-open-set-transfer-lock.json",
+  "implementation_lock_sha256": "79dc920958d5358936eefe0ca88df80138a25b7a9dd427c5e865c7fab79160f4",
+  "lock_payload_sha256": "e823d456dec4bc5443a70fad7861733f6127fb996785a09d29e2fbfc9a0889d7",
+  "outcome": {
+    "aggregate": {
+      "controlled_missing_observation_abstention_accuracy": 1.0,
+      "fixture_count": 76,
+      "hybrid_metrics": {
+        "confidence_ece_10_bin": 0.21885472469422101,
+        "false_known_acceptance_rate": 0.020833333333333332,
+        "known_exact_intent_accuracy": 0.8958333333333334,
+        "mean_regret": 1.015625,
+        "novel_exact_scenario_accuracy": 0.0,
+        "observed_exact_decision_accuracy": 0.6979166666666666,
+        "observed_record_count": 96,
+        "observed_status_macro_f1": 0.5903353768481789,
+        "per_class": {
+          "known_familiar": {
+            "exact_decision_accuracy": 1.0,
+            "mean_regret": 0.0,
+            "record_count": 24
+          },
+          "known_unfamiliar": {
+            "exact_decision_accuracy": 0.7916666666666666,
+            "mean_regret": 1.1666666666666667,
+            "record_count": 24
+          },
+          "novel_valid": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 2.8958333333333335,
+            "record_count": 24
+          },
+          "unsupported": {
+            "exact_decision_accuracy": 1.0,
+            "mean_regret": 0.0,
+            "record_count": 24
+          }
+        },
+        "per_status": {
+          "KNOWN": {
+            "f1": 0.9574468085106383,
+            "precision": 0.9782608695652174,
+            "prediction_count": 46,
+            "recall": 0.9375,
+            "true_positive_count": 45,
+            "truth_count": 48
+          },
+          "NOVEL": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "prediction_count": 0,
+            "recall": 0.0,
+            "true_positive_count": 0,
+            "truth_count": 24
+          },
+          "UNSUPPORTED": {
+            "f1": 0.8135593220338984,
+            "precision": 0.6857142857142857,
+            "prediction_count": 35,
+            "recall": 1.0,
+            "true_positive_count": 24,
+            "truth_count": 24
+          }
+        },
+        "predicted_decision_correctness_brier": 0.20151863404788348,
+        "record_count": 96,
+        "scored_rows": [
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11",
+            "regret": 10.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11611",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11615",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11624",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::11690",
+            "regret": 6.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11699",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.1,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::11785",
+            "regret": 1.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11933",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11952",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::12108",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::1576",
+            "regret": 10.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15761",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15778",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15897",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15910",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15939",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16090",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16107",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16135",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16173",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16176",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16249",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16372",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16396",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16462",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16582",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16588",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16685",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16709",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16744",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16821",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16848",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 0.55,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16877",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::17006",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::17018",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::1888",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.9878729533020136,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::2814",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::2821",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.9428571428571428,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::3803",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::3840",
+            "regret": 10.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::415",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::4440",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.9666134786011553,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::5069",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::5150",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6001",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::6778",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.9645025116804459,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6808",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6914",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6920",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6939",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6952",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7064",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7065",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7086",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.99,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::710",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7201",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.1,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7309",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7312",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.8594756818181193,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7341",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.3,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7373",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7470",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 1.0,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7486",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.55,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7523",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7555",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7627",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.936552924036443,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7631",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.2,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7723",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7769",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.2,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7801",
+            "regret": 1.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7846",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.2,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7867",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7907",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.8210809308684996,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7920",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7977",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8068",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.98,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8132",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.45,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8207",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.3,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8258",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8315",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8325",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8451",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8463",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.8446582236490641,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8479",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 1.0,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8491",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8543",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8602",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8622",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8729",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.1,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8859",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8863",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.8942417146074063,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8895",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8903",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8984",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::9002",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.5,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::9136",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.9111111111111112,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::9171",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          }
+        ],
+        "structured_response_validity": 1.0,
+        "top_confidence_80_percent_coverage": 0.8020833333333334,
+        "top_confidence_80_percent_error": 0.23376623376623373
+      },
+      "model_nonresidual_override_count": 0,
+      "residual_metrics": {
+        "confidence_ece_10_bin": 0.2457894736842106,
+        "false_known_acceptance_rate": 0.02564102564102564,
+        "known_exact_intent_accuracy": 0.8648648648648649,
+        "mean_regret": 1.230263157894737,
+        "novel_exact_scenario_accuracy": 0.0,
+        "observed_exact_decision_accuracy": 0.631578947368421,
+        "observed_record_count": 76,
+        "observed_status_macro_f1": 0.5687830687830688,
+        "per_class": {
+          "known_familiar": {
+            "exact_decision_accuracy": 1.0,
+            "mean_regret": 0.0,
+            "record_count": 13
+          },
+          "known_unfamiliar": {
+            "exact_decision_accuracy": 0.7916666666666666,
+            "mean_regret": 1.1666666666666667,
+            "record_count": 24
+          },
+          "novel_valid": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 2.847826086956522,
+            "record_count": 23
+          },
+          "unsupported": {
+            "exact_decision_accuracy": 1.0,
+            "mean_regret": 0.0,
+            "record_count": 16
+          }
+        },
+        "per_status": {
+          "KNOWN": {
+            "f1": 0.9444444444444445,
+            "precision": 0.9714285714285714,
+            "prediction_count": 35,
+            "recall": 0.918918918918919,
+            "true_positive_count": 34,
+            "truth_count": 37
+          },
+          "NOVEL": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "prediction_count": 0,
+            "recall": 0.0,
+            "true_positive_count": 0,
+            "truth_count": 23
+          },
+          "UNSUPPORTED": {
+            "f1": 0.761904761904762,
+            "precision": 0.6153846153846154,
+            "prediction_count": 26,
+            "recall": 1.0,
+            "true_positive_count": 16,
+            "truth_count": 16
+          }
+        },
+        "predicted_decision_correctness_brier": 0.2278736842105263,
+        "record_count": 76,
+        "scored_rows": [
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11",
+            "regret": 10.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11611",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11615",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11624",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::11690",
+            "regret": 6.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11699",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.1,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::11785",
+            "regret": 1.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11933",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::11952",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::12108",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::1576",
+            "regret": 10.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15778",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15897",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::15939",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16090",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16107",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16135",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16173",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16249",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16396",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16462",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16588",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16744",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16821",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::16848",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::17006",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "unsupported",
+            "confidence": 1.0,
+            "exact_decision": true,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::17018",
+            "regret": 0.0,
+            "truth_status": "UNSUPPORTED"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::1888",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::2821",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::3840",
+            "regret": 10.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::415",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::4440",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::5150",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6001",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::6778",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6914",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6920",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6939",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::6952",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7064",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7065",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7086",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7201",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.1,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7309",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7312",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.3,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7373",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7470",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 1.0,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7486",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7555",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7627",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.2,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7723",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::7769",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.2,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7801",
+            "regret": 1.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7846",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.2,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7867",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::7907",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::7977",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8068",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.98,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8132",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.45,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8207",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.3,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8258",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8315",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8325",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.95,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8451",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8463",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 1.0,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8491",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8543",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8602",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8622",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8729",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.1,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::8859",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8863",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.95,
+            "exact_decision": false,
+            "predicted_status": "UNSUPPORTED",
+            "record_id": "v161::development_transfer::massive::8903",
+            "regret": 4.0,
+            "truth_status": "NOVEL"
+          },
+          {
+            "class_label": "known_familiar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::8984",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "known_unfamiliar",
+            "confidence": 0.98,
+            "exact_decision": true,
+            "predicted_status": "KNOWN",
+            "record_id": "v161::development_transfer::massive::9002",
+            "regret": 0.0,
+            "truth_status": "KNOWN"
+          },
+          {
+            "class_label": "novel_valid",
+            "confidence": 0.5,
+            "exact_decision": false,
+            "predicted_status": "ABSTAIN",
+            "record_id": "v161::development_transfer::massive::9136",
+            "regret": 1.5,
+            "truth_status": "NOVEL"
+          }
+        ],
+        "structured_response_validity": 1.0,
+        "top_confidence_80_percent_coverage": 0.8026315789473685,
+        "top_confidence_80_percent_error": 0.2295081967213115
+      },
+      "true_hypothesis_retention": 1.0,
+      "valid_fixture_count": 76,
+      "validation_reason_counts": {
+        "valid": 76
+      }
+    },
+    "condition_completed": true,
+    "decision": "freeze_nonqualifying_V164_and_close_residual_model_protocol",
+    "frozen_consensus_regret": 0.953125,
+    "gates": {
+      "combined_hybrid_exact_decision_accuracy": true,
+      "combined_hybrid_false_known_acceptance_rate": true,
+      "combined_hybrid_mean_decision_regret": false,
+      "combined_regret_improvement_over_frozen_consensus": false,
+      "controlled_missing_observation_abstention_accuracy": true,
+      "development_language_read_budget": true,
+      "model_generation_budget": true,
+      "model_load_budget": true,
+      "required_residual_fixture_count": true,
+      "residual_confidence_ECE": false,
+      "residual_exact_decision_accuracy": true,
+      "residual_false_known_acceptance_rate": true,
+      "residual_known_exact_intent_accuracy": true,
+      "residual_mean_decision_regret": false,
+      "residual_novel_exact_scenario_accuracy": false,
+      "residual_novel_status_precision": false,
+      "residual_novel_status_recall": false,
+      "residual_status_macro_f1": false,
+      "residual_top_confidence_80_percent_error": true,
+      "residual_unsupported_status_precision": false,
+      "residual_unsupported_status_recall": true,
+      "structured_response_validity": true,
+      "true_hypothesis_retention": true,
+      "zero_LLM_API_calls": true,
+      "zero_actual_execution": true,
+      "zero_adapter_training": true,
+      "zero_external_side_effects": true,
+      "zero_manual_raw_response_inspection": true,
+      "zero_manual_utterance_inspection": true,
+      "zero_protected_language_reads": true,
+      "zero_real_service_calls": true,
+      "zero_retries": true
+    },
+    "passed": true,
+    "quality_gate_pass": false
+  },
+  "result": "outputs/v164-local-residual-open-set-transfer/development/result.json",
+  "result_sha256": "54b563d704232583bf98b8677dbe0fe600da5257161fe171edc98d60c62a4b76",
+  "results_document": "docs/v164-local-residual-open-set-transfer-results.md",
+  "results_document_sha256": "f1c1bbd695c577ea57c01b193b9acb36f919b5b9fa0a16c754850199a136bd1e",
+  "schema_version": "164-local-residual-open-set-transfer-outcome-lock",
+  "verifier": "python/verify_and_freeze_v164_local_residual_open_set_transfer_outcome.py",
+  "verifier_sha256": "f3f3ed6dcac8cfb471280b6b951ebfb72397ce692144526cef2299b54e3f2359"
+}

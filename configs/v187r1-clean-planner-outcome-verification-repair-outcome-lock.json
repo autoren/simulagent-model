@@ -1,0 +1,138 @@
+{
+  "authorization": {
+    "modify_rerun_or_redefine_V187_or_V187r1": false,
+    "preregister_correlated_error_or_model_successor": false,
+    "preregister_text_free_channel_economics_frontier": true,
+    "read_protected_or_utterance_language_run_model_API_or_training": false,
+    "register_mutate_call_service_act_or_execute": false
+  },
+  "development_record_results": "outputs/v187-clean-typed-clarification-planner/evaluation/development-record-results.json",
+  "development_record_results_sha256": "7474b3cd868034bc75a8dc569dd379466ec528d5f4cb007af524d31de96bb0b7",
+  "experiment": "v187r1_verification_only_repair_of_V187_problem_summary_raw_count",
+  "lock_payload_sha256": "c92c87c6b3cbb759fb30a4fcb824239f0c5789bde6e5e305078d565c335ac6bb",
+  "outcome": {
+    "decision": "freeze_V187_clean_boundary_result_without_error_or_model_successor",
+    "passed": true,
+    "source_scientific_development_gates_passed": false,
+    "summary": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "best_open_loop_sequence": [],
+      "contract_count": 14,
+      "development_binding_count": 132,
+      "exact_history_dependent_nonroot_question_count": 0,
+      "exact_history_dependent_nonroot_question_ids": [],
+      "exact_improvement_over_always_generic": 0.0,
+      "exact_improvement_over_best_open_loop": 0.0,
+      "external_side_effect_count": 0,
+      "horizon": 4,
+      "missing_development_count": 12,
+      "missing_insufficient_rate": 1.0,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "observed_development_count": 120,
+      "ontology_registration_count": 0,
+      "partition_distinct_question_count": 25,
+      "policy_summary": {
+        "always_generic": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.4,
+          "mean_cost_fraction": "2/5",
+          "mean_question_count": 0.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.0
+        },
+        "best_open_loop": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.4,
+          "mean_cost_fraction": "2/5",
+          "mean_question_count": 0.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.0
+        },
+        "exact_adaptive": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.4,
+          "mean_cost_fraction": "2/5",
+          "mean_question_count": 0.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.0
+        },
+        "greedy_information_gain": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.4,
+          "mean_cost_fraction": "2/5",
+          "mean_question_count": 0.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.0
+        },
+        "immediate_deferral": {
+          "final_exactness_rate": 0.0,
+          "mean_cost": 0.5,
+          "mean_cost_fraction": "1/2",
+          "mean_question_count": 0.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.0
+        },
+        "source_order": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.625,
+          "mean_cost_fraction": "5/8",
+          "mean_question_count": 3.5833333333333335,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.3333333333333333
+        },
+        "target_informed_oracle": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.1,
+          "mean_cost_fraction": "1/10",
+          "mean_question_count": 1.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 1.0
+        }
+      },
+      "positive_prior_contract_count": 14,
+      "prior_counts": {
+        "C_1b099ede5d276d0d7e686863": 1,
+        "C_3952cb7117dfccd4faa65fe1": 12,
+        "C_4ab8adeabddfae28cdfd8586": 11,
+        "C_5e8838e0afa2cb9fb11797de": 12,
+        "C_6bf4a7fc35cd0004e9177b09": 5,
+        "C_6dee36329eb9039b7fc7ab52": 12,
+        "C_921e592a9360e0f6763b4faa": 4,
+        "C_9e40b8c76ec62bd62e010c18": 3,
+        "C_a449e2daa6d62796f299baa7": 7,
+        "C_b0fc70d7abe5fe162310f6cf": 8,
+        "C_c1b57d05f1a0c1576c78ff0c": 12,
+        "C_c3b772e901e67c804d681253": 12,
+        "C_c967f1c0f09afaef3cf4896e": 9,
+        "C_fc5db8c638cd224d137e71c7": 12
+      },
+      "protected_utterance_language_read_count": 0,
+      "raw_question_count": 164,
+      "service_call_count": 0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "utterance_or_dialogue_language_read_count": 0
+    }
+  },
+  "policy_summary": "outputs/v187-clean-typed-clarification-planner/evaluation/policy-summary.json",
+  "policy_summary_sha256": "2f5a13ea55dcd213313901e2dda578f9a054d125fe91ff81b5d5c1cf53f5a6f0",
+  "problem_summary": "outputs/v187-clean-typed-clarification-planner/evaluation/problem-summary.json",
+  "problem_summary_sha256": "e11c993c5025a3d4bc2a63aa9eacb57d5d0c09d1e3308b4ee702cf72e13f71ac",
+  "repair_audit": "outputs/v187r1-clean-planner-outcome-verification-repair/outcome-audit.json",
+  "repair_audit_sha256": "d2c2ca821095e198b319fa7333497bc513731bc20ff93cb3a458ce3504f73f0c",
+  "repair_lock": "configs/v187r1-clean-planner-outcome-verification-repair-lock.json",
+  "repair_lock_sha256": "1dbb421d91cb40134e70c24c5eb2902f9137c5b0073be5564dbfbc115a083e17",
+  "schema_version": "187r1-clean-planner-outcome-verification-repair-outcome-lock",
+  "source_V187_failed_outcome_audit": "outputs/v187-clean-typed-clarification-planner/outcome-audit.json",
+  "source_V187_failed_outcome_audit_sha256": "7d57dce0e370384a898fa45aa99edb88d4ffbfcc1eb7763e254bfa5ce9a3482a",
+  "source_V187_lock": "configs/v187-clean-typed-clarification-planner-lock.json",
+  "source_V187_lock_sha256": "1c3ef3117e3093ca58ea7405244e070f0e603883612cee3882648695c96289a4",
+  "source_V187_result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json",
+  "source_V187_result_sha256": "ba32e55be1283fc38315dd2ee953fd0bd68c80103953a9a3c98b011df5e288e0",
+  "source_results_document": "docs/v187-clean-typed-clarification-planner-results.md",
+  "source_results_document_sha256": "d7eb3f017cee453c48c0b70f86272966e8028121be1c46fcdc3b964c666cfbdf",
+  "target_paths": "outputs/v187-clean-typed-clarification-planner/evaluation/target-paths.json",
+  "target_paths_sha256": "7668d4931272ca49df599050eedbccdcb469978ae2c1f7b49b34cd18a0a90e65"
+}

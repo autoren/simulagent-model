@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "207r1-agentabstain-shadow-metadata-schema-transport-repair-design",
+  "experiment": "v207r1_agentabstain_paired_preexecution_shadow_subset_feasibility_transport_repair",
+  "parentV207DesignLock": "configs/v207-agentabstain-shadow-feasibility-lock.json",
+  "parentV207DesignLockSha256": "685fbcf02a500e6f6a28a63fbf17b4c772f9171dc8bdff2bb0c2cf4705d5ceb1",
+  "unchangedScientificConfig": "configs/v207-agentabstain-shadow-feasibility.json",
+  "unchangedScientificConfigSha256": "92125210a4f89d262b83b5d449eaed47a94057408a39622b18f2f3734b8d952d",
+  "failedAttemptRecord": "outputs/v207-agentabstain-shadow-feasibility/transport-failure.json",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "claimBoundary": "transport-only repair of V207 metadata and schema feasibility; no change to source, pair identity, pre-execution definition, qualification thresholds, language firewall, contamination treatment, future selection, shadow-only boundary, or scientific claim",
+  "repairPolicy": {
+    "huggingFaceTreePageSize": 1000,
+    "minimumExpectedPageCount": 2,
+    "maximumAllowedPageCount": 20,
+    "followOnlyExplicitRelNextLinks": true,
+    "requireSameHTTPSHostAndPinnedRevisionPath": true,
+    "rejectRepeatedPageURLOrCursorCycle": true,
+    "requireTerminalPageWithoutNextLink": true,
+    "combineOnlyTreeObjectMetadata": true,
+    "persistNoResponseBodyOrCursorURL": true,
+    "countEveryPhysicalPageRead": true,
+    "preserveOneLogicalDatasetTreeCensus": true,
+    "preserveEveryScientificQualificationGate": true,
+    "preserveTaskLanguageModelToolAndExecutionFirewall": true
+  },
+  "preLockExposure": {
+    "priorV207ScientificOutcomeAvailable": false,
+    "priorCodeTreeMetadataReadCount": 2,
+    "priorCodeSchemaFileReadCount": 8,
+    "priorDatasetHeadReadCount": 3,
+    "priorDatasetTreeMetadataRequestCount": 9,
+    "priorDatasetTreeMetadataSuccessCount": 7,
+    "priorDatasetTreeMetadataHTTP400Count": 2,
+    "priorDatasetCardHeaderReadCount": 0,
+    "priorTaskInstructionExampleDialogueRationaleReadCount": 0,
+    "priorModelOrPolicyEvaluationCount": 0,
+    "V207r1DatasetTreePageReadCount": 0,
+    "V207r1DatasetCardHeaderReadCount": 0,
+    "V207r1TaskInstructionExampleDialogueRationaleReadCount": 0,
+    "V207r1ModelOrPolicyEvaluationCount": 0
+  },
+  "decisionRule": {
+    "ifTransportIntegrityAndOriginalV207GatesPass": "freeze_V207r1_positive_and_authorize_separate_deterministic_text_extraction_preregistration_only",
+    "ifOriginalScientificGateFails": "freeze_V207r1_scientific_negative_without_opening_task_payload_or_weakening_gates",
+    "ifTransportFailsAgain": "freeze_another_technical_nonresult_before_any_further_change",
+    "passAuthorizesImmediateTaskTextAccessOrModelRun": false,
+    "passAuthorizesToolsExecutionAPITrainingRegistrationAuthorityOrSideEffects": false
+  }
+}

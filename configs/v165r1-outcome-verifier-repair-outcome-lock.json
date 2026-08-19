@@ -1,0 +1,138 @@
+{
+  "V165_result": "outputs/v165-factored-ontology-identifiability/population/result.json",
+  "V165_result_sha256": "30738d6a9f1fe78832cc8c4f2e8e780ae4b9d9dbb31b792dd60ee8ffff6d6f9b",
+  "audit": "outputs/v165r1-outcome-verifier-repair/outcome-audit.json",
+  "audit_sha256": "edba09a5b142e9a01d16cfca74cd01dc25485c86de7ed8e6f03cc36c4ee5b9f5",
+  "authorization": {
+    "create_nominal_V165_outcome_lock": false,
+    "create_or_open_evaluation_population": false,
+    "grant_candidate_state_belief_action_or_execution_authority": false,
+    "load_or_run_local_or_API_model": false,
+    "perform_real_service_call_external_side_effect_or_execution": false,
+    "preregister_model_free_V166_deterministic_baselines": true,
+    "register_provisional_primitive": false,
+    "retain_V165_as_project_authored_model_free_positive_development_evidence": true,
+    "score_baselines_without_separate_lock": false,
+    "train_or_fit_learned_component": false,
+    "treat_repair_as_new_scientific_evidence": false
+  },
+  "experiment": "v165r1_population_access_alias_outcome_verifier_repair",
+  "failed_V165_outcome_audit": "outputs/v165-factored-ontology-identifiability/outcome-audit.json",
+  "failed_V165_outcome_audit_sha256": "1985c49a1747dcac2cf68e11eeccc681120f591e2fdb0136dee18030da013797",
+  "frozen_ontology": "outputs/v165-factored-ontology-identifiability/population/frozen-ontology.json",
+  "frozen_ontology_sha256": "50fd723697b6697e144455388a142e92a2bcb4e12f0b6e30ce0adbd558dc2581",
+  "hidden_records": "outputs/v165-factored-ontology-identifiability/population/hidden-records.json",
+  "hidden_records_sha256": "d65751fc4445e1443f88997a57e3b519d6423ff336745faf36ab6c84eed9b264",
+  "lock_payload_sha256": "42e4fad0775a10a0c58e80d9d1fa17b37e14f4b4a15ceb43c393a2585457ff79",
+  "outcome": {
+    "decision": "freeze_V165_and_authorize_separate_model_free_deterministic_baseline_preregistration_only",
+    "passed": true,
+    "population_audit": {
+      "access": {
+        "API_call_count": 0,
+        "actual_execution_count": 0,
+        "evaluation_record_count": 0,
+        "external_side_effect_count": 0,
+        "manual_judgment_count": 0,
+        "model_generation_count": 0,
+        "model_load_count": 0,
+        "ontology_registration_count": 0,
+        "real_service_call_count": 0,
+        "training_run_count": 0
+      },
+      "checks": {
+        "ambiguous_version_space_and_class_coverage": true,
+        "candidate_truth_table_count": true,
+        "cell_count": true,
+        "contradictory_version_space_size": true,
+        "evidence_status_classification": true,
+        "logical_target_group_count": true,
+        "project_authored_development_disclosed": true,
+        "provisional_truth_table_count": true,
+        "public_projection_is_exact": true,
+        "record_count": true,
+        "records_per_cell": true,
+        "registered_alias_truth_table_count": true,
+        "registered_composition_truth_table_count": true,
+        "renaming_version_space_invariance": true,
+        "renamings_per_logical_target": true,
+        "sufficient_expressibility_classification": true,
+        "sufficient_version_space_size": true,
+        "target_retention_when_noncontradictory": true,
+        "zero_evaluation_records": true,
+        "zero_manual_model_API_training_registration_and_execution": true,
+        "zero_public_hidden_field_leaks": true
+      },
+      "evidence_status_classification_accuracy": 1.0,
+      "passed": true,
+      "public_hidden_field_leak_count": 0,
+      "renaming_version_space_invariance": 1.0,
+      "sufficient_expressibility_classification_accuracy": 1.0,
+      "summary": {
+        "candidate_class_counts": {
+          "alias": 3,
+          "composition": 6,
+          "provisional_primitive": 247
+        },
+        "candidate_truth_table_count": 256,
+        "cell_count": 9,
+        "cell_counts": {
+          "alias::ambiguous": 16,
+          "alias::contradictory": 16,
+          "alias::sufficient": 16,
+          "composition::ambiguous": 16,
+          "composition::contradictory": 16,
+          "composition::sufficient": 16,
+          "provisional_primitive::ambiguous": 16,
+          "provisional_primitive::contradictory": 16,
+          "provisional_primitive::sufficient": 16
+        },
+        "evaluation_record_count": 0,
+        "evidence_status_counts": {
+          "ambiguous": 48,
+          "contradictory": 48,
+          "sufficient": 48
+        },
+        "generative_expressibility_counts": {
+          "alias": 48,
+          "composition": 48,
+          "provisional_primitive": 48
+        },
+        "logical_target_group_count": 36,
+        "namespace_count": 4,
+        "project_authored_synthetic_development": true,
+        "record_count": 144
+      },
+      "target_retention_when_noncontradictory": 1.0,
+      "version_space_size_by_status": {
+        "ambiguous": {
+          "maximum": 64,
+          "minimum": 64
+        },
+        "contradictory": {
+          "maximum": 0,
+          "minimum": 0
+        },
+        "sufficient": {
+          "maximum": 1,
+          "minimum": 1
+        }
+      }
+    },
+    "scientific_population_passed": true,
+    "technical_repair_only": true
+  },
+  "parent_population_lock": "configs/v165-factored-ontology-identifiability-population-lock.json",
+  "parent_population_lock_sha256": "325d8ec610ce9191d1740d730ef20ef6b84926d1b26f0c9c3dc3b0a0d325b06b",
+  "population_summary": "outputs/v165-factored-ontology-identifiability/population/population-summary.json",
+  "population_summary_sha256": "d3d317acafebfd8d7ac042f6e99442387d94619f671d71bc03dd16842d0a30df",
+  "public_records": "outputs/v165-factored-ontology-identifiability/population/public-records.json",
+  "public_records_sha256": "9811796d05388fb685e30a9119d6461cfdfc779c6d132771bacd9b474b9dcb18",
+  "repair_lock": "configs/v165r1-outcome-verifier-repair-lock.json",
+  "repair_lock_sha256": "8f7e9bbfa7cabcce0437572469eb444bbb320e4df170a0aaaa7b297d637945fa",
+  "results_document": "docs/v165r1-outcome-verifier-repair-results.md",
+  "results_document_sha256": "4a194ff841e2df00c562dc5218bcde8b9af544e0aae97df54760daae878913a5",
+  "schema_version": "165r1-outcome-verifier-repair-outcome-lock",
+  "verifier": "python/verify_and_freeze_v165r1_outcome_verifier_repair.py",
+  "verifier_sha256": "e0d81276c81f3a31c75d872263111a5ac2714f12a0c940c2b9281af1d9f21b53"
+}

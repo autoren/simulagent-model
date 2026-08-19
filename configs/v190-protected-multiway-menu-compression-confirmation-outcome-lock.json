@@ -1,0 +1,108 @@
+{
+  "audit": "outputs/v190-protected-multiway-menu-compression-confirmation/outcome-audit.json",
+  "audit_sha256": "54c77c06b72f4fe6f86e76e0c32a7fcc46eb6f2e3309dcda7abf094b9caf0531",
+  "authorization": {
+    "claim_adaptive_language_model_UI_or_human_result": false,
+    "claim_finite_oracle_menu_compression_only": true,
+    "modify_rerun_or_redefine_V190": false,
+    "read_protected_utterance_language_run_model_API_or_training": false,
+    "register_mutate_call_service_act_or_execute": false
+  },
+  "confirmation_lock": "configs/v190-protected-multiway-menu-compression-confirmation-lock.json",
+  "confirmation_lock_sha256": "45b5959e377a84f04c5d51896b5ce85daa0368ea141740683b305fdb4beee14d",
+  "confirmation_summary": "outputs/v190-protected-multiway-menu-compression-confirmation/confirmation/confirmation-summary.json",
+  "confirmation_summary_sha256": "04e3ab6393d85315074319195407d2371b32235d2ffa4c84c33dbf91f26ea0bb",
+  "experiment": "v190_fresh_protected_identity_confirmation_of_fixed_multiway_menu_compression",
+  "lock_payload_sha256": "34567279ffb7252c7156cad566c97dcc7614f472491fdb451ed20f385e85276c",
+  "outcome": {
+    "decision": "freeze_V190_confirmed_multiway_menu_compression_without_adaptive_claim",
+    "passed": true,
+    "scientific_confirmation_gates_passed": true,
+    "summary": {
+      "API_call_count": 0,
+      "absolute_development_protected_cost_difference": 0.0,
+      "actual_execution_count": 0,
+      "contract_count": 14,
+      "development_fixed_cost": 0.38000000000000006,
+      "external_side_effect_count": 0,
+      "fixed_improvement_over_always_generic": 0.020000000000000018,
+      "fixed_sequence": [
+        "M189_domain",
+        "M189_intent_concept"
+      ],
+      "missing_insufficient_rate": 1.0,
+      "missing_protected_count": 12,
+      "model_generation_count": 0,
+      "model_load_count": 0,
+      "observed_protected_count": 120,
+      "ontology_registration_count": 0,
+      "policy_optimization_count": 0,
+      "policy_summary": {
+        "always_generic": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.4000000000000001,
+          "mean_turn_count": 0.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0
+        },
+        "domain_only_then_generic": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.6200000000000001,
+          "mean_turn_count": 1.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 0.2
+        },
+        "fixed_domain_then_intent": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.38000000000000006,
+          "mean_turn_count": 1.8,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 1.0
+        },
+        "flat_global_intent_menu": {
+          "final_exactness_rate": 1.0,
+          "mean_cost": 0.4000000000000001,
+          "mean_turn_count": 1.0,
+          "target_retention_rate": 1.0,
+          "typed_completion_rate": 1.0
+        }
+      },
+      "positive_prior_contract_count": 14,
+      "protected_binding_count": 132,
+      "protected_prior_counts": {
+        "C_1b099ede5d276d0d7e686863": 3,
+        "C_3952cb7117dfccd4faa65fe1": 12,
+        "C_4ab8adeabddfae28cdfd8586": 9,
+        "C_5e8838e0afa2cb9fb11797de": 12,
+        "C_6bf4a7fc35cd0004e9177b09": 5,
+        "C_6dee36329eb9039b7fc7ab52": 12,
+        "C_921e592a9360e0f6763b4faa": 5,
+        "C_9e40b8c76ec62bd62e010c18": 8,
+        "C_a449e2daa6d62796f299baa7": 7,
+        "C_b0fc70d7abe5fe162310f6cf": 7,
+        "C_c1b57d05f1a0c1576c78ff0c": 12,
+        "C_c3b772e901e67c804d681253": 12,
+        "C_c967f1c0f09afaef3cf4896e": 4,
+        "C_fc5db8c638cd224d137e71c7": 12
+      },
+      "protected_utterance_language_read_count": 0,
+      "service_call_count": 0,
+      "training_run_count": 0,
+      "trusted_state_mutation_count": 0,
+      "utterance_or_dialogue_language_read_count": 0
+    }
+  },
+  "parent_V189_outcome": "configs/v189-multiway-typed-channel-feasibility-outcome-lock.json",
+  "parent_V189_outcome_sha256": "7b9e5e4fb0410200f72da7b7a20df2f9c2fa7a2da19ee877a4cc25203522d1cd",
+  "protected_record_results": "outputs/v190-protected-multiway-menu-compression-confirmation/confirmation/protected-record-results.json",
+  "protected_record_results_sha256": "733757cae29ce274af069263f868bbd026e48f06fe7f5f4f32d1daaf409dd33b",
+  "result": "outputs/v190-protected-multiway-menu-compression-confirmation/confirmation/result.json",
+  "result_sha256": "872553d604419ed6942a738f7b6da091ec984a00df2df3f9ce1045b3eeecfd41",
+  "results_document": "docs/v190-protected-multiway-menu-compression-confirmation-results.md",
+  "results_document_sha256": "54e2113cf34e50436ffb8046d60350945399bcc69eb99268863b5bed4eda657e",
+  "schema_version": "190-protected-multiway-menu-compression-confirmation-outcome-lock",
+  "target_paths": "outputs/v190-protected-multiway-menu-compression-confirmation/confirmation/target-paths.json",
+  "target_paths_sha256": "dee588fae0197b6eee7f659ca5c48585a8d2557ca08a83008f21c9e96df40ce6",
+  "verifier": "python/verify_and_freeze_v190_protected_multiway_menu_compression_confirmation_outcome.py",
+  "verifier_sha256": "e29653fc9ab55b461d4b2db031e9c0be86e40480c0ed48df91cc8f0521022440"
+}

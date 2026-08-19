@@ -1,0 +1,170 @@
+{
+  "audit": "outputs/v205-terminally-proper-open-world-semantic-pomdp/outcome-audit.json",
+  "audit_sha256": "888226faa567e477044ac98a4f1719f11569f5804df88c487a66f86cddd1f2e8",
+  "authorization": {
+    "API_training_registration_authority_action_or_execution": false,
+    "external_candidate_language_or_model_run": false,
+    "preregister_separate_fresh_source_feasibility_design_only": true
+  },
+  "evaluation_lock": "configs/v205-terminally-proper-open-world-semantic-pomdp-lock.json",
+  "evaluation_lock_sha256": "effed9937b46945da484ece1a686ccd1fea52bc8dd3c2a0e92e935f1c401a1a1",
+  "experiment": "v205_fixed_stage_terminally_proper_open_world_semantic_abstention_oracle",
+  "lock_payload_sha256": "96e075593b9f3d8e021b50f7c07a90330219c0923e09e94f90ab19d3775327c4",
+  "outcome": {
+    "decision": "freeze_V205_positive_terminally_proper_open_world_abstention_mechanism_and_authorize_separate_fresh_source_feasibility_design_only",
+    "passed": true,
+    "scientific_oracle_passed": true,
+    "summary": {
+      "access": {
+        "API_call_count": 0,
+        "actual_execution_count": 0,
+        "external_side_effect_count": 0,
+        "language_record_read_count": 0,
+        "model_generation_count": 0,
+        "model_load_count": 0,
+        "ontology_registration_count": 0,
+        "oracle_evaluation_count": 1,
+        "protected_access_count": 0,
+        "raw_model_response_read_count": 0,
+        "service_call_count": 0,
+        "training_run_count": 0,
+        "trusted_state_mutation_count": 0
+      },
+      "closed_world": {
+        "action_after_root_green": "inspect",
+        "normalized_regret": 0.01494366666666667,
+        "root_action": "calibrate",
+        "true_environment_value": 0.34000000000000075
+      },
+      "decision_nodes": 16,
+      "exact": {
+        "action_after_root_blue": "inspect",
+        "action_after_root_green": "defer",
+        "action_after_root_red": "inspect",
+        "distinct_post_calibration_selected_actions": [
+          "defer",
+          "inspect"
+        ],
+        "distinct_reachable_repair_actions": [
+          "repair_A",
+          "repair_B"
+        ],
+        "normalized_advantage_over_immediate_defer": 0.03444366666666667,
+        "reachable_defer_history_count": 3,
+        "reachable_selected_actions": [
+          "calibrate",
+          "defer",
+          "inspect",
+          "repair_A",
+          "repair_B"
+        ],
+        "root_action": "calibrate",
+        "root_optimal_actions": [
+          "calibrate"
+        ],
+        "root_q_values": {
+          "calibrate": 2.133240000000001,
+          "defer": -2.0,
+          "inspect": -2.5,
+          "repair_A": -10.0,
+          "repair_B": -10.0
+        },
+        "value": 2.133240000000001
+      },
+      "forced_commit": {
+        "normalized_regret": 0.014943666666666668,
+        "root_action": "calibrate",
+        "true_environment_value": 0.34000000000000097
+      },
+      "immediate_defer": {
+        "value": -2.0
+      },
+      "map": {
+        "latent": "CANONICAL",
+        "normalized_regret": 0.10527700000000002,
+        "root_action": "inspect",
+        "true_environment_value": -10.500000000000002
+      },
+      "myopic": {
+        "normalized_regret": 0.10111033333333334,
+        "root_action": "repair_A",
+        "true_environment_value": -10.0
+      },
+      "open_loop": {
+        "normalized_exact_advantage": 0.03444366666666667,
+        "optimal_programs": [
+          [
+            "defer"
+          ]
+        ],
+        "program_count": 12,
+        "selected_program": [
+          "defer"
+        ],
+        "value": -2.0
+      },
+      "posterior_sampling": {
+        "models": [
+          {
+            "latent": "CANONICAL",
+            "mass": 0.35,
+            "root_action": "inspect",
+            "true_value": -10.500000000000002
+          },
+          {
+            "latent": "REVERSED",
+            "mass": 0.35,
+            "root_action": "inspect",
+            "true_value": -10.500000000000002
+          },
+          {
+            "latent": "OUTSIDE_UNKNOWN",
+            "mass": 0.3,
+            "root_action": "defer",
+            "true_value": -2.0
+          }
+        ],
+        "normalized_regret": 0.08402700000000002,
+        "true_environment_value": -7.95
+      },
+      "return_scale": 120.0,
+      "structural": {
+        "belief_normalization_rate": 1.0,
+        "calibration_mutual_information_nats": 0.5192531842106446,
+        "exact_policy_terminal_audit": {
+          "automatic_settlement_paths": 4,
+          "safe_deferral_paths": 3,
+          "terminal_paths": 7,
+          "unsettled_paths": 0
+        },
+        "fallback_count": 0,
+        "final_stage_allowed_actions": [
+          "repair_A",
+          "repair_B",
+          "defer"
+        ],
+        "horizon_escape_path_count": 0,
+        "known_codebook_inspection_total_variation": 0.8999999999999999,
+        "mandatory_automatic_settlement_rate": 1.0,
+        "maximum_initial_sensing_or_repair_immediate_reward": 0.0,
+        "minimum_observation_probability_on_sensing_support": 0.02,
+        "point_model_common_support": true,
+        "repair_immediate_rewards": {
+          "repair_A": 0.0,
+          "repair_B": 0.0
+        },
+        "unfinished_sensing_safe_deferral_rate": 1.0,
+        "unsettled_repair_terminal_count": 0
+      }
+    }
+  },
+  "result": "outputs/v205-terminally-proper-open-world-semantic-pomdp/evaluation/result.json",
+  "result_sha256": "f6898a6f45ba59d897b55542288e8bdb48cabf840021c07dab55db8da652f8aa",
+  "results_document": "docs/v205-terminally-proper-open-world-semantic-pomdp-results.md",
+  "results_document_sha256": "0835149bf4ed2f23d1897817a20368609463936bf309c823a99caa499be925c3",
+  "schema_version": "205-terminally-proper-open-world-semantic-POMDP-outcome-lock",
+  "summary": "outputs/v205-terminally-proper-open-world-semantic-pomdp/evaluation/summary.json",
+  "summary_sha256": "20f0ed0e8a0bd2cdca39ceb7098978f0c546b67f583daf5e26fed9cffb839326",
+  "verifier": "python/verify_and_freeze_v205_terminally_proper_open_world_semantic_pomdp_outcome.py",
+  "verifier_sha256": "4b9a36dd7418aa288a1a3b0442817d016769fc18c15d9891e0a386af3df8a256"
+}

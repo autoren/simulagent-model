@@ -1,0 +1,166 @@
+{
+  "auditor": "python/audit_and_freeze_v193_shadow_menu_interface_frontier.py",
+  "auditor_sha256": "dba35e91e08698445e071a6f73e336cd4b100dd712a483a8f6024c18ef74b55b",
+  "authorization": {
+    "modify_menu_grammar_controller_costs_gates_or_decision": false,
+    "read_or_score_utterance_or_protected_language": false,
+    "register_prune_mutate_call_service_act_or_execute": false,
+    "run_model_API_or_training": false,
+    "run_text_free_interface_frontier_once": true
+  },
+  "config": "configs/v193-shadow-menu-interface-frontier.json",
+  "config_payload": {
+    "claimBoundary": "text-free finite-menu interface, fail-closed parser, trusted-answer controller, and oracle proposal-quality economics only; not utterance scoring, open-set or open-world recognition, model performance, protected evaluation, human reliability, ontology truth, authority, action, or execution",
+    "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+    "decisionRule": {
+      "ifEveryInterfaceParserSafetyAndOracleFrontierGatePasses": "freeze_V193_and_authorize_one_separately_preregistered_deterministic_language_ranker_evaluation_only",
+      "otherwise": "freeze_V193_interface_or_economics_failure_without_language_scoring_or_model",
+      "passAuthorizesImmediateLanguageScoring": false,
+      "passAuthorizesModelOrAPIRun": false,
+      "passAuthorizesProtectedAccessRegistrationAuthorityActionOrExecution": false
+    },
+    "developmentBindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/development-bindings.json",
+    "economics": {
+      "alwaysGenericCost": 0.4,
+      "fixedV190MeanCost": 0.38,
+      "frontierRecallGridDenominator": 1000,
+      "maximumQualifyingMeanCost": 0.36,
+      "minimumMaterialImprovement": 0.02,
+      "primaryPrior": "frozen V186 development binding frequencies",
+      "requiredPrimaryObservedCount": 120,
+      "top1AnalyticBreakEvenRecallExclusive": 0.3,
+      "top1AnalyticMaterialRecallInclusive": 0.35,
+      "top3AnalyticBreakEvenRecallExclusive": 0.55,
+      "top3AnalyticMaterialRecallInclusive": 0.6
+    },
+    "experiment": "v193_text_free_shadow_menu_interface_parser_and_oracle_cost_frontier",
+    "interfaceGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumDeterministicLanguageScoreCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumProtectedLanguageReadCount": 0,
+      "maximumServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "maximumUtteranceOrDialogueLanguageReadCount": 0,
+      "requiredAlwaysGenericMeanCost": 0.4,
+      "requiredDistinctDomainCount": 8,
+      "requiredDistinctIntentConceptCount": 14,
+      "requiredFixedHierarchyMeanCost": 0.38,
+      "requiredHiddenMappingCount": 14,
+      "requiredInvalidParserCasesInsufficientRate": 1.0,
+      "requiredMissingInsufficientRate": 1.0,
+      "requiredOracleTargetRetentionRate": 1.0,
+      "requiredOracleTop1MeanCost": 0.1,
+      "requiredOracleTop3MeanCost": 0.2,
+      "requiredPrimaryPriorContractCount": 14,
+      "requiredPrimaryPriorObservedCount": 120,
+      "requiredTop1MaterialRecallThreshold": 0.35,
+      "requiredTop3MaterialRecallThreshold": 0.6,
+      "requiredVisibleOptionCount": 14
+    },
+    "parentV192OutcomeLock": "configs/v192-fresh-language-to-menu-extraction-outcome-lock.json",
+    "preLockExposure": {
+      "APICallCount": 0,
+      "V190CostSummaryReadCount": 1,
+      "actualExecutionCount": 0,
+      "contractMetadataReadCount": 1,
+      "deterministicLanguageScoreCount": 0,
+      "interfaceEvaluationCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedLanguageReadCount": 0,
+      "trainingRunCount": 0,
+      "utteranceOrDialogueLanguageReadCount": 0
+    },
+    "proposalGrammar": {
+      "confidenceFieldAllowed": false,
+      "freeTextAllowed": false,
+      "insufficient": {
+        "exactKeys": [
+          "status",
+          "ranked_option_ids"
+        ],
+        "requiredValue": [],
+        "status": "INSUFFICIENT"
+      },
+      "missingMalformedTruncatedUnknownDuplicateExtraKeyOrWrongType": "INSUFFICIENT",
+      "ranked": {
+        "distinctKnownOptionIdsOnly": true,
+        "exactKeys": [
+          "status",
+          "ranked_option_ids"
+        ],
+        "maximumLength": 3,
+        "minimumLength": 1,
+        "status": "RANKED"
+      },
+      "retryOrRepairGenerationAllowed": false
+    },
+    "schemaVersion": "193-shadow-menu-interface-frontier-design",
+    "sourceV186OutcomeLock": "configs/v186-typed-contract-question-codebook-feasibility-outcome-lock.json",
+    "sourceV190OutcomeLock": "configs/v190-protected-multiway-menu-compression-confirmation-outcome-lock.json",
+    "trustedController": {
+      "bitCost": 0.1,
+      "insufficientOrInvalidProposal": "unchanged V190 domain_to_intent hierarchy",
+      "menuQuestionCost": "bitCost * ceil(log2(number_of_proposed_options + 1_OTHER))",
+      "missingObservation": "INSUFFICIENT with zero query cost",
+      "outsideMenuGenericClarificationCost": 0.4,
+      "policies": [
+        "TOP1_PLUS_OTHER",
+        "TOP3_PLUS_OTHER"
+      ],
+      "proposalNeverDeterminesTerminalState": true,
+      "proposalNeverPrunesCandidateUniverse": true,
+      "targetInMenu": "trusted answer selects the exact target and terminates",
+      "targetOutsideMenu": "trusted OTHER answer followed by generic trusted clarification",
+      "trustedAnswerRequiredForEveryExactTerminal": true
+    },
+    "visibleMenuContract": {
+      "hiddenMappingFields": [
+        "option_id",
+        "capability_contract_id"
+      ],
+      "menuIsFiniteBenchmarkHypothesisSetNotDeclaredOntologyAuthority": true,
+      "optionCount": 14,
+      "truthKindAndContractIdentityNeverVisibleToProposer": true,
+      "visibleOptionFields": [
+        "option_id",
+        "domain",
+        "intent_concept"
+      ]
+    }
+  },
+  "config_sha256": "dc988c211ebb55f0a9dc3a40527e89b9d680f3ed3a41656ea1a711a8200cdd94",
+  "contract_catalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "contract_catalog_sha256": "23c7d5550db98927751aa5cdbf0926f773cbe40e6b95250dc8086e39bf873839",
+  "design_audit": "outputs/v193-shadow-menu-interface-frontier/design-audit.json",
+  "design_audit_sha256": "1257173920e3bc7d5fab95b3d9f98205801ac91bf2265a5d0e970c4186227945",
+  "development_bindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/development-bindings.json",
+  "development_bindings_sha256": "114abf3c2351be24e01fa1b69419813c6b31ea74fbb3f559fbd24e2323a5a4d0",
+  "experiment": "v193_text_free_shadow_menu_interface_parser_and_oracle_cost_frontier",
+  "lock_payload_sha256": "51c17fcfbb8b8ceed53023aaf3758109435cef4b71de12556e37a970e67e3169",
+  "parent_V192_outcome": "configs/v192-fresh-language-to-menu-extraction-outcome-lock.json",
+  "parent_V192_outcome_sha256": "f19d5eb6de15ee22a2312ba4aaac66245e35df110a7e86be54cb15038b3815dc",
+  "plan": "docs/v193-shadow-menu-interface-frontier-plan.md",
+  "plan_sha256": "649d650763408ffd4b1990b17d431f3bcd8475cc47bf35f5390516510dd71032",
+  "protocol": "python/v193_shadow_menu_interface_frontier.py",
+  "protocol_sha256": "cd65abbae25cfb77a63f0868befdf922501e5f9e500797d1e77ee93233d5731d",
+  "runner": "python/run_v193_shadow_menu_interface_frontier.py",
+  "runner_sha256": "c9ae3ca63270abf346cb8a93e10e4ebd3eed2d0fe87257605a30d7e534299b53",
+  "schema_version": "193-shadow-menu-interface-frontier-lock",
+  "source_V186_codebook_lock": "configs/v186-typed-contract-question-codebook-feasibility-lock.json",
+  "source_V186_codebook_lock_sha256": "776120bd4598ab38dca29c0a80302a3aa386e021e100bbf32695d521ffce8f13",
+  "source_V186_outcome": "configs/v186-typed-contract-question-codebook-feasibility-outcome-lock.json",
+  "source_V186_outcome_sha256": "b814ab03c545f3b52d21f9b74b168bd1be86f925a49b30056a13d90181705293",
+  "source_V190_outcome": "configs/v190-protected-multiway-menu-compression-confirmation-outcome-lock.json",
+  "source_V190_outcome_sha256": "0a5e1695e0589c315ab743fdf25a4e0946d37d66b1bf08f86694d33bf08e0399",
+  "tests": "python/test_v193_shadow_menu_interface_frontier.py",
+  "tests_sha256": "10f17962d5cbe78c0701531638913d691db04111106677706aa57879370011fd",
+  "verifier": "python/verify_and_freeze_v193_shadow_menu_interface_frontier_outcome.py",
+  "verifier_sha256": "7e1dfd8b88908f40702c8b3bceba27bc5d7c7454fb79f63659c63c990cb184e7"
+}

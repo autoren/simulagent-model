@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "207-agentabstain-shadow-metadata-schema-feasibility-design",
+  "experiment": "v207_agentabstain_paired_preexecution_shadow_subset_feasibility",
+  "parentV206OutcomeLock": "configs/v206-fresh-external-analogue-feasibility-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "claimBoundary": "metadata and schema feasibility for a separate behavioral act-versus-abstain study on a deterministic paired pre-execution AgentAbstain subset; not V205 likelihood validation, task-language evaluation, LLM performance, execution safety, posterior calibration, ontology truth, authority, action, or execution",
+  "source": {
+    "codeRepository": "https://github.com/AntiQuality/agentabstain",
+    "codeCommitFromV206": "f581249704b26804e28a39e37396f1be00b71a4d",
+    "codeREADMEPath": "README.md",
+    "codeREADMESha256FromV206": "f42e49fb621278a15eeb5e87c7f3dbbe1e8d13e2f2aa6d1a1670f663479203f9",
+    "codeLicensePath": "LICENSE",
+    "codeLicenseSha256FromV206": "ae23741b50e4cb70f5e4eddf4878f4623899d467fa97012d505bf5b5272c5d91",
+    "datasetRepository": "https://huggingface.co/datasets/antiquality/agentabstain",
+    "datasetId": "antiquality/agentabstain",
+    "datasetRevisionPinnedAtEvaluation": true,
+    "declaredDatasetLicense": "CC-BY-4.0",
+    "declaredPairCount": 263,
+    "declaredEnvironmentCount": 42,
+    "declaredScenarioCount": 8,
+    "declaredScenarioSpan": ["pre-execution", "runtime"]
+  },
+  "allowedMetadataReads": {
+    "githubTreePathsOnly": true,
+    "datasetTreePathsAndObjectMetadataOnly": true,
+    "datasetCardYAMLFrontMatterOnly": true,
+    "codeFiles": [
+      "src/configs/tasks.yaml"
+    ],
+    "codeGlobPrefixes": [
+      "src/types/",
+      "eval/evaluators/"
+    ],
+    "codeGlobSuffix": ".py",
+    "maximumAllowedCodeSchemaFiles": 20,
+    "persistFetchedCodeOrCardText": false,
+    "persistOnlyHashesByteCountsPathsAndExtractedSchemaIdentifiers": true
+  },
+  "fixedMetadataPatterns": {
+    "shouldActPathMarkers": ["should_act", "should-act", "shouldact"],
+    "shouldAbstainPathMarkers": ["should_abstain", "should-abstain", "shouldabstain"],
+    "preExecutionPathMarkers": ["pre_execution", "pre-execution", "preexecution"],
+    "runtimePathMarkers": ["runtime", "post_tool", "post-tool"],
+    "identitySchemaIdentifiers": ["task_id", "taskid", "pair_id", "pairid", "environment_id", "env_id"],
+    "goldSchemaIdentifiers": ["should_abstain", "should_act", "expected_decision", "gold_decision", "abstention_label"],
+    "scenarioSchemaIdentifiers": ["scenario", "category", "trigger", "phase", "abstention_type"],
+    "promptSchemaIdentifiers": ["instruction", "prompt", "query", "task_description"],
+    "rationaleSchemaIdentifiers": ["rationale", "explanation", "judge_reason"],
+    "taskConfigIdentifierPattern": "[A-Za-z0-9][A-Za-z0-9_.:/-]{3,}"
+  },
+  "qualificationGates": {
+    "requiredCodeCommitMatchesV206": true,
+    "requiredCodeREADMEAndLicenseHashesMatchV206": true,
+    "requiredDatasetRevisionPinned": true,
+    "requiredDatasetCardLicense": "cc-by-4.0",
+    "minimumTreeIdentifiedCompletePairCount": 40,
+    "minimumTreeIdentifiedPreExecutionPairCount": 20,
+    "minimumTreeIdentifiedPreExecutionScenarioCount": 2,
+    "requiredBothPairSidesIdentifiableWithoutTaskPayload": true,
+    "requiredGoldDecisionIdentifiableWithoutLLMJudge": true,
+    "requiredIdentityGoldScenarioAndPromptSchemaFields": true,
+    "requiredRationaleSeparableFromPrompt": true,
+    "requiredPreExecutionSubsetSelectableBeforeTaskText": true,
+    "requiredShadowNoToolNoExecutionEvaluationPath": true,
+    "requiredDeclaredPairEnvironmentAndScenarioCountsPresent": true,
+    "requiredContaminationTreatment": "freeze source and model revisions; make no contamination-free claim because the July-2026 benchmark predates the August-2026 local-model evaluation; require paired perturbation controls and no training or finetuning on the source"
+  },
+  "futureSelectionIfQualified": {
+    "population": "all tree-proven complete pre-execution should-act/should-abstain pairs",
+    "ordering": "ascending SHA-256 of UTF-8 dataset_commit + ':' + canonical_pair_identity",
+    "maximumPairs": 96,
+    "minimumPairs": 20,
+    "balance": "retain both sides of every pair and round-robin across source scenario identifiers",
+    "selectionMayReadTaskText": false,
+    "futureTextExtractionRequiresSeparateLock": true
+  },
+  "accessGates": {
+    "requiredCodeTreeMetadataReadCount": 1,
+    "requiredDatasetHeadReadCount": 1,
+    "requiredDatasetTreeMetadataReadCount": 1,
+    "requiredDatasetCardHeaderReadCount": 1,
+    "minimumCodeSchemaFileReadCount": 1,
+    "maximumCodeSchemaFileReadCount": 20,
+    "maximumDatasetTaskPayloadFileReadCount": 0,
+    "maximumTaskInstructionExampleDialogueRationaleReadCount": 0,
+    "maximumProtectedAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumModelAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumToolCallCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "officialLandingPagePreviewCount": 1,
+    "observedPublicReleaseMonth": "2026-07",
+    "datasetIdentifierObservedCount": 1,
+    "exactDatasetHeadReadCount": 0,
+    "datasetTreeOrCardReadCount": 0,
+    "codeTreeOrSchemaFileReadCount": 0,
+    "taskInstructionExampleDialogueRationaleReadCount": 0,
+    "modelOrPolicyEvaluationCount": 0
+  },
+  "decisionRule": {
+    "ifEveryIntegrityQualificationAndAccessGatePasses": "freeze_V207_positive_and_authorize_separate_deterministic_text_extraction_preregistration_only",
+    "otherwise": "freeze_V207_negative_without_opening_task_payload_or_weakening_pair_preexecution_or_noexecution_gates",
+    "passAuthorizesImmediateTaskTextAccessOrModelRun": false,
+    "passAuthorizesToolsExecutionAPITrainingRegistrationAuthorityOrSideEffects": false
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "209-controlled-language-observation-POMDP-design",
+  "experiment": "v209_terminally_proper_controlled_probabilistic_language_observation_oracle",
+  "parentV208OutcomeLock": "configs/v208-external-behavioral-abstention-source-census-outcome-lock.json",
+  "referenceV205OutcomeLock": "configs/v205-terminally-proper-open-world-semantic-pomdp-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "claimBoundary": "project-authored model-free mechanism oracle for exact planning over a finite probabilistic controlled-language channel with explicit outside semantics, adaptive clarification, safe deferral, and mandatory automatic settlement; not evidence about natural-language understanding, an LLM, calibrated model confidence, external language, human behavior, ontology truth, authority, action, or execution",
+  "hypotheses": {
+    "taskStates": ["A", "B"],
+    "semanticRegimes": ["CANONICAL", "ALTERNATIVE", "OUTSIDE_UNKNOWN"],
+    "taskStatePrior": [0.5, 0.5],
+    "semanticRegimePrior": [0.35, 0.35, 0.30],
+    "priorComesFromModelScoresOrRanks": false,
+    "fullHypothesisUniverseAlwaysRetained": true
+  },
+  "grammar": {
+    "semanticObservationIds": ["UTTERANCE_ALPHA", "UTTERANCE_BETA", "UTTERANCE_UNRESOLVED"],
+    "clarificationActions": ["ask_reference", "ask_target"],
+    "surfaceFamilies": {
+      "DIRECT": {
+        "ask_reference": {
+          "UTTERANCE_ALPHA": "The reference uses alpha.",
+          "UTTERANCE_BETA": "The reference uses beta.",
+          "UTTERANCE_UNRESOLVED": "The reference convention is unclear."
+        },
+        "ask_target": {
+          "UTTERANCE_ALPHA": "The target appears to be alpha.",
+          "UTTERANCE_BETA": "The target appears to be beta.",
+          "UTTERANCE_UNRESOLVED": "The target description is inconclusive."
+        }
+      },
+      "MATCHED_PARAPHRASE": {
+        "ask_reference": {
+          "UTTERANCE_ALPHA": "For the known example, choose alpha.",
+          "UTTERANCE_BETA": "For the known example, choose beta.",
+          "UTTERANCE_UNRESOLVED": "For the known example, no convention can be selected."
+        },
+        "ask_target": {
+          "UTTERANCE_ALPHA": "For the item in question, choose alpha.",
+          "UTTERANCE_BETA": "For the item in question, choose beta.",
+          "UTTERANCE_UNRESOLVED": "For the item in question, the evidence does not decide."
+        }
+      }
+    },
+    "matchedSurfaceCounterfactualFamilies": ["DIRECT", "MATCHED_PARAPHRASE"],
+    "observationRenamingPermutation": [1, 0, 2],
+    "surfaceProjectionIsDeterministicAndNonAuthoritative": true,
+    "surfaceTextNeverEntersPlanner": true
+  },
+  "channel": {
+    "referenceKnownLogicalState": "A",
+    "knownLogicalA": [0.94, 0.04, 0.02],
+    "knownLogicalB": [0.04, 0.86, 0.10],
+    "outsideEitherState": [0.20, 0.20, 0.60],
+    "postReferenceHistoryMixWeight": 0.01,
+    "postReferenceHistoryAnchors": {
+      "UTTERANCE_ALPHA": [0.45, 0.45, 0.10],
+      "UTTERANCE_BETA": [0.44, 0.46, 0.10],
+      "UTTERANCE_UNRESOLVED": [0.20, 0.20, 0.60]
+    },
+    "everyActionRegimeStateHistoryDistributionIsNormalized": true,
+    "commonPositiveSupport": true
+  },
+  "decisionProcess": {
+    "stageNames": ["PRE_REFERENCE", "POST_REFERENCE", "POST_TARGET"],
+    "actionNames": ["ask_reference", "ask_target", "act_A", "act_B", "defer"],
+    "allowedActionsByStage": {
+      "PRE_REFERENCE": ["ask_reference", "ask_target", "act_A", "act_B", "defer"],
+      "POST_REFERENCE": ["ask_target", "act_A", "act_B", "defer"],
+      "POST_TARGET": ["act_A", "act_B", "defer"]
+    },
+    "askReferenceNextStage": "POST_REFERENCE",
+    "askTargetNextStage": "POST_TARGET",
+    "maximumControllableDecisionCount": 3,
+    "discount": 1.0,
+    "tieTolerance": 1e-12,
+    "baseClarificationCost": -0.5,
+    "clarificationCostRegimeStateOffsets": {
+      "ask_reference": [[-0.006, -0.004], [0.004, 0.006], [-0.002, 0.002]],
+      "ask_target": [[-0.005, 0.005], [0.005, -0.005], [-0.003, 0.003]]
+    },
+    "postReferenceHistoryCostOffsets": {
+      "UTTERANCE_ALPHA": -0.004,
+      "UTTERANCE_BETA": 0.004,
+      "UTTERANCE_UNRESOLVED": 0.008
+    },
+    "safeDeferralReward": -2.0,
+    "controlImmediateReward": 0.0,
+    "automaticCorrectSettlementReward": 10.0,
+    "automaticWrongSettlementReward": -30.0,
+    "unfinishedClarificationTerminalValue": -2.0,
+    "controlAlwaysTransitionsThroughAutomaticSettlement": true,
+    "automaticSettlementConsumesNoControllableDecision": true,
+    "unfinishedClarificationAlwaysTerminatesBySafeDeferral": true
+  },
+  "fixedComparators": [
+    "FULL_OPEN_WORLD_EXACT",
+    "CLOSED_WORLD_BAYES_ADAPTIVE_EXCLUDING_OUTSIDE",
+    "FULL_BELIEF_FORCED_COMMIT_WITHOUT_DEFER",
+    "MAP_CERTAINTY_EQUIVALENCE",
+    "PERSISTENT_POSTERIOR_SAMPLING",
+    "BEST_OPEN_LOOP",
+    "MYOPIC_IMMEDIATE_REWARD",
+    "IMMEDIATE_DEFER"
+  ],
+  "oracleGates": {
+    "requiredLatentRegimeCount": 3,
+    "requiredClarificationActionCount": 2,
+    "requiredCommonPositiveSupport": true,
+    "minimumObservationProbabilityOnSupport": 0.019,
+    "minimumReferenceMutualInformationNats": 0.29,
+    "minimumKnownTargetTotalVariation": 0.79,
+    "requiredHistoryDependentTargetLikelihood": true,
+    "requiredLatentDependentClarificationCost": true,
+    "maximumClarificationOrControlImmediateReward": 0.0,
+    "requiredSelectedExactRootAction": "ask_reference",
+    "requiredExactActionAfterRootAlpha": "ask_target",
+    "requiredExactActionAfterRootBeta": "ask_target",
+    "requiredExactActionAfterRootUnresolved": "defer",
+    "requiredClosedWorldActionAfterRootUnresolved": "ask_target",
+    "minimumDistinctReachableControlActions": 2,
+    "minimumReachableDeferHistoryCount": 1,
+    "minimumDistinctPostReferenceSelectedActions": 2,
+    "minimumNormalizedExactOverImmediateDeferAdvantage": 0.015,
+    "minimumNormalizedClosedWorldRegret": 0.004,
+    "minimumNormalizedForcedCommitRegret": 0.004,
+    "minimumNormalizedMAPRegret": 0.015,
+    "minimumNormalizedPosteriorSamplingRegret": 0.008,
+    "minimumNormalizedExactOverOpenLoopAdvantage": 0.015,
+    "minimumNormalizedMyopicRegret": 0.04,
+    "requiredControlImmediateReward": 0.0,
+    "requiredMandatoryAutomaticSettlementRate": 1.0,
+    "requiredUnfinishedClarificationSafeDeferralRate": 1.0,
+    "maximumUnsettledControlTerminalCount": 0,
+    "maximumHorizonEscapePathCount": 0,
+    "minimumBeliefNormalizationRate": 1.0,
+    "requiredMatchedSurfaceCounterfactualValueDifference": 0.0,
+    "requiredMatchedSurfaceCounterfactualPolicyMismatchCount": 0,
+    "maximumRenamingValueDifference": 1e-12,
+    "requiredRenamingPolicyMismatchCount": 0,
+    "maximumFallbackCount": 0,
+    "requiredFiniteMetrics": true
+  },
+  "accessGates": {
+    "requiredOracleEvaluationCount": 1,
+    "maximumExternalLanguageRecordReadCount": 0,
+    "maximumRawModelResponseReadCount": 0,
+    "maximumProtectedAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "preLockExposure": {
+    "conceptualParameterDesignCount": 1,
+    "exactPolicyValueOrActionEvaluationCount": 0,
+    "externalLanguageRecordReadCount": 0,
+    "rawModelResponseReadCount": 0,
+    "protectedAccessCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOracleIntegrityScientificAndAccessGatePasses": "freeze_V209_positive_controlled_language_decision_mechanism_and_authorize_separate_fresh_controlled_language_population_design_only",
+    "otherwise": "freeze_V209_negative_without_parameter_grammar_stage_reward_channel_comparator_or_gate_tuning_and_diagnose_model_free_structure",
+    "passAuthorizesFreshControlledLanguagePopulationDesignOnly": true,
+    "passAuthorizesImmediateLanguagePopulationOpeningOrModelRun": false,
+    "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

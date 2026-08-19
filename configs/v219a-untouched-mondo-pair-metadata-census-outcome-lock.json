@@ -1,0 +1,209 @@
+{
+  "audit": "outputs/v219a-untouched-mondo-pair-metadata-census/outcome-audit.json",
+  "audit_sha256": "03eb2b3f513986735c7b1959b64c8af78facd1b3aa93f2c58b306bbaed760a34",
+  "authorization": {
+    "design_one_untouched_pair_payload_protocol": true,
+    "open_protected_or_run_model": false,
+    "register_mutate_service_act_execute": false,
+    "retrieve_payload_or_evaluate_method": false
+  },
+  "design_lock": "configs/v219a-untouched-mondo-pair-metadata-census-lock.json",
+  "design_lock_sha256": "74dc03ea764720cd31b1f70317981598416bb6cc49a723927cc9caa08188e6f1",
+  "evidence": "outputs/v219a-untouched-mondo-pair-metadata-census/census/evidence.json",
+  "evidence_sha256": "eef9cb4991ac608b410abac2e3eb01013632734362752368b5abfdeadb06ab2a",
+  "evidence_snapshot": "outputs/v217a-independent-source-event-metadata-census/metadata-snapshots/f1e464db2cd1cdc3df7e.json",
+  "evidence_snapshot_sha256": "2cdcb1f171bf912c57d1b5a48364da7afeb211cd8bd00af6e6a1b70209d63072",
+  "experiment": "v219a_prospective_untouched_mondo_pair_metadata_census",
+  "lock_payload_sha256": "5d01377d356a53e47d384f6542b44ecf2b371ee40232f5608b8f13a758b3284e",
+  "outcome": {
+    "branch": "UNTOUCHED_MONDO_PAIR_PAYLOAD_DESIGN_ELIGIBLE",
+    "decision": "freeze_V219A_positive_and_authorize_one_separate_untouched_pair_payload_design_only",
+    "metrics": {
+      "asset_digest_coverage": 1.0,
+      "asset_role_coverage": 1.0,
+      "eligible_pair_count": 2,
+      "eligible_pair_ids": [
+        "v2026-05-05__to__v2026-06-02",
+        "v2026-04-07__to__v2026-05-05"
+      ],
+      "evidence_snapshot_hash_accuracy": 1.0,
+      "excluded_release_count": 2,
+      "expected_selected_pair_ids": [
+        "v2026-05-05__to__v2026-06-02"
+      ],
+      "finite_metrics": true,
+      "original_adjacency_accuracy": 1.0,
+      "pair_assessment_coverage": 1.0,
+      "pair_metrics": {
+        "v2026-04-07__to__v2026-05-05": {
+          "eligible": true,
+          "release_body_categories": {
+            "ADDITION": true,
+            "OBSOLETION_OR_REPLACEMENT": true,
+            "SYNONYM_OR_LABEL": true,
+            "TEXT_DEFINITION": true
+          },
+          "total_pair_payload_bytes": 95309262
+        },
+        "v2026-05-05__to__v2026-06-02": {
+          "eligible": true,
+          "release_body_categories": {
+            "ADDITION": true,
+            "OBSOLETION_OR_REPLACEMENT": true,
+            "SYNONYM_OR_LABEL": true,
+            "TEXT_DEFINITION": true
+          },
+          "total_pair_payload_bytes": 96095320
+        }
+      },
+      "release_body_category_coverage": 1.0,
+      "release_body_hash_coverage": 1.0,
+      "release_count": 5,
+      "retrospective_not_speaker_intent_boundary": true,
+      "selected_pair_count": 1,
+      "selected_pair_ids": [
+        "v2026-05-05__to__v2026-06-02"
+      ],
+      "selection_priority_correctness": 1.0,
+      "untouched_adjacent_pair_count": 2
+    },
+    "scientific_passed": true,
+    "selected_pair_assessments": [
+      {
+        "asset_roles": [
+          {
+            "asset_name": "mondo-base.obo",
+            "byte_count": 47474428,
+            "declared_sha256": "57e4563920b922dc952ed954d36368319592f3a32946504728665c248000a3ac",
+            "format": "OBO",
+            "match_count": 1,
+            "release_side": "OLDER",
+            "release_tag": "v2026-05-05",
+            "role": "OLDER_RETROSPECTIVE_SOURCE",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-05-05/mondo-base.obo",
+            "valid": true
+          },
+          {
+            "asset_name": "mondo-base.obo",
+            "byte_count": 48298257,
+            "declared_sha256": "363a2dd9e653e12db0182332a974a6e3c3621a4556ab32c70eaa592cd37a376d",
+            "format": "OBO",
+            "match_count": 1,
+            "release_side": "NEWER",
+            "release_tag": "v2026-06-02",
+            "role": "NEWER_RETROSPECTIVE_TARGET",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo-base.obo",
+            "valid": true
+          },
+          {
+            "asset_name": "mondo_release_diff_changed_terms.tsv",
+            "byte_count": 5891,
+            "declared_sha256": "63aa226f56bd5ab6aa94c65a02c3c249b9cc5bfe7155efa9bcb65e8d1568a553",
+            "format": "TSV",
+            "match_count": 1,
+            "release_side": "NEWER",
+            "release_tag": "v2026-06-02",
+            "role": "PAIR_CHANGED_TERM_CONTROL",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo_release_diff_changed_terms.tsv",
+            "valid": true
+          },
+          {
+            "asset_name": "mondo_release_diff_new_terms.tsv",
+            "byte_count": 125701,
+            "declared_sha256": "1fc7c53bed11c3a96732dba0ff6fd5655c5a1d8138b4e8ae0f874fb67ce677c3",
+            "format": "TSV",
+            "match_count": 1,
+            "release_side": "NEWER",
+            "release_tag": "v2026-06-02",
+            "role": "PAIR_NEW_TERM_CONTROL",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo_release_diff_new_terms.tsv",
+            "valid": true
+          },
+          {
+            "asset_name": "mondo_obsoletioncandidates.tsv",
+            "byte_count": 94222,
+            "declared_sha256": "c4c7d52941d4478cd9392ef82530394e4e481c0a86b5b5ad54474a2de1835c67",
+            "format": "TSV",
+            "match_count": 1,
+            "release_side": "OLDER",
+            "release_tag": "v2026-05-05",
+            "role": "OLDER_CANDIDATE_STATUS_CONTROL",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-05-05/mondo_obsoletioncandidates.tsv",
+            "valid": true
+          },
+          {
+            "asset_name": "mondo_obsoletioncandidates.tsv",
+            "byte_count": 95091,
+            "declared_sha256": "392880f93470a3f361efa408a9fc1202a1f294309a1dcada64075ad474039a74",
+            "format": "TSV",
+            "match_count": 1,
+            "release_side": "NEWER",
+            "release_tag": "v2026-06-02",
+            "role": "NEWER_CANDIDATE_STATUS_CONTROL",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/mondo_obsoletioncandidates.tsv",
+            "valid": true
+          },
+          {
+            "asset_name": "source-versions.tsv",
+            "byte_count": 865,
+            "declared_sha256": "35e627f3985481a198e373ccb4c747198597f71308a66691fd1eb21031f72c45",
+            "format": "TSV",
+            "match_count": 1,
+            "release_side": "OLDER",
+            "release_tag": "v2026-05-05",
+            "role": "OLDER_SOURCE_PROVENANCE_CONTROL",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-05-05/source-versions.tsv",
+            "valid": true
+          },
+          {
+            "asset_name": "source-versions.tsv",
+            "byte_count": 865,
+            "declared_sha256": "c5094c1125b4f9a578e29e8fc82550fadcb797bd15c295545fd553f65546b840",
+            "format": "TSV",
+            "match_count": 1,
+            "release_side": "NEWER",
+            "release_tag": "v2026-06-02",
+            "role": "NEWER_SOURCE_PROVENANCE_CONTROL",
+            "url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-06-02/source-versions.tsv",
+            "valid": true
+          }
+        ],
+        "eligible": true,
+        "full_order_newer_index": 2,
+        "full_order_older_index": 3,
+        "newer_published_at": "2026-06-02T17:04:52Z",
+        "newer_release_tag": "v2026-06-02",
+        "older_published_at": "2026-05-05T14:12:52Z",
+        "older_release_tag": "v2026-05-05",
+        "original_adjacency": true,
+        "pair_id": "v2026-05-05__to__v2026-06-02",
+        "release_body_control": {
+          "body_sha256": "76b1133b7196e1547ca91470bcbb8e59422e8fe2fe815e7ebab250473d72050a",
+          "category_matches": {
+            "ADDITION": true,
+            "OBSOLETION_OR_REPLACEMENT": true,
+            "SYNONYM_OR_LABEL": true,
+            "TEXT_DEFINITION": true
+          },
+          "newer_release_tag": "v2026-06-02",
+          "repository_readme_used": false,
+          "source": "body_field_of_newer_release_object_in_frozen_API_snapshot"
+        },
+        "total_pair_payload_bytes": 96095320
+      }
+    ],
+    "selected_pair_ids": [
+      "v2026-05-05__to__v2026-06-02"
+    ],
+    "verification_passed": true
+  },
+  "result": "outputs/v219a-untouched-mondo-pair-metadata-census/census/result.json",
+  "result_sha256": "17bba8818affa7b040db25bdb2972c07cc7f1f65aa9a62a14e0919c6d3d2c5ff",
+  "results_document": "docs/v219a-untouched-mondo-pair-metadata-census-results.md",
+  "results_document_sha256": "9e229e7e4618e49359f40182318c32433d6a020470a1d5e93d1ca97056ff4569",
+  "schema_version": "219a-untouched-mondo-pair-metadata-census-outcome-lock",
+  "summary": "outputs/v219a-untouched-mondo-pair-metadata-census/census/summary.json",
+  "summary_sha256": "4921412743f23e4870a21faa4361cfd11c164530c606fe2b9006f1cba8003803",
+  "verifier": "python/verify_and_freeze_v219a_untouched_mondo_pair_metadata_census_outcome.py",
+  "verifier_sha256": "6839c687330be1591f0594bfcc1fc85f7ef7cebdd25deeb684c2d6a1d8307465"
+}

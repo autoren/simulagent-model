@@ -1,0 +1,111 @@
+{
+  "auditor": "python/audit_and_freeze_v221r1_parser_config_repair.py",
+  "auditor_sha256": "2abaff39f9bbf8814cbf835080cf3ff207c696d765772f73bc7450a598da2a3c",
+  "authorization": {
+    "hash_but_do_not_load_V220_protected": true,
+    "register_mutate_service_act_execute": false,
+    "run_model_or_open_protected": false,
+    "run_one_repaired_V221_development_evaluation": true
+  },
+  "design_audit": "outputs/v221r1-parser-config-repair/design-audit.json",
+  "design_audit_sha256": "805a4ebc68c83ad21f3d151f6dc958b8a60eacd56268765acc5939c3ace21368",
+  "experiment": "v221r1_parser_config_repair",
+  "failure_record": "docs/v221-initial-attempt-failure.md",
+  "failure_record_sha256": "e2ec439201b72019191a545ad57a9b0880211e058facbf78837fa7f69e3ffcb2",
+  "lock_payload_sha256": "ac2d6cc289131f7c93e6c1221b941acbfb0088d8f62113f4b396d94288f083d3",
+  "parent_V221_design": "configs/v221-deterministic-mondo-residual-lock.json",
+  "parent_V221_design_sha256": "83fb85a7f202fbd75708424e3552460a47d68d8bf5ac6761adee95181bbf4c4e",
+  "plan": "docs/v221r1-parser-config-repair-plan.md",
+  "plan_sha256": "f828d042448f9634769fe0ee6a827709fbd8e03f75055f0527ae8c1c94afbabb",
+  "repair_config": "configs/v221r1-parser-config-repair.json",
+  "repair_config_payload": {
+    "artifacts": {
+      "catalogManifest": "outputs/v221r1-parser-config-repair/catalog-manifest.json",
+      "observations": "outputs/v221r1-parser-config-repair/observations.jsonl",
+      "residualManifest": "outputs/v221r1-parser-config-repair/residual-manifest.json",
+      "result": "outputs/v221r1-parser-config-repair/result.json",
+      "summary": "outputs/v221r1-parser-config-repair/summary.json"
+    },
+    "decisionRule": {
+      "authorizesProtectedOrModelRun": false,
+      "authorizesRegistrationMutationServiceActionOrExecution": false,
+      "ifRepairAuditPasses": "run_one_repaired_V221_development_evaluation_with_all_scientific_rules_unchanged",
+      "otherwise": "stop_V221_without_scientific_result"
+    },
+    "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+    "experiment": "v221r1_parser_config_repair",
+    "failureBoundary": {
+      "candidateMethodEvaluationCount": 0,
+      "catalogManifestWritten": false,
+      "developmentPublicPriorLoadCount": 1,
+      "developmentTruthPriorLoadCount": 1,
+      "exceptionType": "KeyError",
+      "failedFunction": "build_catalog",
+      "missingKey": "parserDesign",
+      "modelRunCount": 0,
+      "observationCount": 0,
+      "protectedJSONLBodyLoadCount": 0
+    },
+    "parentV221DesignLock": "configs/v221-deterministic-mondo-residual-lock.json",
+    "parentV221DesignLockSha256": "83fb85a7f202fbd75708424e3552460a47d68d8bf5ac6761adee95181bbf4c4e",
+    "plan": "docs/v221r1-parser-config-repair-plan.md",
+    "repair": {
+      "candidateBudgetsChanged": false,
+      "controllerChanged": false,
+      "evaluationGatesChanged": false,
+      "inputHashesChanged": false,
+      "methodPortfolioChanged": false,
+      "operation": "inject_exact_V220_parserDesign_into_runtime_copy_of_locked_V221_config",
+      "parserDesign": {
+        "assertedStateIsInferredOWLEquivalence": false,
+        "duplicateTermIdPolicy": "FAIL",
+        "logicalFields": [
+          "is_a",
+          "relationship",
+          "intersection_of",
+          "equivalent_to",
+          "disjoint_from"
+        ],
+        "mappingFields": [
+          "xref"
+        ],
+        "normalizeWhitespace": true,
+        "oboEncoding": "utf-8",
+        "releaseSummaryPolicy": "CONTENT_HASHED_OFFICIAL_API_BODY_FROZEN_CATEGORY_CENSUS",
+        "remoteImportPolicy": "FORBID_AND_DO_NOT_RESOLVE",
+        "requiredOBOFields": [
+          "id",
+          "name"
+        ],
+        "sortSetValuedFields": true,
+        "statusFields": [
+          "is_obsolete",
+          "replaced_by",
+          "consider"
+        ],
+        "stripOBOCommentsAfterBang": true,
+        "tabularControlPolicy": "UTF8_TSV_HEADER_REQUIRED_AND_MONDO_ID_CENSUS",
+        "termStanza": "Term",
+        "textFields": [
+          "name",
+          "def",
+          "synonym"
+        ]
+      },
+      "primaryBudgetChanged": false,
+      "residualDefinitionChanged": false,
+      "roleManifestChanged": false
+    },
+    "schemaVersion": "221r1-parser-config-repair-design",
+    "sourceV220DesignLock": "configs/v220-fresh-mondo-artifact-population-lock.json",
+    "sourceV220DesignLockSha256": "f45dd3da394bb12ca84c453416299e2f161cb99f94bb36925cba150b33118b9b"
+  },
+  "repair_config_sha256": "4e34310b0845ae8d30af9574619694e98c83af3254d823a27d1fc121347702fa",
+  "runner": "python/run_v221r1_parser_config_repair.py",
+  "runner_sha256": "03ca67e15d71a3409374a9870aeabcc5fc1d674f33811d216b0cd96daa7cbc62",
+  "schema_version": "221r1-parser-config-repair-lock",
+  "source_V220_design": "configs/v220-fresh-mondo-artifact-population-lock.json",
+  "source_V220_design_sha256": "f45dd3da394bb12ca84c453416299e2f161cb99f94bb36925cba150b33118b9b",
+  "verifier": "python/verify_and_freeze_v221r1_parser_config_repair_outcome.py",
+  "verifier_sha256": "c4c46560a2f9d8f3ee075fe805a761a3b270027e103530179c5acebe5a28e5ef"
+}

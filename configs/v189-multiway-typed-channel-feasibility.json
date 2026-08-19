@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "189-multiway-typed-channel-feasibility",
+  "experiment": "v189_text_free_multiway_typed_clarification_bandwidth_feasibility",
+  "parentV188OutcomeLock": "configs/v188-binary-clarification-channel-frontier-outcome-lock.json",
+  "contractCatalog": "outputs/v183-sgd-contract-identifiability-population/population/contract-catalog.json",
+  "developmentBindings": "outputs/v186-typed-contract-question-codebook-feasibility/codebook/development-bindings.json",
+  "sourceV187Result": "outputs/v187-clean-typed-clarification-planner/evaluation/result.json",
+  "multiwayQuestions": {
+    "domain": "categorical declared domain over the current version space",
+    "intent_concept": "categorical normalized intent concept over the current version space",
+    "transactionality": "categorical boolean transactionality over the current version space",
+    "deriveOnlyFromFrozenAllowedSemanticPayload": true,
+    "excludeServiceVersionSourceTruthPresentedCandidateLanguageAndOutcomes": true,
+    "allQuestionSet": ["domain", "intent_concept", "transactionality"],
+    "coarseQuestionSet": ["domain", "transactionality"]
+  },
+  "pricing": {
+    "binaryQuestionAnchorCost": 0.10,
+    "genericTrustedClarificationCost": 0.40,
+    "maximumMultiwayTurns": 2,
+    "bitSlotRule": "cost(k,o)=o+(0.10-o)*ceil(log2(k)), where k is the number of reachable answer categories",
+    "turnOverheadGridNumeratorsInclusive": [0, 9],
+    "turnOverheadGridDenominator": 100,
+    "turnOverheadGridStep": 0.01,
+    "entropyLowerBoundRule": "cost=0.10*H(answer|current version space) with zero turn overhead",
+    "doNotEquateOneCategoricalAnswerWithOneBinaryBit": true,
+    "costIsComputedBeforePolicyScoring": true
+  },
+  "policies": [
+    "exact_adaptive_all_multiway_questions",
+    "best_fixed_open_loop_all_multiway_questions",
+    "exact_adaptive_coarse_questions_only",
+    "always_generic_trusted_clarification"
+  ],
+  "feasibilityGates": {
+    "requiredContractCount": 14,
+    "requiredPositivePriorContractCount": 14,
+    "requiredAllQuestionCount": 3,
+    "requiredCoarseQuestionCount": 2,
+    "requiredPricingScenarioCount": 11,
+    "requiredObservedFinalExactnessRate": 1.0,
+    "requiredTargetRetentionRate": 1.0,
+    "requiredV187GenericCost": 0.40,
+    "requiredPureBitSlotAllQuestionCostNotBelowGeneric": true,
+    "minimumPositiveConditionalScenarioCount": 1,
+    "maximumMeanTurnCount": 2.0,
+    "maximumUtteranceOrDialogueLanguageReadCount": 0,
+    "maximumProtectedUtteranceLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "interpretationRule": {
+    "robustMultiwayValueRequiresStrictImprovementUnderPureBitSlotUpperPricing": true,
+    "conditionalMultiwayValueMeansImprovementOnlyWithPositiveTurnOverheadOrEntropyLowerBound": true,
+    "coarseOnlyControlMustBeReportedSeparately": true,
+    "globalIntentMenuBenefitMustNotBeCalledAdaptiveIfExactAndOpenLoopTie": true
+  },
+  "decisionRule": {
+    "ifRobustMultiwayValuePasses": "freeze_robust_multiway_feasibility_and_authorize_separate_clean_protocol_design_only",
+    "ifOnlyConditionalMultiwayValuePasses": "freeze_conditional_multiway_feasibility_and_require_external_cost_or_proposal_evidence",
+    "otherwise": "freeze_negative_multiway_feasibility_and_close_channel_track",
+    "passAuthorizesImmediateLanguageModelOrProtectedRun": false,
+    "passAuthorizesRegistrationAuthorityActionOrExecution": false
+  },
+  "preLockExposure": {
+    "multiwayQuestionBuildCount": 0,
+    "pricingScenarioScoreCount": 0,
+    "policyScoreCount": 0,
+    "utteranceOrDialogueLanguageReadCount": 0,
+    "protectedUtteranceLanguageReadCount": 0,
+    "modelLoadCount": 0,
+    "actualExecutionCount": 0
+  },
+  "claimBoundary": "text-free oracle-answer feasibility and pricing sensitivity for three finite multiway semantic questions over the frozen 14-contract universe; not human/UI burden evidence, raw-language understanding, model/deployed answer reliability, open-world discovery outside the universe, protected evidence, registration, authority, action, or execution"
+}

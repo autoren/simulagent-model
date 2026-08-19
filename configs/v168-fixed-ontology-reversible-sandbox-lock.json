@@ -1,0 +1,199 @@
+{
+  "auditor": "python/audit_and_freeze_v168_fixed_ontology_reversible_sandbox.py",
+  "auditor_sha256": "2e0ee98ae9375dc3ad8e7538f5760c0e707e1d1935ace0ff5b0737b128e028c1",
+  "authorization": {
+    "call_real_service_or_tool": false,
+    "create_or_open_evaluation_population": false,
+    "load_or_run_local_or_API_model": false,
+    "modify_ontology_invariants_population_faults_protocol_metrics_gates_or_decision": false,
+    "perform_external_side_effect_or_real_execution": false,
+    "run_formal_simulated_census_once": true,
+    "use_or_register_provisional_concept": false
+  },
+  "config": "configs/v168-fixed-ontology-reversible-sandbox.json",
+  "config_payload": {
+    "authorityBoundary": {
+      "independentVerifierCannotBeBypassed": true,
+      "learnedConfidenceCannotAuthorizeCommit": true,
+      "onlyFixedTrustedOntologyMayBeUsed": true,
+      "provisionalConceptsMayNotEnterSandbox": true,
+      "realExecutionCount": 0,
+      "realServiceOrToolTargetExists": false,
+      "stateStoreIsLocalInMemorySimulation": true
+    },
+    "claimBoundary": "project-authored deterministic simulated transaction-development result only; not language understanding, provisional ontology integration, deployment, real service control, or real execution",
+    "decisionRule": {
+      "ifEverySandboxGatePasses": "freeze_V168_as_positive_fixed_ontology_reversible_sandbox_development_evidence",
+      "otherwise": "freeze_V168_boundary_result_and_do_not_integrate_or_tune_on_frozen_fixtures",
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesProvisionalOntologyIntegration": false,
+      "passAuthorizesRealServiceOrExecution": false
+    },
+    "experiment": "v168_model_free_fixed_ontology_reversible_transaction_sandbox_development",
+    "faultModel": {
+      "faultInjectionIsNotARealServiceOrExternalSideEffect": true,
+      "post_commit_corruption": "development harness mutates an untargeted mutable field after commit; independent verifier must detect and restore the complete pre-transaction state",
+      "preview_token_tamper": "replace the accepted preview token before commit; commit must reject without mutation"
+    },
+    "fixedOntology": {
+      "entityIds": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "entityType": "Device",
+      "immutableRootFields": [
+        "schema_version",
+        "environment"
+      ],
+      "mutableFields": {
+        "mode": {
+          "type": "enum",
+          "values": [
+            "active",
+            "maintenance",
+            "offline"
+          ]
+        },
+        "owner_team": {
+          "type": "enum",
+          "values": [
+            "red",
+            "blue",
+            "green"
+          ]
+        },
+        "quota": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "provisionalConceptsAllowed": false,
+      "systemManagedFields": [
+        "revision"
+      ]
+    },
+    "invariants": [
+      "every entity has exactly mode quota owner_team and revision",
+      "offline devices have quota zero",
+      "maintenance devices have quota at most two",
+      "active devices have quota at least one",
+      "total quota is at most twelve",
+      "at least one device is active",
+      "all revisions are nonnegative integers"
+    ],
+    "parentV167r1OutcomeLock": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+    "population": {
+      "evaluationPopulationCreated": false,
+      "projectAuthoredSynthetic": true,
+      "recordsPerScenario": 12,
+      "requiredRecordCount": 132,
+      "scenarios": [
+        "valid_retain",
+        "valid_explicit_rollback",
+        "valid_multi_entity_atomic",
+        "invariant_violation",
+        "unauthorized_field",
+        "stale_revision",
+        "malformed_type",
+        "contradictory_duplicate_patch",
+        "unknown_entity",
+        "preview_token_tamper",
+        "post_commit_corruption"
+      ],
+      "split": "development_only"
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "formalCensusRunCount": 0,
+      "implementationTestCensusRunCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "provisionalOntologyUseCount": 0,
+      "realExecutionCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0
+    },
+    "registeredMetrics": [
+      "exact expected disposition",
+      "exact final target state",
+      "rejected-state immutability",
+      "preview nonmutation",
+      "preview-commit parity",
+      "atomic multi-entity commit",
+      "complete explicit rollback recovery",
+      "complete verification-failure rollback recovery",
+      "invariant preservation",
+      "zero unauthorized commit mutation",
+      "fault detection",
+      "provenance chain validity",
+      "scenario coverage",
+      "model and real-execution access"
+    ],
+    "sandboxGates": {
+      "maximumAPICallCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProvisionalOntologyUseCount": 0,
+      "maximumRealExecutionCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "requiredAtomicMultiEntityCommit": 1.0,
+      "requiredExactFinalTargetState": 1.0,
+      "requiredExpectedDispositionAccuracy": 1.0,
+      "requiredExplicitRollbackRecovery": 1.0,
+      "requiredFaultDetection": 1.0,
+      "requiredInvariantPreservation": 1.0,
+      "requiredPreviewCommitParity": 1.0,
+      "requiredPreviewNonmutation": 1.0,
+      "requiredProvenanceChainValidity": 1.0,
+      "requiredRecordCount": 132,
+      "requiredRecordsPerScenario": 12,
+      "requiredRejectedStateImmutability": 1.0,
+      "requiredScenarioCount": 11,
+      "requiredVerificationFailureRollbackRecovery": 1.0,
+      "requiredZeroUnauthorizedCommitMutation": 1.0
+    },
+    "schemaVersion": "168-fixed-ontology-reversible-sandbox-design",
+    "transactionProtocol": {
+      "commitIsAtomic": true,
+      "commitRequiresExactPreviewTokenAndUnchangedBaseState": true,
+      "duplicateEntityFieldOperationRejected": true,
+      "explicitRollbackSupported": true,
+      "independentVerificationAfterCommit": true,
+      "previewBindsBaseStatePatchAndExpectedPostState": true,
+      "previewMutatesState": false,
+      "proposalContainsExpectedRevisionForEveryAndOnlyTouchedEntity": true,
+      "provenanceLogHashChainedAndAppendOnly": true,
+      "touchedEntityRevisionIncrement": 1,
+      "verificationFailureTriggersAutomaticRollback": true
+    }
+  },
+  "config_sha256": "4606015c494344a12b9769860d922621fccc7e31888353e5a9d9e476a3b20986",
+  "design_audit": "outputs/v168-fixed-ontology-reversible-sandbox/design-audit.json",
+  "design_audit_sha256": "7cd666f1c765aab5c7a67e5c5d4048da39392620cc9e86c33caf7321a788f89d",
+  "experiment": "v168_model_free_fixed_ontology_reversible_transaction_sandbox_development",
+  "lock_payload_sha256": "0699602e7e5236468994a916905bee6a533f888d5e89e0ed13eab299825b3239",
+  "parent_V167r1_outcome": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+  "parent_V167r1_outcome_sha256": "3fe6cce4f7c6b75ae484663203b8e4415fc7866a8382684ec05c64497f2da8a3",
+  "plan": "docs/v168-fixed-ontology-reversible-sandbox-plan.md",
+  "plan_sha256": "641816a2e96ee7fe8d00067c23fc15a3b42d06608819275e5a0cfb6069cb781d",
+  "protocol": "python/v168_fixed_ontology_reversible_sandbox.py",
+  "protocol_sha256": "46a5f5b2b61ce6d20bf0f2de60983e7998731922d566490230b1843d403d554f",
+  "roadmap": "docs/research-roadmap-after-v166.md",
+  "roadmap_sha256": "bab8f588807c0a19586660ea2f29bb7f92418962a07f9bd37d3cab4701d4e1df",
+  "runner": "python/run_v168_fixed_ontology_reversible_sandbox.py",
+  "runner_sha256": "1c92d556cc3a9fe428b2f30cd66674a98545b975e7fade66440dffddc5655c58",
+  "schema_version": "168-fixed-ontology-reversible-sandbox-lock",
+  "tests": "python/test_v168_fixed_ontology_reversible_sandbox.py",
+  "tests_sha256": "373dfbcc86c4a009d096edcce8d19ce827d36ea6e67550b58dabb5edb8b9be20",
+  "verifier": "python/verify_and_freeze_v168_fixed_ontology_reversible_sandbox_outcome.py",
+  "verifier_sha256": "a226efe93dfdc2fd3a4cc16cfd1143b625e5e7d675be03706894c5ee3146b0ed"
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "206-fresh-external-analogue-source-feasibility-design",
+  "experiment": "v206_metadata_only_fresh_external_terminal_open_world_analogue_feasibility",
+  "parentV205OutcomeLock": "configs/v205-terminally-proper-open-world-semantic-pomdp-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v202.md",
+  "claimBoundary": "official repository metadata feasibility for a fresh external analogue of the V205 terminally proper open-world sensing-and-deferral mechanism; landing documentation can establish eligibility for later source inspection but not model structure, policy value, language identifiability, LLM performance, ontology truth, authority, action, or execution",
+  "leadDiscovery": {
+    "queryCount": 8,
+    "selectedCandidateLandingPreviewCount": 6,
+    "exactRepositoryHeadReadCountBeforeLock": 0,
+    "exactOfficialREADMEFetchCountBeforeLock": 0,
+    "exactLicenseFetchCountBeforeLock": 0,
+    "candidateImplementationOrTaskRecordReadCountBeforeLock": 0,
+    "policyOrSimulatorEvaluationCountBeforeLock": 0
+  },
+  "candidates": [
+    {
+      "candidateId": "AGENT_ABSTAIN",
+      "repository": "https://github.com/AntiQuality/agentabstain",
+      "readmePath": "README.md",
+      "licensePath": "LICENSE",
+      "domainFamily": "paired executable agent abstention sandboxes"
+    },
+    {
+      "candidateId": "OPEN_AGENT",
+      "repository": "https://github.com/LAMDA-NeSy/OpenAgent",
+      "readmePath": "README.md",
+      "licensePath": "LICENSE",
+      "domainFamily": "open-world tool-use environment shifts"
+    },
+    {
+      "candidateId": "MINTREC_2",
+      "repository": "https://github.com/thuiar/MIntRec2.0",
+      "readmePath": "README.md",
+      "licensePath": "LICENSE",
+      "domainFamily": "multimodal intent and out-of-scope detection"
+    },
+    {
+      "candidateId": "FAILURE_SENSOR_IQ",
+      "repository": "https://github.com/IBM/FailureSensorIQ",
+      "readmePath": "README.md",
+      "licensePath": "LICENSE",
+      "domainFamily": "industrial sensor-failure semantic reasoning"
+    },
+    {
+      "candidateId": "THEORY_OF_SPACE",
+      "repository": "https://github.com/mll-lab-nu/Theory-of-Space",
+      "readmePath": "README.md",
+      "licensePath": "LICENSE",
+      "domainFamily": "active spatial belief construction"
+    },
+    {
+      "candidateId": "ACE_BENCH",
+      "repository": "https://github.com/Agent-Suite/AgentSuite",
+      "readmePath": "ACEBench/README.md",
+      "licensePath": "LICENSE",
+      "domainFamily": "ambiguous incomplete and infeasible tool use"
+    }
+  ],
+  "priorExposureRepositoryUrls": [
+    "https://github.com/taodav/pobax",
+    "https://github.com/cassandra/pomdp-solve",
+    "https://github.com/AdaCompNUS/sarsop",
+    "https://github.com/JuliaPOMDP/POMDPModels.jl",
+    "https://github.com/JuliaPOMDP/RockSample.jl",
+    "https://github.com/sisl/BetaZero.jl",
+    "https://github.com/sisl/SBO_AIPPMS",
+    "https://github.com/prateekbhustali/IMPRL",
+    "https://github.com/prateekbhustali/jax-imprl",
+    "https://github.com/h2r/pomdp-py",
+    "https://github.com/kylewray/nova",
+    "https://github.com/twni2016/pomdp-baselines",
+    "https://github.com/infer-actively/pymdp",
+    "https://github.com/yaacovpariente/POMDPPlanners"
+  ],
+  "metadataQualificationGates": {
+    "requiredCandidateCount": 6,
+    "requiredOfficialLicense": true,
+    "requiredFreshRepositoryAndDomainFamily": true,
+    "requiredExplicitOpenWorldOutsideInvalidOrAbstentionRegime": true,
+    "requiredActionDependentInformationGathering": true,
+    "requiredInEpisodeReferenceCalibrationOrCrossSensorPathway": true,
+    "requiredSafeDeferAbstainOrHoldAction": true,
+    "requiredDelayedStateDependentOrIrreversibleConsequence": true,
+    "requiredExactSimulatorOrValidatedGenerativeLikelihoodPath": true,
+    "requiredAllCriticalElementsSourceNative": true,
+    "minimumQualifiedRepositoryDistinctFamilies": 1
+  },
+  "fixedDocumentationEvidenceRules": {
+    "openWorldOutsideInvalidOrAbstentionMarkers": ["open-world", "out-of-scope", "abstain", "should-abstain", "invalid", "unknown"],
+    "actionDependentInformationMarkers": ["actively explore", "active perception", "information gathering", "inspection action", "sensing action", "tool-use", "tool use", "runtime observation"],
+    "referenceCalibrationMarkers": ["calibration action", "reference observation", "reference sensor", "known reference", "cross-sensor", "in-episode calibration"],
+    "safeDeferMarkers": ["abstain", "refuse", "hold the critical action", "knowing when to stop", "safe defer"],
+    "delayedConsequenceMarkers": ["delayed reward", "delayed consequence", "irreversible action", "long-horizon", "runtime trigger", "state-dependent consequence"],
+    "generativeModelConjunctions": [
+      ["pomdp", "observation", "transition", "reward"],
+      ["exact simulator", "deterministic replay"],
+      ["executable sandbox", "deterministic dag replay"]
+    ],
+    "allCriticalElementsSourceNativeRule": "all preceding mechanism gates must be evidenced in the same official README without adding an action, likelihood, reward, hidden regime, or terminal rule"
+  },
+  "accessGates": {
+    "requiredRepositoryHeadReadCount": 6,
+    "requiredOfficialREADMEFetchAttemptCount": 6,
+    "requiredLicenseFetchAttemptCount": 6,
+    "maximumRepositoryCloneOrArchiveDownloadCount": 0,
+    "maximumCandidateImplementationFileReadCount": 0,
+    "maximumTaskDialogueUtteranceOrExampleRecordReadCount": 0,
+    "maximumTransitionObservationRewardOrBeliefArrayReadCount": 0,
+    "maximumSimulatorPlannerOrPolicyEvaluationCount": 0,
+    "maximumProtectedAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumModelAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifAtLeastOneCandidatePassesEveryMetadataAndAccessGate": "freeze_V206_positive_and_authorize_separate_source_file_structural_inspection_preregistration_only",
+    "otherwise": "freeze_V206_negative_and_keep_external_grounding_deferred_without_weakening_the_V205_analogue_contract",
+    "passAuthorizesImmediateRepositoryCloneArchiveOrImplementationInspection": false,
+    "passAuthorizesLanguageTaskRecordOrModelEvaluation": false,
+    "passAuthorizesAPITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

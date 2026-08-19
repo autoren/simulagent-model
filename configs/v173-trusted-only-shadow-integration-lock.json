@@ -1,0 +1,581 @@
+{
+  "V167_config_payload": {
+    "authorityBoundary": {
+      "actionOrExecutionAllowed": false,
+      "authoritativeOntologyImmutable": true,
+      "candidateBeliefsAndTerminalDecisionsAreShadowOnly": true,
+      "modelUseAllowed": false,
+      "provisionalRegistrationAllowed": false,
+      "realExecutionCount": 0,
+      "realQueryOrServiceCallAllowed": false,
+      "trustedStateMutationAllowed": false
+    },
+    "caseSelection": {
+      "requiredCandidateCount": 64,
+      "requiredCaseCount": 48,
+      "requiredEvidenceStatus": "ambiguous",
+      "selectionUsesFrozenV166PredictionsOnly": true,
+      "sourceBaseline": "exact_parser_plus_version_space"
+    },
+    "claimBoundary": "development-informed exact finite-DSL shadow-planning result only; not fresh confirmation, unrestricted ontology learning, language understanding, registration, trusted-state control, action, or execution",
+    "decisionRule": {
+      "ifEveryPlannerGatePasses": "freeze_V167_as_development_evidence_and_preregister_fixed_ontology_reversible_sandbox",
+      "otherwise": "freeze_V167_boundary_result_and_do_not_tune_on_frozen_cases",
+      "passAuthorizesImmediateSandboxRun": false,
+      "passAuthorizesModelOrEvaluationPopulation": false,
+      "passAuthorizesRegistrationTrustedStateActionOrExecution": false
+    },
+    "developmentDesignDisclosure": {
+      "confirmatoryClaimAllowed": false,
+      "costsHorizonAndLossesChosenAfterDevelopmentFeasibilityInspection": true,
+      "formalPolicyScoresWrittenBeforeLock": false,
+      "hiddenDevelopmentTruthReadCount": 2,
+      "oracleFeasibilityAnalysisRunCount": 2,
+      "projectAuthoredDevelopmentOnly": true,
+      "protectedOrEvaluationPopulationExists": false
+    },
+    "experiment": "v167_exact_class_balanced_evidence_gathering_development_planner",
+    "formalRunPreLockAccess": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "evaluationRecordCount": 0,
+      "formalPolicyScoreCount": 0,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "trainingRunCount": 0,
+      "trustedStateMutationCount": 0
+    },
+    "lossOrientation": "terminalLoss[actual_class][decision]",
+    "parentV166OutcomeLock": "configs/v166-model-free-factored-ontology-baselines-outcome-lock.json",
+    "plannerGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedStateMutationCount": 0,
+      "minimumHistoryDependentSecondActionCaseCount": 1,
+      "minimumStrictBayesImprovementOverOpenLoopCaseCount": 1,
+      "minimumUniqueBayesRootQueryCount": 2,
+      "requiredBayesNoWorseThanEveryNonOracleBaselineCaseRate": 1.0,
+      "requiredCandidatesPerCase": 64,
+      "requiredCaseCount": 48,
+      "requiredExpressibilityClassCoverage": 3,
+      "requiredPositiveValueOfInformationCaseCount": 48,
+      "requiredRenamingRiskInvariance": 1.0,
+      "requiredTargetCandidateRetention": 1.0
+    },
+    "policies": {
+      "exact_bayes_adaptive": "minimize exact expected query cost plus terminal loss with optional stopping over a two-query policy tree",
+      "forced_map_no_query": "choose the maximum-posterior class without defer, using terminal decision order for ties",
+      "greedy_class_information_gain": "adaptively choose maximum expected Shannon class-entropy reduction for two queries, then take the Bayes terminal decision",
+      "no_query_bayes_terminal": "take the minimum-risk terminal decision immediately",
+      "optimal_open_loop_pair": "choose the minimum-risk unordered query pair at the root, use both regardless of the first outcome, then take the Bayes terminal decision",
+      "oracle_class": "observe the actual expressibility class without cost; scoring lower bound only",
+      "random_open_loop_pair": "uniform expected risk over every unordered pair of available queries, always using both"
+    },
+    "prior": {
+      "classMass": {
+        "alias": "1/3",
+        "composition": "1/3",
+        "provisional_primitive": "1/3"
+      },
+      "expressibilityClasses": [
+        "alias",
+        "composition",
+        "provisional_primitive"
+      ],
+      "kind": "class_balanced_then_uniform_within_class",
+      "meaning": "normative development prior chosen to prevent the 247-member provisional class from winning solely by enumeration multiplicity"
+    },
+    "queryModel": {
+      "action": "query one currently variable truth-table valuation",
+      "candidateUpdate": "exact Bayesian conditioning with zero inconsistent-candidate mass",
+      "earlyStopAllowed": true,
+      "maximumQueries": 2,
+      "outcomeNoise": 0.0,
+      "outcomes": [
+        0,
+        1
+      ],
+      "queryCost": "1/10",
+      "repeatedQueryAllowed": false
+    },
+    "registeredMetrics": [
+      "expected total risk by policy",
+      "regret relative to exact Bayes-adaptive policy",
+      "positive value-of-information case count",
+      "strict improvement over optimal open-loop case count",
+      "unique exact-Bayes root query count",
+      "history-dependent second-action case count",
+      "expected query count",
+      "terminal defer probability",
+      "false provisional decision probability",
+      "target candidate retention",
+      "renaming invariance",
+      "model and execution access"
+    ],
+    "schemaVersion": "167-exact-evidence-gathering-planner-design",
+    "terminalDecisions": [
+      "alias",
+      "composition",
+      "provisional_primitive",
+      "defer"
+    ],
+    "terminalLoss": {
+      "alias": {
+        "alias": 0,
+        "composition": 4,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "composition": {
+        "alias": 4,
+        "composition": 0,
+        "defer": 2,
+        "provisional_primitive": 12
+      },
+      "provisional_primitive": {
+        "alias": 6,
+        "composition": 6,
+        "defer": 2,
+        "provisional_primitive": 0
+      }
+    },
+    "tieBreaks": {
+      "equalInformationGainPrefersLowestValuationIndex": true,
+      "equalOpenLoopRiskPrefersLexicographicallyLowestPair": true,
+      "equalQueryRiskPrefersLowestValuationIndex": true,
+      "stopPreferredToEqualRiskQuery": true,
+      "terminalDecisionOrder": [
+        "alias",
+        "composition",
+        "provisional_primitive",
+        "defer"
+      ]
+    }
+  },
+  "V171_config_payload": {
+    "authorityBoundary": {
+      "learnedConfidenceCannotAuthorizeCommit": true,
+      "onlyFixedTrustedV168OntologyMayBeUsed": true,
+      "provenanceVerifierCannotBeBypassed": true,
+      "provisionalConceptsMayNotEnterSandbox": true,
+      "realExecutionCount": 0,
+      "realServiceOrToolTargetExists": false,
+      "stateAndDurabilityAreLocalInMemorySimulation": true
+    },
+    "claimBoundary": "project-authored exhaustive bounded stateful simulation confirmation only; not language understanding, provisional ontology integration, persistent-database validation, concurrency proof, deployment, real service control, or real execution",
+    "confirmationGates": {
+      "maximumAPICallCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProvisionalOntologyUseCount": 0,
+      "maximumRealExecutionCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "requiredAtomicMultiEntityRetention": 1.0,
+      "requiredCrashRecovery": 1.0,
+      "requiredExactOracleFinalState": 1.0,
+      "requiredExpectedDispositionAccuracy": 1.0,
+      "requiredInvariantPreservation": 1.0,
+      "requiredPartialWriteRecovery": 1.0,
+      "requiredPostRecoveryContinuation": 1.0,
+      "requiredProvenanceRestartValidity": 1.0,
+      "requiredProvenanceTamperDetection": 1.0,
+      "requiredRepeatedRollbackIdempotence": 1.0,
+      "requiredReplayIdempotence": 1.0,
+      "requiredRevisionRaceRejection": 1.0,
+      "requiredScenarioCount": 11,
+      "requiredSequenceCount": 132,
+      "requiredSequencesPerScenario": 12,
+      "requiredSerializableBoundaryRate": 1.0,
+      "requiredZeroUnauthorizedRetainedMutation": 1.0
+    },
+    "decisionRule": {
+      "ifEveryConfirmationGatePasses": "freeze_V171_as_positive_fresh_stateful_sandbox_confirmation",
+      "otherwise": "freeze_V171_boundary_result_and_stop_before_cross_track_integration",
+      "passAuthorizesImmediateIntegrationRun": false,
+      "passAuthorizesModelOrLanguagePopulation": false,
+      "passAuthorizesProvisionalOntologyIntegration": false,
+      "passAuthorizesRealServiceOrExecution": false,
+      "passAuthorizesTrustedOnlyShadowIntegrationDesign": true
+    },
+    "experiment": "v171_unchanged_V168_contract_on_fresh_stateful_transaction_sequences",
+    "fixedOntology": {
+      "entityIds": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "entityType": "Device",
+      "immutableRootFields": [
+        "schema_version",
+        "environment"
+      ],
+      "mutableFields": {
+        "mode": {
+          "type": "enum",
+          "values": [
+            "active",
+            "maintenance",
+            "offline"
+          ]
+        },
+        "owner_team": {
+          "type": "enum",
+          "values": [
+            "red",
+            "blue",
+            "green"
+          ]
+        },
+        "quota": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "provisionalConceptsAllowed": false,
+      "systemManagedFields": [
+        "revision"
+      ]
+    },
+    "fixedSourceContract": {
+      "addedHarnessScopeOnly": [
+        "durable transaction lifecycle status",
+        "write-ahead recovery journal",
+        "simulated restart and crash recovery",
+        "idempotent replay and repeated rollback guards",
+        "provenance verification before recovery or continuation"
+      ],
+      "modifyV168SourceOrLockedArtifacts": false,
+      "reuseV168AtomicPatchAndRevisionSemanticsExactly": true,
+      "reuseV168FixedOntologyExactly": true,
+      "reuseV168InvariantsExactly": true,
+      "reuseV168PreviewBindingAndVerificationSemanticsExactly": true,
+      "reuseV168ProposalValidationExactly": true
+    },
+    "invariants": [
+      "every entity has exactly mode quota owner_team and revision",
+      "offline devices have quota zero",
+      "maintenance devices have quota at most two",
+      "active devices have quota at least one",
+      "total quota is at most twelve",
+      "at least one device is active",
+      "all revisions are nonnegative integers"
+    ],
+    "parentV170OutcomeLock": "configs/v170-unchanged-planner-fresh-confirmation-outcome-lock.json",
+    "population": {
+      "enumeration": "complete Cartesian product of every scenario family and variant index",
+      "humanAuthored": false,
+      "modelGenerated": false,
+      "projectAuthoredSynthetic": true,
+      "requiredScenarioCount": 11,
+      "requiredSequenceCount": 132,
+      "requiredSequencesPerScenario": 12,
+      "scenarioFamilies": [
+        "revision_race",
+        "committed_replay_across_restart",
+        "crash_after_preview",
+        "crash_after_snapshot_before_apply",
+        "crash_after_apply_before_verify",
+        "crash_after_verify_before_finalize",
+        "partial_multi_entity_write",
+        "repeated_rollback_across_restart",
+        "provenance_multi_restart",
+        "provenance_tamper_detection",
+        "atomic_multi_entity_retained"
+      ],
+      "selectionOrExclusionAfterOutcomeInspectionAllowed": false,
+      "split": "fresh_procedural_confirmation",
+      "variantIndices": [
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211
+      ]
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "aggregateFormalMetricInspectionCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "formalSequenceRunCount": 0,
+      "implementationUnitSequenceCount": 3,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "provisionalOntologyUseCount": 0,
+      "realExecutionCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0
+    },
+    "recoveryPolicy": {
+      "postRecoveryContinuationRequired": true,
+      "provenanceFailure": "fail closed before recovery or continuation without mutation",
+      "repeatedRollback": "return already_rolled_back without restoring an old snapshot or mutating state",
+      "terminalTransactionReplay": "reject idempotently without mutation",
+      "unverifiedPreparedOrAppliedTransaction": "restore complete before-state snapshot and mark recovered_rollback",
+      "verifiedTransactionWhoseStateMatchesExpectedPostState": "finalize retained after restart"
+    },
+    "registeredMetrics": [
+      "exact oracle final state",
+      "exact expected disposition",
+      "serializable retained and recovered boundaries",
+      "revision race rejection",
+      "committed replay idempotence",
+      "crash-point recovery",
+      "partial-write recovery",
+      "repeated rollback idempotence",
+      "provenance validity across restart",
+      "provenance tamper detection",
+      "atomic multi-entity retention",
+      "post-recovery continuation",
+      "invariant preservation at every externally visible boundary",
+      "zero unauthorized retained mutation",
+      "model and real-execution access"
+    ],
+    "schemaVersion": "171-stateful-sandbox-sequence-confirmation-design",
+    "sourceV168OutcomeLock": "configs/v168-fixed-ontology-reversible-sandbox-outcome-lock.json",
+    "transactionProtocol": {
+      "commitIsAtomic": true,
+      "commitRequiresExactPreviewTokenAndUnchangedBaseState": true,
+      "duplicateEntityFieldOperationRejected": true,
+      "explicitRollbackSupported": true,
+      "independentVerificationAfterCommit": true,
+      "previewBindsBaseStatePatchAndExpectedPostState": true,
+      "previewMutatesState": false,
+      "proposalContainsExpectedRevisionForEveryAndOnlyTouchedEntity": true,
+      "provenanceLogHashChainedAndAppendOnly": true,
+      "touchedEntityRevisionIncrement": 1,
+      "verificationFailureTriggersAutomaticRollback": true
+    }
+  },
+  "auditor": "python/audit_and_freeze_v173_trusted_only_shadow_integration.py",
+  "auditor_sha256": "a31798df6043e116dadee820aaba66f03445328f387400fc30f567054a88437e",
+  "authorization": {
+    "allow_planner_hidden_target_model_or_provisional_commit_authority": false,
+    "call_real_service_mutate_real_state_or_execute": false,
+    "modify_policies_gate_routes_population_targets_weights_estimands_thresholds_or_decision": false,
+    "run_formal_integration_once": true,
+    "select_exclude_subsample_or_tune_after_scores": false
+  },
+  "config": "configs/v173-trusted-only-shadow-integration.json",
+  "config_payload": {
+    "benefitThresholds": {
+      "exactAdaptiveMeanRoutedRiskMustBeStrictlyBelowNoQuery": true,
+      "exactAdaptiveTrustedCompletionMustBeStrictlyAboveNoQuery": true,
+      "failureInvalidatesSafety": false,
+      "minimumStateCountWithStrictRoutedRiskImprovementOverNoQuery": 1
+    },
+    "claimBoundary": "project-authored finite-DSL trusted-only shadow integration evidence; not language understanding, ontology induction, provisional registration, persistent-database validation, deployment, real service control, or real execution",
+    "decisionRule": {
+      "ifSafetyAndBenefitPassButStrongThresholdsFail": "freeze_V173_as_beneficial_mixed_trusted_only_shadow_integration",
+      "ifSafetyBenefitAndStrongThresholdsPass": "freeze_V173_as_strong_positive_trusted_only_shadow_integration",
+      "ifSafetyPassesButBenefitFails": "freeze_V173_as_safe_nonbeneficial_boundary_and_stop_before_confirmation",
+      "otherwise": "freeze_V173_as_integration_safety_failure_and_keep_tracks_isolated",
+      "passAuthorizesImmediateConfirmationRun": false,
+      "passAuthorizesModelProvisionalRegistrationRealServiceOrExecution": false,
+      "retainNegativeOrMixedOutcomeWithoutTuning": true
+    },
+    "deterministicConsensusGate": {
+      "deferIfCandidateClassesAreMixed": true,
+      "deferIfEveryCandidateClassIsProvisionalPrimitive": true,
+      "hiddenTargetCanAuthorizeOperationalCommit": false,
+      "input": "exact surviving candidate IDs after the policy stops",
+      "oracleComparatorIsOperational": false,
+      "plannerTerminalDecisionCanAuthorizeCommit": false,
+      "provisionalPrimitiveMayEnterSandbox": false,
+      "routeAliasOnlyIfEveryCandidateClassIsAlias": true,
+      "routeCompositionOnlyIfEveryCandidateClassIsComposition": true
+    },
+    "experiment": "v173_unchanged_planner_policies_through_deterministic_consensus_gate_and_reversible_sandbox",
+    "frozenPolicyContract": {
+      "classMass": {
+        "alias": "1/3",
+        "composition": "1/3",
+        "provisional_primitive": "1/3"
+      },
+      "maximumQueries": 2,
+      "oracleRole": "non-operational upper-bound comparator that reveals the target candidate before the same consensus gate",
+      "outcomeNoise": 0.0,
+      "policies": [
+        "no_query_bayes_terminal",
+        "forced_map_no_query",
+        "random_open_loop_pair",
+        "greedy_class_information_gain",
+        "optimal_open_loop_pair",
+        "exact_bayes_adaptive",
+        "oracle_class"
+      ],
+      "priorKind": "class_balanced_then_uniform_within_class",
+      "queryCost": "1/10",
+      "randomOpenLoopEvaluation": "exact uniform average over every available two-query pair",
+      "terminalDecisions": [
+        "alias",
+        "composition",
+        "provisional_primitive",
+        "defer"
+      ],
+      "terminalLoss": {
+        "alias": {
+          "alias": 0,
+          "composition": 4,
+          "defer": 2,
+          "provisional_primitive": 12
+        },
+        "composition": {
+          "alias": 4,
+          "composition": 0,
+          "defer": 2,
+          "provisional_primitive": 12
+        },
+        "provisional_primitive": {
+          "alias": 6,
+          "composition": 6,
+          "defer": 2,
+          "provisional_primitive": 0
+        }
+      }
+    },
+    "integrityAndSafetyGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumEvaluationRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumManualJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOntologyRegistrationCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumTrustedRealStateMutationCount": 0,
+      "requiredDeterministicGateReconstruction": 1.0,
+      "requiredEligibleStateCount": 132,
+      "requiredFalseTrustedRouteProbability": 0.0,
+      "requiredPlannerCommitAuthorizationCount": 0,
+      "requiredPolicyCoverage": 1.0,
+      "requiredPriorWeightNormalization": 1.0,
+      "requiredProvisionalSandboxEntryProbability": 0.0,
+      "requiredSandboxExactFinalState": 1.0,
+      "requiredSandboxInvariantPreservation": 1.0,
+      "requiredSandboxProvenanceValidity": 1.0,
+      "requiredSandboxRestartVerification": 1.0,
+      "requiredTargetCaseCount": 4224,
+      "requiredTargetMembershipCoverage": 1.0
+    },
+    "parentV172OutcomeLock": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+    "populationUse": {
+      "requiredEligibleStateCount": 132,
+      "requiredTargetCaseCount": 4224,
+      "selectionSubsamplingOrExclusionAfterScoringAllowed": false,
+      "useAllEligibleStates": true,
+      "useAllTargetCases": true,
+      "useFrozenClassBalancedTargetWeights": true
+    },
+    "preLockExposure": {
+      "APICallCount": 0,
+      "actualExecutionCount": 0,
+      "aggregateFormalMetricInspectionCount": 0,
+      "evaluationRecordCount": 0,
+      "externalSideEffectCount": 0,
+      "formalTargetPolicyScoreCount": 0,
+      "implementationUnitPolicyCount": 2,
+      "implementationUnitTargetCount": 1,
+      "manualJudgmentCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "ontologyRegistrationCount": 0,
+      "realServiceCallCount": 0,
+      "trainingRunCount": 0,
+      "trustedRealStateMutationCount": 0
+    },
+    "registeredEstimands": [
+      "class-balanced mean planner recommendation loss plus query cost",
+      "class-balanced mean safe routed-system loss plus query cost",
+      "trusted completion probability",
+      "mixed and provisional deferral probability",
+      "false trusted route probability",
+      "provisional sandbox entry probability",
+      "expected query count",
+      "per-class routed loss and completion",
+      "statewise routed-risk comparison",
+      "sandbox exact final state invariant provenance and restart verification",
+      "planner commit authorization count",
+      "model and real-execution access"
+    ],
+    "schemaVersion": "173-trusted-only-shadow-integration-design",
+    "sourceV167PlannerLock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+    "sourceV167r1MetricRepairOutcomeLock": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+    "sourceV170OutcomeLock": "configs/v170-unchanged-planner-fresh-confirmation-outcome-lock.json",
+    "sourceV171OutcomeLock": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+    "strongIntegrationThresholds": {
+      "exactAdaptiveMeanRoutedRiskNoWorseThanGreedy": true,
+      "exactAdaptiveMeanRoutedRiskNoWorseThanOptimalOpenLoop": true,
+      "exactAdaptiveMeanRoutedRiskNoWorseThanRandomOpenLoop": true,
+      "failureInvalidatesSafetyOrBenefit": false,
+      "minimumStatewiseNoWorseThanEveryNonOraclePolicyRate": 1.0
+    },
+    "trustedTypedRoutes": {
+      "alias": "single-entity registered owner_team update",
+      "composition": "atomic registered multi-entity mode quota and owner_team update",
+      "independentVerifierRequired": true,
+      "initialState": "V168 deterministic valid Device state derived from target policy and branch identity",
+      "postCommitRestartVerification": true,
+      "realServiceOrToolTargetExists": false
+    }
+  },
+  "config_sha256": "6a82ae85e85de482f5914c6a02616663dbca556947e7eee69d5049d5549807ed",
+  "constraint_states": "outputs/v172-trusted-shadow-integration-population/population/constraint-states.json",
+  "constraint_states_sha256": "524fd70bae1af58f47251a9f26cb3cb0e47fa4a6ba440f4d7cb0393e346e5cf6",
+  "design_audit": "outputs/v173-trusted-only-shadow-integration/design-audit.json",
+  "design_audit_sha256": "00107d8e63e138222fd3658d0516dfea9b0c64cf4a7e4eb8853e13784b0a90a0",
+  "eligible_state_ids": "outputs/v172-trusted-shadow-integration-population/population/integration-eligible-state-ids.json",
+  "eligible_state_ids_sha256": "9a4250cc2f22bfd4d66c4681b7654314d0fb48aa93739e9815072af77585e43c",
+  "experiment": "v173_unchanged_planner_policies_through_deterministic_consensus_gate_and_reversible_sandbox",
+  "lock_payload_sha256": "3f8ca4dc165c9a077cec1073b31c6abba8b79c8272c6f0c5bfd94baedf96055e",
+  "parent_V172_outcome": "configs/v172-trusted-shadow-integration-population-outcome-lock.json",
+  "parent_V172_outcome_sha256": "689c73b050805591a9d2eda4f2330d5443bbbad0aac59efa7084ca57a443b7fb",
+  "plan": "docs/v173-trusted-only-shadow-integration-plan.md",
+  "plan_sha256": "0a007114268ea14bcde5ab6a05464b6e5424e514792caa32b142b36b24867543",
+  "protocol": "python/v173_trusted_only_shadow_integration.py",
+  "protocol_sha256": "949fcda50c114fe22ef191bb71793cd6e06323ada64c019bea9c347e8984f3a6",
+  "runner": "python/run_v173_trusted_only_shadow_integration.py",
+  "runner_sha256": "2266aed50efa88857315b3f4631334616803fdde671c49f1688cd9079929438e",
+  "schema_version": "173-trusted-only-shadow-integration-lock",
+  "source_V167_planner_lock": "configs/v167-exact-evidence-gathering-planner-lock.json",
+  "source_V167_planner_lock_sha256": "9ea702e7fd6be86d30ba72cad6fa4d5b5e891be32bae1a30d8adc992c0dd9d28",
+  "source_V167r1_metric_repair": "configs/v167r1-history-action-metric-repair-outcome-lock.json",
+  "source_V167r1_metric_repair_sha256": "3fe6cce4f7c6b75ae484663203b8e4415fc7866a8382684ec05c64497f2da8a3",
+  "source_V170_outcome": "configs/v170-unchanged-planner-fresh-confirmation-outcome-lock.json",
+  "source_V170_outcome_sha256": "47a6dff2b6a6189470ed6376c0f5b97b0b945f48f8a399c1d14b1ae8843428e4",
+  "source_V171_lock": "configs/v171-stateful-sandbox-sequence-confirmation-lock.json",
+  "source_V171_lock_sha256": "c52fdaac862414f76c06abb0a38b98930d27e1eed9d755f026fb936e7c8a71be",
+  "source_V171_outcome": "configs/v171-stateful-sandbox-sequence-confirmation-outcome-lock.json",
+  "source_V171_outcome_sha256": "fcd68adb1127e109df90a99522040c1d6a823243326976dee6c5f5a3e3a982b3",
+  "target_cases": "outputs/v172-trusted-shadow-integration-population/population/target-cases.json",
+  "target_cases_sha256": "ee6694c46798e1bab69417b7bea39c237f8dc5f368cf3c368998d4659d9414ca",
+  "tests": "python/test_v173_trusted_only_shadow_integration.py",
+  "tests_sha256": "639f3ac6f4d37d4ddc80bdae8fc2f40086f3e1ff1a0d407b30857e88f4f3b283",
+  "verifier": "python/verify_and_freeze_v173_trusted_only_shadow_integration_outcome.py",
+  "verifier_sha256": "b358942138ec1a7e4e3342fe37f7587d1611f7a41568c2bdae7979dd746617b2"
+}

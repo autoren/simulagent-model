@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "219a-untouched-mondo-pair-metadata-census-design",
+  "draftStatus": "READY_FOR_PROSPECTIVE_AUDIT",
+  "experiment": "v219a_prospective_untouched_mondo_pair_metadata_census",
+  "parentV218OutcomeLock": "configs/v218-mondo-artifact-population-outcome-lock.json",
+  "roadmap": "docs/research-roadmap-after-v218.md",
+  "plan": "docs/v219a-untouched-mondo-pair-metadata-census-plan.md",
+  "claimBoundary": "metadata-only feasibility of at most one fully untouched adjacent Mondo release pair using one already-frozen official GitHub API snapshot; not payload evidence, reuse or repair of V218 records, deterministic method evidence, inferred semantic equivalence, correct new-speaker intent, expert validation, model evidence, registration, authority, action, or execution",
+  "priorExposure": {
+    "blindReleaseMetadataDiscoveryClaim": false,
+    "V217AReleaseMetadataPreviouslyInspected": true,
+    "V218OpenedReleaseTags": ["v2026-07-06", "v2026-08-04"],
+    "newPayloadBodyByteReadCount": 0,
+    "newOntologyTermOrAxiomRecordReadCount": 0,
+    "V218DevelopmentRecordReadCount": 0,
+    "V218ProtectedRecordReadCount": 0,
+    "V216ProtectedReadCount": 0,
+    "V213ProtectedReadCount": 0
+  },
+  "evidenceSource": {
+    "sourceId": "V217A_FROZEN_MONDO_GITHUB_RELEASES_API_SNAPSHOT",
+    "path": "outputs/v217a-independent-source-event-metadata-census/metadata-snapshots/f1e464db2cd1cdc3df7e.json",
+    "sha256": "2cdcb1f171bf912c57d1b5a48364da7afeb211cd8bd00af6e6a1b70209d63072",
+    "officialUrl": "https://api.github.com/repos/monarch-initiative/mondo/releases?per_page=5",
+    "expectedReleaseCount": 5,
+    "networkRequestAuthorized": false
+  },
+  "pairEnumeration": {
+    "releaseOrder": "published_at_descending_then_tag_name_ascending",
+    "adjacencyDefinition": "consecutive_entries_in_the_full_frozen_release_order_before_exclusion",
+    "excludedReleaseTags": ["v2026-07-06", "v2026-08-04"],
+    "keepPairOnlyIfBothReleaseTagsAreUnexcluded": true,
+    "pairPriority": "newer_release_published_at_descending_then_older_tag_then_newer_tag",
+    "selectAtMostOne": true,
+    "selectFirstEligiblePair": true,
+    "expectedUntouchedAdjacentPairCount": 2
+  },
+  "requiredAssetRoles": [
+    {
+      "role": "OLDER_RETROSPECTIVE_SOURCE",
+      "releaseSide": "OLDER",
+      "assetName": "mondo-base.obo",
+      "format": "OBO"
+    },
+    {
+      "role": "NEWER_RETROSPECTIVE_TARGET",
+      "releaseSide": "NEWER",
+      "assetName": "mondo-base.obo",
+      "format": "OBO"
+    },
+    {
+      "role": "PAIR_CHANGED_TERM_CONTROL",
+      "releaseSide": "NEWER",
+      "assetName": "mondo_release_diff_changed_terms.tsv",
+      "format": "TSV"
+    },
+    {
+      "role": "PAIR_NEW_TERM_CONTROL",
+      "releaseSide": "NEWER",
+      "assetName": "mondo_release_diff_new_terms.tsv",
+      "format": "TSV"
+    },
+    {
+      "role": "OLDER_CANDIDATE_STATUS_CONTROL",
+      "releaseSide": "OLDER",
+      "assetName": "mondo_obsoletioncandidates.tsv",
+      "format": "TSV"
+    },
+    {
+      "role": "NEWER_CANDIDATE_STATUS_CONTROL",
+      "releaseSide": "NEWER",
+      "assetName": "mondo_obsoletioncandidates.tsv",
+      "format": "TSV"
+    },
+    {
+      "role": "OLDER_SOURCE_PROVENANCE_CONTROL",
+      "releaseSide": "OLDER",
+      "assetName": "source-versions.tsv",
+      "format": "TSV"
+    },
+    {
+      "role": "NEWER_SOURCE_PROVENANCE_CONTROL",
+      "releaseSide": "NEWER",
+      "assetName": "source-versions.tsv",
+      "format": "TSV"
+    }
+  ],
+  "assetRequirements": {
+    "requiredAssetRoleCount": 8,
+    "requireHttpsDownloadUrl": true,
+    "requirePositiveIntegerByteCount": true,
+    "requirePublishedSha256Digest": true,
+    "maximumSingleAssetBytes": 50000000,
+    "maximumPairPayloadBytes": 99000000,
+    "allowAssetSubstitution": false,
+    "allowLinkExpansion": false
+  },
+  "releaseBodyControl": {
+    "source": "body_field_of_newer_release_object_in_frozen_API_snapshot",
+    "storeExactBodySha256InEvidence": true,
+    "requiredCategories": [
+      "ADDITION",
+      "SYNONYM_OR_LABEL",
+      "TEXT_DEFINITION",
+      "OBSOLETION_OR_REPLACEMENT"
+    ],
+    "categoryPatterns": {
+      "ADDITION": "(?i)<summary>(new terms|classes added):",
+      "SYNONYM_OR_LABEL": "(?i)<summary>terms renamed",
+      "TEXT_DEFINITION": "(?i)<summary>text definitions? (added|changed)",
+      "OBSOLETION_OR_REPLACEMENT": "(?i)<summary>terms obsoleted with replacement"
+    },
+    "repositoryReadmeIsReleaseSummaryEvidence": false
+  },
+  "censusGates": {
+    "requiredEvidenceSnapshotHashAccuracy": 1.0,
+    "requiredReleaseCount": 5,
+    "requiredExcludedReleaseCount": 2,
+    "requiredUntouchedAdjacentPairCount": 2,
+    "requiredOriginalAdjacencyAccuracy": 1.0,
+    "requiredPairAssessmentCoverage": 1.0,
+    "requiredAssetRoleCoverage": 1.0,
+    "requiredAssetDigestCoverage": 1.0,
+    "requiredReleaseBodyHashCoverage": 1.0,
+    "requiredReleaseBodyCategoryCoverage": 1.0,
+    "minimumEligiblePairCount": 1,
+    "maximumSelectedPairCount": 1,
+    "requiredSelectionPriorityCorrectness": 1.0,
+    "requiredRetrospectiveNotSpeakerIntentBoundary": true,
+    "requiredFiniteMetrics": true
+  },
+  "accessGates": {
+    "requiredMetadataCensusRunCount": 1,
+    "requiredEvidenceSnapshotReadCount": 1,
+    "maximumNetworkRequestCount": 0,
+    "maximumNewPayloadBodyReadCount": 0,
+    "maximumNewOntologyTermOrAxiomRecordReadCount": 0,
+    "maximumV218DevelopmentRecordReadCount": 0,
+    "maximumV218ProtectedRecordReadCount": 0,
+    "maximumV216ProtectedAccessCount": 0,
+    "maximumV213ProtectedAccessCount": 0,
+    "maximumDeterministicMethodEvaluationCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumModelAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumTrustedStateMutationCount": 0,
+    "maximumServiceActionCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "artifacts": {
+    "evidence": "outputs/v219a-untouched-mondo-pair-metadata-census/census/evidence.json",
+    "summary": "outputs/v219a-untouched-mondo-pair-metadata-census/census/summary.json",
+    "result": "outputs/v219a-untouched-mondo-pair-metadata-census/census/result.json"
+  },
+  "decisionRule": {
+    "ifEveryMetadataPairControlSelectionAndAccessGatePasses": "freeze_V219A_positive_and_authorize_one_separate_untouched_pair_payload_design_only",
+    "otherwise": "freeze_V219A_negative_and_stop_fresh_Mondo_payload_branch_without_release_pair_asset_role_body_pattern_byte_threshold_or_gate_tuning",
+    "passAuthorizesOnePayloadDesignOnly": true,
+    "passAuthorizesPayloadRetrievalOrMethodEvaluation": false,
+    "passAuthorizesProtectedAccessOrModelRun": false,
+    "passAuthorizesRegistrationMutationServiceActionOrExecution": false
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "166-model-free-factored-ontology-baselines-design",
+  "experiment": "v166_model_free_factored_ontology_deterministic_development_baselines",
+  "parentV165r1OutcomeLock": "configs/v165r1-outcome-verifier-repair-outcome-lock.json",
+  "claimBoundary": "project-authored finite-DSL model-free development baseline result only; exact version-space retention is not unrestricted semantic parsing, external transfer, ontology truth, model performance, registration, authority, action, or execution",
+  "baselines": {
+    "complete_safe_enumeration": "retain all 256 truth-table candidates for every record",
+    "definition_parser_only": "apply only the frozen controlled-definition parser; exact registered definitions yield one candidate and every other definition retains all candidates",
+    "ontology_retrieval_only": "exactly retrieve a registered formula by matching the frozen canonical definition string; otherwise retain all candidates",
+    "observation_filter_only": "ignore definition meaning and filter all 256 candidates by typed intervention observations",
+    "exact_parser_plus_version_space": "apply the frozen parser constraint and exact observation filtering while retaining every consistent candidate",
+    "oracle_hidden_contract": "return the frozen hidden version space for scoring only"
+  },
+  "predictionContract": {
+    "candidateIdsAreTruthTableIdentifiers": true,
+    "candidateOrder": "ascending candidate_id",
+    "evidenceStatusFromCardinality": {"zero": "contradictory", "one": "sufficient", "many": "ambiguous"},
+    "ambiguousCandidatesMayNotBeRankedOrPruned": true,
+    "contradictoryEvidenceMayNotBeAutoRepaired": true,
+    "provisionalCandidateMayNotBeRegistered": true
+  },
+  "registeredMetrics": [
+    "exact version-space accuracy", "evidence-status accuracy",
+    "noncontradictory target retention", "sufficient exact candidate accuracy",
+    "sufficient expressibility-class accuracy", "ambiguity precision and recall",
+    "contradiction precision and recall", "false provisional creation",
+    "false resolution of ambiguous or contradictory evidence", "mean candidate-set size",
+    "renaming invariance", "model-eligible residual count"
+  ],
+  "baselineGates": {
+    "requiredRecordCount": 144,
+    "requiredBaselineNames": [
+      "complete_safe_enumeration", "definition_parser_only", "ontology_retrieval_only",
+      "observation_filter_only", "exact_parser_plus_version_space", "oracle_hidden_contract"
+    ],
+    "requiredOracleExactVersionSpaceAccuracy": 1.0,
+    "requiredOracleEvidenceStatusAccuracy": 1.0,
+    "requiredExactCombinedVersionSpaceAccuracy": 1.0,
+    "requiredExactCombinedEvidenceStatusAccuracy": 1.0,
+    "requiredExactCombinedTargetRetention": 1.0,
+    "requiredExactCombinedSufficientCandidateAccuracy": 1.0,
+    "requiredExactCombinedSufficientExpressibilityAccuracy": 1.0,
+    "requiredExactCombinedAmbiguityRecall": 1.0,
+    "requiredExactCombinedContradictionRecall": 1.0,
+    "requiredExactCombinedFalseProvisionalCreationRate": 0.0,
+    "requiredExactCombinedFalseResolutionRate": 0.0,
+    "requiredExactCombinedRenamingInvariance": 1.0,
+    "requiredModelEligibleResidualCount": 0,
+    "requiredIntentionallyAmbiguousRecordCount": 48,
+    "requiredCandidatesPerAmbiguousRecord": 64,
+    "maximumEvaluationRecordCount": 0,
+    "maximumManualJudgmentCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumOntologyRegistrationCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "authorityBoundary": {
+    "authoritativeOntologyAndStateImmutable": true,
+    "completeConsistentVersionSpaceRetained": true,
+    "candidateRankingOnAmbiguousEvidenceAllowed": false,
+    "contradictionAutoRepairAllowed": false,
+    "provisionalRegistrationAllowed": false,
+    "modelUseAllowed": false,
+    "actionOrExecutionAllowed": false,
+    "realExecutionCount": 0
+  },
+  "preLockExposure": {
+    "publicRecordReadCount": 0,
+    "hiddenTruthReadCount": 0,
+    "baselineScoreCount": 0,
+    "evaluationRecordCount": 0,
+    "manualJudgmentCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0,
+    "trainingRunCount": 0,
+    "ontologyRegistrationCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryBaselineGatePassesAndResidualIsZero": "freeze_V166_and_advance_to_evidence_gathering_and_fixed_ontology_reversible_sandbox_design_without_LLM_residual",
+    "ifPipelinePassesButResidualIsNonzero": "freeze_V166_and_preregister_residual_qualification_before_any_model",
+    "otherwise": "close_V166_without_model_or_downstream_integration",
+    "passAuthorizesImmediateEvidencePlannerOrSandboxRun": false,
+    "passAuthorizesModelEvaluationOrEvaluationPopulation": false,
+    "passAuthorizesRegistrationAuthorityActionOrExecution": false
+  }
+}

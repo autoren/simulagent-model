@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "211r1-compositional-baseline-name-repair-design",
+  "experiment": "v211r1_compositional_prediction_key_repair",
+  "parentV211DesignLock": "configs/v211-deterministic-residual-baselines-lock.json",
+  "parentV211TechnicalFailure": "outputs/v211-deterministic-residual-baselines/technical-failure.json",
+  "parentPredictionFreeze": "outputs/v211-deterministic-residual-baselines/evaluation/prediction-freeze.json",
+  "parentLearnedLexicon": "outputs/v211-deterministic-residual-baselines/evaluation/learned-lexicon.json",
+  "parentEvaluationSurface": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-surfaces.jsonl",
+  "parentEvaluationTruthSealed": "outputs/v211-deterministic-residual-baselines/firewall/evaluation-truth-sealed.jsonl",
+  "parentSplit": "outputs/v211-deterministic-residual-baselines/evaluation/split.json",
+  "repair": {
+    "oldEmittedKey": "CONTEXT_CONTRAST",
+    "newEmittedKey": "COMPOSITIONAL_RESPONSE_SPAN",
+    "maximumChangedPredictionValueCount": 0,
+    "maximumChangedSplitOrLearnedLexiconCount": 0,
+    "maximumChangedMetricGateOrDecisionCount": 0
+  },
+  "authorization": {
+    "rerunCorrectedPredictionAndScoringOnce": true,
+    "refitBaselineOrReadCalibrationAgain": false,
+    "readProtectedOrRunModel": false,
+    "APITrainingRegistrationAuthorityActionOrExecution": false
+  }
+}

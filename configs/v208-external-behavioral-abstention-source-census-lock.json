@@ -1,0 +1,236 @@
+{
+  "auditor": "python/audit_and_freeze_v208_external_behavioral_abstention_source_census.py",
+  "auditor_sha256": "dad16e002896538c778f94ae7e19c145731917353e90221b361b5efe0349d2c9",
+  "authorization": {
+    "model_API_training_tool_service_registration_authority_action_or_execution": false,
+    "modify_roster_landing_facts_gates_or_decision": false,
+    "read_blob_task_language_example_dialogue_rationale_response": false,
+    "run_one_metadata_only_source_census": true
+  },
+  "config": "configs/v208-external-behavioral-abstention-source-census.json",
+  "config_payload": {
+    "allowedEvaluationReads": {
+      "githubLicenseBlobBodyReadCount": 0,
+      "githubREADMEOrOtherBlobBodyReadCount": 0,
+      "githubRecursiveTreePathsOnly": true,
+      "githubRepositoryObjectMetadata": true,
+      "huggingFaceCardDataObjectMetadataOnly": true,
+      "huggingFaceDatasetHeadOnly": true,
+      "huggingFaceTreeOrPayloadReadCount": 0,
+      "modelOrPolicyEvaluationCount": 0,
+      "taskInstructionExampleDialogueRationaleResponseReadCount": 0
+    },
+    "candidates": [
+      {
+        "candidateId": "OVERSEARCH_QA",
+        "codeRepository": "https://github.com/apple/ml-over-searching",
+        "datasetRepository": null,
+        "declaredPairCount": 0,
+        "declaredPublicUnitCount": 1188,
+        "declaredScenarioCount": 3,
+        "landingFacts": {
+          "balancedActAbstainControlsClaimed": true,
+          "deterministicActAbstainGoldFieldClaimed": true,
+          "explicitMachineReadablePairIdentityFieldClaimed": false,
+          "explicitPreExecutionPhaseIdentityClaimed": true,
+          "goldIndependentOfLLMJudgeClaimed": true,
+          "pairedOrMatchedControlsClaimed": false,
+          "promptLabelSeparationClaimed": true,
+          "runtimeInteractionRequired": false,
+          "textOnlyShadowClassificationSupported": true
+        }
+      },
+      {
+        "candidateId": "ABSTENTION_BENCH",
+        "codeRepository": "https://github.com/facebookresearch/AbstentionBench",
+        "datasetRepository": "https://huggingface.co/datasets/facebook/AbstentionBench",
+        "declaredPairCount": 0,
+        "declaredPublicUnitCount": 0,
+        "declaredScenarioCount": 6,
+        "landingFacts": {
+          "balancedActAbstainControlsClaimed": false,
+          "deterministicActAbstainGoldFieldClaimed": true,
+          "explicitMachineReadablePairIdentityFieldClaimed": false,
+          "explicitPreExecutionPhaseIdentityClaimed": true,
+          "goldIndependentOfLLMJudgeClaimed": true,
+          "pairedOrMatchedControlsClaimed": false,
+          "promptLabelSeparationClaimed": true,
+          "runtimeInteractionRequired": false,
+          "textOnlyShadowClassificationSupported": true
+        }
+      },
+      {
+        "candidateId": "ABSTAIN_EQA",
+        "codeRepository": "https://github.com/gibrantaowu/AbstainEQA",
+        "datasetRepository": null,
+        "declaredPairCount": 1636,
+        "declaredPublicUnitCount": 3272,
+        "declaredScenarioCount": 5,
+        "landingFacts": {
+          "balancedActAbstainControlsClaimed": true,
+          "deterministicActAbstainGoldFieldClaimed": true,
+          "explicitMachineReadablePairIdentityFieldClaimed": false,
+          "explicitPreExecutionPhaseIdentityClaimed": false,
+          "goldIndependentOfLLMJudgeClaimed": true,
+          "pairedOrMatchedControlsClaimed": true,
+          "promptLabelSeparationClaimed": true,
+          "runtimeInteractionRequired": true,
+          "textOnlyShadowClassificationSupported": false
+        }
+      },
+      {
+        "candidateId": "HIL_BENCH",
+        "codeRepository": "https://github.com/hilbenchauthors/hil-bench",
+        "datasetRepository": "https://huggingface.co/datasets/ScaleAI/hil-bench",
+        "declaredPairCount": 200,
+        "declaredPublicUnitCount": 200,
+        "declaredScenarioCount": 3,
+        "landingFacts": {
+          "balancedActAbstainControlsClaimed": true,
+          "deterministicActAbstainGoldFieldClaimed": false,
+          "explicitMachineReadablePairIdentityFieldClaimed": true,
+          "explicitPreExecutionPhaseIdentityClaimed": false,
+          "goldIndependentOfLLMJudgeClaimed": false,
+          "pairedOrMatchedControlsClaimed": true,
+          "promptLabelSeparationClaimed": true,
+          "runtimeInteractionRequired": true,
+          "textOnlyShadowClassificationSupported": false
+        }
+      },
+      {
+        "candidateId": "CLARIFY_CODE_BENCH",
+        "codeRepository": "https://github.com/fangz-cs/ClarifyCodeBench",
+        "datasetRepository": null,
+        "declaredPairCount": 0,
+        "declaredPublicUnitCount": 419,
+        "declaredScenarioCount": 1,
+        "landingFacts": {
+          "balancedActAbstainControlsClaimed": false,
+          "deterministicActAbstainGoldFieldClaimed": false,
+          "explicitMachineReadablePairIdentityFieldClaimed": false,
+          "explicitPreExecutionPhaseIdentityClaimed": true,
+          "goldIndependentOfLLMJudgeClaimed": false,
+          "pairedOrMatchedControlsClaimed": false,
+          "promptLabelSeparationClaimed": true,
+          "runtimeInteractionRequired": false,
+          "textOnlyShadowClassificationSupported": true
+        }
+      },
+      {
+        "candidateId": "ASK_OR_ASSUME",
+        "codeRepository": "https://github.com/nedwards99/ask-or-assume",
+        "datasetRepository": "https://huggingface.co/datasets/cmu-lti/interactive-swe",
+        "declaredPairCount": 500,
+        "declaredPublicUnitCount": 500,
+        "declaredScenarioCount": 1,
+        "landingFacts": {
+          "balancedActAbstainControlsClaimed": true,
+          "deterministicActAbstainGoldFieldClaimed": false,
+          "explicitMachineReadablePairIdentityFieldClaimed": true,
+          "explicitPreExecutionPhaseIdentityClaimed": false,
+          "goldIndependentOfLLMJudgeClaimed": false,
+          "pairedOrMatchedControlsClaimed": true,
+          "promptLabelSeparationClaimed": true,
+          "runtimeInteractionRequired": true,
+          "textOnlyShadowClassificationSupported": false
+        }
+      }
+    ],
+    "claimBoundary": "source availability for a separate external text-only pre-execution act-versus-abstain shadow study; not LLM performance, V205 likelihood validation, posterior calibration, ontology acquisition, authority, action, or execution",
+    "decisionRule": {
+      "ifAtLeastOneCandidatePassesEveryGate": "freeze_V208_positive_and_authorize_separate_exact_identifier_selection_and_text_extraction_preregistration_only",
+      "otherwise": "freeze_V208_negative_park_external_behavioral_abstention_and_return_to_model_free_decision_interface_track",
+      "passAuthorizesAPITrainingToolServiceRegistrationAuthorityActionOrExecution": false,
+      "passAuthorizesImmediateTaskTextAccessOrModelRun": false
+    },
+    "experiment": "v208_fresh_external_behavioral_abstention_source_availability_census",
+    "fixedTreePathMarkerGroups": {
+      "gold": [
+        "should_abstain",
+        "should_act",
+        "answerable",
+        "unanswerable",
+        "needs_clarification"
+      ],
+      "pair": [
+        "pair_id",
+        "pair-id",
+        "matched_control",
+        "original_id",
+        "source_id"
+      ],
+      "phase": [
+        "pre_execution",
+        "pre-execution",
+        "runtime",
+        "baseline",
+        "full_info",
+        "full-info"
+      ],
+      "prompt": [
+        "prompt",
+        "question",
+        "instruction",
+        "task"
+      ],
+      "rationale": [
+        "rationale",
+        "explanation",
+        "resolution",
+        "answer"
+      ]
+    },
+    "parentV207r2OutcomeLock": "configs/v207r2-agentabstain-outcome-verification-repair-outcome-lock.json",
+    "preLockExposure": {
+      "candidateDatasetCardMetadataReadCount": 0,
+      "candidateDatasetHeadReadCount": 0,
+      "candidateRecursiveRepositoryTreeReadCount": 0,
+      "candidateTaskPayloadFileReadCount": 0,
+      "incidentalIllustrativeTaskExamplePreviewCount": 1,
+      "manualFullTaskInstructionExampleDialogueRationaleResponseReadCount": 0,
+      "modelOrPolicyEvaluationCount": 0,
+      "officialProjectPagePreviewCount": 1,
+      "uniqueOfficialCandidateLandingPagePreviewCount": 6,
+      "webSearchCallCount": 3
+    },
+    "qualificationGates": {
+      "maximumRuntimeInteractionRequired": false,
+      "minimumCandidateCount": 6,
+      "minimumDeclaredPairCount": 20,
+      "minimumDeclaredPublicUnitCount": 40,
+      "minimumDeclaredScenarioCount": 2,
+      "requiredBalancedActAbstainControls": true,
+      "requiredDeterministicActAbstainGoldField": true,
+      "requiredDistinctRepositoryPerCandidate": true,
+      "requiredExplicitMachineReadablePairIdentityField": true,
+      "requiredExplicitPreExecutionPhaseIdentity": true,
+      "requiredGoldIndependentOfLLMJudge": true,
+      "requiredImmutableCodeRevision": true,
+      "requiredImmutableExternalDatasetRevisionWhenDeclared": true,
+      "requiredPairedOrMatchedControls": true,
+      "requiredPromptLabelSeparation": true,
+      "requiredRecognizedCodeLicenseMetadata": true,
+      "requiredRecognizedDatasetLicenseMetadataWhenDeclared": true,
+      "requiredTextOnlyShadowClassification": true
+    },
+    "schemaVersion": "208-external-behavioral-abstention-source-census-design"
+  },
+  "config_sha256": "ccad44425df859dfa11a191212b1f515703d8c3f5410cda43d828346cddab472",
+  "design_audit": "outputs/v208-external-behavioral-abstention-source-census/design-audit.json",
+  "design_audit_sha256": "90fdf3d94fce75d8dcb34193778ae83f54926524363f4d4614dbb2bcf21cac49",
+  "experiment": "v208_fresh_external_behavioral_abstention_source_availability_census",
+  "lock_payload_sha256": "8e0fde22ecd4aaf77eeaa17ce235182ebce683af7e77d87c39222d0d8a26c719",
+  "parent_V207r2_outcome": "configs/v207r2-agentabstain-outcome-verification-repair-outcome-lock.json",
+  "parent_V207r2_outcome_sha256": "156610afd53c9a10f9f7a55e89381093ba09fd8f523d8f6f140d61eb785e08ea",
+  "plan": "docs/v208-external-behavioral-abstention-source-census-plan.md",
+  "plan_sha256": "5e65b80b1487e5ce7a80cb16715c9fedee4ac18581be8de4a9248db3805fdf14",
+  "protocol": "python/v208_external_behavioral_abstention_source_census.py",
+  "protocol_sha256": "307b26ec3dbf6e90fcb8313448334201e325c1b3c319b599cef77222d131c84d",
+  "runner": "python/run_v208_external_behavioral_abstention_source_census.py",
+  "runner_sha256": "4b3082e12f10713f846d7ac3bf573f5d27dfa2b09d7b9cde214972c13be9e921",
+  "schema_version": "208-external-behavioral-abstention-source-census-lock",
+  "tests": "python/test_v208_external_behavioral_abstention_source_census.py",
+  "tests_sha256": "b6b7450c7fbcda0ab3a9606700e5575aa2cfe6ba7ac8fa0a86a1080a62dfe88e",
+  "verifier": "python/verify_and_freeze_v208_external_behavioral_abstention_source_census_outcome.py",
+  "verifier_sha256": "0e7f58135505661f151eeb958bd50f88d15016432d7790a95161e5d2da661abb"
+}

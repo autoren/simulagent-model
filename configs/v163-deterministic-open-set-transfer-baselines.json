@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "163-deterministic-open-set-transfer-baselines-design",
+  "experiment": "v163_fresh_massive_deterministic_open_set_transfer_development_baselines",
+  "parentLanguageOutcomeLock": "configs/v162-fresh-massive-transfer-language-extraction-outcome-lock.json",
+  "historicalInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+  "developmentLanguage": "outputs/v162-fresh-massive-transfer-language/selected-language/development-transfer.jsonl",
+  "developmentLanguageSha256": "29e8f02a001e252f4698ae14e2744a0faf34814812023dba64cb678cc6c06148",
+  "protectedLanguageIdentityOnly": {
+    "path": "outputs/v162-fresh-massive-transfer-language/selected-language/protected-transfer.jsonl",
+    "sha256": "a12e11f53db63a371d4a95737479c55bf4f351a8974f90c1f92ced0d27f40a41",
+    "fileOpenCount": 0
+  },
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+  "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "visibleCatalogSha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc",
+  "safeHypothesisUniverse": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+  "safeHypothesisUniverseSha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8",
+  "developmentSplit": {
+    "salt": "simulagent-v163-development-calibration-evaluation-v1",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "calibrationCountPerClass": 24,
+    "evaluationCountPerClass": 24,
+    "splitUsesOnlyFrozenRecordIdentifierAndClass": true,
+    "manualLanguageInspection": false
+  },
+  "controlledMissingObservation": {
+    "count": 24,
+    "selectionSalt": "simulagent-v163-controlled-missing-observation-v1",
+    "selectionUsesRecordIdentifierOnly": true,
+    "utteranceExposureCount": 0,
+    "authoritativeDecision": "ABSTAIN"
+  },
+  "truthContract": {
+    "known_familiar": "KNOWN with exact declared scenario::intent",
+    "known_unfamiliar": "KNOWN with exact declared scenario::intent",
+    "novel_valid": "NOVEL with exact visible scenario",
+    "unsupported": "UNSUPPORTED",
+    "controlled_missing_observation": "ABSTAIN"
+  },
+  "deterministicBaselines": {
+    "complete_safe_enumeration": "retain all 17 safe hypotheses and abstain",
+    "ask_always": "ABSTAIN for every observed request",
+    "identifier_grammar": "unchanged V106 token-overlap rule over visible intent and scenario identifiers",
+    "character_ngram_retrieval": {
+      "trainingData": "MASSIVE train utterances for the 12 declared intents only",
+      "vectorizer": "sklearn TfidfVectorizer analyzer=char_wb ngram_range=(3,5) lowercase=true min_df=1 norm=l2 dtype=float64",
+      "nearestNeighborTieBreak": "first record in frozen intent/source-id order through numpy argmax",
+      "knownThresholdGrid": [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80],
+      "unsupportedThresholdGrid": [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60],
+      "constraint": "unsupported threshold must be strictly below known threshold",
+      "selectionObjective": "minimum calibration mean decision regret; ties use maximum exact accuracy, minimum false-known acceptance, then lexicographically smallest thresholds"
+    },
+    "deterministic_consensus": {
+      "acceptRule": "accept only when identifier grammar and calibrated character retrieval return the identical complete non-ABSTAIN structured decision",
+      "otherwise": "ABSTAIN",
+      "acceptedConfidence": "minimum component confidence",
+      "abstainConfidence": 0.0
+    },
+    "oracle": "exact frozen truth contract for scoring only"
+  },
+  "residualRule": {
+    "definition": "evaluation records on which deterministic_consensus returns ABSTAIN",
+    "manifestFields": ["record_id"],
+    "truthOrLanguageMayNotAffectMembership": true,
+    "futureModelMayReceiveLanguageOnlyAfterSeparateResidualModelLock": true
+  },
+  "decisionCosts": {
+    "known": {"exact_known": 0.0, "wrong_known": 10.0, "novel": 3.0, "unsupported": 6.0, "abstain": 1.0},
+    "novel": {"known": 10.0, "exact_novel": 0.0, "wrong_novel_scenario": 5.0, "unsupported": 4.0, "abstain": 1.5},
+    "unsupported": {"known": 10.0, "novel": 4.0, "unsupported": 0.0, "abstain": 1.0},
+    "insufficient": {"known": 10.0, "novel": 6.0, "unsupported": 4.0, "abstain": 0.0}
+  },
+  "registeredMetrics": [
+    "exact decision accuracy", "status precision recall and macro F1",
+    "known exact-intent accuracy", "novel exact-scenario accuracy",
+    "false-known acceptance on non-known requests", "confidence ECE with ten fixed bins",
+    "predicted-decision correctness Brier score", "top-confidence 80 percent error",
+    "mean shadow decision regret", "per-class exactness and regret",
+    "controlled missing-observation abstention", "complete safe-hypothesis retention",
+    "deterministic residual count and class coverage", "nonresidual exactness false-known rate and regret"
+  ],
+  "baselinePipelineGates": {
+    "requiredTrainingDeclaredIntentCount": 12,
+    "minimumTrainingRecordCountPerDeclaredIntent": 1,
+    "requiredCalibrationRecordCount": 96,
+    "requiredEvaluationRecordCount": 96,
+    "requiredControlledMissingObservationCount": 24,
+    "requiredBaselineNames": [
+      "complete_safe_enumeration", "ask_always", "identifier_grammar",
+      "character_ngram_retrieval", "deterministic_consensus", "oracle"
+    ],
+    "requiredOracleExactDecisionAccuracy": 1.0,
+    "requiredOracleMeanRegret": 0.0,
+    "requiredCompleteSafeEnumerationTrueHypothesisRetention": 1.0,
+    "maximumProtectedLanguageReadCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "residualQualificationGates": {
+    "minimumResidualRecordCount": 24,
+    "maximumResidualRecordCount": 88,
+    "minimumResidualClassCoverage": 3,
+    "minimumNonResidualRecordCount": 8,
+    "minimumNonResidualExactDecisionAccuracy": 0.95,
+    "maximumNonResidualFalseKnownAcceptanceRate": 0.0,
+    "maximumNonResidualMeanRegret": 0.25,
+    "maximumConsensusOverallFalseKnownAcceptanceRate": 0.05,
+    "maximumConsensusRegretAboveAskAlways": 0.0
+  },
+  "deterministicRuntime": {
+    "numpyVersion": "2.5.1",
+    "scikitLearnVersion": "1.9.0"
+  },
+  "authorityBoundary": {
+    "allActionsAreCounterfactualShadowActions": true,
+    "realExecutionCount": 0,
+    "safeHypothesisUniverseMayNotBePruned": true,
+    "authoritativeCapabilityStatePosteriorAndPolicyAreImmutable": true,
+    "deterministicPredictionsDoNotAuthorizeAction": true,
+    "futureModelMayNotSelectActionOrExecuteTool": true
+  },
+  "preLockExposure": {
+    "developmentLanguageReadCount": 0,
+    "protectedLanguageReadCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryBaselinePipelineGatePasses": "freeze_deterministic_development_outcome",
+    "ifResidualQualificationAlsoPasses": "authorize_separate_pinned_local_model_residual_protocol_preregistration_only",
+    "ifResidualQualificationFails": "close_local_model_residual_branch_without_threshold_or_rule_tuning",
+    "baselinePassAuthorizesProtectedAccess": false,
+    "baselinePassAuthorizesImmediateModelRun": false,
+    "baselinePassAuthorizesAPITrainingOntologyPlanningActionOrExecution": false
+  },
+  "claimBoundary": "record-disjoint MASSIVE deterministic development evidence for controlled open-set capability recognition and a prospectively defined residual; not V160 relation-codebook confirmation, unrestricted open-world understanding, ontology learning, action, or execution"
+}
