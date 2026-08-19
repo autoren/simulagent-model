@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "115-contrastive-catalog-fit-design",
+  "experiment": "v115_two_pass_contrastive_catalog_fit_development",
+  "parentV114OutcomeLock": "configs/v114-rescued-policy-transfer-outcome-lock.json",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "excludedPopulations": [
+    "outputs/v101-massive-population/population/selected-population.json",
+    "outputs/v112-open-world-full-policy-transfer/design/fresh-population.json",
+    "outputs/v114-rescued-policy-transfer/design/fresh-population.json"
+  ],
+  "freshPopulation": {
+    "sourcePartition": "test",
+    "baseSalt": "simulagent-v115-two-pass-contrastive-catalog-fit-v1",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "recordCountPerClass": 48,
+    "requiredScenarioCoverage": {
+      "known_familiar": 3,
+      "known_unfamiliar": 3,
+      "novel_valid": 2,
+      "unsupported": 1
+    },
+    "excludeEveryPriorAndProtectedIdentifier": true,
+    "selectionUsesOnlyIdentifierClassPartitionAndScenario": true,
+    "selectionBeforeLanguageExtractionOrModelGeneration": true,
+    "claimBoundary": "new record-disjoint development evidence from the same MASSIVE distribution; not confirmatory cross-dataset or unrestricted open-world evidence"
+  },
+  "extraction": {
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "canonicalSourcePartitionMap": {"train": "train", "dev": "validation", "test": "test"},
+    "role": "development_contrastive",
+    "requiredRecordCount": 192,
+    "requiredRecordCountPerClass": 48,
+    "maximumUnselectedLanguageRecordCount": 0
+  },
+  "condition": {
+    "id": "qwen38_27b_4bit_v115_two_pass_contrastive",
+    "reuseExactV112ModelSnapshotPromptAndFirstPass": true,
+    "modelLoadLimit": 1,
+    "observedFixtureCount": 192,
+    "controlledMissingObservationCount": 48,
+    "generationCountPerFixture": 2,
+    "totalGenerationCount": 480,
+    "retryCount": 0
+  },
+  "contrastiveInterface": {
+    "candidateUnderReview": "first-pass known choice when available, otherwise deterministic nearest-intent retrieval; fixed K00 for missing controls",
+    "verdicts": {
+      "C00": "candidate under review fully and exactly covers the request",
+      "O00": "a different declared catalog capability fully and exactly covers the request",
+      "N00": "request is coherent in a visible scenario but requires a valid undeclared capability",
+      "U00": "request is outside every visible scenario and unsupported",
+      "A00": "evidence is insufficient"
+    },
+    "outputKeys": ["verdict_id", "selected_choice_id", "verdict_confidence", "novel_probability"],
+    "knownChoicePrefix": "K",
+    "novelChoicePrefix": "N",
+    "unsupportedChoiceId": "U00",
+    "insufficientEvidenceChoiceId": "A00",
+    "acceptAliases": false,
+    "invalidOutputMapsToZeroConfidenceAbstainAndZeroNovelProbability": true,
+    "completeDeclaredCatalogShown": true,
+    "hiddenRecordGroundTruthClassIntentAndScenarioShown": false,
+    "modelMayNotAddRemoveOrDefineCapability": true
+  },
+  "prompt": {
+    "system": "You are an offline, non-authoritative semantic reviewer. Challenge the proposed catalog match against every supplied declared capability. Never call a tool, choose an action, define a capability, alter the catalog, or remove a hypothesis. Return exactly the required JSON object and no explanation.",
+    "demonstrationCount": 0,
+    "maximumPromptTokens": 4096,
+    "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]"
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "maximumNewTokens": 96,
+    "samplesPerPrompt": 1,
+    "retryOnMalformedOutput": false,
+    "enableThinking": false
+  },
+  "frozenContrastivePolicy": {
+    "knownRule": "emit shadow KNOWN only when pass one proposes KNOWN and pass two returns C00 for that identical choice",
+    "unsupportedRule": "emit shadow UNSUPPORTED only when both passes return UNSUPPORTED",
+    "novelEvidenceRule": "pass-two N00 is novel evidence but always emits ABSTAIN and ASK_FOR_CLARIFICATION",
+    "otherwiseRule": "emit ABSTAIN and ASK_FOR_CLARIFICATION",
+    "knownAndUnsupportedConfidence": "minimum of the two valid pass confidences",
+    "abstainActionConfidence": 0.0,
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "novelEvidenceCannotDefineSchemaCapabilityActionOrExecution": true
+  },
+  "comparators": [
+    "ask_always", "pass_one_direct", "pass_two_semantic_review",
+    "V112_policy_from_pass_one", "V115_contrastive_policy", "fixed_character_retrieval", "oracle"
+  ],
+  "contrastiveEvidenceGates": {
+    "minimumPassOneStructuredValidity": 0.98,
+    "minimumPassTwoStructuredValidity": 0.98,
+    "minimumBothPassMissingObservationAbstentionAccuracy": 0.95,
+    "minimumExplicitNovelPrecision": 0.70,
+    "minimumExplicitNovelRecall": 0.50,
+    "maximumExplicitNovelNonNovelFalsePositiveRate": 0.10,
+    "maximumExplicitNovelECE": 0.15,
+    "minimumPassTwoObservedExactDecisionAccuracy": 0.60,
+    "minimumPassTwoObservedStatusMacroF1": 0.55,
+    "minimumPassTwoKnownExactIntentAccuracy": 0.80,
+    "minimumPassTwoNovelExactScenarioAccuracy": 0.50,
+    "minimumPassTwoUnsupportedRecall": 0.80,
+    "minimumPassTwoUnsupportedPrecision": 0.80,
+    "maximumPassTwoFalseKnownAcceptanceRate": 0.10
+  },
+  "reuseExactV112CombinedPolicyQualityGates": true,
+  "accessGates": {
+    "maximumFreshDevelopmentLanguageReadCount": 1,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 480,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "modelIsPermanentlyNonAuthoritativeEvidenceOnly": true,
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "allActionsAreCounterfactualShadowActions": true,
+    "authoritativeStatePosteriorCapabilitiesAndPolicyAreImmutable": true,
+    "modelMayNotSelectActionOrExecuteTool": true,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifContrastiveEvidenceAndCombinedPolicyPass": "freeze positive development result and seek a genuinely independent source for confirmatory transfer",
+    "ifEvidencePassesButPolicyFails": "retain contrastive evidence as development-only and redesign a policy on a new population",
+    "ifContrastiveEvidenceFails": "close the two-pass single-model contrastive branch",
+    "passAuthorizesOriginalProtectedTest": false,
+    "passAuthorizesSchemaInduction": false,
+    "passAuthorizesRicherSequentialPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

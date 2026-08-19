@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "99-open-world-source-selection",
+  "experiment": "v99_external_typed_core_and_paired_insufficiency_source_selection",
+  "parentSchemaOutcomeLock": "configs/v98-test-schema-feasibility-outcome-lock.json",
+  "decision": {
+    "coreSource": "MASSIVE_1.1_en-US",
+    "insufficientEvidenceSource": "PRESTO_v1_en-US_human_context_pairs",
+    "mixSourceIdentityAsClassFeature": false,
+    "syntheticLanguageCountsAsExternalEvaluation": false
+  },
+  "massive": {
+    "role": "primary_typed_four_class_controlled_open_set_transfer",
+    "officialDataset": "https://huggingface.co/datasets/AmazonScience/massive",
+    "officialPaper": "https://aclanthology.org/2023.acl-long.235/",
+    "license": "CC-BY-4.0",
+    "provenance": "human-created English SLURP seed utterances; professional translations for other locales",
+    "selectedLocale": "en-US",
+    "publishedDomainCount": 18,
+    "publishedIntentCount": 60,
+    "publishedSlotTypeCount": 55,
+    "requiredFields": ["id", "locale", "partition", "scenario", "intent", "utt", "annot_utt"],
+    "archive": {
+      "url": "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz",
+      "byteSize": 40251390,
+      "etag": "51e0da2a3ff7a016f109e1d1b4306e93-3",
+      "lastModified": "2022-11-07T16:55:04Z"
+    },
+    "coreClasses": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "typedOntology": ["scenario", "intent", "slot_type"]
+  },
+  "presto": {
+    "role": "auxiliary_paired_full_context_vs_ablated_context_evidence_sufficiency",
+    "officialRepository": "https://github.com/google-research-datasets/presto",
+    "officialPaper": "https://aclanthology.org/2023.emnlp-main.667/",
+    "license": "CC-BY-4.0",
+    "provenance": "human-generated contextual multilingual conversations with structured context and semantic parses",
+    "selectedLocale": "en-US",
+    "requiredFields": ["inputs", "targets", "metadata.example_id", "metadata.locale", "metadata.context", "metadata.previous_turns", "metadata.seeded_lists", "metadata.seeded_notes", "metadata.seeded_contacts"],
+    "archive": {
+      "url": "https://storage.googleapis.com/gresearch/presto/presto_v1.zip",
+      "byteSize": 415990813,
+      "md5Hex": "5fb5bd7e437a07fbae4991b5b4a573f4",
+      "gcsGeneration": "1678604196509246",
+      "lastModified": "2023-03-12T06:56:36Z"
+    },
+    "pairRules": {
+      "requireHumanContext": true,
+      "requireNonemptyContext": true,
+      "requireTargetArgumentAbsentFromInputAndPresentInHumanContext": true,
+      "fullAndAblatedShareUtteranceTargetAndIdentifier": true,
+      "syntheticContextAllowed": false
+    }
+  },
+  "rejected": {
+    "SGD": "all development families exhausted and only two novel test families",
+    "CLINC150": "explicit OOS but no slot schema and source-only unsupported class would confound dataset identity",
+    "PRESTO_as_core": "rich semantic parses but no simple authoritative domain catalog equivalent to MASSIVE scenario labels"
+  },
+  "selectionGates": {
+    "minimumCoreDomainCount": 4,
+    "minimumCoreIntentCount": 8,
+    "minimumCoreSlotTypeCount": 1,
+    "requireHumanAuthoredCoreEnglish": true,
+    "requireHumanContextPairedInsufficiency": true,
+    "requireMachineCheckableContextDependency": true,
+    "requireCCBYCompatibleLicenseForBoth": true,
+    "maximumPayloadDownloadCount": 0,
+    "maximumLanguageRecordInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "access": {
+    "primaryWebSourceReadCount": 8,
+    "artifactMetadataRequestCount": 3,
+    "payloadDownloadCount": 0,
+    "languageRecordInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0,
+    "realServiceCallCount": 0,
+    "externalSideEffectCount": 0
+  },
+  "authorization": {
+    "preregisterMassiveArchiveInventory": true,
+    "preregisterPrestoArchiveInventory": true,
+    "downloadEitherPayloadBeforeItsOwnLock": false,
+    "extractOrInspectLanguage": false,
+    "selectPopulation": false,
+    "loadLocalOrAPIModel": false,
+    "trainAdapterOrLearnLikelihood": false,
+    "grantModelAuthority": false,
+    "performRealServiceCallOrExternalSideEffect": false
+  }
+}

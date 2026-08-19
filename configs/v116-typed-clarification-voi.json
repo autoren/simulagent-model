@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "116-typed-clarification-voi-design",
+  "experiment": "v116_language_free_typed_clarification_value_of_information_audit",
+  "parentV115OutcomeLock": "configs/v115-contrastive-catalog-fit-outcome-lock.json",
+  "historicalPopulation": "outputs/v115-contrastive-catalog-fit/design/fresh-population.json",
+  "historicalModelResult": "outputs/v115-contrastive-catalog-fit/model-contrastive/result.json",
+  "choiceCatalog": "outputs/v109-open-world-typed-choice/interface/choice-catalog.json",
+  "claimBoundary": "historical structural feasibility under an explicit simulated answer channel; not fresh language evidence, human-response evidence, model evidence, or deployment evidence",
+  "clarificationQuery": {
+    "type": "typed_candidate_catalog_fit",
+    "question": "Does the request exactly match the candidate, another declared capability, a valid undeclared capability in a visible scenario, or none of the visible scenarios?",
+    "responseChoiceUniverse": "exact frozen 17-choice catalog",
+    "candidateSource": "frozen V115 candidate_choice_id",
+    "truthResponseUsesOnlyFrozenClassScenarioAndIntentMetadata": true,
+    "modelDoesNotGenerateQuestionOrAnswer": true,
+    "modelDoesNotInterpretAnswer": true
+  },
+  "simulatedAnswerChannel": {
+    "correctResponseProbabilities": [0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00],
+    "nonCorrectMassToInsufficientWhenTruthIsNotInsufficient": 0.50,
+    "remainingErrorMass": "uniform over every other non-insufficient response",
+    "insufficientTruthErrorMass": "uniform over every non-insufficient response",
+    "twoAnswerConditions": ["conditionally_independent", "fully_correlated"],
+    "singleClarificationCost": 0.20,
+    "doubleClarificationCost": 0.30,
+    "costUnits": "same frozen V106/V112 decision-cost units"
+  },
+  "priorRegimes": [
+    {"id": "uniform_safe_universe", "candidateProbability": 0.058823529411764705},
+    {"id": "moderate_candidate", "candidateProbability": 0.50},
+    {"id": "strong_candidate", "candidateProbability": 0.75}
+  ],
+  "frozenBayesPolicy": {
+    "posterior": "normalize prior times the explicit simulated answer likelihood",
+    "actionSet": "ABSTAIN, UNSUPPORTED, or one exact declared KNOWN intent",
+    "novelResponseAlwaysAbstains": true,
+    "insufficientResponseAlwaysAbstains": true,
+    "actionRule": "minimum posterior expected frozen decision cost with deterministic lexical tie break",
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "actualExecutionCount": 0
+  },
+  "feasibilityGates": {
+    "requiredReliability": 0.95,
+    "maximumIndependentDoubleAnswerMeanRegretEveryPrior": 0.7760416666666666,
+    "minimumIndependentDoubleAnswerKnownExactEveryPrior": 0.80,
+    "minimumIndependentDoubleAnswerUnsupportedCorrectEveryPrior": 0.80,
+    "maximumIndependentDoubleAnswerFalseKnownEveryPrior": 0.10,
+    "requiredPerfectChannelMeanRegretEveryPrior": 0.675,
+    "requiredMonotoneIndependentMeanRegretFrom090To095": true,
+    "requiredFullyCorrelatedStressTestReported": true,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifIndependentAndCorrelatedPass": "robust_typed_clarification_feasible_preregister_unprotected_simulator_benchmark",
+    "ifIndependentPassButCorrelatedFails": "conditionally_feasible_requires_95pct_independent_typed_answers",
+    "ifIndependentFails": "typed_clarification_value_insufficient_close_branch",
+    "passAuthorizesFreshLanguageOrModelGeneration": false,
+    "passAuthorizesProtectedTest": false,
+    "passAuthorizesSchemaInductionOrRicherPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "auditor": "python/audit_and_freeze_v134_semantic_novelty_source_design.py",
+  "auditor_sha256": "90ec1277fb1a666dc47078207102a99d7d9fa6b93132ccfa412e83cea5b81532",
+  "authorization": {
+    "extract_language_or_run_model": false,
+    "freeze_future_benchmark_asset": true,
+    "modify_reselect_or_redefine_V134": false,
+    "run_API_training_authority_or_execution": false
+  },
+  "choice_catalog": "outputs/v134-semantic-novelty-source-design/design/choice-catalog.json",
+  "choice_catalog_sha256": "f9c058a191844e26fa6901a3ced658c5ac223b8dbbfea9e44e45a51f9ec0f8e9",
+  "config": "configs/v134-semantic-novelty-source-design.json",
+  "config_payload": {
+    "catalog": {
+      "completeSafeCompositeHypothesisUniverse": true,
+      "declaredKnownPairs": [
+        "RentalCars_1::GetCarsAvailable",
+        "RentalCars_1::ReserveCar",
+        "Weather_1::GetWeather",
+        "Events_1::FindEvents",
+        "Events_1::BuyEventTickets",
+        "Travel_1::FindAttractions"
+      ],
+      "expectedChoiceCount": 11,
+      "insufficientControl": true,
+      "novelCompositeDomains": [
+        "banks",
+        "flights",
+        "media"
+      ],
+      "unsupportedCompositeAcrossEveryDevUnseenDomain": true
+    },
+    "claimBoundary": "text-free feasibility and preregistration of a schema-name-noncolliding controlled open-set population from an untouched source partition; not language, model, policy, human clarification, induction, or execution evidence",
+    "decisionRule": {
+      "ifEverySourceIdentifiabilityAndAccessGatePasses": "freeze_semantically_noncolliding_dev_source_await_new_realization_authority",
+      "otherwise": "reject_corrected_SGD_source_without_reselection_or_gate_relaxation",
+      "passAuthorizesLanguageExtractionOrModelRun": false,
+      "passAuthorizesProtectedInductionRicherPlanningAPITrainingActionOrExecution": false,
+      "passCreatesFutureBenchmarkAssetOnly": true
+    },
+    "experiment": "v134_text_free_semantically_noncolliding_SGD_dev_source_design",
+    "parentV133OutcomeLock": "configs/v133-sgd-capability-label-identifiability-outcome-lock.json",
+    "population": {
+      "baseSalt": "simulagent-v134-semantic-novelty-dev-source-v1",
+      "devLanguagePreviouslyUsedCount": 0,
+      "expectedCellCount": 66,
+      "expectedFixtureCount": 264,
+      "expectedMissingControlCount": 24,
+      "expectedSourceRecordCount": 240,
+      "recordsPerTruthCandidateCell": 4,
+      "selectionBeforeAnyDevLanguageExtraction": true,
+      "selectionUsesOnlyIdentifierPartitionDerivedClassDomainServiceAndIntent": true,
+      "sourcePartition": "dev"
+    },
+    "schemaIdentifiability": {
+      "manualSemanticJudgmentCount": 0,
+      "rawDescriptionEmissionCount": 0,
+      "requiredEntirelyNameCollidingNovelChoiceCount": 0,
+      "requiredSelectedNovelExactNameCollisionFraction": 0.0,
+      "requiredSelectedNovelFullSignatureCollisionFraction": 0.0,
+      "schemaPartitions": [
+        "train",
+        "dev"
+      ]
+    },
+    "schemaVersion": "134-semantic-novelty-source-design",
+    "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+    "sourceGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumLanguageReadCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "requireUniqueSourceIdentifiers": true,
+      "requiredCellCount": 66,
+      "requiredChoiceCount": 11,
+      "requiredFixtureCount": 264,
+      "requiredInsufficientChoiceCount": 1,
+      "requiredKnownChoiceCount": 6,
+      "requiredKnownPairCoverage": 6,
+      "requiredMissingControlCount": 24,
+      "requiredNovelChoiceCount": 3,
+      "requiredNovelDomainCoverage": 3,
+      "requiredRecordsPerCandidate": 44,
+      "requiredRecordsPerCell": 4,
+      "requiredRecordsPerTruth": 24,
+      "requiredSourceRecordCount": 240,
+      "requiredUnsupportedChoiceCount": 1,
+      "requiredUnsupportedDomainCoverage": 1
+    },
+    "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json"
+  },
+  "config_sha256": "d3a81f0211f9ca4a1f41b18ca8359990348858455141e59aca86720954fe090e",
+  "design_audit": "outputs/v134-semantic-novelty-source-design/design-audit.json",
+  "design_audit_sha256": "ca196afed17f844988af09de2d0f6cf3a7cb90be8f56f08e0ce49420f6007db3",
+  "experiment": "v134_text_free_semantically_noncolliding_SGD_dev_source_design",
+  "fixture_population": "outputs/v134-semantic-novelty-source-design/design/fixture-population.json",
+  "fixture_population_sha256": "6f9dc434379285aa60b6046d6e75b1b28c28f36b29b847a184a54f49422979a6",
+  "lock_payload_sha256": "c5bb1dfde6d25804bddaaa22f40729dcee994ec684052086f64f9c3fb0eacadd",
+  "parent_analysis_lock": "configs/v133-sgd-capability-label-identifiability-lock.json",
+  "parent_analysis_lock_sha256": "8f750b3aa70db9514505a5fd2f72b530a56f7af9b7855e93c549cc2e1294d3ef",
+  "parent_outcome": "configs/v133-sgd-capability-label-identifiability-outcome-lock.json",
+  "parent_outcome_sha256": "0338d6c4547ef4466ba61a33c43f909c2d50c593153f98abfc776569e0b37947",
+  "plan": "docs/v134-semantic-novelty-source-design-plan.md",
+  "plan_sha256": "d2862889f988084dd9c3b1f233f008ad00949fb5038ba0d89f7fca129eebb0a9",
+  "protocol": "python/v134_semantic_novelty_source_design.py",
+  "protocol_sha256": "3cd5f5b452fb72ff3e5ba2fa21b71986f4fd072c147dc48659fd22cbe2c87f2c",
+  "schema_identifiability": "outputs/v134-semantic-novelty-source-design/design/schema-identifiability.json",
+  "schema_identifiability_sha256": "8987c95e1e712cbbc481dec1eee86355bfecabc18382c80918df6da6aacbdbd8",
+  "schema_version": "134-semantic-novelty-source-design-lock",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "source_inventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "source_inventory_sha256": "3cf2f5b5a43e340b0b4723baf728e49882286429c35fd3b111e28306ab029e5f",
+  "tests": "python/test_v134_semantic_novelty_source_design.py",
+  "tests_sha256": "85c1ad02417b26f6aa242aa3dc1bcf196ab7774d6651ce1cb3a23a09df13b370",
+  "verifier": "python/verify_and_freeze_v134_semantic_novelty_source_design_outcome.py",
+  "verifier_sha256": "cd67233613ddb4fbe6e2eea6a7b75b54d3aa97f339b49065daa30523d64e2fc5"
+}

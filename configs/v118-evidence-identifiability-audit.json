@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "118-evidence-identifiability-audit-design",
+  "experiment": "v118_prior_robust_evidence_identifiability_audit",
+  "parentV117OutcomeLock": "configs/v117-causal-clarification-simulator-outcome-lock.json",
+  "parentV117AnalysisLock": "configs/v117-causal-clarification-simulator-lock.json",
+  "historicalPopulation": "outputs/v115-contrastive-catalog-fit/design/fresh-population.json",
+  "historicalModelResult": "outputs/v115-contrastive-catalog-fit/model-contrastive/result.json",
+  "choiceCatalog": "outputs/v109-open-world-typed-choice/interface/choice-catalog.json",
+  "claimBoundary": "aggregate algebraic identifiability analysis of frozen hypotheses, costs, priors, and the already-frozen V117 channel; not new simulator, language, human, model, prompt, or deployment evidence",
+  "auditPoints": {
+    "reliability": 0.95,
+    "requiredSharedFailureCorrelations": [0.00, 0.25, 0.50],
+    "candidateReferenceChoice": "K00",
+    "candidateDecisiveObservation": ["CONFIRM", "DECLARED"],
+    "unsupportedDecisiveObservation": ["REJECT", "OUTSIDE_VISIBLE"]
+  },
+  "derivations": {
+    "exactCandidatePosteriorThresholdEnvelope": "derive against extreme conditional alternative compositions under the frozen decision costs",
+    "unsupportedPosteriorThresholdEnvelope": "derive against extreme conditional alternative compositions under the frozen decision costs",
+    "priorToPosteriorBayesFactorRequirements": true,
+    "perfectPartitionCeiling": true,
+    "frozenV117EffectiveLikelihoodRatios": true,
+    "strongPriorUnsupportedDecisivePosterior": true,
+    "minimumIndependentExactConfirmationUnits": true,
+    "minimumAdditionalUnsupportedSpecificBayesFactor": true
+  },
+  "outcomeGates": {
+    "requiredExactCandidatePosteriorThresholdMinimum": 0.8947368421052632,
+    "requiredExactCandidatePosteriorThresholdMaximum": 0.9090909090909091,
+    "requiredUnsupportedPosteriorThresholdMinimum": 0.7142857142857143,
+    "requiredUnsupportedPosteriorThresholdMaximum": 0.8333333333333334,
+    "requiredUniformExactCandidateBayesFactorMinimum": 136.0,
+    "maximumFrozenCandidateBayesFactorThroughRequiredCorrelation": 78.0,
+    "requiredPerfectKnownCeiling": 0.96875,
+    "requiredIndependentExactConfirmationUnitCount": 2,
+    "maximumSupplementalUnsupportedSpecificBayesFactorAtStrongPrior": 1.30,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumIndividualRecordEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifAllOutcomeAndAccessGatesPass": "identifiability_boundary_derived_requires_asymmetric_adaptive_evidence",
+    "otherwise": "identifiability_audit_inconclusive_keep_all_successors_closed",
+    "passAuthorizesOnlyPreregisterLanguageFreeAdaptiveCausalSimulator": true,
+    "passAuthorizesLanguageOrModelRun": false,
+    "passAuthorizesProtectedTest": false,
+    "passAuthorizesSchemaInductionOrRicherPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

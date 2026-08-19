@@ -1,0 +1,91 @@
+{
+  "audit": "outputs/v101-massive-population/population-outcome-audit.json",
+  "audit_sha256": "3ec7187965d567afe7693b249a3b76ab0e96046d857ee1dcfd40111e39113f6c",
+  "authorization": {
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_prompt_controls_metrics_and_gates_lock": false,
+    "manually_inspect_selected_language": false,
+    "modify_or_rerun_V101_population_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_selected_language_extraction": true,
+    "reopen_archive_or_extract_language_before_extraction_lock": false,
+    "run_API_model_or_train_adapter": false
+  },
+  "experiment": "v101_massive_population_outcome_lock",
+  "lock_payload_sha256": "ebe1f583114b1e917bca81a10e99ee796f6e468bf474cf92c237e401151b4be0",
+  "outcome": {
+    "decision": "freeze_positive_V101_MASSIVE_population",
+    "passed": true,
+    "population_summary": {
+      "contains_language_tokens_slot_values_or_prompts": false,
+      "development_test_identifiers_are_disjoint": true,
+      "role_class_counts": {
+        "development": {
+          "known_familiar": 64,
+          "known_unfamiliar": 64,
+          "novel_valid": 64,
+          "unsupported": 64
+        },
+        "protected_test": {
+          "known_familiar": 64,
+          "known_unfamiliar": 64,
+          "novel_valid": 64,
+          "unsupported": 64
+        }
+      },
+      "role_class_intent_counts": {
+        "development": {
+          "known_familiar": 8,
+          "known_unfamiliar": 10,
+          "novel_valid": 2,
+          "unsupported": 4
+        },
+        "protected_test": {
+          "known_familiar": 7,
+          "known_unfamiliar": 10,
+          "novel_valid": 2,
+          "unsupported": 4
+        }
+      },
+      "role_class_scenario_counts": {
+        "development": {
+          "known_familiar": 3,
+          "known_unfamiliar": 3,
+          "novel_valid": 2,
+          "unsupported": 1
+        },
+        "protected_test": {
+          "known_familiar": 3,
+          "known_unfamiliar": 3,
+          "novel_valid": 2,
+          "unsupported": 1
+        }
+      },
+      "role_counts": {
+        "development": 256,
+        "protected_test": 256
+      },
+      "selected_candidate_count": 512,
+      "selected_population_sha256": "284e7d464967a385f711e10c8919a31dc4c36f7ab288dd99721d0b96dcc7d8dc",
+      "source_partition_counts": {
+        "test": 256,
+        "validation": 256
+      }
+    },
+    "scientific_population_feasibility_passed": true
+  },
+  "population": "outputs/v101-massive-population/population/selected-population.json",
+  "population_lock": "configs/v101-massive-population-lock.json",
+  "population_lock_sha256": "53577ad3f06787d5f291e5316acb82a2820ac4bdd88d238ac82a411462bb290c",
+  "population_sha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "result": "outputs/v101-massive-population/population/result.json",
+  "result_sha256": "9f2b9bc187245aaf7409812f18a5d7d13ca80eaa3150d52918b339bb7ecce672",
+  "results_document": "docs/v101-massive-population-results.md",
+  "results_document_sha256": "6124a66cd64e4cded29f7c4a7c1cd20a0767306e2930ed7b1fe06d144a46732d",
+  "schema_version": "101-massive-population-outcome-lock",
+  "selected_population_payload_sha256": "284e7d464967a385f711e10c8919a31dc4c36f7ab288dd99721d0b96dcc7d8dc",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "verifier": "python/verify_and_freeze_v101_population_outcome.py",
+  "verifier_sha256": "7e3608231bd70d084f0dec74e54200450ce7d1ebe37b2aa6faf0b1eae49979fb"
+}

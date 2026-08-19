@@ -1,0 +1,163 @@
+{
+  "V130_config": "configs/v130-clarification-evidence-strength.json",
+  "V130_config_sha256": "eebc6a3b3c1f0163ecd376141a4f44dcd264dc036c92f212e7811463a5b05c67",
+  "auditor": "python/audit_and_freeze_v132_local_complete_answer_realization.py",
+  "auditor_sha256": "f2c51c44a447e91a1fef9924f0032897035dc3202ed8d379f58b8f2f991b4eb4",
+  "authorization": {
+    "modify_prompt_catalog_population_model_decoding_gates_or_decision": false,
+    "retry_rerun_or_inspect_raw_responses": false,
+    "run_API_train_grant_authority_or_execute": false,
+    "run_exactly_one_pinned_local_complete_answer_condition": true
+  },
+  "baseline_config": "configs/v106-open-world-development-benchmark.json",
+  "baseline_config_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "choice_catalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "3df849d72abe34dafe3eadeef706f208bf145fbcd367ebd3bc53903d62b83b22",
+  "config": "configs/v132-local-complete-answer-realization.json",
+  "config_payload": {
+    "V130Config": "configs/v130-clarification-evidence-strength.json",
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumAutomaticSelectedLanguageParseCount": 1,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 264,
+      "maximumModelLoadCount": 1,
+      "maximumOriginalProtectedLanguageReadCount": 0,
+      "maximumPersistedSelectedLanguageRecordCount": 240,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceArchiveReadCount": 1
+    },
+    "authorityBoundary": {
+      "actualExecutionCount": 0,
+      "allActionsAreCounterfactualShadowActions": true,
+      "authoritativeStatePosteriorCapabilitiesAndPolicyAreImmutable": true,
+      "completeSafeHypothesisUniverseAlwaysRetained": true,
+      "modelIsPermanentlyNonAuthoritativeEvidenceOnly": true
+    },
+    "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+    "choiceCatalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+    "claimBoundary": "one-pass definition-conditioned realization evidence from record-disjoint SGD current-turn language using one pinned local model; not a human clarification study, unrestricted open-world understanding, independent replication, capability induction, deployment safety, authority, or execution",
+    "completeAnswerInterface": {
+      "acceptAliases": false,
+      "answerSet": "the exact eleven frozen V131 choice identifiers",
+      "completeChoiceMenuShown": true,
+      "extraKeysAllowed": false,
+      "invalidOutputMapsTo": "A00",
+      "knownChoicesExposeFrozenSourceSchemaDefinition": true,
+      "modelMayNotAddRemoveDefineOrExecuteCapability": true,
+      "novelChoicesExposeOnlyDomainAndUndeclaredMeaning": true,
+      "outputKeys": [
+        "choice_id"
+      ],
+      "preliminaryKnownCandidateShownAndExplicitlyFallible": true
+    },
+    "condition": {
+      "controlledMissingObservationCount": 24,
+      "generationCountPerFixture": 1,
+      "id": "qwen38_27b_4bit_v132_complete_answer",
+      "modelLoadLimit": 1,
+      "observedFixtureCount": 240,
+      "quantizationBits": 4,
+      "repository": "mlx-community/Qwen3.8-27B-4bit",
+      "retryCount": 0,
+      "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+      "totalFixtureCount": 264,
+      "totalGenerationCount": 264
+    },
+    "decisionRule": {
+      "ifEvidenceDownstreamAndAccessGatesPass": "local_complete_answer_realizes_V130_boundary_seek_independent_external_confirmation_only",
+      "otherwise": "local_complete_answer_does_not_realize_V130_boundary_close_one_pass_local_realization_branch",
+      "passAuthorizesHumanEquivalenceOrRepeatedSampleIndependenceClaim": false,
+      "passAuthorizesIndependentExternalConfirmationDesignOnly": true,
+      "passAuthorizesProtectedInductionRicherPlanningAPITrainingActionOrExecution": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 32,
+      "retryOnMalformedOutput": false,
+      "samplesPerPrompt": 1,
+      "temperature": 0.0
+    },
+    "downstreamGates": {
+      "answerReliabilityUsedByFrozenPlanner": 0.9725,
+      "assumedErrorRegimes": [
+        "symmetric",
+        "candidate_attraction",
+        "abstention_attraction"
+      ],
+      "maximumActualExecutionCount": 0,
+      "maximumFalseKnownEveryPriorAndAssumedRegime": 0.1,
+      "maximumMeanRegretEveryPriorAndAssumedRegime": 1.1666666666666667,
+      "minimumKnownExactEveryPriorAndAssumedRegime": 0.8,
+      "minimumUnsupportedEveryPriorAndAssumedRegime": 0.8,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "evidenceGates": {
+      "maximumAbstentionAttractedFractionOfErrors": 0.75,
+      "maximumCandidateAttractedFractionOfErrors": 0.75,
+      "maximumFalseKnownAnswerRateOnNonKnownTruths": 0.1,
+      "minimumEveryTruthChoiceAccuracy": 0.95,
+      "minimumKnownExactChoiceAccuracy": 0.9725,
+      "minimumMissingObservationAccuracy": 0.95,
+      "minimumNovelCompositeAccuracy": 0.95,
+      "minimumOneSided95WilsonLowerBound": 0.95,
+      "minimumOverallExactChoiceAccuracy": 0.9725,
+      "minimumStructuredResponseValidity": 0.99,
+      "minimumUnsupportedAccuracy": 0.95
+    },
+    "experiment": "v132_pinned_local_model_complete_clarification_answer_realization",
+    "extraction": {
+      "archiveRevision": "e852981ae34990f4358979625854259302feaa78",
+      "expectedMissingControlCount": 24,
+      "expectedSelectedLanguageRecordCount": 240,
+      "hideGroundTruthClassServiceIntentAndDomainFromPrompt": true,
+      "hideNovelMemberIntentIdentifiers": true,
+      "knownChoiceDefinitionsFromTrainSchema": true,
+      "maximumUnselectedLanguageRecordCount": 0,
+      "persistSelectedLanguage": true,
+      "sourcePartition": "test",
+      "useCurrentUserTurnOnly": true,
+      "useDialogueHistory": false,
+      "useSlotValues": false
+    },
+    "fixturePopulation": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+    "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+    "parentV131OutcomeLock": "configs/v131-complete-clarification-realization-population-outcome-lock.json",
+    "prompt": {
+      "demonstrationCount": 0,
+      "maximumPromptTokens": 4096,
+      "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]",
+      "system": "You are an offline, non-authoritative source of one semantic clarification answer. The preliminary candidate may be wrong. Select exactly one supplied choice identifier. Never invent, register, remove, call, or execute a capability. Return exactly the required JSON object and no explanation."
+    },
+    "schemaVersion": "132-local-complete-answer-realization-design",
+    "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz"
+  },
+  "config_sha256": "26e58f699272e7f0598f73f68294d4f0df735eef1df0caacf65617f05e79bfa8",
+  "design_audit": "outputs/v132-local-complete-answer-realization/design-audit.json",
+  "design_audit_sha256": "5585aac5f8bc31ebcb5123ca870405d4a9be92e2c02758f93242c6ab72d882ff",
+  "experiment": "v132_pinned_local_model_complete_clarification_answer_realization",
+  "fixture_population": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+  "fixture_population_sha256": "1ead9d09af96cbf66fba091936d0fa833e8aa7578d7dfdb5267c61b2e7ca2f83",
+  "lock_payload_sha256": "0f5eacf15f04510021b5298374d63824627152e7e92659f5c7652630f051dbbf",
+  "model_manifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "model_manifest_sha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "parent_analysis_lock": "configs/v131-complete-clarification-realization-population-lock.json",
+  "parent_analysis_lock_sha256": "57a1287ac9b73dbd74630b562d4832773b0aeabfdd32017cf4210bd8326e4b76",
+  "parent_outcome": "configs/v131-complete-clarification-realization-population-outcome-lock.json",
+  "parent_outcome_sha256": "e6ce3795825bc7a13b5e2a128be78d103b4efc481436e4db665195230f3d39c5",
+  "plan": "docs/v132-local-complete-answer-realization-plan.md",
+  "plan_sha256": "398702a9d00697245befcbccf84aea3f1f42de55bc8b642f2a264eab15dfcdfb",
+  "protocol": "python/v132_local_complete_answer_realization.py",
+  "protocol_sha256": "69dfacb18be92a6b11a17956b4acd0bd572d6bceb9269b3b551b65cfafdae8f6",
+  "runner": "python/run_v132_local_complete_answer_realization.py",
+  "runner_sha256": "0824e5f5ded509865f1d02bac87cf79eeb4fd1b09781b845c200a428e3a25d2d",
+  "schema_version": "132-local-complete-answer-realization-lock",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "tests": "python/test_v132_local_complete_answer_realization.py",
+  "tests_sha256": "b8bf51098646afee7350cda45fd7b4d7a6e52766635986b0b83c080695b42e8c",
+  "verifier": "python/verify_and_freeze_v132_local_complete_answer_realization_outcome.py",
+  "verifier_sha256": "d66b858991b8b458cb281c81a7cc56b42f668f7e7c186d1e6889bdf213b9e8c0"
+}

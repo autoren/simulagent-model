@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "102r1-presto-parser-repair-design",
+  "experiment": "v102r1_presto_optional_context_leaf_parser_repair",
+  "parentTechnicalOutcomeLock": "configs/v102-presto-context-source-technical-outcome-lock.json",
+  "unchangedScientificConfig": "configs/v102-presto-context-source.json",
+  "unchangedScientificConfigSha256": "fe764e4d7d766a73f44b7576250cc9ed76e635641f9f709f2be7a46a209872ad",
+  "repairPolicy": {
+    "requireRecordMetadataAndContextContainers": true,
+    "acceptNullContextContainerAsEmpty": true,
+    "useOnlyStringContextLeaves": true,
+    "ignoreNonStringOptionalContextLeaves": true,
+    "neverCoerceNonStringLeavesToStrings": true,
+    "neverEmitContextLeavesOrTheirHashes": true,
+    "preserveTargetArgumentCurrentInputAndContiguousContextMatchRule": true,
+    "preserveEveryScientificCountDiversityAndSplitGate": true,
+    "persistVerifiedArchiveBeforeParsing": true
+  },
+  "preLockExposure": {
+    "priorV102ArchiveDownloadCount": 1,
+    "priorV102LanguageRecordAutomaticParseCompleted": true,
+    "priorV102EmittedLanguageRecordCount": 0,
+    "priorV102ManualUtteranceInspectionCount": 0,
+    "V102r1ArchivePayloadDownloadCount": 0,
+    "V102r1LanguageRecordInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifRepairAuditPasses": "authorize one fresh retrieval of the unchanged pinned archive and run the unchanged V102 scientific gates",
+    "ifAnyScientificGateFails": "freeze the negative result without threshold or eligibility changes",
+    "ifAnotherTechnicalFailureOccurs": "preserve the verified archive and freeze another technical result before any parser change",
+    "passAuthorizesLanguageExtractionOrModelInference": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "audit": "outputs/v105-open-world-interface/interface-outcome-audit.json",
+  "audit_sha256": "fc85168a346c0cbe5830594ab9122cdde67fa9d3382b251286504c38b55c6bc6",
+  "authorization": {
+    "automatically_read_development_language_after_next_benchmark_lock": true,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_baseline_and_benchmark_lock": false,
+    "manually_inspect_protected_test_language": false,
+    "modify_or_rerun_V105_interface": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_baselines_metrics_costs_calibration_and_one_local_model": true,
+    "read_protected_test_before_baseline_and_development_outcomes": false,
+    "run_API_model_or_train_adapter": false
+  },
+  "controlled_insufficient_identifiers": "outputs/v105-open-world-interface/interface/controlled-insufficient-identifiers.json",
+  "controlled_insufficient_identifiers_sha256": "12b204164451ac45bd88a0adc136abca178ed6a07a80ce5701b0cf7c04a4ce92",
+  "experiment": "v105_open_world_interface_outcome_lock",
+  "interface_lock": "configs/v105-open-world-interface-lock.json",
+  "interface_lock_sha256": "7ac661f4d33c6a2ca4c18ebfdd0e151f929b694461ff9f38ef2be0fb5b476671",
+  "interface_manifest": "outputs/v105-open-world-interface/interface/interface-manifest.json",
+  "interface_manifest_sha256": "d7c907c75ebae9c0b5dd8a1e39192ebe5fe799e8015903f0d3dfbe4f99422aef",
+  "lock_payload_sha256": "c879ad33b5fd1a0b77e489f38058ae50f6472208937ce53596c1cee2c89e5a59",
+  "outcome": {
+    "decision": "freeze_positive_V105_open_world_interface",
+    "interface_summary": {
+      "catalog_sha256": "a239f8a87908ac473512ce4d5df4edb02632e0a384301b9aa69dbee2be5e0ca8",
+      "controlled_insufficient_role_counts": {
+        "development": 64,
+        "protected_test": 64
+      },
+      "controlled_payload_sha256": "3388550deeef0d8649e4a5157a6878c27e76fc4a2ea7b153470143660a036b8b",
+      "hidden_or_unsupported_schema_leak_count": 0,
+      "safe_hypothesis_count": 17,
+      "visible_intent_count": 12,
+      "visible_scenario_count": 3,
+      "visible_unique_slot_type_count": 29
+    },
+    "output_integrity": {
+      "controlled_insufficient_identifiers": {
+        "path": "outputs/v105-open-world-interface/interface/controlled-insufficient-identifiers.json",
+        "sha256": "12b204164451ac45bd88a0adc136abca178ed6a07a80ce5701b0cf7c04a4ce92"
+      },
+      "interface_manifest": {
+        "path": "outputs/v105-open-world-interface/interface/interface-manifest.json",
+        "sha256": "d7c907c75ebae9c0b5dd8a1e39192ebe5fe799e8015903f0d3dfbe4f99422aef"
+      },
+      "safe_hypothesis_universe": {
+        "path": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+        "sha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8"
+      },
+      "visible_catalog": {
+        "path": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+        "sha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+      }
+    },
+    "passed": true,
+    "scientific_interface_passed": true
+  },
+  "result": "outputs/v105-open-world-interface/interface/result.json",
+  "result_sha256": "2e6f51c3150b0e3fb8779841bf0d07a63d0bd74fde0d4f7a2daa8db2c2c84137",
+  "results_document": "docs/v105-open-world-interface-results.md",
+  "results_document_sha256": "a370c4ec87bdb9a901f970436f3b2c1a53eb4eddbc7f8069944221788ddc2ae9",
+  "safe_hypothesis_universe": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+  "safe_hypothesis_universe_sha256": "7a50c44d9dd715b498d2a755e6feade75c10cbf4b1faf1deb5e350c9b52449b8",
+  "schema_version": "105-open-world-interface-outcome-lock",
+  "verifier": "python/verify_and_freeze_v105_interface_outcome.py",
+  "verifier_sha256": "989878fb1018fdd5b83af44b8d76cf88aaca8f2d3d2b6dd22df360b549c88855",
+  "visible_catalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "visible_catalog_sha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+}

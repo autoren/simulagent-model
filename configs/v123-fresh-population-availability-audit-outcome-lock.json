@@ -1,0 +1,58 @@
+{
+  "analysis_lock": "configs/v123-fresh-population-availability-audit-lock.json",
+  "analysis_lock_sha256": "d9907938ab8d94651424dba682486b909a0671e2e51170f16aafe68b83016f06",
+  "audit": "outputs/v123-fresh-population-availability-audit/outcome-audit.json",
+  "audit_sha256": "3bb38616d1b712fd42ef0dd26c96c9cede8bf9f844d993e17be1e98a2aa03397",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "evaluate_language_signal_trigger_or_model": false,
+    "modify_rerun_or_shrink_V123": false,
+    "preregister_external_controlled_open_set_source_feasibility_audit": true,
+    "reuse_prior_or_protected_identifiers": false,
+    "run_API_training_action_or_execution": false
+  },
+  "experiment": "v123_fresh_population_availability_outcome_lock",
+  "lock_payload_sha256": "7278740fee1a75bdd23a929766aa35a96b7daa7136fcefd335b22436e6116f3f",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "massive_unused_pool_insufficient_for_fresh_paired_transfer_require_external_source",
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "candidate_requirement_pass": false,
+      "decision": "massive_unused_pool_insufficient_for_fresh_paired_transfer_require_external_source",
+      "individual_candidate_emission_count": 0,
+      "language_read_count": 0,
+      "maximum_balanced_record_count_per_class": 9,
+      "outcome_gates": {
+        "aggregate_only": true,
+        "candidate_requirement_fails": true,
+        "maximum_balanced_count_exact": true,
+        "novel_scenario_coverage_exact": true,
+        "remaining_counts_exact": true,
+        "zero_execution": true,
+        "zero_language": true
+      },
+      "outcome_pass": true,
+      "remaining_counts": {
+        "known_familiar": 38,
+        "known_unfamiliar": 186,
+        "novel_valid": 9,
+        "unsupported": 111
+      },
+      "remaining_scenario_counts": {
+        "known_familiar": 3,
+        "known_unfamiliar": 3,
+        "novel_valid": 1,
+        "unsupported": 1
+      }
+    }
+  },
+  "result": "outputs/v123-fresh-population-availability-audit/audit/result.json",
+  "result_sha256": "591152d26ab1e3caf23a1de10134547a11b187c2977d3603aad9dbc61a8a7267",
+  "results_document": "docs/v123-fresh-population-availability-audit-results.md",
+  "results_document_sha256": "7955ee2f90ef4bbca4d2280b9912bc3dc9ccae591e03a7add8ae8a37e90174df",
+  "schema_version": "123-fresh-population-availability-outcome-lock",
+  "verifier": "python/verify_and_freeze_v123_fresh_population_availability_outcome.py",
+  "verifier_sha256": "b4dd59cc580a60a34247477bcfcf56365dfca2fec44befa62ada7666cccca08d"
+}

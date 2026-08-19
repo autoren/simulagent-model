@@ -1,0 +1,82 @@
+{
+  "auditor": "python/audit_and_freeze_v157_fresh_hard_tie_routing_population.py",
+  "auditor_sha256": "ceee065a2da393d97d49f5ad09c7d096f03a1655ba523afadf5c65bace29123e",
+  "authorization": {
+    "fit_thresholds_or_calibration": false,
+    "open_or_score_evaluation_language_or_metadata": false,
+    "preregister_model_free_development_routing_policy": true,
+    "propose_or_prune_candidate_states": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_model_or_hybrid_before_model_free_routing_feasibility": false,
+    "score_policy_or_read_development_truth_before_separate_lock": false
+  },
+  "config": "configs/v157-fresh-hard-tie-routing-population.json",
+  "config_sha256": "d7b16aa88793b7b0d58a126da9681631b215833d460a85dd8ad227cec047ca2b",
+  "design_audit": "outputs/v157-fresh-hard-tie-routing-population/design-audit.json",
+  "design_audit_sha256": "f370cae36dcc4c0e37fbb257dcb5a4d736ce3e8f1225300fd20d7d67bbfa3fa8",
+  "experiment": "v157_fresh_hard_tie_generic_routing_population",
+  "hidden_fixtures": "outputs/v157-fresh-hard-tie-routing-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "278b7a966c9ca8d802845f593e33da07f5045a67dd3eda45465f9e420edbbf60",
+  "interaction_catalog": "outputs/v157-fresh-hard-tie-routing-population/design/interaction-catalog.json",
+  "interaction_catalog_sha256": "d4ae22033e1ba4980beed6130327b8fd1dfc92ea8d03f44492ffd06cc45382f1",
+  "lock_payload_sha256": "8c001aa79e8a41829464df90c8097d045d71a67512e5d64cf118e48296e52e82",
+  "outcome": {
+    "candidate_proposal_field_count": 0,
+    "decision": "freeze_fresh_hard_tie_routing_population_authorize_separate_model_free_development_policy_preregistration_only",
+    "fresh_hard_tie_routing_population_pass": true,
+    "generic_route_semantic_witness_count": 0,
+    "generic_route_validity": 1.0,
+    "passed": true,
+    "specific_answer_witness_routing": 1.0,
+    "summary": {
+      "choice_count": 9,
+      "family_count": 6,
+      "fixture_count": 384,
+      "group_count": 48,
+      "query_count": 7,
+      "request_fixture_count": 192,
+      "route_fixture_count": 96,
+      "specific_answer_fixture_count": 96,
+      "specific_query_count": 6,
+      "split_counts": {
+        "development": 192,
+        "evaluation": 192
+      },
+      "stage_counts": {
+        "closed_route_family": 48,
+        "closed_route_unclear": 48,
+        "closed_specific_left": 48,
+        "closed_specific_right": 48,
+        "request_insufficient": 48,
+        "request_lexical_control": 48,
+        "request_relational_tie": 48,
+        "request_uncatalogued_paraphrase": 48
+      },
+      "stratum_counts": {
+        "insufficient": 48,
+        "lexical_control": 48,
+        "relational_tie": 48,
+        "trusted_route_family": 48,
+        "trusted_route_unclear": 48,
+        "trusted_specific_left": 48,
+        "trusted_specific_right": 48,
+        "uncatalogued_paraphrase": 48
+      }
+    }
+  },
+  "parent_outcome": "configs/v156-model-free-explicit-metadata-question-retrieval-outcome-lock.json",
+  "parent_outcome_sha256": "db5e53acd45b49f3e8010586eb2978412479720a5aee541b32f43ea8cde26e3d",
+  "plan": "docs/v157-fresh-hard-tie-routing-population-plan.md",
+  "plan_sha256": "66d45b4c0200072ac78a5ebc4b365fa6110662ac22fbffc91d13a2599996324d",
+  "population_summary": "outputs/v157-fresh-hard-tie-routing-population/design/population-summary.json",
+  "population_summary_sha256": "0e2e665da085482aeec9f997c25ea9438c35968ab59496f4bae05b94ebf1e1b8",
+  "protocol": "python/v157_fresh_hard_tie_routing_population.py",
+  "protocol_sha256": "d64d3e98b8c3c70551c7b79502cb9770a8bdf6c9bb2e0e8c66fbd208722bc070",
+  "public_fixtures": "outputs/v157-fresh-hard-tie-routing-population/design/public-fixtures.json",
+  "public_fixtures_sha256": "89c95f57c71f9cc84098268a2fc1097c605e085b8dfd5236d5b362c7eeb2b859",
+  "results_document": "docs/v157-fresh-hard-tie-routing-population-results.md",
+  "results_document_sha256": "f800e509e143c7cdebe3f07578db5534c3d53d0ad264d83db502074ac3226008",
+  "schema_version": "157-fresh-hard-tie-routing-population-outcome-lock",
+  "tests": "python/test_v157_fresh_hard_tie_routing_population.py",
+  "tests_sha256": "b47ac4029e7b57597b82387d1572c93b70768213b42530797d2f148deefc644f"
+}

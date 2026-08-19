@@ -1,0 +1,452 @@
+{
+  "V112_config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFreshDevelopmentLanguageReadCount": 1,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 240,
+      "maximumModelLoadCount": 1,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0
+    },
+    "authorityBoundary": {
+      "allActionsAreCounterfactualShadowActions": true,
+      "authoritativeStatePosteriorCapabilitiesAndPolicyAreImmutable": true,
+      "completeSafeHypothesisUniverseMayNotBePruned": true,
+      "modelIsPermanentlyNonAuthoritativeEvidenceOnly": true,
+      "modelMayNotSelectActionOrExecuteTool": true,
+      "novelCandidateDoesNotEnterCapabilityCatalog": true,
+      "realExecutionCount": 0
+    },
+    "choiceCatalog": "outputs/v109-open-world-typed-choice/interface/choice-catalog.json",
+    "comparators": [
+      "ask_always",
+      "direct_llm",
+      "fixed_v110_character_retrieval",
+      "validated_novelty_evidence_policy",
+      "oracle"
+    ],
+    "condition": {
+      "controlledMissingObservationCount": 48,
+      "id": "qwen38_27b_4bit_v112_fresh_transfer",
+      "modelLoadLimit": 1,
+      "observedGenerationCount": 192,
+      "quantizationBits": 4,
+      "repository": "mlx-community/Qwen3.8-27B-4bit",
+      "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+      "totalGenerationCount": 240,
+      "weightBytes": 16054541349
+    },
+    "decisionRule": {
+      "ifEveryQualityAndAccessGatePasses": "freeze fresh full-policy transfer and separately preregister protected-test confirmation",
+      "ifNovelEvidenceFails": "close abstention-as-novelty branch and require a genuinely new contrastive or multi-turn evidence source",
+      "ifNovelEvidencePassesButFullPolicyFails": "retain positive detector boundary but redesign downstream decision policy on a new population",
+      "passAuthorizesProtectedTestImmediately": false,
+      "passAuthorizesSchemaInductionImmediately": false,
+      "passAuthorizesSequentialPlanningAPITrainingCapabilityActionOrExecution": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 64,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "excludedV101Population": "outputs/v101-massive-population/population/selected-population.json",
+    "experiment": "v112_fresh_massive_non_authoritative_novelty_evidence_policy_transfer",
+    "extraction": {
+      "canonicalSourcePartitionMap": {
+        "dev": "validation",
+        "test": "test",
+        "train": "train"
+      },
+      "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+      "maximumUnselectedLanguageRecordCount": 0,
+      "requiredRecordCount": 192,
+      "requiredRecordCountPerClass": 48,
+      "role": "development_transfer"
+    },
+    "fixedRetrievalThresholds": {
+      "known": 0.8,
+      "unsupported": 0.3
+    },
+    "freshPopulation": {
+      "baseSalt": "simulagent-v112-fresh-full-policy-transfer-v1",
+      "classes": [
+        "known_familiar",
+        "known_unfamiliar",
+        "novel_valid",
+        "unsupported"
+      ],
+      "excludeEveryV101DevelopmentAndProtectedIdentifier": true,
+      "manualLanguageInspection": false,
+      "recordCountPerClass": 48,
+      "requiredScenarioCoverage": {
+        "known_familiar": 3,
+        "known_unfamiliar": 3,
+        "novel_valid": 2,
+        "unsupported": 1
+      },
+      "selectionBeforeFreshLanguageExtraction": true,
+      "selectionUsesOnlyFrozenIdentifierClassPartitionAndScenario": true,
+      "sourcePartition": "validation"
+    },
+    "frozenPolicy": {
+      "abstainActionConfidence": 0.0,
+      "completeSafeHypothesisUniverseAlwaysRetained": true,
+      "confidenceCalibrationSource": "exact aggregate V109 128-record historical development population, frozen before V112 selection language extraction or model generation",
+      "knownActionConfidence": 0.9180327868852459,
+      "negativeNovelEvidenceProbability": 0.14953271028037382,
+      "novelEvidenceCannotDefineSchemaCapabilityActionOrExecution": true,
+      "novelEvidenceRule": "direct typed status ABSTAIN raises novel_candidate=true but never authoritatively emits NOVEL",
+      "otherwiseRule": "emit ABSTAIN and ASK_FOR_CLARIFICATION",
+      "positiveNovelEvidenceProbability": 0.7619047619047619,
+      "unsupportedActionConfidence": 0.875,
+      "unsupportedRule": "emit shadow UNSUPPORTED when direct typed status is UNSUPPORTED",
+      "validatedKnownRule": "emit shadow KNOWN only when direct status is KNOWN and its exact intent equals deterministic nearest-intent retrieval"
+    },
+    "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+    "parentSeparabilityOutcomeLock": "configs/v111-open-world-separability-audit-outcome-lock.json",
+    "prompt": {
+      "demonstrationCount": 0,
+      "maximumPromptTokens": 4096,
+      "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]",
+      "system": "You are an offline, non-authoritative semantic proposer. Select exactly one supplied choice ID. Never call a tool, choose an action, alter the choices, or remove a hypothesis. Return exactly the required JSON object and no explanation."
+    },
+    "qualityGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumNovelEvidenceECE": 0.15,
+      "maximumNovelEvidenceNonNovelFalsePositiveRate": 0.1,
+      "maximumPolicyConfidenceECE": 0.15,
+      "maximumPolicyFalseKnownAcceptanceRate": 0.1,
+      "maximumPolicyMeanDecisionRegret": 1.125,
+      "maximumPolicyTopConfidence80PercentError": 0.2,
+      "minimumControlledMissingObservationAbstentionAccuracy": 0.95,
+      "minimumNovelEvidencePrecision": 0.7,
+      "minimumNovelEvidenceRecall": 0.5,
+      "minimumPolicyKnownExactIntentAccuracy": 0.8,
+      "minimumPolicyObservedExactDecisionAccuracy": 0.6,
+      "minimumPolicyObservedStatusMacroF1": 0.55,
+      "minimumPolicyUnsupportedStatusPrecision": 0.8,
+      "minimumPolicyUnsupportedStatusRecall": 0.8,
+      "minimumStructuredResponseValidity": 0.98,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "schemaVersion": "112-open-world-full-policy-transfer-design",
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+    "typedChoiceInterface": {
+      "acceptAliases": false,
+      "acceptQualifiedIntentOutsideChoiceId": false,
+      "choiceWidth": 2,
+      "deterministicallyExpandChoiceAfterValidation": true,
+      "insufficientEvidenceChoiceId": "A00",
+      "invalidOutputMapsToZeroConfidenceAbstain": true,
+      "knownChoicePrefix": "K",
+      "novelScenarioChoicePrefix": "N",
+      "outputKeys": [
+        "choice_id",
+        "confidence"
+      ],
+      "requiredChoiceCount": 17,
+      "unsupportedChoiceId": "U00"
+    },
+    "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json"
+  },
+  "auditor": "python/audit_and_freeze_v112r1_aggregation_recovery.py",
+  "auditor_sha256": "43ebae28b91a2c54a829d50eaa6d6ed3be2ff084db1056084f5f3079170fbba6",
+  "authorization": {
+    "load_or_generate_with_model": false,
+    "manually_inspect_language_or_raw_response": false,
+    "modify_V112_population_language_prompt_model_response_policy_metric_gate_or_decision": false,
+    "read_protected_test_run_API_train_or_execute": false,
+    "run_one_aggregation_only_recovery": true
+  },
+  "baseline_config_payload": {
+    "authorityBoundary": {
+      "allActionsAreCounterfactualShadowActions": true,
+      "authoritativeCapabilityStatePosteriorAndPolicyAreImmutable": true,
+      "modelMayNotSelectActionOrExecuteTool": true,
+      "realExecutionCount": 0,
+      "safeHypothesisUniverseMayNotBePruned": true
+    },
+    "baselineOutcomeGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumTrainingRecordCountPerDeclaredIntent": 1,
+      "requiredBaselineNames": [
+        "complete_safe_enumeration",
+        "ask_always",
+        "identifier_grammar",
+        "character_ngram_retrieval",
+        "oracle"
+      ],
+      "requiredCalibrationRecordCount": 128,
+      "requiredCompleteSafeEnumerationTrueHypothesisRetention": 1.0,
+      "requiredControlledMissingObservationCount": 64,
+      "requiredEvaluationRecordCount": 128,
+      "requiredOracleExactDecisionAccuracy": 1.0,
+      "requiredOracleMeanRegret": 0.0,
+      "requiredTrainingDeclaredIntentCount": 12
+    },
+    "controlledInsufficientIdentifiers": "outputs/v105-open-world-interface/interface/controlled-insufficient-identifiers.json",
+    "decisionCosts": {
+      "insufficient": {
+        "abstain": 0.0,
+        "known": 10.0,
+        "novel": 6.0,
+        "unsupported": 4.0
+      },
+      "known": {
+        "abstain": 1.0,
+        "exact_known": 0.0,
+        "novel": 3.0,
+        "unsupported": 6.0,
+        "wrong_known": 10.0
+      },
+      "novel": {
+        "abstain": 1.5,
+        "exact_novel": 0.0,
+        "known": 10.0,
+        "unsupported": 4.0,
+        "wrong_novel_scenario": 5.0
+      },
+      "unsupported": {
+        "abstain": 1.0,
+        "known": 10.0,
+        "novel": 4.0,
+        "unsupported": 0.0
+      }
+    },
+    "decisionRule": {
+      "baselinePassAuthorizesAPITrainingPlanningOrExecution": false,
+      "baselinePassAuthorizesOneLocalModelDevelopmentRun": true,
+      "baselinePassAuthorizesProtectedTestAccess": false,
+      "ifAnyBaselineOutcomeGateFails": "stop before model or protected-test access",
+      "ifEveryBaselineOutcomeGatePasses": "freeze development baseline outcome and separately audit one local-model implementation"
+    },
+    "deterministicBaselines": {
+      "ask_always": "ABSTAIN for every observed request",
+      "character_ngram_retrieval": {
+        "constraint": "unsupported threshold must be strictly below known threshold",
+        "knownThresholdGrid": [
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8
+        ],
+        "nearestNeighborTieBreak": "lexicographically first sorted training record",
+        "selectionObjective": "minimum calibration mean decision regret; ties use maximum exact decision accuracy, minimum false-known acceptance, then lexicographically smallest thresholds",
+        "trainingData": "MASSIVE train utterances for the 12 declared intents only",
+        "unsupportedThresholdGrid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6
+        ],
+        "vectorizer": "sklearn TfidfVectorizer analyzer=char_wb ngram_range=(3,5) lowercase=true min_df=1 norm=l2 dtype=float64"
+      },
+      "complete_safe_enumeration": "retain all 17 safe hypotheses and abstain; structural retention control",
+      "identifier_grammar": "token overlap against visible intent and scenario identifiers only; exact fixed rule",
+      "oracle": "exact frozen truth contract; scoring and lower-bound control only"
+    },
+    "deterministicRuntime": {
+      "mlxLmVersionReservedForFutureModelStage": "0.31.3",
+      "numpyVersion": "2.5.1",
+      "scikitLearnVersion": "1.9.0"
+    },
+    "developmentLanguage": "outputs/v104-massive-language/selected-language/development.jsonl",
+    "developmentLanguageSha256": "dd6621ced78272e713b7cd4f8fdbdd7ad0a201fa59a507ef503e92d86b7853b0",
+    "developmentSplit": {
+      "calibrationCountPerClass": 32,
+      "classes": [
+        "known_familiar",
+        "known_unfamiliar",
+        "novel_valid",
+        "unsupported"
+      ],
+      "evaluationCountPerClass": 32,
+      "manualLanguageInspection": false,
+      "salt": "simulagent-v106-development-calibration-evaluation-v1",
+      "splitUsesOnlyFrozenRecordIdentifierAndClass": true
+    },
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "experiment": "v106_massive_open_world_deterministic_development_benchmark",
+    "futureLocalModelCondition": {
+      "developmentGenerationCountIfAuthorized": 192,
+      "id": "qwen38_27b_4bit",
+      "localSnapshot": "/Users/kkmini/.cache/huggingface/hub/models--mlx-community--Qwen3.8-27B-4bit/snapshots/3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+      "maximumNewTokens": 160,
+      "repository": "mlx-community/Qwen3.8-27B-4bit",
+      "retryOnMalformedOutput": false,
+      "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+      "role": "non-authoritative shadow ranker only",
+      "samplesPerRecord": 1,
+      "selectionReason": "one high-capacity local challenger; no ensemble or API; prior V90 found no semantic recovery from the 8-bit duplicate",
+      "temperature": 0.0,
+      "thinking": false
+    },
+    "futureModelDevelopmentGates": {
+      "maximumConfidenceECE": 0.15,
+      "maximumFalseKnownAcceptanceRate": 0.1,
+      "maximumMeanDecisionRegret": 1.5,
+      "maximumRegretAboveBestNonOracleDeterministicBaseline": 0.25,
+      "maximumTopConfidence80PercentError": 0.2,
+      "minimumControlledMissingObservationAbstentionAccuracy": 0.95,
+      "minimumKnownExactIntentAccuracy": 0.8,
+      "minimumNovelExactScenarioAccuracy": 0.8,
+      "minimumNovelStatusPrecision": 0.7,
+      "minimumNovelStatusRecall": 0.7,
+      "minimumObservedExactDecisionAccuracy": 0.7,
+      "minimumObservedStatusMacroF1": 0.7,
+      "minimumStructuredResponseValidity": 0.98,
+      "minimumUnsupportedStatusPrecision": 0.8,
+      "minimumUnsupportedStatusRecall": 0.8
+    },
+    "parentInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedTestLanguageReadCount": 0,
+      "selectedDevelopmentLanguageReadCount": 0
+    },
+    "protectedTestLanguage": "outputs/v104-massive-language/selected-language/protected-test.jsonl",
+    "protectedTestLanguageSha256": "9d80958347e2aa4c967e7c5b6c57b30e92db78064650f9475ccecfa7cbdebd8e",
+    "registeredMetrics": [
+      "exact structured response validity",
+      "observed exact decision accuracy",
+      "KNOWN NOVEL UNSUPPORTED status precision recall and macro F1",
+      "known exact-intent accuracy",
+      "novel exact-scenario accuracy",
+      "false-known acceptance on non-known requests",
+      "confidence ECE with ten fixed bins",
+      "predicted-decision correctness Brier score",
+      "error among top-confidence 80 percent coverage",
+      "mean shadow decision regret",
+      "per-class mean regret",
+      "controlled missing-observation abstention accuracy",
+      "safe true-hypothesis retention"
+    ],
+    "safeHypothesisUniverse": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+    "schemaVersion": "106-open-world-development-benchmark-design",
+    "shadowActionMapping": {
+      "ABSTAIN": "ASK_FOR_CLARIFICATION",
+      "KNOWN": "EXECUTE_DECLARED_INTENT",
+      "NOVEL": "SANDBOX_REVIEW",
+      "UNSUPPORTED": "REJECT_UNSUPPORTED"
+    },
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+    "truthContract": {
+      "controlled_missing_observation": "ABSTAIN",
+      "known_familiar": "KNOWN with exact declared scenario::intent",
+      "known_unfamiliar": "KNOWN with exact declared scenario::intent",
+      "novel_valid": "NOVEL with exact visible scenario",
+      "unsupported": "UNSUPPORTED"
+    },
+    "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json"
+  },
+  "config": "configs/v112r1-full-policy-aggregation-recovery.json",
+  "config_payload": {
+    "authorizedRepair": {
+      "changesPopulationLanguagePromptModelResponsePolicyThresholdConfidenceMetricGateOrDecision": false,
+      "description": "pass each record to the ask_always_prediction helper's intentionally unused positional argument",
+      "manualLanguageOrRawResponseInspection": false,
+      "newModelLoadOrGeneration": false
+    },
+    "decisionRule": {
+      "ifRecoveryIntegrityPasses": "freeze recovered V112 quality outcome",
+      "passAuthorizesProtectedTestImmediately": false,
+      "passAuthorizesSchemaInductionSequentialPlanningAPITrainingActionOrExecution": false,
+      "reuseEveryV112PopulationPolicyMetricGateAndDecisionExactly": true
+    },
+    "experiment": "v112r1_preserved_fixture_mechanical_aggregation_recovery",
+    "freshLanguage": "outputs/v112-open-world-full-policy-transfer/fresh-language/development-transfer.jsonl",
+    "parentFailure": "outputs/v112-open-world-full-policy-transfer/model-policy-transfer/failure.json",
+    "parentV112ImplementationLock": "configs/v112-open-world-full-policy-transfer-lock.json",
+    "rawFixtureDirectory": "outputs/v112-open-world-full-policy-transfer/model-policy-transfer/raw-fixtures",
+    "registeredFailure": {
+      "exceptionMessage": "ask_always_prediction() missing 1 required positional argument: '_'",
+      "exceptionType": "TypeError",
+      "requiredCompletedFixtureCount": 240,
+      "requiredModelGenerationCount": 240,
+      "requiredModelLoadCount": 1,
+      "stage": "gate_aggregation"
+    },
+    "schemaVersion": "112r1-full-policy-aggregation-recovery-design"
+  },
+  "config_sha256": "38883d5352ac61e7ff1a224bf6588eb98d467a892851f0af37b322aefbe6766a",
+  "design_audit": "outputs/v112r1-full-policy-aggregation-recovery/design-audit.json",
+  "design_audit_sha256": "0a6b4eb58183120f2f4223e46122a1989aba18db874d31b6cf859501f3f2e038",
+  "experiment": "v112r1_preserved_fixture_mechanical_aggregation_recovery",
+  "fixture_manifest": "outputs/v112r1-full-policy-aggregation-recovery/design/preserved-fixture-manifest.json",
+  "fixture_manifest_sha256": "1ec25e00e11addabfe61b13cbd7ba121d931346fa1bbab1147eeb721434d0149",
+  "fresh_language": "outputs/v112-open-world-full-policy-transfer/fresh-language/development-transfer.jsonl",
+  "fresh_language_sha256": "9f04111503237714e2ea737fd0ad51fe7f7fb1c056269359bb2674d34aa73590",
+  "fresh_population": "outputs/v112-open-world-full-policy-transfer/design/fresh-population.json",
+  "fresh_population_sha256": "3c1b033574e431d0f8ca148f2951d59224580645baa74d73164bd5697a22d3f3",
+  "lock_payload_sha256": "7a5132309946174f38579a906bf6af0e93d9cc20469d1e1dd77e8f5148a46c1f",
+  "parent_failure": "outputs/v112-open-world-full-policy-transfer/model-policy-transfer/failure.json",
+  "parent_failure_sha256": "108a545c5ad6550983021e6a9fe240be27aab9032345609585349ea6cd9c7edd",
+  "parent_lock": "configs/v112-open-world-full-policy-transfer-lock.json",
+  "parent_lock_sha256": "9e492f651baa8ab0f24d0128dc644f05d389367aa190a2ac943e3e5cfe44ff58",
+  "plan": "docs/v112r1-full-policy-aggregation-recovery-plan.md",
+  "plan_sha256": "d4d3084dc96fe85deb38e5d835919722bc4e34bb11f428a30781717e6732a451",
+  "preserved_access": {
+    "LLM_API_call_count": 0,
+    "adapter_training_run_count": 0,
+    "condition_id": "qwen38_27b_4bit_v112_fresh_transfer",
+    "elapsed_seconds": 2259.89554804191,
+    "external_side_effect_count": 0,
+    "fresh_development_language_read_count": 1,
+    "manual_language_or_raw_response_inspection_count": 0,
+    "model_generation_count": 240,
+    "model_load_count": 1,
+    "model_load_seconds": 1.1632761668879539,
+    "peak_active_memory_bytes": 17005349960,
+    "protected_test_language_read_count": 0,
+    "real_service_call_count": 0
+  },
+  "protocol": "python/v112r1_full_policy_aggregation.py",
+  "protocol_sha256": "c352a636a8c26eac4727e93c36f16d63340b4327c64be27b3aaf14760c65e66f",
+  "runner": "python/run_v112r1_full_policy_aggregation.py",
+  "runner_sha256": "fe07aa3ec727b63bb4a7b8c8e089890230fa230542b7deb8cda894255f823f43",
+  "schema_version": "112r1-full-policy-aggregation-recovery-lock",
+  "source_archive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "source_archive_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "tests": "python/test_v112r1_full_policy_aggregation.py",
+  "tests_sha256": "2bc0ebe109fa82d9a687e63aab8d091179f41bee1102595ba13d839b270d5a85",
+  "verifier": "python/verify_and_freeze_v112r1_aggregation_outcome.py",
+  "verifier_sha256": "579f1f6a5546f60536c08a0ab07c14df4f90ffc2403770905e664b62d845c23a",
+  "visible_catalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "visible_catalog_sha256": "834a483c1dbb8b53b77cc9d55b52a194cc7256c58e68d7eea4fd7fc524d84bdc"
+}

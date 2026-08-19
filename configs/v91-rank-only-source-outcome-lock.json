@@ -1,0 +1,65 @@
+{
+  "audit": "outputs/v91-rank-only/source-outcome-audit.json",
+  "audit_sha256": "2ff1458982756d23de3438cbd7af3e3cb1bc3686c3a1f7126ff8b8e0503a3df2",
+  "authorization": {
+    "grant_model_pruning_belief_action_or_execution_authority": false,
+    "load_model_before_population_prompt_controls_gates_and_invariance_lock": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_source_extension": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_fresh_hash_selected_rank_only_shadow_population": true,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_utterance_extraction": true
+  },
+  "experiment": "v91_rank_only_source_outcome_lock",
+  "inventory": "outputs/v91-rank-only/source-inventory/structural-inventory.json",
+  "inventory_sha256": "60471ba1359329fe32c994201ae53f988d1019440fe3430c89f8bb129c7d170c",
+  "lock_payload_sha256": "89fd2fa2fbce3ed33e37f030d5d1bb923ae5ac262499726443c27194c4fe01e6",
+  "outcome": {
+    "decision": "freeze_source_and_preregister_fresh_rank_only_population",
+    "inventory_summary": {
+      "contains_utterance_or_text_fields": false,
+      "counts": {
+        "dialogue_count": 128,
+        "eligible_active_record_count": 794,
+        "eligible_none_record_count": 72,
+        "eligible_record_count": 866,
+        "non_user_turn_count": 866,
+        "turn_count": 1732,
+        "user_turn_count": 866
+      },
+      "eligible_intent_counts": {
+        "Alarm_1::AddAlarm": 126,
+        "Alarm_1::GetAlarms": 55,
+        "Alarm_1::NONE": 18,
+        "Homes_1::FindApartment": 72,
+        "Homes_1::NONE": 10,
+        "Services_4::BookAppointment": 227,
+        "Services_4::FindProvider": 185,
+        "Services_4::NONE": 25,
+        "Weather_1::GetWeather": 129,
+        "Weather_1::NONE": 19
+      },
+      "eligible_service_counts": {
+        "Alarm_1": 199,
+        "Homes_1": 82,
+        "Services_4": 437,
+        "Weather_1": 148
+      },
+      "record_index_sha256": "a6e9f4769623666099e307aa4e597ad9629b3e0341110e912c8fa9b622c584a0"
+    },
+    "passed": true
+  },
+  "result": "outputs/v91-rank-only/source-inventory/result.json",
+  "result_sha256": "eedf289fb5a5688f7e1dd9490c18998fd97b9fc1dad10f95ff4ed6679060e2ea",
+  "results_document": "docs/v91-rank-only-source-results.md",
+  "results_document_sha256": "e9f5c36f1a3545608f03504da540456a630d60d9cd5f9413b56a43d4ab1fa1b7",
+  "schema_version": "91-rank-only-source-outcome-lock",
+  "source_file": "outputs/v91-rank-only/source/dialogues_003.json",
+  "source_file_git_blob_sha1": "6abbd79ddd2c58c386ca9cfb748bb55a4efd7be5",
+  "source_file_sha256": "5915cea36b77de920fbd66569333db2395626ec465ba23e2f0caa77fba2e5dae",
+  "source_lock": "configs/v91-rank-only-source-lock.json",
+  "source_lock_sha256": "86d580795f27a4405aaf816627447980f95f9459a7ad2e86e927a6a0867f0df4",
+  "verifier": "python/verify_and_freeze_v91_source_outcome.py",
+  "verifier_sha256": "ee4af1b432d3f3dc840794cff40a23a891aa6920f23ee8d653c1f5a37d8be211"
+}

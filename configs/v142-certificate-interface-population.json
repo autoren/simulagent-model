@@ -1,0 +1,280 @@
+{
+  "schemaVersion": "142-certificate-interface-population",
+  "experiment": "v142_fresh_evidence_certificate_interface_and_population",
+  "parentV141OutcomeLock": "configs/v141-two-stage-controller-feasibility-outcome-lock.json",
+  "claimBoundary": "fresh project-authored controlled-language development asset and typed certificate interface; not externally authored transfer, unrestricted open-world understanding, model performance, calibration, deployment safety, induction, authority, action, or execution",
+  "catalog": {
+    "choices": [
+      {
+        "choice_id": "K11",
+        "kind": "KNOWN",
+        "title": "change_existing_medical_appointment",
+        "boundary": "Change the date or time of an already booked visit with a clinic or clinician. Excludes medication orders or shipments."
+      },
+      {
+        "choice_id": "K12",
+        "kind": "KNOWN",
+        "title": "pause_or_cancel_media_subscription",
+        "boundary": "Pause or cancel an entertainment, news, or streaming subscription. Excludes utility service and retroactive erasure of completed charges."
+      },
+      {
+        "choice_id": "K13",
+        "kind": "KNOWN",
+        "title": "track_existing_grocery_delivery",
+        "boundary": "Check location, status, or arrival time of an existing grocery delivery. Excludes medication shipments and erasing a completed delivery from history."
+      },
+      {
+        "choice_id": "K14",
+        "kind": "KNOWN",
+        "title": "check_owned_device_warranty",
+        "boundary": "Check manufacturer or retailer repair coverage for a device the user owns. Excludes insurance or damage waivers for rented equipment."
+      },
+      {
+        "choice_id": "N11",
+        "kind": "VALID_UNDECLARED",
+        "title": "manage_recurring_medication_shipment",
+        "boundary": "Change or track a recurring prescribed-medication shipment. This is valid but not a declared capability. Excludes medical appointments."
+      },
+      {
+        "choice_id": "N12",
+        "kind": "VALID_UNDECLARED",
+        "title": "pause_utility_service",
+        "boundary": "Pause or restart electricity, water, or fixed internet service for an account. This is valid but not a declared capability. Excludes media subscriptions."
+      },
+      {
+        "choice_id": "N13",
+        "kind": "VALID_UNDECLARED",
+        "title": "check_rented_equipment_damage_coverage",
+        "boundary": "Check insurance or damage-waiver coverage for rented tools or equipment. This is valid but not a declared capability. Excludes warranties for owned devices."
+      },
+      {
+        "choice_id": "U10",
+        "kind": "UNSUPPORTED",
+        "title": "retroactively_erase_completed_event",
+        "boundary": "Make a completed charge, delivery, or real-world event never have occurred. This request is impossible or unsupported."
+      },
+      {
+        "choice_id": "A00",
+        "kind": "INSUFFICIENT_EVIDENCE",
+        "title": "insufficient_evidence",
+        "boundary": "The visible conversation is compatible with multiple supplied choices and does not safely identify one."
+      }
+    ]
+  },
+  "certificateContract": {
+    "requiredKeys": ["evidence_status", "compatible_choice_ids", "proposed_choice_id"],
+    "extraKeysAllowed": false,
+    "evidenceStatusValues": ["SUFFICIENT", "INSUFFICIENT"],
+    "choiceIdsMustComeFromCompleteCatalog": true,
+    "compatibleChoiceIdsMustBeSortedUniqueAndNonempty": true,
+    "compatibleChoiceIdsExcludeA00": true,
+    "sufficientRequiresSingletonCompatibleSetAndMatchingProposal": true,
+    "insufficientRequiresAtLeastTwoCompatibleChoicesAndA00Proposal": true,
+    "certificateIsPermanentlyNonAuthoritative": true,
+    "certificateNeverPrunesAuthoritativeHypothesisUniverse": true
+  },
+  "deterministicFinalizer": {
+    "validSufficientSingletonReturnsProposedChoice": true,
+    "validInsufficientCertificateReturnsA00": true,
+    "invalidMissingTruncatedOrInconsistentCertificateReturnsA00": true,
+    "outputIsProgrammaticallySerializedExactChoiceJson": true,
+    "modelDoesNotGenerateFinalOutputSyntax": true,
+    "actualExecutionCount": 0
+  },
+  "population": {
+    "familyCount": 6,
+    "groupsPerFamily": 8,
+    "groupCount": 48,
+    "fixturesPerGroup": 6,
+    "fixtureCount": 288,
+    "developmentGroupCount": 24,
+    "testGroupCount": 24,
+    "developmentFixtureCount": 144,
+    "testFixtureCount": 144,
+    "stages": [
+      "clear_known_familiar",
+      "clear_known_unfamiliar",
+      "clear_right",
+      "ambiguous",
+      "clarified_known",
+      "clarified_right"
+    ]
+  },
+  "families": [
+    {
+      "family_id": "medical_visit_vs_medication_shipment",
+      "left_choice_id": "K11",
+      "right_choice_id": "N11",
+      "presented_candidate_choice_id": "K11",
+      "question": "Is this the booked clinician visit or the recurring medication shipment?",
+      "known_familiar": "Reschedule my medical appointment with {provider} from {old_time} to {new_time}.",
+      "known_unfamiliar": "Shift my visit slot with {provider} from {old_time} to {new_time}.",
+      "right_clear": "Move my recurring prescription shipment from {old_time} to {new_time}.",
+      "ambiguous": "Move it from {old_time} to {new_time}.",
+      "left_answer": "It is the booked visit with {provider}.",
+      "right_answer": "It is the recurring prescription package.",
+      "slot_variants": [
+        {"provider": "Dr. Chen", "old_time": "Tuesday", "new_time": "Friday"},
+        {"provider": "Lakeside Clinic", "old_time": "9 AM", "new_time": "2 PM"},
+        {"provider": "Dr. Patel", "old_time": "March 3", "new_time": "March 8"},
+        {"provider": "Northview Health", "old_time": "Monday", "new_time": "Thursday"},
+        {"provider": "Dr. Roy", "old_time": "10 AM", "new_time": "4 PM"},
+        {"provider": "Harbour Clinic", "old_time": "April 5", "new_time": "April 9"},
+        {"provider": "Dr. Singh", "old_time": "Wednesday", "new_time": "Saturday"},
+        {"provider": "Cedar Health", "old_time": "1 PM", "new_time": "3 PM"}
+      ]
+    },
+    {
+      "family_id": "media_subscription_vs_utility_service",
+      "left_choice_id": "K12",
+      "right_choice_id": "N12",
+      "presented_candidate_choice_id": "K12",
+      "question": "Is this the media plan or the household utility account?",
+      "known_familiar": "Pause my {media} streaming subscription after {period}.",
+      "known_unfamiliar": "Put the monthly {media} viewing plan on hold after {period}.",
+      "right_clear": "Pause {utility} service at {address} after {period}.",
+      "ambiguous": "Put my service on hold after {period}.",
+      "left_answer": "It is the monthly media viewing plan.",
+      "right_answer": "It is the household {utility} account.",
+      "slot_variants": [
+        {"media": "NorthStar", "utility": "electricity", "address": "14 King Street", "period": "this billing cycle"},
+        {"media": "FilmBox", "utility": "water", "address": "82 Pine Road", "period": "Friday"},
+        {"media": "NewsPlus", "utility": "internet", "address": "6 Harbour Lane", "period": "May 1"},
+        {"media": "SportsNow", "utility": "electricity", "address": "31 Cedar Avenue", "period": "next month"},
+        {"media": "DramaCloud", "utility": "water", "address": "9 Lake Drive", "period": "June 4"},
+        {"media": "ViewPoint", "utility": "internet", "address": "77 Queen Street", "period": "Sunday"},
+        {"media": "DocuStream", "utility": "electricity", "address": "20 Elm Court", "period": "the renewal date"},
+        {"media": "KidsScreen", "utility": "water", "address": "5 Maple Way", "period": "July 2"}
+      ]
+    },
+    {
+      "family_id": "owned_warranty_vs_rental_coverage",
+      "left_choice_id": "K14",
+      "right_choice_id": "N13",
+      "presented_candidate_choice_id": "K14",
+      "question": "Do you own the device under warranty, or is it rented equipment with a damage waiver?",
+      "known_familiar": "Is my owned {device} still under manufacturer warranty for {issue}?",
+      "known_unfamiliar": "If the {device} I bought develops {issue}, is the maker still responsible for repair?",
+      "right_clear": "Does the damage waiver on my rented {equipment} cover {issue}?",
+      "ambiguous": "Am I covered if it develops {issue}?",
+      "left_answer": "I bought and own the {device}.",
+      "right_answer": "It is rented {equipment} with a damage waiver.",
+      "slot_variants": [
+        {"device": "laptop", "equipment": "power drill", "issue": "a failed battery"},
+        {"device": "tablet", "equipment": "camera", "issue": "a cracked screen"},
+        {"device": "monitor", "equipment": "floor sander", "issue": "a dead power supply"},
+        {"device": "phone", "equipment": "projector", "issue": "water damage"},
+        {"device": "router", "equipment": "tile cutter", "issue": "an electrical fault"},
+        {"device": "printer", "equipment": "pressure washer", "issue": "a broken motor"},
+        {"device": "smartwatch", "equipment": "audio mixer", "issue": "a faulty button"},
+        {"device": "speaker", "equipment": "concrete saw", "issue": "a damaged casing"}
+      ]
+    },
+    {
+      "family_id": "grocery_tracking_vs_retroactive_erasure",
+      "left_choice_id": "K13",
+      "right_choice_id": "U10",
+      "presented_candidate_choice_id": "K13",
+      "question": "Do you want the current delivery status, or do you want a completed delivery erased from history?",
+      "known_familiar": "Track my grocery order {order} and tell me its arrival time.",
+      "known_unfamiliar": "Where are the vegetables in order {order}, and when will they reach my door?",
+      "right_clear": "Make grocery order {order}, delivered {past_time}, never have been delivered.",
+      "ambiguous": "Deal with grocery order {order} for me.",
+      "left_answer": "I want its current location and arrival estimate.",
+      "right_answer": "I want the completed delivery erased from history.",
+      "slot_variants": [
+        {"order": "G-104", "past_time": "yesterday"},
+        {"order": "G-219", "past_time": "last Friday"},
+        {"order": "G-335", "past_time": "this morning"},
+        {"order": "G-448", "past_time": "two days ago"},
+        {"order": "G-552", "past_time": "last week"},
+        {"order": "G-663", "past_time": "on Monday"},
+        {"order": "G-774", "past_time": "at noon"},
+        {"order": "G-889", "past_time": "on Saturday"}
+      ]
+    },
+    {
+      "family_id": "grocery_vs_medication_tracking",
+      "left_choice_id": "K13",
+      "right_choice_id": "N11",
+      "presented_candidate_choice_id": "K13",
+      "question": "Is this the grocery delivery or the recurring medication shipment?",
+      "known_familiar": "Track grocery order {order} to {address}.",
+      "known_unfamiliar": "When will the food basket in order {order} reach {address}?",
+      "right_clear": "Track recurring prescription shipment {order} to {address}.",
+      "ambiguous": "Where is order {order}, and when will it reach {address}?",
+      "left_answer": "It contains groceries and household food.",
+      "right_answer": "It contains my recurring prescription medicine.",
+      "slot_variants": [
+        {"order": "T-101", "address": "8 Oak Street"},
+        {"order": "T-202", "address": "19 River Road"},
+        {"order": "T-303", "address": "44 Birch Lane"},
+        {"order": "T-404", "address": "2 Bay Avenue"},
+        {"order": "T-505", "address": "67 Hill Court"},
+        {"order": "T-606", "address": "12 Spruce Way"},
+        {"order": "T-707", "address": "91 Park Drive"},
+        {"order": "T-808", "address": "36 Mill Street"}
+      ]
+    },
+    {
+      "family_id": "media_cancellation_vs_charge_erasure",
+      "left_choice_id": "K12",
+      "right_choice_id": "U10",
+      "presented_candidate_choice_id": "K12",
+      "question": "Do you want to stop future subscription renewal, or erase a completed charge from history?",
+      "known_familiar": "Cancel my {media} subscription before the next renewal.",
+      "known_unfamiliar": "End the monthly {media} viewing plan before it bills me again.",
+      "right_clear": "Make last month's completed {media} charge never have happened.",
+      "ambiguous": "Get rid of the {media} charge.",
+      "left_answer": "I want to stop the next and future renewals.",
+      "right_answer": "I want the already completed charge erased from history.",
+      "slot_variants": [
+        {"media": "CinemaArc"},
+        {"media": "DailyView"},
+        {"media": "MatchLive"},
+        {"media": "StageBox"},
+        {"media": "WorldDocs"},
+        {"media": "FamilyPlay"},
+        {"media": "RetroScreen"},
+        {"media": "LocalNews TV"}
+      ]
+    }
+  ],
+  "gates": {
+    "requiredChoiceCount": 9,
+    "requiredKnownChoiceCount": 4,
+    "requiredNovelChoiceCount": 3,
+    "requiredUnsupportedChoiceCount": 1,
+    "requiredInsufficientChoiceCount": 1,
+    "requiredFamilyCount": 6,
+    "requiredGroupCount": 48,
+    "requiredFixtureCount": 288,
+    "requiredSplitFixtureCount": 144,
+    "requiredStageCountPerGroup": 6,
+    "requiredKnownFamiliarFixtureCount": 48,
+    "requiredKnownUnfamiliarFixtureCount": 48,
+    "requiredAmbiguousFixtureCount": 48,
+    "requiredClarifiedFixtureCount": 96,
+    "requiredPublicHiddenIdAlignment": 1.0,
+    "requiredAmbiguousPairCompatibility": 1.0,
+    "requiredDecidableSingletonCompatibility": 1.0,
+    "requiredDeterministicFinalizerValidity": 1.0,
+    "requiredExactConversationNonoverlapWithV135": 1.0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumV134LanguageReadCount": 0,
+    "maximumExternalLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryInterfacePopulationAndAccessGatePasses": "freeze_fresh_certificate_asset_authorize_model_free_oracle_policy_audit_only",
+    "otherwise": "reject_V142_without_language_or_model_run",
+    "passAuthorizesModelFreeOraclePolicyAuditOnly": true,
+    "passAuthorizesImmediateLanguageOrModelRun": false,
+    "passAuthorizesV134OrExternalLanguage": false,
+    "passAuthorizesAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

@@ -1,0 +1,547 @@
+{
+  "analysis_lock": "configs/v116-typed-clarification-voi-lock.json",
+  "analysis_lock_sha256": "db3e5e2682ebc7038d974c2ef2c331873e02fb5124134a4997478cefa5772644",
+  "audit": "outputs/v116-typed-clarification-voi/outcome-audit.json",
+  "audit_sha256": "931c86f340cbe755bc83e91ce49cc04b656d786da2a68ba226f40adb307846eb",
+  "authorization": {
+    "begin_schema_induction_or_richer_planning": false,
+    "claim_human_or_model_answer_reliability": false,
+    "grant_capability_belief_action_or_execution_authority": false,
+    "modify_rerun_or_retune_V116": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_unprotected_simulator_benchmark": true,
+    "read_fresh_or_protected_language": false,
+    "run_model_or_API_or_training": false
+  },
+  "experiment": "v116_typed_clarification_voi_outcome_lock",
+  "lock_payload_sha256": "d6b4d56a49e1c21875dbd96e69fa182ff92b15978d34dbd3c494747ab1a747ef",
+  "outcome": {
+    "decision": "conditionally_feasible_requires_95pct_independent_typed_answers",
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "baseline": {
+        "false_known_acceptance_rate": 0.052083333333333336,
+        "known_exact_intent_accuracy": 0.7604166666666666,
+        "mean_regret": 0.7760416666666666,
+        "unsupported_recall": 0.9166666666666666
+      },
+      "conditions": {
+        "moderate_candidate": {
+          "0.70": {
+            "double_correlated": {
+              "false_known_probability": 0.010000000000000007,
+              "known_exact_probability": 0.6781250000000011,
+              "mean_regret_including_clarification": 1.131093749999989,
+              "non_abstain_action_probability": 0.3442187500000002,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.02099999999999959,
+              "known_exact_probability": 0.8968750000000201,
+              "mean_regret_including_clarification": 0.9539843750004178,
+              "non_abstain_action_probability": 0.5823718750000846,
+              "unsupported_correct_probability": 0.48999999999999955
+            },
+            "single": {
+              "false_known_probability": 0.010000000000000007,
+              "known_exact_probability": 0.6781250000000011,
+              "mean_regret_including_clarification": 1.031093749999989,
+              "non_abstain_action_probability": 0.3442187500000002,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.75": {
+            "double_correlated": {
+              "false_known_probability": 0.00833333333333333,
+              "known_exact_probability": 0.7265625,
+              "mean_regret_including_clarification": 1.0993489583333442,
+              "non_abstain_action_probability": 0.3675781249999999,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.01736111111111154,
+              "known_exact_probability": 0.9257812499999747,
+              "mean_regret_including_clarification": 0.9034179687503479,
+              "non_abstain_action_probability": 0.6128884548611118,
+              "unsupported_correct_probability": 0.5625
+            },
+            "single": {
+              "false_known_probability": 0.00833333333333333,
+              "known_exact_probability": 0.7265625,
+              "mean_regret_including_clarification": 0.9993489583333444,
+              "non_abstain_action_probability": 0.3675781249999999,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.80": {
+            "double_correlated": {
+              "false_known_probability": 0.006666666666666669,
+              "known_exact_probability": 0.7749999999999986,
+              "mean_regret_including_clarification": 1.0676041666666378,
+              "non_abstain_action_probability": 0.39093749999999905,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.013777777777777965,
+              "known_exact_probability": 0.9500000000000446,
+              "mean_regret_including_clarification": 0.8544791666664446,
+              "non_abstain_action_probability": 0.6423736111111075,
+              "unsupported_correct_probability": 0.6400000000000005
+            },
+            "single": {
+              "false_known_probability": 0.006666666666666669,
+              "known_exact_probability": 0.7749999999999986,
+              "mean_regret_including_clarification": 0.967604166666638,
+              "non_abstain_action_probability": 0.39093749999999905,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.85": {
+            "double_correlated": {
+              "false_known_probability": 0.005000000000000004,
+              "known_exact_probability": 0.8234374999999997,
+              "mean_regret_including_clarification": 0.8389843749999863,
+              "non_abstain_action_probability": 0.6305468749999955,
+              "unsupported_correct_probability": 0.8500000000000006
+            },
+            "double_independent": {
+              "false_known_probability": 0.010250000000000965,
+              "known_exact_probability": 0.9695312499999731,
+              "mean_regret_including_clarification": 0.8071679687499556,
+              "non_abstain_action_probability": 0.6708273437499167,
+              "unsupported_correct_probability": 0.7224999999999998
+            },
+            "single": {
+              "false_known_probability": 0.005000000000000004,
+              "known_exact_probability": 0.8234374999999997,
+              "mean_regret_including_clarification": 0.7389843749999863,
+              "non_abstain_action_probability": 0.6305468749999955,
+              "unsupported_correct_probability": 0.8500000000000006
+            }
+          },
+          "0.90": {
+            "double_correlated": {
+              "false_known_probability": 0.0033333333333333344,
+              "known_exact_probability": 0.8718750000000005,
+              "mean_regret_including_clarification": 0.7895312499999885,
+              "non_abstain_action_probability": 0.6651562499999986,
+              "unsupported_correct_probability": 0.8999999999999991
+            },
+            "double_independent": {
+              "false_known_probability": 0.0067777777777776145,
+              "known_exact_probability": 0.9843750000000072,
+              "mean_regret_including_clarification": 0.7614843749998798,
+              "non_abstain_action_probability": 0.6982496527777341,
+              "unsupported_correct_probability": 0.81
+            },
+            "single": {
+              "false_known_probability": 0.0033333333333333344,
+              "known_exact_probability": 0.8718750000000005,
+              "mean_regret_including_clarification": 0.6895312499999884,
+              "non_abstain_action_probability": 0.6651562499999986,
+              "unsupported_correct_probability": 0.8999999999999991
+            }
+          },
+          "0.95": {
+            "double_correlated": {
+              "false_known_probability": 0.020000000000000323,
+              "known_exact_probability": 0.9500000000000016,
+              "mean_regret_including_clarification": 0.8877083333333249,
+              "non_abstain_action_probability": 0.7329166666666507,
+              "unsupported_correct_probability": 0.9500000000000005
+            },
+            "double_independent": {
+              "false_known_probability": 0.0033611111111111393,
+              "known_exact_probability": 0.9945312499999872,
+              "mean_regret_including_clarification": 0.7058138020833714,
+              "non_abstain_action_probability": 0.7365780381944768,
+              "unsupported_correct_probability": 0.9500000000000005
+            },
+            "single": {
+              "false_known_probability": 0.020000000000000323,
+              "known_exact_probability": 0.9500000000000016,
+              "mean_regret_including_clarification": 0.787708333333325,
+              "non_abstain_action_probability": 0.7329166666666507,
+              "unsupported_correct_probability": 0.9500000000000005
+            }
+          },
+          "1.00": {
+            "double_correlated": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.675,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.675,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            },
+            "single": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.575,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            }
+          }
+        },
+        "strong_candidate": {
+          "0.70": {
+            "double_correlated": {
+              "false_known_probability": 0.010000000000000007,
+              "known_exact_probability": 0.6781250000000011,
+              "mean_regret_including_clarification": 1.131093749999989,
+              "non_abstain_action_probability": 0.3442187500000002,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.02099999999999959,
+              "known_exact_probability": 0.8968750000000201,
+              "mean_regret_including_clarification": 0.9539843750004178,
+              "non_abstain_action_probability": 0.5823718750000846,
+              "unsupported_correct_probability": 0.48999999999999955
+            },
+            "single": {
+              "false_known_probability": 0.010000000000000007,
+              "known_exact_probability": 0.6781250000000011,
+              "mean_regret_including_clarification": 1.031093749999989,
+              "non_abstain_action_probability": 0.3442187500000002,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.75": {
+            "double_correlated": {
+              "false_known_probability": 0.00833333333333333,
+              "known_exact_probability": 0.7265625,
+              "mean_regret_including_clarification": 1.0993489583333442,
+              "non_abstain_action_probability": 0.3675781249999999,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.01736111111111154,
+              "known_exact_probability": 0.9257812499999747,
+              "mean_regret_including_clarification": 0.9034179687503479,
+              "non_abstain_action_probability": 0.6128884548611118,
+              "unsupported_correct_probability": 0.5625
+            },
+            "single": {
+              "false_known_probability": 0.00833333333333333,
+              "known_exact_probability": 0.7265625,
+              "mean_regret_including_clarification": 0.9993489583333444,
+              "non_abstain_action_probability": 0.3675781249999999,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.80": {
+            "double_correlated": {
+              "false_known_probability": 0.006666666666666669,
+              "known_exact_probability": 0.7749999999999986,
+              "mean_regret_including_clarification": 1.0676041666666378,
+              "non_abstain_action_probability": 0.39093749999999905,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.013777777777777965,
+              "known_exact_probability": 0.9500000000000446,
+              "mean_regret_including_clarification": 0.8544791666664446,
+              "non_abstain_action_probability": 0.6423736111111075,
+              "unsupported_correct_probability": 0.6400000000000005
+            },
+            "single": {
+              "false_known_probability": 0.006666666666666669,
+              "known_exact_probability": 0.7749999999999986,
+              "mean_regret_including_clarification": 0.967604166666638,
+              "non_abstain_action_probability": 0.39093749999999905,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.85": {
+            "double_correlated": {
+              "false_known_probability": 0.005000000000000004,
+              "known_exact_probability": 0.8234374999999997,
+              "mean_regret_including_clarification": 1.0358593749999583,
+              "non_abstain_action_probability": 0.41429687500000006,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.010250000000000965,
+              "known_exact_probability": 0.9695312499999731,
+              "mean_regret_including_clarification": 0.8071679687499556,
+              "non_abstain_action_probability": 0.6708273437499167,
+              "unsupported_correct_probability": 0.7224999999999998
+            },
+            "single": {
+              "false_known_probability": 0.005000000000000004,
+              "known_exact_probability": 0.8234374999999997,
+              "mean_regret_including_clarification": 0.9358593749999582,
+              "non_abstain_action_probability": 0.41429687500000006,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.90": {
+            "double_correlated": {
+              "false_known_probability": 0.0033333333333333344,
+              "known_exact_probability": 0.8718750000000005,
+              "mean_regret_including_clarification": 1.004114583333296,
+              "non_abstain_action_probability": 0.4376562499999998,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.0067777777777776145,
+              "known_exact_probability": 0.9843750000000072,
+              "mean_regret_including_clarification": 0.7614843749998798,
+              "non_abstain_action_probability": 0.6982496527777341,
+              "unsupported_correct_probability": 0.81
+            },
+            "single": {
+              "false_known_probability": 0.0033333333333333344,
+              "known_exact_probability": 0.8718750000000005,
+              "mean_regret_including_clarification": 0.9041145833332962,
+              "non_abstain_action_probability": 0.4376562499999998,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.95": {
+            "double_correlated": {
+              "false_known_probability": 0.0016666666666666687,
+              "known_exact_probability": 0.9203125000000015,
+              "mean_regret_including_clarification": 0.7400781249999877,
+              "non_abstain_action_probability": 0.6997656249999992,
+              "unsupported_correct_probability": 0.9500000000000005
+            },
+            "double_independent": {
+              "false_known_probability": 0.0033611111111111393,
+              "known_exact_probability": 0.9945312499999872,
+              "mean_regret_including_clarification": 0.7174283854166914,
+              "non_abstain_action_probability": 0.724640538194476,
+              "unsupported_correct_probability": 0.9025000000000009
+            },
+            "single": {
+              "false_known_probability": 0.0016666666666666687,
+              "known_exact_probability": 0.9203125000000015,
+              "mean_regret_including_clarification": 0.6400781249999877,
+              "non_abstain_action_probability": 0.6997656249999992,
+              "unsupported_correct_probability": 0.9500000000000005
+            }
+          },
+          "1.00": {
+            "double_correlated": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.675,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.675,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            },
+            "single": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.575,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            }
+          }
+        },
+        "uniform_safe_universe": {
+          "0.70": {
+            "double_correlated": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 0.0,
+              "mean_regret_including_clarification": 1.4249999999999545,
+              "non_abstain_action_probability": 0.0,
+              "unsupported_correct_probability": 0.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.0012000000000000237,
+              "known_exact_probability": 0.49000000000000016,
+              "mean_regret_including_clarification": 1.0680125000003686,
+              "non_abstain_action_probability": 0.36872500000002545,
+              "unsupported_correct_probability": 0.48999999999999955
+            },
+            "single": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 0.0,
+              "mean_regret_including_clarification": 1.3249999999999544,
+              "non_abstain_action_probability": 0.0,
+              "unsupported_correct_probability": 0.0
+            }
+          },
+          "0.75": {
+            "double_correlated": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 0.0,
+              "mean_regret_including_clarification": 1.2635416666666546,
+              "non_abstain_action_probability": 0.19374999999999967,
+              "unsupported_correct_probability": 0.75
+            },
+            "double_independent": {
+              "false_known_probability": 0.0008333333333333126,
+              "known_exact_probability": 0.5625,
+              "mean_regret_including_clarification": 1.0104253472226297,
+              "non_abstain_action_probability": 0.42272569444444974,
+              "unsupported_correct_probability": 0.5625
+            },
+            "single": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 0.0,
+              "mean_regret_including_clarification": 1.1635416666666545,
+              "non_abstain_action_probability": 0.19374999999999967,
+              "unsupported_correct_probability": 0.75
+            }
+          },
+          "0.80": {
+            "double_correlated": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 0.0,
+              "mean_regret_including_clarification": 1.2458333333333105,
+              "non_abstain_action_probability": 0.20500000000000065,
+              "unsupported_correct_probability": 0.7999999999999998
+            },
+            "double_independent": {
+              "false_known_probability": 0.0005333333333333304,
+              "known_exact_probability": 0.6400000000000005,
+              "mean_regret_including_clarification": 0.9496722222220579,
+              "non_abstain_action_probability": 0.480544444444416,
+              "unsupported_correct_probability": 0.6400000000000005
+            },
+            "single": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 0.0,
+              "mean_regret_including_clarification": 1.1458333333333106,
+              "non_abstain_action_probability": 0.20500000000000065,
+              "unsupported_correct_probability": 0.7999999999999998
+            }
+          },
+          "0.85": {
+            "double_correlated": {
+              "false_known_probability": 0.05999999999999895,
+              "known_exact_probability": 0.8499999999999995,
+              "mean_regret_including_clarification": 1.3131250000000172,
+              "non_abstain_action_probability": 0.6987499999999699,
+              "unsupported_correct_probability": 0.8500000000000006
+            },
+            "double_independent": {
+              "false_known_probability": 0.00030000000000000594,
+              "known_exact_probability": 0.7224999999999983,
+              "mean_regret_including_clarification": 0.8562218749999491,
+              "non_abstain_action_probability": 0.574618749999965,
+              "unsupported_correct_probability": 0.8499999999999982
+            },
+            "single": {
+              "false_known_probability": 0.05999999999999895,
+              "known_exact_probability": 0.8499999999999995,
+              "mean_regret_including_clarification": 1.213125000000017,
+              "non_abstain_action_probability": 0.6987499999999699,
+              "unsupported_correct_probability": 0.8500000000000006
+            }
+          },
+          "0.90": {
+            "double_correlated": {
+              "false_known_probability": 0.04000000000000064,
+              "known_exact_probability": 0.9000000000000007,
+              "mean_regret_including_clarification": 1.1004166666666497,
+              "non_abstain_action_probability": 0.7158333333333055,
+              "unsupported_correct_probability": 0.8999999999999991
+            },
+            "double_independent": {
+              "false_known_probability": 0.0001333333333333326,
+              "known_exact_probability": 0.810000000000001,
+              "mean_regret_including_clarification": 0.7972097222221303,
+              "non_abstain_action_probability": 0.6303861111110939,
+              "unsupported_correct_probability": 0.9000000000000025
+            },
+            "single": {
+              "false_known_probability": 0.04000000000000064,
+              "known_exact_probability": 0.9000000000000007,
+              "mean_regret_including_clarification": 1.0004166666666499,
+              "non_abstain_action_probability": 0.7158333333333055,
+              "unsupported_correct_probability": 0.8999999999999991
+            }
+          },
+          "0.95": {
+            "double_correlated": {
+              "false_known_probability": 0.020000000000000323,
+              "known_exact_probability": 0.9500000000000016,
+              "mean_regret_including_clarification": 0.8877083333333249,
+              "non_abstain_action_probability": 0.7329166666666507,
+              "unsupported_correct_probability": 0.9500000000000005
+            },
+            "double_independent": {
+              "false_known_probability": 3.333333333333316e-05,
+              "known_exact_probability": 0.9025000000000021,
+              "mean_regret_including_clarification": 0.736802430555582,
+              "non_abstain_action_probability": 0.6888465277777973,
+              "unsupported_correct_probability": 0.9500000000000005
+            },
+            "single": {
+              "false_known_probability": 0.020000000000000323,
+              "known_exact_probability": 0.9500000000000016,
+              "mean_regret_including_clarification": 0.787708333333325,
+              "non_abstain_action_probability": 0.7329166666666507,
+              "unsupported_correct_probability": 0.9500000000000005
+            }
+          },
+          "1.00": {
+            "double_correlated": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.675,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            },
+            "double_independent": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.675,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            },
+            "single": {
+              "false_known_probability": 0.0,
+              "known_exact_probability": 1.0,
+              "mean_regret_including_clarification": 0.575,
+              "non_abstain_action_probability": 0.75,
+              "unsupported_correct_probability": 1.0
+            }
+          }
+        }
+      },
+      "correlated_pass": false,
+      "decision": "conditionally_feasible_requires_95pct_independent_typed_answers",
+      "feasibility_gates": {
+        "fully_correlated_stress_test_reported": true,
+        "independent_false_known_every_prior": true,
+        "independent_known_exact_every_prior": true,
+        "independent_mean_regret_every_prior": true,
+        "independent_regret_monotone_090_to_095": true,
+        "independent_unsupported_correct_every_prior": true,
+        "perfect_channel_mean_regret_every_prior": true,
+        "true_hypothesis_retention": true,
+        "zero_actual_execution": true
+      },
+      "historical_record_count": 192,
+      "independent_pass": true,
+      "individual_record_emission_count": 0,
+      "true_hypothesis_retention": 1.0,
+      "truth_choice_count": 15
+    }
+  },
+  "result": "outputs/v116-typed-clarification-voi/audit/result.json",
+  "result_sha256": "160d54f17aa59d9979dce1c10b70d597eee1b00ad57a412ba78b6aab40f8231e",
+  "results_document": "docs/v116-typed-clarification-voi-results.md",
+  "results_document_sha256": "c11618be389a16d9ad9b0344639f569317b76e8406aec0332336251deb2595e5",
+  "schema_version": "116-typed-clarification-voi-outcome-lock",
+  "verifier": "python/verify_and_freeze_v116_typed_clarification_voi_outcome.py",
+  "verifier_sha256": "dbc19f727d9b6f6e74ab1d5f7492c62b144aaf5d9d2f139da852c2855a9a152d"
+}

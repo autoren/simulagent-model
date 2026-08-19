@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "113-known-disagreement-rescue-census-design",
+  "experiment": "v113_historical_known_disagreement_rescue_feasibility_census",
+  "parentV112r1OutcomeLock": "configs/v112r1-full-policy-aggregation-recovery-outcome-lock.json",
+  "question": "Can a simple deterministic rule safely accept enough historically correct LLM/retrieval intent disagreements to clear every V112 full-policy gate while leaving the transferred abstention novelty signal unchanged?",
+  "inputs": {
+    "useExactPreservedV112Fixtures": true,
+    "useExactV112FreshLanguageAsHistoricalDevelopmentOnly": true,
+    "readProtectedTestLanguage": false,
+    "manualLanguageOrRawResponseInspection": false,
+    "persistIndividualFeaturesPredictionsIdentifiersLanguageOrRawResponse": false,
+    "loadOrGenerateModel": false
+  },
+  "rescueEligibility": "direct typed status is KNOWN but exact proposed intent disagrees with deterministic nearest-intent retrieval",
+  "registeredFeatures": [
+    "proposed_intent_score", "nearest_intent_score", "score_gap",
+    "llm_confidence", "proposed_and_nearest_same_scenario"
+  ],
+  "registeredRuleFamilies": [
+    "no_rescue", "accept_all", "same_scenario_only", "proposal_score_at_least",
+    "proposal_score_and_gap", "proposal_score_and_same_scenario",
+    "confidence_at_least", "confidence_and_same_scenario",
+    "proposal_score_confidence_and_same_scenario"
+  ],
+  "thresholdGrids": {
+    "proposalScore": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.01],
+    "scoreGap": [0.0, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 1.01],
+    "confidence": [0.0, 0.65, 0.75, 0.85, 0.9, 0.95, 0.99, 1.01]
+  },
+  "rescueActionConfidence": 0.75,
+  "selection": {
+    "feasibleCandidateDefinition": "all seventeen frozen V112 quality gates pass noncompensatorily",
+    "selectionObjective": "prefer feasible; then maximum passed-gate count, minimum normalized violation of failed gates, minimum mean regret, minimum false-known acceptance, maximum known exact-intent accuracy, minimum complexity, lexical signature",
+    "evaluationRole": "historical policy design only; no transfer or protected-test claim"
+  },
+  "decisionRule": {
+    "ifAtLeastOneCandidateIsFeasible": "freeze one selected rescue rule for separately locked evaluation on a new disjoint population",
+    "ifNoCandidateIsFeasible": "close this simple disagreement-rescue family and require new evidence or policy structure",
+    "passAuthorizesProtectedTestImmediately": false,
+    "passAuthorizesSchemaInductionSequentialPlanningNewModelAPITrainingActionOrExecution": false
+  }
+}

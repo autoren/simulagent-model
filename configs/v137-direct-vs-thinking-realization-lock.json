@@ -1,0 +1,151 @@
+{
+  "V135_outcome": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+  "V135_outcome_sha256": "6fce0a5ec02f22209ad37fa0a7f0598da06631c75ee4a96b8da8b1e9c2b61ad2",
+  "V136_config": "configs/v136-controlled-clarification-value.json",
+  "V136_config_sha256": "d28e55668dc681406de53128a34ed970b9cd52c357b8f3674d3c6669a955e486",
+  "auditor": "python/audit_and_freeze_v137_direct_vs_thinking_realization.py",
+  "auditor_sha256": "914f9f4807d5fbbd969bc56727453c2e4bdeec957a8d9d63b34c0f99a2318af2",
+  "authorization": {
+    "modify_prompt_population_model_conditions_parsing_gates_or_decision": false,
+    "retry_rerun_or_inspect_raw_responses_or_traces": false,
+    "run_API_induction_training_authority_action_or_execution": false,
+    "run_exactly_one_pinned_direct_vs_thinking_comparison": true,
+    "touch_V134_language": false
+  },
+  "choice_catalog": "outputs/v135-controlled-open-world-minimal-pairs/design/choice-catalog.json",
+  "choice_catalog_sha256": "5631a31834cf1a97a8fe645110aad45a2e984163f8afbd56efa4e052cfbe786e",
+  "config": "configs/v137-direct-vs-thinking-realization.json",
+  "config_payload": {
+    "V135OutcomeLock": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+    "V136Config": "configs/v136-controlled-clarification-value.json",
+    "accessGates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalLanguageReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumGenerationCountPerConditionFixture": 1,
+      "maximumManualRawResponseOrTraceInspectionCount": 0,
+      "maximumModelGenerationCount": 200,
+      "maximumModelLoadCount": 1,
+      "maximumPersistedRawResponseOrTraceCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumRetryCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumV134LanguageReadCount": 0
+    },
+    "claimBoundary": "deterministic synthetic-development comparison of direct and thinking-enabled inference on the frozen V135 test split; not V134 or externally authored transfer, human identifiability, unrestricted open-world understanding, repeated-sample independence, deployment safety, induction, authority, action, or execution",
+    "conditions": [
+      {
+        "enableThinking": false,
+        "id": "direct",
+        "maximumNewTokens": 32,
+        "retryCount": 0,
+        "samplesPerPrompt": 1,
+        "temperature": 0.0
+      },
+      {
+        "enableThinking": true,
+        "id": "thinking",
+        "maximumNewTokens": 512,
+        "retryCount": 0,
+        "samplesPerPrompt": 1,
+        "temperature": 0.0
+      }
+    ],
+    "decisionRule": {
+      "ifBothQualifyAndThinkingReducesSequentialCostByAtLeast": 0.05,
+      "ifBothQualifyWithMaterialThinkingGain": "both_qualify_thinking_has_material_decision_gain",
+      "ifBothQualifyWithoutMaterialThinkingGain": "both_qualify_prefer_direct_for_efficiency",
+      "ifDirectQualifiesAndThinkingFails": "direct_qualifies_thinking_does_not_help",
+      "ifNeitherQualifies": "neither_condition_realizes_controlled_boundary_close_current_local_branch",
+      "ifThinkingQualifiesAndDirectFails": "thinking_materially_repairs_controlled_open_world_realization",
+      "outcomeAuthorizesAPIInductionTrainingAuthorityActionOrExecution": false,
+      "outcomeAuthorizesV134LanguageAccessOrRerun": false,
+      "passingConditionAuthorizesOnlySeparateExternalTransferDesign": true
+    },
+    "experiment": "v137_pinned_local_direct_vs_thinking_controlled_realization",
+    "model": {
+      "modelLoadLimit": 1,
+      "quantizationBits": 4,
+      "repository": "mlx-community/Qwen3.8-27B-4bit",
+      "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff"
+    },
+    "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+    "parentV136OutcomeLock": "configs/v136-controlled-clarification-value-outcome-lock.json",
+    "parsing": {
+      "acceptAliases": false,
+      "directRequiresWholeResponseExactJSON": true,
+      "invalidOutputMapsTo": "A00",
+      "persistRawResponseOrThinkingTrace": false,
+      "persistResponseHashAndTokenCountsOnly": true,
+      "thinkingAcceptsExactJSONAfterLastClosedThinkTag": true,
+      "thinkingOpenWithoutCloseIsInvalid": true
+    },
+    "population": {
+      "ambiguousFixtureCount": 20,
+      "clarifiedFixtureCount": 40,
+      "clearFixtureCount": 40,
+      "fixtureCount": 100,
+      "groupCount": 20,
+      "modifyExcludeOrRelabelAfterRun": false,
+      "split": "test",
+      "useDevelopmentSplit": false
+    },
+    "prompt": {
+      "demonstrationCount": 0,
+      "instruction": "Select exactly one supplied choice_id from the complete safe universe. Treat ambiguity as A00 rather than guessing the closest known label.",
+      "maximumPromptTokens": 4096,
+      "responseContract": {
+        "extra_keys_allowed": false,
+        "required_keys": [
+          "choice_id"
+        ]
+      },
+      "sameSemanticPromptAcrossConditions": true,
+      "system": "You are an offline, permanently non-authoritative semantic evidence source. Compare the conversation with every supplied capability boundary. The presented candidate is fallible. Select a KNOWN choice only when its complete definition covers the request and no exclusion applies. Select a VALID_UNDECLARED choice when its described undeclared domain is clearly required. Select U00 only for the registered unsupported alarm domain. Select A00 when the visible conversation does not distinguish the supplied choices safely. Never define, register, call, or execute a capability. Your final answer must be exactly the required JSON object."
+    },
+    "qualificationGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumCandidateAttractedFractionOfErrors": 0.5,
+      "maximumFalseKnownRateOnNonKnownTruths": 0.05,
+      "maximumSequentialFalseKnownOnRightTruth": 0.05,
+      "maximumSequentialMeanDecisionCost": 0.7,
+      "maximumThinkingTracePresenceForDirectCondition": 0.0,
+      "minimumAmbiguousAbstentionAccuracy": 0.95,
+      "minimumClarifiedExactAccuracy": 0.95,
+      "minimumClearExactAccuracy": 0.95,
+      "minimumFullFiveStageGroupAccuracy": 0.8,
+      "minimumOverallExactAccuracy": 0.95,
+      "minimumSequentialImprovementOverNoQuery": 0.25,
+      "minimumSequentialSafeNonKnownOnRightTruth": 0.95,
+      "minimumStructuredValidity": 0.99,
+      "minimumThinkingTracePresenceForThinkingCondition": 0.95,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "schemaVersion": "137-direct-vs-thinking-realization"
+  },
+  "config_sha256": "42b6f7d08b88426cb7412031b56cbbf5980e4c597795ba0067a00f924c924f05",
+  "design_audit": "outputs/v137-direct-vs-thinking-realization/design-audit.json",
+  "design_audit_sha256": "a65c0d031dac4f715a54d510f403455e6a3ef06e0743978979d588367ec049bc",
+  "experiment": "v137_pinned_local_direct_vs_thinking_controlled_realization",
+  "hidden_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "b0dbfef23db7b8975a6b0a74fa5602bbd65de2aadc307d19c6be2bd99b6b3231",
+  "lock_payload_sha256": "3e9576f52bbcc6d589d7d745608925235dcbf664723a48759f736dcacff6ce63",
+  "model_manifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "model_manifest_sha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "parent_outcome": "configs/v136-controlled-clarification-value-outcome-lock.json",
+  "parent_outcome_sha256": "1334d52cf8b59955bb7108e7be0facb8abd6cae7a1a5a38e4d38fc404168acc4",
+  "plan": "docs/v137-direct-vs-thinking-realization-plan.md",
+  "plan_sha256": "1d9108d445fadbe6927f3fd4d75ccd4dc3f8c6a03619d2e72c9fba2c41cecd94",
+  "protocol": "python/v137_direct_vs_thinking_realization.py",
+  "protocol_sha256": "0b86fe3c37684c330e335e242b6b6783d92ba3e1e4a1e7477bbb532a459755f0",
+  "public_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/public-fixtures.json",
+  "public_fixtures_sha256": "895193ef53abfd754778faab940e53cbe299ab9c43316215a9c9a92d69edc13a",
+  "runner": "python/run_v137_direct_vs_thinking_realization.py",
+  "runner_sha256": "8b9832ebbe4d6928ca7ffd569090af70be60f799f779cecdba9e440d9b71b6e9",
+  "schema_version": "137-direct-vs-thinking-realization-lock",
+  "tests": "python/test_v137_direct_vs_thinking_realization.py",
+  "tests_sha256": "2a47858231911e7056d5e54551a9b663485ead687f0aa1ad62cc981e2c298d10",
+  "verifier": "python/verify_and_freeze_v137_direct_vs_thinking_realization_outcome.py",
+  "verifier_sha256": "751f34cec20635c3b912dd4ee16e8c8e8c4aa0814a905d452500a36474e1a486"
+}

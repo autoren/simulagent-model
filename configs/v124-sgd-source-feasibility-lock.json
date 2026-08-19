@@ -1,0 +1,112 @@
+{
+  "auditor": "python/audit_and_freeze_v124_sgd_source_feasibility.py",
+  "auditor_sha256": "3745a503af9a353ff82d85128522b92d09c249fdb37c59bbcccb0ad437ef8591",
+  "authorization": {
+    "download_one_pinned_archive_and_build_one_text_free_inventory": true,
+    "emit_or_manually_inspect_language_or_slot_values": false,
+    "evaluate_retrieval_signal_trigger_or_model": false,
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_source_revision_candidate_definition_gates_or_decision": false
+  },
+  "config": "configs/v124-sgd-source-feasibility.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumArchivePayloadDownloadCount": 1,
+      "maximumAutomaticLanguageParseCount": 1,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceArchiveReadCount": 1
+    },
+    "archiveUrl": "https://codeload.github.com/google-research-datasets/dstc8-schema-guided-dialogue/tar.gz/e852981ae34990f4358979625854259302feaa78",
+    "candidateDefinition": {
+      "declaredKnown": "test service and intent pair present in train schemas",
+      "domainRule": "service_name with final numeric suffix removed and lowercased",
+      "emitUtteranceOrSlotValues": false,
+      "manualLanguageInspection": false,
+      "novelValid": "test service and intent pair absent from train schemas but service domain present in train schemas",
+      "partitions": [
+        "train",
+        "dev",
+        "test"
+      ],
+      "unit": "USER turn with exactly one INFORM_INTENT action and one matching non-NONE active intent",
+      "unsupported": "test service domain absent from train schemas"
+    },
+    "claimBoundary": "automatic source and structural-label feasibility only; no language examples, retrieval signal, trigger, model, policy, or utility evaluated",
+    "decisionRule": {
+      "ifEverySourceAndAccessGatePasses": "freeze_positive_SGD_controlled_open_set_source_feasibility",
+      "otherwise": "reject_SGD_source_for_current_transfer_without_gate_relaxation",
+      "passAuthorizesImmediateSelectedLanguageSignalTriggerOrModelEvaluation": false,
+      "passAuthorizesOnlyTextFreeCatalogAndPopulationPreregistration": true,
+      "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+    },
+    "experiment": "v124_schema_guided_dialogue_controlled_open_set_source_feasibility",
+    "license": "CC BY-SA 4.0",
+    "officialRepository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+    "parentV123OutcomeLock": "configs/v123-fresh-population-availability-audit-outcome-lock.json",
+    "preLockExposure": {
+      "archivePayloadDownloadCount": 0,
+      "languageRecordInspectionCount": 0,
+      "metadataOnlyRequestCount": 2,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0
+    },
+    "revision": "e852981ae34990f4358979625854259302feaa78",
+    "schemaVersion": "124-sgd-source-feasibility-design",
+    "sourceGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumManualLanguageInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "minimumDialogueCount": 16000,
+      "minimumDomainCount": 16,
+      "minimumIntentCount": 60,
+      "minimumIntentIntroductionCandidateCount": 1000,
+      "minimumKnownTestDomainCoverage": 3,
+      "minimumNovelValidTestDomainCoverage": 2,
+      "minimumServiceCount": 40,
+      "minimumTestCandidateCountPerOpenSetClass": 64,
+      "minimumTrainCandidateCount": 500,
+      "minimumUnsupportedTestDomainCoverage": 2,
+      "requireSchemaIntentMembership": true,
+      "requireUniqueCandidateIdentifiers": true,
+      "requiredLicenseSubstring": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "requiredPartitions": [
+        "train",
+        "dev",
+        "test"
+      ]
+    },
+    "sourceMetadata": "outputs/v124-sgd-source-feasibility/source-metadata.json",
+    "sourceRole": "candidate_external_schema_defined_controlled_open_set_transfer"
+  },
+  "config_sha256": "33c583e224f9a4ef00234ae95977bcb2ed94da1e1151ad80bc405915e8e97018",
+  "design_audit": "outputs/v124-sgd-source-feasibility/design-audit.json",
+  "design_audit_sha256": "dd7d676ae7b41fbc18936c03928480d0e470ddec5ecfdca39a1f5812c268b58a",
+  "experiment": "v124_schema_guided_dialogue_controlled_open_set_source_feasibility",
+  "lock_payload_sha256": "f9cb026ff393c7b0faad0b9c4b182154eebfa89ba25a21a6d0c33229be54da1f",
+  "parent_analysis_lock": "configs/v123-fresh-population-availability-audit-lock.json",
+  "parent_analysis_lock_sha256": "d9907938ab8d94651424dba682486b909a0671e2e51170f16aafe68b83016f06",
+  "parent_outcome": "configs/v123-fresh-population-availability-audit-outcome-lock.json",
+  "parent_outcome_sha256": "afb440b7913ce08cb9a1c555a11bd088e6e9de641a2e20ffc1badd9ed309153a",
+  "plan": "docs/v124-sgd-source-feasibility-plan.md",
+  "plan_sha256": "2a951550dd1f604b9d10d26fbbc9deb75be06404ce7c43e4a116753cd0e78f3b",
+  "protocol": "python/v124_sgd_source_feasibility.py",
+  "protocol_sha256": "b605974187467334b97294e9aab92444fface97766e41f836298b894dfcd5f78",
+  "runner": "python/run_v124_sgd_source_feasibility.py",
+  "runner_sha256": "33b1e6e7d99b36e7a45463cfd3b75c6df07ae5b4383e2712e318fe01f6f0096c",
+  "schema_version": "124-sgd-source-feasibility-lock",
+  "source_metadata": "outputs/v124-sgd-source-feasibility/source-metadata.json",
+  "source_metadata_sha256": "c25d13939c37fee9a98c2e7b7b7dd437b4344657ff80faf7d0e3a0eb32f8e289",
+  "tests": "python/test_v124_sgd_source_feasibility.py",
+  "tests_sha256": "501929d903fb028af6bdd876905949afb7ae86e4f72dcdc6b11837c69083c3d1",
+  "verifier": "python/verify_and_freeze_v124_sgd_source_feasibility_outcome.py",
+  "verifier_sha256": "02b91938c304d33786d5bd555b1d04aefbe7cb759e7074528c20af0b91068b82"
+}

@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "155-fresh-deterministic-question-retrieval-population",
+  "experiment": "v155_fresh_explicit_metadata_question_retrieval_population",
+  "parentV154r1OutcomeLock": "configs/v154r1-outcome-verifier-repair-outcome-lock.json",
+  "claimBoundary": "fresh project-authored synthetic development and sealed evaluation population for deterministic retrieval of registered clarification questions from visible language and explicit catalog metadata; no retrieval performance, model performance, external transfer, calibration, state proposal, pruning, authority, action, or execution claim",
+  "outputIds": ["K61", "K62", "K63", "K64", "K65", "K66", "N60", "U60", "A00"],
+  "knownIds": ["K61", "K62", "K63", "K64", "K65", "K66"],
+  "novelCandidateId": "N60",
+  "unsupportedId": "U60",
+  "insufficientId": "A00",
+  "trustedSource": "CLOSED_TYPED_CLARIFICATION",
+  "allowedValues": {
+    "operation": [
+      "renew_permit", "transfer_credential", "maintain_device", "request_access_support",
+      "revise_active_request", "track_payment", "erase_certified_record"
+    ],
+    "object_class": [
+      "community_garden_permit", "wildlife_rehabilitation_permit", "conference_badge",
+      "makerspace_credential", "greenhouse_sensor", "marine_buoy", "theater_ticket",
+      "museum_storage_visit", "archive_reproduction_request", "solar_rebate",
+      "certified_history"
+    ],
+    "scope": ["prospective", "delegation", "maintenance", "access", "active_record", "payment", "retroactive"]
+  },
+  "knownWitnesses": [
+    {"choice_id": "K61", "operation": "renew_permit", "object_class": "community_garden_permit", "scope": "prospective"},
+    {"choice_id": "K62", "operation": "transfer_credential", "object_class": "conference_badge", "scope": "delegation"},
+    {"choice_id": "K63", "operation": "maintain_device", "object_class": "greenhouse_sensor", "scope": "maintenance"},
+    {"choice_id": "K64", "operation": "request_access_support", "object_class": "theater_ticket", "scope": "access"},
+    {"choice_id": "K65", "operation": "revise_active_request", "object_class": "archive_reproduction_request", "scope": "active_record"},
+    {"choice_id": "K66", "operation": "track_payment", "object_class": "solar_rebate", "scope": "payment"}
+  ],
+  "novelWitnesses": [
+    {"operation": "renew_permit", "object_class": "wildlife_rehabilitation_permit", "scope": "prospective"},
+    {"operation": "transfer_credential", "object_class": "makerspace_credential", "scope": "delegation"},
+    {"operation": "maintain_device", "object_class": "marine_buoy", "scope": "maintenance"},
+    {"operation": "request_access_support", "object_class": "museum_storage_visit", "scope": "access"}
+  ],
+  "unsupportedWitnesses": [
+    {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"}
+  ],
+  "catalog": {
+    "choices": [
+      {"choice_id": "K61", "kind": "KNOWN", "title": "renew_community_garden_permit", "boundary": "Renew an existing community-garden plot permit prospectively."},
+      {"choice_id": "K62", "kind": "KNOWN", "title": "transfer_conference_badge", "boundary": "Transfer an eligible conference badge to another attendee."},
+      {"choice_id": "K63", "kind": "KNOWN", "title": "maintain_greenhouse_sensor", "boundary": "Arrange maintenance for a registered greenhouse environmental sensor."},
+      {"choice_id": "K64", "kind": "KNOWN", "title": "request_theater_ticket_access_support", "boundary": "Request accessibility support attached to a theater ticket."},
+      {"choice_id": "K65", "kind": "KNOWN", "title": "revise_active_archive_reproduction_request", "boundary": "Revise an active archive reproduction request before fulfillment."},
+      {"choice_id": "K66", "kind": "KNOWN", "title": "track_solar_rebate_payment", "boundary": "Track the payment status of an approved solar rebate."},
+      {"choice_id": "N60", "kind": "NOVEL_CANDIDATE", "title": "valid_unregistered_mechanic_candidate", "boundary": "Trusted evidence identifies a coherent mechanic outside the declared known catalog; non-executable and not registered."},
+      {"choice_id": "U60", "kind": "UNSUPPORTED", "title": "retroactively_erase_certified_history", "boundary": "Make a completed certified event or record never have occurred."},
+      {"choice_id": "A00", "kind": "INSUFFICIENT_EVIDENCE", "title": "insufficient_evidence", "boundary": "Visible evidence does not safely identify one registered state."}
+    ]
+  },
+  "families": [
+    {
+      "family_id": "garden_vs_wildlife_permit", "query_id": "Q61", "left_choice_id": "K61", "right_choice_id": "N60",
+      "query_title": "identify_permit_program", "question": "Which permit program is involved?",
+      "left_option_text": "A community-garden plot permit", "right_option_text": "A wildlife-rehabilitation permit",
+      "retrieval_profile": {
+        "anchor_phrases": ["community garden", "garden plot", "wildlife rehabilitation", "animal rehabilitation"],
+        "primary_terms": ["garden", "allotment", "plot", "wildlife", "animal", "rehabilitation", "permit", "licence"],
+        "secondary_terms": ["renew", "authorization", "sanctuary", "habitat"]
+      },
+      "left_witness": {"operation": "renew_permit", "object_class": "community_garden_permit", "scope": "prospective"},
+      "right_witness": {"operation": "renew_permit", "object_class": "wildlife_rehabilitation_permit", "scope": "prospective"},
+      "left_anchor": "Renew the community-garden permit for plot {code} before {date}.",
+      "left_paraphrase": "Extend the allotment authorization for garden space {code} ahead of {date}.",
+      "right_clear": "Renew wildlife-rehabilitation licence {code} for the {animal} sanctuary before {date}.",
+      "ambiguous": "The permit for {code} needs attention before {date}; it concerns either a garden plot or animal rehabilitation.",
+      "left_answer": "It is the community-garden plot permit.", "right_answer": "It is the wildlife-rehabilitation permit.",
+      "slot_columns": {
+        "code": ["G-104", "G-215", "G-326", "G-437", "G-548", "G-659", "G-760", "G-871"],
+        "date": ["September 2", "Friday", "October 11", "next month", "November 6", "Monday", "December 1", "January 9"],
+        "animal": ["raptor", "fox", "turtle", "songbird", "otter", "deer", "owl", "hare"]
+      }
+    },
+    {
+      "family_id": "conference_vs_makerspace_credential", "query_id": "Q62", "left_choice_id": "K62", "right_choice_id": "N60",
+      "query_title": "identify_transferable_credential", "question": "Which credential should be transferred?",
+      "left_option_text": "A conference attendee badge", "right_option_text": "A makerspace access credential",
+      "retrieval_profile": {
+        "anchor_phrases": ["conference badge", "attendee pass", "makerspace credential", "workshop access"],
+        "primary_terms": ["conference", "attendee", "badge", "pass", "makerspace", "workshop", "credential", "transfer"],
+        "secondary_terms": ["delegate", "fabrication", "lab", "registration"]
+      },
+      "left_witness": {"operation": "transfer_credential", "object_class": "conference_badge", "scope": "delegation"},
+      "right_witness": {"operation": "transfer_credential", "object_class": "makerspace_credential", "scope": "delegation"},
+      "left_anchor": "Transfer conference badge {code} from {person} to another attendee.",
+      "left_paraphrase": "Reassign {person}'s attendee pass {code} for the conference registration.",
+      "right_clear": "Move makerspace credential {code} from {person} to a new workshop member.",
+      "ambiguous": "Reassign {person}'s transferable credential {code}; it may be for a conference or a fabrication workshop.",
+      "left_answer": "It is the conference attendee badge.", "right_answer": "It is the makerspace access credential.",
+      "slot_columns": {
+        "code": ["B-113", "B-224", "B-335", "B-446", "B-557", "B-668", "B-779", "B-880"],
+        "person": ["Asha", "Bram", "Cleo", "Davi", "Enid", "Farah", "Gio", "Hana"]
+      }
+    },
+    {
+      "family_id": "greenhouse_vs_buoy_device", "query_id": "Q63", "left_choice_id": "K63", "right_choice_id": "N60",
+      "query_title": "identify_monitoring_device", "question": "Which monitoring device needs maintenance?",
+      "left_option_text": "A greenhouse environmental sensor", "right_option_text": "A marine research buoy",
+      "retrieval_profile": {
+        "anchor_phrases": ["greenhouse sensor", "climate probe", "marine buoy", "ocean float"],
+        "primary_terms": ["greenhouse", "climate", "sensor", "probe", "marine", "buoy", "ocean", "float"],
+        "secondary_terms": ["humidity", "salinity", "maintenance", "calibrate"]
+      },
+      "left_witness": {"operation": "maintain_device", "object_class": "greenhouse_sensor", "scope": "maintenance"},
+      "right_witness": {"operation": "maintain_device", "object_class": "marine_buoy", "scope": "maintenance"},
+      "left_anchor": "Schedule maintenance for greenhouse sensor {code} after its {issue} alert.",
+      "left_paraphrase": "Have climate probe {code} in the glasshouse checked for {issue}.",
+      "right_clear": "Calibrate marine buoy {code} after the ocean unit reported {issue}.",
+      "ambiguous": "Monitoring device {code} needs service for {issue}; it is either in a greenhouse or floating offshore.",
+      "left_answer": "It is the greenhouse environmental sensor.", "right_answer": "It is the marine research buoy.",
+      "slot_columns": {
+        "code": ["S-122", "S-233", "S-344", "S-455", "S-566", "S-677", "S-788", "S-899"],
+        "issue": ["humidity drift", "temperature noise", "power loss", "calibration error", "salinity drift", "signal loss", "battery warning", "pressure noise"]
+      }
+    },
+    {
+      "family_id": "theater_vs_museum_access", "query_id": "Q64", "left_choice_id": "K64", "right_choice_id": "N60",
+      "query_title": "identify_access_visit", "question": "Which visit needs accessibility support?",
+      "left_option_text": "A theater performance ticket", "right_option_text": "A museum collection-storage visit",
+      "retrieval_profile": {
+        "anchor_phrases": ["theater ticket", "performance seat", "museum storage", "collection visit"],
+        "primary_terms": ["theater", "performance", "ticket", "seat", "museum", "collection", "storage", "visit"],
+        "secondary_terms": ["accessibility", "captioning", "mobility", "accommodation"]
+      },
+      "left_witness": {"operation": "request_access_support", "object_class": "theater_ticket", "scope": "access"},
+      "right_witness": {"operation": "request_access_support", "object_class": "museum_storage_visit", "scope": "access"},
+      "left_anchor": "Add {support} support to theater ticket {code} for the performance.",
+      "left_paraphrase": "Arrange {support} for performance seat {code} at the playhouse.",
+      "right_clear": "Request {support} for museum collection-storage visit {code}.",
+      "ambiguous": "Visit booking {code} needs {support}; it may be a performance or a museum storage appointment.",
+      "left_answer": "It is for the theater performance ticket.", "right_answer": "It is for the museum collection-storage visit.",
+      "slot_columns": {
+        "code": ["T-131", "T-242", "T-353", "T-464", "T-575", "T-686", "T-797", "T-808"],
+        "support": ["captioning", "step-free access", "audio description", "aisle seating", "mobility assistance", "quiet entry", "sign interpretation", "companion seating"]
+      }
+    },
+    {
+      "family_id": "archive_revision_vs_erasure", "query_id": "Q65", "left_choice_id": "K65", "right_choice_id": "U60",
+      "query_title": "identify_archive_record_operation", "question": "What should happen to the archive record?",
+      "left_option_text": "Revise an active reproduction request", "right_option_text": "Erase a completed certified record retroactively",
+      "retrieval_profile": {
+        "anchor_phrases": ["archive reproduction", "copy request", "certified record", "archive history"],
+        "primary_terms": ["archive", "reproduction", "copy", "manuscript", "certified", "record", "history", "erase"],
+        "secondary_terms": ["revise", "amend", "completed", "retroactive"]
+      },
+      "left_witness": {"operation": "revise_active_request", "object_class": "archive_reproduction_request", "scope": "active_record"},
+      "right_witness": {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"},
+      "left_anchor": "Revise active archive-reproduction request {code} before the manuscript copy is made.",
+      "left_paraphrase": "Amend the pending copy request {code} in the archive queue.",
+      "right_clear": "Erase completed certified archive record {code} so its history never existed.",
+      "ambiguous": "Change archive item {code}; it may be a pending copy request or a completed certified record.",
+      "left_answer": "Revise the active reproduction request.", "right_answer": "Erase the completed certified record retroactively.",
+      "slot_columns": {
+        "code": ["A-140", "A-251", "A-362", "A-473", "A-584", "A-695", "A-706", "A-817"]
+      }
+    },
+    {
+      "family_id": "rebate_tracking_vs_erasure", "query_id": "Q66", "left_choice_id": "K66", "right_choice_id": "U60",
+      "query_title": "identify_rebate_record_operation", "question": "What should happen to the rebate record?",
+      "left_option_text": "Track an approved solar-rebate payment", "right_option_text": "Erase a completed certified grant record retroactively",
+      "retrieval_profile": {
+        "anchor_phrases": ["solar rebate", "renewable incentive", "grant record", "certified payment"],
+        "primary_terms": ["solar", "rebate", "renewable", "incentive", "grant", "payment", "certified", "erase"],
+        "secondary_terms": ["track", "approved", "completed", "retroactive"]
+      },
+      "left_witness": {"operation": "track_payment", "object_class": "solar_rebate", "scope": "payment"},
+      "right_witness": {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"},
+      "left_anchor": "Track approved solar-rebate payment {code} for the renewable installation.",
+      "left_paraphrase": "Check when renewable-incentive payment {code} will be issued.",
+      "right_clear": "Erase completed certified grant record {code} so the payment history never existed.",
+      "ambiguous": "Handle incentive item {code}; it may be an approved solar payment or a completed certified grant record.",
+      "left_answer": "Track the approved solar-rebate payment.", "right_answer": "Erase the completed certified grant record retroactively.",
+      "slot_columns": {
+        "code": ["R-159", "R-260", "R-371", "R-482", "R-593", "R-604", "R-715", "R-826"]
+      }
+    }
+  ],
+  "population": {
+    "familyCount": 6, "groupsPerFamily": 8, "groupCount": 48, "fixturesPerGroup": 6,
+    "fixtureCount": 288, "developmentGroupCount": 24, "evaluationGroupCount": 24,
+    "developmentFixtureCount": 144, "evaluationFixtureCount": 144,
+    "stageNames": [
+      "request_left_anchor", "request_left_paraphrase", "request_right_clear", "request_ambiguous",
+      "closed_answer_left", "closed_answer_right"
+    ]
+  },
+  "priorPublicPaths": [
+    "outputs/v135-controlled-open-world-minimal-pairs/design/public-fixtures.json",
+    "outputs/v142-certificate-interface-population/design/public-fixtures.json",
+    "outputs/v146-fresh-codebook-population/design/public-fixtures.json",
+    "outputs/v149-fresh-closed-interaction-population/design/public-fixtures.json",
+    "outputs/v152-fresh-question-order-population/design/public-fixtures.json"
+  ],
+  "gates": {
+    "requiredChoiceCount": 9, "requiredKnownChoiceCount": 6, "requiredQueryCount": 6,
+    "requiredOptionsPerQuery": 2, "requiredFamilyCount": 6, "requiredGroupCount": 48,
+    "requiredFixtureCount": 288, "requiredSplitFixtureCount": 144,
+    "requiredStageCountPerGroup": 6, "requiredRequestFixtureCount": 192,
+    "requiredClosedAnswerFixtureCount": 96, "requiredClosedAnswerWitnessRouting": 1.0,
+    "requiredPreAnswerFailClosedRate": 1.0, "requiredMalformedAnswerEventFailClosedRate": 1.0,
+    "requiredExactConversationOverlapWithPriorControlledPopulations": 0,
+    "requiredCandidateProposalFieldCount": 0, "requiredTrueHypothesisRetention": 1.0,
+    "maximumModelLoadCount": 0, "maximumModelGenerationOrScoreCount": 0,
+    "maximumEvaluationPolicyScoreCount": 0, "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0, "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryFreshnessMetadataFirewallAndAccessGatePasses": "freeze_fresh_explicit_metadata_retrieval_population_authorize_separate_model_free_development_policy_preregistration_only",
+    "otherwise": "close_fresh_deterministic_question_retrieval_population_branch",
+    "passingAuthorizesOnlySeparateModelFreeDevelopmentPolicyPreregistration": true,
+    "passingDoesNotAuthorizeEvaluationLanguageAccessModelHybridCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

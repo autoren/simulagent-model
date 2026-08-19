@@ -1,0 +1,46 @@
+{
+  "analysis_lock": "configs/v135-controlled-open-world-minimal-pairs-lock.json",
+  "analysis_lock_sha256": "88b05db0a71e202b1b4dfb459768362d60b41db942a18b1b96a0d2966df47fe5",
+  "audit": "outputs/v135-controlled-open-world-minimal-pairs/outcome-audit.json",
+  "audit_sha256": "6bce1f982040ff034235034b2d9b8bf29ce37f9adaf6cd0896ad4ec8df368b03",
+  "authorization": {
+    "modify_regenerate_or_relabel_V135": false,
+    "run_induction_training_authority_action_or_execution": false,
+    "run_local_or_API_model": false,
+    "run_model_free_sequential_value_audit": true,
+    "touch_V134_language": false
+  },
+  "choice_catalog": "outputs/v135-controlled-open-world-minimal-pairs/design/choice-catalog.json",
+  "choice_catalog_sha256": "5631a31834cf1a97a8fe645110aad45a2e984163f8afbd56efa4e052cfbe786e",
+  "experiment": "v135_controlled_open_world_minimal_pairs_outcome_lock",
+  "hidden_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "b0dbfef23db7b8975a6b0a74fa5602bbd65de2aadc307d19c6be2bd99b6b3231",
+  "lock_payload_sha256": "7f1bfa7f2cb12d6420504c42e39c410daf08d79face6070aecafb61aba4f2a4c",
+  "outcome": {
+    "audit_pass": true,
+    "controlled_benchmark_pass": true,
+    "decision": "freeze_controlled_minimal_pair_asset_authorize_model_free_sequential_value_audit_only",
+    "passed": true,
+    "summary": {
+      "choice_count": 9,
+      "clarification_resolution_rate": 1.0,
+      "cue_validation_rate": 1.0,
+      "family_count": 5,
+      "fixture_count": 200,
+      "group_count": 40,
+      "split_counts": {
+        "development": 100,
+        "test": 100
+      }
+    }
+  },
+  "population_summary": "outputs/v135-controlled-open-world-minimal-pairs/design/population-summary.json",
+  "population_summary_sha256": "35f0e12b2be6f3dedd706427959a1b05d4ba50637e01dab53af87f1f40df00ab",
+  "public_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/public-fixtures.json",
+  "public_fixtures_sha256": "895193ef53abfd754778faab940e53cbe299ab9c43316215a9c9a92d69edc13a",
+  "results_document": "docs/v135-controlled-open-world-minimal-pairs-results.md",
+  "results_document_sha256": "2c0a5846b115b512d43fa39e1d9db5a881cb2f7ac0cf0624149bdfd96c3a0718",
+  "schema_version": "135-controlled-open-world-minimal-pairs-outcome-lock",
+  "verifier": "python/verify_and_freeze_v135_controlled_open_world_minimal_pairs_outcome.py",
+  "verifier_sha256": "ef806a97aac425044e724003b891d8a3177992c48daf9e8cd1b5b623849c8b42"
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "131-complete-clarification-realization-population-design",
+  "experiment": "v131_text_free_complete_clarification_realization_population",
+  "parentV130OutcomeLock": "configs/v130-clarification-evidence-strength-outcome-lock.json",
+  "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "excludedPopulations": [
+    "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+    "outputs/v127-sgd-typed-constraint-feasibility/design/fresh-population.json",
+    "outputs/v128-sgd-typed-relation-feasibility/design/fresh-population.json"
+  ],
+  "claimBoundary": "text-free preregistration of a record-disjoint realization catalog and balanced truth-by-presented-candidate population; not language, model, clarification reliability, policy, or execution evidence",
+  "catalog": {
+    "visibleDomains": ["hotels", "movies", "services"],
+    "declaredKnownPairs": [
+      "Hotels_2::SearchHouse",
+      "Movies_1::FindMovies",
+      "Movies_1::BuyMovieTickets",
+      "Movies_1::GetTimesForMovie",
+      "Services_1::BookAppointment",
+      "Services_1::FindProvider"
+    ],
+    "novelCompositeDomains": ["hotels", "movies", "services"],
+    "unsupportedCompositeAcrossEveryRemainingUnseenDomain": true,
+    "insufficientControl": true,
+    "expectedChoiceCount": 11,
+    "completeSafeCompositeHypothesisUniverse": true
+  },
+  "population": {
+    "sourcePartition": "test",
+    "baseSalt": "simulagent-v131-complete-clarification-realization-v1",
+    "recordsPerTruthCandidateCell": 4,
+    "truthChoiceCount": 11,
+    "presentedKnownCandidateCount": 6,
+    "expectedCellCount": 66,
+    "expectedSourceRecordCount": 240,
+    "expectedMissingControlCount": 24,
+    "expectedFixtureCount": 264,
+    "unsupportedRecordCountPerUnseenDomain": 6,
+    "excludeEveryV125V127V128Identifier": true,
+    "selectionUsesOnlyIdentifierPartitionClassDomainServiceAndIntent": true,
+    "selectionBeforeAnySelectedLanguageExtraction": true
+  },
+  "populationGates": {
+    "requiredChoiceCount": 11,
+    "requiredKnownChoiceCount": 6,
+    "requiredNovelCompositeChoiceCount": 3,
+    "requiredUnsupportedChoiceCount": 1,
+    "requiredInsufficientChoiceCount": 1,
+    "requiredCellCount": 66,
+    "requiredRecordsPerCell": 4,
+    "requiredSourceRecordCount": 240,
+    "requiredMissingControlCount": 24,
+    "requiredFixtureCount": 264,
+    "requiredRecordsPerTruthChoice": 24,
+    "requiredRecordsPerPresentedCandidate": 44,
+    "requiredKnownPairCoverage": 6,
+    "requiredNovelDomainCoverage": 3,
+    "requiredUnsupportedDomainCoverage": 4,
+    "requireExcludedIdentifierDisjointness": true,
+    "requireUniqueSourceIdentifiers": true,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualLanguageInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryCatalogPopulationAndAccessGatePasses": "freeze_complete_clarification_realization_population_authorize_protocol_lock_only",
+    "otherwise": "reject_realization_population_without_reselection_or_gate_relaxation",
+    "passAuthorizesOnlyPreregisterLocalModelRealizationProtocol": true,
+    "passAuthorizesImmediateLanguageExtractionOrModelRun": false,
+    "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+  }
+}

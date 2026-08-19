@@ -1,0 +1,99 @@
+{
+  "auditor": "python/audit_and_freeze_v123_fresh_population_availability.py",
+  "auditor_sha256": "381fd7dc97d9f4a76b9dc4b48c718799aff31917042961dabeef66cd361ef02a",
+  "authorization": {
+    "evaluate_signal_trigger_or_model": false,
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_counts_requirements_exclusions_gates_or_decision": false,
+    "read_language_or_individual_candidates": false,
+    "run_one_text_free_aggregate_availability_audit": true
+  },
+  "config": "configs/v123-fresh-population-availability-audit.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFreshLanguageReadCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0
+    },
+    "candidateRequirement": {
+      "classes": [
+        "known_familiar",
+        "known_unfamiliar",
+        "novel_valid",
+        "unsupported"
+      ],
+      "excludeEveryPriorAndProtectedIdentifier": true,
+      "minimumNovelValidScenarioCoverage": 2,
+      "minimumRecordCountPerClass": 32,
+      "sourcePartition": "test"
+    },
+    "claimBoundary": "text-free aggregate availability of a genuinely unused MASSIVE test population; not a language, signal, trigger, model, or utility evaluation",
+    "decisionRule": {
+      "ifAllOutcomeAndAccessGatesPass": "massive_unused_pool_insufficient_for_fresh_paired_transfer_require_external_source",
+      "otherwise": "fresh_population_availability_inconclusive_keep_evaluation_closed",
+      "passAuthorizesOnlyExternalControlledOpenSetSourceFeasibilityAudit": true,
+      "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false,
+      "passAuthorizesShrinkReuseLanguageSignalTriggerOrModelEvaluation": false
+    },
+    "excludedPopulations": [
+      "outputs/v101-massive-population/population/selected-population.json",
+      "outputs/v112-open-world-full-policy-transfer/design/fresh-population.json",
+      "outputs/v114-rescued-policy-transfer/design/fresh-population.json",
+      "outputs/v115-contrastive-catalog-fit/design/fresh-population.json"
+    ],
+    "experiment": "v123_text_free_massive_fresh_population_availability_audit",
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumIndividualCandidateEmissionCount": 0,
+      "maximumLanguageReadCount": 0,
+      "requireCandidateRequirementFailure": true,
+      "requireExactRemainingCounts": {
+        "known_familiar": 38,
+        "known_unfamiliar": 186,
+        "novel_valid": 9,
+        "unsupported": 111
+      },
+      "requiredMaximumBalancedRecordCountPerClass": 9,
+      "requiredRemainingNovelScenarioCoverage": 1
+    },
+    "parentV122OutcomeLock": "configs/v122-prequery-signal-inventory-outcome-lock.json",
+    "schemaVersion": "123-fresh-population-availability-audit-design",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json"
+  },
+  "config_sha256": "364b6335ad27b0f0a25c58c206263d48d91a83f86dd12f93fa041ac438b0c390",
+  "design_audit": "outputs/v123-fresh-population-availability-audit/design-audit.json",
+  "design_audit_sha256": "7c41d1b2d9fea1f12b6cfbd301e3d6f9e3c53353f4ce01bd6e150d665c674077",
+  "excluded_population_0": "outputs/v101-massive-population/population/selected-population.json",
+  "excluded_population_0_sha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "excluded_population_1": "outputs/v112-open-world-full-policy-transfer/design/fresh-population.json",
+  "excluded_population_1_sha256": "3c1b033574e431d0f8ca148f2951d59224580645baa74d73164bd5697a22d3f3",
+  "excluded_population_2": "outputs/v114-rescued-policy-transfer/design/fresh-population.json",
+  "excluded_population_2_sha256": "f4f4647fe3a3f404f9f1a39533ef135a50b71e124d96291f7af47c18f72fff72",
+  "excluded_population_3": "outputs/v115-contrastive-catalog-fit/design/fresh-population.json",
+  "excluded_population_3_sha256": "7265b373295e4c4bfa907a49ea1b05dee8d6c70155fdb12b17f6f012197b4592",
+  "experiment": "v123_text_free_massive_fresh_population_availability_audit",
+  "lock_payload_sha256": "1f6aad51b4e66ed10c6f2a7b1f20fa234f6240220950e4d1cacff12bfbc6f4cd",
+  "parent_analysis_lock": "configs/v122-prequery-signal-inventory-lock.json",
+  "parent_analysis_lock_sha256": "f7fead45d4a1041af4d98bfa8aba0a2b2cbc08c27374d0c09b329df23ca12f8d",
+  "parent_outcome": "configs/v122-prequery-signal-inventory-outcome-lock.json",
+  "parent_outcome_sha256": "df4cec616cd02993dc0060201186c89ff205d5a23883ee67b7749b447b620006",
+  "plan": "docs/v123-fresh-population-availability-audit-plan.md",
+  "plan_sha256": "eb99de36fd7eda3d1147919293a95caaf504b2282465d4ab9e89d1809d2207b9",
+  "protocol": "python/v123_fresh_population_availability_audit.py",
+  "protocol_sha256": "ea0b42f25163a9579327cbca5103015ae0559c11daace73e1fa9f541f6f28976",
+  "runner": "python/run_v123_fresh_population_availability_audit.py",
+  "runner_sha256": "3b5db77870f656da0b619dd02420a57eddb05e677df3ef78c0b416189eee442c",
+  "schema_version": "123-fresh-population-availability-lock",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "tests": "python/test_v123_fresh_population_availability_audit.py",
+  "tests_sha256": "1a80f35f15829405d77e2ce8a47a59d3522a3a0cf9e9375dfb28cdda176b4d63",
+  "verifier": "python/verify_and_freeze_v123_fresh_population_availability_outcome.py",
+  "verifier_sha256": "b4dd59cc580a60a34247477bcfcf56365dfca2fec44befa62ada7666cccca08d"
+}

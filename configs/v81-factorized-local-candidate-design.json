@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "81-factorized-local-candidate-design",
+  "experiment": "v81_frozen_local_LLM_factorized_candidate_generation",
+  "purpose": "test whether a frozen local LLM can emit a fixed semantic compatibility vector that deterministic code safely maps into V79 interpretation candidates",
+  "predecessorConstraint": "V80 is frozen and may not be rerun; V81 uses a new prompt, a different fixed-shape representation, and 24 fresh project-authored requests",
+  "model": {
+    "provider": "local_mlx",
+    "repository": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "adapterPath": null,
+    "frozen": true,
+    "APIRequired": false
+  },
+  "candidateIdsInRequiredOrder": [
+    "schedule_review__alex_chen",
+    "send_summary__alex_chen",
+    "schedule_review__alex_kim",
+    "send_summary__alex_kim",
+    "none_of_the_above"
+  ],
+  "labelKeysInRequiredOrder": [
+    "schedule_review",
+    "send_summary",
+    "alex_chen",
+    "alex_kim",
+    "out_of_ontology"
+  ],
+  "systemPrompt": "You are a semantic compatibility labeler, not a decision maker. Return exactly one JSON object with these five Boolean keys in this exact order: schedule_review, send_summary, alex_chen, alex_kim, out_of_ontology. Mark every interpretation compatible with the text, not merely the most likely one. schedule_review is true only for arranging, booking, organizing, or setting up a project review meeting. send_summary is true only for sending, delivering, forwarding, sharing, or emailing a project summary or recap. If the requested operation is unspecified or generically described as a project item, task, request, matter, or issue, both operation keys are true. alex_chen is true for Alex Chen; alex_kim is true for Alex Kim; if only Alex is given, both recipient keys are true. out_of_ontology is true exactly when neither supported operation is requested; in that case both operation keys must be false. Do not include candidate IDs, probabilities, confidence, actions, tools, explanations, or Markdown.",
+  "userPromptTemplate": "Project request: {instruction}",
+  "outputContract": {
+    "exactTopLevelKeys": [
+      "schedule_review",
+      "send_summary",
+      "alex_chen",
+      "alex_kim",
+      "out_of_ontology"
+    ],
+    "valuesMustBeBoolean": true,
+    "outOfOntologyIffNoSupportedOperation": true,
+    "candidateComposition": "if out_of_ontology then none_of_the_above only; otherwise canonical cross-product of true operation and recipient flags followed by none_of_the_above",
+    "confidenceOrProbabilityFieldsAllowed": false,
+    "actionOrToolFieldsAllowed": false,
+    "candidateIdsFromModelAllowed": false
+  },
+  "decoding": {
+    "enableThinking": false,
+    "temperature": 0.0,
+    "maximumNewTokens": 96,
+    "maximumPromptTokens": 640,
+    "samplesPerRecord": 1,
+    "retryOnMalformedOutput": false
+  },
+  "records": [
+    {"id":"v81-clear-sc-01","stratum":"clear","instruction":"Set up a project review meeting with Alex Chen.","goldLabels":{"schedule_review":true,"send_summary":false,"alex_chen":true,"alex_kim":false,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","none_of_the_above"]},
+    {"id":"v81-clear-sc-02","stratum":"clear","instruction":"Organize the project review session for Alex Chen.","goldLabels":{"schedule_review":true,"send_summary":false,"alex_chen":true,"alex_kim":false,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","none_of_the_above"]},
+    {"id":"v81-clear-sk-01","stratum":"clear","instruction":"Set up a project review meeting with Alex Kim.","goldLabels":{"schedule_review":true,"send_summary":false,"alex_chen":false,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_kim","none_of_the_above"]},
+    {"id":"v81-clear-sk-02","stratum":"clear","instruction":"Organize the project review session for Alex Kim.","goldLabels":{"schedule_review":true,"send_summary":false,"alex_chen":false,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_kim","none_of_the_above"]},
+    {"id":"v81-clear-tc-01","stratum":"clear","instruction":"Email the project recap to Alex Chen.","goldLabels":{"schedule_review":false,"send_summary":true,"alex_chen":true,"alex_kim":false,"out_of_ontology":false},"goldCandidateIds":["send_summary__alex_chen","none_of_the_above"]},
+    {"id":"v81-clear-tc-02","stratum":"clear","instruction":"Share the project summary with Alex Chen.","goldLabels":{"schedule_review":false,"send_summary":true,"alex_chen":true,"alex_kim":false,"out_of_ontology":false},"goldCandidateIds":["send_summary__alex_chen","none_of_the_above"]},
+    {"id":"v81-clear-tk-01","stratum":"clear","instruction":"Email the project recap to Alex Kim.","goldLabels":{"schedule_review":false,"send_summary":true,"alex_chen":false,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-clear-tk-02","stratum":"clear","instruction":"Share the project summary with Alex Kim.","goldLabels":{"schedule_review":false,"send_summary":true,"alex_chen":false,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-recipient-s-01","stratum":"recipient_ambiguous","instruction":"Set up Alex's project review meeting.","goldLabels":{"schedule_review":true,"send_summary":false,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","schedule_review__alex_kim","none_of_the_above"]},
+    {"id":"v81-recipient-s-02","stratum":"recipient_ambiguous","instruction":"Organize a project review session with Alex.","goldLabels":{"schedule_review":true,"send_summary":false,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","schedule_review__alex_kim","none_of_the_above"]},
+    {"id":"v81-recipient-t-01","stratum":"recipient_ambiguous","instruction":"Email Alex the project recap.","goldLabels":{"schedule_review":false,"send_summary":true,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["send_summary__alex_chen","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-recipient-t-02","stratum":"recipient_ambiguous","instruction":"Share the project summary with Alex.","goldLabels":{"schedule_review":false,"send_summary":true,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["send_summary__alex_chen","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-operation-c-01","stratum":"operation_ambiguous","instruction":"Resolve the project matter for Alex Chen.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":true,"alex_kim":false,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","send_summary__alex_chen","none_of_the_above"]},
+    {"id":"v81-operation-c-02","stratum":"operation_ambiguous","instruction":"Deal with Alex Chen's project issue.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":true,"alex_kim":false,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","send_summary__alex_chen","none_of_the_above"]},
+    {"id":"v81-operation-k-01","stratum":"operation_ambiguous","instruction":"Resolve the project matter for Alex Kim.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":false,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_kim","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-operation-k-02","stratum":"operation_ambiguous","instruction":"Deal with Alex Kim's project issue.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":false,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_kim","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-full-01","stratum":"fully_ambiguous","instruction":"Resolve Alex's project matter.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","send_summary__alex_chen","schedule_review__alex_kim","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-full-02","stratum":"fully_ambiguous","instruction":"Deal with Alex's project issue.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","send_summary__alex_chen","schedule_review__alex_kim","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-full-03","stratum":"fully_ambiguous","instruction":"Address the project matter for Alex.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","send_summary__alex_chen","schedule_review__alex_kim","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-full-04","stratum":"fully_ambiguous","instruction":"Sort out Alex's project issue.","goldLabels":{"schedule_review":true,"send_summary":true,"alex_chen":true,"alex_kim":true,"out_of_ontology":false},"goldCandidateIds":["schedule_review__alex_chen","send_summary__alex_chen","schedule_review__alex_kim","send_summary__alex_kim","none_of_the_above"]},
+    {"id":"v81-unknown-01","stratum":"out_of_ontology","instruction":"Rename the project folder for Alex Chen.","goldLabels":{"schedule_review":false,"send_summary":false,"alex_chen":true,"alex_kim":false,"out_of_ontology":true},"goldCandidateIds":["none_of_the_above"]},
+    {"id":"v81-unknown-02","stratum":"out_of_ontology","instruction":"Print the project brief for Alex Kim.","goldLabels":{"schedule_review":false,"send_summary":false,"alex_chen":false,"alex_kim":true,"out_of_ontology":true},"goldCandidateIds":["none_of_the_above"]},
+    {"id":"v81-unknown-03","stratum":"out_of_ontology","instruction":"Approve Alex's project budget.","goldLabels":{"schedule_review":false,"send_summary":false,"alex_chen":true,"alex_kim":true,"out_of_ontology":true},"goldCandidateIds":["none_of_the_above"]},
+    {"id":"v81-unknown-04","stratum":"out_of_ontology","instruction":"Move Alex Chen's project deadline.","goldLabels":{"schedule_review":false,"send_summary":false,"alex_chen":true,"alex_kim":false,"out_of_ontology":true},"goldCandidateIds":["none_of_the_above"]}
+  ],
+  "gates": {
+    "requiredRecordCount": 24,
+    "requiredStratumCounts": {"clear":8,"recipient_ambiguous":4,"operation_ambiguous":4,"fully_ambiguous":4,"out_of_ontology":4},
+    "minimumExactJSONParseRate": 1.0,
+    "minimumSchemaValidityRate": 1.0,
+    "minimumExactLabelVectorAccuracy": 0.75,
+    "minimumMeanLabelAccuracy": 0.95,
+    "minimumOutOfOntologyLabelAccuracy": 0.75,
+    "minimumMeanGoldCandidateRecall": 0.95,
+    "minimumPerStratumMeanGoldCandidateRecall": 0.9,
+    "minimumExactCandidateSetAccuracy": 0.75,
+    "minimumClearExactCandidateSetAccuracy": 0.75,
+    "minimumOutOfOntologyExactCandidateSetAccuracy": 0.75,
+    "minimumCanonicalOrderRate": 1.0,
+    "maximumMeanCandidateCount": 3.5,
+    "maximumConfidenceOrProbabilityFieldCount": 0,
+    "maximumActionOrToolFieldCount": 0,
+    "maximumCandidateIdFieldCount": 0,
+    "maximumModelGenerationCount": 24,
+    "maximumAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumRealToolCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze factorized proposer and authorize preregistration of deterministic candidate-to-belief integration",
+    "ifAnyGateFails": "freeze V81 without edits or rerun and stop local candidate integration pending a materially different design",
+    "passAuthorizesBeliefAssignmentImmediately": false,
+    "passAuthorizesAPIAccess": false,
+    "passAuthorizesAdapterTraining": false,
+    "passAuthorizesRealToolExecution": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeProtocol": true,
+    "constructAndSealCorpus": false,
+    "implementAndAuditLocalRunner": false,
+    "runLocalModel": false,
+    "runAPIModel": false,
+    "trainAdapter": false,
+    "collectHumanLanguage": false,
+    "performRealToolCall": false,
+    "performExternalSideEffect": false
+  }
+}

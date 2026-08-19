@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "133-sgd-capability-label-identifiability-design",
+  "experiment": "v133_model_free_SGD_capability_label_identifiability_audit",
+  "parentV132OutcomeLock": "configs/v132-local-complete-answer-realization-outcome-lock.json",
+  "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "choiceCatalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+  "fixturePopulation": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+  "claimBoundary": "source-schema audit of whether selected service-level novel labels correspond to distinguishable capability definitions; not language-model evaluation, unrestricted semantic equivalence, causal attribution of individual errors, or execution evidence",
+  "schemaAudit": {
+    "archiveRevision": "e852981ae34990f4358979625854259302feaa78",
+    "schemaPartitions": ["train", "test"],
+    "declaredDefinitionsFrom": "train",
+    "novelDefinitionsFrom": "test",
+    "comparisonScope": "each selected novel service-intent definition against all six declared known definitions",
+    "primaryCollision": "Unicode-normalized case-folded alphanumeric intent name equality",
+    "secondaryCollisions": [
+      "normalized description equality",
+      "required and optional slot-set equality",
+      "joint normalized name description and slot equality"
+    ],
+    "manualSemanticJudgmentCount": 0,
+    "emitRawDescriptionCount": 0,
+    "emitUtteranceOrSlotValueCount": 0
+  },
+  "identifiabilityGates": {
+    "requiredSelectedNovelRecordCount": 72,
+    "requiredNovelCompositeChoiceCount": 3,
+    "minimumNovelChoicesWithNoExactNameCollision": 3,
+    "maximumSelectedNovelRecordExactNameCollisionFraction": 0.10,
+    "maximumSelectedNovelRecordFullSignatureCollisionFraction": 0.10,
+    "maximumEntirelyNameCollidingNovelChoiceCount": 0,
+    "requireEveryNovelDefinitionPresentExactlyOnce": true,
+    "requiredDeclaredKnownDefinitionCount": 6,
+    "maximumManualSemanticJudgmentCount": 0,
+    "maximumRawDescriptionEmissionCount": 0,
+    "maximumUtteranceOrSlotValueReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumSourceArchiveReadCount": 1,
+    "maximumSchemaFileReadCount": 2,
+    "maximumDialogueFileReadCount": 0,
+    "maximumLanguageRecordReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryIdentifiabilityAndAccessGatePasses": "SGD_selected_novel_labels_are_capability_identifiable_authorize_independent_source_confirmation_design_only",
+    "otherwise": "SGD_service_novelty_is_capability_confounded_retract_pure_capability_novelty_interpretation",
+    "failureAuthorizesOnlyTextFreeSemanticallyNoncollidingSourceDesign": true,
+    "failureAuthorizesModelRerunPromptRevisionOrScaling": false,
+    "eitherOutcomeAuthorizesProtectedInductionRicherPlanningAPITrainingActionOrExecution": false
+  }
+}

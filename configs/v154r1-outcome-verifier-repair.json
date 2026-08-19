@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "154r1-outcome-verifier-repair",
+  "experiment": "v154r1_json_key_type_outcome_verifier_repair",
+  "parentV154AnalysisLock": "configs/v154-adaptive-local-question-order-lock.json",
+  "failedV154OutcomeAudit": "outputs/v154-adaptive-local-question-order/outcome-audit.json",
+  "v154Result": "outputs/v154-adaptive-local-question-order/model-realization/result.json",
+  "v154Access": "outputs/v154-adaptive-local-question-order/model-realization/access.json",
+  "v154DirectResult": "outputs/v154-adaptive-local-question-order/model-realization/direct/result.json",
+  "v154BoundedLowResult": "outputs/v154-adaptive-local-question-order/model-realization/bounded-low-reasoning/result.json",
+  "v154ResultsDocument": "docs/v154-adaptive-local-question-order-results.md",
+  "claimBoundary": "technical outcome-verifier repair only: recursively normalize recomputed summary objects through JSON before exact comparison because JSON object keys are strings; do not rerun or inspect model language, change any metric, gate, decision, threshold, prompt, reasoning setting, parser, fallback, sample, or scientific claim",
+  "diagnosis": {
+    "expectedFailedChecks": [
+      "direct_summary_exact",
+      "bounded_low_summary_exact_if_triggered"
+    ],
+    "expectedSoleMismatchField": "metrics.rank_counts",
+    "recomputedRankCountKeyType": "integer",
+    "persistedJsonRankCountKeyType": "string",
+    "canonicalization": "json.loads(json.dumps(value, sort_keys=True))",
+    "requireRawInequalityBeforeCanonicalization": true,
+    "requireExactEqualityAfterCanonicalization": true,
+    "requireExactEqualityAfterRemovingRankCounts": true
+  },
+  "frozenOutcome": {
+    "selectedCondition": null,
+    "decision": "local_question_order_conditions_fail_development_gates_close_without_evaluation_or_tuning",
+    "developmentQualified": false
+  },
+  "accessGates": {
+    "maximumModelLoadCount": 0,
+    "maximumTokenizerLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumRawResponseInspectionCount": 0,
+    "maximumEvaluationReadCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "authorization": {
+    "writeRepairedTechnicalOutcomeAuditAndLock": true,
+    "modifyOriginalV154VerifierOrFailedAudit": false,
+    "rerunModelOrTokenizer": false,
+    "inspectRawLanguage": false,
+    "openEvaluationSplit": false,
+    "changeMetricsGatesDecisionOrClaims": false,
+    "retryRerunRepromptTuneOrCalibrate": false,
+    "runAPITrainingServicesSideEffectsOrExecution": false
+  }
+}

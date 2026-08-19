@@ -1,0 +1,39 @@
+{
+  "audit": "outputs/v78-structured-llm-interface/outcome-audit.json",
+  "audit_sha256": "ee79b234bd11e50491b95cc17db6287c148d0b77b04a83431cb1cd97d4b630b7",
+  "authorization": {
+    "access_local_or_API_model": false,
+    "claim_V78_as_model_or_human_evidence": false,
+    "compute_successor_outcomes_before_successor_lock": false,
+    "modify_or_rerun_V78": false,
+    "preregister_fresh_successor_with_explicit_terminal_unresolved_utility": true
+  },
+  "decision": "freeze_v78_failure_and_authorize_fresh_terminal-utility_successor_preregistration",
+  "experiment": "v78_model_free_outcome_lock",
+  "implementation_lock": "configs/v78-clarification-implementation-lock.json",
+  "implementation_lock_sha256": "b16b9000c41ced69dc947600a345de6c46cdd082d26c73b173fee68c6988c005",
+  "lock_payload_sha256": "9a3f176a5f6386e08007475c64660e01b7a5285bdc93dc351935eeadb946fb70",
+  "raw_fixture_artifacts": [
+    {
+      "path": "outputs/v78-structured-llm-interface/model-free-evaluation/raw-fixtures/000-ambiguous_tool_intent.json",
+      "sha256": "0bd5cfac0aa644c321a34b6e4a28d7c5a5cfd6f53948d95aff1f6e83aeae4344"
+    },
+    {
+      "path": "outputs/v78-structured-llm-interface/model-free-evaluation/raw-fixtures/001-clear_tool_intent.json",
+      "sha256": "9eff5efe5a81517672baa1dc75919049dcb1fb8c7e1a8988695913e8a3571493"
+    },
+    {
+      "path": "outputs/v78-structured-llm-interface/model-free-evaluation/raw-fixtures/002-unknown_heavy_tool_intent.json",
+      "sha256": "fa0bf8d95377bda288738961a47afa7416c2924a5e3187b33fd8e743f10146b0"
+    },
+    {
+      "path": "outputs/v78-structured-llm-interface/model-free-evaluation/raw-fixtures/003-dominant_safe_preview.json",
+      "sha256": "229b62bcf10c814554b464e66f0f70c4ea29834ea558c876a86bdb49823a2bac"
+    }
+  ],
+  "result": "outputs/v78-structured-llm-interface/model-free-evaluation/result.json",
+  "result_sha256": "45411af857b4e1b024effd9d4601b2ed0340dea121490fb647097378d77d0f6b",
+  "schema_version": "78-clarification-outcome-lock",
+  "verifier": "python/verify_and_freeze_v78_clarification_outcome.py",
+  "verifier_sha256": "14da46bfadbee3a8aacacd44a9929125bbd04abf0288ed467aafbfe4a4143f89"
+}

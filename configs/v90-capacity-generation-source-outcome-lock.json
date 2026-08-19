@@ -1,0 +1,66 @@
+{
+  "audit": "outputs/v90-capacity-generation/source-outcome-audit.json",
+  "audit_sha256": "83644f8ab7bac8f885f12abd7b5b0eba501a534b5e1133f1aec66d464fb4a1f7",
+  "authorization": {
+    "download_or_run_model_before_population_prompt_and_gates_lock": false,
+    "grant_model_belief_action_or_execution_authority": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_source_extension": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_fresh_hash_selected_multi_model_shadow_population": true,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_utterance_extraction": true
+  },
+  "experiment": "v90_capacity_generation_source_outcome_lock",
+  "inventory": "outputs/v90-capacity-generation/source-inventory/structural-inventory.json",
+  "inventory_sha256": "4b4d2a91e85b85ee1bd30738de821fb06f295b76fb936f146041999cbad03cf8",
+  "lock_payload_sha256": "6e06b8f829a37ab9529ffd0bb7cd6e2689c1241434ef9504e646b1ac1ba146b1",
+  "outcome": {
+    "decision": "freeze_source_and_preregister_fresh_model_population",
+    "inventory_summary": {
+      "contains_utterance_or_text_fields": false,
+      "counts": {
+        "dialogue_count": 128,
+        "eligible_active_record_count": 884,
+        "eligible_none_record_count": 78,
+        "eligible_record_count": 962,
+        "non_user_turn_count": 962,
+        "turn_count": 1924,
+        "user_turn_count": 962
+      },
+      "eligible_intent_counts": {
+        "Alarm_1::AddAlarm": 18,
+        "Alarm_1::GetAlarms": 9,
+        "Alarm_1::NONE": 3,
+        "Buses_1::BuyBusTicket": 140,
+        "Buses_1::FindBus": 210,
+        "Buses_1::NONE": 27,
+        "RentalCars_1::GetCarsAvailable": 198,
+        "RentalCars_1::NONE": 26,
+        "RentalCars_1::ReserveCar": 104,
+        "RideSharing_1::GetRide": 205,
+        "RideSharing_1::NONE": 22
+      },
+      "eligible_service_counts": {
+        "Alarm_1": 30,
+        "Buses_1": 377,
+        "RentalCars_1": 328,
+        "RideSharing_1": 227
+      },
+      "record_index_sha256": "61c8fe49db04dbe8d54261733aa7cb4916e0ac9ffbe3d95f9efce8e4c6e78538"
+    },
+    "passed": true
+  },
+  "result": "outputs/v90-capacity-generation/source-inventory/result.json",
+  "result_sha256": "905269f85c84acdab3a39be5e8f74019381b91e79a39b47af1c32b55994a252b",
+  "results_document": "docs/v90-capacity-generation-source-results.md",
+  "results_document_sha256": "30786e972744205173e43c5df298f5480cdea172c81b1860f2a6986ee90de273",
+  "schema_version": "90-capacity-generation-source-outcome-lock",
+  "source_file": "outputs/v90-capacity-generation/source/dialogues_002.json",
+  "source_file_git_blob_sha1": "fc199abe65125e63864173ef5b89533b048427bb",
+  "source_file_sha256": "fcbc8ba411ed8b3e0b06dff31819dc366f6bc6d228e021053920365e11004b03",
+  "source_lock": "configs/v90-capacity-generation-source-lock.json",
+  "source_lock_sha256": "dd34c08d74bf09aa990585fb46e4005a1eac0ef80af6a246032bf9772629f6c4",
+  "verifier": "python/verify_and_freeze_v90_source_outcome.py",
+  "verifier_sha256": "ba002d0267b1e22dfd861d17e702182ff07504c0e6f0c77f3eef9a0fb27898e7"
+}

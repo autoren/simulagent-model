@@ -1,0 +1,248 @@
+{
+  "authorization": {
+    "access_human_records_or_real_tools": false,
+    "access_local_or_API_model": false,
+    "compute_V79_policy_values_or_optimal_actions": false,
+    "implement_and_structurally_audit_model_free_terminal_utility": true,
+    "modify_inherited_V78_fields_or_terminal_utility": false,
+    "perform_external_side_effect": false
+  },
+  "design_audit": "outputs/v79-structured-llm-interface/design-audit.json",
+  "design_audit_sha256": "5d22fbead7dd376508191d582839e717eb1a3b2e1fe93a8585e4fb90487be4f2",
+  "design_auditor": "python/audit_and_freeze_v79_terminal_utility_design.py",
+  "design_auditor_sha256": "fda0a2e1504c62ee5e29674cf0efe9fe37af61075d019fb10a3a22eadb350072",
+  "design_delta": "configs/v79-terminal-utility-design.json",
+  "design_delta_sha256": "793e5c4f0c5228ef31ebae7470e3a7f8c8e06d48d53b172336dec14ff2e5824e",
+  "experiment": "v79_terminal_utility_design_lock",
+  "lock_payload_sha256": "8b3838327e4b637e56f1ec564b2f9815406f53a0b4b76865dcb7f749d8ec5950",
+  "parent_outcome_lock": "configs/v78-clarification-outcome-lock.json",
+  "parent_outcome_lock_sha256": "22234ec335d6881d4dfdea08dff1489dfc2c41de32b22028dcb26dbff75c53e5",
+  "preregistration": "docs/v79-terminal-utility-benchmark-plan.md",
+  "preregistration_sha256": "b4e55921d82878478feb3c8203f586d419636bf8146e62ebb3d8208b83777aa2",
+  "resolved_config_payload": {
+    "actionsInTieBreakOrder": [
+      "ask_operation",
+      "ask_recipient",
+      "ask_full_details",
+      "preview_schedule_chen",
+      "preview_send_chen",
+      "preview_schedule_kim",
+      "preview_send_kim",
+      "execute_schedule_chen",
+      "execute_send_chen",
+      "execute_schedule_kim",
+      "execute_send_kim",
+      "safe_preview",
+      "abstain"
+    ],
+    "additionalGates": {
+      "requireAllInheritedV78Gates": true,
+      "requireTerminalUtilityReplayAgreement": true,
+      "requiredActiveUnresolvedTerminalUtility": -6.0,
+      "requiredTerminalStateTerminalUtility": 0.0,
+      "requiredV78FailedGateSet": [
+        "unknown_has_safe_unknown_continuation"
+      ],
+      "requiredV78PassedGateCount": 19
+    },
+    "benchmarkGates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCompleteBeliefExecutionCertificateViolations": 0,
+      "maximumDominantNormalizedMAPRegret": 1e-12,
+      "maximumDominantNormalizedPosteriorSamplingRegret": 1e-12,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumOffSupportFallbackCount": 0,
+      "maximumRealToolCallCount": 0,
+      "maximumUnknownBranchIrreversibleExecutionCount": 0,
+      "minimumAmbiguousNormalizedActImmediatelyRegret": 0.05,
+      "minimumAmbiguousNormalizedMAPRegret": 0.05,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumClearNormalizedAskAlwaysRegret": 0.02,
+      "minimumIdenticalHypothesisSupportRate": 1.0,
+      "minimumObservationNormalizationRate": 1.0,
+      "minimumTransitionNormalizationRate": 1.0,
+      "requiredAmbiguousReachableInformationActions": [
+        "ask_operation",
+        "ask_recipient"
+      ],
+      "requiredAmbiguousRootActionSet": [
+        "ask_operation",
+        "ask_recipient"
+      ],
+      "requiredClearRootAction": "execute_schedule_chen",
+      "requiredDominantRootAction": "safe_preview",
+      "requiredFixtureCount": 4,
+      "requiredHypothesisCount": 5,
+      "requiredNoneHypothesis": "none_of_the_above",
+      "requiredUnknownContinuationActionSet": [
+        "safe_preview",
+        "abstain"
+      ],
+      "requiredUnknownRootActionSet": [
+        "ask_operation",
+        "ask_recipient",
+        "ask_full_details"
+      ]
+    },
+    "claimBoundary": {
+      "APIModelEvidence": false,
+      "executionAuthority": false,
+      "externalBenchmarkEvidence": false,
+      "humanLanguageEvidence": false,
+      "localModelEvidence": false,
+      "modelFreeStage": true,
+      "openWorldSafety": false,
+      "projectAuthoredDevelopmentMechanism": true,
+      "targetedSuccessorToFrozenNegativeResult": true
+    },
+    "controls": [
+      "exact_posterior_aware",
+      "map_interpretation",
+      "persistent_posterior_sampling",
+      "act_immediately",
+      "ask_always",
+      "best_open_loop",
+      "oracle_interpretation"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V79 failure without changing the terminal utility or inherited V78 design",
+      "ifEveryInheritedAndAdditionalGatePasses": "freeze V79 and authorize preregistration of frozen local-model candidate generation",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesExecutionAuthority": false,
+      "passAuthorizesLearnedLikelihoods": false,
+      "passAuthorizesLoRA": false,
+      "passAuthorizesLocalModelForwardPassesImmediately": false
+    },
+    "dominantControlRewardProfile": {
+      "abstain": -5.0,
+      "askFullDetails": -5.5,
+      "askOperation": -1.2,
+      "askRecipient": -1.0,
+      "candidatePreview": -1.0,
+      "everyExecution": 3.0,
+      "safePreview": 6.0
+    },
+    "experiment": "v79_explicit_unresolved_terminal_utility_successor",
+    "fixtures": [
+      {
+        "name": "ambiguous_tool_intent",
+        "prior": [
+          0.225,
+          0.225,
+          0.225,
+          0.225,
+          0.1
+        ],
+        "rewardProfile": "positive",
+        "syntheticInstruction": "Handle the project item for Alex."
+      },
+      {
+        "name": "clear_tool_intent",
+        "prior": [
+          0.992,
+          0.002,
+          0.002,
+          0.002,
+          0.002
+        ],
+        "rewardProfile": "positive",
+        "syntheticInstruction": "Schedule the project review with Alex Chen now."
+      },
+      {
+        "name": "unknown_heavy_tool_intent",
+        "prior": [
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.52
+        ],
+        "rewardProfile": "positive",
+        "syntheticInstruction": "Do the unusual project thing for the other Alex."
+      },
+      {
+        "name": "dominant_safe_preview",
+        "prior": [
+          0.225,
+          0.225,
+          0.225,
+          0.225,
+          0.1
+        ],
+        "rewardProfile": "dominant_control",
+        "syntheticInstruction": "Prepare the safest reversible project option for Alex."
+      }
+    ],
+    "hypothesesInTieBreakOrder": [
+      "schedule_review__alex_chen",
+      "send_summary__alex_chen",
+      "schedule_review__alex_kim",
+      "send_summary__alex_kim",
+      "none_of_the_above"
+    ],
+    "observationsInSourceOrder": [
+      "operation_schedule",
+      "operation_send",
+      "operation_other",
+      "recipient_chen",
+      "recipient_kim",
+      "recipient_other",
+      "full_schedule_chen",
+      "full_send_chen",
+      "full_schedule_kim",
+      "full_send_kim",
+      "full_other",
+      "preview_approved",
+      "preview_rejected",
+      "done"
+    ],
+    "positiveRewardProfile": {
+      "abstain": -5.0,
+      "askFullDetails": -5.5,
+      "askOperation": -1.2,
+      "askRecipient": -1.0,
+      "candidatePreview": -1.0,
+      "correctExecution": 14.0,
+      "safePreview": -2.5,
+      "wrongOrUnsupportedExecution": -40.0
+    },
+    "purpose": "targeted model-free successor to V78 that assigns explicit utility to unresolved active belief at horizon exhaustion",
+    "schemaVersion": "79-terminal-utility-benchmark-design",
+    "sharedParameters": {
+      "discount": 1.0,
+      "focusedQuestionReliability": 0.94,
+      "fullQuestionReliability": 0.97,
+      "horizonActions": 3,
+      "irreversibleExecutionMaximumNonePosterior": 0.08,
+      "irreversibleExecutionMinimumMatchingPosterior": 0.9,
+      "matchingPreviewApprovalProbability": 0.8,
+      "nonmatchingPreviewApprovalProbability": 0.2,
+      "tieTolerance": 1e-12
+    },
+    "stageAuthorization": {
+      "accessAPIModel": false,
+      "accessLocalModel": false,
+      "auditAndFreezeDesign": true,
+      "collectHumanLanguage": false,
+      "computePlannerOutcomes": false,
+      "implementTerminalUtilityPlanner": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "trainAdapter": false
+    },
+    "statesInSourceOrder": [
+      "active",
+      "terminal"
+    ],
+    "terminalUtility": {
+      "activeUnresolvedAtHorizonExhaustion": -6.0,
+      "appliesToPlannerAndEveryControl": true,
+      "requiredOrdering": "active unresolved < explicit abstain < safe preview",
+      "terminalStateAtHorizonExhaustion": 0.0
+    }
+  },
+  "schema_version": "79-terminal-utility-design-lock"
+}

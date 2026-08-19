@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "91-rank-only-source-extension",
+  "experiment": "v91_fresh_external_rank_only_source_extension",
+  "purpose": "pin and inventory one previously untouched official Schema-Guided Dialogue development shard before any rank-only population selection or model access",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "parentModelDecisionLock": "configs/v90-capacity-generation-outcome-lock.json",
+  "previousSourceOutcomeLock": "configs/v90-capacity-generation-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "newDialogueShard": {
+    "path": "dev/dialogues_003.json",
+    "byteSize": 1965028,
+    "gitBlobSha1": "6abbd79ddd2c58c386ca9cfb748bb55a4efd7be5",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_003.json"
+  },
+  "preLockExposure": {
+    "allowed": [
+      "GitHub contents API file name, type, byte size, and Git blob identifier",
+      "existing V87 source and license locks",
+      "frozen V90 model-use decision and source outcome"
+    ],
+    "GitHubMetadataRequestCount": 1,
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "newModelWeightDownloadCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0
+  },
+  "inventoryProtocol": {
+    "verifyByteSizeAndGitBlobBeforeParsing": true,
+    "reusePinnedV87SchemaOnly": true,
+    "manualUtteranceInspection": false,
+    "emitLanguageOrSlotValues": false,
+    "excludedServicePrefixes": [
+      "Calendar_",
+      "Messaging_",
+      "Project_",
+      "File_",
+      "Incident_",
+      "Inventory_"
+    ]
+  },
+  "sourceGates": {
+    "minimumEligibleRecordCount": 64,
+    "minimumEligibleActiveRecordCount": 32,
+    "minimumEligibleNoneRecordCount": 32,
+    "minimumEligibleServiceCount": 2,
+    "minimumEligibleActiveIntentCount": 3,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumNewModelWeightDownloadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the structural inventory and authorize preregistration of a fresh rank-only shadow population whose deterministic completion retains every intent and NONE",
+    "ifAnySourceGateFails": "stop V91 without inspecting utterances, weakening source gates, selecting records, or loading a model",
+    "passAuthorizesPopulationSelection": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesTraining": false,
+    "passAuthorizesExecution": false
+  }
+}

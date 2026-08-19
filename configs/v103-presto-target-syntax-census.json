@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "103-presto-target-syntax-census-design",
+  "experiment": "v103_presto_text_free_target_literal_and_dependency_census",
+  "parentSourceOutcomeLock": "configs/v102r1-presto-context-source-outcome-lock.json",
+  "sourceArchive": "outputs/v102r1-presto-context-source/source/presto_v1.zip",
+  "sourceArchiveSha256": "1fc671692cceb31fbda17e351e47f2cc52ee8779042f92dc26674cc0cca2167f",
+  "unchangedScientificConfig": "configs/v102-presto-context-source.json",
+  "unchangedScientificConfigSha256": "fe764e4d7d766a73f44b7576250cc9ed76e635641f9f709f2be7a46a209872ad",
+  "literalFamilies": [
+    "guillemet", "single_guillemet", "ascii_double_quote", "curly_double_quote",
+    "ascii_single_quote", "square_bracket"
+  ],
+  "candidateEligibleLiteralFamilies": [
+    "guillemet", "single_guillemet", "ascii_double_quote", "curly_double_quote",
+    "ascii_single_quote"
+  ],
+  "diagnosticStages": [
+    "record_contains_literal_family", "quality_filtered_literal", "literal_absent_from_current_input",
+    "literal_present_in_context", "literal_absent_from_input_and_present_in_context"
+  ],
+  "structuralCharacterFeatures": [
+    "left_parenthesis", "right_parenthesis", "colon", "equals", "left_square_bracket",
+    "left_guillemet", "left_single_guillemet", "ascii_double_quote", "curly_double_quote"
+  ],
+  "diagnosticGates": {
+    "minimumUnionDevelopmentCandidateCount": 64,
+    "minimumUnionProtectedTestCandidateCount": 64,
+    "minimumUnionTotalCandidateCount": 256,
+    "minimumUnionPreviousTurnDependentCandidateCount": 64,
+    "minimumUnionSeededStateDependentCandidateCount": 64,
+    "minimumUnionDependencySourceKindCount": 2,
+    "minimumUnionSemanticRootFunctionCount": 8,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumEmittedCandidateIdentifierCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "sourceArchiveAutomaticReadCount": 0,
+    "targetOrContextLanguageRecordInspectionCount": 0,
+    "aggregateTargetSyntaxCountInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEveryUnionDiagnosticGatePasses": "authorize preregistration of a materially new literal-family context-dependency source construction",
+    "ifAnyUnionDiagnosticGateFails": "close PRESTO as the paired insufficiency source and proceed with MASSIVE only",
+    "diagnosticMaySelectPopulationOrEmitIdentifiers": false,
+    "diagnosticMayEmitLanguageOrAuthorizeModelInference": false
+  }
+}

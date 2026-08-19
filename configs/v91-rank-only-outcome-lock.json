@@ -1,0 +1,425 @@
+{
+  "audit": "outputs/v91-rank-only/outcome-audit.json",
+  "audit_sha256": "7fe451eadadec74cc5b69a958ceaabc788515ece2022343032ba73c2e0b61bec",
+  "authorization": {
+    "add_larger_local_or_API_model_for_this_branch": false,
+    "grant_model_belief_action_or_execution_authority": false,
+    "modify_or_rerun_V91": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "prune_or_early_stop_search": false,
+    "report_and_synthesize_frozen_results": true,
+    "retain_complete_deterministic_schema_enumeration": true,
+    "retain_operational_NONE_and_immutable_authoritative_state": true,
+    "train_adapter_or_learn_likelihood_for_this_branch": false,
+    "use_local_model_as_candidate_generator_or_search_scheduler": false
+  },
+  "experiment": "v91_rank_only_outcome_lock",
+  "implementation_lock": "configs/v91-rank-only-implementation-lock.json",
+  "implementation_lock_sha256": "703bf2ab4fee28121e78f879b3f8ab1ec4055012f4870232563985a03f6fe527",
+  "lock_payload_sha256": "89ba7ee13f974294762245aa3485c1e1117a07ed0c523477c84539edefdfc11f",
+  "outcome": {
+    "access": {
+      "LLM_API_call_count": 0,
+      "action_selection_from_model_count": 0,
+      "adapter_training_run_count": 0,
+      "belief_update_from_model_count": 0,
+      "early_stopping_count": 0,
+      "elapsed_seconds": 52.563491750042886,
+      "external_side_effect_count": 0,
+      "manual_utterance_inspection_count": 0,
+      "model_generation_count": 64,
+      "model_load_count": 1,
+      "model_load_seconds": 1.2420917078852654,
+      "new_model_weight_download_count": 0,
+      "peak_active_memory_bytes": 3476893358,
+      "pruned_hypothesis_count": 0,
+      "real_service_call_count": 0,
+      "source_language_record_access_count": 64
+    },
+    "condition_qualified": false,
+    "decision": "freeze_nonqualifying_ranker_and_retain_deterministic_exhaustive_order",
+    "metrics": {
+      "MRR_improvement_over_best_nonoracle_control": -0.0859375,
+      "active_record_count": 32,
+      "active_top1_rate": 0.78125,
+      "authoritative_state_preservation_rate": 1.0,
+      "best_nonoracle_MRR_control": "identifier_exact_match_grammar",
+      "best_nonoracle_mean_rank_control": "identifier_exact_match_grammar",
+      "canonical_NONE_retention_rate": 1.0,
+      "canonical_complete_set_rate": 1.0,
+      "controls": {
+        "exhaustive_unordered": {
+          "active_record_count": 32,
+          "active_top1_rate": 0.0,
+          "mean_gold_rank": 3.0,
+          "mean_reciprocal_rank": 0.3333333333333333,
+          "none_record_count": 32,
+          "none_top1_rate": 0.0,
+          "overall_top1_rate": 0.0,
+          "overall_top2_rate": 0.0,
+          "record_count": 64
+        },
+        "identifier_exact_match_grammar": {
+          "active_record_count": 32,
+          "active_top1_rate": 0.125,
+          "mean_gold_rank": 1.609375,
+          "mean_reciprocal_rank": 0.7526041666666666,
+          "none_record_count": 32,
+          "none_top1_rate": 1.0,
+          "overall_top1_rate": 0.5625,
+          "overall_top2_rate": 0.828125,
+          "record_count": 64
+        },
+        "lexical_overlap": {
+          "active_record_count": 32,
+          "active_top1_rate": 0.75,
+          "mean_gold_rank": 2.125,
+          "mean_reciprocal_rank": 0.6041666666666666,
+          "none_record_count": 32,
+          "none_top1_rate": 0.0,
+          "overall_top1_rate": 0.375,
+          "overall_top2_rate": 0.5,
+          "record_count": 64
+        },
+        "oracle_first": {
+          "active_record_count": 32,
+          "active_top1_rate": 1.0,
+          "mean_gold_rank": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "none_record_count": 32,
+          "none_top1_rate": 1.0,
+          "overall_top1_rate": 1.0,
+          "overall_top2_rate": 1.0,
+          "record_count": 64
+        },
+        "schema_order": {
+          "active_record_count": 32,
+          "active_top1_rate": 0.625,
+          "mean_gold_rank": 2.1875,
+          "mean_reciprocal_rank": 0.5729166666666666,
+          "none_record_count": 32,
+          "none_top1_rate": 0.0,
+          "overall_top1_rate": 0.3125,
+          "overall_top2_rate": 0.5,
+          "record_count": 64
+        }
+      },
+      "exact_JSON_parse_rate": 1.0,
+      "mean_gold_rank": 1.9375,
+      "mean_rank_reduction_versus_best_nonoracle_control": -0.328125,
+      "mean_reciprocal_rank": 0.6666666666666666,
+      "none_record_count": 32,
+      "none_top1_rate": 0.15625,
+      "overall_top1_rate": 0.46875,
+      "overall_top2_rate": 0.59375,
+      "permanent_non_deployable_rate": 1.0,
+      "raw_full_permutation_rate": 0.15625,
+      "raw_ontology_conformance_rate": 1.0,
+      "record_count": 64
+    },
+    "passed": true,
+    "planner_invariance": {
+      "action_mismatch_count": 0,
+      "execution_certificate_violation_count": 0,
+      "fixture_count": 4,
+      "fixtures": [
+        {
+          "baseline_selected_action": 1,
+          "baseline_value": 6.619284999999997,
+          "name": "ambiguous_tool_intent",
+          "permutation_count": 120
+        },
+        {
+          "baseline_selected_action": 7,
+          "baseline_value": 13.568,
+          "name": "clear_tool_intent",
+          "permutation_count": 120
+        },
+        {
+          "baseline_selected_action": 1,
+          "baseline_value": 1.8003519999999984,
+          "name": "unknown_heavy_tool_intent",
+          "permutation_count": 120
+        },
+        {
+          "baseline_selected_action": 11,
+          "baseline_value": 5.999999999999999,
+          "name": "dominant_safe_preview",
+          "permutation_count": 120
+        }
+      ],
+      "invariance_rate": 1.0,
+      "invariant_permutation_count": 480,
+      "maximum_absolute_value_error": 1.7763568394002505e-15,
+      "model_output_access_count": 0,
+      "permutation_count": 480
+    }
+  },
+  "raw_fixture_artifacts": [
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/000-v91-000-3_00023::turn-014::Alarm_1.json",
+      "sha256": "7ccc6692fb5be18bb1192913f71a9c1210153b6dbb6ebae1f59591fab86debd0"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/001-v91-001-3_00000::turn-010::Alarm_1.json",
+      "sha256": "73afe98d97d8f9c49651eebdb619e61ce8a849daeb113b3109e84bcf9f309b63"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/002-v91-002-3_00018::turn-012::Alarm_1.json",
+      "sha256": "5dc5b4b35eb59941a775b3fe8cc58e44356ea878a88349eebbe00aea1d318c08"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/003-v91-003-3_00010::turn-012::Alarm_1.json",
+      "sha256": "bfa14c3002d6145559706226577eb007f9be3a365cea73c1364a6ac474658b57"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/004-v91-004-3_00027::turn-008::Alarm_1.json",
+      "sha256": "4cd67dd1ba7c31a762add16d41246684233aab67c8df55feaacf9cb37d5307ab"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/005-v91-005-3_00008::turn-010::Alarm_1.json",
+      "sha256": "e47a5e940353a30c30de00e3050b0cdd42f02b1ab22cb28a718636749a722a2d"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/006-v91-006-3_00025::turn-006::Alarm_1.json",
+      "sha256": "84fa51cc787cad13d43fbe7e2eaa024f3e13d3d4a9aa071033cc759e748ec51a"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/007-v91-007-3_00029::turn-016::Alarm_1.json",
+      "sha256": "dcef55a38d9234ae24ff8dc5b23d037318629f216fa812b43637bc7497507fc8"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/008-v91-008-3_00111::turn-012::Homes_1.json",
+      "sha256": "13f00acbf3432b96c75ca6bb08d88670a29b5f55aa864837f011f9693d4bec07"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/009-v91-009-3_00117::turn-010::Homes_1.json",
+      "sha256": "1a74bf8e43eda9a64db3230e3fb9021364102302bafd1711dd7cc06f8fee4dc3"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/010-v91-010-3_00114::turn-014::Homes_1.json",
+      "sha256": "4bf531b65f7e65b1a213b7b926c352e7dd40b42b9600fddbbd047d6fba6df764"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/011-v91-011-3_00115::turn-008::Homes_1.json",
+      "sha256": "5b5a739d301ec2ea7829f3d1795e5a1cbb9c47afd9786a0efa2cab6be252a960"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/012-v91-012-3_00118::turn-010::Homes_1.json",
+      "sha256": "defd072b859fc09fde5063d8029b28c6777f51d3847241017719d76a51b8bb85"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/013-v91-013-3_00121::turn-006::Homes_1.json",
+      "sha256": "fea18f09491db80bac2efc57f90373d1146cb340d28c21a5cb497c55dd4b1f5d"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/014-v91-014-3_00116::turn-008::Homes_1.json",
+      "sha256": "7ef55b8f599e2fb27af65afcb3d62b4fab95b8b1b8f57cbb741c68919b0c5692"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/015-v91-015-3_00113::turn-006::Homes_1.json",
+      "sha256": "8011c833061b82742a2ca74f7b1a350f26f801aa76b88442ce183b479a70f9f3"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/016-v91-016-3_00072::turn-018::Services_4.json",
+      "sha256": "a3f7d6efe11210d5cbf4aaf6f359df25e3bd423f48da04f0b4282c1804d8bf93"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/017-v91-017-3_00063::turn-018::Services_4.json",
+      "sha256": "e1c7b3149f34f7c3613f9672c70e3b4ce2bd95b9ebc7c89d08d5a166db1f08b0"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/018-v91-018-3_00051::turn-020::Services_4.json",
+      "sha256": "7d289aef10c6c42b412f42c32f34bc3a352b61fd6c68d8a1dd7b48f4b878f9dc"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/019-v91-019-3_00032::turn-014::Services_4.json",
+      "sha256": "538ce0ec9c061013ab2465af0fa0a8551a69b337237756ab1e7adf4a50564c93"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/020-v91-020-3_00040::turn-020::Services_4.json",
+      "sha256": "f69f6e145bd53ed00ba86aefa59544185a3cbdb90b4bf0f26b981511465d4412"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/021-v91-021-3_00061::turn-018::Services_4.json",
+      "sha256": "8c02d803a474a13b995986e3d4e4917b391ae1094892ecd1ac8b131511ec7a72"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/022-v91-022-3_00038::turn-020::Services_4.json",
+      "sha256": "450dcae1732173e29ff4dc00e6d630e6868b36218f356effc35acccce099e880"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/023-v91-023-3_00043::turn-018::Services_4.json",
+      "sha256": "76472c6c0957434c36663ff75476454bb57cbef7672a0e9cafd18769fa5bfeb2"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/024-v91-024-3_00067::turn-012::Services_4.json",
+      "sha256": "c3dd7bb6117e58b7ced9fae7deee92b8909d8bade9e59e79633042bbc7774c83"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/025-v91-025-3_00053::turn-016::Services_4.json",
+      "sha256": "66143a1ee304ca9cc4fe15bbe4900880153fc8b8142645ae9b5209cebbf8a8ba"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/026-v91-026-3_00052::turn-020::Services_4.json",
+      "sha256": "0da4a99d1e56be32b73ba51c10fc56cb7ad7f1f4ac2111b9cb0684a7ff426f5a"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/027-v91-027-3_00048::turn-022::Services_4.json",
+      "sha256": "3ae2a2b77c8df494ca7298c62c3893b2ef41c9670e9f9507b8503f467b0106ce"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/028-v91-028-3_00041::turn-026::Services_4.json",
+      "sha256": "f647c79f05107cefd711a78ad50d96637858ff1396dfaee3bf5e61527aa4757c"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/029-v91-029-3_00054::turn-026::Services_4.json",
+      "sha256": "6a02ccbba3457f655c888648fe3635545e10f5418bae31df7219807f656ac811"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/030-v91-030-3_00045::turn-020::Services_4.json",
+      "sha256": "a88c959f8c0701096d2f76ceb744acb6c8b9232281ea120e6c42398d5b4b44ee"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/031-v91-031-3_00042::turn-016::Services_4.json",
+      "sha256": "5f6bc399e790d557d6382e457b94e346267abed4fd3a3f2ed8f998b0eda4619a"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/032-v91-032-3_00009::turn-008::Alarm_1.json",
+      "sha256": "16438d9b58ca1f2cd3a38a5693e9027402970cea222ae3f76104eae371a0c669"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/033-v91-033-3_00004::turn-008::Alarm_1.json",
+      "sha256": "5d19a07aeb1ff27add33426b562a74b198d95077a2f0937c56f2959e1c1fc249"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/034-v91-034-3_00019::turn-012::Alarm_1.json",
+      "sha256": "9e12dbb6e12ee279730b7a969817f0beafcdef89fd63148bd67cef298fb028b3"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/035-v91-035-3_00001::turn-010::Alarm_1.json",
+      "sha256": "1d964cd58406d8d26983e9c145a3d5e1888d77bbaf6b6d093e8de841f1bd37a9"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/036-v91-036-3_00030::turn-002::Alarm_1.json",
+      "sha256": "f7b149da4602bebeedcaf6e82dab86c16cf8dbc39dacccb61a6dabadd31cb6a1"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/037-v91-037-3_00016::turn-012::Alarm_1.json",
+      "sha256": "c4fce8fef70aee1a8c9e281c1ad24a6dc49b4fe34785ba975f0fbffc008d1e84"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/038-v91-038-3_00006::turn-008::Alarm_1.json",
+      "sha256": "f7679ad0f03eb56401034458c9315a338c15d7e9f7be54045675becceb203036"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/039-v91-039-3_00031::turn-012::Alarm_1.json",
+      "sha256": "f65fa3932e75b9bb0f67bb1102c095f73c76bdc41c35a28944337b79fb85f6c7"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/040-v91-040-3_00017::turn-000::Alarm_1.json",
+      "sha256": "f59da899e4b9b5e9ad89c7353a9e603ae2780c28f59cf6258734121f65333791"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/041-v91-041-3_00003::turn-000::Alarm_1.json",
+      "sha256": "cab402b3485346e8e5e8b37faef9a21d7c26e3ed38b8143c540690ac8b278ca1"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/042-v91-042-3_00014::turn-000::Alarm_1.json",
+      "sha256": "568e0170749087b21c4491993a57620d243f525bb40c9c0d87993b5f450fd10c"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/043-v91-043-3_00020::turn-004::Alarm_1.json",
+      "sha256": "a1f1d38f0d2e707840bff728ae6b587a17923709e982918f8dab139ccf5e1397"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/044-v91-044-3_00011::turn-000::Alarm_1.json",
+      "sha256": "ffae7902d5e48c134dc79cfdddaa248e45ebb3f5e5f65d72d68ab2200df640c7"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/045-v91-045-3_00012::turn-000::Alarm_1.json",
+      "sha256": "83e8903c1aacc60f775ff13e3d12b0e70af8d62f3c2dde8dda5d8377386b771b"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/046-v91-046-3_00015::turn-002::Alarm_1.json",
+      "sha256": "389dbbe754193b6a17f02baec3e00d6d5ef359d5a52b90a152397733b3510c1e"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/047-v91-047-3_00026::turn-000::Alarm_1.json",
+      "sha256": "18442da6c59bb7f9ec3e6c945101d9cf8d7c59381f2706e6f3b36c5a9d53f30f"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/048-v91-048-3_00112::turn-000::Homes_1.json",
+      "sha256": "ff24a48727d551e3665c5b5a607dcd9239cc14963dce7ad9f63656cd6dedb685"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/049-v91-049-3_00122::turn-008::Homes_1.json",
+      "sha256": "7942e38de300e528e3254e15879595e0a4c2509057740e78b3a2f76ecd336d65"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/050-v91-050-3_00124::turn-000::Homes_1.json",
+      "sha256": "cbf957df5f5877808a21b2dbf593fa41e28c7d0e76cbacf9aaa4e414d6fc729d"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/051-v91-051-3_00126::turn-000::Homes_1.json",
+      "sha256": "a896e224113eabe7dc3e6e80db23fda7d5f4c5b555321aefa22ae9a4100c785d"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/052-v91-052-3_00120::turn-002::Homes_1.json",
+      "sha256": "7fc28128022f36c5b27b483938c8184d6d59bdba67282e6037d3e808410e053e"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/053-v91-053-3_00123::turn-008::Homes_1.json",
+      "sha256": "72847d5c1ffc50bcdaf4cf261257eb0dd4c4ee01265c032f3e1705279cc469f5"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/054-v91-054-3_00119::turn-000::Homes_1.json",
+      "sha256": "18823a8de482e9a45f157ef384340a4d68ae0c3b84007b6f43ec089c1c097fc9"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/055-v91-055-3_00127::turn-002::Homes_1.json",
+      "sha256": "b85bf83ea4f1386272ffa02f3a654acfc9de4a35c03e4b5d33414f010420af04"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/056-v91-056-3_00055::turn-012::Services_4.json",
+      "sha256": "a1561492e53c821c7c87a19bf3310f591b2089ba8329deba89911d2a9c16aefe"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/057-v91-057-3_00039::turn-010::Services_4.json",
+      "sha256": "06a893bbb3c8cb00ad18550a7d26a98703c1c4c30c9b8a7b3724bdd63b34eb62"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/058-v91-058-3_00049::turn-026::Services_4.json",
+      "sha256": "9bc438a2c60d258d48c6fcca12605ccd343af8a5695119d93561ef726bed3397"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/059-v91-059-3_00075::turn-010::Services_4.json",
+      "sha256": "90bea6c60b15e5eb5962acf639ec9963c3a8929023babb818a7313ec56dea731"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/060-v91-060-3_00066::turn-006::Services_4.json",
+      "sha256": "c2c5bce8b0dd5850dc191e54db7d44acfe8d8c28f317118a7b6c72b053866002"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/061-v91-061-3_00074::turn-002::Services_4.json",
+      "sha256": "1e77bf2a5be5bcac9a984989959cc6e2ba7de5fb5a4da103c425fc237e581c0b"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/062-v91-062-3_00059::turn-010::Services_4.json",
+      "sha256": "1d2bf3fe5b04325be5ec15ce8d37ad44bbffcb2c75b09b99ffb7522c169528a9"
+    },
+    {
+      "path": "outputs/v91-rank-only/evaluation/raw-fixtures/063-v91-063-3_00034::turn-006::Services_4.json",
+      "sha256": "ed6fe55d3aa523910c377210fbcdf3acd5d57e36d86e0bc4a41d9c43389e3932"
+    }
+  ],
+  "research_direction": "docs/research-direction.md",
+  "research_direction_sha256": "60298bc045151d0d66311cdafa02786256c418a3719c3358bac2546169b0ba0f",
+  "result": "outputs/v91-rank-only/evaluation/result.json",
+  "result_sha256": "798a57b509e9af9f447cbaf2b6e5c15ced8084ac03d9e4048a38dcfd1bc13826",
+  "results_document": "docs/v91-rank-only-results.md",
+  "results_document_sha256": "b16445ec81df55ffd19c1e79e17671f8bcb07d884afada91934b3492821ac857",
+  "schema_version": "91-rank-only-outcome-lock",
+  "verifier": "python/verify_and_freeze_v91_outcome.py",
+  "verifier_sha256": "ecf9bd08e57b696261dcf4e09fe9d6526883657f824da54dc25f4e3d4324c184"
+}

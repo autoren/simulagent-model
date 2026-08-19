@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "158-model-free-hard-tie-routing-policy",
+  "experiment": "v158_model_free_margin_gated_generic_routing_policy",
+  "parentV157OutcomeLock": "configs/v157-fresh-hard-tie-routing-population-outcome-lock.json",
+  "claimBoundary": "single prospectively locked model-free development policy choosing a high-evidence registered specific question or generic route Q70; wrong specific choices fail closed then fall back to Q70; no state proposal, semantic authority, model, evaluation, external transfer, induction, action, or execution",
+  "population": {
+    "split": "development", "groupCount": 24, "requestFixtureCount": 96,
+    "metadataFixtureCount": 192, "sequentialEpisodeCount": 120,
+    "evaluationPolicyReadCount": 0, "candidateProposalFieldCount": 0
+  },
+  "retrieval": {
+    "anchorPhraseWeight": 8.0, "primaryTermWeight": 3.0,
+    "secondaryTermWeight": 1.0, "visibleQuestionSurfaceTokenWeight": 0.25,
+    "minimumTopScoreForSpecific": 6.0, "minimumTopTwoMarginForSpecific": 4.0,
+    "requireUniqueTopScore": true, "sourceOrderTieBreak": true,
+    "fallbackToGenericAfterWrongSpecific": true,
+    "stateChoiceWitnessTruthOrOracleFieldsAvailableToPolicy": false,
+    "fittingLearnedParametersOrCalibration": false
+  },
+  "policy": {
+    "specificQueryCost": 0.3, "genericRouteQueryCost": 0.2,
+    "noQueryAction": "A00", "genericQueryId": "Q70",
+    "randomSeed": "v158-seeded-specific-order-v1",
+    "comparators": ["NO_QUERY", "SOURCE_SPECIFIC_THEN_GENERIC", "SEEDED_RANDOM_SPECIFIC_THEN_GENERIC", "ALWAYS_GENERIC", "INFORMATION_ORACLE", "MARGIN_GATED_ROUTER"],
+    "completeAuthoritativeHypothesisUniverseRetained": true,
+    "trustedClosedAnswerReliability": 1.0
+  },
+  "decisionCosts": {
+    "correct": 0.0, "safeAbstentionOnDecidableTruth": 1.0,
+    "wrongKnownOnNonKnownTruth": 5.0, "wrongKnownOnKnownTruth": 3.0,
+    "otherWrongState": 2.0
+  },
+  "gates": {
+    "requiredGroupCount": 24, "requiredRequestFixtureCount": 96,
+    "requiredSequentialEpisodeCount": 120, "requiredComparatorCount": 6,
+    "requiredMarginRouterInitialActionAccuracy": 1.0,
+    "requiredLexicalControlSpecificRate": 1.0,
+    "requiredUncataloguedParaphraseGenericRate": 1.0,
+    "requiredRelationalTieGenericRate": 1.0,
+    "requiredInsufficientGenericRate": 1.0,
+    "requiredIncorrectSpecificRateOnFallbackStrata": 0.0,
+    "maximumMarginRouterMeanDecisionCost": 0.4,
+    "minimumImprovementOverNoQuery": 0.4,
+    "minimumImprovementOverAlwaysGeneric": 0.04,
+    "requiredFinalExactAccuracy": 1.0,
+    "requiredIrrelevantIntermediateFailClosedRate": 1.0,
+    "requiredAuthoritativeHypothesisRetention": 1.0,
+    "requiredCandidateProposalFieldCount": 0,
+    "maximumEvaluationPolicyReadCount": 0, "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0, "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0, "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryRoutingSelectivityCostFirewallAndAccessGatePasses": "margin_gated_generic_router_qualifies_on_synthetic_development_authorize_separate_local_tie_breaker_protocol_design_only",
+    "otherwise": "margin_gated_generic_router_fails_development_gates_close_without_tuning_or_model",
+    "passingAuthorizesOnlySeparateLocalTieBreakerProtocolDesign": true,
+    "passingDoesNotAuthorizeImmediateModelRunV157EvaluationThresholdFitCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

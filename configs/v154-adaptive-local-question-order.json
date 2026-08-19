@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "154-adaptive-local-question-order",
+  "experiment": "v154_adaptive_direct_then_bounded_low_reasoning_question_order",
+  "parentV153OutcomeLock": "configs/v153-model-free-question-order-comparators-outcome-lock.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "claimBoundary": "single prospectively adaptive local development study of question ordering only: run direct decoding first and run a mechanically bounded low-reasoning challenger only if direct fails; no state proposal, confidence, hypothesis pruning, closed-answer or evaluation generation, external transfer, calibration fit, authority, action, or execution",
+  "population": {
+    "split": "development",
+    "groupCount": 24,
+    "requestFixtureCount": 96,
+    "sequentialEpisodeCount": 120,
+    "queryCount": 6,
+    "closedAnswerModelGenerationCount": 0,
+    "evaluationFixtureModelGenerationCount": 0,
+    "candidateProposalFieldCount": 0
+  },
+  "prompt": {
+    "system": "You are an offline, permanently non-authoritative question-ordering heuristic. Compare the visible request with every registered closed clarification question. You may only prioritize which question to ask first. You do not classify the request, propose or remove states, supply an answer, define a capability, claim authority, call tools, or execute anything.",
+    "instruction": "Return exactly one JSON object with one key named query_ranking. Its value must contain every supplied query ID exactly once, ordered from most to least useful for resolving the visible request. Do not include state IDs, confidence, explanations, markdown, or additional keys.",
+    "responseKeys": ["query_ranking"],
+    "maximumPromptTokens": 4096,
+    "demonstrationCount": 0
+  },
+  "model": {
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "temperature": 0.0,
+    "samplesPerPrompt": 1,
+    "retryCount": 0,
+    "modelLoadLimit": 1
+  },
+  "conditions": {
+    "direct": {
+      "conditionId": "DIRECT_NO_THINKING",
+      "enableThinking": false,
+      "maximumNewTokens": 64,
+      "generationCallsPerFixture": 1,
+      "primary": true
+    },
+    "boundedLowReasoning": {
+      "conditionId": "BOUNDED_LOW_REASONING",
+      "enableThinking": true,
+      "reasoningEffort": "low",
+      "reasoningPhaseMaximumTokens": 48,
+      "finalPhaseMaximumTokens": 64,
+      "generationCallsPerFixture": 2,
+      "mechanicallyForceCloseThinkingBeforeFinalPhase": true,
+      "runOnlyIfDirectFailsQualification": true
+    }
+  },
+  "fallbackQueryRanking": ["Q51", "Q52", "Q53", "Q54", "Q55", "Q56"],
+  "qualificationGates": {
+    "minimumStructuralValidity": 0.98,
+    "minimumQueryTop1Accuracy": 0.9,
+    "minimumQueryMeanReciprocalRank": 0.95,
+    "maximumMeanCorrectQueryRank": 1.25,
+    "maximumSequentialMeanDecisionCost": 0.45,
+    "minimumSequentialImprovementOverNoQuery": 0.55,
+    "requiredFinalExactAccuracyAfterTrustedAnswer": 1.0,
+    "requiredIrrelevantQueryIntermediateFailClosedRate": 1.0,
+    "requiredAuthoritativeHypothesisRetention": 1.0,
+    "maximumCandidateProposalFieldCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumTokenizerLoadCount": 1,
+    "maximumModelLoadCount": 1,
+    "maximumDirectGenerationCount": 96,
+    "maximumBoundedReasoningPhaseGenerationCount": 96,
+    "maximumBoundedFinalPhaseGenerationCount": 96,
+    "maximumTotalGenerationCount": 288,
+    "maximumGenerationCallsPerConditionFixture": 2,
+    "maximumClosedAnswerModelGenerationCount": 0,
+    "maximumEvaluationFixtureModelGenerationCount": 0,
+    "maximumRetryCount": 0,
+    "maximumManualRawResponseInspectionCount": 0,
+    "maximumPersistedRawResponseCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifDirectQualifies": "direct_question_order_qualifies_on_synthetic_development_authorize_separate_V152_evaluation_preregistration_only",
+    "ifDirectFailsAndBoundedLowReasoningQualifies": "bounded_low_reasoning_question_order_qualifies_on_synthetic_development_authorize_separate_V152_evaluation_preregistration_only",
+    "otherwise": "local_question_order_conditions_fail_development_gates_close_without_evaluation_or_tuning",
+    "directPassStopsBeforeBoundedLowReasoning": true,
+    "passAuthorizesOnlySeparateEvaluationPreregistration": true,
+    "outcomeAuthorizesImmediateEvaluationRun": false,
+    "outcomeAuthorizesRetryRerunRepromptReasoningChangeThresholdFitCalibrationAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

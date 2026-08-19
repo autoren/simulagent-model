@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "100-massive-core-source-design",
+  "experiment": "v100_massive_en_us_typed_open_set_source_feasibility",
+  "parentSourceSelectionLock": "configs/v99-open-world-source-selection-lock.json",
+  "sourceName": "MASSIVE 1.1",
+  "sourceRole": "primary_typed_four_class_controlled_open_set_transfer",
+  "officialDataset": "https://huggingface.co/datasets/AmazonScience/massive",
+  "officialPaper": "https://aclanthology.org/2023.acl-long.235/",
+  "license": "CC-BY-4.0",
+  "locale": "en-US",
+  "archive": {
+    "url": "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz",
+    "byteSize": 40251390,
+    "etag": "51e0da2a3ff7a016f109e1d1b4306e93-3",
+    "lastModified": "2022-11-07T16:55:04Z",
+    "expectedLocaleMemberSuffix": "en-US.jsonl"
+  },
+  "requiredRecordFields": ["id", "locale", "partition", "scenario", "intent", "utt", "annot_utt"],
+  "allowedSourcePartitions": ["train", "dev", "test"],
+  "canonicalPartitionMap": {"train": "train", "dev": "validation", "test": "test"},
+  "servicePartition": {
+    "eligibleScenarioMinimumRecordCount": 200,
+    "eligibleIntentMinimumRecordCount": 64,
+    "unsupportedScenarioSalt": "simulagent-v100-unsupported-scenario-v1",
+    "unsupportedScenarioCount": 1,
+    "catalogScenarioSalt": "simulagent-v100-catalog-scenario-v1",
+    "catalogScenarioCount": 3,
+    "hiddenScenarioSalt": "simulagent-v100-hidden-scenario-v1",
+    "hiddenIntentSalt": "simulagent-v100-hidden-intent-v1",
+    "hiddenScenarioCount": 2,
+    "hiddenIntentCountPerSelectedScenario": 1,
+    "minimumDeclaredIntentCount": 3,
+    "partitionBeforeUtteranceDerivedFeatures": true
+  },
+  "classConstruction": {
+    "knownFamiliarMinimumCurrentUtteranceOverlapCount": 1,
+    "knownUnfamiliarMaximumCurrentUtteranceOverlapCount": 0,
+    "novelRequiresHiddenIntentInsideCatalogScenario": true,
+    "unsupportedRequiresCompletelyWithheldScenario": true,
+    "emitRawOrAnnotatedUtteranceTokensOrSlotValues": false
+  },
+  "sourceGates": {
+    "minimumScenarioCount": 18,
+    "minimumIntentCount": 60,
+    "minimumSlotTypeCount": 20,
+    "minimumEligibleScenarioCount": 4,
+    "requiredCatalogScenarioCount": 3,
+    "requiredUnsupportedScenarioCount": 1,
+    "requiredHiddenIntentCount": 2,
+    "minimumDeclaredIntentCount": 3,
+    "minimumClassCandidateCount": 64,
+    "minimumValidationCandidateCountPerClass": 16,
+    "minimumTestCandidateCountPerClass": 16,
+    "minimumKnownClassScenarioCoverage": 2,
+    "requiredNovelScenarioCoverage": 2,
+    "requiredUnsupportedScenarioCoverage": 1,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "archiveHEADRequestCount": 1,
+    "archivePayloadDownloadCount": 0,
+    "languageRecordInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the MASSIVE ontology and candidate inventory and authorize preregistration of hash-selected validation/test populations",
+    "ifAnySourceGateFails": "stop before population selection, selected-language extraction, model access, or gate changes",
+    "passAuthorizesSelectedLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

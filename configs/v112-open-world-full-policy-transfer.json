@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "112-open-world-full-policy-transfer-design",
+  "experiment": "v112_fresh_massive_non_authoritative_novelty_evidence_policy_transfer",
+  "parentSeparabilityOutcomeLock": "configs/v111-open-world-separability-audit-outcome-lock.json",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "excludedV101Population": "outputs/v101-massive-population/population/selected-population.json",
+  "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "choiceCatalog": "outputs/v109-open-world-typed-choice/interface/choice-catalog.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "freshPopulation": {
+    "sourcePartition": "validation",
+    "baseSalt": "simulagent-v112-fresh-full-policy-transfer-v1",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "recordCountPerClass": 48,
+    "requiredScenarioCoverage": {
+      "known_familiar": 3,
+      "known_unfamiliar": 3,
+      "novel_valid": 2,
+      "unsupported": 1
+    },
+    "excludeEveryV101DevelopmentAndProtectedIdentifier": true,
+    "selectionUsesOnlyFrozenIdentifierClassPartitionAndScenario": true,
+    "selectionBeforeFreshLanguageExtraction": true,
+    "manualLanguageInspection": false
+  },
+  "extraction": {
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "canonicalSourcePartitionMap": {"train": "train", "dev": "validation", "test": "test"},
+    "role": "development_transfer",
+    "requiredRecordCount": 192,
+    "requiredRecordCountPerClass": 48,
+    "maximumUnselectedLanguageRecordCount": 0
+  },
+  "condition": {
+    "id": "qwen38_27b_4bit_v112_fresh_transfer",
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "weightBytes": 16054541349,
+    "modelLoadLimit": 1,
+    "observedGenerationCount": 192,
+    "controlledMissingObservationCount": 48,
+    "totalGenerationCount": 240
+  },
+  "typedChoiceInterface": {
+    "knownChoicePrefix": "K",
+    "novelScenarioChoicePrefix": "N",
+    "unsupportedChoiceId": "U00",
+    "insufficientEvidenceChoiceId": "A00",
+    "choiceWidth": 2,
+    "requiredChoiceCount": 17,
+    "outputKeys": ["choice_id", "confidence"],
+    "acceptAliases": false,
+    "acceptQualifiedIntentOutsideChoiceId": false,
+    "deterministicallyExpandChoiceAfterValidation": true,
+    "invalidOutputMapsToZeroConfidenceAbstain": true
+  },
+  "prompt": {
+    "system": "You are an offline, non-authoritative semantic proposer. Select exactly one supplied choice ID. Never call a tool, choose an action, alter the choices, or remove a hypothesis. Return exactly the required JSON object and no explanation.",
+    "demonstrationCount": 0,
+    "maximumPromptTokens": 4096,
+    "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]"
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "maximumNewTokens": 64,
+    "samplesPerRecord": 1,
+    "retryOnMalformedOutput": false,
+    "enableThinking": false
+  },
+  "frozenPolicy": {
+    "novelEvidenceRule": "direct typed status ABSTAIN raises novel_candidate=true but never authoritatively emits NOVEL",
+    "validatedKnownRule": "emit shadow KNOWN only when direct status is KNOWN and its exact intent equals deterministic nearest-intent retrieval",
+    "unsupportedRule": "emit shadow UNSUPPORTED when direct typed status is UNSUPPORTED",
+    "otherwiseRule": "emit ABSTAIN and ASK_FOR_CLARIFICATION",
+    "knownActionConfidence": 0.9180327868852459,
+    "unsupportedActionConfidence": 0.875,
+    "abstainActionConfidence": 0.0,
+    "positiveNovelEvidenceProbability": 0.7619047619047619,
+    "negativeNovelEvidenceProbability": 0.14953271028037382,
+    "confidenceCalibrationSource": "exact aggregate V109 128-record historical development population, frozen before V112 selection language extraction or model generation",
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "novelEvidenceCannotDefineSchemaCapabilityActionOrExecution": true
+  },
+  "comparators": [
+    "ask_always", "direct_llm", "fixed_v110_character_retrieval",
+    "validated_novelty_evidence_policy", "oracle"
+  ],
+  "fixedRetrievalThresholds": {"known": 0.8, "unsupported": 0.3},
+  "qualityGates": {
+    "minimumStructuredResponseValidity": 0.98,
+    "minimumControlledMissingObservationAbstentionAccuracy": 0.95,
+    "minimumNovelEvidencePrecision": 0.70,
+    "minimumNovelEvidenceRecall": 0.50,
+    "maximumNovelEvidenceNonNovelFalsePositiveRate": 0.10,
+    "maximumNovelEvidenceECE": 0.15,
+    "minimumPolicyObservedExactDecisionAccuracy": 0.60,
+    "minimumPolicyObservedStatusMacroF1": 0.55,
+    "minimumPolicyKnownExactIntentAccuracy": 0.80,
+    "minimumPolicyUnsupportedStatusRecall": 0.80,
+    "minimumPolicyUnsupportedStatusPrecision": 0.80,
+    "maximumPolicyFalseKnownAcceptanceRate": 0.10,
+    "maximumPolicyConfidenceECE": 0.15,
+    "maximumPolicyTopConfidence80PercentError": 0.20,
+    "maximumPolicyMeanDecisionRegret": 1.125,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshDevelopmentLanguageReadCount": 1,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 240,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "allActionsAreCounterfactualShadowActions": true,
+    "modelIsPermanentlyNonAuthoritativeEvidenceOnly": true,
+    "authoritativeStatePosteriorCapabilitiesAndPolicyAreImmutable": true,
+    "completeSafeHypothesisUniverseMayNotBePruned": true,
+    "novelCandidateDoesNotEnterCapabilityCatalog": true,
+    "modelMayNotSelectActionOrExecuteTool": true,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryQualityAndAccessGatePasses": "freeze fresh full-policy transfer and separately preregister protected-test confirmation",
+    "ifNovelEvidenceFails": "close abstention-as-novelty branch and require a genuinely new contrastive or multi-turn evidence source",
+    "ifNovelEvidencePassesButFullPolicyFails": "retain positive detector boundary but redesign downstream decision policy on a new population",
+    "passAuthorizesProtectedTestImmediately": false,
+    "passAuthorizesSchemaInductionImmediately": false,
+    "passAuthorizesSequentialPlanningAPITrainingCapabilityActionOrExecution": false
+  }
+}

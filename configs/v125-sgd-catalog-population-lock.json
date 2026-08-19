@@ -1,0 +1,107 @@
+{
+  "auditor": "python/audit_and_freeze_v125_sgd_catalog_population.py",
+  "auditor_sha256": "3c2762ebb954e185cb1cef2c04377bfd01a56531916ac9217c0fc812f37b8cad",
+  "authorization": {
+    "evaluate_retrieval_signal_trigger_or_model": false,
+    "extract_or_inspect_language": false,
+    "freeze_text_free_catalog_and_population": true,
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_catalog_population_counts_salt_gates_or_decision": false
+  },
+  "choice_catalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "37edfc9df1a10d58c8102f50f42426bbf8969d23ecfa52e8e196ccf9770cc86f",
+  "config": "configs/v125-sgd-catalog-population.json",
+  "config_payload": {
+    "catalog": {
+      "completeSafeCompositeHypothesisUniverse": true,
+      "declaredKnownPairs": [
+        "Hotels_2::BookHouse",
+        "Hotels_2::SearchHouse",
+        "Movies_1::FindMovies",
+        "Movies_1::GetTimesForMovie",
+        "Services_1::BookAppointment",
+        "Services_1::FindProvider"
+      ],
+      "expectedChoiceCount": 11,
+      "insufficientControl": true,
+      "novelCompositePerVisibleDomain": true,
+      "unsupportedCompositeAcrossUnseenDomains": true,
+      "visibleDomains": [
+        "hotels",
+        "movies",
+        "services"
+      ]
+    },
+    "claimBoundary": "text-free deterministic catalog and identifier population selection; not selected-language, retrieval, trigger, model, policy, or utility evidence",
+    "decisionRule": {
+      "ifEveryCatalogPopulationAndAccessGatePasses": "freeze_SGD_catalog_and_population_for_cross_dataset_retrieval_selectivity_design",
+      "otherwise": "reject_SGD_catalog_population_without_retuning",
+      "passAuthorizesImmediateLanguageExtractionSignalTriggerOrModelEvaluation": false,
+      "passAuthorizesOnlyPreregisterCrossDatasetRetrievalSelectivityDesign": true,
+      "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+    },
+    "evaluationPopulation": {
+      "baseSalt": "simulagent-v125-sgd-cross-dataset-population-v1",
+      "expectedKnownRecordCount": 192,
+      "expectedNovelValidRecordCount": 192,
+      "expectedTotalRecordCount": 576,
+      "expectedUnsupportedRecordCount": 192,
+      "knownRecordCountPerDeclaredPair": 32,
+      "novelValidRecordCountPerVisibleDomain": 64,
+      "selectionBeforeAnySelectedLanguageExtraction": true,
+      "selectionUsesOnlyFrozenIdentifierPartitionClassDomainServiceAndIntent": true,
+      "sourcePartition": "test",
+      "unsupportedRecordCountPerDomain": 48
+    },
+    "experiment": "v125_text_free_SGD_catalog_and_cross_dataset_population",
+    "parentV124OutcomeLock": "configs/v124-sgd-source-feasibility-outcome-lock.json",
+    "populationGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumManualLanguageInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "requireTrainingEvaluationIdentifierDisjointness": true,
+      "requiredChoiceCount": 11,
+      "requiredEvaluationRecordCount": 576,
+      "requiredEvaluationRecordCountPerClass": 192,
+      "requiredInsufficientChoiceCount": 1,
+      "requiredKnownChoiceCount": 6,
+      "requiredKnownPairCoverage": 6,
+      "requiredNovelCompositeChoiceCount": 3,
+      "requiredNovelDomainCoverage": 3,
+      "requiredTrainingRecordCount": 4881,
+      "requiredUnsupportedChoiceCount": 1,
+      "requiredUnsupportedDomainCoverage": 4
+    },
+    "schemaVersion": "125-sgd-catalog-population-design",
+    "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+    "trainingPopulation": {
+      "expectedRecordCount": 4881,
+      "includeEveryCandidateForDeclaredKnownPairs": true,
+      "sourcePartition": "train"
+    }
+  },
+  "config_sha256": "d81ed7f5aa6cf0ac03709410a6dec27a8af076172a7e759b49af1eefd2d736eb",
+  "design_audit": "outputs/v125-sgd-catalog-population/design-audit.json",
+  "design_audit_sha256": "96f4fa36b6f6197776c4eef9ffc73fc4cdd6aa66efcc4b928f3160b892bae4ec",
+  "experiment": "v125_text_free_SGD_catalog_and_cross_dataset_population",
+  "lock_payload_sha256": "b852bd3b802e1d6bee01d667f3e99f43911f6bdca1f205a3fcd60f5fa2dc98fc",
+  "parent_analysis_lock": "configs/v124-sgd-source-feasibility-lock.json",
+  "parent_analysis_lock_sha256": "661ffe86bc4661337523b83ab3f3e1f417f80e5843fe2f7e6b1bd551bf2841f5",
+  "parent_outcome": "configs/v124-sgd-source-feasibility-outcome-lock.json",
+  "parent_outcome_sha256": "e346060d40bfb4a255f7cc686d89163af28044f9a9941e2e15e55da4f7ba9b6f",
+  "plan": "docs/v125-sgd-catalog-population-plan.md",
+  "plan_sha256": "e97ec699ab0473428e570923dd46478bdcdb6e277635d0c33208834d80966afe",
+  "protocol": "python/v125_sgd_catalog_population.py",
+  "protocol_sha256": "0241601a49123acd102319bd17a7d8122ed1dbb5391cf64dee1ca5542b6412aa",
+  "schema_version": "125-sgd-catalog-population-lock",
+  "selected_populations": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+  "selected_populations_sha256": "e1f721f20ce830fe1fbbbd481fedd9470cf8259b9c892ffd8c0f5d86db9f2b0c",
+  "source_inventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "source_inventory_sha256": "3cf2f5b5a43e340b0b4723baf728e49882286429c35fd3b111e28306ab029e5f",
+  "tests": "python/test_v125_sgd_catalog_population.py",
+  "tests_sha256": "87c4c9fccb988f74f15d2578ad3de9ecc1c5181cfcd529a9822fd66048a2f919",
+  "verifier": "python/verify_and_freeze_v125_sgd_catalog_population_outcome.py",
+  "verifier_sha256": "e68014b82505c3c9e6e8ee32699ffc0a69751d31050d1ea3528f644695b5fcd8"
+}

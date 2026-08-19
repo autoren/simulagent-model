@@ -463,3 +463,1212 @@ Do not weaken or rerun the census, inspect a rejected candidate, return to Tiger
 maintenance or V71 protected models, or add a project-authored beacon/noise layer. The correct current
 decision is to report and defer the active-sensing empirical branch until a new preregistration is
 justified by a materially different target or genuinely new public source-native benchmarks.
+
+## Status after V77-V81 structured-LLM interface work (2026-08-17)
+
+The next research direction is a local-first structured-LLM interface above the frozen exact Bayesian
+decision core. The language model's eventual role is limited to proposing a bounded candidate
+interpretation set; calibrated evidence and the verified core retain authority over clarification,
+reversible preview, abstention, and certified execution. API models remain optional comparators, not
+dependencies. No model forward pass, API call, adapter training, human record, or real tool action has
+yet been authorized or performed in this branch.
+
+V77 and its single mechanical retry are frozen as execution-inconclusive. The first attempt exposed an
+omitted terminal-successor branch in a shadow baseline; the retry exposed loss of fixture identity in
+gate aggregation. Neither produced a result artifact, and neither counts as evidence for or against the
+scientific hypothesis. The successor harness now durably writes each completed fixture and captures
+fixture- or gate-stage exceptions, with full-path regression coverage for both escaped defects.
+
+V78 then completed cleanly on a fresh scheduling-versus-sending task family. Nineteen of twenty frozen
+gates passed. Posterior-aware planning clarified ambiguous requests, materially outperformed MAP and
+act-immediately controls, executed clear requests immediately, preserved the dominant reversible action
+boundary, normalized every probability object, and never violated complete-belief execution
+certification. The sole failure was the required safe continuation on unknown-indicating histories:
+with no end-of-horizon cost for an active unresolved task, the horizon-one policy preferred asking once
+more and silently expiring over safe preview or abstention.
+
+Freeze V78 as a negative benchmark-design result without tuning or rerunning it. The next authorized
+step is a separately preregistered successor with explicit terminal utility for unresolved active
+beliefs. That successor must retain the same model/API/human/tool firewall and noncompensatory gates.
+Only a fully passing, independently audited model-free successor may authorize preregistration of frozen
+local-model candidate generation; it still would not authorize model access immediately, API use, LoRA,
+learned likelihoods, or execution authority.
+
+V79 prospectively added only the missing active-unresolved terminal penalty while retaining V78's
+model, policies, and gates. All 23 gates passed: ambiguous input elicited clarification; both focus
+questions were reachable; MAP and act-immediately controls incurred material regret; every unknown
+history selected safe preview; no uncertain execution occurred; and the dominant control remained a
+zero-regret negative case. An independent terminal-aware recursion reproduced every value and gate.
+
+V80 then introduced the pinned local `mlx-community/Qwen3.5-4B-4bit` model only as a candidate proposer
+above that verified core. The locked 24-record run used no API, adapter, human record, real tool, or side
+effect. All responses were parseable and included `none_of_the_above`, but exact candidate accuracy was
+`0.625`, mean recall was `0.8611`, and out-of-ontology exact accuracy was zero. V80 was frozen without a
+prompt edit or rerun.
+
+V81 used a new fixed Boolean compatibility interface and 24 fresh requests, with deterministic code
+composing candidates. It exactly solved every clear and fully ambiguous record, but failed on bare-name
+ambiguity, generic operations, and all four out-of-ontology labels. Exact label-vector and candidate-set
+accuracy were `0.5833`, mean label accuracy was `0.7583`, and out-of-ontology label accuracy was zero.
+An independent verifier reproduced all raw scores, aggregates, gates, and access counts.
+
+The local candidate-integration branch is therefore paused. The result does not require or justify an
+API fallback: the model is optional, while the exact decision core remains usable without one. A future
+LLM experiment must use a materially different, non-authoritative role—such as clarification wording or
+pre-seal adversarial language generation—and must not assign beliefs, define the live hypothesis set,
+select actions, or execute tools. V80 and V81 prompts, populations, decoders, models, and gates are closed
+to retrospective tuning.
+
+## Status after V82-V83 clarification-surface work (2026-08-17)
+
+V82 tested the first materially different local-model role: rendering wording only after V79 had already
+selected a typed clarification action. The frozen 24-record local run was operationally complete, used no
+API, training, human record, original user language, tool, or side effect, and preserved every action and
+policy value. It nevertheless failed its registered quality gates. More importantly, an independent
+strict-choice audit found that the registered anchor validator falsely accepted six `and` formulations
+that named both options without actually offering an alternative. Strict raw acceptance was `1/24`, and
+strict final validity was `18/24`. Freeze V82 as a negative surface-model result and disable that renderer.
+
+V83 converted the failure into a provenance-aware, model-free interface over the unchanged V79 core.
+Only locked canonical text and a finite grammar can produce deployable clarification surfaces. Arbitrary
+text can be inspected but remains non-deployable even when its content happens to validate; local-model,
+API-model, adapter-model, and passthrough sources are rejected by construction. All 54 rendered cases
+across the six reachable clarification nodes passed exact-choice certification, all 16 non-clarification
+nodes remained structurally identical, all ten unsafe mutations were rejected, policy-value error was
+zero, and complete-belief execution-certificate violations remained zero. An independent verifier
+reconstructed the full census and every metric.
+
+Freeze V83 for synthetic bounded shadow use only. It establishes a trustworthy optional-language
+boundary, not open-world language understanding or safety. The next empirical stage should be a fresh,
+schema-grounded shadow benchmark in which independently specified typed schemas drive canonical and
+finite-grammar clarification generation. It must test domain transfer, missing/unknown slot handling,
+schema/action separation, adversarial untrusted surfaces, and exact invariance of the Bayesian policy.
+No local or API model, adapter training, original user language, real tool call, or external side effect is
+authorized by V83.
+
+## Status after V84 schema-grounded transfer (2026-08-17)
+
+V84 replaced V83's hard-coded scheduling surface table with a generic typed-schema boundary and froze
+four schemas: the project workflow plus three fresh homologous transfer schemas. All 108 schema renderings
+were strictly valid and preserved their typed clarification requests. All twelve invalid schemas were
+rejected, all thirteen unknown or malformed requests failed closed, all sixteen unsafe surfaces were
+rejected, and valid-looking untrusted surfaces remained non-deployable. No fallback guessed a schema,
+slot, action, or question.
+
+The exact V79 bridge also passed all 54 rendered clarification cases. Every action and original policy
+field was preserved, the maximum policy-value error was zero, and complete-belief execution-certificate
+violations remained zero. The independent verifier reconstructed every positive and negative row and all
+metrics. V84 remains synthetic, bounded, and model-free; it is not evidence for human language, open-world
+safety, or real tool use.
+
+Freeze V84 for bounded shadow use. The only newly authorized successor is preregistration of a local model
+as an offline adversarial-input generator. Such generated text must carry permanently untrusted provenance,
+must never become a deployable surface even if it passes content checks, and may only expand a future test
+suite before that suite is sealed. It cannot assign beliefs, select actions, change schemas, call tools, or
+trigger an API fallback.
+
+## Status after V85-V86 adversarial hardening (2026-08-17)
+
+V85 completed its one frozen local-model run as an offline, permanently non-deployable adversarial-input
+generator. Safety and provenance gates held: all 24 responses parsed, no forbidden authority fields were
+emitted, every row remained non-deployable, and there was no API, training, human record, original user
+language, tool, or side effect. The model nevertheless failed the registered usefulness gates. Only half
+the population was both schema-valid and strictly invalid, inventory produced no useful rows, and the 24
+records collapsed to nine unique questions. Freeze V85 negative without prompt editing or rerun.
+
+The independent V85 audit also found a contained content-validator false positive. An operation-only
+question included the exact operation alternative plus the single unrequested option `Alex Chen`. V84
+forbade only the complete other-slot phrase `Alex Chen or Alex Kim`, so the content check passed, although
+untrusted provenance still prevented deployment. This is evidence that provenance is load-bearing and
+that phrase-level semantic checks require exhaustive subcomponent controls.
+
+V86 prospectively corrected only that model-free rule. It rejects every individual option surface from
+an unrequested slot while preserving schemas, typed requests, safe wording, actions, values, and execution
+certificates. All 108 safe surfaces passed, all sixteen original unsafe controls and sixteen exhaustive
+partial-option injections were rejected, and the exact V85 false positive was blocked. All 54 V79 bridge
+cases preserved actions and structure, with zero policy-value error and zero execution-certificate
+violations. An independent implementation reproduced the complete result.
+
+Freeze the hardened V86 validator for future bounded shadow integrations. Do not reopen V85, deploy any
+model-generated surface, or infer that adversarial generation is a successful role for this local model.
+The next evidence gap is independently authored language. Address it only through a fresh sealed shadow
+evaluation with externally sourced text and typed schemas; keep every utterance non-executable, preserve
+`none_of_the_above`, and do not authorize a model call until the source, license, mapping, and leakage
+audit are frozen.
+
+## Status after V87-V88r1 external-language work (2026-08-17)
+
+V87 closed the source, license, mapping, and leakage gate without opening dialogue payload before the
+protocol lock. Of SGD, Taskmaster-1, and the audited MultiWOZ reference repository, only the official
+Schema-Guided Dialogue dataset passed every noncompensatory requirement. It supplies crowd-worker user
+language, machine-readable service schemas, and deterministic user-frame state annotations under CC
+BY-SA 4.0. The repository and two required dev files were pinned to commit
+`e852981ae34990f4358979625854259302feaa78` by byte size and Git blob identity.
+
+The one-shot code-only V87 inventory found 825 eligible user turns in 128 dialogues: 757 active-intent
+states and 68 genuine `NONE` states across Flights, Restaurants, and RideSharing. No utterance or slot-
+value text entered the inventory, and no record was manually inspected. The frozen structural index has
+SHA-256 `ebdb2204bf437782fe6d4a4af8f6489905f1363cc00cd56289255a0f7446f2a2`.
+
+V88 then hash-selected and sealed 48 records before extracting language: 24 active cases balanced across
+four intent labels and 24 genuine `NONE` cases. The first local inference attempt is frozen execution-
+inconclusive after one unobserved generation because the scorer omitted the generic harness's separate
+fixture `name` field. A separately registered terminal repair changed only that identity handoff and
+reused the corpus, prompts, model, decoder, parser, scorer, controls, and thresholds byte-for-byte.
+
+The completed V88r1 result is negative. Exact JSON and ontology conformance were both `0.75`, active-
+intent coverage was `0.625`, exact intent candidate sets were `0.5625`, and exact state-slot-key sets were
+`0.2083`. All twelve malformed outputs occurred in Flights; service-level intent recall was `0.3684` for
+Flights versus above `0.90` for Restaurants and RideSharing. Among the 36 conforming outputs, exact
+intent sets reached `0.75` and state-key recall `0.8944`, but exact state sets remained `0.2778`, so
+serialization is not the only limitation.
+
+Freeze V88/V88r1 without any further retry, prompt repair, record replacement, threshold change, API
+fallback, or adapter training. The cumulative disclosed resource use is two local model loads and 49
+generations, with zero API calls, manual language inspection, service calls, or side effects. The local
+model must not define the live hypothesis set or accumulated state. Retain the V83/V86 deterministic
+interface above the frozen Bayesian core. The only authorized successor is a preregistered model-free
+failure decomposition; any later model experiment must use a materially different factorization in which
+deterministic code owns syntax and state accumulation and the local model supplies at most a narrow,
+non-authoritative intent compatibility signal.
+
+## V89 model-free decomposition and branch decision (2026-08-17)
+
+V89 used only the frozen identifier-level V88r1 artifacts and granted every malformed row an optimistic
+gold serialization repair. Even that upper bound failed the original active-intent coverage gate
+(`0.7917 < 0.90`) and exact state-key gate (`0.4583 < 0.50`). Adding a perfect state oracle still left
+active-intent coverage at `0.7917`. Among conforming rows, only eight of 36 had both exact intent and
+state sets; nineteen had correct intent but wrong state, two had wrong intent but correct state, and seven
+missed both.
+
+Serialization repair, constrained JSON, or deterministic state accumulation therefore cannot by
+themselves justify another run of this local model interface. Freeze V89 and pause the external local-
+model integration branch. Do not introduce an API fallback, larger model, adapter, learned likelihood,
+prompt revision, record replacement, threshold change, or execution authority under this evidence.
+The validated project direction remains the exact Bayesian decision core with the deterministic V83/V86
+clarification boundary. LLMs remain optional offline research components, not runtime dependencies.
+
+## V90 local capacity, generation, and quantization comparison (2026-08-17)
+
+V90 reopened model comparison only under a fresh, preregistered question and a fresh sealed SGD shard.
+It ran Qwen3.5 4B 4-bit, Qwen3.5 27B 4-bit, Qwen3.8 27B 4-bit, and Qwen3.8 27B 8-bit independently with
+the exact same prompt, output contract, deterministic decoder, parser, scorer, and 48 records. Every
+condition completed its single load and 48 generations. Total access was four local loads and 192 local
+generations, with zero API calls, training runs, retries, manual utterance inspections, service calls,
+or external side effects.
+
+None of the four models qualified. Active-intent coverage ranged from `0.7917` to `0.8750`, below the
+registered `0.90` gate in every condition. Exact accumulated state-key sets ranged from `0.2292` to
+`0.2917`, far below `0.50`. The larger Qwen3.5 model improved intent-set and NONE exactness but lost
+active coverage and state recall. Qwen3.8 recovered some of that loss; its 4-bit condition violated the
+mandatory-`NONE` invariant, while 8-bit fixed that invariant and modestly improved exactness without
+recovering any additional active record. The 8-bit run used about 30.10 GB peak active memory and 641.9
+seconds versus 3.53 GB and 81.6 seconds for the 4B baseline.
+
+The preregistered combination diagnostic was ineligible because no 27B condition independently passed.
+Freeze every 27B result as nonqualifying shadow evidence and do not construct a small/large union or
+cascade. Retain Qwen3.5 4B only as the low-cost historical shadow baseline, not as a live proposer. Do
+not add an API model, adapter, larger local model, higher precision, prompt revision, or threshold change
+to this interface. The authoritative system remains model-free: typed schemas and deterministic
+validation above the exact Bayesian decision core. A future LLM experiment must change the scientific
+role so model failure cannot delete the true hypothesis, corrupt accumulated state, select an action,
+or execute a tool; capacity scaling and quantization are closed as remedies for this branch.
+
+## V91 rank-only complete-search scheduling result (2026-08-18)
+
+V91 tested the remaining safe local-model role suggested by V90: ordering a complete deterministic
+intent list without pruning it. A fresh SGD shard and 64 records from 64 distinct dialogues were sealed
+before selected-language or model access. Deterministic completion always appended omitted schema
+intents and `NONE`; malformed output therefore could not change the hypothesis set, state, posterior,
+action, or execution boundary. All 480 permutations of the frozen five-hypothesis V79 planner preserved
+the selected action, optimal actions, Q values, and value, with zero certificate violations and maximum
+numerical error `1.78e-15`.
+
+The model was safe under that construction but not useful enough. Qwen3.5 4B ranked 25 of 32 active
+records first but only five of 32 `NONE` records first. Overall top-1 was `0.46875`, top-2 was `0.59375`,
+MRR was `0.66667`, and mean gold rank was `1.9375`. Only ten of 64 raw responses obeyed the requested
+complete-permutation contract, although canonical completion retained all candidates in every case. The
+best preregistered non-oracle deterministic control, identifier exact-match grammar, achieved MRR
+`0.75260` and mean rank `1.60938`; model improvements were negative on both registered comparisons.
+
+Freeze V91 and do not use the local model for semantic candidate generation or exhaustive-search
+scheduling. Do not add a larger local model, API comparator, adapter, prompt revision, retry, control
+ensemble, pruning, or early stopping to this branch. V90 already resolved the capacity uncertainty, so
+an API model would not answer a remaining registered question. The validated runtime direction is now
+fully model-free: complete typed-schema enumeration with operational `NONE`, immutable authoritative
+state, deterministic validation, and exact posterior-aware planning. LLMs remain offline research tools
+only; none currently has authority or demonstrated utility in the structured decision path.
+
+## V92 frozen architecture synthesis (2026-08-18)
+
+V92 performed no new empirical access. It independently checked the internal payload hashes of all 15
+V77-V91 closure or outcome locks and audited the sequence against the long-running structured-LLM
+objective. The audit confirms complete coverage of the registered exhaustive, grammar, retrieval,
+direct-action, MAP, ask-always, act-immediately, oracle-candidate, and oracle-interpretation control
+families. It also reconstructs cumulative access of 11 local model loads and 401 generations, with zero
+API calls, adapter training, real tool/service calls, or external side effects.
+
+The branch is terminal under its own gates. Every tested learned role was nonqualifying, while the V79
+exact planner and V83/V84/V86 deterministic clarification boundary passed their frozen checks. The
+retained runtime therefore uses complete deterministic typed-schema enumeration with `NONE`, immutable
+authoritative state, trusted canonical/finite-grammar surfaces, exact Bayesian updating, exact posterior-
+aware planning, and complete-belief execution certification. No LLM is present in the decision path.
+
+Model-conditioned posterior integration, model-generated mechanic/action hypotheses, downstream model-
+conditioned regret, API comparison, LoRA, learned likelihoods, pruning, and execution authority were
+stopped because their prerequisite noncompensatory gates failed. They must not be described as tested
+failures, but running them now would violate the authorization chain. The canonical assessment is
+`docs/v92-structured-llm-architecture-assessment.md`.
+
+## V93 controlled open-set source feasibility (2026-08-18)
+
+V93 began the controlled open-world program without model access. It pinned the untouched official SGD
+`dev/dialogues_004.json` shard before download and froze five automatic, text-free class rules: familiar
+known intent, unfamiliar known paraphrase, source-valid hidden intent, cross-service unsupported input,
+and `NONE` as insufficient evidence. All services exposed in V87-V91 were excluded, and each target
+service was required to contain at least three typed intents with a sufficiently supported hash-selected
+hidden intent.
+
+The source gate failed cleanly. Although 154 structurally valid records remained after exclusions, zero
+service met the per-service intent requirement, so no class candidate was emitted and every scientific
+count and coverage gate failed. The inventory emitted no language, token, slot value, or history; no
+utterance was manually inspected; and there were zero model loads, generations, API calls, training
+runs, service calls, or side effects.
+
+Freeze V93 as source-infeasible without relaxation, rerun, population selection, or model access. This
+is not novelty or abstention evidence. The authorized successor is a fresh, preregistered global
+capability-catalog construction that partitions declared and hidden intents across multiple services
+rather than requiring three intents inside each individual service.
+
+## V94 global capability-catalog feasibility (2026-08-18)
+
+V94 applied that material redesign to untouched SGD shard `dev/dialogues_005.json`. The global catalog
+was structurally viable: four fresh services yielded 645 candidates, with three catalog services, one
+unsupported service, four declared supported pairs, and one hidden pair. Known familiar, unsupported,
+and insufficient-evidence count and coverage gates all passed.
+
+The complete source gate nevertheless failed before language extraction or model access. Accumulated
+history left only seven zero-overlap unfamiliar-known records, below 24. The five supported catalog
+pairs could not retain four declared pairs while hiding two, so hidden-pair count and novel service
+coverage also failed. The one hidden pair still supplied 148 novel records, confirming that count alone
+is not adequate diversity. No source language or tokens were emitted or manually inspected, and model,
+API, training, service-call, and side-effect counts remained zero.
+
+Freeze V94 unchanged. A fresh successor may define lexical unfamiliarity on the current intent-bearing
+turn and preregister two hidden plus three declared supported pairs, but cannot reuse V94 language or
+outcomes. V94 is source-feasibility evidence only, not novelty or abstention evidence.
+
+## V95 activation-turn source feasibility (2026-08-18)
+
+V95 applied both material corrections prospectively to untouched SGD shard `dev/dialogues_006.json`.
+Only source-annotated intent activations could supply known, novel-valid, or unsupported cases, and
+familiarity used only the current user turn. The redesign worked: three catalog services supplied 80
+known-familiar, 38 known-unfamiliar, 64 novel-valid, and 46 insufficient-evidence candidates. Exactly
+two intent pairs were hidden from two distinct services, four declared pairs remained, and every count
+and coverage gate for those four classes passed.
+
+The complete source gate still failed because the shard had only three eligible fresh services after
+the locked exclusions. Preserving the required three-service catalog left no fourth service that could
+be withheld completely, so unsupported-service and unsupported-candidate gates failed. No language,
+tokens, values, histories, or prompts were emitted or manually inspected; local model, API, training,
+service-call, and side-effect counts remained zero.
+
+Freeze V95 unchanged. The authorized scientific successor is a fresh two-source construction: retain
+the validated activation-turn catalog rules and pin a separate untouched shard solely to supply a
+completely withheld unsupported service. Both source identities and roles must be locked before payload
+access. Do not weaken the unsupported class, reuse a previously exposed service, select a population, or
+load a model under V95.
+
+## V96 two-source shard-role feasibility (2026-08-18)
+
+V96 prospectively assigned untouched `dev/dialogues_007.json` to the catalog and
+`dev/dialogues_008.json` to the unsupported role. The construction remained text-free and correctly
+enforced source-annotated activations, current-turn lexical separation, disjoint roles, and zero model or
+execution access. The source assumption failed: shard 007 had only one eligible unexposed service
+(`Events_1`), and shard 008 had no eligible service after the frozen exclusions. The resulting inventory
+had one catalog service, one hidden pair, one declared pair, and no unsupported candidates.
+
+Freeze V96 as source-infeasible. Individual SGD shards are too service-concentrated to receive whole
+benchmark roles prospectively. The next source audit may pin an aggregate pool of untouched shards and
+hash-partition services across the combined activation inventory, but must lock the complete pool before
+payload access, exclude every previously exposed service, retain the V95 class and count gates, and keep
+language, models, APIs, training, services, and side effects closed.
+
+## V97 aggregate development-pool feasibility (2026-08-18)
+
+V97 pinned and automatically inventoried every remaining untouched SGD development shard
+(`dialogues_009.json` through `dialogues_020.json`) as one service-level pool. All 45,767,156 bytes and
+twelve Git blob identities matched. The pool contained 15,330 valid records and 4,725 intent activations,
+with no emitted or manually inspected language and zero model, API, training, service-call, or side-
+effect access.
+
+The source gate failed before population selection because the frozen prior-exposure list already
+contained all 17 services in the development schema. No eligible service namespace remained, so the
+catalog, unsupported, hidden, and declared sets were empty and no candidate was emitted. This closes the
+entire SGD development split for fresh service-level open-set evidence; processing more dev dialogues
+cannot change that conclusion.
+
+Freeze V97 unchanged. The next source audit must move to a genuinely new typed schema split or a
+different independently authored dataset. Its design audit must prove, from schema structure alone and
+before dialogue payload access, that at least four sufficiently distinct unexposed service namespaces
+exist and that machine-checkable intent and `NONE` ground truth are available. Do not weaken freshness
+by recycling dev services or reinterpret V97 as novelty-model evidence.
+
+## V98 SGD test-schema family feasibility (2026-08-18)
+
+V98 pinned and automatically parsed only the official test schema, with all 34 test dialogue shards
+remaining unopened. The test schema has 21 services across 18 base families, but family-level comparison
+against the 16 development families found only two genuinely new typed families: `Payment` and `Trains`.
+Both define two intents and typed slots, but the preregistered requirement was four fresh families for
+three catalog roles plus one fully unsupported role.
+
+Freeze V98 as schema-infeasible. Do not count versioned variants of already exposed families as novel
+and do not open the test dialogues under this branch. Together V97 and V98 close SGD as the sole source
+for the controlled open-set benchmark. The next source-selection audit must evaluate a different
+independently authored dataset for at least four typed domains, machine-checkable intent and slot ground
+truth, language provenance and licensing, an unsupported construction, and an insufficient-evidence
+control before any payload or model access.
+
+## V99-V100 external open-set source selection and MASSIVE feasibility (2026-08-18)
+
+V99 selected two independently authored, CC BY 4.0 sources under deliberately separate roles. MASSIVE
+1.1 en-US supplies the primary typed familiar-known, unfamiliar-known, novel-valid, and unsupported
+classes. PRESTO v1 is reserved for a later within-record full-context versus context-ablated
+insufficient-evidence control, avoiding dataset identity as the abstention cue. CLINC150 was rejected as
+the unsupported source because it has no typed slot schema and would confound class with corpus.
+
+V100 then froze the exact 40,251,390-byte official MASSIVE archive, selection salts, ontology thresholds,
+and noncompensatory class gates before its single permitted download. The automatic text-free census
+passed every gate: 16,521 en-US records expose 18 scenarios, 60 intents, and 55 slot types. Hash selection
+produced three catalog scenarios (`iot`, `recommendation`, `calendar`), one completely withheld scenario
+(`email`), two hidden intents across two catalog scenarios, and 12 declared intents.
+
+The resulting 5,424 candidates comprise 1,080 familiar known, 1,956 unfamiliar known, 1,007 novel-valid,
+and 1,381 unsupported records. Every class has at least 118 validation and 169 test records, well above
+the separately locked 16-record minima, and all scenario-coverage gates passed. No utterance or derived
+token was emitted or manually inspected; no model, API, training, service, or side-effect access occurred.
+
+Freeze V100 as positive source-feasibility evidence, not model or open-world-performance evidence. The
+next step is to lock hash-selected validation/test populations before extracting their language, then
+independently audit PRESTO's human-context dependency construction. No LLM may be loaded until the
+population, prompt, deterministic controls, metrics, and pass/fail gates are all prospectively frozen.
+
+## V101 MASSIVE population selection (2026-08-18)
+
+V101 hash-selected the development and protected-test identifiers entirely from V100's text-free
+candidate index. Each role contains 256 records, exactly 64 per familiar-known, unfamiliar-known,
+novel-valid, and unsupported class. The official validation and test partitions remain identifier-
+disjoint. Both known classes cover all three catalog scenarios in both roles, novel-valid covers both
+hidden-intent scenarios, unsupported covers the withheld scenario, and every preregistered intent-
+coverage gate passed.
+
+The population payload is frozen at
+`284e7d464967a385f711e10c8919a31dc4c36f7ab288dd99721d0b96dcc7d8dc`. V101 did not reopen the archive,
+extract or emit language, inspect an utterance, or access a model, API, training runtime, service, or
+external side effect. The next MASSIVE operation must separately lock automatic selected-language
+extraction. Keep the protected test closed until the prompt, deterministic controls, metrics, and
+noncompensatory pass/fail gates are frozen. In parallel, independently establish whether PRESTO can
+supply the paired human-context insufficiency control without synthetic context or source-style confounds.
+
+## V102/V102r1 PRESTO context-dependency feasibility (2026-08-18)
+
+V102 froze a paired full-context versus context-ablated rule before downloading PRESTO: en-US human-
+context records needed a target argument absent from the current input but copied contiguously from a
+previous turn or seeded state. Its first execution stopped technically because some seeded-note leaves
+violated the README's strict string assumption. No source artifact or language was emitted, so that event
+was frozen as a technical—not scientific—failure.
+
+V102r1 retained the exact archive, dependency rule, and scientific gates, changing only the parser to
+ignore non-string optional context leaves without coercion. The repair was exercised 39,035 times and the
+full census completed over 276,665 dev/test records, including 12,279 en-US human-context records. The
+scientific result was negative: zero records met the exact target-argument copy criterion, so every
+candidate-count, dependency-diversity, and semantic-root gate failed. No language was emitted or manually
+inspected, and no model, API, training, service, or side-effect access occurred.
+
+Freeze V102r1 unchanged. This rejects only the exact contiguous-copy construction; it does not establish
+that PRESTO context lacks decision value or that an LLM cannot abstain. Do not select a PRESTO population,
+weaken thresholds, or inspect examples. The appropriate successor is a prospectively locked text-free
+target-syntax census on the persisted archive. Only if that census identifies an independently checkable
+dependency relation should a materially new paired insufficiency construction be preregistered.
+
+## V103 PRESTO target-syntax diagnostic and branch closure (2026-08-18)
+
+V103 localized V102r1's zero-candidate result without exposing language or identifiers. Among 12,279
+en-US human-context records, 3,246 targets used guillemet literals and 3,226 passed the frozen literal-
+quality rule. Of those, 2,015 also appeared in admissible context, but every quality literal was present
+in the current input; zero were absent from input. Alternative quoted-literal families supplied no
+viable cases. Thus the failure was not the principal delimiter parser: PRESTO simply does not instantiate
+the desired exact-copy dependency where a required literal is available only through context.
+
+Freeze V103 negative and close PRESTO as the paired insufficiency source. This does not claim that PRESTO
+context has no linguistic value; it says the intended mechanically certified ablation is unavailable.
+Continue the main controlled open-set study with the viable V101 MASSIVE development/protected-test
+population. If missing-evidence abstention is still required, preregister an explicit controlled
+intervention and report it as an ablation—not as naturally occurring external-language evidence.
+
+## V104 exact MASSIVE selected-language extraction (2026-08-18)
+
+V104 automatically materialized exactly the 512 identifiers frozen by V101 into separate 256-record
+development and protected-test artifacts. Each contains 64 records per familiar-known, unfamiliar-known,
+novel-valid, and unsupported class. Every identifier, source partition, scenario, intent, schema-
+visibility role, known-class familiarity rule, typed slot count, and split-disjointness property
+reconstructed exactly; zero unselected language records were emitted.
+
+No utterance from either artifact was manually inspected, and there was no model, API, training, service,
+or external side-effect access. The protected test remains sealed. The next stage must freeze the visible
+catalog, prompt and output grammar, deterministic baselines, novelty/unsupported decision semantics,
+calibration and risk-coverage metrics, downstream decision loss, and noncompensatory gates before it may
+read the protected test or load the local model.
+
+## V105 typed open-world interface (2026-08-18)
+
+V105 froze and compiled the non-authoritative language-to-hypothesis boundary before reading either
+selected language split. The visible catalog contains exactly three scenarios, 12 declared intents, and
+29 unique slot types derived automatically from MASSIVE training annotations. Both hidden valid intents
+and the completely withheld `email` scenario remain absent. The complete safe state space always retains
+all 12 known intents, three scenario-level novel-capability hypotheses, `UNSUPPORTED`, and
+`INSUFFICIENT_EVIDENCE`: 17 hypotheses total.
+
+The response contract is strict JSON with `KNOWN`, `NOVEL`, `UNSUPPORTED`, or `ABSTAIN`; any malformed or
+invariant-violating output becomes zero-confidence `ABSTAIN`. An LLM may eventually rank hypotheses in
+shadow, but it cannot define or prune capabilities, change authoritative state or posterior, select an
+action, or execute a tool. V105 also froze 64 missing-observation controls per role using only text-free
+identifiers. Their authoritative response is always abstain-and-ask; this is explicitly a synthetic
+intervention rather than naturally occurring language evidence.
+
+Every interface gate passed with zero hidden-schema leaks, selected-language reads, manual utterance
+inspection, model/API/training access, service calls, or side effects. Freeze the interface. The next
+stage must prospectively lock and run deterministic development baselines, calibration/risk metrics,
+decision costs, and noncompensatory gates before loading one local challenger. The protected test stays
+sealed until both the interface and development-baseline outcomes authorize a single final evaluation.
+
+## V106 deterministic open-world development baselines (2026-08-18)
+
+V106 froze a balanced hash-only development split, asymmetric shadow-decision costs, calibration and
+selective-risk metrics, five deterministic controls, and one future local-model condition before opening
+development language. Its first design audit stopped on a bookkeeping mismatch—15 future model gates had
+been frozen while the auditor expected 14. That zero-access technical event was preserved, and the exact
+count repair passed without changing any scientific choice.
+
+The completed benchmark used 128 calibration and 128 evaluation records, 32 per class per subset. The
+identifier grammar reached 45.31% exact decisions overall but was deliberately brittle: 81.25% on
+familiar known language, 0% on unfamiliar known and novel-valid language, and 100% on the unsupported
+scenario. Character n-gram TF-IDF retrieval reached 50.78% exact decisions and 53.86% status macro F1,
+including 56.25% exact novel-scenario routing, but its mean regret was `2.117` because semantic mistakes
+were costly. Always asking had no exact resolutions yet lower mean regret, `1.125`, and therefore became
+the best frozen non-oracle decision baseline. The oracle was exact with zero regret.
+
+This establishes the correct LLM question: not whether a model can outperform a lexical grammar on raw
+accuracy, but whether it can add enough open-world semantic resolution to beat cautious abstention under
+asymmetric costs while remaining calibrated and willing to abstain when evidence is absent. Freeze V106.
+One pinned local Qwen3.8-27B 4-bit development run is now eligible for a separate implementation audit;
+do not combine models or use an API. Keep the complete 17-hypothesis universe authoritative and the model
+non-authoritative. The protected test stays sealed unless every development model gate passes.
+
+## V107 local open-world model development result (2026-08-18)
+
+V107 ran the single pinned Qwen3.8-27B 4-bit condition exactly once on 128 observed development records
+and 64 missing-observation controls. The 39.2-minute local run used one model load, 192 no-retry
+generations, and 17.32 GB peak active memory. There were no APIs, training runs, protected-test reads,
+manual utterance inspections, service calls, executions, or side effects.
+
+The result is scientifically useful but nonqualifying. Missing-observation abstention was perfect
+(`64/64`), and all 32 wholly unsupported requests were correctly rejected. The model correctly routed
+13/32 hidden-valid requests as novel and achieved mean shadow regret `1.0977`, slightly better than
+ask-always's `1.125`. But it accepted no exact known intent at all, reached only 35.16% observed exact
+decisions and 46.91% status macro F1, and had 56.31% error among its top-confidence 80%. Only 52.34% of
+observed outputs satisfied the strict typed response invariant; invalid rows safely became abstentions.
+
+This clarifies the open-world language question. A capable local LLM can be conservative about absent or
+obviously out-of-domain evidence and can identify some within-domain novelty, yet still fail the exact
+schema-grounding step needed for reliable known-capability execution. The permanent complete-hypothesis
+architecture prevented those failures from deleting the truth, and asymmetric costs prevented modest raw
+semantic successes from being mistaken for deployment readiness.
+
+Freeze V107 negative and keep the protected test sealed. Do not retry, loosen gates, ensemble models,
+switch to an API, or train an adapter under this branch. A fresh successor may redesign the typed grounding
+interface or embed language proposals in a richer sequential sensing/clarification decision problem, but
+must keep deterministic abstention, complete safe-hypothesis retention, and non-authoritative model output.
+
+## V108 typed-interface forensics (2026-08-18)
+
+V108 automatically reparsed all 192 exact frozen V107 outputs under a prospectively locked, aggregate-only
+diagnostic. It read no development or protected-test language, exposed no raw response or identifier, and
+performed no model load, generation, retry, API call, training run, service call, or side effect. Every one
+of the 61 invalid observed outputs used an exact unique short intent name that V105's catalog visibly exposed
+even though its validator accepted only the qualified intent ID. The sole permitted alias canonicalization
+made all 61 structurally valid; there were zero ambiguous aliases.
+
+Counterfactual known-intent accuracy rose from 0% to 79.69%, overall exact decisions from 35.16% to 75%,
+macro F1 from 46.91% to 74.64%, and top-confidence error fell from 56.31% to 16.50%. This decisively locates
+V107's headline known-intent failure at the typed serialization boundary rather than in known-language
+understanding alone. It does not erase the semantic open-world problem: false-known acceptance rose to
+14.06% and mean regret worsened from `1.0977` to `1.3672`, because nine novel-valid requests had been
+expressed as known aliases and would become actionable under the diagnostic mapping.
+
+Freeze V108 as a positive interface diagnosis without replacing or rescoring V107. The next branch should
+prospectively test a fresh development-only interface with one unambiguous machine-accepted identifier
+representation, while separately gating false-known risk and keeping the LLM non-authoritative. Keep the
+protected test sealed and do not use an API, train an adapter, or grant planning or execution authority.
+
+## V109 single-choice typed interface holdback (2026-08-18)
+
+V109 tested the repair on the 128 development records excluded from V107 model generation, plus 64
+language-free missing-observation controls. A complete 17-choice catalog gave every known intent, visible-
+scenario novelty state, unsupported state, and insufficient-evidence state one unique code; the model could
+return only a choice code and confidence. The one pinned local run completed in 30.2 minutes with 192
+no-retry generations, one model load, and 17.01 GB peak active memory.
+
+The interface passed decisively: all 192 responses were valid, missing-evidence abstention was 100%, known-
+intent accuracy was 96.88%, familiar-known accuracy was 100%, and unfamiliar-known accuracy was 93.75%.
+This confirms that V107's zero known-intent result was an interface artifact, not a faithful measure of the
+model's known-language understanding.
+
+The open-world semantic boundary did not pass. The model made zero novelty selections on 32 hidden-valid
+requests: 13 were overcommitted to known capabilities, three were rejected as unsupported, and sixteen
+were deferred. False-known acceptance was 20.31%, ECE was 0.2538, top-confidence error was 25.24%, and
+mean regret was `1.3828`, `0.2578` worse than ask-always. Exact decisions still reached 70.31% because
+known and unsupported cases were strong, but that aggregate cannot compensate for zero novelty recall.
+
+Freeze V109 without retry or protected-test access. Formatting work is complete enough to stop being the
+main branch. The authorized successor is a prospectively locked sequential clarification benchmark that
+preserves known and novel alternatives, prices information gathering and delayed false-known harm, and
+keeps the LLM as evidence rather than authority. Do not add an API model, train an adapter, or grant action
+or execution authority.
+
+## V110 deterministic novelty, abstention, and validation (2026-08-18)
+
+Because V109 failed the objective's novelty prerequisite, V110 deferred sequential planning and instead
+completed the missing deterministic comparison on a new hash split of frozen development outputs. Sixty-
+four records calibrated fixed thresholds and 64 evaluated nine policies, with 16 records per class in each
+subset. There was no new model generation or protected-test access.
+
+Confidence abstention selected a `0.99` cutoff. It eliminated false-known and unsafe known shadow proposals,
+reduced ECE to `0.0313`, and improved mean regret to `1.0391`, but covered only 14.06% of records and still
+found no novelty. Retrieval and the deterministic novelty override achieved 100% novelty recall and zero
+false-known acceptance, but only 29.63% novelty precision, 31.25% known accuracy, zero unsupported recall,
+and `2.1875` mean regret. The primary LLM-plus-validation rule inherited that over-triggering and failed the
+joint semantic, calibration, selective-risk, and utility gates. The direct LLM showed the opposite failure:
+100% known accuracy and 71.88% overall exact decisions, but zero novelty recall and 21.88% false-known
+acceptance.
+
+Freeze V110 negative. Neither confidence nor nearest-neighbor novelty is a sufficient discriminator: one
+mostly suppresses decisions, while the other calls too much novel. Keep the protected test, schema induction,
+and richer sequential benchmark closed. A fresh aggregate-only separability audit may test preregistered
+per-intent score, top-two margin, scenario concentration, and disagreement features. If no simple rule has
+joint precision/recall feasibility, close this evidence interface and seek genuinely new contrastive or
+multi-turn evidence rather than retuning thresholds.
+
+## V111 existing-evidence novelty separability audit (2026-08-18)
+
+V111 froze 1,343 rules from ten simple families before evaluating the exact V110 64/64 development split.
+It persisted aggregate distributions only and generated no new model output. Exactly one calibration rule
+met the joint novelty constraints: use the local model's typed `ABSTAIN` status as novelty evidence. The
+unchanged rule transferred with 80% precision, 50% recall, 61.54% F1, and a 4.17% non-novel false-positive
+rate, clearing all three preregistered separability gates.
+
+This is a positive but limited diagnosis. The model did not identify a novel schema; reluctance to commit
+was informative. `ABSTAIN` must therefore remain evidence that preserves novel hypotheses or triggers
+information gathering, never an authoritative `NOVEL` classification. Half of novel-valid cases remained
+undetected. The evaluation-label oracle found 13 feasible registered rules but remains diagnostic and may
+not change the selected rule.
+
+Freeze V111 positive. The next step is a separately locked full development policy that combines frozen
+typed LLM evidence and deterministic validation while retaining the complete safe hypothesis universe and
+jointly evaluating status accuracy, calibration, selective risk, false-known acceptance, and planner regret.
+Keep protected-test language, induction, richer sequential planning, APIs, training, capabilities, actions,
+and execution closed.
+
+## V112/V112r1 fresh full-policy transfer (2026-08-18)
+
+V112 selected 192 unused MASSIVE validation records before language extraction, excluding all prior V101
+development and protected identifiers. The pinned local model completed 240 no-retry generations, including
+48 missing-observation controls. A post-generation missing-argument error was repaired by V112r1 using a
+prospectively hashed manifest of all preserved fixtures and zero new model inference.
+
+The V111 abstention signal transferred: novelty precision was 70.21%, recall 68.75%, non-novel false-positive
+rate 9.72%, and ECE 0.0494. Thus model abstention carries useful calibrated novelty evidence on fresh
+controlled open-set language, while still mapping operationally to clarification rather than a new capability.
+
+The complete policy improved mean regret to 0.8047 versus 1.125 for ask-always, reduced false-known
+acceptance to 6.25%, reached 0.0235 action-confidence ECE, and retained all hypotheses with zero execution.
+It nevertheless failed two noncompensatory gates: known exact-intent accuracy was 78.13% rather than 80%,
+and top-80% error was 22.08% rather than at most 20%. Freeze the detector positive and full policy negative.
+Do not retune, open the protected test, or begin induction. A new-population policy branch may address known
+over-abstention and selective ranking while preserving novelty, safety, calibration, and regret.
+
+## V113 historical known-disagreement rescue census (2026-08-18)
+
+V113 froze 239 simple rules before treating V112 as historical policy-design data. Sixteen records were
+eligible because a typed known proposal disagreed with nearest-intent retrieval. Eighty candidates passed
+all seventeen inherited gates. The selected rule requires proposed-intent score at least 0.60 and a gap
+behind the nearest intent no greater than 0.15.
+
+It rescued four historical disagreements, lifting known accuracy from 78.13% to 82.29%, lowering top-80%
+error from 22.08% to 19.48%, and improving mean regret from 0.8047 to 0.7839. False-known acceptance stayed
+at 6.25%, and the novelty signal remained exactly unchanged. Freeze this rule without retuning for a new,
+disjoint transfer population. V113 itself is not transfer evidence and does not authorize protected-test
+access or induction.
+
+## V114 record-disjoint rescued-policy transfer (2026-08-18)
+
+V114 selected 192 balanced records from the unused MASSIVE test-partition remainder before language
+extraction, excluding every V101 identifier—including its sealed protected records—and every V112
+identifier. The pinned Qwen3.8-27B 4-bit condition completed 240 no-retry generations with one load, 100%
+typed validity, 100% missing-observation abstention, no protected or manual reads, and zero execution.
+
+The V112 abstention novelty signal did not extend under the frozen noncompensatory gates. Precision was
+68.75% rather than 70%, recall was 68.75%, and the non-novel false-positive rate was 10.42% rather than at
+most 10%. Both failures reduce to the same fifteenth false positive, but no threshold may be relaxed. The
+base full policy also failed exact decisions (58.33%), known accuracy (73.96%), and top-80% error (27.27%).
+
+The V113 rescue triggered three of 22 eligible disagreements. It corrected two known cases and introduced
+no exact correct-to-wrong transition, but its third trigger converted a novel-valid error into a more costly
+false-known acceptance. Known accuracy rose to 76.04% and selective error fell to 25.97%, while false-known
+acceptance rose from 9.38% to 10.42% and regret from 0.9688 to 1.0026. Rescue precision was 66.67%, the
+minimum four-trigger opportunity was not met, and all triggers were in the calendar scenario.
+
+Freeze V114 as a negative controlled open-set transfer. Do not retune the rescue, mine V114, open the
+original protected population, or begin induction or richer sequential planning. V112 remains positive on
+its fresh validation population, but abstention alone is not a stable novelty discriminator across the two
+partitions. A successor must preregister genuinely new contrastive or multi-turn evidence on unprotected
+development material, with complete safe-hypothesis retention and zero model authority or execution.
+
+## V115 two-pass contrastive catalog fit (2026-08-18)
+
+V115 selected another 192 balanced unused MASSIVE test records while excluding all V101, V112, and V114
+identifiers. The pinned local model completed two frozen no-retry passes on 192 observed and 48 controlled
+fixtures: 480 generations, one load, 100% validity, 100% two-pass missing-input abstention, no protected or
+manual reads, and zero execution.
+
+The second pass explicitly challenged a candidate against the complete declared catalog, but novel evidence
+collapsed to 55.56% precision and 10.42% recall with 0.2213 ECE. It mapped 28 of 48 novel-valid requests to
+a declared known capability and recognized only five as valid but undeclared. Its conservative shadow policy
+slightly improved known accuracy from 76.04% to 77.08%, while worsening false-known acceptance from 5.21%
+to 7.29%, top-80% error from 24.03% to 24.68%, and regret from 0.7760 to 0.9375.
+
+Freeze V115 negative and close static two-pass self-review. Supported grounding remains comparatively
+strong—the first typed pass reached 86.46% known accuracy—but the model still assimilates undeclared-valid
+requests to nearby known capabilities. The next branch must first prove, without language or model calls,
+that a typed multi-turn clarification answer channel contains decision-relevant information. Induction,
+protected access, richer sequential planning, APIs, training, actions, and execution remain closed.
+
+## V116 typed clarification value-of-information audit (2026-08-18)
+
+V116 used no language or model calls. It swept an explicit simulated typed-answer channel over three priors,
+70–100% answer reliability, one versus two answers, and independent versus fully correlated error. The
+Bayes policy retained all 17 hypotheses, could emit only known, unsupported, or abstain shadow decisions,
+and never executed.
+
+Two conditionally independent 95%-correct answers beat the frozen V115/V112-policy regret of 0.7760 under
+all priors: 0.7368 with a uniform prior, 0.7058 with a moderate candidate prior, and 0.7174 with a strong
+candidate prior. Known and unsupported correctness exceeded 90.25%, while false-known probability stayed
+below 0.34%. One answer was insufficient under two priors, and fully correlated double answers failed under
+uniform and moderate priors with 0.8877 regret.
+
+Freeze V116 as conditional feasibility. It does not show that human or model answers are 95% reliable or
+independent. The only permitted successor is an unprotected causal simulator whose two clarification
+observations are generated from explicitly different latent mechanisms and whose evaluation includes
+correlated-error and misspecification stress. New language/model generation, protected access, induction,
+APIs, training, action authority, and execution remain closed.
+
+## V117 two-mechanism causal clarification simulator (2026-08-18)
+
+V117 replaced the abstract duplicate answers with exact candidate-confirmation and catalog-status
+observations, then swept 90--100% marginal correctness, shared-failure correlation from zero to one, three
+priors, and correlation-aware versus independence-assumed inference. It retained all 17 hypotheses, emitted
+no record-level diagnostics, used no language or model, and executed nothing.
+
+The frozen all-prior gates failed at 95% reliability. Under the uniform prior, the correlation-aware policy
+never selected an exact known action through correlation 0.50 and had 1.2056--1.2085 regret. Under the strong
+candidate prior, unsupported correctness fell to zero at correlations 0.25 and 0.50, with regret 1.0399 and
+0.9924. The moderate prior alone stayed near the 0.7760 historical baseline. An independence-assumed planner
+also failed its misspecification regret gate under the uniform prior at actual correlation 0.50.
+
+The perfect channel reached exactly 0.690625 regret under every prior, confirming implementation and
+noiseless identifiability. Freeze V117 negative: distinct questions do not by themselves provide robust
+decision value. Keep language/model generation closed. A next branch may only perform an aggregate,
+model-free identifiability audit to derive the minimum evidence geometry required by any future adaptive
+clarification protocol; protected access, induction, APIs, training, authority, and execution remain closed.
+
+## V118 prior-robust evidence identifiability audit (2026-08-18)
+
+V118 algebraically derived the action regions induced by the frozen loss matrix and checked them against
+the already-frozen V117 channel. Exact candidate action needs 89.47%--90.91% posterior probability; from a
+uniform 1/17 prior this requires a Bayes factor of 136--160. V117's decisive candidate evidence supplied
+only 38--78 through the required correlation range because catalog status is identical for every declared
+known intent. The audit therefore exactly explains V117's 0% uniform-prior known accuracy.
+
+For unsupported action under the strong candidate prior, the decisive posterior was 83.24% at zero
+correlation and the policy acted unsupported. At correlations 0.25 and 0.50 it fell to 81.08% and 79.08%; the
+residual known risk made abstention optimal. Only 1.091--1.270 additional unsupported-specific Bayes factor
+would reverse those cases. The candidate was exact on 93 of 96 known records, reproducing the perfect-channel
+known ceiling of 96.875%.
+
+Freeze V118 positive as mechanism localization, not application evidence. Any successor must be a locked,
+language-free adaptive causal simulator with separate identity- and support-specific evidence and explicit
+dependence stress. No prompt, model, human, or protected run is authorized; induction, APIs, training,
+authority, and execution remain closed.
+
+## V119 asymmetric adaptive evidence simulator (2026-08-18)
+
+V119 routed candidate confirmation to two identity checks, while rejection or uncertainty routed to two
+support-status checks. All paths retained 17 hypotheses, cost the same frozen 0.30, and had common-shock
+correlation stress. No language, model, protected data, or execution was used.
+
+The design fixed every V117 classification and safety failure. Through correlation 0.50 at 95% reliability,
+known accuracy was 85.30%--91.92%, unsupported correctness 88.05%--92.51%, and false-known probability
+below 1%. Perfect controls and independence-misspecification gates also passed. Only mean regret failed:
+0.7865 and 0.7775 for the uniform prior at correlations 0.25 and 0.50, and 0.7866 for the strong prior at
+correlation 0.50, against the frozen 0.7760 baseline.
+
+Freeze V119 negative despite the narrow margins. Do not discount cost or relax the baseline after seeing
+the result. The next permissible step is an aggregate model-free regret decomposition and selective-query
+feasibility audit. Language/model generation, protected access, induction, APIs, training, authority, and
+execution remain closed.
+
+## V120 aggregate selective-query value audit (2026-08-18)
+
+V120 decomposed the three V119 regret failures without reading any individual record. Their decision regret
+before clarification cost was 0.4775--0.4866, substantially below the 0.7760 historical baseline. The
+maximum affordable average query cost was 0.2895--0.2986 versus the frozen universal cost of 0.30. Closing
+the gaps would require a zero-loss skip rate of only 0.47%--3.51%.
+
+Freeze this as a quantitative boundary, not a selective-policy result. A successor must independently
+specify and audit a pre-query signal, include the decision loss from skipped clarifications, and remain
+model-free. Do not mine records, use post-query observations as the trigger, discount V119 cost, or open
+language/model, protected, induction, API, training, authority, or execution branches.
+
+## V121 pre-query value-selectivity envelope (2026-08-18)
+
+V121 derived necessary selective-trigger conditions from V120 without reading records. A successful queried
+subset needs 0.47%--3.64% more average value than the population. At a 5% skip rate, the strong-candidate
+correlation-0.50 and uniform correlation-0.25 conditions require skipped cases to have at most 0.0895 and
+0.0908 average query value, only about 31% of their population averages.
+
+Freeze the envelope and its explicit negative claim: no trigger has been certified. The next action may only
+inventory pre-query signals that already exist independently of post-query outcomes. Evaluation or tuning
+requires a separately locked paired fresh design. Language/model, protected, induction, API, training,
+authority, and execution branches remain closed.
+
+## V122 pre-query signal provenance inventory (2026-08-18)
+
+V122 inventoried 11 signals from frozen definitions and excluded nine hidden-label, post-query, outcome,
+oracle, or extra-model sources. It read no individual records or language, evaluated no signal, fitted no
+trigger, loaded no model, and executed nothing.
+
+Frozen character n-gram retrieval geometry is the only semantic signal family computationally independent
+of the LLM. Its available components are nearest similarity, nearest intent as non-authoritative context,
+and the status band from frozen thresholds. Model choices and confidence are directly dependent; validation
+and all agreement, gap, scenario, and policy features depend on generated candidates.
+
+Freeze V122 positive as a provenance result only. Computational independence does not imply statistically
+independent errors, predictive utility, or a certified trigger. A successor may only preregister a fresh,
+paired, model-free retrieval-geometry evaluation. Language/model access, signal fitting, protected access,
+induction, APIs, training, authority, and execution remain closed until that design is separately frozen.
+
+## V123 fresh-population availability audit (2026-08-18)
+
+V123 found that MASSIVE no longer contains enough unused novel-valid material for the locked paired design.
+Only nine eligible novel-valid turns remained after prior evaluation records were excluded, all from one
+scenario. Freeze the shortage rather than relaxing freshness, balance, or scenario diversity. An external
+controlled open-set source was required.
+
+## V124 Schema-Guided Dialogue source feasibility (2026-08-18)
+
+V124 pinned and audited the official Schema-Guided Dialogue source without emitting language. Relative to
+the train schemas, its test split contains 3,101 exact known-service/intent turns, 6,601 novel-valid turns
+from unseen services in seen domains, and 1,403 unsupported turns from unseen domains. Freeze the source as
+structurally feasible. This does not establish model performance or authorize execution.
+
+## V125 Schema-Guided Dialogue catalog and population (2026-08-18)
+
+V125 froze an 11-choice catalog and a balanced, text-free 576-record evaluation population. Exact-known and
+novel-valid examples span Hotels, Movies, and Services; unsupported examples span Alarm, Messaging,
+Payment, and Trains. Six exact known service-intent choices have a fixed 4,881-example training retrieval
+base. Selection used annotations and hashes only, with no language/model inspection.
+
+## V126 cross-dataset retrieval-geometry selectivity (2026-08-18)
+
+V126 ran the sole V122 semantic family on the fresh V125 population with the exact frozen character n-gram
+retriever and thresholds. It queried 478 of 576 cases and skipped 98. The trigger was anti-selective: skipped
+cases had 1.9171--1.9650 average clarification value, compared with 0.4810--0.5461 for queried cases.
+Selective regret was 1.1820--1.2361, exceeding both ask-always at 1.1667 and query-all at
+0.8988--0.9609. An oracle using the same 17.01% skip fraction achieved 0.8392--0.8908, so selective querying
+is possible in principle but the current signal orders cases incorrectly.
+
+Freeze V126 as a decisive negative and close the current pre-query-trigger inventory. Do not fit new
+thresholds on this population or repackage nearest similarity as a new mechanism. A successor requires an
+independently defined, mechanistically distinct pre-query signal and a separately locked fresh utility
+test. Until then, ask-always is the honest policy for the simulated clarification channel. Language/model
+evaluation, protected access, induction, APIs, training, authority, and execution remain closed.
+
+## V127 oracle typed slot-constraint feasibility (2026-08-18)
+
+V127 tested perfect source-authored dialogue-state slot names against the six declared known schemas on 576
+fresh balanced SGD records. Slot evidence was present for 70.31% and produced a 14.93% skip fraction. The
+skip was neither safe nor low-value: action precision was 87.21% and skipped clarification value was
+1.0169--1.0861 versus the frozen 0.30 cost. Selective exact-known probability was 66.58%--68.71%, and the
+policy was worse than query-all in every condition.
+
+Freeze V127 negative. This is an oracle upper-bound failure, so implementing the same rule with a parser or
+LLM cannot repair it. No thresholds, failure mining, or post-hoc combination with retrieval are permitted.
+
+## V128 oracle typed relation-support feasibility (2026-08-18)
+
+V128 enriched the unavailable oracle evidence to typed USER act/slot relations, accumulated state-slot
+presence, and requested-slot presence. Six deterministic support sets came from 4,881 known training frames;
+432 evaluation records were balanced and disjoint from V125 and V127. No utterance fields, slot values,
+frequencies, probabilities, learned likelihoods, or models were used.
+
+The rule skipped 23.61% with 93.14% action precision, still below 95%. Skipped clarification value was
+0.4600--0.5336, selective regret exceeded query-all in all nine conditions, and exact-known probability was
+only 72.09%--72.56%. Freeze V128 negative and close the annotation-signature trigger family.
+
+The next bottleneck is the candidate-specific clarification interface: after rejecting a wrong candidate,
+it can establish declared status but cannot identify a different exact known intent. A successor may only
+preregister a model-free audit of a complete typed clarification interface over the full safe hypothesis
+universe, with unchanged costs and dependence stresses. Selective-trigger search, language/model access,
+protected data, induction, richer planning, APIs, training, authority, and execution remain closed.
+
+## V129 complete typed clarification-interface audit (2026-08-18)
+
+V129 enumerated all 66 safe truth/presented-known-candidate pairs and allowed one typed answer to name any
+of the eleven frozen hypotheses. It tested 90%, 95%, and 100% correctness with symmetric,
+candidate-attracted, and abstention-attracted errors. No language or benchmark record was read.
+
+Perfect answers gave 100% known and unsupported decisions, establishing identifiability. At 95%, uniform
+and moderate priors generally reached 95% exact-known decisions and 0.8350--1.1242 regret. Under the strong
+75% candidate prior, however, symmetric and candidate-attracted conditions reached only 15.83% exact-known
+probability, with 1.2323 and 1.4847 regret. A correct alternative answer did not cross the roughly 90%
+posterior action boundary imposed by the asymmetric loss matrix.
+
+Freeze V129 negative. Complete answer expressivity is necessary but one 95%-correct answer is not robustly
+sufficient. A successor may only derive the evidence-strength boundary—minimum reliability or genuinely
+independent answer count—under the same biased-error stresses. Do not treat repeated generations from one
+model as independent. Language/model access, protected data, induction, richer planning, APIs, training,
+authority, and execution remain closed.
+
+## V130 complete-clarification evidence-strength boundary (2026-08-18)
+
+V130 evaluated the complete eleven-choice channel on an exact 101-point one-answer reliability grid and a
+correlated repeated-answer grid. No benchmark language, human answer, or model output was used. Six of nine
+one-answer prior/error conditions passed at 95%; the remaining thresholds were 96%, 96.7%, and 97.25%.
+The hardest case was a strong 75% wrong-candidate prior with symmetric error. Because every threshold was
+below the frozen 99% ceiling, the abstract single-source realization route is feasible.
+
+Repeated 95%-correct answers were not robust to shared error. Two answers passed only at zero common-shock
+correlation; at correlation 0.25 or 0.50, none of one through three answers passed all required conditions.
+Freeze V130 positive only as an evidence-geometry result. A successor may preregister a fresh realization
+audit that measures one actual typed-answer source against the unchanged 97.25% worst-case boundary. It may
+not assume independence across repeated generations or authorize capability induction, APIs, training,
+belief/action authority, or execution.
+
+## V131 complete-clarification realization population (2026-08-18)
+
+V131 froze 264 text-free fixtures from the unconsumed SGD test remainder. The population contains every one
+of 66 safe truth-by-presented-known-candidate cells four times, using 240 distinct source records and 24
+missing controls. Every truth appears 24 times, every candidate 44 times, and overlap with V125, V127, and
+V128 is zero. Passing authorized only the separately locked V132 protocol.
+
+## V132 pinned local complete-answer realization (2026-08-18)
+
+V132 completed all 264 deterministic generations with the pinned local Qwen3.8-27B 4-bit model, one load,
+no retries, no API calls, and 100% structural validity. Exact eleven-way accuracy was 74.24% versus the
+97.25% V130 boundary; its one-sided 95% Wilson lower bound was 69.59%. By truth kind, accuracy was 80.56%
+known, 55.56% valid undeclared, 66.67% unsupported, and 100% missing. False-known answers were 18.33%.
+
+Every downstream performance family failed: regret was 1.7072--1.7773, unsupported correctness 66.67%, and
+false-known probability 17.50%--18.33%. Full hypothesis retention, access controls, and zero execution all
+passed. Freeze V132 negative and close the current one-pass local realization branch. Do not rerun, revise
+the prompt, scale the model, or switch to an API. A model-free source-label identifiability audit is now
+necessary because SGD's unseen-service definition can label an intent novel even when its semantic name is
+identical to a declared intent; capability induction and all authority or execution remain closed.
+
+## V133 SGD capability-label identifiability (2026-08-18)
+
+V133 read only the pinned train and test schemas and found that 48 of 72 selected novel-valid fixtures
+(66.67%) reused an exact declared intent name. The entire `N02` and `N03` composites were name-colliding;
+only `N01` was collision-free. The 10% record-level ceiling and zero entirely-colliding-choice gate failed.
+
+Descriptions and slot signatures were not exact duplicates, so the result does not prove identical service
+mechanics. It does establish that V131/V132 test service/schema-version discrimination rather than cleanly
+separated novel-capability recognition. Freeze V133 negative and retract the pure capability-novelty reading
+of V132. Only a text-free semantically non-colliding source design is authorized; model reruns, prompt or
+scale changes, induction, protected access, APIs, training, authority, and execution remain closed.
+
+## V134 semantically non-colliding future source asset (2026-08-18)
+
+V134 froze a corrected 264-fixture census from the untouched SGD development partition: six declared
+choices, novel composites from banks, flights, and media, one unsupported alarm composite, and `A00`.
+Every one of 66 truth-by-candidate cells has four fixtures; the 240 source identifiers are unique and the
+remaining 24 fixtures are missing controls.
+
+Selected novel definitions have zero normalized intent-name collisions and zero exact full-signature
+collisions with the declared choices. No development utterance or model output was opened. Freeze V134
+positive only as a future benchmark asset. Its outcome lock forbids language extraction and any local/API
+model run; protected access, induction, richer planning, training, authority, actions, and execution remain
+closed pending independently justified authority.
+
+## Status after V140 (2026-08-18)
+
+V135 introduced a controlled, semantically identifiable nine-choice open-world benchmark with forty
+five-stage minimal-pair groups and a complete safe hypothesis universe. V136 established exact model-free
+value for targeted clarification: 95%-reliable answers improved decisions across every registered family and
+prior, while clear cases did not need a query.
+
+V137 showed that direct Qwen3.8-27B inference was strong on decisive language but insufficiently cautious on
+ambiguous language. Its thinking condition was invalidated by a template/parser contract error rather than
+a semantic result. V138 confirmed and froze the correct prompt-opened reasoning parser without accessing raw
+responses or rerunning the test split.
+
+V139 then ran a fresh repaired comparison on the unused synthetic development split. Direct inference
+achieved 94% overall accuracy, 70% ambiguous abstention, and 1.16 sequential cost. Thinking achieved 97%,
+90%, and 0.62, reduced false-known decisions on the hard branch from 10% to 5%, and repaired four direct
+errors while introducing one. This is credible evidence that deliberation can improve the decision policy.
+
+Thinking nevertheless missed the 95% ambiguity and 99% validity gates. Two valid ambiguous outputs still
+overcommitted, and three outputs reached the 1,024-token ceiling without closing their trace. V140 proved
+that completion-only and semantic-only repairs are each insufficient. The next branch must first establish,
+model-free, a two-component controller with bounded finalization and an explicit evidence-sufficiency gate.
+It may not treat same-model passes as independent, simply increase the reasoning ceiling, reopen V134 or
+V139, use an API or training, induce capabilities, grant model authority, or execute actions.
+
+## Status after V144 (2026-08-18)
+
+V141 showed model-free that a two-stage finalizer-plus-evidence controller could satisfy the target decision
+envelope under arbitrary within-decision dependence. V142 froze a fresh 288-fixture, nine-choice certificate
+benchmark, and V143 verified the interface exactly with an oracle and nine malformed-certificate mutation
+classes. The deterministic finalizer always produced valid `A00` on invalid evidence and never modified the
+authoritative hypothesis universe.
+
+V144 then ran the one authorized local development realization. All 144 generations completed with one
+pinned Qwen3.8-27B 4-bit load, no retries, no raw trace persistence, no API, no test generations, and zero
+execution. The controller achieved 97.22% final exact accuracy, 0% false-known decisions, and 0.3417
+sequential cost. All 116 valid sufficient certificates proposed the correct answer.
+
+The certificate mechanism nevertheless failed qualification. Twenty-four thinking traces reached the
+1,024-token ceiling without closing, including 20 of 24 ambiguous fixtures. Certificate validity and exact
+compatible-set recovery were 83.33%, ambiguity sensitivity was 16.67%, and decidable specificity was 96.67%.
+The finalizer made all ambiguous final decisions safely abstain, but deterministic fallback is not evidence
+that the model identified ambiguity.
+
+Freeze V144 negative and keep the V142 test split sealed. No prompt tuning, larger token ceiling, retry,
+rerun, alternate local/API model, induction, training, authority, action, or execution is authorized by this
+result. The next direction must be separately justified rather than selected by mining V144's missing traces.
+
+V145 supplied that model-free architectural justification. The controlled certificate space can be encoded
+as 14 registered alternatives: eight sufficient singletons and six ambiguity pairs. An oracle was exact on
+all 288 abstract structural rows, and ten invalid-code mutations failed closed. A future realization can
+therefore score fixed alternatives rather than generate a reasoning trace or certificate syntax.
+
+This removes completion as a measurement confound but leaves semantics untouched: a wrong registered
+singleton is still structurally valid. Freeze V145 as interface feasibility only. The only authorized
+successor is fresh population and scoring-protocol design; language/model execution, V142 test access,
+V144 tuning or rerun, APIs, training, induction, authority, action, and execution remain closed.
+
+V146 supplied the fresh asset: 288 new controlled fixtures in 48 six-stage groups, evenly divided into
+development and test, with new catalog IDs, domains, templates, slots, and conversations. Public/hidden
+alignment, compatibility labels, 14-code oracle coverage, and group completeness are exact. No conversation
+overlaps V135 or V142.
+
+Freeze V146 positive as population design only. A separately audited scoring protocol is required before
+any local model access. V142 test, APIs, training, induction, authority, action, and execution remain closed.
+
+## Status after V147 (2026-08-18)
+
+V147 replaced free-form certificate generation with exact likelihood ranking over all 14 registered
+alternatives. The single locked development run completed 144 fixtures and 2,016 scores using one pinned
+local model load, zero generation, zero retries, zero test scores, no API, and zero execution. Structural
+validity improved to 99.31%, demonstrating that the finite-codebook design removed nearly all syntax and
+completion failure.
+
+It did not solve semantic abstention. Overall accuracy was 77.78%, ambiguity sensitivity 50%, novel-valid
+accuracy 43.75%, and false-known errors on non-known truths 15.28%. The model was perfect on familiar known
+requests but converted 11 of 24 ambiguous truths into known choices. Its sequential mean cost was 2.6521,
+with 45.83% false-known decisions on difficult right-hand outcomes.
+
+Freeze V147 negative and close the fixed-score realization branch. Generation was a real confound, but the
+deeper limitation is similarity-driven catalog membership: a complete menu makes the correct boundary
+expressible without supplying evidence for it. No threshold fitting, rescore, rerun, prompt/alias change,
+API, training, induction, authority, action, or execution is authorized. The V146 test split is retired after
+pre-preregistration inspection exposed two rows; future evidence requires a new blind population and a
+separately model-free-justified selective-evidence protocol.
+
+## Status after V148 (2026-08-18)
+
+V148 established the separately justified model-free successor. The optional LLM output is now only a hint;
+it cannot satisfy or override the semantic witness required for known acceptance. Exact trusted witnesses
+map to four known choices, well-typed unregistered mechanics map to generic non-executable `N00`, an exact
+forbidden mechanic maps to `U30`, and incomplete or invalid evidence maps to `A00`.
+
+The exhaustive census crossed 14 valid witnesses with all seven LLM proposals. All 98 decisions were exact
+and candidate-invariant. Ten malformed witnesses failed closed, and twelve near-known one-field mutations
+could not be forced into known acceptance by a matching LLM proposal. All state-routing, known precision and
+recall, output validity, and hypothesis-retention gates passed with zero language or model access.
+
+This is interface feasibility, not autonomous language understanding. Trusted witness acquisition remains
+the empirical bottleneck. Only a fresh blind closed-interaction population may now be designed; a separate
+lock is required before any local model run. The retired V146 test, V147 score mining, threshold fitting,
+APIs, training, induction, authority, action, and execution remain prohibited.
+
+## Status after V149–V150 (2026-08-18)
+
+V149 instantiated the witness firewall in a fresh controlled population: 288 fixtures, 48 six-stage groups,
+six registered binary questions, and 96 structured closed-answer events. Answer events map immutably to typed
+witnesses; pre-answer and malformed-event records remain `A00`. All mappings and structural gates passed,
+with no exact conversation overlap against V135, V142, or V146. The project-authored evaluation split is not
+external transfer evidence.
+
+V150 then proved model-free that the interaction is decision-useful. Across 48 development episodes, the
+exact planner always selected the one discriminating question. Mean cost was 0.3 rather than 1.0 for safe
+no-query abstention, final accuracy was 100%, irrelevant questions failed closed, and false-known outcomes
+were zero. All 2,352 state/query proposal combinations produced the same safe policy and final state.
+
+The remaining empirical question is narrower and better identified: can the pinned local model recall the
+compatible state set and order the useful registered question early enough to save evidence cost? Its output
+will remain non-authoritative; wrong proposals may cost extra closed questions but cannot authorize known
+membership or define a novel capability. Only prospective protocol design is currently authorized.
+
+## Status after V151/V151r1 (2026-08-18)
+
+V151 began the single prospectively locked local development realization and was externally interrupted
+after 59 generation attempts. V151r1 froze a no-retry recovery before semantic inspection: 58 durable
+normalized artifacts were retained exactly, the interrupted fixture was represented by the registered
+invalid fail-closed proposal, and only the 37 never-started fixtures were generated. The final accounting was
+96 attempts, two model/tokenizer loads, no retries, no evaluation or closed-answer generation, no raw-output
+inspection or persistence, no API or training, and zero execution. The outcome verifier reconstructed the
+complete census and froze it exactly.
+
+The firewall achieved the intended separation between safety and heuristic quality. All 120 sequential
+episodes ended in the exact state after trusted answers, false-known outcomes were zero, 21 irrelevant
+intermediate answers all failed closed, and authoritative hypothesis retention was 100%. Despite imperfect
+ranking, mean sequential cost was 0.3525 and improvement over safe no-query abstention was 0.6475, passing
+their preregistered gates.
+
+The combined semantic-proposal qualification failed. Compatible-state retention was 84.375% rather than
+97%, exact candidate-set recovery 57.292% rather than 90%, ambiguity sensitivity 50% rather than 95%, query
+top-1 accuracy 83.333% rather than 90%, and query MRR 0.9141 rather than 0.95. The model was structurally
+valid on 95 of 96 records, so this is not another formatting result. Eighty-four percent of semantic errors
+were attracted toward a presented candidate, and diagnostic confidence was sharply overconfident.
+
+Freeze V151r1 negative and keep V149 evaluation closed. Do not retry, rerun, reprompt, alter reasoning effort,
+fit thresholds or calibration, inspect the protected split, introduce an API or training condition, induce
+capabilities, grant authority, act, or execute. The next branch must separate the two claims rather than
+relaxing the failed combined gates. Prospectively design a wholly fresh question-order-only population and
+model-free controller in which the model never proposes or prunes states. Its only possible effect should be
+the order of registered questions; fixed source order, seeded random order, and oracle order should be frozen
+comparators. A later local realization may test direct versus mechanically bounded low reasoning only after
+that fresh design is audited, and failure must affect cost rather than final semantic acceptance.
+
+## Status after V152–V154/V154r1 (2026-08-18)
+
+V152 froze the fresh question-order-only asset required by V151r1: 288 project-authored fixtures in 48
+six-stage groups, balanced across development and evaluation. The model-facing contract contains only a
+permutation of six registered question IDs. It contains no state proposals, state ranking, confidence, or
+pruning. Trusted closed answers remain the sole route to a final state.
+
+V153 proved the model-free decision geometry. Safe no-query abstention cost 1.0, source and seeded-random
+order cost 1.05 with mean rank 3.5, and oracle order cost 0.3 with rank 1. Every comparator that asked
+questions ended exactly after the trusted answer, every irrelevant answer failed closed, and the complete
+authoritative universe was retained.
+
+V154 ran the pinned Qwen3.8-27B 4-bit model on 96 locked development requests. Direct decoding was
+structurally perfect and useful: 80 correct questions at rank 1, 16 at rank 2, top-1 accuracy 83.333%, MRR
+0.9167, mean rank 1.1667, and sequential cost 0.34. It substantially beat the model-free source/random
+baselines and approached oracle cost, but did not pass the 90% top-1 or 0.95 MRR qualification gates.
+
+The preregistered adaptive rule therefore ran bounded low reasoning. A separate 48-token reasoning phase
+and reserved 64-token final phase prevented unfinished reasoning from consuming the final-answer budget.
+All 96 reasoning phases nevertheless exhausted their budget and required forced closure; the condition
+produced five invalid JSON answers and degraded top-1 to 81.25%, MRR to 0.8938, mean rank to 1.3125, and
+cost to 0.375. No final phase hit its limit. Bounded reasoning solved the completion-control problem but did
+not improve semantic question selection. Direct should remain the default for this task class.
+
+Both model conditions were safe by architecture rather than by model correctness. Across 240 sequential
+episodes, the trusted answer produced 100% final exactness, all irrelevant intermediates failed closed,
+hypothesis retention was complete, candidate proposals were absent, and execution was zero. Freeze V154
+negative and keep the V152 evaluation split unopened.
+
+V154r1 then repaired a purely technical outcome-verifier mismatch without rerunning the model. Python
+recomputation used integer keys in `metrics.rank_counts`; JSON persistence necessarily returned identical
+string keys. The original verifier and failed audit remain immutable. A prospectively locked repaired
+verifier canonicalized recomputed summaries through JSON, reran every substantive check, and passed with
+zero model, tokenizer, language, evaluation, API, training, service, side-effect, or execution access. No
+score, gate, decision, or scientific claim changed.
+
+The next justified branch is not another prompt, reasoning-effort, budget, quantization, model, or threshold
+experiment on V154. Prospectively design a fresh deterministic question-retrieval benchmark using only
+visible request language and registered question metadata. First establish model-free retrieval feasibility
+against source, seeded-random, and oracle order. Only then may a separately locked hybrid condition use the
+LLM as a non-authoritative tie-breaker for retrieval ties. Wrong rankings may cost extra closed questions but
+must never define or accept a capability, prune the authoritative state set, supply trusted evidence, grant
+authority, act, or execute.
+
+## Status after V155–V156 (2026-08-18)
+
+V155 created the fresh deterministic-retrieval asset required after V154. Its 288 project-authored synthetic
+fixtures form 48 complete six-stage groups, evenly divided between development and evaluation. Six binary
+questions expose explicit retrieval profiles while public rows hide truth, oracle query, witness, state
+compatibility, and all candidate/proposal fields. Typed answers route exactly; pre-answer and malformed
+events fail closed; the authoritative state set is never pruned; execution is zero; and canonical
+conversations do not overlap five prior controlled populations.
+
+V156 froze the retrieval algorithm and noncompensatory gates before policy scoring. The policy uses only a
+state-free projection of visible question metadata and request text. It assigns fixed weights of 8 to exact
+anchor phrases, 3 to primary terms, 1 to secondary terms, and 0.25 to visible question-surface tokens, then
+uses source order for exact ties. It has no fitted or learned parameter and cannot access choice IDs,
+witnesses, truth labels, compatible states, or oracle queries.
+
+The single model-free development run was exact: 96/96 correct questions at rank 1, top-1 and MRR both 1.0,
+zero top-score ties, and mean rank 1.0. Across 120 sequential episodes, retrieval matched oracle cost 0.3
+and improvement 0.7. Source order cost 1.05 and seeded random cost 1.005. Trusted-answer final accuracy,
+irrelevant-intermediate fail-closure, and hypothesis retention were all 100%; candidate fields and execution
+were zero. No evaluation policy access, model, API, training, service, or side effect occurred.
+
+The correct claim is narrow. V156 proves that explicit catalog metadata can make an LLM unnecessary for
+synthetic language covered by that metadata. It does not establish semantic generalization beyond the
+registered vocabulary or an unrestricted open-world boundary. Do not open V155 evaluation, tune terms or
+weights, or add a hybrid model to an already solved population.
+
+The next branch must be a new hard-tie population designed before any policy is run. It should separately
+label lexically decisive controls, uncatalogued paraphrases, equal or near-equal topical evidence whose
+answer depends on a relation, and truly insufficient requests that should trigger a generic safe fallback.
+First test deterministic retrieval plus the fallback model-free. Only after a residual, prospectively defined
+tie subset exists may a local LLM be tested as a non-authoritative order/tie heuristic. Trusted answers remain
+the sole semantic authority; APIs, training, induction, action, and execution remain closed.
+
+## Status after V157–V158 (2026-08-18)
+
+V157 introduced safe two-level clarification on a fresh 384-fixture synthetic population. Six specific
+binary questions can produce typed semantic witnesses. Generic route question `Q70` can identify one of the
+six question families or return `UNCLEAR`, but its options contain no state or witness. It therefore cannot
+accept a capability even when routing is correct.
+
+The population separately labels lexical controls, uncatalogued paraphrases, cross-family relational ties,
+and insufficient requests. All group/split/stratum, freshness, public-hidden, typed-route, malformed-event,
+fail-closure, hypothesis-retention, no-candidate, and zero-execution gates passed. V157 ran no policy or
+model.
+
+V158 froze its margin-gated policy before development scoring. A specific question required score at least
+6, margin at least 4, and a unique top score; otherwise the policy used `Q70`. Wrong specifics were
+non-authoritative and automatically fell back. The single model-free run failed its preregistered gates:
+five of 96 initial actions overcommitted, router cost was 0.4225, improvement over no query 0.3775, and
+improvement over always-generic 0.0175.
+
+All lexical controls and insufficient requests were routed correctly. The errors were one uncatalogued
+food-rescue paraphrase attracted to the school-meal question and four environmental-monitor relational ties
+attracted to the heritage-image question. Their margins were 6.25, so increasing confidence with score
+separation would not diagnose them. The mechanism failure is semantic/relational, not numerical uncertainty.
+
+All final outcomes nevertheless remained exact. Wrong specific answers yielded no witness, stayed `A00`,
+and fell back through generic routing. Every irrelevant intermediate failed closed, hypothesis retention was
+complete, candidate-state fields were absent, and execution was zero. This is direct evidence that the new
+trust boundary converts semantic routing mistakes into bounded interaction cost rather than unsafe action.
+
+Freeze V158 negative without threshold tuning, term edits, rerun, V157 evaluation, or model fallback. A
+future local LLM is not yet authorized. The next model-free branch should use wholly fresh language and a
+prospectively specified grammar/relational-conflict gate—for example, recognizing explicit alternative
+relations separately from lexical question scores. It must compare grammar, retrieval, generic fallback,
+and oracle controls before a local model is considered. APIs, training, calibration fitting, capability
+induction, authority, action, and execution remain closed.

@@ -1,0 +1,305 @@
+{
+  "access": "outputs/v88r1-external-intent-candidate/evaluation/access.json",
+  "access_sha256": "7777232395cc3650e55a8ad0db984b81d11a895d6bc7a829bd4e928a0f55084f",
+  "audit": "outputs/v88r1-external-intent-candidate/outcome-audit.json",
+  "audit_sha256": "f5a53c65a774be82f8c2d9e165b222a86e7a3cbbc5b3cadb8bea8b78ea332ad9",
+  "authorization": {
+    "deploy_or_execute_any_model_output": false,
+    "modify_rerun_repair_or_resume_V88_or_V88r1": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_model_free_failure_decomposition_only": true,
+    "retain_V83_V86_model_free_interface_and_frozen_Bayesian_core": true,
+    "run_API_fallback_or_capacity_comparator": false,
+    "train_adapter_or_learned_likelihood": false,
+    "use_local_model_to_define_live_hypothesis_set_or_state": false
+  },
+  "experiment": "v88r1_external_intent_candidate_outcome_lock",
+  "implementation_lock": "configs/v88r1-name-preservation-repair-implementation-lock.json",
+  "implementation_lock_sha256": "5aacba494fe7433dc194032a39c5d4fdcca1975d92a149ea32158e6d08fec9e6",
+  "lock_payload_sha256": "0ad1b6053b56e037062e5d5fd57b668a7c1c501937a37d747f9a5b77be24c61c",
+  "outcome": {
+    "cumulative_access": {
+      "LLM_API_call_count": 0,
+      "adapter_training_run_count": 0,
+      "external_side_effect_count": 0,
+      "manual_utterance_inspection_count": 0,
+      "model_generation_count": 49,
+      "model_load_count": 2,
+      "real_service_call_count": 0
+    },
+    "decision": "freeze_negative_V88r1_without_any_further_retry_or_change",
+    "metrics": {
+      "active_intent_label_count": 4,
+      "controls": {
+        "empty_state_gold_intent": {
+          "intent_exact_rate": 1.0,
+          "intent_precision": 1.0,
+          "intent_recall": 1.0,
+          "state_exact_rate": 0.0625,
+          "state_precision": 0.0625,
+          "state_recall": 0.0625
+        },
+        "exhaustive": {
+          "intent_exact_rate": 0.16666666666666666,
+          "intent_precision": 0.5659722222222222,
+          "intent_recall": 1.0,
+          "state_exact_rate": 0.0,
+          "state_precision": 0.37998366013071894,
+          "state_recall": 0.9375
+        },
+        "none_only": {
+          "intent_exact_rate": 0.5,
+          "intent_precision": 1.0,
+          "intent_recall": 0.75,
+          "state_exact_rate": 0.0625,
+          "state_precision": 0.0625,
+          "state_recall": 0.0625
+        },
+        "oracle": {
+          "intent_exact_rate": 1.0,
+          "intent_precision": 1.0,
+          "intent_recall": 1.0,
+          "state_exact_rate": 1.0,
+          "state_precision": 1.0,
+          "state_recall": 1.0
+        }
+      },
+      "exact_JSON_parse_rate": 0.75,
+      "gold_active_intent_coverage_rate": 0.625,
+      "intent_candidate_precision": 0.6944444444444445,
+      "intent_candidate_recall": 0.6979166666666666,
+      "intent_candidate_set_exact_rate": 0.5625,
+      "intent_exact_improvement_over_exhaustive": 0.39583333333333337,
+      "mandatory_NONE_inclusion_rate": 0.75,
+      "mean_intent_candidate_count": 1.1875,
+      "none_only_intent_exact_rate": 0.5833333333333334,
+      "none_record_count": 24,
+      "ontology_conformance_rate": 0.75,
+      "per_service_intent_candidate_recall": {
+        "Flights_3": 0.3684210526315789,
+        "Restaurants_2": 0.9166666666666666,
+        "RideSharing_1": 0.9090909090909091
+      },
+      "permanent_non_deployable_rate": 1.0,
+      "record_count": 48,
+      "service_count": 3,
+      "state_slot_key_exact_rate": 0.20833333333333334,
+      "state_slot_key_precision": 0.49963527077497666,
+      "state_slot_key_recall": 0.6708333333333334
+    },
+    "passed": false,
+    "post_outcome_model_free_diagnostic": {
+      "conditional_active_intent_coverage_rate": 0.75,
+      "conditional_intent_exact_rate": 0.75,
+      "conditional_state_slot_key_exact_rate": 0.2777777777777778,
+      "conditional_state_slot_key_recall": 0.8944444444444445,
+      "malformed_by_service": {
+        "Flights_3": 12,
+        "Restaurants_2": 0,
+        "RideSharing_1": 0
+      },
+      "ontology_conforming_record_count": 36
+    }
+  },
+  "raw_fixture_artifacts": [
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/000-v88-000-1_00098::turn-006::Flights_3.json",
+      "sha256": "e15a792047090beb3d95748ba6a2d2bf3e4df1070804455dc2ed93f141563132"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/001-v88-001-1_00097::turn-000::Flights_3.json",
+      "sha256": "e31dc95010a45f651823d8ca151ee63e862d5284ffead52b11627eb809cff5fd"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/002-v88-002-1_00039::turn-004::Flights_3.json",
+      "sha256": "1272700669209470610fd771acd02a7faad212ed389e21b4ba3e7a69ecae114c"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/003-v88-003-1_00040::turn-000::Flights_3.json",
+      "sha256": "a7a187b8735b09939583cc13c9a1300a25d580966d436c80ce3fa4e8e2856f30"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/004-v88-004-1_00077::turn-014::Flights_3.json",
+      "sha256": "e6868677a06b2a0d37fa8c575b3e4520c3af15dc1b4f76d05c3feb4be05f3d1f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/005-v88-005-1_00079::turn-010::Flights_3.json",
+      "sha256": "dd5f3f3941df288a3d402ce12c1e998de6bfbc9763a139a280a97d40dd471b6b"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/006-v88-006-1_00088::turn-012::Flights_3.json",
+      "sha256": "92f7d393281bf355a797941420fd01310c11fb21e41e8452b0bb5ece0d95ef01"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/007-v88-007-1_00083::turn-006::Flights_3.json",
+      "sha256": "b998e153aec07b1be7aad3317e76335e44d9780955c7d4cc935e33ad31bb5476"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/008-v88-008-1_00028::turn-000::Restaurants_2.json",
+      "sha256": "26484deaebcf860344c24c55b17018754d973de6d79eb9bbb71c810aeacea15f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/009-v88-009-1_00011::turn-000::Restaurants_2.json",
+      "sha256": "100477b4536b826adb96585d6e71de7f89a75132f93e8c43a6eeae520bc2cfe4"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/010-v88-010-1_00003::turn-010::Restaurants_2.json",
+      "sha256": "1fea0d99f3c10d964c949c45d974bddc192c7b0373f3bac0e5af7227ae9baf82"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/011-v88-011-1_00025::turn-000::Restaurants_2.json",
+      "sha256": "8ab590857e1e2ba2bb4a361abcf99e5c9f999f61ddc6747efaec9bad2cd6a1ef"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/012-v88-012-1_00007::turn-008::Restaurants_2.json",
+      "sha256": "92be572f0684e303fd0fbac2a24c3f58b6abccac92fd82038454fce7d6b6c0c7"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/013-v88-013-1_00010::turn-008::Restaurants_2.json",
+      "sha256": "9f72c2014eb342ad5239c8454f99fb0e76ae357981b70b3c072475b36d5dd64f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/014-v88-014-1_00013::turn-008::Restaurants_2.json",
+      "sha256": "618420f765303b94ef96e5f94e1d396d411aee1dc5e33b71e3ada9bb9157c54b"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/015-v88-015-1_00005::turn-010::Restaurants_2.json",
+      "sha256": "6dcbb4d4c2a3d264a02f3b625f9c971213b9c1674f456a63ce9dc9eaf330db64"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/016-v88-016-1_00124::turn-006::RideSharing_1.json",
+      "sha256": "baf854d8c13e2326eb7cecae96931a8322a90319c49621edc1fcbc5060a3e84f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/017-v88-017-1_00125::turn-006::RideSharing_1.json",
+      "sha256": "77f85461df5896e412fe96cdddc38c5f5f4806fd7aeb430dd1a60bbe7ef86fc0"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/018-v88-018-1_00127::turn-008::RideSharing_1.json",
+      "sha256": "1ef64a350751bb17412b646ec9de1ddd10d4aab6358df00d351a59e4a9d75398"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/019-v88-019-1_00126::turn-002::RideSharing_1.json",
+      "sha256": "ae5bea216667d95869d6bece2a54099d0e7a53f5126a82a4f7e4c1e6dac694fa"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/020-v88-020-1_00123::turn-002::RideSharing_1.json",
+      "sha256": "42642fce7bda4b073ca36c2a50b922fd47f2d8f4565977b0fb38e5e55bc5f4c6"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/021-v88-021-1_00126::turn-004::RideSharing_1.json",
+      "sha256": "41d0f0dce1dd9367309f5bb3d3b206188562a161c9401f7901934bb7bab7ee27"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/022-v88-022-1_00123::turn-006::RideSharing_1.json",
+      "sha256": "64b17b801bee455b2d1bf0cebdbfd3e0c31a9c1aca9b9d4f840cbf0d83e5b2a5"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/023-v88-023-1_00127::turn-002::RideSharing_1.json",
+      "sha256": "b62d5f96c1e3a5ca8a905b0d3a841ae2b4c33957827910530e3c7220a3db9496"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/024-v88-024-1_00109::turn-014::Flights_3.json",
+      "sha256": "5d13bb9196d1f72126fe4c8ae823f3bf4bdfed5059570186a68767176e5e1716"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/025-v88-025-1_00114::turn-012::Flights_3.json",
+      "sha256": "3cc70bd9e3645604edb398767cb1f839e616ba09a6f684758c05d3f3e4d22972"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/026-v88-026-1_00061::turn-006::Flights_3.json",
+      "sha256": "b423fd9a10273ccca10f7e4497c05a1f39840792ae31819bfac7b2b9a1b66fc0"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/027-v88-027-1_00069::turn-006::Flights_3.json",
+      "sha256": "34576ed446d8b45befc1be146868cad663fc148a1fc8693290b18c99f1d104f5"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/028-v88-028-1_00115::turn-018::Flights_3.json",
+      "sha256": "6beb9056cb64311935fe700865564b73733e3417b8f88fe41d2f04345579c8d8"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/029-v88-029-1_00118::turn-016::Flights_3.json",
+      "sha256": "bfee33a6bc59a5378cf84d03e53a705346fca01ea5d6cc91e83f42875f32ebda"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/030-v88-030-1_00036::turn-012::Flights_3.json",
+      "sha256": "859539444ed317ef14c27c609719824d9199b62c354c8896064ad054bd0d5de7"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/031-v88-031-1_00100::turn-018::Flights_3.json",
+      "sha256": "7e9cdaf8b4bb35ac129c9a500f276f73315655667dff29cdfaf1889a604a0bb2"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/032-v88-032-1_00111::turn-022::Flights_3.json",
+      "sha256": "24ebe887668a0cb34da271a9a24e1fec14d01a34e1c9f25c0fe30d13138a95f4"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/033-v88-033-1_00079::turn-012::Flights_3.json",
+      "sha256": "a37b2b8f7343761e16091d88776bb1d851d87e8215205341b950bb32a6faa0c5"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/034-v88-034-1_00059::turn-010::Flights_3.json",
+      "sha256": "fd9a85c78fee02751171d06e693d49cfbf317fed482ea9efd25262a38b5d340f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/035-v88-035-1_00005::turn-012::Restaurants_2.json",
+      "sha256": "cf402a3a3fad1f484d931760f51fe71215b8661ce3c7c76e32d9d69042819663"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/036-v88-036-1_00017::turn-012::Restaurants_2.json",
+      "sha256": "d8fd9d4220fb6662dd9e09ba375f0f594b4ae7cfa383a6f7a337490791dfd34f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/037-v88-037-1_00007::turn-010::Restaurants_2.json",
+      "sha256": "06f82a006b5dd6766bc2ca20249635173b7a34ba29ef93810eaf8d403a35d3bb"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/038-v88-038-1_00000::turn-010::Restaurants_2.json",
+      "sha256": "a7ff0345516cb1770332df68bbff0090195f38ab548f47461c5d06bdd68ed2c2"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/039-v88-039-1_00027::turn-012::Restaurants_2.json",
+      "sha256": "276d0ba2716d66bbebdc5d2bf8926acee769a3e2cfa906d38493bb01b1f056c5"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/040-v88-040-1_00028::turn-008::Restaurants_2.json",
+      "sha256": "76d45ddaf20b682fca47a3cab4c90d9d2677d103513d5f3f62ec8c7a5ac9631d"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/041-v88-041-1_00018::turn-008::Restaurants_2.json",
+      "sha256": "bfeeca8b89ddc05dd30dba25bebcf9cf57cce23b562d3beb7bc8ed1e464c5438"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/042-v88-042-1_00014::turn-010::Restaurants_2.json",
+      "sha256": "31721b43e30f75c3a4017ffa0add0257fa0e695b9b2d389ac683fcdcb32fbe3c"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/043-v88-043-1_00013::turn-010::Restaurants_2.json",
+      "sha256": "f4774c702369c2c3b4444a435792846e24906f6c468d228d5dcfda53974b743f"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/044-v88-044-1_00022::turn-014::Restaurants_2.json",
+      "sha256": "bfca6aaa28abd71f376fe6070cfb02760f9fd99ddbc339915ebc0b2043a34d16"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/045-v88-045-1_00123::turn-010::RideSharing_1.json",
+      "sha256": "86a8f996bd5e8ed12d0f83301c52b5b0c58dcbae1ea09e83c3e493f16700fd1a"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/046-v88-046-1_00124::turn-012::RideSharing_1.json",
+      "sha256": "5f1a93bf3be92a7c821858b255d8e48d7c554db6f904fafb38db191614d6644a"
+    },
+    {
+      "path": "outputs/v88r1-external-intent-candidate/evaluation/raw-fixtures/047-v88-047-1_00125::turn-012::RideSharing_1.json",
+      "sha256": "8067f5728487b6f8a1de8759ae9a40b27a4488d7a6a5a636c96562db52b858d4"
+    }
+  ],
+  "result": "outputs/v88r1-external-intent-candidate/evaluation/result.json",
+  "result_sha256": "caeea1ab3297964d278602782bf1edca076abed5b8ae31a54e6574806d8c9166",
+  "results_document": "docs/v88r1-external-intent-candidate-results.md",
+  "results_document_sha256": "debb0e3d9f7c458ae51fe230262d5209a9413f3289e57ebb2172aa0769dda29e",
+  "schema_version": "88r1-external-intent-candidate-outcome-lock",
+  "verifier": "python/verify_and_freeze_v88r1_external_candidate_outcome.py",
+  "verifier_sha256": "16d6846e7fbace90c6ea718b5ee437d7c71ea230b1815ad0b5e35caddb603e4c"
+}

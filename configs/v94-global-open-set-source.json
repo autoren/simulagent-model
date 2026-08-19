@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "94-global-open-set-source-design",
+  "experiment": "v94_global_capability_catalog_source_feasibility",
+  "purpose": "construct a fresh five-class controlled open-set benchmark by hash-partitioning a multi-service capability catalog before population or model access",
+  "parentSourceClosureLock": "configs/v93-controlled-open-set-source-closure-lock.json",
+  "parentArchitectureLock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "newDialogueShard": {
+    "path": "dev/dialogues_005.json",
+    "byteSize": 1512309,
+    "gitBlobSha1": "80ddca2c6ed633e49e2f827c05615e514b62ca17",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_005.json"
+  },
+  "previouslyExposedServices": [
+    "Alarm_1", "Buses_1", "Flights_3", "Homes_1", "RentalCars_1",
+    "Restaurants_2", "RideSharing_1", "Services_4", "Weather_1"
+  ],
+  "catalogPartition": {
+    "eligibleServiceMinimumActiveRecordCount": 12,
+    "eligiblePairMinimumActiveRecordCount": 8,
+    "unsupportedServiceSalt": "simulagent-v94-unsupported-service-v1",
+    "unsupportedServiceFractionNumerator": 1,
+    "unsupportedServiceFractionDenominator": 4,
+    "minimumUnsupportedServiceCount": 1,
+    "minimumCatalogServiceCount": 3,
+    "hiddenIntentPairSalt": "simulagent-v94-hidden-pair-v1",
+    "hiddenPairFractionNumerator": 1,
+    "hiddenPairFractionDenominator": 3,
+    "minimumHiddenPairCount": 2,
+    "minimumDeclaredPairCount": 4,
+    "partitionBeforeLanguageDerivedFeatures": true
+  },
+  "classConstruction": {
+    "knownFamiliarMinimumOverlapCount": 1,
+    "knownUnfamiliarMaximumOverlapCount": 0,
+    "useAccumulatedUserHistoryThroughTargetTurn": true,
+    "noneMapsOnlyToInsufficientEvidence": true,
+    "unsupportedRequiresHashWithheldService": true,
+    "novelRequiresHashHiddenPairInsideCatalogService": true,
+    "emitLanguageTokensSlotValuesOrHistories": false
+  },
+  "sourceGates": {
+    "minimumEligibleFreshServiceCount": 4,
+    "minimumCatalogServiceCount": 3,
+    "minimumUnsupportedServiceCount": 1,
+    "minimumHiddenPairCount": 2,
+    "minimumDeclaredPairCount": 4,
+    "minimumKnownFamiliarCandidateCount": 24,
+    "minimumKnownUnfamiliarCandidateCount": 24,
+    "minimumNovelValidCandidateCount": 24,
+    "minimumUnsupportedCandidateCount": 24,
+    "minimumInsufficientEvidenceCandidateCount": 16,
+    "minimumKnownClassServiceCoverage": 2,
+    "minimumNovelServiceCoverage": 2,
+    "minimumInsufficientEvidenceServiceCoverage": 2,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "GitHubMetadataRequestCount": 1,
+    "schemaStructuralInspectionCount": 1,
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the global-catalog inventory and authorize preregistration of a hash-selected dialogue-disjoint calibration/evaluation population",
+    "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+    "passAuthorizesLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

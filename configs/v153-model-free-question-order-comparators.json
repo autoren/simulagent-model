@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "153-model-free-question-order-comparators",
+  "experiment": "v153_model_free_question_order_comparator_policy",
+  "parentV152OutcomeLock": "configs/v152-fresh-question-order-population-outcome-lock.json",
+  "claimBoundary": "model-free development-metadata comparator policy for question ordering only; freezes no-query, source-order, seeded-random, and oracle reference values under the typed-answer firewall; not language/model performance, evaluation evidence, external transfer, calibration, authority, action, or execution",
+  "population": {
+    "split": "development",
+    "groupCount": 24,
+    "requestFixtureCount": 96,
+    "sequentialEpisodeCount": 120,
+    "evaluationLanguageReadCount": 0,
+    "candidateProposalFieldCount": 0
+  },
+  "policy": {
+    "queryCost": 0.3,
+    "noQueryAction": "A00",
+    "irrelevantQueryAnswer": "NO_SELECTION",
+    "randomSeed": "v153-seeded-question-order-v1",
+    "comparators": ["NO_QUERY", "SOURCE_ORDER", "SEEDED_RANDOM", "ORACLE_ORDER"],
+    "completeAuthoritativeHypothesisUniverseRetained": true,
+    "questionOrderIsOnlyHeuristicInput": true,
+    "trustedClosedAnswerReliability": 1.0
+  },
+  "decisionCosts": {
+    "correct": 0.0,
+    "safeAbstentionOnDecidableTruth": 1.0,
+    "wrongKnownOnNonKnownTruth": 5.0,
+    "wrongKnownOnKnownTruth": 3.0,
+    "otherWrongState": 2.0
+  },
+  "gates": {
+    "requiredGroupCount": 24,
+    "requiredRequestFixtureCount": 96,
+    "requiredSequentialEpisodeCount": 120,
+    "requiredComparatorCount": 4,
+    "requiredOracleMeanCorrectQueryRank": 1.0,
+    "requiredOracleMeanDecisionCost": 0.3,
+    "requiredOracleImprovementOverNoQuery": 0.7,
+    "requiredSourceMeanCorrectQueryRank": 3.5,
+    "minimumSeededRandomMeanCorrectQueryRank": 2.8,
+    "maximumSeededRandomMeanCorrectQueryRank": 4.2,
+    "requiredTrustedAnswerFinalExactAccuracy": 1.0,
+    "requiredIrrelevantQueryFailClosedRate": 1.0,
+    "requiredAuthoritativeHypothesisRetention": 1.0,
+    "requiredCandidateProposalFieldCount": 0,
+    "maximumEvaluationLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryComparatorFirewallAndAccessGatePasses": "freeze_question_order_comparators_authorize_local_question_order_protocol_design_only",
+    "otherwise": "question_order_comparator_policy_infeasible_close_without_model",
+    "passingAuthorizesOnlyLocalQuestionOrderProtocolDesign": true,
+    "passingDoesNotAuthorizeImmediateModelRunEvaluationAccessReasoningComparisonCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

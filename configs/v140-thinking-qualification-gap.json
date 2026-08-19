@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "140-thinking-qualification-gap",
+  "experiment": "v140_aggregate_thinking_qualification_gap_audit",
+  "parentV139OutcomeLock": "configs/v139-repaired-direct-vs-thinking-realization-outcome-lock.json",
+  "V139Result": "outputs/v139-repaired-direct-vs-thinking-realization/model-realization/result.json",
+  "claimBoundary": "aggregate model-free decomposition of V139's registered qualification gap; not response mining, prompt tuning, retrospective rescoring, a new language/model result, or authority for V134, external transfer, APIs, training, induction, action, or execution",
+  "registeredPopulation": {
+    "fixtureCount": 100,
+    "ambiguousFixtureCount": 20,
+    "clearFixtureCount": 40,
+    "clarifiedFixtureCount": 40
+  },
+  "registeredThresholds": {
+    "minimumStructuredValidity": 0.99,
+    "minimumAmbiguousAbstentionAccuracy": 0.95
+  },
+  "auditGates": {
+    "requireExactlyTwoFailedThinkingGateFamilies": true,
+    "requireAllInvalidThinkingOutputsAtFrozenCeiling": true,
+    "requireCompletionOnlyRepairInsufficient": true,
+    "requireSemanticOnlyRepairInsufficient": true,
+    "requirePairedThinkingNetGain": true,
+    "requireNoRawResponseOrTraceRead": true,
+    "maximumModelLoads": 0,
+    "maximumModelGenerations": 0,
+    "maximumV134LanguageReads": 0,
+    "maximumExternalLanguageReads": 0,
+    "maximumAPICalls": 0,
+    "maximumActualExecutions": 0
+  },
+  "successorRequirements": {
+    "freshPopulationRequired": true,
+    "boundedFinalizationMechanismRequired": true,
+    "explicitEvidenceSufficiencyMechanismRequired": true,
+    "mereTokenCeilingIncreaseDisallowed": true,
+    "sameModelPassesMayNotBeClaimedIndependent": true,
+    "completeSafeHypothesisUniverseRequired": true,
+    "invalidOutputMustRemainSafe": true,
+    "rawReasoningPersistenceDisallowed": true,
+    "zeroAuthorityActionAndExecutionRequired": true
+  },
+  "decisionRule": {
+    "ifAllGatesPass": "freeze_two_mechanism_gap_authorize_model_free_controller_feasibility_only",
+    "otherwise": "close_current_thinking_successor",
+    "authorizeLanguageOrModelRun": false,
+    "authorizeV134OrExternalLanguage": false,
+    "authorizeAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

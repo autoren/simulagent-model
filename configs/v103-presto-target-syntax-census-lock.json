@@ -1,0 +1,112 @@
+{
+  "auditor": "python/audit_and_freeze_v103_presto_syntax.py",
+  "auditor_sha256": "39dfe1988d2b3c850b6a615b7d84b3bc52c1d4f458790a35d2f849a5b79d77b9",
+  "authorization": {
+    "emit_language_literals_identifiers_or_root_names": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_families_stages_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "read_persisted_archive_and_emit_aggregate_census_once": true,
+    "select_population_or_extract_selected_language": false,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "config": "configs/v103-presto-target-syntax-census.json",
+  "config_payload": {
+    "candidateEligibleLiteralFamilies": [
+      "guillemet",
+      "single_guillemet",
+      "ascii_double_quote",
+      "curly_double_quote",
+      "ascii_single_quote"
+    ],
+    "decisionRule": {
+      "diagnosticMayEmitLanguageOrAuthorizeModelInference": false,
+      "diagnosticMaySelectPopulationOrEmitIdentifiers": false,
+      "ifAnyUnionDiagnosticGateFails": "close PRESTO as the paired insufficiency source and proceed with MASSIVE only",
+      "ifEveryUnionDiagnosticGatePasses": "authorize preregistration of a materially new literal-family context-dependency source construction"
+    },
+    "diagnosticGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumEmittedCandidateIdentifierCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumUnionDependencySourceKindCount": 2,
+      "minimumUnionDevelopmentCandidateCount": 64,
+      "minimumUnionPreviousTurnDependentCandidateCount": 64,
+      "minimumUnionProtectedTestCandidateCount": 64,
+      "minimumUnionSeededStateDependentCandidateCount": 64,
+      "minimumUnionSemanticRootFunctionCount": 8,
+      "minimumUnionTotalCandidateCount": 256
+    },
+    "diagnosticStages": [
+      "record_contains_literal_family",
+      "quality_filtered_literal",
+      "literal_absent_from_current_input",
+      "literal_present_in_context",
+      "literal_absent_from_input_and_present_in_context"
+    ],
+    "experiment": "v103_presto_text_free_target_literal_and_dependency_census",
+    "literalFamilies": [
+      "guillemet",
+      "single_guillemet",
+      "ascii_double_quote",
+      "curly_double_quote",
+      "ascii_single_quote",
+      "square_bracket"
+    ],
+    "parentSourceOutcomeLock": "configs/v102r1-presto-context-source-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "aggregateTargetSyntaxCountInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "sourceArchiveAutomaticReadCount": 0,
+      "targetOrContextLanguageRecordInspectionCount": 0
+    },
+    "schemaVersion": "103-presto-target-syntax-census-design",
+    "sourceArchive": "outputs/v102r1-presto-context-source/source/presto_v1.zip",
+    "sourceArchiveSha256": "1fc671692cceb31fbda17e351e47f2cc52ee8779042f92dc26674cc0cca2167f",
+    "structuralCharacterFeatures": [
+      "left_parenthesis",
+      "right_parenthesis",
+      "colon",
+      "equals",
+      "left_square_bracket",
+      "left_guillemet",
+      "left_single_guillemet",
+      "ascii_double_quote",
+      "curly_double_quote"
+    ],
+    "unchangedScientificConfig": "configs/v102-presto-context-source.json",
+    "unchangedScientificConfigSha256": "fe764e4d7d766a73f44b7576250cc9ed76e635641f9f709f2be7a46a209872ad"
+  },
+  "config_sha256": "c7c1889949ecfce848874989eb1aea8cc7cd11a21d1a047ea0e5d5d6f64ed341",
+  "design_audit": "outputs/v103-presto-target-syntax/census-design-audit.json",
+  "design_audit_sha256": "591c280e511f299ff90a7eb5b0f7b82e4fde64677941ffabf8cf59a97907030d",
+  "experiment": "v103_presto_target_syntax_census_lock",
+  "lock_payload_sha256": "0f9cca61c793190d9487d241a14afac08527cc1dff5e4b37f46d131774b4fd65",
+  "parent_source_outcome": "configs/v102r1-presto-context-source-outcome-lock.json",
+  "parent_source_outcome_sha256": "3a889154560c8d4c67bb9db3cbf093f01d5b4eb5e802c4c5bf70ce2ce23423cc",
+  "plan": "docs/v103-presto-target-syntax-census-plan.md",
+  "plan_sha256": "1536df29f2a1df2572d1e05401ea177a36ffca74bbdf5def3f9a424f43f6ba72",
+  "protocol": "python/v103_presto_target_syntax_census.py",
+  "protocol_sha256": "d2c2a6d0ce71563b3fd28b88885aeadc3bf754ee44529daaf18af87b78f07962",
+  "runner": "python/run_v103_presto_target_syntax_census.py",
+  "runner_sha256": "9fa5849667e11ae1af421788179c01f44790a45b8f6f43519cb61fad3f0ccc29",
+  "schema_version": "103-presto-target-syntax-census-lock",
+  "scientific_config": "configs/v102-presto-context-source.json",
+  "scientific_config_sha256": "fe764e4d7d766a73f44b7576250cc9ed76e635641f9f709f2be7a46a209872ad",
+  "source_archive": "outputs/v102r1-presto-context-source/source/presto_v1.zip",
+  "source_archive_sha256": "1fc671692cceb31fbda17e351e47f2cc52ee8779042f92dc26674cc0cca2167f",
+  "tests": "python/test_v103_presto_target_syntax_census.py",
+  "tests_sha256": "b71151964bbdb3536025ff6d17c6c74b05a042df1427b8dc83c8ecd2b467c2ce",
+  "verifier": "python/verify_and_freeze_v103_presto_syntax_outcome.py",
+  "verifier_sha256": "181ae5250486b6650c0c154357af7decf2cf8db1537b489fe2f1034f029b2b90"
+}

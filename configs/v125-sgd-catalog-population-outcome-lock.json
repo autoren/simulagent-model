@@ -1,0 +1,43 @@
+{
+  "analysis_lock": "configs/v125-sgd-catalog-population-lock.json",
+  "analysis_lock_sha256": "3014c49a1ff72c825847fd5efea0e65348e8002869489ab1eacfc0750cc00331",
+  "audit": "outputs/v125-sgd-catalog-population/outcome-audit.json",
+  "audit_sha256": "12a7c1c6a05d38b086f09cbad7f4d2ee020e7a61318da5897d84dfaf17f4bc74",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "extract_selected_language_or_evaluate_before_next_lock": false,
+    "modify_rerun_or_reselect_V125": false,
+    "preregister_cross_dataset_retrieval_geometry_selectivity_design": true,
+    "run_API_training_action_or_execution": false,
+    "run_language_model_or_open_protected": false
+  },
+  "choice_catalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "37edfc9df1a10d58c8102f50f42426bbf8969d23ecfa52e8e196ccf9770cc86f",
+  "experiment": "v125_sgd_catalog_population_outcome_lock",
+  "lock_payload_sha256": "d973222e616b490ae6eebe121101dd4106dad9e8b760fb32acfd788aedf5be07",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "freeze_SGD_catalog_and_population_for_cross_dataset_retrieval_selectivity_design",
+    "passed": true,
+    "summary": {
+      "choice_count": 11,
+      "evaluation_class_counts": {
+        "known": 192,
+        "novel_valid": 192,
+        "unsupported": 192
+      },
+      "evaluation_record_count": 576,
+      "known_pair_coverage": 6,
+      "novel_domain_coverage": 3,
+      "training_record_count": 4881,
+      "unsupported_domain_coverage": 4
+    }
+  },
+  "results_document": "docs/v125-sgd-catalog-population-results.md",
+  "results_document_sha256": "c41ebc659ce63a6a7c1e6d9f019a17df782bdbdc2a4cd84bb0355393c5fe9266",
+  "schema_version": "125-sgd-catalog-population-outcome-lock",
+  "selected_populations": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+  "selected_populations_sha256": "e1f721f20ce830fe1fbbbd481fedd9470cf8259b9c892ffd8c0f5d86db9f2b0c",
+  "verifier": "python/verify_and_freeze_v125_sgd_catalog_population_outcome.py",
+  "verifier_sha256": "e68014b82505c3c9e6e8ee32699ffc0a69751d31050d1ea3528f644695b5fcd8"
+}

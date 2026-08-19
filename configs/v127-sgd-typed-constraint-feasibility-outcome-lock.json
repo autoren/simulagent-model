@@ -1,0 +1,312 @@
+{
+  "analysis_lock": "configs/v127-sgd-typed-constraint-feasibility-lock.json",
+  "analysis_lock_sha256": "3cb06c6a28f1d3d5a49c43e1355fd371172ba5af130d755a5c01aaf4fe87907d",
+  "audit": "outputs/v127-sgd-typed-constraint-feasibility/outcome-audit.json",
+  "audit_sha256": "6ff24d61a501de84576367911f8d93351f8a1e68a24f2c490704d4474c0aa66f",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "close_typed_constraint_signature_mechanism": true,
+    "modify_rerun_retune_or_mine_V127": false,
+    "preregister_typed_parser_realization_design": false,
+    "run_API_training_action_or_execution": false,
+    "run_language_model_or_protected": false
+  },
+  "experiment": "v127_sgd_typed_constraint_feasibility_outcome_lock",
+  "lock_payload_sha256": "2662f1c6a20ab7fa3b63cbd74b9f089ef04a2042c2adf09cee48df989c2f7247",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "oracle_typed_constraint_selectivity_infeasible_do_not_realize_parser",
+    "experimental_pass": false,
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "conditions": {
+        "moderate_candidate@0.00": {
+          "always_query": {
+            "false_known_probability": 0.001234375000000002,
+            "known_exact_probability": 0.6662988281250001,
+            "mean_regret": 0.9455311482747395,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.050544415656889,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.009037231445312502,
+            "known_exact_probability": 0.6867578125000001,
+            "mean_regret": 1.0629049241807724,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.086131336300872,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "moderate_candidate@0.25": {
+          "always_query": {
+            "false_known_probability": 0.005613281250000007,
+            "known_exact_probability": 0.6667163085937499,
+            "mean_regret": 0.9892700042724614,
+            "unsupported_correct_probability": 0.8805312500000001
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.000131096540178,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.013381927490234381,
+            "known_exact_probability": 0.686943359375,
+            "mean_regret": 1.1057912546793625,
+            "unsupported_correct_probability": 0.8805312500000001
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.080421398074128,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "moderate_candidate@0.50": {
+          "always_query": {
+            "false_known_probability": 0.0037265625000000037,
+            "known_exact_probability": 0.65126953125,
+            "mean_regret": 0.9744212951660156,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.020867653858419,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.011509948730468754,
+            "known_exact_probability": 0.680078125,
+            "mean_regret": 1.0881507805718316,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.0617230650436045,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "strong_candidate@0.00": {
+          "always_query": {
+            "false_known_probability": 0.001234375000000002,
+            "known_exact_probability": 0.6662988281250001,
+            "mean_regret": 0.9455311482747395,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.050544415656889,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.009037231445312502,
+            "known_exact_probability": 0.6867578125000001,
+            "mean_regret": 1.0629049241807724,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.086131336300872,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "strong_candidate@0.25": {
+          "always_query": {
+            "false_known_probability": 0.005613281250000007,
+            "known_exact_probability": 0.6667163085937499,
+            "mean_regret": 0.9892700042724614,
+            "unsupported_correct_probability": 0.8805312500000001
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.000131096540178,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.013381927490234381,
+            "known_exact_probability": 0.686943359375,
+            "mean_regret": 1.1057912546793625,
+            "unsupported_correct_probability": 0.8805312500000001
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.080421398074128,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "strong_candidate@0.50": {
+          "always_query": {
+            "false_known_probability": 0.00999218750000001,
+            "known_exact_probability": 0.6671337890625,
+            "mean_regret": 1.0112630106608074,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 7.97535312898597,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.01772662353515626,
+            "known_exact_probability": 0.68712890625,
+            "mean_regret": 1.1268697340223524,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.0742961936773254,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "uniform_safe_universe@0.00": {
+          "always_query": {
+            "false_known_probability": 4.687500000000012e-05,
+            "known_exact_probability": 0.6345703125,
+            "mean_regret": 0.9481226196289061,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.054168714126275,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.0078590087890625,
+            "known_exact_probability": 0.6726562500000001,
+            "mean_regret": 1.0598217536078556,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.0481244322311045,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "uniform_safe_universe@0.25": {
+          "always_query": {
+            "false_known_probability": 0.0015742187500000012,
+            "known_exact_probability": 0.61912353515625,
+            "mean_regret": 0.9644740041097007,
+            "unsupported_correct_probability": 0.9312968749999998
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.040422956194197,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.009374420166015626,
+            "known_exact_probability": 0.665791015625,
+            "mean_regret": 1.071515193515354,
+            "unsupported_correct_probability": 0.9312968749999998
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.0169270360192586,
+          "typed_evidence_presence_fraction": 0.703125
+        },
+        "uniform_safe_universe@0.50": {
+          "always_query": {
+            "false_known_probability": 0.003132812500000003,
+            "known_exact_probability": 0.6354052734375,
+            "mean_regret": 0.975717030843099,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "queried_average_query_value": 8.022679803093112,
+          "query_fraction": 0.8506944444444444,
+          "record_count": 576,
+          "selective_query": {
+            "false_known_probability": 0.010920837402343753,
+            "known_exact_probability": 0.67302734375,
+            "mean_regret": 1.0866091952853734,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "skip_class_counts": {
+            "KNOWN": 83,
+            "NOVEL": 3
+          },
+          "skip_fraction": 0.14930555555555555,
+          "skipped_action_precision": 0.872093023255814,
+          "skipped_average_query_value": 1.0427196130087208,
+          "typed_evidence_presence_fraction": 0.703125
+        }
+      },
+      "decision": "oracle_typed_constraint_selectivity_infeasible_do_not_realize_parser",
+      "fit_count": 0,
+      "individual_record_emission_count": 0,
+      "outcome_gates": {
+        "complete_hypothesis_retention": true,
+        "nontrivial_skip_fraction": true,
+        "one_rule_zero_fit_selection_and_thresholds": true,
+        "queried_average_value_covers_cost": true,
+        "schema_signature_count": true,
+        "selective_false_known_every_prior_and_correlation": true,
+        "selective_known_exact_every_prior_and_correlation": false,
+        "selective_no_worse_than_always_query": false,
+        "selective_regret_every_prior_and_correlation": true,
+        "selective_unsupported_every_prior_and_correlation": true,
+        "skipped_action_precision": false,
+        "skipped_average_value_not_above_cost": false,
+        "zero_execution": true,
+        "zero_individual_record_emission": true
+      },
+      "outcome_pass": false,
+      "primary_rule_count": 1,
+      "record_count": 576,
+      "schema_signature_count": 6,
+      "selection_count": 0,
+      "threshold_count": 0,
+      "true_hypothesis_retention": 1.0
+    }
+  },
+  "result": "outputs/v127-sgd-typed-constraint-feasibility/evaluation/result.json",
+  "result_sha256": "d34a14e7d53eba217de9e14337f3af9deb035ee49a97fba018d216c475935dc0",
+  "results_document": "docs/v127-sgd-typed-constraint-feasibility-results.md",
+  "results_document_sha256": "0a312f739dc188e7489b66c55b5adf97c8c16ea2dc892a8f89a1f95bbf03482c",
+  "schema_version": "127-sgd-typed-constraint-feasibility-outcome-lock",
+  "verifier": "python/verify_and_freeze_v127_sgd_typed_constraint_feasibility_outcome.py",
+  "verifier_sha256": "d9aa0349ac6db1e8af913b0718bd787f04fbb6f06b92fd1b799b20fb213f15d1"
+}

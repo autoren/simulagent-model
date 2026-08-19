@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "112r1-full-policy-aggregation-recovery-design",
+  "experiment": "v112r1_preserved_fixture_mechanical_aggregation_recovery",
+  "parentV112ImplementationLock": "configs/v112-open-world-full-policy-transfer-lock.json",
+  "parentFailure": "outputs/v112-open-world-full-policy-transfer/model-policy-transfer/failure.json",
+  "freshLanguage": "outputs/v112-open-world-full-policy-transfer/fresh-language/development-transfer.jsonl",
+  "rawFixtureDirectory": "outputs/v112-open-world-full-policy-transfer/model-policy-transfer/raw-fixtures",
+  "registeredFailure": {
+    "stage": "gate_aggregation",
+    "exceptionType": "TypeError",
+    "exceptionMessage": "ask_always_prediction() missing 1 required positional argument: '_'",
+    "requiredCompletedFixtureCount": 240,
+    "requiredModelLoadCount": 1,
+    "requiredModelGenerationCount": 240
+  },
+  "authorizedRepair": {
+    "description": "pass each record to the ask_always_prediction helper's intentionally unused positional argument",
+    "changesPopulationLanguagePromptModelResponsePolicyThresholdConfidenceMetricGateOrDecision": false,
+    "newModelLoadOrGeneration": false,
+    "manualLanguageOrRawResponseInspection": false
+  },
+  "decisionRule": {
+    "reuseEveryV112PopulationPolicyMetricGateAndDecisionExactly": true,
+    "ifRecoveryIntegrityPasses": "freeze recovered V112 quality outcome",
+    "passAuthorizesProtectedTestImmediately": false,
+    "passAuthorizesSchemaInductionSequentialPlanningAPITrainingActionOrExecution": false
+  }
+}

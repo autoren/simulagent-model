@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "117-causal-clarification-simulator-design",
+  "experiment": "v117_two_mechanism_causal_clarification_simulator",
+  "parentV116OutcomeLock": "configs/v116-typed-clarification-voi-outcome-lock.json",
+  "historicalPopulation": "outputs/v115-contrastive-catalog-fit/design/fresh-population.json",
+  "historicalModelResult": "outputs/v115-contrastive-catalog-fit/model-contrastive/result.json",
+  "choiceCatalog": "outputs/v109-open-world-typed-choice/interface/choice-catalog.json",
+  "claimBoundary": "causal simulator evidence using frozen structural metadata and candidates; not language, human-response, model-response, or deployment evidence",
+  "mechanisms": {
+    "candidateConfirmation": {
+      "answers": ["CONFIRM", "REJECT", "UNSURE"],
+      "truthRule": "CONFIRM only for the exact candidate known hypothesis; REJECT for every other observed hypothesis; UNSURE for insufficient"
+    },
+    "catalogStatus": {
+      "answers": ["DECLARED", "UNDECLARED_VISIBLE", "OUTSIDE_VISIBLE", "UNSURE"],
+      "truthRule": "KNOWN maps DECLARED, NOVEL maps UNDECLARED_VISIBLE, UNSUPPORTED maps OUTSIDE_VISIBLE, insufficient maps UNSURE"
+    },
+    "modelGeneratesOrInterpretsNeitherObservation": true
+  },
+  "channel": {
+    "marginalCorrectness": [0.90, 0.95, 1.00],
+    "sharedFailureCorrelation": [0.00, 0.25, 0.50, 0.75, 1.00],
+    "nonCorrectMassToUnsure": 0.50,
+    "remainingErrorMass": "uniform over other actionable answers",
+    "jointChannel": "mixture of independent marginal channel and shared correctness/error shock while preserving marginals",
+    "totalClarificationCost": 0.30
+  },
+  "priorRegimes": [
+    {"id": "uniform_safe_universe", "candidateProbability": 0.058823529411764705},
+    {"id": "moderate_candidate", "candidateProbability": 0.50},
+    {"id": "strong_candidate", "candidateProbability": 0.75}
+  ],
+  "planners": [
+    {"id": "correlation_aware", "assumedCorrelation": "actual"},
+    {"id": "independence_assumed", "assumedCorrelation": 0.0}
+  ],
+  "frozenBayesPolicy": {
+    "actionSet": "ABSTAIN, UNSUPPORTED, or one exact declared KNOWN intent",
+    "minimumPosteriorExpectedFrozenDecisionCost": true,
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "novelAndInsufficientCannotBecomeActions": true,
+    "actualExecutionCount": 0
+  },
+  "outcomeGates": {
+    "requiredReliability": 0.95,
+    "maximumRequiredCorrelation": 0.50,
+    "maximumAwareMeanRegretEveryPriorAndRequiredCorrelation": 0.7760416666666666,
+    "minimumAwareKnownExactEveryPriorAndRequiredCorrelation": 0.80,
+    "minimumAwareUnsupportedCorrectEveryPriorAndRequiredCorrelation": 0.80,
+    "maximumAwareFalseKnownEveryPriorAndRequiredCorrelation": 0.10,
+    "maximumMisspecifiedMeanRegretAt050EveryPrior": 1.125,
+    "maximumMisspecifiedFalseKnownAt050EveryPrior": 0.10,
+    "requiredPerfectChannelMeanRegretEveryPrior": 0.690625,
+    "requiredRhoOneStressReported": true,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifAllOutcomeAndAccessGatesPass": "causal_simulator_pass_preregister_fresh_unprotected_multiturn_language_protocol",
+    "otherwise": "causal_simulator_fails_keep_language_and_model_branch_closed",
+    "passAuthorizesImmediateLanguageOrModelRun": false,
+    "passAuthorizesProtectedTest": false,
+    "passAuthorizesSchemaInductionOrRicherPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "auditor": "python/audit_and_freeze_v133_sgd_capability_label_identifiability.py",
+  "auditor_sha256": "915fa4fcaf3f47f8df04df541a35dedb40cc12690102f33a7b62ed5af85dd879",
+  "authorization": {
+    "modify_collision_rules_gates_population_or_decision": false,
+    "read_dialogue_language_or_model_output": false,
+    "run_model_API_training_authority_or_execution": false,
+    "run_one_schema_only_identifiability_audit": true
+  },
+  "choice_catalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "3df849d72abe34dafe3eadeef706f208bf145fbcd367ebd3bc53903d62b83b22",
+  "config": "configs/v133-sgd-capability-label-identifiability.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumDialogueFileReadCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumLanguageRecordReadCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSchemaFileReadCount": 2,
+      "maximumSourceArchiveReadCount": 1
+    },
+    "choiceCatalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+    "claimBoundary": "source-schema audit of whether selected service-level novel labels correspond to distinguishable capability definitions; not language-model evaluation, unrestricted semantic equivalence, causal attribution of individual errors, or execution evidence",
+    "decisionRule": {
+      "eitherOutcomeAuthorizesProtectedInductionRicherPlanningAPITrainingActionOrExecution": false,
+      "failureAuthorizesModelRerunPromptRevisionOrScaling": false,
+      "failureAuthorizesOnlyTextFreeSemanticallyNoncollidingSourceDesign": true,
+      "ifEveryIdentifiabilityAndAccessGatePasses": "SGD_selected_novel_labels_are_capability_identifiable_authorize_independent_source_confirmation_design_only",
+      "otherwise": "SGD_service_novelty_is_capability_confounded_retract_pure_capability_novelty_interpretation"
+    },
+    "experiment": "v133_model_free_SGD_capability_label_identifiability_audit",
+    "fixturePopulation": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+    "identifiabilityGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumEntirelyNameCollidingNovelChoiceCount": 0,
+      "maximumManualSemanticJudgmentCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRawDescriptionEmissionCount": 0,
+      "maximumSelectedNovelRecordExactNameCollisionFraction": 0.1,
+      "maximumSelectedNovelRecordFullSignatureCollisionFraction": 0.1,
+      "maximumUtteranceOrSlotValueReadCount": 0,
+      "minimumNovelChoicesWithNoExactNameCollision": 3,
+      "requireEveryNovelDefinitionPresentExactlyOnce": true,
+      "requiredDeclaredKnownDefinitionCount": 6,
+      "requiredNovelCompositeChoiceCount": 3,
+      "requiredSelectedNovelRecordCount": 72
+    },
+    "parentV132OutcomeLock": "configs/v132-local-complete-answer-realization-outcome-lock.json",
+    "schemaAudit": {
+      "archiveRevision": "e852981ae34990f4358979625854259302feaa78",
+      "comparisonScope": "each selected novel service-intent definition against all six declared known definitions",
+      "declaredDefinitionsFrom": "train",
+      "emitRawDescriptionCount": 0,
+      "emitUtteranceOrSlotValueCount": 0,
+      "manualSemanticJudgmentCount": 0,
+      "novelDefinitionsFrom": "test",
+      "primaryCollision": "Unicode-normalized case-folded alphanumeric intent name equality",
+      "schemaPartitions": [
+        "train",
+        "test"
+      ],
+      "secondaryCollisions": [
+        "normalized description equality",
+        "required and optional slot-set equality",
+        "joint normalized name description and slot equality"
+      ]
+    },
+    "schemaVersion": "133-sgd-capability-label-identifiability-design",
+    "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz"
+  },
+  "config_sha256": "56b6a57706b1496f5956f2214b42e3872ba1d8a5a3bc93b127111e647ef84e56",
+  "design_audit": "outputs/v133-sgd-capability-label-identifiability/design-audit.json",
+  "design_audit_sha256": "ca3b2262e6c9c026386e0cb8c4c9cea3c04de90aa182929794fc0839da8c8792",
+  "experiment": "v133_model_free_SGD_capability_label_identifiability_audit",
+  "fixture_population": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+  "fixture_population_sha256": "1ead9d09af96cbf66fba091936d0fa833e8aa7578d7dfdb5267c61b2e7ca2f83",
+  "lock_payload_sha256": "73afbfc39adfb98b1db11e916fa8e16a200698eb4af53715db48767dca2c296c",
+  "parent_analysis_lock": "configs/v132-local-complete-answer-realization-lock.json",
+  "parent_analysis_lock_sha256": "82dc07709952528c5949b1313aee8107680adb1210c8e8fd8a1c5abfaaae6490",
+  "parent_outcome": "configs/v132-local-complete-answer-realization-outcome-lock.json",
+  "parent_outcome_sha256": "60679bfdb9cc7377f8548c9ea8c3d15e6a58f981b789f2495b30ef1530ba92a3",
+  "plan": "docs/v133-sgd-capability-label-identifiability-plan.md",
+  "plan_sha256": "230902bd22fa04481d7cefb0dee243a41684a895548f5ebb069440de8d7aa55b",
+  "protocol": "python/v133_sgd_capability_label_identifiability.py",
+  "protocol_sha256": "d0d4824f08562053986f848a1fea277abb9bdcb9fcf9fcdb5e4327ec852c02c6",
+  "runner": "python/run_v133_sgd_capability_label_identifiability.py",
+  "runner_sha256": "06b10867f7111916dbccbeed0a2c8575edaab09ab7c5a30180675ebf62670a63",
+  "schema_version": "133-sgd-capability-label-identifiability-lock",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "tests": "python/test_v133_sgd_capability_label_identifiability.py",
+  "tests_sha256": "89033007d35bfa293676b2fea38f8307cfc8551014f514ce3d3ef2553257ac33",
+  "verifier": "python/verify_and_freeze_v133_sgd_capability_label_identifiability_outcome.py",
+  "verifier_sha256": "2951b6ec2cc260ed671610233567f8f35d9b2a4d9a433aa77669bacb92801818"
+}

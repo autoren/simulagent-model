@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "load_or_run_model": false,
+    "modify_scientific_config_split_baselines_metrics_costs_model_or_gates": false,
+    "read_development_or_protected_test_language_before_repaired_lock": false,
+    "repair_audit_expected_model_gate_count_from_14_to_15": true,
+    "rerun_design_audit_after_exact_repair": true
+  },
+  "config": "configs/v106-open-world-development-benchmark.json",
+  "config_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "experiment": "v106_open_world_development_benchmark_design_audit_technical_failure",
+  "failed_audit": "outputs/v106-open-world-development/development-design-audit.json",
+  "failed_audit_sha256": "bd1c8c16e3c6c4b56e8e98ee52dd2704f8d547d24e1117310912771b187f7938",
+  "failed_auditor": "python/audit_and_freeze_v106_development_benchmark.py",
+  "failed_auditor_sha256": "d750e24ae7036957e6149915b7f6bc1c157763f7ee796b6a8df7db7978456f7d",
+  "lock_payload_sha256": "473c18ea0ef4dabd6ec187e99202023a4b631003671a7ddd555e7bbefc5d4839",
+  "outcome": {
+    "development_language_read_count": 0,
+    "failure": "futureModelDevelopmentGates contains 15 frozen gates but the audit asserted a count of 14",
+    "failure_class": "technical_design_audit_constant_mismatch",
+    "model_generation_count": 0,
+    "model_load_count": 0,
+    "passed": true,
+    "protected_test_language_read_count": 0,
+    "scientific_benchmark_ran": false
+  },
+  "schema_version": "106-open-world-development-benchmark-technical-outcome-lock"
+}

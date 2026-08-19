@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "authorize_one_fresh_archive_retrieval_because_no_artifact_persisted": true,
+    "emit_or_manually_inspect_language": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_or_rerun_V102": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_V102r1_parser_repair": true,
+    "retain_exact_source_dependency_rule_and_scientific_gates": true,
+    "select_population_or_extract_selected_language": false,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "design_lock": "configs/v102-presto-context-source-lock.json",
+  "design_lock_sha256": "3ac57d13698441eef61d6ff6f0bcd605933c8f9507f8f305e2dba1dbbe1a1c5f",
+  "experiment": "v102_presto_context_source_technical_outcome_lock",
+  "failure": "outputs/v102-presto-context-source/technical-failure.json",
+  "failure_document": "docs/v102-presto-context-source-technical-failure.md",
+  "failure_document_sha256": "8a3c9ea45a1c17aed79af74f000af2acef37983e4ab3c14393e382f5fd099cf1",
+  "failure_sha256": "9bb275b83a53cb75d6277fa252d9b8a50c888f76b6bafc496cb6d125d0c31f1e",
+  "freezer": "python/freeze_v102_presto_technical_failure.py",
+  "freezer_sha256": "d689a008ef0d5218ee3165ad3a1394bb2f89d866dd98163273ea7dc20d7ff539",
+  "lock_payload_sha256": "a08c82eea7fce7ef052c3b3b5216d282df3f58340caed517b906ea0e1898e2a6",
+  "outcome": {
+    "decision": "freeze_technical_V102_and_preregister_parser_repair_without_gate_changes",
+    "failure_class": "technical_parser_schema_validation_failure",
+    "passed": true,
+    "scientific_source_feasibility_evaluated": false
+  },
+  "runner": "python/run_v102_presto_source_inventory.py",
+  "runner_sha256": "6d90977f96f4afe315881a00d3eee33fc7acf11599ee09b27db6cd0e2d8211e9",
+  "schema_version": "102-presto-context-source-technical-outcome-lock"
+}

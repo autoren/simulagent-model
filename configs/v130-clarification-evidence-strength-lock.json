@@ -1,0 +1,141 @@
+{
+  "auditor": "python/audit_and_freeze_v130_clarification_evidence_strength.py",
+  "auditor_sha256": "6414e970ea68cce8b87ae0a6ffc1ecb8cbf3c81e7b7c4e45bf9e5b11b17f9bdd",
+  "authorization": {
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_grids_channel_cost_gates_or_decision": false,
+    "read_language_records_or_load_model": false,
+    "run_one_model_free_evidence_strength_audit": true
+  },
+  "baseline_config": "configs/v106-open-world-development-benchmark.json",
+  "baseline_config_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "choice_catalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "37edfc9df1a10d58c8102f50f42426bbf8969d23ecfa52e8e196ccf9770cc86f",
+  "config": "configs/v130-clarification-evidence-strength.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumIndividualBenchmarkRecordReadCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumLanguageReadCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0
+    },
+    "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+    "census": {
+      "individualRecordOrLanguageReadCount": 0,
+      "presentedCandidates": "all six declared known hypotheses",
+      "truthCandidatePairCount": 66,
+      "truths": "all eleven safe hypotheses",
+      "uniformPairWeighting": true
+    },
+    "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+    "claimBoundary": "abstract evidence-strength boundary for stipulated complete typed answers; not evidence that humans, models, parsers, or repeated generations achieve the required reliability or independence",
+    "completeClarificationChannel": {
+      "answerSet": "the exact eleven frozen choice identifiers",
+      "errorBiasFraction": 0.75,
+      "errorRegimes": [
+        "symmetric",
+        "candidate_attraction",
+        "abstention_attraction"
+      ],
+      "totalCost": 0.3
+    },
+    "decisionRule": {
+      "ifAuditCompleteAndEitherEvidenceRoutePasses": "complete_clarification_evidence_strength_feasible_authorize_realization_audit_only",
+      "ifAuditCompleteButNeitherEvidenceRoutePasses": "complete_clarification_evidence_strength_infeasible_keep_realization_closed",
+      "passAuthorizesAPITrainingActionOrExecution": false,
+      "passAuthorizesLanguageHumanOrModelRun": false,
+      "passAuthorizesOnlyPreregisterEvidenceRealizationAudit": true,
+      "passAuthorizesProtectedInductionOrRicherPlanning": false
+    },
+    "experiment": "v130_model_free_complete_clarification_evidence_strength_audit",
+    "feasibilityRule": {
+      "eitherRouteMayAuthorizeRealizationAudit": true,
+      "maximumIndependentAnswerCount": 2,
+      "maximumRequiredCommonShockCorrelation": 0.25,
+      "maximumSingleAnswerReliability": 0.99,
+      "multiRoutePassesIfOneAllowedCountPassesEveryPriorBiasAndRequiredCorrelation": true,
+      "singleRoutePassesIfEveryPriorAndBiasThresholdIsAtMostMaximum": true
+    },
+    "multiAnswerGrid": {
+      "answerCounts": [
+        1,
+        2,
+        3
+      ],
+      "commonShockCorrelations": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "costPerAnswer": 0.3,
+      "jointChannel": "mixture of independent answer draws and one shared draw repeated across every answer, preserving each marginal",
+      "marginalCorrectness": 0.95,
+      "plannerIsCorrelationAware": true,
+      "repeatedSamplesFromOneModelAreNotDeclaredIndependent": true
+    },
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumIndividualPairEmissionCount": 0,
+      "requiredMultiAnswerConditionCount": 81,
+      "requiredPerfectSingleAnswerKnownExact": 1.0,
+      "requiredPerfectSingleAnswerUnsupported": 1.0,
+      "requiredReliabilityGridPointCount": 101,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "parentV129OutcomeLock": "configs/v129-complete-clarification-interface-outcome-lock.json",
+    "priorRegimes": [
+      {
+        "candidateProbability": 0.09090909090909091,
+        "id": "uniform_safe_universe"
+      },
+      {
+        "candidateProbability": 0.5,
+        "id": "moderate_candidate"
+      },
+      {
+        "candidateProbability": 0.75,
+        "id": "strong_candidate"
+      }
+    ],
+    "qualityGates": {
+      "maximumFalseKnown": 0.1,
+      "maximumMeanRegret": 1.1666666666666667,
+      "minimumKnownExact": 0.8,
+      "minimumUnsupportedCorrect": 0.8
+    },
+    "schemaVersion": "130-clarification-evidence-strength-design",
+    "singleAnswerReliabilityGrid": {
+      "maximum": 1.0,
+      "minimum": 0.95,
+      "pointCount": 101,
+      "selectionRule": "first grid point satisfying all absolute quality gates for a prior/error-regime condition",
+      "step": 0.0005
+    }
+  },
+  "config_sha256": "eebc6a3b3c1f0163ecd376141a4f44dcd264dc036c92f212e7811463a5b05c67",
+  "design_audit": "outputs/v130-clarification-evidence-strength/design-audit.json",
+  "design_audit_sha256": "090dec807982a0360db0305af1632f8e16f8f5e9b75f5ad093c3036e71d24119",
+  "experiment": "v130_model_free_complete_clarification_evidence_strength_audit",
+  "lock_payload_sha256": "3f12bc7152468ef50af19c949075c5f33dab9a795d3557c3825334313e4aa9e5",
+  "parent_analysis_lock": "configs/v129-complete-clarification-interface-lock.json",
+  "parent_analysis_lock_sha256": "139638992ccea0cc7a3702827de132575a99de93d6ee72670c0776e0fe67d6b1",
+  "parent_outcome": "configs/v129-complete-clarification-interface-outcome-lock.json",
+  "parent_outcome_sha256": "ba62226f3c2ff4dfc758fe3ba70bc650b08cd4087be829587ff13e9f37310391",
+  "plan": "docs/v130-clarification-evidence-strength-plan.md",
+  "plan_sha256": "7ddf0978e8ac9a79c81ecfb8d73e49f514aaf5e608a64bec3c6fa8a9c78cad3c",
+  "protocol": "python/v130_clarification_evidence_strength.py",
+  "protocol_sha256": "994a13fc0014b614a9f1afc63245c3739daed310d0f22a29b424a32a0c836891",
+  "runner": "python/run_v130_clarification_evidence_strength.py",
+  "runner_sha256": "fbc7adfbb2fab141519dbac5e9e47805e32597d71e7af049fae044c36d118b02",
+  "schema_version": "130-clarification-evidence-strength-lock",
+  "tests": "python/test_v130_clarification_evidence_strength.py",
+  "tests_sha256": "c1560b4133acce70459b77d4daff079f33d2127090c25b381cb227f68cde86a4",
+  "verifier": "python/verify_and_freeze_v130_clarification_evidence_strength_outcome.py",
+  "verifier_sha256": "e29d658c79c74b25c35411dbe611a5f4ffcfec479a9fd8c8c6cf16fe5c05cf9f"
+}

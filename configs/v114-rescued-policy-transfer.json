@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "114-rescued-policy-transfer-design",
+  "experiment": "v114_record_disjoint_massive_rescued_policy_transfer",
+  "parentV113OutcomeLock": "configs/v113-known-disagreement-rescue-census-outcome-lock.json",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "excludedPopulations": [
+    "outputs/v101-massive-population/population/selected-population.json",
+    "outputs/v112-open-world-full-policy-transfer/design/fresh-population.json"
+  ],
+  "freshPopulation": {
+    "sourcePartition": "test",
+    "baseSalt": "simulagent-v114-rescued-policy-transfer-v1",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "recordCountPerClass": 48,
+    "requiredScenarioCoverage": {
+      "known_familiar": 3,
+      "known_unfamiliar": 3,
+      "novel_valid": 2,
+      "unsupported": 1
+    },
+    "excludeEveryPriorAndProtectedIdentifier": true,
+    "selectionUsesOnlyIdentifierClassPartitionAndScenario": true,
+    "selectionBeforeLanguageExtractionOrModelGeneration": true,
+    "claimBoundary": "new record-disjoint transfer from the same MASSIVE source distribution; not cross-dataset or unrestricted open-world evidence"
+  },
+  "extraction": {
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "canonicalSourcePartitionMap": {"train": "train", "dev": "validation", "test": "test"},
+    "role": "development_transfer_2",
+    "requiredRecordCount": 192,
+    "requiredRecordCountPerClass": 48,
+    "maximumUnselectedLanguageRecordCount": 0
+  },
+  "selectedRescueRule": {
+    "family": "proposal_score_and_gap",
+    "minimum_score": 0.6,
+    "maximum_gap": 0.15,
+    "complexity": 2
+  },
+  "rescueActionConfidence": 0.75,
+  "pairedRescueEvaluation": {
+    "minimumEligibleDisagreementCountForMechanismConclusion": 8,
+    "minimumTriggeredRescueCountForMechanismConclusion": 4,
+    "minimumRescuePrecision": 0.75,
+    "minimumNetCorrectedErrors": 1,
+    "minimumKnownExactIntentAccuracyDelta": 0.0,
+    "maximumTopConfidence80PercentErrorDelta": 0.0,
+    "maximumMeanRegretDelta": 0.0,
+    "maximumFalseKnownAcceptanceRateDelta": 0.0,
+    "minimumUnsupportedPrecisionDelta": 0.0,
+    "minimumUnsupportedRecallDelta": 0.0,
+    "requireExactNovelEvidenceIdentity": true,
+    "insufficientOpportunityConclusion": "full-policy transfer may qualify, but the V113 rescue mechanism remains inconclusive",
+    "thresholdRationale": "half the 16 historical eligible disagreements and the historical four triggered rescues; frozen before V114 population selection or language extraction"
+  },
+  "comparators": [
+    "ask_always", "direct_llm", "fixed_v110_character_retrieval",
+    "V112_validated_novelty_evidence_policy", "V114_rescued_policy", "oracle"
+  ],
+  "reuseExactV112": {
+    "typedChoiceInterfacePromptModelAndDecoding": true,
+    "basePolicyCalibrationComparatorsMetricsAndSeventeenQualityGates": true,
+    "observedGenerationCount": 192,
+    "controlledMissingObservationCount": 48,
+    "totalGenerationCount": 240
+  },
+  "authorityBoundary": {
+    "modelIsPermanentlyNonAuthoritativeEvidenceOnly": true,
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "novelCandidateStillAsksAndCannotDefineCapability": true,
+    "allActionsAreCounterfactualShadowActions": true,
+    "authoritativeStatePosteriorCapabilitiesAndPolicyAreImmutable": true,
+    "modelMayNotSelectActionOrExecuteTool": true,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "qualificationLayers": ["absolute full-policy transfer", "paired V113 rescue-mechanism transfer"],
+    "ifRescuedPassesBaselineFailsAndMechanismPasses": "strong rescue transfer; separately preregister sandboxed typed-induction feasibility",
+    "ifBothPassAndMechanismPasses": "full-policy transfer plus weaker positive rescue transfer; separately preregister sandboxed typed-induction feasibility",
+    "ifFullPolicyPassesButMechanismOpportunityIsInsufficient": "full-policy transfer only; rescue mechanism inconclusive; separately preregister sandboxed typed-induction feasibility",
+    "ifRescueHarmsSafetyOrUtility": "reject the rescue even if an aggregate metric improves",
+    "ifBothPoliciesFail": "freeze policy nontransfer and require new evidence or policy structure",
+    "ifNovelEvidenceFails": "close abstention novelty transfer claim beyond V112",
+    "ifNovelEvidencePassesButFullPolicyFails": "freeze policy nontransfer and require new evidence or policy structure",
+    "passAuthorizesProtectedTestImmediately": false,
+    "passAuthorizesSchemaInductionImmediately": false,
+    "passAuthorizesSequentialPlanningAPITrainingActionOrExecution": false
+  }
+}

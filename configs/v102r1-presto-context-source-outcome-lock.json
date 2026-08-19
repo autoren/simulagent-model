@@ -1,0 +1,64 @@
+{
+  "audit": "outputs/v102r1-presto-context-source/source-outcome-audit.json",
+  "audit_sha256": "c565dd37d74221f73f69e7e4bf19626105d5a166cb13de3a68047f363e3dcc9a",
+  "authorization": {
+    "extract_selected_language_before_population_lock": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_population_prompt_controls_metrics_and_gates_lock": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_V102r1_source_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_paired_development_and_protected_test_population": false,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_language_extraction": false
+  },
+  "experiment": "v102r1_presto_context_source_outcome_lock",
+  "inventory": "outputs/v102r1-presto-context-source/source-inventory/presto-context-dependency-inventory.json",
+  "inventory_sha256": "ff447a508d16f12fb17608cb47001e405a8b4e5cbf677f33ce960f0938ad112f",
+  "lock_payload_sha256": "430b3583406b533930f17fd4b119f352e0554aeaaf1ce7d7f97ded07adb1624a",
+  "outcome": {
+    "decision": "freeze_negative_V102r1_PRESTO_context_source_feasibility",
+    "inventory_summary": {
+      "candidate_index_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "contains_input_target_argument_context_tokens_seeded_values_or_prompts": false,
+      "dependency_source_kind_count": 0,
+      "dependency_source_kind_counts": {},
+      "development_test_identifiers_are_disjoint": true,
+      "eligible_candidate_count": 0,
+      "en_us_human_context_record_counts": {
+        "dev": 3665,
+        "test": 8614
+      },
+      "ignored_non_string_optional_context_leaf_count": 39035,
+      "pairs_share_source_id_input_and_target_by_construction": true,
+      "previous_turn_dependent_candidate_count": 0,
+      "role_candidate_counts": {},
+      "seeded_state_dependent_candidate_count": 0,
+      "semantic_root_function_count": 0,
+      "source_member_record_counts": {
+        "presto_dev.jsonl": 82547,
+        "presto_test.jsonl": 194118
+      },
+      "source_record_count": 276665,
+      "source_split_record_counts": {
+        "dev": 82547,
+        "test": 194118
+      },
+      "synthetic_context_candidate_count": 0
+    },
+    "passed": true,
+    "scientific_source_feasibility_passed": false
+  },
+  "result": "outputs/v102r1-presto-context-source/source-inventory/result.json",
+  "result_sha256": "ba79c89298125e9a988dbe809d8bece0d9c213bcabf223c03a6407849c31663a",
+  "results_document": "docs/v102r1-presto-context-source-results.md",
+  "results_document_sha256": "674be1ea5f55094f5522c1ad8be55cb16356e84f527495d90d93a619adbc1f7e",
+  "schema_version": "102r1-presto-context-source-outcome-lock",
+  "source_archive": "outputs/v102r1-presto-context-source/source/presto_v1.zip",
+  "source_archive_payload_sha256": "1fc671692cceb31fbda17e351e47f2cc52ee8779042f92dc26674cc0cca2167f",
+  "source_archive_sha256": "1fc671692cceb31fbda17e351e47f2cc52ee8779042f92dc26674cc0cca2167f",
+  "source_lock": "configs/v102r1-presto-context-source-lock.json",
+  "source_lock_sha256": "9552e804f7370c73a7d5d3c21880187c3dfb6d2afa9334bfa9126bdaaf6f83b4",
+  "verifier": "python/verify_and_freeze_v102r1_presto_source_outcome.py",
+  "verifier_sha256": "342ce79de8d4af55ffc46a6a3475527d0444884157e1e8d39abb22f107262f52"
+}

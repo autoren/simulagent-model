@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "105-open-world-interface-design",
+  "experiment": "v105_massive_typed_open_world_non_authoritative_interface",
+  "parentLanguageOutcomeLock": "configs/v104-massive-language-extraction-outcome-lock.json",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+  "selectedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+  "selectedPopulationSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "visibleScenarios": ["calendar", "iot", "recommendation"],
+  "visibleDeclaredIntents": [
+    "calendar::calendar_remove", "calendar::calendar_set", "iot::iot_cleaning",
+    "iot::iot_coffee", "iot::iot_hue_lightchange", "iot::iot_hue_lightdim",
+    "iot::iot_hue_lightup", "iot::iot_wemo_off", "iot::iot_wemo_on",
+    "recommendation::recommendation_events", "recommendation::recommendation_locations",
+    "recommendation::recommendation_movies"
+  ],
+  "hiddenGroundTruthMustNotAppearInVisibleCatalog": [
+    "calendar::calendar_query", "iot::iot_hue_lightoff", "email"
+  ],
+  "responseContract": {
+    "requiredKeys": ["status", "known_intent", "novel_scenario", "confidence"],
+    "allowedStatuses": ["KNOWN", "NOVEL", "UNSUPPORTED", "ABSTAIN"],
+    "confidenceMinimum": 0.0,
+    "confidenceMaximum": 1.0,
+    "knownStatusRequiresDeclaredKnownIntent": true,
+    "novelStatusRequiresVisibleScenario": true,
+    "unsupportedAndAbstainRequireNullIntentAndScenario": true,
+    "extraKeysAllowed": false,
+    "invalidResponseFallback": {
+      "status": "ABSTAIN", "known_intent": null, "novel_scenario": null, "confidence": 0.0
+    }
+  },
+  "promptContract": {
+    "includeNoDemonstrations": true,
+    "includeVisibleTypedCatalog": true,
+    "includeRawUtteranceOnlyWhenObservationAvailable": true,
+    "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]",
+    "instruction": "Classify the user request against the visible catalog. Use KNOWN only for one listed intent. Use NOVEL when the request is a plausible new capability inside one visible scenario but no listed intent matches. Use UNSUPPORTED when it belongs outside every visible scenario. Use ABSTAIN when evidence is insufficient. Return exactly one JSON object and no explanation."
+  },
+  "safeHypothesisUniverse": {
+    "declaredKnownHypothesisCount": 12,
+    "scenarioNovelHypothesisCount": 3,
+    "unsupportedHypothesisCount": 1,
+    "insufficientEvidenceHypothesisCount": 1,
+    "totalHypothesisCount": 17,
+    "LLMMayRankButNeverDeleteHypotheses": true,
+    "trueHypothesisRetentionIsDeterministicallyComplete": true
+  },
+  "controlledInsufficientEvidence": {
+    "construction": "same_frozen_record_identifier_with_observation_available_false_and_no_utterance_exposure",
+    "recordsPerRole": 64,
+    "selectionSalt": "simulagent-v105-controlled-missing-observation-v1",
+    "evidenceClaim": "controlled_missing_observation_intervention_only",
+    "naturalLanguageEvidenceClaimAllowed": false,
+    "deterministicRuntimeAction": "ABSTAIN_AND_ASK",
+    "modelInvocationRole": "shadow_only"
+  },
+  "authorityBoundary": {
+    "authoritativeStateIsImmutable": true,
+    "LLMDefinesCapabilities": false,
+    "LLMPrunesHypotheses": false,
+    "LLMUpdatesPosterior": false,
+    "LLMSelectsAction": false,
+    "LLMExecutesActionOrTool": false,
+    "invalidOrMissingOutputCanRemoveTrueHypothesis": false,
+    "realToolAndServiceAccess": false
+  },
+  "interfaceGates": {
+    "requiredVisibleScenarioCount": 3,
+    "requiredVisibleIntentCount": 12,
+    "minimumVisibleUniqueSlotTypeCount": 8,
+    "requiredSafeHypothesisCount": 17,
+    "requiredControlledInsufficientRecordsPerRole": 64,
+    "maximumHiddenOrUnsupportedSchemaLeakCount": 0,
+    "maximumSelectedDevelopmentLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "sourceArchiveReadCount": 0,
+    "selectedDevelopmentLanguageReadCount": 0,
+    "protectedTestLanguageReadCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEveryInterfaceGatePasses": "freeze catalog interface and controlled missing-observation identifiers, then preregister baselines metrics costs calibration and model",
+    "ifAnyInterfaceGateFails": "stop before selected language, baseline, or model access",
+    "passAuthorizesSelectedLanguageOrModelAccess": false,
+    "passAuthorizesAPITrainingPlanningOrExecution": false
+  }
+}

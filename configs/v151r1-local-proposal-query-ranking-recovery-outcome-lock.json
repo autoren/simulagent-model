@@ -1,0 +1,157 @@
+{
+  "access": "outputs/v151r1-local-proposal-query-ranking-recovery/model-recovery/access.json",
+  "access_sha256": "d6233dbd46fdc0cd0dedc8db3a68f5201f24874326f216f739ae42a59927dbb0",
+  "analysis_lock": "configs/v151r1-local-proposal-query-ranking-recovery-lock.json",
+  "analysis_lock_sha256": "95de4af6bf14b7304641ee11264b81672c24f49f4bd0de72cf408ca0c3a32595",
+  "audit": "outputs/v151r1-local-proposal-query-ranking-recovery/outcome-audit.json",
+  "audit_sha256": "833d4baec16adecd6fa3c6fa5308ed1af06437853a62918613a3f188b294777f",
+  "authorization": {
+    "modify_retry_rerun_reprompt_tune_threshold_fit_or_mine_V151r1": false,
+    "preregister_separate_V149_evaluation_realization": false,
+    "retain_as_project_authored_synthetic_development_evidence_only": true,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_or_open_V149_evaluation_before_separate_preregistration": false
+  },
+  "experiment": "v151r1_no_retry_recovery_of_interrupted_local_proposal_query_ranking",
+  "lock_payload_sha256": "2d8fb7bd9858c961b501c9e0cd2b417aefe92dcf4f3de80450baba18aee76ad8",
+  "outcome": {
+    "audit_pass": true,
+    "calibration_diagnostics": {
+      "calibration_bins": [
+        {
+          "accuracy": 0.0,
+          "count": 1,
+          "lower": 0.0,
+          "mean_confidence": 0.0,
+          "upper": 0.1
+        },
+        {
+          "accuracy": 0.36363636363636365,
+          "count": 11,
+          "lower": 0.8,
+          "mean_confidence": 0.85,
+          "upper": 0.9
+        },
+        {
+          "accuracy": 0.5,
+          "count": 84,
+          "lower": 0.9,
+          "mean_confidence": 0.9624999999999999,
+          "upper": 1.0
+        }
+      ],
+      "confidence_is_diagnostic_not_fitted_or_authoritative": true,
+      "risk_coverage": {
+        "0.5": {
+          "coverage": 0.9895833333333334,
+          "selective_accuracy": 0.4842105263157895
+        },
+        "0.7": {
+          "coverage": 0.9895833333333334,
+          "selective_accuracy": 0.4842105263157895
+        },
+        "0.9": {
+          "coverage": 0.875,
+          "selective_accuracy": 0.5
+        }
+      },
+      "self_reported_confidence_ECE_10_bin": 0.4604166666666666,
+      "self_reported_confidence_brier": 0.44941666666666663
+    },
+    "decision": "recovered_local_proposal_query_ranking_fails_development_gates_close_without_evaluation_or_tuning",
+    "metrics": {
+      "actual_execution_count": 0,
+      "ambiguity_sensitivity": 0.5,
+      "authoritative_true_hypothesis_retention": 1.0,
+      "candidate_attracted_fraction_of_semantic_errors": 0.84,
+      "compatible_set_exact_accuracy": 0.5729166666666666,
+      "compatible_state_retention": 0.84375,
+      "decidable_specificity": 0.4722222222222222,
+      "decidable_top1_accuracy": 0.8055555555555556,
+      "false_known_after_trusted_answer": 0.0,
+      "false_known_singleton_rate_on_nonknown_truth": 0.041666666666666664,
+      "final_exact_accuracy_after_trusted_answer": 1.0,
+      "fixture_count": 96,
+      "group_count": 24,
+      "irrelevant_query_intermediate_count": 21,
+      "irrelevant_query_intermediate_fail_closed_rate": 1.0,
+      "language_class_metrics": {
+        "insufficient_evidence": {
+          "compatible_set_exact_accuracy": 0.5,
+          "compatible_state_retention": 0.5,
+          "count": 24,
+          "query_top1_accuracy": 0.9583333333333334
+        },
+        "known_familiar": {
+          "compatible_set_exact_accuracy": 1.0,
+          "compatible_state_retention": 1.0,
+          "count": 24,
+          "query_top1_accuracy": 0.6666666666666666
+        },
+        "known_unfamiliar": {
+          "compatible_set_exact_accuracy": 0.6666666666666666,
+          "compatible_state_retention": 1.0,
+          "count": 24,
+          "query_top1_accuracy": 0.7083333333333334
+        },
+        "novel_candidate": {
+          "compatible_set_exact_accuracy": 0.0,
+          "compatible_state_retention": 0.8125,
+          "count": 16,
+          "query_top1_accuracy": 1.0
+        },
+        "unsupported": {
+          "compatible_set_exact_accuracy": 0.375,
+          "compatible_state_retention": 1.0,
+          "count": 8,
+          "query_top1_accuracy": 1.0
+        }
+      },
+      "mean_correct_query_rank": 1.1875,
+      "mean_generated_tokens": 94.0625,
+      "proposal_structural_validity": 0.9895833333333334,
+      "query_mean_reciprocal_rank": 0.9140625,
+      "query_top1_accuracy": 0.8333333333333334,
+      "safe_nonknown_after_trusted_answer": 1.0,
+      "sequential_episode_count": 120,
+      "sequential_improvement_over_no_query": 0.6475000000000001,
+      "sequential_mean_decision_cost": 0.3525,
+      "total_generation_seconds": 1292.3936138346326,
+      "validation_reason_counts": {
+        "technical_interruption_no_persisted_response": 1,
+        "valid_registered_proposal": 95
+      }
+    },
+    "passed": true,
+    "qualification_gates": {
+      "ambiguity_sensitivity": false,
+      "authoritative_retention": true,
+      "candidate_attraction": false,
+      "compatible_set_exact_accuracy": false,
+      "compatible_state_retention": false,
+      "decidable_specificity": false,
+      "decidable_top1_accuracy": false,
+      "every_language_class_compatible_state_retention": false,
+      "false_known_singleton": true,
+      "final_exact_after_trusted_answer": true,
+      "irrelevant_queries_fail_closed": true,
+      "mean_correct_query_rank": true,
+      "proposal_structural_validity": true,
+      "query_MRR": false,
+      "query_top1_accuracy": false,
+      "sequential_cost": true,
+      "sequential_improvement": true,
+      "zero_execution": true,
+      "zero_false_known_after_trusted_answer": true
+    },
+    "qualified": false,
+    "recovery_completed": true
+  },
+  "result": "outputs/v151r1-local-proposal-query-ranking-recovery/model-recovery/result.json",
+  "result_sha256": "33ce2e71dfc9d923bf2c659545c1f396c202e0b0dc890ee4e02f9c170113ee0b",
+  "results_document": "docs/v151r1-local-proposal-query-ranking-recovery-results.md",
+  "results_document_sha256": "bf898f1eb696f356b93a7291f927f4c5e9f92683f34373639be778549ffd9bc0",
+  "schema_version": "151r1-local-proposal-query-ranking-recovery-outcome-lock",
+  "verifier": "python/verify_and_freeze_v151r1_local_proposal_query_ranking_recovery_outcome.py",
+  "verifier_sha256": "4cc9313c20dae51fe150de76bc7e61820dbb7e7e80c66fc66c988ff3ce05bfdd"
+}

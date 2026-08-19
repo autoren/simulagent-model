@@ -1,0 +1,50 @@
+{
+  "V135_config": "configs/v135-controlled-open-world-minimal-pairs.json",
+  "V135_config_sha256": "a89d157ada33b0798a4f6cd227b8667f202e6c567242dfac14eb05df0984b2d7",
+  "V135_outcome": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+  "V135_outcome_sha256": "6fce0a5ec02f22209ad37fa0a7f0598da06631c75ee4a96b8da8b1e9c2b61ad2",
+  "V136_config": "configs/v136-controlled-clarification-value.json",
+  "V136_config_sha256": "d28e55668dc681406de53128a34ed970b9cd52c357b8f3674d3c6669a955e486",
+  "audit": "outputs/v141-two-stage-controller-feasibility/audit.json",
+  "audit_sha256": "5221124f77db214a99f9f1474996c42fc3a1d90c8f5737e70df259c2f2883793",
+  "authorization": {
+    "claim_same_model_stage_independence": false,
+    "design_fresh_bounded_finalizer_evidence_certificate_interface_and_population": true,
+    "rerun_mine_or_modify_V139": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_language_or_model": false,
+    "touch_V134_or_external_language": false
+  },
+  "choice_catalog": "outputs/v135-controlled-open-world-minimal-pairs/design/choice-catalog.json",
+  "choice_catalog_sha256": "5631a31834cf1a97a8fe645110aad45a2e984163f8afbd56efa4e052cfbe786e",
+  "config": "configs/v141-two-stage-controller-feasibility.json",
+  "config_sha256": "0a61a97f595874a861a939410b5bec74eb476656e31b706dc08828f43de4da34",
+  "experiment": "v141_model_free_correlated_two_stage_controller_feasibility",
+  "lock_payload_sha256": "e2770656eefaf9554abe64e202999b8ba141cfdc583dc62bc107f1cafb2f85a4",
+  "outcome": {
+    "candidate_attraction_certified": false,
+    "decision": "freeze_robust_two_stage_envelope_authorize_fresh_interface_and_population_design_only",
+    "individual_thresholds": {
+      "ambiguity_sensitivity": 0.98,
+      "decidable_specificity": 0.985,
+      "finalizer_validity": 0.99,
+      "proposal_correctness": 0.985
+    },
+    "passed": true,
+    "robust_two_stage_envelope_feasible": true,
+    "symmetric_marginal_reliability_threshold": 0.99
+  },
+  "parent_outcome": "configs/v140-thinking-qualification-gap-outcome-lock.json",
+  "parent_outcome_sha256": "159182688c2a6c1a4c05a15ded0f49862227edb785dca5e48fba7c4a2bced8c9",
+  "plan": "docs/v141-two-stage-controller-feasibility-plan.md",
+  "plan_sha256": "4c9e25a23adb9f0cb2540b9fc4fd02181ee8dd14e62a21a7d8941896cf04f6ed",
+  "protocol": "python/v141_two_stage_controller_feasibility.py",
+  "protocol_sha256": "d5bc2f20888731b03241d1c543eeaa454cf6d269edc4d920cbe3df5000636ff5",
+  "results_document": "docs/v141-two-stage-controller-feasibility-results.md",
+  "results_document_sha256": "3731b1b1922b5770a7066eff6d8aed43f464d46792ea448814c28c2cd45269b2",
+  "runner": "python/run_and_freeze_v141_two_stage_controller_feasibility.py",
+  "runner_sha256": "b2b083ec3e19a7b47560d433383c6d3a906cc91af2b3280e46cd35e7563bad20",
+  "schema_version": "141-two-stage-controller-feasibility-outcome-lock",
+  "tests": "python/test_v141_two_stage_controller_feasibility.py",
+  "tests_sha256": "152b48ead8c5d3791a15916d6d0d324c6c5a1f06680ef8f315ffe4e1397caf6d"
+}

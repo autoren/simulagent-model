@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "123-fresh-population-availability-audit-design",
+  "experiment": "v123_text_free_massive_fresh_population_availability_audit",
+  "parentV122OutcomeLock": "configs/v122-prequery-signal-inventory-outcome-lock.json",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "excludedPopulations": [
+    "outputs/v101-massive-population/population/selected-population.json",
+    "outputs/v112-open-world-full-policy-transfer/design/fresh-population.json",
+    "outputs/v114-rescued-policy-transfer/design/fresh-population.json",
+    "outputs/v115-contrastive-catalog-fit/design/fresh-population.json"
+  ],
+  "claimBoundary": "text-free aggregate availability of a genuinely unused MASSIVE test population; not a language, signal, trigger, model, or utility evaluation",
+  "candidateRequirement": {
+    "sourcePartition": "test",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "minimumRecordCountPerClass": 32,
+    "minimumNovelValidScenarioCoverage": 2,
+    "excludeEveryPriorAndProtectedIdentifier": true
+  },
+  "outcomeGates": {
+    "requireExactRemainingCounts": {
+      "known_familiar": 38,
+      "known_unfamiliar": 186,
+      "novel_valid": 9,
+      "unsupported": 111
+    },
+    "requiredMaximumBalancedRecordCountPerClass": 9,
+    "requiredRemainingNovelScenarioCoverage": 1,
+    "requireCandidateRequirementFailure": true,
+    "maximumIndividualCandidateEmissionCount": 0,
+    "maximumLanguageReadCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifAllOutcomeAndAccessGatesPass": "massive_unused_pool_insufficient_for_fresh_paired_transfer_require_external_source",
+    "otherwise": "fresh_population_availability_inconclusive_keep_evaluation_closed",
+    "passAuthorizesOnlyExternalControlledOpenSetSourceFeasibilityAudit": true,
+    "passAuthorizesShrinkReuseLanguageSignalTriggerOrModelEvaluation": false,
+    "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+  }
+}

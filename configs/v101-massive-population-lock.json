@@ -1,0 +1,114 @@
+{
+  "auditor": "python/audit_and_freeze_v101_population.py",
+  "auditor_sha256": "3a2f969b52196aec15c97b44a6cb6c2b457c1d9c33ae16bb48047ee4df11de5f",
+  "authorization": {
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "manually_inspect_language": false,
+    "modify_salt_quotas_roles_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "reopen_source_archive_or_extract_selected_language": false,
+    "select_and_emit_text_free_population_once": true,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "config": "configs/v101-massive-population.json",
+  "config_payload": {
+    "decisionRule": {
+      "ifAnyPopulationGateFails": "stop before language extraction, population changes, model access, or gate changes",
+      "ifEveryPopulationGatePasses": "freeze development and protected-test identifiers and authorize a separate selected-language extraction design",
+      "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false,
+      "passAuthorizesImmediateLanguageExtraction": false,
+      "passAuthorizesModelInference": false
+    },
+    "experiment": "v101_massive_hash_selected_open_set_population",
+    "parentSourceOutcomeLock": "configs/v100-massive-source-outcome-lock.json",
+    "populationGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceArchiveReopenCount": 0,
+      "maximumTrainPartitionCandidateCount": 0,
+      "minimumIntentCoveragePerClass": {
+        "known_familiar": 6,
+        "known_unfamiliar": 8,
+        "novel_valid": 2,
+        "unsupported": 4
+      },
+      "requireDevelopmentTestIdentifierDisjointness": true,
+      "requiredCandidateCountPerClassPerSplit": 64,
+      "requiredCandidateCountPerSplit": 256,
+      "requiredKnownScenarioCoverage": 3,
+      "requiredNovelScenarioCoverage": 2,
+      "requiredTotalCandidateCount": 512,
+      "requiredUnsupportedScenarioCoverage": 1
+    },
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "individualCandidateIdentifierInspectionCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "selectedLanguageRecordExtractionCount": 0,
+      "sourceArchiveReopenCount": 0,
+      "textFreeCandidateIndexAggregateInspectionCount": 1
+    },
+    "requiredClasses": [
+      "known_familiar",
+      "known_unfamiliar",
+      "novel_valid",
+      "unsupported"
+    ],
+    "schemaVersion": "101-massive-population-design",
+    "selection": {
+      "baseSalt": "simulagent-v101-massive-population-v1",
+      "hashSelectionUsesOnlyCandidateIdentifierClassSplitAndScenario": true,
+      "roles": {
+        "development": {
+          "languageAccessAfterOutcomeLock": "automatic_selected_record_extraction_only",
+          "sourcePartition": "validation"
+        },
+        "protected_test": {
+          "languageAccessAfterOutcomeLock": "only_after_prompt_controls_metrics_and_gates_lock",
+          "sourcePartition": "test"
+        }
+      },
+      "scenarioMinimumPerClass": {
+        "known_familiar": 12,
+        "known_unfamiliar": 12,
+        "novel_valid": 16,
+        "unsupported": 0
+      },
+      "selectedCandidateCountPerClassPerSplit": 64,
+      "selectionBeforeAnySelectedLanguageExtraction": true
+    },
+    "sourceCandidateIndexSha256": "d436b27715aa3daa6d03116428d41a401c51a5a051792fdf5673aea107c9b46f",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+    "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6"
+  },
+  "config_sha256": "fda537a46febb7ccc6c2f29db0a9171a0c63a140c65b98ac0a60e5c1ec25b5bf",
+  "design_audit": "outputs/v101-massive-population/population-design-audit.json",
+  "design_audit_sha256": "0aa7c32aa711c3820e20c203b219e3c95e90133d53a14774c79e22f4ded442f7",
+  "experiment": "v101_massive_population_lock",
+  "lock_payload_sha256": "289c74332cfade9fc655f26921b594051f59e66e5f150d4e17569b7f3be5202e",
+  "parent_source_outcome": "configs/v100-massive-source-outcome-lock.json",
+  "parent_source_outcome_sha256": "8a39a298da37891dd1d2654e475aec92789e282a60579a1362590ebd08fe51ab",
+  "plan": "docs/v101-massive-population-plan.md",
+  "plan_sha256": "5dc28db8f905f89a64db34dc4af927591211f281d3a6ba6e050a19bb8fa22592",
+  "protocol": "python/v101_massive_population.py",
+  "protocol_sha256": "fbd68da96233b4265f103d2af78884b46eb3dd997ec6c8dc0a763944493f8ca2",
+  "runner": "python/run_v101_population_selection.py",
+  "runner_sha256": "a6142a0718677fa918e70d4f697df2d1ba657a8c0a9eddf7ef350840468241b7",
+  "schema_version": "101-massive-population-lock",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "tests": "python/test_v101_massive_population.py",
+  "tests_sha256": "5149c5fbc03b67d3fa1f2f7c907dacfe0d50c0050d839191c5c9229b6d86d30d",
+  "verifier": "python/verify_and_freeze_v101_population_outcome.py",
+  "verifier_sha256": "7e3608231bd70d084f0dec74e54200450ce7d1ebe37b2aa6faf0b1eae49979fb"
+}

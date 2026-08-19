@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "88-external-intent-candidate-design",
+  "experiment": "v88_sealed_external_human_language_local_candidate_shadow",
+  "purpose": "test whether the frozen local model can map independently authored SGD dialogue context into a small typed intent-and-state-key candidate set while retaining NONE and no authority",
+  "parentOutcomeLock": "configs/v87-external-language-source-outcome-lock.json",
+  "source": {
+    "dataset": "Schema-Guided Dialogue Dataset",
+    "revision": "e852981ae34990f4358979625854259302feaa78",
+    "license": "CC-BY-SA-4.0",
+    "inventorySha256": "ebdb2204bf437782fe6d4a4af8f6489905f1363cc00cd56289255a0f7446f2a2",
+    "manualUtteranceInspectionBeforeCorpusSeal": false
+  },
+  "population": {
+    "recordCount": 48,
+    "selectionSalt": "simulagent-v88-external-shadow-v1",
+    "selectionOrder": "ascending SHA-256 of selectionSalt, stratum ID, and canonical record ID",
+    "strata": [
+      {"service": "Flights_3", "activeIntent": "SearchOnewayFlight", "count": 4},
+      {"service": "Flights_3", "activeIntent": "SearchRoundtripFlights", "count": 4},
+      {"service": "Restaurants_2", "activeIntent": "ReserveRestaurant", "count": 8},
+      {"service": "RideSharing_1", "activeIntent": "GetRide", "count": 8},
+      {"service": "Flights_3", "activeIntent": "NONE", "count": 11},
+      {"service": "Restaurants_2", "activeIntent": "NONE", "count": 10},
+      {"service": "RideSharing_1", "activeIntent": "NONE", "count": 3}
+    ],
+    "futureRecordUse": "all selected records are evaluation-only; no prompt tuning, few-shot examples, or training",
+    "selectionBeforeUtteranceExtraction": true
+  },
+  "inputContract": {
+    "dialogueContext": "all source turns from dialogue start through the selected USER turn",
+    "targetService": "the single selected frame service",
+    "schemaContext": [
+      "service name and description",
+      "all service intent identifiers and descriptions",
+      "all service slot identifiers and descriptions"
+    ],
+    "sourceLanguageMayNotBeSentToAPI": true,
+    "sourceLanguageMayNotBePrintedByBuilderOrRunner": true
+  },
+  "outputContract": {
+    "exactKeys": ["intent_candidates", "state_slot_key_candidates"],
+    "intentCandidates": "unique non-empty list drawn only from target service intent identifiers plus NONE; NONE is mandatory",
+    "stateSlotKeyCandidates": "unique list drawn only from target service slot identifiers",
+    "goldIntentCandidateSet": "NONE only when active_intent is NONE; otherwise active_intent plus NONE",
+    "goldStateSlotKeySet": "the accumulated frame.state.slot_values keys at the selected turn",
+    "permanentlyNonDeployable": true,
+    "mayNotEmitValuesActionsToolCallsOrFreeText": true
+  },
+  "model": {
+    "provider": "local_mlx",
+    "repository": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "adapterPath": null,
+    "frozen": true,
+    "APIRequired": false
+  },
+  "decoding": {
+    "enableThinking": false,
+    "temperature": 0.0,
+    "maximumNewTokens": 160,
+    "maximumPromptTokens": 8192,
+    "samplesPerRecord": 1,
+    "retryOnMalformedOutput": false
+  },
+  "systemPrompt": "You are an offline semantic candidate proposer. Your output is permanently non-deployable and cannot select an action or call a service. Infer the current typed state for the target service from the complete dialogue history and the supplied schema. Return exactly one JSON object with exactly two keys: intent_candidates and state_slot_key_candidates. intent_candidates must be a unique non-empty JSON list using only the supplied intent identifiers or NONE, and must always include NONE as an operational none-of-the-above candidate. Include the smallest set of currently plausible active intents; when no supplied intent is active, return only NONE. state_slot_key_candidates must be a unique JSON list using only supplied slot identifiers; include every slot whose current accumulated value is supported by the dialogue, but never emit a slot value. Do not emit prose, Markdown, actions, service calls, arguments, values, confidence scores, or additional keys.",
+  "userPromptTemplate": "Target service: {service_name}\nService description: {service_description}\nAllowed intent identifiers and descriptions:\n{intent_lines}\nAllowed slot identifiers and descriptions:\n{slot_lines}\nDialogue history through the current USER turn:\n{dialogue_history}\nReturn the exact JSON object now.",
+  "controls": {
+    "exhaustiveEnumeration": "all service intents plus NONE and all service slots",
+    "noneOnly": "intent_candidates is NONE only and state_slot_key_candidates is empty",
+    "emptyStateWithGoldIntentOracle": "gold intent candidate set with no state slot keys",
+    "oracleTypedTarget": "exact registered gold candidate sets"
+  },
+  "gates": {
+    "requiredRecordCount": 48,
+    "requiredServiceCount": 3,
+    "requiredActiveIntentLabelCount": 4,
+    "requiredNoneRecordCount": 24,
+    "minimumExactJSONParseRate": 1.0,
+    "minimumOntologyConformanceRate": 1.0,
+    "minimumMandatoryNoneInclusionRate": 1.0,
+    "minimumPermanentNonDeployableRate": 1.0,
+    "minimumGoldActiveIntentCoverageRate": 0.9,
+    "minimumIntentCandidateSetExactRate": 0.7,
+    "minimumNoneOnlyIntentExactRate": 0.75,
+    "minimumPerServiceIntentCandidateRecallRate": 0.75,
+    "minimumStateSlotKeyRecallRate": 0.75,
+    "minimumStateSlotKeyExactRate": 0.5,
+    "minimumIntentExactImprovementOverExhaustive": 0.2,
+    "maximumMeanIntentCandidateCount": 2.0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 48,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze positive human-language shadow evidence and authorize preregistration of a bounded posterior integration study; do not deploy or execute",
+    "ifAnyGateFails": "freeze V88 negative without prompt edits, record replacement, threshold changes, retries, API fallback, or rerun",
+    "passAuthorizesAPIAccess": false,
+    "passAuthorizesAdapterTraining": false,
+    "passAuthorizesDirectActionOrExecution": false,
+    "passAuthorizesHumanLanguageDeployment": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "selectAndSealCorpus": false,
+    "extractSelectedUtterancesByCode": false,
+    "inspectUtterancesManually": false,
+    "implementAndAuditRunner": false,
+    "runLocalModel": false,
+    "runAPIModel": false,
+    "trainAdapter": false,
+    "performRealServiceCall": false,
+    "performExternalSideEffect": false
+  }
+}

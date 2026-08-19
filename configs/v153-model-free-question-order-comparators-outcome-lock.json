@@ -1,0 +1,109 @@
+{
+  "audit": "outputs/v153-model-free-question-order-comparators/audit.json",
+  "audit_sha256": "c2dcbd96c742fa1e4308ca0828f9566032f6f8da3328604a2b0bb58a29cfc8cf",
+  "authorization": {
+    "add_candidate_state_proposal_or_pruning": false,
+    "compare_reasoning_conditions_before_separate_preregistration": false,
+    "design_local_development_question_order_protocol": true,
+    "fit_calibration_thresholds_or_mine_future_results": false,
+    "open_or_score_V152_evaluation_split": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_language_or_model_before_separate_preregistration": false
+  },
+  "config": "configs/v153-model-free-question-order-comparators.json",
+  "config_sha256": "4c4d6a442af06d298beb2626b3a5a330c4121e5bf53a7a3e766ea4e57fc51a2f",
+  "experiment": "v153_model_free_question_order_comparator_policy",
+  "hidden_fixtures": "outputs/v152-fresh-question-order-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "8269f8a4d91b40e7ed9188aa39543210ed83d0017e46c6c1c6793b52762d5854",
+  "interaction_catalog": "outputs/v152-fresh-question-order-population/design/interaction-catalog.json",
+  "interaction_catalog_sha256": "bd2df81e8f3875fbaa98f7399ad659bcfe527e8b81b1ad506065d35c92a4be49",
+  "lock_payload_sha256": "68b7a5a730c42132548f742975d09991165483a49ec2ee4ab4bca2c1dd1c4ce5",
+  "outcome": {
+    "candidate_proposal_field_count": 0,
+    "decision": "freeze_question_order_comparators_authorize_local_question_order_protocol_design_only",
+    "episode_count": 120,
+    "metrics": {
+      "NO_QUERY": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 0.0,
+        "improvement_over_no_query": 0.0,
+        "irrelevant_query_fail_closed_rate": 1.0,
+        "irrelevant_query_intermediate_count": 0,
+        "mean_correct_query_rank": null,
+        "mean_decision_cost": 1.0,
+        "rank_counts": {}
+      },
+      "ORACLE_ORDER": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "improvement_over_no_query": 0.7,
+        "irrelevant_query_fail_closed_rate": 1.0,
+        "irrelevant_query_intermediate_count": 0,
+        "mean_correct_query_rank": 1.0,
+        "mean_decision_cost": 0.3,
+        "rank_counts": {
+          "1": 120
+        }
+      },
+      "SEEDED_RANDOM": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "improvement_over_no_query": -0.049999999999999954,
+        "irrelevant_query_fail_closed_rate": 1.0,
+        "irrelevant_query_intermediate_count": 300,
+        "mean_correct_query_rank": 3.5,
+        "mean_decision_cost": 1.05,
+        "rank_counts": {
+          "1": 21,
+          "2": 19,
+          "3": 18,
+          "4": 21,
+          "5": 23,
+          "6": 18
+        }
+      },
+      "SOURCE_ORDER": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "improvement_over_no_query": -0.049999999999999954,
+        "irrelevant_query_fail_closed_rate": 1.0,
+        "irrelevant_query_intermediate_count": 300,
+        "mean_correct_query_rank": 3.5,
+        "mean_decision_cost": 1.05,
+        "rank_counts": {
+          "1": 20,
+          "2": 20,
+          "3": 20,
+          "4": 20,
+          "5": 20,
+          "6": 20
+        }
+      }
+    },
+    "passed": true,
+    "question_order_comparators_feasible": true
+  },
+  "parent_outcome": "configs/v152-fresh-question-order-population-outcome-lock.json",
+  "parent_outcome_sha256": "fa8f17bd177c8573d55decb934377e0f5d4a2592abd3deff8bead230b2aae51c",
+  "plan": "docs/v153-model-free-question-order-comparators-plan.md",
+  "plan_sha256": "002fa8cd62ffe6838758c7790b349a52213f19c1d9f028a25e0b13b7ffd8c5df",
+  "protocol": "python/v153_model_free_question_order_comparators.py",
+  "protocol_sha256": "51fffda8854ea29332b48d27c0881d44a3770c9dab27c9985440120c620e22ae",
+  "results_document": "docs/v153-model-free-question-order-comparators-results.md",
+  "results_document_sha256": "2de72d23a4ea89a08ab6fd0a6471248ec34b816036d2e8be4b8370ac9b5b4056",
+  "runner": "python/run_and_freeze_v153_model_free_question_order_comparators.py",
+  "runner_sha256": "2fc81fa8a98d17e28327f3dfe18f26ab871b0e5011cb7deb7cdbdc82cedab505",
+  "schema_version": "153-model-free-question-order-comparators-outcome-lock",
+  "tests": "python/test_v153_model_free_question_order_comparators.py",
+  "tests_sha256": "2458da76a7db427e1baa9ec2bbbb69b042502b41937f305d6544b9bd127727ca",
+  "witness_config": "configs/v152-fresh-question-order-population.json",
+  "witness_config_sha256": "6400566a01e89028cb26122418bc2c0a7eb039cdfa0cf240f60c962ea1a68742"
+}

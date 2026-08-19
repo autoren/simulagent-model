@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "79-terminal-utility-resource-budget",
+  "registeredFixtureCount": 4,
+  "registeredHypothesisCount": 5,
+  "registeredActionCount": 13,
+  "registeredObservationCount": 14,
+  "registeredStateCount": 2,
+  "registeredHorizon": 3,
+  "maximumDenseKernelBytesPerFixture": 20000,
+  "maximumConservativeBellmanNodeBoundPerFixture": 6100000,
+  "requiredOpenLoopSequenceCountPerFixture": 2197,
+  "minimumDurableRawFixtureArtifactCountOnCompletedCensus": 4,
+  "maximumModelForwardPassCount": 0,
+  "maximumAPICallCount": 0,
+  "maximumAdapterTrainingRunCount": 0,
+  "maximumHumanRecordAccessCount": 0,
+  "maximumRealToolCallCount": 0,
+  "maximumExternalSideEffectCount": 0
+}

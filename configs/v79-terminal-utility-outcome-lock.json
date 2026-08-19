@@ -1,0 +1,41 @@
+{
+  "audit": "outputs/v79-structured-llm-interface/outcome-audit.json",
+  "audit_sha256": "0365e523004875e3ed1fa584f131271f7a77b808c5aaaed8fcef2c65875523a6",
+  "authorization": {
+    "access_local_or_API_model": false,
+    "claim_V79_as_LLM_language_human_or_safety_evidence": false,
+    "modify_or_rerun_V79": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "preregister_frozen_local_model_candidate_generation_protocol": true,
+    "run_model_forward_pass_before_protocol_lock": false,
+    "train_adapter_or_learn_likelihoods": false
+  },
+  "decision": "freeze_V79_and_authorize_frozen_local_model_protocol_preregistration_only",
+  "experiment": "v79_model_free_terminal_utility_outcome_lock",
+  "implementation_lock": "configs/v79-terminal-utility-implementation-lock.json",
+  "implementation_lock_sha256": "7646eaeae3fab0734926fb58a29a539765384205bcccab56861445b6466f2d9e",
+  "lock_payload_sha256": "5afa7efdda7cb9e4ac7f37b6968726df9a493f60f9814690a13b2c256b05d2fb",
+  "raw_fixture_artifacts": [
+    {
+      "path": "outputs/v79-structured-llm-interface/model-free-evaluation/raw-fixtures/000-ambiguous_tool_intent.json",
+      "sha256": "3d07840770604d74cb714cc49e86721f537715ed181216daf7d8a5d8d393c9f5"
+    },
+    {
+      "path": "outputs/v79-structured-llm-interface/model-free-evaluation/raw-fixtures/001-clear_tool_intent.json",
+      "sha256": "e0c6da7e967ea56d1af5edca0654ced6278661dc060b02bd77005618f5d5c12f"
+    },
+    {
+      "path": "outputs/v79-structured-llm-interface/model-free-evaluation/raw-fixtures/002-unknown_heavy_tool_intent.json",
+      "sha256": "70be87dac9e3c0323919e215de5976215b5a6c8d0cfddfea831440ac89604950"
+    },
+    {
+      "path": "outputs/v79-structured-llm-interface/model-free-evaluation/raw-fixtures/003-dominant_safe_preview.json",
+      "sha256": "c5152534909e270536846f3223194e01408e5f269229e27b47605c4b308413bb"
+    }
+  ],
+  "result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json",
+  "result_sha256": "b20f89129eafe9131feac2276fa1f342a49e0fb6143713d842abdb9b682ed8e8",
+  "schema_version": "79-terminal-utility-outcome-lock",
+  "verifier": "python/verify_and_freeze_v79_terminal_utility_outcome.py",
+  "verifier_sha256": "ad12eceada068fbd43e2a4bdc63b52cb79402c3c397384270a28f454881ae3e2"
+}

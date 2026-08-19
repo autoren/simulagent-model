@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "132-local-complete-answer-realization-design",
+  "experiment": "v132_pinned_local_model_complete_clarification_answer_realization",
+  "parentV131OutcomeLock": "configs/v131-complete-clarification-realization-population-outcome-lock.json",
+  "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "choiceCatalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+  "fixturePopulation": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "V130Config": "configs/v130-clarification-evidence-strength.json",
+  "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+  "claimBoundary": "one-pass definition-conditioned realization evidence from record-disjoint SGD current-turn language using one pinned local model; not a human clarification study, unrestricted open-world understanding, independent replication, capability induction, deployment safety, authority, or execution",
+  "extraction": {
+    "archiveRevision": "e852981ae34990f4358979625854259302feaa78",
+    "sourcePartition": "test",
+    "expectedSelectedLanguageRecordCount": 240,
+    "expectedMissingControlCount": 24,
+    "persistSelectedLanguage": true,
+    "maximumUnselectedLanguageRecordCount": 0,
+    "useCurrentUserTurnOnly": true,
+    "useDialogueHistory": false,
+    "useSlotValues": false,
+    "knownChoiceDefinitionsFromTrainSchema": true,
+    "hideNovelMemberIntentIdentifiers": true,
+    "hideGroundTruthClassServiceIntentAndDomainFromPrompt": true
+  },
+  "condition": {
+    "id": "qwen38_27b_4bit_v132_complete_answer",
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "observedFixtureCount": 240,
+    "controlledMissingObservationCount": 24,
+    "totalFixtureCount": 264,
+    "modelLoadLimit": 1,
+    "generationCountPerFixture": 1,
+    "totalGenerationCount": 264,
+    "retryCount": 0
+  },
+  "completeAnswerInterface": {
+    "answerSet": "the exact eleven frozen V131 choice identifiers",
+    "outputKeys": ["choice_id"],
+    "acceptAliases": false,
+    "extraKeysAllowed": false,
+    "invalidOutputMapsTo": "A00",
+    "completeChoiceMenuShown": true,
+    "preliminaryKnownCandidateShownAndExplicitlyFallible": true,
+    "novelChoicesExposeOnlyDomainAndUndeclaredMeaning": true,
+    "knownChoicesExposeFrozenSourceSchemaDefinition": true,
+    "modelMayNotAddRemoveDefineOrExecuteCapability": true
+  },
+  "prompt": {
+    "system": "You are an offline, non-authoritative source of one semantic clarification answer. The preliminary candidate may be wrong. Select exactly one supplied choice identifier. Never invent, register, remove, call, or execute a capability. Return exactly the required JSON object and no explanation.",
+    "demonstrationCount": 0,
+    "maximumPromptTokens": 4096,
+    "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]"
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "maximumNewTokens": 32,
+    "samplesPerPrompt": 1,
+    "retryOnMalformedOutput": false,
+    "enableThinking": false
+  },
+  "evidenceGates": {
+    "minimumStructuredResponseValidity": 0.99,
+    "minimumOverallExactChoiceAccuracy": 0.9725,
+    "minimumOneSided95WilsonLowerBound": 0.95,
+    "minimumEveryTruthChoiceAccuracy": 0.95,
+    "minimumKnownExactChoiceAccuracy": 0.9725,
+    "minimumNovelCompositeAccuracy": 0.95,
+    "minimumUnsupportedAccuracy": 0.95,
+    "minimumMissingObservationAccuracy": 0.95,
+    "maximumCandidateAttractedFractionOfErrors": 0.75,
+    "maximumAbstentionAttractedFractionOfErrors": 0.75,
+    "maximumFalseKnownAnswerRateOnNonKnownTruths": 0.10
+  },
+  "downstreamGates": {
+    "answerReliabilityUsedByFrozenPlanner": 0.9725,
+    "assumedErrorRegimes": ["symmetric", "candidate_attraction", "abstention_attraction"],
+    "maximumMeanRegretEveryPriorAndAssumedRegime": 1.1666666666666667,
+    "minimumKnownExactEveryPriorAndAssumedRegime": 0.8,
+    "minimumUnsupportedEveryPriorAndAssumedRegime": 0.8,
+    "maximumFalseKnownEveryPriorAndAssumedRegime": 0.1,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumSourceArchiveReadCount": 1,
+    "maximumAutomaticSelectedLanguageParseCount": 1,
+    "maximumPersistedSelectedLanguageRecordCount": 240,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumOriginalProtectedLanguageReadCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 264,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "modelIsPermanentlyNonAuthoritativeEvidenceOnly": true,
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "authoritativeStatePosteriorCapabilitiesAndPolicyAreImmutable": true,
+    "allActionsAreCounterfactualShadowActions": true,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEvidenceDownstreamAndAccessGatesPass": "local_complete_answer_realizes_V130_boundary_seek_independent_external_confirmation_only",
+    "otherwise": "local_complete_answer_does_not_realize_V130_boundary_close_one_pass_local_realization_branch",
+    "passAuthorizesIndependentExternalConfirmationDesignOnly": true,
+    "passAuthorizesHumanEquivalenceOrRepeatedSampleIndependenceClaim": false,
+    "passAuthorizesProtectedInductionRicherPlanningAPITrainingActionOrExecution": false
+  }
+}

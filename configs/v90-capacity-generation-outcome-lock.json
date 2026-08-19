@@ -1,0 +1,1169 @@
+{
+  "analyzer": "python/analyze_v90_capacity_generation.py",
+  "analyzer_sha256": "a4558316406eeeaa5efc1b5e307c6eecff5beb2c7ef9f8cf45904ab9422603a3",
+  "audit": "outputs/v90-capacity-generation/outcome-audit.json",
+  "audit_sha256": "f48a1a34ff2a3c0915941560e691dbad09a4101581014ff4abf385d812e52179",
+  "authorization": {
+    "adopt_any_27b_or_8bit_condition": false,
+    "construct_small_large_union_or_cascade": false,
+    "deploy_or_execute_any_model_output": false,
+    "grant_any_model_belief_or_action_authority": false,
+    "modify_or_rerun_V90": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "report_and_synthesize_frozen_results": true,
+    "retain_model_free_authoritative_boundary": true,
+    "retain_qwen35_4b_only_as_frozen_shadow_baseline": true,
+    "run_API_model_or_train_adapter_for_this_branch": false
+  },
+  "comparison_result": "outputs/v90-capacity-generation/comparison/result.json",
+  "comparison_result_sha256": "1e2d24702bacd66c18d9de7d59f94ddc506a162364b42e66239bdc6527a0db54",
+  "condition_results": {
+    "qwen35_27b_4bit": {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/result.json",
+      "sha256": "7ce4f8e6e6392d58f9c5dbe2f281d039607494434ebcc429d0aed2f3b4434bf1"
+    },
+    "qwen35_4b_4bit": {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/result.json",
+      "sha256": "9b24d10ca0bd582c9f6ebb888473eb48b468110cf825b17063455681da9648da"
+    },
+    "qwen38_27b_4bit": {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/result.json",
+      "sha256": "23de98b831476471c081fcf71af75daa2727fda521976519078bb219e34b6568"
+    },
+    "qwen38_27b_8bit": {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/result.json",
+      "sha256": "e7b39ad1831594410a592082694d6d4ef80206a95389c43ccc2bea707641f743"
+    }
+  },
+  "experiment": "v90_capacity_generation_outcome_lock",
+  "failed_outcome_audit_attempt": "outputs/v90-capacity-generation/outcome-audit-attempt-0.json",
+  "failed_outcome_audit_attempt_sha256": "221898b5cc7a6717eaf06966eec0823b111bcd47a713ff2ae48477b5ad9de03d",
+  "implementation_lock": "configs/v90-capacity-generation-implementation-lock.json",
+  "implementation_lock_sha256": "4145b410aa92725326c2a8ff41770998654a15da1badea26537555c2cd1ff652",
+  "lock_payload_sha256": "4889af6f15fecc2d0312497bf410f6a4299660d6f0d000e5a487ff1021ee357c",
+  "outcome": {
+    "access": {
+      "LLM_API_call_count": 0,
+      "adapter_training_run_count": 0,
+      "external_side_effect_count": 0,
+      "manual_utterance_inspection_count": 0,
+      "model_generation_count": 192,
+      "model_load_count": 4,
+      "real_service_call_count": 0
+    },
+    "combination_diagnostic_eligible": false,
+    "condition_summaries": {
+      "qwen35_27b_4bit": {
+        "access": {
+          "LLM_API_call_count": 0,
+          "adapter_training_run_count": 0,
+          "condition_id": "qwen35_27b_4bit",
+          "elapsed_seconds": 370.5755159170367,
+          "external_side_effect_count": 0,
+          "manual_utterance_inspection_count": 0,
+          "model_generation_count": 48,
+          "model_load_count": 1,
+          "model_load_seconds": 3.4769814999308437,
+          "peak_active_memory_bytes": 16735436376,
+          "real_service_call_count": 0,
+          "source_language_record_access_count": 48
+        },
+        "completed_condition": true,
+        "failed_quality_gates": [
+          "gold_active_intent_coverage",
+          "state_slot_key_exact"
+        ],
+        "metrics": {
+          "exact_JSON_parse_rate": 1.0,
+          "gold_active_intent_coverage_rate": 0.7916666666666666,
+          "intent_candidate_set_exact_rate": 0.8958333333333334,
+          "mandatory_NONE_inclusion_rate": 1.0,
+          "mean_intent_candidate_count": 1.4375,
+          "none_only_intent_exact_rate": 1.0,
+          "ontology_conformance_rate": 1.0,
+          "state_slot_key_exact_rate": 0.25,
+          "state_slot_key_recall": 0.7770833333333332
+        },
+        "per_service_intent_candidate_recall": {
+          "Buses_1": 0.90625,
+          "RentalCars_1": 0.96875,
+          "RideSharing_1": 0.96875
+        },
+        "quality_gate_pass": false,
+        "quantization_bits": 4,
+        "role": "same-generation capacity condition",
+        "runtime": {
+          "elapsed_seconds": 370.5755159170367,
+          "model_load_seconds": 3.4769814999308437,
+          "peak_active_memory_bytes": 16735436376
+        },
+        "weight_bytes": 16054546159
+      },
+      "qwen35_4b_4bit": {
+        "access": {
+          "LLM_API_call_count": 0,
+          "adapter_training_run_count": 0,
+          "condition_id": "qwen35_4b_4bit",
+          "elapsed_seconds": 81.64249287499115,
+          "external_side_effect_count": 0,
+          "manual_utterance_inspection_count": 0,
+          "model_generation_count": 48,
+          "model_load_count": 1,
+          "model_load_seconds": 0.916944416007027,
+          "peak_active_memory_bytes": 3533328016,
+          "real_service_call_count": 0,
+          "source_language_record_access_count": 48
+        },
+        "completed_condition": true,
+        "failed_quality_gates": [
+          "gold_active_intent_coverage",
+          "state_slot_key_exact"
+        ],
+        "metrics": {
+          "exact_JSON_parse_rate": 1.0,
+          "gold_active_intent_coverage_rate": 0.875,
+          "intent_candidate_set_exact_rate": 0.8125,
+          "mandatory_NONE_inclusion_rate": 1.0,
+          "mean_intent_candidate_count": 1.5833333333333333,
+          "none_only_intent_exact_rate": 0.7916666666666666,
+          "ontology_conformance_rate": 1.0,
+          "state_slot_key_exact_rate": 0.22916666666666666,
+          "state_slot_key_recall": 0.970138888888889
+        },
+        "per_service_intent_candidate_recall": {
+          "Buses_1": 0.96875,
+          "RentalCars_1": 0.96875,
+          "RideSharing_1": 0.96875
+        },
+        "quality_gate_pass": false,
+        "quantization_bits": 4,
+        "role": "fresh historical-family baseline",
+        "runtime": {
+          "elapsed_seconds": 81.64249287499115,
+          "model_load_seconds": 0.916944416007027,
+          "peak_active_memory_bytes": 3533328016
+        },
+        "weight_bytes": 3034300695
+      },
+      "qwen38_27b_4bit": {
+        "access": {
+          "LLM_API_call_count": 0,
+          "adapter_training_run_count": 0,
+          "condition_id": "qwen38_27b_4bit",
+          "elapsed_seconds": 441.31693912507035,
+          "external_side_effect_count": 0,
+          "manual_utterance_inspection_count": 0,
+          "model_generation_count": 48,
+          "model_load_count": 1,
+          "model_load_seconds": 3.0663914589677006,
+          "peak_active_memory_bytes": 16735431768,
+          "real_service_call_count": 0,
+          "source_language_record_access_count": 48
+        },
+        "completed_condition": true,
+        "failed_quality_gates": [
+          "gold_active_intent_coverage",
+          "mandatory_NONE_inclusion",
+          "state_slot_key_exact"
+        ],
+        "metrics": {
+          "exact_JSON_parse_rate": 1.0,
+          "gold_active_intent_coverage_rate": 0.875,
+          "intent_candidate_set_exact_rate": 0.875,
+          "mandatory_NONE_inclusion_rate": 0.9375,
+          "mean_intent_candidate_count": 1.375,
+          "none_only_intent_exact_rate": 1.0,
+          "ontology_conformance_rate": 1.0,
+          "state_slot_key_exact_rate": 0.25,
+          "state_slot_key_recall": 0.953125
+        },
+        "per_service_intent_candidate_recall": {
+          "Buses_1": 0.90625,
+          "RentalCars_1": 0.90625,
+          "RideSharing_1": 1.0
+        },
+        "quality_gate_pass": false,
+        "quantization_bits": 4,
+        "role": "fixed-size generation condition",
+        "runtime": {
+          "elapsed_seconds": 441.31693912507035,
+          "model_load_seconds": 3.0663914589677006,
+          "peak_active_memory_bytes": 16735431768
+        },
+        "weight_bytes": 16054541349
+      },
+      "qwen38_27b_8bit": {
+        "access": {
+          "LLM_API_call_count": 0,
+          "adapter_training_run_count": 0,
+          "condition_id": "qwen38_27b_8bit",
+          "elapsed_seconds": 641.916502666194,
+          "external_side_effect_count": 0,
+          "manual_utterance_inspection_count": 0,
+          "model_generation_count": 48,
+          "model_load_count": 1,
+          "model_load_seconds": 6.840847083134577,
+          "peak_active_memory_bytes": 30103055448,
+          "real_service_call_count": 0,
+          "source_language_record_access_count": 48
+        },
+        "completed_condition": true,
+        "failed_quality_gates": [
+          "gold_active_intent_coverage",
+          "state_slot_key_exact"
+        ],
+        "metrics": {
+          "exact_JSON_parse_rate": 1.0,
+          "gold_active_intent_coverage_rate": 0.875,
+          "intent_candidate_set_exact_rate": 0.9166666666666666,
+          "mandatory_NONE_inclusion_rate": 1.0,
+          "mean_intent_candidate_count": 1.4791666666666667,
+          "none_only_intent_exact_rate": 1.0,
+          "ontology_conformance_rate": 1.0,
+          "state_slot_key_exact_rate": 0.2916666666666667,
+          "state_slot_key_recall": 0.9513888888888888
+        },
+        "per_service_intent_candidate_recall": {
+          "Buses_1": 0.9375,
+          "RentalCars_1": 0.96875,
+          "RideSharing_1": 1.0
+        },
+        "quality_gate_pass": false,
+        "quantization_bits": 8,
+        "role": "Qwen3.8 quantization quality ceiling",
+        "runtime": {
+          "elapsed_seconds": 641.916502666194,
+          "model_load_seconds": 6.840847083134577,
+          "peak_active_memory_bytes": 30103055448
+        },
+        "weight_bytes": 29501218479
+      }
+    },
+    "contrasts": {
+      "capacity_qwen35_4b_to_27b": {
+        "active_intent_coverage_complementarity": {
+          "both_correct": 18,
+          "left_only_correct": 3,
+          "neither_correct": 2,
+          "right_only_correct": 1
+        },
+        "left_condition": "qwen35_4b_4bit",
+        "paired_correctness_transitions": {
+          "active_intent_covered": {
+            "false_to_false": 2,
+            "false_to_true": 1,
+            "true_to_false": 3,
+            "true_to_true": 42
+          },
+          "intent_exact": {
+            "false_to_false": 2,
+            "false_to_true": 7,
+            "true_to_false": 3,
+            "true_to_true": 36
+          },
+          "ontology_conformant": {
+            "true_to_true": 48
+          },
+          "state_exact": {
+            "false_to_false": 35,
+            "false_to_true": 2,
+            "true_to_false": 1,
+            "true_to_true": 10
+          }
+        },
+        "right_condition": "qwen35_27b_4bit",
+        "right_minus_left_elapsed_seconds": 288.93302304204553,
+        "right_minus_left_metric_deltas": {
+          "exact_JSON_parse_rate": 0.0,
+          "gold_active_intent_coverage_rate": -0.08333333333333337,
+          "intent_candidate_set_exact_rate": 0.08333333333333337,
+          "mandatory_NONE_inclusion_rate": 0.0,
+          "mean_intent_candidate_count": -0.14583333333333326,
+          "none_only_intent_exact_rate": 0.20833333333333337,
+          "ontology_conformance_rate": 0.0,
+          "state_slot_key_exact_rate": 0.020833333333333343,
+          "state_slot_key_recall": -0.19305555555555576
+        },
+        "right_minus_left_peak_active_memory_bytes": 13202108360
+      },
+      "generation_qwen35_to_qwen38_27b_4bit": {
+        "active_intent_coverage_complementarity": {
+          "both_correct": 19,
+          "left_only_correct": 0,
+          "neither_correct": 3,
+          "right_only_correct": 2
+        },
+        "left_condition": "qwen35_27b_4bit",
+        "paired_correctness_transitions": {
+          "active_intent_covered": {
+            "false_to_false": 3,
+            "false_to_true": 2,
+            "true_to_true": 43
+          },
+          "intent_exact": {
+            "false_to_false": 3,
+            "false_to_true": 2,
+            "true_to_false": 3,
+            "true_to_true": 40
+          },
+          "ontology_conformant": {
+            "true_to_true": 48
+          },
+          "state_exact": {
+            "false_to_false": 34,
+            "false_to_true": 2,
+            "true_to_false": 2,
+            "true_to_true": 10
+          }
+        },
+        "right_condition": "qwen38_27b_4bit",
+        "right_minus_left_elapsed_seconds": 70.74142320803367,
+        "right_minus_left_metric_deltas": {
+          "exact_JSON_parse_rate": 0.0,
+          "gold_active_intent_coverage_rate": 0.08333333333333337,
+          "intent_candidate_set_exact_rate": -0.02083333333333337,
+          "mandatory_NONE_inclusion_rate": -0.0625,
+          "mean_intent_candidate_count": -0.0625,
+          "none_only_intent_exact_rate": 0.0,
+          "ontology_conformance_rate": 0.0,
+          "state_slot_key_exact_rate": 0.0,
+          "state_slot_key_recall": 0.17604166666666676
+        },
+        "right_minus_left_peak_active_memory_bytes": -4608
+      },
+      "quantization_qwen38_4bit_to_8bit": {
+        "active_intent_coverage_complementarity": {
+          "both_correct": 21,
+          "left_only_correct": 0,
+          "neither_correct": 3,
+          "right_only_correct": 0
+        },
+        "left_condition": "qwen38_27b_4bit",
+        "paired_correctness_transitions": {
+          "active_intent_covered": {
+            "false_to_false": 3,
+            "true_to_true": 45
+          },
+          "intent_exact": {
+            "false_to_false": 3,
+            "false_to_true": 3,
+            "true_to_false": 1,
+            "true_to_true": 41
+          },
+          "ontology_conformant": {
+            "true_to_true": 48
+          },
+          "state_exact": {
+            "false_to_false": 34,
+            "false_to_true": 2,
+            "true_to_true": 12
+          }
+        },
+        "right_condition": "qwen38_27b_8bit",
+        "right_minus_left_elapsed_seconds": 200.59956354112364,
+        "right_minus_left_metric_deltas": {
+          "exact_JSON_parse_rate": 0.0,
+          "gold_active_intent_coverage_rate": 0.0,
+          "intent_candidate_set_exact_rate": 0.04166666666666663,
+          "mandatory_NONE_inclusion_rate": 0.0625,
+          "mean_intent_candidate_count": 0.10416666666666674,
+          "none_only_intent_exact_rate": 0.0,
+          "ontology_conformance_rate": 0.0,
+          "state_slot_key_exact_rate": 0.041666666666666685,
+          "state_slot_key_recall": -0.0017361111111111605
+        },
+        "right_minus_left_peak_active_memory_bytes": 13367623680
+      }
+    },
+    "decision": "retain_model_free_authoritative_boundary",
+    "model_usage_policy": {
+      "LLM_API": "not_authorized_or_needed_for_this_result",
+      "adapter_training": "not_authorized_or_needed_for_this_result",
+      "all_27b_conditions": "freeze_as_nonqualifying_shadow_evidence",
+      "authoritative_semantic_boundary": "model_free_schema_renderer_and_deterministic_validator",
+      "belief_or_action_authority": false,
+      "deployment_or_execution": false,
+      "qwen35_4b_4bit": "retain_only_as_low_cost_frozen_shadow_baseline",
+      "small_large_combination": "not_eligible_and_not_executed"
+    },
+    "passed": true,
+    "qualifying_27b_conditions": []
+  },
+  "raw_fixture_artifacts": [
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/000-v90-000-2_00097::turn-008::Buses_1.json",
+      "sha256": "749d55a9de87dceece8aff60d9949eb112c25dc3f991d651376c0bbf8c21159a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/001-v90-001-2_00121::turn-008::Buses_1.json",
+      "sha256": "8cc2af879fb2b3b6bcb46083e4aea7789a1b7638e52dbf74d378a315058a8b7f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/002-v90-002-2_00112::turn-010::Buses_1.json",
+      "sha256": "96fd17e613238d57a5639052109650279bce6fe3bcb8b0000811d584ba2b13a0"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/003-v90-003-2_00089::turn-014::Buses_1.json",
+      "sha256": "d0bcc6e8d7b7095a753e05c47281ed80044ad681cfbb9891b090863ff0ce8e2c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/004-v90-004-2_00122::turn-006::Buses_1.json",
+      "sha256": "1fb5e1e94b3f0babff78d078424269323ae871593156290fbb6ab759e6afe36f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/005-v90-005-2_00120::turn-004::Buses_1.json",
+      "sha256": "a92d6101d5eb5509fc92cf09cf626f0bcbcf1482de24c6b0ab0912d695570d43"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/006-v90-006-2_00117::turn-002::Buses_1.json",
+      "sha256": "d32b2f9fc195401d1d34acac15bf785139be9af400de8452d3f3ea3c20b1f95f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/007-v90-007-2_00079::turn-006::Buses_1.json",
+      "sha256": "d04689054df0aadf6ec83d7a56f6a2e6e9c6f5faa2d18e0b7cfc2796a4f71edd"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/008-v90-008-2_00069::turn-002::RentalCars_1.json",
+      "sha256": "c38d9643ce23b5d24b8d61c9933eb3fb8bb10138c0068dac4ffd9db397b6cf9f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/009-v90-009-2_00047::turn-006::RentalCars_1.json",
+      "sha256": "7d79fb03dafb78adfc0cc48602094cdca602ba4359f4ecc0420f2ee94e5482e1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/010-v90-010-2_00076::turn-006::RentalCars_1.json",
+      "sha256": "d95394faa728d6b904e1ab4dae1b0b4c061fd01856bcb0b6af6a8e0f70737dc9"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/011-v90-011-2_00057::turn-000::RentalCars_1.json",
+      "sha256": "ed9ffc0db8aba0350e6bff59da42c3e024a8993fe4bc5c9e9888fb43e33fa65f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/012-v90-012-2_00053::turn-008::RentalCars_1.json",
+      "sha256": "47c96dd307a60a698f1fe520168b14839fbf21f8f0c43ce73df6ad185205ab3e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/013-v90-013-2_00061::turn-014::RentalCars_1.json",
+      "sha256": "deea35a5d055cab01dfa8e79c1d9fa19c1fbc4348c024d37ca48272d6d51770a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/014-v90-014-2_00064::turn-018::RentalCars_1.json",
+      "sha256": "73bddfeb38b5e6a57c1aa6e5c441766d30460cec2bc38e74f3b453ed81d0bbf2"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/015-v90-015-2_00075::turn-014::RentalCars_1.json",
+      "sha256": "b1035c4e9e1e52fe97929df5d271d1c15d1e42c30eb39c78a65b0ee52cb98438"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/016-v90-016-2_00039::turn-000::RideSharing_1.json",
+      "sha256": "8390bb2d60c3dea9fb6e4974dbc8317513455d6e372ca91b0a5c256077b51aa8"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/017-v90-017-2_00003::turn-006::RideSharing_1.json",
+      "sha256": "08aaa737b322dcc79bf360817afd8e1e520e6ecd8fa67aaf2fa1839de5c7d8ed"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/018-v90-018-2_00032::turn-004::RideSharing_1.json",
+      "sha256": "791db68176b2158b541927f99d4161c769a4ae7730808e84d01713549ad11c3c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/019-v90-019-2_00002::turn-008::RideSharing_1.json",
+      "sha256": "116ee2c1bf4714abf6a2177dce643c847e43edb5e43161665f3a9fbe124bfd49"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/020-v90-020-2_00024::turn-002::RideSharing_1.json",
+      "sha256": "630697833b68a3b15011f045d392ae7575f476244bbde16292ee6fb9952d5660"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/021-v90-021-2_00022::turn-000::RideSharing_1.json",
+      "sha256": "a983923d10e5dd00fc22c7f20a2f1f1e720fa0a58125e6fab3f3efca0389448f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/022-v90-022-2_00015::turn-006::RideSharing_1.json",
+      "sha256": "47ccd7b7c28b6b3df724cb1b94c53fc8f9e09ea11acb72d3e8ff5fc92112b35d"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/023-v90-023-2_00009::turn-004::RideSharing_1.json",
+      "sha256": "3061557caac0c9e051f5bbbfd123bb8702521af419b3adca37d4dd7695d27199"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/024-v90-024-2_00108::turn-018::Buses_1.json",
+      "sha256": "6cc0d2db3224a0ec9f46d07b7455168edc473d7710a80b520c20a5d67a7e4843"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/025-v90-025-2_00081::turn-012::Buses_1.json",
+      "sha256": "d2818b33d09bb38c484b6f011c26c055602dc0858f637c50f15badf2edf5c262"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/026-v90-026-2_00095::turn-018::Buses_1.json",
+      "sha256": "250bc3376a86a0232fa7f6594dded0ccd019e215f9085e1d3e23dc486dd19680"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/027-v90-027-2_00080::turn-018::Buses_1.json",
+      "sha256": "eb1b40256c57c0a00b5d4e2678fc0cb792e83572ed68f4ddb9cf5a7f26b5665c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/028-v90-028-2_00111::turn-016::Buses_1.json",
+      "sha256": "ae69d6ee09039476107afd9df01d1eec871e44bede5a8cdc15d2d783004d1e33"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/029-v90-029-2_00090::turn-006::Buses_1.json",
+      "sha256": "9124f2c8b81fba24f769ff73a47e6c7661e5289779ce23d60cfb9c7474df2ed3"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/030-v90-030-2_00099::turn-012::Buses_1.json",
+      "sha256": "332d48d884c9cb94b95b04bf510f91bf6410187965afa1c912a5ac348d9ea877"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/031-v90-031-2_00094::turn-022::Buses_1.json",
+      "sha256": "73f3dda116d10d75c265bac2d4b673459f4ae404addb3f28fe8bfccdbb590531"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/032-v90-032-2_00077::turn-012::RentalCars_1.json",
+      "sha256": "e68a4aea159f9830de913d024cc4248ad90646125491c4276af0f78a6870df3e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/033-v90-033-2_00072::turn-012::RentalCars_1.json",
+      "sha256": "9218344f47e6a704f81a5e37a8baf57bf65592cfc28c1cfe972b83968e311884"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/034-v90-034-2_00067::turn-014::RentalCars_1.json",
+      "sha256": "afaf05d9f01f3e0778e96a773d4e371cb38a6bcc80c685aa3a1a6df6a36124ed"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/035-v90-035-2_00052::turn-018::RentalCars_1.json",
+      "sha256": "a98141397adac224ad6359336fa850b3299941370be53cfd7e03bfb1249d57ab"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/036-v90-036-2_00068::turn-012::RentalCars_1.json",
+      "sha256": "b30130861f9fb073f1d973edcb3ad3fb63854e0ace9a0f81d092204bc8a60fac"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/037-v90-037-2_00070::turn-010::RentalCars_1.json",
+      "sha256": "dcbb391a8f2e42fc4e2e13e821a2b611dbf442c6093f3ccb20e61577bd2a16d1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/038-v90-038-2_00044::turn-020::RentalCars_1.json",
+      "sha256": "9993ef648d22b496561fc474c0b6e80f1568ce5edb495ed0da0dd1269b247664"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/039-v90-039-2_00054::turn-018::RentalCars_1.json",
+      "sha256": "093c49a9b2d5703ec1a1952346286b5ea541bd299b5e11df388584a81a647920"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/040-v90-040-2_00013::turn-010::RideSharing_1.json",
+      "sha256": "4bb661e2104fa7588af9f4bc35a8d0f7086629899390940ea8868514f31015a1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/041-v90-041-2_00005::turn-010::RideSharing_1.json",
+      "sha256": "e1fec0f57b2c60e15f1f1f09bc9d50e6f186f4597feb2053c4accc24005388be"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/042-v90-042-2_00025::turn-010::RideSharing_1.json",
+      "sha256": "eba431c037d251e6c0668e1aecec1669ee673e4b35a18c5a6d827ac0dcc504f5"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/043-v90-043-2_00004::turn-010::RideSharing_1.json",
+      "sha256": "a54a5f7b2481de7dbdd1e36e63a4a2dc11f684906672d5fe25a50db8f38f51fe"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/044-v90-044-2_00006::turn-010::RideSharing_1.json",
+      "sha256": "ff14359402067aba4e074707b67685d99258e751f3607d73666d634ab2b62f81"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/045-v90-045-2_00014::turn-008::RideSharing_1.json",
+      "sha256": "562bc2069704e04e902c08e0de75f4bdeaa04ecca7fd9f4ad2a92cb99304c526"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/046-v90-046-2_00030::turn-012::RideSharing_1.json",
+      "sha256": "91096ae5b20a54b4ba670c2677a0143a92528ecd5ceeb350364da2fd958db359"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_4b_4bit/raw-fixtures/047-v90-047-2_00000::turn-008::RideSharing_1.json",
+      "sha256": "63f759e0a020995e8b8e7f81183aec478a509ffd98362469f11d7557b0ab5673"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/000-v90-000-2_00097::turn-008::Buses_1.json",
+      "sha256": "268fc00c1c0a4434d0a1b5a2756e8da144b2fece74e601ca5e6f37fcbd5ab165"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/001-v90-001-2_00121::turn-008::Buses_1.json",
+      "sha256": "ea3c9e2dfc15a061326c52c445b08c5a3462a45b6fc0d62039cdb57d632e96ed"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/002-v90-002-2_00112::turn-010::Buses_1.json",
+      "sha256": "fb7a915e0c64f04420b9e5d51fc3086d63cbff160eae4f78650b76002e66aa75"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/003-v90-003-2_00089::turn-014::Buses_1.json",
+      "sha256": "1331c23a6e2df3a126d2b3705c429a6758d32a6d1f8ca7dfb8e962f9540f0311"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/004-v90-004-2_00122::turn-006::Buses_1.json",
+      "sha256": "46f4f14be8979ca9fdcc24f2c96c8aeb9dc66de7d4a5a7452ef9d9dd691fa3a4"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/005-v90-005-2_00120::turn-004::Buses_1.json",
+      "sha256": "ec29606bff6ab9ed704286899c88e44959ee6bed906dd97074448b22526f1a10"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/006-v90-006-2_00117::turn-002::Buses_1.json",
+      "sha256": "e1a97789cd507d5b29de70d4a8dc8b69abbf2a7437ac8db248d4ff14cdc81547"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/007-v90-007-2_00079::turn-006::Buses_1.json",
+      "sha256": "c9ed8edbfe126a6350f3af818c133bcf2157b7ff4576629741cf1c09be7a9e7e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/008-v90-008-2_00069::turn-002::RentalCars_1.json",
+      "sha256": "2abce44b240085f73f922306f82cff1d31c6665424e1879e5f62ebf1a9151742"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/009-v90-009-2_00047::turn-006::RentalCars_1.json",
+      "sha256": "c955cfe582295279910200041393100e0401a8a5091cb3b62973581d0d43d3da"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/010-v90-010-2_00076::turn-006::RentalCars_1.json",
+      "sha256": "6f3650409a17f0cd41e5381e4958f3f9d6d6eca14784e278aaccd1dc2cb1ea17"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/011-v90-011-2_00057::turn-000::RentalCars_1.json",
+      "sha256": "13460622f2a2700fb757be6a1a03a2f0fb5fb2d8221d1be7406b66ed40155c12"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/012-v90-012-2_00053::turn-008::RentalCars_1.json",
+      "sha256": "e2df46da54787e79496a017d6e5be7c1d37e7ac33823f1ac030c13a8061ff86b"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/013-v90-013-2_00061::turn-014::RentalCars_1.json",
+      "sha256": "c2a3aedfd3ea10c6af70115b24c1cd4fb5588fdb9f38817ceefd413f1a247b5d"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/014-v90-014-2_00064::turn-018::RentalCars_1.json",
+      "sha256": "d2d29b294cb23a1055ced1e81b31d74d7d3f49bb58e9236bfe11b71d0c34eaee"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/015-v90-015-2_00075::turn-014::RentalCars_1.json",
+      "sha256": "3e78d3af392a182be0e0d05418cb622975f1bb223bfa4f3259f724438b24e173"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/016-v90-016-2_00039::turn-000::RideSharing_1.json",
+      "sha256": "e9fe763de6ed6d50c313b4dd87b75af79365341d12574a830cbe0024f21c04fd"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/017-v90-017-2_00003::turn-006::RideSharing_1.json",
+      "sha256": "b3f7737a4d9cc43ce6708498cd6ba02cc80364ffa5c7eb84e2ec06f0b2a89c53"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/018-v90-018-2_00032::turn-004::RideSharing_1.json",
+      "sha256": "9896c201232f7f472c42c39c069ecb854843250b8a23005134e5f6831b5038d8"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/019-v90-019-2_00002::turn-008::RideSharing_1.json",
+      "sha256": "815e864754d8ae07a1f80d6d336414956f350dee43a0dc3ecab6ada510004b29"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/020-v90-020-2_00024::turn-002::RideSharing_1.json",
+      "sha256": "a9fd16f3412540ff4f85526234b2c3fb297489b5e244b66230c4e4fcc0fb1901"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/021-v90-021-2_00022::turn-000::RideSharing_1.json",
+      "sha256": "3b504417ae8ea7e3650f57a362fdd11520981cf9735cd45757345993ab462539"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/022-v90-022-2_00015::turn-006::RideSharing_1.json",
+      "sha256": "95cd5360d453051b00aa66fc9d961c93f90b253cc35389863431114c76d564d2"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/023-v90-023-2_00009::turn-004::RideSharing_1.json",
+      "sha256": "79199afef03b0fcd165f1a5a074b2588d736b42e843d75839869ad5a1ba25afe"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/024-v90-024-2_00108::turn-018::Buses_1.json",
+      "sha256": "73d906e174ddaf42a533eeb9aaf54ee855c345817df9a7b99f4514d235b5a131"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/025-v90-025-2_00081::turn-012::Buses_1.json",
+      "sha256": "c8fa4a69ca57e9e1af18d1b0e2252fb37877743c89b2c60d622f4e65cba8be4e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/026-v90-026-2_00095::turn-018::Buses_1.json",
+      "sha256": "bf9362f91eac985cf1011d55156c418b21edbfc64a715967580a25111b6c1519"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/027-v90-027-2_00080::turn-018::Buses_1.json",
+      "sha256": "870cc18a37a77e1bc31ffec96973dbe8b5345308741fd0a0c339b24aa19e765a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/028-v90-028-2_00111::turn-016::Buses_1.json",
+      "sha256": "b3e65e50c845b9c9ea776324575b94264386b00de02c4fbe24637a6ecedfb473"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/029-v90-029-2_00090::turn-006::Buses_1.json",
+      "sha256": "dd5afac759c781db686562c30059a3eaada94456abafa665033ec122a04b0d7a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/030-v90-030-2_00099::turn-012::Buses_1.json",
+      "sha256": "3510652b40fbdce4c410e504d73f88cd34d55d02f24218aee095c8c3d853cf08"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/031-v90-031-2_00094::turn-022::Buses_1.json",
+      "sha256": "7dcb8c1cbdde11cbb866130ddc939d5fa0283a6e30426d5bb377d50742b5c4c4"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/032-v90-032-2_00077::turn-012::RentalCars_1.json",
+      "sha256": "2b71cafcaf5e094129b8206fae0508df7c5a17ec188cbc528ffc1f379dc4af0a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/033-v90-033-2_00072::turn-012::RentalCars_1.json",
+      "sha256": "7ff632a63dbcb79045cf13eba2460b515b34574d5e5a9630adc71bb70d12ba11"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/034-v90-034-2_00067::turn-014::RentalCars_1.json",
+      "sha256": "9b4001bd5aa5870f3ca1eb52347300f193beb77359c36b7e93ff34415369e95d"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/035-v90-035-2_00052::turn-018::RentalCars_1.json",
+      "sha256": "d2b60dec7d44ab30a8dd6d5ed5629e4f54d6d619c8a4f8295a0b922356885408"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/036-v90-036-2_00068::turn-012::RentalCars_1.json",
+      "sha256": "132330ddb35475d4d4ed9f4741b1d29ea6c9d1c1c3d6e9b397fcfa35b4d37d0f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/037-v90-037-2_00070::turn-010::RentalCars_1.json",
+      "sha256": "3e66e72bbe3000994a94a1c522c99907e0ef08fb9ede6ced1f31f5dd1fb48309"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/038-v90-038-2_00044::turn-020::RentalCars_1.json",
+      "sha256": "47f94f4edf57bab7749c78ff17847292e0808ba7715ce9a1dbd6c0df18c59aee"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/039-v90-039-2_00054::turn-018::RentalCars_1.json",
+      "sha256": "2e7269c442e117c39483bd7b7796ecdb8f531ed4dec7c7ce1651ec52530f1858"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/040-v90-040-2_00013::turn-010::RideSharing_1.json",
+      "sha256": "f62574f85d55acbeea434c6c7c0d647e00e88799bab98192a7618ec08af87c3f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/041-v90-041-2_00005::turn-010::RideSharing_1.json",
+      "sha256": "791e1edce159b281fd70a050305409727f9f86e498622d3ea9574b9d5b698827"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/042-v90-042-2_00025::turn-010::RideSharing_1.json",
+      "sha256": "80cf19e28ceae681ba975039d489a0f062924adc50fde190926d01ec09a7bd91"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/043-v90-043-2_00004::turn-010::RideSharing_1.json",
+      "sha256": "8d415dbb878291711e7999e68252b6153209d8ce846c61736e5a0bdf142c5739"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/044-v90-044-2_00006::turn-010::RideSharing_1.json",
+      "sha256": "ff624df004ebcc0b027d687f716abce9c75bb5f83a2cfb735f30ae9f2d8cff90"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/045-v90-045-2_00014::turn-008::RideSharing_1.json",
+      "sha256": "854f9174f64e5cbcbd10169af46309f9f079d21e4a25ee5cf05c4cb93665a272"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/046-v90-046-2_00030::turn-012::RideSharing_1.json",
+      "sha256": "9e6013585556e2380f3e4fd9976381d19ba2e4598bf01c32fa69a4bdd73d568e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen35_27b_4bit/raw-fixtures/047-v90-047-2_00000::turn-008::RideSharing_1.json",
+      "sha256": "81fda75ad6ce5779b1f046e17f169f7fddf7505dfb6a541c2d8322647f5886b0"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/000-v90-000-2_00097::turn-008::Buses_1.json",
+      "sha256": "96fb7f394aa7588cd1c20e5f8a1299c99cdf01f7772d5455f9da8c2534ee8e73"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/001-v90-001-2_00121::turn-008::Buses_1.json",
+      "sha256": "c0373b8ad8bb5359e758c1d9f606f4ad6d3fd10d378576bb7c5bf503e2a66b93"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/002-v90-002-2_00112::turn-010::Buses_1.json",
+      "sha256": "beac4c1fd484f187b7548b64fe3fc4b706a6cd569de19846bc6aab5e0db83ed1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/003-v90-003-2_00089::turn-014::Buses_1.json",
+      "sha256": "e38a1d526787938bce8230c9ca31c8324cbae63f1ae45cfd6b9d65b3bae72ee3"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/004-v90-004-2_00122::turn-006::Buses_1.json",
+      "sha256": "6329c56305474ec149cedf3d01b7561217f89d1e61125af26c48cd6a667b98c1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/005-v90-005-2_00120::turn-004::Buses_1.json",
+      "sha256": "198ff826aac46c4ef12e1e26d02ea95ba78e6cc7ec6db8968806b9909ef63ff1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/006-v90-006-2_00117::turn-002::Buses_1.json",
+      "sha256": "47658dda8b87172dbe1c1e572f1e2d2d7f4c3dd7ada24215624ee15f91b21604"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/007-v90-007-2_00079::turn-006::Buses_1.json",
+      "sha256": "bb7b47832e56012e1b9b2e67ad5b2d6a47e888251152337a3fe2e1aba2eff79c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/008-v90-008-2_00069::turn-002::RentalCars_1.json",
+      "sha256": "b9266de0e8577816e0c8b4bd2310aebaa5d1d213cce56b37503243b5173c5588"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/009-v90-009-2_00047::turn-006::RentalCars_1.json",
+      "sha256": "f57967ec7966cb027fbc8b32a4b4ce090ee571d653e3eff4a7a1b3a95bdf5220"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/010-v90-010-2_00076::turn-006::RentalCars_1.json",
+      "sha256": "d754573481f0adb6d9c7d2c0e5f4293f322e6ac6f37392e96ac94a6583cebf1e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/011-v90-011-2_00057::turn-000::RentalCars_1.json",
+      "sha256": "04322b73fc1bf2165f9b4237d41cd5cc53a0a0e30b652ea4ea00736e2b4faec5"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/012-v90-012-2_00053::turn-008::RentalCars_1.json",
+      "sha256": "e1cb478456e95bdbcba5150094e4a389f03d94a8f8f4ab7908bb93d81efe3640"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/013-v90-013-2_00061::turn-014::RentalCars_1.json",
+      "sha256": "a45d6d02e06ca8cb6eee5e81dbff8e77be00522e956b1e53ec1546376d718b24"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/014-v90-014-2_00064::turn-018::RentalCars_1.json",
+      "sha256": "c0d2aa380500df42353a83703f7a133e0579e8b4086d3f5f7c6f41554748e557"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/015-v90-015-2_00075::turn-014::RentalCars_1.json",
+      "sha256": "9ea44d5bb8577d309edab73aaf49129773b807ee776112162bc4f804a8622ded"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/016-v90-016-2_00039::turn-000::RideSharing_1.json",
+      "sha256": "f79c7a7def3dd2eeea6f7dbd955bddfe379b706df3fe21816c80cd6e452607e9"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/017-v90-017-2_00003::turn-006::RideSharing_1.json",
+      "sha256": "c88930c040feaa857994dcde4096ea7ea6fdbcf1f4217a21ace0cdc2e9814f6a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/018-v90-018-2_00032::turn-004::RideSharing_1.json",
+      "sha256": "114e908519b296e2203d8aacecf1abe3bcb9bc5716cbd311e94ad961e1772a09"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/019-v90-019-2_00002::turn-008::RideSharing_1.json",
+      "sha256": "c382d899ace9ef9ffb1ab41d5463bdea42e5f7ce39212f09061690a9ee923483"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/020-v90-020-2_00024::turn-002::RideSharing_1.json",
+      "sha256": "02ec5b9edd11e9e163c2b9be986a6ad16f0f4e3c897f69fc02fa3aa6aebe5dd1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/021-v90-021-2_00022::turn-000::RideSharing_1.json",
+      "sha256": "fdcb1ef5732b751b6f57573fea4c853a664f614bbcaf6a1dcf26e8bd97392a5a"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/022-v90-022-2_00015::turn-006::RideSharing_1.json",
+      "sha256": "5015a90111a053811fef416859f58fdffdacadd4eee823f4a59da7a8976d8b77"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/023-v90-023-2_00009::turn-004::RideSharing_1.json",
+      "sha256": "1e66490e4dce878b8b8f88d824c1cf04a327a27b63c748f9a4c760d9023cbb8c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/024-v90-024-2_00108::turn-018::Buses_1.json",
+      "sha256": "222a859e5bbf3f8e9fbe2de53a5f8d98792dd676d355520041da3ed494597551"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/025-v90-025-2_00081::turn-012::Buses_1.json",
+      "sha256": "ee2a7655ee7147568048aec7b89017ac1d08795453afcd52300bb15b407295fa"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/026-v90-026-2_00095::turn-018::Buses_1.json",
+      "sha256": "8a71e79c7f18eba87f189e8a2fe2f95361d9f0e01b2f870b00a533d82a1d4ba6"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/027-v90-027-2_00080::turn-018::Buses_1.json",
+      "sha256": "81c701de9a149fda1054ec7650ad099a5f2fd0645c6dffd807e3a4f70075c5d9"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/028-v90-028-2_00111::turn-016::Buses_1.json",
+      "sha256": "b527ca5755a06b9eda17f817de888277840f98cdcad801ce1caa414bafd91a72"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/029-v90-029-2_00090::turn-006::Buses_1.json",
+      "sha256": "7578a8f9deee1abb86ca78043156357c6839c6317ed08b5704c50be782cb7b33"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/030-v90-030-2_00099::turn-012::Buses_1.json",
+      "sha256": "c3b7cd273148c087adb85f05f4db2bcbcf5a2e17d81a69d4483b9861d613f515"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/031-v90-031-2_00094::turn-022::Buses_1.json",
+      "sha256": "43dffc4031ad0fcd1764d605a90a1abc93376d1e1f0c7423004c4c6d3aea95f1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/032-v90-032-2_00077::turn-012::RentalCars_1.json",
+      "sha256": "eddde8b8ad2b482fe3f729dbde1660fcaab3d8e112725e1c1a25275611b37eb5"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/033-v90-033-2_00072::turn-012::RentalCars_1.json",
+      "sha256": "90bc5acb6b1b2494650cf299edc2092c87a64adb8d677c8be0d725b5e14e0021"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/034-v90-034-2_00067::turn-014::RentalCars_1.json",
+      "sha256": "5164795e697c14eb4134835420561568353d5c6a4ade2728105ef8d264f2f60d"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/035-v90-035-2_00052::turn-018::RentalCars_1.json",
+      "sha256": "8385bb2756b135b7c43f95cbb3affdb8fb83ab8812b61ab757e544b38225538e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/036-v90-036-2_00068::turn-012::RentalCars_1.json",
+      "sha256": "f232b08a9a90b278a12166b2219c4406b47c45e577b8268cbd254cac5314c9e9"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/037-v90-037-2_00070::turn-010::RentalCars_1.json",
+      "sha256": "9e756e4484fb1d3571b60debb078ee562bb85b8b7a8f5427f07c4321b66274df"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/038-v90-038-2_00044::turn-020::RentalCars_1.json",
+      "sha256": "441298b4852eab5d5a2999ffe46717cbd33cac5e5f10925bef67be1ab9e863eb"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/039-v90-039-2_00054::turn-018::RentalCars_1.json",
+      "sha256": "0ede870bebd0c2a8f53af22bde0b098a7f9eca9ab2eb78ecb2d93e009be52a86"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/040-v90-040-2_00013::turn-010::RideSharing_1.json",
+      "sha256": "2a48d285fe10b15190e7b55c5ada97c83c74cc12df5206a7cca09ac214bfd4eb"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/041-v90-041-2_00005::turn-010::RideSharing_1.json",
+      "sha256": "d9bc6c4d940d495ac2c0829ac6c080998dc044ed5aaf321f9c3b8dee89fa1784"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/042-v90-042-2_00025::turn-010::RideSharing_1.json",
+      "sha256": "005dcc8b3bea956f33c307fa35f30269a06eeab7f3d8007757aa2d8832350e6f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/043-v90-043-2_00004::turn-010::RideSharing_1.json",
+      "sha256": "36b2f29e4c721b86fc54f29e02e7f643901d7b748f7fd5d97d143b55490099ae"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/044-v90-044-2_00006::turn-010::RideSharing_1.json",
+      "sha256": "29c4af6b8141f71dbafde34fe66521d771f96ffa60da5b6ea2eada6d37df4ab7"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/045-v90-045-2_00014::turn-008::RideSharing_1.json",
+      "sha256": "1dbea9812420fb89b4cfdb1747e9b9c9281d2bc79ff0efaa384a6a30377e350c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/046-v90-046-2_00030::turn-012::RideSharing_1.json",
+      "sha256": "990fec4136c0568d1f4572712ed258e88d45f77e3b29f609111e4604a0e518c1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_4bit/raw-fixtures/047-v90-047-2_00000::turn-008::RideSharing_1.json",
+      "sha256": "226bafb5266c12a7c7f47970d507cac25643827e6d953a39cffcd275484acf93"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/000-v90-000-2_00097::turn-008::Buses_1.json",
+      "sha256": "842d1a4635ea5bba5db2cdbb5bce638c5dcd6ac970b7914421d9f564a17eca03"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/001-v90-001-2_00121::turn-008::Buses_1.json",
+      "sha256": "cde59e863c0c9aa57f18c5746df079c1f515a60ee9db755ae93bc2e389c7b5e3"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/002-v90-002-2_00112::turn-010::Buses_1.json",
+      "sha256": "9e7ed5444f04f11b2ee9ae860db16430eedb9b1dc62e7bf8b9d6c37ecbace674"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/003-v90-003-2_00089::turn-014::Buses_1.json",
+      "sha256": "46985ce4135bd6f2c0270199672416306ffdde62858a9fde4017e9179e56ce20"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/004-v90-004-2_00122::turn-006::Buses_1.json",
+      "sha256": "72cc1b8a2b1ddeb9720c91292a6f0407f94fe8aa8de76f888df90ce3b6b997ff"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/005-v90-005-2_00120::turn-004::Buses_1.json",
+      "sha256": "80d62a878dc8fa474fcbb90bfdf99ff8e69690b42458067a825d2d9211b5e2aa"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/006-v90-006-2_00117::turn-002::Buses_1.json",
+      "sha256": "d22daccce2186ea03a47c429049652c8a88cb0c84f82ce62925000d9cd4c8c91"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/007-v90-007-2_00079::turn-006::Buses_1.json",
+      "sha256": "97eff1d90490992d40b42a60ed2fa7bc1ce2151da38e7f0bdd66705e5b7afbeb"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/008-v90-008-2_00069::turn-002::RentalCars_1.json",
+      "sha256": "b56e7bcc1c8e2f406a8ab0305e339fc4560fdc74c6e5a501759e55edb4fca9f1"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/009-v90-009-2_00047::turn-006::RentalCars_1.json",
+      "sha256": "33c463b9b1cedd5287c94c34495f110275515540e8ba930d8357ad4712f6132c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/010-v90-010-2_00076::turn-006::RentalCars_1.json",
+      "sha256": "825058371ca5293b72784680f33b0486755fba61f0c14a99b71e855ba1a97b5f"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/011-v90-011-2_00057::turn-000::RentalCars_1.json",
+      "sha256": "ad2bdef93f7512b66b17e5110c3c07290848e5e304fcfcd98ecc2a16e4d30a8b"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/012-v90-012-2_00053::turn-008::RentalCars_1.json",
+      "sha256": "b8532b86ade5deee9b08756d212ad0c826753c701c688c31eb0adf6bf3a2bc61"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/013-v90-013-2_00061::turn-014::RentalCars_1.json",
+      "sha256": "ec72437deab1aa3f194947dd0e9d1249aceebae2cef6909e5622c98e652e95e8"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/014-v90-014-2_00064::turn-018::RentalCars_1.json",
+      "sha256": "6484cac460c688315dce46890c16c4a5613b28d09e8e54634f4e97c1f117f656"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/015-v90-015-2_00075::turn-014::RentalCars_1.json",
+      "sha256": "d61f9a259f34fd1d92d89cc26c7c94345abe7cd5034e02462c915feff4a7ecbe"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/016-v90-016-2_00039::turn-000::RideSharing_1.json",
+      "sha256": "26e8440be287364605df647a96fe276b8f170cbfc981e0dc602346f22ac072e2"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/017-v90-017-2_00003::turn-006::RideSharing_1.json",
+      "sha256": "3b18fc76df27547deb3dc09fa88b4eac335a5ea93b97b2a56de9b9951ca5a1a3"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/018-v90-018-2_00032::turn-004::RideSharing_1.json",
+      "sha256": "efe8b271d7fbb378ed1ae4004a72598c7dc5244fa3cb6e05d5fb8a85bdadfa44"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/019-v90-019-2_00002::turn-008::RideSharing_1.json",
+      "sha256": "0bf23e40e5a302bb3cbded169c4541e23b493840356b61eb71cc70f763eeb494"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/020-v90-020-2_00024::turn-002::RideSharing_1.json",
+      "sha256": "30efe37b16dc5922fd9d0eb5066d80b85fa455168626d32ea86e0970985644e8"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/021-v90-021-2_00022::turn-000::RideSharing_1.json",
+      "sha256": "fee0b98aa67c1013f4ecfc27525a2fc73d5de7dd090db50c500108b0317b2d0d"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/022-v90-022-2_00015::turn-006::RideSharing_1.json",
+      "sha256": "06cf99222e7a3cce5ce288b97f6022984414d402129de03954a0bc444579a321"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/023-v90-023-2_00009::turn-004::RideSharing_1.json",
+      "sha256": "33ac3e37fb928a3b39a1ebc5ce4ebc3321f014b35a5241bcbdd6a8db5a544691"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/024-v90-024-2_00108::turn-018::Buses_1.json",
+      "sha256": "30842f0c46718bd24d53c017b5c9439ea3d744dfd5dd5740a8111cfcbb76f2b8"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/025-v90-025-2_00081::turn-012::Buses_1.json",
+      "sha256": "c7f021920534f5e4359eb915ded90bd53d570f1062ef741d962969d64f55b1ca"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/026-v90-026-2_00095::turn-018::Buses_1.json",
+      "sha256": "75eccfaa1d25a39fb7591ecf1e144118eceb833fd80b4cca91e8c4cb003e416e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/027-v90-027-2_00080::turn-018::Buses_1.json",
+      "sha256": "95e991efece95194f3572fc4872df2eccb526f6078bae9d93b084e4e9ef791d2"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/028-v90-028-2_00111::turn-016::Buses_1.json",
+      "sha256": "4a8b164a57019e44a7a4a759b7a696f6da4c3b86db4ba1216d06da9347c79801"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/029-v90-029-2_00090::turn-006::Buses_1.json",
+      "sha256": "6df5f29ec58f8bf89978fd2fc0171eda00a4771a44c92d7331763a0c8dc5071d"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/030-v90-030-2_00099::turn-012::Buses_1.json",
+      "sha256": "68b74f0fa3a68be0b8bd045ed3c29eedf95df5ea6958857ef2e62122a4fcad0e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/031-v90-031-2_00094::turn-022::Buses_1.json",
+      "sha256": "0e95b86f1f7144209ad52941c51d96b9eb856bcb72d2e23ad27b350742e99310"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/032-v90-032-2_00077::turn-012::RentalCars_1.json",
+      "sha256": "73b3aeda41fecde417f15aa70f84dc7e95b02a3f5368b17aa3474b64bde567c2"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/033-v90-033-2_00072::turn-012::RentalCars_1.json",
+      "sha256": "b4a124554973a9d84146dbfda477fb89e47d74c92ae70eaf05ed1f42862b4876"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/034-v90-034-2_00067::turn-014::RentalCars_1.json",
+      "sha256": "0b265419182767bc127981f3beef8e770525e2339a6e3ca50a63065db3c9df8b"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/035-v90-035-2_00052::turn-018::RentalCars_1.json",
+      "sha256": "2deb8e64b85489638fd4dad44119d630c47cd3a1e91e0d91613833729e216641"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/036-v90-036-2_00068::turn-012::RentalCars_1.json",
+      "sha256": "c8d3a5114d4cc0f6fdc425e68ff369dcb8554beec176423c6ce2e55cc890834c"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/037-v90-037-2_00070::turn-010::RentalCars_1.json",
+      "sha256": "aa44595dfc9206cb13597578b45c1bc18f333a4c28842da48a6cf327e2b67b17"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/038-v90-038-2_00044::turn-020::RentalCars_1.json",
+      "sha256": "f2cae1ad9e9add93719307a80379e4823dcce62dfcd62730b40f43173271e0c0"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/039-v90-039-2_00054::turn-018::RentalCars_1.json",
+      "sha256": "219639f961037b36a8dce088f2711d75a0b2adbb8661efef05b9c1a1e3db86f9"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/040-v90-040-2_00013::turn-010::RideSharing_1.json",
+      "sha256": "6a4a4183f022d6ddc0a426e42f32350edbafe774d364e2a81defaa6a40979abc"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/041-v90-041-2_00005::turn-010::RideSharing_1.json",
+      "sha256": "77322fe461f1b10de366c9e202ae10eadd66ab866b30c567bef9b219508b55ad"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/042-v90-042-2_00025::turn-010::RideSharing_1.json",
+      "sha256": "b9f32f78e292cb61c24732633f7029150798118b0ef4b2e0261418f8011c05f4"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/043-v90-043-2_00004::turn-010::RideSharing_1.json",
+      "sha256": "ee65ba8d32cfbde3085b101540b809224ae6d827450512e2f92a105700b0d87e"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/044-v90-044-2_00006::turn-010::RideSharing_1.json",
+      "sha256": "a8899a67ede3501eeb1444bfc960d4a21d5e00e8daf9db386f4c6dd008d36153"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/045-v90-045-2_00014::turn-008::RideSharing_1.json",
+      "sha256": "cb7b30037314fdce2daeced2d2b88f0c222c91a4402f8044d2963e80c2f64481"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/046-v90-046-2_00030::turn-012::RideSharing_1.json",
+      "sha256": "3b1c50b748132f06e73543fa002350f7fcec469fb4499a99864e91c6e36a6d15"
+    },
+    {
+      "path": "outputs/v90-capacity-generation/evaluation/qwen38_27b_8bit/raw-fixtures/047-v90-047-2_00000::turn-008::RideSharing_1.json",
+      "sha256": "310b5ed3d07d6e15b61b518e85abf9129c36389d4cfe4f0753dd58f1370178ff"
+    }
+  ],
+  "research_direction": "docs/research-direction.md",
+  "research_direction_sha256": "51bca50d04ce7acf6292afe5a8ace63c6847b4c0add32d5178b4114332a6c495",
+  "results_document": "docs/v90-capacity-generation-results.md",
+  "results_document_sha256": "c846841733435d287fd1027a888a651f59419ba8346938d6f3dddda88114e96d",
+  "schema_version": "90-capacity-generation-outcome-lock",
+  "verifier": "python/verify_and_freeze_v90_outcome.py",
+  "verifier_sha256": "c01fa93850b4965abd3dbd98a7b2523eb190005e927d41ce84be181567a60d0d"
+}

@@ -1,0 +1,80 @@
+{
+  "audit": "outputs/v104-massive-language/language-outcome-audit.json",
+  "audit_sha256": "9901d91c7f38340df76a6d02f535674487a8640b4207ffc47f6890724ecc7f13",
+  "authorization": {
+    "automatically_read_development_language_after_interface_lock": true,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_interface_and_baseline_outcomes": false,
+    "manually_inspect_protected_test_language": false,
+    "modify_or_rerun_V104_extraction": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_benchmark_interface_prompt_controls_metrics_and_gates": true,
+    "read_protected_test_before_interface_lock": false,
+    "run_API_model_or_train_adapter": false
+  },
+  "development_language": "outputs/v104-massive-language/selected-language/development.jsonl",
+  "development_language_sha256": "dd6621ced78272e713b7cd4f8fdbdd7ad0a201fa59a507ef503e92d86b7853b0",
+  "experiment": "v104_massive_language_extraction_outcome_lock",
+  "extraction_lock": "configs/v104-massive-language-extraction-lock.json",
+  "extraction_lock_sha256": "ca41ca35b174952de35152ac86f752a7e2cd2e382c5cde0f910d044400c2171e",
+  "lock_payload_sha256": "1ba4df86efd2321bb51e7ce54cc5fde717917a11ba8b0b6d64c7caf7de56fb74",
+  "outcome": {
+    "decision": "freeze_positive_V104_MASSIVE_language_artifacts",
+    "extraction_summary": {
+      "development_protected_test_disjoint": true,
+      "exact_familiarity_reconstruction": true,
+      "exact_selected_identifier_set": true,
+      "exact_slot_type_count_reconstruction": true,
+      "exact_structural_ground_truth_match": true,
+      "role_class_record_counts": {
+        "development": {
+          "known_familiar": 64,
+          "known_unfamiliar": 64,
+          "novel_valid": 64,
+          "unsupported": 64
+        },
+        "protected_test": {
+          "known_familiar": 64,
+          "known_unfamiliar": 64,
+          "novel_valid": 64,
+          "unsupported": 64
+        }
+      },
+      "role_payload_sha256": {
+        "development": "d7f3c237625e509a722776380c8dbe6e54caf06d629d5fcedd43f18d7b54f52a",
+        "protected_test": "51057596f02a49083170ae75465cb702a5a92b69c2be008d3c24979027a640b0"
+      },
+      "role_record_counts": {
+        "development": 256,
+        "protected_test": 256
+      },
+      "total_record_count": 512,
+      "unselected_language_record_count": 0
+    },
+    "output_integrity": {
+      "development": {
+        "file_sha256": "dd6621ced78272e713b7cd4f8fdbdd7ad0a201fa59a507ef503e92d86b7853b0",
+        "path": "outputs/v104-massive-language/selected-language/development.jsonl",
+        "payload_sha256": "d7f3c237625e509a722776380c8dbe6e54caf06d629d5fcedd43f18d7b54f52a",
+        "record_count": 256
+      },
+      "protected_test": {
+        "file_sha256": "9d80958347e2aa4c967e7c5b6c57b30e92db78064650f9475ccecfa7cbdebd8e",
+        "path": "outputs/v104-massive-language/selected-language/protected-test.jsonl",
+        "payload_sha256": "51057596f02a49083170ae75465cb702a5a92b69c2be008d3c24979027a640b0",
+        "record_count": 256
+      }
+    },
+    "passed": true,
+    "scientific_extraction_passed": true
+  },
+  "protected_test_language": "outputs/v104-massive-language/selected-language/protected-test.jsonl",
+  "protected_test_language_sha256": "9d80958347e2aa4c967e7c5b6c57b30e92db78064650f9475ccecfa7cbdebd8e",
+  "result": "outputs/v104-massive-language/selected-language/result.json",
+  "result_sha256": "9b823484a66d40c5ef038286809e4e49e38d175ed6dfc17648d5d4b6d8093ff3",
+  "results_document": "docs/v104-massive-language-extraction-results.md",
+  "results_document_sha256": "bb8850f416a84677739cc7afe1be8b604c33bec764ae6f10f705db85ca55f168",
+  "schema_version": "104-massive-language-extraction-outcome-lock",
+  "verifier": "python/verify_and_freeze_v104_language_outcome.py",
+  "verifier_sha256": "dbc525127d1fbbdccedb7221926b0ddbad94ab123bd457194f0926f957b26bfe"
+}

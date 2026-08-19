@@ -1,0 +1,148 @@
+{
+  "access": "outputs/v144-local-certificate-realization/model-realization/access.json",
+  "access_sha256": "3b51cb95f9516487178e258f542b1d7b9173c4dc8699df2f11acefec240931b5",
+  "analysis_lock": "configs/v144-local-certificate-realization-lock.json",
+  "analysis_lock_sha256": "f3f9c0d7a2247b27e4fe1aedcbb205db52fe2e0027a116c0f4ec86a6df88e0e6",
+  "audit": "outputs/v144-local-certificate-realization/outcome-audit.json",
+  "audit_sha256": "ab49311d6d0fea30a9b5048e88f8ba106e9b7bdf9c777a91b6af78e7c7d6abb1",
+  "authorization": {
+    "modify_retry_rerun_reprompt_tune_or_mine_V144": false,
+    "preregister_one_separate_frozen_V142_test_realization": false,
+    "retain_as_project_authored_synthetic_development_evidence_only": true,
+    "run_or_open_V142_test_before_separate_preregistration": false,
+    "run_training_induction_authority_action_or_execution": false,
+    "touch_V134_external_language_or_run_API": false
+  },
+  "experiment": "v144_pinned_local_certificate_development_realization",
+  "lock_payload_sha256": "46f24dcd50ef750d0d535c28195f627a48ebc2eecb43e48b53a06301367a4c35",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "local_certificate_realization_fails_development_gates_close_without_test_or_tuning",
+    "metrics": {
+      "actual_execution_count": 0,
+      "ambiguity_sensitivity": 0.16666666666666666,
+      "authoritative_true_hypothesis_retention": 1.0,
+      "candidate_attracted_fraction_of_errors": 0.0,
+      "certificate_structural_validity": 0.8333333333333334,
+      "certificate_true_option_retention": 0.8333333333333334,
+      "compatible_set_exact_accuracy": 0.8333333333333334,
+      "conditional_proposal_correctness": 1.0,
+      "confusion_counts": {
+        "A00->A00": 24,
+        "K11->K11": 12,
+        "K12->A00": 4,
+        "K12->K12": 20,
+        "K13->K13": 24,
+        "K14->K14": 12,
+        "N11->N11": 16,
+        "N12->N12": 8,
+        "N13->N13": 8,
+        "U10->U10": 16
+      },
+      "decidable_specificity": 0.9666666666666667,
+      "deterministic_final_output_validity": 1.0,
+      "false_known_rate_on_nonknown_truths": 0.0,
+      "fixture_count": 144,
+      "full_six_stage_group_accuracy": 0.875,
+      "group_count": 24,
+      "language_class_metrics": {
+        "insufficient_evidence": {
+          "certificate_validity": 0.16666666666666666,
+          "compatible_set_exact_accuracy": 0.16666666666666666,
+          "count": 24,
+          "final_exact_accuracy": 1.0
+        },
+        "known_clarified": {
+          "certificate_validity": 0.9166666666666666,
+          "compatible_set_exact_accuracy": 0.9166666666666666,
+          "count": 24,
+          "final_exact_accuracy": 0.9166666666666666
+        },
+        "known_familiar": {
+          "certificate_validity": 0.9166666666666666,
+          "compatible_set_exact_accuracy": 0.9166666666666666,
+          "count": 24,
+          "final_exact_accuracy": 0.9166666666666666
+        },
+        "known_unfamiliar": {
+          "certificate_validity": 1.0,
+          "compatible_set_exact_accuracy": 1.0,
+          "count": 24,
+          "final_exact_accuracy": 1.0
+        },
+        "novel_valid": {
+          "certificate_validity": 1.0,
+          "compatible_set_exact_accuracy": 1.0,
+          "count": 16,
+          "final_exact_accuracy": 1.0
+        },
+        "novel_valid_clarified": {
+          "certificate_validity": 1.0,
+          "compatible_set_exact_accuracy": 1.0,
+          "count": 16,
+          "final_exact_accuracy": 1.0
+        },
+        "unsupported": {
+          "certificate_validity": 1.0,
+          "compatible_set_exact_accuracy": 1.0,
+          "count": 8,
+          "final_exact_accuracy": 1.0
+        },
+        "unsupported_clarified": {
+          "certificate_validity": 1.0,
+          "compatible_set_exact_accuracy": 1.0,
+          "count": 8,
+          "final_exact_accuracy": 1.0
+        }
+      },
+      "maximum_new_tokens_hit_count": 24,
+      "mean_generated_tokens": 618.7083333333334,
+      "no_query_mean_decision_cost": 1.1666666666666667,
+      "overall_final_exact_accuracy": 0.9722222222222222,
+      "sequential_false_known_on_right_truth": 0.0,
+      "sequential_improvement_over_no_query": 0.8249999999999998,
+      "sequential_mean_decision_cost": 0.3416666666666666,
+      "sequential_query_rate": 1.0,
+      "sequential_safe_nonknown_on_right_truth": 1.0,
+      "thinking_trace_presence": 1.0,
+      "total_generation_seconds": 6818.297154917149,
+      "validation_reason_counts": {
+        "prompt_opened_thinking_trace_not_closed": 24,
+        "valid_insufficient": 4,
+        "valid_sufficient": 116
+      },
+      "worst_family_sequential_improvement": 0.44999999999999996
+    },
+    "passed": true,
+    "qualification_gates": {
+      "ambiguity_sensitivity": false,
+      "authoritative_retention": true,
+      "candidate_attraction": true,
+      "certificate_structural_validity": false,
+      "certificate_true_option_retention": false,
+      "compatible_set_exact_accuracy": false,
+      "conditional_proposal_correctness": true,
+      "decidable_specificity": false,
+      "deterministic_final_output_validity": true,
+      "every_language_class_final_exact_accuracy": false,
+      "false_known": true,
+      "full_six_stage_group_accuracy": true,
+      "overall_final_exact_accuracy": true,
+      "sequential_cost": true,
+      "sequential_false_known": true,
+      "sequential_improvement": true,
+      "sequential_safe_nonknown": true,
+      "thinking_trace_presence": true,
+      "zero_execution": true
+    },
+    "qualified": false,
+    "realization_completed": true
+  },
+  "result": "outputs/v144-local-certificate-realization/model-realization/result.json",
+  "result_sha256": "fa1381221d1b58d25047cf4537a681010690db01bb55e0e077ecd9a6204c3f57",
+  "results_document": "docs/v144-local-certificate-realization-results.md",
+  "results_document_sha256": "78edb1fece103c4f4555f58c83b3131731c554eff7eb22ebe7ec5d7972953ad8",
+  "schema_version": "144-local-certificate-realization-outcome-lock",
+  "verifier": "python/verify_and_freeze_v144_local_certificate_realization_outcome.py",
+  "verifier_sha256": "5a17168955f15810a064fae80f24df7374404695bdd17dc490de2e4bc863966a"
+}

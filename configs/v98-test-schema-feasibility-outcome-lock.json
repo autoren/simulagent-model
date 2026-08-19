@@ -1,0 +1,67 @@
+{
+  "audit": "outputs/v98-test-schema-feasibility/schema-outcome-audit.json",
+  "audit_sha256": "887f0854e96a70711cb67dc1b1e628b31de90c690b9b133863514a63c4e9c82d",
+  "authorization": {
+    "download_test_dialogue_payload_before_source_pool_lock": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "manually_inspect_schema_or_dialogue_language": false,
+    "modify_or_rerun_V98_schema_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_test_dialogue_source_pool_metadata": false,
+    "run_API_model_or_train_adapter": false,
+    "select_population_or_extract_language": false
+  },
+  "experiment": "v98_test_schema_feasibility_outcome_lock",
+  "inventory": "outputs/v98-test-schema-feasibility/schema-inventory/test-schema-inventory.json",
+  "inventory_sha256": "59a5fb6faae4f500c17e526c80aa86baf521934eb4f6a6ce4bbe7182568150e6",
+  "lock_payload_sha256": "854f9aa914b3280861426d1c20411d323abec276e7654ca5842f56eef1e3a819",
+  "outcome": {
+    "decision": "freeze_negative_V98_test_schema_feasibility",
+    "inventory_summary": {
+      "contains_schema_language_or_surface_tokens": false,
+      "development_family_count": 16,
+      "development_service_count": 17,
+      "eligible_novel_service_count": 2,
+      "eligible_novel_services": [
+        {
+          "family": "Payment",
+          "intent_count": 2,
+          "service": "Payment_1",
+          "slot_count": 4
+        },
+        {
+          "family": "Trains",
+          "intent_count": 2,
+          "service": "Trains_1",
+          "slot_count": 10
+        }
+      ],
+      "emitted_intent_description_count": 0,
+      "emitted_intent_name_count": 0,
+      "emitted_slot_name_count": 0,
+      "inventory_sha256": "df7118bd5819a4f4c24cca3c048440cd3fd2eb0c70928c33573da3212e0dab32",
+      "novel_service_families": [
+        "Payment",
+        "Trains"
+      ],
+      "novel_service_family_count": 2,
+      "test_family_count": 18,
+      "test_service_count": 21
+    },
+    "passed": true,
+    "scientific_schema_feasibility_passed": false
+  },
+  "result": "outputs/v98-test-schema-feasibility/schema-inventory/result.json",
+  "result_sha256": "d1870743c18282c830f5978eecf10448f3753e09778a2a6c265f41fd3a43c79b",
+  "results_document": "docs/v98-test-schema-feasibility-results.md",
+  "results_document_sha256": "d7620ed827670a2e59db252343929daab0b8f44747a0f52dce9f0b414a1353e2",
+  "schema_lock": "configs/v98-test-schema-feasibility-lock.json",
+  "schema_lock_sha256": "1742befd28452e8b901ef802bbab1e8de1548f0ba372a994cd32824ae07949fc",
+  "schema_version": "98-test-schema-feasibility-outcome-lock",
+  "source_schema": "outputs/v98-test-schema-feasibility/source/schema.json",
+  "source_schema_git_blob_sha1": "6cb0fc131da22b43bb4672ec89755f19e7d278ff",
+  "source_schema_sha256": "0b4af32e01695aec4788681fe6b22fb7ee908907269f5ac7167d01f4c4132bcb",
+  "verifier": "python/verify_and_freeze_v98_schema_outcome.py",
+  "verifier_sha256": "9ebaf240eb6c8c215b52b0cef1ec44f8cd9aaf5f4d5789cfd3fd37b0d14fbe00"
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "88r1-name-preservation-repair",
+  "experiment": "v88r1_single_mechanical_fixture_name_repair",
+  "purpose": "obtain the originally registered V88 scientific outcome after a pre-scoring harness identity failure",
+  "parentExecutionLock": "configs/v88-external-intent-candidate-execution-lock.json",
+  "originalImplementationLock": "configs/v88-external-intent-candidate-implementation-lock.json",
+  "onlyAuthorizedChange": "copy the harness-provided fixture name field unchanged into the scored row before the harness identity check",
+  "frozenUnchangedDependencies": [
+    "source and source revision",
+    "record population and order",
+    "human-language corpus bytes",
+    "system and user prompt templates",
+    "local model repository, revision, and snapshot",
+    "decoding parameters",
+    "candidate parser and scorer",
+    "controls and scientific quality gates",
+    "non-deployable provenance and no-execution boundary"
+  ],
+  "retry": {
+    "attemptNumber": 1,
+    "maximumRetryModelLoadCount": 1,
+    "maximumRetryModelGenerationCount": 48,
+    "priorFailedModelLoadCount": 1,
+    "priorFailedModelGenerationCount": 1,
+    "maximumCumulativeModelLoadCount": 2,
+    "maximumCumulativeModelGenerationCount": 49,
+    "retryOnMalformedOutput": false,
+    "anyFurtherRetryAuthorized": false
+  },
+  "decisionRule": {
+    "ifExecutionCompletes": "apply every unchanged original V88 gate and freeze the result positive or negative",
+    "ifExecutionFailsAgain": "freeze V88r1 execution-inconclusive and stop without another retry",
+    "ifAnyScientificGateFails": "freeze negative without prompt, record, model, decoder, parser, scorer, control, or threshold changes",
+    "passAuthorizesAPIAccessTrainingDeploymentOrExecution": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeRepair": true,
+    "modifyOriginalV88Files": false,
+    "implementNamePreservingRunner": false,
+    "runLocalModel": false,
+    "runAPIModel": false,
+    "trainAdapter": false,
+    "inspectSourceLanguageManually": false,
+    "performRealServiceCall": false,
+    "performExternalSideEffect": false
+  }
+}

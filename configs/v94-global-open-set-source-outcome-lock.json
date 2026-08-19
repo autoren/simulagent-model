@@ -1,0 +1,85 @@
+{
+  "audit": "outputs/v94-global-open-set/source-outcome-audit.json",
+  "audit_sha256": "3f93a0e25176d7cb568bae31954b548b15f30c3b94f0c2a51343400f1d8e1ddf",
+  "authorization": {
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_population_prompt_controls_metrics_and_gates_lock": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_V94_source_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_dialogue_disjoint_population": false,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_language_extraction": false
+  },
+  "experiment": "v94_global_open_set_source_outcome_lock",
+  "inventory": "outputs/v94-global-open-set/source-inventory/global-open-set-inventory.json",
+  "inventory_sha256": "376844e322dab53ac7bc0e32997bcdc5fda38f4d9eca3f488eed95ea59f5da2a",
+  "lock_payload_sha256": "29d42612c3a64fd4f08494850af225ecf3b66403d5bb79fe7a708635db446a9c",
+  "outcome": {
+    "decision": "freeze_negative_V94_global_source_feasibility",
+    "inventory_summary": {
+      "candidate_count": 645,
+      "candidate_index_sha256": "60181d8f425feb568fda6ff309fb0d7a39227e0e80a01959ec60175203a75583",
+      "catalog_service_count": 3,
+      "catalog_services": [
+        "Movies_2",
+        "Media_2",
+        "Banks_2"
+      ],
+      "class_counts": {
+        "insufficient_evidence": 49,
+        "known_familiar": 240,
+        "known_unfamiliar": 7,
+        "novel_valid": 148,
+        "unsupported": 201
+      },
+      "class_service_counts": {
+        "insufficient_evidence": 3,
+        "known_familiar": 2,
+        "known_unfamiliar": 2,
+        "novel_valid": 1,
+        "unsupported": 1
+      },
+      "complete_catalog_pair_count": 5,
+      "contains_language_tokens_slot_values_or_histories": false,
+      "declared_supported_pair_count": 4,
+      "declared_supported_pairs": [
+        "Banks_2::CheckBalance",
+        "Banks_2::TransferMoney",
+        "Media_2::FindMovies",
+        "Media_2::RentMovie"
+      ],
+      "eligible_fresh_service_count": 4,
+      "eligible_fresh_services": [
+        "Travel_1",
+        "Movies_2",
+        "Media_2",
+        "Banks_2"
+      ],
+      "hidden_pair_count": 1,
+      "hidden_pairs": [
+        "Movies_2::FindMovies"
+      ],
+      "source_record_count": 666,
+      "supported_pair_count": 5,
+      "unsupported_service_count": 1,
+      "unsupported_services": [
+        "Travel_1"
+      ]
+    },
+    "passed": true,
+    "scientific_source_feasibility_passed": false
+  },
+  "result": "outputs/v94-global-open-set/source-inventory/result.json",
+  "result_sha256": "72ead941572224026f7ea0f59c07aab97b265f56747517ef93aac8b072206e5e",
+  "results_document": "docs/v94-global-open-set-source-results.md",
+  "results_document_sha256": "6650a3e7e0b4549e336e75a1119b2f2b707f33632befe28ca6a0c627ae69bb90",
+  "schema_version": "94-global-open-set-source-outcome-lock",
+  "source_file": "outputs/v94-global-open-set/source/dialogues_005.json",
+  "source_file_git_blob_sha1": "80ddca2c6ed633e49e2f827c05615e514b62ca17",
+  "source_file_sha256": "107d8bc1ce21b06453f33cc8dfc19172e0956646b47d9c1db7bdcd978a323d73",
+  "source_lock": "configs/v94-global-open-set-source-lock.json",
+  "source_lock_sha256": "f69e032490bd5a851ea50f868e3ed0ed9259bd9d2ed954a740861d89ca4d0e5a",
+  "verifier": "python/verify_and_freeze_v94_source_outcome.py",
+  "verifier_sha256": "aa7d49deb524e72b44e9ee516ba57d01a07eec03917e8f2577aff3bc1720d238"
+}

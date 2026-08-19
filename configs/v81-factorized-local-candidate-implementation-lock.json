@@ -1,0 +1,543 @@
+{
+  "authorization": {
+    "collect_human_language": false,
+    "maximum_model_generation_count": 24,
+    "maximum_model_load_count": 1,
+    "modify_prompt_records_model_parser_composer_decoding_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "rerun_on_malformed_or_failed_output": false,
+    "run_API_model": false,
+    "run_local_model_once": true,
+    "train_adapter": false
+  },
+  "census_harness": "python/locked_census_harness.py",
+  "census_harness_sha256": "16fb60b0619f5a38ab9d375cfa626d0e88d66a49dd221f736436f933639e7714",
+  "config_payload": {
+    "candidateIdsInRequiredOrder": [
+      "schedule_review__alex_chen",
+      "send_summary__alex_chen",
+      "schedule_review__alex_kim",
+      "send_summary__alex_kim",
+      "none_of_the_above"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V81 without edits or rerun and stop local candidate integration pending a materially different design",
+      "ifEveryGatePasses": "freeze factorized proposer and authorize preregistration of deterministic candidate-to-belief integration",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesBeliefAssignmentImmediately": false,
+      "passAuthorizesRealToolExecution": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 96,
+      "maximumPromptTokens": 640,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v81_frozen_local_LLM_factorized_candidate_generation",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumActionOrToolFieldCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCandidateIdFieldCount": 0,
+      "maximumConfidenceOrProbabilityFieldCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumMeanCandidateCount": 3.5,
+      "maximumModelGenerationCount": 24,
+      "maximumRealToolCallCount": 0,
+      "minimumCanonicalOrderRate": 1.0,
+      "minimumClearExactCandidateSetAccuracy": 0.75,
+      "minimumExactCandidateSetAccuracy": 0.75,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumExactLabelVectorAccuracy": 0.75,
+      "minimumMeanGoldCandidateRecall": 0.95,
+      "minimumMeanLabelAccuracy": 0.95,
+      "minimumOutOfOntologyExactCandidateSetAccuracy": 0.75,
+      "minimumOutOfOntologyLabelAccuracy": 0.75,
+      "minimumPerStratumMeanGoldCandidateRecall": 0.9,
+      "minimumSchemaValidityRate": 1.0,
+      "requiredRecordCount": 24,
+      "requiredStratumCounts": {
+        "clear": 8,
+        "fully_ambiguous": 4,
+        "operation_ambiguous": 4,
+        "out_of_ontology": 4,
+        "recipient_ambiguous": 4
+      }
+    },
+    "labelKeysInRequiredOrder": [
+      "schedule_review",
+      "send_summary",
+      "alex_chen",
+      "alex_kim",
+      "out_of_ontology"
+    ],
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "actionOrToolFieldsAllowed": false,
+      "candidateComposition": "if out_of_ontology then none_of_the_above only; otherwise canonical cross-product of true operation and recipient flags followed by none_of_the_above",
+      "candidateIdsFromModelAllowed": false,
+      "confidenceOrProbabilityFieldsAllowed": false,
+      "exactTopLevelKeys": [
+        "schedule_review",
+        "send_summary",
+        "alex_chen",
+        "alex_kim",
+        "out_of_ontology"
+      ],
+      "outOfOntologyIffNoSupportedOperation": true,
+      "valuesMustBeBoolean": true
+    },
+    "predecessorConstraint": "V80 is frozen and may not be rerun; V81 uses a new prompt, a different fixed-shape representation, and 24 fresh project-authored requests",
+    "purpose": "test whether a frozen local LLM can emit a fixed semantic compatibility vector that deterministic code safely maps into V79 interpretation candidates",
+    "records": [
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": false
+        },
+        "id": "v81-clear-sc-01",
+        "instruction": "Set up a project review meeting with Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": false
+        },
+        "id": "v81-clear-sc-02",
+        "instruction": "Organize the project review session for Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": false
+        },
+        "id": "v81-clear-sk-01",
+        "instruction": "Set up a project review meeting with Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": false
+        },
+        "id": "v81-clear-sk-02",
+        "instruction": "Organize the project review session for Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": false,
+          "schedule_review": false,
+          "send_summary": true
+        },
+        "id": "v81-clear-tc-01",
+        "instruction": "Email the project recap to Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": false,
+          "schedule_review": false,
+          "send_summary": true
+        },
+        "id": "v81-clear-tc-02",
+        "instruction": "Share the project summary with Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": false,
+          "send_summary": true
+        },
+        "id": "v81-clear-tk-01",
+        "instruction": "Email the project recap to Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": false,
+          "send_summary": true
+        },
+        "id": "v81-clear-tk-02",
+        "instruction": "Share the project summary with Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": false
+        },
+        "id": "v81-recipient-s-01",
+        "instruction": "Set up Alex's project review meeting.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": false
+        },
+        "id": "v81-recipient-s-02",
+        "instruction": "Organize a project review session with Alex.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": false,
+          "send_summary": true
+        },
+        "id": "v81-recipient-t-01",
+        "instruction": "Email Alex the project recap.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": false,
+          "send_summary": true
+        },
+        "id": "v81-recipient-t-02",
+        "instruction": "Share the project summary with Alex.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-operation-c-01",
+        "instruction": "Resolve the project matter for Alex Chen.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-operation-c-02",
+        "instruction": "Deal with Alex Chen's project issue.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-operation-k-01",
+        "instruction": "Resolve the project matter for Alex Kim.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-operation-k-02",
+        "instruction": "Deal with Alex Kim's project issue.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-full-01",
+        "instruction": "Resolve Alex's project matter.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-full-02",
+        "instruction": "Deal with Alex's project issue.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-full-03",
+        "instruction": "Address the project matter for Alex.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": false,
+          "schedule_review": true,
+          "send_summary": true
+        },
+        "id": "v81-full-04",
+        "instruction": "Sort out Alex's project issue.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": true,
+          "schedule_review": false,
+          "send_summary": false
+        },
+        "id": "v81-unknown-01",
+        "instruction": "Rename the project folder for Alex Chen.",
+        "stratum": "out_of_ontology"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": false,
+          "alex_kim": true,
+          "out_of_ontology": true,
+          "schedule_review": false,
+          "send_summary": false
+        },
+        "id": "v81-unknown-02",
+        "instruction": "Print the project brief for Alex Kim.",
+        "stratum": "out_of_ontology"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": true,
+          "out_of_ontology": true,
+          "schedule_review": false,
+          "send_summary": false
+        },
+        "id": "v81-unknown-03",
+        "instruction": "Approve Alex's project budget.",
+        "stratum": "out_of_ontology"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "goldLabels": {
+          "alex_chen": true,
+          "alex_kim": false,
+          "out_of_ontology": true,
+          "schedule_review": false,
+          "send_summary": false
+        },
+        "id": "v81-unknown-04",
+        "instruction": "Move Alex Chen's project deadline.",
+        "stratum": "out_of_ontology"
+      }
+    ],
+    "schemaVersion": "81-factorized-local-candidate-design",
+    "stageAuthorization": {
+      "auditAndFreezeProtocol": true,
+      "collectHumanLanguage": false,
+      "constructAndSealCorpus": false,
+      "implementAndAuditLocalRunner": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You are a semantic compatibility labeler, not a decision maker. Return exactly one JSON object with these five Boolean keys in this exact order: schedule_review, send_summary, alex_chen, alex_kim, out_of_ontology. Mark every interpretation compatible with the text, not merely the most likely one. schedule_review is true only for arranging, booking, organizing, or setting up a project review meeting. send_summary is true only for sending, delivering, forwarding, sharing, or emailing a project summary or recap. If the requested operation is unspecified or generically described as a project item, task, request, matter, or issue, both operation keys are true. alex_chen is true for Alex Chen; alex_kim is true for Alex Kim; if only Alex is given, both recipient keys are true. out_of_ontology is true exactly when neither supported operation is requested; in that case both operation keys must be false. Do not include candidate IDs, probabilities, confidence, actions, tools, explanations, or Markdown.",
+    "userPromptTemplate": "Project request: {instruction}"
+  },
+  "corpus": "data/v81-factorized-local-candidate/records.jsonl",
+  "corpus_seal": "data/v81-factorized-local-candidate/corpus-seal.json",
+  "corpus_seal_sha256": "2d7467eb3a3bb911483e65c9f082a953468cf028be8508edfbd7bb7afc6f72e6",
+  "corpus_sha256": "94d8816be192044d35b85c7dfa7924a34d0a17a96d1d8fab93409d76491f490e",
+  "design_lock": "configs/v81-factorized-local-candidate-design-lock.json",
+  "design_lock_sha256": "ab75d492980638b0f48000c1edd23c3a86a7f840561cd86b4141ebd435b10317",
+  "experiment": "v81_factorized_local_candidate_implementation_lock",
+  "implementation_audit": "outputs/v81-factorized-local-candidate/implementation-audit.json",
+  "implementation_audit_sha256": "28e422850c19fefc43a7701b0f50e4a18b7142fce763c9e99b2d76100b1162ca",
+  "implementation_auditor": "python/audit_and_freeze_v81_factorized_implementation.py",
+  "implementation_auditor_sha256": "52b4071854fdc606a75fc2236ec72c955930a7b94add1aa08252ef1d89076b47",
+  "local_config_sha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "local_model_index_sha256": "52e534c41f7b97708329c85f762e5882bf48bd5955a422c6ae74eba321e6048a",
+  "local_snapshot_path": "/Users/kkmini/.cache/huggingface/hub/models--mlx-community--Qwen3.5-4B-4bit/snapshots/0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "local_tokenizer_config_sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+  "lock_payload_sha256": "2fc3597601053ff64b71f7595f68b0d25a972e12442e27b14108fd4ea2c46f25",
+  "protocol": "python/v81_factorized_candidate_protocol.py",
+  "protocol_sha256": "2d74bc6a0260c55ac2364552b1087d325566e04a22cdcc016dd0a3f8f181685a",
+  "runner": "python/run_v81_factorized_local_candidate_mlx.py",
+  "runner_sha256": "6199ca9afd5821d4b9f77ecd4b80d0f56d5c837e86635d340f93e73c840dc590",
+  "schema_version": "81-factorized-local-candidate-implementation-lock",
+  "tests": "python/test_v81_factorized_candidate_protocol.py",
+  "tests_sha256": "e7ba77cfe4b98c08323c89c05f8469b01ebab8f7ee09ecda834bd364a4ed1715"
+}

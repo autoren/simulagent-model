@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "141-two-stage-controller-feasibility",
+  "experiment": "v141_model_free_correlated_two_stage_controller_feasibility",
+  "parentV140OutcomeLock": "configs/v140-thinking-qualification-gap-outcome-lock.json",
+  "V135Config": "configs/v135-controlled-open-world-minimal-pairs.json",
+  "V135OutcomeLock": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+  "V136Config": "configs/v136-controlled-clarification-value.json",
+  "claimBoundary": "model-free reliability envelope for a bounded finalizer, explicit evidence-sufficiency gate, and typed proposer under arbitrary within-decision dependence and conservative downstream error costs; not evidence that an LLM realizes the marginals, not a candidate-attraction guarantee, and not language transfer, authority, action, or execution",
+  "controller": {
+    "stages": [
+      "bounded typed finalizer",
+      "evidence-sufficiency gate",
+      "complete-universe typed proposer"
+    ],
+    "invalidFinalizerOutputMapsTo": "A00",
+    "ambiguousGatePositiveMapsTo": "A00",
+    "decidableGatePositiveAllowsTypedProposal": true,
+    "completeSafeHypothesisUniverseRetained": true,
+    "sameModelStageErrorsMayBeArbitrarilyDependent": true,
+    "crossFixtureGroupErrorsMayBeArbitrarilyDependent": true,
+    "wrongTypedProposalChargedAtWorstFrozenDecisionCost": true,
+    "actualExecutionCount": 0
+  },
+  "reliabilityGrid": {
+    "minimum": 0.95,
+    "maximum": 1.0,
+    "step": 0.001,
+    "referenceFinalizerValidity": 0.99,
+    "referenceAmbiguitySensitivity": 0.99,
+    "referenceDecidableSpecificity": 0.99,
+    "referenceProposalCorrectness": 0.99
+  },
+  "populationWeights": {
+    "clear": 0.4,
+    "ambiguous": 0.2,
+    "clarified": 0.4,
+    "fixturesPerFiveStageGroup": 5,
+    "decidableFixturesPerGroup": 4,
+    "ambiguousFixturesPerGroup": 1
+  },
+  "qualificationGates": {
+    "minimumStructuredValidity": 0.99,
+    "minimumOverallExactAccuracyLowerBound": 0.95,
+    "minimumClearExactAccuracyLowerBound": 0.95,
+    "minimumAmbiguousAbstentionLowerBound": 0.95,
+    "minimumClarifiedExactAccuracyLowerBound": 0.95,
+    "minimumFullFiveStageGroupAccuracyLowerBound": 0.8,
+    "maximumFalseKnownRateOnNonKnownTruthsUpperBound": 0.05,
+    "maximumSequentialMeanDecisionCostUpperBound": 0.7,
+    "minimumSequentialImprovementOverNoQueryLowerBound": 0.25,
+    "maximumSequentialFalseKnownOnRightTruthUpperBound": 0.05,
+    "minimumSequentialSafeNonKnownOnRightTruthLowerBound": 0.95,
+    "maximumSymmetricMarginalReliabilityThreshold": 0.99,
+    "maximumReferenceCandidateAttractedFractionOfErrors": null,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumRawResponseOrTraceReads": 0,
+    "maximumV134LanguageReads": 0,
+    "maximumExternalLanguageReads": 0,
+    "maximumModelLoads": 0,
+    "maximumModelGenerations": 0,
+    "maximumAPICalls": 0,
+    "maximumTrainingRuns": 0,
+    "maximumActualExecutions": 0
+  },
+  "decisionRule": {
+    "ifReferenceAndThresholdGatesPass": "freeze_robust_two_stage_envelope_authorize_fresh_interface_and_population_design_only",
+    "otherwise": "reject_two_stage_controller_without_language_or_model_run",
+    "passAuthorizesImmediateLanguageOrModelRun": false,
+    "passAuthorizesFreshInterfaceAndPopulationDesign": true,
+    "passAuthorizesV134OrExternalLanguage": false,
+    "passAuthorizesAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

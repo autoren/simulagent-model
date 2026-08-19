@@ -1,0 +1,293 @@
+{
+  "authorization": {
+    "collect_human_or_original_user_language": false,
+    "construct_and_seal_corpus": true,
+    "implement_and_audit_runner": true,
+    "modify_design_prompt_records_model_decoding_contract_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "run_API_model": false,
+    "run_local_model": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "canonicalSurfaces": {
+      "ask_full_details": "Should I schedule the project review or send the project summary, and should the recipient be Alex Chen or Alex Kim?",
+      "ask_operation": "Should I schedule the project review or send the project summary?",
+      "ask_recipient": "Should the recipient be Alex Chen or Alex Kim?"
+    },
+    "clarificationCodesInRequiredOrder": [
+      "ask_operation",
+      "ask_recipient",
+      "ask_full_details"
+    ],
+    "controls": [
+      "canonical_surface",
+      "finite_grammar_surface",
+      "raw_local_model_passthrough",
+      "validated_local_model_with_canonical_fallback",
+      "unsafe_surface_mutations"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V82 without prompt edits or rerun; retain canonical and grammar renderers only",
+      "ifEveryGatePasses": "freeze V82 as an optional validated surface renderer with mandatory canonical fallback",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesActionSelection": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesBeliefAssignment": false,
+      "passAuthorizesCandidateGeneration": false,
+      "passAuthorizesRealToolExecution": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 96,
+      "maximumPromptTokens": 640,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v82_frozen_local_LLM_fail_closed_clarification_surface",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumConfidenceProbabilityCandidateActionOrToolFieldCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFallbackRate": 0.25,
+      "maximumForbiddenExecutionClaimCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumMeanFinalQuestionCharacters": 180.0,
+      "maximumModelGenerationCount": 24,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumRealToolCallCount": 0,
+      "maximumV79PolicyValueAbsoluteError": 1e-12,
+      "minimumAcceptedUniqueSurfaceCountPerCode": 1,
+      "minimumCanonicalBaselineValidityRate": 1.0,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumFinalActionCodePreservationRate": 1.0,
+      "minimumFinalSemanticValidityRate": 1.0,
+      "minimumFiniteGrammarBaselineValidityRate": 1.0,
+      "minimumPerCodeRawSemanticAcceptanceRate": 0.625,
+      "minimumRawSemanticAcceptanceRate": 0.75,
+      "minimumReachableV79ClarificationActionInvarianceRate": 1.0,
+      "minimumUnsafeMutationRejectionRate": 1.0,
+      "requiredCodeCounts": {
+        "ask_full_details": 8,
+        "ask_operation": 8,
+        "ask_recipient": 8
+      },
+      "requiredRecordCount": 24
+    },
+    "lexicalAnchors": {
+      "operation": [
+        "schedule the project review",
+        "send the project summary"
+      ],
+      "recipient": [
+        "Alex Chen",
+        "Alex Kim"
+      ]
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "ASCIIOnly": true,
+      "exactQuestionMarkCount": 1,
+      "exactTopLevelKeys": [
+        "question"
+      ],
+      "forbiddenExecutionClaimFragments": [
+        "i have",
+        "i've",
+        "i will",
+        "i'll",
+        "already",
+        "completed",
+        "executed",
+        "scheduled",
+        "sent",
+        "booked",
+        "done"
+      ],
+      "invalidOutputHandling": "discard complete model output and use locked canonical surface for the unchanged clarification code",
+      "maximumCharacters": 180,
+      "minimumCharacters": 1,
+      "newlinesAllowed": false,
+      "questionMarkMustTerminate": true,
+      "requiredAnchorsMustAppearExactlyOnce": true,
+      "underscoresAllowed": false,
+      "unrequestedAnchorsAllowed": false
+    },
+    "parentDecisionCore": {
+      "frozen": true,
+      "outcomeLock": "configs/v79-terminal-utility-outcome-lock.json",
+      "reachableActionCounts": {
+        "ask_full_details": 0,
+        "ask_operation": 4,
+        "ask_recipient": 2
+      },
+      "reachableClarificationNodeCount": 6,
+      "result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json"
+    },
+    "predecessorConstraint": "V80 and V81 remain frozen negative candidate-generation results; V82 cannot propose candidates, assign beliefs, choose actions, call tools, or receive original user language",
+    "purpose": "test a materially different non-authoritative LLM role that renders an already selected V79 clarification code while deterministic validation and canonical fallback preserve semantics and policy value",
+    "records": [
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-concise",
+        "styleHint": "concise"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-neutral",
+        "styleHint": "neutral"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-polite",
+        "styleHint": "polite"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-formal",
+        "styleHint": "formal"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-direct",
+        "styleHint": "direct"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-friendly",
+        "styleHint": "friendly"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-explicit",
+        "styleHint": "explicit"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-minimal",
+        "styleHint": "minimal"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-concise",
+        "styleHint": "concise"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-neutral",
+        "styleHint": "neutral"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-polite",
+        "styleHint": "polite"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-formal",
+        "styleHint": "formal"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-direct",
+        "styleHint": "direct"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-friendly",
+        "styleHint": "friendly"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-explicit",
+        "styleHint": "explicit"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-minimal",
+        "styleHint": "minimal"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-concise",
+        "styleHint": "concise"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-neutral",
+        "styleHint": "neutral"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-polite",
+        "styleHint": "polite"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-formal",
+        "styleHint": "formal"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-direct",
+        "styleHint": "direct"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-friendly",
+        "styleHint": "friendly"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-explicit",
+        "styleHint": "explicit"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-minimal",
+        "styleHint": "minimal"
+      }
+    ],
+    "schemaVersion": "82-local-clarification-surface-design",
+    "stageAuthorization": {
+      "accessOriginalUserLanguage": false,
+      "auditAndFreezeProtocol": true,
+      "collectHumanLanguage": false,
+      "constructAndSealCorpus": false,
+      "implementAndAuditRunner": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You render wording for an already selected clarification code; you do not interpret the request or make a decision. Return exactly one JSON object with one key named question and a string value. For ask_operation, include the exact anchors 'schedule the project review' and 'send the project summary' exactly once each, and do not mention Alex Chen or Alex Kim. For ask_recipient, include Alex Chen and Alex Kim exactly once each, and do not include either operation anchor. For ask_full_details, include all four exact anchors exactly once each. Produce exactly one question ending in '?', no newlines, no underscores, and no statement that anything was or will be executed. A style hint may change only polite surrounding wording. Do not include probabilities, confidence, candidate IDs, action fields, tool fields, explanations, or Markdown.",
+    "userPromptTemplate": "Clarification code: {clarificationCode}\nStyle hint: {styleHint}"
+  },
+  "design": "configs/v82-local-clarification-surface-design.json",
+  "design_audit": "outputs/v82-local-clarification-surface/design-audit.json",
+  "design_audit_sha256": "d94e77310c6a66584c95951632bc878466f904df9801eedc4f4adeb3c842c429",
+  "design_auditor": "python/audit_and_freeze_v82_surface_design.py",
+  "design_auditor_sha256": "5db098da6d0f7655dd9044921b4508d8378b225163d64a59bea2e753d6ff4732",
+  "design_sha256": "3479fe8f3fd7645f182154792f41df39ec72591c77c88a1b7595677409dc3a33",
+  "experiment": "v82_local_clarification_surface_design_lock",
+  "lock_payload_sha256": "cf79e306c8f2f60433866b197841b2966cf2e1592e59b727952eac8b46d68835",
+  "parent_V79_outcome_lock": "configs/v79-terminal-utility-outcome-lock.json",
+  "parent_V79_outcome_lock_sha256": "51209d9e9562dcd1a4f1643bc5dd46dc68042741b6467ab9331b450b1db468a7",
+  "parent_V79_result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json",
+  "parent_V79_result_sha256": "b20f89129eafe9131feac2276fa1f342a49e0fb6143713d842abdb9b682ed8e8",
+  "plan": "docs/v82-local-clarification-surface-plan.md",
+  "plan_sha256": "5d672294e6d84da0820dbb3a0add4f91c488dc14b269f9364b40e70cd8ba5876",
+  "predecessor_outcome_lock": "configs/v81-factorized-local-candidate-outcome-lock.json",
+  "predecessor_outcome_lock_sha256": "f3f1a842e2ef4fafa8860fe60dee14592335f477b4c42c7094de8bf336dd6d21",
+  "schema_version": "82-local-clarification-surface-design-lock"
+}

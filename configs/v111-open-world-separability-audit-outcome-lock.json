@@ -1,0 +1,51 @@
+{
+  "analysis_lock": "configs/v111-open-world-separability-audit-lock.json",
+  "analysis_lock_sha256": "dda2ae1cc01023d1aa48f46b469863186e779ec71ba3875ac2fc86a2128d05d9",
+  "audit": "outputs/v111-open-world-separability-audit/outcome-audit.json",
+  "audit_sha256": "70089633ca12b905473191b5e160447e0e8417940a726b9aecedddc427be7480",
+  "authorization": {
+    "close_current_single_turn_evidence_interface_for_simple_deterministic_novelty_gating": false,
+    "modify_rerun_or_retune_V111": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_full_deterministic_development_policy": true,
+    "proceed_to_richer_sequential_decision_problem": false,
+    "proceed_to_schema_or_mechanic_induction": false,
+    "prune_hypotheses_define_capability_or_grant_belief_action_execution_authority": false,
+    "read_protected_test_before_separate_lock": false,
+    "run_additional_local_or_API_model_or_train_adapter": false,
+    "seek_genuinely_fresh_evidence_population": false
+  },
+  "experiment": "v111_existing_evidence_deterministic_novelty_separability_outcome_lock",
+  "lock_payload_sha256": "8cb7da12c35e7e63de702708c44b28014be005d9c6c98fbd0da117c847809741",
+  "outcome": {
+    "calibration_feasible_candidate_count": 1,
+    "decision": "simple_features_transfer_separably_preregister_full_development_policy",
+    "evaluation_oracle_feasible_candidate_count": 13,
+    "passed": true,
+    "quality_gate_pass": true,
+    "selected_evaluation_metrics": {
+      "f1": 0.6153846153846154,
+      "false_negative": 8,
+      "false_positive": 2,
+      "non_novel_false_positive_rate": 0.041666666666666664,
+      "precision": 0.8,
+      "prediction_count": 10,
+      "recall": 0.5,
+      "true_negative": 46,
+      "true_positive": 8
+    },
+    "selected_rule": {
+      "complexity": 1,
+      "family": "llm_abstain_only"
+    }
+  },
+  "research_roadmap": "docs/open-world-language-research-direction.md",
+  "research_roadmap_sha256": "6a4670408f75b3aae57f9e75a7a2c5c65c6115aa36b82fcbb99c2d4281317a76",
+  "result": "outputs/v111-open-world-separability-audit/development-census/result.json",
+  "result_sha256": "6186276139b3cacc261ff7948eb4f86445083aa3099145da568454d97c5f7ddc",
+  "results_document": "docs/v111-open-world-separability-audit-results.md",
+  "results_document_sha256": "127513eb9e5cb893531aca3ed5d03bdf168d2dc1b950d528704df94655b508c4",
+  "schema_version": "111-open-world-separability-audit-outcome-lock",
+  "verifier": "python/verify_and_freeze_v111_separability_outcome.py",
+  "verifier_sha256": "19b118ec53f3c7690ada2940b85752c501faaf868cabd38676a138d8d4bfc67f"
+}

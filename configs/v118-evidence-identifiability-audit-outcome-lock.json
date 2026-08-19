@@ -1,0 +1,161 @@
+{
+  "analysis_lock": "configs/v118-evidence-identifiability-audit-lock.json",
+  "analysis_lock_sha256": "21dbeb083cfa9bd67f94e4c4af02c024ebb0832b7af5dc5dd8e9cdd4b47f3135",
+  "audit": "outputs/v118-evidence-identifiability-audit/outcome-audit.json",
+  "audit_sha256": "224fc1ba3d8d391d22dd1b743d4000b3c6d02f5d959ba2b8f60a642b8f83156b",
+  "authorization": {
+    "begin_schema_induction_or_richer_planning": false,
+    "grant_capability_belief_action_or_execution_authority": false,
+    "modify_rerun_or_retune_V118": false,
+    "open_protected_test": false,
+    "preregister_language_free_adaptive_causal_simulator": true,
+    "run_API_or_training": false,
+    "run_language_or_model": false
+  },
+  "experiment": "v118_evidence_identifiability_outcome_lock",
+  "lock_payload_sha256": "b30cf4bb90a79604a2aa0a4e3311d546ee9fe10abaa82170fa4170f904b8ee05",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "identifiability_boundary_derived_requires_asymmetric_adaptive_evidence",
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "correct_known_candidate_count": 93,
+      "decision": "identifiability_boundary_derived_requires_asymmetric_adaptive_evidence",
+      "frozen_v117_candidate_evidence": {
+        "0.00": {
+          "exact_candidate_information_bits": 5.247927513443584,
+          "exact_candidate_vs_other_known_bayes_factor": 37.999999999999964
+        },
+        "0.25": {
+          "exact_candidate_information_bits": 5.681824039973744,
+          "exact_candidate_vs_other_known_bayes_factor": 51.333333333333286
+        },
+        "0.50": {
+          "exact_candidate_information_bits": 6.285402218862247,
+          "exact_candidate_vs_other_known_bayes_factor": 77.99999999999993
+        }
+      },
+      "hypothesis_count": 17,
+      "independent_exact_confirmation_unit_bayes_factor": 37.999999999999964,
+      "individual_record_emission_count": 0,
+      "known_record_count": 96,
+      "minimum_independent_exact_confirmation_unit_count": 2,
+      "outcome_gates": {
+        "aggregate_only": true,
+        "finite_asymmetric_candidate_evidence_requirement": true,
+        "finite_supplemental_unsupported_evidence_requirement": true,
+        "frozen_candidate_evidence_below_uniform_requirement": true,
+        "perfect_known_ceiling_exact": true,
+        "posterior_threshold_envelopes_exact": true,
+        "strong_unsupported_action_transition_explained": true,
+        "true_hypothesis_retention": true,
+        "uniform_candidate_bayes_factor_requirement_exact": true,
+        "uniform_known_failure_reproduced": true,
+        "zero_actual_execution": true
+      },
+      "outcome_pass": true,
+      "perfect_known_ceiling": 0.96875,
+      "posterior_threshold_envelopes": {
+        "exact_candidate": {
+          "maximum": 0.9090909090909091,
+          "minimum": 0.8947368421052632
+        },
+        "unsupported": {
+          "maximum": 0.8333333333333334,
+          "minimum": 0.7142857142857143
+        }
+      },
+      "prior_bayes_factor_requirements": {
+        "moderate_candidate": {
+          "candidate_prior": 0.5,
+          "exact_candidate_bayes_factor": {
+            "maximum": 9.999999999999996,
+            "minimum": 8.5
+          },
+          "unsupported_bayes_factor": {
+            "maximum": 155.00000000000006,
+            "minimum": 77.5
+          },
+          "unsupported_prior": 0.03125
+        },
+        "strong_candidate": {
+          "candidate_prior": 0.75,
+          "exact_candidate_bayes_factor": {
+            "maximum": 3.333333333333332,
+            "minimum": 2.8333333333333335
+          },
+          "unsupported_bayes_factor": {
+            "maximum": 315.0000000000001,
+            "minimum": 157.5
+          },
+          "unsupported_prior": 0.015625
+        },
+        "uniform_safe_universe": {
+          "candidate_prior": 0.058823529411764705,
+          "exact_candidate_bayes_factor": {
+            "maximum": 159.99999999999994,
+            "minimum": 136.0
+          },
+          "unsupported_bayes_factor": {
+            "maximum": 80.00000000000003,
+            "minimum": 40.0
+          },
+          "unsupported_prior": 0.058823529411764705
+        }
+      },
+      "strong_prior_unsupported_decisive_posterior": {
+        "0.00": {
+          "abstain_expected_cost": 1.0160453497309763,
+          "best_action": "UNSUPPORTED::",
+          "best_expected_cost": 0.938893159108379,
+          "minimum_additional_unsupported_specific_bayes_factor": 1.0,
+          "posterior_by_kind": {
+            "ABSTAIN": 0.00038431975403535807,
+            "KNOWN": 0.13431975403535754,
+            "NOVEL": 0.032859338970023085,
+            "UNSUPPORTED": 0.8324365872405841
+          },
+          "posterior_candidate": 0.013835511145272891,
+          "unsupported_expected_cost": 0.938893159108379
+        },
+        "0.25": {
+          "abstain_expected_cost": 1.009721965638278,
+          "best_action": "ABSTAIN::",
+          "best_expected_cost": 1.009721965638278,
+          "minimum_additional_unsupported_specific_bayes_factor": 1.0908806106174538,
+          "posterior_by_kind": {
+            "ABSTAIN": 0.002124515056345836,
+            "KNOWN": 0.16335673378902654,
+            "NOVEL": 0.023692961389248125,
+            "UNSUPPORTED": 0.8108257897653794
+          },
+          "posterior_candidate": 0.07648254202845009,
+          "unsupported_expected_cost": 1.0834103085165352
+        },
+        "0.50": {
+          "abstain_expected_cost": 1.0038687299893279,
+          "best_action": "ABSTAIN::",
+          "best_expected_cost": 1.0038687299893279,
+          "minimum_additional_unsupported_specific_bayes_factor": 1.2697368421052644,
+          "posterior_by_kind": {
+            "ABSTAIN": 0.003735325506937036,
+            "KNOWN": 0.19023479188900763,
+            "NOVEL": 0.015208110992529361,
+            "UNSUPPORTED": 0.7908217716115261
+          },
+          "posterior_candidate": 0.1344717182497333,
+          "unsupported_expected_cost": 1.2171824973319114
+        }
+      },
+      "true_hypothesis_retention": 1.0
+    }
+  },
+  "result": "outputs/v118-evidence-identifiability-audit/audit/result.json",
+  "result_sha256": "057ff9752400a9346d7e5cc19786b0f2a172cc3ec77d909a801b4a5a02466dea",
+  "results_document": "docs/v118-evidence-identifiability-audit-results.md",
+  "results_document_sha256": "9a1c37ffdd05bf1031c2008b64da9e1054fc404eeaada8ffc85d4a00ee2ceec5",
+  "schema_version": "118-evidence-identifiability-outcome-lock",
+  "verifier": "python/verify_and_freeze_v118_evidence_identifiability_audit_outcome.py",
+  "verifier_sha256": "62c38dea301d4b14c3d905733393a727196120e2b3f57c63cf93e5bfcd707f1a"
+}

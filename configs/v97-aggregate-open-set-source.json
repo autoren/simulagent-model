@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "97-aggregate-open-set-source-design",
+  "experiment": "v97_aggregate_pool_service_partition_open_set_source_feasibility",
+  "purpose": "construct a fresh five-class controlled open-set benchmark by service-level hash partition over every remaining untouched SGD development shard",
+  "parentSourceOutcomeLock": "configs/v96-two-source-open-set-source-outcome-lock.json",
+  "parentArchitectureLock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "aggregateDialogueShards": [
+    {"path": "dev/dialogues_009.json", "byteSize": 3323617, "gitBlobSha1": "816fd56b102b2e6f0d9c677a3d84fe74e44ec394", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_009.json"},
+    {"path": "dev/dialogues_010.json", "byteSize": 2485450, "gitBlobSha1": "319387f58d2c4438a5af1dfc6265352b02051357", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_010.json"},
+    {"path": "dev/dialogues_011.json", "byteSize": 3171402, "gitBlobSha1": "6ed93205c5f9d3f60683db1f3ddeb6dc518b45df", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_011.json"},
+    {"path": "dev/dialogues_012.json", "byteSize": 4080667, "gitBlobSha1": "9325f175c88070b1f6018326e97df26b9c9f832a", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_012.json"},
+    {"path": "dev/dialogues_013.json", "byteSize": 3550658, "gitBlobSha1": "0773ab4253c9e131bd5947b61c4cf6fb9a745ecb", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_013.json"},
+    {"path": "dev/dialogues_014.json", "byteSize": 3960820, "gitBlobSha1": "d284292a55c9c4804906de26716edd08584e4223", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_014.json"},
+    {"path": "dev/dialogues_015.json", "byteSize": 4295570, "gitBlobSha1": "2c7a76d2f4cc9de4210589fc7cb69590e6062ca4", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_015.json"},
+    {"path": "dev/dialogues_016.json", "byteSize": 3972559, "gitBlobSha1": "db10171c57e6607c4af9aa9a38288aa76292d01c", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_016.json"},
+    {"path": "dev/dialogues_017.json", "byteSize": 5023594, "gitBlobSha1": "a311b3b3277f7fd93ac342aa6982892731fdf13f", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_017.json"},
+    {"path": "dev/dialogues_018.json", "byteSize": 4315111, "gitBlobSha1": "7ec3c54d23b08bd51b91a0dbd83008406f35efa2", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_018.json"},
+    {"path": "dev/dialogues_019.json", "byteSize": 4183695, "gitBlobSha1": "025f06c4cc014a60387ab7e6d8e2fdbf8d457253", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_019.json"},
+    {"path": "dev/dialogues_020.json", "byteSize": 3404013, "gitBlobSha1": "14a37211eb58685343960e2252a6cea1002d77e4", "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_020.json"}
+  ],
+  "aggregateDialogueShardCount": 12,
+  "aggregateDialogueByteSize": 45767156,
+  "previouslyExposedServices": [
+    "Alarm_1", "Banks_2", "Buses_1", "Events_1", "Flights_3", "Homes_1",
+    "Hotels_1", "Hotels_4", "Media_2", "Movies_2", "Music_1", "RentalCars_1",
+    "Restaurants_2", "RideSharing_1", "Services_4", "Travel_1", "Weather_1"
+  ],
+  "servicePartition": {
+    "eligibleServiceMinimumActivationCount": 12,
+    "eligiblePairMinimumActivationCount": 8,
+    "unsupportedServiceSalt": "simulagent-v97-unsupported-service-v1",
+    "unsupportedServiceCount": 1,
+    "catalogServiceSalt": "simulagent-v97-catalog-service-v1",
+    "catalogServiceCount": 3,
+    "hiddenServiceSalt": "simulagent-v97-hidden-service-v1",
+    "hiddenIntentPairSalt": "simulagent-v97-hidden-pair-v1",
+    "hiddenServiceCount": 2,
+    "hiddenPairCountPerSelectedService": 1,
+    "minimumDeclaredPairCount": 3,
+    "partitionBeforeLanguageDerivedFeatures": true
+  },
+  "classConstruction": {
+    "knownFamiliarMinimumCurrentTurnOverlapCount": 1,
+    "knownUnfamiliarMaximumCurrentTurnOverlapCount": 0,
+    "nonNoneClassesRequireSourceIntentActivation": true,
+    "useCurrentUserTurnOnlyForLexicalSeparation": true,
+    "noneMapsOnlyToInsufficientEvidence": true,
+    "unsupportedRequiresCompletelyWithheldHashSelectedService": true,
+    "novelRequiresOneHashHiddenPairFromEachSelectedCatalogService": true,
+    "emitLanguageTokensSlotValuesOrHistories": false
+  },
+  "sourceGates": {
+    "minimumEligibleFreshServiceCount": 4,
+    "requiredCatalogServiceCount": 3,
+    "requiredUnsupportedServiceCount": 1,
+    "requiredHiddenPairCount": 2,
+    "minimumDeclaredPairCount": 3,
+    "minimumKnownFamiliarCandidateCount": 16,
+    "minimumKnownUnfamiliarCandidateCount": 16,
+    "minimumNovelValidCandidateCount": 16,
+    "minimumUnsupportedCandidateCount": 16,
+    "minimumInsufficientEvidenceCandidateCount": 16,
+    "minimumKnownClassServiceCoverage": 2,
+    "requiredNovelServiceCoverage": 2,
+    "minimumInsufficientEvidenceServiceCoverage": 2,
+    "requiredUnsupportedServiceCoverage": 1,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "GitHubMetadataRequestCount": 1,
+    "schemaStructuralInspectionCount": 1,
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the aggregate service-level inventory and authorize preregistration of a hash-selected dialogue-disjoint calibration/evaluation population",
+    "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+    "passAuthorizesLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

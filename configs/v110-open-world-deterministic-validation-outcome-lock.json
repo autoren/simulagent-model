@@ -1,0 +1,734 @@
+{
+  "analysis_lock": "configs/v110-open-world-deterministic-validation-lock.json",
+  "analysis_lock_sha256": "5042d24f330db94c5023c5bc81738bf10e00144659e937335397b5a470a91552",
+  "audit": "outputs/v110-open-world-deterministic-validation/outcome-audit.json",
+  "audit_sha256": "5d8d4f1190db10e4adc34959ac060a36755d436d687ce0e69b1fa95faa41df75",
+  "authorization": {
+    "modify_rerun_or_retune_V110": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_identical_deterministic_layer_protected_test_protocol": false,
+    "proceed_to_richer_sequential_decision_problem": false,
+    "proceed_to_schema_or_mechanic_induction": false,
+    "prune_hypotheses_define_capability_or_grant_belief_action_execution_authority": false,
+    "read_protected_test_before_separate_lock": false,
+    "run_additional_local_or_API_model_or_train_adapter": false
+  },
+  "experiment": "v110_open_world_deterministic_validation_outcome_lock",
+  "lock_payload_sha256": "54b22b3910477f2315703abbc2d30f3a1fb9d63af9ad2ba791e80378bffffb6c",
+  "outcome": {
+    "analysis": {
+      "abstention_tuning": {
+        "candidate_count": 13,
+        "selected": {
+          "false_known_acceptance_rate": 0.0,
+          "mean_regret": 1.0546875,
+          "observed_exact_decision_accuracy": 0.109375,
+          "threshold": 0.99
+        }
+      },
+      "policy_metrics": {
+        "ask_always": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.0,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 0.0,
+          "exact_accuracy_at_decision_coverage": 0.0,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.0,
+          "mean_regret": 1.125,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.0,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.0,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.5,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.0,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 1.0,
+          "true_hypothesis_retention": 1.0
+        },
+        "calibrated_abstention": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.031249999999999993,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 0.140625,
+          "exact_accuracy_at_decision_coverage": 0.8888888888888888,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.03125,
+          "mean_regret": 1.0390625,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.125,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.21464646464646467,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.0625,
+              "mean_regret": 0.9375,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.65625,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.4375,
+              "mean_regret": 0.5625,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.06060606060606061,
+              "precision": 1.0,
+              "prediction_count": 1,
+              "recall": 0.03125,
+              "true_positive_count": 1,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.5833333333333334,
+              "precision": 0.875,
+              "prediction_count": 8,
+              "recall": 0.4375,
+              "true_positive_count": 7,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.03125,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.8461538461538461,
+          "true_hypothesis_retention": 1.0
+        },
+        "character_ngram_retrieval": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.23019179606472878,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 1.0,
+          "exact_accuracy_at_decision_coverage": 0.375,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.3125,
+          "mean_regret": 2.1875,
+          "novel_exact_scenario_accuracy": 0.875,
+          "observed_exact_decision_accuracy": 0.375,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.3111111111111111,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.875,
+              "mean_regret": 0.625,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 4.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.47619047619047616,
+              "precision": 1.0,
+              "prediction_count": 10,
+              "recall": 0.3125,
+              "true_positive_count": 10,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.45714285714285713,
+              "precision": 0.2962962962962963,
+              "prediction_count": 54,
+              "recall": 1.0,
+              "true_positive_count": 16,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.22906609439908224,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.5576923076923077,
+          "true_hypothesis_retention": 1.0
+        },
+        "complete_safe_enumeration": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.0,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 0.0,
+          "exact_accuracy_at_decision_coverage": 0.0,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.0,
+          "mean_regret": 1.125,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.0,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.0,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.5,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.0,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 1.0,
+          "true_hypothesis_retention": 1.0
+        },
+        "deterministic_novelty_gate": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.23907668931831363,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 1.0,
+          "exact_accuracy_at_decision_coverage": 0.375,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.3125,
+          "mean_regret": 2.1875,
+          "novel_exact_scenario_accuracy": 0.875,
+          "observed_exact_decision_accuracy": 0.375,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.3111111111111111,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.875,
+              "mean_regret": 0.625,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 4.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.47619047619047616,
+              "precision": 1.0,
+              "prediction_count": 10,
+              "recall": 0.3125,
+              "true_positive_count": 10,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.45714285714285713,
+              "precision": 0.2962962962962963,
+              "prediction_count": 54,
+              "recall": 1.0,
+              "true_positive_count": 16,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.22898890300730013,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.5576923076923077,
+          "true_hypothesis_retention": 1.0
+        },
+        "direct_llm": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.24062500000000003,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 0.84375,
+          "exact_accuracy_at_decision_coverage": 0.8518518518518519,
+          "false_known_acceptance_rate": 0.21875,
+          "known_exact_intent_accuracy": 1.0,
+          "mean_regret": 1.375,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.71875,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.6015447523852794,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 5.375,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.875,
+              "mean_regret": 0.125,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.9014084507042254,
+              "precision": 0.8205128205128205,
+              "prediction_count": 39,
+              "recall": 1.0,
+              "true_positive_count": 32,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.9032258064516129,
+              "precision": 0.9333333333333333,
+              "prediction_count": 15,
+              "recall": 0.875,
+              "true_positive_count": 14,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.254484375,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 7,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.25,
+          "true_hypothesis_retention": 1.0
+        },
+        "identifier_grammar": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.19534226190476192,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 1.0,
+          "exact_accuracy_at_decision_coverage": 0.484375,
+          "false_known_acceptance_rate": 0.125,
+          "known_exact_intent_accuracy": 0.46875,
+          "mean_regret": 3.03125,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.484375,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.3829059829059829,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.9375,
+              "mean_regret": 0.625,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 6.0,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 5.5,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.6153846153846154,
+              "precision": 0.8,
+              "prediction_count": 20,
+              "recall": 0.5,
+              "true_positive_count": 16,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.5333333333333333,
+              "precision": 0.36363636363636365,
+              "prediction_count": 44,
+              "recall": 1.0,
+              "true_positive_count": 16,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.25543283553004537,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 4,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.40384615384615385,
+          "true_hypothesis_retention": 1.0
+        },
+        "llm_plus_validation": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.22803759973549376,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 1.0,
+          "exact_accuracy_at_decision_coverage": 0.375,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.3125,
+          "mean_regret": 2.1875,
+          "novel_exact_scenario_accuracy": 0.875,
+          "observed_exact_decision_accuracy": 0.375,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 0.3111111111111111,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.875,
+              "mean_regret": 0.625,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 4.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.47619047619047616,
+              "precision": 1.0,
+              "prediction_count": 10,
+              "recall": 0.3125,
+              "true_positive_count": 10,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 0.45714285714285713,
+              "precision": 0.2962962962962963,
+              "prediction_count": 54,
+              "recall": 1.0,
+              "true_positive_count": 16,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.23070908141230537,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.5576923076923077,
+          "true_hypothesis_retention": 1.0
+        },
+        "oracle": {
+          "actual_execution_count": 0,
+          "confidence_ece_10_bin": 0.0,
+          "controlled_missing_observation_abstention_accuracy": 1.0,
+          "decision_coverage": 1.0,
+          "exact_accuracy_at_decision_coverage": 1.0,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 1.0,
+          "mean_regret": 0.0,
+          "novel_exact_scenario_accuracy": 1.0,
+          "observed_exact_decision_accuracy": 1.0,
+          "observed_record_count": 64,
+          "observed_status_macro_f1": 1.0,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 16
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "prediction_count": 32,
+              "recall": 1.0,
+              "true_positive_count": 32,
+              "truth_count": 32
+            },
+            "NOVEL": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "prediction_count": 16,
+              "recall": 1.0,
+              "true_positive_count": 16,
+              "truth_count": 16
+            },
+            "UNSUPPORTED": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "prediction_count": 16,
+              "recall": 1.0,
+              "true_positive_count": 16,
+              "truth_count": 16
+            }
+          },
+          "predicted_decision_correctness_brier": 0.0,
+          "record_count": 64,
+          "shadow_known_proposal_on_novel_or_unsupported_count": 0,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8125,
+          "top_confidence_80_percent_error": 0.0,
+          "true_hypothesis_retention": 1.0
+        }
+      },
+      "retrieval_tuning": {
+        "candidate_count": 124,
+        "selected": {
+          "exact_decision_accuracy": 0.4375,
+          "false_known_acceptance_rate": 0.03125,
+          "known_threshold": 0.8,
+          "mean_regret": 2.0625,
+          "unsupported_threshold": 0.3
+        }
+      },
+      "source_locale_member": "1.1/data/en-US.jsonl",
+      "source_record_count": 16521,
+      "split": {
+        "class_counts": {
+          "calibration": {
+            "known_familiar": 16,
+            "known_unfamiliar": 16,
+            "novel_valid": 16,
+            "unsupported": 16
+          },
+          "evaluation": {
+            "known_familiar": 16,
+            "known_unfamiliar": 16,
+            "novel_valid": 16,
+            "unsupported": 16
+          }
+        },
+        "counts": {
+          "calibration": 64,
+          "evaluation": 64
+        },
+        "membership_sha256": "001a9a25a046a89fd76164264cbd646530f456831deeb4206df0c462e21e6747"
+      },
+      "training_summary": {
+        "declared_intent_count": 12,
+        "record_count": 2149
+      }
+    },
+    "decision": "freeze_nonqualifying_deterministic_layer",
+    "gates": {
+      "balanced_class_counts": true,
+      "calibration_evaluation_membership_disjoint": true,
+      "calibration_record_count": true,
+      "evaluation_record_count": true,
+      "outputs_contain_no_source_language_or_raw_model_response": true,
+      "primary_confidence_ECE": false,
+      "primary_controlled_missing_abstention": true,
+      "primary_exact_decision_accuracy": false,
+      "primary_false_known_acceptance_rate": true,
+      "primary_known_exact_intent_accuracy": false,
+      "primary_mean_decision_regret": false,
+      "primary_novel_exact_scenario_accuracy": true,
+      "primary_novel_status_precision": false,
+      "primary_novel_status_recall": true,
+      "primary_regret_above_ask_always": false,
+      "primary_status_macro_f1": false,
+      "primary_top_confidence_80_percent_error": false,
+      "primary_true_hypothesis_retention": true,
+      "primary_unsupported_status_precision": false,
+      "primary_unsupported_status_recall": false,
+      "required_policy_names": true,
+      "zero_LLM_API_calls": true,
+      "zero_actual_execution": true,
+      "zero_adapter_training": true,
+      "zero_external_side_effects": true,
+      "zero_manual_language_or_raw_response_inspection": true,
+      "zero_model_generations": true,
+      "zero_model_loads": true,
+      "zero_protected_test_language_reads": true,
+      "zero_real_service_calls": true
+    },
+    "passed": true,
+    "primary_policy": "llm_plus_validation",
+    "quality_gate_pass": false
+  },
+  "result": "outputs/v110-open-world-deterministic-validation/development-evaluation/result.json",
+  "result_sha256": "287aace89ce69d158eef85c29915d3bcea6309f236bc00de4e60e51453ab4515",
+  "results_document": "docs/v110-open-world-deterministic-validation-results.md",
+  "results_document_sha256": "a246018d6ba2107ac8cd3ad850003ec9cb12c85f2bc6fbc96c5b256b76a2f9ed",
+  "schema_version": "110-open-world-deterministic-validation-outcome-lock",
+  "verifier": "python/verify_and_freeze_v110_deterministic_validation_outcome.py",
+  "verifier_sha256": "fa3900f4980075e9a6cddc59b201f100b0f48c4967de00388444503a331a9431"
+}

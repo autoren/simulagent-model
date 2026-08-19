@@ -1,0 +1,176 @@
+{
+  "authorization": {
+    "implement_and_audit_local_runner_after_corpus_seal": true,
+    "manually_inspect_selected_language": false,
+    "modify_population_prompt_model_decoding_controls_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "run_API_model": false,
+    "run_local_model_before_implementation_lock": false,
+    "select_extract_and_seal_corpus_once_by_frozen_code": true,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "controls": {
+      "emptyStateWithGoldIntentOracle": "gold intent candidate set with no state slot keys",
+      "exhaustiveEnumeration": "all service intents plus NONE and all service slots",
+      "noneOnly": "intent_candidates is NONE only and state_slot_key_candidates is empty",
+      "oracleTypedTarget": "exact registered gold candidate sets"
+    },
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V88 negative without prompt edits, record replacement, threshold changes, retries, API fallback, or rerun",
+      "ifEveryGatePasses": "freeze positive human-language shadow evidence and authorize preregistration of a bounded posterior integration study; do not deploy or execute",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesDirectActionOrExecution": false,
+      "passAuthorizesHumanLanguageDeployment": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 160,
+      "maximumPromptTokens": 8192,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v88_sealed_external_human_language_local_candidate_shadow",
+    "gates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumMeanIntentCandidateCount": 2.0,
+      "maximumModelGenerationCount": 48,
+      "maximumModelLoadCount": 1,
+      "maximumRealServiceCallCount": 0,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumGoldActiveIntentCoverageRate": 0.9,
+      "minimumIntentCandidateSetExactRate": 0.7,
+      "minimumIntentExactImprovementOverExhaustive": 0.2,
+      "minimumMandatoryNoneInclusionRate": 1.0,
+      "minimumNoneOnlyIntentExactRate": 0.75,
+      "minimumOntologyConformanceRate": 1.0,
+      "minimumPerServiceIntentCandidateRecallRate": 0.75,
+      "minimumPermanentNonDeployableRate": 1.0,
+      "minimumStateSlotKeyExactRate": 0.5,
+      "minimumStateSlotKeyRecallRate": 0.75,
+      "requiredActiveIntentLabelCount": 4,
+      "requiredNoneRecordCount": 24,
+      "requiredRecordCount": 48,
+      "requiredServiceCount": 3
+    },
+    "inputContract": {
+      "dialogueContext": "all source turns from dialogue start through the selected USER turn",
+      "schemaContext": [
+        "service name and description",
+        "all service intent identifiers and descriptions",
+        "all service slot identifiers and descriptions"
+      ],
+      "sourceLanguageMayNotBePrintedByBuilderOrRunner": true,
+      "sourceLanguageMayNotBeSentToAPI": true,
+      "targetService": "the single selected frame service"
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "exactKeys": [
+        "intent_candidates",
+        "state_slot_key_candidates"
+      ],
+      "goldIntentCandidateSet": "NONE only when active_intent is NONE; otherwise active_intent plus NONE",
+      "goldStateSlotKeySet": "the accumulated frame.state.slot_values keys at the selected turn",
+      "intentCandidates": "unique non-empty list drawn only from target service intent identifiers plus NONE; NONE is mandatory",
+      "mayNotEmitValuesActionsToolCallsOrFreeText": true,
+      "permanentlyNonDeployable": true,
+      "stateSlotKeyCandidates": "unique list drawn only from target service slot identifiers"
+    },
+    "parentOutcomeLock": "configs/v87-external-language-source-outcome-lock.json",
+    "population": {
+      "futureRecordUse": "all selected records are evaluation-only; no prompt tuning, few-shot examples, or training",
+      "recordCount": 48,
+      "selectionBeforeUtteranceExtraction": true,
+      "selectionOrder": "ascending SHA-256 of selectionSalt, stratum ID, and canonical record ID",
+      "selectionSalt": "simulagent-v88-external-shadow-v1",
+      "strata": [
+        {
+          "activeIntent": "SearchOnewayFlight",
+          "count": 4,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "SearchRoundtripFlights",
+          "count": 4,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "ReserveRestaurant",
+          "count": 8,
+          "service": "Restaurants_2"
+        },
+        {
+          "activeIntent": "GetRide",
+          "count": 8,
+          "service": "RideSharing_1"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 11,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 10,
+          "service": "Restaurants_2"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 3,
+          "service": "RideSharing_1"
+        }
+      ]
+    },
+    "purpose": "test whether the frozen local model can map independently authored SGD dialogue context into a small typed intent-and-state-key candidate set while retaining NONE and no authority",
+    "schemaVersion": "88-external-intent-candidate-design",
+    "source": {
+      "dataset": "Schema-Guided Dialogue Dataset",
+      "inventorySha256": "ebdb2204bf437782fe6d4a4af8f6489905f1363cc00cd56289255a0f7446f2a2",
+      "license": "CC-BY-SA-4.0",
+      "manualUtteranceInspectionBeforeCorpusSeal": false,
+      "revision": "e852981ae34990f4358979625854259302feaa78"
+    },
+    "stageAuthorization": {
+      "auditAndFreezeDesign": true,
+      "extractSelectedUtterancesByCode": false,
+      "implementAndAuditRunner": false,
+      "inspectUtterancesManually": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "selectAndSealCorpus": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You are an offline semantic candidate proposer. Your output is permanently non-deployable and cannot select an action or call a service. Infer the current typed state for the target service from the complete dialogue history and the supplied schema. Return exactly one JSON object with exactly two keys: intent_candidates and state_slot_key_candidates. intent_candidates must be a unique non-empty JSON list using only the supplied intent identifiers or NONE, and must always include NONE as an operational none-of-the-above candidate. Include the smallest set of currently plausible active intents; when no supplied intent is active, return only NONE. state_slot_key_candidates must be a unique JSON list using only supplied slot identifiers; include every slot whose current accumulated value is supported by the dialogue, but never emit a slot value. Do not emit prose, Markdown, actions, service calls, arguments, values, confidence scores, or additional keys.",
+    "userPromptTemplate": "Target service: {service_name}\nService description: {service_description}\nAllowed intent identifiers and descriptions:\n{intent_lines}\nAllowed slot identifiers and descriptions:\n{slot_lines}\nDialogue history through the current USER turn:\n{dialogue_history}\nReturn the exact JSON object now."
+  },
+  "design": "configs/v88-external-intent-candidate-design.json",
+  "design_audit": "outputs/v88-external-intent-candidate/design-audit.json",
+  "design_audit_sha256": "42a6597aa02e8296f4b5a0c901a288e582c3e8b6ee77b8fe5daddf2bc0841d87",
+  "design_auditor": "python/audit_and_freeze_v88_external_candidate_design.py",
+  "design_auditor_sha256": "742f35bda93ec09369982a5ad563ee6ac5614f9196fa32e4b13cf48d51b49dde",
+  "design_sha256": "897ce740680a335e6f54acbe487843ee37bbf48985ce02da445552a6e630407f",
+  "experiment": "v88_external_intent_candidate_design_lock",
+  "lock_payload_sha256": "d1f48822a3c0f56c9e639fab6334056f6593279c4a6b0eef1faaa41a6fe8f67f",
+  "parent_V87_outcome_lock": "configs/v87-external-language-source-outcome-lock.json",
+  "parent_V87_outcome_lock_sha256": "3654945adeed5348960847ce61a1a5417fcc6fd275cb817559cfe4293b56bd63",
+  "plan": "docs/v88-external-intent-candidate-plan.md",
+  "plan_sha256": "e17054fb1d9aacbcd1099944ee9cb64c93ce418266098249c2e6651a821eb1d5",
+  "schema_version": "88-external-intent-candidate-design-lock",
+  "source_inventory": "outputs/v87-external-language-source-audit/inventory/structural-inventory.json",
+  "source_inventory_sha256": "3eeae0de06bd7e687c897e773fa56f52f737d89cd8da8c78de0eb6a3da674a7a"
+}

@@ -1,0 +1,46 @@
+{
+  "audit": "outputs/v86-partial-option-validator/outcome-audit.json",
+  "audit_sha256": "9794a5acd7631fc828f62e09eefad6ac35aeda02970afd79dfdc221b75bd2a30",
+  "authorization": {
+    "access_local_or_API_model_or_train_adapter": false,
+    "deploy_model_or_untrusted_surface": false,
+    "grant_schema_surface_belief_action_or_execution_authority": false,
+    "modify_or_rerun_V86": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "preregister_fresh_independently_authored_language_shadow_evaluation": true,
+    "use_hardened_validator_in_future_bounded_shadow_integrations": true
+  },
+  "experiment": "v86_partial_option_validator_outcome_lock",
+  "implementation_lock": "configs/v86-partial-option-validator-implementation-lock.json",
+  "implementation_lock_sha256": "2e79b71e225dff63a69b3e3f2981d0a45f1855cd2e7fd5ed8e4cec1eee822adc",
+  "lock_payload_sha256": "900f7473b680f19509f01aec3088cc5cc0568d8b910f987192abcfd32949eb34",
+  "outcome": {
+    "decision": "freeze_hardened_partial_option_validator",
+    "metrics": {
+      "V79_bridge_action_preservation_rate": 1.0,
+      "V79_bridge_node_count": 6,
+      "V79_bridge_rendered_case_count": 54,
+      "V79_bridge_structural_preservation_rate": 1.0,
+      "V85_false_positive_regression_count": 1,
+      "V85_false_positive_regression_rejection_rate": 1.0,
+      "base_unsafe_mutation_count": 16,
+      "base_unsafe_mutation_rejection_rate": 1.0,
+      "complete_belief_execution_certificate_violation_count": 0,
+      "disabled_untrusted_deployment_rate": 1.0,
+      "maximum_V79_policy_value_absolute_error": 0.0,
+      "partial_option_injection_mutation_count": 16,
+      "partial_option_injection_rejection_rate": 1.0,
+      "schema_rendered_case_count": 108,
+      "schema_surface_validity_rate": 1.0,
+      "typed_request_preservation_rate": 1.0
+    },
+    "passed": true
+  },
+  "result": "outputs/v86-partial-option-validator/evaluation/result.json",
+  "result_sha256": "fc221f704356332db207a03c147e7037297ff983eaeb3f844da08a0de004eee4",
+  "results_document": "docs/v86-partial-option-validator-results.md",
+  "results_document_sha256": "91d1d767c1e416e90683463cee35f2a3a970a50deef3a15f01a4ee0da334036b",
+  "schema_version": "86-partial-option-validator-outcome-lock",
+  "verifier": "python/verify_and_freeze_v86_validator_outcome.py",
+  "verifier_sha256": "63b68e9347786b79716f710148535529302bef575e2db199a053020a7763e18a"
+}

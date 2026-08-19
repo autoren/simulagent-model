@@ -1,0 +1,306 @@
+{
+  "authorization": {
+    "collect_human_or_original_user_language": false,
+    "maximum_model_generation_count": 24,
+    "maximum_model_load_count": 1,
+    "modify_prompt_records_model_parser_validator_fallback_decoding_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "rerun_on_malformed_or_failed_output": false,
+    "run_API_model": false,
+    "run_local_model_once": true,
+    "train_adapter": false
+  },
+  "census_harness": "python/locked_census_harness.py",
+  "census_harness_sha256": "16fb60b0619f5a38ab9d375cfa626d0e88d66a49dd221f736436f933639e7714",
+  "config_payload": {
+    "canonicalSurfaces": {
+      "ask_full_details": "Should I schedule the project review or send the project summary, and should the recipient be Alex Chen or Alex Kim?",
+      "ask_operation": "Should I schedule the project review or send the project summary?",
+      "ask_recipient": "Should the recipient be Alex Chen or Alex Kim?"
+    },
+    "clarificationCodesInRequiredOrder": [
+      "ask_operation",
+      "ask_recipient",
+      "ask_full_details"
+    ],
+    "controls": [
+      "canonical_surface",
+      "finite_grammar_surface",
+      "raw_local_model_passthrough",
+      "validated_local_model_with_canonical_fallback",
+      "unsafe_surface_mutations"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V82 without prompt edits or rerun; retain canonical and grammar renderers only",
+      "ifEveryGatePasses": "freeze V82 as an optional validated surface renderer with mandatory canonical fallback",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesActionSelection": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesBeliefAssignment": false,
+      "passAuthorizesCandidateGeneration": false,
+      "passAuthorizesRealToolExecution": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 96,
+      "maximumPromptTokens": 640,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v82_frozen_local_LLM_fail_closed_clarification_surface",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumConfidenceProbabilityCandidateActionOrToolFieldCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFallbackRate": 0.25,
+      "maximumForbiddenExecutionClaimCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumMeanFinalQuestionCharacters": 180.0,
+      "maximumModelGenerationCount": 24,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumRealToolCallCount": 0,
+      "maximumV79PolicyValueAbsoluteError": 1e-12,
+      "minimumAcceptedUniqueSurfaceCountPerCode": 1,
+      "minimumCanonicalBaselineValidityRate": 1.0,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumFinalActionCodePreservationRate": 1.0,
+      "minimumFinalSemanticValidityRate": 1.0,
+      "minimumFiniteGrammarBaselineValidityRate": 1.0,
+      "minimumPerCodeRawSemanticAcceptanceRate": 0.625,
+      "minimumRawSemanticAcceptanceRate": 0.75,
+      "minimumReachableV79ClarificationActionInvarianceRate": 1.0,
+      "minimumUnsafeMutationRejectionRate": 1.0,
+      "requiredCodeCounts": {
+        "ask_full_details": 8,
+        "ask_operation": 8,
+        "ask_recipient": 8
+      },
+      "requiredRecordCount": 24
+    },
+    "lexicalAnchors": {
+      "operation": [
+        "schedule the project review",
+        "send the project summary"
+      ],
+      "recipient": [
+        "Alex Chen",
+        "Alex Kim"
+      ]
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "ASCIIOnly": true,
+      "exactQuestionMarkCount": 1,
+      "exactTopLevelKeys": [
+        "question"
+      ],
+      "forbiddenExecutionClaimFragments": [
+        "i have",
+        "i've",
+        "i will",
+        "i'll",
+        "already",
+        "completed",
+        "executed",
+        "scheduled",
+        "sent",
+        "booked",
+        "done"
+      ],
+      "invalidOutputHandling": "discard complete model output and use locked canonical surface for the unchanged clarification code",
+      "maximumCharacters": 180,
+      "minimumCharacters": 1,
+      "newlinesAllowed": false,
+      "questionMarkMustTerminate": true,
+      "requiredAnchorsMustAppearExactlyOnce": true,
+      "underscoresAllowed": false,
+      "unrequestedAnchorsAllowed": false
+    },
+    "parentDecisionCore": {
+      "frozen": true,
+      "outcomeLock": "configs/v79-terminal-utility-outcome-lock.json",
+      "reachableActionCounts": {
+        "ask_full_details": 0,
+        "ask_operation": 4,
+        "ask_recipient": 2
+      },
+      "reachableClarificationNodeCount": 6,
+      "result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json"
+    },
+    "predecessorConstraint": "V80 and V81 remain frozen negative candidate-generation results; V82 cannot propose candidates, assign beliefs, choose actions, call tools, or receive original user language",
+    "purpose": "test a materially different non-authoritative LLM role that renders an already selected V79 clarification code while deterministic validation and canonical fallback preserve semantics and policy value",
+    "records": [
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-concise",
+        "styleHint": "concise"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-neutral",
+        "styleHint": "neutral"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-polite",
+        "styleHint": "polite"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-formal",
+        "styleHint": "formal"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-direct",
+        "styleHint": "direct"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-friendly",
+        "styleHint": "friendly"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-explicit",
+        "styleHint": "explicit"
+      },
+      {
+        "clarificationCode": "ask_operation",
+        "id": "v82-operation-minimal",
+        "styleHint": "minimal"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-concise",
+        "styleHint": "concise"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-neutral",
+        "styleHint": "neutral"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-polite",
+        "styleHint": "polite"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-formal",
+        "styleHint": "formal"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-direct",
+        "styleHint": "direct"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-friendly",
+        "styleHint": "friendly"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-explicit",
+        "styleHint": "explicit"
+      },
+      {
+        "clarificationCode": "ask_recipient",
+        "id": "v82-recipient-minimal",
+        "styleHint": "minimal"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-concise",
+        "styleHint": "concise"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-neutral",
+        "styleHint": "neutral"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-polite",
+        "styleHint": "polite"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-formal",
+        "styleHint": "formal"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-direct",
+        "styleHint": "direct"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-friendly",
+        "styleHint": "friendly"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-explicit",
+        "styleHint": "explicit"
+      },
+      {
+        "clarificationCode": "ask_full_details",
+        "id": "v82-full-minimal",
+        "styleHint": "minimal"
+      }
+    ],
+    "schemaVersion": "82-local-clarification-surface-design",
+    "stageAuthorization": {
+      "accessOriginalUserLanguage": false,
+      "auditAndFreezeProtocol": true,
+      "collectHumanLanguage": false,
+      "constructAndSealCorpus": false,
+      "implementAndAuditRunner": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You render wording for an already selected clarification code; you do not interpret the request or make a decision. Return exactly one JSON object with one key named question and a string value. For ask_operation, include the exact anchors 'schedule the project review' and 'send the project summary' exactly once each, and do not mention Alex Chen or Alex Kim. For ask_recipient, include Alex Chen and Alex Kim exactly once each, and do not include either operation anchor. For ask_full_details, include all four exact anchors exactly once each. Produce exactly one question ending in '?', no newlines, no underscores, and no statement that anything was or will be executed. A style hint may change only polite surrounding wording. Do not include probabilities, confidence, candidate IDs, action fields, tool fields, explanations, or Markdown.",
+    "userPromptTemplate": "Clarification code: {clarificationCode}\nStyle hint: {styleHint}"
+  },
+  "corpus": "data/v82-local-clarification-surface/records.jsonl",
+  "corpus_seal": "data/v82-local-clarification-surface/corpus-seal.json",
+  "corpus_seal_sha256": "6734ed3fcc4faea6a51468d9f43d9a1ebf18cf7276cd8bd0000b60bb3bf307b5",
+  "corpus_sha256": "79f9fb261e4a9a07dc9f8d9ff899cef85fa95c598a1c2328f4e5b13eab20e0af",
+  "design_lock": "configs/v82-local-clarification-surface-design-lock.json",
+  "design_lock_sha256": "1e54c1de237b0bfe1379b2504bf5d22b5959d51694cbbfe359ba2c2c50f1aa2c",
+  "experiment": "v82_local_clarification_surface_implementation_lock",
+  "implementation_audit": "outputs/v82-local-clarification-surface/implementation-audit.json",
+  "implementation_audit_sha256": "e873914d2bb1d700358e4f36733067a49636a0e0f48741c04ef97a45031001c0",
+  "implementation_auditor": "python/audit_and_freeze_v82_surface_implementation.py",
+  "implementation_auditor_sha256": "6b91a0802af9c198bc482dd35d24ad2fc9f730e53f5928abb7ddcf8facdf975d",
+  "local_config_sha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "local_model_index_sha256": "52e534c41f7b97708329c85f762e5882bf48bd5955a422c6ae74eba321e6048a",
+  "local_snapshot_path": "/Users/kkmini/.cache/huggingface/hub/models--mlx-community--Qwen3.5-4B-4bit/snapshots/0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "local_tokenizer_config_sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+  "lock_payload_sha256": "d7a2a0f3e742ec323f91c25d91c10f0a7f31028a66fc0e1e619c685a57fa01b8",
+  "parent_V79_outcome_lock": "configs/v79-terminal-utility-outcome-lock.json",
+  "parent_V79_outcome_lock_sha256": "51209d9e9562dcd1a4f1643bc5dd46dc68042741b6467ab9331b450b1db468a7",
+  "parent_V79_result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json",
+  "parent_V79_result_sha256": "b20f89129eafe9131feac2276fa1f342a49e0fb6143713d842abdb9b682ed8e8",
+  "protocol": "python/v82_clarification_surface_protocol.py",
+  "protocol_sha256": "b29355a14e276d170ceae276144204ffe169ab724e4a59c17340577113820953",
+  "runner": "python/run_v82_local_clarification_surface_mlx.py",
+  "runner_sha256": "b9d4e61ad8cabc308cc0856aa695d5af36e0cd12e225529aa408c1e0d9c6365d",
+  "schema_version": "82-local-clarification-surface-implementation-lock",
+  "tests": "python/test_v82_clarification_surface_protocol.py",
+  "tests_sha256": "f9b79115cb6f9a0ff87364519438e6bef90d6d9c19184b3dc47b616b63dead46"
+}

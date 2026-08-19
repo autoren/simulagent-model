@@ -1,0 +1,97 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "collect_human_or_original_user_language": false,
+    "evaluate_model_free_census_once": true,
+    "implement_and_test_model_free_validator": true,
+    "modify_design_rule_population_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "authorizedRendererSources": [
+      "canonical",
+      "finite_grammar"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "reject V86 and retain V84 with provenance-only containment of generated or untrusted text",
+      "ifEveryGatePasses": "freeze the hardened validator and supersede only V84's weak unrequested-slot content certificate in future shadow integrations",
+      "passAuthorizesBeliefActionOrExecutionAuthority": false,
+      "passAuthorizesGeneratedSurfaceDeployment": false,
+      "passAuthorizesModelAccess": false
+    },
+    "disabledRendererSources": [
+      "local_model",
+      "API_model",
+      "adapter_model",
+      "untrusted_passthrough",
+      "local_model_adversarial"
+    ],
+    "enumeration": {
+      "V79BridgeNodeCount": 6,
+      "V79BridgeRenderedCaseCount": 54,
+      "V85RegisteredFalsePositiveRegressionCount": 1,
+      "baseUnsafeMutationCount": 16,
+      "partialOptionInjectionMutationCount": 16,
+      "schemaCount": 4,
+      "schemaRenderedCaseCount": 108
+    },
+    "experiment": "v86_model_free_unrequested_partial_option_hardening",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCompleteBeliefExecutionCertificateViolations": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumRealToolCallCount": 0,
+      "maximumV79PolicyValueAbsoluteError": 1e-12,
+      "minimumBaseUnsafeMutationRejectionRate": 1.0,
+      "minimumDisabledUntrustedDeploymentRate": 1.0,
+      "minimumPartialOptionInjectionRejectionRate": 1.0,
+      "minimumSchemaSurfaceValidityRate": 1.0,
+      "minimumTypedRequestPreservationRate": 1.0,
+      "minimumV79BridgeActionPreservationRate": 1.0,
+      "minimumV79BridgeStructuralPreservationRate": 1.0,
+      "minimumV85FalsePositiveRegressionRejectionRate": 1.0
+    },
+    "parentOutcomeLock": "configs/v85-local-adversarial-generator-outcome-lock.json",
+    "purpose": "correct the V85-discovered false positive by rejecting any individual option surface belonging to an unrequested slot",
+    "registeredCorrection": {
+      "changesAuthorizedRendererSources": false,
+      "changesCanonicalOrFiniteGrammarText": false,
+      "changesSchemaBeliefActionOrPolicy": false,
+      "newRule": "forbid every individual option surface and the complete choice fragment from every unrequested slot",
+      "oldRule": "forbid only the complete choice fragment from every unrequested slot"
+    },
+    "schemaOutcomeLock": "configs/v84-schema-grounded-shadow-outcome-lock.json",
+    "schemaVersion": "86-partial-option-validator-design",
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "auditAndFreezeDesign": true,
+      "collectHumanOrOriginalUserLanguage": false,
+      "evaluateModelFreeCensus": false,
+      "implementAndTestValidator": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "trainAdapter": false
+    }
+  },
+  "design": "configs/v86-partial-option-validator-design.json",
+  "design_audit": "outputs/v86-partial-option-validator/design-audit.json",
+  "design_audit_sha256": "e2fb2b654ef8631f4702f34790fcbeed4faff54f4ce6946a37399256328ca5eb",
+  "design_auditor": "python/audit_and_freeze_v86_validator_design.py",
+  "design_auditor_sha256": "1bdea8ba7bf6f92b808a26336327b0cd83fa87109bd463cc4ae8ea84ba149d48",
+  "design_sha256": "aff7d2bff9f30f3b5bca666d3ea1a1a2b4c9a08f58399d3647502ac7ca8ecf2f",
+  "experiment": "v86_partial_option_validator_design_lock",
+  "lock_payload_sha256": "d9c9237a133aea3dbae6020e881cce7b1991d9da8f95ad8e3b874d7b1092d3e5",
+  "parent_V85_outcome_lock": "configs/v85-local-adversarial-generator-outcome-lock.json",
+  "parent_V85_outcome_lock_sha256": "67b8a2466426fbd3d883764b367e02d6ba5fe23f9950ee09a677ca29270c3d52",
+  "plan": "docs/v86-partial-option-validator-plan.md",
+  "plan_sha256": "52687002f5ad7b7d0897f4307d40fbde7ea8f713529a7278c46525a29bab2146",
+  "schema_V84_outcome_lock": "configs/v84-schema-grounded-shadow-outcome-lock.json",
+  "schema_V84_outcome_lock_sha256": "449f1ddd8ed6ce990d2c22b9fa1b1af18ce29ea3956c67dcf7949b4e756da311",
+  "schema_version": "86-partial-option-validator-design-lock"
+}

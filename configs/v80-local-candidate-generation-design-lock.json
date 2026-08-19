@@ -1,0 +1,353 @@
+{
+  "authorization": {
+    "collect_human_language": false,
+    "construct_and_seal_corpus": true,
+    "implement_and_audit_local_runner": true,
+    "modify_prompt_model_revision_population_decoding_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "run_API_model": false,
+    "run_local_model": false,
+    "train_adapter": false
+  },
+  "config": "configs/v80-local-candidate-generation-design.json",
+  "config_payload": {
+    "candidateIdsInRequiredOrder": [
+      "schedule_review__alex_chen",
+      "send_summary__alex_chen",
+      "schedule_review__alex_kim",
+      "send_summary__alex_kim",
+      "none_of_the_above"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "freeze the failure without prompt edits or rerun on this population",
+      "ifEveryGatePasses": "freeze candidate generator and authorize preregistration of model-to-belief integration",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesLearnedLikelihoods": false,
+      "passAuthorizesModelToBeliefIntegrationImmediately": false,
+      "passAuthorizesRealToolExecution": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 128,
+      "maximumPromptTokens": 512,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v80_frozen_local_LLM_candidate_generation",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumActionOrToolFieldCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumConfidenceOrProbabilityFieldCount": 0,
+      "maximumDuplicateCandidateIdCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumMeanCandidateCount": 3.5,
+      "maximumModelForwardPassCount": 24,
+      "maximumRealToolCallCount": 0,
+      "maximumUnknownCandidateIdCount": 0,
+      "minimumCanonicalOrderRate": 1.0,
+      "minimumClearExactCandidateSetAccuracy": 0.75,
+      "minimumExactCandidateSetAccuracy": 0.75,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumMeanGoldCandidateRecall": 0.95,
+      "minimumNoneOfTheAboveInclusionRate": 1.0,
+      "minimumOutOfOntologyExactCandidateSetAccuracy": 0.75,
+      "minimumPerStratumMeanGoldCandidateRecall": 0.9,
+      "minimumSchemaValidityRate": 1.0,
+      "requiredRecordCount": 24,
+      "requiredStratumCounts": {
+        "clear": 8,
+        "fully_ambiguous": 4,
+        "operation_ambiguous": 4,
+        "out_of_ontology": 4,
+        "recipient_ambiguous": 4
+      }
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "actionOrToolFieldsAllowed": false,
+      "confidenceOrProbabilityFieldsAllowed": false,
+      "duplicatesAllowed": false,
+      "exactTopLevelKeys": [
+        "candidate_ids"
+      ],
+      "explanatoryTextAllowed": false,
+      "markdownFencesAllowed": false,
+      "maximumCandidates": 5,
+      "minimumCandidates": 1,
+      "noneOfTheAboveRequired": true,
+      "unknownIdsAllowed": false
+    },
+    "purpose": "test a frozen local LLM only as a bounded structured interpretation proposer above the V79 verified decision mechanism",
+    "records": [
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-sc-01",
+        "instruction": "Please arrange the project review with Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-sc-02",
+        "instruction": "Book a project review for Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-sk-01",
+        "instruction": "Please arrange the project review with Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-sk-02",
+        "instruction": "Book a project review for Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-tc-01",
+        "instruction": "Please deliver the project summary to Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-tc-02",
+        "instruction": "Forward the project summary to Alex Chen.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-tk-01",
+        "instruction": "Please deliver the project summary to Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-clear-tk-02",
+        "instruction": "Forward the project summary to Alex Kim.",
+        "stratum": "clear"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-recipient-s-01",
+        "instruction": "Arrange the project review with Alex.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "schedule_review__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-recipient-s-02",
+        "instruction": "Book Alex for the project review.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-recipient-t-01",
+        "instruction": "Send the project summary to Alex.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "send_summary__alex_chen",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-recipient-t-02",
+        "instruction": "Forward Alex the project summary.",
+        "stratum": "recipient_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "id": "v80-operation-c-01",
+        "instruction": "Handle the project item for Alex Chen.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "none_of_the_above"
+        ],
+        "id": "v80-operation-c-02",
+        "instruction": "Take care of the project task for Alex Chen.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-operation-k-01",
+        "instruction": "Handle the project item for Alex Kim.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-operation-k-02",
+        "instruction": "Take care of the project task for Alex Kim.",
+        "stratum": "operation_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-full-01",
+        "instruction": "Handle the project item for Alex.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-full-02",
+        "instruction": "Take care of the project task for Alex.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-full-03",
+        "instruction": "Please deal with Alex's project request.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "schedule_review__alex_chen",
+          "send_summary__alex_chen",
+          "schedule_review__alex_kim",
+          "send_summary__alex_kim",
+          "none_of_the_above"
+        ],
+        "id": "v80-full-04",
+        "instruction": "Complete the project-related request for Alex.",
+        "stratum": "fully_ambiguous"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "id": "v80-unknown-01",
+        "instruction": "Archive the project notes for Alex Chen.",
+        "stratum": "out_of_ontology"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "id": "v80-unknown-02",
+        "instruction": "Call Alex Kim about the project.",
+        "stratum": "out_of_ontology"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "id": "v80-unknown-03",
+        "instruction": "Delete the project draft for Alex.",
+        "stratum": "out_of_ontology"
+      },
+      {
+        "goldCandidateIds": [
+          "none_of_the_above"
+        ],
+        "id": "v80-unknown-04",
+        "instruction": "Translate the project summary for Alex Chen.",
+        "stratum": "out_of_ontology"
+      }
+    ],
+    "schemaVersion": "80-local-candidate-generation-design",
+    "stageAuthorization": {
+      "auditAndFreezeProtocol": true,
+      "collectHumanLanguage": false,
+      "constructAndSealCorpus": false,
+      "implementAndAuditLocalRunner": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You are a candidate interpretation generator, not a decision maker. Given one project request, return exactly one JSON object with one key named candidate_ids. Its value must be a JSON array containing every candidate ID that remains plausible from the text. Always include none_of_the_above as an escape candidate. Preserve the required candidate order shown below. Do not assign probabilities or confidence, do not select a clarification or tool action, and do not explain. Allowed IDs in required order: schedule_review__alex_chen, send_summary__alex_chen, schedule_review__alex_kim, send_summary__alex_kim, none_of_the_above.",
+    "userPromptTemplate": "Project request: {instruction}"
+  },
+  "config_sha256": "75779356b9f48029dbd9a9865f1bb06a56faea0d3af4f1262a4cb13d0e93d6be",
+  "design_audit": "outputs/v80-local-candidate-generation/design-audit.json",
+  "design_audit_sha256": "b6460c279634a2f452e4700e04e3f56e9c04b0daff0e0f012eb3aea40b4aba9a",
+  "design_auditor": "python/audit_and_freeze_v80_local_candidate_design.py",
+  "design_auditor_sha256": "d9c91894a4c278c69f5e70b571c98d56a69813c0e66d72f577b0695a562add8a",
+  "experiment": "v80_local_candidate_generation_design_lock",
+  "lock_payload_sha256": "44129b061df43c761b48f9fcd103d0b7097eaee97e83de5ba81bd106b1119a06",
+  "parent_outcome_lock": "configs/v79-terminal-utility-outcome-lock.json",
+  "parent_outcome_lock_sha256": "51209d9e9562dcd1a4f1643bc5dd46dc68042741b6467ab9331b450b1db468a7",
+  "preregistration": "docs/v80-local-candidate-generation-plan.md",
+  "preregistration_sha256": "a2d614053f48e1251c09d3db0447357315294c6f7554ed68ab920318940fb692",
+  "schema_version": "80-local-candidate-generation-design-lock"
+}

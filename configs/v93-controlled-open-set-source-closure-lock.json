@@ -1,0 +1,39 @@
+{
+  "authorization": {
+    "claim_novelty_or_abstention_evidence": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_for_V93": false,
+    "modify_relax_or_rerun_V93": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_fresh_global_capability_catalog_successor": true,
+    "reuse_V93_source_for_successor_outcomes": false,
+    "run_API_model_or_train_adapter": false,
+    "select_V93_population_or_extract_language": false
+  },
+  "closure_audit": "outputs/v93-controlled-open-set/source-closure-audit.json",
+  "closure_audit_sha256": "cb1463288a5c0885e2caf51902f7de2b736f173d6100502b8cc5628ad35b66fa",
+  "closure_auditor": "python/freeze_v93_source_infeasible.py",
+  "closure_auditor_sha256": "8219767cb1269b4d5f71cc2cff7954ae53aa6459ce5d93f9a9ebed655c38e8a3",
+  "experiment": "v93_controlled_open_set_source_infeasibility_closure_lock",
+  "inventory": "outputs/v93-controlled-open-set/source-inventory/open-set-inventory.json",
+  "inventory_sha256": "3a007af5c1c2a7042fe1d280c72bd537d4e36cf95a884130f57715d851a62427",
+  "lock_payload_sha256": "34c67846c5afa8e6dbe5efe301832151c407ceb21c7fa1404f8b130077bec7c1",
+  "outcome": {
+    "candidate_count": 0,
+    "decision": "freeze_V93_source_infeasible_without_population_or_model_access",
+    "eligible_service_count": 0,
+    "passed": true,
+    "scientific_source_feasibility_passed": false,
+    "source_record_count": 154
+  },
+  "result": "outputs/v93-controlled-open-set/source-inventory/result.json",
+  "result_sha256": "6928ae7fe81e7ff659e6f29f3e3bb77c40fd01e8e99ede747239c37c75685805",
+  "results_document": "docs/v93-controlled-open-set-source-results.md",
+  "results_document_sha256": "b02d8525887e47be1c02ea197d35844aef69ca31c236f06a3c076ce4c3b19e96",
+  "schema_version": "93-controlled-open-set-source-closure-lock",
+  "source_file": "outputs/v93-controlled-open-set/source/dialogues_004.json",
+  "source_file_git_blob_sha1": "81329efc5ef7169f455cd5f1a3a47d1de6fc419b",
+  "source_file_sha256": "d379a5149a86304a22162531e122ff9a7b8e9e46178789a5170e0a7091dd2bbf",
+  "source_lock": "configs/v93-controlled-open-set-source-lock.json",
+  "source_lock_sha256": "bd11eb2e185ec9fd940f3a6f96d92199cc9acf957da4bb65a366fd1a9038b65d"
+}

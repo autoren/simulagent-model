@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "151r1-local-proposal-query-ranking-recovery",
+  "experiment": "v151r1_no_retry_recovery_of_interrupted_local_proposal_query_ranking",
+  "parentV151AnalysisLock": "configs/v151-local-proposal-query-ranking-lock.json",
+  "claimBoundary": "technical recovery of the prospectively locked V151 synthetic development realization after an external process interruption; retain 58 durable outputs unchanged, force the interrupted 59th fixture to an invalid fail-closed proposal, generate only 37 never-started fixtures, and preserve all original semantic gates; not a retry, rerun, prompt change, evaluation result, external transfer, calibration fit, authority, action, or execution",
+  "interruption": {
+    "requiredPersistedFixtureCount": 58,
+    "requiredAttemptedGenerationCount": 59,
+    "requiredInterruptedFixtureCount": 1,
+    "requiredNeverStartedFixtureCount": 37,
+    "requiredFinalFixtureCount": 96,
+    "requiredPriorModelLoadCount": 1,
+    "maximumRecoveryModelLoadCount": 1,
+    "requiredFinalModelLoadCount": 2,
+    "regeneratePersistedOrInterruptedFixture": false,
+    "inspectOrMinePersistedSemanticOutputsBeforeRecoveryLock": false
+  },
+  "recoveryAccessGates": {
+    "maximumTokenizerLoadCount": 2,
+    "maximumModelLoadCount": 2,
+    "maximumModelGenerationCount": 96,
+    "maximumGenerationCountPerFixture": 1,
+    "maximumClosedAnswerModelGenerationCount": 0,
+    "maximumEvaluationFixtureModelGenerationCount": 0,
+    "maximumRetryCount": 0,
+    "maximumManualRawResponseInspectionCount": 0,
+    "maximumPersistedRawResponseCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOriginalQualificationAndRecoveryAccessGatePasses": "recovered_local_proposal_query_ranking_qualifies_on_synthetic_development_authorize_separate_V149_evaluation_preregistration_only",
+    "otherwise": "recovered_local_proposal_query_ranking_fails_development_gates_close_without_evaluation_or_tuning",
+    "passAuthorizesOnlySeparateEvaluationPreregistration": true,
+    "outcomeAuthorizesImmediateEvaluationRun": false,
+    "outcomeAuthorizesRetryRerunPromptChangeThresholdFitAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

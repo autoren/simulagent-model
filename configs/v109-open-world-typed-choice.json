@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "109-open-world-typed-choice-development-design",
+  "experiment": "v109_qwen38_27b_single_choice_interface_holdback_shadow",
+  "parentForensicsOutcomeLock": "configs/v108-open-world-interface-forensics-outcome-lock.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "modelManifestSha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "condition": {
+    "id": "qwen38_27b_4bit_single_choice_holdback",
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "weightBytes": 16054541349,
+    "modelLoadLimit": 1,
+    "generationLimit": 192
+  },
+  "corpus": {
+    "observedDevelopmentHoldbackCount": 128,
+    "observedSubset": "V106 calibration membership not used in V107 model generation",
+    "controlledMissingObservationCount": 64,
+    "totalGenerationCount": 192,
+    "excludeV107EvaluationRecords": true,
+    "excludeProtectedTestRecords": true,
+    "manualUtteranceInspection": false
+  },
+  "typedChoiceInterface": {
+    "knownChoicePrefix": "K",
+    "novelScenarioChoicePrefix": "N",
+    "unsupportedChoiceId": "U00",
+    "insufficientEvidenceChoiceId": "A00",
+    "choiceWidth": 2,
+    "requiredChoiceCount": 17,
+    "singleMachineAcceptedIdentifierField": "choice_id",
+    "outputKeys": ["choice_id", "confidence"],
+    "acceptAliases": false,
+    "acceptQualifiedIntentOutsideChoiceId": false,
+    "deterministicallyExpandChoiceAfterValidation": true,
+    "invalidOutputMapsToZeroConfidenceAbstain": true
+  },
+  "prompt": {
+    "system": "You are an offline, non-authoritative semantic proposer. Select exactly one supplied choice ID. Never call a tool, choose an action, alter the choices, or remove a hypothesis. Return exactly the required JSON object and no explanation.",
+    "demonstrationCount": 0,
+    "maximumPromptTokens": 4096,
+    "samePromptContractForObservedAndMissing": true,
+    "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]"
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "maximumNewTokens": 64,
+    "samplesPerRecord": 1,
+    "retryOnMalformedOutput": false,
+    "enableThinking": false
+  },
+  "metricDefinitions": {
+    "structuredResponseValidity": "strict two-key typed-choice validity over all 192 generations",
+    "observedMetrics": "frozen V106 decision metrics on the 128 model-blind holdback observations after deterministic choice expansion",
+    "controlledMissingObservationAbstentionAccuracy": "expanded A00 abstention count divided by 64 missing-observation controls",
+    "meanDecisionRegret": "frozen V106 asymmetric shadow cost",
+    "regretAboveAskAlways": "observed mean regret minus 1.125",
+    "trueHypothesisRetention": "1.0 by architecture because all 17 choices remain permanently available"
+  },
+  "interfaceGates": {
+    "minimumStructuredResponseValidity": 0.98,
+    "minimumObservedStructuredResponseValidity": 0.97,
+    "minimumControlledMissingObservationAbstentionAccuracy": 0.95,
+    "requiredChoiceCount": 17,
+    "maximumAmbiguousChoiceIdCount": 0
+  },
+  "semanticGates": {
+    "minimumObservedStatusMacroF1": 0.70,
+    "minimumObservedExactDecisionAccuracy": 0.65,
+    "minimumKnownExactIntentAccuracy": 0.75,
+    "minimumNovelStatusRecall": 0.50,
+    "minimumNovelStatusPrecision": 0.70,
+    "minimumNovelExactScenarioAccuracy": 0.60,
+    "minimumUnsupportedStatusRecall": 0.80,
+    "minimumUnsupportedStatusPrecision": 0.80,
+    "maximumFalseKnownAcceptanceRate": 0.10,
+    "maximumConfidenceECE": 0.15,
+    "maximumTopConfidence80PercentError": 0.20,
+    "maximumMeanDecisionRegret": 1.50,
+    "maximumRegretAboveAskAlways": 0.25
+  },
+  "accessGates": {
+    "requiredFixtureCount": 192,
+    "maximumDevelopmentLanguageReadCount": 1,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 192,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "permanentlyNonAuthoritative": true,
+    "completeSafeHypothesisUniverseRetained": true,
+    "modelDefinesOrPrunesCapabilities": false,
+    "modelUpdatesPosterior": false,
+    "modelSelectsAction": false,
+    "modelExecutesTool": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "completedCondition": "all 192 independent no-retry generations and access gates complete regardless of quality",
+    "interfacePass": "every interface gate passes noncompensatorily",
+    "semanticPass": "every semantic gate passes noncompensatorily",
+    "ifInterfaceAndSemanticPass": "freeze positive typed-choice result and preregister a sequential clarification benchmark",
+    "ifInterfacePassButSemanticFails": "freeze serialization repair with residual semantic risk and preregister a sequential clarification benchmark",
+    "ifInterfaceFails": "freeze typed-choice interface as nonviable and close this model-serialization branch",
+    "passAuthorizesProtectedTest": false,
+    "passAuthorizesAPITrainingPlanningOrExecution": false
+  }
+}

@@ -1,0 +1,579 @@
+{
+  "auditor": "python/audit_and_freeze_v135_controlled_open_world_minimal_pairs.py",
+  "auditor_sha256": "6ec92a467c982aa53b77daedbc5ec48822c1fa1d51dfc96d20a89e61f85b5312",
+  "authorization": {
+    "freeze_controlled_synthetic_asset": true,
+    "modify_regenerate_or_relabel_V135": false,
+    "run_induction_training_authority_action_or_execution": false,
+    "run_local_or_API_model": false,
+    "run_model_free_sequential_value_audit": true,
+    "touch_V134_language": false
+  },
+  "choice_catalog": "outputs/v135-controlled-open-world-minimal-pairs/design/choice-catalog.json",
+  "choice_catalog_sha256": "5631a31834cf1a97a8fe645110aad45a2e984163f8afbd56efa4e052cfbe786e",
+  "config": "configs/v135-controlled-open-world-minimal-pairs.json",
+  "config_payload": {
+    "authorization": {
+      "basis": "explicit user direction on 2026-08-18 to continue the prospectively controlled research sequence",
+      "runAPITrainingActionOrExecution": false,
+      "runModelInV135": false,
+      "separateSyntheticDevelopmentBranchOnly": true,
+      "touchOrExtractV134Language": false
+    },
+    "catalog": {
+      "choices": [
+        {
+          "choice_id": "K01",
+          "excludes": [
+            "air travel",
+            "recorded or streamed media"
+          ],
+          "includes": [
+            "in-person event discovery",
+            "live-event admission"
+          ],
+          "kind": "KNOWN",
+          "name": "live_event_search",
+          "visible_definition": "Find or reserve admission to an in-person concert, performance, festival, or sporting event."
+        },
+        {
+          "choice_id": "K02",
+          "excludes": [
+            "money transfer",
+            "digital payment"
+          ],
+          "includes": [
+            "physical shipment",
+            "parcel delivery"
+          ],
+          "kind": "KNOWN",
+          "name": "physical_parcel_dispatch",
+          "visible_definition": "Arrange shipment or delivery of a physical parcel, package, box, or envelope."
+        },
+        {
+          "choice_id": "K03",
+          "excludes": [
+            "clock alarm",
+            "wake-up alert"
+          ],
+          "includes": [
+            "restaurant booking",
+            "dining seating"
+          ],
+          "kind": "KNOWN",
+          "name": "restaurant_table_reservation",
+          "visible_definition": "Reserve a dining table or restaurant seating for a party at a requested time."
+        },
+        {
+          "choice_id": "K04",
+          "excludes": [
+            "clock alarm",
+            "wake-up alert"
+          ],
+          "includes": [
+            "rain forecast",
+            "temperature forecast"
+          ],
+          "kind": "KNOWN",
+          "name": "weather_forecast",
+          "visible_definition": "Provide a forecast such as rain, temperature, or other weather for a place and time."
+        },
+        {
+          "choice_id": "N01",
+          "kind": "VALID_UNDECLARED",
+          "name": "undeclared_air_travel",
+          "visible_definition": "A valid air-travel or flight-reservation capability is needed, but no such capability is declared in the known catalog."
+        },
+        {
+          "choice_id": "N02",
+          "kind": "VALID_UNDECLARED",
+          "name": "undeclared_money_transfer",
+          "visible_definition": "A valid money-transfer or payment capability is needed, but no such capability is declared in the known catalog."
+        },
+        {
+          "choice_id": "N03",
+          "kind": "VALID_UNDECLARED",
+          "name": "undeclared_media_playback",
+          "visible_definition": "A valid recorded-media or streaming playback capability is needed, but no such capability is declared in the known catalog."
+        },
+        {
+          "choice_id": "U00",
+          "kind": "UNSUPPORTED",
+          "name": "unsupported_alarm_control",
+          "visible_definition": "The request is for clock-alarm or wake-up-alert control, which is outside the supported and valid-undeclared universe for this benchmark."
+        },
+        {
+          "choice_id": "A00",
+          "kind": "INSUFFICIENT_EVIDENCE",
+          "name": "insufficient_evidence",
+          "visible_definition": "The visible language does not contain enough information to distinguish the relevant supplied choices safely."
+        }
+      ]
+    },
+    "claimBoundary": "deterministic synthetic-development evidence that known, valid-undeclared, unsupported, and insufficient-evidence language states can be generated as observable minimal pairs with exact clarification resolutions; not externally authored language, human identifiability, unrestricted open-world understanding, model performance, deployment safety, induction, authority, action, or execution",
+    "decisionRule": {
+      "ifEveryStructuralObservabilityAndAccessGatePasses": "freeze_controlled_minimal_pair_asset_authorize_model_free_sequential_value_audit_only",
+      "otherwise": "reject_V135_without_model_run_or_gate_relaxation",
+      "passAuthorizesInductionTrainingAuthorityActionOrExecution": false,
+      "passAuthorizesLocalOrAPIModelRun": false,
+      "passAuthorizesModelFreeSequentialValueAuditOnly": true,
+      "passAuthorizesV134LanguageAccess": false
+    },
+    "experiment": "v135_formally_controlled_open_world_minimal_pair_benchmark",
+    "families": [
+      {
+        "clarification_question": "Is the ticket for an in-person event or for air travel?",
+        "family_id": "ticket_event_vs_air",
+        "left_answer": "It is for an in-person live event.",
+        "left_answer_cue": "in-person live event",
+        "left_choice_id": "K01",
+        "presented_candidate_choice_id": "K01",
+        "right_answer": "It is for air travel on a flight.",
+        "right_answer_cue": "air travel on a flight",
+        "right_choice_id": "N01",
+        "slot_variants": [
+          {
+            "city": "Montreal",
+            "day": "Friday",
+            "event": "jazz concert"
+          },
+          {
+            "city": "Vancouver",
+            "day": "Saturday",
+            "event": "hockey game"
+          },
+          {
+            "city": "Halifax",
+            "day": "Tuesday",
+            "event": "theatre performance"
+          },
+          {
+            "city": "Calgary",
+            "day": "Sunday",
+            "event": "food festival"
+          },
+          {
+            "city": "Quebec City",
+            "day": "Wednesday",
+            "event": "indie concert"
+          },
+          {
+            "city": "Winnipeg",
+            "day": "Thursday",
+            "event": "basketball game"
+          },
+          {
+            "city": "Edmonton",
+            "day": "Monday",
+            "event": "dance performance"
+          },
+          {
+            "city": "Ottawa",
+            "day": "next Saturday",
+            "event": "film festival"
+          }
+        ],
+        "surfaces": [
+          {
+            "ambiguous": "Get me a ticket for {day}.",
+            "left": "Get me a live-event ticket for the {event} on {day}.",
+            "left_cue": "live-event",
+            "right": "Get me a plane ticket to {city} on {day}.",
+            "right_cue": "plane ticket"
+          },
+          {
+            "ambiguous": "I need a booking for {day}.",
+            "left": "I need admission to the {event} on {day}.",
+            "left_cue": "admission",
+            "right": "I need airfare to {city} on {day}.",
+            "right_cue": "airfare"
+          },
+          {
+            "ambiguous": "Reserve me a seat for {day}.",
+            "left": "Reserve a seat at the in-person {event} on {day}.",
+            "left_cue": "in-person",
+            "right": "Reserve a seat on a flight to {city} on {day}.",
+            "right_cue": "flight"
+          },
+          {
+            "ambiguous": "Find me an option for {day}.",
+            "left": "Find event entry for the {event} on {day}.",
+            "left_cue": "event entry",
+            "right": "Find air travel to {city} on {day}.",
+            "right_cue": "air travel"
+          }
+        ]
+      },
+      {
+        "clarification_question": "Are you sending a physical parcel or transferring money?",
+        "family_id": "send_parcel_vs_money",
+        "left_answer": "I am sending a physical parcel.",
+        "left_answer_cue": "physical parcel",
+        "left_choice_id": "K02",
+        "presented_candidate_choice_id": "K02",
+        "right_answer": "I am transferring money as a payment.",
+        "right_answer_cue": "transferring money",
+        "right_choice_id": "N02",
+        "slot_variants": [
+          {
+            "amount": "40",
+            "person": "Jordan"
+          },
+          {
+            "amount": "25",
+            "person": "Riley"
+          },
+          {
+            "amount": "80",
+            "person": "Morgan"
+          },
+          {
+            "amount": "15",
+            "person": "Casey"
+          },
+          {
+            "amount": "60",
+            "person": "Avery"
+          },
+          {
+            "amount": "35",
+            "person": "Taylor"
+          },
+          {
+            "amount": "90",
+            "person": "Cameron"
+          },
+          {
+            "amount": "20",
+            "person": "Quinn"
+          }
+        ],
+        "surfaces": [
+          {
+            "ambiguous": "Send this to {person}.",
+            "left": "Send this parcel to {person}.",
+            "left_cue": "parcel",
+            "right": "Send {amount} dollars to {person}.",
+            "right_cue": "dollars"
+          },
+          {
+            "ambiguous": "Arrange this for {person}.",
+            "left": "Arrange delivery of this package to {person}.",
+            "left_cue": "package",
+            "right": "Transfer {amount} dollars to {person}.",
+            "right_cue": "dollars"
+          },
+          {
+            "ambiguous": "Get this to {person}.",
+            "left": "Ship the box to {person}.",
+            "left_cue": "box",
+            "right": "Wire funds to {person}.",
+            "right_cue": "funds"
+          },
+          {
+            "ambiguous": "Move this over to {person}.",
+            "left": "Have this physical envelope delivered to {person}.",
+            "left_cue": "physical envelope",
+            "right": "Make a payment to {person}.",
+            "right_cue": "payment"
+          }
+        ]
+      },
+      {
+        "clarification_question": "Do you want to attend a live event or play recorded media?",
+        "family_id": "show_event_vs_media",
+        "left_answer": "I want to attend a live event in person.",
+        "left_answer_cue": "live event in person",
+        "left_choice_id": "K01",
+        "presented_candidate_choice_id": "K01",
+        "right_answer": "I want to play recorded media on a screen.",
+        "right_answer_cue": "recorded media",
+        "right_choice_id": "N03",
+        "slot_variants": [
+          {
+            "genre": "comedy"
+          },
+          {
+            "genre": "jazz"
+          },
+          {
+            "genre": "documentary"
+          },
+          {
+            "genre": "drama"
+          },
+          {
+            "genre": "classical"
+          },
+          {
+            "genre": "science-fiction"
+          },
+          {
+            "genre": "family"
+          },
+          {
+            "genre": "mystery"
+          }
+        ],
+        "surfaces": [
+          {
+            "ambiguous": "I want a {genre} show tonight.",
+            "left": "Find a live-event {genre} show to attend tonight.",
+            "left_cue": "live-event",
+            "right": "Play a {genre} show on my television tonight.",
+            "right_cue": "television"
+          },
+          {
+            "ambiguous": "Get me a {genre} performance.",
+            "left": "Get admission to an in-person {genre} performance.",
+            "left_cue": "in-person",
+            "right": "Start streaming a {genre} performance.",
+            "right_cue": "streaming"
+          },
+          {
+            "ambiguous": "Show me something {genre}.",
+            "left": "Which {genre} events can I attend locally?",
+            "left_cue": "attend locally",
+            "right": "Put a {genre} video on the screen.",
+            "right_cue": "video"
+          },
+          {
+            "ambiguous": "Find a {genre} show.",
+            "left": "Find a {genre} show at a live venue.",
+            "left_cue": "live venue",
+            "right": "Play a recorded {genre} show.",
+            "right_cue": "recorded"
+          }
+        ]
+      },
+      {
+        "clarification_question": "Are you reserving restaurant seating or setting a wake-up alarm?",
+        "family_id": "schedule_restaurant_vs_alarm",
+        "left_answer": "I am reserving restaurant seating.",
+        "left_answer_cue": "restaurant seating",
+        "left_choice_id": "K03",
+        "presented_candidate_choice_id": "K03",
+        "right_answer": "I am setting a wake-up alarm.",
+        "right_answer_cue": "wake-up alarm",
+        "right_choice_id": "U00",
+        "slot_variants": [
+          {
+            "party": "two",
+            "time": "7:00 PM"
+          },
+          {
+            "party": "four",
+            "time": "6:30 PM"
+          },
+          {
+            "party": "three",
+            "time": "8:00 PM"
+          },
+          {
+            "party": "six",
+            "time": "5:45 PM"
+          },
+          {
+            "party": "two",
+            "time": "7:30 PM"
+          },
+          {
+            "party": "five",
+            "time": "6:00 PM"
+          },
+          {
+            "party": "four",
+            "time": "8:15 PM"
+          },
+          {
+            "party": "three",
+            "time": "5:30 PM"
+          }
+        ],
+        "surfaces": [
+          {
+            "ambiguous": "Set something up for {time}.",
+            "left": "Reserve a restaurant table for {party} at {time}.",
+            "left_cue": "restaurant table",
+            "right": "Set an alarm for {time}.",
+            "right_cue": "alarm"
+          },
+          {
+            "ambiguous": "Book something for {time}.",
+            "left": "Book dinner seating for {party} at {time}.",
+            "left_cue": "dinner seating",
+            "right": "Wake me at {time}.",
+            "right_cue": "wake me"
+          },
+          {
+            "ambiguous": "Schedule this for {time}.",
+            "left": "Get us dining seats for {party} at {time}.",
+            "left_cue": "dining seats",
+            "right": "Schedule a wake-up alert for {time}.",
+            "right_cue": "wake-up alert"
+          },
+          {
+            "ambiguous": "Arrange something for {time}.",
+            "left": "Arrange a restaurant reservation for {party} at {time}.",
+            "left_cue": "restaurant reservation",
+            "right": "Create a clock alarm for {time}.",
+            "right_cue": "clock alarm"
+          }
+        ]
+      },
+      {
+        "clarification_question": "Do you want weather information or a wake-up alarm?",
+        "family_id": "tomorrow_weather_vs_alarm",
+        "left_answer": "I want weather information and a forecast.",
+        "left_answer_cue": "weather information",
+        "left_choice_id": "K04",
+        "presented_candidate_choice_id": "K04",
+        "right_answer": "I want a wake-up alarm.",
+        "right_answer_cue": "wake-up alarm",
+        "right_choice_id": "U00",
+        "slot_variants": [
+          {
+            "city": "Toronto",
+            "time": "7:00 AM"
+          },
+          {
+            "city": "Montreal",
+            "time": "6:30 AM"
+          },
+          {
+            "city": "Ottawa",
+            "time": "8:00 AM"
+          },
+          {
+            "city": "Vancouver",
+            "time": "7:45 AM"
+          },
+          {
+            "city": "Halifax",
+            "time": "6:00 AM"
+          },
+          {
+            "city": "Calgary",
+            "time": "7:30 AM"
+          },
+          {
+            "city": "Edmonton",
+            "time": "8:15 AM"
+          },
+          {
+            "city": "Winnipeg",
+            "time": "5:45 AM"
+          }
+        ],
+        "surfaces": [
+          {
+            "ambiguous": "Let me know at {time} tomorrow.",
+            "left": "Tell me whether it will rain in {city} at {time} tomorrow.",
+            "left_cue": "rain",
+            "right": "Wake me at {time} tomorrow.",
+            "right_cue": "wake me"
+          },
+          {
+            "ambiguous": "I need an update at {time} tomorrow.",
+            "left": "Give me the temperature forecast for {city} at {time}.",
+            "left_cue": "temperature forecast",
+            "right": "Set a wake-up alert for {time}.",
+            "right_cue": "wake-up alert"
+          },
+          {
+            "ambiguous": "Help me prepare for tomorrow morning.",
+            "left": "Will I need an umbrella in {city} tomorrow morning?",
+            "left_cue": "umbrella",
+            "right": "Make sure I am awake at {time} tomorrow.",
+            "right_cue": "awake"
+          },
+          {
+            "ambiguous": "Check on me around {time} tomorrow.",
+            "left": "Check tomorrow's weather in {city} around {time}.",
+            "left_cue": "weather",
+            "right": "Create an alarm for {time} tomorrow.",
+            "right_cue": "alarm"
+          }
+        ]
+      }
+    ],
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumV134LanguageReadCount": 0,
+      "requiredAmbiguousFixtureCountPerSplit": 20,
+      "requiredChoiceCount": 9,
+      "requiredChoiceCoveragePerSplit": 9,
+      "requiredClarificationResolutionRate": 1.0,
+      "requiredClarifiedFixtureCountPerSplit": 40,
+      "requiredCueValidationRate": 1.0,
+      "requiredFamilyCount": 5,
+      "requiredFixtureCount": 200,
+      "requiredFixtureCountPerSplit": 100,
+      "requiredGroupCount": 40,
+      "requiredInitialFixtureCountPerSplit": 60,
+      "requiredInsufficientChoiceCount": 1,
+      "requiredKnownChoiceCount": 4,
+      "requiredNovelChoiceCount": 3,
+      "requiredPublicGoldLeakageCount": 0,
+      "requiredStagesPerGroup": 5,
+      "requiredTruthDerivationRate": 1.0,
+      "requiredUnsupportedChoiceCount": 1,
+      "requiredVariantCountPerFamily": 8
+    },
+    "generation": {
+      "ambiguousTruthIsInsufficientEvidenceRatherThanAHiddenSourceLabel": true,
+      "baseSalt": "simulagent-v135-controlled-open-world-v1",
+      "noModelGeneratedLanguage": true,
+      "splits": {
+        "development": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "test": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "stagesPerGroup": [
+        "clear_left",
+        "clear_right",
+        "ambiguous",
+        "clarified_left",
+        "clarified_right"
+      ],
+      "syntheticLanguageIsDevelopmentEvidenceOnly": true
+    },
+    "parentV134OutcomeLock": "configs/v134-semantic-novelty-source-design-outcome-lock.json",
+    "schemaVersion": "135-controlled-open-world-minimal-pairs"
+  },
+  "config_sha256": "a89d157ada33b0798a4f6cd227b8667f202e6c567242dfac14eb05df0984b2d7",
+  "design_audit": "outputs/v135-controlled-open-world-minimal-pairs/design-audit.json",
+  "design_audit_sha256": "e3f26be5f9a4afdf35ec99a911f113090340cdc841c4057ecebcfb5fd232d48e",
+  "experiment": "v135_formally_controlled_open_world_minimal_pair_benchmark",
+  "hidden_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "b0dbfef23db7b8975a6b0a74fa5602bbd65de2aadc307d19c6be2bd99b6b3231",
+  "lock_payload_sha256": "0bf9ce2b0aca9e247e3263c53d51fd1891ee07a0256711e879cd398406740533",
+  "parent_outcome": "configs/v134-semantic-novelty-source-design-outcome-lock.json",
+  "parent_outcome_sha256": "0cead7097790c8193b7fe8a97452332be3221cbcfc8834370d79a3334ee8d94d",
+  "plan": "docs/v135-controlled-open-world-minimal-pairs-plan.md",
+  "plan_sha256": "84d2d88e17726f04cd80c1ecd097803a799773d107f3071bcbdd58975ea32c9c",
+  "population_summary": "outputs/v135-controlled-open-world-minimal-pairs/design/population-summary.json",
+  "population_summary_sha256": "35f0e12b2be6f3dedd706427959a1b05d4ba50637e01dab53af87f1f40df00ab",
+  "protocol": "python/v135_controlled_open_world_minimal_pairs.py",
+  "protocol_sha256": "2ca5157152a80932636d342ce04919a92e4757b9c89dd734e2088293a0e55af2",
+  "public_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/public-fixtures.json",
+  "public_fixtures_sha256": "895193ef53abfd754778faab940e53cbe299ab9c43316215a9c9a92d69edc13a",
+  "schema_version": "135-controlled-open-world-minimal-pairs-lock",
+  "tests": "python/test_v135_controlled_open_world_minimal_pairs.py",
+  "tests_sha256": "ae0cad7d525dd64b66bf550c941ab5de9967c7da93fcb5a1b9959dc7760f0a0f",
+  "verifier": "python/verify_and_freeze_v135_controlled_open_world_minimal_pairs_outcome.py",
+  "verifier_sha256": "ef806a97aac425044e724003b891d8a3177992c48daf9e8cd1b5b623849c8b42"
+}

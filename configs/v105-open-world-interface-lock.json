@@ -1,0 +1,171 @@
+{
+  "auditor": "python/audit_and_freeze_v105_interface.py",
+  "auditor_sha256": "064716c6a54b79ea08f0f16b1653d68c9731a3c78966589e76b9ddd976b08946",
+  "authorization": {
+    "design_or_run_language_baseline_or_model": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "manually_inspect_any_utterance": false,
+    "modify_catalog_contract_control_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "read_local_archive_training_annotations_once": true,
+    "read_selected_development_or_protected_test_language": false,
+    "read_text_free_population_identifiers_once": true,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "config": "configs/v105-open-world-interface.json",
+  "config_payload": {
+    "authorityBoundary": {
+      "LLMDefinesCapabilities": false,
+      "LLMExecutesActionOrTool": false,
+      "LLMPrunesHypotheses": false,
+      "LLMSelectsAction": false,
+      "LLMUpdatesPosterior": false,
+      "authoritativeStateIsImmutable": true,
+      "invalidOrMissingOutputCanRemoveTrueHypothesis": false,
+      "realToolAndServiceAccess": false
+    },
+    "controlledInsufficientEvidence": {
+      "construction": "same_frozen_record_identifier_with_observation_available_false_and_no_utterance_exposure",
+      "deterministicRuntimeAction": "ABSTAIN_AND_ASK",
+      "evidenceClaim": "controlled_missing_observation_intervention_only",
+      "modelInvocationRole": "shadow_only",
+      "naturalLanguageEvidenceClaimAllowed": false,
+      "recordsPerRole": 64,
+      "selectionSalt": "simulagent-v105-controlled-missing-observation-v1"
+    },
+    "decisionRule": {
+      "ifAnyInterfaceGateFails": "stop before selected language, baseline, or model access",
+      "ifEveryInterfaceGatePasses": "freeze catalog interface and controlled missing-observation identifiers, then preregister baselines metrics costs calibration and model",
+      "passAuthorizesAPITrainingPlanningOrExecution": false,
+      "passAuthorizesSelectedLanguageOrModelAccess": false
+    },
+    "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+    "experiment": "v105_massive_typed_open_world_non_authoritative_interface",
+    "hiddenGroundTruthMustNotAppearInVisibleCatalog": [
+      "calendar::calendar_query",
+      "iot::iot_hue_lightoff",
+      "email"
+    ],
+    "interfaceGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHiddenOrUnsupportedSchemaLeakCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSelectedDevelopmentLanguageReadCount": 0,
+      "minimumVisibleUniqueSlotTypeCount": 8,
+      "requiredControlledInsufficientRecordsPerRole": 64,
+      "requiredSafeHypothesisCount": 17,
+      "requiredVisibleIntentCount": 12,
+      "requiredVisibleScenarioCount": 3
+    },
+    "parentLanguageOutcomeLock": "configs/v104-massive-language-extraction-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "protectedTestLanguageReadCount": 0,
+      "selectedDevelopmentLanguageReadCount": 0,
+      "sourceArchiveReadCount": 0
+    },
+    "promptContract": {
+      "includeNoDemonstrations": true,
+      "includeRawUtteranceOnlyWhenObservationAvailable": true,
+      "includeVisibleTypedCatalog": true,
+      "instruction": "Classify the user request against the visible catalog. Use KNOWN only for one listed intent. Use NOVEL when the request is a plausible new capability inside one visible scenario but no listed intent matches. Use UNSUPPORTED when it belongs outside every visible scenario. Use ABSTAIN when evidence is insufficient. Return exactly one JSON object and no explanation.",
+      "missingObservationSentinel": "[NO_USER_UTTERANCE_AVAILABLE]"
+    },
+    "responseContract": {
+      "allowedStatuses": [
+        "KNOWN",
+        "NOVEL",
+        "UNSUPPORTED",
+        "ABSTAIN"
+      ],
+      "confidenceMaximum": 1.0,
+      "confidenceMinimum": 0.0,
+      "extraKeysAllowed": false,
+      "invalidResponseFallback": {
+        "confidence": 0.0,
+        "known_intent": null,
+        "novel_scenario": null,
+        "status": "ABSTAIN"
+      },
+      "knownStatusRequiresDeclaredKnownIntent": true,
+      "novelStatusRequiresVisibleScenario": true,
+      "requiredKeys": [
+        "status",
+        "known_intent",
+        "novel_scenario",
+        "confidence"
+      ],
+      "unsupportedAndAbstainRequireNullIntentAndScenario": true
+    },
+    "safeHypothesisUniverse": {
+      "LLMMayRankButNeverDeleteHypotheses": true,
+      "declaredKnownHypothesisCount": 12,
+      "insufficientEvidenceHypothesisCount": 1,
+      "scenarioNovelHypothesisCount": 3,
+      "totalHypothesisCount": 17,
+      "trueHypothesisRetentionIsDeterministicallyComplete": true,
+      "unsupportedHypothesisCount": 1
+    },
+    "schemaVersion": "105-open-world-interface-design",
+    "selectedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+    "selectedPopulationSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+    "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+    "visibleDeclaredIntents": [
+      "calendar::calendar_remove",
+      "calendar::calendar_set",
+      "iot::iot_cleaning",
+      "iot::iot_coffee",
+      "iot::iot_hue_lightchange",
+      "iot::iot_hue_lightdim",
+      "iot::iot_hue_lightup",
+      "iot::iot_wemo_off",
+      "iot::iot_wemo_on",
+      "recommendation::recommendation_events",
+      "recommendation::recommendation_locations",
+      "recommendation::recommendation_movies"
+    ],
+    "visibleScenarios": [
+      "calendar",
+      "iot",
+      "recommendation"
+    ]
+  },
+  "config_sha256": "f776541760b120197dd17f19d417bc746a504040ef93eae95205987373786f08",
+  "design_audit": "outputs/v105-open-world-interface/interface-design-audit.json",
+  "design_audit_sha256": "6ec66fc3a20d766d1db8589031ad590771f2a12005d41d6da953f9a305220fe8",
+  "experiment": "v105_open_world_interface_lock",
+  "lock_payload_sha256": "e1698b25af68e02c9008bef77175d159ef24c4d5417cd378ac370cdb95ec4299",
+  "parent_language_outcome": "configs/v104-massive-language-extraction-outcome-lock.json",
+  "parent_language_outcome_sha256": "36d4b9f6b362678133c9c0e48b6d9c436b4bafb357301bc53ff229e98ae75a35",
+  "plan": "docs/v105-open-world-interface-plan.md",
+  "plan_sha256": "71343966737e4980bccf699162fbfeaaf59e7b00983634c473f96920d16b7eb8",
+  "protocol": "python/v105_open_world_interface.py",
+  "protocol_sha256": "822205f15dea54f28f95d1e3e5cb9e78ae41cbb55d8571ab748a775ae732cfaa",
+  "runner": "python/run_v105_open_world_interface.py",
+  "runner_sha256": "b3b05b5044476dec9e26f7247fce7bcbea0ede8674e1299ca14281cde4e1d546",
+  "schema_version": "105-open-world-interface-lock",
+  "selected_population": "outputs/v101-massive-population/population/selected-population.json",
+  "selected_population_sha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "source_archive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "source_archive_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "tests": "python/test_v105_open_world_interface.py",
+  "tests_sha256": "506f18671ef116d5da4455df6bc77c6401012be484142890c942cbfa1c040bb9",
+  "verifier": "python/verify_and_freeze_v105_interface_outcome.py",
+  "verifier_sha256": "989878fb1018fdd5b83af44b8d76cf88aaca8f2d3d2b6dd22df360b549c88855"
+}

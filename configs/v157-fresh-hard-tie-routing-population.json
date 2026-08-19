@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "157-fresh-hard-tie-routing-population",
+  "experiment": "v157_fresh_hard_tie_generic_routing_population",
+  "parentV156OutcomeLock": "configs/v156-model-free-explicit-metadata-question-retrieval-outcome-lock.json",
+  "claimBoundary": "fresh project-authored synthetic population with independently labeled lexical-control, uncatalogued-paraphrase, relational-tie, and insufficient strata; generic typed routing may identify a registered specific question but never supplies a semantic witness or final state; no policy/model performance, external transfer, induction, authority, action, or execution claim",
+  "outputIds": ["K71", "K72", "K73", "K74", "K75", "K76", "N70", "U70", "A00"],
+  "knownIds": ["K71", "K72", "K73", "K74", "K75", "K76"],
+  "novelCandidateId": "N70", "unsupportedId": "U70", "insufficientId": "A00",
+  "trustedSource": "CLOSED_TYPED_CLARIFICATION",
+  "genericQueryId": "Q70", "genericUnclearOptionId": "UNCLEAR",
+  "allowedValues": {
+    "operation": ["replace_container", "refund_deposit", "request_accommodation", "maintain_monitor", "license_reproduction", "track_grant", "erase_certified_record"],
+    "object_class": ["compost_container", "food_rescue_pickup", "rail_pass_deposit", "bike_share_deposit", "school_meal", "library_quiet_room", "irrigation_monitor", "air_quality_monitor", "heritage_photo", "flood_grant", "certified_history"],
+    "scope": ["municipal_service", "deposit", "access", "maintenance", "license", "payment", "retroactive"]
+  },
+  "knownWitnesses": [
+    {"choice_id": "K71", "operation": "replace_container", "object_class": "compost_container", "scope": "municipal_service"},
+    {"choice_id": "K72", "operation": "refund_deposit", "object_class": "rail_pass_deposit", "scope": "deposit"},
+    {"choice_id": "K73", "operation": "request_accommodation", "object_class": "school_meal", "scope": "access"},
+    {"choice_id": "K74", "operation": "maintain_monitor", "object_class": "irrigation_monitor", "scope": "maintenance"},
+    {"choice_id": "K75", "operation": "license_reproduction", "object_class": "heritage_photo", "scope": "license"},
+    {"choice_id": "K76", "operation": "track_grant", "object_class": "flood_grant", "scope": "payment"}
+  ],
+  "novelWitnesses": [
+    {"operation": "replace_container", "object_class": "food_rescue_pickup", "scope": "municipal_service"},
+    {"operation": "refund_deposit", "object_class": "bike_share_deposit", "scope": "deposit"},
+    {"operation": "request_accommodation", "object_class": "library_quiet_room", "scope": "access"},
+    {"operation": "maintain_monitor", "object_class": "air_quality_monitor", "scope": "maintenance"}
+  ],
+  "unsupportedWitnesses": [
+    {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"}
+  ],
+  "catalog": {
+    "choices": [
+      {"choice_id": "K71", "kind": "KNOWN", "title": "replace_municipal_compost_container", "boundary": "Replace a damaged municipal compost container."},
+      {"choice_id": "K72", "kind": "KNOWN", "title": "refund_rail_pass_deposit", "boundary": "Refund the refundable deposit attached to a regional rail pass."},
+      {"choice_id": "K73", "kind": "KNOWN", "title": "request_school_meal_accommodation", "boundary": "Request a documented accommodation for a school meal service."},
+      {"choice_id": "K74", "kind": "KNOWN", "title": "maintain_irrigation_monitor", "boundary": "Maintain a registered agricultural irrigation monitor."},
+      {"choice_id": "K75", "kind": "KNOWN", "title": "license_heritage_photo_reproduction", "boundary": "License reproduction of a heritage-collection photograph."},
+      {"choice_id": "K76", "kind": "KNOWN", "title": "track_flood_resilience_grant", "boundary": "Track payment of an approved flood-resilience grant."},
+      {"choice_id": "N70", "kind": "NOVEL_CANDIDATE", "title": "valid_unregistered_mechanic_candidate", "boundary": "Trusted evidence identifies a coherent mechanic outside the known catalog; non-executable and not registered."},
+      {"choice_id": "U70", "kind": "UNSUPPORTED", "title": "retroactively_erase_certified_history", "boundary": "Make a completed certified event or record never have occurred."},
+      {"choice_id": "A00", "kind": "INSUFFICIENT_EVIDENCE", "title": "insufficient_evidence", "boundary": "Visible evidence does not safely identify one registered state."}
+    ]
+  },
+  "genericQuery": {
+    "query_id": "Q70", "title": "identify_service_area",
+    "question": "Which registered service area is this request about?",
+    "unclear_option_text": "The service area cannot yet be identified"
+  },
+  "families": [
+    {
+      "family_id": "compost_vs_food_rescue", "query_id": "Q71", "decoy_query_id": "Q73", "left_choice_id": "K71", "right_choice_id": "N70",
+      "route_label": "municipal materials or surplus-food collection", "query_title": "identify_collection_service", "question": "Which collection service needs a change?",
+      "left_option_text": "A municipal compost container", "right_option_text": "A surplus-food rescue pickup",
+      "retrieval_profile": {"anchor_phrases": ["compost container", "food rescue"], "primary_terms": ["compost", "container", "food", "rescue"], "secondary_terms": ["organic", "pickup", "replace"]},
+      "left_witness": {"operation": "replace_container", "object_class": "compost_container", "scope": "municipal_service"},
+      "right_witness": {"operation": "replace_container", "object_class": "food_rescue_pickup", "scope": "municipal_service"},
+      "lexical_control": "Replace damaged compost container {code} at {place}.",
+      "uncatalogued_paraphrase": "The surplus-meal recovery round for {place} under {code} needs a different vessel.",
+      "relational_tie": "At {place}, item {code} concerns either organic collection or a pupil dining adjustment; identify the service before changing it.",
+      "insufficient": "Something connected with reference {code} at {place} needs to be changed, but I cannot identify the service area.",
+      "route_answer": "It concerns municipal materials or surplus-food collection.",
+      "left_answer": "It is the municipal compost container.", "right_answer": "It is the surplus-food rescue pickup.",
+      "slot_columns": {"code": ["C-101", "C-212", "C-323", "C-434", "C-545", "C-656", "C-767", "C-878"], "place": ["Alder Court", "Bay School", "Cedar Hall", "Dune Centre", "Elm House", "Field School", "Grove Hall", "Harbour Court"]}
+    },
+    {
+      "family_id": "rail_vs_bikeshare_deposit", "query_id": "Q72", "decoy_query_id": "Q76", "left_choice_id": "K72", "right_choice_id": "N70",
+      "route_label": "transport credential deposits", "query_title": "identify_transport_deposit", "question": "Which transport deposit should be refunded?",
+      "left_option_text": "A regional rail-pass deposit", "right_option_text": "A bike-share membership deposit",
+      "retrieval_profile": {"anchor_phrases": ["rail pass", "bike share"], "primary_terms": ["rail", "train", "bike", "bicycle"], "secondary_terms": ["pass", "membership", "deposit", "refund"]},
+      "left_witness": {"operation": "refund_deposit", "object_class": "rail_pass_deposit", "scope": "deposit"},
+      "right_witness": {"operation": "refund_deposit", "object_class": "bike_share_deposit", "scope": "deposit"},
+      "lexical_control": "Refund the rail-pass deposit for credential {code}.",
+      "uncatalogued_paraphrase": "Return the security amount held for pedal-network membership {code}.",
+      "relational_tie": "Reference {code} may concern a commuter credential or a resilience payment; determine the program before releasing funds.",
+      "insufficient": "A refundable amount linked to {code} should come back, but I do not know which program holds it.",
+      "route_answer": "It concerns a transport credential deposit.",
+      "left_answer": "It is the regional rail-pass deposit.", "right_answer": "It is the bike-share membership deposit.",
+      "slot_columns": {"code": ["D-110", "D-221", "D-332", "D-443", "D-554", "D-665", "D-776", "D-887"]}
+    },
+    {
+      "family_id": "school_meal_vs_library_room", "query_id": "Q73", "decoy_query_id": "Q71", "left_choice_id": "K73", "right_choice_id": "N70",
+      "route_label": "education or library access accommodation", "query_title": "identify_accommodation_service", "question": "Which service needs an accommodation?",
+      "left_option_text": "A school meal service", "right_option_text": "A library quiet-room booking",
+      "retrieval_profile": {"anchor_phrases": ["school meal", "quiet room"], "primary_terms": ["school", "meal", "library", "room"], "secondary_terms": ["lunch", "quiet", "accommodation", "access"]},
+      "left_witness": {"operation": "request_accommodation", "object_class": "school_meal", "scope": "access"},
+      "right_witness": {"operation": "request_accommodation", "object_class": "library_quiet_room", "scope": "access"},
+      "lexical_control": "Add accommodation {support} to school-meal profile {code}.",
+      "uncatalogued_paraphrase": "Reserve a low-stimulation reading enclosure for patron record {code} with {support}.",
+      "relational_tie": "Record {code} concerns either pupil dining support or organic collection; identify the service before applying {support}.",
+      "insufficient": "Please add {support} to record {code}, but the relevant public service is not known.",
+      "route_answer": "It concerns an education or library access accommodation.",
+      "left_answer": "It is the school meal service.", "right_answer": "It is the library quiet-room booking.",
+      "slot_columns": {"code": ["M-129", "M-230", "M-341", "M-452", "M-563", "M-674", "M-785", "M-896"], "support": ["allergen separation", "reduced noise", "texture adjustment", "low lighting", "ingredient substitution", "private seating", "extra transition time", "sensory support"]}
+    },
+    {
+      "family_id": "irrigation_vs_air_monitor", "query_id": "Q74", "decoy_query_id": "Q75", "left_choice_id": "K74", "right_choice_id": "N70",
+      "route_label": "environmental monitoring equipment", "query_title": "identify_environmental_monitor", "question": "Which environmental monitor needs maintenance?",
+      "left_option_text": "An agricultural irrigation monitor", "right_option_text": "A public air-quality monitor",
+      "retrieval_profile": {"anchor_phrases": ["irrigation monitor", "air quality"], "primary_terms": ["irrigation", "water", "air", "pollution"], "secondary_terms": ["monitor", "sensor", "maintenance", "calibrate"]},
+      "left_witness": {"operation": "maintain_monitor", "object_class": "irrigation_monitor", "scope": "maintenance"},
+      "right_witness": {"operation": "maintain_monitor", "object_class": "air_quality_monitor", "scope": "maintenance"},
+      "lexical_control": "Calibrate irrigation monitor {code} after its {issue} warning.",
+      "uncatalogued_paraphrase": "Service the roadside atmosphere sampler {code} after {issue} appeared.",
+      "relational_tie": "Device {code} may measure field moisture or support a heritage image workflow; identify its relation before addressing {issue}.",
+      "insufficient": "Device {code} reports {issue}, but its deployment and service area are unknown.",
+      "route_answer": "It concerns environmental monitoring equipment.",
+      "left_answer": "It is the agricultural irrigation monitor.", "right_answer": "It is the public air-quality monitor.",
+      "slot_columns": {"code": ["E-138", "E-249", "E-350", "E-461", "E-572", "E-683", "E-794", "E-805"], "issue": ["flow drift", "particle noise", "pressure loss", "gas baseline drift", "moisture error", "signal clipping", "battery loss", "sampling failure"]}
+    },
+    {
+      "family_id": "photo_license_vs_erasure", "query_id": "Q75", "decoy_query_id": "Q74", "left_choice_id": "K75", "right_choice_id": "U70",
+      "route_label": "heritage reproduction or certified-record handling", "query_title": "identify_heritage_record_operation", "question": "What should happen to the heritage record?",
+      "left_option_text": "License a heritage photograph reproduction", "right_option_text": "Erase a completed certified record retroactively",
+      "retrieval_profile": {"anchor_phrases": ["heritage photo", "certified record"], "primary_terms": ["heritage", "photo", "image", "certified"], "secondary_terms": ["license", "reproduction", "erase", "history"]},
+      "left_witness": {"operation": "license_reproduction", "object_class": "heritage_photo", "scope": "license"},
+      "right_witness": {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"},
+      "lexical_control": "License heritage-photo reproduction {code} for {use}.",
+      "uncatalogued_paraphrase": "Make the attested historical entry {code} disappear as though it had never been issued.",
+      "relational_tie": "Reference {code} may be a visual collection asset or an environmental device; determine its relation before {use}.",
+      "insufficient": "Historical reference {code} needs an operation for {use}, but its record type is unknown.",
+      "route_answer": "It concerns heritage reproduction or certified-record handling.",
+      "left_answer": "License the heritage photograph reproduction.", "right_answer": "Erase the completed certified record retroactively.",
+      "slot_columns": {"code": ["H-147", "H-258", "H-369", "H-470", "H-581", "H-692", "H-703", "H-814"], "use": ["a textbook", "an exhibit", "a documentary", "a catalog", "a lecture", "a website", "a journal", "a display"]}
+    },
+    {
+      "family_id": "flood_grant_vs_erasure", "query_id": "Q76", "decoy_query_id": "Q72", "left_choice_id": "K76", "right_choice_id": "U70",
+      "route_label": "resilience-grant payment or certified-record handling", "query_title": "identify_resilience_record_operation", "question": "What should happen to the resilience record?",
+      "left_option_text": "Track an approved flood-resilience grant", "right_option_text": "Erase a completed certified inspection record retroactively",
+      "retrieval_profile": {"anchor_phrases": ["flood grant", "certified inspection"], "primary_terms": ["flood", "resilience", "grant", "inspection"], "secondary_terms": ["payment", "track", "erase", "history"]},
+      "left_witness": {"operation": "track_grant", "object_class": "flood_grant", "scope": "payment"},
+      "right_witness": {"operation": "erase_certified_record", "object_class": "certified_history", "scope": "retroactive"},
+      "lexical_control": "Track flood-resilience grant payment {code} for {place}.",
+      "uncatalogued_paraphrase": "Remove the attested site-review entry {code} as if the official event never occurred.",
+      "relational_tie": "Item {code} may be a hazard-mitigation award or a commuter security amount; determine the program for {place}.",
+      "insufficient": "Payment-related item {code} at {place} needs attention, but the program and record type are unknown.",
+      "route_answer": "It concerns a resilience-grant payment or certified-record handling.",
+      "left_answer": "Track the approved flood-resilience grant.", "right_answer": "Erase the completed certified inspection record retroactively.",
+      "slot_columns": {"code": ["F-156", "F-267", "F-378", "F-489", "F-590", "F-601", "F-712", "F-823"], "place": ["Ash Crossing", "Brook Ward", "Cairn Point", "Delta Road", "Estuary Lane", "Ford District", "Gale Shore", "Harbour Reach"]}
+    }
+  ],
+  "population": {
+    "familyCount": 6, "groupsPerFamily": 8, "groupCount": 48, "fixturesPerGroup": 8,
+    "fixtureCount": 384, "developmentGroupCount": 24, "evaluationGroupCount": 24,
+    "developmentFixtureCount": 192, "evaluationFixtureCount": 192,
+    "stageNames": ["request_lexical_control", "request_uncatalogued_paraphrase", "request_relational_tie", "request_insufficient", "closed_route_family", "closed_route_unclear", "closed_specific_left", "closed_specific_right"]
+  },
+  "priorPublicPaths": [
+    "outputs/v135-controlled-open-world-minimal-pairs/design/public-fixtures.json",
+    "outputs/v142-certificate-interface-population/design/public-fixtures.json",
+    "outputs/v146-fresh-codebook-population/design/public-fixtures.json",
+    "outputs/v149-fresh-closed-interaction-population/design/public-fixtures.json",
+    "outputs/v152-fresh-question-order-population/design/public-fixtures.json",
+    "outputs/v155-fresh-deterministic-question-retrieval-population/design/public-fixtures.json"
+  ],
+  "gates": {
+    "requiredChoiceCount": 9, "requiredKnownChoiceCount": 6, "requiredQueryCountIncludingGeneric": 7,
+    "requiredSpecificQueryCount": 6, "requiredGroupCount": 48, "requiredFixtureCount": 384,
+    "requiredSplitFixtureCount": 192, "requiredStageCountPerGroup": 8,
+    "requiredRequestFixtureCount": 192, "requiredRouteFixtureCount": 96,
+    "requiredSpecificAnswerFixtureCount": 96, "requiredSpecificAnswerWitnessRouting": 1.0,
+    "requiredGenericRouteValidity": 1.0, "requiredGenericRouteSemanticWitnessCount": 0,
+    "requiredPreanswerAndGenericFinalFailClosedRate": 1.0,
+    "requiredMalformedEventFailClosedRate": 1.0,
+    "requiredExactConversationOverlapWithPriorControlledPopulations": 0,
+    "requiredCandidateProposalFieldCount": 0, "requiredTrueHypothesisRetention": 1.0,
+    "maximumPolicyScoreCount": 0, "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0, "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0, "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryHardTieRoutingFreshnessFirewallAndAccessGatePasses": "freeze_fresh_hard_tie_routing_population_authorize_separate_model_free_development_policy_preregistration_only",
+    "otherwise": "close_fresh_hard_tie_routing_population_branch",
+    "passingAuthorizesOnlySeparateModelFreeDevelopmentPolicyPreregistration": true,
+    "passingDoesNotAuthorizeEvaluationModelHybridCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

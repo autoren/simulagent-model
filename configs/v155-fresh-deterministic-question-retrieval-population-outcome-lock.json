@@ -1,0 +1,79 @@
+{
+  "auditor": "python/audit_and_freeze_v155_fresh_deterministic_question_retrieval_population.py",
+  "auditor_sha256": "3ace3410cc0d28f655b2ea308d807b91b71a1b4ff34b6c2cca68f05fb8434ca5",
+  "authorization": {
+    "fit_thresholds_or_calibration": false,
+    "open_or_score_evaluation_language_or_metadata": false,
+    "preregister_model_free_development_retrieval_policy": true,
+    "propose_or_prune_candidate_states": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_model_or_hybrid_before_model_free_feasibility": false,
+    "score_policy_or_read_development_truth_before_separate_lock": false
+  },
+  "config": "configs/v155-fresh-deterministic-question-retrieval-population.json",
+  "config_sha256": "3fc3980a786274665f9b63e98c1fec1b291e255795676dcad640d801974c3f77",
+  "design_audit": "outputs/v155-fresh-deterministic-question-retrieval-population/design-audit.json",
+  "design_audit_sha256": "1baae97f1c9fb5e5d7d61a1cea38852a8d684e810561dab01ff41d76d00c9654",
+  "experiment": "v155_fresh_explicit_metadata_question_retrieval_population",
+  "hidden_fixtures": "outputs/v155-fresh-deterministic-question-retrieval-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "24c6b6802fbe8980b54b8174acb003ceb588afd039d1599d0aef091275564071",
+  "interaction_catalog": "outputs/v155-fresh-deterministic-question-retrieval-population/design/interaction-catalog.json",
+  "interaction_catalog_sha256": "b4782b02f7b7b3e43fae8d01dc0c65c4f0bbb6f9ce861f001641207b442748f8",
+  "lock_payload_sha256": "e52f12f6d39c6bc06e6ca27664d39efddc721e3d6783f59bb7dba1f2e89a5ec3",
+  "outcome": {
+    "candidate_proposal_field_count": 0,
+    "closed_answer_witness_routing": 1.0,
+    "decision": "freeze_fresh_explicit_metadata_retrieval_population_authorize_separate_model_free_development_policy_preregistration_only",
+    "fresh_explicit_metadata_retrieval_population_pass": true,
+    "malformed_answer_event_fail_closed_rate": 1.0,
+    "passed": true,
+    "preanswer_fail_closed_rate": 1.0,
+    "summary": {
+      "choice_count": 9,
+      "closed_answer_fixture_count": 96,
+      "family_count": 6,
+      "fixture_count": 288,
+      "group_count": 48,
+      "query_count": 6,
+      "request_fixture_count": 192,
+      "split_counts": {
+        "development": 144,
+        "evaluation": 144
+      },
+      "stage_counts": {
+        "closed_answer_left": 48,
+        "closed_answer_right": 48,
+        "request_ambiguous": 48,
+        "request_left_anchor": 48,
+        "request_left_paraphrase": 48,
+        "request_right_clear": 48
+      },
+      "truth_counts": {
+        "A00": 48,
+        "K61": 24,
+        "K62": 24,
+        "K63": 24,
+        "K64": 24,
+        "K65": 24,
+        "K66": 24,
+        "N60": 64,
+        "U60": 32
+      }
+    }
+  },
+  "parent_outcome": "configs/v154r1-outcome-verifier-repair-outcome-lock.json",
+  "parent_outcome_sha256": "6b4d819bb89fcb31571d0983735cfa4eb2bf56bcab553ac060a5fbfa4c06d567",
+  "plan": "docs/v155-fresh-deterministic-question-retrieval-population-plan.md",
+  "plan_sha256": "d1f7c720a71a45ddac25676e51a1f5afa60e4ea8dbe66bcf21e50e4d4c38dd8a",
+  "population_summary": "outputs/v155-fresh-deterministic-question-retrieval-population/design/population-summary.json",
+  "population_summary_sha256": "871e32ee09f7d61396dd885b397f135681da62382e28ac9352f5d92a319357a0",
+  "protocol": "python/v155_fresh_deterministic_question_retrieval_population.py",
+  "protocol_sha256": "2de6e1434f511debc6667cc62ea012c8b2ab618016404d1d0eebd3e018432a24",
+  "public_fixtures": "outputs/v155-fresh-deterministic-question-retrieval-population/design/public-fixtures.json",
+  "public_fixtures_sha256": "0daeee601c4d2e826f517f0a3f18eeaaba911432e804778347011c5a8f562c13",
+  "results_document": "docs/v155-fresh-deterministic-question-retrieval-population-results.md",
+  "results_document_sha256": "caaaaf337e9c7fc46e6dbe523a2a9e346b8596dc1a42eec39500ef1eb26e41d7",
+  "schema_version": "155-fresh-deterministic-question-retrieval-population-outcome-lock",
+  "tests": "python/test_v155_fresh_deterministic_question_retrieval_population.py",
+  "tests_sha256": "ccb4b9b5817421e54f5fbce7c391bc95b600f44c30018aca368366952b423b82"
+}

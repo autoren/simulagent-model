@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "156-model-free-explicit-metadata-question-retrieval",
+  "experiment": "v156_model_free_explicit_metadata_question_retrieval",
+  "parentV155OutcomeLock": "configs/v155-fresh-deterministic-question-retrieval-population-outcome-lock.json",
+  "claimBoundary": "single prospectively locked model-free development policy using only visible request language and a state-free projection of explicit registered question metadata; compares retrieval, no-query, source, seeded-random, and oracle ordering under the trusted answer firewall; not model performance, evaluation evidence, external transfer, novelty authority, induction, action, or execution",
+  "population": {
+    "split": "development", "groupCount": 24, "requestFixtureCount": 96,
+    "closedAnswerFixtureCount": 48, "sequentialEpisodeCount": 120,
+    "evaluationPolicyReadCount": 0, "candidateProposalFieldCount": 0
+  },
+  "retrieval": {
+    "normalization": "unicode_casefold_then_ascii_alphanumeric_tokens",
+    "anchorPhraseWeight": 8.0,
+    "primaryTermWeight": 3.0,
+    "secondaryTermWeight": 1.0,
+    "visibleQuestionSurfaceTokenWeight": 0.25,
+    "sourceOrderTieBreak": true,
+    "stateChoiceWitnessOrTruthFieldsAvailableToPolicy": false,
+    "fittingOrLearnedParameters": false
+  },
+  "policy": {
+    "queryCost": 0.3,
+    "noQueryAction": "A00",
+    "randomSeed": "v156-seeded-question-order-v1",
+    "comparators": ["NO_QUERY", "SOURCE_ORDER", "SEEDED_RANDOM", "ORACLE_ORDER", "EXPLICIT_METADATA_RETRIEVAL"],
+    "completeAuthoritativeHypothesisUniverseRetained": true,
+    "trustedClosedAnswerReliability": 1.0
+  },
+  "decisionCosts": {
+    "correct": 0.0, "safeAbstentionOnDecidableTruth": 1.0,
+    "wrongKnownOnNonKnownTruth": 5.0, "wrongKnownOnKnownTruth": 3.0,
+    "otherWrongState": 2.0
+  },
+  "gates": {
+    "requiredGroupCount": 24, "requiredRequestFixtureCount": 96,
+    "requiredSequentialEpisodeCount": 120, "requiredComparatorCount": 5,
+    "requiredOracleMeanCorrectQueryRank": 1.0, "requiredOracleMeanDecisionCost": 0.3,
+    "requiredSourceMeanCorrectQueryRank": 3.5,
+    "minimumSeededRandomMeanCorrectQueryRank": 2.8, "maximumSeededRandomMeanCorrectQueryRank": 4.2,
+    "minimumRetrievalQueryTop1Accuracy": 0.95, "minimumRetrievalQueryMeanReciprocalRank": 0.97,
+    "maximumRetrievalMeanCorrectQueryRank": 1.1, "maximumRetrievalTopScoreTieRate": 0.05,
+    "maximumRetrievalSequentialMeanDecisionCost": 0.33,
+    "minimumRetrievalSequentialImprovementOverNoQuery": 0.67,
+    "requiredTrustedAnswerFinalExactAccuracy": 1.0,
+    "requiredIrrelevantQueryFailClosedRate": 1.0,
+    "requiredAuthoritativeHypothesisRetention": 1.0,
+    "requiredCandidateProposalFieldCount": 0,
+    "maximumEvaluationPolicyReadCount": 0, "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0, "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0, "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryRetrievalComparatorFirewallAndAccessGatePasses": "explicit_metadata_retrieval_qualifies_on_synthetic_development_retain_model_free_policy_and_authorize_fresh_hard_tie_population_design_only",
+    "otherwise": "explicit_metadata_retrieval_fails_development_gates_close_without_tuning_or_hybrid_model",
+    "passingAuthorizesOnlyFreshHardTiePopulationDesign": true,
+    "passingDoesNotAuthorizeV155EvaluationModelOrHybridRunThresholdFitCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

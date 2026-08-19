@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "121-prequery-value-selectivity-envelope-design",
+  "experiment": "v121_aggregate_prequery_value_selectivity_envelope",
+  "parentV120OutcomeLock": "configs/v120-selective-query-value-audit-outcome-lock.json",
+  "claimBoundary": "necessary aggregate value-selectivity requirements for a hypothetical pre-query trigger; not a trigger, policy, record-level validation, language, model, or deployment result",
+  "skipFractions": [0.05, 0.10, 0.25, 0.50],
+  "definitions": {
+    "perCaseQueryValue": "baseline decision loss minus post-query decision loss",
+    "selectiveRegretFromFullQuery": "full-query regret minus skipped_fraction times query_cost plus skipped_fraction times average skipped query value",
+    "maximumSkippedValue": "query_cost minus full-query excess divided by skipped_fraction",
+    "minimumQueriedValueLift": "query_cost divided by population-average query value"
+  },
+  "outcomeGates": {
+    "requiredFailingConditionCount": 3,
+    "maximumMinimumQueriedValueLift": 1.037,
+    "maximumFivePercentSkipValueForHardConditions": 0.091,
+    "minimumNonnegativeSkipFractionCountEveryCondition": 4,
+    "requireAggregateMetricsInsufficientToCertifyAnyTrigger": true,
+    "maximumIndividualRecordReadCount": 0,
+    "maximumIndividualRecordEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifAllOutcomeAndAccessGatesPass": "value_selectivity_envelope_derived_requires_paired_fresh_trigger_validation",
+    "otherwise": "value_selectivity_envelope_inconclusive_keep_trigger_branch_closed",
+    "passAuthorizesOnlyPrequerySignalInventory": true,
+    "passAuthorizesTriggerEvaluation": false,
+    "passAuthorizesLanguageModelOrProtectedRun": false,
+    "passAuthorizesRetuneCostInductionAPITrainingActionOrExecution": false
+  }
+}

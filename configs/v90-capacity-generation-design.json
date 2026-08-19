@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "90-capacity-generation-design",
+  "experiment": "v90_fresh_external_local_capacity_generation_shadow",
+  "purpose": "separate capacity, model-generation, and quantization effects on typed semantic candidate proposal after the V88r1 and V89 negative results",
+  "parentSourceOutcomeLock": "configs/v90-capacity-generation-source-outcome-lock.json",
+  "historicalOutcomeLocks": [
+    "configs/v88r1-external-intent-candidate-outcome-lock.json",
+    "configs/v89-model-free-failure-decomposition-outcome-lock.json"
+  ],
+  "source": {
+    "dataset": "Schema-Guided Dialogue Dataset",
+    "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+    "revision": "e852981ae34990f4358979625854259302feaa78",
+    "shard": "dev/dialogues_002.json",
+    "license": "CC-BY-SA-4.0",
+    "manualUtteranceInspectionBeforeCorpusSeal": false
+  },
+  "population": {
+    "recordCount": 48,
+    "activeRecordCount": 24,
+    "noneRecordCount": 24,
+    "serviceCount": 3,
+    "activeIntentLabelCount": 5,
+    "selectionBeforeUtteranceExtraction": true,
+    "selectionSalt": "simulagent-v90-capacity-generation-fresh-v1",
+    "selectionOrder": "strata in registered order; within each stratum ascending SHA-256 of salt, service, active intent, and canonical record ID; skip any dialogue already selected",
+    "uniqueDialoguePerRecord": true,
+    "futureRecordUse": "evaluation only; never use for prompt selection, examples, tuning, training, retries, or manual adjudication",
+    "strata": [
+      {"service": "Buses_1", "activeIntent": "BuyBusTicket", "count": 4},
+      {"service": "Buses_1", "activeIntent": "FindBus", "count": 4},
+      {"service": "RentalCars_1", "activeIntent": "GetCarsAvailable", "count": 4},
+      {"service": "RentalCars_1", "activeIntent": "ReserveCar", "count": 4},
+      {"service": "RideSharing_1", "activeIntent": "GetRide", "count": 8},
+      {"service": "Buses_1", "activeIntent": "NONE", "count": 8},
+      {"service": "RentalCars_1", "activeIntent": "NONE", "count": 8},
+      {"service": "RideSharing_1", "activeIntent": "NONE", "count": 8}
+    ]
+  },
+  "modelConditions": [
+    {
+      "id": "qwen35_4b_4bit",
+      "role": "fresh historical-family baseline",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "quantizationBits": 4,
+      "weightBytes": 3034300695,
+      "downloadRequired": false
+    },
+    {
+      "id": "qwen35_27b_4bit",
+      "role": "same-generation capacity condition",
+      "repository": "mlx-community/Qwen3.5-27B-4bit",
+      "revision": "45797d2985a12c55e6473686e9ea91b95e959553",
+      "quantizationBits": 4,
+      "weightBytes": 16054546159,
+      "downloadRequired": true
+    },
+    {
+      "id": "qwen38_27b_4bit",
+      "role": "fixed-size generation condition",
+      "repository": "mlx-community/Qwen3.8-27B-4bit",
+      "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+      "quantizationBits": 4,
+      "weightBytes": 16054541349,
+      "downloadRequired": true
+    },
+    {
+      "id": "qwen38_27b_8bit",
+      "role": "Qwen3.8 quantization quality ceiling",
+      "repository": "mlx-community/Qwen3.8-27B-8bit",
+      "revision": "815b83c0df8ffd1d1b5244cf75fd6ef14fca9ef9",
+      "quantizationBits": 8,
+      "weightBytes": 29501218479,
+      "downloadRequired": true
+    }
+  ],
+  "preDesignModelExposure": {
+    "repositoryMetadataRecordsInspected": 4,
+    "modelWeightDownloadCount": 0,
+    "newModelSnapshotCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0
+  },
+  "inputContract": {
+    "dialogueContext": "all source turns from dialogue start through the selected USER turn",
+    "schemaContext": [
+      "service name and description",
+      "all service intent identifiers and descriptions",
+      "all service slot identifiers and descriptions"
+    ],
+    "sourceLanguageMayNotBePrintedByBuilderOrRunner": true,
+    "sourceLanguageMayNotBeSentToAPI": true,
+    "samePromptForEveryCondition": true
+  },
+  "systemPrompt": "You are an offline semantic candidate proposer. Your output is permanently non-deployable and cannot select an action or call a service. Infer the current typed state for the target service from the complete dialogue history and the supplied schema. Return exactly one JSON object with exactly two keys: intent_candidates and state_slot_key_candidates. intent_candidates must be a unique non-empty JSON list using only the supplied intent identifiers or NONE, and must always include NONE as an operational none-of-the-above candidate. Include the smallest set of currently plausible active intents; when no supplied intent is active, return only NONE. state_slot_key_candidates must be a unique JSON list using only supplied slot identifiers; include every slot whose current accumulated value is supported by the dialogue, but never emit a slot value. Do not emit prose, Markdown, actions, service calls, arguments, values, confidence scores, or additional keys.",
+  "userPromptTemplate": "Target service: {service_name}\nService description: {service_description}\nAllowed intent identifiers and descriptions:\n{intent_lines}\nAllowed slot identifiers and descriptions:\n{slot_lines}\nDialogue history through the current USER turn:\n{dialogue_history}\nReturn the exact JSON object now.",
+  "outputContract": {
+    "exactKeys": ["intent_candidates", "state_slot_key_candidates"],
+    "intentCandidates": "unique non-empty list drawn only from target service intent identifiers plus mandatory NONE",
+    "stateSlotKeyCandidates": "unique list drawn only from target service slot identifiers",
+    "goldIntentCandidateSet": "NONE only for a NONE state; otherwise active intent plus NONE",
+    "goldStateSlotKeySet": "accumulated frame.state.slot_values keys at the selected turn",
+    "mayNotEmitValuesActionsToolCallsConfidenceOrFreeText": true,
+    "permanentlyNonDeployable": true,
+    "executable": false
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "samplesPerRecord": 1,
+    "maximumPromptTokens": 8192,
+    "maximumNewTokens": 160,
+    "enableThinking": false,
+    "retryOnMalformedOutput": false
+  },
+  "controls": {
+    "exhaustiveEnumeration": "all service intents plus NONE and all service slots",
+    "noneOnly": "NONE intent only and empty state",
+    "emptyStateWithGoldIntentOracle": "gold intent candidates with no state keys",
+    "oracleTypedTarget": "exact registered gold candidate sets"
+  },
+  "qualityGatesPerCondition": {
+    "minimumExactJSONParseRate": 1.0,
+    "minimumOntologyConformanceRate": 1.0,
+    "minimumMandatoryNoneInclusionRate": 1.0,
+    "minimumPermanentNonDeployableRate": 1.0,
+    "minimumGoldActiveIntentCoverageRate": 0.9,
+    "minimumIntentCandidateSetExactRate": 0.7,
+    "minimumNoneOnlyIntentExactRate": 0.75,
+    "minimumPerServiceIntentCandidateRecallRate": 0.75,
+    "minimumStateSlotKeyRecallRate": 0.75,
+    "minimumStateSlotKeyExactRate": 0.5,
+    "minimumIntentExactImprovementOverExhaustive": 0.2,
+    "maximumMeanIntentCandidateCount": 2.0
+  },
+  "accessGatesPerCondition": {
+    "requiredRecordCount": 48,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 48,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "comparisonProtocol": {
+    "capacityContrast": ["qwen35_4b_4bit", "qwen35_27b_4bit"],
+    "generationContrast": ["qwen35_27b_4bit", "qwen38_27b_4bit"],
+    "quantizationContrast": ["qwen38_27b_4bit", "qwen38_27b_8bit"],
+    "registeredMetrics": [
+      "exact JSON and ontology conformance",
+      "mandatory NONE inclusion and NONE-only exactness",
+      "active-intent coverage and exact candidate set",
+      "per-service intent recall",
+      "state-key recall and exactness",
+      "mean candidate count",
+      "paired per-record correctness transitions",
+      "latency, prompt tokens, generated tokens, and peak active memory"
+    ],
+    "combinationDiagnostic": {
+      "eligiblePair": ["qwen35_4b_4bit", "best independently qualifying 27B condition"],
+      "method": "fail-closed canonical set union of independently ontology-conformant rows only; retain NONE; no new generation",
+      "minimumActiveCoverageGain": 0.05,
+      "minimumSmallOnlyCorrectActiveCount": 2,
+      "maximumMeanIntentCandidateCount": 2.0,
+      "requiresNoReductionInNoneOnlyExactRate": true,
+      "authorizesLiveCascade": false
+    }
+  },
+  "decisionRule": {
+    "completedCondition": "all 48 independent generations complete within access gates regardless of quality outcome",
+    "qualifyingCondition": "every noncompensatory quality and access gate passes",
+    "ifNo27BConditionQualifies": "retain model-free authoritative boundary and freeze all new models as nonqualifying shadow evidence",
+    "ifAny27BConditionQualifies": "select the lowest-weight qualifying 27B condition for a separately preregistered posterior-integration shadow study only",
+    "ifCombinationDiagnosticPasses": "authorize only preregistration of a bounded small-first or union shadow comparison",
+    "passAuthorizesDirectActionOrExecution": false,
+    "passAuthorizesBeliefAuthority": false,
+    "passAuthorizesHumanLanguageDeployment": false,
+    "passAuthorizesAPIAccess": false,
+    "passAuthorizesAdapterTraining": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "selectExtractAndSealCorpus": false,
+    "inspectUtterancesManually": false,
+    "downloadPinnedModelWeights": false,
+    "implementAndAuditRunner": false,
+    "runLocalModels": false,
+    "runAPIModel": false,
+    "trainAdapter": false,
+    "performRealServiceCall": false,
+    "performExternalSideEffect": false
+  }
+}

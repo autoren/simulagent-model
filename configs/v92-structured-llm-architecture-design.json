@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "92-structured-llm-architecture-synthesis-design",
+  "experiment": "v92_frozen_structured_llm_architecture_synthesis",
+  "purpose": "audit the sealed V77-V91 evidence against the long-running structured-LLM objective and freeze the resulting runtime authority boundary without new empirical access",
+  "claimBoundary": "retrospective synthesis of already frozen bounded shadow evidence; no new model generation, source-language access, prompt selection, training, API use, service call, execution, or external side effect",
+  "evidenceLocks": [
+    "configs/v77-execution-closure-lock.json",
+    "configs/v78-clarification-outcome-lock.json",
+    "configs/v79-terminal-utility-outcome-lock.json",
+    "configs/v80-local-candidate-generation-outcome-lock.json",
+    "configs/v81-factorized-local-candidate-outcome-lock.json",
+    "configs/v82-local-clarification-surface-outcome-lock.json",
+    "configs/v83-strict-clarification-interface-outcome-lock.json",
+    "configs/v84-schema-grounded-shadow-outcome-lock.json",
+    "configs/v85-local-adversarial-generator-outcome-lock.json",
+    "configs/v86-partial-option-validator-outcome-lock.json",
+    "configs/v87-external-language-source-outcome-lock.json",
+    "configs/v88r1-external-intent-candidate-outcome-lock.json",
+    "configs/v89-model-free-failure-decomposition-outcome-lock.json",
+    "configs/v90-capacity-generation-outcome-lock.json",
+    "configs/v91-rank-only-outcome-lock.json"
+  ],
+  "requirementAudit": {
+    "modelFreeBenchmark": "V79 must pass every registered gate after the V77 execution-inconclusive and V78 negative design stages",
+    "boundedLocalModelRoles": "candidate generation, factorized compatibility, clarification rendering, adversarial generation, external intent/state generation, capacity/precision comparison, and rank-only scheduling must each have a frozen outcome",
+    "controlCoverage": [
+      "exhaustive_enumeration",
+      "grammar",
+      "retrieval",
+      "direct_action",
+      "MAP",
+      "ask_always",
+      "act_immediately",
+      "oracle_candidate",
+      "oracle_interpretation"
+    ],
+    "safeBoundary": [
+      "operational_NONE",
+      "fail_closed_validation",
+      "immutable_authoritative_state",
+      "exact_posterior_aware_planning",
+      "complete_belief_execution_certification",
+      "non_deployable_model_outputs",
+      "zero_real_execution"
+    ],
+    "claimDiscipline": "synthetic evidence remains synthetic; independently authored SGD language is non-executable shadow evidence and does not establish open-world safety or human-language deployment",
+    "conditionalExpansionRule": "model-conditioned posterior integration, mechanic/action generation, downstream model-conditioned regret, API comparison, adapter training, learned likelihoods, pruning, and execution authority remain unperformed when their prerequisite noncompensatory gates fail"
+  },
+  "decisionRule": {
+    "adoptLearnedRuntimeRoleOnlyIfQualified": true,
+    "retainDeterministicRuntimeIfNoLearnedRoleQualified": true,
+    "treatStoppedConditionalStagesAsProtocolComplianceNotMissingEvidence": true,
+    "doNotUseScaleOrAPIAsUnregisteredRetry": true,
+    "doNotInferDeploymentSafety": true
+  },
+  "expectedArchitecture": {
+    "authoritativeHypothesisSet": "complete deterministic typed-schema enumeration including NONE",
+    "authoritativeState": "deterministic immutable accumulation and validation",
+    "clarificationSurface": "V86-hardened canonical or finite-grammar renderer with trusted provenance only",
+    "beliefUpdate": "exact model-defined Bayesian update",
+    "actionSelection": "exact posterior-aware V79 planner",
+    "executionBoundary": "complete-belief certificate and fail-closed shadow-only interface",
+    "localLLMRuntimeRole": "disabled",
+    "APIRuntimeDependency": false,
+    "adapterOrLearnedLikelihood": false,
+    "realToolOrServiceExecution": false
+  },
+  "stageAuthorization": {
+    "readFrozenEvidence": true,
+    "writeSynthesisAuditAndOutcomeLock": true,
+    "loadOrGenerateWithAnyModel": false,
+    "readNewSourceLanguage": false,
+    "callAPI": false,
+    "trainAdapter": false,
+    "changePromptOrThreshold": false,
+    "pruneOrEarlyStop": false,
+    "selectActionFromModel": false,
+    "performToolOrServiceCall": false,
+    "causeExternalSideEffect": false
+  }
+}

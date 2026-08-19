@@ -1,0 +1,109 @@
+{
+  "auditor": "python/audit_and_freeze_v91_source.py",
+  "auditor_sha256": "13ae527db0e8d3df32f3176752c3b865820ef681e61ca6d467a4870fada93f83",
+  "authorization": {
+    "download_and_inventory_pinned_shard_once": true,
+    "grant_model_pruning_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_source_metadata_code_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "print_or_manually_inspect_utterances": false,
+    "select_rank_only_population": false,
+    "train_adapter": false
+  },
+  "config": "configs/v91-rank-only-source.json",
+  "config_payload": {
+    "decisionRule": {
+      "ifAnySourceGateFails": "stop V91 without inspecting utterances, weakening source gates, selecting records, or loading a model",
+      "ifEverySourceGatePasses": "freeze the structural inventory and authorize preregistration of a fresh rank-only shadow population whose deterministic completion retains every intent and NONE",
+      "passAuthorizesExecution": false,
+      "passAuthorizesModelInference": false,
+      "passAuthorizesPopulationSelection": false,
+      "passAuthorizesTraining": false
+    },
+    "experiment": "v91_fresh_external_rank_only_source_extension",
+    "inventoryProtocol": {
+      "emitLanguageOrSlotValues": false,
+      "excludedServicePrefixes": [
+        "Calendar_",
+        "Messaging_",
+        "Project_",
+        "File_",
+        "Incident_",
+        "Inventory_"
+      ],
+      "manualUtteranceInspection": false,
+      "reusePinnedV87SchemaOnly": true,
+      "verifyByteSizeAndGitBlobBeforeParsing": true
+    },
+    "license": "CC-BY-SA-4.0",
+    "newDialogueShard": {
+      "byteSize": 1965028,
+      "gitBlobSha1": "6abbd79ddd2c58c386ca9cfb748bb55a4efd7be5",
+      "path": "dev/dialogues_003.json",
+      "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_003.json"
+    },
+    "parentModelDecisionLock": "configs/v90-capacity-generation-outcome-lock.json",
+    "preLockExposure": {
+      "GitHubMetadataRequestCount": 1,
+      "LLMAPICallCount": 0,
+      "allowed": [
+        "GitHub contents API file name, type, byte size, and Git blob identifier",
+        "existing V87 source and license locks",
+        "frozen V90 model-use decision and source outcome"
+      ],
+      "dialoguePayloadAccessCount": 0,
+      "individualUtteranceAccessCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "newModelWeightDownloadCount": 0
+    },
+    "previousSourceOutcomeLock": "configs/v90-capacity-generation-source-outcome-lock.json",
+    "purpose": "pin and inventory one previously untouched official Schema-Guided Dialogue development shard before any rank-only population selection or model access",
+    "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+    "revision": "e852981ae34990f4358979625854259302feaa78",
+    "schemaDependency": {
+      "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+      "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+      "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366",
+      "path": "dev/schema.json"
+    },
+    "schemaVersion": "91-rank-only-source-extension",
+    "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+    "sourceGates": {
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumNewModelWeightDownloadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumEligibleActiveIntentCount": 3,
+      "minimumEligibleActiveRecordCount": 32,
+      "minimumEligibleNoneRecordCount": 32,
+      "minimumEligibleRecordCount": 64,
+      "minimumEligibleServiceCount": 2
+    }
+  },
+  "config_sha256": "78eea00d51f84b362e966d13686d77be3bd0e955849ed5895bfdac0c20b5e548",
+  "design_audit": "outputs/v91-rank-only/source-design-audit.json",
+  "design_audit_sha256": "007b8197c0ce32ea46e6f9a2e9be5b9ca38702d132dad77b2aed3383116e85cc",
+  "experiment": "v91_rank_only_source_lock",
+  "inventory_module": "python/v87_external_source_inventory.py",
+  "inventory_module_sha256": "d53e93bc4d4dfb8b72a7ecf7ae93662db904075d4253c628dfa4c3945578ae3b",
+  "lock_payload_sha256": "b1b984d5423d29fb7a9d353426ce20bc5f0133ee81569efaae20b58043528753",
+  "parent_model_decision_lock": "configs/v90-capacity-generation-outcome-lock.json",
+  "parent_model_decision_lock_sha256": "313619194120ad4d2e74cd87b797926a3e57f63002d5c0dbe39c90fc7c52c19a",
+  "plan": "docs/v91-rank-only-plan.md",
+  "plan_sha256": "32b79384e70232bba9ea4bd2545ce469f1ee757b587317dd0458835c974064f4",
+  "previous_source_outcome_lock": "configs/v90-capacity-generation-source-outcome-lock.json",
+  "previous_source_outcome_lock_sha256": "7ebe37989bdd4043eb98c9baf1eecb596387e4dd64866f489a82ebb2dd4dabbd",
+  "runner": "python/run_v91_source_inventory.py",
+  "runner_sha256": "644248e1b6449b5cebd37518d48cf3ac2e4fe2b947b127b1ee51d39f31c0fb33",
+  "schema_version": "91-rank-only-source-lock",
+  "source_authority_lock": "configs/v87-external-language-source-outcome-lock.json",
+  "source_authority_lock_sha256": "3654945adeed5348960847ce61a1a5417fcc6fd275cb817559cfe4293b56bd63",
+  "verifier": "python/verify_and_freeze_v91_source_outcome.py",
+  "verifier_sha256": "ee4af1b432d3f3dc840794cff40a23a891aa6920f23ee8d653c1f5a37d8be211"
+}

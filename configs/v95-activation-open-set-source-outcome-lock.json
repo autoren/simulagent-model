@@ -1,0 +1,96 @@
+{
+  "audit": "outputs/v95-activation-open-set/source-outcome-audit.json",
+  "audit_sha256": "3b19096de6c6733ac67ac89a75c8b11e5694ee298b43973911ca61a5f93a4114",
+  "authorization": {
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_population_prompt_controls_metrics_and_gates_lock": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_V95_source_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_dialogue_disjoint_population": false,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_language_extraction": false
+  },
+  "experiment": "v95_activation_open_set_source_outcome_lock",
+  "inventory": "outputs/v95-activation-open-set/source-inventory/activation-open-set-inventory.json",
+  "inventory_sha256": "905f553cc4d4b44228ed5c2bf234494725aa8b74d63c507556561866a392bd96",
+  "lock_payload_sha256": "6b7f732e7947350442f7da6773587cacd31399a7d2ffbb53fff1a3b5e702e9be",
+  "outcome": {
+    "decision": "freeze_negative_V95_activation_source_feasibility",
+    "inventory_summary": {
+      "all_non_none_candidates_are_source_intent_activations": true,
+      "candidate_count": 228,
+      "candidate_index_sha256": "7045afdda764c215d7f127554e563472fd1fe6dd74462cdad64a84ee27dd5b6b",
+      "catalog_service_count": 3,
+      "catalog_services": [
+        "Hotels_1",
+        "Hotels_4",
+        "Music_1"
+      ],
+      "class_counts": {
+        "insufficient_evidence": 46,
+        "known_familiar": 80,
+        "known_unfamiliar": 38,
+        "novel_valid": 64
+      },
+      "class_service_counts": {
+        "insufficient_evidence": 3,
+        "known_familiar": 3,
+        "known_unfamiliar": 3,
+        "novel_valid": 2
+      },
+      "complete_catalog_pair_count": 6,
+      "contains_language_tokens_slot_values_or_histories": false,
+      "declared_supported_pair_count": 4,
+      "declared_supported_pairs": [
+        "Hotels_1::ReserveHotel",
+        "Hotels_1::SearchHotel",
+        "Hotels_4::SearchHotel",
+        "Music_1::PlaySong"
+      ],
+      "eligible_fresh_service_count": 3,
+      "eligible_fresh_services": [
+        "Hotels_1",
+        "Hotels_4",
+        "Music_1"
+      ],
+      "hidden_pair_count": 2,
+      "hidden_pairs": [
+        "Hotels_4::ReserveHotel",
+        "Music_1::LookupSong"
+      ],
+      "hidden_services": [
+        "Music_1",
+        "Hotels_4"
+      ],
+      "lexical_separation_uses_current_turn_only": true,
+      "source_intent_activation_count": 251,
+      "source_record_count": 1044,
+      "supported_pair_count": 6,
+      "supported_pairs": [
+        "Hotels_1::ReserveHotel",
+        "Hotels_1::SearchHotel",
+        "Hotels_4::ReserveHotel",
+        "Hotels_4::SearchHotel",
+        "Music_1::LookupSong",
+        "Music_1::PlaySong"
+      ],
+      "unsupported_service_count": 0,
+      "unsupported_services": []
+    },
+    "passed": true,
+    "scientific_source_feasibility_passed": false
+  },
+  "result": "outputs/v95-activation-open-set/source-inventory/result.json",
+  "result_sha256": "20e6591531417e417197de5f524d4efe2822277b1fda93946165a8c7e7142c60",
+  "results_document": "docs/v95-activation-open-set-source-results.md",
+  "results_document_sha256": "8cd27c6fc25e0a1a1d0bfe91c01349170944cebbe36a22fb0cbf725c0d704ab2",
+  "schema_version": "95-activation-open-set-source-outcome-lock",
+  "source_file": "outputs/v95-activation-open-set/source/dialogues_006.json",
+  "source_file_git_blob_sha1": "b81539d0ca41f68b076261df0dc5a5ed68961ee3",
+  "source_file_sha256": "20140828f25496461003140b67a5987d954109d9e14e12e472ed565ed2843bc3",
+  "source_lock": "configs/v95-activation-open-set-source-lock.json",
+  "source_lock_sha256": "d7908e7b292a6ec4e35f2d1928106e90c10cb0503e9b87eab58fb4baeb1b9c98",
+  "verifier": "python/verify_and_freeze_v95_source_outcome.py",
+  "verifier_sha256": "c5b1c352488c72c291b712262f7c3b35e7835eddfa32f4da3703f125b97b3831"
+}

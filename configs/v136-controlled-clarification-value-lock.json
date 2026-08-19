@@ -1,0 +1,127 @@
+{
+  "auditor": "python/audit_and_freeze_v136_controlled_clarification_value.py",
+  "auditor_sha256": "99f3ecf38f6ad34e9a6d2f256fa0c52c769f2c94f77df930c668f12a3013d49e",
+  "authorization": {
+    "freeze_model_free_value_result": true,
+    "modify_rerun_or_relax_V136": false,
+    "preregister_direct_vs_thinking_successor": true,
+    "run_induction_training_authority_action_or_execution": false,
+    "run_local_or_API_model": false,
+    "touch_V134_language": false
+  },
+  "baseline_costs": "configs/v106-open-world-development-benchmark.json",
+  "baseline_costs_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "config": "configs/v136-controlled-clarification-value.json",
+  "config_payload": {
+    "baselineDecisionCostSource": "configs/v106-open-world-development-benchmark.json",
+    "claimBoundary": "model-free exact value-of-information evidence for family-specific binary clarification on the frozen synthetic V135 semantics; not evidence that a model or human realizes the channel, not external-language transfer, and not authority or execution",
+    "clarificationChannel": {
+      "answerSet": "the exact left and right hypotheses registered for the active V135 family",
+      "errorModel": "symmetric binary answer error with known reliability",
+      "evaluationReliability": 0.95,
+      "gridMaximum": 1.0,
+      "gridMinimum": 0.5,
+      "gridStep": 0.0005,
+      "noIndependenceClaim": true,
+      "oneFamilySpecificQuestionOnly": true,
+      "queryCost": 0.3
+    },
+    "decisionCosts": {
+      "insufficient": {
+        "abstain": 0.0,
+        "known": 10.0,
+        "novel": 6.0,
+        "unsupported": 4.0
+      },
+      "known": {
+        "abstain": 1.0,
+        "exact_known": 0.0,
+        "novel": 3.0,
+        "unsupported": 6.0,
+        "wrong_known": 10.0
+      },
+      "novel": {
+        "abstain": 1.5,
+        "exact_novel": 0.0,
+        "known": 10.0,
+        "unsupported": 4.0,
+        "wrong_novel_scenario": 5.0
+      },
+      "unsupported": {
+        "abstain": 1.0,
+        "known": 10.0,
+        "novel": 4.0,
+        "unsupported": 0.0
+      }
+    },
+    "decisionRule": {
+      "ifEveryValueSafetyAndAccessGatePasses": "targeted_clarification_has_model_free_value_authorize_direct_vs_thinking_preregistration_only",
+      "otherwise": "close_controlled_clarification_branch_without_model_run_or_gate_relaxation",
+      "passAuthorizesAPIInductionTrainingAuthorityActionOrExecution": false,
+      "passAuthorizesDirectVsThinkingPreregistrationOnly": true,
+      "passAuthorizesImmediateModelRun": false,
+      "passAuthorizesV134LanguageAccess": false
+    },
+    "experiment": "v136_model_free_targeted_clarification_value_audit",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumActualExecutionCount": 0,
+      "maximumExternalLanguageReadCount": 0,
+      "maximumFalseKnownProbabilityOnRightTruthAtEvaluationReliability": 0.051,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumTrainingRunCount": 0,
+      "maximumV134LanguageReadCount": 0,
+      "maximumWorstQueryBenefitReliabilityThreshold": 0.95,
+      "minimumSafeNonKnownDecisionProbabilityOnRightTruthAtEvaluationReliability": 0.949,
+      "minimumWorstConditionCostImprovementAtEvaluationReliability": 0.299,
+      "requiredClearCaseSkipPreferredFraction": 1.0,
+      "requiredEvaluationReliabilityQueryPreferredFraction": 1.0,
+      "requiredFamilyPriorConditionCount": 15,
+      "requiredOracleQueryPreferredFraction": 1.0,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "parentV135OutcomeLock": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+    "policy": {
+      "actualExecutionCount": 0,
+      "allSafeHypothesesRemainRepresented": true,
+      "ambiguousBeliefContainsExactlyFamilyLeftAndRight": true,
+      "clearBeliefIsDegenerateAtRegisteredTruth": true,
+      "minimumPosteriorExpectedFrozenDecisionCost": true,
+      "terminalDecisionSet": "all nine V135 typed choices; declaring a valid-undeclared choice is a shadow classification decision and never capability registration or execution"
+    },
+    "priorRegimes": [
+      {
+        "id": "balanced_pair",
+        "presentedKnownCandidateProbability": 0.5
+      },
+      {
+        "id": "moderate_known_candidate",
+        "presentedKnownCandidateProbability": 0.75
+      },
+      {
+        "id": "strong_known_candidate",
+        "presentedKnownCandidateProbability": 0.9
+      }
+    ],
+    "schemaVersion": "136-controlled-clarification-value"
+  },
+  "config_sha256": "d28e55668dc681406de53128a34ed970b9cd52c357b8f3674d3c6669a955e486",
+  "design_audit": "outputs/v136-controlled-clarification-value/design-audit.json",
+  "design_audit_sha256": "99d582b1daa67e7a2aa7288fc4c0981d19ae4a5ccaf3b428c99ebe865088c3b4",
+  "experiment": "v136_model_free_targeted_clarification_value_audit",
+  "lock_payload_sha256": "a31fe61e1a691426865a8b5433e41f0669f15391d1734b3f9e5b3308e4791c0b",
+  "parent_outcome": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+  "parent_outcome_sha256": "6fce0a5ec02f22209ad37fa0a7f0598da06631c75ee4a96b8da8b1e9c2b61ad2",
+  "plan": "docs/v136-controlled-clarification-value-plan.md",
+  "plan_sha256": "05edc44a413c3d99586459eab5e6c1f30a92ab6107d287981fd38235cdcf90bd",
+  "protocol": "python/v136_controlled_clarification_value.py",
+  "protocol_sha256": "303ffa346443816ad65fdcd06056b966bd90abd6d85515f35f0f2c773352fb4a",
+  "result": "outputs/v136-controlled-clarification-value/model-free/result.json",
+  "result_sha256": "31ebc7505bb46deb3b372c330065687aa3f6db9ec5ec38461200cfdd4eaddaa1",
+  "schema_version": "136-controlled-clarification-value-lock",
+  "tests": "python/test_v136_controlled_clarification_value.py",
+  "tests_sha256": "9103d09a59c223c92df5d5a82531aea78fcd08ecb1d3f6fa90a03ef63c648f2c",
+  "verifier": "python/verify_and_freeze_v136_controlled_clarification_value_outcome.py",
+  "verifier_sha256": "90537c78b5958f2074c3dbfa7126caa293bd5f1697ace58a7ea10878a9fbe55a"
+}

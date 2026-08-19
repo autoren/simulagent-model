@@ -1,0 +1,168 @@
+{
+  "V119_config": "configs/v119-asymmetric-adaptive-evidence.json",
+  "V119_config_sha256": "de96b3633b07344445b6454e080641a81563d66f72bd32da135632f6461a8b17",
+  "auditor": "python/audit_and_freeze_v127_sgd_typed_constraint_feasibility.py",
+  "auditor_sha256": "1207565bec9deaf727e2c439a2011e6973d9f0316da649915cbcab4cbc671e4a",
+  "authorization": {
+    "access_utterance_fields_slot_values_or_emit_individual_evidence": false,
+    "fit_select_or_load_any_model": false,
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_population_mechanism_channel_cost_gates_or_decision": false,
+    "run_one_oracle_typed_constraint_feasibility_evaluation": true
+  },
+  "baseline_config": "configs/v106-open-world-development-benchmark.json",
+  "baseline_config_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "choice_catalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "37edfc9df1a10d58c8102f50f42426bbf8969d23ecfa52e8e196ccf9770cc86f",
+  "config": "configs/v127-sgd-typed-constraint-feasibility.json",
+  "config_payload": {
+    "V119Config": "configs/v119-asymmetric-adaptive-evidence.json",
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumAutomaticSelectedAnnotationParseCount": 1,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumPersistedIndividualEvidenceCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSlotValueAccessCount": 0,
+      "maximumSourceArchiveReadCount": 1,
+      "maximumUtteranceFieldAccessCount": 0
+    },
+    "authorityBoundary": {
+      "actualExecutionCount": 0,
+      "allActionsAreCounterfactualShadowActions": true,
+      "annotationsAreUnavailableOracleEvidenceNotRuntimeInputs": true,
+      "novelAndInsufficientHypothesesCannotBecomeActions": true,
+      "typedSignaturesNeverDefineCapabilitiesOrGroundTruth": true
+    },
+    "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+    "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+    "claimBoundary": "fresh finite-population oracle upper-bound test of source-authored typed slot names against frozen known schemas; not evidence that language, a parser, an LLM, a human, or deployment supplies those annotations, and not unrestricted open-world understanding or execution",
+    "comparators": [
+      "ask_always",
+      "query_every_record_with_frozen_channel",
+      "oracle_typed_constraint_selective_query"
+    ],
+    "decisionRule": {
+      "ifEveryOutcomeAndAccessGatePasses": "oracle_typed_constraint_selectivity_feasible_authorize_parser_realization_design_only",
+      "otherwise": "oracle_typed_constraint_selectivity_infeasible_do_not_realize_parser",
+      "passAuthorizesAPITrainingActionOrExecution": false,
+      "passAuthorizesImmediateLanguageOrModelRun": false,
+      "passAuthorizesOnlyPreregisterTypedParserRealizationDesign": true,
+      "passAuthorizesProtectedInductionOrRicherPlanning": false
+    },
+    "excludedV125Population": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+    "experiment": "v127_fresh_sgd_oracle_typed_constraint_selectivity_feasibility",
+    "freshPopulation": {
+      "baseSalt": "simulagent-v127-fresh-typed-constraint-feasibility-2026-08-18",
+      "excludeEveryV125EvaluationIdentifier": true,
+      "knownRecordCountPerDeclaredPair": 32,
+      "novelValidRecordCountPerVisibleDomain": 64,
+      "persistLanguage": false,
+      "requiredKnownPairCoverage": 6,
+      "requiredNovelDomainCoverage": 3,
+      "requiredRecordCount": 576,
+      "requiredRecordCountPerClass": 192,
+      "requiredUnsupportedDomainCoverage": 4,
+      "selectionBeforeSourceArchiveRead": true,
+      "selectionUsesOnlyIdentifierPartitionClassDomainServiceAndIntent": true,
+      "sourcePartition": "test",
+      "unsupportedRecordCountPerDomain": 48
+    },
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumIndividualRecordEmissionCount": 0,
+      "maximumSelectiveFalseKnownEveryPriorAndCorrelation": 0.1,
+      "maximumSelectiveMeanRegretEveryPriorAndCorrelation": 1.1666666666666667,
+      "maximumSkipFraction": 0.95,
+      "maximumSkippedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+      "minimumQueriedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+      "minimumSelectiveKnownExactEveryPriorAndCorrelation": 0.8,
+      "minimumSelectiveUnsupportedCorrectEveryPriorAndCorrelation": 0.8,
+      "minimumSkipFraction": 0.05,
+      "minimumSkippedActionPrecision": 0.95,
+      "requireSelectiveRegretNoWorseThanAlwaysQueryEveryCondition": true,
+      "requiredSchemaSignatureCount": 6,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "parentV126OutcomeLock": "configs/v126-sgd-retrieval-selectivity-outcome-lock.json",
+    "queryChannel": {
+      "correlationAware": true,
+      "marginalCorrectness": 0.95,
+      "priorRegimes": [
+        {
+          "candidateProbability": 0.09090909090909091,
+          "id": "uniform_safe_universe"
+        },
+        {
+          "candidateProbability": 0.5,
+          "id": "moderate_candidate"
+        },
+        {
+          "candidateProbability": 0.75,
+          "id": "strong_candidate"
+        }
+      ],
+      "sharedFailureCorrelations": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "source": "V119 asymmetric adaptive identity-versus-support causal channel",
+      "totalCost": 0.3
+    },
+    "schemaVersion": "127-sgd-typed-constraint-feasibility-design",
+    "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+    "sourceArchiveRevision": "e852981ae34990f4358979625854259302feaa78",
+    "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+    "typedConstraintMechanism": {
+      "candidateCount": 1,
+      "candidateRule": "choose the unique compatible known intent when one exists; otherwise minimize extraneous observed slots, then missing required slots, then maximize overlap, then lexicographic intent id",
+      "compatibilityRule": "a known intent is compatible iff the observed slot-name set is nonempty and is a subset of that intent's allowed required-plus-optional slot names",
+      "completeSafeHypothesisUniverseAlwaysRetained": true,
+      "evidenceSource": "source-authored slot names in the selected USER frame state plus non-intent USER actions",
+      "fitCount": 0,
+      "id": "oracle_dialogue_state_slot_signature_unique_known_compatibility",
+      "knownSchemaSource": "pinned train schema required_slots plus optional_slots for the six declared known service-intent pairs",
+      "oracleUpperBoundOnly": true,
+      "queryRule": "skip clarification and shadow-select the known candidate iff exactly one known intent is compatible; query otherwise",
+      "selectionCount": 0,
+      "slotValuesMayBeAccessedOrPersisted": false,
+      "thresholdCount": 0,
+      "usesGroundTruthClassIntentServiceOrDomainAtDecisionTime": false,
+      "utteranceFieldMayBeAccessed": false
+    }
+  },
+  "config_sha256": "645a196bccb56b16f092862f23761a962a3f585057266fa1665445cf7555ce50",
+  "design_audit": "outputs/v127-sgd-typed-constraint-feasibility/design-audit.json",
+  "design_audit_sha256": "fa04879fb07606e46d349b755fc565fe2aacc11c15db84e0d7e6888cdd4d3b30",
+  "excluded_population": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+  "excluded_population_sha256": "e1f721f20ce830fe1fbbbd481fedd9470cf8259b9c892ffd8c0f5d86db9f2b0c",
+  "experiment": "v127_fresh_sgd_oracle_typed_constraint_selectivity_feasibility",
+  "fresh_population": "outputs/v127-sgd-typed-constraint-feasibility/design/fresh-population.json",
+  "fresh_population_sha256": "2e21f6e1ebfe30f6f6ca6e9c6aef2fe074d3d2be235b1487859457210e01e711",
+  "lock_payload_sha256": "c23a608ae4a1c422bc38b84afdd2655b407fd04cf0dfde791f9a8a5130aa9b11",
+  "parent_analysis_lock": "configs/v126-sgd-retrieval-selectivity-lock.json",
+  "parent_analysis_lock_sha256": "838a1924063d69df8deb461a2eba5271deee69e84bbfd0b251d4c262bf06dd9a",
+  "parent_outcome": "configs/v126-sgd-retrieval-selectivity-outcome-lock.json",
+  "parent_outcome_sha256": "cf18667ee36ead09a06098c6bba6468e39de14d5a89a0f38e0a999774c7c79dd",
+  "plan": "docs/v127-sgd-typed-constraint-feasibility-plan.md",
+  "plan_sha256": "a43cd1f8c5ac9c9014fc1b9feef7755592f1eb29ffaf860b1353226f6686d0d2",
+  "protocol": "python/v127_sgd_typed_constraint_feasibility.py",
+  "protocol_sha256": "cf286488adc2354a97b130ad8d7b38516e1357ebf4dc5f96b95845119842cd81",
+  "runner": "python/run_v127_sgd_typed_constraint_feasibility.py",
+  "runner_sha256": "08f37b7f72a6055bd1990078f452ee498b182f63acfe95ce96006ee234c3c24c",
+  "schema_version": "127-sgd-typed-constraint-feasibility-lock",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "source_inventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "source_inventory_sha256": "3cf2f5b5a43e340b0b4723baf728e49882286429c35fd3b111e28306ab029e5f",
+  "tests": "python/test_v127_sgd_typed_constraint_feasibility.py",
+  "tests_sha256": "31aeda08f0d489d1d313e80839a88ccbe631610694e55424c74e20409a3edc86",
+  "verifier": "python/verify_and_freeze_v127_sgd_typed_constraint_feasibility_outcome.py",
+  "verifier_sha256": "d9aa0349ac6db1e8af913b0718bd787f04fbb6f06b92fd1b799b20fb213f15d1"
+}

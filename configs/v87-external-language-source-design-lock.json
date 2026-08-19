@@ -1,0 +1,201 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "acquire_only_pinned_SGD_files": true,
+    "manually_inspect_utterance_text_before_subset_lock": false,
+    "modify_source_candidates_gates_revision_files_or_protocol": false,
+    "parse_code_only_structural_inventory_once": true,
+    "perform_real_service_call_or_external_side_effect": false,
+    "select_or_score_benchmark_subset": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "auditExposure": {
+      "APICallCount": 0,
+      "allowedBeforeDesignLock": [
+        "official repository README and license metadata",
+        "repository archive status and immutable head commit",
+        "GitHub contents API file names, types, byte sizes, and Git blob identifiers"
+      ],
+      "date": "2026-08-17",
+      "dialoguePayloadAccessCount": 0,
+      "forbiddenBeforeDesignLock": [
+        "dialogue payload bytes",
+        "schema payload bytes",
+        "individual utterances",
+        "dialogue annotations",
+        "candidate model prompts or responses",
+        "any benchmark score"
+      ],
+      "individualUtteranceAccessCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "schemaPayloadAccessCount": 0
+    },
+    "candidates": [
+      {
+        "archivedReadOnly": true,
+        "eligible": true,
+        "humanLanguageEvidence": "dialogues were generated with paid crowd-workers; user turns are human utterances",
+        "id": "schema_guided_dialogue",
+        "license": "CC-BY-SA-4.0",
+        "licenseBlobSha1": "e100aff6acc25dad98b144f76c4903419c5e99c1",
+        "licenseEvidence": "README License section and LICENSE.txt",
+        "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+        "revision": "e852981ae34990f4358979625854259302feaa78",
+        "selected": true,
+        "sourceGateResults": {
+          "deterministic_utterance_to_schema_and_state_linkage": true,
+          "evaluation_requires_no_live_service_or_transaction": true,
+          "explicit_dataset_license_permitting_research_reuse_with_attribution": true,
+          "immutable_repository_revision": true,
+          "independently_human_authored_or_spoken_user_utterances": true,
+          "machine_readable_service_schema": true,
+          "synthetic_family_exclusion_can_be_applied_before_text_scoring": true,
+          "turn_level_typed_intent_and_slot_state": true
+        },
+        "typedMappingEvidence": "each user frame names a service and contains state.active_intent, state.requested_slots, and state.slot_values linked to the service schema"
+      },
+      {
+        "archivedReadOnly": true,
+        "eligible": false,
+        "humanLanguageEvidence": "spoken Wizard-of-Oz user turns and crowdsourced written dialogues",
+        "id": "taskmaster_1",
+        "license": "CC-BY-4.0",
+        "repository": "https://github.com/google-research-datasets/Taskmaster",
+        "revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+        "selected": false,
+        "sourceGateResults": {
+          "deterministic_utterance_to_schema_and_state_linkage": false,
+          "evaluation_requires_no_live_service_or_transaction": true,
+          "explicit_dataset_license_permitting_research_reuse_with_attribution": true,
+          "immutable_repository_revision": true,
+          "independently_human_authored_or_spoken_user_utterances": true,
+          "machine_readable_service_schema": true,
+          "synthetic_family_exclusion_can_be_applied_before_text_scoring": true,
+          "turn_level_typed_intent_and_slot_state": false
+        },
+        "typedMappingEvidence": "span annotations and an API-argument ontology are present, but the audited format does not provide the required turn-level active-intent and accumulated dialogue-state contract"
+      },
+      {
+        "archivedReadOnly": false,
+        "eligible": false,
+        "humanLanguageEvidence": "the repository describes the MultiWOZ Wizard-of-Oz task-oriented dialogue dataset",
+        "id": "multiwoz_reference_repository",
+        "license": "MIT",
+        "repository": "https://github.com/budzianowski/multiwoz",
+        "revision": "fe0c8e65cfcd8462bd33c86e35f21addc84ca82b",
+        "selected": false,
+        "sourceGateResults": {
+          "deterministic_utterance_to_schema_and_state_linkage": false,
+          "evaluation_requires_no_live_service_or_transaction": true,
+          "explicit_dataset_license_permitting_research_reuse_with_attribution": true,
+          "immutable_repository_revision": true,
+          "independently_human_authored_or_spoken_user_utterances": true,
+          "machine_readable_service_schema": false,
+          "synthetic_family_exclusion_can_be_applied_before_text_scoring": false,
+          "turn_level_typed_intent_and_slot_state": false
+        },
+        "typedMappingEvidence": "the audited repository metadata does not state a single normalized immutable schema-and-user-frame mapping contract sufficient for this benchmark without inspecting bundled implementation and versioned data"
+      }
+    ],
+    "decisionRule": {
+      "ifExactlyOneSourcePassesEveryGate": "freeze that source and authorize only pinned-file acquisition plus code-only structural inventory",
+      "ifMultipleSourcesPassEveryGate": "select the lexicographically first candidate id and retain the others for a future source-disjoint confirmation",
+      "ifZeroSourcesPassEveryGate": "defer the external-language branch without weakening gates",
+      "passAuthorizesBenchmarkSubsetSelection": false,
+      "passAuthorizesDialoguePayloadAcquisition": true,
+      "passAuthorizesExecution": false,
+      "passAuthorizesModelAccess": false,
+      "passAuthorizesTraining": false
+    },
+    "experiment": "v87_external_human_language_source_gate",
+    "noncompensatorySourceGates": [
+      "immutable_repository_revision",
+      "explicit_dataset_license_permitting_research_reuse_with_attribution",
+      "independently_human_authored_or_spoken_user_utterances",
+      "machine_readable_service_schema",
+      "turn_level_typed_intent_and_slot_state",
+      "deterministic_utterance_to_schema_and_state_linkage",
+      "evaluation_requires_no_live_service_or_transaction",
+      "synthetic_family_exclusion_can_be_applied_before_text_scoring"
+    ],
+    "parentOutcomeLock": "configs/v86-partial-option-validator-outcome-lock.json",
+    "postLockStructuralInventoryProtocol": {
+      "allowCodeOnlyStructuralParsing": true,
+      "allowOnlyPinnedFiles": true,
+      "benchmarkScoringDuringInventory": false,
+      "eligibleRecordRequirements": [
+        "turn.speaker equals USER",
+        "turn has exactly one frame",
+        "frame.service exists in the pinned schema",
+        "frame.state exists",
+        "frame.state.active_intent is NONE or exists in that service schema",
+        "every frame.state.slot_values key exists in that service schema"
+      ],
+      "excludedServicePrefixes": [
+        "Calendar_",
+        "Messaging_",
+        "Project_",
+        "File_",
+        "Incident_",
+        "Inventory_"
+      ],
+      "manualUtteranceInspectionBeforeSubsetSeal": false,
+      "modelAccessDuringInventory": false,
+      "realServiceCalls": false,
+      "selectionBeforeLanguageScoring": true,
+      "selectionMethod": "canonical record identifiers ordered by SHA-256 under a future preregistered salt",
+      "verifyBytesByGitBlobSha1BeforeParsing": true
+    },
+    "purpose": "select and pin a licensed external source of independently authored user language with deterministic typed-state linkage before any payload access or model evaluation",
+    "schemaVersion": "87-external-language-source-audit",
+    "selectedSource": {
+      "candidateId": "schema_guided_dialogue",
+      "files": [
+        {
+          "byteSize": 45576,
+          "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+          "path": "dev/schema.json"
+        },
+        {
+          "byteSize": 2225937,
+          "gitBlobSha1": "d9c9d93494f7a74ae22692c6819e80f8a5244763",
+          "path": "dev/dialogues_001.json"
+        }
+      ],
+      "licenseHandling": {
+        "attributeDatasetAndPapersInDerivedDocumentation": true,
+        "doNotRedistributeMoreTextThanRequired": true,
+        "markAnyRedistributedAdaptedRecordArtifactCCBYSA40": true,
+        "retainSourceNameRevisionAndURLs": true
+      },
+      "maximumAcquisitionBytes": 2271513,
+      "split": "dev"
+    },
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "acquirePinnedPayloadFiles": false,
+      "auditAndFreezeSourceDesign": true,
+      "inspectUtterancesManually": false,
+      "parseStructuralInventory": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "selectBenchmarkSubset": false,
+      "trainAdapter": false
+    }
+  },
+  "design": "configs/v87-external-language-source-audit.json",
+  "design_audit": "outputs/v87-external-language-source-audit/design-audit.json",
+  "design_audit_sha256": "88290c0931b0f45aaeccb7b9e44c5c06f02ee2d11da29dc1817e3d05f1f3f802",
+  "design_auditor": "python/audit_and_freeze_v87_external_source_design.py",
+  "design_auditor_sha256": "a08197dd3849945fc1bd457957b61bd1ac0fdd829a97f936502c8a2c4bedb466",
+  "design_sha256": "0407002cdeb6660035683071820b85b1b61b9665ffc54213d2b3971940d4813b",
+  "experiment": "v87_external_language_source_design_lock",
+  "lock_payload_sha256": "197f5d415bec802492ca05f62045d00eacb2274863d885b1d9fd4867a2e26c13",
+  "parent_V86_outcome_lock": "configs/v86-partial-option-validator-outcome-lock.json",
+  "parent_V86_outcome_lock_sha256": "87b2c439dab3348e6493c95c0d5d1ef298f5e9b888dbd9567d9cd9423d9ef20b",
+  "plan": "docs/v87-external-language-source-audit-plan.md",
+  "plan_sha256": "f0113fb217f7bd073802959c31f2d25c6c49e2d8f95a32ac811440cbbc2c7623",
+  "schema_version": "87-external-language-source-design-lock"
+}

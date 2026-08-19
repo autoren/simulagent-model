@@ -1,0 +1,92 @@
+{
+  "audit": "outputs/v96-two-source-open-set/source-outcome-audit.json",
+  "audit_sha256": "c16cdf448f01642b30dd197d4d80c76157859cbd80930106f23f0d0b6688226f",
+  "authorization": {
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_population_prompt_controls_metrics_and_gates_lock": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_V96_source_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_dialogue_disjoint_population": false,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_language_extraction": false
+  },
+  "catalog_source_file": "outputs/v96-two-source-open-set/source/catalog-dialogues_007.json",
+  "catalog_source_file_git_blob_sha1": "5e6e1bb204621cf530228c8a7bd1537b12fc35b2",
+  "catalog_source_file_sha256": "d9af6ffcb69257ab3ce10e4637fc4d45d268094e55693b170a9b5b9d914dc611",
+  "experiment": "v96_two_source_open_set_source_outcome_lock",
+  "inventory": "outputs/v96-two-source-open-set/source-inventory/two-source-open-set-inventory.json",
+  "inventory_sha256": "5f31bdec29dcbd51f8d8507dc85c7c94a2039629a8e58532375923663d3fc6d4",
+  "lock_payload_sha256": "2b8ef7baa85743345a3cf99ed60d5a94583c43f2bbf9bfb9803022e2dcbb70e6",
+  "outcome": {
+    "decision": "freeze_negative_V96_two_source_feasibility",
+    "inventory_summary": {
+      "all_non_none_candidates_are_source_intent_activations": true,
+      "candidate_count": 150,
+      "candidate_index_sha256": "ebb990a6076397a21da9f20c4c1acaa381b4f9d3c22c157f9aaf7bc3cabc3330",
+      "catalog_service_count": 1,
+      "catalog_services": [
+        "Events_1"
+      ],
+      "catalog_source_intent_activation_count": 102,
+      "catalog_source_record_count": 499,
+      "class_counts": {
+        "insufficient_evidence": 48,
+        "known_familiar": 26,
+        "known_unfamiliar": 8,
+        "novel_valid": 68
+      },
+      "class_service_counts": {
+        "insufficient_evidence": 1,
+        "known_familiar": 1,
+        "known_unfamiliar": 1,
+        "novel_valid": 1
+      },
+      "complete_catalog_pair_count": 2,
+      "contains_language_tokens_slot_values_or_histories": false,
+      "declared_supported_pair_count": 1,
+      "declared_supported_pairs": [
+        "Events_1::BuyEventTickets"
+      ],
+      "eligible_catalog_service_count": 1,
+      "eligible_catalog_services": [
+        "Events_1"
+      ],
+      "eligible_unsupported_service_count": 0,
+      "eligible_unsupported_services": [],
+      "hidden_pair_count": 1,
+      "hidden_pairs": [
+        "Events_1::FindEvents"
+      ],
+      "hidden_services": [
+        "Events_1"
+      ],
+      "lexical_separation_uses_current_turn_only": true,
+      "source_roles_are_disjoint": true,
+      "supported_pair_count": 2,
+      "supported_pairs": [
+        "Events_1::BuyEventTickets",
+        "Events_1::FindEvents"
+      ],
+      "unsupported_service_count": 0,
+      "unsupported_services": [],
+      "unsupported_source_intent_activation_count": 380,
+      "unsupported_source_record_count": 1355,
+      "unsupported_supported_pairs": []
+    },
+    "passed": true,
+    "scientific_source_feasibility_passed": false
+  },
+  "result": "outputs/v96-two-source-open-set/source-inventory/result.json",
+  "result_sha256": "12b7cc64d0cf5180229b2503091c2f46ddaca76c6558ca0f0f808b2fc76206fd",
+  "results_document": "docs/v96-two-source-open-set-source-results.md",
+  "results_document_sha256": "f9c19a26f805c8dfd04577d49237912e30d2ea841f6ddbdecc63ec03b9640e0b",
+  "schema_version": "96-two-source-open-set-source-outcome-lock",
+  "source_lock": "configs/v96-two-source-open-set-source-lock.json",
+  "source_lock_sha256": "788fd2bba734cbafe891cf17e1a3b5cba28c0801d5de120a6cde51fea1ed702e",
+  "unsupported_source_file": "outputs/v96-two-source-open-set/source/unsupported-dialogues_008.json",
+  "unsupported_source_file_git_blob_sha1": "c80db910d22e1f7db9d576652e9f1e5537a01c58",
+  "unsupported_source_file_sha256": "986264c54cfabb8c70ace72e209ff0cd000523daecde226b19b3dbd6f44ea09b",
+  "verifier": "python/verify_and_freeze_v96_source_outcome.py",
+  "verifier_sha256": "fdfcd287669a3859981bc9b59e6338c5dcad74e042017b3c3c837eadd6917efe"
+}

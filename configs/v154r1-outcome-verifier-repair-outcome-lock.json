@@ -1,0 +1,125 @@
+{
+  "V154_access": "outputs/v154-adaptive-local-question-order/model-realization/access.json",
+  "V154_access_sha256": "f921dfb0041b1c0724299c16013ec6d2c8ab43d952dc47407d881a0bd859e4e1",
+  "V154_bounded_low_result": "outputs/v154-adaptive-local-question-order/model-realization/bounded-low-reasoning/result.json",
+  "V154_bounded_low_result_sha256": "bc3f356551d40c0039ef50ce47a5b4dd9aede14e6126f411505e65499a82c98e",
+  "V154_direct_result": "outputs/v154-adaptive-local-question-order/model-realization/direct/result.json",
+  "V154_direct_result_sha256": "03bae7fcb6e9583a6ca35280db34543a911b1862d42a08704fa8bd6afa50a727",
+  "V154_result": "outputs/v154-adaptive-local-question-order/model-realization/result.json",
+  "V154_result_sha256": "116899694874d29e73021e40fe20d394ed3a84dcb21927a95c84b0cf579dd2f0",
+  "audit": "outputs/v154r1-outcome-verifier-repair/outcome-audit.json",
+  "audit_sha256": "f4a073ecbb549d5c15a4a2085dd511f9f054260c4c29d5f12da798db1e50170b",
+  "authorization": {
+    "add_candidate_state_proposal_confidence_or_pruning": false,
+    "create_nominal_V154_outcome_lock": false,
+    "open_or_run_evaluation": false,
+    "retain_V154_as_project_authored_synthetic_negative_development_evidence": true,
+    "retry_rerun_reprompt_change_reasoning_threshold_fit_calibrate_or_tune_V154": false,
+    "run_model_API_training_services_authority_action_side_effect_or_execution": false,
+    "treat_repair_as_new_scientific_evidence": false
+  },
+  "experiment": "v154r1_json_key_type_outcome_verifier_repair",
+  "failed_V154_outcome_audit": "outputs/v154-adaptive-local-question-order/outcome-audit.json",
+  "failed_V154_outcome_audit_sha256": "9d70ae5bea4db84520b02da2cfceb9efb7da069b271372f29b1529ce9b54eeef",
+  "lock_payload_sha256": "1f782fed1e2af6c1972a7ed0ed439a310448f052abd6cf13ae0d876bf91df4c7",
+  "outcome": {
+    "bounded_low_reasoning_summary": {
+      "metrics": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "candidate_proposal_field_count": 0,
+        "final_exact_accuracy_after_trusted_answer": 1.0,
+        "irrelevant_query_intermediate_count": 30,
+        "irrelevant_query_intermediate_fail_closed_rate": 1.0,
+        "mean_correct_query_rank": 1.3125,
+        "mean_generated_tokens": 77.26041666666667,
+        "query_mean_reciprocal_rank": 0.8937499999999999,
+        "query_top1_accuracy": 0.8125,
+        "rank_counts": {
+          "1": 78,
+          "2": 14,
+          "5": 4
+        },
+        "request_fixture_count": 96,
+        "sequential_episode_count": 120,
+        "sequential_improvement_over_no_query": 0.625,
+        "sequential_mean_decision_cost": 0.375,
+        "structural_validity": 0.9479166666666666,
+        "total_generation_seconds": 1344.582433004398,
+        "validation_reason_counts": {
+          "invalid_json": 5,
+          "valid_registered_query_ranking": 91
+        }
+      },
+      "qualification_gates": {
+        "authoritative_retention": true,
+        "final_exact_after_trusted_answer": true,
+        "irrelevant_queries_fail_closed": true,
+        "mean_correct_query_rank": false,
+        "query_MRR": false,
+        "query_top1_accuracy": false,
+        "sequential_cost": true,
+        "sequential_improvement": true,
+        "structural_validity": false,
+        "zero_candidate_proposal_fields": true,
+        "zero_execution": true
+      },
+      "qualified": false
+    },
+    "decision": "local_question_order_conditions_fail_development_gates_close_without_evaluation_or_tuning",
+    "development_qualified": false,
+    "direct_summary": {
+      "metrics": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "candidate_proposal_field_count": 0,
+        "final_exact_accuracy_after_trusted_answer": 1.0,
+        "irrelevant_query_intermediate_count": 16,
+        "irrelevant_query_intermediate_fail_closed_rate": 1.0,
+        "mean_correct_query_rank": 1.1666666666666667,
+        "mean_generated_tokens": 31.5625,
+        "query_mean_reciprocal_rank": 0.9166666666666666,
+        "query_top1_accuracy": 0.8333333333333334,
+        "rank_counts": {
+          "1": 80,
+          "2": 16
+        },
+        "request_fixture_count": 96,
+        "sequential_episode_count": 120,
+        "sequential_improvement_over_no_query": 0.6599999999999999,
+        "sequential_mean_decision_cost": 0.33999999999999997,
+        "structural_validity": 1.0,
+        "total_generation_seconds": 602.9486165430862,
+        "validation_reason_counts": {
+          "valid_registered_query_ranking": 96
+        }
+      },
+      "qualification_gates": {
+        "authoritative_retention": true,
+        "final_exact_after_trusted_answer": true,
+        "irrelevant_queries_fail_closed": true,
+        "mean_correct_query_rank": true,
+        "query_MRR": false,
+        "query_top1_accuracy": false,
+        "sequential_cost": true,
+        "sequential_improvement": true,
+        "structural_validity": true,
+        "zero_candidate_proposal_fields": true,
+        "zero_execution": true
+      },
+      "qualified": false
+    },
+    "passed": true,
+    "selected_condition": null,
+    "technical_repair_only": true
+  },
+  "parent_analysis_lock": "configs/v154-adaptive-local-question-order-lock.json",
+  "parent_analysis_lock_sha256": "aabf84057f0f472e6461946dc63e47fb2d8effaa61a228cd323b9419bc1ed7e9",
+  "repair_lock": "configs/v154r1-outcome-verifier-repair-lock.json",
+  "repair_lock_sha256": "001d7cb7dfe4e3e252bdfd884a61630d44147217148ce45505092ae3c30f17b8",
+  "results_document": "docs/v154r1-outcome-verifier-repair-results.md",
+  "results_document_sha256": "23caf018db25eb2f60af6d27daa815317ba0f44b2a98a929bd423aac810b9345",
+  "schema_version": "154r1-outcome-verifier-repair-outcome-lock",
+  "verifier": "python/verify_and_freeze_v154r1_outcome_verifier_repair.py",
+  "verifier_sha256": "d7578292a44c9831778839a9aa15e4f6c9fab2d423000f5ad7088791bd00184e"
+}

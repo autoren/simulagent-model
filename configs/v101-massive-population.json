@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "101-massive-population-design",
+  "experiment": "v101_massive_hash_selected_open_set_population",
+  "parentSourceOutcomeLock": "configs/v100-massive-source-outcome-lock.json",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "sourceCandidateIndexSha256": "d436b27715aa3daa6d03116428d41a401c51a5a051792fdf5673aea107c9b46f",
+  "requiredClasses": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+  "selection": {
+    "baseSalt": "simulagent-v101-massive-population-v1",
+    "selectedCandidateCountPerClassPerSplit": 64,
+    "scenarioMinimumPerClass": {
+      "known_familiar": 12,
+      "known_unfamiliar": 12,
+      "novel_valid": 16,
+      "unsupported": 0
+    },
+    "roles": {
+      "development": {
+        "sourcePartition": "validation",
+        "languageAccessAfterOutcomeLock": "automatic_selected_record_extraction_only"
+      },
+      "protected_test": {
+        "sourcePartition": "test",
+        "languageAccessAfterOutcomeLock": "only_after_prompt_controls_metrics_and_gates_lock"
+      }
+    },
+    "hashSelectionUsesOnlyCandidateIdentifierClassSplitAndScenario": true,
+    "selectionBeforeAnySelectedLanguageExtraction": true
+  },
+  "populationGates": {
+    "requiredCandidateCountPerClassPerSplit": 64,
+    "requiredCandidateCountPerSplit": 256,
+    "requiredTotalCandidateCount": 512,
+    "requiredKnownScenarioCoverage": 3,
+    "requiredNovelScenarioCoverage": 2,
+    "requiredUnsupportedScenarioCoverage": 1,
+    "minimumIntentCoveragePerClass": {
+      "known_familiar": 6,
+      "known_unfamiliar": 8,
+      "novel_valid": 2,
+      "unsupported": 4
+    },
+    "requireDevelopmentTestIdentifierDisjointness": true,
+    "maximumTrainPartitionCandidateCount": 0,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumSourceArchiveReopenCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "textFreeCandidateIndexAggregateInspectionCount": 1,
+    "individualCandidateIdentifierInspectionCount": 0,
+    "sourceArchiveReopenCount": 0,
+    "selectedLanguageRecordExtractionCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationGatePasses": "freeze development and protected-test identifiers and authorize a separate selected-language extraction design",
+    "ifAnyPopulationGateFails": "stop before language extraction, population changes, model access, or gate changes",
+    "passAuthorizesImmediateLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

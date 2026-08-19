@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "83-strict-clarification-interface-design",
+  "experiment": "v83_model_free_strict_clarification_interface_integration",
+  "purpose": "integrate the frozen V79 Bayesian decision core with only the V82-approved canonical and finite-grammar clarification renderers after the local-model renderer failed",
+  "parentDecisionCoreOutcomeLock": "configs/v79-terminal-utility-outcome-lock.json",
+  "surfaceBoundaryOutcomeLock": "configs/v82-local-clarification-surface-outcome-lock.json",
+  "authorizedRendererSources": ["canonical", "finite_grammar"],
+  "disabledRendererSources": ["local_model", "API_model", "adapter_model", "untrusted_passthrough"],
+  "clarificationCodes": ["ask_operation", "ask_recipient", "ask_full_details"],
+  "strictChoiceFragments": {
+    "ask_operation": ["schedule the project review or send the project summary"],
+    "ask_recipient": ["Alex Chen or Alex Kim"],
+    "ask_full_details": [
+      "schedule the project review or send the project summary",
+      "Alex Chen or Alex Kim"
+    ]
+  },
+  "enumeration": {
+    "reachableV79ClarificationNodes": 6,
+    "allV79PolicyNodes": 22,
+    "canonicalCasesPerClarificationNode": 1,
+    "finiteGrammarCasesPerClarificationNode": 8,
+    "finiteGrammarStyles": [
+      "concise", "neutral", "polite", "formal",
+      "direct", "friendly", "explicit", "minimal"
+    ],
+    "requiredRenderedReachableCases": 54
+  },
+  "gates": {
+    "requiredNoneHypothesis": "none_of_the_above",
+    "requiredNoneHypothesisIndex": 4,
+    "requiredReachableClarificationNodeCount": 6,
+    "requiredAllPolicyNodeCount": 22,
+    "requiredRenderedReachableCaseCount": 54,
+    "minimumStrictSurfaceValidityRate": 1.0,
+    "minimumActionCodePreservationRate": 1.0,
+    "minimumPolicyNodeStructuralPreservationRate": 1.0,
+    "minimumUnsafeMutationRejectionRate": 1.0,
+    "minimumDisabledUntrustedDeploymentRate": 1.0,
+    "maximumPolicyValueAbsoluteError": 1e-12,
+    "maximumCompleteBeliefExecutionCertificateViolations": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumOriginalUserLanguageAccessCount": 0,
+    "maximumRealToolCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the strict model-free interface for shadow use above V79",
+    "ifAnyGateFails": "reject the integration and retain V79 without any surface adapter",
+    "passAuthorizesLocalOrAPIModel": false,
+    "passAuthorizesBeliefOrActionAuthority": false,
+    "passAuthorizesRealToolExecution": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "implementAndTestInterface": false,
+    "evaluateFrozenIntegration": false,
+    "accessLocalOrAPIModel": false,
+    "trainAdapter": false,
+    "collectHumanOrOriginalUserLanguage": false,
+    "performRealToolCall": false,
+    "performExternalSideEffect": false
+  }
+}

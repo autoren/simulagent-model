@@ -1,0 +1,236 @@
+{
+  "V85_false_positive_artifact": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/000-v85-project-operation-subtle.json",
+  "V85_false_positive_artifact_sha256": "3d6d8073a942dc9190d9b51e4d76b87018c1be3ab3e8b233d7cd9d5336c71812",
+  "authorization": {
+    "access_local_or_API_model": false,
+    "collect_human_or_original_user_language": false,
+    "evaluate_model_free_census_once": true,
+    "modify_implementation_or_evaluation": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "authorizedRendererSources": [
+      "canonical",
+      "finite_grammar"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "reject V86 and retain V84 with provenance-only containment of generated or untrusted text",
+      "ifEveryGatePasses": "freeze the hardened validator and supersede only V84's weak unrequested-slot content certificate in future shadow integrations",
+      "passAuthorizesBeliefActionOrExecutionAuthority": false,
+      "passAuthorizesGeneratedSurfaceDeployment": false,
+      "passAuthorizesModelAccess": false
+    },
+    "disabledRendererSources": [
+      "local_model",
+      "API_model",
+      "adapter_model",
+      "untrusted_passthrough",
+      "local_model_adversarial"
+    ],
+    "enumeration": {
+      "V79BridgeNodeCount": 6,
+      "V79BridgeRenderedCaseCount": 54,
+      "V85RegisteredFalsePositiveRegressionCount": 1,
+      "baseUnsafeMutationCount": 16,
+      "partialOptionInjectionMutationCount": 16,
+      "schemaCount": 4,
+      "schemaRenderedCaseCount": 108
+    },
+    "experiment": "v86_model_free_unrequested_partial_option_hardening",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCompleteBeliefExecutionCertificateViolations": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumRealToolCallCount": 0,
+      "maximumV79PolicyValueAbsoluteError": 1e-12,
+      "minimumBaseUnsafeMutationRejectionRate": 1.0,
+      "minimumDisabledUntrustedDeploymentRate": 1.0,
+      "minimumPartialOptionInjectionRejectionRate": 1.0,
+      "minimumSchemaSurfaceValidityRate": 1.0,
+      "minimumTypedRequestPreservationRate": 1.0,
+      "minimumV79BridgeActionPreservationRate": 1.0,
+      "minimumV79BridgeStructuralPreservationRate": 1.0,
+      "minimumV85FalsePositiveRegressionRejectionRate": 1.0
+    },
+    "parentOutcomeLock": "configs/v85-local-adversarial-generator-outcome-lock.json",
+    "purpose": "correct the V85-discovered false positive by rejecting any individual option surface belonging to an unrequested slot",
+    "registeredCorrection": {
+      "changesAuthorizedRendererSources": false,
+      "changesCanonicalOrFiniteGrammarText": false,
+      "changesSchemaBeliefActionOrPolicy": false,
+      "newRule": "forbid every individual option surface and the complete choice fragment from every unrequested slot",
+      "oldRule": "forbid only the complete choice fragment from every unrequested slot"
+    },
+    "schemaOutcomeLock": "configs/v84-schema-grounded-shadow-outcome-lock.json",
+    "schemaVersion": "86-partial-option-validator-design",
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "auditAndFreezeDesign": true,
+      "collectHumanOrOriginalUserLanguage": false,
+      "evaluateModelFreeCensus": false,
+      "implementAndTestValidator": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "trainAdapter": false
+    }
+  },
+  "design_lock": "configs/v86-partial-option-validator-design-lock.json",
+  "design_lock_sha256": "0945c8d7a35b3999bc75d658e4822e3f0712ae5432455915b5700c2eba4c8286",
+  "evaluator": "python/evaluate_v86_partial_option_validator.py",
+  "evaluator_sha256": "25524c7f084e339a3c18d2ee83ab88b1dd5f2e986901e5cf0752be92c4b14668",
+  "experiment": "v86_partial_option_validator_implementation_lock",
+  "implementation_audit": "outputs/v86-partial-option-validator/implementation-audit.json",
+  "implementation_audit_sha256": "2d5c826915712bddddbddacdacacb24d6b11d027386dcc53674c6e10b6a2e428",
+  "implementation_auditor": "python/audit_and_freeze_v86_validator_implementation.py",
+  "implementation_auditor_sha256": "e2cdb52f4e7e50796a71b7f5c3a2f08a537a140f0f5afdfc507fc5048afbbdc2",
+  "lock_payload_sha256": "10eb6d68cdf5fd1e622e7cfc11603293d6d8081e940d9e280987c2162539a87b",
+  "module": "python/schema_grounded_interface_v86.py",
+  "module_sha256": "837cfff4da262d593d7c0e414b06bb07e64c1fdc8d4ffebb268d50773965726f",
+  "parent_V79_result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json",
+  "parent_V79_result_sha256": "b20f89129eafe9131feac2276fa1f342a49e0fb6143713d842abdb9b682ed8e8",
+  "schema_source_lock": "configs/v84-schema-grounded-shadow-implementation-lock.json",
+  "schema_source_lock_sha256": "94551458919fedfe49044ca9ded5a194693d3c8e534e4ac192660633400c355e",
+  "schema_version": "86-partial-option-validator-implementation-lock",
+  "schemas": [
+    {
+      "schemaId": "project_workflow",
+      "slots": [
+        {
+          "options": [
+            {
+              "optionId": "schedule_review",
+              "surface": "schedule the project review"
+            },
+            {
+              "optionId": "send_summary",
+              "surface": "send the project summary"
+            }
+          ],
+          "questionPrefix": "Should I",
+          "slotId": "operation"
+        },
+        {
+          "options": [
+            {
+              "optionId": "alex_chen",
+              "surface": "Alex Chen"
+            },
+            {
+              "optionId": "alex_kim",
+              "surface": "Alex Kim"
+            }
+          ],
+          "questionPrefix": "Should the recipient be",
+          "slotId": "recipient"
+        }
+      ]
+    },
+    {
+      "schemaId": "file_lifecycle",
+      "slots": [
+        {
+          "options": [
+            {
+              "optionId": "copy_report",
+              "surface": "copy the report"
+            },
+            {
+              "optionId": "archive_report",
+              "surface": "archive the report"
+            }
+          ],
+          "questionPrefix": "Should I",
+          "slotId": "operation"
+        },
+        {
+          "options": [
+            {
+              "optionId": "finance_folder",
+              "surface": "Finance Folder"
+            },
+            {
+              "optionId": "legal_folder",
+              "surface": "Legal Folder"
+            }
+          ],
+          "questionPrefix": "Should the destination be",
+          "slotId": "destination"
+        }
+      ]
+    },
+    {
+      "schemaId": "incident_response",
+      "slots": [
+        {
+          "options": [
+            {
+              "optionId": "investigate_incident",
+              "surface": "investigate the incident"
+            },
+            {
+              "optionId": "escalate_incident",
+              "surface": "escalate the incident"
+            }
+          ],
+          "questionPrefix": "Should I",
+          "slotId": "operation"
+        },
+        {
+          "options": [
+            {
+              "optionId": "catalog_api",
+              "surface": "Catalog API"
+            },
+            {
+              "optionId": "billing_api",
+              "surface": "Billing API"
+            }
+          ],
+          "questionPrefix": "Should the service be",
+          "slotId": "service"
+        }
+      ]
+    },
+    {
+      "schemaId": "inventory_control",
+      "slots": [
+        {
+          "options": [
+            {
+              "optionId": "reserve_item",
+              "surface": "reserve the item"
+            },
+            {
+              "optionId": "release_item",
+              "surface": "release the item"
+            }
+          ],
+          "questionPrefix": "Should I",
+          "slotId": "operation"
+        },
+        {
+          "options": [
+            {
+              "optionId": "camera",
+              "surface": "Camera"
+            },
+            {
+              "optionId": "tripod",
+              "surface": "Tripod"
+            }
+          ],
+          "questionPrefix": "Should the item be",
+          "slotId": "item"
+        }
+      ]
+    }
+  ],
+  "test": "python/test_schema_grounded_interface_v86.py",
+  "test_sha256": "4599499504240f2500a1727ca3607ac72ecbfb49c4440eef1311d543b683f2a9"
+}

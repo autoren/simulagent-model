@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "136-controlled-clarification-value",
+  "experiment": "v136_model_free_targeted_clarification_value_audit",
+  "parentV135OutcomeLock": "configs/v135-controlled-open-world-minimal-pairs-outcome-lock.json",
+  "baselineDecisionCostSource": "configs/v106-open-world-development-benchmark.json",
+  "claimBoundary": "model-free exact value-of-information evidence for family-specific binary clarification on the frozen synthetic V135 semantics; not evidence that a model or human realizes the channel, not external-language transfer, and not authority or execution",
+  "decisionCosts": {
+    "known": {"exact_known": 0.0, "wrong_known": 10.0, "novel": 3.0, "unsupported": 6.0, "abstain": 1.0},
+    "novel": {"known": 10.0, "exact_novel": 0.0, "wrong_novel_scenario": 5.0, "unsupported": 4.0, "abstain": 1.5},
+    "unsupported": {"known": 10.0, "novel": 4.0, "unsupported": 0.0, "abstain": 1.0},
+    "insufficient": {"known": 10.0, "novel": 6.0, "unsupported": 4.0, "abstain": 0.0}
+  },
+  "clarificationChannel": {
+    "queryCost": 0.3,
+    "answerSet": "the exact left and right hypotheses registered for the active V135 family",
+    "errorModel": "symmetric binary answer error with known reliability",
+    "evaluationReliability": 0.95,
+    "gridMinimum": 0.5,
+    "gridMaximum": 1.0,
+    "gridStep": 0.0005,
+    "oneFamilySpecificQuestionOnly": true,
+    "noIndependenceClaim": true
+  },
+  "priorRegimes": [
+    {"id": "balanced_pair", "presentedKnownCandidateProbability": 0.5},
+    {"id": "moderate_known_candidate", "presentedKnownCandidateProbability": 0.75},
+    {"id": "strong_known_candidate", "presentedKnownCandidateProbability": 0.9}
+  ],
+  "policy": {
+    "terminalDecisionSet": "all nine V135 typed choices; declaring a valid-undeclared choice is a shadow classification decision and never capability registration or execution",
+    "minimumPosteriorExpectedFrozenDecisionCost": true,
+    "ambiguousBeliefContainsExactlyFamilyLeftAndRight": true,
+    "clearBeliefIsDegenerateAtRegisteredTruth": true,
+    "allSafeHypothesesRemainRepresented": true,
+    "actualExecutionCount": 0
+  },
+  "gates": {
+    "requiredFamilyPriorConditionCount": 15,
+    "requiredOracleQueryPreferredFraction": 1.0,
+    "requiredEvaluationReliabilityQueryPreferredFraction": 1.0,
+    "maximumWorstQueryBenefitReliabilityThreshold": 0.95,
+    "minimumWorstConditionCostImprovementAtEvaluationReliability": 0.299,
+    "maximumFalseKnownProbabilityOnRightTruthAtEvaluationReliability": 0.051,
+    "minimumSafeNonKnownDecisionProbabilityOnRightTruthAtEvaluationReliability": 0.949,
+    "requiredClearCaseSkipPreferredFraction": 1.0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumV134LanguageReadCount": 0,
+    "maximumExternalLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryValueSafetyAndAccessGatePasses": "targeted_clarification_has_model_free_value_authorize_direct_vs_thinking_preregistration_only",
+    "otherwise": "close_controlled_clarification_branch_without_model_run_or_gate_relaxation",
+    "passAuthorizesDirectVsThinkingPreregistrationOnly": true,
+    "passAuthorizesImmediateModelRun": false,
+    "passAuthorizesV134LanguageAccess": false,
+    "passAuthorizesAPIInductionTrainingAuthorityActionOrExecution": false
+  }
+}

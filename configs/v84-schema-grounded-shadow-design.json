@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "84-schema-grounded-shadow-design",
+  "experiment": "v84_model_free_schema_grounded_shadow_transfer",
+  "purpose": "test whether V83's strict provenance and exact-choice boundary can be expressed by a generic typed-schema interface without changing the frozen V79 policy",
+  "parentOutcomeLock": "configs/v83-strict-clarification-interface-outcome-lock.json",
+  "schemas": [
+    {
+      "schemaId": "project_workflow",
+      "slots": [
+        {
+          "slotId": "operation",
+          "questionPrefix": "Should I",
+          "options": [
+            {"optionId": "schedule_review", "surface": "schedule the project review"},
+            {"optionId": "send_summary", "surface": "send the project summary"}
+          ]
+        },
+        {
+          "slotId": "recipient",
+          "questionPrefix": "Should the recipient be",
+          "options": [
+            {"optionId": "alex_chen", "surface": "Alex Chen"},
+            {"optionId": "alex_kim", "surface": "Alex Kim"}
+          ]
+        }
+      ]
+    },
+    {
+      "schemaId": "file_lifecycle",
+      "slots": [
+        {
+          "slotId": "operation",
+          "questionPrefix": "Should I",
+          "options": [
+            {"optionId": "copy_report", "surface": "copy the report"},
+            {"optionId": "archive_report", "surface": "archive the report"}
+          ]
+        },
+        {
+          "slotId": "destination",
+          "questionPrefix": "Should the destination be",
+          "options": [
+            {"optionId": "finance_folder", "surface": "Finance Folder"},
+            {"optionId": "legal_folder", "surface": "Legal Folder"}
+          ]
+        }
+      ]
+    },
+    {
+      "schemaId": "incident_response",
+      "slots": [
+        {
+          "slotId": "operation",
+          "questionPrefix": "Should I",
+          "options": [
+            {"optionId": "investigate_incident", "surface": "investigate the incident"},
+            {"optionId": "escalate_incident", "surface": "escalate the incident"}
+          ]
+        },
+        {
+          "slotId": "service",
+          "questionPrefix": "Should the service be",
+          "options": [
+            {"optionId": "catalog_api", "surface": "Catalog API"},
+            {"optionId": "billing_api", "surface": "Billing API"}
+          ]
+        }
+      ]
+    },
+    {
+      "schemaId": "inventory_control",
+      "slots": [
+        {
+          "slotId": "operation",
+          "questionPrefix": "Should I",
+          "options": [
+            {"optionId": "reserve_item", "surface": "reserve the item"},
+            {"optionId": "release_item", "surface": "release the item"}
+          ]
+        },
+        {
+          "slotId": "item",
+          "questionPrefix": "Should the item be",
+          "options": [
+            {"optionId": "camera", "surface": "Camera"},
+            {"optionId": "tripod", "surface": "Tripod"}
+          ]
+        }
+      ]
+    }
+  ],
+  "clarificationRequestContract": {
+    "exactFields": ["schema_id", "kind", "slot_id"],
+    "allowedKinds": ["slot", "all"],
+    "slotKindRequiresKnownSlotId": true,
+    "allKindRequiresNullSlotId": true,
+    "unknownOrMalformedHandling": "raise a typed fail-closed error without rendering or changing an action"
+  },
+  "schemaContract": {
+    "exactSlotsPerSchema": 2,
+    "exactOptionsPerSlot": 2,
+    "uniqueSchemaSlotAndOptionIds": true,
+    "ASCIIOnlySurfaces": true,
+    "surfaceLengthRange": [1, 64],
+    "questionPrefixLengthRange": [1, 48],
+    "forbidQuestionMarksNewlinesUnderscoresAndExecutionClaimsInSurfaces": true,
+    "choiceConnector": " or ",
+    "schemaValuesCannotSelectOrRenamePolicyActions": true
+  },
+  "authorizedRendererSources": ["canonical", "finite_grammar"],
+  "disabledRendererSources": ["local_model", "API_model", "adapter_model", "untrusted_passthrough"],
+  "finiteGrammarStyles": [
+    "concise", "neutral", "polite", "formal",
+    "direct", "friendly", "explicit", "minimal"
+  ],
+  "invalidSchemaMutationNames": [
+    "duplicate_schema_id",
+    "duplicate_slot_id",
+    "missing_slot_id",
+    "one_option",
+    "three_options",
+    "duplicate_option_id",
+    "duplicate_option_surface",
+    "unsafe_surface_newline",
+    "unsafe_surface_underscore",
+    "unsafe_surface_question_mark",
+    "unsafe_surface_execution_claim",
+    "missing_question_prefix"
+  ],
+  "enumeration": {
+    "schemaCount": 4,
+    "freshTransferSchemaCount": 3,
+    "clarificationTargetsPerSchema": 3,
+    "renderedCasesPerTarget": 9,
+    "requiredSchemaRenderedCaseCount": 108,
+    "requiredV79BridgeNodeCount": 6,
+    "requiredV79BridgeRenderedCaseCount": 54,
+    "requiredInvalidSchemaMutationCount": 12,
+    "requiredInvalidRequestCount": 13,
+    "requiredUnsafeSurfaceMutationCount": 16
+  },
+  "gates": {
+    "minimumValidSchemaAcceptanceRate": 1.0,
+    "minimumInvalidSchemaRejectionRate": 1.0,
+    "minimumInvalidRequestFailClosedRate": 1.0,
+    "minimumStrictSchemaSurfaceValidityRate": 1.0,
+    "minimumTypedRequestPreservationRate": 1.0,
+    "minimumUnsafeSurfaceMutationRejectionRate": 1.0,
+    "minimumDisabledUntrustedDeploymentRate": 1.0,
+    "minimumFreshSchemaCoverageRate": 1.0,
+    "minimumV79BridgeActionPreservationRate": 1.0,
+    "minimumV79BridgePolicyNodeStructuralPreservationRate": 1.0,
+    "maximumV79PolicyValueAbsoluteError": 1e-12,
+    "maximumCompleteBeliefExecutionCertificateViolations": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumOriginalUserLanguageAccessCount": 0,
+    "maximumRealToolCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the generic typed-schema interface for bounded shadow use and authorize preregistration of an offline non-deployable local-model adversarial-generator test",
+    "ifAnyGateFails": "reject generic integration and retain the frozen V83 single-schema interface",
+    "passAuthorizesModelAccessImmediately": false,
+    "passAuthorizesGeneratedSurfaceDeployment": false,
+    "passAuthorizesBeliefActionOrExecutionAuthority": false,
+    "passAuthorizesRealToolExecution": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "implementAndTestInterface": false,
+    "evaluateModelFreeShadowCensus": false,
+    "accessLocalOrAPIModel": false,
+    "trainAdapter": false,
+    "collectHumanOrOriginalUserLanguage": false,
+    "performRealToolCall": false,
+    "performExternalSideEffect": false
+  }
+}

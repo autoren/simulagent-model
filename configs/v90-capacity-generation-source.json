@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "90-capacity-generation-source-extension",
+  "experiment": "v90_fresh_external_source_extension",
+  "purpose": "pin and inventory one previously untouched official Schema-Guided Dialogue development shard before selecting a fresh larger-model evaluation population",
+  "parentOutcomeLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "newDialogueShard": {
+    "path": "dev/dialogues_002.json",
+    "byteSize": 2507250,
+    "gitBlobSha1": "fc199abe65125e63864173ef5b89533b048427bb",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_002.json"
+  },
+  "preLockExposure": {
+    "allowed": [
+      "GitHub contents API file name, type, byte size, and Git blob identifier",
+      "existing V87 source and license locks",
+      "Hugging Face repository metadata for candidate model identities"
+    ],
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelWeightDownloadCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0
+  },
+  "inventoryProtocol": {
+    "verifyByteSizeAndGitBlobBeforeParsing": true,
+    "reusePinnedV87SchemaOnly": true,
+    "manualUtteranceInspection": false,
+    "emitLanguageOrSlotValues": false,
+    "excludedServicePrefixes": [
+      "Calendar_",
+      "Messaging_",
+      "Project_",
+      "File_",
+      "Incident_",
+      "Inventory_"
+    ]
+  },
+  "sourceGates": {
+    "minimumEligibleRecordCount": 48,
+    "minimumEligibleActiveRecordCount": 24,
+    "minimumEligibleNoneRecordCount": 24,
+    "minimumEligibleServiceCount": 2,
+    "minimumEligibleActiveIntentCount": 3,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelWeightDownloadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the structural inventory and authorize preregistration of a fresh hash-selected nonexecutable multi-model shadow population",
+    "ifAnySourceGateFails": "stop the V90 model branch without inspecting utterances, weakening source gates, or downloading model weights",
+    "passAuthorizesModelWeightDownload": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesTraining": false,
+    "passAuthorizesExecution": false
+  }
+}

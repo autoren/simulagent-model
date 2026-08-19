@@ -1,0 +1,281 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "collect_human_or_original_user_language": false,
+    "evaluate_model_free_shadow_census_once": true,
+    "implement_and_test_model_free_schema_interface": true,
+    "modify_design_schema_population_controls_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "authorizedRendererSources": [
+      "canonical",
+      "finite_grammar"
+    ],
+    "clarificationRequestContract": {
+      "allKindRequiresNullSlotId": true,
+      "allowedKinds": [
+        "slot",
+        "all"
+      ],
+      "exactFields": [
+        "schema_id",
+        "kind",
+        "slot_id"
+      ],
+      "slotKindRequiresKnownSlotId": true,
+      "unknownOrMalformedHandling": "raise a typed fail-closed error without rendering or changing an action"
+    },
+    "decisionRule": {
+      "ifAnyGateFails": "reject generic integration and retain the frozen V83 single-schema interface",
+      "ifEveryGatePasses": "freeze the generic typed-schema interface for bounded shadow use and authorize preregistration of an offline non-deployable local-model adversarial-generator test",
+      "passAuthorizesBeliefActionOrExecutionAuthority": false,
+      "passAuthorizesGeneratedSurfaceDeployment": false,
+      "passAuthorizesModelAccessImmediately": false,
+      "passAuthorizesRealToolExecution": false
+    },
+    "disabledRendererSources": [
+      "local_model",
+      "API_model",
+      "adapter_model",
+      "untrusted_passthrough"
+    ],
+    "enumeration": {
+      "clarificationTargetsPerSchema": 3,
+      "freshTransferSchemaCount": 3,
+      "renderedCasesPerTarget": 9,
+      "requiredInvalidRequestCount": 13,
+      "requiredInvalidSchemaMutationCount": 12,
+      "requiredSchemaRenderedCaseCount": 108,
+      "requiredUnsafeSurfaceMutationCount": 16,
+      "requiredV79BridgeNodeCount": 6,
+      "requiredV79BridgeRenderedCaseCount": 54,
+      "schemaCount": 4
+    },
+    "experiment": "v84_model_free_schema_grounded_shadow_transfer",
+    "finiteGrammarStyles": [
+      "concise",
+      "neutral",
+      "polite",
+      "formal",
+      "direct",
+      "friendly",
+      "explicit",
+      "minimal"
+    ],
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCompleteBeliefExecutionCertificateViolations": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumRealToolCallCount": 0,
+      "maximumV79PolicyValueAbsoluteError": 1e-12,
+      "minimumDisabledUntrustedDeploymentRate": 1.0,
+      "minimumFreshSchemaCoverageRate": 1.0,
+      "minimumInvalidRequestFailClosedRate": 1.0,
+      "minimumInvalidSchemaRejectionRate": 1.0,
+      "minimumStrictSchemaSurfaceValidityRate": 1.0,
+      "minimumTypedRequestPreservationRate": 1.0,
+      "minimumUnsafeSurfaceMutationRejectionRate": 1.0,
+      "minimumV79BridgeActionPreservationRate": 1.0,
+      "minimumV79BridgePolicyNodeStructuralPreservationRate": 1.0,
+      "minimumValidSchemaAcceptanceRate": 1.0
+    },
+    "invalidSchemaMutationNames": [
+      "duplicate_schema_id",
+      "duplicate_slot_id",
+      "missing_slot_id",
+      "one_option",
+      "three_options",
+      "duplicate_option_id",
+      "duplicate_option_surface",
+      "unsafe_surface_newline",
+      "unsafe_surface_underscore",
+      "unsafe_surface_question_mark",
+      "unsafe_surface_execution_claim",
+      "missing_question_prefix"
+    ],
+    "parentOutcomeLock": "configs/v83-strict-clarification-interface-outcome-lock.json",
+    "purpose": "test whether V83's strict provenance and exact-choice boundary can be expressed by a generic typed-schema interface without changing the frozen V79 policy",
+    "schemaContract": {
+      "ASCIIOnlySurfaces": true,
+      "choiceConnector": " or ",
+      "exactOptionsPerSlot": 2,
+      "exactSlotsPerSchema": 2,
+      "forbidQuestionMarksNewlinesUnderscoresAndExecutionClaimsInSurfaces": true,
+      "questionPrefixLengthRange": [
+        1,
+        48
+      ],
+      "schemaValuesCannotSelectOrRenamePolicyActions": true,
+      "surfaceLengthRange": [
+        1,
+        64
+      ],
+      "uniqueSchemaSlotAndOptionIds": true
+    },
+    "schemaVersion": "84-schema-grounded-shadow-design",
+    "schemas": [
+      {
+        "schemaId": "project_workflow",
+        "slots": [
+          {
+            "options": [
+              {
+                "optionId": "schedule_review",
+                "surface": "schedule the project review"
+              },
+              {
+                "optionId": "send_summary",
+                "surface": "send the project summary"
+              }
+            ],
+            "questionPrefix": "Should I",
+            "slotId": "operation"
+          },
+          {
+            "options": [
+              {
+                "optionId": "alex_chen",
+                "surface": "Alex Chen"
+              },
+              {
+                "optionId": "alex_kim",
+                "surface": "Alex Kim"
+              }
+            ],
+            "questionPrefix": "Should the recipient be",
+            "slotId": "recipient"
+          }
+        ]
+      },
+      {
+        "schemaId": "file_lifecycle",
+        "slots": [
+          {
+            "options": [
+              {
+                "optionId": "copy_report",
+                "surface": "copy the report"
+              },
+              {
+                "optionId": "archive_report",
+                "surface": "archive the report"
+              }
+            ],
+            "questionPrefix": "Should I",
+            "slotId": "operation"
+          },
+          {
+            "options": [
+              {
+                "optionId": "finance_folder",
+                "surface": "Finance Folder"
+              },
+              {
+                "optionId": "legal_folder",
+                "surface": "Legal Folder"
+              }
+            ],
+            "questionPrefix": "Should the destination be",
+            "slotId": "destination"
+          }
+        ]
+      },
+      {
+        "schemaId": "incident_response",
+        "slots": [
+          {
+            "options": [
+              {
+                "optionId": "investigate_incident",
+                "surface": "investigate the incident"
+              },
+              {
+                "optionId": "escalate_incident",
+                "surface": "escalate the incident"
+              }
+            ],
+            "questionPrefix": "Should I",
+            "slotId": "operation"
+          },
+          {
+            "options": [
+              {
+                "optionId": "catalog_api",
+                "surface": "Catalog API"
+              },
+              {
+                "optionId": "billing_api",
+                "surface": "Billing API"
+              }
+            ],
+            "questionPrefix": "Should the service be",
+            "slotId": "service"
+          }
+        ]
+      },
+      {
+        "schemaId": "inventory_control",
+        "slots": [
+          {
+            "options": [
+              {
+                "optionId": "reserve_item",
+                "surface": "reserve the item"
+              },
+              {
+                "optionId": "release_item",
+                "surface": "release the item"
+              }
+            ],
+            "questionPrefix": "Should I",
+            "slotId": "operation"
+          },
+          {
+            "options": [
+              {
+                "optionId": "camera",
+                "surface": "Camera"
+              },
+              {
+                "optionId": "tripod",
+                "surface": "Tripod"
+              }
+            ],
+            "questionPrefix": "Should the item be",
+            "slotId": "item"
+          }
+        ]
+      }
+    ],
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "auditAndFreezeDesign": true,
+      "collectHumanOrOriginalUserLanguage": false,
+      "evaluateModelFreeShadowCensus": false,
+      "implementAndTestInterface": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "trainAdapter": false
+    }
+  },
+  "design": "configs/v84-schema-grounded-shadow-design.json",
+  "design_audit": "outputs/v84-schema-grounded-shadow/design-audit.json",
+  "design_audit_sha256": "ef94e7e1e5bf9e8b58178c94d100ac5f12792978982f8de923abc4ceea1a756d",
+  "design_auditor": "python/audit_and_freeze_v84_schema_design.py",
+  "design_auditor_sha256": "dffe29d778c84c6f4c0901973d444265245b2723aac68779c5cfd374ce6b16bb",
+  "design_sha256": "91d2800cd013e5303ed21e498244bc708c2fd74c634a5717e588188f51603eb7",
+  "experiment": "v84_schema_grounded_shadow_design_lock",
+  "lock_payload_sha256": "bb692acb1265bbc2c26ae10d53bcc31ceaf7419f45c8ff867711d326247c9e2a",
+  "parent_V83_outcome_lock": "configs/v83-strict-clarification-interface-outcome-lock.json",
+  "parent_V83_outcome_lock_sha256": "df41eca7ae988b5fb701b736172f02972d241e42bb3f0f1127e40574e881baba",
+  "plan": "docs/v84-schema-grounded-shadow-plan.md",
+  "plan_sha256": "5a40bd9b9495db5546bba832f2268ca796fa332d83d42358e8f910e99e00a632",
+  "schema_version": "84-schema-grounded-shadow-design-lock"
+}

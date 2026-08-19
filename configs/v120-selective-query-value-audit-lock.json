@@ -1,0 +1,89 @@
+{
+  "auditor": "python/audit_and_freeze_v120_selective_query_value_audit.py",
+  "auditor_sha256": "d65039454472f94408776865515516fd8da60b98a46a869296700f6bf25b8d43",
+  "authorization": {
+    "grant_any_authority_or_execution": false,
+    "load_or_generate_with_model": false,
+    "modify_parent_cost_metrics_gates_or_decision": false,
+    "read_individual_records_language_or_raw_responses": false,
+    "run_one_aggregate_cost_decomposition": true
+  },
+  "config": "configs/v120-selective-query-value-audit.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFreshLanguageReadCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0
+    },
+    "claimBoundary": "aggregate decomposition of already-frozen V119 regret and query cost; not a new policy, trigger, simulator, language, model, or deployment result",
+    "decisionRule": {
+      "ifAllOutcomeAndAccessGatesPass": "selective_query_value_boundary_derived_requires_independent_prequery_trigger",
+      "otherwise": "selective_query_value_inconclusive_keep_successor_closed",
+      "passAuthorizesInductionAPITrainingActionOrExecution": false,
+      "passAuthorizesLanguageModelOrProtectedRun": false,
+      "passAuthorizesOnlyPreregisterModelFreePrequeryTriggerFeasibilityAudit": true,
+      "passAuthorizesRetuneV119OrDiscountCost": false
+    },
+    "decomposition": {
+      "decisionRegret": "total regret minus fixed clarification cost",
+      "fixedClarificationCost": 0.3,
+      "maximumAffordableQueryCost": "historical baseline regret minus decision regret",
+      "minimumZeroLossSkipFraction": "positive cost excess divided by fixed clarification cost"
+    },
+    "experiment": "v120_aggregate_selective_query_value_boundary_audit",
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumIndividualRecordEmissionCount": 0,
+      "maximumIndividualRecordReadCount": 0,
+      "maximumMinimumZeroLossSkipFraction": 0.036,
+      "maximumRegretExcessOverBaseline": 0.011,
+      "requireDecisionRegretBelowBaselineEveryFailingCondition": true,
+      "requireParentAccuracySafetyControlAndMisspecificationGatesPass": true,
+      "requiredFailingConditionCount": 3
+    },
+    "parentV119OutcomeLock": "configs/v119-asymmetric-adaptive-evidence-outcome-lock.json",
+    "requiredSlice": {
+      "correlations": [
+        "0.00",
+        "0.25",
+        "0.50"
+      ],
+      "expectedFailingConditionIds": [
+        "uniform_safe_universe@0.25",
+        "uniform_safe_universe@0.50",
+        "strong_candidate@0.50"
+      ],
+      "planner": "correlation_aware",
+      "reliability": "0.95"
+    },
+    "schemaVersion": "120-selective-query-value-audit-design"
+  },
+  "config_sha256": "3fbc67c585dae648fc6d4ef2c422eda41462967465f137e655e51596c0e55925",
+  "design_audit": "outputs/v120-selective-query-value-audit/design-audit.json",
+  "design_audit_sha256": "37f2a188c98c2edb1ab9c87336c77503a3af302ed13ed1a22647aa287dd42e54",
+  "experiment": "v120_aggregate_selective_query_value_boundary_audit",
+  "lock_payload_sha256": "5f44471260a80be6aa38f1d88f2efb6e8270fcbfe4016f649681e22ac06bb577",
+  "parent_analysis_lock": "configs/v119-asymmetric-adaptive-evidence-lock.json",
+  "parent_analysis_lock_sha256": "5197e4cb6fbf3833abdc4640e1b4b01dbba52940055ccd78da24de636c090cb7",
+  "parent_outcome": "configs/v119-asymmetric-adaptive-evidence-outcome-lock.json",
+  "parent_outcome_sha256": "4b7d4d76fa92f50fc36f7a5b453b0cf524ca2871e9d6d4c95b7330953d072e6d",
+  "parent_result": "outputs/v119-asymmetric-adaptive-evidence/simulator/result.json",
+  "parent_result_sha256": "97ffe9ec20c676843848fb90bd351b0292d340e4b59b8636569b61e3822a6711",
+  "plan": "docs/v120-selective-query-value-audit-plan.md",
+  "plan_sha256": "8e803bef84b3c402c9d23ffa030e9f1f670c0a0e87f504ec7ecc2f6599980615",
+  "protocol": "python/v120_selective_query_value_audit.py",
+  "protocol_sha256": "671092cda6ee670abf05e99f910b210c80f0b8e52aa78c20bac2678cd096d81c",
+  "runner": "python/run_v120_selective_query_value_audit.py",
+  "runner_sha256": "72b2daf6faf7ad9b82b25032945d8255764cccb47872e9d88a08820309e44c0d",
+  "schema_version": "120-selective-query-value-audit-lock",
+  "tests": "python/test_v120_selective_query_value_audit.py",
+  "tests_sha256": "5c4fd9089385b3e78299f24f49efc44d6b63fe649c597cbef96161bf733f30bb",
+  "verifier": "python/verify_and_freeze_v120_selective_query_value_audit_outcome.py",
+  "verifier_sha256": "abeb1951f67ed1b317e58443bf2cf75790f12a1c2d3ec5bef1f51f21892fd805"
+}

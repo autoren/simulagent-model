@@ -1,0 +1,110 @@
+{
+  "audit": "outputs/v150-oracle-closed-interaction-policy/audit.json",
+  "audit_sha256": "1360720462665b945932f2eb384aaf1a6ee6c90cab78f0c21ceca17884e7aded",
+  "authorization": {
+    "design_local_development_proposal_protocol": true,
+    "fit_calibration_or_mine_future_results": false,
+    "open_or_score_V149_evaluation_split": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_language_or_model_before_separate_preregistration": false
+  },
+  "config": "configs/v150-oracle-closed-interaction-policy.json",
+  "config_sha256": "6167b827d7f822d6353cfb58774284edad1d675dbf325b23b187ba06e21a94f3",
+  "experiment": "v150_model_free_oracle_typed_witness_interaction_policy",
+  "hidden_fixtures": "outputs/v149-fresh-closed-interaction-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "81318454a02a5df881c8dac51986eaac40362b71c77ca827fb22f9cd30710e74",
+  "interaction_catalog": "outputs/v149-fresh-closed-interaction-population/design/interaction-catalog.json",
+  "interaction_catalog_sha256": "7b01bcc54a23c4b197449d1fe51e56bc5906c14fda43fe91f5da9987d352c08d",
+  "lock_payload_sha256": "5a3ec05e9725bfa305bbcf6421e4608b97b9b6dab41b07de26ad90b1eecd7965",
+  "outcome": {
+    "decision": "freeze_oracle_closed_interaction_policy_feasible_authorize_local_proposal_protocol_design_only",
+    "family_metrics": {
+      "library_transfer_vs_record_erasure": {
+        "episode_count": 8,
+        "improvement": 0.7,
+        "mean_cost": 0.3,
+        "mean_no_query_cost": 1.0
+      },
+      "library_transfer_vs_specimen_courier": {
+        "episode_count": 8,
+        "improvement": 0.7,
+        "mean_cost": 0.3,
+        "mean_no_query_cost": 1.0
+      },
+      "meal_kit_pause_vs_medication_delivery_pause": {
+        "episode_count": 8,
+        "improvement": 0.7,
+        "mean_cost": 0.3,
+        "mean_no_query_cost": 1.0
+      },
+      "owned_camera_lens_vs_borrowed_instrument_protection": {
+        "episode_count": 8,
+        "improvement": 0.7,
+        "mean_cost": 0.3,
+        "mean_no_query_cost": 1.0
+      },
+      "veterinary_visit_vs_mobile_grooming_visit": {
+        "episode_count": 8,
+        "improvement": 0.7,
+        "mean_cost": 0.3,
+        "mean_no_query_cost": 1.0
+      },
+      "veterinary_visit_vs_record_erasure": {
+        "episode_count": 8,
+        "improvement": 0.7,
+        "mean_cost": 0.3,
+        "mean_no_query_cost": 1.0
+      }
+    },
+    "language_proposal_and_query_ranking_remain_unproven": true,
+    "metrics": {
+      "API_call_count": 0,
+      "actual_execution_count": 0,
+      "authoritative_true_hypothesis_retention": 1.0,
+      "candidate_and_query_proposal_invariance": 1.0,
+      "candidate_proposal_count": 7,
+      "correct_query_selection_rate": 1.0,
+      "episode_count": 48,
+      "evaluation_language_read_count": 0,
+      "false_known_on_nonknown_truth": 0.0,
+      "final_exact_accuracy": 1.0,
+      "group_count": 24,
+      "improvement_over_no_query": 0.6999999999999998,
+      "irrelevant_query_fail_closed_rate": 1.0,
+      "model_generation_or_score_count": 0,
+      "model_load_count": 0,
+      "no_query_mean_decision_cost": 1.0,
+      "policy_evaluation_count": 2352,
+      "query_proposal_count": 7,
+      "resolved_per_query": 1.0,
+      "safe_nonknown_on_nonknown_truth": 1.0,
+      "sequential_mean_decision_cost": 0.3,
+      "training_run_count": 0,
+      "truth_counts": {
+        "K41": 8,
+        "K42": 4,
+        "K43": 8,
+        "K44": 4,
+        "N00": 16,
+        "U40": 8
+      }
+    },
+    "oracle_closed_interaction_policy_feasible": true,
+    "passed": true
+  },
+  "parent_outcome": "configs/v149-fresh-closed-interaction-population-outcome-lock.json",
+  "parent_outcome_sha256": "af9947170f410639e1c644d31e63694c4523b4a9a9fb2a6e8e4e56a3d17152db",
+  "plan": "docs/v150-oracle-closed-interaction-policy-plan.md",
+  "plan_sha256": "75ba698d98c9850862bd1a864b81c1c843d17ea698f8d23b241f101cda1cc300",
+  "protocol": "python/v150_oracle_closed_interaction_policy.py",
+  "protocol_sha256": "e45612319f06ef0802656e08f908841498d7fdb9c902fc4c0eae5128833a6ddc",
+  "results_document": "docs/v150-oracle-closed-interaction-policy-results.md",
+  "results_document_sha256": "84c7ac83c500fcb8aad79ff6c0c50e8c7d067b9aae031aaa47b31d3ade8e188c",
+  "runner": "python/run_and_freeze_v150_oracle_closed_interaction_policy.py",
+  "runner_sha256": "36da8cdec097ccf67bb1c8d384f8e9f49182d41b5eeb18f7f7f39db5218c0c7c",
+  "schema_version": "150-oracle-closed-interaction-policy-outcome-lock",
+  "tests": "python/test_v150_oracle_closed_interaction_policy.py",
+  "tests_sha256": "02b3d5cbbae0bd4c8448a5e9b7568ace9c8f8616b11a5c9ca37d5cf4a73bceda",
+  "witness_config": "configs/v149-fresh-closed-interaction-population.json",
+  "witness_config_sha256": "e84940471c0d06e8e7c3d3c87e63724ed33f39684bd77d450e84c67d941774be"
+}

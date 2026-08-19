@@ -1,0 +1,82 @@
+{
+  "auditor": "python/audit_and_freeze_v149_fresh_closed_interaction_population.py",
+  "auditor_sha256": "e3d2dc4d011aca84f906fe2897bcc4eb389a87b4352b0c716f590a492fbb4c2c",
+  "authorization": {
+    "open_evaluation_language_during_oracle_policy": false,
+    "run_API_training_calibration_induction_authority_action_or_execution": false,
+    "run_language_or_model_before_separate_preregistration": false,
+    "run_model_free_oracle_interaction_policy": true,
+    "use_retired_V146_test_or_mine_V147": false
+  },
+  "config": "configs/v149-fresh-closed-interaction-population.json",
+  "config_sha256": "e84940471c0d06e8e7c3d3c87e63724ed33f39684bd77d450e84c67d941774be",
+  "design_audit": "outputs/v149-fresh-closed-interaction-population/design-audit.json",
+  "design_audit_sha256": "67345c30591fe58f0edc5d2a7a6bbde9f17d8e08be43fb261d13677ddc7efb11",
+  "experiment": "v149_fresh_typed_witness_closed_interaction_population",
+  "hidden_fixtures": "outputs/v149-fresh-closed-interaction-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "81318454a02a5df881c8dac51986eaac40362b71c77ca827fb22f9cd30710e74",
+  "interaction_catalog": "outputs/v149-fresh-closed-interaction-population/design/interaction-catalog.json",
+  "interaction_catalog_sha256": "7b01bcc54a23c4b197449d1fe51e56bc5906c14fda43fe91f5da9987d352c08d",
+  "lock_payload_sha256": "0da85d439613e552730b7c8ff53fa3433d9074b5834077980962b3d9a6081d24",
+  "outcome": {
+    "closed_answer_witness_routing": 1.0,
+    "decision": "freeze_fresh_closed_interaction_population_authorize_oracle_policy_only",
+    "fresh_closed_interaction_population_pass": true,
+    "passed": true,
+    "preanswer_fail_closed_rate": 1.0,
+    "summary": {
+      "choice_count": 7,
+      "closed_answer_fixture_count": 96,
+      "family_count": 6,
+      "fixture_count": 288,
+      "group_count": 48,
+      "language_class_counts": {
+        "insufficient_evidence": 48,
+        "known_closed_answer": 48,
+        "known_familiar": 48,
+        "known_unfamiliar": 48,
+        "novel_candidate": 32,
+        "novel_candidate_closed_answer": 32,
+        "unsupported": 16,
+        "unsupported_closed_answer": 16
+      },
+      "query_count": 6,
+      "split_counts": {
+        "development": 144,
+        "evaluation": 144
+      },
+      "stage_counts": {
+        "closed_answer_known": 48,
+        "closed_answer_right": 48,
+        "request_ambiguous": 48,
+        "request_known_familiar": 48,
+        "request_known_unfamiliar": 48,
+        "request_right": 48
+      },
+      "truth_counts": {
+        "A00": 48,
+        "K41": 48,
+        "K42": 24,
+        "K43": 48,
+        "K44": 24,
+        "N00": 64,
+        "U40": 32
+      }
+    }
+  },
+  "parent_outcome": "configs/v148-typed-witness-firewall-outcome-lock.json",
+  "parent_outcome_sha256": "37f08b8dc392f57088ec8490bb5e431cf93f293a3ef1144a554c2b591918c688",
+  "plan": "docs/v149-fresh-closed-interaction-population-plan.md",
+  "plan_sha256": "02a412f4e10e64d4aed1c51264a1afe789dee1d3fb9d951fb2a129a8a26085bc",
+  "population_summary": "outputs/v149-fresh-closed-interaction-population/design/population-summary.json",
+  "population_summary_sha256": "b9cdbdb2c7dd96f738aa6d13e440a4add88e32741cab31f0552f2b05f2e020d5",
+  "protocol": "python/v149_fresh_closed_interaction_population.py",
+  "protocol_sha256": "0dcba10c9d4ba27fffde3f4d5f5ba4359f087ed384e3061e1db59600e8547cac",
+  "public_fixtures": "outputs/v149-fresh-closed-interaction-population/design/public-fixtures.json",
+  "public_fixtures_sha256": "9ac01f2714ff3196cbf06ca561037c574cba83abb26f295383fece86472c06f1",
+  "results_document": "docs/v149-fresh-closed-interaction-population-results.md",
+  "results_document_sha256": "e85e127c8820a841cf38253663f63b8778bcae8f82cd84747da348aeabbe1b42",
+  "schema_version": "149-fresh-closed-interaction-population-outcome-lock",
+  "tests": "python/test_v149_fresh_closed_interaction_population.py",
+  "tests_sha256": "a116f1877b9575031e7ccd4bfebe65cdaf2c4da02081c1ca18455e5da42fcdc8"
+}

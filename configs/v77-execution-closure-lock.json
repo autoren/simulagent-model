@@ -1,0 +1,24 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "claim_v77_scientific_outcome": false,
+    "preregister_fresh_successor_after_harness_passes": true,
+    "rerun_v77_or_v77r1": false,
+    "start_outcome_blind_successor_harness_hardening": true
+  },
+  "closure": "outputs/v77-structured-llm-interface/execution-closure.json",
+  "closure_auditor": "python/freeze_v77_execution_inconclusive.py",
+  "closure_auditor_sha256": "f47dd9872f3eef9e5c14905920c7427177ea3654519aff41222803b843485871",
+  "closure_sha256": "a0397a554aae3fce55ceb366fb66de5a2845781d6cd4bfd0bdc375c8183a46f3",
+  "experiment": "v77_clarification_execution_closure_lock",
+  "first_failure": "outputs/v77-structured-llm-interface/model-free-evaluation/failure.json",
+  "first_failure_sha256": "3577889fd52f68e59eec466d5600ef4a81acf614e000459e6c204d8f4fa1423c",
+  "lock_payload_sha256": "b9cf0a3cc52ea06996cf69caf7bbbd474140ef21fe69ac90a624d691dc8d4f07",
+  "parent_implementation_lock": "configs/v77-clarification-implementation-lock.json",
+  "parent_implementation_lock_sha256": "5d76dde36a17c27cea27b698956380a2d281e6450489579dc13b52dcfead11ee",
+  "retry_failure": "outputs/v77-structured-llm-interface/model-free-evaluation-r1/failure.json",
+  "retry_failure_sha256": "4b445ff3fc0c4418360d95bd53748f79efa2b91eec8a9089a043e7dd25ea8ce1",
+  "retry_lock": "configs/v77r1-clarification-execution-lock.json",
+  "retry_lock_sha256": "84c7c4d38f27ea23166e285595e530023987b126ddfa6c89e296e365986ec3d5",
+  "schema_version": "77-clarification-execution-closure-lock"
+}

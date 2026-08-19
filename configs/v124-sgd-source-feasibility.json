@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "124-sgd-source-feasibility-design",
+  "experiment": "v124_schema_guided_dialogue_controlled_open_set_source_feasibility",
+  "parentV123OutcomeLock": "configs/v123-fresh-population-availability-audit-outcome-lock.json",
+  "sourceMetadata": "outputs/v124-sgd-source-feasibility/source-metadata.json",
+  "officialRepository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "archiveUrl": "https://codeload.github.com/google-research-datasets/dstc8-schema-guided-dialogue/tar.gz/e852981ae34990f4358979625854259302feaa78",
+  "license": "CC BY-SA 4.0",
+  "sourceRole": "candidate_external_schema_defined_controlled_open_set_transfer",
+  "claimBoundary": "automatic source and structural-label feasibility only; no language examples, retrieval signal, trigger, model, policy, or utility evaluated",
+  "candidateDefinition": {
+    "partitions": ["train", "dev", "test"],
+    "unit": "USER turn with exactly one INFORM_INTENT action and one matching non-NONE active intent",
+    "declaredKnown": "test service and intent pair present in train schemas",
+    "novelValid": "test service and intent pair absent from train schemas but service domain present in train schemas",
+    "unsupported": "test service domain absent from train schemas",
+    "domainRule": "service_name with final numeric suffix removed and lowercased",
+    "emitUtteranceOrSlotValues": false,
+    "manualLanguageInspection": false
+  },
+  "sourceGates": {
+    "minimumDialogueCount": 16000,
+    "minimumDomainCount": 16,
+    "minimumServiceCount": 40,
+    "minimumIntentCount": 60,
+    "minimumIntentIntroductionCandidateCount": 1000,
+    "minimumTrainCandidateCount": 500,
+    "minimumTestCandidateCountPerOpenSetClass": 64,
+    "minimumKnownTestDomainCoverage": 3,
+    "minimumNovelValidTestDomainCoverage": 2,
+    "minimumUnsupportedTestDomainCoverage": 2,
+    "requiredPartitions": ["train", "dev", "test"],
+    "requiredLicenseSubstring": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "requireSchemaIntentMembership": true,
+    "requireUniqueCandidateIdentifiers": true,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualLanguageInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumArchivePayloadDownloadCount": 1,
+    "maximumSourceArchiveReadCount": 1,
+    "maximumAutomaticLanguageParseCount": 1,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceAndAccessGatePasses": "freeze_positive_SGD_controlled_open_set_source_feasibility",
+    "otherwise": "reject_SGD_source_for_current_transfer_without_gate_relaxation",
+    "passAuthorizesOnlyTextFreeCatalogAndPopulationPreregistration": true,
+    "passAuthorizesImmediateSelectedLanguageSignalTriggerOrModelEvaluation": false,
+    "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+  },
+  "preLockExposure": {
+    "metadataOnlyRequestCount": 2,
+    "archivePayloadDownloadCount": 0,
+    "languageRecordInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0
+  }
+}

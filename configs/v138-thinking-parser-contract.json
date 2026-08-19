@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "138-thinking-parser-contract",
+  "experiment": "v138_qwen_thinking_template_parser_contract_audit",
+  "parentV137OutcomeLock": "configs/v137-direct-vs-thinking-realization-outcome-lock.json",
+  "V137Result": "outputs/v137-direct-vs-thinking-realization/model-realization/result.json",
+  "V137Protocol": "python/v137_direct_vs_thinking_realization.py",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "templateFilename": "chat_template.jinja",
+  "claimBoundary": "model-free audit of the frozen Qwen chat-template and generated-suffix parser contract; not a retrospective reparse, semantic rescore, model-performance result, external-language result, or authority for V134, APIs, training, induction, action, or execution",
+  "expectedFrozenMetadata": {
+    "thinkingFixtureCount": 100,
+    "unclosedThinkingTraceCount": 93,
+    "invalidFinalJsonCount": 7,
+    "thinkingTracePresenceCount": 93,
+    "maximumTokenCount": 512,
+    "maximumTokenHitCount": 7
+  },
+  "correctedContract": {
+    "thinkingPromptBeginsWithOpenTag": true,
+    "generatedSuffixInitialThinkDepth": 1,
+    "requireExactlyOneTransitionToClosedDepth": true,
+    "requireNoThinkingTagsAfterClosure": true,
+    "requireExactFinalJsonObject": true,
+    "invalidOutputMapsTo": "A00",
+    "directPromptSuppliesClosedEmptyTrace": true,
+    "directGeneratedSuffixRequiresExactJsonAndNoThinkingTags": true
+  },
+  "auditGates": {
+    "requirePinnedTemplateHashMatch": true,
+    "requireTemplatePromptOpenForThinking": true,
+    "requireTemplateEmptyClosedTraceForDirect": true,
+    "requireOldParserRejectsCanonicalPromptOpenedSuffix": true,
+    "requireCorrectedParserAcceptsCanonicalPromptOpenedSuffix": true,
+    "requireCorrectedParserRejectsMissingClose": true,
+    "requireCorrectedParserRejectsTagsAfterClose": true,
+    "requireCorrectedDirectParserAcceptsExactJson": true,
+    "requireCorrectedDirectParserRejectsTrace": true,
+    "requireFrozenMetadataExact": true,
+    "requireNoRawResponseOrTraceRead": true,
+    "requireNoRetrospectiveSemanticRescore": true,
+    "maximumModelLoads": 0,
+    "maximumModelGenerations": 0,
+    "maximumV134LanguageReads": 0,
+    "maximumExternalLanguageReads": 0,
+    "maximumAPICalls": 0,
+    "maximumActualExecutions": 0
+  },
+  "decisionRule": {
+    "ifAllGatesPass": "freeze_parser_contract_authorize_fresh_repaired_V135_development_comparison_only",
+    "otherwise": "reject_recovery_and_close_thinking_branch",
+    "authorizeRetrospectiveV137Rescore": false,
+    "authorizeV137RerunOrTestReuse": false,
+    "authorizeFreshV135DevelopmentPreregistration": true,
+    "authorizeV134LanguageOrExternalTransfer": false,
+    "authorizeAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

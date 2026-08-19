@@ -1,0 +1,166 @@
+{
+  "access": "outputs/v85-local-adversarial-generator/evaluation/access.json",
+  "access_sha256": "1d017eaaf2aaf5ca1c812d63f7281d9f7f47f3a95458452a518c4f2d7aff5156",
+  "audit": "outputs/v85-local-adversarial-generator/outcome-audit.json",
+  "audit_sha256": "2cb4c2696b3bb3e95cdee0f1ab83505e20a3d31101ef403351e038eb9481cb11",
+  "authorization": {
+    "access_local_or_API_model_or_train_adapter": false,
+    "add_V85_outputs_to_frozen_V84_suite": false,
+    "modify_or_rerun_V85": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "preregister_model_free_partial_option_validator_correction": true,
+    "use_V85_generated_outputs_as_deployable_surfaces": false
+  },
+  "experiment": "v85_local_adversarial_generator_outcome_lock",
+  "implementation_lock": "configs/v85-local-adversarial-generator-implementation-lock.json",
+  "implementation_lock_sha256": "2eac87aa22bec3ab2c9551a61e2b2538e07a08ab5572e3089945b01dbb0734e8",
+  "lock_payload_sha256": "3f0d44aefaa1d58abac34305ddfc8e270fc0591f459757ba698d8312fdfea5f1",
+  "outcome": {
+    "decision": "freeze_negative_V85_without_prompt_edit_or_rerun",
+    "metrics": {
+      "detected_defect_categories": [
+        "required_choice_missing_or_repeated",
+        "structural",
+        "unrequested_choice"
+      ],
+      "detected_defect_category_count": 3,
+      "exact_JSON_parse_rate": 1.0,
+      "extra_field_count": 0,
+      "novel_beyond_V84_mutation_rate": 0.5,
+      "per_schema_strict_content_invalid_rate": {
+        "file_lifecycle": 1.0,
+        "incident_response": 0.3333333333333333,
+        "inventory_control": 0.0,
+        "project_workflow": 0.6666666666666666
+      },
+      "permanent_non_deployable_rate": 1.0,
+      "record_count": 24,
+      "schema_count": 4,
+      "schema_counts": {
+        "file_lifecycle": 6,
+        "incident_response": 6,
+        "inventory_control": 6,
+        "project_workflow": 6
+      },
+      "schema_valid_question_rate": 0.625,
+      "strict_content_invalid_rate": 0.5,
+      "typed_target_count": 12,
+      "unique_question_count": 9
+    },
+    "passed": false,
+    "post_outcome_stricter_diagnostic": {
+      "false_positive_ids": [
+        "v85-project-operation-subtle"
+      ],
+      "partial_unrequested_option_injection_count": 16,
+      "provenance_prevented_false_positive_deployment": true,
+      "registered_validator_false_positive_count": 1,
+      "stricter_schema_valid_content_invalid_rate": 0.5416666666666666
+    }
+  },
+  "raw_fixture_artifacts": [
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/000-v85-project-operation-subtle.json",
+      "sha256": "3d6d8073a942dc9190d9b51e4d76b87018c1be3ab3e8b233d7cd9d5336c71812"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/001-v85-project-operation-aggressive.json",
+      "sha256": "fac3eb5355b3723a4f6e748c7fa8be3534ca83caf1bef8c97660964f96715806"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/002-v85-project-recipient-subtle.json",
+      "sha256": "ad1d6640fce376ebc0a0dc56c6a15bc785e2c415573d5e0447fe326a1b1b62b1"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/003-v85-project-recipient-aggressive.json",
+      "sha256": "96b246dd89f2740e11599922bf100c81c697d5696252a3c3a9c99812a0b429f2"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/004-v85-project-all-subtle.json",
+      "sha256": "570e3a0394918c8e4482cbfb1417e6a9655b2adb8f7a71197c148aae1db7c246"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/005-v85-project-all-aggressive.json",
+      "sha256": "bb704890769b9c18549542210324d4d01a0691f9574cbccf5d448ea0180049e3"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/006-v85-file-operation-subtle.json",
+      "sha256": "35b8ad877fbc750506bf0da61527083f1ad141dfb0543016182c465b532ea443"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/007-v85-file-operation-aggressive.json",
+      "sha256": "6168c949fbc82a734f53fe5268b206f3cc22e898537c67a67f89306543ed576a"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/008-v85-file-destination-subtle.json",
+      "sha256": "26260e75b2b33996cae0f7473ae2ed6da3169219b998752c87f9604f586cfe15"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/009-v85-file-destination-aggressive.json",
+      "sha256": "fdc82a162f593b9be6cfb597731f69c6b43f133712d58452386398edfb23faa1"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/010-v85-file-all-subtle.json",
+      "sha256": "1b4d5f7543a1ab729ff89fa1302b699a1a115d599f2656bcabc7832967434ac1"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/011-v85-file-all-aggressive.json",
+      "sha256": "1d2b51b427b978aaebd4e871730a4a877c8ebac17af947326905c5b31aaa9fa1"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/012-v85-incident-operation-subtle.json",
+      "sha256": "ef4117917ba06d8eade19349b3766d971d874ea8cbc92b793d89114b013e7f59"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/013-v85-incident-operation-aggressive.json",
+      "sha256": "379d100c2d56d447d1e74dfa3657492a1c1178c73eab44ac6abad3cdcddf43dc"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/014-v85-incident-service-subtle.json",
+      "sha256": "606c9c5f44eba84d17c80f9676bce2bba7eaaf706d27e5d80727e574e00bda8f"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/015-v85-incident-service-aggressive.json",
+      "sha256": "65a612fa608c400e2862bc1bd6f23b4bd08188c93c2c79e33a6861cf460b5a3b"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/016-v85-incident-all-subtle.json",
+      "sha256": "8307483bfbd4c415220108a8bc1d2b25dd9af0ebbc5c0884d46b78670e056c0e"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/017-v85-incident-all-aggressive.json",
+      "sha256": "d47cd96a0485424947cfc3e016c49f3dc8e5149be8a7bf0c0051f1adf3c73b1e"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/018-v85-inventory-operation-subtle.json",
+      "sha256": "7ef4946f5ed4cf6918d558b8869e0d16cea0d9cb6d7685aa3a960df807baf0bf"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/019-v85-inventory-operation-aggressive.json",
+      "sha256": "a900a59a8f121c3f779b1239b931b55d1ecf05e7aac1b0beb4d3f357339efcc0"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/020-v85-inventory-item-subtle.json",
+      "sha256": "112393375388d1090db73d5e5f6f05e49513709ae4adf08983c7585170503a68"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/021-v85-inventory-item-aggressive.json",
+      "sha256": "b18b2e9389ce91ce97f76a1284785a604313c4af93f458727a61eb051e9ea72d"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/022-v85-inventory-all-subtle.json",
+      "sha256": "0c7ea9f330e18f582bda6dd7f1576e6745d08f1e021dcdce7985509eccdfaa8f"
+    },
+    {
+      "path": "outputs/v85-local-adversarial-generator/evaluation/raw-fixtures/023-v85-inventory-all-aggressive.json",
+      "sha256": "56ef8b66945f68401617a337c4a2d18aded03ee8c255d4e2ffd47bfbeefd133f"
+    }
+  ],
+  "result": "outputs/v85-local-adversarial-generator/evaluation/result.json",
+  "result_sha256": "51534b2f385da7d2949818ea69b30872f97e76662d5daa0eb1259d4c4db72c66",
+  "results_document": "docs/v85-local-adversarial-generator-results.md",
+  "results_document_sha256": "3f444053676ebfebe69e8136f4355171799f0e6db9fdb15c1e644d38d4f09c2d",
+  "schema_version": "85-local-adversarial-generator-outcome-lock",
+  "verifier": "python/verify_and_freeze_v85_adversarial_outcome.py",
+  "verifier_sha256": "ca1d14c84143a50de7a25c32123613b518a87c2c57cd0990a90cb6623fd2d621"
+}

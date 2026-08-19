@@ -1,0 +1,139 @@
+{
+  "analysis_lock": "configs/v113-known-disagreement-rescue-census-lock.json",
+  "analysis_lock_sha256": "bbd2c0f6526246ae6a09ac1f0b4f61c0ba0893c27a4b8a664709b1b538614c64",
+  "audit": "outputs/v113-known-disagreement-rescue-census/outcome-audit.json",
+  "audit_sha256": "8de32a920b9a765850c59eeb7baefdb40b3d5408ddbdd9941f7a4859864b6072",
+  "authorization": {
+    "modify_rerun_or_retune_V113": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_selected_rescue_on_new_disjoint_population": true,
+    "proceed_to_richer_sequential_decision_problem": false,
+    "proceed_to_schema_or_mechanic_induction": false,
+    "prune_hypotheses_define_capability_or_grant_belief_action_execution_authority": false,
+    "read_protected_test_before_separate_lock": false,
+    "run_additional_local_or_API_model_or_train_adapter": false,
+    "seek_new_evidence_or_policy_structure": false
+  },
+  "experiment": "v113_known_disagreement_rescue_census_outcome_lock",
+  "lock_payload_sha256": "8922d796c723da2bf336401dbeeb5f5de4caf360ec8c912821bd7fe3c1b60359",
+  "outcome": {
+    "decision": "freeze_selected_rescue_for_separately_locked_new_population_transfer",
+    "feasible_candidate_count": 80,
+    "feasible_rescue_exists": true,
+    "passed": true,
+    "selected": {
+      "feasible": true,
+      "gates": {
+        "controlled_missing_observation_abstention_accuracy": true,
+        "novel_evidence_ECE": true,
+        "novel_evidence_non_novel_false_positive_rate": true,
+        "novel_evidence_precision": true,
+        "novel_evidence_recall": true,
+        "policy_confidence_ECE": true,
+        "policy_false_known_acceptance_rate": true,
+        "policy_known_exact_intent_accuracy": true,
+        "policy_mean_decision_regret": true,
+        "policy_observed_exact_decision_accuracy": true,
+        "policy_observed_status_macro_f1": true,
+        "policy_top_confidence_80_percent_error": true,
+        "policy_unsupported_status_precision": true,
+        "policy_unsupported_status_recall": true,
+        "structured_response_validity": true,
+        "true_hypothesis_retention": true,
+        "zero_actual_execution": true
+      },
+      "metrics": {
+        "confidence_ece_10_bin": 0.02872054303278689,
+        "false_known_acceptance_rate": 0.0625,
+        "known_exact_intent_accuracy": 0.8229166666666666,
+        "mean_regret": 0.7838541666666666,
+        "novel_exact_scenario_accuracy": 0.0,
+        "observed_exact_decision_accuracy": 0.6458333333333334,
+        "observed_record_count": 192,
+        "observed_status_macro_f1": 0.6067655326160705,
+        "per_class": {
+          "known_familiar": {
+            "exact_decision_accuracy": 0.8958333333333334,
+            "mean_regret": 0.20833333333333334,
+            "record_count": 48
+          },
+          "known_unfamiliar": {
+            "exact_decision_accuracy": 0.75,
+            "mean_regret": 0.25,
+            "record_count": 48
+          },
+          "novel_valid": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 2.6145833333333335,
+            "record_count": 48
+          },
+          "unsupported": {
+            "exact_decision_accuracy": 0.9375,
+            "mean_regret": 0.0625,
+            "record_count": 48
+          }
+        },
+        "per_status": {
+          "KNOWN": {
+            "f1": 0.87292817679558,
+            "precision": 0.9294117647058824,
+            "prediction_count": 85,
+            "recall": 0.8229166666666666,
+            "true_positive_count": 79,
+            "truth_count": 96
+          },
+          "NOVEL": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "prediction_count": 0,
+            "recall": 0.0,
+            "true_positive_count": 0,
+            "truth_count": 48
+          },
+          "UNSUPPORTED": {
+            "f1": 0.9473684210526315,
+            "precision": 0.9574468085106383,
+            "prediction_count": 47,
+            "recall": 0.9375,
+            "true_positive_count": 45,
+            "truth_count": 48
+          }
+        },
+        "predicted_decision_correctness_brier": 0.04190092181621204,
+        "record_count": 192,
+        "structured_response_validity": 1.0,
+        "top_confidence_80_percent_coverage": 0.8020833333333334,
+        "top_confidence_80_percent_error": 0.19480519480519476
+      },
+      "normalized_violation": 0,
+      "novel_evidence_metrics": {
+        "Brier": 0.12371851915230625,
+        "ECE_10_bin": 0.04943628541759383,
+        "f1": 0.6947368421052632,
+        "false_negative": 15,
+        "false_positive": 14,
+        "non_novel_false_positive_rate": 0.09722222222222222,
+        "precision": 0.7021276595744681,
+        "prediction_count": 47,
+        "recall": 0.6875,
+        "true_negative": 130,
+        "true_positive": 33
+      },
+      "passed_gate_count": 17,
+      "rescued_count": 4,
+      "rule": {
+        "complexity": 2,
+        "family": "proposal_score_and_gap",
+        "maximum_gap": 0.15,
+        "minimum_score": 0.6
+      }
+    }
+  },
+  "result": "outputs/v113-known-disagreement-rescue-census/historical-census/result.json",
+  "result_sha256": "c7f908649fdc95ed7cb7f72781fe60cd4eb3a4425149bf1f8c900eec07b82113",
+  "results_document": "docs/v113-known-disagreement-rescue-census-results.md",
+  "results_document_sha256": "fd69ec97026a7322781f0a3040157b31f411f885b36557fa941839c482b5e8b3",
+  "schema_version": "113-known-disagreement-rescue-census-outcome-lock",
+  "verifier": "python/verify_and_freeze_v113_rescue_outcome.py",
+  "verifier_sha256": "f73174b966aeac9ed0cee5063b51c905d37620b33f4008d2287f20476c1f7e0a"
+}

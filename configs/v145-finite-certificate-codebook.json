@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "145-finite-certificate-codebook",
+  "experiment": "v145_model_free_finite_registered_certificate_codebook",
+  "parentV144OutcomeLock": "configs/v144-local-certificate-realization-outcome-lock.json",
+  "claimBoundary": "model-free structural feasibility of a finite registered certificate codebook and future score-all-alternatives interface; not model performance, language evidence, calibration, semantic validation, test authorization, induction, authority, action, or execution",
+  "choiceIds": ["K11", "K12", "K13", "K14", "N11", "N12", "N13", "U10", "A00"],
+  "ambiguousPairs": [
+    ["K11", "N11"],
+    ["K12", "N12"],
+    ["K14", "N13"],
+    ["K13", "U10"],
+    ["K13", "N11"],
+    ["K12", "U10"]
+  ],
+  "abstractPopulation": {
+    "familyCount": 6,
+    "groupsPerFamily": 8,
+    "groupCount": 48,
+    "stagesPerGroup": 6,
+    "fixtureCount": 288,
+    "stages": ["clear_known_familiar", "clear_known_unfamiliar", "clear_right", "ambiguous", "clarified_known", "clarified_right"]
+  },
+  "futureInterface": {
+    "method": "score_every_registered_certificate_code_as_a_closed_alternative_without_free_form_generation",
+    "registeredAlternativeCount": 14,
+    "freeFormReasoningOrCertificateGeneration": false,
+    "invalidOrUnavailableScoreVectorMapsTo": "A00",
+    "scoreVectorIsNonAuthoritative": true,
+    "semanticCorrectnessStillRequiresFreshEmpiricalEvidence": true,
+    "sameModelScoresMustNotBeTreatedAsIndependentEvidence": true
+  },
+  "gates": {
+    "requiredCodeCount": 14,
+    "requiredSufficientCodeCount": 8,
+    "requiredInsufficientCodeCount": 6,
+    "requiredUniqueCertificateCount": 14,
+    "requiredAbstractFixtureCount": 288,
+    "requiredOracleCodeValidity": 1.0,
+    "requiredOracleCertificateExactAccuracy": 1.0,
+    "requiredOracleFinalChoiceExactAccuracy": 1.0,
+    "requiredInvalidCodeFailClosedRate": 1.0,
+    "requiredDeterministicFinalOutputValidity": 1.0,
+    "requiredRegisteredWrongSingletonSemanticLimitation": true,
+    "requiredAuthoritativeTrueHypothesisRetention": 1.0,
+    "maximumProjectLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryStructuralOracleMutationAndAccessGatePasses": "freeze_finite_codebook_feasible_authorize_fresh_codebook_scoring_population_and_protocol_design_only",
+    "otherwise": "close_finite_codebook_branch",
+    "passAuthorizesLanguageOrModelRun": false,
+    "passAuthorizesV142TestAccess": false,
+    "passAuthorizesAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

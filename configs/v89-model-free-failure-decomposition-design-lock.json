@@ -1,0 +1,84 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "evaluate_identifier_only_artifacts_once": true,
+    "modify_population_views_or_decision_rule": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "read_source_language_or_prompts": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "decisionRule": {
+      "ifPerfectSerializationPlusStateFailsIntentGates": "pause external local-model integration entirely",
+      "ifPerfectSerializationPlusStatePassesIntentGates": "authorize only preregistration of a model-free state-accumulation feasibility study before any later intent-only model experiment",
+      "ifPerfectSerializationStillFailsAnySemanticGate": "rule out constrained decoding or JSON repair as a sufficient successor",
+      "passAuthorizesModelOrAPIAccess": false,
+      "passAuthorizesTrainingDeploymentOrExecution": false
+    },
+    "experiment": "v89_v88r1_failure_decomposition_without_language_or_model_access",
+    "gates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceLanguageAccessCount": 0,
+      "minimumRawRowReconstructionRate": 1.0,
+      "minimumStrictMetricReconstructionRate": 1.0,
+      "requiredRawFixtureCount": 48,
+      "requiredRecordCount": 48
+    },
+    "intentOracleRule": "replace intent candidates with gold while retaining the view's state slot-key candidates",
+    "parentOutcomeLock": "configs/v88r1-external-intent-candidate-outcome-lock.json",
+    "perfectSerializationRule": "for every nonconforming row only, optimistically replace both predicted sets with gold and mark structure conforming; retain every conforming row unchanged",
+    "population": {
+      "recordCount": 48,
+      "recordReplacementAllowed": false,
+      "sourceUtteranceOrPromptAccessAllowed": false,
+      "useEveryFrozenRawFixture": true
+    },
+    "purpose": "determine whether perfect serialization repair alone could satisfy the frozen V88 gates, and localize the remaining intent-versus-state bottleneck",
+    "registeredDiagnostics": [
+      "joint intent-exact by state-exact quadrant among conforming rows",
+      "malformed count by service and active-versus-NONE label",
+      "strict and conditional metrics",
+      "state target cardinality buckets",
+      "original gate outcomes for every registered counterfactual view"
+    ],
+    "registeredViews": [
+      "strict_frozen_outcome",
+      "perfect_serialization_upper_bound",
+      "perfect_state_oracle_with_strict_intents",
+      "perfect_intent_oracle_with_strict_state",
+      "perfect_serialization_plus_state_oracle",
+      "perfect_serialization_plus_intent_oracle",
+      "full_oracle"
+    ],
+    "schemaVersion": "89-model-free-failure-decomposition-design",
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "auditAndFreezeDesign": true,
+      "evaluateFrozenIdentifierOnlyArtifacts": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "readSourceUtterancesOrPrompts": false,
+      "trainAdapter": false
+    },
+    "stateOracleRule": "replace state slot-key candidates with gold while retaining the view's intent candidates"
+  },
+  "design": "configs/v89-model-free-failure-decomposition-design.json",
+  "design_audit": "outputs/v89-model-free-failure-decomposition/design-audit.json",
+  "design_audit_sha256": "4d69992c4a6c02db400d954278d8b93c922432c22135d0fb5f63110cd82725bf",
+  "design_auditor": "python/audit_and_freeze_v89_failure_decomposition_design.py",
+  "design_auditor_sha256": "7864fbb111a8c9ce8c4f7383d62227999284e7a2ee04e9f9961db4cc1d337731",
+  "design_sha256": "480af53a43ebddd47df722ff5a833babce265caba7ac862a153e0b68fc9fa9cb",
+  "experiment": "v89_failure_decomposition_design_lock",
+  "lock_payload_sha256": "5f7bd93e756053c1d2110a8a088d18e8618e376a82454110f30882bf6c21814b",
+  "parent_V88r1_outcome_lock": "configs/v88r1-external-intent-candidate-outcome-lock.json",
+  "parent_V88r1_outcome_lock_sha256": "a310b230492e00650fd28a2db6024d731ad08b74d7c06912b8a9877d7e9f7ab2",
+  "plan": "docs/v89-model-free-failure-decomposition-plan.md",
+  "plan_sha256": "bf8ad99047ad6c40e5f98c1fd9e2ac44e50e775d84424b0532af978db9251eae",
+  "schema_version": "89-model-free-failure-decomposition-design-lock"
+}

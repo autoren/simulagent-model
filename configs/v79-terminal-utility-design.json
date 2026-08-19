@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "79-terminal-utility-design-delta",
+  "experiment": "v79_explicit_unresolved_terminal_utility_successor",
+  "purpose": "targeted model-free successor to V78 that assigns explicit utility to unresolved active belief at horizon exhaustion",
+  "parentOutcome": "V78 negative benchmark-design result with the sole failed gate unknown_has_safe_unknown_continuation",
+  "inheritExactlyFromV78": [
+    "hypothesesInTieBreakOrder",
+    "actionsInTieBreakOrder",
+    "observationsInSourceOrder",
+    "statesInSourceOrder",
+    "sharedParameters",
+    "positiveRewardProfile",
+    "dominantControlRewardProfile",
+    "fixtures",
+    "benchmarkGates",
+    "controls"
+  ],
+  "terminalUtility": {
+    "activeUnresolvedAtHorizonExhaustion": -6.0,
+    "terminalStateAtHorizonExhaustion": 0.0,
+    "requiredOrdering": "active unresolved < explicit abstain < safe preview",
+    "appliesToPlannerAndEveryControl": true
+  },
+  "additionalGates": {
+    "requiredV78PassedGateCount": 19,
+    "requiredV78FailedGateSet": ["unknown_has_safe_unknown_continuation"],
+    "requiredActiveUnresolvedTerminalUtility": -6.0,
+    "requiredTerminalStateTerminalUtility": 0.0,
+    "requireAllInheritedV78Gates": true,
+    "requireTerminalUtilityReplayAgreement": true
+  },
+  "claimBoundary": {
+    "projectAuthoredDevelopmentMechanism": true,
+    "targetedSuccessorToFrozenNegativeResult": true,
+    "modelFreeStage": true,
+    "localModelEvidence": false,
+    "APIModelEvidence": false,
+    "humanLanguageEvidence": false,
+    "externalBenchmarkEvidence": false,
+    "openWorldSafety": false,
+    "executionAuthority": false
+  },
+  "decisionRule": {
+    "ifEveryInheritedAndAdditionalGatePasses": "freeze V79 and authorize preregistration of frozen local-model candidate generation",
+    "ifAnyGateFails": "freeze V79 failure without changing the terminal utility or inherited V78 design",
+    "passAuthorizesLocalModelForwardPassesImmediately": false,
+    "passAuthorizesAPIAccess": false,
+    "passAuthorizesLoRA": false,
+    "passAuthorizesLearnedLikelihoods": false,
+    "passAuthorizesExecutionAuthority": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "implementTerminalUtilityPlanner": false,
+    "computePlannerOutcomes": false,
+    "accessLocalModel": false,
+    "accessAPIModel": false,
+    "trainAdapter": false,
+    "collectHumanLanguage": false,
+    "performRealToolCall": false,
+    "performExternalSideEffect": false
+  }
+}

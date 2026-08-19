@@ -1,0 +1,172 @@
+{
+  "analysis_lock": "configs/v120-selective-query-value-audit-lock.json",
+  "analysis_lock_sha256": "81e212f6a733a06cf7cc528ffb2f5f8b16937a5d22171b134a34acfc8c4525c8",
+  "audit": "outputs/v120-selective-query-value-audit/outcome-audit.json",
+  "audit_sha256": "ce98cbaae7711f0713937b549f824b4943fa884365db2e6fbecbd80095ef75a4",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "modify_rerun_or_retune_V120": false,
+    "preregister_model_free_prequery_trigger_feasibility_audit": true,
+    "retune_V119_or_discount_cost": false,
+    "run_API_training_action_or_execution": false,
+    "run_language_model_or_protected": false
+  },
+  "experiment": "v120_selective_query_value_outcome_lock",
+  "lock_payload_sha256": "22681cb546d52006f58cc7fc4ce3b4378180c225172e33bbee08b2ef5486e767",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "selective_query_value_boundary_derived_requires_independent_prequery_trigger",
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "baseline_mean_regret": 0.7760416666666666,
+      "conditions": [
+        {
+          "condition_id": "moderate_candidate@0.00",
+          "decision_regret_excluding_query_cost": 0.4408838500976631,
+          "decision_value_relative_to_baseline": 0.3351578165690035,
+          "fails_baseline": false,
+          "maximum_affordable_average_query_cost": 0.3351578165690035,
+          "minimum_zero_loss_skip_fraction": 0.0,
+          "regret_excess_over_baseline": 0.0,
+          "total_regret": 0.7408838500976631
+        },
+        {
+          "condition_id": "moderate_candidate@0.25",
+          "decision_regret_excluding_query_cost": 0.47195262145996203,
+          "decision_value_relative_to_baseline": 0.3040890452067046,
+          "fails_baseline": false,
+          "maximum_affordable_average_query_cost": 0.3040890452067046,
+          "minimum_zero_loss_skip_fraction": 0.0,
+          "regret_excess_over_baseline": 0.0,
+          "total_regret": 0.771952621459962
+        },
+        {
+          "condition_id": "moderate_candidate@0.50",
+          "decision_regret_excluding_query_cost": 0.4692025451660247,
+          "decision_value_relative_to_baseline": 0.3068391215006419,
+          "fails_baseline": false,
+          "maximum_affordable_average_query_cost": 0.3068391215006419,
+          "minimum_zero_loss_skip_fraction": 0.0,
+          "regret_excess_over_baseline": 0.0,
+          "total_regret": 0.7692025451660247
+        },
+        {
+          "condition_id": "strong_candidate@0.00",
+          "decision_regret_excluding_query_cost": 0.4408838500976631,
+          "decision_value_relative_to_baseline": 0.3351578165690035,
+          "fails_baseline": false,
+          "maximum_affordable_average_query_cost": 0.3351578165690035,
+          "minimum_zero_loss_skip_fraction": 0.0,
+          "regret_excess_over_baseline": 0.0,
+          "total_regret": 0.7408838500976631
+        },
+        {
+          "condition_id": "strong_candidate@0.25",
+          "decision_regret_excluding_query_cost": 0.47195262145996203,
+          "decision_value_relative_to_baseline": 0.3040890452067046,
+          "fails_baseline": false,
+          "maximum_affordable_average_query_cost": 0.3040890452067046,
+          "minimum_zero_loss_skip_fraction": 0.0,
+          "regret_excess_over_baseline": 0.0,
+          "total_regret": 0.771952621459962
+        },
+        {
+          "condition_id": "strong_candidate@0.50",
+          "decision_regret_excluding_query_cost": 0.48656704711915105,
+          "decision_value_relative_to_baseline": 0.2894746195475156,
+          "fails_baseline": true,
+          "maximum_affordable_average_query_cost": 0.2894746195475156,
+          "minimum_zero_loss_skip_fraction": 0.035084601508281375,
+          "regret_excess_over_baseline": 0.010525380452484412,
+          "total_regret": 0.786567047119151
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.00",
+          "decision_regret_excluding_query_cost": 0.45737896728516253,
+          "decision_value_relative_to_baseline": 0.3186626993815041,
+          "fails_baseline": false,
+          "maximum_affordable_average_query_cost": 0.3186626993815041,
+          "minimum_zero_loss_skip_fraction": 0.0,
+          "regret_excess_over_baseline": 0.0,
+          "total_regret": 0.7573789672851625
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.25",
+          "decision_regret_excluding_query_cost": 0.4864998626708989,
+          "decision_value_relative_to_baseline": 0.28954180399576773,
+          "fails_baseline": true,
+          "maximum_affordable_average_query_cost": 0.28954180399576773,
+          "minimum_zero_loss_skip_fraction": 0.03486065334744086,
+          "regret_excess_over_baseline": 0.010458196004232256,
+          "total_regret": 0.7864998626708989
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.50",
+          "decision_regret_excluding_query_cost": 0.4774501037597753,
+          "decision_value_relative_to_baseline": 0.2985915629068913,
+          "fails_baseline": true,
+          "maximum_affordable_average_query_cost": 0.2985915629068913,
+          "minimum_zero_loss_skip_fraction": 0.00469479031036224,
+          "regret_excess_over_baseline": 0.001408437093108672,
+          "total_regret": 0.7774501037597753
+        }
+      ],
+      "decision": "selective_query_value_boundary_derived_requires_independent_prequery_trigger",
+      "failing_condition_count": 3,
+      "failing_conditions": [
+        {
+          "condition_id": "strong_candidate@0.50",
+          "decision_regret_excluding_query_cost": 0.48656704711915105,
+          "decision_value_relative_to_baseline": 0.2894746195475156,
+          "fails_baseline": true,
+          "maximum_affordable_average_query_cost": 0.2894746195475156,
+          "minimum_zero_loss_skip_fraction": 0.035084601508281375,
+          "regret_excess_over_baseline": 0.010525380452484412,
+          "total_regret": 0.786567047119151
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.25",
+          "decision_regret_excluding_query_cost": 0.4864998626708989,
+          "decision_value_relative_to_baseline": 0.28954180399576773,
+          "fails_baseline": true,
+          "maximum_affordable_average_query_cost": 0.28954180399576773,
+          "minimum_zero_loss_skip_fraction": 0.03486065334744086,
+          "regret_excess_over_baseline": 0.010458196004232256,
+          "total_regret": 0.7864998626708989
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.50",
+          "decision_regret_excluding_query_cost": 0.4774501037597753,
+          "decision_value_relative_to_baseline": 0.2985915629068913,
+          "fails_baseline": true,
+          "maximum_affordable_average_query_cost": 0.2985915629068913,
+          "minimum_zero_loss_skip_fraction": 0.00469479031036224,
+          "regret_excess_over_baseline": 0.001408437093108672,
+          "total_regret": 0.7774501037597753
+        }
+      ],
+      "fixed_clarification_cost": 0.3,
+      "individual_record_emission_count": 0,
+      "individual_record_read_count": 0,
+      "outcome_gates": {
+        "aggregate_only_no_record_reads_or_emissions": true,
+        "decision_regret_below_baseline_every_failing_condition": true,
+        "failing_conditions_exact": true,
+        "parent_accuracy_safety_control_and_misspecification_gates_pass": true,
+        "regret_excess_is_narrow": true,
+        "required_zero_loss_skip_fraction_is_small": true,
+        "zero_actual_execution": true
+      },
+      "outcome_pass": true,
+      "required_condition_count": 9
+    }
+  },
+  "result": "outputs/v120-selective-query-value-audit/audit/result.json",
+  "result_sha256": "23b3e36f190e2bad71dd364525104ae552a1b7141ae5f8d81b429b16b9de720e",
+  "results_document": "docs/v120-selective-query-value-audit-results.md",
+  "results_document_sha256": "ef975aa03573c1461335a5e704d3b0d323255ce703bccc5e0facbea80a331984",
+  "schema_version": "120-selective-query-value-outcome-lock",
+  "verifier": "python/verify_and_freeze_v120_selective_query_value_audit_outcome.py",
+  "verifier_sha256": "abeb1951f67ed1b317e58443bf2cf75790f12a1c2d3ec5bef1f51f21892fd805"
+}

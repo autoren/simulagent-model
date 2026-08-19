@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "98-test-schema-feasibility-design",
+  "experiment": "v98_sgd_test_schema_novel_family_feasibility",
+  "purpose": "establish before test-dialogue access whether the official SGD test schema contains at least four genuinely unexposed typed service families",
+  "parentSourceOutcomeLock": "configs/v97-aggregate-open-set-source-outcome-lock.json",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "developmentSchemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "testSchema": {
+    "path": "test/schema.json",
+    "byteSize": 54864,
+    "gitBlobSha1": "6cb0fc131da22b43bb4672ec89755f19e7d278ff",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/test/schema.json"
+  },
+  "testDialogueShardMetadataCount": 34,
+  "familyRule": {
+    "serviceIdentifierPattern": "^.+_[0-9]+$",
+    "familyIsPrefixBeforeFinalNumericSuffix": true,
+    "excludeEveryFamilyPresentInDevelopmentSchema": true,
+    "minimumTypedIntentCountPerEligibleService": 2,
+    "minimumSlotCountPerEligibleService": 1
+  },
+  "schemaGates": {
+    "minimumNovelServiceFamilyCount": 4,
+    "minimumEligibleNovelServiceCount": 4,
+    "minimumTestDialogueShardMetadataCount": 34,
+    "maximumEmittedIntentNameCount": 0,
+    "maximumEmittedIntentDescriptionCount": 0,
+    "maximumEmittedSlotNameCount": 0,
+    "maximumManualSchemaLanguageInspectionCount": 0,
+    "maximumTestDialoguePayloadAccessCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "GitHubTestDirectoryMetadataRequestCount": 1,
+    "testSchemaPayloadAccessCount": 0,
+    "testDialoguePayloadAccessCount": 0,
+    "manualSchemaLanguageInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySchemaGatePasses": "freeze the schema inventory and authorize preregistration of immutable test-dialogue source metadata before any dialogue payload access",
+    "ifAnySchemaGateFails": "stop before test-dialogue download, population selection, language extraction, or model access",
+    "passAuthorizesTestDialogueDownload": false,
+    "passAuthorizesLanguageExtractionOrModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

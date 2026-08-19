@@ -1,0 +1,81 @@
+{
+  "auditor": "python/audit_and_freeze_v146_fresh_codebook_population.py",
+  "auditor_sha256": "796ba58bc0d551773af54dd4d5b5b8db96eb53922e0083e810ae76cc2998f847",
+  "authorization": {
+    "open_or_generate_on_V142_test": false,
+    "preregister_closed_alternative_scoring_protocol": true,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_language_or_model_before_separate_preregistration": false
+  },
+  "certificate_codebook": "outputs/v146-fresh-codebook-population/design/certificate-codebook.json",
+  "certificate_codebook_sha256": "16ad0440e222f41d01018478a0211149a7a90bb1c6a541895fc8ec5304bf4aab",
+  "choice_catalog": "outputs/v146-fresh-codebook-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "45dd30bc53afea098839bc95c370385b00aae52dd173121353b0c82cb4ea7818",
+  "config": "configs/v146-fresh-codebook-population.json",
+  "config_sha256": "ad57f74895caa60fc910ad74dd2f81824537197f4e4669f5dc7e48688df54f3b",
+  "design_audit": "outputs/v146-fresh-codebook-population/design-audit.json",
+  "design_audit_sha256": "23a75479d86f5686efa0abc10d98bc485db6206ca610af30926453ea6baa83ae",
+  "experiment": "v146_fresh_controlled_codebook_scoring_population",
+  "hidden_fixtures": "outputs/v146-fresh-codebook-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "e45c5815df5afd93912267cf27d1fe1ad23e5e2b1980290679d8e2b69e23ca13",
+  "lock_payload_sha256": "2dbacb0e1654ba00fe039a58873c910f8a6782296687d24e2176dcbccab0ae38",
+  "outcome": {
+    "decision": "freeze_fresh_codebook_population_authorize_scoring_protocol_preregistration_only",
+    "fresh_population_and_codebook_pass": true,
+    "passed": true,
+    "summary": {
+      "choice_count": 9,
+      "family_count": 6,
+      "fixture_count": 288,
+      "group_count": 48,
+      "language_class_counts": {
+        "insufficient_evidence": 48,
+        "known_clarified": 48,
+        "known_familiar": 48,
+        "known_unfamiliar": 48,
+        "novel_valid": 32,
+        "novel_valid_clarified": 32,
+        "unsupported": 16,
+        "unsupported_clarified": 16
+      },
+      "split_counts": {
+        "development": 144,
+        "test": 144
+      },
+      "stage_counts": {
+        "ambiguous": 48,
+        "clarified_known": 48,
+        "clarified_right": 48,
+        "clear_known_familiar": 48,
+        "clear_known_unfamiliar": 48,
+        "clear_right": 48
+      },
+      "truth_counts": {
+        "A00": 48,
+        "K21": 24,
+        "K22": 48,
+        "K23": 48,
+        "K24": 24,
+        "N21": 32,
+        "N22": 16,
+        "N23": 16,
+        "U20": 32
+      }
+    }
+  },
+  "parent_outcome": "configs/v145-finite-certificate-codebook-outcome-lock.json",
+  "parent_outcome_sha256": "66cb089e445346718482ea5abf684ac579dab67db0aca1e58b729261c0812695",
+  "plan": "docs/v146-fresh-codebook-population-plan.md",
+  "plan_sha256": "c2a9b9ac596228b271086c504dbbfaee0b8c51619ccb15c8d2d577bfc751623a",
+  "population_summary": "outputs/v146-fresh-codebook-population/design/population-summary.json",
+  "population_summary_sha256": "f9b1f94679e1c2c2ecb6d28002afa02e329262a589f0612ea632c39a9367ed0e",
+  "protocol": "python/v146_fresh_codebook_population.py",
+  "protocol_sha256": "15133d377d5d1f58e513ead700c9c800f78f9e5f07e00d33d953a81aff1a3bf4",
+  "public_fixtures": "outputs/v146-fresh-codebook-population/design/public-fixtures.json",
+  "public_fixtures_sha256": "c3274788dd789c10ae92639e521fe28b91434b475447a1ec7ffc4f3634e66f44",
+  "results_document": "docs/v146-fresh-codebook-population-results.md",
+  "results_document_sha256": "9734f05b4c23cee6bfae882c82d9187c4d34c888bc6c06bb48e044d249d2e08a",
+  "schema_version": "146-fresh-codebook-population-outcome-lock",
+  "tests": "python/test_v146_fresh_codebook_population.py",
+  "tests_sha256": "10528298e31ada2343c486f7510a7f468589bcc335b483b8605fb6ddaec6f397"
+}

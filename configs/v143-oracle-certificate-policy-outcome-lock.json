@@ -1,0 +1,100 @@
+{
+  "V136_config": "configs/v136-controlled-clarification-value.json",
+  "V136_config_sha256": "d28e55668dc681406de53128a34ed970b9cd52c357b8f3674d3c6669a955e486",
+  "V142_config": "configs/v142-certificate-interface-population.json",
+  "V142_config_sha256": "fc6b26edc0d64747c3991e52b42cfe1944bf50de698f55144fa97803d5bf1190",
+  "audit": "outputs/v143-oracle-certificate-policy/audit.json",
+  "audit_sha256": "10b38ed3863c9d7292799827fe4a7fa4fb8a0a52b86254efb04a3a0d7dfa937c",
+  "authorization": {
+    "open_V142_test_split_language": false,
+    "preregister_one_pinned_local_V142_development_realization": true,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_model_before_separate_preregistration": false,
+    "touch_V134_or_external_language": false
+  },
+  "choice_catalog": "outputs/v142-certificate-interface-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "9e55dd93e02b79b397c3012da264877370993aaacf0364d954c1d8cbeee4777b",
+  "config": "configs/v143-oracle-certificate-policy.json",
+  "config_sha256": "7fbd20154c364619eb7a12a3ffa528aaa8e84bcb870aebffb176282e0d229132",
+  "experiment": "v143_model_free_oracle_certificate_policy_audit",
+  "hidden_fixtures": "outputs/v142-certificate-interface-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "9c10ea46961f4797d084eaf3cb6232dfd85b764d6d4206dda2535498036d5883",
+  "lock_payload_sha256": "c99dcb1138a05452bb22553b4d2bc505b0ce425832ae7ae94c46be1dcd31a91d",
+  "outcome": {
+    "decision": "freeze_oracle_certificate_policy_authorize_local_development_realization_preregistration_only",
+    "metrics": {
+      "actual_execution_count": 0,
+      "ambiguous_query_rate": 1.0,
+      "compatible_set_exact_accuracy": 1.0,
+      "deterministic_final_output_validity": 1.0,
+      "final_choice_exact_accuracy": 1.0,
+      "fixture_count": 288,
+      "language_class_metrics": {
+        "insufficient_evidence": {
+          "certificate_validity": 1.0,
+          "count": 48,
+          "exact_accuracy": 1.0
+        },
+        "known_clarified": {
+          "certificate_validity": 1.0,
+          "count": 48,
+          "exact_accuracy": 1.0
+        },
+        "known_familiar": {
+          "certificate_validity": 1.0,
+          "count": 48,
+          "exact_accuracy": 1.0
+        },
+        "known_unfamiliar": {
+          "certificate_validity": 1.0,
+          "count": 48,
+          "exact_accuracy": 1.0
+        },
+        "novel_valid": {
+          "certificate_validity": 1.0,
+          "count": 32,
+          "exact_accuracy": 1.0
+        },
+        "novel_valid_clarified": {
+          "certificate_validity": 1.0,
+          "count": 32,
+          "exact_accuracy": 1.0
+        },
+        "unsupported": {
+          "certificate_validity": 1.0,
+          "count": 16,
+          "exact_accuracy": 1.0
+        },
+        "unsupported_clarified": {
+          "certificate_validity": 1.0,
+          "count": 16,
+          "exact_accuracy": 1.0
+        }
+      },
+      "malformed_mutation_fail_closed_rate": 1.0,
+      "oracle_certificate_validity": 1.0,
+      "sequential_false_known_on_right_truth": 0.0,
+      "sequential_mean_decision_cost": 0.3,
+      "sequential_safe_nonknown_on_right_truth": 1.0,
+      "true_hypothesis_retention": 1.0,
+      "valid_wrong_singleton_passes_structural_validation": true,
+      "worst_family_sequential_improvement": 0.7
+    },
+    "oracle_certificate_policy_pass": true,
+    "passed": true,
+    "semantic_wrong_singleton_remains_empirical": true
+  },
+  "parent_outcome": "configs/v142-certificate-interface-population-outcome-lock.json",
+  "parent_outcome_sha256": "5144aeb4ae634bf0fc49f6f1083ae1d18f94fb071f81f344f192b78c0b617090",
+  "plan": "docs/v143-oracle-certificate-policy-plan.md",
+  "plan_sha256": "009d8a832cc5ae08af64d859fe00264afd5a483b55ed14eb8d7012bddea3dc05",
+  "protocol": "python/v143_oracle_certificate_policy.py",
+  "protocol_sha256": "5646bb57a75cfb46ec695f9f63da1657a27fd68e86e70f9831fc1a764537ee2c",
+  "results_document": "docs/v143-oracle-certificate-policy-results.md",
+  "results_document_sha256": "f9c9e1a3884c827dc7140fabb3e5763f45a79a182e9dd74add9342c07afc2cec",
+  "runner": "python/run_and_freeze_v143_oracle_certificate_policy.py",
+  "runner_sha256": "e5e38e190878580cfecadf0480808abd400bc0fdf640ec1693da3b09d049b6bf",
+  "schema_version": "143-oracle-certificate-policy-outcome-lock",
+  "tests": "python/test_v143_oracle_certificate_policy.py",
+  "tests_sha256": "8c0ce60b5cc9336300a48f8311a1d4ce500060920f6014b174f93170a491322d"
+}

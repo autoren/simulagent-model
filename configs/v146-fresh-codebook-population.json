@@ -1,0 +1,198 @@
+{
+  "schemaVersion": "146-fresh-codebook-population",
+  "experiment": "v146_fresh_controlled_codebook_scoring_population",
+  "parentV145OutcomeLock": "configs/v145-finite-certificate-codebook-outcome-lock.json",
+  "claimBoundary": "fresh project-authored controlled-language population and registered certificate-code asset for future closed-alternative scoring; not model performance, externally authored transfer, unrestricted open-world understanding, calibration, deployment safety, authority, action, or execution",
+  "catalog": {
+    "choices": [
+      {"choice_id": "K21", "kind": "KNOWN", "title": "change_existing_dental_appointment", "boundary": "Change the date or time of an already booked dental visit. Excludes recurring diagnostic-kit shipments."},
+      {"choice_id": "K22", "kind": "KNOWN", "title": "pause_or_cancel_audiobook_subscription", "boundary": "Pause or cancel an audiobook or spoken-content subscription. Excludes home-security monitoring and retroactive erasure of completed charges."},
+      {"choice_id": "K23", "kind": "KNOWN", "title": "track_existing_retail_parcel", "boundary": "Check location, status, or arrival time of an existing retail parcel. Excludes diagnostic-kit shipments and erasing completed deliveries."},
+      {"choice_id": "K24", "kind": "KNOWN", "title": "check_owned_appliance_warranty", "boundary": "Check manufacturer or retailer repair coverage for a home appliance the user owns. Excludes coverage for rented vehicles."},
+      {"choice_id": "N21", "kind": "VALID_UNDECLARED", "title": "manage_recurring_home_diagnostic_kit_shipment", "boundary": "Change or track a recurring home diagnostic-kit shipment. This is valid but not a declared capability. Excludes dental visits and ordinary retail parcels."},
+      {"choice_id": "N22", "kind": "VALID_UNDECLARED", "title": "pause_home_security_monitoring", "boundary": "Pause or restart alarm or home-security monitoring for an account. This is valid but not a declared capability. Excludes audiobook subscriptions."},
+      {"choice_id": "N23", "kind": "VALID_UNDECLARED", "title": "check_rented_vehicle_damage_or_roadside_coverage", "boundary": "Check damage-waiver or roadside coverage for a rented vehicle. This is valid but not a declared capability. Excludes warranties for owned appliances."},
+      {"choice_id": "U20", "kind": "UNSUPPORTED", "title": "retroactively_erase_completed_event", "boundary": "Make a completed charge, delivery, or real-world event never have occurred. This request is impossible or unsupported."},
+      {"choice_id": "A00", "kind": "INSUFFICIENT_EVIDENCE", "title": "insufficient_evidence", "boundary": "The visible conversation is compatible with multiple supplied choices and does not safely identify one."}
+    ]
+  },
+  "choiceIds": ["K21", "K22", "K23", "K24", "N21", "N22", "N23", "U20", "A00"],
+  "ambiguousPairs": [["K21", "N21"], ["K22", "N22"], ["K24", "N23"], ["K23", "U20"], ["K23", "N21"], ["K22", "U20"]],
+  "population": {
+    "familyCount": 6,
+    "groupsPerFamily": 8,
+    "groupCount": 48,
+    "fixturesPerGroup": 6,
+    "fixtureCount": 288,
+    "developmentGroupCount": 24,
+    "testGroupCount": 24,
+    "developmentFixtureCount": 144,
+    "testFixtureCount": 144,
+    "stages": ["clear_known_familiar", "clear_known_unfamiliar", "clear_right", "ambiguous", "clarified_known", "clarified_right"]
+  },
+  "families": [
+    {
+      "family_id": "dental_visit_vs_diagnostic_kit_shipment",
+      "left_choice_id": "K21",
+      "right_choice_id": "N21",
+      "presented_candidate_choice_id": "K21",
+      "question": "Is this the booked dental visit or the recurring home diagnostic-kit shipment?",
+      "known_familiar": "Reschedule my dental appointment at {practice} from {old_time} to {new_time}.",
+      "known_unfamiliar": "Move the chair time I booked at {practice} from {old_time} to {new_time}.",
+      "right_clear": "Move my recurring home test-kit shipment from {old_time} to {new_time}.",
+      "ambiguous": "Move my health arrangement from {old_time} to {new_time}.",
+      "left_answer": "It is the visit I booked at {practice}.",
+      "right_answer": "It is the repeating home diagnostic-kit package.",
+      "slot_variants": [
+        {"practice": "Maple Dental", "old_time": "Tuesday", "new_time": "Friday"},
+        {"practice": "Harbour Smiles", "old_time": "8 AM", "new_time": "1 PM"},
+        {"practice": "Cedar Dentistry", "old_time": "September 3", "new_time": "September 8"},
+        {"practice": "Riverfront Dental", "old_time": "Monday", "new_time": "Thursday"},
+        {"practice": "Oakview Dental", "old_time": "10 AM", "new_time": "3 PM"},
+        {"practice": "King Street Dental", "old_time": "October 5", "new_time": "October 9"},
+        {"practice": "Lakeshore Dentistry", "old_time": "Wednesday", "new_time": "Saturday"},
+        {"practice": "Northgate Dental", "old_time": "2 PM", "new_time": "4 PM"}
+      ]
+    },
+    {
+      "family_id": "audiobook_subscription_vs_security_monitoring",
+      "left_choice_id": "K22",
+      "right_choice_id": "N22",
+      "presented_candidate_choice_id": "K22",
+      "question": "Is this the spoken-content membership or the home alarm-monitoring account?",
+      "known_familiar": "Pause my {audio} audiobook subscription after {period}.",
+      "known_unfamiliar": "Put the monthly {audio} spoken-book membership on hold after {period}.",
+      "right_clear": "Suspend home alarm monitoring at {address} after {period}.",
+      "ambiguous": "Put my monthly plan on hold after {period}.",
+      "left_answer": "It is the spoken-book listening membership.",
+      "right_answer": "It is the alarm monitoring for {address}.",
+      "slot_variants": [
+        {"audio": "StoryWave", "address": "18 Grove Street", "period": "this billing cycle"},
+        {"audio": "ListenLeaf", "address": "72 Meadow Road", "period": "Friday"},
+        {"audio": "BookCurrent", "address": "5 Junction Lane", "period": "September 1"},
+        {"audio": "VoiceShelf", "address": "41 Aspen Avenue", "period": "next month"},
+        {"audio": "ChapterCloud", "address": "11 Valley Drive", "period": "October 4"},
+        {"audio": "TaleBox", "address": "80 Front Street", "period": "Sunday"},
+        {"audio": "NarratorPlus", "address": "23 Willow Court", "period": "the renewal date"},
+        {"audio": "AudioHarbour", "address": "7 Forest Way", "period": "November 2"}
+      ]
+    },
+    {
+      "family_id": "owned_appliance_warranty_vs_rental_vehicle_coverage",
+      "left_choice_id": "K24",
+      "right_choice_id": "N23",
+      "presented_candidate_choice_id": "K24",
+      "question": "Do you own the appliance under warranty, or is this a rented vehicle with coverage?",
+      "known_familiar": "Is my owned {appliance} still under warranty for {issue}?",
+      "known_unfamiliar": "If the {appliance} I bought develops {issue}, is the maker responsible for repair?",
+      "right_clear": "Does the coverage on my rented {vehicle} include {issue}?",
+      "ambiguous": "Am I covered for {issue}?",
+      "left_answer": "I bought and own the {appliance}.",
+      "right_answer": "It is a rented {vehicle} with damage or roadside coverage.",
+      "slot_variants": [
+        {"appliance": "dishwasher", "vehicle": "cargo van", "issue": "an electrical failure"},
+        {"appliance": "refrigerator", "vehicle": "compact car", "issue": "a damaged door"},
+        {"appliance": "washing machine", "vehicle": "pickup truck", "issue": "a failed motor"},
+        {"appliance": "microwave", "vehicle": "minivan", "issue": "water damage"},
+        {"appliance": "dryer", "vehicle": "SUV", "issue": "a broken control panel"},
+        {"appliance": "freezer", "vehicle": "sedan", "issue": "a cooling failure"},
+        {"appliance": "oven", "vehicle": "moving truck", "issue": "a damaged latch"},
+        {"appliance": "air conditioner", "vehicle": "station wagon", "issue": "a faulty compressor"}
+      ]
+    },
+    {
+      "family_id": "retail_parcel_tracking_vs_retroactive_erasure",
+      "left_choice_id": "K23",
+      "right_choice_id": "U20",
+      "presented_candidate_choice_id": "K23",
+      "question": "Do you want the parcel's current status, or do you want a completed delivery erased from history?",
+      "known_familiar": "Track retail parcel {tracking} and tell me its arrival time.",
+      "known_unfamiliar": "Where is the package with code {tracking}, and when will it reach me?",
+      "right_clear": "Make parcel {tracking}, delivered {past_time}, never have been delivered.",
+      "ambiguous": "Deal with package {tracking} for me.",
+      "left_answer": "I want its current location and delivery estimate.",
+      "right_answer": "I want the completed delivery erased from history.",
+      "slot_variants": [
+        {"tracking": "P-154", "past_time": "yesterday"},
+        {"tracking": "P-267", "past_time": "last Thursday"},
+        {"tracking": "P-381", "past_time": "this morning"},
+        {"tracking": "P-496", "past_time": "three days ago"},
+        {"tracking": "P-507", "past_time": "last week"},
+        {"tracking": "P-618", "past_time": "on Tuesday"},
+        {"tracking": "P-729", "past_time": "at noon"},
+        {"tracking": "P-840", "past_time": "on Sunday"}
+      ]
+    },
+    {
+      "family_id": "retail_parcel_vs_diagnostic_kit_tracking",
+      "left_choice_id": "K23",
+      "right_choice_id": "N21",
+      "presented_candidate_choice_id": "K23",
+      "question": "Is this an ordinary retail parcel or the recurring home diagnostic-kit shipment?",
+      "known_familiar": "Track retail parcel {tracking} to {address}.",
+      "known_unfamiliar": "When will the store package with code {tracking} reach {address}?",
+      "right_clear": "Track recurring home diagnostic-kit shipment {tracking} to {address}.",
+      "ambiguous": "Where is shipment {tracking}, and when will it reach {address}?",
+      "left_answer": "It is an ordinary item I bought from a store.",
+      "right_answer": "It contains my repeating home diagnostic kit.",
+      "slot_variants": [
+        {"tracking": "S-115", "address": "9 Orchard Street"},
+        {"tracking": "S-226", "address": "21 Creek Road"},
+        {"tracking": "S-337", "address": "48 Poplar Lane"},
+        {"tracking": "S-449", "address": "3 Shore Avenue"},
+        {"tracking": "S-550", "address": "69 Ridge Court"},
+        {"tracking": "S-661", "address": "15 Fir Way"},
+        {"tracking": "S-772", "address": "93 Garden Drive"},
+        {"tracking": "S-883", "address": "38 Market Street"}
+      ]
+    },
+    {
+      "family_id": "audiobook_cancellation_vs_charge_erasure",
+      "left_choice_id": "K22",
+      "right_choice_id": "U20",
+      "presented_candidate_choice_id": "K22",
+      "question": "Do you want to stop future audiobook renewal, or erase a completed charge from history?",
+      "known_familiar": "Cancel my {audio} audiobook subscription before the next renewal.",
+      "known_unfamiliar": "End the monthly {audio} listening membership before it bills me again.",
+      "right_clear": "Make last month's completed {audio} charge never have happened.",
+      "ambiguous": "Get rid of the {audio} charge.",
+      "left_answer": "I want to stop the next and future renewals.",
+      "right_answer": "I want the already completed charge erased from history.",
+      "slot_variants": [
+        {"audio": "NovelNest"}, {"audio": "ReadAloud Club"}, {"audio": "EpicEar"}, {"audio": "SpokenPage"},
+        {"audio": "MemoirStream"}, {"audio": "FableAudio"}, {"audio": "ClassicVoice"}, {"audio": "DailyChapter"}
+      ]
+    }
+  ],
+  "gates": {
+    "requiredChoiceCount": 9,
+    "requiredKnownChoiceCount": 4,
+    "requiredNovelChoiceCount": 3,
+    "requiredUnsupportedChoiceCount": 1,
+    "requiredInsufficientChoiceCount": 1,
+    "requiredFamilyCount": 6,
+    "requiredGroupCount": 48,
+    "requiredFixtureCount": 288,
+    "requiredSplitFixtureCount": 144,
+    "requiredStageCountPerGroup": 6,
+    "requiredCodebookCount": 14,
+    "requiredPublicHiddenIdAlignment": 1.0,
+    "requiredAmbiguousPairCompatibility": 1.0,
+    "requiredDecidableSingletonCompatibility": 1.0,
+    "requiredOracleCodeCoverage": 1.0,
+    "requiredExactConversationOverlapWithV135AndV142": 0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationCodebookLeakageAndAccessGatePasses": "freeze_fresh_codebook_population_authorize_scoring_protocol_preregistration_only",
+    "otherwise": "close_fresh_codebook_population_branch",
+    "passAuthorizesImmediateLanguageOrModelScoringRun": false,
+    "passAuthorizesV142TestAccess": false,
+    "passAuthorizesAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

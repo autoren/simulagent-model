@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "108-open-world-interface-forensics-design",
+  "experiment": "v108_existing_output_typed_identifier_mismatch_diagnostic",
+  "parentModelOutcomeLock": "configs/v107-open-world-local-model-outcome-lock.json",
+  "diagnosticQuestion": "Did V107 fail known-intent validation primarily because the visible catalog exposed both qualified intent_id and shorter intent fields while the validator accepted only qualified intent_id?",
+  "inputs": {
+    "useExactFrozenV107RawResponses": true,
+    "useV101TextFreeStructuralGroundTruth": true,
+    "useV106EvaluationMembership": true,
+    "readDevelopmentOrProtectedLanguage": false,
+    "manualRawResponseInspection": false
+  },
+  "registeredInvariantCategories": [
+    "known_local_name_only", "known_qualified_with_redundant_matching_scenario",
+    "known_local_name_with_redundant_matching_scenario", "known_missing_intent",
+    "known_unknown_identifier", "known_other_invariant", "novel_other_invariant",
+    "unsupported_or_abstain_nonnull_fields", "non_status_invariant_failure", "valid"
+  ],
+  "canonicalization": {
+    "diagnosticOnly": true,
+    "uniqueLocalIntentNameToQualifiedIntentId": true,
+    "removeNovelScenarioOnlyWhenStatusKnownAndScenarioExactlyMatchesResolvedIntentScenario": true,
+    "changeStatus": false,
+    "inferIntentFromUtteranceOrGold": false,
+    "changeConfidence": false,
+    "retryOrRegenerate": false,
+    "replaceFrozenV107Score": false
+  },
+  "formatDominanceGates": {
+    "requiredOriginalFixtureCount": 192,
+    "requiredOriginalObservedFixtureCount": 128,
+    "requiredOriginalControlFixtureCount": 64,
+    "requiredOriginalMetricReconstruction": true,
+    "minimumOriginallyInvalidObservedCount": 1,
+    "minimumInvalidObservedCanonicalizableFraction": 0.75,
+    "minimumCounterfactualKnownExactIntentAccuracy": 0.70,
+    "minimumCounterfactualObservedExactDecisionAccuracy": 0.65,
+    "maximumAmbiguousLocalIntentNameCount": 0,
+    "requiredOriginalV107OutcomeUnchanged": true,
+    "maximumDevelopmentLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryFormatDominanceGatePasses": "freeze diagnosis and preregister a fresh development-only constrained typed serialization interface without rerunning or replacing V107",
+    "ifAnyFormatDominanceGateFails": "freeze diagnosis and prioritize a fresh sequential clarification benchmark rather than a serialization-only repair",
+    "passAuthorizesV107RescoreOrRetry": false,
+    "passAuthorizesProtectedTestOrModelAccess": false,
+    "passAuthorizesAPITrainingPlanningOrExecution": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "access": "outputs/v158-model-free-hard-tie-routing-policy/model-free-realization/access.json",
+  "access_sha256": "3e9ef5bb9e01c3881b66bfd6441ccb661e463e83eb4fdf8a88f7f35ba77bd835",
+  "analysis_lock": "configs/v158-model-free-hard-tie-routing-policy-lock.json",
+  "analysis_lock_sha256": "ddcc15910bbaaf852beb16e2ef9155d00ab39aa0897bf865c5d9b00c691fdf67",
+  "audit": "outputs/v158-model-free-hard-tie-routing-policy/outcome-audit.json",
+  "audit_sha256": "10fa767ac9335ae32cf919b5c372661f368348ae35f075edd1ae68ccfac52b69",
+  "authorization": {
+    "change_terms_weights_thresholds_costs_gates_or_rerun": false,
+    "design_local_non_authoritative_tie_breaker_protocol_if_policy_qualified": false,
+    "fit_calibration_or_learned_retrieval": false,
+    "open_or_score_V157_evaluation": false,
+    "retain_as_project_authored_synthetic_model_free_development_evidence": true,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_local_tie_breaker_before_separate_preregistration": false
+  },
+  "experiment": "v158_model_free_margin_gated_generic_routing_policy",
+  "lock_payload_sha256": "64e2094fcf5af8bf953d79ab6a677a407d969d37a472be722157408f081a8308",
+  "outcome": {
+    "candidate_proposal_field_count": 0,
+    "comparator_metrics": {
+      "ALWAYS_GENERIC": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.44,
+        "mean_interaction_cost": 0.44,
+        "wrong_specific_question_count": 0
+      },
+      "INFORMATION_ORACLE": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.36000000000000004,
+        "mean_interaction_cost": 0.36000000000000004,
+        "wrong_specific_question_count": 0
+      },
+      "MARGIN_GATED_ROUTER": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 9,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.42250000000000004,
+        "mean_interaction_cost": 0.42250000000000004,
+        "wrong_specific_question_count": 9
+      },
+      "NO_QUERY": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 0.2,
+        "irrelevant_intermediate_count": 0,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 0.8,
+        "mean_interaction_cost": 0.0,
+        "wrong_specific_question_count": 0
+      },
+      "SEEDED_RANDOM_SPECIFIC_THEN_GENERIC": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 394,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 1.265,
+        "mean_interaction_cost": 1.265,
+        "wrong_specific_question_count": 394
+      },
+      "SOURCE_SPECIFIC_THEN_GENERIC": {
+        "actual_execution_count": 0,
+        "authoritative_hypothesis_retention": 1.0,
+        "episode_count": 120,
+        "final_exact_accuracy": 1.0,
+        "irrelevant_intermediate_count": 384,
+        "irrelevant_intermediate_fail_closed_rate": 1.0,
+        "mean_decision_cost": 1.2399999999999998,
+        "mean_interaction_cost": 1.2399999999999998,
+        "wrong_specific_question_count": 384
+      }
+    },
+    "decision": "margin_gated_generic_router_fails_development_gates_close_without_tuning_or_model",
+    "passed": true,
+    "policy_qualified": false,
+    "routing_metrics": {
+      "improvement_over_always_generic": 0.01749999999999996,
+      "improvement_over_no_query": 0.3775,
+      "incorrect_specific_rate_on_fallback_strata": 0.06944444444444445,
+      "initial_action_accuracy": 0.9479166666666666,
+      "initial_action_counts": {
+        "Q70": 67,
+        "Q71": 4,
+        "Q72": 4,
+        "Q73": 5,
+        "Q74": 4,
+        "Q75": 8,
+        "Q76": 4
+      },
+      "insufficient_generic_rate": 1.0,
+      "lexical_control_specific_rate": 1.0,
+      "mean_top_score": 4.927083333333333,
+      "mean_top_two_margin": 4.455729166666667,
+      "relational_tie_generic_rate": 0.8333333333333334,
+      "request_count": 96,
+      "uncatalogued_paraphrase_generic_rate": 0.9583333333333334
+    }
+  },
+  "result": "outputs/v158-model-free-hard-tie-routing-policy/model-free-realization/result.json",
+  "result_sha256": "d9f81c641f332081296faa72dbdf3551930c93ce834e7d4bbb0b92f0f22666ea",
+  "results_document": "docs/v158-model-free-hard-tie-routing-policy-results.md",
+  "results_document_sha256": "40ff42b6d4ed014bd8698fd0d32cbe4a6690c159661c69d0ddd40e663b949d66",
+  "schema_version": "158-model-free-hard-tie-routing-policy-outcome-lock",
+  "verifier": "python/verify_and_freeze_v158_model_free_hard_tie_routing_policy_outcome.py",
+  "verifier_sha256": "a9f45e88419d80f479e08f26a9e95df11dc5ba55930f73a56a29bed1a8737e50"
+}

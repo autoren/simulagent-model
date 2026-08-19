@@ -1,0 +1,23 @@
+{
+  "audit": "outputs/v78-structured-llm-interface/harness-audit.json",
+  "audit_sha256": "05a8f5f8920e6982e19bcf69b67a22bd296d317092da852a5af4beae8bf25b4f",
+  "auditor": "python/audit_and_freeze_v78_harness.py",
+  "auditor_sha256": "49a6912af7654a6b5823ab1f998e93a8d076f8b3640929f6b6701eda4701b12a",
+  "authorization": {
+    "access_human_records_or_real_tools": false,
+    "access_local_or_API_model": false,
+    "compute_v78_planner_outcomes": false,
+    "implement_v78_before_design_lock": false,
+    "preregister_fresh_v78_design": true,
+    "rerun_v77_or_v77r1": false
+  },
+  "experiment": "v78_outcome_blind_successor_harness_lock",
+  "harness": "python/locked_census_harness.py",
+  "harness_sha256": "16fb60b0619f5a38ab9d375cfa626d0e88d66a49dd221f736436f933639e7714",
+  "lock_payload_sha256": "eb2235b147c1196e6c72a11f5a88cfca0f793c5e28a64fdf93a8f1d4cac972e9",
+  "schema_version": "78-successor-harness-lock",
+  "tests": "python/test_locked_census_harness.py",
+  "tests_sha256": "59551df260b2a576ab1b3f0cb9a727744c9a81a7343b7f0f6a40c634034006c3",
+  "v77_execution_closure_lock": "configs/v77-execution-closure-lock.json",
+  "v77_execution_closure_lock_sha256": "bf410cf6721521e9c55de4528f957a753f77682f8f22c5e24b99c4d4adcee5a3"
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "148-typed-witness-firewall",
+  "experiment": "v148_model_free_typed_semantic_witness_firewall",
+  "parentV147OutcomeLock": "configs/v147-closed-alternative-scoring-outcome-lock.json",
+  "claimBoundary": "model-free structural and oracle feasibility of a typed semantic-witness firewall; not language understanding, witness extraction, calibration, external transfer, deployment safety, authority, action, or execution",
+  "outputIds": ["K31", "K32", "K33", "K34", "N00", "U30", "A00"],
+  "knownIds": ["K31", "K32", "K33", "K34"],
+  "novelCandidateId": "N00",
+  "unsupportedId": "U30",
+  "insufficientId": "A00",
+  "trustedSource": "CLOSED_TYPED_CLARIFICATION",
+  "allowedValues": {
+    "operation": ["schedule", "stop_future", "track", "inspect_coverage", "monitor", "erase_completed_record"],
+    "object_class": ["professional_visit", "subscription_renewal", "retail_shipment", "owned_product", "diagnostic_shipment", "security_event", "rented_vehicle", "authoritative_history"],
+    "scope": ["future", "delivery", "owned", "ongoing", "rented", "retroactive"]
+  },
+  "knownWitnesses": [
+    {"choice_id": "K31", "operation": "schedule", "object_class": "professional_visit", "scope": "future"},
+    {"choice_id": "K32", "operation": "stop_future", "object_class": "subscription_renewal", "scope": "future"},
+    {"choice_id": "K33", "operation": "track", "object_class": "retail_shipment", "scope": "delivery"},
+    {"choice_id": "K34", "operation": "inspect_coverage", "object_class": "owned_product", "scope": "owned"}
+  ],
+  "novelWitnesses": [
+    {"operation": "track", "object_class": "diagnostic_shipment", "scope": "delivery"},
+    {"operation": "monitor", "object_class": "security_event", "scope": "ongoing"},
+    {"operation": "inspect_coverage", "object_class": "rented_vehicle", "scope": "rented"}
+  ],
+  "unsupportedWitnesses": [
+    {"operation": "erase_completed_record", "object_class": "authoritative_history", "scope": "retroactive"}
+  ],
+  "insufficientCompatibleSets": [
+    ["K31", "N00"],
+    ["K32", "N00"],
+    ["K32", "U30"],
+    ["K33", "N00"],
+    ["K33", "U30"],
+    ["K34", "N00"]
+  ],
+  "interface": {
+    "LLMProposalIsOptionalAndNonAuthoritative": true,
+    "LLMProposalMayNotSatisfyWitness": true,
+    "knownAcceptanceRequiresExactTrustedWitness": true,
+    "wellTypedUnknownRoutesToGenericNovelCandidateWithoutRegistration": true,
+    "registeredForbiddenWitnessRoutesToUnsupported": true,
+    "missingMalformedContradictoryOrInsufficientRoutesToA00": true,
+    "completeAuthoritativeHypothesisUniverseRetained": true,
+    "novelCandidateIsNonExecutable": true
+  },
+  "population": {
+    "validWitnessCount": 14,
+    "candidateProposalCount": 7,
+    "oracleCandidateCrossProductCount": 98,
+    "malformedWitnessCount": 10,
+    "nearKnownMutationCount": 12
+  },
+  "gates": {
+    "requiredOracleExactAccuracy": 1.0,
+    "requiredCandidateInvariance": 1.0,
+    "requiredKnownAcceptancePrecision": 1.0,
+    "requiredKnownAcceptanceRecall": 1.0,
+    "requiredNovelCandidateRouting": 1.0,
+    "requiredUnsupportedRouting": 1.0,
+    "requiredInsufficientRouting": 1.0,
+    "requiredMalformedFailClosedRate": 1.0,
+    "requiredNearKnownNotAcceptedAsKnownRate": 1.0,
+    "requiredDeterministicFinalOutputValidity": 1.0,
+    "requiredAuthoritativeTrueHypothesisRetention": 1.0,
+    "maximumProjectLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOracleMutationInvarianceAndAccessGatePasses": "freeze_typed_witness_firewall_feasible_authorize_fresh_interaction_population_design_only",
+    "otherwise": "typed_witness_firewall_infeasible_close_without_language_or_model",
+    "passingAuthorizesOnlyFreshInteractionPopulationDesign": true,
+    "passingDoesNotAuthorizeLanguageModelRunCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

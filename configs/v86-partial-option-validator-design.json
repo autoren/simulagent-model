@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "86-partial-option-validator-design",
+  "experiment": "v86_model_free_unrequested_partial_option_hardening",
+  "purpose": "correct the V85-discovered false positive by rejecting any individual option surface belonging to an unrequested slot",
+  "parentOutcomeLock": "configs/v85-local-adversarial-generator-outcome-lock.json",
+  "schemaOutcomeLock": "configs/v84-schema-grounded-shadow-outcome-lock.json",
+  "registeredCorrection": {
+    "oldRule": "forbid only the complete choice fragment from every unrequested slot",
+    "newRule": "forbid every individual option surface and the complete choice fragment from every unrequested slot",
+    "changesSchemaBeliefActionOrPolicy": false,
+    "changesAuthorizedRendererSources": false,
+    "changesCanonicalOrFiniteGrammarText": false
+  },
+  "authorizedRendererSources": ["canonical", "finite_grammar"],
+  "disabledRendererSources": ["local_model", "API_model", "adapter_model", "untrusted_passthrough", "local_model_adversarial"],
+  "enumeration": {
+    "schemaCount": 4,
+    "schemaRenderedCaseCount": 108,
+    "V79BridgeNodeCount": 6,
+    "V79BridgeRenderedCaseCount": 54,
+    "baseUnsafeMutationCount": 16,
+    "partialOptionInjectionMutationCount": 16,
+    "V85RegisteredFalsePositiveRegressionCount": 1
+  },
+  "gates": {
+    "minimumSchemaSurfaceValidityRate": 1.0,
+    "minimumTypedRequestPreservationRate": 1.0,
+    "minimumBaseUnsafeMutationRejectionRate": 1.0,
+    "minimumPartialOptionInjectionRejectionRate": 1.0,
+    "minimumV85FalsePositiveRegressionRejectionRate": 1.0,
+    "minimumDisabledUntrustedDeploymentRate": 1.0,
+    "minimumV79BridgeActionPreservationRate": 1.0,
+    "minimumV79BridgeStructuralPreservationRate": 1.0,
+    "maximumV79PolicyValueAbsoluteError": 1e-12,
+    "maximumCompleteBeliefExecutionCertificateViolations": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumHumanRecordAccessCount": 0,
+    "maximumOriginalUserLanguageAccessCount": 0,
+    "maximumRealToolCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryGatePasses": "freeze the hardened validator and supersede only V84's weak unrequested-slot content certificate in future shadow integrations",
+    "ifAnyGateFails": "reject V86 and retain V84 with provenance-only containment of generated or untrusted text",
+    "passAuthorizesModelAccess": false,
+    "passAuthorizesGeneratedSurfaceDeployment": false,
+    "passAuthorizesBeliefActionOrExecutionAuthority": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "implementAndTestValidator": false,
+    "evaluateModelFreeCensus": false,
+    "accessLocalOrAPIModel": false,
+    "trainAdapter": false,
+    "collectHumanOrOriginalUserLanguage": false,
+    "performRealToolCall": false,
+    "performExternalSideEffect": false
+  }
+}

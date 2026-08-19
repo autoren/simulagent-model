@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "150-oracle-closed-interaction-policy",
+  "experiment": "v150_model_free_oracle_typed_witness_interaction_policy",
+  "parentV149OutcomeLock": "configs/v149-fresh-closed-interaction-population-outcome-lock.json",
+  "claimBoundary": "model-free exact-policy feasibility on V149 development metadata; not language understanding, local-model performance, evaluation-split evidence, calibration, external transfer, authority, action, or execution",
+  "population": {
+    "split": "development",
+    "groupCount": 24,
+    "episodeCount": 48,
+    "candidateProposalCount": 7,
+    "queryProposalCount": 7,
+    "proposalCrossProductPerEpisode": 49,
+    "policyEvaluationCount": 2352,
+    "evaluationLanguageReadCount": 0
+  },
+  "policy": {
+    "queryCost": 0.3,
+    "trustedClosedAnswerReliability": 1.0,
+    "noQueryAction": "A00",
+    "irrelevantQueryAnswer": "NO_SELECTION",
+    "LLMCandidateAndQueryProposalsNonAuthoritative": true,
+    "exactPlannerUsesCompleteHypothesisPairAndRegisteredQueryModel": true
+  },
+  "decisionCosts": {
+    "correct": 0.0,
+    "safeAbstentionOnDecidableTruth": 1.0,
+    "wrongKnownOnNonKnownTruth": 5.0,
+    "wrongKnownOnKnownTruth": 3.0,
+    "otherWrongState": 2.0
+  },
+  "gates": {
+    "requiredEpisodeCount": 48,
+    "requiredPolicyEvaluationCount": 2352,
+    "requiredCorrectQuerySelectionRate": 1.0,
+    "requiredFinalExactAccuracy": 1.0,
+    "requiredCandidateAndQueryProposalInvariance": 1.0,
+    "maximumSequentialMeanDecisionCost": 0.3,
+    "minimumImprovementOverNoQuery": 0.7,
+    "requiredResolvedPerQuery": 1.0,
+    "maximumFalseKnownOnNonKnownTruth": 0.0,
+    "requiredSafeNonKnownOnNonKnownTruth": 1.0,
+    "requiredIrrelevantQueryFailClosedRate": 1.0,
+    "requiredAuthoritativeTrueHypothesisRetention": 1.0,
+    "maximumEvaluationLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOraclePolicyValueInvarianceAndAccessGatePasses": "freeze_oracle_closed_interaction_policy_feasible_authorize_local_proposal_protocol_design_only",
+    "otherwise": "oracle_closed_interaction_policy_infeasible_close_without_model",
+    "passingAuthorizesOnlyLocalProposalProtocolDesign": true,
+    "passingDoesNotAuthorizeImmediateModelRunEvaluationAccessCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

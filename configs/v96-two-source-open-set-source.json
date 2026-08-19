@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "96-two-source-open-set-source-design",
+  "experiment": "v96_two_source_activation_open_set_source_feasibility",
+  "purpose": "construct a fresh five-class controlled open-set benchmark with prospectively disjoint catalog and unsupported source shards",
+  "parentSourceOutcomeLock": "configs/v95-activation-open-set-source-outcome-lock.json",
+  "parentArchitectureLock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "catalogDialogueShard": {
+    "role": "catalog_only",
+    "path": "dev/dialogues_007.json",
+    "byteSize": 1381473,
+    "gitBlobSha1": "5e6e1bb204621cf530228c8a7bd1537b12fc35b2",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_007.json"
+  },
+  "unsupportedDialogueShard": {
+    "role": "unsupported_only",
+    "path": "dev/dialogues_008.json",
+    "byteSize": 4040385,
+    "gitBlobSha1": "c80db910d22e1f7db9d576652e9f1e5537a01c58",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_008.json"
+  },
+  "previouslyExposedServices": [
+    "Alarm_1", "Banks_2", "Buses_1", "Flights_3", "Homes_1", "Hotels_1",
+    "Hotels_4", "Media_2", "Movies_2", "Music_1", "RentalCars_1", "Restaurants_2",
+    "RideSharing_1", "Services_4", "Travel_1", "Weather_1"
+  ],
+  "catalogPartition": {
+    "eligibleServiceMinimumActivationCount": 12,
+    "eligiblePairMinimumActivationCount": 8,
+    "catalogServiceSalt": "simulagent-v96-catalog-service-v1",
+    "catalogServiceCount": 3,
+    "hiddenServiceSalt": "simulagent-v96-hidden-service-v1",
+    "hiddenIntentPairSalt": "simulagent-v96-hidden-pair-v1",
+    "hiddenServiceCount": 2,
+    "hiddenPairCountPerSelectedService": 1,
+    "minimumDeclaredPairCount": 3,
+    "partitionBeforeLanguageDerivedFeatures": true
+  },
+  "unsupportedPartition": {
+    "eligibleServiceMinimumActivationCount": 16,
+    "eligiblePairMinimumActivationCount": 8,
+    "unsupportedServiceSalt": "simulagent-v96-unsupported-service-v1",
+    "unsupportedServiceCount": 1,
+    "requireDisjointFromCatalogServices": true,
+    "partitionBeforeLanguageDerivedFeatures": true
+  },
+  "classConstruction": {
+    "knownFamiliarMinimumCurrentTurnOverlapCount": 1,
+    "knownUnfamiliarMaximumCurrentTurnOverlapCount": 0,
+    "nonNoneClassesRequireSourceIntentActivation": true,
+    "useCurrentUserTurnOnlyForLexicalSeparation": true,
+    "noneMapsOnlyToInsufficientEvidence": true,
+    "unsupportedRequiresSeparateHashSelectedService": true,
+    "novelRequiresOneHashHiddenPairFromEachSelectedCatalogService": true,
+    "emitLanguageTokensSlotValuesOrHistories": false
+  },
+  "sourceGates": {
+    "requiredCatalogServiceCount": 3,
+    "requiredUnsupportedServiceCount": 1,
+    "requiredHiddenPairCount": 2,
+    "minimumDeclaredPairCount": 3,
+    "minimumKnownFamiliarCandidateCount": 16,
+    "minimumKnownUnfamiliarCandidateCount": 16,
+    "minimumNovelValidCandidateCount": 16,
+    "minimumUnsupportedCandidateCount": 16,
+    "minimumInsufficientEvidenceCandidateCount": 16,
+    "minimumKnownClassServiceCoverage": 2,
+    "requiredNovelServiceCoverage": 2,
+    "minimumInsufficientEvidenceServiceCoverage": 2,
+    "requiredUnsupportedServiceCoverage": 1,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "GitHubMetadataRequestCount": 2,
+    "schemaStructuralInspectionCount": 1,
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the two-source activation inventory and authorize preregistration of a hash-selected dialogue-disjoint calibration/evaluation population",
+    "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+    "passAuthorizesLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

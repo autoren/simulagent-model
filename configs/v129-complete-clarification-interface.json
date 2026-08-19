@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "129-complete-clarification-interface-design",
+  "experiment": "v129_model_free_complete_safe_hypothesis_clarification_audit",
+  "parentV128OutcomeLock": "configs/v128-sgd-typed-relation-feasibility-outcome-lock.json",
+  "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+  "V119Config": "configs/v119-asymmetric-adaptive-evidence.json",
+  "claimBoundary": "abstract finite-census feasibility of a complete typed clarification answer under stipulated reliability and bias; not evidence about real human, parser, or model answers, language understanding, independence, deployment, or execution",
+  "census": {
+    "truths": "all eleven complete-safe-universe hypotheses",
+    "presentedCandidates": "each of the six declared known hypotheses",
+    "pairCount": 66,
+    "pairWeighting": "uniform, not an empirical prevalence claim",
+    "usesLanguageOrIndividualBenchmarkRecords": false
+  },
+  "completeClarificationChannel": {
+    "answerSet": "the exact eleven frozen choice identifiers",
+    "marginalCorrectness": [0.9, 0.95, 1.0],
+    "requiredReliability": 0.95,
+    "totalCost": 0.3,
+    "errorBiasFraction": 0.75,
+    "errorRegimes": [
+      "symmetric",
+      "candidate_attraction",
+      "abstention_attraction"
+    ],
+    "candidateAttractionRule": "when the presented known candidate is wrong, allocate 75% of error mass to it and distribute the remainder uniformly over other wrong answers",
+    "abstentionAttractionRule": "when A00 is wrong, allocate 75% of error mass to A00 and distribute the remainder uniformly over other wrong answers",
+    "plannerConditions": ["channel_aware", "symmetric_assumed"],
+    "oneAnswerOnly": true,
+    "noIndependenceClaim": true
+  },
+  "priorRegimes": [
+    {"id": "uniform_safe_universe", "candidateProbability": 0.09090909090909091},
+    {"id": "moderate_candidate", "candidateProbability": 0.5},
+    {"id": "strong_candidate", "candidateProbability": 0.75}
+  ],
+  "candidateSpecificComparator": {
+    "source": "V119 asymmetric adaptive identity-versus-support channel",
+    "marginalCorrectness": 0.95,
+    "sharedFailureCorrelation": 0.25,
+    "correlationAware": true,
+    "sameTotalCost": 0.3
+  },
+  "frozenBayesPolicy": {
+    "actionSet": "ABSTAIN, UNSUPPORTED, or one exact declared KNOWN intent",
+    "minimumPosteriorExpectedFrozenDecisionCost": true,
+    "completeSafeHypothesisUniverseAlwaysRetained": true,
+    "novelAndInsufficientCannotBecomeActions": true,
+    "actualExecutionCount": 0
+  },
+  "outcomeGates": {
+    "maximumAwareMeanRegretEveryPriorAndBiasAtRequiredReliability": 1.1666666666666667,
+    "minimumAwareKnownExactEveryPriorAndBiasAtRequiredReliability": 0.8,
+    "minimumAwareUnsupportedEveryPriorAndBiasAtRequiredReliability": 0.8,
+    "maximumAwareFalseKnownEveryPriorAndBiasAtRequiredReliability": 0.1,
+    "requireAwareNoWorseRegretThanCandidateSpecificEveryPriorAndBias": true,
+    "requireAwareNoWorseKnownExactThanCandidateSpecificEveryPriorAndBias": true,
+    "maximumSymmetricAssumedRegretEveryPriorAndBiasedRegime": 1.1666666666666667,
+    "maximumSymmetricAssumedFalseKnownEveryPriorAndBiasedRegime": 0.1,
+    "requiredPerfectAnswerKnownExact": 1.0,
+    "requiredPerfectAnswerUnsupported": 1.0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumIndividualPairEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumIndividualBenchmarkRecordReadCount": 0,
+    "maximumLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOutcomeAndAccessGatePasses": "complete_typed_clarification_feasible_authorize_realization_audit_only",
+    "otherwise": "complete_typed_clarification_infeasible_keep_language_and_model_closed",
+    "passAuthorizesOnlyPreregisterClarificationRealizationAudit": true,
+    "passAuthorizesImmediateLanguageHumanOrModelRun": false,
+    "passAuthorizesProtectedInductionOrRicherPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

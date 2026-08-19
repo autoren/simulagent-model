@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "130-clarification-evidence-strength-design",
+  "experiment": "v130_model_free_complete_clarification_evidence_strength_audit",
+  "parentV129OutcomeLock": "configs/v129-complete-clarification-interface-outcome-lock.json",
+  "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+  "claimBoundary": "abstract evidence-strength boundary for stipulated complete typed answers; not evidence that humans, models, parsers, or repeated generations achieve the required reliability or independence",
+  "census": {
+    "truthCandidatePairCount": 66,
+    "truths": "all eleven safe hypotheses",
+    "presentedCandidates": "all six declared known hypotheses",
+    "uniformPairWeighting": true,
+    "individualRecordOrLanguageReadCount": 0
+  },
+  "completeClarificationChannel": {
+    "answerSet": "the exact eleven frozen choice identifiers",
+    "totalCost": 0.3,
+    "errorBiasFraction": 0.75,
+    "errorRegimes": ["symmetric", "candidate_attraction", "abstention_attraction"]
+  },
+  "singleAnswerReliabilityGrid": {
+    "minimum": 0.95,
+    "maximum": 1.0,
+    "step": 0.0005,
+    "pointCount": 101,
+    "selectionRule": "first grid point satisfying all absolute quality gates for a prior/error-regime condition"
+  },
+  "multiAnswerGrid": {
+    "marginalCorrectness": 0.95,
+    "answerCounts": [1, 2, 3],
+    "commonShockCorrelations": [0.0, 0.25, 0.5],
+    "costPerAnswer": 0.3,
+    "jointChannel": "mixture of independent answer draws and one shared draw repeated across every answer, preserving each marginal",
+    "plannerIsCorrelationAware": true,
+    "repeatedSamplesFromOneModelAreNotDeclaredIndependent": true
+  },
+  "priorRegimes": [
+    {"id": "uniform_safe_universe", "candidateProbability": 0.09090909090909091},
+    {"id": "moderate_candidate", "candidateProbability": 0.5},
+    {"id": "strong_candidate", "candidateProbability": 0.75}
+  ],
+  "qualityGates": {
+    "maximumMeanRegret": 1.1666666666666667,
+    "minimumKnownExact": 0.8,
+    "minimumUnsupportedCorrect": 0.8,
+    "maximumFalseKnown": 0.1
+  },
+  "feasibilityRule": {
+    "maximumSingleAnswerReliability": 0.99,
+    "maximumIndependentAnswerCount": 2,
+    "maximumRequiredCommonShockCorrelation": 0.25,
+    "singleRoutePassesIfEveryPriorAndBiasThresholdIsAtMostMaximum": true,
+    "multiRoutePassesIfOneAllowedCountPassesEveryPriorBiasAndRequiredCorrelation": true,
+    "eitherRouteMayAuthorizeRealizationAudit": true
+  },
+  "outcomeGates": {
+    "requiredReliabilityGridPointCount": 101,
+    "requiredMultiAnswerConditionCount": 81,
+    "requiredPerfectSingleAnswerKnownExact": 1.0,
+    "requiredPerfectSingleAnswerUnsupported": 1.0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumIndividualPairEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumIndividualBenchmarkRecordReadCount": 0,
+    "maximumLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifAuditCompleteAndEitherEvidenceRoutePasses": "complete_clarification_evidence_strength_feasible_authorize_realization_audit_only",
+    "ifAuditCompleteButNeitherEvidenceRoutePasses": "complete_clarification_evidence_strength_infeasible_keep_realization_closed",
+    "passAuthorizesOnlyPreregisterEvidenceRealizationAudit": true,
+    "passAuthorizesLanguageHumanOrModelRun": false,
+    "passAuthorizesProtectedInductionOrRicherPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

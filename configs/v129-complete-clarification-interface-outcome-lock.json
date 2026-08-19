@@ -1,0 +1,475 @@
+{
+  "analysis_lock": "configs/v129-complete-clarification-interface-lock.json",
+  "analysis_lock_sha256": "139638992ccea0cc7a3702827de132575a99de93d6ee72670c0776e0fe67d6b1",
+  "audit": "outputs/v129-complete-clarification-interface/outcome-audit.json",
+  "audit_sha256": "c23e9abc9399518551b1cf351a1aae73794262073e8d52e441f8702dc93bd8c8",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "keep_language_model_and_human_channel_closed": true,
+    "modify_rerun_retune_or_mine_V129": false,
+    "preregister_complete_clarification_realization_audit": false,
+    "run_API_training_action_or_execution": false
+  },
+  "experiment": "v129_complete_clarification_interface_outcome_lock",
+  "lock_payload_sha256": "91c63a477df2b688a9da94666390121195bc14dc861b040fa585b40ee3e22f0f",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "complete_typed_clarification_infeasible_keep_language_and_model_closed",
+    "experimental_pass": false,
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "candidate_specific_comparator": {
+        "moderate_candidate": {
+          "false_known_probability": 0.005613281250000006,
+          "known_exact_probability": 0.15803645833333332,
+          "mean_regret": 1.2256384745896471,
+          "unsupported_correct_probability": 0.8805312500000001
+        },
+        "strong_candidate": {
+          "false_known_probability": 0.005613281250000006,
+          "known_exact_probability": 0.15803645833333332,
+          "mean_regret": 1.2256384745896471,
+          "unsupported_correct_probability": 0.8805312500000001
+        },
+        "uniform_safe_universe": {
+          "false_known_probability": 0.0015742187500000014,
+          "known_exact_probability": 0.14675520833333333,
+          "mean_regret": 1.197974338107639,
+          "unsupported_correct_probability": 0.9312968749999998
+        }
+      },
+      "census_pair_count": 66,
+      "conditions": {
+        "moderate_candidate": {
+          "0.90": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.025333333333333326,
+                "known_exact_probability": 0.8999999999999999,
+                "mean_regret": 0.9608333333333332,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.004222222222222222,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.224090909090909,
+                "unsupported_correct_probability": 0.9
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.07499999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.8058080808080808,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.07499999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.8058080808080808,
+                "unsupported_correct_probability": 0.9
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.009999999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.3009090909090908,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.009999999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.3009090909090908,
+                "unsupported_correct_probability": 0.9
+              }
+            }
+          },
+          "0.95": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.012666666666666678,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 0.8349621212121213,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.012666666666666678,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 0.8349621212121213,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.04444444444444449,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.1241792929292933,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.04444444444444449,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.1241792929292933,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.030000000000000027,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.0038636363636366,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.030000000000000027,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.0038636363636366,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            }
+          },
+          "1.00": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            }
+          }
+        },
+        "strong_candidate": {
+          "0.90": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.004222222222222222,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.224090909090909,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.004222222222222222,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.2928030303030305,
+                "unsupported_correct_probability": 0.0
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.07499999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.8738636363636363,
+                "unsupported_correct_probability": 0.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.07499999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.8738636363636363,
+                "unsupported_correct_probability": 0.0
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.009999999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.345,
+                "unsupported_correct_probability": 0.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.009999999999999998,
+                "known_exact_probability": 0.15000000000000002,
+                "mean_regret": 1.345,
+                "unsupported_correct_probability": 0.0
+              }
+            }
+          },
+          "0.95": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.012666666666666678,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 0.8349621212121213,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0021111111111111126,
+                "known_exact_probability": 0.15833333333333333,
+                "mean_regret": 1.1938636363636363,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.037500000000000026,
+                "known_exact_probability": 0.15833333333333333,
+                "mean_regret": 1.4847222222222223,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.037500000000000026,
+                "known_exact_probability": 0.15833333333333333,
+                "mean_regret": 1.4847222222222223,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.0050000000000000044,
+                "known_exact_probability": 0.15833333333333333,
+                "mean_regret": 1.2322727272727272,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0050000000000000044,
+                "known_exact_probability": 0.15833333333333333,
+                "mean_regret": 1.2322727272727272,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            }
+          },
+          "1.00": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            }
+          }
+        },
+        "uniform_safe_universe": {
+          "0.90": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.025333333333333326,
+                "known_exact_probability": 0.8999999999999999,
+                "mean_regret": 0.9608333333333332,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.025333333333333326,
+                "known_exact_probability": 0.8999999999999999,
+                "mean_regret": 0.9608333333333332,
+                "unsupported_correct_probability": 0.9
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.013888888888888885,
+                "known_exact_probability": 0.75,
+                "mean_regret": 1.010858585858586,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.08888888888888888,
+                "known_exact_probability": 0.8999999999999999,
+                "mean_regret": 1.5392676767676765,
+                "unsupported_correct_probability": 0.9
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.059999999999999984,
+                "known_exact_probability": 0.8999999999999999,
+                "mean_regret": 1.2986363636363636,
+                "unsupported_correct_probability": 0.9
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.059999999999999984,
+                "known_exact_probability": 0.8999999999999999,
+                "mean_regret": 1.2986363636363636,
+                "unsupported_correct_probability": 0.9
+              }
+            }
+          },
+          "0.95": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.012666666666666678,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 0.8349621212121213,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.012666666666666678,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 0.8349621212121213,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.00694444444444445,
+                "known_exact_probability": 0.7916666666666666,
+                "mean_regret": 0.9054292929292931,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.04444444444444449,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.1241792929292933,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.030000000000000027,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.0038636363636366,
+                "unsupported_correct_probability": 0.9499999999999998
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.030000000000000027,
+                "known_exact_probability": 0.9499999999999998,
+                "mean_regret": 1.0038636363636366,
+                "unsupported_correct_probability": 0.9499999999999998
+              }
+            }
+          },
+          "1.00": {
+            "abstention_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            },
+            "candidate_attraction": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            },
+            "symmetric": {
+              "channel_aware": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              },
+              "symmetric_assumed": {
+                "false_known_probability": 0.0,
+                "known_exact_probability": 1.0,
+                "mean_regret": 0.709090909090909,
+                "unsupported_correct_probability": 1.0
+              }
+            }
+          }
+        }
+      },
+      "decision": "complete_typed_clarification_infeasible_keep_language_and_model_closed",
+      "individual_pair_emission_count": 0,
+      "outcome_gates": {
+        "aware_false_known_every_prior_and_bias": true,
+        "aware_known_exact_every_prior_and_bias": false,
+        "aware_no_worse_known_than_candidate_specific": true,
+        "aware_no_worse_regret_than_candidate_specific": false,
+        "aware_regret_every_prior_and_bias": false,
+        "aware_unsupported_every_prior_and_bias": true,
+        "complete_hypothesis_retention": true,
+        "perfect_answer_known_exact": true,
+        "perfect_answer_unsupported": true,
+        "symmetric_assumed_false_known_under_bias": true,
+        "symmetric_assumed_regret_under_bias": false,
+        "zero_execution": true,
+        "zero_individual_pair_emission": true
+      },
+      "outcome_pass": false,
+      "true_hypothesis_retention": 1.0
+    }
+  },
+  "result": "outputs/v129-complete-clarification-interface/evaluation/result.json",
+  "result_sha256": "d314b136dd3b0071fede8d40388d3573f881f36727542e29ddfc5bf97636d7c5",
+  "results_document": "docs/v129-complete-clarification-interface-results.md",
+  "results_document_sha256": "d4084969abe6d7ce357d703e86fbf282b03f99ab892b060724b40e33b1224425",
+  "schema_version": "129-complete-clarification-interface-outcome-lock",
+  "verifier": "python/verify_and_freeze_v129_complete_clarification_interface_outcome.py",
+  "verifier_sha256": "f09900c0a51d26b2a14b6a5587288a35bf938c24aba8102535d1856d3ecbd74e"
+}

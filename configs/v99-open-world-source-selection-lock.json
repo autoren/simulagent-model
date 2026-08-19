@@ -1,0 +1,36 @@
+{
+  "audit": "outputs/v99-open-world-source-selection/source-selection-audit.json",
+  "audit_sha256": "7f591561e45b6efa8e7c1ae0c7e48fe3fd46b3f6f58a77ceedb8eb8b4e0c31d6",
+  "auditor": "python/audit_and_freeze_v99_source_selection.py",
+  "auditor_sha256": "93a04e6bf4fc2d66138fae456f1cd6a391230acecf36ee6bc98e3f686c5ca61c",
+  "authorization": {
+    "downloadEitherPayloadBeforeItsOwnLock": false,
+    "extractOrInspectLanguage": false,
+    "grantModelAuthority": false,
+    "loadLocalOrAPIModel": false,
+    "performRealServiceCallOrExternalSideEffect": false,
+    "preregisterMassiveArchiveInventory": true,
+    "preregisterPrestoArchiveInventory": true,
+    "selectPopulation": false,
+    "trainAdapterOrLearnLikelihood": false
+  },
+  "config": "configs/v99-open-world-source-selection.json",
+  "config_sha256": "1af8367e94ccd00536ec699ea4cc2a6b631dd4e77568f1bfb16e5a70fd503acf",
+  "decision_document": "docs/v99-open-world-source-selection.md",
+  "decision_document_sha256": "b1e30d9525572d01164756668f1c86438b96fe32df6e2e0cc815d00be530272f",
+  "experiment": "v99_open_world_source_selection_lock",
+  "lock_payload_sha256": "24bf4a4b8e5aaaed6782870aa125ad65c5a92f63d5886a02085ca39307427973",
+  "outcome": {
+    "core_source": "MASSIVE_1.1_en-US",
+    "decision": "freeze_MASSIVE_core_PRESTO_paired_insufficiency_selection",
+    "insufficient_evidence_source": "PRESTO_v1_en-US_human_context_pairs",
+    "passed": true
+  },
+  "parent_schema_outcome": "configs/v98-test-schema-feasibility-outcome-lock.json",
+  "parent_schema_outcome_sha256": "2b418f81989728778dc0cf057ce82ec5db8f8f73807934900e41a1cec0c2f94e",
+  "protocol": "python/v99_source_selection.py",
+  "protocol_sha256": "0494dc72e72fa1296f95c756fa9fc582715f77770c29171e7324b3c7a878a6b2",
+  "schema_version": "99-open-world-source-selection-lock",
+  "tests": "python/test_v99_source_selection.py",
+  "tests_sha256": "a62b8c5b671da598cc16bfa2f1080ee389153af36de39c3f75aad3efea8df7b4"
+}

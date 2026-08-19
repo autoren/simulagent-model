@@ -1,0 +1,140 @@
+{
+  "V119_config": "configs/v119-asymmetric-adaptive-evidence.json",
+  "V119_config_sha256": "de96b3633b07344445b6454e080641a81563d66f72bd32da135632f6461a8b17",
+  "auditor": "python/audit_and_freeze_v129_complete_clarification_interface.py",
+  "auditor_sha256": "06f65d174bd677b5bbab5adeed38248be3e79744a596c6586a807eb64944cc61",
+  "authorization": {
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_census_channel_bias_cost_comparator_gates_or_decision": false,
+    "read_language_records_or_load_model": false,
+    "run_one_model_free_complete_interface_audit": true
+  },
+  "baseline_config": "configs/v106-open-world-development-benchmark.json",
+  "baseline_config_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "choice_catalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "37edfc9df1a10d58c8102f50f42426bbf8969d23ecfa52e8e196ccf9770cc86f",
+  "config": "configs/v129-complete-clarification-interface.json",
+  "config_payload": {
+    "V119Config": "configs/v119-asymmetric-adaptive-evidence.json",
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumIndividualBenchmarkRecordReadCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumLanguageReadCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0
+    },
+    "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+    "candidateSpecificComparator": {
+      "correlationAware": true,
+      "marginalCorrectness": 0.95,
+      "sameTotalCost": 0.3,
+      "sharedFailureCorrelation": 0.25,
+      "source": "V119 asymmetric adaptive identity-versus-support channel"
+    },
+    "census": {
+      "pairCount": 66,
+      "pairWeighting": "uniform, not an empirical prevalence claim",
+      "presentedCandidates": "each of the six declared known hypotheses",
+      "truths": "all eleven complete-safe-universe hypotheses",
+      "usesLanguageOrIndividualBenchmarkRecords": false
+    },
+    "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+    "claimBoundary": "abstract finite-census feasibility of a complete typed clarification answer under stipulated reliability and bias; not evidence about real human, parser, or model answers, language understanding, independence, deployment, or execution",
+    "completeClarificationChannel": {
+      "abstentionAttractionRule": "when A00 is wrong, allocate 75% of error mass to A00 and distribute the remainder uniformly over other wrong answers",
+      "answerSet": "the exact eleven frozen choice identifiers",
+      "candidateAttractionRule": "when the presented known candidate is wrong, allocate 75% of error mass to it and distribute the remainder uniformly over other wrong answers",
+      "errorBiasFraction": 0.75,
+      "errorRegimes": [
+        "symmetric",
+        "candidate_attraction",
+        "abstention_attraction"
+      ],
+      "marginalCorrectness": [
+        0.9,
+        0.95,
+        1.0
+      ],
+      "noIndependenceClaim": true,
+      "oneAnswerOnly": true,
+      "plannerConditions": [
+        "channel_aware",
+        "symmetric_assumed"
+      ],
+      "requiredReliability": 0.95,
+      "totalCost": 0.3
+    },
+    "decisionRule": {
+      "ifEveryOutcomeAndAccessGatePasses": "complete_typed_clarification_feasible_authorize_realization_audit_only",
+      "otherwise": "complete_typed_clarification_infeasible_keep_language_and_model_closed",
+      "passAuthorizesAPITrainingActionOrExecution": false,
+      "passAuthorizesImmediateLanguageHumanOrModelRun": false,
+      "passAuthorizesOnlyPreregisterClarificationRealizationAudit": true,
+      "passAuthorizesProtectedInductionOrRicherPlanning": false
+    },
+    "experiment": "v129_model_free_complete_safe_hypothesis_clarification_audit",
+    "frozenBayesPolicy": {
+      "actionSet": "ABSTAIN, UNSUPPORTED, or one exact declared KNOWN intent",
+      "actualExecutionCount": 0,
+      "completeSafeHypothesisUniverseAlwaysRetained": true,
+      "minimumPosteriorExpectedFrozenDecisionCost": true,
+      "novelAndInsufficientCannotBecomeActions": true
+    },
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumAwareFalseKnownEveryPriorAndBiasAtRequiredReliability": 0.1,
+      "maximumAwareMeanRegretEveryPriorAndBiasAtRequiredReliability": 1.1666666666666667,
+      "maximumIndividualPairEmissionCount": 0,
+      "maximumSymmetricAssumedFalseKnownEveryPriorAndBiasedRegime": 0.1,
+      "maximumSymmetricAssumedRegretEveryPriorAndBiasedRegime": 1.1666666666666667,
+      "minimumAwareKnownExactEveryPriorAndBiasAtRequiredReliability": 0.8,
+      "minimumAwareUnsupportedEveryPriorAndBiasAtRequiredReliability": 0.8,
+      "requireAwareNoWorseKnownExactThanCandidateSpecificEveryPriorAndBias": true,
+      "requireAwareNoWorseRegretThanCandidateSpecificEveryPriorAndBias": true,
+      "requiredPerfectAnswerKnownExact": 1.0,
+      "requiredPerfectAnswerUnsupported": 1.0,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "parentV128OutcomeLock": "configs/v128-sgd-typed-relation-feasibility-outcome-lock.json",
+    "priorRegimes": [
+      {
+        "candidateProbability": 0.09090909090909091,
+        "id": "uniform_safe_universe"
+      },
+      {
+        "candidateProbability": 0.5,
+        "id": "moderate_candidate"
+      },
+      {
+        "candidateProbability": 0.75,
+        "id": "strong_candidate"
+      }
+    ],
+    "schemaVersion": "129-complete-clarification-interface-design"
+  },
+  "config_sha256": "e4540c6ff18942487358885852408333ed8519349e1cfefaa8894255f93a7b3e",
+  "design_audit": "outputs/v129-complete-clarification-interface/design-audit.json",
+  "design_audit_sha256": "a858192f34c3e7866787cd97a3baac32007e4b8299d0358da5230c7981c33f37",
+  "experiment": "v129_model_free_complete_safe_hypothesis_clarification_audit",
+  "lock_payload_sha256": "0832563ae025b70caa1fc113b717b04c43a0cf30abb8fde453729daa85918f18",
+  "parent_analysis_lock": "configs/v128-sgd-typed-relation-feasibility-lock.json",
+  "parent_analysis_lock_sha256": "82911850131a2ce4f2e13d005c114df6e2613e626cd8635378356e68b226110e",
+  "parent_outcome": "configs/v128-sgd-typed-relation-feasibility-outcome-lock.json",
+  "parent_outcome_sha256": "03850b48bb63147ce903d7865d0c682966613c359c0aa16cc951e6d0435ab065",
+  "plan": "docs/v129-complete-clarification-interface-plan.md",
+  "plan_sha256": "1ef3a3f8ce68a4b2784ecf6009f7ec046c958b8f8da9724fc7aa39bad600dbaf",
+  "protocol": "python/v129_complete_clarification_interface.py",
+  "protocol_sha256": "0ba247e852d74d241bcf61ce366a2e1c638c590eeb0219a6fb94d8a1b07c12dc",
+  "runner": "python/run_v129_complete_clarification_interface.py",
+  "runner_sha256": "96830e20b10c5fdfe4fe475d710c3bb944c81bac9916c88a6d321271532f9a64",
+  "schema_version": "129-complete-clarification-interface-lock",
+  "tests": "python/test_v129_complete_clarification_interface.py",
+  "tests_sha256": "fa55b74ed0c4bd438d7996e8a27d0b44d9424778f490eab85c833ccc41957124",
+  "verifier": "python/verify_and_freeze_v129_complete_clarification_interface_outcome.py",
+  "verifier_sha256": "f09900c0a51d26b2a14b6a5587288a35bf938c24aba8102535d1856d3ecbd74e"
+}

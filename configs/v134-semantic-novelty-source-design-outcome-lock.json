@@ -1,0 +1,44 @@
+{
+  "analysis_lock": "configs/v134-semantic-novelty-source-design-lock.json",
+  "analysis_lock_sha256": "0845a500614a4ad1e86051ed503069cdeb8fb5d3e799f264ed2e48a425c60b6f",
+  "audit": "outputs/v134-semantic-novelty-source-design/outcome-audit.json",
+  "audit_sha256": "37c70d7a67aa22bb9eb4af5feb3ec17e5d1a1171ef0a4317e0f48cd837590454",
+  "authorization": {
+    "extract_language_or_run_local_or_API_model": false,
+    "modify_rerun_reselect_or_redefine_V134": false,
+    "open_protected_or_begin_induction_or_richer_planning": false,
+    "retain_as_future_benchmark_asset": true,
+    "run_training_action_or_execution": false
+  },
+  "choice_catalog": "outputs/v134-semantic-novelty-source-design/design/choice-catalog.json",
+  "choice_catalog_sha256": "f9c058a191844e26fa6901a3ced658c5ac223b8dbbfea9e44e45a51f9ec0f8e9",
+  "experiment": "v134_semantic_novelty_source_design_outcome_lock",
+  "fixture_population": "outputs/v134-semantic-novelty-source-design/design/fixture-population.json",
+  "fixture_population_sha256": "6f9dc434379285aa60b6046d6e75b1b28c28f36b29b847a184a54f49422979a6",
+  "lock_payload_sha256": "13ba34bd871240bd212d75cacb5786a3f4dc2fafbe2d0df531facc0bf359f897",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "freeze_semantically_noncolliding_dev_source_await_new_realization_authority",
+    "passed": true,
+    "source_design_pass": true,
+    "summary": {
+      "cell_count": 66,
+      "choice_count": 11,
+      "fixture_count": 264,
+      "known_pair_coverage": 6,
+      "missing_control_count": 24,
+      "novel_domain_coverage": 3,
+      "novel_full_signature_collision_fraction": 0.0,
+      "novel_name_collision_fraction": 0.0,
+      "source_record_count": 240,
+      "unsupported_domain_coverage": 1
+    }
+  },
+  "results_document": "docs/v134-semantic-novelty-source-design-results.md",
+  "results_document_sha256": "2e098af4058b88d65b13a5ed6e3c8fa15a7d205dce4c04f0a7f64acc71c469b3",
+  "schema_identifiability": "outputs/v134-semantic-novelty-source-design/design/schema-identifiability.json",
+  "schema_identifiability_sha256": "8987c95e1e712cbbc481dec1eee86355bfecabc18382c80918df6da6aacbdbd8",
+  "schema_version": "134-semantic-novelty-source-design-outcome-lock",
+  "verifier": "python/verify_and_freeze_v134_semantic_novelty_source_design_outcome.py",
+  "verifier_sha256": "cd67233613ddb4fbe6e2eea6a7b75b54d3aa97f339b49065daa30523d64e2fc5"
+}

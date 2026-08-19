@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "126-sgd-retrieval-selectivity-design",
+  "experiment": "v126_cross_dataset_model_free_retrieval_geometry_selectivity",
+  "parentV125OutcomeLock": "configs/v125-sgd-catalog-population-outcome-lock.json",
+  "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "selectedPopulations": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+  "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+  "V119Config": "configs/v119-asymmetric-adaptive-evidence.json",
+  "claimBoundary": "finite fresh cross-dataset test of one frozen model-free retrieval-status selective-query trigger under a simulated clarification channel; not real clarification reliability, statistical independence, unrestricted open-world understanding, model evidence, deployment, or execution",
+  "extraction": {
+    "archiveRevision": "e852981ae34990f4358979625854259302feaa78",
+    "partitions": ["train", "test"],
+    "expectedTrainingRecordCount": 4881,
+    "expectedEvaluationRecordCount": 576,
+    "persistSelectedLanguage": false,
+    "maximumIndividualLanguageRecordEmissionCount": 0
+  },
+  "frozenRetrieval": {
+    "mechanism": "V106 character_wb TF-IDF 3-5 gram nearest-neighbor",
+    "knownThreshold": 0.8,
+    "unsupportedThreshold": 0.3,
+    "thresholdSource": "V112 frozen transfer thresholds",
+    "fitCount": 0,
+    "nearestKnownIntentIsCandidateNotGroundTruth": true
+  },
+  "primaryTrigger": {
+    "id": "query_only_ambiguous_retrieval_band",
+    "queryRule": "query iff 0.3 < nearest_similarity < 0.8",
+    "highBandShadowAction": "nearest declared known intent",
+    "lowBandShadowAction": "unsupported",
+    "candidateCount": 1,
+    "selectionCount": 0
+  },
+  "queryChannel": {
+    "source": "V119 asymmetric adaptive identity-versus-support causal channel",
+    "marginalCorrectness": 0.95,
+    "totalCost": 0.3,
+    "correlationAware": true,
+    "sharedFailureCorrelations": [0.0, 0.25, 0.5],
+    "priorRegimes": [
+      {"id": "uniform_safe_universe", "candidateProbability": 0.09090909090909091},
+      {"id": "moderate_candidate", "candidateProbability": 0.5},
+      {"id": "strong_candidate", "candidateProbability": 0.75}
+    ]
+  },
+  "comparators": [
+    "ask_always",
+    "no_query_frozen_retrieval_action",
+    "query_every_record_with_frozen_channel",
+    "primary_frozen_status_band_selective_query",
+    "oracle_query_value_rank_same_skip_fraction_diagnostic"
+  ],
+  "outcomeGates": {
+    "maximumSelectiveMeanRegretEveryPriorAndCorrelation": 1.1666666666666667,
+    "minimumSelectiveKnownExactEveryPriorAndCorrelation": 0.8,
+    "minimumSelectiveUnsupportedCorrectEveryPriorAndCorrelation": 0.8,
+    "maximumSelectiveFalseKnownEveryPriorAndCorrelation": 0.1,
+    "minimumSkipFraction": 0.05,
+    "maximumSkipFraction": 0.95,
+    "minimumQueriedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+    "maximumSkippedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+    "requireSelectiveRegretNoWorseThanAlwaysQueryEveryCondition": true,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumIndividualRecordEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumSourceArchiveReadCount": 1,
+    "maximumAutomaticSelectedLanguageParseCount": 1,
+    "maximumPersistedSelectedLanguageRecordCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "completeSafeCompositeHypothesisUniverseAlwaysRetained": true,
+    "allActionsAreCounterfactualShadowActions": true,
+    "retrievalAndSimulatedAnswersNeverDefineCapabilitiesOrGroundTruth": true,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOutcomeAndAccessGatePasses": "retrieval_geometry_selectivity_transfers_cross_dataset_requires_independent_confirmation",
+    "otherwise": "retrieval_status_band_fails_cross_dataset_selectivity_close_current_trigger_inventory",
+    "passAuthorizesIndependentConfirmationOnly": true,
+    "passAuthorizesThresholdFitAlternativeTriggerOrModelRun": false,
+    "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+  }
+}

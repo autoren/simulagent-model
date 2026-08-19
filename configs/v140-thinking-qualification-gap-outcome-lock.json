@@ -1,0 +1,43 @@
+{
+  "V139_result": "outputs/v139-repaired-direct-vs-thinking-realization/model-realization/result.json",
+  "V139_result_sha256": "372e30cda64fa98328d608953714c3424b73606eee4bcf013a9f59cad6d0b575",
+  "audit": "outputs/v140-thinking-qualification-gap/audit.json",
+  "audit_sha256": "b8a2e722da774422506fe2f987013930328238daa033cf96bfc376300d638477",
+  "authorization": {
+    "preregister_model_free_bounded_finalizer_and_evidence_sufficiency_feasibility": true,
+    "rerun_mine_or_modify_V139": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_language_or_model": false,
+    "touch_V134_or_external_language": false
+  },
+  "config": "configs/v140-thinking-qualification-gap.json",
+  "config_sha256": "0e3671007cc874e7853a5970b8a660f763daf0be06a4ec2080f3c2d8d386e51e",
+  "experiment": "v140_aggregate_thinking_qualification_gap_audit",
+  "hidden_fixtures": "outputs/v135-controlled-open-world-minimal-pairs/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "b0dbfef23db7b8975a6b0a74fa5602bbd65de2aadc307d19c6be2bd99b6b3231",
+  "lock_payload_sha256": "1c1d162407e21dea0297a27d062f8eee2bf5c775c5b56510b3d4edfda6fba1ea",
+  "outcome": {
+    "decision": "freeze_two_mechanism_gap_authorize_model_free_controller_feasibility_only",
+    "minimum_joint_gap": {
+      "additional_apparent_ambiguous_corrections_required": 1,
+      "both_mechanism_families_required": true,
+      "fewer_invalid_outputs_required": 2
+    },
+    "paired_thinking_gain_confirmed": true,
+    "passed": true,
+    "two_mechanism_gap_confirmed": true
+  },
+  "parent_outcome": "configs/v139-repaired-direct-vs-thinking-realization-outcome-lock.json",
+  "parent_outcome_sha256": "5df417db8866cc9b6e3535117f7c88a0a3c47b0fabda24c0e121050e3e3aa833",
+  "plan": "docs/v140-thinking-qualification-gap-plan.md",
+  "plan_sha256": "975768be4d32343e358a9bc1c0578bcab1e5ba026d40ac3dae850a06bfebe105",
+  "protocol": "python/v140_thinking_qualification_gap.py",
+  "protocol_sha256": "9ca6f571c6fe7ff4df0db96b10b9d549ab342d186f7f3e783298e22219f800cf",
+  "results_document": "docs/v140-thinking-qualification-gap-results.md",
+  "results_document_sha256": "7937a7a0795ab5436cf31d3293430200a0f4676dd4b514db8d746bb508556441",
+  "runner": "python/run_and_freeze_v140_thinking_qualification_gap.py",
+  "runner_sha256": "6e41a4dd2f711c60a46515fe725efc59fe6a8210b0389175ab1a2a10aaa5f548",
+  "schema_version": "140-thinking-qualification-gap-outcome-lock",
+  "tests": "python/test_v140_thinking_qualification_gap.py",
+  "tests_sha256": "abf893e131499785d15ed4fa27f84f4454a09f9addebd3099987a04221d3a420"
+}

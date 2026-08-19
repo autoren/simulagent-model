@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "127-sgd-typed-constraint-feasibility-design",
+  "experiment": "v127_fresh_sgd_oracle_typed_constraint_selectivity_feasibility",
+  "parentV126OutcomeLock": "configs/v126-sgd-retrieval-selectivity-outcome-lock.json",
+  "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "sourceArchiveRevision": "e852981ae34990f4358979625854259302feaa78",
+  "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "excludedV125Population": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+  "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+  "V119Config": "configs/v119-asymmetric-adaptive-evidence.json",
+  "claimBoundary": "fresh finite-population oracle upper-bound test of source-authored typed slot names against frozen known schemas; not evidence that language, a parser, an LLM, a human, or deployment supplies those annotations, and not unrestricted open-world understanding or execution",
+  "freshPopulation": {
+    "sourcePartition": "test",
+    "baseSalt": "simulagent-v127-fresh-typed-constraint-feasibility-2026-08-18",
+    "knownRecordCountPerDeclaredPair": 32,
+    "novelValidRecordCountPerVisibleDomain": 64,
+    "unsupportedRecordCountPerDomain": 48,
+    "requiredRecordCount": 576,
+    "requiredRecordCountPerClass": 192,
+    "requiredKnownPairCoverage": 6,
+    "requiredNovelDomainCoverage": 3,
+    "requiredUnsupportedDomainCoverage": 4,
+    "excludeEveryV125EvaluationIdentifier": true,
+    "selectionUsesOnlyIdentifierPartitionClassDomainServiceAndIntent": true,
+    "selectionBeforeSourceArchiveRead": true,
+    "persistLanguage": false
+  },
+  "typedConstraintMechanism": {
+    "id": "oracle_dialogue_state_slot_signature_unique_known_compatibility",
+    "evidenceSource": "source-authored slot names in the selected USER frame state plus non-intent USER actions",
+    "oracleUpperBoundOnly": true,
+    "utteranceFieldMayBeAccessed": false,
+    "slotValuesMayBeAccessedOrPersisted": false,
+    "knownSchemaSource": "pinned train schema required_slots plus optional_slots for the six declared known service-intent pairs",
+    "compatibilityRule": "a known intent is compatible iff the observed slot-name set is nonempty and is a subset of that intent's allowed required-plus-optional slot names",
+    "candidateRule": "choose the unique compatible known intent when one exists; otherwise minimize extraneous observed slots, then missing required slots, then maximize overlap, then lexicographic intent id",
+    "queryRule": "skip clarification and shadow-select the known candidate iff exactly one known intent is compatible; query otherwise",
+    "candidateCount": 1,
+    "selectionCount": 0,
+    "fitCount": 0,
+    "thresholdCount": 0,
+    "usesGroundTruthClassIntentServiceOrDomainAtDecisionTime": false,
+    "completeSafeHypothesisUniverseAlwaysRetained": true
+  },
+  "queryChannel": {
+    "source": "V119 asymmetric adaptive identity-versus-support causal channel",
+    "marginalCorrectness": 0.95,
+    "totalCost": 0.3,
+    "correlationAware": true,
+    "sharedFailureCorrelations": [0.0, 0.25, 0.5],
+    "priorRegimes": [
+      {"id": "uniform_safe_universe", "candidateProbability": 0.09090909090909091},
+      {"id": "moderate_candidate", "candidateProbability": 0.5},
+      {"id": "strong_candidate", "candidateProbability": 0.75}
+    ]
+  },
+  "comparators": [
+    "ask_always",
+    "query_every_record_with_frozen_channel",
+    "oracle_typed_constraint_selective_query"
+  ],
+  "outcomeGates": {
+    "maximumSelectiveMeanRegretEveryPriorAndCorrelation": 1.1666666666666667,
+    "minimumSelectiveKnownExactEveryPriorAndCorrelation": 0.8,
+    "minimumSelectiveUnsupportedCorrectEveryPriorAndCorrelation": 0.8,
+    "maximumSelectiveFalseKnownEveryPriorAndCorrelation": 0.1,
+    "minimumSkipFraction": 0.05,
+    "maximumSkipFraction": 0.95,
+    "minimumSkippedActionPrecision": 0.95,
+    "minimumQueriedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+    "maximumSkippedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+    "requireSelectiveRegretNoWorseThanAlwaysQueryEveryCondition": true,
+    "requiredSchemaSignatureCount": 6,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumIndividualRecordEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumSourceArchiveReadCount": 1,
+    "maximumAutomaticSelectedAnnotationParseCount": 1,
+    "maximumUtteranceFieldAccessCount": 0,
+    "maximumSlotValueAccessCount": 0,
+    "maximumPersistedIndividualEvidenceCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "annotationsAreUnavailableOracleEvidenceNotRuntimeInputs": true,
+    "allActionsAreCounterfactualShadowActions": true,
+    "typedSignaturesNeverDefineCapabilitiesOrGroundTruth": true,
+    "novelAndInsufficientHypothesesCannotBecomeActions": true,
+    "actualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOutcomeAndAccessGatePasses": "oracle_typed_constraint_selectivity_feasible_authorize_parser_realization_design_only",
+    "otherwise": "oracle_typed_constraint_selectivity_infeasible_do_not_realize_parser",
+    "passAuthorizesOnlyPreregisterTypedParserRealizationDesign": true,
+    "passAuthorizesImmediateLanguageOrModelRun": false,
+    "passAuthorizesProtectedInductionOrRicherPlanning": false,
+    "passAuthorizesAPITrainingActionOrExecution": false
+  }
+}

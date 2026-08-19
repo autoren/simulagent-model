@@ -1,0 +1,47 @@
+{
+  "access": {
+    "LLM_API_call_count": 0,
+    "adapter_training_run_count": 0,
+    "attempt_number": 1,
+    "external_side_effect_count": 0,
+    "manual_utterance_inspection_count": 0,
+    "model_generation_count": 1,
+    "model_load_count": 1,
+    "real_service_call_count": 0,
+    "source_language_record_access_count": 48
+  },
+  "access_progress": "outputs/v88-external-intent-candidate/evaluation/access-progress.json",
+  "access_progress_sha256": "ddef00ec95888042f43cbe9065db640331ed3c39a0f3cd7f4cee2bc866570f17",
+  "authorization": {
+    "authorize_any_further_retry": false,
+    "interpret_as_positive_or_negative_model_evidence": false,
+    "maximum_cumulative_model_generation_count_after_retry": 49,
+    "maximum_cumulative_model_load_count_after_retry": 2,
+    "modify_or_resume_V88_attempt": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_one_mechanical_name_preservation_retry": true,
+    "retry_may_change_corpus_prompt_model_decoding_parser_scoring_controls_or_quality_gates": false,
+    "retry_may_only_preserve_registered_fixture_name": true,
+    "run_API_model_or_train_adapter": false
+  },
+  "checks": {
+    "exact_partial_access_is_one_local_generation_only": true,
+    "failed_response_is_unobserved_and_unscored": true,
+    "failure_is_exact_registered_name_contract_error": true,
+    "implementation_lock_exact": true,
+    "no_fixture_or_result_was_preserved": true
+  },
+  "experiment": "v88_external_intent_candidate_execution_inconclusive",
+  "failure": "outputs/v88-external-intent-candidate/evaluation/failure.json",
+  "failure_sha256": "a6faa1bf4300c408d743c27f447addfa9e22b4cabcd9acc4be1f35fa400a8daa",
+  "freezer": "python/freeze_v88_execution_inconclusive.py",
+  "freezer_sha256": "dc0e69b1c581c4f7aeeb4a2b5f6d29fe91102732fe2e33191425db8cf8b84829",
+  "implementation_lock": "configs/v88-external-intent-candidate-implementation-lock.json",
+  "implementation_lock_sha256": "150ebfda8aacb9110bf66942a2acd641aaed64341ede6bbaa95c21d6722c7e06",
+  "lock_payload_sha256": "f6538e10de522290a74291212326d006620dee7d5530dd7a4c207db468b96103",
+  "note": "docs/v88-external-intent-candidate-execution-note.md",
+  "note_sha256": "b6dc457c644f366c1cd275df83a029c9089be4164e0aa7bce0261128f9d6af85",
+  "schema_version": "88-external-intent-candidate-execution-lock",
+  "scientific_outcome": null,
+  "status": "execution_inconclusive"
+}

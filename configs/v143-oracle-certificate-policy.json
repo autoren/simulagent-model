@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "143-oracle-certificate-policy",
+  "experiment": "v143_model_free_oracle_certificate_policy_audit",
+  "parentV142OutcomeLock": "configs/v142-certificate-interface-population-outcome-lock.json",
+  "V136Config": "configs/v136-controlled-clarification-value.json",
+  "claimBoundary": "model-free oracle and mutation audit of the frozen V142 certificate/finalizer interface; not evidence that a model realizes certificates, not semantic validation of a well-formed wrong singleton, not external transfer, authority, action, or execution",
+  "mutationClasses": [
+    "missing_keys",
+    "extra_key",
+    "unknown_choice",
+    "A00_in_compatible_set",
+    "duplicate_or_unsorted_compatible_set",
+    "sufficient_with_multiple_choices",
+    "sufficient_proposal_mismatch",
+    "insufficient_with_singleton",
+    "insufficient_with_non_A00_proposal"
+  ],
+  "gates": {
+    "requiredFixtureCount": 288,
+    "requiredOracleCertificateValidity": 1.0,
+    "requiredCompatibleSetExactAccuracy": 1.0,
+    "requiredFinalChoiceExactAccuracy": 1.0,
+    "requiredEveryLanguageClassExactAccuracy": 1.0,
+    "requiredAmbiguousQueryRate": 1.0,
+    "maximumSequentialMeanDecisionCost": 0.3,
+    "minimumWorstFamilySequentialImprovement": 0.7,
+    "maximumSequentialFalseKnownOnRightTruth": 0.0,
+    "minimumSequentialSafeNonKnownOnRightTruth": 1.0,
+    "requiredMalformedMutationFailClosedRate": 1.0,
+    "requiredDeterministicFinalOutputValidity": 1.0,
+    "requiredValidWrongSingletonRecognizedAsSemanticLimitation": true,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumV134LanguageReadCount": 0,
+    "maximumExternalLanguageReadCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryOracleMutationPolicyAndAccessGatePasses": "freeze_oracle_certificate_policy_authorize_local_development_realization_preregistration_only",
+    "otherwise": "close_certificate_realization_branch_without_model_run",
+    "passAuthorizesDevelopmentRealizationPreregistrationOnly": true,
+    "passAuthorizesImmediateModelRun": false,
+    "passAuthorizesTestSplitOrV134Access": false,
+    "passAuthorizesAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

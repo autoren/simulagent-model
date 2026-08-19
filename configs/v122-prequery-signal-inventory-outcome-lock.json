@@ -1,0 +1,213 @@
+{
+  "analysis_lock": "configs/v122-prequery-signal-inventory-lock.json",
+  "analysis_lock_sha256": "f7fead45d4a1041af4d98bfa8aba0a2b2cbc08c27374d0c09b329df23ca12f8d",
+  "audit": "outputs/v122-prequery-signal-inventory/outcome-audit.json",
+  "audit_sha256": "10182bb1925c082fa9351f750bfbd454d86c8f4290c30aa6bcc8d7f965843212",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "evaluate_signals_or_fit_trigger": false,
+    "modify_rerun_or_retune_V122": false,
+    "preregister_fresh_model_free_retrieval_geometry_design": true,
+    "run_API_training_action_or_execution": false,
+    "run_language_model_or_protected": false
+  },
+  "experiment": "v122_prequery_signal_inventory_outcome_lock",
+  "lock_payload_sha256": "c3c83b32ca325005ec5487e7f5f7ff6b30a78956d720dcbbb5c93437798de8c4",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "inventory_complete_retrieval_geometry_only_llm_independent_semantic_family",
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "decision": "inventory_complete_retrieval_geometry_only_llm_independent_semantic_family",
+      "excluded_signal_count": 9,
+      "excluded_signals": [
+        {
+          "id": "source_class_label",
+          "reason": "hidden ground truth leakage"
+        },
+        {
+          "id": "source_intent",
+          "reason": "hidden ground truth leakage"
+        },
+        {
+          "id": "source_scenario_annotation",
+          "reason": "hidden ground truth leakage unless produced by an audited runtime mechanism"
+        },
+        {
+          "id": "slot_type_count_or_overlap_metadata",
+          "reason": "source-derived benchmark metadata, not an audited runtime observation"
+        },
+        {
+          "id": "post_clarification_answers",
+          "reason": "not available before query decision"
+        },
+        {
+          "id": "posterior_after_clarification",
+          "reason": "not available before query decision"
+        },
+        {
+          "id": "realized_query_value_or_regret",
+          "reason": "outcome leakage"
+        },
+        {
+          "id": "oracle_hidden_schema_truth",
+          "reason": "oracle control only"
+        },
+        {
+          "id": "V115_second_pass_verdict",
+          "reason": "additional model interrogation, not a pre-query signal"
+        }
+      ],
+      "included_signal_count": 11,
+      "included_signals": [
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic",
+          "futurePairedEvaluationRole": "control_only",
+          "id": "input_observation_available",
+          "independenceClaim": "none_needed",
+          "llmDependence": "none",
+          "mutability": "immutable_per_case",
+          "semanticFamily": "presence_control",
+          "source": "typed interface"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "retrieval_nearest_similarity",
+          "independenceClaim": "computationally_independent_of_llm_not_statistically_independent",
+          "llmDependence": "none",
+          "mutability": "frozen_definition_and_catalog",
+          "semanticFamily": "retrieval_geometry",
+          "source": "frozen character n-gram retrieval"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic",
+          "futurePairedEvaluationRole": "candidate_context_only",
+          "id": "retrieval_nearest_intent",
+          "independenceClaim": "computationally_independent_of_llm_not_statistically_independent",
+          "llmDependence": "none",
+          "mutability": "frozen_definition_and_catalog",
+          "semanticFamily": "retrieval_geometry",
+          "source": "frozen character n-gram retrieval"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "retrieval_status_band",
+          "independenceClaim": "computationally_independent_of_llm_not_statistically_independent",
+          "llmDependence": "none",
+          "mutability": "frozen_thresholds",
+          "semanticFamily": "retrieval_geometry",
+          "source": "frozen retrieval thresholds"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "pinned_no_retry_generation_then_deterministic_parse",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "direct_typed_choice",
+          "independenceClaim": "not_independent",
+          "llmDependence": "direct",
+          "mutability": "pinned_model_and_prompt_but_generated_per_case",
+          "semanticFamily": "model_proposal",
+          "source": "pinned local proposer"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "model_report_then_range_validation",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "direct_self_reported_confidence",
+          "independenceClaim": "not_independent_and_not_likelihood",
+          "llmDependence": "direct",
+          "mutability": "pinned_model_and_prompt_but_generated_per_case",
+          "semanticFamily": "model_proposal",
+          "source": "pinned local proposer"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "typed_response_validity_and_failure_code",
+          "independenceClaim": "not_semantic_evidence",
+          "llmDependence": "input_is_model_response",
+          "mutability": "frozen_validator_applied_to_generated_response",
+          "semanticFamily": "syntax_validation",
+          "source": "deterministic response validator"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic_given_proposal_and_retrieval",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "proposal_retrieval_agreement",
+          "independenceClaim": "not_independent",
+          "llmDependence": "candidate_dependent",
+          "mutability": "frozen_definition_but_candidate_dependent",
+          "semanticFamily": "cross_check",
+          "source": "frozen policy cross-check"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic_given_proposal_and_retrieval",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "proposal_retrieval_score_and_gap",
+          "independenceClaim": "not_independent",
+          "llmDependence": "candidate_dependent",
+          "mutability": "frozen_definition_but_candidate_dependent",
+          "semanticFamily": "cross_check",
+          "source": "frozen V113 feature definition"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic_given_proposal_and_declared_catalog",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "proposal_nearest_same_scenario",
+          "independenceClaim": "not_independent",
+          "llmDependence": "candidate_dependent",
+          "mutability": "frozen_definition_but_candidate_dependent",
+          "semanticFamily": "cross_check",
+          "source": "frozen V113 feature definition"
+        },
+        {
+          "availableBeforeClarification": true,
+          "determinism": "deterministic_given_proposal_and_retrieval",
+          "futurePairedEvaluationRole": "candidate_signal",
+          "id": "frozen_policy_state",
+          "independenceClaim": "not_independent",
+          "llmDependence": "candidate_dependent",
+          "mutability": "frozen_policy_but_candidate_dependent",
+          "semanticFamily": "derived_policy",
+          "source": "V112 policy"
+        }
+      ],
+      "individual_record_read_count": 0,
+      "llm_independent_semantic_families": [
+        "retrieval_geometry"
+      ],
+      "outcome_gates": {
+        "aggregate_definition_only": true,
+        "all_included_available_prequery": true,
+        "computational_independence_not_promoted_to_statistical_independence": true,
+        "excluded_leakage_signal_count": true,
+        "included_signal_count": true,
+        "llm_independent_semantic_family_exact": true,
+        "mutability_recorded": true,
+        "no_utility_calibration_or_trigger_claim": true,
+        "zero_actual_execution": true
+      },
+      "outcome_pass": true,
+      "signal_evaluated_count": 0,
+      "trigger_fitted_count": 0
+    }
+  },
+  "result": "outputs/v122-prequery-signal-inventory/audit/result.json",
+  "result_sha256": "9b25c3b8f69c1de6810269670733a810180c4af1ff0900b0a3d096e55ed7fa25",
+  "results_document": "docs/v122-prequery-signal-inventory-results.md",
+  "results_document_sha256": "5d858159b8b4c3bc7c9a7b044f4dfd6a0f8ce4996abd62436163cbbd3c791329",
+  "schema_version": "122-prequery-signal-inventory-outcome-lock",
+  "verifier": "python/verify_and_freeze_v122_prequery_signal_inventory_outcome.py",
+  "verifier_sha256": "9e023f351cdd70593759bc669ecf9d114e436636342a7da932ecb4a8685fe127"
+}

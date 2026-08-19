@@ -1,0 +1,131 @@
+{
+  "auditor": "python/audit_and_freeze_v100_source.py",
+  "auditor_sha256": "d0da7311a95abbfce4236624d39d91fe46cd739575f1127df633e4c2194c7d34",
+  "authorization": {
+    "download_and_inventory_pinned_archive_once": true,
+    "emit_or_manually_inspect_language": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_source_identity_roles_classes_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "select_population_or_extract_selected_language": false,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "config": "configs/v100-massive-source.json",
+  "config_payload": {
+    "allowedSourcePartitions": [
+      "train",
+      "dev",
+      "test"
+    ],
+    "archive": {
+      "byteSize": 40251390,
+      "etag": "51e0da2a3ff7a016f109e1d1b4306e93-3",
+      "expectedLocaleMemberSuffix": "en-US.jsonl",
+      "lastModified": "2022-11-07T16:55:04Z",
+      "url": "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz"
+    },
+    "canonicalPartitionMap": {
+      "dev": "validation",
+      "test": "test",
+      "train": "train"
+    },
+    "classConstruction": {
+      "emitRawOrAnnotatedUtteranceTokensOrSlotValues": false,
+      "knownFamiliarMinimumCurrentUtteranceOverlapCount": 1,
+      "knownUnfamiliarMaximumCurrentUtteranceOverlapCount": 0,
+      "novelRequiresHiddenIntentInsideCatalogScenario": true,
+      "unsupportedRequiresCompletelyWithheldScenario": true
+    },
+    "decisionRule": {
+      "ifAnySourceGateFails": "stop before population selection, selected-language extraction, model access, or gate changes",
+      "ifEverySourceGatePasses": "freeze the MASSIVE ontology and candidate inventory and authorize preregistration of hash-selected validation/test populations",
+      "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false,
+      "passAuthorizesModelInference": false,
+      "passAuthorizesSelectedLanguageExtraction": false
+    },
+    "experiment": "v100_massive_en_us_typed_open_set_source_feasibility",
+    "license": "CC-BY-4.0",
+    "locale": "en-US",
+    "officialDataset": "https://huggingface.co/datasets/AmazonScience/massive",
+    "officialPaper": "https://aclanthology.org/2023.acl-long.235/",
+    "parentSourceSelectionLock": "configs/v99-open-world-source-selection-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "archiveHEADRequestCount": 1,
+      "archivePayloadDownloadCount": 0,
+      "languageRecordInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0
+    },
+    "requiredRecordFields": [
+      "id",
+      "locale",
+      "partition",
+      "scenario",
+      "intent",
+      "utt",
+      "annot_utt"
+    ],
+    "schemaVersion": "100-massive-core-source-design",
+    "servicePartition": {
+      "catalogScenarioCount": 3,
+      "catalogScenarioSalt": "simulagent-v100-catalog-scenario-v1",
+      "eligibleIntentMinimumRecordCount": 64,
+      "eligibleScenarioMinimumRecordCount": 200,
+      "hiddenIntentCountPerSelectedScenario": 1,
+      "hiddenIntentSalt": "simulagent-v100-hidden-intent-v1",
+      "hiddenScenarioCount": 2,
+      "hiddenScenarioSalt": "simulagent-v100-hidden-scenario-v1",
+      "minimumDeclaredIntentCount": 3,
+      "partitionBeforeUtteranceDerivedFeatures": true,
+      "unsupportedScenarioCount": 1,
+      "unsupportedScenarioSalt": "simulagent-v100-unsupported-scenario-v1"
+    },
+    "sourceGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumClassCandidateCount": 64,
+      "minimumDeclaredIntentCount": 3,
+      "minimumEligibleScenarioCount": 4,
+      "minimumIntentCount": 60,
+      "minimumKnownClassScenarioCoverage": 2,
+      "minimumScenarioCount": 18,
+      "minimumSlotTypeCount": 20,
+      "minimumTestCandidateCountPerClass": 16,
+      "minimumValidationCandidateCountPerClass": 16,
+      "requiredCatalogScenarioCount": 3,
+      "requiredHiddenIntentCount": 2,
+      "requiredNovelScenarioCoverage": 2,
+      "requiredUnsupportedScenarioCount": 1,
+      "requiredUnsupportedScenarioCoverage": 1
+    },
+    "sourceName": "MASSIVE 1.1",
+    "sourceRole": "primary_typed_four_class_controlled_open_set_transfer"
+  },
+  "config_sha256": "a4c3431f65545a3f2b8158f03335964c3350f032191419fd4da69a5e24d7e1ce",
+  "design_audit": "outputs/v100-massive-open-set/source-design-audit.json",
+  "design_audit_sha256": "b7e02e28033197f7c159b0ffda7e9ab939828970e20c49dc71fe48e0121c0899",
+  "experiment": "v100_massive_source_lock",
+  "lock_payload_sha256": "6450571a0ab96d0a4ce6c36dbd0f17a1eebb2b318da10bfb053215301633c111",
+  "parent_source_selection_lock": "configs/v99-open-world-source-selection-lock.json",
+  "parent_source_selection_lock_sha256": "194d9e1dda182eb39849ee2047647fac45cf42aded9e05d1f302692640fdcdf6",
+  "plan": "docs/v100-massive-source-plan.md",
+  "plan_sha256": "0124d4f7b29e7d1665d31e954aff22dc7f2bc5645d47267bfabe20b79bd6f84a",
+  "protocol": "python/v100_massive_source.py",
+  "protocol_sha256": "ed7d15aa63d7c618884cd5d0698119fe688f69b15e25b30fbb02bcd3e521e75c",
+  "runner": "python/run_v100_source_inventory.py",
+  "runner_sha256": "7706b0d5872934103536a7c29053cbdfa7f3c3d84c1f5cbe02ea50095c92adb8",
+  "schema_version": "100-massive-source-lock",
+  "tests": "python/test_v100_massive_source.py",
+  "tests_sha256": "4f179f39cf8a1b228facee62cf2ff6b373e96966cc265a2c421283eed0c9e0a2",
+  "verifier": "python/verify_and_freeze_v100_source_outcome.py",
+  "verifier_sha256": "1d591ec45f4e39850f48146628e2b4c6d0fc0a542bd59ecb887fd48aedd3f542"
+}

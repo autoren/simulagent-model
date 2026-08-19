@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "107-open-world-local-model-development-design",
+  "experiment": "v107_qwen38_27b_open_world_non_authoritative_development_shadow",
+  "parentBaselineOutcomeLock": "configs/v106-open-world-development-benchmark-outcome-lock.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "modelManifestSha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "condition": {
+    "id": "qwen38_27b_4bit",
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "weightBytes": 16054541349,
+    "modelLoadLimit": 1,
+    "generationLimit": 192
+  },
+  "corpus": {
+    "observedDevelopmentEvaluationCount": 128,
+    "controlledMissingObservationCount": 64,
+    "totalGenerationCount": 192,
+    "excludeDevelopmentCalibrationRecords": true,
+    "excludeProtectedTestRecords": true,
+    "manualUtteranceInspection": false
+  },
+  "prompt": {
+    "system": "You are an offline, non-authoritative open-world semantic proposer. Never call a tool, choose an action, alter the capability catalog, or remove a hypothesis. Follow the supplied JSON contract exactly.",
+    "userPayload": "exact V105 render_prompt JSON with the frozen visible catalog, V105 instruction, response contract, observation flag, and either the selected utterance or frozen missing-observation sentinel",
+    "demonstrationCount": 0,
+    "maximumPromptTokens": 4096,
+    "samePromptContractForObservedAndMissing": true,
+    "missingConditionMayNotIncludeSourceUtterance": true
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "maximumNewTokens": 160,
+    "samplesPerRecord": 1,
+    "retryOnMalformedOutput": false,
+    "enableThinking": false
+  },
+  "validation": {
+    "useExactV105ResponseValidator": true,
+    "invalidOutputMapsToV105ZeroConfidenceAbstain": true,
+    "rawResponseStoredForAutomaticAuditButNeverManuallyInspected": true,
+    "modelOutputNeverPrunesCompleteSafeHypothesisUniverse": true
+  },
+  "metricDefinitions": {
+    "structuredResponseValidity": "valid V105 response count divided by all 192 generations",
+    "observedMetrics": "V106 metrics computed only on 128 development-evaluation observations after invalid-output fallback",
+    "controlledMissingObservationAbstentionAccuracy": "parsed ABSTAIN count divided by 64 missing-observation controls after invalid-output fallback",
+    "confidenceCalibration": "raw model confidence on observed predictions only; no post-hoc calibration",
+    "meanDecisionRegret": "V106 frozen shadow cost over 128 observed evaluation records",
+    "regretAboveBestNonOracleDeterministicBaseline": "model observed mean regret minus frozen ask-always mean regret 1.125",
+    "trueHypothesisRetention": "1.0 by architecture because the permanent 17-hypothesis universe is never pruned"
+  },
+  "developmentGates": {
+    "minimumStructuredResponseValidity": 0.98,
+    "minimumObservedStatusMacroF1": 0.70,
+    "minimumObservedExactDecisionAccuracy": 0.70,
+    "minimumKnownExactIntentAccuracy": 0.80,
+    "minimumNovelStatusRecall": 0.70,
+    "minimumNovelStatusPrecision": 0.70,
+    "minimumNovelExactScenarioAccuracy": 0.80,
+    "minimumUnsupportedStatusRecall": 0.80,
+    "minimumUnsupportedStatusPrecision": 0.80,
+    "maximumFalseKnownAcceptanceRate": 0.10,
+    "maximumConfidenceECE": 0.15,
+    "maximumTopConfidence80PercentError": 0.20,
+    "maximumMeanDecisionRegret": 1.50,
+    "minimumControlledMissingObservationAbstentionAccuracy": 0.95,
+    "maximumRegretAboveBestNonOracleDeterministicBaseline": 0.25
+  },
+  "accessGates": {
+    "requiredFixtureCount": 192,
+    "maximumDevelopmentLanguageReadCount": 1,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 192,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "permanentlyNonAuthoritative": true,
+    "completeSafeHypothesisUniverseRetained": true,
+    "modelDefinesOrPrunesCapabilities": false,
+    "modelUpdatesPosterior": false,
+    "modelSelectsAction": false,
+    "modelExecutesTool": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "completedCondition": "all 192 independent no-retry generations and access gates complete regardless of quality",
+    "qualifyingCondition": "every development and access gate passes noncompensatorily",
+    "ifQualifying": "freeze outcome and separately preregister one protected-test run with the identical prompt model decoding and gates",
+    "ifNonqualifying": "freeze negative development outcome and close the model branch without protected-test access",
+    "passAuthorizesProtectedTestImmediately": false,
+    "passAuthorizesAPITrainingPlanningOrExecution": false
+  }
+}

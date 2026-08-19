@@ -1,0 +1,153 @@
+{
+  "audit": "outputs/v89-model-free-failure-decomposition/outcome-audit.json",
+  "audit_sha256": "5dc8fa6704867e4c2537b90db566233bdf30a028a6d460b1710f37d92f6bccd2",
+  "authorization": {
+    "access_local_or_API_model_for_this_branch": false,
+    "deploy_or_execute_any_language_model_output": false,
+    "modify_or_rerun_V89": false,
+    "pause_external_local_model_integration": true,
+    "perform_real_service_call_or_external_side_effect": false,
+    "report_and_synthesize_frozen_results": true,
+    "retain_verified_Bayesian_core_and_V83_V86_deterministic_interface": true,
+    "train_adapter_or_learned_likelihood": false
+  },
+  "experiment": "v89_failure_decomposition_outcome_lock",
+  "implementation_lock": "configs/v89-model-free-failure-decomposition-implementation-lock.json",
+  "implementation_lock_sha256": "582755a58e23fa7049703ca6a060ed14c5a053637a177b9b360cf310f17ce671",
+  "lock_payload_sha256": "f36ec5cfc48408628d2aa8bc726dfea7c0a66d0935e61f4b64fea1c6338a3de4",
+  "outcome": {
+    "decision": "pause_external_local_model_integration",
+    "diagnostics": {
+      "joint_exactness_among_conforming": {
+        "intent_exact__state_exact": 8,
+        "intent_exact__state_wrong": 19,
+        "intent_wrong__state_exact": 2,
+        "intent_wrong__state_wrong": 7
+      },
+      "malformed_by_service_and_label_role": {
+        "Flights_3::NONE": 8,
+        "Flights_3::active": 4
+      },
+      "serialization_only_failed_semantic_gates": [
+        "gold_active_intent_coverage",
+        "state_slot_key_exact"
+      ],
+      "serialization_only_upper_bound_satisfies_all_semantic_gates": false,
+      "serialization_plus_state_oracle_satisfies_all_intent_gates": false,
+      "state_target_cardinality": {
+        "0": {
+          "record_count": 3,
+          "strict_state_exact_rate": 0.0,
+          "strict_state_recall": 0.0
+        },
+        "1": {
+          "record_count": 1,
+          "strict_state_exact_rate": 0.0,
+          "strict_state_recall": 1.0
+        },
+        "2": {
+          "record_count": 3,
+          "strict_state_exact_rate": 1.0,
+          "strict_state_recall": 1.0
+        },
+        "3": {
+          "record_count": 10,
+          "strict_state_exact_rate": 0.5,
+          "strict_state_recall": 1.0
+        },
+        "4": {
+          "record_count": 4,
+          "strict_state_exact_rate": 0.25,
+          "strict_state_recall": 0.75
+        },
+        "5": {
+          "record_count": 18,
+          "strict_state_exact_rate": 0.05555555555555555,
+          "strict_state_recall": 0.8444444444444444
+        },
+        "6": {
+          "record_count": 3,
+          "strict_state_exact_rate": 0.0,
+          "strict_state_recall": 0.0
+        },
+        "7": {
+          "record_count": 5,
+          "strict_state_exact_rate": 0.0,
+          "strict_state_recall": 0.0
+        },
+        "8": {
+          "record_count": 1,
+          "strict_state_exact_rate": 0.0,
+          "strict_state_recall": 0.0
+        }
+      }
+    },
+    "passed": true,
+    "serialization_upper_bound_metrics": {
+      "active_intent_label_count": 4,
+      "controls": {
+        "empty_state_gold_intent": {
+          "intent_exact_rate": 1.0,
+          "intent_precision": 1.0,
+          "intent_recall": 1.0,
+          "state_exact_rate": 0.0625,
+          "state_precision": 0.0625,
+          "state_recall": 0.0625
+        },
+        "exhaustive": {
+          "intent_exact_rate": 0.16666666666666666,
+          "intent_precision": 0.5659722222222222,
+          "intent_recall": 1.0,
+          "state_exact_rate": 0.0,
+          "state_precision": 0.37998366013071894,
+          "state_recall": 0.9375
+        },
+        "none_only": {
+          "intent_exact_rate": 0.5,
+          "intent_precision": 1.0,
+          "intent_recall": 0.75,
+          "state_exact_rate": 0.0625,
+          "state_precision": 0.0625,
+          "state_recall": 0.0625
+        },
+        "oracle": {
+          "intent_exact_rate": 1.0,
+          "intent_precision": 1.0,
+          "intent_recall": 1.0,
+          "state_exact_rate": 1.0,
+          "state_precision": 1.0,
+          "state_recall": 1.0
+        }
+      },
+      "exact_JSON_parse_rate": 1.0,
+      "gold_active_intent_coverage_rate": 0.7916666666666666,
+      "intent_candidate_precision": 0.9444444444444445,
+      "intent_candidate_recall": 0.9479166666666666,
+      "intent_candidate_set_exact_rate": 0.8125,
+      "intent_exact_improvement_over_exhaustive": 0.6458333333333334,
+      "mandatory_NONE_inclusion_rate": 1.0,
+      "mean_intent_candidate_count": 1.5208333333333333,
+      "none_only_intent_exact_rate": 0.9166666666666666,
+      "none_record_count": 24,
+      "ontology_conformance_rate": 1.0,
+      "per_service_intent_candidate_recall": {
+        "Flights_3": 1.0,
+        "Restaurants_2": 0.9166666666666666,
+        "RideSharing_1": 0.9090909090909091
+      },
+      "permanent_non_deployable_rate": 1.0,
+      "record_count": 48,
+      "service_count": 3,
+      "state_slot_key_exact_rate": 0.4583333333333333,
+      "state_slot_key_precision": 0.7496352707749767,
+      "state_slot_key_recall": 0.9208333333333334
+    }
+  },
+  "result": "outputs/v89-model-free-failure-decomposition/evaluation/result.json",
+  "result_sha256": "20c5c8bf9a01abddd9943bd27bc8bfe8cd59dd77200cc6c0766f75aa8267a248",
+  "results_document": "docs/v89-model-free-failure-decomposition-results.md",
+  "results_document_sha256": "d242e3e2bf81906adc628055b6fc5bf0f8e8e5303108b5afc27009baa3be3a09",
+  "schema_version": "89-model-free-failure-decomposition-outcome-lock",
+  "verifier": "python/verify_and_freeze_v89_failure_decomposition_outcome.py",
+  "verifier_sha256": "1e83b121c46f9bd40ed408b13f9e1a20b267e6f3049e94f9f5b0aed6c632745a"
+}

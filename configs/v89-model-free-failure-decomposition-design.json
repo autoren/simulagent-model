@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "89-model-free-failure-decomposition-design",
+  "experiment": "v89_v88r1_failure_decomposition_without_language_or_model_access",
+  "purpose": "determine whether perfect serialization repair alone could satisfy the frozen V88 gates, and localize the remaining intent-versus-state bottleneck",
+  "parentOutcomeLock": "configs/v88r1-external-intent-candidate-outcome-lock.json",
+  "population": {
+    "recordCount": 48,
+    "useEveryFrozenRawFixture": true,
+    "recordReplacementAllowed": false,
+    "sourceUtteranceOrPromptAccessAllowed": false
+  },
+  "registeredViews": [
+    "strict_frozen_outcome",
+    "perfect_serialization_upper_bound",
+    "perfect_state_oracle_with_strict_intents",
+    "perfect_intent_oracle_with_strict_state",
+    "perfect_serialization_plus_state_oracle",
+    "perfect_serialization_plus_intent_oracle",
+    "full_oracle"
+  ],
+  "perfectSerializationRule": "for every nonconforming row only, optimistically replace both predicted sets with gold and mark structure conforming; retain every conforming row unchanged",
+  "stateOracleRule": "replace state slot-key candidates with gold while retaining the view's intent candidates",
+  "intentOracleRule": "replace intent candidates with gold while retaining the view's state slot-key candidates",
+  "registeredDiagnostics": [
+    "joint intent-exact by state-exact quadrant among conforming rows",
+    "malformed count by service and active-versus-NONE label",
+    "strict and conditional metrics",
+    "state target cardinality buckets",
+    "original gate outcomes for every registered counterfactual view"
+  ],
+  "decisionRule": {
+    "ifPerfectSerializationStillFailsAnySemanticGate": "rule out constrained decoding or JSON repair as a sufficient successor",
+    "ifPerfectSerializationPlusStatePassesIntentGates": "authorize only preregistration of a model-free state-accumulation feasibility study before any later intent-only model experiment",
+    "ifPerfectSerializationPlusStateFailsIntentGates": "pause external local-model integration entirely",
+    "passAuthorizesModelOrAPIAccess": false,
+    "passAuthorizesTrainingDeploymentOrExecution": false
+  },
+  "gates": {
+    "requiredRecordCount": 48,
+    "requiredRawFixtureCount": 48,
+    "minimumStrictMetricReconstructionRate": 1.0,
+    "minimumRawRowReconstructionRate": 1.0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumSourceLanguageAccessCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "evaluateFrozenIdentifierOnlyArtifacts": false,
+    "readSourceUtterancesOrPrompts": false,
+    "accessLocalOrAPIModel": false,
+    "trainAdapter": false,
+    "performRealServiceCall": false,
+    "performExternalSideEffect": false
+  }
+}

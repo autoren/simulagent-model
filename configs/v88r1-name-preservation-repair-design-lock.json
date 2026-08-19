@@ -1,0 +1,72 @@
+{
+  "authorization": {
+    "authorize_further_retry": false,
+    "implement_and_audit_name_preserving_runner": true,
+    "modify_repair_or_original_scientific_dependencies": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "run_API_model_or_train_adapter": false,
+    "run_local_model": false
+  },
+  "config_payload": {
+    "decisionRule": {
+      "ifAnyScientificGateFails": "freeze negative without prompt, record, model, decoder, parser, scorer, control, or threshold changes",
+      "ifExecutionCompletes": "apply every unchanged original V88 gate and freeze the result positive or negative",
+      "ifExecutionFailsAgain": "freeze V88r1 execution-inconclusive and stop without another retry",
+      "passAuthorizesAPIAccessTrainingDeploymentOrExecution": false
+    },
+    "experiment": "v88r1_single_mechanical_fixture_name_repair",
+    "frozenUnchangedDependencies": [
+      "source and source revision",
+      "record population and order",
+      "human-language corpus bytes",
+      "system and user prompt templates",
+      "local model repository, revision, and snapshot",
+      "decoding parameters",
+      "candidate parser and scorer",
+      "controls and scientific quality gates",
+      "non-deployable provenance and no-execution boundary"
+    ],
+    "onlyAuthorizedChange": "copy the harness-provided fixture name field unchanged into the scored row before the harness identity check",
+    "originalImplementationLock": "configs/v88-external-intent-candidate-implementation-lock.json",
+    "parentExecutionLock": "configs/v88-external-intent-candidate-execution-lock.json",
+    "purpose": "obtain the originally registered V88 scientific outcome after a pre-scoring harness identity failure",
+    "retry": {
+      "anyFurtherRetryAuthorized": false,
+      "attemptNumber": 1,
+      "maximumCumulativeModelGenerationCount": 49,
+      "maximumCumulativeModelLoadCount": 2,
+      "maximumRetryModelGenerationCount": 48,
+      "maximumRetryModelLoadCount": 1,
+      "priorFailedModelGenerationCount": 1,
+      "priorFailedModelLoadCount": 1,
+      "retryOnMalformedOutput": false
+    },
+    "schemaVersion": "88r1-name-preservation-repair",
+    "stageAuthorization": {
+      "auditAndFreezeRepair": true,
+      "implementNamePreservingRunner": false,
+      "inspectSourceLanguageManually": false,
+      "modifyOriginalV88Files": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "trainAdapter": false
+    }
+  },
+  "design_audit": "outputs/v88r1-external-intent-candidate/design-audit-r1a.json",
+  "design_audit_sha256": "ac7bac44607eac35cfa04704eb5b6f53a233e692d6711aef5c635887789cfea7",
+  "design_auditor": "python/audit_and_freeze_v88r1_repair_design.py",
+  "design_auditor_sha256": "8f6c438baafa0ad2130dfcaa71fb78ec9d22e7f8ad66af7c7ca9215132d9f6ec",
+  "experiment": "v88r1_name_preservation_repair_design_lock",
+  "lock_payload_sha256": "4fc31a0d721b59b0b49f69771410d6b2b338b83860cd37c1791400835a538104",
+  "original_implementation_lock": "configs/v88-external-intent-candidate-implementation-lock.json",
+  "original_implementation_lock_sha256": "150ebfda8aacb9110bf66942a2acd641aaed64341ede6bbaa95c21d6722c7e06",
+  "parent_execution_lock": "configs/v88-external-intent-candidate-execution-lock.json",
+  "parent_execution_lock_sha256": "ba70692d477f6d98c29178cf03f17d5aa638ee76750f30951e35e2da0b16da2e",
+  "plan": "docs/v88r1-name-preservation-repair-plan.md",
+  "plan_sha256": "b48457f6625c2c5bf20731abd4afba6bf5223f73abc2b8ba0118e1af3855d89e",
+  "repair_design": "configs/v88r1-name-preservation-repair.json",
+  "repair_design_sha256": "8aaf21044cae7896bea19cc3853f58fe8044771fc7271e81cb8bdc0ed88b96bb",
+  "schema_version": "88r1-name-preservation-repair-design-lock"
+}

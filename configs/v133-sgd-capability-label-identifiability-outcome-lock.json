@@ -1,0 +1,195 @@
+{
+  "analysis_lock": "configs/v133-sgd-capability-label-identifiability-lock.json",
+  "analysis_lock_sha256": "8f750b3aa70db9514505a5fd2f72b530a56f7af9b7855e93c549cc2e1294d3ef",
+  "audit": "outputs/v133-sgd-capability-label-identifiability/outcome-audit.json",
+  "audit_sha256": "941a0e972d729f31d4cf989478c5759f643656491e71e2a844c1cb62716f7d74",
+  "authorization": {
+    "modify_rerun_redefine_or_mine_V133": false,
+    "open_protected_or_begin_induction_or_richer_planning": false,
+    "preregister_independent_source_confirmation": false,
+    "preregister_text_free_semantically_noncolliding_source_design": true,
+    "rerun_model_revise_prompt_or_scale": false,
+    "run_API_training_action_or_execution": false
+  },
+  "experiment": "v133_sgd_capability_label_identifiability_outcome_lock",
+  "lock_payload_sha256": "ff9110e882cb49c283a98203c2d7699518d5861e1dbe96f9c580f6079a481c9e",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "SGD_service_novelty_is_capability_confounded_retract_pure_capability_novelty_interpretation",
+    "identifiability_pass": false,
+    "passed": true,
+    "summary": {
+      "decision": "SGD_service_novelty_is_capability_confounded_retract_pure_capability_novelty_interpretation",
+      "identifiability_gates": {
+        "declared_known_definition_count": true,
+        "every_novel_definition_present": true,
+        "no_entirely_name_colliding_novel_choice": false,
+        "novel_choices_have_no_exact_name_collision": false,
+        "novel_composite_choice_count": true,
+        "selected_full_signature_collision_fraction": true,
+        "selected_name_collision_fraction": false,
+        "selected_novel_record_count": true,
+        "zero_manual_judgment": true,
+        "zero_model_and_execution": true,
+        "zero_raw_description_emission": true,
+        "zero_utterance_or_slot_value_read": true
+      },
+      "identifiability_pass": false,
+      "summary": {
+        "actual_execution_count": 0,
+        "choice_summary": {
+          "N01": {
+            "all_members_exact_name_collide": false,
+            "has_any_exact_name_collision": false,
+            "member_definition_count": 2,
+            "selected_record_count": 24
+          },
+          "N02": {
+            "all_members_exact_name_collide": true,
+            "has_any_exact_name_collision": true,
+            "member_definition_count": 1,
+            "selected_record_count": 24
+          },
+          "N03": {
+            "all_members_exact_name_collide": true,
+            "has_any_exact_name_collision": true,
+            "member_definition_count": 2,
+            "selected_record_count": 24
+          }
+        },
+        "declared_known_definition_count": 6,
+        "entirely_name_colliding_novel_choice_count": 2,
+        "manual_semantic_judgment_count": 0,
+        "model_generation_count": 0,
+        "model_load_count": 0,
+        "novel_choices_with_no_exact_name_collision": 1,
+        "novel_composite_choice_count": 3,
+        "novel_definition_count": 5,
+        "pair_summary": [
+          {
+            "colliding_known_intent_ids": {
+              "exact_description": [],
+              "exact_full_signature": [],
+              "exact_name": [],
+              "exact_slot_signature": []
+            },
+            "collision": {
+              "exact_description": false,
+              "exact_full_signature": false,
+              "exact_name": false,
+              "exact_slot_signature": false
+            },
+            "full_signature_sha256": "37bb089315df2bb5e19f06438902fd22617d5fe98fe4481201609009bec2cc8e",
+            "normalized_description_sha256": "f69795e611f4640512a8ad4e11516a7001675b049e676299088652c20a51b9f9",
+            "normalized_name": "reservehotel",
+            "novel_choice_id": "N01",
+            "novel_intent_id": "Hotels_4::ReserveHotel",
+            "selected_record_count": 7
+          },
+          {
+            "colliding_known_intent_ids": {
+              "exact_description": [],
+              "exact_full_signature": [],
+              "exact_name": [],
+              "exact_slot_signature": []
+            },
+            "collision": {
+              "exact_description": false,
+              "exact_full_signature": false,
+              "exact_name": false,
+              "exact_slot_signature": false
+            },
+            "full_signature_sha256": "d45362c4d89361c9e6e1e334bd7c5fb183e0cd5de652a1af4f07cdb1fcce4849",
+            "normalized_description_sha256": "395c498a85e75dfbadadb1d63183c8292606119ed31509b8de03a5f9a9c3b557",
+            "normalized_name": "searchhotel",
+            "novel_choice_id": "N01",
+            "novel_intent_id": "Hotels_4::SearchHotel",
+            "selected_record_count": 17
+          },
+          {
+            "colliding_known_intent_ids": {
+              "exact_description": [],
+              "exact_full_signature": [],
+              "exact_name": [
+                "Movies_1::FindMovies"
+              ],
+              "exact_slot_signature": []
+            },
+            "collision": {
+              "exact_description": false,
+              "exact_full_signature": false,
+              "exact_name": true,
+              "exact_slot_signature": false
+            },
+            "full_signature_sha256": "f1fdde4a376cf1c8cae9f070d492df949c080d951c0c00bbae6823947b9f1ae7",
+            "normalized_description_sha256": "55e20a440d62fead2aed2527110e8cfb572185732776a89b27dad94fa872b465",
+            "normalized_name": "findmovies",
+            "novel_choice_id": "N02",
+            "novel_intent_id": "Movies_3::FindMovies",
+            "selected_record_count": 24
+          },
+          {
+            "colliding_known_intent_ids": {
+              "exact_description": [],
+              "exact_full_signature": [],
+              "exact_name": [
+                "Services_1::BookAppointment"
+              ],
+              "exact_slot_signature": []
+            },
+            "collision": {
+              "exact_description": false,
+              "exact_full_signature": false,
+              "exact_name": true,
+              "exact_slot_signature": false
+            },
+            "full_signature_sha256": "2b012eb178acfe06aca6597206dcb725ec6a3c0b84a79fab6604aeac903e8559",
+            "normalized_description_sha256": "9f3170bf248b641b317e709fcc80d6747f03cebb73ac420189ec767ffbaa53a3",
+            "normalized_name": "bookappointment",
+            "novel_choice_id": "N03",
+            "novel_intent_id": "Services_4::BookAppointment",
+            "selected_record_count": 10
+          },
+          {
+            "colliding_known_intent_ids": {
+              "exact_description": [],
+              "exact_full_signature": [],
+              "exact_name": [
+                "Services_1::FindProvider"
+              ],
+              "exact_slot_signature": []
+            },
+            "collision": {
+              "exact_description": false,
+              "exact_full_signature": false,
+              "exact_name": true,
+              "exact_slot_signature": false
+            },
+            "full_signature_sha256": "a84d81e0d3dab2932cc3bc37e3cff37a5f43c15cd6e1781cd6efccbeefe4b521",
+            "normalized_description_sha256": "0385a384c2fb5b0141592dfe37ae3cda92dff8e32415428cb85c577ca6431a65",
+            "normalized_name": "findprovider",
+            "novel_choice_id": "N03",
+            "novel_intent_id": "Services_4::FindProvider",
+            "selected_record_count": 14
+          }
+        ],
+        "raw_description_emission_count": 0,
+        "selected_novel_record_count": 72,
+        "selected_record_collision_fractions": {
+          "exact_description": 0.0,
+          "exact_full_signature": 0.0,
+          "exact_name": 0.6666666666666666,
+          "exact_slot_signature": 0.0
+        },
+        "utterance_or_slot_value_read_count": 0
+      }
+    }
+  },
+  "result": "outputs/v133-sgd-capability-label-identifiability/evaluation/result.json",
+  "result_sha256": "679039222e88ecc87c67c8b3a55a20457eea2ecc63921b5bd349d2344a564343",
+  "results_document": "docs/v133-sgd-capability-label-identifiability-results.md",
+  "results_document_sha256": "6b2d395821fdfd4d28b98b626d7d73bdaabb7ef90998967f3c7732a161bb169f",
+  "schema_version": "133-sgd-capability-label-identifiability-outcome-lock",
+  "verifier": "python/verify_and_freeze_v133_sgd_capability_label_identifiability_outcome.py",
+  "verifier_sha256": "2951b6ec2cc260ed671610233567f8f35d9b2a4d9a433aa77669bacb92801818"
+}

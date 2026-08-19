@@ -1,0 +1,82 @@
+{
+  "auditor": "python/audit_and_freeze_v121_prequery_value_selectivity_envelope.py",
+  "auditor_sha256": "00e035a07c8932309d41d8153f8896ea6c3b51b473196d388f6c84af364d8e5d",
+  "authorization": {
+    "evaluate_or_fit_trigger": false,
+    "grant_any_authority_or_execution": false,
+    "load_or_generate_with_model": false,
+    "modify_parent_cost_metrics_fractions_gates_or_decision": false,
+    "read_individual_records_language_or_raw_responses": false,
+    "run_one_aggregate_value_envelope": true
+  },
+  "config": "configs/v121-prequery-value-selectivity-envelope.json",
+  "config_payload": {
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumFreshLanguageReadCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0
+    },
+    "claimBoundary": "necessary aggregate value-selectivity requirements for a hypothetical pre-query trigger; not a trigger, policy, record-level validation, language, model, or deployment result",
+    "decisionRule": {
+      "ifAllOutcomeAndAccessGatesPass": "value_selectivity_envelope_derived_requires_paired_fresh_trigger_validation",
+      "otherwise": "value_selectivity_envelope_inconclusive_keep_trigger_branch_closed",
+      "passAuthorizesLanguageModelOrProtectedRun": false,
+      "passAuthorizesOnlyPrequerySignalInventory": true,
+      "passAuthorizesRetuneCostInductionAPITrainingActionOrExecution": false,
+      "passAuthorizesTriggerEvaluation": false
+    },
+    "definitions": {
+      "maximumSkippedValue": "query_cost minus full-query excess divided by skipped_fraction",
+      "minimumQueriedValueLift": "query_cost divided by population-average query value",
+      "perCaseQueryValue": "baseline decision loss minus post-query decision loss",
+      "selectiveRegretFromFullQuery": "full-query regret minus skipped_fraction times query_cost plus skipped_fraction times average skipped query value"
+    },
+    "experiment": "v121_aggregate_prequery_value_selectivity_envelope",
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumFivePercentSkipValueForHardConditions": 0.091,
+      "maximumIndividualRecordEmissionCount": 0,
+      "maximumIndividualRecordReadCount": 0,
+      "maximumMinimumQueriedValueLift": 1.037,
+      "minimumNonnegativeSkipFractionCountEveryCondition": 4,
+      "requireAggregateMetricsInsufficientToCertifyAnyTrigger": true,
+      "requiredFailingConditionCount": 3
+    },
+    "parentV120OutcomeLock": "configs/v120-selective-query-value-audit-outcome-lock.json",
+    "schemaVersion": "121-prequery-value-selectivity-envelope-design",
+    "skipFractions": [
+      0.05,
+      0.1,
+      0.25,
+      0.5
+    ]
+  },
+  "config_sha256": "98018e2e6da8a187ed71173097d1caa2f531e2a8fd85c360590728adbc8849b9",
+  "design_audit": "outputs/v121-prequery-value-selectivity-envelope/design-audit.json",
+  "design_audit_sha256": "c22fc43ff0a46985087992e61dfd7133add28bf17e8a8ecca8087b1667eb7d48",
+  "experiment": "v121_aggregate_prequery_value_selectivity_envelope",
+  "lock_payload_sha256": "43e326f0a758c6d0e55d9d3d7a83f456e35bc59f71f920cb0ccdbf7bbf6adca3",
+  "parent_analysis_lock": "configs/v120-selective-query-value-audit-lock.json",
+  "parent_analysis_lock_sha256": "81e212f6a733a06cf7cc528ffb2f5f8b16937a5d22171b134a34acfc8c4525c8",
+  "parent_outcome": "configs/v120-selective-query-value-audit-outcome-lock.json",
+  "parent_outcome_sha256": "2694763dbf35afcf6e5d5cebe7f2d6ded52dbc73f8d3f5201d6f475c93690006",
+  "parent_result": "outputs/v120-selective-query-value-audit/audit/result.json",
+  "parent_result_sha256": "23b3e36f190e2bad71dd364525104ae552a1b7141ae5f8d81b429b16b9de720e",
+  "plan": "docs/v121-prequery-value-selectivity-envelope-plan.md",
+  "plan_sha256": "9c3f56fb6f4f5662b9a8a81c52e89bb9c25388e6a3acd5ff2ec0277a5bf252d2",
+  "protocol": "python/v121_prequery_value_selectivity_envelope.py",
+  "protocol_sha256": "03aac34e2f171c4dd23b356d82cba1aabdc59dfb4921d432aaf7063032d74061",
+  "runner": "python/run_v121_prequery_value_selectivity_envelope.py",
+  "runner_sha256": "90f011b8ae562362a39408222616f23e9fd553fc25b5bbc42f0b5f2e1a3eefa0",
+  "schema_version": "121-prequery-value-selectivity-envelope-lock",
+  "tests": "python/test_v121_prequery_value_selectivity_envelope.py",
+  "tests_sha256": "567e3c1d68649d3105b8e2cf04fb3e3ec49ea80fd02958c531edac10f46cc070",
+  "verifier": "python/verify_and_freeze_v121_prequery_value_selectivity_envelope_outcome.py",
+  "verifier_sha256": "e6fd99944cdddac5c5a4ac7b462213d2f25ff76b57b62245f3d3f6bf6bfb34f4"
+}

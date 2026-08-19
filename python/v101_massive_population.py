@@ -1,0 +1,172 @@
+from __future__ import annotations
+
+from collections import Counter, defaultdict
+from typing import Any
+
+from v93_open_set_source import canonical_sha256, hash_order
+
+
+def _selected_rows(
+    pool: list[dict[str, Any]], *, count: int, scenario_minimum: int,
+    salt: str, role: str, class_label: str,
+) -> list[dict[str, Any]]:
+    by_scenario: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in pool:
+        by_scenario[row["scenario"]].append(row)
+    if scenario_minimum * len(by_scenario) > count:
+        raise ValueError("scenario minima exceed the class quota")
+    selected: dict[str, dict[str, Any]] = {}
+    for scenario, rows in sorted(by_scenario.items()):
+        if len(rows) < scenario_minimum:
+            raise ValueError(f"insufficient {role}/{class_label}/{scenario} candidates")
+        ordered = sorted(
+            rows,
+            key=lambda row: hash_order(
+                salt, role, class_label, "scenario-minimum", scenario, row["candidate_id"]
+            ),
+        )
+        selected.update((row["candidate_id"], row) for row in ordered[:scenario_minimum])
+    remainder = sorted(
+        (row for row in pool if row["candidate_id"] not in selected),
+        key=lambda row: hash_order(salt, role, class_label, "fill", row["candidate_id"]),
+    )
+    needed = count - len(selected)
+    if len(remainder) < needed:
+        raise ValueError(f"insufficient {role}/{class_label} candidates")
+    selected.update((row["candidate_id"], row) for row in remainder[:needed])
+    return sorted(selected.values(), key=lambda row: row["candidate_id"])
+
+
+def select_massive_population(inventory: Any, config: dict[str, Any]) -> dict[str, Any]:
+    if not isinstance(inventory, dict) or not isinstance(inventory.get("candidate_index"), list):
+        raise ValueError("V100 candidate inventory is missing")
+    if inventory.get("candidate_index_sha256") != config["sourceCandidateIndexSha256"]:
+        raise ValueError("V100 candidate index identity mismatch")
+    rows = inventory["candidate_index"]
+    if len({row["candidate_id"] for row in rows}) != len(rows):
+        raise ValueError("candidate identifiers are not unique")
+    required_classes = tuple(config["requiredClasses"])
+    selection = config["selection"]
+    count = selection["selectedCandidateCountPerClassPerSplit"]
+    selected: list[dict[str, Any]] = []
+    for role, role_spec in selection["roles"].items():
+        source_partition = role_spec["sourcePartition"]
+        for class_label in required_classes:
+            pool = [
+                row for row in rows
+                if row["partition"] == source_partition and row["class_label"] == class_label
+            ]
+            chosen = _selected_rows(
+                pool,
+                count=count,
+                scenario_minimum=selection["scenarioMinimumPerClass"][class_label],
+                salt=selection["baseSalt"],
+                role=role,
+                class_label=class_label,
+            )
+            for row in chosen:
+                selected.append({
+                    "population_id": f"v101::{role}::{row['candidate_id']}",
+                    "candidate_id": row["candidate_id"],
+                    "source_id": row["source_id"],
+                    "role": role,
+                    "source_partition": source_partition,
+                    "class_label": class_label,
+                    "scenario": row["scenario"],
+                    "intent": row["intent"],
+                    "current_utterance_intent_overlap_count": (
+                        row["current_utterance_intent_overlap_count"]
+                    ),
+                    "slot_type_count": row["slot_type_count"],
+                })
+    selected.sort(key=lambda row: row["population_id"])
+    forbidden = {
+        "utt", "utterance", "annot_utt", "tokens", "slot_values", "values", "text", "prompt",
+    }
+    keys = set().union(*(row.keys() for row in selected)) if selected else set()
+    if keys & forbidden:
+        raise AssertionError("language leaked into V101 population")
+    role_class_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    role_class_scenarios: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    role_class_intents: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    for row in selected:
+        role_class_counts[row["role"]][row["class_label"]] += 1
+        role_class_scenarios[row["role"]][row["class_label"]].add(row["scenario"])
+        role_class_intents[row["role"]][row["class_label"]].add(row["intent"])
+    role_ids = {
+        role: {row["candidate_id"] for row in selected if row["role"] == role}
+        for role in selection["roles"]
+    }
+    return {
+        "selected_candidate_count": len(selected),
+        "role_counts": dict(sorted(Counter(row["role"] for row in selected).items())),
+        "role_class_counts": {
+            role: dict(sorted(counts.items())) for role, counts in sorted(role_class_counts.items())
+        },
+        "role_class_scenario_counts": {
+            role: {label: len(values) for label, values in sorted(classes.items())}
+            for role, classes in sorted(role_class_scenarios.items())
+        },
+        "role_class_intent_counts": {
+            role: {label: len(values) for label, values in sorted(classes.items())}
+            for role, classes in sorted(role_class_intents.items())
+        },
+        "source_partition_counts": dict(sorted(
+            Counter(row["source_partition"] for row in selected).items()
+        )),
+        "development_test_identifiers_are_disjoint": not (
+            role_ids.get("development", set()) & role_ids.get("protected_test", set())
+        ),
+        "selected_population_sha256": canonical_sha256(selected),
+        "selected_population": selected,
+        "contains_language_tokens_slot_values_or_prompts": False,
+    }
+
+
+def evaluate_population_gates(
+    population: dict[str, Any], config: dict[str, Any]
+) -> dict[str, bool]:
+    gates = config["populationGates"]
+    required_classes = tuple(config["requiredClasses"])
+    roles = tuple(config["selection"]["roles"])
+    checks: dict[str, bool] = {
+        "total_candidate_count": (
+            population["selected_candidate_count"] == gates["requiredTotalCandidateCount"]
+        ),
+        "development_test_identifier_disjointness": bool(
+            population["development_test_identifiers_are_disjoint"]
+        ),
+        "zero_train_partition_candidates": (
+            population["source_partition_counts"].get("train", 0)
+            <= gates["maximumTrainPartitionCandidateCount"]
+        ),
+        "text_free_population": not population["contains_language_tokens_slot_values_or_prompts"],
+    }
+    expected_coverage = {
+        "known_familiar": gates["requiredKnownScenarioCoverage"],
+        "known_unfamiliar": gates["requiredKnownScenarioCoverage"],
+        "novel_valid": gates["requiredNovelScenarioCoverage"],
+        "unsupported": gates["requiredUnsupportedScenarioCoverage"],
+    }
+    for role in roles:
+        checks[f"{role}_candidate_count"] = (
+            population["role_counts"].get(role, 0) == gates["requiredCandidateCountPerSplit"]
+        )
+        for class_label in required_classes:
+            prefix = f"{role}_{class_label}"
+            checks[f"{prefix}_candidate_count"] = (
+                population["role_class_counts"].get(role, {}).get(class_label, 0)
+                == gates["requiredCandidateCountPerClassPerSplit"]
+            )
+            checks[f"{prefix}_scenario_coverage"] = (
+                population["role_class_scenario_counts"].get(role, {}).get(class_label, 0)
+                == expected_coverage[class_label]
+            )
+            checks[f"{prefix}_intent_coverage"] = (
+                population["role_class_intent_counts"].get(role, {}).get(class_label, 0)
+                >= gates["minimumIntentCoveragePerClass"][class_label]
+            )
+    return checks
+
+
+__all__ = ["evaluate_population_gates", "select_massive_population"]

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "111-open-world-separability-audit-design",
+  "experiment": "v111_existing_evidence_deterministic_novelty_separability_audit",
+  "parentValidationOutcomeLock": "configs/v110-open-world-deterministic-validation-outcome-lock.json",
+  "question": "Do per-intent retrieval scores, score margins, scenario concentration, and frozen LLM/retrieval disagreement contain enough signal for a prospectively selected simple rule to achieve useful novelty precision and recall?",
+  "inputs": {
+    "reuseExactV110CalibrationEvaluationMembership": true,
+    "useExactFrozenV109ParsedPredictions": true,
+    "useExactV106CharacterTfidfRepresentation": true,
+    "readProtectedTestLanguage": false,
+    "manualLanguageOrRawResponseInspection": false,
+    "persistIndividualFeaturesPredictionsOrIdentifiers": false
+  },
+  "registeredFeatures": [
+    "top_intent_score", "second_intent_score", "intent_margin",
+    "top_scenario_score", "second_scenario_score", "scenario_margin",
+    "proposed_intent_score", "llm_confidence", "llm_is_known",
+    "llm_is_abstain", "llm_is_unsupported", "llm_retrieval_intent_disagree"
+  ],
+  "registeredRuleFamilies": [
+    "top_score_band", "low_intent_margin", "top_score_band_and_low_margin",
+    "llm_known_proposal_score_below", "llm_known_retrieval_disagreement",
+    "llm_nonknown_top_score_band", "not_llm_unsupported_top_score_band",
+    "llm_known_top_score_band_and_low_margin", "top_score_band_or_known_disagreement",
+    "llm_abstain_only"
+  ],
+  "thresholdGrids": {
+    "score": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.01],
+    "margin": [0.0, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 1.01],
+    "proposal": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.01]
+  },
+  "calibrationSelection": {
+    "minimumNovelPrecisionForFeasibleCandidate": 0.70,
+    "minimumNovelRecallForFeasibleCandidate": 0.50,
+    "maximumNonNovelFalsePositiveRateForFeasibleCandidate": 0.10,
+    "selectionObjective": "prefer calibration-feasible candidates; then maximum F1, minimum false-positive count, maximum recall, minimum rule complexity, lexical signature",
+    "ifNoCalibrationCandidateIsFeasible": "select maximum F1 with the same remaining tie breaks and label it nonfeasible"
+  },
+  "evaluationGates": {
+    "requiredCalibrationRecordCount": 64,
+    "requiredEvaluationRecordCount": 64,
+    "requiredCountPerClassPerSubset": 16,
+    "minimumSelectedRuleNovelPrecision": 0.70,
+    "minimumSelectedRuleNovelRecall": 0.50,
+    "maximumSelectedRuleNonNovelFalsePositiveRate": 0.10,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifSelectedRulePassesEvaluation": "freeze positive simple-feature transfer diagnosis and separately preregister a full deterministic development policy",
+    "ifSelectedRuleFailsAndNoEvaluationOracleCandidatePasses": "close current single-turn evidence interface for simple deterministic novelty gating",
+    "ifSelectedRuleFailsButEvaluationOracleCandidateExists": "freeze selection-instability diagnosis and require a genuinely fresh evidence population",
+    "evaluationOracleMayAuthorizePolicy": false,
+    "passAuthorizesProtectedTestInductionPlanningAPITrainingOrExecution": false
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "audit": "outputs/v103-presto-target-syntax/census-outcome-audit.json",
+  "audit_sha256": "3aea20957b26ff38ab09083b209f5c3f75d25b99b1bdb084294f8aaf80eb55ff",
+  "authorization": {
+    "close_PRESTO_paired_insufficiency_branch": true,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_or_rerun_V103_census": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_new_PRESTO_dependency_construction": false,
+    "select_population_or_extract_language": false
+  },
+  "census": "outputs/v103-presto-target-syntax/census/target-syntax-census.json",
+  "census_lock": "configs/v103-presto-target-syntax-census-lock.json",
+  "census_lock_sha256": "42d0800a50a2d0e43d7709fed8f4187ee0d3e41556791cb9d2b7556ca51cb04a",
+  "census_sha256": "71c1afbfa233350dafe6d0cd1136f085920b3dd014ca0985b1b9980989b539d0",
+  "experiment": "v103_presto_target_syntax_census_outcome_lock",
+  "lock_payload_sha256": "66d7c91de16492bbc7cff68f99697c0b7a8841dddebd9940e0149fa841c1ec3d",
+  "outcome": {
+    "census_summary": {
+      "candidate_eligible_family_union_count": 0,
+      "candidate_eligible_family_union_dependency_source_kind_count": 0,
+      "candidate_eligible_family_union_dependency_source_kind_counts": {},
+      "candidate_eligible_family_union_previous_turn_dependent_count": 0,
+      "candidate_eligible_family_union_role_counts": {},
+      "candidate_eligible_family_union_seeded_state_dependent_count": 0,
+      "candidate_eligible_family_union_semantic_root_function_count": 0,
+      "contains_input_target_literal_context_tokens_identifiers_or_root_names": false,
+      "emitted_candidate_identifier_count": 0,
+      "en_us_human_context_role_counts": {
+        "development": 3665,
+        "protected_test": 8614
+      },
+      "ignored_non_string_optional_context_leaf_count": 39035,
+      "literal_family_stage_record_counts": {
+        "ascii_double_quote": {
+          "literal_absent_from_current_input": 0,
+          "literal_absent_from_input_and_present_in_context": 0,
+          "literal_present_in_context": 1,
+          "quality_filtered_literal": 1,
+          "record_contains_literal_family": 2
+        },
+        "ascii_single_quote": {
+          "literal_absent_from_current_input": 0,
+          "literal_absent_from_input_and_present_in_context": 0,
+          "literal_present_in_context": 0,
+          "quality_filtered_literal": 0,
+          "record_contains_literal_family": 0
+        },
+        "curly_double_quote": {
+          "literal_absent_from_current_input": 0,
+          "literal_absent_from_input_and_present_in_context": 0,
+          "literal_present_in_context": 0,
+          "quality_filtered_literal": 0,
+          "record_contains_literal_family": 0
+        },
+        "guillemet": {
+          "literal_absent_from_current_input": 0,
+          "literal_absent_from_input_and_present_in_context": 0,
+          "literal_present_in_context": 2015,
+          "quality_filtered_literal": 3226,
+          "record_contains_literal_family": 3246
+        },
+        "single_guillemet": {
+          "literal_absent_from_current_input": 0,
+          "literal_absent_from_input_and_present_in_context": 0,
+          "literal_present_in_context": 0,
+          "quality_filtered_literal": 0,
+          "record_contains_literal_family": 0
+        },
+        "square_bracket": {
+          "literal_absent_from_current_input": 0,
+          "literal_absent_from_input_and_present_in_context": 0,
+          "literal_present_in_context": 0,
+          "quality_filtered_literal": 0,
+          "record_contains_literal_family": 0
+        }
+      },
+      "source_record_count": 276665,
+      "structural_character_record_counts": {
+        "ascii_double_quote": 2,
+        "colon": 5,
+        "curly_double_quote": 0,
+        "equals": 0,
+        "left_guillemet": 3246,
+        "left_parenthesis": 12279,
+        "left_single_guillemet": 0,
+        "left_square_bracket": 0,
+        "right_parenthesis": 12279
+      }
+    },
+    "decision": "freeze_negative_V103_close_PRESTO_paired_branch",
+    "diagnostic_viability_passed": false,
+    "passed": true
+  },
+  "result": "outputs/v103-presto-target-syntax/census/result.json",
+  "result_sha256": "3fdbd237963d2d0a8a14fafb75c7fd2642a1099c26f1258637dc7cb377b35be9",
+  "results_document": "docs/v103-presto-target-syntax-census-results.md",
+  "results_document_sha256": "fc4a080931c24ffb23313210d65a49ce1dad63c6950e4a84b966eadc7bca38e5",
+  "schema_version": "103-presto-target-syntax-census-outcome-lock",
+  "source_archive": "outputs/v102r1-presto-context-source/source/presto_v1.zip",
+  "source_archive_sha256": "1fc671692cceb31fbda17e351e47f2cc52ee8779042f92dc26674cc0cca2167f",
+  "verifier": "python/verify_and_freeze_v103_presto_syntax_outcome.py",
+  "verifier_sha256": "181ae5250486b6650c0c154357af7decf2cf8db1537b489fe2f1034f029b2b90"
+}

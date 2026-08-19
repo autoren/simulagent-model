@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "151-local-proposal-query-ranking",
+  "experiment": "v151_pinned_local_non_authoritative_state_recall_and_query_ranking",
+  "parentV150OutcomeLock": "configs/v150-oracle-closed-interaction-policy-outcome-lock.json",
+  "modelManifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "claimBoundary": "single prospectively locked local realization on 96 V149 development request fixtures; proposal recall, abstention-status, confidence diagnostics, and query ordering only; not trusted witness creation, known acceptance, evaluation evidence, external transfer, calibration fitting, authority, action, or execution",
+  "population": {
+    "split": "development",
+    "requestFixtureCount": 96,
+    "groupCount": 24,
+    "sequentialEpisodeCount": 120,
+    "closedAnswerModelGenerationCount": 0,
+    "evaluationFixtureModelGenerationCount": 0,
+    "modifyExcludeRelabelRetryRerunOrMineAfterOutcome": false
+  },
+  "model": {
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "quantizationBits": 4,
+    "enableThinking": false,
+    "temperature": 0.0,
+    "maximumNewTokens": 256,
+    "samplesPerPrompt": 1,
+    "retryCount": 0,
+    "modelLoadLimit": 1
+  },
+  "prompt": {
+    "system": "You are an offline, permanently non-authoritative semantic proposal source. Compare the visible request with every supplied state boundary and registered clarification question. The presented candidate is fallible. Propose compatible state IDs and rank questions, but do not define capabilities, claim authority, call tools, or execute anything.",
+    "instruction": "Return one JSON object. Use DECIDABLE only when the request uniquely supports one state; otherwise use NEEDS_CLARIFICATION. candidate_state_ids must be an ordered list of one to three supplied non-A00 state IDs and must retain every compatible state you can identify. query_ranking must contain every supplied query ID exactly once, ordered from most to least useful. confidence is your probability from 0 to 1 that evidence_status and candidate_state_ids are exactly correct; it is diagnostic and never authoritative.",
+    "responseKeys": ["evidence_status", "candidate_state_ids", "query_ranking", "confidence"],
+    "allowedEvidenceStatus": ["DECIDABLE", "NEEDS_CLARIFICATION"],
+    "maximumCandidateCount": 3,
+    "maximumPromptTokens": 4096,
+    "demonstrationCount": 0
+  },
+  "fallbackQueryRanking": ["Q41", "Q42", "Q43", "Q44", "Q45", "Q46"],
+  "qualificationGates": {
+    "minimumProposalStructuralValidity": 0.98,
+    "minimumCompatibleStateRetention": 0.97,
+    "minimumEveryLanguageClassCompatibleStateRetention": 0.95,
+    "minimumCompatibleSetExactAccuracy": 0.9,
+    "minimumAmbiguitySensitivity": 0.95,
+    "minimumDecidableSpecificity": 0.95,
+    "minimumDecidableTop1Accuracy": 0.95,
+    "minimumQueryTop1Accuracy": 0.9,
+    "minimumQueryMeanReciprocalRank": 0.95,
+    "maximumMeanCorrectQueryRank": 1.25,
+    "maximumFalseKnownSingletonRateOnNonKnownTruth": 0.05,
+    "maximumCandidateAttractedFractionOfSemanticErrors": 0.5,
+    "maximumSequentialMeanDecisionCost": 0.45,
+    "minimumSequentialImprovementOverNoQuery": 0.55,
+    "requiredFinalExactAccuracyAfterTrustedAnswer": 1.0,
+    "maximumFalseKnownAfterTrustedAnswer": 0.0,
+    "requiredIrrelevantQueryIntermediateFailClosedRate": 1.0,
+    "requiredAuthoritativeTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumTokenizerLoadCount": 1,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 96,
+    "maximumGenerationCountPerFixture": 1,
+    "maximumClosedAnswerModelGenerationCount": 0,
+    "maximumEvaluationFixtureModelGenerationCount": 0,
+    "maximumRetryCount": 0,
+    "maximumManualRawResponseInspectionCount": 0,
+    "maximumPersistedRawResponseCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryQualificationAndAccessGatePasses": "local_proposal_query_ranking_qualifies_on_synthetic_development_authorize_separate_V149_evaluation_preregistration_only",
+    "otherwise": "local_proposal_query_ranking_fails_development_gates_close_without_evaluation_or_tuning",
+    "passAuthorizesOnlySeparateEvaluationPreregistration": true,
+    "outcomeAuthorizesImmediateEvaluationRun": false,
+    "outcomeAuthorizesRetryRerunPromptChangeThresholdFitAPITrainingInductionAuthorityActionOrExecution": false
+  }
+}

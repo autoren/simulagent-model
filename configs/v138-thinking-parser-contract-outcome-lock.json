@@ -1,0 +1,41 @@
+{
+  "V137_protocol": "python/v137_direct_vs_thinking_realization.py",
+  "V137_protocol_sha256": "0b86fe3c37684c330e335e242b6b6783d92ba3e1e4a1e7477bbb532a459755f0",
+  "V137_result": "outputs/v137-direct-vs-thinking-realization/model-realization/result.json",
+  "V137_result_sha256": "e3a8288a91e613ce808e6bea722abbd67d952cc0b81d24bb6823765fa47f0791",
+  "audit": "outputs/v138-thinking-parser-contract/audit.json",
+  "audit_sha256": "f0c59bec4f27c4d245e8807830dc2c77989cda4c27ae847f204e50b5a0e6fc45",
+  "authorization": {
+    "preregister_one_fresh_repaired_V135_development_comparison": true,
+    "rerun_reparse_or_modify_V137": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "touch_V134_or_external_language": false
+  },
+  "config": "configs/v138-thinking-parser-contract.json",
+  "config_sha256": "6f0c468ff81c6ad3cc6d3eb35d6d867dea47ed3b6e982283d52109a3f85034e1",
+  "experiment": "v138_qwen_thinking_template_parser_contract_audit",
+  "lock_payload_sha256": "fa4263ba5ca04e813f557bf88fecbc8633e6502ff65aeb246665cd6407174742",
+  "model_manifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+  "model_manifest_sha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+  "outcome": {
+    "decision": "freeze_parser_contract_authorize_fresh_repaired_V135_development_comparison_only",
+    "passed": true,
+    "retrospective_semantic_rescore_permitted": false,
+    "technical_contract_mismatch_confirmed": true
+  },
+  "parent_outcome": "configs/v137-direct-vs-thinking-realization-outcome-lock.json",
+  "parent_outcome_sha256": "d3a500a976e8c91bc20fa800b94fe13c1e6d3c8c3635dfe9a8f2ced7c6798650",
+  "plan": "docs/v138-thinking-parser-contract-plan.md",
+  "plan_sha256": "49a1263f827a47fd599073a94122ce7aeb4d6337f0bdab59a67a4f3dff1d7d8c",
+  "protocol": "python/v138_thinking_parser_contract.py",
+  "protocol_sha256": "270f50acd5dac5edbf21b6d9d610562ce973449fd6f8df3751c4de2bd28de059",
+  "results_document": "docs/v138-thinking-parser-contract-results.md",
+  "results_document_sha256": "5429163e518aa1c7c857ad2dd044250474c2cb2d621bcd966caafa0b9f032a67",
+  "runner": "python/run_and_freeze_v138_thinking_parser_contract.py",
+  "runner_sha256": "f3c1bc740ed18eb12c16bb36bc29639d9e14733570f513bbc2a7219f83b16895",
+  "schema_version": "138-thinking-parser-contract-outcome-lock",
+  "template": "/Users/kkmini/.cache/huggingface/hub/models--mlx-community--Qwen3.8-27B-4bit/snapshots/3e6447f082e89cc7f0bc6e5441afd38dfce760ff/chat_template.jinja",
+  "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+  "tests": "python/test_v138_thinking_parser_contract.py",
+  "tests_sha256": "b11ffc3e11fcea9f61dcb4b708b14b8f0023adb164b1fa4f61d5631d385e88dc"
+}

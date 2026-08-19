@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "93-controlled-open-set-source-design",
+  "experiment": "v93_controlled_open_set_source_feasibility",
+  "purpose": "pin and automatically inventory one untouched external-language shard for a five-class controlled open-set benchmark before population selection or model access",
+  "parentArchitectureLock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "newDialogueShard": {
+    "path": "dev/dialogues_004.json",
+    "byteSize": 2794855,
+    "gitBlobSha1": "81329efc5ef7169f455cd5f1a3a47d1de6fc419b",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_004.json"
+  },
+  "preLockExposure": {
+    "GitHubMetadataRequestCount": 1,
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "classConstruction": {
+    "hiddenIntentSalt": "simulagent-v93-hidden-intent-v1",
+    "unsupportedTargetSalt": "simulagent-v93-unsupported-target-v1",
+    "minimumSourceIntentRecordCountForHiding": 8,
+    "minimumTypedIntentCountPerService": 3,
+    "minimumDeclaredIntentCountPerService": 2,
+    "knownFamiliarMinimumOverlapCount": 1,
+    "knownUnfamiliarMaximumOverlapCount": 0,
+    "useAccumulatedUserHistoryThroughTargetTurn": true,
+    "noneMapsOnlyToInsufficientEvidence": true,
+    "unsupportedRequiresDifferentSourceAndTargetService": true,
+    "unsupportedRequiresSourceIntentAbsentFromCompleteTargetSchema": true,
+    "emitLanguageTokensSlotValuesOrHistories": false
+  },
+  "excludedServices": [
+    "Alarm_1",
+    "Buses_1",
+    "Flights_3",
+    "Homes_1",
+    "RentalCars_1",
+    "Restaurants_2",
+    "RideSharing_1",
+    "Services_4",
+    "Weather_1"
+  ],
+  "sourceGates": {
+    "minimumEligibleServiceCount": 3,
+    "minimumKnownFamiliarCandidateCount": 32,
+    "minimumKnownUnfamiliarCandidateCount": 32,
+    "minimumNovelValidCandidateCount": 32,
+    "minimumUnsupportedCandidateCount": 32,
+    "minimumInsufficientEvidenceCandidateCount": 24,
+    "minimumClassServiceCoverage": 2,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the text-free class inventory and authorize preregistration of a hash-selected calibration/evaluation population only",
+    "ifAnySourceGateFails": "stop before population selection, language extraction, manual inspection, model access, or threshold changes",
+    "passAuthorizesLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPIOrTraining": false,
+    "passAuthorizesPosteriorIntegrationPlanningOrExecution": false
+  }
+}

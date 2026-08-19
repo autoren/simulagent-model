@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "120-selective-query-value-audit-design",
+  "experiment": "v120_aggregate_selective_query_value_boundary_audit",
+  "parentV119OutcomeLock": "configs/v119-asymmetric-adaptive-evidence-outcome-lock.json",
+  "claimBoundary": "aggregate decomposition of already-frozen V119 regret and query cost; not a new policy, trigger, simulator, language, model, or deployment result",
+  "requiredSlice": {
+    "reliability": "0.95",
+    "correlations": ["0.00", "0.25", "0.50"],
+    "planner": "correlation_aware",
+    "expectedFailingConditionIds": [
+      "uniform_safe_universe@0.25",
+      "uniform_safe_universe@0.50",
+      "strong_candidate@0.50"
+    ]
+  },
+  "decomposition": {
+    "fixedClarificationCost": 0.30,
+    "decisionRegret": "total regret minus fixed clarification cost",
+    "maximumAffordableQueryCost": "historical baseline regret minus decision regret",
+    "minimumZeroLossSkipFraction": "positive cost excess divided by fixed clarification cost"
+  },
+  "outcomeGates": {
+    "requiredFailingConditionCount": 3,
+    "maximumRegretExcessOverBaseline": 0.011,
+    "maximumMinimumZeroLossSkipFraction": 0.036,
+    "requireDecisionRegretBelowBaselineEveryFailingCondition": true,
+    "requireParentAccuracySafetyControlAndMisspecificationGatesPass": true,
+    "maximumIndividualRecordReadCount": 0,
+    "maximumIndividualRecordEmissionCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "accessGates": {
+    "maximumFreshLanguageReadCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "ifAllOutcomeAndAccessGatesPass": "selective_query_value_boundary_derived_requires_independent_prequery_trigger",
+    "otherwise": "selective_query_value_inconclusive_keep_successor_closed",
+    "passAuthorizesOnlyPreregisterModelFreePrequeryTriggerFeasibilityAudit": true,
+    "passAuthorizesLanguageModelOrProtectedRun": false,
+    "passAuthorizesRetuneV119OrDiscountCost": false,
+    "passAuthorizesInductionAPITrainingActionOrExecution": false
+  }
+}

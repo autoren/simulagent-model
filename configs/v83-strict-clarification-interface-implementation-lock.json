@@ -1,0 +1,117 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "collect_human_or_original_user_language": false,
+    "evaluate_model_free_integration_once": true,
+    "modify_implementation_or_evaluation": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "authorizedRendererSources": [
+      "canonical",
+      "finite_grammar"
+    ],
+    "clarificationCodes": [
+      "ask_operation",
+      "ask_recipient",
+      "ask_full_details"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "reject the integration and retain V79 without any surface adapter",
+      "ifEveryGatePasses": "freeze the strict model-free interface for shadow use above V79",
+      "passAuthorizesBeliefOrActionAuthority": false,
+      "passAuthorizesLocalOrAPIModel": false,
+      "passAuthorizesRealToolExecution": false
+    },
+    "disabledRendererSources": [
+      "local_model",
+      "API_model",
+      "adapter_model",
+      "untrusted_passthrough"
+    ],
+    "enumeration": {
+      "allV79PolicyNodes": 22,
+      "canonicalCasesPerClarificationNode": 1,
+      "finiteGrammarCasesPerClarificationNode": 8,
+      "finiteGrammarStyles": [
+        "concise",
+        "neutral",
+        "polite",
+        "formal",
+        "direct",
+        "friendly",
+        "explicit",
+        "minimal"
+      ],
+      "reachableV79ClarificationNodes": 6,
+      "requiredRenderedReachableCases": 54
+    },
+    "experiment": "v83_model_free_strict_clarification_interface_integration",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumCompleteBeliefExecutionCertificateViolations": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumPolicyValueAbsoluteError": 1e-12,
+      "maximumRealToolCallCount": 0,
+      "minimumActionCodePreservationRate": 1.0,
+      "minimumDisabledUntrustedDeploymentRate": 1.0,
+      "minimumPolicyNodeStructuralPreservationRate": 1.0,
+      "minimumStrictSurfaceValidityRate": 1.0,
+      "minimumUnsafeMutationRejectionRate": 1.0,
+      "requiredAllPolicyNodeCount": 22,
+      "requiredNoneHypothesis": "none_of_the_above",
+      "requiredNoneHypothesisIndex": 4,
+      "requiredReachableClarificationNodeCount": 6,
+      "requiredRenderedReachableCaseCount": 54
+    },
+    "parentDecisionCoreOutcomeLock": "configs/v79-terminal-utility-outcome-lock.json",
+    "purpose": "integrate the frozen V79 Bayesian decision core with only the V82-approved canonical and finite-grammar clarification renderers after the local-model renderer failed",
+    "schemaVersion": "83-strict-clarification-interface-design",
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "auditAndFreezeDesign": true,
+      "collectHumanOrOriginalUserLanguage": false,
+      "evaluateFrozenIntegration": false,
+      "implementAndTestInterface": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "trainAdapter": false
+    },
+    "strictChoiceFragments": {
+      "ask_full_details": [
+        "schedule the project review or send the project summary",
+        "Alex Chen or Alex Kim"
+      ],
+      "ask_operation": [
+        "schedule the project review or send the project summary"
+      ],
+      "ask_recipient": [
+        "Alex Chen or Alex Kim"
+      ]
+    },
+    "surfaceBoundaryOutcomeLock": "configs/v82-local-clarification-surface-outcome-lock.json"
+  },
+  "design_lock": "configs/v83-strict-clarification-interface-design-lock.json",
+  "design_lock_sha256": "154139457ebc0d37b72eb0738a668cfda96481b3eb9dd2323d907eaa6d871d94",
+  "evaluator": "python/evaluate_v83_strict_clarification_interface.py",
+  "evaluator_sha256": "d64c77c36db827e6363b20cc59c0b55122afe3d652f15e9513e9c283c1fe2d7b",
+  "experiment": "v83_strict_clarification_interface_implementation_lock",
+  "implementation_audit": "outputs/v83-strict-clarification-interface/implementation-audit.json",
+  "implementation_audit_sha256": "555bb6c86e5bb1498a9c1a67b982533d2036dee27b8a1a20ce75140fc9da1c23",
+  "implementation_auditor": "python/audit_and_freeze_v83_interface_implementation.py",
+  "implementation_auditor_sha256": "5f82cb55c4f83d84041dc3ce7461ea8b71c44bbcba3dad8d13081286e3a790a6",
+  "lock_payload_sha256": "55ba6b5831b864603c081449b801f145aaeb19e42c57f24ba3aa0420e28e3061",
+  "module": "python/structured_llm_interface.py",
+  "module_sha256": "0f7c242eae7c68679608a0edf181f6666210701a82fe732d61d36cadcba8213a",
+  "parent_V79_result": "outputs/v79-structured-llm-interface/model-free-evaluation/result.json",
+  "parent_V79_result_sha256": "b20f89129eafe9131feac2276fa1f342a49e0fb6143713d842abdb9b682ed8e8",
+  "schema_version": "83-strict-clarification-interface-implementation-lock",
+  "test": "python/test_structured_llm_interface.py",
+  "test_sha256": "2f45c332f9080c41a3ae5230cc98e5edfe6e0bc373908b23b2e31fc7586a2467"
+}

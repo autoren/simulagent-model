@@ -1,0 +1,190 @@
+{
+  "authorization": {
+    "deploy_or_execute_any_model_output": false,
+    "manually_inspect_source_language_or_prompts": false,
+    "maximum_model_generation_count": 48,
+    "maximum_model_load_count": 1,
+    "modify_prompt_records_model_parser_scoring_decoding_controls_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "rerun_on_malformed_failed_or_negative_output": false,
+    "run_API_model": false,
+    "run_local_model_once": true,
+    "train_adapter": false
+  },
+  "builder": "python/build_v88_external_candidate_corpus.py",
+  "builder_sha256": "21d100183cd204aa87af9ca03d1ad1a4d083515d7629edd9a092ea7e1f275b5b",
+  "census_harness": "python/locked_census_harness.py",
+  "census_harness_sha256": "16fb60b0619f5a38ab9d375cfa626d0e88d66a49dd221f736436f933639e7714",
+  "config_payload": {
+    "controls": {
+      "emptyStateWithGoldIntentOracle": "gold intent candidate set with no state slot keys",
+      "exhaustiveEnumeration": "all service intents plus NONE and all service slots",
+      "noneOnly": "intent_candidates is NONE only and state_slot_key_candidates is empty",
+      "oracleTypedTarget": "exact registered gold candidate sets"
+    },
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V88 negative without prompt edits, record replacement, threshold changes, retries, API fallback, or rerun",
+      "ifEveryGatePasses": "freeze positive human-language shadow evidence and authorize preregistration of a bounded posterior integration study; do not deploy or execute",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesDirectActionOrExecution": false,
+      "passAuthorizesHumanLanguageDeployment": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 160,
+      "maximumPromptTokens": 8192,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v88_sealed_external_human_language_local_candidate_shadow",
+    "gates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumMeanIntentCandidateCount": 2.0,
+      "maximumModelGenerationCount": 48,
+      "maximumModelLoadCount": 1,
+      "maximumRealServiceCallCount": 0,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumGoldActiveIntentCoverageRate": 0.9,
+      "minimumIntentCandidateSetExactRate": 0.7,
+      "minimumIntentExactImprovementOverExhaustive": 0.2,
+      "minimumMandatoryNoneInclusionRate": 1.0,
+      "minimumNoneOnlyIntentExactRate": 0.75,
+      "minimumOntologyConformanceRate": 1.0,
+      "minimumPerServiceIntentCandidateRecallRate": 0.75,
+      "minimumPermanentNonDeployableRate": 1.0,
+      "minimumStateSlotKeyExactRate": 0.5,
+      "minimumStateSlotKeyRecallRate": 0.75,
+      "requiredActiveIntentLabelCount": 4,
+      "requiredNoneRecordCount": 24,
+      "requiredRecordCount": 48,
+      "requiredServiceCount": 3
+    },
+    "inputContract": {
+      "dialogueContext": "all source turns from dialogue start through the selected USER turn",
+      "schemaContext": [
+        "service name and description",
+        "all service intent identifiers and descriptions",
+        "all service slot identifiers and descriptions"
+      ],
+      "sourceLanguageMayNotBePrintedByBuilderOrRunner": true,
+      "sourceLanguageMayNotBeSentToAPI": true,
+      "targetService": "the single selected frame service"
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "exactKeys": [
+        "intent_candidates",
+        "state_slot_key_candidates"
+      ],
+      "goldIntentCandidateSet": "NONE only when active_intent is NONE; otherwise active_intent plus NONE",
+      "goldStateSlotKeySet": "the accumulated frame.state.slot_values keys at the selected turn",
+      "intentCandidates": "unique non-empty list drawn only from target service intent identifiers plus NONE; NONE is mandatory",
+      "mayNotEmitValuesActionsToolCallsOrFreeText": true,
+      "permanentlyNonDeployable": true,
+      "stateSlotKeyCandidates": "unique list drawn only from target service slot identifiers"
+    },
+    "parentOutcomeLock": "configs/v87-external-language-source-outcome-lock.json",
+    "population": {
+      "futureRecordUse": "all selected records are evaluation-only; no prompt tuning, few-shot examples, or training",
+      "recordCount": 48,
+      "selectionBeforeUtteranceExtraction": true,
+      "selectionOrder": "ascending SHA-256 of selectionSalt, stratum ID, and canonical record ID",
+      "selectionSalt": "simulagent-v88-external-shadow-v1",
+      "strata": [
+        {
+          "activeIntent": "SearchOnewayFlight",
+          "count": 4,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "SearchRoundtripFlights",
+          "count": 4,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "ReserveRestaurant",
+          "count": 8,
+          "service": "Restaurants_2"
+        },
+        {
+          "activeIntent": "GetRide",
+          "count": 8,
+          "service": "RideSharing_1"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 11,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 10,
+          "service": "Restaurants_2"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 3,
+          "service": "RideSharing_1"
+        }
+      ]
+    },
+    "purpose": "test whether the frozen local model can map independently authored SGD dialogue context into a small typed intent-and-state-key candidate set while retaining NONE and no authority",
+    "schemaVersion": "88-external-intent-candidate-design",
+    "source": {
+      "dataset": "Schema-Guided Dialogue Dataset",
+      "inventorySha256": "ebdb2204bf437782fe6d4a4af8f6489905f1363cc00cd56289255a0f7446f2a2",
+      "license": "CC-BY-SA-4.0",
+      "manualUtteranceInspectionBeforeCorpusSeal": false,
+      "revision": "e852981ae34990f4358979625854259302feaa78"
+    },
+    "stageAuthorization": {
+      "auditAndFreezeDesign": true,
+      "extractSelectedUtterancesByCode": false,
+      "implementAndAuditRunner": false,
+      "inspectUtterancesManually": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "selectAndSealCorpus": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You are an offline semantic candidate proposer. Your output is permanently non-deployable and cannot select an action or call a service. Infer the current typed state for the target service from the complete dialogue history and the supplied schema. Return exactly one JSON object with exactly two keys: intent_candidates and state_slot_key_candidates. intent_candidates must be a unique non-empty JSON list using only the supplied intent identifiers or NONE, and must always include NONE as an operational none-of-the-above candidate. Include the smallest set of currently plausible active intents; when no supplied intent is active, return only NONE. state_slot_key_candidates must be a unique JSON list using only supplied slot identifiers; include every slot whose current accumulated value is supported by the dialogue, but never emit a slot value. Do not emit prose, Markdown, actions, service calls, arguments, values, confidence scores, or additional keys.",
+    "userPromptTemplate": "Target service: {service_name}\nService description: {service_description}\nAllowed intent identifiers and descriptions:\n{intent_lines}\nAllowed slot identifiers and descriptions:\n{slot_lines}\nDialogue history through the current USER turn:\n{dialogue_history}\nReturn the exact JSON object now."
+  },
+  "corpus": "data/v88-external-intent-candidate/records.jsonl",
+  "corpus_seal": "data/v88-external-intent-candidate/corpus-seal.json",
+  "corpus_seal_sha256": "bc6e5eda0e17dbf34baee8642bcba2f1f887cd74ffe61b0f2dedeea55e0c22b5",
+  "corpus_sha256": "4511f339616133b47aeaf25e4e9d2f0a93db79d70a90888627e88d031795d79f",
+  "design_lock": "configs/v88-external-intent-candidate-design-lock.json",
+  "design_lock_sha256": "d4b0932a0c92d495197bee2b387d314a150706c984201615eb79dddbe69c7543",
+  "experiment": "v88_external_intent_candidate_implementation_lock",
+  "implementation_audit": "outputs/v88-external-intent-candidate/implementation-audit.json",
+  "implementation_audit_sha256": "241b64c731205e216c9a742ef6c300a723fd893a4effe655721eba8bbe8da792",
+  "implementation_auditor": "python/audit_and_freeze_v88_external_candidate_implementation.py",
+  "implementation_auditor_sha256": "1b7234aaab4059044c40c4f3117cd4623742c60dfcc126b43462f0bfe2432252",
+  "local_config_sha256": "f3efc81b2ea8d96a45301037d3ccccbcccdef44a961845c87f286aaddbc6eaaa",
+  "local_model_index_sha256": "52e534c41f7b97708329c85f762e5882bf48bd5955a422c6ae74eba321e6048a",
+  "local_snapshot_path": "/Users/kkmini/.cache/huggingface/hub/models--mlx-community--Qwen3.5-4B-4bit/snapshots/0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+  "local_tokenizer_config_sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+  "lock_payload_sha256": "3b3c1d066072d13205f5207b6190b4819e0b17dc61decaaeddfa9ff909d28287",
+  "protocol": "python/v88_external_candidate_protocol.py",
+  "protocol_sha256": "1d4bd200d28ec092254e0e6b5b99b173efe1909b97b5450bde5461ca4d331a17",
+  "runner": "python/run_v88_external_candidate_mlx.py",
+  "runner_sha256": "47f150100778dbe8fcdc1f6e6cd0a364c6c3a4b63f56a67ca18d63e3b66020b1",
+  "schema_version": "88-external-intent-candidate-implementation-lock",
+  "tests": "python/test_v88_external_candidate_protocol.py",
+  "tests_sha256": "625ce1109a43cbe01ceb7f29c81add33e36becdb2c2bbb5cfc93c87463c98239"
+}

@@ -1,0 +1,129 @@
+{
+  "auditor": "python/audit_and_freeze_v104_language_extraction.py",
+  "auditor_sha256": "35d40b559b94382f1ee63dfae0c7cfa0ea8a021b5675de8c32da60b72ba2ab8d",
+  "authorization": {
+    "design_or_run_prompt_baseline_or_model": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "manually_inspect_development_or_protected_test_language": false,
+    "modify_identifiers_fields_roles_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "read_local_archive_and_emit_exact_selected_language_once": true,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "config": "configs/v104-massive-language-extraction.json",
+  "config_payload": {
+    "canonicalSourcePartitionMap": {
+      "dev": "validation",
+      "test": "test",
+      "train": "train"
+    },
+    "decisionRule": {
+      "ifAnyExtractionGateFails": "stop before manual inspection, prompt design, baseline execution, or model access",
+      "ifEveryExtractionGatePasses": "freeze both language artifacts and authorize prospective benchmark-interface design",
+      "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false,
+      "passAuthorizesManualProtectedTestInspection": false,
+      "passAuthorizesModelInference": false
+    },
+    "emittedRecordFields": [
+      "record_id",
+      "candidate_id",
+      "source_id",
+      "role",
+      "source_partition",
+      "class_label",
+      "schema_visibility",
+      "scenario",
+      "intent",
+      "utterance",
+      "annotated_utterance",
+      "slots",
+      "current_utterance_intent_overlap_count"
+    ],
+    "expectedClassCountPerRole": 64,
+    "expectedLocaleMemberSuffix": "en-US.jsonl",
+    "experiment": "v104_massive_exact_selected_language_extraction",
+    "extractionGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualDevelopmentUtteranceInspectionCount": 0,
+      "maximumManualProtectedTestUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumUnselectedLanguageRecordCount": 0,
+      "requireDevelopmentProtectedTestDisjointness": true,
+      "requireExactFamiliarityReconstruction": true,
+      "requireExactSelectedIdentifierSet": true,
+      "requireExactSlotTypeCountReconstruction": true,
+      "requireExactStructuralGroundTruthMatch": true,
+      "requiredRecordCountPerClassPerRole": 64,
+      "requiredRecordCountPerRole": 256,
+      "requiredTotalRecordCount": 512
+    },
+    "parentPopulationOutcomeLock": "configs/v101-massive-population-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "V104SourceArchiveReadCount": 0,
+      "adapterTrainingRunCount": 0,
+      "manualDevelopmentUtteranceInspectionCount": 0,
+      "manualProtectedTestUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "selectedLanguageRecordExtractionCount": 0
+    },
+    "prestoClosureOutcomeLock": "configs/v103-presto-target-syntax-census-outcome-lock.json",
+    "requiredClasses": [
+      "known_familiar",
+      "known_unfamiliar",
+      "novel_valid",
+      "unsupported"
+    ],
+    "roles": {
+      "development": {
+        "expectedRecordCount": 256,
+        "output": "outputs/v104-massive-language/selected-language/development.jsonl",
+        "postExtractionAccess": "automatic_baseline_and_prompt_development_after_separate_design_lock"
+      },
+      "protected_test": {
+        "expectedRecordCount": 256,
+        "output": "outputs/v104-massive-language/selected-language/protected-test.jsonl",
+        "postExtractionAccess": "sealed_until_prompt_controls_metrics_and_gates_lock"
+      }
+    },
+    "schemaVersion": "104-massive-selected-language-extraction-design",
+    "selectedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+    "selectedPopulationSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+    "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+    "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+    "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+    "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6"
+  },
+  "config_sha256": "fcad62ad4881aae9dacd1e66fa1693a65675d7953335614577669e3a2a21fc91",
+  "design_audit": "outputs/v104-massive-language/language-design-audit.json",
+  "design_audit_sha256": "240104f450f9a6be1b5d78cc2a653f053172855e8d78b6dd60f80b2129442f89",
+  "experiment": "v104_massive_language_extraction_lock",
+  "lock_payload_sha256": "933f77ffd535b142d0f6f9014253e0a9b926a2918fe5bb5b85c327f222686aa3",
+  "parent_population_outcome": "configs/v101-massive-population-outcome-lock.json",
+  "parent_population_outcome_sha256": "ed584eb48d9b4412c759c9ce43af07de7b5427e875ac9899141301ee6239c130",
+  "plan": "docs/v104-massive-language-extraction-plan.md",
+  "plan_sha256": "f468188a94ea81f7c28327e0e52d84a1f6aad05f53d689c14e3b45bb01771e4d",
+  "presto_closure_outcome": "configs/v103-presto-target-syntax-census-outcome-lock.json",
+  "presto_closure_outcome_sha256": "f3ed7e32e7fb6387ab0128ef3c174782212d21f986d936693bb920063792d117",
+  "protocol": "python/v104_massive_language_extraction.py",
+  "protocol_sha256": "a6d19d444c4d268d4c5e6f42e80f083999ed4d34c8f33e1578c5565cecf52cfe",
+  "runner": "python/run_v104_massive_language_extraction.py",
+  "runner_sha256": "a6827c0f9afc50325b058ff769d2586114a03e6cf9a7e38f89037d10e6a1e6a7",
+  "schema_version": "104-massive-language-extraction-lock",
+  "selected_population": "outputs/v101-massive-population/population/selected-population.json",
+  "selected_population_sha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "source_archive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "source_archive_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "source_inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "source_inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "tests": "python/test_v104_massive_language_extraction.py",
+  "tests_sha256": "b9e79bdef107b2a9d8e2417f5917d30db43463453081d30836454c53d1d4a2f8",
+  "verifier": "python/verify_and_freeze_v104_language_outcome.py",
+  "verifier_sha256": "dbc525127d1fbbdccedb7221926b0ddbad94ab123bd457194f0926f957b26bfe"
+}

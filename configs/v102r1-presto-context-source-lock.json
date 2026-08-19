@@ -1,0 +1,185 @@
+{
+  "auditor": "python/audit_and_freeze_v102r1_presto_source.py",
+  "auditor_sha256": "f8cdc536d0131799fbf757ab9ea23f6356a237b552c4fa3c534de030e8ff1f9c",
+  "authorization": {
+    "download_persist_and_inventory_pinned_archive_once": true,
+    "emit_or_manually_inspect_language": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_source_dependency_rule_scientific_gates_or_repair_policy": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "select_population_or_extract_selected_language": false,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "design_audit": "outputs/v102r1-presto-context-source/source-design-audit.json",
+  "design_audit_sha256": "ac933e9b275c97ebc4034468b2c5c51bf4bcc97a6797668c337c9a76b2ce8a6a",
+  "experiment": "v102r1_presto_context_source_lock",
+  "lock_payload_sha256": "0aa0fecf8cc38567299f4200bfaf6dae145053678ffe0156130f329d3b8216e5",
+  "parent_technical_outcome": "configs/v102-presto-context-source-technical-outcome-lock.json",
+  "parent_technical_outcome_sha256": "7039841ad10264bc79b944d4fe927b84c9e080cf1e6d1a02d290641ab9afa3ae",
+  "plan": "docs/v102r1-presto-parser-repair-plan.md",
+  "plan_sha256": "2b893a64b053a9c765dacace4b5918230a66936a7b931950290fa910988a52cf",
+  "protocol": "python/v102r1_presto_context_source.py",
+  "protocol_sha256": "c34d70fb1f3e061a131ed805f05e2b701da56096030d5cf4d26be49e716421b4",
+  "repair_config": "configs/v102r1-presto-parser-repair.json",
+  "repair_config_payload": {
+    "decisionRule": {
+      "ifAnotherTechnicalFailureOccurs": "preserve the verified archive and freeze another technical result before any parser change",
+      "ifAnyScientificGateFails": "freeze the negative result without threshold or eligibility changes",
+      "ifRepairAuditPasses": "authorize one fresh retrieval of the unchanged pinned archive and run the unchanged V102 scientific gates",
+      "passAuthorizesLanguageExtractionOrModelInference": false
+    },
+    "experiment": "v102r1_presto_optional_context_leaf_parser_repair",
+    "parentTechnicalOutcomeLock": "configs/v102-presto-context-source-technical-outcome-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "V102r1ArchivePayloadDownloadCount": 0,
+      "V102r1LanguageRecordInspectionCount": 0,
+      "adapterTrainingRunCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "priorV102ArchiveDownloadCount": 1,
+      "priorV102EmittedLanguageRecordCount": 0,
+      "priorV102LanguageRecordAutomaticParseCompleted": true,
+      "priorV102ManualUtteranceInspectionCount": 0
+    },
+    "repairPolicy": {
+      "acceptNullContextContainerAsEmpty": true,
+      "ignoreNonStringOptionalContextLeaves": true,
+      "neverCoerceNonStringLeavesToStrings": true,
+      "neverEmitContextLeavesOrTheirHashes": true,
+      "persistVerifiedArchiveBeforeParsing": true,
+      "preserveEveryScientificCountDiversityAndSplitGate": true,
+      "preserveTargetArgumentCurrentInputAndContiguousContextMatchRule": true,
+      "requireRecordMetadataAndContextContainers": true,
+      "useOnlyStringContextLeaves": true
+    },
+    "schemaVersion": "102r1-presto-parser-repair-design",
+    "unchangedScientificConfig": "configs/v102-presto-context-source.json",
+    "unchangedScientificConfigSha256": "fe764e4d7d766a73f44b7576250cc9ed76e635641f9f709f2be7a46a209872ad"
+  },
+  "repair_config_sha256": "d0f1d5b2230533226565defb810d9a0f055167c3a1c2b5464da3e7247222566b",
+  "runner": "python/run_v102r1_presto_source_inventory.py",
+  "runner_sha256": "6c62afd3e33646870139ffd1786666cbaf3f2d4784049922d5903c6ecd59b156",
+  "schema_version": "102r1-presto-context-source-lock",
+  "scientific_config": "configs/v102-presto-context-source.json",
+  "scientific_config_payload": {
+    "allowedSourceSplits": [
+      "dev",
+      "test"
+    ],
+    "archive": {
+      "byteSize": 415990813,
+      "etagMd5": "5fb5bd7e437a07fbae4991b5b4a573f4",
+      "generation": "1678604196509246",
+      "lastModified": "2023-03-12T06:56:36Z",
+      "requiredMemberBasenames": [
+        "presto_dev.jsonl",
+        "presto_test.jsonl"
+      ],
+      "url": "https://storage.googleapis.com/gresearch/presto/presto_v1.zip"
+    },
+    "canonicalSplitMap": {
+      "dev": "development",
+      "test": "protected_test"
+    },
+    "decisionRule": {
+      "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+      "ifEverySourceGatePasses": "freeze PRESTO context-dependency inventory and authorize preregistration of paired development and protected-test populations",
+      "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false,
+      "passAuthorizesModelInference": false,
+      "passAuthorizesSelectedLanguageExtraction": false
+    },
+    "dependencyRule": {
+      "argumentMustBeAbsentFromCurrentInput": true,
+      "argumentMustOccurAsContiguousNormalizedTokensInContext": true,
+      "eligibleContextSources": [
+        "previous_turn_user_query",
+        "previous_turn_response_text",
+        "seeded_list_name",
+        "seeded_list_item",
+        "seeded_note_name",
+        "seeded_note_text",
+        "seeded_contact"
+      ],
+      "emitInputTargetArgumentContextOrSeededValues": false,
+      "fullAndAblatedPairsShareExampleIdInputAndTarget": true,
+      "maximumNormalizedArgumentTokenCount": 8,
+      "minimumNormalizedArgumentCharacterCount": 3,
+      "prohibitedNormalizedArguments": [
+        "yes",
+        "no",
+        "true",
+        "false",
+        "none",
+        "null"
+      ],
+      "syntheticContextAllowed": false,
+      "targetArgumentDelimiters": [
+        "\u00ab",
+        "\u00bb"
+      ]
+    },
+    "experiment": "v102_presto_human_context_dependency_source_feasibility",
+    "license": "CC-BY-4.0",
+    "locale": "en-US",
+    "massivePopulationOutcomeLock": "configs/v101-massive-population-outcome-lock.json",
+    "officialPaper": "https://aclanthology.org/2023.emnlp-main.667/",
+    "officialRepository": "https://github.com/google-research-datasets/presto",
+    "parentSourceSelectionLock": "configs/v99-open-world-source-selection-lock.json",
+    "preLockExposure": {
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "archiveHEADRequestCount": 1,
+      "archivePayloadDownloadCount": 0,
+      "languageRecordInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "officialREADMEAndPaperMetadataInspectionCount": 1
+    },
+    "requiredContextProvenance": "human",
+    "requiredMetadataFields": [
+      "example_id",
+      "locale",
+      "split",
+      "context",
+      "linguistic_phenomena",
+      "previous_turns",
+      "seeded_lists",
+      "seeded_notes",
+      "seeded_contacts"
+    ],
+    "requiredRecordFields": [
+      "inputs",
+      "targets",
+      "metadata"
+    ],
+    "schemaVersion": "102-presto-human-context-source-design",
+    "sourceGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumEmittedLanguageRecordCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSyntheticContextCandidateCount": 0,
+      "minimumDependencySourceKindCount": 2,
+      "minimumEligibleDevelopmentCandidateCount": 64,
+      "minimumEligibleProtectedTestCandidateCount": 64,
+      "minimumEligibleTotalCandidateCount": 256,
+      "minimumPreviousTurnDependentCandidateCount": 64,
+      "minimumSeededStateDependentCandidateCount": 64,
+      "minimumSemanticRootFunctionCount": 8,
+      "requireDevelopmentTestIdentifierDisjointness": true
+    },
+    "sourceName": "PRESTO v1",
+    "sourceRole": "auxiliary_paired_full_context_vs_ablated_insufficient_evidence_control"
+  },
+  "scientific_config_sha256": "fe764e4d7d766a73f44b7576250cc9ed76e635641f9f709f2be7a46a209872ad",
+  "tests": "python/test_v102r1_presto_context_source.py",
+  "tests_sha256": "9275ea7d2d31703f9683590e766d3138c94981e0f433f735e8d8992cf7c90f20",
+  "verifier": "python/verify_and_freeze_v102r1_presto_source_outcome.py",
+  "verifier_sha256": "342ce79de8d4af55ffc46a6a3475527d0444884157e1e8d39abb22f107262f52"
+}

@@ -1,0 +1,232 @@
+{
+  "V58_deferral": "docs/v58-deferred-status.md",
+  "V58_deferral_sha256": "361aaa05f4cce2b8b8d70846fe37da227d4da47feff7b783e2d24749747cfaa0",
+  "V76_outcome_lock": "configs/v76-discovery-clean-source-census-lock.json",
+  "V76_outcome_lock_sha256": "562280bb0f293771e65b93a04ed96650ae616ec8f46cfcd51e4a5554b4719083",
+  "authorization": {
+    "access_API_model": false,
+    "access_local_model": false,
+    "collect_human_language": false,
+    "compute_planner_policy_values_or_optimal_actions": false,
+    "implement_and_structurally_audit_model_free_benchmark": true,
+    "modify_V77_design_parameters_priors_or_gates": false,
+    "perform_external_side_effect": false,
+    "train_adapter": false
+  },
+  "config": "configs/v77-clarification-benchmark-design.json",
+  "config_payload": {
+    "actionsInTieBreakOrder": [
+      "ask_report",
+      "ask_recipient",
+      "ask_full_details",
+      "draft_q2_lee",
+      "draft_annual_lee",
+      "draft_q2_patel",
+      "draft_annual_patel",
+      "send_q2_lee",
+      "send_annual_lee",
+      "send_q2_patel",
+      "send_annual_patel",
+      "safe_draft",
+      "abstain"
+    ],
+    "benchmarkGates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumDominantNormalizedMAPRegret": 1e-12,
+      "maximumDominantNormalizedPosteriorSamplingRegret": 1e-12,
+      "maximumExternalSideEffectCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelForwardPassCount": 0,
+      "maximumOffSupportFallbackCount": 0,
+      "maximumUnknownBranchIrreversibleSendCount": 0,
+      "minimumAmbiguousNormalizedActImmediatelyRegret": 0.05,
+      "minimumAmbiguousNormalizedMAPRegret": 0.05,
+      "minimumBeliefNormalizationRate": 1.0,
+      "minimumClearNormalizedAskAlwaysRegret": 0.02,
+      "minimumIdenticalHypothesisSupportRate": 1.0,
+      "minimumObservationNormalizationRate": 1.0,
+      "requiredAmbiguousReachableInformationActions": [
+        "ask_report",
+        "ask_recipient"
+      ],
+      "requiredAmbiguousRootActionSet": [
+        "ask_report",
+        "ask_recipient"
+      ],
+      "requiredClearRootAction": "send_q2_lee",
+      "requiredDominantRootAction": "safe_draft",
+      "requiredFixtureCount": 4,
+      "requiredHypothesisCount": 5,
+      "requiredNoneHypothesis": "none_of_the_above",
+      "requiredUnknownContinuationActionSet": [
+        "safe_draft",
+        "abstain"
+      ],
+      "requiredUnknownRootActionSet": [
+        "ask_report",
+        "ask_recipient",
+        "ask_full_details"
+      ]
+    },
+    "claimBoundary": {
+      "APIModelEvidence": false,
+      "exactFiniteBenchmark": true,
+      "executionAuthority": false,
+      "externalBenchmarkEvidence": false,
+      "humanLanguageEvidence": false,
+      "localModelEvidence": false,
+      "modelFreeStage": true,
+      "openWorldSafety": false,
+      "projectAuthoredDevelopmentMechanism": true
+    },
+    "controls": [
+      "exact_posterior_aware",
+      "map_interpretation",
+      "persistent_posterior_sampling",
+      "act_immediately",
+      "ask_always",
+      "best_open_loop",
+      "oracle_interpretation"
+    ],
+    "decisionRule": {
+      "ifAnyGateFails": "freeze a model-free benchmark-design failure without tuning this population",
+      "ifEveryGatePasses": "freeze the model-free benchmark and authorize preregistration of frozen local-model candidate generation",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesExecutionAuthority": false,
+      "passAuthorizesLearnedLikelihoods": false,
+      "passAuthorizesLoRA": false,
+      "passAuthorizesLocalModelForwardPassesImmediately": false
+    },
+    "dominantControlRewardProfile": {
+      "abstain": -4.0,
+      "askFullDetails": -4.5,
+      "askRecipient": -1.0,
+      "askReport": -1.0,
+      "candidateDraft": -0.5,
+      "everySend": 4.0,
+      "safeDraft": 5.0
+    },
+    "experiment": "v77_local_first_structured_llm_clarification_benchmark",
+    "fixtures": [
+      {
+        "name": "ambiguous_send",
+        "prior": [
+          0.2375,
+          0.2375,
+          0.2375,
+          0.2375,
+          0.05
+        ],
+        "rewardProfile": "positive",
+        "syntheticInstruction": "Send the final report to Jordan."
+      },
+      {
+        "name": "clear_send",
+        "prior": [
+          0.995,
+          0.00125,
+          0.00125,
+          0.00125,
+          0.00125
+        ],
+        "rewardProfile": "positive",
+        "syntheticInstruction": "Send the Q2 report to Jordan Lee now."
+      },
+      {
+        "name": "unknown_heavy",
+        "prior": [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.4
+        ],
+        "rewardProfile": "positive",
+        "syntheticInstruction": "Send the special report to the other Jordan."
+      },
+      {
+        "name": "dominant_safe_draft",
+        "prior": [
+          0.2375,
+          0.2375,
+          0.2375,
+          0.2375,
+          0.05
+        ],
+        "rewardProfile": "dominant_control",
+        "syntheticInstruction": "Prepare whatever is safest for Jordan."
+      }
+    ],
+    "hypothesesInTieBreakOrder": [
+      "q2_report__jordan_lee",
+      "annual_report__jordan_lee",
+      "q2_report__jordan_patel",
+      "annual_report__jordan_patel",
+      "none_of_the_above"
+    ],
+    "observationsInSourceOrder": [
+      "report_q2",
+      "report_annual",
+      "report_other",
+      "recipient_lee",
+      "recipient_patel",
+      "recipient_other",
+      "full_q2_lee",
+      "full_annual_lee",
+      "full_q2_patel",
+      "full_annual_patel",
+      "full_other",
+      "draft_approved",
+      "draft_rejected",
+      "done"
+    ],
+    "positiveRewardProfile": {
+      "abstain": -4.0,
+      "askFullDetails": -4.5,
+      "askRecipient": -1.0,
+      "askReport": -1.0,
+      "candidateDraft": -0.5,
+      "correctSend": 12.0,
+      "safeDraft": -2.0,
+      "wrongOrUnsupportedSend": -35.0
+    },
+    "purpose": "project-authored, model-free development benchmark for separating interpretation proposals, belief weighting, and decisions",
+    "schemaVersion": "77-clarification-benchmark-design",
+    "sharedParameters": {
+      "discount": 1.0,
+      "focusedQuestionReliability": 0.96,
+      "fullQuestionReliability": 0.96,
+      "horizonActions": 3,
+      "irreversibleSendMaximumNonePosterior": 0.1,
+      "irreversibleSendMinimumMatchingPosterior": 0.9,
+      "matchingDraftApprovalProbability": 0.9,
+      "nonmatchingDraftApprovalProbability": 0.1,
+      "tieTolerance": 1e-12
+    },
+    "stageAuthorization": {
+      "accessAPIModel": false,
+      "accessLocalModel": false,
+      "auditAndFreezeDesign": true,
+      "collectHumanLanguage": false,
+      "computePlannerOutcomes": false,
+      "implementBenchmark": false,
+      "performExternalSideEffect": false,
+      "trainAdapter": false
+    },
+    "statesInSourceOrder": [
+      "active",
+      "terminal"
+    ]
+  },
+  "config_sha256": "e55c578701857e13f95f35d032660313cfa6e8f3308a7342ccc394a1cd585205",
+  "design_audit": "outputs/v77-structured-llm-interface/design-audit.json",
+  "design_audit_sha256": "46acd828877be19847dcf4fcac49779d779e717f2c6968bcf49cb20e6169eaf1",
+  "design_auditor": "python/audit_and_freeze_v77_clarification_design.py",
+  "design_auditor_sha256": "29fec897859a1bf7a68d58c3fcc5d15c2e5540f9903a262e2c541cd332cbaa5c",
+  "experiment": "v77_clarification_design_lock",
+  "lock_payload_sha256": "eeff82b63503e2bb2ed94296d275122336726785d3b3ebabec84e7b12d90b83b",
+  "preregistration": "docs/v77-clarification-benchmark-plan.md",
+  "preregistration_sha256": "d4e2f948de3beadb96dc7aa21f0063f1036c8bd8c212532cb52cac187e3153bd",
+  "schema_version": "77-clarification-benchmark-design"
+}

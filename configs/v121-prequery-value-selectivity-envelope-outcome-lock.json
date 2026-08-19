@@ -1,0 +1,138 @@
+{
+  "analysis_lock": "configs/v121-prequery-value-selectivity-envelope-lock.json",
+  "analysis_lock_sha256": "789f619689a795c5b9ce04cf5dcf72354e712d792b30799f1b16432b3585ce71",
+  "audit": "outputs/v121-prequery-value-selectivity-envelope/outcome-audit.json",
+  "audit_sha256": "bdcef189e4dbe2e81932f41ca9fc54b3f0a92fd0ba48b52fc3c4e79af628958b",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "evaluate_or_fit_trigger": false,
+    "inventory_independently_available_prequery_signals": true,
+    "modify_rerun_or_retune_V121": false,
+    "retune_cost_or_V119": false,
+    "run_API_training_action_or_execution": false,
+    "run_language_model_or_protected": false
+  },
+  "experiment": "v121_prequery_value_selectivity_outcome_lock",
+  "lock_payload_sha256": "4b49ea2b195f080a6baffe155bc7d5d84fb4088607206f8bb43480f1ed11e2af",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "value_selectivity_envelope_derived_requires_paired_fresh_trigger_validation",
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "condition_count": 3,
+      "conditions": [
+        {
+          "condition_id": "strong_candidate@0.50",
+          "minimum_queried_subset_value": 0.3,
+          "minimum_queried_value_lift_percent": 3.636028771343369,
+          "minimum_queried_value_lift_ratio": 1.0363602877134337,
+          "population_average_query_value": 0.2894746195475156,
+          "skip_value_bounds": [
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.08949239095031175,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.30915453344476057,
+              "skip_fraction": 0.05
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.19474619547515587,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.6727574105790971,
+              "skip_fraction": 0.1
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.25789847819006234,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.890919136859699,
+              "skip_fraction": 0.25
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.27894923909503117,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.9636397122865663,
+              "skip_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.25",
+          "minimum_queried_subset_value": 0.3,
+          "minimum_queried_value_lift_percent": 3.611981365007022,
+          "minimum_queried_value_lift_ratio": 1.0361198136500702,
+          "population_average_query_value": 0.28954180399576773,
+          "skip_value_bounds": [
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.09083607991535486,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.31372354064866786,
+              "skip_fraction": 0.05
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.19541803995767743,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.674921677149369,
+              "skip_fraction": 0.1
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.25816721598307096,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.8916405590497897,
+              "skip_fraction": 0.25
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.2790836079915355,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.9638801863499299,
+              "skip_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "condition_id": "uniform_safe_universe@0.50",
+          "minimum_queried_subset_value": 0.3,
+          "minimum_queried_value_lift_percent": 0.4716935332656602,
+          "minimum_queried_value_lift_ratio": 1.0047169353326566,
+          "population_average_query_value": 0.2985915629068913,
+          "skip_value_bounds": [
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.27183125813782655,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.9103782286795246,
+              "skip_fraction": 0.05
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.28591562906891327,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.9575475820060906,
+              "skip_fraction": 0.1
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.2943662516275653,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.9858491940020302,
+              "skip_fraction": 0.25
+            },
+            {
+              "maximum_average_query_value_in_skipped_subset": 0.29718312581378264,
+              "maximum_skipped_value_as_fraction_of_population_average": 0.9952830646673434,
+              "skip_fraction": 0.5
+            }
+          ]
+        }
+      ],
+      "decision": "value_selectivity_envelope_derived_requires_paired_fresh_trigger_validation",
+      "individual_record_emission_count": 0,
+      "individual_record_read_count": 0,
+      "outcome_gates": {
+        "aggregate_metrics_explicitly_insufficient_to_certify_trigger": true,
+        "aggregate_only": true,
+        "all_preregistered_skip_bounds_nonnegative": true,
+        "failing_condition_count_exact": true,
+        "five_percent_skip_requires_low_value_cases_in_hard_conditions": true,
+        "queried_value_lift_is_finite_but_positive": true,
+        "zero_actual_execution": true
+      },
+      "outcome_pass": true,
+      "query_cost": 0.3,
+      "required_future_evidence": "paired fresh pre-query signal, query-value, safety, and regret validation",
+      "trigger_certified": false
+    }
+  },
+  "result": "outputs/v121-prequery-value-selectivity-envelope/audit/result.json",
+  "result_sha256": "c080a87e392ec509eb389d259ae3e2b2ab77d6d19337f9462cf905682197d0db",
+  "results_document": "docs/v121-prequery-value-selectivity-envelope-results.md",
+  "results_document_sha256": "53cc34691cee7420a5cdcd88f09e38d6dd362c604228ff8e4429e7d4366a6c45",
+  "schema_version": "121-prequery-value-selectivity-outcome-lock",
+  "verifier": "python/verify_and_freeze_v121_prequery_value_selectivity_envelope_outcome.py",
+  "verifier_sha256": "e6fd99944cdddac5c5a4ac7b462213d2f25ff76b57b62245f3d3f6bf6bfb34f4"
+}

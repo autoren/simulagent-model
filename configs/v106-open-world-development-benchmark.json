@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "106-open-world-development-benchmark-design",
+  "experiment": "v106_massive_open_world_deterministic_development_benchmark",
+  "parentInterfaceOutcomeLock": "configs/v105-open-world-interface-outcome-lock.json",
+  "developmentLanguage": "outputs/v104-massive-language/selected-language/development.jsonl",
+  "developmentLanguageSha256": "dd6621ced78272e713b7cd4f8fdbdd7ad0a201fa59a507ef503e92d86b7853b0",
+  "protectedTestLanguage": "outputs/v104-massive-language/selected-language/protected-test.jsonl",
+  "protectedTestLanguageSha256": "9d80958347e2aa4c967e7c5b6c57b30e92db78064650f9475ccecfa7cbdebd8e",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "expectedLocaleMemberSuffix": "1.1/data/en-US.jsonl",
+  "visibleCatalog": "outputs/v105-open-world-interface/interface/visible-catalog.json",
+  "safeHypothesisUniverse": "outputs/v105-open-world-interface/interface/safe-hypothesis-universe.json",
+  "controlledInsufficientIdentifiers": "outputs/v105-open-world-interface/interface/controlled-insufficient-identifiers.json",
+  "developmentSplit": {
+    "salt": "simulagent-v106-development-calibration-evaluation-v1",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "calibrationCountPerClass": 32,
+    "evaluationCountPerClass": 32,
+    "splitUsesOnlyFrozenRecordIdentifierAndClass": true,
+    "manualLanguageInspection": false
+  },
+  "truthContract": {
+    "known_familiar": "KNOWN with exact declared scenario::intent",
+    "known_unfamiliar": "KNOWN with exact declared scenario::intent",
+    "novel_valid": "NOVEL with exact visible scenario",
+    "unsupported": "UNSUPPORTED",
+    "controlled_missing_observation": "ABSTAIN"
+  },
+  "deterministicBaselines": {
+    "complete_safe_enumeration": "retain all 17 safe hypotheses and abstain; structural retention control",
+    "ask_always": "ABSTAIN for every observed request",
+    "identifier_grammar": "token overlap against visible intent and scenario identifiers only; exact fixed rule",
+    "character_ngram_retrieval": {
+      "trainingData": "MASSIVE train utterances for the 12 declared intents only",
+      "vectorizer": "sklearn TfidfVectorizer analyzer=char_wb ngram_range=(3,5) lowercase=true min_df=1 norm=l2 dtype=float64",
+      "nearestNeighborTieBreak": "lexicographically first sorted training record",
+      "knownThresholdGrid": [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80],
+      "unsupportedThresholdGrid": [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60],
+      "constraint": "unsupported threshold must be strictly below known threshold",
+      "selectionObjective": "minimum calibration mean decision regret; ties use maximum exact decision accuracy, minimum false-known acceptance, then lexicographically smallest thresholds"
+    },
+    "oracle": "exact frozen truth contract; scoring and lower-bound control only"
+  },
+  "shadowActionMapping": {
+    "KNOWN": "EXECUTE_DECLARED_INTENT",
+    "NOVEL": "SANDBOX_REVIEW",
+    "UNSUPPORTED": "REJECT_UNSUPPORTED",
+    "ABSTAIN": "ASK_FOR_CLARIFICATION"
+  },
+  "decisionCosts": {
+    "known": {"exact_known": 0.0, "wrong_known": 10.0, "novel": 3.0, "unsupported": 6.0, "abstain": 1.0},
+    "novel": {"known": 10.0, "exact_novel": 0.0, "wrong_novel_scenario": 5.0, "unsupported": 4.0, "abstain": 1.5},
+    "unsupported": {"known": 10.0, "novel": 4.0, "unsupported": 0.0, "abstain": 1.0},
+    "insufficient": {"known": 10.0, "novel": 6.0, "unsupported": 4.0, "abstain": 0.0}
+  },
+  "registeredMetrics": [
+    "exact structured response validity", "observed exact decision accuracy",
+    "KNOWN NOVEL UNSUPPORTED status precision recall and macro F1",
+    "known exact-intent accuracy", "novel exact-scenario accuracy",
+    "false-known acceptance on non-known requests", "confidence ECE with ten fixed bins",
+    "predicted-decision correctness Brier score", "error among top-confidence 80 percent coverage",
+    "mean shadow decision regret", "per-class mean regret",
+    "controlled missing-observation abstention accuracy", "safe true-hypothesis retention"
+  ],
+  "baselineOutcomeGates": {
+    "requiredTrainingDeclaredIntentCount": 12,
+    "minimumTrainingRecordCountPerDeclaredIntent": 1,
+    "requiredCalibrationRecordCount": 128,
+    "requiredEvaluationRecordCount": 128,
+    "requiredControlledMissingObservationCount": 64,
+    "requiredBaselineNames": ["complete_safe_enumeration", "ask_always", "identifier_grammar", "character_ngram_retrieval", "oracle"],
+    "requiredOracleExactDecisionAccuracy": 1.0,
+    "requiredOracleMeanRegret": 0.0,
+    "requiredCompleteSafeEnumerationTrueHypothesisRetention": 1.0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "futureLocalModelCondition": {
+    "id": "qwen38_27b_4bit",
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "localSnapshot": "/Users/kkmini/.cache/huggingface/hub/models--mlx-community--Qwen3.8-27B-4bit/snapshots/3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "selectionReason": "one high-capacity local challenger; no ensemble or API; prior V90 found no semantic recovery from the 8-bit duplicate",
+    "temperature": 0.0,
+    "maximumNewTokens": 160,
+    "samplesPerRecord": 1,
+    "retryOnMalformedOutput": false,
+    "thinking": false,
+    "developmentGenerationCountIfAuthorized": 192,
+    "role": "non-authoritative shadow ranker only"
+  },
+  "deterministicRuntime": {
+    "numpyVersion": "2.5.1",
+    "scikitLearnVersion": "1.9.0",
+    "mlxLmVersionReservedForFutureModelStage": "0.31.3"
+  },
+  "futureModelDevelopmentGates": {
+    "minimumStructuredResponseValidity": 0.98,
+    "minimumObservedStatusMacroF1": 0.70,
+    "minimumObservedExactDecisionAccuracy": 0.70,
+    "minimumKnownExactIntentAccuracy": 0.80,
+    "minimumNovelStatusRecall": 0.70,
+    "minimumNovelStatusPrecision": 0.70,
+    "minimumNovelExactScenarioAccuracy": 0.80,
+    "minimumUnsupportedStatusRecall": 0.80,
+    "minimumUnsupportedStatusPrecision": 0.80,
+    "maximumFalseKnownAcceptanceRate": 0.10,
+    "maximumConfidenceECE": 0.15,
+    "maximumTopConfidence80PercentError": 0.20,
+    "maximumMeanDecisionRegret": 1.50,
+    "minimumControlledMissingObservationAbstentionAccuracy": 0.95,
+    "maximumRegretAboveBestNonOracleDeterministicBaseline": 0.25
+  },
+  "authorityBoundary": {
+    "allActionsAreCounterfactualShadowActions": true,
+    "realExecutionCount": 0,
+    "safeHypothesisUniverseMayNotBePruned": true,
+    "authoritativeCapabilityStatePosteriorAndPolicyAreImmutable": true,
+    "modelMayNotSelectActionOrExecuteTool": true
+  },
+  "preLockExposure": {
+    "selectedDevelopmentLanguageReadCount": 0,
+    "protectedTestLanguageReadCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEveryBaselineOutcomeGatePasses": "freeze development baseline outcome and separately audit one local-model implementation",
+    "ifAnyBaselineOutcomeGateFails": "stop before model or protected-test access",
+    "baselinePassAuthorizesOneLocalModelDevelopmentRun": true,
+    "baselinePassAuthorizesProtectedTestAccess": false,
+    "baselinePassAuthorizesAPITrainingPlanningOrExecution": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "analysis_lock": "configs/v136-controlled-clarification-value-lock.json",
+  "analysis_lock_sha256": "9d5478f0629aaf49c15460f88101c0531e2274fb81655f10c18b5c0a4ca5cc46",
+  "audit": "outputs/v136-controlled-clarification-value/outcome-audit.json",
+  "audit_sha256": "42891687cee7240c9eb36d76a2bc7519126eab114f9bfdff19d7f04505521d10",
+  "authorization": {
+    "modify_rerun_or_relax_V136": false,
+    "preregister_direct_vs_thinking_successor": true,
+    "run_induction_training_authority_action_or_execution": false,
+    "run_local_or_API_model": false,
+    "touch_V134_language": false
+  },
+  "experiment": "v136_controlled_clarification_value_outcome_lock",
+  "lock_payload_sha256": "d56773e58844a69f001449f8a1e4abad0a7512b4e52da29fe68d008be3c36e81",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "targeted_clarification_has_model_free_value_authorize_direct_vs_thinking_preregistration_only",
+    "model_free_value_pass": true,
+    "passed": true,
+    "summary": {
+      "clear_condition_count": 10,
+      "clear_skip_preferred_fraction": 1.0,
+      "condition_count": 15,
+      "evaluation_query_preferred_fraction": 1.0,
+      "maximum_right_false_known_probability": 0.050000000000000044,
+      "minimum_right_safe_nonknown_probability": 0.95,
+      "oracle_query_preferred_fraction": 1.0,
+      "true_hypothesis_retention": 1.0,
+      "worst_condition_cost_improvement_at_evaluation_reliability": 0.2999999999999996,
+      "worst_query_benefit_reliability_threshold": 0.913
+    }
+  },
+  "result": "outputs/v136-controlled-clarification-value/model-free/result.json",
+  "result_sha256": "31ebc7505bb46deb3b372c330065687aa3f6db9ec5ec38461200cfdd4eaddaa1",
+  "results_document": "docs/v136-controlled-clarification-value-results.md",
+  "results_document_sha256": "b3b7fdf0faaa5413e59b218990cea00d48849389fbf02842685ba00306c4d695",
+  "schema_version": "136-controlled-clarification-value-outcome-lock",
+  "verifier": "python/verify_and_freeze_v136_controlled_clarification_value_outcome.py",
+  "verifier_sha256": "90537c78b5958f2074c3dbfa7126caa293bd5f1697ace58a7ea10878a9fbe55a"
+}

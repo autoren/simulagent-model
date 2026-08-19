@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "104-massive-selected-language-extraction-design",
+  "experiment": "v104_massive_exact_selected_language_extraction",
+  "parentPopulationOutcomeLock": "configs/v101-massive-population-outcome-lock.json",
+  "prestoClosureOutcomeLock": "configs/v103-presto-target-syntax-census-outcome-lock.json",
+  "selectedPopulation": "outputs/v101-massive-population/population/selected-population.json",
+  "selectedPopulationSha256": "292c92a6aba92e28a5d7c131ad575059828152a13b5db39ef939ee89a5c61214",
+  "sourceInventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "sourceInventorySha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "sourceArchive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "sourceArchiveSha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "expectedLocaleMemberSuffix": "en-US.jsonl",
+  "canonicalSourcePartitionMap": {"train": "train", "dev": "validation", "test": "test"},
+  "roles": {
+    "development": {
+      "expectedRecordCount": 256,
+      "output": "outputs/v104-massive-language/selected-language/development.jsonl",
+      "postExtractionAccess": "automatic_baseline_and_prompt_development_after_separate_design_lock"
+    },
+    "protected_test": {
+      "expectedRecordCount": 256,
+      "output": "outputs/v104-massive-language/selected-language/protected-test.jsonl",
+      "postExtractionAccess": "sealed_until_prompt_controls_metrics_and_gates_lock"
+    }
+  },
+  "expectedClassCountPerRole": 64,
+  "requiredClasses": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+  "emittedRecordFields": [
+    "record_id", "candidate_id", "source_id", "role", "source_partition", "class_label",
+    "schema_visibility", "scenario", "intent", "utterance", "annotated_utterance", "slots",
+    "current_utterance_intent_overlap_count"
+  ],
+  "extractionGates": {
+    "requiredTotalRecordCount": 512,
+    "requiredRecordCountPerRole": 256,
+    "requiredRecordCountPerClassPerRole": 64,
+    "requireExactSelectedIdentifierSet": true,
+    "requireExactStructuralGroundTruthMatch": true,
+    "requireExactFamiliarityReconstruction": true,
+    "requireExactSlotTypeCountReconstruction": true,
+    "requireDevelopmentProtectedTestDisjointness": true,
+    "maximumUnselectedLanguageRecordCount": 0,
+    "maximumManualDevelopmentUtteranceInspectionCount": 0,
+    "maximumManualProtectedTestUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "V104SourceArchiveReadCount": 0,
+    "selectedLanguageRecordExtractionCount": 0,
+    "manualDevelopmentUtteranceInspectionCount": 0,
+    "manualProtectedTestUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEveryExtractionGatePasses": "freeze both language artifacts and authorize prospective benchmark-interface design",
+    "ifAnyExtractionGateFails": "stop before manual inspection, prompt design, baseline execution, or model access",
+    "passAuthorizesManualProtectedTestInspection": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

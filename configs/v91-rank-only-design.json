@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "91-rank-only-design",
+  "experiment": "v91_fresh_external_local_rank_only_shadow",
+  "purpose": "test whether a low-cost frozen local model can improve exhaustive intent-search ordering while deterministic completion preserves every schema intent, NONE, state, posterior, value, and action",
+  "sourceOutcomeLock": "configs/v91-rank-only-source-outcome-lock.json",
+  "parentModelDecisionLock": "configs/v90-capacity-generation-outcome-lock.json",
+  "plannerOutcomeLock": "configs/v79-terminal-utility-outcome-lock.json",
+  "source": {
+    "dataset": "Schema-Guided Dialogue Dataset",
+    "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+    "revision": "e852981ae34990f4358979625854259302feaa78",
+    "shard": "dev/dialogues_003.json",
+    "license": "CC-BY-SA-4.0",
+    "manualUtteranceInspectionBeforeCorpusSeal": false
+  },
+  "population": {
+    "recordCount": 64,
+    "activeRecordCount": 32,
+    "noneRecordCount": 32,
+    "serviceCount": 3,
+    "activeIntentLabelCount": 5,
+    "selectionBeforeUtteranceExtraction": true,
+    "selectionSalt": "simulagent-v91-rank-only-fresh-v1",
+    "selectionOrder": "strata in registered order; within each stratum ascending SHA-256 of salt, service, active intent, and canonical record ID; skip every dialogue selected earlier",
+    "uniqueDialoguePerRecord": true,
+    "futureRecordUse": "evaluation only; never use for prompt selection, examples, tuning, training, retries, or manual adjudication",
+    "strata": [
+      {"service": "Alarm_1", "activeIntent": "NONE", "count": 8},
+      {"service": "Homes_1", "activeIntent": "NONE", "count": 8},
+      {"service": "Services_4", "activeIntent": "NONE", "count": 16},
+      {"service": "Alarm_1", "activeIntent": "AddAlarm", "count": 8},
+      {"service": "Alarm_1", "activeIntent": "GetAlarms", "count": 8},
+      {"service": "Homes_1", "activeIntent": "FindApartment", "count": 8},
+      {"service": "Services_4", "activeIntent": "BookAppointment", "count": 4},
+      {"service": "Services_4", "activeIntent": "FindProvider", "count": 4}
+    ]
+  },
+  "modelCondition": {
+    "id": "qwen35_4b_4bit_rank_only",
+    "role": "low-cost frozen shadow ordering baseline retained by V90",
+    "repository": "mlx-community/Qwen3.5-4B-4bit",
+    "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+    "quantizationBits": 4,
+    "weightBytes": 3034300695,
+    "reuseManifest": "outputs/v90-capacity-generation/model-acquisition/qwen35_4b_4bit.json",
+    "reuseManifestFileSha256": "ae348b86944b0af9fad7c7e07b42b39a75c433ef6064cdaf0c8e5ab5e0f398ad",
+    "reuseManifestPayloadSha256": "516226389f59942e6f58f7b53effbb7f34bfa6710749e0a3c2df6ad884f7a979",
+    "newWeightDownloadAuthorized": false
+  },
+  "preDesignExposure": {
+    "selectedUtteranceExtractionCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "newModelWeightDownloadCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0
+  },
+  "inputContract": {
+    "dialogueContext": "all source turns from dialogue start through the selected USER turn",
+    "schemaContext": [
+      "service name and description",
+      "every service intent identifier and description"
+    ],
+    "excludedFromPrompt": [
+      "gold active intent",
+      "state keys and values",
+      "posterior probabilities",
+      "actions and tool arguments",
+      "execution state"
+    ],
+    "sourceLanguageMayNotBePrintedByBuilderOrRunner": true,
+    "sourceLanguageMayNotBeSentToAPI": true
+  },
+  "systemPrompt": "You are an offline search-order proposer. Deterministic code already owns the complete intent set and will exhaustively evaluate it; you cannot remove an intent, update state or belief, select an action, or call a tool. Return exactly one JSON object with exactly one key, intent_priority. Its value must contain every supplied intent identifier and NONE exactly once, ordered from most to least plausible for the target service after the complete dialogue history. NONE means that none of the supplied active intents currently applies. Do not emit prose, Markdown, state, slots, values, probabilities, actions, arguments, tool calls, or additional keys.",
+  "userPromptTemplate": "Target service: {service_name}\nService description: {service_description}\nAllowed intent identifiers and descriptions:\n{intent_lines}\nDialogue history through the current USER turn:\n{dialogue_history}\nReturn the exact JSON object now.",
+  "outputContract": {
+    "exactKeys": ["intent_priority"],
+    "rawIntentPriority": "JSON list intended to contain every supplied service intent identifier plus NONE exactly once in best-first order",
+    "canonicalCompletion": "retain the first occurrence of each allowed identifier from a valid list, discard unknowns, then append every omitted allowed identifier in frozen schema order",
+    "malformedFallback": "treat the proposal as empty and use the complete frozen schema order",
+    "completeSetAlwaysEqualsDeterministicSchemaSet": true,
+    "noneAlwaysRetained": true,
+    "stateMutationPossible": false,
+    "posteriorOrActionAuthority": false,
+    "permanentlyNonDeployable": true,
+    "executable": false
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "samplesPerRecord": 1,
+    "maximumPromptTokens": 8192,
+    "maximumNewTokens": 96,
+    "enableThinking": false,
+    "retryOnMalformedOutput": false
+  },
+  "rankingControls": {
+    "schemaOrder": "all allowed identifiers in frozen schema order with NONE last",
+    "lexicalOverlap": "descending deterministic token-overlap between dialogue history and each intent identifier plus description; NONE leads only when every active overlap is zero; schema order breaks ties",
+    "identifierExactMatchGrammar": "active intent leads only when all normalized identifier tokens occur in the current USER utterance; NONE leads when no active identifier matches; schema order breaks ties",
+    "exhaustiveUnordered": "complete deterministic enumeration with work equal to the full candidate count",
+    "oracleFirst": "gold identifier first followed by schema order; analysis ceiling only"
+  },
+  "plannerInvariance": {
+    "frozenOutcomeLock": "configs/v79-terminal-utility-outcome-lock.json",
+    "requiredFixtureCount": 4,
+    "requiredHypothesisPermutationCountPerFixture": 120,
+    "method": "enumerate every permutation of the five V79 hypotheses, permute kernel and belief consistently, and independently recompute the exact horizon-three posterior-aware policy",
+    "mustPreserve": [
+      "selected root action",
+      "optimal root action set",
+      "every root Q value",
+      "exact policy value",
+      "complete-belief execution certification"
+    ],
+    "maximumAbsoluteValueError": 1e-12,
+    "modelOutputUsedByInvarianceHarness": false
+  },
+  "qualityGates": {
+    "minimumExactJSONParseRate": 0.95,
+    "minimumRawOntologyConformanceRate": 0.95,
+    "minimumRawFullPermutationRate": 0.8,
+    "minimumOverallTop1Rate": 0.75,
+    "minimumActiveTop1Rate": 0.75,
+    "minimumNoneTop1Rate": 0.75,
+    "minimumOverallTop2Rate": 0.95,
+    "minimumMeanReciprocalRank": 0.8,
+    "maximumMeanGoldRank": 1.4,
+    "minimumMRRImprovementOverBestNonOracleControl": 0.05,
+    "minimumMeanRankReductionVersusBestNonOracleControl": 0.2,
+    "minimumCanonicalCompleteSetRate": 1.0,
+    "minimumCanonicalNoneRetentionRate": 1.0,
+    "minimumAuthoritativeStatePreservationRate": 1.0,
+    "minimumPermanentNonDeployableRate": 1.0,
+    "minimumExactPlannerPermutationInvarianceRate": 1.0,
+    "maximumPlannerValueError": 1e-12,
+    "maximumPlannerActionMismatchCount": 0,
+    "maximumExecutionCertificateViolationCount": 0
+  },
+  "accessGates": {
+    "requiredRecordCount": 64,
+    "maximumNewModelWeightDownloadCount": 0,
+    "maximumModelLoadCount": 1,
+    "maximumModelGenerationCount": 64,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "decisionRule": {
+    "qualifyingCondition": "every safety, utility, comparison, planner-invariance, and access gate passes",
+    "ifQualifying": "freeze V91 and authorize only preregistration of a bounded complete-search scheduling study; continue to forbid pruning and early stopping",
+    "ifNotQualifying": "freeze the rank-only local model result and retain deterministic schema order and exact exhaustive planning",
+    "passAuthorizesPruningOrEarlyStopping": false,
+    "passAuthorizesLearnedLikelihoodOrBeliefAuthority": false,
+    "passAuthorizesActionSelectionOrExecution": false,
+    "passAuthorizesAPIAccessOrAdapterTraining": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeDesign": true,
+    "selectExtractAndSealCorpus": false,
+    "inspectUtterancesManually": false,
+    "loadOrRunLocalModel": false,
+    "runAPIModel": false,
+    "trainAdapter": false,
+    "pruneOrEarlyStopSearch": false,
+    "grantBeliefActionOrExecutionAuthority": false,
+    "performRealServiceCall": false,
+    "performExternalSideEffect": false
+  }
+}

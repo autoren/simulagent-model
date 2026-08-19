@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "134-semantic-novelty-source-design",
+  "experiment": "v134_text_free_semantically_noncolliding_SGD_dev_source_design",
+  "parentV133OutcomeLock": "configs/v133-sgd-capability-label-identifiability-outcome-lock.json",
+  "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "claimBoundary": "text-free feasibility and preregistration of a schema-name-noncolliding controlled open-set population from an untouched source partition; not language, model, policy, human clarification, induction, or execution evidence",
+  "catalog": {
+    "declaredKnownPairs": [
+      "RentalCars_1::GetCarsAvailable",
+      "RentalCars_1::ReserveCar",
+      "Weather_1::GetWeather",
+      "Events_1::FindEvents",
+      "Events_1::BuyEventTickets",
+      "Travel_1::FindAttractions"
+    ],
+    "novelCompositeDomains": ["banks", "flights", "media"],
+    "unsupportedCompositeAcrossEveryDevUnseenDomain": true,
+    "insufficientControl": true,
+    "expectedChoiceCount": 11,
+    "completeSafeCompositeHypothesisUniverse": true
+  },
+  "population": {
+    "sourcePartition": "dev",
+    "baseSalt": "simulagent-v134-semantic-novelty-dev-source-v1",
+    "recordsPerTruthCandidateCell": 4,
+    "expectedCellCount": 66,
+    "expectedSourceRecordCount": 240,
+    "expectedMissingControlCount": 24,
+    "expectedFixtureCount": 264,
+    "selectionUsesOnlyIdentifierPartitionDerivedClassDomainServiceAndIntent": true,
+    "selectionBeforeAnyDevLanguageExtraction": true,
+    "devLanguagePreviouslyUsedCount": 0
+  },
+  "schemaIdentifiability": {
+    "schemaPartitions": ["train", "dev"],
+    "requiredSelectedNovelExactNameCollisionFraction": 0.0,
+    "requiredSelectedNovelFullSignatureCollisionFraction": 0.0,
+    "requiredEntirelyNameCollidingNovelChoiceCount": 0,
+    "manualSemanticJudgmentCount": 0,
+    "rawDescriptionEmissionCount": 0
+  },
+  "sourceGates": {
+    "requiredChoiceCount": 11,
+    "requiredKnownChoiceCount": 6,
+    "requiredNovelChoiceCount": 3,
+    "requiredUnsupportedChoiceCount": 1,
+    "requiredInsufficientChoiceCount": 1,
+    "requiredCellCount": 66,
+    "requiredRecordsPerCell": 4,
+    "requiredRecordsPerTruth": 24,
+    "requiredRecordsPerCandidate": 44,
+    "requiredSourceRecordCount": 240,
+    "requiredMissingControlCount": 24,
+    "requiredFixtureCount": 264,
+    "requiredKnownPairCoverage": 6,
+    "requiredNovelDomainCoverage": 3,
+    "requiredUnsupportedDomainCoverage": 1,
+    "requireUniqueSourceIdentifiers": true,
+    "maximumLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceIdentifiabilityAndAccessGatePasses": "freeze_semantically_noncolliding_dev_source_await_new_realization_authority",
+    "otherwise": "reject_corrected_SGD_source_without_reselection_or_gate_relaxation",
+    "passCreatesFutureBenchmarkAssetOnly": true,
+    "passAuthorizesLanguageExtractionOrModelRun": false,
+    "passAuthorizesProtectedInductionRicherPlanningAPITrainingActionOrExecution": false
+  }
+}

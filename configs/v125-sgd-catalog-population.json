@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "125-sgd-catalog-population-design",
+  "experiment": "v125_text_free_SGD_catalog_and_cross_dataset_population",
+  "parentV124OutcomeLock": "configs/v124-sgd-source-feasibility-outcome-lock.json",
+  "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "claimBoundary": "text-free deterministic catalog and identifier population selection; not selected-language, retrieval, trigger, model, policy, or utility evidence",
+  "catalog": {
+    "visibleDomains": ["hotels", "movies", "services"],
+    "declaredKnownPairs": [
+      "Hotels_2::BookHouse",
+      "Hotels_2::SearchHouse",
+      "Movies_1::FindMovies",
+      "Movies_1::GetTimesForMovie",
+      "Services_1::BookAppointment",
+      "Services_1::FindProvider"
+    ],
+    "novelCompositePerVisibleDomain": true,
+    "unsupportedCompositeAcrossUnseenDomains": true,
+    "insufficientControl": true,
+    "expectedChoiceCount": 11,
+    "completeSafeCompositeHypothesisUniverse": true
+  },
+  "trainingPopulation": {
+    "sourcePartition": "train",
+    "includeEveryCandidateForDeclaredKnownPairs": true,
+    "expectedRecordCount": 4881
+  },
+  "evaluationPopulation": {
+    "sourcePartition": "test",
+    "baseSalt": "simulagent-v125-sgd-cross-dataset-population-v1",
+    "knownRecordCountPerDeclaredPair": 32,
+    "novelValidRecordCountPerVisibleDomain": 64,
+    "unsupportedRecordCountPerDomain": 48,
+    "expectedKnownRecordCount": 192,
+    "expectedNovelValidRecordCount": 192,
+    "expectedUnsupportedRecordCount": 192,
+    "expectedTotalRecordCount": 576,
+    "selectionUsesOnlyFrozenIdentifierPartitionClassDomainServiceAndIntent": true,
+    "selectionBeforeAnySelectedLanguageExtraction": true
+  },
+  "populationGates": {
+    "requiredChoiceCount": 11,
+    "requiredKnownChoiceCount": 6,
+    "requiredNovelCompositeChoiceCount": 3,
+    "requiredUnsupportedChoiceCount": 1,
+    "requiredInsufficientChoiceCount": 1,
+    "requiredTrainingRecordCount": 4881,
+    "requiredEvaluationRecordCount": 576,
+    "requiredEvaluationRecordCountPerClass": 192,
+    "requiredKnownPairCoverage": 6,
+    "requiredNovelDomainCoverage": 3,
+    "requiredUnsupportedDomainCoverage": 4,
+    "requireTrainingEvaluationIdentifierDisjointness": true,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualLanguageInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryCatalogPopulationAndAccessGatePasses": "freeze_SGD_catalog_and_population_for_cross_dataset_retrieval_selectivity_design",
+    "otherwise": "reject_SGD_catalog_population_without_retuning",
+    "passAuthorizesOnlyPreregisterCrossDatasetRetrievalSelectivityDesign": true,
+    "passAuthorizesImmediateLanguageExtractionSignalTriggerOrModelEvaluation": false,
+    "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false
+  }
+}

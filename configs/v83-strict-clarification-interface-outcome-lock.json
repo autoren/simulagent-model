@@ -1,0 +1,41 @@
+{
+  "audit": "outputs/v83-strict-clarification-interface/outcome-audit.json",
+  "audit_sha256": "d29532d127b6b19b112c8c40e617cdbfe744a1cb0375419047dd96e21dc5a49b",
+  "authorization": {
+    "claim_open_world_language_or_safety_evidence": false,
+    "deploy_local_API_adapter_or_untrusted_surface_renderer": false,
+    "grant_surface_belief_action_or_execution_authority": false,
+    "modify_or_rerun_V83": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "preregister_fresh_schema_grounded_shadow_benchmark": true,
+    "use_strict_model_free_interface_in_synthetic_shadow_mode": true
+  },
+  "experiment": "v83_strict_clarification_interface_outcome_lock",
+  "implementation_lock": "configs/v83-strict-clarification-interface-implementation-lock.json",
+  "implementation_lock_sha256": "f3d002100e5f9c048737cadbbbf584e55185bf561e18d01be206803a8f8258cf",
+  "lock_payload_sha256": "842efdab13547ee002c48db8921afa95f14eeb271a60077c33a994df1177fb28",
+  "outcome": {
+    "decision": "freeze_strict_model_free_interface_for_shadow_use_above_V79",
+    "metrics": {
+      "action_code_preservation_rate": 1.0,
+      "all_policy_node_count": 22,
+      "complete_belief_execution_certificate_violation_count": 0,
+      "disabled_untrusted_deployment_rate": 1.0,
+      "maximum_policy_value_absolute_error": 0.0,
+      "nonclarification_node_count": 16,
+      "policy_node_structural_preservation_rate": 1.0,
+      "reachable_clarification_node_count": 6,
+      "rendered_reachable_case_count": 54,
+      "strict_surface_validity_rate": 1.0,
+      "unsafe_mutation_rejection_rate": 1.0
+    },
+    "passed": true
+  },
+  "result": "outputs/v83-strict-clarification-interface/evaluation/result.json",
+  "result_sha256": "bf2653cd55e4651eb1720780048f0bb1b9b6f67abfbefcbb4135c2c440060dff",
+  "results_document": "docs/v83-strict-clarification-interface-results.md",
+  "results_document_sha256": "12a947cfde3456887f0e3d3e1cec836d2ae5aa2f45cb645b483492ab860e174f",
+  "schema_version": "83-strict-clarification-interface-outcome-lock",
+  "verifier": "python/verify_and_freeze_v83_interface_outcome.py",
+  "verifier_sha256": "bc3232cdde63b7d92dadacf1039d08c09fcd570a6b6ab759fbeb88bb44b8523a"
+}

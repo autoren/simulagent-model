@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "110-open-world-deterministic-validation-design",
+  "experiment": "v110_deterministic_novelty_abstention_and_llm_validation_development",
+  "parentTypedChoiceOutcomeLock": "configs/v109-open-world-typed-choice-outcome-lock.json",
+  "inputs": {
+    "useExactFrozenV109ObservedPredictions": true,
+    "useV109ControlledMissingObservationPredictions": true,
+    "useExactV104DevelopmentLanguage": true,
+    "useExactV100MASSIVETrainingPartition": true,
+    "readProtectedTestLanguage": false,
+    "manualLanguageOrRawResponseInspection": false
+  },
+  "secondaryDevelopmentSplit": {
+    "sourceSubset": "the 128 V109 observed model-blind holdback records",
+    "classes": ["known_familiar", "known_unfamiliar", "novel_valid", "unsupported"],
+    "calibrationCountPerClass": 16,
+    "evaluationCountPerClass": 16,
+    "salt": "simulagent-v110-deterministic-validation-calibration-evaluation-v1",
+    "splitUsesOnlyFrozenRecordIdentifierAndClass": true,
+    "claimBoundary": "prospectively split secondary development analysis; not an independent new model or protected-test result"
+  },
+  "policies": {
+    "complete_safe_enumeration": "retain all 17 hypotheses and abstain",
+    "ask_always": "ABSTAIN with zero exact-decision confidence",
+    "identifier_grammar": "exact frozen V106 identifier grammar",
+    "character_ngram_retrieval": "exact V106 character TF-IDF method with thresholds recalibrated only on V110 calibration",
+    "direct_llm": "exact expanded V109 prediction and confidence",
+    "calibrated_abstention": "direct LLM prediction unless confidence is below the selected threshold, otherwise zero-confidence ABSTAIN",
+    "deterministic_novelty_gate": "replace any direct LLM decision with the retrieval NOVEL decision whenever calibrated retrieval selects NOVEL; otherwise retain direct LLM",
+    "llm_plus_validation": "use calibrated retrieval NOVEL decisions; otherwise accept only exact LLM/retrieval agreement and zero-confidence ABSTAIN on disagreement",
+    "oracle": "exact hidden typed truth for scoring only"
+  },
+  "calibratedAbstention": {
+    "thresholdGrid": [0.0, 0.5, 0.65, 0.7, 0.8, 0.85, 0.9, 0.95, 0.96, 0.98, 0.99, 1.0, 1.01],
+    "selectionObjective": "minimum calibration mean regret; ties use minimum false-known acceptance, maximum exact accuracy, then smallest threshold",
+    "abstentionConfidence": 0.0
+  },
+  "retrievalCalibration": {
+    "reuseExactV106VectorizerAndThresholdGrids": true,
+    "selectionObjective": "minimum calibration mean regret; ties use maximum exact accuracy, minimum false-known acceptance, then lexicographically smallest thresholds"
+  },
+  "primaryPolicy": "llm_plus_validation",
+  "developmentOutcomeGates": {
+    "requiredCalibrationRecordCount": 64,
+    "requiredEvaluationRecordCount": 64,
+    "requiredCountPerClassPerSubset": 16,
+    "requiredPolicyNames": [
+      "complete_safe_enumeration", "ask_always", "identifier_grammar",
+      "character_ngram_retrieval", "direct_llm", "calibrated_abstention",
+      "deterministic_novelty_gate", "llm_plus_validation", "oracle"
+    ],
+    "minimumPrimaryObservedStatusMacroF1": 0.70,
+    "minimumPrimaryObservedExactDecisionAccuracy": 0.65,
+    "minimumPrimaryKnownExactIntentAccuracy": 0.75,
+    "minimumPrimaryNovelStatusRecall": 0.50,
+    "minimumPrimaryNovelStatusPrecision": 0.70,
+    "minimumPrimaryNovelExactScenarioAccuracy": 0.60,
+    "minimumPrimaryUnsupportedStatusRecall": 0.80,
+    "minimumPrimaryUnsupportedStatusPrecision": 0.80,
+    "maximumPrimaryFalseKnownAcceptanceRate": 0.10,
+    "maximumPrimaryConfidenceECE": 0.15,
+    "maximumPrimaryTopConfidence80PercentError": 0.20,
+    "maximumPrimaryMeanDecisionRegret": 1.50,
+    "maximumPrimaryRegretAboveAskAlways": 0.25,
+    "minimumPrimaryControlledMissingObservationAbstentionAccuracy": 1.0,
+    "requiredPrimaryTrueHypothesisRetention": 1.0,
+    "maximumActualExecutionCount": 0,
+    "maximumProtectedTestLanguageReadCount": 0,
+    "maximumManualLanguageOrRawResponseInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "authorityBoundary": {
+    "allPoliciesAreCounterfactualShadowPolicies": true,
+    "LLMRemainsEvidenceOnly": true,
+    "completeSafeHypothesisUniverseRetained": true,
+    "authoritativeCapabilityStatePosteriorAndPolicyImmutable": true,
+    "modelOrGateDefinesCapability": false,
+    "modelOrGateExecutesAction": false,
+    "realExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPrimaryAndIntegrityGatePasses": "freeze development result and separately preregister one identical deterministic layer for protected-test evaluation",
+    "ifAnyPrimaryGateFails": "freeze negative development result; do not access protected test or proceed to schema induction",
+    "passAuthorizesProtectedTestImmediately": false,
+    "passAuthorizesSchemaInductionImmediately": false,
+    "passAuthorizesAPITrainingPlanningOrExecution": false
+  }
+}

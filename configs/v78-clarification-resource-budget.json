@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "78-clarification-resource-budget",
+  "experiment": "v78_model_free_clarification_resource_feasibility",
+  "registeredFixtureCount": 4,
+  "registeredHypothesisCount": 5,
+  "registeredActionCount": 13,
+  "registeredObservationCount": 14,
+  "registeredStateCount": 2,
+  "registeredHorizon": 3,
+  "maximumDenseKernelBytesPerFixture": 20000,
+  "maximumConservativeBellmanNodeBoundPerFixture": 40000,
+  "requiredOpenLoopSequenceCountPerFixture": 2197,
+  "maximumEvaluationFixtureCount": 4,
+  "minimumDurableRawFixtureArtifactCountOnCompletedCensus": 4,
+  "maximumModelForwardPassCount": 0,
+  "maximumAPICallCount": 0,
+  "maximumAdapterTrainingRunCount": 0,
+  "maximumHumanRecordAccessCount": 0,
+  "maximumRealToolCallCount": 0,
+  "maximumExternalSideEffectCount": 0,
+  "ifAnyBoundFails": "defer the entire V78 model-free census without dropping fixtures or changing the registered design"
+}

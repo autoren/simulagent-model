@@ -1,0 +1,64 @@
+{
+  "audit": "outputs/v87-external-language-source-audit/outcome-audit.json",
+  "audit_sha256": "6546e5d1de4110a171b59730bb22dfeb51d7fb4e5db2b25c0b43171d72ae6f03",
+  "authorization": {
+    "access_local_or_API_model_before_subset_and_prompt_lock": false,
+    "grant_language_belief_action_or_execution_authority": false,
+    "manually_inspect_utterances_before_subset_lock": false,
+    "modify_or_rerun_V87": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_sealed_nonexecutable_external_language_shadow_subset": true,
+    "select_subset_before_utterance_extraction_by_frozen_hash_rule": true,
+    "train_adapter": false
+  },
+  "experiment": "v87_external_language_source_outcome_lock",
+  "implementation_lock": "configs/v87-external-language-source-implementation-lock.json",
+  "implementation_lock_sha256": "3e629a880fee522ea90d4bf689c7efb725fd1aeb71f2a4b22458c513160f15ed",
+  "inventory": "outputs/v87-external-language-source-audit/inventory/structural-inventory.json",
+  "inventory_sha256": "3eeae0de06bd7e687c897e773fa56f52f737d89cd8da8c78de0eb6a3da674a7a",
+  "lock_payload_sha256": "82ee5690359d5988d2cf8365c898ae1c3048064eb67945b05833ef34442361aa",
+  "outcome": {
+    "decision": "freeze_source_integrity_and_structural_inventory_then_preregister_external_shadow_subset",
+    "inventory_summary": {
+      "contains_utterance_or_text_fields": false,
+      "counts": {
+        "dialogue_count": 128,
+        "eligible_active_record_count": 757,
+        "eligible_none_record_count": 68,
+        "eligible_record_count": 825,
+        "non_user_turn_count": 825,
+        "turn_count": 1650,
+        "user_turn_count": 825
+      },
+      "eligible_intent_count": 7,
+      "eligible_service_counts": {
+        "Flights_3": 611,
+        "Restaurants_2": 184,
+        "RideSharing_1": 30
+      },
+      "ineligibility_reason_counts": {},
+      "record_index_sha256": "ebdb2204bf437782fe6d4a4af8f6489905f1363cc00cd56289255a0f7446f2a2",
+      "schema_service_count": 17
+    },
+    "passed": true
+  },
+  "result": "outputs/v87-external-language-source-audit/inventory/result.json",
+  "result_sha256": "8890490b5330b9b3422993ec05e6449cf9bb54a4e9956176534a0e6e3de8cbbf",
+  "results_document": "docs/v87-external-language-source-audit-results.md",
+  "results_document_sha256": "688308bc1261b64f0d5bffd52cebf54f501ff9639efc39a03aa1d3ba8ec075bb",
+  "schema_version": "87-external-language-source-outcome-lock",
+  "source_files": {
+    "dev/dialogues_001.json": {
+      "git_blob_sha1": "d9c9d93494f7a74ae22692c6819e80f8a5244763",
+      "local_path": "outputs/v87-external-language-source-audit/source/dialogues_001.json",
+      "local_sha256": "fe3a8ed9e160c15e20e7cfd16d03734b4473df0d3864f2ad687ea9eeee5eea52"
+    },
+    "dev/schema.json": {
+      "git_blob_sha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+      "local_path": "outputs/v87-external-language-source-audit/source/schema.json",
+      "local_sha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+    }
+  },
+  "verifier": "python/verify_and_freeze_v87_external_source_outcome.py",
+  "verifier_sha256": "0a9f78d9e03fdddb5ce2db80cea2957080ef7c8c3c631841dc1be43072ef8750"
+}

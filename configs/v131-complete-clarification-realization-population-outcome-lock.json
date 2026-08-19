@@ -1,0 +1,39 @@
+{
+  "analysis_lock": "configs/v131-complete-clarification-realization-population-lock.json",
+  "analysis_lock_sha256": "57a1287ac9b73dbd74630b562d4832773b0aeabfdd32017cf4210bd8326e4b76",
+  "audit": "outputs/v131-complete-clarification-realization-population/outcome-audit.json",
+  "audit_sha256": "7de1a8b6a01572638f3593eb80e94721c39e66ebf54a6c996edd6a31a8385667",
+  "authorization": {
+    "extract_language_or_run_model_before_next_lock": false,
+    "modify_rerun_or_reselect_V131": false,
+    "open_protected_or_begin_induction_or_richer_planning": false,
+    "preregister_local_model_complete_answer_realization_protocol": true,
+    "run_API_training_action_or_execution": false
+  },
+  "choice_catalog": "outputs/v131-complete-clarification-realization-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "3df849d72abe34dafe3eadeef706f208bf145fbcd367ebd3bc53903d62b83b22",
+  "experiment": "v131_complete_clarification_realization_population_outcome_lock",
+  "fixture_population": "outputs/v131-complete-clarification-realization-population/design/fixture-population.json",
+  "fixture_population_sha256": "1ead9d09af96cbf66fba091936d0fa833e8aa7578d7dfdb5267c61b2e7ca2f83",
+  "lock_payload_sha256": "2cb04455b72d356dd6a3a925ecfb970ad8752cbd607b31f5b3f40dcaeba51bca",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "freeze_complete_clarification_realization_population_authorize_protocol_lock_only",
+    "passed": true,
+    "summary": {
+      "cell_count": 66,
+      "choice_count": 11,
+      "fixture_count": 264,
+      "known_pair_coverage": 6,
+      "missing_control_count": 24,
+      "novel_domain_coverage": 3,
+      "source_record_count": 240,
+      "unsupported_domain_coverage": 4
+    }
+  },
+  "results_document": "docs/v131-complete-clarification-realization-population-results.md",
+  "results_document_sha256": "cd2f7857618907ed45f8141016ff61611eae2344317f2ecbc138a57bbbbe7838",
+  "schema_version": "131-complete-clarification-realization-population-outcome-lock",
+  "verifier": "python/verify_and_freeze_v131_complete_clarification_realization_population_outcome.py",
+  "verifier_sha256": "4fbce6ba0ae4261ca162fae03c9cb3787ac2bc6555dec6f1a157d630997b0a74"
+}

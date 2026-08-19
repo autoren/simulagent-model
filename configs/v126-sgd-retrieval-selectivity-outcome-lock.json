@@ -1,0 +1,417 @@
+{
+  "analysis_lock": "configs/v126-sgd-retrieval-selectivity-lock.json",
+  "analysis_lock_sha256": "838a1924063d69df8deb461a2eba5271deee69e84bbfd0b251d4c262bf06dd9a",
+  "audit": "outputs/v126-sgd-retrieval-selectivity/outcome-audit.json",
+  "audit_sha256": "a204b1a532fe6a9f0e767ae883571469717458182941fd0104e79e03f6daf43a",
+  "authorization": {
+    "begin_induction_or_richer_planning": false,
+    "close_current_prequery_trigger_inventory": true,
+    "fit_threshold_or_select_alternative_current_signal": false,
+    "modify_rerun_retune_or_mine_V126": false,
+    "preregister_independent_confirmation": false,
+    "run_API_training_action_or_execution": false,
+    "run_language_model_or_protected": false
+  },
+  "experiment": "v126_sgd_retrieval_selectivity_outcome_lock",
+  "lock_payload_sha256": "df5c29548bffa08479022fdb98d43f2f4b43490a1ab4b764e18a6b11dc679479",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "retrieval_status_band_fails_cross_dataset_selectivity_close_current_trigger_inventory",
+    "experimental_pass": false,
+    "passed": true,
+    "summary": {
+      "actual_execution_count": 0,
+      "conditions": {
+        "moderate_candidate@0.00": {
+          "always_query": {
+            "false_known_probability": 0.001234375000000002,
+            "known_exact_probability": 0.804494140625,
+            "mean_regret": 0.8987503594292533,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0011540120442708353,
+            "known_exact_probability": 0.81676953125,
+            "mean_regret": 0.8391516859266491,
+            "unsupported_correct_probability": 0.9348199869791666
+          },
+          "population_average_query_value": 0.7875343627929691,
+          "queried_average_query_value": 0.5461355869181489,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05575150553385417,
+            "known_exact_probability": 0.81676953125,
+            "mean_regret": 1.1820263705783418,
+            "unsupported_correct_probability": 0.930001953125
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9649692083864798
+        },
+        "moderate_candidate@0.25": {
+          "always_query": {
+            "false_known_probability": 0.005613281250000007,
+            "known_exact_probability": 0.8049982096354166,
+            "mean_regret": 0.9407888234456383,
+            "unsupported_correct_probability": 0.8805312500000001
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0052478332519531315,
+            "known_exact_probability": 0.8171344401041666,
+            "mean_regret": 0.875687181260851,
+            "unsupported_correct_probability": 0.8960870768229167
+          },
+          "population_average_query_value": 0.7454958987765838,
+          "queried_average_query_value": 0.502175317484963,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05952603149414063,
+            "known_exact_probability": 0.8171344401041666,
+            "mean_regret": 1.2185072886149093,
+            "unsupported_correct_probability": 0.8915009765624999
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9323044483418366
+        },
+        "moderate_candidate@0.50": {
+          "always_query": {
+            "false_known_probability": 0.0037265625000000037,
+            "known_exact_probability": 0.7863476562499999,
+            "mean_regret": 0.9279372049967447,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0034839477539062532,
+            "known_exact_probability": 0.8036328125000001,
+            "mean_regret": 0.8635435519748264,
+            "unsupported_correct_probability": 0.9162281901041666
+          },
+          "population_average_query_value": 0.7583475172254774,
+          "queried_average_query_value": 0.5168191152915794,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05789971923828125,
+            "known_exact_probability": 0.8036328125000001,
+            "mean_regret": 1.206354970296224,
+            "unsupported_correct_probability": 0.911521484375
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9364146205357142
+        },
+        "strong_candidate@0.00": {
+          "always_query": {
+            "false_known_probability": 0.001234375000000002,
+            "known_exact_probability": 0.804494140625,
+            "mean_regret": 0.8987503594292533,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0011540120442708353,
+            "known_exact_probability": 0.81676953125,
+            "mean_regret": 0.8391516859266491,
+            "unsupported_correct_probability": 0.9348199869791666
+          },
+          "population_average_query_value": 0.7875343627929691,
+          "queried_average_query_value": 0.5461355869181489,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05575150553385417,
+            "known_exact_probability": 0.81676953125,
+            "mean_regret": 1.1820263705783418,
+            "unsupported_correct_probability": 0.930001953125
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9649692083864798
+        },
+        "strong_candidate@0.25": {
+          "always_query": {
+            "false_known_probability": 0.005613281250000007,
+            "known_exact_probability": 0.8049982096354166,
+            "mean_regret": 0.9407888234456383,
+            "unsupported_correct_probability": 0.8805312500000001
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0052478332519531315,
+            "known_exact_probability": 0.8171344401041666,
+            "mean_regret": 0.875687181260851,
+            "unsupported_correct_probability": 0.8960870768229167
+          },
+          "population_average_query_value": 0.7454958987765838,
+          "queried_average_query_value": 0.502175317484963,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05952603149414063,
+            "known_exact_probability": 0.8171344401041666,
+            "mean_regret": 1.2185072886149093,
+            "unsupported_correct_probability": 0.8915009765624999
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9323044483418366
+        },
+        "strong_candidate@0.50": {
+          "always_query": {
+            "false_known_probability": 0.00999218750000001,
+            "known_exact_probability": 0.8055022786458333,
+            "mean_regret": 0.9609409213595921,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.008196716308593758,
+            "known_exact_probability": 0.8055022786458333,
+            "mean_regret": 0.8907672763400607,
+            "unsupported_correct_probability": 0.9162281901041666
+          },
+          "population_average_query_value": 0.7253438008626302,
+          "queried_average_query_value": 0.48100042086166317,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.0633005574544271,
+            "known_exact_probability": 0.8174993489583334,
+            "mean_regret": 1.2360795118543837,
+            "unsupported_correct_probability": 0.911521484375
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9171411033163264
+        },
+        "uniform_safe_universe@0.00": {
+          "always_query": {
+            "false_known_probability": 4.687500000000012e-05,
+            "known_exact_probability": 0.7661848958333333,
+            "mean_regret": 0.9040549384223089,
+            "unsupported_correct_probability": 0.9250625
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 4.3823242187500113e-05,
+            "known_exact_probability": 0.7890364583333334,
+            "mean_regret": 0.8419142727322046,
+            "unsupported_correct_probability": 0.9348199869791666
+          },
+          "population_average_query_value": 0.7822297837999134,
+          "queried_average_query_value": 0.5428401502026675,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.054727905273437495,
+            "known_exact_probability": 0.7890364583333334,
+            "mean_regret": 1.1847611253526475,
+            "unsupported_correct_probability": 0.930001953125
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.949864935427296
+        },
+        "uniform_safe_universe@0.25": {
+          "always_query": {
+            "false_known_probability": 0.0015742187500000012,
+            "known_exact_probability": 0.7475343424479166,
+            "mean_regret": 0.9213246646457252,
+            "unsupported_correct_probability": 0.9312968749999998
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0014717305501302097,
+            "known_exact_probability": 0.7755348307291666,
+            "mean_regret": 0.8555106014675566,
+            "unsupported_correct_probability": 0.9402425944010416
+          },
+          "population_average_query_value": 0.7649600575764972,
+          "queried_average_query_value": 0.5263691539046154,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05604444376627604,
+            "known_exact_probability": 0.7755348307291666,
+            "mean_regret": 1.1984297646416562,
+            "unsupported_correct_probability": 0.93539208984375
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9286993632413902
+        },
+        "uniform_safe_universe@0.50": {
+          "always_query": {
+            "false_known_probability": 0.003132812500000003,
+            "known_exact_probability": 0.7671930338541667,
+            "mean_regret": 0.9305894944932727,
+            "unsupported_correct_probability": 0.9036874999999999
+          },
+          "ask_always": {
+            "mean_regret": 1.1666666666666667
+          },
+          "no_query_retrieval": {
+            "false_known_probability": 0.0546875,
+            "known_exact_probability": 0.234375,
+            "mean_regret": 1.3862847222222223,
+            "unsupported_correct_probability": 0.13020833333333334
+          },
+          "oracle_same_skip_fraction": {
+            "false_known_probability": 0.0029288533528645856,
+            "known_exact_probability": 0.7897662760416666,
+            "mean_regret": 0.8649248453776042,
+            "unsupported_correct_probability": 0.9162281901041666
+          },
+          "population_average_query_value": 0.7556952277289497,
+          "queried_average_query_value": 0.515171396933839,
+          "query_fraction": 0.8298611111111112,
+          "record_count": 576,
+          "retrieval_band_counts": {
+            "ambiguous_query": 478,
+            "high_known": 66,
+            "low_unsupported": 32
+          },
+          "selective_query": {
+            "false_known_probability": 0.05738791910807292,
+            "known_exact_probability": 0.7897662760416666,
+            "mean_regret": 1.2077223476833767,
+            "unsupported_correct_probability": 0.911521484375
+          },
+          "skip_fraction": 0.1701388888888889,
+          "skipped_average_query_value": 1.9288624840561226
+        }
+      },
+      "decision": "retrieval_status_band_fails_cross_dataset_selectivity_close_current_trigger_inventory",
+      "individual_record_emission_count": 0,
+      "outcome_gates": {
+        "complete_hypothesis_retention": true,
+        "nontrivial_skip_fraction": true,
+        "one_trigger_zero_fit_and_selection": true,
+        "queried_average_value_covers_cost": true,
+        "selective_false_known_every_prior_and_correlation": true,
+        "selective_known_exact_every_prior_and_correlation": false,
+        "selective_no_worse_than_always_query": false,
+        "selective_regret_every_prior_and_correlation": false,
+        "selective_unsupported_every_prior_and_correlation": true,
+        "skipped_average_value_not_above_cost": false,
+        "zero_execution": true,
+        "zero_individual_record_emission": true
+      },
+      "outcome_pass": false,
+      "primary_trigger_count": 1,
+      "record_count": 576,
+      "threshold_fit_count": 0,
+      "trigger_selection_count": 0,
+      "true_hypothesis_retention": 1.0
+    }
+  },
+  "result": "outputs/v126-sgd-retrieval-selectivity/evaluation/result.json",
+  "result_sha256": "f91baf1ebc9f6ccdedb6476d928ccaa291444597dad45c077bb6f4804d29f7ae",
+  "results_document": "docs/v126-sgd-retrieval-selectivity-results.md",
+  "results_document_sha256": "38a9c37ee4d448588e97bae274e11b31aaf4606a5114cf30c3518ffdab466dd6",
+  "schema_version": "126-sgd-retrieval-selectivity-outcome-lock",
+  "verifier": "python/verify_and_freeze_v126_sgd_retrieval_selectivity_outcome.py",
+  "verifier_sha256": "a3f5525901a9203a7bf1cf5c86bfff8cc1a6d8f1c4dc21df7f72186846d5bfe8"
+}

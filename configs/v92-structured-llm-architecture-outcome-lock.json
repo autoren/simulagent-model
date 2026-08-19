@@ -1,0 +1,76 @@
+{
+  "audit": "outputs/v92-structured-llm-architecture/architecture-audit.json",
+  "audit_sha256": "691d37c64328fea3fc4ddf19926386e9222b6477494c92f2c57366a6185b90ed",
+  "authorization": {
+    "adopt_or_combine_any_27B_or_8bit_model": false,
+    "begin_future_LLM_study_only_with_materially_new_preregistered_role_and_fresh_evidence": true,
+    "grant_model_state_belief_action_or_execution_authority": false,
+    "perform_real_tool_or_service_call_or_external_side_effect": false,
+    "prune_hypotheses_or_early_stop_from_model_ranking": false,
+    "report_frozen_bounded_results_with_claim_limits": true,
+    "retain_complete_deterministic_schema_enumeration_and_NONE": true,
+    "retain_deterministic_state_validation_and_V86_surfaces": true,
+    "retain_exact_posterior_aware_planning_and_execution_certificates": true,
+    "run_API_capacity_comparator_for_current_branch": false,
+    "train_adapter_or_learn_likelihood_for_current_branch": false,
+    "use_Qwen35_4B_as_historical_shadow_baseline_only": true,
+    "use_any_local_or_API_model_in_runtime_decision_path": false
+  },
+  "design": "configs/v92-structured-llm-architecture-design.json",
+  "design_sha256": "c7f1301d5535f2e149176f86d9f02db8508191017f1aa606fa6cf18f9ee55889",
+  "experiment": "v92_frozen_structured_llm_architecture_synthesis",
+  "lock_payload_sha256": "0b4480f4e767b6f48fc2c76e34215af13642e356c48595bbc0098501969071ac",
+  "outcome": {
+    "cumulative_model_access": {
+      "LLM_API_call_count": 0,
+      "adapter_training_run_count": 0,
+      "external_side_effect_count": 0,
+      "model_generation_count": 401,
+      "model_load_count": 11,
+      "real_tool_or_service_call_count": 0
+    },
+    "decision": "freeze_model_free_authoritative_runtime_and_close_current_structured_LLM_branch",
+    "learned_role_qualification": {
+      "capacity_or_precision_condition": false,
+      "clarification_surface_rendering": false,
+      "external_intent_and_state_generation": false,
+      "factorized_semantic_compatibility": false,
+      "offline_adversarial_generation": false,
+      "rank_only_search_scheduling": false,
+      "synthetic_candidate_generation": false
+    },
+    "passed": true,
+    "runtime_architecture": {
+      "APIRuntimeDependency": false,
+      "actionSelection": "exact posterior-aware V79 planner",
+      "adapterOrLearnedLikelihood": false,
+      "authoritativeHypothesisSet": "complete deterministic typed-schema enumeration including NONE",
+      "authoritativeState": "deterministic immutable accumulation and validation",
+      "beliefUpdate": "exact model-defined Bayesian update",
+      "clarificationSurface": "V86-hardened canonical or finite-grammar renderer with trusted provenance only",
+      "executionBoundary": "complete-belief certificate and fail-closed shadow-only interface",
+      "localLLMRuntimeRole": "disabled",
+      "realToolOrServiceExecution": false
+    },
+    "stopped_conditional_stages": [
+      "model_conditioned_posterior_or_likelihood_integration",
+      "model_generated_mechanic_or_action_hypotheses",
+      "downstream_model_conditioned_action_regret",
+      "API_capacity_comparison",
+      "adapter_or_LoRA_training",
+      "learned_likelihood_scoring",
+      "LLM_guided_pruning_or_early_stopping",
+      "bounded_or_real_execution_authority"
+    ],
+    "stopping_reason": "all learned roles failed prerequisite noncompensatory utility gates; running later stages would violate the registered authorization chain"
+  },
+  "protocol": "python/v92_architecture_audit.py",
+  "protocol_sha256": "2b5d78c6ae3b257de496013e7a5939274f6635725255efb7fd743abb33e9d12a",
+  "research_direction": "docs/research-direction.md",
+  "research_direction_sha256": "3a830f05fa864de5809ef7662c0c58f052f1741d81fad351cea37c85c09c8b73",
+  "results_document": "docs/v92-structured-llm-architecture-assessment.md",
+  "results_document_sha256": "33123c720d8266d42690b6a564f7d23dbf739a259c829109a88480e162ad6088",
+  "schema_version": "92-structured-llm-architecture-outcome-lock",
+  "verifier": "python/verify_and_freeze_v92_architecture.py",
+  "verifier_sha256": "1245d07feefd0de54ee1ebf9098dbfa7cb62f80ee101df834d4fcd6317a4fd96"
+}

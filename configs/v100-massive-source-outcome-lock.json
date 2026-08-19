@@ -1,0 +1,137 @@
+{
+  "audit": "outputs/v100-massive-open-set/source-outcome-audit.json",
+  "audit_sha256": "9f7c8c3ec85aab8432f4563c80a308f74d76ea5cbbfda8e29b65813634e90059",
+  "authorization": {
+    "extract_selected_language_before_population_lock": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_model_before_population_prompt_controls_metrics_and_gates_lock": false,
+    "manually_inspect_source_language": false,
+    "modify_or_rerun_V100_source_stage": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_hash_selected_validation_and_test_population": true,
+    "run_API_model_or_train_adapter": false,
+    "select_population_before_language_extraction": true
+  },
+  "experiment": "v100_massive_source_outcome_lock",
+  "inventory": "outputs/v100-massive-open-set/source-inventory/massive-open-set-inventory.json",
+  "inventory_sha256": "e4436ea425ffcc189a527beea178b82d812f0cbd5f5bc75c4a4e48c555729ba6",
+  "lock_payload_sha256": "ef7b9fb7d8b50bf5dbc2f7dc41cb304932e828c7a31e4d8aaef9144a5d1174a5",
+  "outcome": {
+    "decision": "freeze_positive_V100_MASSIVE_source_feasibility",
+    "inventory_summary": {
+      "candidate_count": 5424,
+      "candidate_index_sha256": "d436b27715aa3daa6d03116428d41a401c51a5a051792fdf5673aea107c9b46f",
+      "catalog_scenario_count": 3,
+      "catalog_scenarios": [
+        "iot",
+        "recommendation",
+        "calendar"
+      ],
+      "class_counts": {
+        "known_familiar": 1080,
+        "known_unfamiliar": 1956,
+        "novel_valid": 1007,
+        "unsupported": 1381
+      },
+      "class_partition_counts": {
+        "known_familiar": {
+          "test": 198,
+          "train": 764,
+          "validation": 118
+        },
+        "known_unfamiliar": {
+          "test": 346,
+          "train": 1385,
+          "validation": 225
+        },
+        "novel_valid": {
+          "test": 169,
+          "train": 719,
+          "validation": 119
+        },
+        "unsupported": {
+          "test": 271,
+          "train": 953,
+          "validation": 157
+        }
+      },
+      "class_scenario_counts": {
+        "known_familiar": 3,
+        "known_unfamiliar": 3,
+        "novel_valid": 2,
+        "unsupported": 1
+      },
+      "contains_raw_or_annotated_utterances_tokens_or_slot_values": false,
+      "declared_intent_count": 12,
+      "declared_intents": [
+        "calendar::calendar_remove",
+        "calendar::calendar_set",
+        "iot::iot_cleaning",
+        "iot::iot_coffee",
+        "iot::iot_hue_lightchange",
+        "iot::iot_hue_lightdim",
+        "iot::iot_hue_lightup",
+        "iot::iot_wemo_off",
+        "iot::iot_wemo_on",
+        "recommendation::recommendation_events",
+        "recommendation::recommendation_locations",
+        "recommendation::recommendation_movies"
+      ],
+      "eligible_scenario_count": 15,
+      "eligible_scenarios": [
+        "alarm",
+        "audio",
+        "calendar",
+        "datetime",
+        "email",
+        "general",
+        "iot",
+        "lists",
+        "music",
+        "play",
+        "qa",
+        "recommendation",
+        "social",
+        "takeaway",
+        "transport"
+      ],
+      "hidden_intent_count": 2,
+      "hidden_intents": [
+        "calendar::calendar_query",
+        "iot::iot_hue_lightoff"
+      ],
+      "hidden_scenarios": [
+        "iot",
+        "calendar"
+      ],
+      "intent_count": 60,
+      "partition_counts": {
+        "test": 2974,
+        "train": 11514,
+        "validation": 2033
+      },
+      "roles_selected_before_utterance_features": true,
+      "scenario_count": 18,
+      "slot_type_count": 55,
+      "source_record_count": 16521,
+      "unsupported_scenario_count": 1,
+      "unsupported_scenarios": [
+        "email"
+      ]
+    },
+    "passed": true,
+    "scientific_source_feasibility_passed": true
+  },
+  "result": "outputs/v100-massive-open-set/source-inventory/result.json",
+  "result_sha256": "00665cf7b0bde0b3ebc720278c2fcc1d57a38231ad44eac2976104926083a9da",
+  "results_document": "docs/v100-massive-source-results.md",
+  "results_document_sha256": "2bdf0a571bcbdf78fa6aa75a9521168f7d9175481a3a2ca0ef28cba995419480",
+  "schema_version": "100-massive-source-outcome-lock",
+  "source_archive": "outputs/v100-massive-open-set/source/amazon-massive-dataset-1.1.tar.gz",
+  "source_archive_payload_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "source_archive_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+  "source_lock": "configs/v100-massive-source-lock.json",
+  "source_lock_sha256": "024dd52b85fe68d54bfdd8e57e2ccf5be49bbbe9f5deff0ce7714682ff20fd62",
+  "verifier": "python/verify_and_freeze_v100_source_outcome.py",
+  "verifier_sha256": "1d591ec45f4e39850f48146628e2b4c6d0fc0a542bd59ecb887fd48aedd3f542"
+}

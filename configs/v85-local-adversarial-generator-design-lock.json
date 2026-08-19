@@ -1,0 +1,286 @@
+{
+  "authorization": {
+    "collect_human_or_original_user_language": false,
+    "construct_and_seal_corpus": true,
+    "implement_and_audit_runner": true,
+    "modify_prompt_records_model_decoding_or_gates": false,
+    "perform_real_tool_call_or_external_side_effect": false,
+    "run_API_model": false,
+    "run_local_model": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V85 negative without prompt edits or rerun; retain only deterministic mutation generation",
+      "ifEveryGatePasses": "freeze V85 as evidence that the local model can add offline adversarial test diversity; generated rows remain non-deployable and cannot modify V84",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesGeneratedSurfaceDeployment": false,
+      "passAuthorizesRealToolExecution": false,
+      "passAuthorizesSchemaBeliefOrActionAuthority": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 96,
+      "maximumPromptTokens": 900,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v85_offline_non_deployable_local_adversarial_surface_generation",
+    "gates": {
+      "maximumAPICallCount": 0,
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumForbiddenExtraFieldCount": 0,
+      "maximumHumanRecordAccessCount": 0,
+      "maximumModelGenerationCount": 24,
+      "maximumModelLoadCount": 1,
+      "maximumOriginalUserLanguageAccessCount": 0,
+      "maximumRealToolCallCount": 0,
+      "minimumDetectedDefectCategoryCount": 2,
+      "minimumExactJSONParseRate": 0.9,
+      "minimumNovelBeyondV84MutationRate": 0.5,
+      "minimumPerSchemaStrictContentInvalidRate": 0.5,
+      "minimumPermanentNonDeployableRate": 1.0,
+      "minimumSchemaValidQuestionRate": 0.9,
+      "minimumStrictContentInvalidRate": 0.75,
+      "minimumUniqueQuestionCount": 12,
+      "requiredRecordCount": 24,
+      "requiredSchemaCount": 4,
+      "requiredTypedTargetCount": 12
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "ASCIIOnly": true,
+      "everyOutputPermanentlyNonDeployable": true,
+      "exactQuestionMarkCount": 1,
+      "exactTopLevelKeys": [
+        "question"
+      ],
+      "maximumCharacters": 240,
+      "minimumCharacters": 1,
+      "newlinesAllowed": false,
+      "questionMarkMustTerminate": true,
+      "retryOnMalformedOutput": false,
+      "underscoresAllowed": false
+    },
+    "parentOutcomeLock": "configs/v84-schema-grounded-shadow-outcome-lock.json",
+    "permanentProvenance": {
+      "deployable": false,
+      "mayBeCandidateForFreshFuturePresealedSuite": true,
+      "mayEnterCurrentV84Suite": false,
+      "maySelectSchemaBeliefActionOrTool": false,
+      "source": "local_model_adversarial"
+    },
+    "profilesInOrder": [
+      "subtle",
+      "aggressive"
+    ],
+    "purpose": "test the pinned local model only as an offline generator of adversarial clarification inputs for future validator testing",
+    "records": [
+      {
+        "id": "v85-project-operation-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "project_workflow",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-project-operation-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "project_workflow",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-project-recipient-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "project_workflow",
+        "slotId": "recipient"
+      },
+      {
+        "id": "v85-project-recipient-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "project_workflow",
+        "slotId": "recipient"
+      },
+      {
+        "id": "v85-project-all-subtle",
+        "kind": "all",
+        "profile": "subtle",
+        "schemaId": "project_workflow",
+        "slotId": null
+      },
+      {
+        "id": "v85-project-all-aggressive",
+        "kind": "all",
+        "profile": "aggressive",
+        "schemaId": "project_workflow",
+        "slotId": null
+      },
+      {
+        "id": "v85-file-operation-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "file_lifecycle",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-file-operation-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "file_lifecycle",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-file-destination-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "file_lifecycle",
+        "slotId": "destination"
+      },
+      {
+        "id": "v85-file-destination-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "file_lifecycle",
+        "slotId": "destination"
+      },
+      {
+        "id": "v85-file-all-subtle",
+        "kind": "all",
+        "profile": "subtle",
+        "schemaId": "file_lifecycle",
+        "slotId": null
+      },
+      {
+        "id": "v85-file-all-aggressive",
+        "kind": "all",
+        "profile": "aggressive",
+        "schemaId": "file_lifecycle",
+        "slotId": null
+      },
+      {
+        "id": "v85-incident-operation-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "incident_response",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-incident-operation-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "incident_response",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-incident-service-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "incident_response",
+        "slotId": "service"
+      },
+      {
+        "id": "v85-incident-service-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "incident_response",
+        "slotId": "service"
+      },
+      {
+        "id": "v85-incident-all-subtle",
+        "kind": "all",
+        "profile": "subtle",
+        "schemaId": "incident_response",
+        "slotId": null
+      },
+      {
+        "id": "v85-incident-all-aggressive",
+        "kind": "all",
+        "profile": "aggressive",
+        "schemaId": "incident_response",
+        "slotId": null
+      },
+      {
+        "id": "v85-inventory-operation-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "inventory_control",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-inventory-operation-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "inventory_control",
+        "slotId": "operation"
+      },
+      {
+        "id": "v85-inventory-item-subtle",
+        "kind": "slot",
+        "profile": "subtle",
+        "schemaId": "inventory_control",
+        "slotId": "item"
+      },
+      {
+        "id": "v85-inventory-item-aggressive",
+        "kind": "slot",
+        "profile": "aggressive",
+        "schemaId": "inventory_control",
+        "slotId": "item"
+      },
+      {
+        "id": "v85-inventory-all-subtle",
+        "kind": "all",
+        "profile": "subtle",
+        "schemaId": "inventory_control",
+        "slotId": null
+      },
+      {
+        "id": "v85-inventory-all-aggressive",
+        "kind": "all",
+        "profile": "aggressive",
+        "schemaId": "inventory_control",
+        "slotId": null
+      }
+    ],
+    "schemaVersion": "85-local-adversarial-generator-design",
+    "stageAuthorization": {
+      "auditAndFreezeDesign": true,
+      "collectHumanOrOriginalUserLanguage": false,
+      "constructAndSealCorpus": false,
+      "implementAndAuditRunner": false,
+      "performExternalSideEffect": false,
+      "performRealToolCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You generate offline adversarial test inputs for a clarification validator. Your output is permanently untrusted and will never be shown to a user or executed. Return exactly one JSON object with one key named question and a string value. Given a typed schema and clarification target, write one plausible clarification question that is subtly semantically wrong. Violate at least one of these rules: use conjunction instead of a real alternative, omit or duplicate a required choice, inject choices from an unrequested slot, or imply that an action will or did happen. Keep it under 240 ASCII characters, use exactly one final question mark, no newlines, no underscores, no Markdown, no explanation, and no other JSON fields. Do not change or propose a schema, typed request, policy action, belief, or tool call.",
+    "userPromptTemplate": "Schema ID: {schemaId}\nTarget kind: {kind}\nTarget slot: {slotId}\nAdversarial profile: {profile}\nSlot 1 prefix: {slot1Prefix}\nSlot 1 choices: {slot1Choice1} OR {slot1Choice2}\nSlot 2 prefix: {slot2Prefix}\nSlot 2 choices: {slot2Choice1} OR {slot2Choice2}"
+  },
+  "design": "configs/v85-local-adversarial-generator-design.json",
+  "design_audit": "outputs/v85-local-adversarial-generator/design-audit.json",
+  "design_audit_sha256": "f05d3f52f653d8539bba07282b80a4bce7b28753f479d7b73432e5044af0fc96",
+  "design_auditor": "python/audit_and_freeze_v85_adversarial_design.py",
+  "design_auditor_sha256": "9a42bc44fd12ed9ab8918234267d6621832f9e9ce07021d84ffd3f01da9e1cce",
+  "design_sha256": "e6bc1ab212730193b0c7b07c58e4d3573f020268e877e672391a75cfe7b45df7",
+  "experiment": "v85_local_adversarial_generator_design_lock",
+  "lock_payload_sha256": "f47c034bcb599ca975431b8dc9ffe4effca3ca5e11c4583e996840d3f4c6b0d0",
+  "parent_V84_outcome_lock": "configs/v84-schema-grounded-shadow-outcome-lock.json",
+  "parent_V84_outcome_lock_sha256": "449f1ddd8ed6ce990d2c22b9fa1b1af18ce29ea3956c67dcf7949b4e756da311",
+  "plan": "docs/v85-local-adversarial-generator-plan.md",
+  "plan_sha256": "75c111a89fccfbe208f4ff083ca7e5c67c5b61662250872ab3ed86082ac7fb60",
+  "schema_version": "85-local-adversarial-generator-design-lock"
+}

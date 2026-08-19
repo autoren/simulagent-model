@@ -1,0 +1,75 @@
+{
+  "analysis_lock": "configs/v142-certificate-interface-population-lock.json",
+  "analysis_lock_sha256": "b374e609fa32aa3519f4d2076d739716ea3ff6f7a707e0223367a5c63053726e",
+  "audit": "outputs/v142-certificate-interface-population/outcome-audit.json",
+  "audit_sha256": "07bb52f33920655cd6ac6974ca8f4ecc6a477c4b82b5f8c0075393a1ea813719",
+  "authorization": {
+    "modify_regenerate_relabel_or_open_hidden_population": false,
+    "run_API_training_induction_authority_action_or_execution": false,
+    "run_language_or_model": false,
+    "run_model_free_oracle_certificate_policy_audit": true,
+    "touch_V134_or_external_language": false
+  },
+  "choice_catalog": "outputs/v142-certificate-interface-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "9e55dd93e02b79b397c3012da264877370993aaacf0364d954c1d8cbeee4777b",
+  "experiment": "v142_fresh_evidence_certificate_interface_and_population",
+  "hidden_fixtures": "outputs/v142-certificate-interface-population/design/hidden-fixtures.json",
+  "hidden_fixtures_sha256": "9c10ea46961f4797d084eaf3cb6232dfd85b764d6d4206dda2535498036d5883",
+  "lock_payload_sha256": "3429e4ab79da7742cc2c577017d07c5a11aa46bcb99448d528191ae65a0ec6c3",
+  "outcome": {
+    "actual_execution_count": 0,
+    "decision": "freeze_fresh_certificate_asset_authorize_model_free_oracle_policy_audit_only",
+    "deterministic_finalizer_validity": 1.0,
+    "fresh_certificate_asset_pass": true,
+    "passed": true,
+    "summary": {
+      "choice_count": 9,
+      "family_count": 6,
+      "fixture_count": 288,
+      "group_count": 48,
+      "language_class_counts": {
+        "insufficient_evidence": 48,
+        "known_clarified": 48,
+        "known_familiar": 48,
+        "known_unfamiliar": 48,
+        "novel_valid": 32,
+        "novel_valid_clarified": 32,
+        "unsupported": 16,
+        "unsupported_clarified": 16
+      },
+      "split_counts": {
+        "development": 144,
+        "test": 144
+      },
+      "stage_counts": {
+        "ambiguous": 48,
+        "clarified_known": 48,
+        "clarified_right": 48,
+        "clear_known_familiar": 48,
+        "clear_known_unfamiliar": 48,
+        "clear_right": 48
+      },
+      "truth_counts": {
+        "A00": 48,
+        "K11": 24,
+        "K12": 48,
+        "K13": 48,
+        "K14": 24,
+        "N11": 32,
+        "N12": 16,
+        "N13": 16,
+        "U10": 32
+      }
+    },
+    "true_hypothesis_retention": 1.0
+  },
+  "population_summary": "outputs/v142-certificate-interface-population/design/population-summary.json",
+  "population_summary_sha256": "fe1cd8578703e2445ba8b14886d15c5e24988a4e7fc628a8e52a1b6b7fa8b032",
+  "public_fixtures": "outputs/v142-certificate-interface-population/design/public-fixtures.json",
+  "public_fixtures_sha256": "054e2cff78f1d26108f5275bc8247a1461134832c666fa822e709135bb38f9a2",
+  "results_document": "docs/v142-certificate-interface-population-results.md",
+  "results_document_sha256": "cc40396cfd72673352151b5f18cdd1d1669684295c4c56bc917d22a51ff2b9dc",
+  "schema_version": "142-certificate-interface-population-outcome-lock",
+  "verifier": "python/verify_and_freeze_v142_certificate_interface_population_outcome.py",
+  "verifier_sha256": "67d361780d88e1a37e73c4f6c01b989ce37d4086bdd0b3e5006873b5fb59878b"
+}

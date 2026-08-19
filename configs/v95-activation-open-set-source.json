@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "95-activation-open-set-source-design",
+  "experiment": "v95_activation_turn_service_stratified_open_set_source_feasibility",
+  "purpose": "construct a fresh five-class controlled open-set benchmark from source-annotated intent activations with current-turn lexical separation and two service-stratified hidden pairs",
+  "parentSourceOutcomeLock": "configs/v94-global-open-set-source-outcome-lock.json",
+  "parentArchitectureLock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+  "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+  "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "revision": "e852981ae34990f4358979625854259302feaa78",
+  "license": "CC-BY-SA-4.0",
+  "schemaDependency": {
+    "path": "dev/schema.json",
+    "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+    "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+    "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366"
+  },
+  "newDialogueShard": {
+    "path": "dev/dialogues_006.json",
+    "byteSize": 2680136,
+    "gitBlobSha1": "b81539d0ca41f68b076261df0dc5a5ed68961ee3",
+    "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_006.json"
+  },
+  "previouslyExposedServices": [
+    "Alarm_1", "Banks_2", "Buses_1", "Flights_3", "Homes_1", "Media_2",
+    "Movies_2", "RentalCars_1", "Restaurants_2", "RideSharing_1", "Services_4",
+    "Travel_1", "Weather_1"
+  ],
+  "catalogPartition": {
+    "eligibleServiceMinimumActivationCount": 12,
+    "eligiblePairMinimumActivationCount": 8,
+    "unsupportedServiceSalt": "simulagent-v95-unsupported-service-v1",
+    "unsupportedServiceCount": 1,
+    "minimumCatalogServiceCount": 3,
+    "hiddenServiceSalt": "simulagent-v95-hidden-service-v1",
+    "hiddenIntentPairSalt": "simulagent-v95-hidden-pair-v1",
+    "hiddenServiceCount": 2,
+    "hiddenPairCountPerSelectedService": 1,
+    "minimumDeclaredPairCount": 3,
+    "partitionBeforeLanguageDerivedFeatures": true
+  },
+  "classConstruction": {
+    "knownFamiliarMinimumCurrentTurnOverlapCount": 1,
+    "knownUnfamiliarMaximumCurrentTurnOverlapCount": 0,
+    "nonNoneClassesRequireSourceIntentActivation": true,
+    "useCurrentUserTurnOnlyForLexicalSeparation": true,
+    "noneMapsOnlyToInsufficientEvidence": true,
+    "unsupportedRequiresHashWithheldService": true,
+    "novelRequiresOneHashHiddenPairFromEachSelectedCatalogService": true,
+    "emitLanguageTokensSlotValuesOrHistories": false
+  },
+  "sourceGates": {
+    "minimumEligibleFreshServiceCount": 4,
+    "minimumCatalogServiceCount": 3,
+    "minimumUnsupportedServiceCount": 1,
+    "requiredHiddenPairCount": 2,
+    "minimumDeclaredPairCount": 3,
+    "minimumKnownFamiliarCandidateCount": 16,
+    "minimumKnownUnfamiliarCandidateCount": 16,
+    "minimumNovelValidCandidateCount": 16,
+    "minimumUnsupportedCandidateCount": 16,
+    "minimumInsufficientEvidenceCandidateCount": 16,
+    "minimumKnownClassServiceCoverage": 2,
+    "requiredNovelServiceCoverage": 2,
+    "minimumInsufficientEvidenceServiceCoverage": 2,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "GitHubMetadataRequestCount": 1,
+    "schemaStructuralInspectionCount": 1,
+    "dialoguePayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "manualUtteranceInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze the activation-turn inventory and authorize preregistration of a hash-selected dialogue-disjoint calibration/evaluation population",
+    "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+    "passAuthorizesLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "87-external-language-source-audit",
+  "experiment": "v87_external_human_language_source_gate",
+  "purpose": "select and pin a licensed external source of independently authored user language with deterministic typed-state linkage before any payload access or model evaluation",
+  "parentOutcomeLock": "configs/v86-partial-option-validator-outcome-lock.json",
+  "auditExposure": {
+    "date": "2026-08-17",
+    "allowedBeforeDesignLock": [
+      "official repository README and license metadata",
+      "repository archive status and immutable head commit",
+      "GitHub contents API file names, types, byte sizes, and Git blob identifiers"
+    ],
+    "forbiddenBeforeDesignLock": [
+      "dialogue payload bytes",
+      "schema payload bytes",
+      "individual utterances",
+      "dialogue annotations",
+      "candidate model prompts or responses",
+      "any benchmark score"
+    ],
+    "dialoguePayloadAccessCount": 0,
+    "schemaPayloadAccessCount": 0,
+    "individualUtteranceAccessCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "APICallCount": 0
+  },
+  "noncompensatorySourceGates": [
+    "immutable_repository_revision",
+    "explicit_dataset_license_permitting_research_reuse_with_attribution",
+    "independently_human_authored_or_spoken_user_utterances",
+    "machine_readable_service_schema",
+    "turn_level_typed_intent_and_slot_state",
+    "deterministic_utterance_to_schema_and_state_linkage",
+    "evaluation_requires_no_live_service_or_transaction",
+    "synthetic_family_exclusion_can_be_applied_before_text_scoring"
+  ],
+  "candidates": [
+    {
+      "id": "schema_guided_dialogue",
+      "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+      "revision": "e852981ae34990f4358979625854259302feaa78",
+      "archivedReadOnly": true,
+      "license": "CC-BY-SA-4.0",
+      "licenseEvidence": "README License section and LICENSE.txt",
+      "licenseBlobSha1": "e100aff6acc25dad98b144f76c4903419c5e99c1",
+      "humanLanguageEvidence": "dialogues were generated with paid crowd-workers; user turns are human utterances",
+      "typedMappingEvidence": "each user frame names a service and contains state.active_intent, state.requested_slots, and state.slot_values linked to the service schema",
+      "sourceGateResults": {
+        "immutable_repository_revision": true,
+        "explicit_dataset_license_permitting_research_reuse_with_attribution": true,
+        "independently_human_authored_or_spoken_user_utterances": true,
+        "machine_readable_service_schema": true,
+        "turn_level_typed_intent_and_slot_state": true,
+        "deterministic_utterance_to_schema_and_state_linkage": true,
+        "evaluation_requires_no_live_service_or_transaction": true,
+        "synthetic_family_exclusion_can_be_applied_before_text_scoring": true
+      },
+      "eligible": true,
+      "selected": true
+    },
+    {
+      "id": "taskmaster_1",
+      "repository": "https://github.com/google-research-datasets/Taskmaster",
+      "revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+      "archivedReadOnly": true,
+      "license": "CC-BY-4.0",
+      "humanLanguageEvidence": "spoken Wizard-of-Oz user turns and crowdsourced written dialogues",
+      "typedMappingEvidence": "span annotations and an API-argument ontology are present, but the audited format does not provide the required turn-level active-intent and accumulated dialogue-state contract",
+      "sourceGateResults": {
+        "immutable_repository_revision": true,
+        "explicit_dataset_license_permitting_research_reuse_with_attribution": true,
+        "independently_human_authored_or_spoken_user_utterances": true,
+        "machine_readable_service_schema": true,
+        "turn_level_typed_intent_and_slot_state": false,
+        "deterministic_utterance_to_schema_and_state_linkage": false,
+        "evaluation_requires_no_live_service_or_transaction": true,
+        "synthetic_family_exclusion_can_be_applied_before_text_scoring": true
+      },
+      "eligible": false,
+      "selected": false
+    },
+    {
+      "id": "multiwoz_reference_repository",
+      "repository": "https://github.com/budzianowski/multiwoz",
+      "revision": "fe0c8e65cfcd8462bd33c86e35f21addc84ca82b",
+      "archivedReadOnly": false,
+      "license": "MIT",
+      "humanLanguageEvidence": "the repository describes the MultiWOZ Wizard-of-Oz task-oriented dialogue dataset",
+      "typedMappingEvidence": "the audited repository metadata does not state a single normalized immutable schema-and-user-frame mapping contract sufficient for this benchmark without inspecting bundled implementation and versioned data",
+      "sourceGateResults": {
+        "immutable_repository_revision": true,
+        "explicit_dataset_license_permitting_research_reuse_with_attribution": true,
+        "independently_human_authored_or_spoken_user_utterances": true,
+        "machine_readable_service_schema": false,
+        "turn_level_typed_intent_and_slot_state": false,
+        "deterministic_utterance_to_schema_and_state_linkage": false,
+        "evaluation_requires_no_live_service_or_transaction": true,
+        "synthetic_family_exclusion_can_be_applied_before_text_scoring": false
+      },
+      "eligible": false,
+      "selected": false
+    }
+  ],
+  "selectedSource": {
+    "candidateId": "schema_guided_dialogue",
+    "split": "dev",
+    "files": [
+      {
+        "path": "dev/schema.json",
+        "byteSize": 45576,
+        "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28"
+      },
+      {
+        "path": "dev/dialogues_001.json",
+        "byteSize": 2225937,
+        "gitBlobSha1": "d9c9d93494f7a74ae22692c6819e80f8a5244763"
+      }
+    ],
+    "maximumAcquisitionBytes": 2271513,
+    "licenseHandling": {
+      "retainSourceNameRevisionAndURLs": true,
+      "attributeDatasetAndPapersInDerivedDocumentation": true,
+      "markAnyRedistributedAdaptedRecordArtifactCCBYSA40": true,
+      "doNotRedistributeMoreTextThanRequired": true
+    }
+  },
+  "postLockStructuralInventoryProtocol": {
+    "verifyBytesByGitBlobSha1BeforeParsing": true,
+    "allowOnlyPinnedFiles": true,
+    "manualUtteranceInspectionBeforeSubsetSeal": false,
+    "allowCodeOnlyStructuralParsing": true,
+    "eligibleRecordRequirements": [
+      "turn.speaker equals USER",
+      "turn has exactly one frame",
+      "frame.service exists in the pinned schema",
+      "frame.state exists",
+      "frame.state.active_intent is NONE or exists in that service schema",
+      "every frame.state.slot_values key exists in that service schema"
+    ],
+    "excludedServicePrefixes": [
+      "Calendar_",
+      "Messaging_",
+      "Project_",
+      "File_",
+      "Incident_",
+      "Inventory_"
+    ],
+    "selectionBeforeLanguageScoring": true,
+    "selectionMethod": "canonical record identifiers ordered by SHA-256 under a future preregistered salt",
+    "modelAccessDuringInventory": false,
+    "benchmarkScoringDuringInventory": false,
+    "realServiceCalls": false
+  },
+  "decisionRule": {
+    "ifExactlyOneSourcePassesEveryGate": "freeze that source and authorize only pinned-file acquisition plus code-only structural inventory",
+    "ifZeroSourcesPassEveryGate": "defer the external-language branch without weakening gates",
+    "ifMultipleSourcesPassEveryGate": "select the lexicographically first candidate id and retain the others for a future source-disjoint confirmation",
+    "passAuthorizesDialoguePayloadAcquisition": true,
+    "passAuthorizesBenchmarkSubsetSelection": false,
+    "passAuthorizesModelAccess": false,
+    "passAuthorizesTraining": false,
+    "passAuthorizesExecution": false
+  },
+  "stageAuthorization": {
+    "auditAndFreezeSourceDesign": true,
+    "acquirePinnedPayloadFiles": false,
+    "parseStructuralInventory": false,
+    "inspectUtterancesManually": false,
+    "selectBenchmarkSubset": false,
+    "accessLocalOrAPIModel": false,
+    "trainAdapter": false,
+    "performRealServiceCall": false,
+    "performExternalSideEffect": false
+  }
+}

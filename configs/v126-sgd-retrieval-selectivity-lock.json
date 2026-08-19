@@ -1,0 +1,155 @@
+{
+  "V119_config": "configs/v119-asymmetric-adaptive-evidence.json",
+  "V119_config_sha256": "de96b3633b07344445b6454e080641a81563d66f72bd32da135632f6461a8b17",
+  "auditor": "python/audit_and_freeze_v126_sgd_retrieval_selectivity.py",
+  "auditor_sha256": "81abeb432f3f3a725f0fac9faafbc5d98f8a57096dc3c5d76b73c900d4358f6f",
+  "authorization": {
+    "fit_or_select_trigger_or_load_model": false,
+    "grant_protected_induction_authority_or_execution": false,
+    "modify_extraction_retrieval_trigger_channel_cost_gates_or_decision": false,
+    "persist_or_manually_inspect_language_or_individual_records": false,
+    "run_one_cross_dataset_model_free_retrieval_selectivity_evaluation": true
+  },
+  "baseline_config": "configs/v106-open-world-development-benchmark.json",
+  "baseline_config_sha256": "dce55f22e3d81f7ef4f9d9de55c42687b9da5f35577fe3fb9e065931c2d82692",
+  "choice_catalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+  "choice_catalog_sha256": "37edfc9df1a10d58c8102f50f42426bbf8969d23ecfa52e8e196ccf9770cc86f",
+  "config": "configs/v126-sgd-retrieval-selectivity.json",
+  "config_payload": {
+    "V119Config": "configs/v119-asymmetric-adaptive-evidence.json",
+    "accessGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumAutomaticSelectedLanguageParseCount": 1,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualLanguageOrRawResponseInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumPersistedSelectedLanguageRecordCount": 0,
+      "maximumProtectedTestLanguageReadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceArchiveReadCount": 1
+    },
+    "authorityBoundary": {
+      "actualExecutionCount": 0,
+      "allActionsAreCounterfactualShadowActions": true,
+      "completeSafeCompositeHypothesisUniverseAlwaysRetained": true,
+      "retrievalAndSimulatedAnswersNeverDefineCapabilitiesOrGroundTruth": true
+    },
+    "baselineConfig": "configs/v106-open-world-development-benchmark.json",
+    "choiceCatalog": "outputs/v125-sgd-catalog-population/design/choice-catalog.json",
+    "claimBoundary": "finite fresh cross-dataset test of one frozen model-free retrieval-status selective-query trigger under a simulated clarification channel; not real clarification reliability, statistical independence, unrestricted open-world understanding, model evidence, deployment, or execution",
+    "comparators": [
+      "ask_always",
+      "no_query_frozen_retrieval_action",
+      "query_every_record_with_frozen_channel",
+      "primary_frozen_status_band_selective_query",
+      "oracle_query_value_rank_same_skip_fraction_diagnostic"
+    ],
+    "decisionRule": {
+      "ifEveryOutcomeAndAccessGatePasses": "retrieval_geometry_selectivity_transfers_cross_dataset_requires_independent_confirmation",
+      "otherwise": "retrieval_status_band_fails_cross_dataset_selectivity_close_current_trigger_inventory",
+      "passAuthorizesIndependentConfirmationOnly": true,
+      "passAuthorizesProtectedInductionAPITrainingActionOrExecution": false,
+      "passAuthorizesThresholdFitAlternativeTriggerOrModelRun": false
+    },
+    "experiment": "v126_cross_dataset_model_free_retrieval_geometry_selectivity",
+    "extraction": {
+      "archiveRevision": "e852981ae34990f4358979625854259302feaa78",
+      "expectedEvaluationRecordCount": 576,
+      "expectedTrainingRecordCount": 4881,
+      "maximumIndividualLanguageRecordEmissionCount": 0,
+      "partitions": [
+        "train",
+        "test"
+      ],
+      "persistSelectedLanguage": false
+    },
+    "frozenRetrieval": {
+      "fitCount": 0,
+      "knownThreshold": 0.8,
+      "mechanism": "V106 character_wb TF-IDF 3-5 gram nearest-neighbor",
+      "nearestKnownIntentIsCandidateNotGroundTruth": true,
+      "thresholdSource": "V112 frozen transfer thresholds",
+      "unsupportedThreshold": 0.3
+    },
+    "outcomeGates": {
+      "maximumActualExecutionCount": 0,
+      "maximumIndividualRecordEmissionCount": 0,
+      "maximumSelectiveFalseKnownEveryPriorAndCorrelation": 0.1,
+      "maximumSelectiveMeanRegretEveryPriorAndCorrelation": 1.1666666666666667,
+      "maximumSkipFraction": 0.95,
+      "maximumSkippedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+      "minimumQueriedAverageQueryValueEveryPriorAndCorrelation": 0.3,
+      "minimumSelectiveKnownExactEveryPriorAndCorrelation": 0.8,
+      "minimumSelectiveUnsupportedCorrectEveryPriorAndCorrelation": 0.8,
+      "minimumSkipFraction": 0.05,
+      "requireSelectiveRegretNoWorseThanAlwaysQueryEveryCondition": true,
+      "requiredTrueHypothesisRetention": 1.0
+    },
+    "parentV125OutcomeLock": "configs/v125-sgd-catalog-population-outcome-lock.json",
+    "primaryTrigger": {
+      "candidateCount": 1,
+      "highBandShadowAction": "nearest declared known intent",
+      "id": "query_only_ambiguous_retrieval_band",
+      "lowBandShadowAction": "unsupported",
+      "queryRule": "query iff 0.3 < nearest_similarity < 0.8",
+      "selectionCount": 0
+    },
+    "queryChannel": {
+      "correlationAware": true,
+      "marginalCorrectness": 0.95,
+      "priorRegimes": [
+        {
+          "candidateProbability": 0.09090909090909091,
+          "id": "uniform_safe_universe"
+        },
+        {
+          "candidateProbability": 0.5,
+          "id": "moderate_candidate"
+        },
+        {
+          "candidateProbability": 0.75,
+          "id": "strong_candidate"
+        }
+      ],
+      "sharedFailureCorrelations": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "source": "V119 asymmetric adaptive identity-versus-support causal channel",
+      "totalCost": 0.3
+    },
+    "schemaVersion": "126-sgd-retrieval-selectivity-design",
+    "selectedPopulations": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+    "sourceArchive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+    "sourceInventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json"
+  },
+  "config_sha256": "840c8c41673bbd4170a0600ca9ac15acef2aab1e40bd09a1d0d6f40788391f5f",
+  "design_audit": "outputs/v126-sgd-retrieval-selectivity/design-audit.json",
+  "design_audit_sha256": "becf3f0a099b6880c0edb590dc812c345222d1a1528f5c266ca0eed425df7d07",
+  "experiment": "v126_cross_dataset_model_free_retrieval_geometry_selectivity",
+  "lock_payload_sha256": "29f6d4ae1abc00b1519fe446ba1cbecc17a8e00c482291a7d9e4ba1e118f0d7f",
+  "parent_analysis_lock": "configs/v125-sgd-catalog-population-lock.json",
+  "parent_analysis_lock_sha256": "3014c49a1ff72c825847fd5efea0e65348e8002869489ab1eacfc0750cc00331",
+  "parent_outcome": "configs/v125-sgd-catalog-population-outcome-lock.json",
+  "parent_outcome_sha256": "83ba1521b5568eddd84f4a3767987bf86a27f082aaa1f88d679cb37383fe09f5",
+  "plan": "docs/v126-sgd-retrieval-selectivity-plan.md",
+  "plan_sha256": "c2062e6e9f6b319e2c48ab1126752b91da9bdfaa8a855e8f1ed86436a69b9618",
+  "protocol": "python/v126_sgd_retrieval_selectivity.py",
+  "protocol_sha256": "6c5cf200554cd098b95a2f15e952eb7cc60821a7a0765f5ce343053a21152e91",
+  "runner": "python/run_v126_sgd_retrieval_selectivity.py",
+  "runner_sha256": "bd0f29513756749b3085d1a18bc1c44e12d567f0e69e30848926ed81b0e66d14",
+  "schema_version": "126-sgd-retrieval-selectivity-lock",
+  "selected_populations": "outputs/v125-sgd-catalog-population/design/selected-populations.json",
+  "selected_populations_sha256": "e1f721f20ce830fe1fbbbd481fedd9470cf8259b9c892ffd8c0f5d86db9f2b0c",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "source_inventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "source_inventory_sha256": "3cf2f5b5a43e340b0b4723baf728e49882286429c35fd3b111e28306ab029e5f",
+  "tests": "python/test_v126_sgd_retrieval_selectivity.py",
+  "tests_sha256": "19f98ec9cf2496d6d7b4f5906773994d9c77e241742e04af4dba749535943017",
+  "verifier": "python/verify_and_freeze_v126_sgd_retrieval_selectivity_outcome.py",
+  "verifier_sha256": "a3f5525901a9203a7bf1cf5c86bfff8cc1a6d8f1c4dc21df7f72186846d5bfe8"
+}

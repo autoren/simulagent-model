@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "149-fresh-closed-interaction-population",
+  "experiment": "v149_fresh_typed_witness_closed_interaction_population",
+  "parentV148OutcomeLock": "configs/v148-typed-witness-firewall-outcome-lock.json",
+  "claimBoundary": "fresh project-authored controlled interaction population with independently checkable closed-answer-to-witness mappings; not model performance, externally authored transfer, unrestricted open-world understanding, calibration, deployment safety, authority, action, or execution",
+  "outputIds": ["K41", "K42", "K43", "K44", "N00", "U40", "A00"],
+  "knownIds": ["K41", "K42", "K43", "K44"],
+  "novelCandidateId": "N00",
+  "unsupportedId": "U40",
+  "insufficientId": "A00",
+  "trustedSource": "CLOSED_TYPED_CLARIFICATION",
+  "allowedValues": {
+    "operation": ["reschedule", "pause_future", "track", "inspect_protection", "erase_completed_record"],
+    "object_class": ["veterinary_visit", "meal_delivery", "library_transfer", "owned_camera_lens", "grooming_visit", "medication_delivery", "specimen_courier", "borrowed_instrument", "authoritative_history"],
+    "scope": ["future", "delivery", "owned", "borrowed", "retroactive"]
+  },
+  "knownWitnesses": [
+    {"choice_id": "K41", "operation": "reschedule", "object_class": "veterinary_visit", "scope": "future"},
+    {"choice_id": "K42", "operation": "pause_future", "object_class": "meal_delivery", "scope": "future"},
+    {"choice_id": "K43", "operation": "track", "object_class": "library_transfer", "scope": "delivery"},
+    {"choice_id": "K44", "operation": "inspect_protection", "object_class": "owned_camera_lens", "scope": "owned"}
+  ],
+  "novelWitnesses": [
+    {"operation": "reschedule", "object_class": "grooming_visit", "scope": "future"},
+    {"operation": "pause_future", "object_class": "medication_delivery", "scope": "future"},
+    {"operation": "track", "object_class": "specimen_courier", "scope": "delivery"},
+    {"operation": "inspect_protection", "object_class": "borrowed_instrument", "scope": "borrowed"}
+  ],
+  "unsupportedWitnesses": [
+    {"operation": "erase_completed_record", "object_class": "authoritative_history", "scope": "retroactive"}
+  ],
+  "catalog": {
+    "choices": [
+      {"choice_id": "K41", "kind": "KNOWN", "title": "change_existing_veterinary_visit", "boundary": "Change the date or time of an already booked veterinary visit. Excludes grooming appointments and record erasure."},
+      {"choice_id": "K42", "kind": "KNOWN", "title": "pause_future_meal_kit_deliveries", "boundary": "Pause future deliveries from an existing meal-kit plan. Excludes medication deliveries."},
+      {"choice_id": "K43", "kind": "KNOWN", "title": "track_library_interbranch_transfer", "boundary": "Track an active library item moving between branches. Excludes specimen couriers and retroactive erasure."},
+      {"choice_id": "K44", "kind": "KNOWN", "title": "check_owned_camera_lens_protection", "boundary": "Check warranty or protection coverage for a camera lens the user owns. Excludes borrowed instruments."},
+      {"choice_id": "N00", "kind": "NOVEL_CANDIDATE", "title": "valid_unregistered_mechanic_candidate", "boundary": "Evidence identifies a coherent mechanic outside the declared known catalog. This is a non-executable candidate, not a registered capability."},
+      {"choice_id": "U40", "kind": "UNSUPPORTED", "title": "retroactively_erase_completed_authoritative_record", "boundary": "Make a completed authoritative event or record never have occurred. This is forbidden or impossible."},
+      {"choice_id": "A00", "kind": "INSUFFICIENT_EVIDENCE", "title": "insufficient_evidence", "boundary": "The visible evidence does not safely identify one registered state."}
+    ]
+  },
+  "population": {
+    "familyCount": 6,
+    "groupsPerFamily": 8,
+    "groupCount": 48,
+    "fixturesPerGroup": 6,
+    "fixtureCount": 288,
+    "developmentGroupCount": 24,
+    "evaluationGroupCount": 24,
+    "developmentFixtureCount": 144,
+    "evaluationFixtureCount": 144,
+    "stageNames": ["request_known_familiar", "request_known_unfamiliar", "request_right", "request_ambiguous", "closed_answer_known", "closed_answer_right"]
+  },
+  "families": [
+    {
+      "family_id": "veterinary_visit_vs_mobile_grooming_visit", "left_choice_id": "K41", "right_choice_id": "N00", "query_id": "Q41", "presented_candidate_choice_id": "K41",
+      "question": "Which appointment should be moved?", "left_option_text": "The already booked veterinary visit", "right_option_text": "A mobile grooming visit",
+      "left_witness": {"operation": "reschedule", "object_class": "veterinary_visit", "scope": "future"}, "right_witness": {"operation": "reschedule", "object_class": "grooming_visit", "scope": "future"},
+      "known_familiar": "Move {pet}'s veterinary appointment at {place} from {old_time} to {new_time}.",
+      "known_unfamiliar": "Shift the animal-clinic slot for {pet} at {place} from {old_time} to {new_time}.",
+      "right_clear": "Reschedule the mobile groomer for {pet} from {old_time} to {new_time}.",
+      "ambiguous": "Move {pet}'s appointment from {old_time} to {new_time}.",
+      "left_answer": "The already booked veterinary visit.", "right_answer": "The mobile grooming visit.",
+      "slot_variants": [
+        {"pet":"Luna","place":"Pine Veterinary","old_time":"Tuesday","new_time":"Friday"}, {"pet":"Milo","place":"Lake Animal Clinic","old_time":"8 AM","new_time":"1 PM"},
+        {"pet":"Pepper","place":"Cedar Vet Centre","old_time":"September 3","new_time":"September 8"}, {"pet":"Nori","place":"Harbour Veterinary","old_time":"Monday","new_time":"Thursday"},
+        {"pet":"Atlas","place":"Oak Pet Hospital","old_time":"10 AM","new_time":"3 PM"}, {"pet":"Clover","place":"King Animal Care","old_time":"October 5","new_time":"October 9"},
+        {"pet":"Sage","place":"Lakeside Vet","old_time":"Wednesday","new_time":"Saturday"}, {"pet":"Tango","place":"North Pet Clinic","old_time":"2 PM","new_time":"4 PM"}
+      ]
+    },
+    {
+      "family_id": "meal_kit_pause_vs_medication_delivery_pause", "left_choice_id": "K42", "right_choice_id": "N00", "query_id": "Q42", "presented_candidate_choice_id": "K42",
+      "question": "Which recurring delivery should be paused?", "left_option_text": "The meal-kit plan", "right_option_text": "The medication delivery",
+      "left_witness": {"operation": "pause_future", "object_class": "meal_delivery", "scope": "future"}, "right_witness": {"operation": "pause_future", "object_class": "medication_delivery", "scope": "future"},
+      "known_familiar": "Pause my {service} meal-kit deliveries after {time}.",
+      "known_unfamiliar": "Put the future recipe-box drops from {service} on hold after {time}.",
+      "right_clear": "Pause my recurring medication deliveries from {service} after {time}.",
+      "ambiguous": "Pause my recurring box after {time}.",
+      "left_answer": "The meal-kit plan.", "right_answer": "The recurring medication delivery.",
+      "slot_variants": [
+        {"service":"PantryPath","time":"this week"}, {"service":"FreshCedar","time":"Friday"}, {"service":"TableCrate","time":"September 1"}, {"service":"MealHarbour","time":"next month"},
+        {"service":"KitchenTrail","time":"October 4"}, {"service":"SupperBox","time":"Sunday"}, {"service":"RecipeField","time":"the next renewal"}, {"service":"DinnerDock","time":"November 2"}
+      ]
+    },
+    {
+      "family_id": "library_transfer_vs_specimen_courier", "left_choice_id": "K43", "right_choice_id": "N00", "query_id": "Q43", "presented_candidate_choice_id": "K43",
+      "question": "What kind of transfer is being tracked?", "left_option_text": "A library item moving between branches", "right_option_text": "A laboratory specimen courier",
+      "left_witness": {"operation": "track", "object_class": "library_transfer", "scope": "delivery"}, "right_witness": {"operation": "track", "object_class": "specimen_courier", "scope": "delivery"},
+      "known_familiar": "Track library transfer {code} to {place}.",
+      "known_unfamiliar": "Where is the book moving between branches under code {code}, and when will it reach {place}?",
+      "right_clear": "Track laboratory specimen courier {code} to {place}.",
+      "ambiguous": "Where is transfer {code}, and when will it reach {place}?",
+      "left_answer": "A library item moving between branches.", "right_answer": "A laboratory specimen courier.",
+      "slot_variants": [
+        {"code":"T-115","place":"Orchard Branch"}, {"code":"T-226","place":"Creek Library"}, {"code":"T-337","place":"Poplar Branch"}, {"code":"T-449","place":"Shore Library"},
+        {"code":"T-550","place":"Ridge Branch"}, {"code":"T-661","place":"Fir Library"}, {"code":"T-772","place":"Garden Branch"}, {"code":"T-883","place":"Market Library"}
+      ]
+    },
+    {
+      "family_id": "owned_camera_lens_vs_borrowed_instrument_protection", "left_choice_id": "K44", "right_choice_id": "N00", "query_id": "Q44", "presented_candidate_choice_id": "K44",
+      "question": "What property needs a protection check?", "left_option_text": "A camera lens I own", "right_option_text": "A musical instrument I borrowed",
+      "left_witness": {"operation": "inspect_protection", "object_class": "owned_camera_lens", "scope": "owned"}, "right_witness": {"operation": "inspect_protection", "object_class": "borrowed_instrument", "scope": "borrowed"},
+      "known_familiar": "Is my owned {lens} camera lens protected for {issue}?",
+      "known_unfamiliar": "If the {lens} optic I bought develops {issue}, does its protection plan apply?",
+      "right_clear": "Does protection for the borrowed {instrument} cover {issue}?",
+      "ambiguous": "Am I protected for {issue}?",
+      "left_answer": "A camera lens I bought and own.", "right_answer": "A musical instrument I borrowed.",
+      "slot_variants": [
+        {"lens":"35 mm","instrument":"violin","issue":"an internal failure"}, {"lens":"85 mm","instrument":"cello","issue":"a cracked case"}, {"lens":"24 mm","instrument":"trumpet","issue":"a damaged mount"}, {"lens":"50 mm","instrument":"clarinet","issue":"water damage"},
+        {"lens":"70-200 mm","instrument":"flute","issue":"a broken control"}, {"lens":"105 mm","instrument":"guitar","issue":"a focus failure"}, {"lens":"16 mm","instrument":"trombone","issue":"a damaged latch"}, {"lens":"40 mm","instrument":"mandolin","issue":"a faulty mechanism"}
+      ]
+    },
+    {
+      "family_id": "veterinary_visit_vs_record_erasure", "left_choice_id": "K41", "right_choice_id": "U40", "query_id": "Q45", "presented_candidate_choice_id": "K41",
+      "question": "What should happen to the clinic item?", "left_option_text": "Move a future veterinary visit", "right_option_text": "Erase a completed authoritative record",
+      "left_witness": {"operation": "reschedule", "object_class": "veterinary_visit", "scope": "future"}, "right_witness": {"operation": "erase_completed_record", "object_class": "authoritative_history", "scope": "retroactive"},
+      "known_familiar": "Reschedule {pet}'s future veterinary visit at {place}.",
+      "known_unfamiliar": "Move the upcoming animal-clinic booking for {pet} at {place}.",
+      "right_clear": "Make {pet}'s completed clinic record at {place} never have existed.",
+      "ambiguous": "Deal with {pet}'s clinic item at {place}.",
+      "left_answer": "Move the future veterinary visit.", "right_answer": "Erase the completed authoritative record.",
+      "slot_variants": [
+        {"pet":"Nova","place":"Elm Vet"}, {"pet":"Ollie","place":"Bay Animal Care"}, {"pet":"Rue","place":"Hill Veterinary"}, {"pet":"Finn","place":"Park Pet Clinic"},
+        {"pet":"Ivy","place":"Stone Vet"}, {"pet":"Remy","place":"West Animal Care"}, {"pet":"Ziggy","place":"East Veterinary"}, {"pet":"Maya","place":"Glen Pet Clinic"}
+      ]
+    },
+    {
+      "family_id": "library_transfer_vs_record_erasure", "left_choice_id": "K43", "right_choice_id": "U40", "query_id": "Q46", "presented_candidate_choice_id": "K43",
+      "question": "What should happen to the transfer record?", "left_option_text": "Track an active library transfer", "right_option_text": "Erase a completed authoritative record",
+      "left_witness": {"operation": "track", "object_class": "library_transfer", "scope": "delivery"}, "right_witness": {"operation": "erase_completed_record", "object_class": "authoritative_history", "scope": "retroactive"},
+      "known_familiar": "Track active library transfer {code}.",
+      "known_unfamiliar": "Find the current branch-to-branch movement under {code}.",
+      "right_clear": "Make completed transfer record {code} never have existed.",
+      "ambiguous": "Deal with transfer record {code}.",
+      "left_answer": "Track the active library transfer.", "right_answer": "Erase the completed authoritative record.",
+      "slot_variants": [
+        {"code":"R-104"}, {"code":"R-215"}, {"code":"R-326"}, {"code":"R-437"}, {"code":"R-548"}, {"code":"R-659"}, {"code":"R-760"}, {"code":"R-871"}
+      ]
+    }
+  ],
+  "gates": {
+    "requiredChoiceCount": 7,
+    "requiredQueryCount": 6,
+    "requiredOptionsPerQuery": 2,
+    "requiredFamilyCount": 6,
+    "requiredGroupCount": 48,
+    "requiredFixtureCount": 288,
+    "requiredSplitFixtureCount": 144,
+    "requiredStageCountPerGroup": 6,
+    "requiredClosedAnswerFixtureCount": 96,
+    "requiredPublicHiddenAlignment": 1.0,
+    "requiredClosedAnswerWitnessRouting": 1.0,
+    "requiredPreAnswerFailClosedRate": 1.0,
+    "requiredMalformedAnswerEventFailClosedRate": 1.0,
+    "requiredExactConversationOverlapWithPriorControlledPopulations": 0,
+    "requiredTrueHypothesisRetention": 1.0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationOrScoreCount": 0,
+    "maximumAPICallCount": 0,
+    "maximumTrainingRunCount": 0,
+    "maximumActualExecutionCount": 0
+  },
+  "decisionRule": {
+    "ifEveryPopulationWitnessLeakageAndAccessGatePasses": "freeze_fresh_closed_interaction_population_authorize_oracle_policy_only",
+    "otherwise": "close_fresh_closed_interaction_population_branch",
+    "passingAuthorizesOnlyModelFreeOraclePolicy": true,
+    "passingDoesNotAuthorizeLanguageModelCalibrationInductionAuthorityActionOrExecution": true
+  }
+}

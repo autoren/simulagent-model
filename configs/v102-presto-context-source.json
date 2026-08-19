@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "102-presto-human-context-source-design",
+  "experiment": "v102_presto_human_context_dependency_source_feasibility",
+  "parentSourceSelectionLock": "configs/v99-open-world-source-selection-lock.json",
+  "massivePopulationOutcomeLock": "configs/v101-massive-population-outcome-lock.json",
+  "sourceName": "PRESTO v1",
+  "sourceRole": "auxiliary_paired_full_context_vs_ablated_insufficient_evidence_control",
+  "officialRepository": "https://github.com/google-research-datasets/presto",
+  "officialPaper": "https://aclanthology.org/2023.emnlp-main.667/",
+  "license": "CC-BY-4.0",
+  "locale": "en-US",
+  "requiredContextProvenance": "human",
+  "archive": {
+    "url": "https://storage.googleapis.com/gresearch/presto/presto_v1.zip",
+    "byteSize": 415990813,
+    "etagMd5": "5fb5bd7e437a07fbae4991b5b4a573f4",
+    "generation": "1678604196509246",
+    "lastModified": "2023-03-12T06:56:36Z",
+    "requiredMemberBasenames": ["presto_dev.jsonl", "presto_test.jsonl"]
+  },
+  "requiredRecordFields": ["inputs", "targets", "metadata"],
+  "requiredMetadataFields": [
+    "example_id", "locale", "split", "context", "linguistic_phenomena",
+    "previous_turns", "seeded_lists", "seeded_notes", "seeded_contacts"
+  ],
+  "allowedSourceSplits": ["dev", "test"],
+  "canonicalSplitMap": {"dev": "development", "test": "protected_test"},
+  "dependencyRule": {
+    "targetArgumentDelimiters": ["«", "»"],
+    "minimumNormalizedArgumentCharacterCount": 3,
+    "maximumNormalizedArgumentTokenCount": 8,
+    "prohibitedNormalizedArguments": ["yes", "no", "true", "false", "none", "null"],
+    "argumentMustBeAbsentFromCurrentInput": true,
+    "argumentMustOccurAsContiguousNormalizedTokensInContext": true,
+    "eligibleContextSources": [
+      "previous_turn_user_query", "previous_turn_response_text", "seeded_list_name",
+      "seeded_list_item", "seeded_note_name", "seeded_note_text", "seeded_contact"
+    ],
+    "fullAndAblatedPairsShareExampleIdInputAndTarget": true,
+    "syntheticContextAllowed": false,
+    "emitInputTargetArgumentContextOrSeededValues": false
+  },
+  "sourceGates": {
+    "minimumEligibleDevelopmentCandidateCount": 64,
+    "minimumEligibleProtectedTestCandidateCount": 64,
+    "minimumEligibleTotalCandidateCount": 256,
+    "minimumPreviousTurnDependentCandidateCount": 64,
+    "minimumSeededStateDependentCandidateCount": 64,
+    "minimumDependencySourceKindCount": 2,
+    "minimumSemanticRootFunctionCount": 8,
+    "requireDevelopmentTestIdentifierDisjointness": true,
+    "maximumSyntheticContextCandidateCount": 0,
+    "maximumEmittedLanguageRecordCount": 0,
+    "maximumManualUtteranceInspectionCount": 0,
+    "maximumModelLoadCount": 0,
+    "maximumModelGenerationCount": 0,
+    "maximumLLMAPICallCount": 0,
+    "maximumAdapterTrainingRunCount": 0,
+    "maximumRealServiceCallCount": 0,
+    "maximumExternalSideEffectCount": 0
+  },
+  "preLockExposure": {
+    "archiveHEADRequestCount": 1,
+    "officialREADMEAndPaperMetadataInspectionCount": 1,
+    "archivePayloadDownloadCount": 0,
+    "languageRecordInspectionCount": 0,
+    "modelLoadCount": 0,
+    "modelGenerationCount": 0,
+    "LLMAPICallCount": 0,
+    "adapterTrainingRunCount": 0
+  },
+  "decisionRule": {
+    "ifEverySourceGatePasses": "freeze PRESTO context-dependency inventory and authorize preregistration of paired development and protected-test populations",
+    "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+    "passAuthorizesSelectedLanguageExtraction": false,
+    "passAuthorizesModelInference": false,
+    "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false
+  }
+}

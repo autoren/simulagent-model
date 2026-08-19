@@ -1,0 +1,237 @@
+{
+  "authorization": {
+    "access_local_or_API_model": false,
+    "evaluate_identifier_only_decomposition_once": true,
+    "modify_evaluator_views_or_parent_artifacts": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "read_source_language_or_prompts": false,
+    "train_adapter": false
+  },
+  "config_payload": {
+    "decisionRule": {
+      "ifPerfectSerializationPlusStateFailsIntentGates": "pause external local-model integration entirely",
+      "ifPerfectSerializationPlusStatePassesIntentGates": "authorize only preregistration of a model-free state-accumulation feasibility study before any later intent-only model experiment",
+      "ifPerfectSerializationStillFailsAnySemanticGate": "rule out constrained decoding or JSON repair as a sufficient successor",
+      "passAuthorizesModelOrAPIAccess": false,
+      "passAuthorizesTrainingDeploymentOrExecution": false
+    },
+    "experiment": "v89_v88r1_failure_decomposition_without_language_or_model_access",
+    "gates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "maximumSourceLanguageAccessCount": 0,
+      "minimumRawRowReconstructionRate": 1.0,
+      "minimumStrictMetricReconstructionRate": 1.0,
+      "requiredRawFixtureCount": 48,
+      "requiredRecordCount": 48
+    },
+    "intentOracleRule": "replace intent candidates with gold while retaining the view's state slot-key candidates",
+    "parentOutcomeLock": "configs/v88r1-external-intent-candidate-outcome-lock.json",
+    "perfectSerializationRule": "for every nonconforming row only, optimistically replace both predicted sets with gold and mark structure conforming; retain every conforming row unchanged",
+    "population": {
+      "recordCount": 48,
+      "recordReplacementAllowed": false,
+      "sourceUtteranceOrPromptAccessAllowed": false,
+      "useEveryFrozenRawFixture": true
+    },
+    "purpose": "determine whether perfect serialization repair alone could satisfy the frozen V88 gates, and localize the remaining intent-versus-state bottleneck",
+    "registeredDiagnostics": [
+      "joint intent-exact by state-exact quadrant among conforming rows",
+      "malformed count by service and active-versus-NONE label",
+      "strict and conditional metrics",
+      "state target cardinality buckets",
+      "original gate outcomes for every registered counterfactual view"
+    ],
+    "registeredViews": [
+      "strict_frozen_outcome",
+      "perfect_serialization_upper_bound",
+      "perfect_state_oracle_with_strict_intents",
+      "perfect_intent_oracle_with_strict_state",
+      "perfect_serialization_plus_state_oracle",
+      "perfect_serialization_plus_intent_oracle",
+      "full_oracle"
+    ],
+    "schemaVersion": "89-model-free-failure-decomposition-design",
+    "stageAuthorization": {
+      "accessLocalOrAPIModel": false,
+      "auditAndFreezeDesign": true,
+      "evaluateFrozenIdentifierOnlyArtifacts": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "readSourceUtterancesOrPrompts": false,
+      "trainAdapter": false
+    },
+    "stateOracleRule": "replace state slot-key candidates with gold while retaining the view's intent candidates"
+  },
+  "design_lock": "configs/v89-model-free-failure-decomposition-design-lock.json",
+  "design_lock_sha256": "9c170c559b0b35e8137c2d765f02482d0a5486e68f61665aa92069eda609d79c",
+  "evaluator": "python/evaluate_v89_model_free_failure_decomposition.py",
+  "evaluator_sha256": "d15ede1feaba2776f46ed3f51a1fadda6887b7a8c70190765a060fba7e8097f4",
+  "experiment": "v89_failure_decomposition_implementation_lock",
+  "implementation_audit": "outputs/v89-model-free-failure-decomposition/implementation-audit-r1.json",
+  "implementation_audit_sha256": "02b313edfbad56a2904b1c9c6f50c34689df2c913f45ae9c2d8fd0c899a43fe9",
+  "implementation_auditor": "python/audit_and_freeze_v89_failure_decomposition_implementation.py",
+  "implementation_auditor_sha256": "8e6c0d0d6df737972d5db3b56965a2f3049d6c55c06f1099ca5f352158c79c4d",
+  "lock_payload_sha256": "37ecbe1942ed4358fe4c7fe8962ca286dab6b17bfc28dd252288330239975fc2",
+  "original_config": {
+    "controls": {
+      "emptyStateWithGoldIntentOracle": "gold intent candidate set with no state slot keys",
+      "exhaustiveEnumeration": "all service intents plus NONE and all service slots",
+      "noneOnly": "intent_candidates is NONE only and state_slot_key_candidates is empty",
+      "oracleTypedTarget": "exact registered gold candidate sets"
+    },
+    "decisionRule": {
+      "ifAnyGateFails": "freeze V88 negative without prompt edits, record replacement, threshold changes, retries, API fallback, or rerun",
+      "ifEveryGatePasses": "freeze positive human-language shadow evidence and authorize preregistration of a bounded posterior integration study; do not deploy or execute",
+      "passAuthorizesAPIAccess": false,
+      "passAuthorizesAdapterTraining": false,
+      "passAuthorizesDirectActionOrExecution": false,
+      "passAuthorizesHumanLanguageDeployment": false
+    },
+    "decoding": {
+      "enableThinking": false,
+      "maximumNewTokens": 160,
+      "maximumPromptTokens": 8192,
+      "retryOnMalformedOutput": false,
+      "samplesPerRecord": 1,
+      "temperature": 0.0
+    },
+    "experiment": "v88_sealed_external_human_language_local_candidate_shadow",
+    "gates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumMeanIntentCandidateCount": 2.0,
+      "maximumModelGenerationCount": 48,
+      "maximumModelLoadCount": 1,
+      "maximumRealServiceCallCount": 0,
+      "minimumExactJSONParseRate": 1.0,
+      "minimumGoldActiveIntentCoverageRate": 0.9,
+      "minimumIntentCandidateSetExactRate": 0.7,
+      "minimumIntentExactImprovementOverExhaustive": 0.2,
+      "minimumMandatoryNoneInclusionRate": 1.0,
+      "minimumNoneOnlyIntentExactRate": 0.75,
+      "minimumOntologyConformanceRate": 1.0,
+      "minimumPerServiceIntentCandidateRecallRate": 0.75,
+      "minimumPermanentNonDeployableRate": 1.0,
+      "minimumStateSlotKeyExactRate": 0.5,
+      "minimumStateSlotKeyRecallRate": 0.75,
+      "requiredActiveIntentLabelCount": 4,
+      "requiredNoneRecordCount": 24,
+      "requiredRecordCount": 48,
+      "requiredServiceCount": 3
+    },
+    "inputContract": {
+      "dialogueContext": "all source turns from dialogue start through the selected USER turn",
+      "schemaContext": [
+        "service name and description",
+        "all service intent identifiers and descriptions",
+        "all service slot identifiers and descriptions"
+      ],
+      "sourceLanguageMayNotBePrintedByBuilderOrRunner": true,
+      "sourceLanguageMayNotBeSentToAPI": true,
+      "targetService": "the single selected frame service"
+    },
+    "model": {
+      "APIRequired": false,
+      "adapterPath": null,
+      "frozen": true,
+      "provider": "local_mlx",
+      "repository": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c"
+    },
+    "outputContract": {
+      "exactKeys": [
+        "intent_candidates",
+        "state_slot_key_candidates"
+      ],
+      "goldIntentCandidateSet": "NONE only when active_intent is NONE; otherwise active_intent plus NONE",
+      "goldStateSlotKeySet": "the accumulated frame.state.slot_values keys at the selected turn",
+      "intentCandidates": "unique non-empty list drawn only from target service intent identifiers plus NONE; NONE is mandatory",
+      "mayNotEmitValuesActionsToolCallsOrFreeText": true,
+      "permanentlyNonDeployable": true,
+      "stateSlotKeyCandidates": "unique list drawn only from target service slot identifiers"
+    },
+    "parentOutcomeLock": "configs/v87-external-language-source-outcome-lock.json",
+    "population": {
+      "futureRecordUse": "all selected records are evaluation-only; no prompt tuning, few-shot examples, or training",
+      "recordCount": 48,
+      "selectionBeforeUtteranceExtraction": true,
+      "selectionOrder": "ascending SHA-256 of selectionSalt, stratum ID, and canonical record ID",
+      "selectionSalt": "simulagent-v88-external-shadow-v1",
+      "strata": [
+        {
+          "activeIntent": "SearchOnewayFlight",
+          "count": 4,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "SearchRoundtripFlights",
+          "count": 4,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "ReserveRestaurant",
+          "count": 8,
+          "service": "Restaurants_2"
+        },
+        {
+          "activeIntent": "GetRide",
+          "count": 8,
+          "service": "RideSharing_1"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 11,
+          "service": "Flights_3"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 10,
+          "service": "Restaurants_2"
+        },
+        {
+          "activeIntent": "NONE",
+          "count": 3,
+          "service": "RideSharing_1"
+        }
+      ]
+    },
+    "purpose": "test whether the frozen local model can map independently authored SGD dialogue context into a small typed intent-and-state-key candidate set while retaining NONE and no authority",
+    "schemaVersion": "88-external-intent-candidate-design",
+    "source": {
+      "dataset": "Schema-Guided Dialogue Dataset",
+      "inventorySha256": "ebdb2204bf437782fe6d4a4af8f6489905f1363cc00cd56289255a0f7446f2a2",
+      "license": "CC-BY-SA-4.0",
+      "manualUtteranceInspectionBeforeCorpusSeal": false,
+      "revision": "e852981ae34990f4358979625854259302feaa78"
+    },
+    "stageAuthorization": {
+      "auditAndFreezeDesign": true,
+      "extractSelectedUtterancesByCode": false,
+      "implementAndAuditRunner": false,
+      "inspectUtterancesManually": false,
+      "performExternalSideEffect": false,
+      "performRealServiceCall": false,
+      "runAPIModel": false,
+      "runLocalModel": false,
+      "selectAndSealCorpus": false,
+      "trainAdapter": false
+    },
+    "systemPrompt": "You are an offline semantic candidate proposer. Your output is permanently non-deployable and cannot select an action or call a service. Infer the current typed state for the target service from the complete dialogue history and the supplied schema. Return exactly one JSON object with exactly two keys: intent_candidates and state_slot_key_candidates. intent_candidates must be a unique non-empty JSON list using only the supplied intent identifiers or NONE, and must always include NONE as an operational none-of-the-above candidate. Include the smallest set of currently plausible active intents; when no supplied intent is active, return only NONE. state_slot_key_candidates must be a unique JSON list using only supplied slot identifiers; include every slot whose current accumulated value is supported by the dialogue, but never emit a slot value. Do not emit prose, Markdown, actions, service calls, arguments, values, confidence scores, or additional keys.",
+    "userPromptTemplate": "Target service: {service_name}\nService description: {service_description}\nAllowed intent identifiers and descriptions:\n{intent_lines}\nAllowed slot identifiers and descriptions:\n{slot_lines}\nDialogue history through the current USER turn:\n{dialogue_history}\nReturn the exact JSON object now."
+  },
+  "parent_outcome_lock": "configs/v88r1-external-intent-candidate-outcome-lock.json",
+  "parent_outcome_lock_sha256": "a310b230492e00650fd28a2db6024d731ad08b74d7c06912b8a9877d7e9f7ab2",
+  "parent_result": "outputs/v88r1-external-intent-candidate/evaluation/result.json",
+  "parent_result_sha256": "caeea1ab3297964d278602782bf1edca076abed5b8ae31a54e6574806d8c9166",
+  "protocol": "python/v88_external_candidate_protocol.py",
+  "protocol_sha256": "1d4bd200d28ec092254e0e6b5b99b173efe1909b97b5450bde5461ca4d331a17",
+  "schema_version": "89-model-free-failure-decomposition-implementation-lock"
+}

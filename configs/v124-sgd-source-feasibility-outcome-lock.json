@@ -1,0 +1,55 @@
+{
+  "access": "outputs/v124-sgd-source-feasibility/source-inventory/access.json",
+  "access_sha256": "4ef196f7364500fe9fe73dcffb20f3fb0c916891076bc47bf793ffe5a2607075",
+  "analysis_lock": "configs/v124-sgd-source-feasibility-lock.json",
+  "analysis_lock_sha256": "661ffe86bc4661337523b83ab3f3e1f417f80e5843fe2f7e6b1bd551bf2841f5",
+  "audit": "outputs/v124-sgd-source-feasibility/outcome-audit.json",
+  "audit_sha256": "8b7976902a559bdc344a4992e2fd0a265fb8f1757f2ab0afec7ebf01eff03a3c",
+  "authorization": {
+    "extract_selected_language_or_evaluate_signal_trigger_model": false,
+    "modify_rerun_or_reclassify_V124": false,
+    "open_protected_or_begin_induction_or_richer_planning": false,
+    "preregister_text_free_SGD_catalog_and_population": true,
+    "run_API_training_action_or_execution": false
+  },
+  "experiment": "v124_sgd_source_feasibility_outcome_lock",
+  "inventory": "outputs/v124-sgd-source-feasibility/source-inventory/sgd-open-set-inventory.json",
+  "inventory_sha256": "3cf2f5b5a43e340b0b4723baf728e49882286429c35fd3b111e28306ab029e5f",
+  "lock_payload_sha256": "b32a1e6971b9ab9c76a18ab1f4d8b94e9d278e071cc1b387c518d27b665cded4",
+  "outcome": {
+    "audit_pass": true,
+    "decision": "freeze_positive_SGD_controlled_open_set_source_feasibility",
+    "inventory_summary": {
+      "candidate_count": 56831,
+      "candidate_counts": {
+        "dev": 5966,
+        "test": 11105,
+        "train": 39760
+      },
+      "candidate_index_sha256": "5875ec41ad41346f5b421c5ba78d16d4f544fd402453d93de27f903ec929b19b",
+      "dialogue_count": 22825,
+      "domain_count": 20,
+      "intent_count": 88,
+      "service_count": 45,
+      "test_open_set_class_counts": {
+        "known": 3101,
+        "novel_valid": 6601,
+        "unsupported": 1403
+      },
+      "test_open_set_domain_coverage": {
+        "known": 6,
+        "novel_valid": 11,
+        "unsupported": 4
+      }
+    },
+    "passed": true,
+    "source_pass": true
+  },
+  "results_document": "docs/v124-sgd-source-feasibility-results.md",
+  "results_document_sha256": "e6bcff3db9723b7b04feda146b65fe77bee86d39089065d306e7284249340b4f",
+  "schema_version": "124-sgd-source-feasibility-outcome-lock",
+  "source_archive": "outputs/v124-sgd-source-feasibility/source/sgd-pinned.tar.gz",
+  "source_archive_sha256": "ff97a9ab52b4cc9f25e1a093c96431512465e8377f9a1f57dc710a10484d2188",
+  "verifier": "python/verify_and_freeze_v124_sgd_source_feasibility_outcome.py",
+  "verifier_sha256": "02b91938c304d33786d5bd555b1d04aefbe7cb759e7074528c20af0b91068b82"
+}

@@ -1,0 +1,653 @@
+{
+  "access": "outputs/v114-rescued-policy-transfer/model-policy-transfer/access.json",
+  "access_sha256": "89d5d0edbc105c6e14f242fc4884cb04798c72e9423145e7ec9ce09ee6a0a14f",
+  "analysis_lock": "configs/v114-rescued-policy-transfer-lock.json",
+  "analysis_lock_sha256": "41e341bd8458d326030ac46d7249b45a48fa2d61bb9106e930fc0044f435e4b9",
+  "audit": "outputs/v114-rescued-policy-transfer/outcome-audit.json",
+  "audit_sha256": "f9044e54fd30a46eb22432ed4fd0974f903b7b7879a47fccff3e424e0adfd3af",
+  "authorization": {
+    "modify_rerun_retry_or_retune_V114": false,
+    "open_original_protected_test": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "preregister_sandboxed_typed_induction_feasibility": false,
+    "proceed_immediately_to_schema_or_mechanic_induction": false,
+    "proceed_to_richer_sequential_decision_problem": false,
+    "prune_hypotheses_define_capability_or_grant_belief_action_execution_authority": false,
+    "run_API_model_or_train_adapter": false
+  },
+  "experiment": "v114_record_disjoint_massive_rescued_policy_transfer_outcome_lock",
+  "fresh_language": "outputs/v114-rescued-policy-transfer/fresh-language/development-transfer-2.jsonl",
+  "fresh_language_sha256": "5613a5bd4605ed4f732d736254a846a81bec833883ab45fccd62d8e25631bfd9",
+  "lock_payload_sha256": "ea83410dcc9f79634d242bc4ac24042600fdd3b09e5b8054fc9a89c62437fccd",
+  "outcome": {
+    "access_pass": true,
+    "base_policy_pass": false,
+    "decision": "novel_evidence_nontransfer_close_abstention_signal_beyond_V112",
+    "full_policy_qualification": {
+      "V112_baseline_pass": false,
+      "V114_rescued_pass": false
+    },
+    "mechanism_status": "not_interpretable",
+    "nonopportunity_mechanism_gates_pass": false,
+    "novel_evidence_pass": false,
+    "opportunity_sufficient": false,
+    "paired_preservation_gates_pass": false,
+    "passed": true,
+    "preregister_sandboxed_typed_induction_feasibility": false,
+    "rescue_mechanism_qualification": {
+      "diagnostics": {
+        "all_record_transition_counts": {
+          "correct_to_correct": 112,
+          "wrong_to_correct": 2,
+          "wrong_to_wrong": 78
+        },
+        "beneficial_correction_count": 2,
+        "changed_record_transition_counts": {
+          "wrong_to_correct": 2,
+          "wrong_to_wrong": 1
+        },
+        "eligible_by_class": {
+          "known_familiar": 7,
+          "known_unfamiliar": 8,
+          "novel_valid": 7
+        },
+        "eligible_disagreement_count": 22,
+        "individual_record_emission_count": 0,
+        "introduced_error_count": 0,
+        "mechanism_gates": {
+          "false_known_acceptance_not_worse": false,
+          "known_accuracy_not_worse": true,
+          "mean_regret_not_worse": false,
+          "minimum_eligible_disagreement_opportunity": true,
+          "minimum_net_corrected_errors": true,
+          "minimum_rescue_precision": false,
+          "minimum_triggered_rescue_opportunity": false,
+          "novel_evidence_exactly_unchanged": true,
+          "selective_error_not_worse": true,
+          "unsupported_precision_not_worse": true,
+          "unsupported_recall_not_worse": true
+        },
+        "mechanism_pass": false,
+        "metric_deltas_rescued_minus_baseline": {
+          "false_known_acceptance_rate": 0.010416666666666671,
+          "known_exact_intent_accuracy": 0.02083333333333326,
+          "mean_regret": 0.03385416666666674,
+          "observed_exact_decision_accuracy": 0.01041666666666663,
+          "top_confidence_80_percent_error": -0.012987012987012991,
+          "unsupported_precision": 0.0,
+          "unsupported_recall": 0.0
+        },
+        "net_corrected_errors": 2,
+        "novel_evidence_exactly_unchanged": true,
+        "opportunity_sufficient": false,
+        "per_class_deltas_rescued_minus_baseline": {
+          "known_familiar": {
+            "exact_decision_accuracy": 0.04166666666666674,
+            "mean_regret": -0.04166666666666667
+          },
+          "known_unfamiliar": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 0.0
+          },
+          "novel_valid": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 0.17708333333333348
+          },
+          "unsupported": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 0.0
+          }
+        },
+        "rescue_precision": 0.6666666666666666,
+        "triggered_by_class": {
+          "known_familiar": 2,
+          "novel_valid": 1
+        },
+        "triggered_by_proposed_intent": {
+          "calendar::calendar_remove": 2,
+          "calendar::calendar_set": 1
+        },
+        "triggered_by_scenario": {
+          "calendar": 3
+        },
+        "triggered_rescue_count": 3
+      },
+      "opportunity_sufficient": false,
+      "status": "not_interpretable"
+    },
+    "rescued_policy_pass": false,
+    "summary": {
+      "access_gates": {
+        "fresh_development_language_read_budget": true,
+        "model_generation_budget": true,
+        "model_load_budget": true,
+        "zero_LLM_API_calls": true,
+        "zero_adapter_training": true,
+        "zero_external_side_effects": true,
+        "zero_manual_language_or_raw_response_inspection": true,
+        "zero_protected_test_language_reads": true,
+        "zero_real_service_calls": true
+      },
+      "actual_execution_count": 0,
+      "base_quality_gates": {
+        "controlled_missing_observation_abstention_accuracy": true,
+        "novel_evidence_ECE": true,
+        "novel_evidence_non_novel_false_positive_rate": false,
+        "novel_evidence_precision": false,
+        "novel_evidence_recall": true,
+        "policy_confidence_ECE": true,
+        "policy_false_known_acceptance_rate": true,
+        "policy_known_exact_intent_accuracy": false,
+        "policy_mean_decision_regret": true,
+        "policy_observed_exact_decision_accuracy": false,
+        "policy_observed_status_macro_f1": true,
+        "policy_top_confidence_80_percent_error": false,
+        "policy_unsupported_status_precision": true,
+        "policy_unsupported_status_recall": true,
+        "structured_response_validity": true,
+        "true_hypothesis_retention": true,
+        "zero_actual_execution": true
+      },
+      "controlled_missing_observation_abstention_accuracy": 1.0,
+      "individual_evidence_emission_count": 0,
+      "interface_validity": 1.0,
+      "novel_evidence_metrics": {
+        "Brier": 0.1266254922500633,
+        "ECE_10_bin": 0.052625723186470824,
+        "f1": 0.6875,
+        "false_negative": 15,
+        "false_positive": 15,
+        "non_novel_false_positive_rate": 0.10416666666666667,
+        "precision": 0.6875,
+        "prediction_count": 48,
+        "recall": 0.6875,
+        "true_negative": 129,
+        "true_positive": 33
+      },
+      "paired_rescue_diagnostics": {
+        "all_record_transition_counts": {
+          "correct_to_correct": 112,
+          "wrong_to_correct": 2,
+          "wrong_to_wrong": 78
+        },
+        "beneficial_correction_count": 2,
+        "changed_record_transition_counts": {
+          "wrong_to_correct": 2,
+          "wrong_to_wrong": 1
+        },
+        "eligible_by_class": {
+          "known_familiar": 7,
+          "known_unfamiliar": 8,
+          "novel_valid": 7
+        },
+        "eligible_disagreement_count": 22,
+        "individual_record_emission_count": 0,
+        "introduced_error_count": 0,
+        "mechanism_gates": {
+          "false_known_acceptance_not_worse": false,
+          "known_accuracy_not_worse": true,
+          "mean_regret_not_worse": false,
+          "minimum_eligible_disagreement_opportunity": true,
+          "minimum_net_corrected_errors": true,
+          "minimum_rescue_precision": false,
+          "minimum_triggered_rescue_opportunity": false,
+          "novel_evidence_exactly_unchanged": true,
+          "selective_error_not_worse": true,
+          "unsupported_precision_not_worse": true,
+          "unsupported_recall_not_worse": true
+        },
+        "mechanism_pass": false,
+        "metric_deltas_rescued_minus_baseline": {
+          "false_known_acceptance_rate": 0.010416666666666671,
+          "known_exact_intent_accuracy": 0.02083333333333326,
+          "mean_regret": 0.03385416666666674,
+          "observed_exact_decision_accuracy": 0.01041666666666663,
+          "top_confidence_80_percent_error": -0.012987012987012991,
+          "unsupported_precision": 0.0,
+          "unsupported_recall": 0.0
+        },
+        "net_corrected_errors": 2,
+        "novel_evidence_exactly_unchanged": true,
+        "opportunity_sufficient": false,
+        "per_class_deltas_rescued_minus_baseline": {
+          "known_familiar": {
+            "exact_decision_accuracy": 0.04166666666666674,
+            "mean_regret": -0.04166666666666667
+          },
+          "known_unfamiliar": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 0.0
+          },
+          "novel_valid": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 0.17708333333333348
+          },
+          "unsupported": {
+            "exact_decision_accuracy": 0.0,
+            "mean_regret": 0.0
+          }
+        },
+        "rescue_precision": 0.6666666666666666,
+        "triggered_by_class": {
+          "known_familiar": 2,
+          "novel_valid": 1
+        },
+        "triggered_by_proposed_intent": {
+          "calendar::calendar_remove": 2,
+          "calendar::calendar_set": 1
+        },
+        "triggered_by_scenario": {
+          "calendar": 3
+        },
+        "triggered_rescue_count": 3
+      },
+      "policy_metrics": {
+        "V112_validated_novelty_evidence_policy": {
+          "confidence_ece_10_bin": 0.034857411202185766,
+          "false_known_acceptance_rate": 0.09375,
+          "known_exact_intent_accuracy": 0.7395833333333334,
+          "mean_regret": 0.96875,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.5833333333333334,
+          "observed_record_count": 192,
+          "observed_status_macro_f1": 0.5726430976430977,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.8541666666666666,
+              "mean_regret": 0.14583333333333334,
+              "record_count": 48
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.625,
+              "mean_regret": 0.4791666666666667,
+              "record_count": 48
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 2.9166666666666665,
+              "record_count": 48
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.8541666666666666,
+              "mean_regret": 0.3333333333333333,
+              "record_count": 48
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.8068181818181819,
+              "precision": 0.8875,
+              "prediction_count": 80,
+              "recall": 0.7395833333333334,
+              "true_positive_count": 71,
+              "truth_count": 96
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 48
+            },
+            "UNSUPPORTED": {
+              "f1": 0.9111111111111111,
+              "precision": 0.9761904761904762,
+              "prediction_count": 42,
+              "recall": 0.8541666666666666,
+              "true_positive_count": 41,
+              "truth_count": 48
+            }
+          },
+          "predicted_decision_correctness_brier": 0.049314219197908266,
+          "record_count": 192,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8020833333333334,
+          "top_confidence_80_percent_error": 0.2727272727272727
+        },
+        "V114_rescued_policy": {
+          "confidence_ece_10_bin": 0.0361594945355191,
+          "false_known_acceptance_rate": 0.10416666666666667,
+          "known_exact_intent_accuracy": 0.7604166666666666,
+          "mean_regret": 1.0026041666666667,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.59375,
+          "observed_record_count": 192,
+          "observed_status_macro_f1": 0.5755845230705566,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.8958333333333334,
+              "mean_regret": 0.10416666666666667,
+              "record_count": 48
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.625,
+              "mean_regret": 0.4791666666666667,
+              "record_count": 48
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 3.09375,
+              "record_count": 48
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.8541666666666666,
+              "mean_regret": 0.3333333333333333,
+              "record_count": 48
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.8156424581005586,
+              "precision": 0.8795180722891566,
+              "prediction_count": 83,
+              "recall": 0.7604166666666666,
+              "true_positive_count": 73,
+              "truth_count": 96
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 48
+            },
+            "UNSUPPORTED": {
+              "f1": 0.9111111111111111,
+              "precision": 0.9761904761904762,
+              "prediction_count": 42,
+              "recall": 0.8541666666666666,
+              "true_positive_count": 41,
+              "truth_count": 48
+            }
+          },
+          "predicted_decision_correctness_brier": 0.05289494836457493,
+          "record_count": 192,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8020833333333334,
+          "top_confidence_80_percent_error": 0.2597402597402597
+        },
+        "ask_always": {
+          "confidence_ece_10_bin": 1.0,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 0.0,
+          "mean_regret": 1.125,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.0,
+          "observed_record_count": 192,
+          "observed_status_macro_f1": 0.0,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 48
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 48
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.5,
+              "record_count": 48
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 1.0,
+              "record_count": 48
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 96
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 48
+            },
+            "UNSUPPORTED": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 48
+            }
+          },
+          "predicted_decision_correctness_brier": 1.0,
+          "record_count": 192,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8020833333333334,
+          "top_confidence_80_percent_error": 1.0
+        },
+        "direct_llm": {
+          "confidence_ece_10_bin": 0.2857812499999999,
+          "false_known_acceptance_rate": 0.16666666666666666,
+          "known_exact_intent_accuracy": 0.84375,
+          "mean_regret": 1.4609375,
+          "novel_exact_scenario_accuracy": 0.0,
+          "observed_exact_decision_accuracy": 0.6354166666666666,
+          "observed_record_count": 192,
+          "observed_status_macro_f1": 0.5932659932659933,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.9791666666666666,
+              "mean_regret": 0.20833333333333334,
+              "record_count": 48
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.7083333333333334,
+              "mean_regret": 1.1458333333333333,
+              "record_count": 48
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.0,
+              "mean_regret": 4.15625,
+              "record_count": 48
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.8541666666666666,
+              "mean_regret": 0.3333333333333333,
+              "record_count": 48
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.8686868686868686,
+              "precision": 0.8431372549019608,
+              "prediction_count": 102,
+              "recall": 0.8958333333333334,
+              "true_positive_count": 86,
+              "truth_count": 96
+            },
+            "NOVEL": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "prediction_count": 0,
+              "recall": 0.0,
+              "true_positive_count": 0,
+              "truth_count": 48
+            },
+            "UNSUPPORTED": {
+              "f1": 0.9111111111111111,
+              "precision": 0.9761904761904762,
+              "prediction_count": 42,
+              "recall": 0.8541666666666666,
+              "true_positive_count": 41,
+              "truth_count": 48
+            }
+          },
+          "predicted_decision_correctness_brier": 0.2835317708333333,
+          "record_count": 192,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8020833333333334,
+          "top_confidence_80_percent_error": 0.2272727272727273
+        },
+        "fixed_v110_character_retrieval": {
+          "confidence_ece_10_bin": 0.2503515294772019,
+          "false_known_acceptance_rate": 0.020833333333333332,
+          "known_exact_intent_accuracy": 0.2916666666666667,
+          "mean_regret": 2.3229166666666665,
+          "novel_exact_scenario_accuracy": 0.7291666666666666,
+          "observed_exact_decision_accuracy": 0.359375,
+          "observed_record_count": 192,
+          "observed_status_macro_f1": 0.368658672106948,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 0.3125,
+              "mean_regret": 2.0625,
+              "record_count": 48
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 0.2708333333333333,
+              "mean_regret": 2.1875,
+              "record_count": 48
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 0.7291666666666666,
+              "mean_regret": 1.5416666666666667,
+              "record_count": 48
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 0.125,
+              "mean_regret": 3.5,
+              "record_count": 48
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 0.4444444444444445,
+              "precision": 0.9333333333333333,
+              "prediction_count": 30,
+              "recall": 0.2916666666666667,
+              "true_positive_count": 28,
+              "truth_count": 96
+            },
+            "NOVEL": {
+              "f1": 0.44334975369458135,
+              "precision": 0.2903225806451613,
+              "prediction_count": 155,
+              "recall": 0.9375,
+              "true_positive_count": 45,
+              "truth_count": 48
+            },
+            "UNSUPPORTED": {
+              "f1": 0.21818181818181817,
+              "precision": 0.8571428571428571,
+              "prediction_count": 7,
+              "recall": 0.125,
+              "true_positive_count": 6,
+              "truth_count": 48
+            }
+          },
+          "predicted_decision_correctness_brier": 0.2653037457295415,
+          "record_count": 192,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8020833333333334,
+          "top_confidence_80_percent_error": 0.5909090909090908
+        },
+        "oracle": {
+          "confidence_ece_10_bin": 0.0,
+          "false_known_acceptance_rate": 0.0,
+          "known_exact_intent_accuracy": 1.0,
+          "mean_regret": 0.0,
+          "novel_exact_scenario_accuracy": 1.0,
+          "observed_exact_decision_accuracy": 1.0,
+          "observed_record_count": 192,
+          "observed_status_macro_f1": 1.0,
+          "per_class": {
+            "known_familiar": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 48
+            },
+            "known_unfamiliar": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 48
+            },
+            "novel_valid": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 48
+            },
+            "unsupported": {
+              "exact_decision_accuracy": 1.0,
+              "mean_regret": 0.0,
+              "record_count": 48
+            }
+          },
+          "per_status": {
+            "KNOWN": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "prediction_count": 96,
+              "recall": 1.0,
+              "true_positive_count": 96,
+              "truth_count": 96
+            },
+            "NOVEL": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "prediction_count": 48,
+              "recall": 1.0,
+              "true_positive_count": 48,
+              "truth_count": 48
+            },
+            "UNSUPPORTED": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "prediction_count": 48,
+              "recall": 1.0,
+              "true_positive_count": 48,
+              "truth_count": 48
+            }
+          },
+          "predicted_decision_correctness_brier": 0.0,
+          "record_count": 192,
+          "structured_response_validity": 1.0,
+          "top_confidence_80_percent_coverage": 0.8020833333333334,
+          "top_confidence_80_percent_error": 0.0
+        }
+      },
+      "rescued_quality_gates": {
+        "controlled_missing_observation_abstention_accuracy": true,
+        "novel_evidence_ECE": true,
+        "novel_evidence_non_novel_false_positive_rate": false,
+        "novel_evidence_precision": false,
+        "novel_evidence_recall": true,
+        "policy_confidence_ECE": true,
+        "policy_false_known_acceptance_rate": false,
+        "policy_known_exact_intent_accuracy": false,
+        "policy_mean_decision_regret": true,
+        "policy_observed_exact_decision_accuracy": false,
+        "policy_observed_status_macro_f1": true,
+        "policy_top_confidence_80_percent_error": false,
+        "policy_unsupported_status_precision": true,
+        "policy_unsupported_status_recall": true,
+        "structured_response_validity": true,
+        "true_hypothesis_retention": true,
+        "zero_actual_execution": true
+      },
+      "true_hypothesis_retention": 1.0
+    }
+  },
+  "result": "outputs/v114-rescued-policy-transfer/model-policy-transfer/result.json",
+  "result_sha256": "ea95e8ed318c71466063c784f4dc004f9e87cc34982dc5e85a138d96d68633fc",
+  "results_document": "docs/v114-rescued-policy-transfer-results.md",
+  "results_document_sha256": "d69f415940001961e1e79fba525d097c6599cbc9c2ce7872ebd5208bf196bd5d",
+  "schema_version": "114-rescued-policy-transfer-outcome-lock",
+  "verifier": "python/verify_and_freeze_v114_rescued_policy_transfer_outcome.py",
+  "verifier_sha256": "b22101d6aad174b6d5e9d7b0df5abc1fcfa06cd28b1149a461e2e41e66826636"
+}

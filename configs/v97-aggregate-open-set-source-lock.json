@@ -1,0 +1,214 @@
+{
+  "auditor": "python/audit_and_freeze_v97_source.py",
+  "auditor_sha256": "7227ff010a3162540cbaa1b353859ed07ee12bc5c2addfc3e73543fb05722633",
+  "authorization": {
+    "download_and_inventory_all_pinned_shards_once": true,
+    "emit_or_manually_inspect_language": false,
+    "grant_model_capability_state_belief_action_or_execution_authority": false,
+    "load_local_or_API_model": false,
+    "modify_pool_partition_metadata_or_gates": false,
+    "perform_real_service_call_or_external_side_effect": false,
+    "select_population_or_extract_language": false,
+    "train_adapter_or_learn_likelihood": false
+  },
+  "config": "configs/v97-aggregate-open-set-source.json",
+  "config_payload": {
+    "aggregateDialogueByteSize": 45767156,
+    "aggregateDialogueShardCount": 12,
+    "aggregateDialogueShards": [
+      {
+        "byteSize": 3323617,
+        "gitBlobSha1": "816fd56b102b2e6f0d9c677a3d84fe74e44ec394",
+        "path": "dev/dialogues_009.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_009.json"
+      },
+      {
+        "byteSize": 2485450,
+        "gitBlobSha1": "319387f58d2c4438a5af1dfc6265352b02051357",
+        "path": "dev/dialogues_010.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_010.json"
+      },
+      {
+        "byteSize": 3171402,
+        "gitBlobSha1": "6ed93205c5f9d3f60683db1f3ddeb6dc518b45df",
+        "path": "dev/dialogues_011.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_011.json"
+      },
+      {
+        "byteSize": 4080667,
+        "gitBlobSha1": "9325f175c88070b1f6018326e97df26b9c9f832a",
+        "path": "dev/dialogues_012.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_012.json"
+      },
+      {
+        "byteSize": 3550658,
+        "gitBlobSha1": "0773ab4253c9e131bd5947b61c4cf6fb9a745ecb",
+        "path": "dev/dialogues_013.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_013.json"
+      },
+      {
+        "byteSize": 3960820,
+        "gitBlobSha1": "d284292a55c9c4804906de26716edd08584e4223",
+        "path": "dev/dialogues_014.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_014.json"
+      },
+      {
+        "byteSize": 4295570,
+        "gitBlobSha1": "2c7a76d2f4cc9de4210589fc7cb69590e6062ca4",
+        "path": "dev/dialogues_015.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_015.json"
+      },
+      {
+        "byteSize": 3972559,
+        "gitBlobSha1": "db10171c57e6607c4af9aa9a38288aa76292d01c",
+        "path": "dev/dialogues_016.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_016.json"
+      },
+      {
+        "byteSize": 5023594,
+        "gitBlobSha1": "a311b3b3277f7fd93ac342aa6982892731fdf13f",
+        "path": "dev/dialogues_017.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_017.json"
+      },
+      {
+        "byteSize": 4315111,
+        "gitBlobSha1": "7ec3c54d23b08bd51b91a0dbd83008406f35efa2",
+        "path": "dev/dialogues_018.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_018.json"
+      },
+      {
+        "byteSize": 4183695,
+        "gitBlobSha1": "025f06c4cc014a60387ab7e6d8e2fdbf8d457253",
+        "path": "dev/dialogues_019.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_019.json"
+      },
+      {
+        "byteSize": 3404013,
+        "gitBlobSha1": "14a37211eb58685343960e2252a6cea1002d77e4",
+        "path": "dev/dialogues_020.json",
+        "rawUrl": "https://raw.githubusercontent.com/google-research-datasets/dstc8-schema-guided-dialogue/e852981ae34990f4358979625854259302feaa78/dev/dialogues_020.json"
+      }
+    ],
+    "classConstruction": {
+      "emitLanguageTokensSlotValuesOrHistories": false,
+      "knownFamiliarMinimumCurrentTurnOverlapCount": 1,
+      "knownUnfamiliarMaximumCurrentTurnOverlapCount": 0,
+      "nonNoneClassesRequireSourceIntentActivation": true,
+      "noneMapsOnlyToInsufficientEvidence": true,
+      "novelRequiresOneHashHiddenPairFromEachSelectedCatalogService": true,
+      "unsupportedRequiresCompletelyWithheldHashSelectedService": true,
+      "useCurrentUserTurnOnlyForLexicalSeparation": true
+    },
+    "decisionRule": {
+      "ifAnySourceGateFails": "stop before population selection, language extraction, model access, or gate changes",
+      "ifEverySourceGatePasses": "freeze the aggregate service-level inventory and authorize preregistration of a hash-selected dialogue-disjoint calibration/evaluation population",
+      "passAuthorizesAPITrainingPosteriorPlanningOrExecution": false,
+      "passAuthorizesLanguageExtraction": false,
+      "passAuthorizesModelInference": false
+    },
+    "experiment": "v97_aggregate_pool_service_partition_open_set_source_feasibility",
+    "license": "CC-BY-SA-4.0",
+    "parentArchitectureLock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+    "parentSourceOutcomeLock": "configs/v96-two-source-open-set-source-outcome-lock.json",
+    "preLockExposure": {
+      "GitHubMetadataRequestCount": 1,
+      "LLMAPICallCount": 0,
+      "adapterTrainingRunCount": 0,
+      "dialoguePayloadAccessCount": 0,
+      "individualUtteranceAccessCount": 0,
+      "manualUtteranceInspectionCount": 0,
+      "modelGenerationCount": 0,
+      "modelLoadCount": 0,
+      "schemaStructuralInspectionCount": 1
+    },
+    "previouslyExposedServices": [
+      "Alarm_1",
+      "Banks_2",
+      "Buses_1",
+      "Events_1",
+      "Flights_3",
+      "Homes_1",
+      "Hotels_1",
+      "Hotels_4",
+      "Media_2",
+      "Movies_2",
+      "Music_1",
+      "RentalCars_1",
+      "Restaurants_2",
+      "RideSharing_1",
+      "Services_4",
+      "Travel_1",
+      "Weather_1"
+    ],
+    "purpose": "construct a fresh five-class controlled open-set benchmark by service-level hash partition over every remaining untouched SGD development shard",
+    "repository": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+    "revision": "e852981ae34990f4358979625854259302feaa78",
+    "schemaDependency": {
+      "gitBlobSha1": "17c2be3f31433521f2c3d14ac0db7f0608a79b28",
+      "localPath": "outputs/v87-external-language-source-audit/source/schema.json",
+      "localSha256": "8fee8b1211500a4a1fb071765150e3267d20148bcad72a22c04bb1fdcd649366",
+      "path": "dev/schema.json"
+    },
+    "schemaVersion": "97-aggregate-open-set-source-design",
+    "servicePartition": {
+      "catalogServiceCount": 3,
+      "catalogServiceSalt": "simulagent-v97-catalog-service-v1",
+      "eligiblePairMinimumActivationCount": 8,
+      "eligibleServiceMinimumActivationCount": 12,
+      "hiddenIntentPairSalt": "simulagent-v97-hidden-pair-v1",
+      "hiddenPairCountPerSelectedService": 1,
+      "hiddenServiceCount": 2,
+      "hiddenServiceSalt": "simulagent-v97-hidden-service-v1",
+      "minimumDeclaredPairCount": 3,
+      "partitionBeforeLanguageDerivedFeatures": true,
+      "unsupportedServiceCount": 1,
+      "unsupportedServiceSalt": "simulagent-v97-unsupported-service-v1"
+    },
+    "sourceAuthorityLock": "configs/v87-external-language-source-outcome-lock.json",
+    "sourceGates": {
+      "maximumAdapterTrainingRunCount": 0,
+      "maximumExternalSideEffectCount": 0,
+      "maximumLLMAPICallCount": 0,
+      "maximumManualUtteranceInspectionCount": 0,
+      "maximumModelGenerationCount": 0,
+      "maximumModelLoadCount": 0,
+      "maximumRealServiceCallCount": 0,
+      "minimumDeclaredPairCount": 3,
+      "minimumEligibleFreshServiceCount": 4,
+      "minimumInsufficientEvidenceCandidateCount": 16,
+      "minimumInsufficientEvidenceServiceCoverage": 2,
+      "minimumKnownClassServiceCoverage": 2,
+      "minimumKnownFamiliarCandidateCount": 16,
+      "minimumKnownUnfamiliarCandidateCount": 16,
+      "minimumNovelValidCandidateCount": 16,
+      "minimumUnsupportedCandidateCount": 16,
+      "requiredCatalogServiceCount": 3,
+      "requiredHiddenPairCount": 2,
+      "requiredNovelServiceCoverage": 2,
+      "requiredUnsupportedServiceCount": 1,
+      "requiredUnsupportedServiceCoverage": 1
+    }
+  },
+  "config_sha256": "41251a00c61fbaffcb1a338f91aceb31970c3b1e86e138cf26d33621b328cfd9",
+  "design_audit": "outputs/v97-aggregate-open-set/source-design-audit.json",
+  "design_audit_sha256": "bad71146561a9ed32690080b411fff23021b19cf53d69bd02b354997e98490dc",
+  "experiment": "v97_aggregate_open_set_source_lock",
+  "lock_payload_sha256": "03eb47de904ca2393f96cb71c8c1abd98901cc394ffa434a2fc927117000e037",
+  "parent_architecture_lock": "configs/v92-structured-llm-architecture-outcome-lock.json",
+  "parent_architecture_lock_sha256": "1a374de151de26a6a31e13e1cfd927ed61de65bfd3910fc5be1af46dae7f4ea4",
+  "parent_source_outcome": "configs/v96-two-source-open-set-source-outcome-lock.json",
+  "parent_source_outcome_sha256": "568c577fafa4f7d6128375ab6f0c5875f5c3f5ad8efa7caeb5a3980115ccf595",
+  "plan": "docs/v97-aggregate-open-set-source-plan.md",
+  "plan_sha256": "5dbb6201dbd2a2268a5a48c8b759620b4f3a687b992c1dfea071493d0d73741e",
+  "protocol": "python/v97_aggregate_open_set_source.py",
+  "protocol_sha256": "37fb44a7f356142f3478eacb0a828b452a4d81b536dc32f5e142f6285b1775af",
+  "runner": "python/run_v97_source_inventory.py",
+  "runner_sha256": "b4ed202b7db3b07cadfe36d86f8df20c27531855a184e5b9953120a3ae1d423c",
+  "schema_version": "97-aggregate-open-set-source-lock",
+  "source_authority_lock": "configs/v87-external-language-source-outcome-lock.json",
+  "source_authority_lock_sha256": "3654945adeed5348960847ce61a1a5417fcc6fd275cb817559cfe4293b56bd63",
+  "tests": "python/test_v97_aggregate_open_set_source.py",
+  "tests_sha256": "db1a2f6d11e98b3f8e79e6e08b26753736f4d9d350a9881a052a07d82deb12ef",
+  "verifier": "python/verify_and_freeze_v97_source_outcome.py",
+  "verifier_sha256": "ffb87e2bb12db5f0870c4c230a6696119280eec7908063e08e7091011aa50457"
+}
