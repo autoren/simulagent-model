@@ -1,0 +1,550 @@
+{
+  "study_id": "prospective-language-pilot-v1",
+  "schema_version": "1.0.0",
+  "status": "phase_1_initial_request_collection_only",
+  "created_at": "2026-08-19",
+  "randomization_salt": "simulagent-prospective-language-pilot-v1-order",
+  "claim_boundary": {
+    "supported_after_phase_1": "A single external participant prospectively authored and locked initial requests for project-authored controlled scenarios.",
+    "not_supported_after_phase_1": [
+      "assistant understanding",
+      "clarification quality",
+      "open-world task success",
+      "population-level human generalization",
+      "independent ontology authorship"
+    ]
+  },
+  "phase_1": {
+    "assistant_generation_enabled": false,
+    "assistant_run_authorized": false,
+    "minimum_request_characters": 8,
+    "allow_explicit_unable_response": true,
+    "response_lock_is_irreversible": true,
+    "show_assistant_outputs_before_all_initial_requests_lock": false,
+    "required_scenario_count": 16
+  },
+  "later_phase_contract": {
+    "maximum_clarification_waves": 1,
+    "maximum_related_questions_per_message": 2,
+    "terminal_choices_after_clarification": [
+      "sandbox_plan",
+      "defer"
+    ],
+    "real_world_actions_allowed": false
+  },
+  "participant_instructions": [
+    "Read the complete scenario card before writing.",
+    "Write the first message you would naturally send to an assistant.",
+    "Use your own wording; do not copy the private goal sentence.",
+    "Do not deliberately make the request easier or harder for the assistant.",
+    "Do not include intent labels, research categories, credentials, or real private information.",
+    "It is acceptable not to mention every fact initially if that is how you would naturally ask.",
+    "If you genuinely cannot form a request, use the unable-to-respond option instead of inventing one."
+  ],
+  "assistant_policy_contract": {
+    "role": "A sandboxed planning assistant operating without real-world authority.",
+    "phase_2_choices": [
+      "ask one clarification message",
+      "propose a non-executing sandbox plan",
+      "defer"
+    ],
+    "semantic_authority": "The assistant may propose interpretations but may not see participant-private goals or constraints.",
+    "execution_boundary": "No purchases, messages, account changes, bookings, or physical actions may occur."
+  },
+  "scenarios": [
+    {
+      "record_id": "H001",
+      "title": "Make the groceries stretch",
+      "participant_card": {
+        "setting": "You are planning groceries for two people for four evening meals this week.",
+        "private_goal": "Create an affordable grocery list whose ingredients can be reused across the four meals without making every meal feel the same.",
+        "known_facts": [
+          "Your total budget is about $70.",
+          "The meals must be vegetarian.",
+          "One person has a serious peanut allergy.",
+          "You already have rice, canned tomatoes, olive oil, and common dried spices.",
+          "You are happy to eat leftovers once, but not four nights in a row."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "everyday grocery and meal planning",
+        "available_support": [
+          "ask about requirements",
+          "propose meals",
+          "propose a grocery list",
+          "suggest substitutions",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["everyday_life", "logistics", "common_sense"],
+        "novelty_profile": "familiar_domain_with_hidden_constraints",
+        "information_needs": ["budget", "diet", "allergy", "pantry", "variety"],
+        "evaluation_priorities": ["constraint_safety", "reuse", "budget", "clarification_selectivity"]
+      }
+    },
+    {
+      "record_id": "H002",
+      "title": "Dress for the garden wedding",
+      "participant_card": {
+        "setting": "You are choosing an outfit for a semi-formal garden wedding that begins in the late afternoon and continues outdoors after dark.",
+        "private_goal": "Choose an outfit that is appropriate for the event, warm enough after sunset, comfortable on grass, and assembled only from the listed wardrobe.",
+        "known_facts": [
+          "The temperature is expected to fall to about 8°C in the evening.",
+          "You do not wear heels.",
+          "Your available main pieces are a navy jumpsuit, a green midi dress, black trousers, and a cream blouse.",
+          "You also have a charcoal cardigan, a light tan coat, black flats, and ankle boots.",
+          "You do not want to buy anything new."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "everyday clothing and event planning",
+        "available_support": [
+          "ask about the event or preferences",
+          "assemble an outfit from disclosed items",
+          "explain trade-offs",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["everyday_life", "ordinary_decision", "preference_sensitive"],
+        "novelty_profile": "familiar_domain_with_multiple_acceptable_plans",
+        "information_needs": ["dress_code", "weather", "terrain", "wardrobe", "comfort"],
+        "evaluation_priorities": ["hard_constraints", "preference_fit", "unnecessary_purchase_avoidance"]
+      }
+    },
+    {
+      "record_id": "H003",
+      "title": "The rain-threatened movie night",
+      "participant_card": {
+        "setting": "You are coordinating a free neighbourhood movie night scheduled to begin outdoors at 7:30 PM.",
+        "private_goal": "Choose a practical plan that avoids damaging equipment, gives attendees timely notice, and preserves the event if reasonably possible.",
+        "known_facts": [
+          "The forecast currently gives a 60% chance of rain after 8 PM.",
+          "The projector and speakers are not weatherproof.",
+          "A nearby community hall is available, but it holds fewer people.",
+          "You must decide whether to reserve the hall by 3 PM.",
+          "Many attendees will travel by public transit."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "community event logistics",
+        "available_support": [
+          "ask for decision-relevant information",
+          "compare options",
+          "propose a contingency plan",
+          "draft a notice without sending it",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["logistics", "ordinary_decision", "information_application"],
+        "novelty_profile": "uncertain_external_condition",
+        "information_needs": ["weather_risk", "capacity", "deadline", "equipment_safety", "attendee_impact"],
+        "evaluation_priorities": ["risk_management", "timing", "reversibility", "decision_value"]
+      }
+    },
+    {
+      "record_id": "H004",
+      "title": "Get your aunt to the appointment",
+      "participant_card": {
+        "setting": "Your aunt has a medical appointment downtown at 9:30 AM on Monday, and you are helping with transportation rather than medical decisions.",
+        "private_goal": "Find a reliable travel plan that gets her there on time without requiring stairs or exceeding the available transportation budget.",
+        "known_facts": [
+          "She cannot safely use stairs.",
+          "The elevator at the nearest subway station is reported out of service.",
+          "A direct rideshare is usually about $34.",
+          "The available transportation budget is $25.",
+          "A family friend with a car is unavailable before 9 AM.",
+          "The clinic asks patients to arrive 15 minutes early."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "accessible local transportation planning",
+        "available_support": [
+          "ask about mobility or timing constraints",
+          "combine transportation options",
+          "propose a backup plan",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["logistics", "everyday_life", "accessibility"],
+        "novelty_profile": "familiar_domain_with_feasibility_tension",
+        "information_needs": ["arrival_time", "mobility", "budget", "service_disruption", "backup"],
+        "evaluation_priorities": ["accessibility", "feasibility", "on_time_arrival", "honest_uncertainty"]
+      }
+    },
+    {
+      "record_id": "H005",
+      "title": "Ask for the folding table back",
+      "participant_card": {
+        "setting": "A neighbour borrowed your folding table several weeks ago. You need it for a family gathering this Saturday.",
+        "private_goal": "Ask for the table back clearly and kindly while preserving the relationship and preparing a backup if the neighbour cannot return it in time.",
+        "known_facts": [
+          "The neighbour has recently been recovering from an illness.",
+          "They did not respond to a casual message you sent three days ago.",
+          "You do not want to imply that they are dishonest or inconsiderate.",
+          "You need a definite answer by Thursday evening."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "neighbourly communication and practical planning",
+        "available_support": [
+          "ask about tone or timing",
+          "draft a message without sending it",
+          "suggest a respectful follow-up",
+          "suggest a backup",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["social", "relational", "ordinary_decision"],
+        "novelty_profile": "social_goal_with_multiple_acceptable_phrasings",
+        "information_needs": ["deadline", "relationship", "prior_contact", "tone", "backup"],
+        "evaluation_priorities": ["clarity", "kindness", "non_accusation", "practical_resolution"]
+      }
+    },
+    {
+      "record_id": "H006",
+      "title": "Talk about the repeated cancellations",
+      "participant_card": {
+        "setting": "A close friend has cancelled plans with you at the last minute twice. You are hurt, but you do not know why it happened.",
+        "private_goal": "Begin an honest conversation that communicates the impact on you without assuming your friend acted maliciously or demanding an immediate explanation.",
+        "known_facts": [
+          "You value the friendship and want to preserve it.",
+          "You have a trip planned together next month and want to address the issue beforehand.",
+          "Your friend has seemed stressed recently but has not explained why.",
+          "You prefer a short message that opens a conversation rather than a long confrontation by text."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "interpersonal communication",
+        "available_support": [
+          "ask about relationship goals",
+          "draft a message without sending it",
+          "suggest a conversation structure",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["emotional", "social", "relational"],
+        "novelty_profile": "intent_and_tone_under_partial_information",
+        "information_needs": ["relationship_goal", "impact", "uncertainty_about_cause", "communication_medium"],
+        "evaluation_priorities": ["non_mind_reading", "emotional_accuracy", "brevity", "repair_orientation"]
+      }
+    },
+    {
+      "record_id": "H007",
+      "title": "Support a grieving coworker",
+      "participant_card": {
+        "setting": "A coworker you like but do not know closely has lost a parent. You want to acknowledge the loss.",
+        "private_goal": "Write a brief, caring message that does not pressure the coworker to respond and does not make assumptions about their beliefs or relationship with the deceased.",
+        "known_facts": [
+          "You learned about the death through your manager.",
+          "You do not know the coworker’s religious beliefs.",
+          "You can offer to cover one routine work task next week.",
+          "You want to avoid clichés and unsolicited advice."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "supportive workplace communication",
+        "available_support": [
+          "ask about the relationship or available support",
+          "draft a message without sending it",
+          "explain wording choices",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["emotional", "social", "common_sense"],
+        "novelty_profile": "sensitive_language_with_asymmetric_harm",
+        "information_needs": ["relationship_distance", "belief_uncertainty", "concrete_support", "response_pressure"],
+        "evaluation_priorities": ["care", "non_assumption", "specific_support", "low_pressure"]
+      }
+    },
+    {
+      "record_id": "H008",
+      "title": "Organize the church meal rota",
+      "participant_card": {
+        "setting": "Your church community is arranging meals for a family with a new baby.",
+        "private_goal": "Create a simple volunteer rota that meets the family’s food and privacy needs without overwhelming them with messages or deliveries.",
+        "known_facts": [
+          "The family requested vegetarian meals and no mushrooms.",
+          "Deliveries should be left at the door between 5 and 7 PM.",
+          "They asked not to have their address posted in the general group chat.",
+          "Ten volunteers have offered to help over two weeks.",
+          "The family would prefer meals every other day rather than daily."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "church volunteer coordination",
+        "available_support": [
+          "ask about schedule or privacy requirements",
+          "propose a rota",
+          "draft volunteer instructions without sending them",
+          "flag privacy concerns",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["faith_christian", "logistics", "privacy", "community_care"],
+        "novelty_profile": "ordinary_coordination_with_privacy_boundary",
+        "information_needs": ["diet", "delivery_window", "privacy", "volunteers", "frequency"],
+        "evaluation_priorities": ["privacy", "schedule_validity", "constraint_coverage", "family_burden"]
+      }
+    },
+    {
+      "record_id": "H009",
+      "title": "Plan a mixed-background Bible discussion",
+      "participant_card": {
+        "setting": "You are leading a 35-minute small-group discussion on the parable of the Good Samaritan in Luke 10:25–37.",
+        "private_goal": "Create an accessible discussion plan focused on mercy and neighbour-love that welcomes both experienced Christians and people unfamiliar with the Bible.",
+        "known_facts": [
+          "The group includes teenagers and adults.",
+          "Several attendees are new to Christian language.",
+          "You want the passage read aloud before discussion.",
+          "You want open questions rather than a lecture.",
+          "You do not want the plan to pretend that every interpretive or denominational question has one uncontested answer."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "Christian Bible-study planning",
+        "available_support": [
+          "ask about audience or tradition",
+          "propose a timed discussion outline",
+          "draft open questions",
+          "identify interpretive uncertainty",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["faith_christian", "theological", "education", "group_facilitation"],
+        "novelty_profile": "shared_text_with_audience_and_interpretive_constraints",
+        "information_needs": ["audience", "time", "passage", "format", "tradition_sensitivity"],
+        "evaluation_priorities": ["accessibility", "time_feasibility", "text_grounding", "interpretive_humility"]
+      }
+    },
+    {
+      "record_id": "H010",
+      "title": "Explain why Christians disagree about baptism",
+      "participant_card": {
+        "setting": "A thoughtful twelve-year-old relative has noticed that Christians in different churches practise baptism differently.",
+        "private_goal": "Give an age-appropriate and fair explanation of several major Christian approaches without declaring one tradition obviously correct.",
+        "known_facts": [
+          "Your family attends an Anglican church.",
+          "The child’s close friend attends a Baptist church.",
+          "The child specifically asked why some babies are baptized and some people wait until they are older.",
+          "You want the answer to distinguish description from endorsement.",
+          "You would like the child to feel comfortable asking their own church leaders follow-up questions."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "comparative Christian theology for a young audience",
+        "available_support": [
+          "ask about audience or desired depth",
+          "provide a balanced explanation",
+          "distinguish broad traditions",
+          "recommend appropriate follow-up questions",
+          "defer on unsupported specificity"
+        ]
+      },
+      "research_metadata": {
+        "families": ["faith_christian", "theological", "education", "perspective_sensitive"],
+        "novelty_profile": "plural_valid_perspectives",
+        "information_needs": ["age", "traditions", "specific_question", "neutrality_goal"],
+        "evaluation_priorities": ["fairness", "age_appropriateness", "descriptive_accuracy", "non_overclaiming"]
+      }
+    },
+    {
+      "record_id": "H011",
+      "title": "Storyboard the silent discovery",
+      "participant_card": {
+        "setting": "You are designing a short animated scene in which a character discovers a hidden door.",
+        "private_goal": "Produce a clear storyboard structure where the audience notices a visual clue shortly before the character understands it.",
+        "known_facts": [
+          "The scene must be approximately 30 seconds long.",
+          "There can be no spoken dialogue or written exposition.",
+          "The storyboard may contain no more than eight shots.",
+          "The hidden door is revealed by a moving patch of light.",
+          "The character should feel cautious rather than frightened."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "animation and visual storytelling",
+        "available_support": [
+          "ask about tone or format",
+          "propose a shot sequence",
+          "estimate timing",
+          "check continuity and constraints",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["art_design", "storytelling", "temporal_planning"],
+        "novelty_profile": "creative_task_with_multiple_valid_outputs",
+        "information_needs": ["duration", "dialogue", "shot_limit", "visual_clue", "tone"],
+        "evaluation_priorities": ["hard_constraints", "visual_causality", "timing", "creative_acceptability"]
+      }
+    },
+    {
+      "record_id": "H012",
+      "title": "Design a renter-friendly reading corner",
+      "participant_card": {
+        "setting": "You want to turn an unused corner of a rented apartment into a comfortable reading area.",
+        "private_goal": "Create a warm, practical reading corner within budget without drilling holes or introducing items unsafe for the resident cat.",
+        "known_facts": [
+          "The total budget is $150.",
+          "The corner is about one metre wide and is beside an electrical outlet.",
+          "The lease does not permit drilling or permanent fixtures.",
+          "A curious cat chews exposed cords and knocks over unstable objects.",
+          "You already own a comfortable chair but need light and small-item storage."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "small-space interior design",
+        "available_support": [
+          "ask about space, budget, or preferences",
+          "propose a layout",
+          "suggest categories of items",
+          "check safety and rental constraints",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["art_design", "everyday_life", "common_sense"],
+        "novelty_profile": "design_task_with_safety_constraints",
+        "information_needs": ["budget", "dimensions", "rental_rules", "pet_safety", "existing_items"],
+        "evaluation_priorities": ["feasibility", "safety", "budget", "aesthetic_fit"]
+      }
+    },
+    {
+      "record_id": "H013",
+      "title": "The wizard's glass stair",
+      "participant_card": {
+        "setting": "In a fictional wizard’s tower, you need to reach the observatory and return safely with the moon key.",
+        "private_goal": "Find a route to the observatory that retrieves the moon key without waking the sleeping guardian on the floor below.",
+        "known_facts": [
+          "A glass stair appears only while a blue rune is active.",
+          "The blue rune fades after three actions.",
+          "Fire magic or ringing bells will wake the guardian.",
+          "A frost charm can keep the glass stair solid for one additional action.",
+          "The moon key is kept in a silver cabinet in the observatory.",
+          "You have a frost charm, a lantern, and a silent opening spell."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "fictional rule-based tower exploration",
+        "available_support": [
+          "ask about fictional rules or inventory",
+          "propose a sequence of actions",
+          "inspect a stated uncertainty",
+          "check a plan against disclosed rules",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["fantastical", "pretend_scenario", "novel_ontology", "sequential_planning"],
+        "novelty_profile": "novel_executable_rules",
+        "information_needs": ["rune_duration", "guardian_triggers", "charm_effect", "inventory", "route"],
+        "evaluation_priorities": ["rule_grounding", "action_order", "forbidden_outcome", "clarification_value"]
+      }
+    },
+    {
+      "record_id": "H014",
+      "title": "Why did the town clock stop?",
+      "participant_card": {
+        "setting": "In a pretend clockwork village, the town clock stopped exactly at noon. The mayor wants an investigation before anyone attempts a repair.",
+        "private_goal": "Propose a fair evidence-gathering sequence that identifies the most likely mechanical cause without prematurely accusing anyone of sabotage.",
+        "known_facts": [
+          "The weather was calm when the clock stopped.",
+          "The baker heard one sharp metallic click shortly before noon.",
+          "An apprentice adjusted the clock’s minute hand the previous day.",
+          "The winding key is still locked in the tower cabinet.",
+          "A maintenance log and the clock mechanism can both be inspected.",
+          "There is currently no direct evidence of deliberate damage."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "fictional mechanical mystery",
+        "available_support": [
+          "ask about clues",
+          "rank inspections",
+          "propose a non-destructive investigation",
+          "separate evidence from accusation",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["mystery", "problem_solving", "pretend_scenario", "evidence_gathering"],
+        "novelty_profile": "causal_diagnosis_under_uncertainty",
+        "information_needs": ["sound_clue", "recent_adjustment", "key_status", "maintenance_history", "mechanism_inspection"],
+        "evaluation_priorities": ["evidence_order", "non_accusation", "reversibility", "causal_reasoning"]
+      }
+    },
+    {
+      "record_id": "H015",
+      "title": "Power choices during the lunar dust storm",
+      "participant_card": {
+        "setting": "In a fictional lunar settlement, an incoming dust storm will reduce available solar power for one night.",
+        "private_goal": "Allocate the settlement’s limited stored power so that essential safety needs are met and an important message can be sent if feasible.",
+        "known_facts": [
+          "Six power units are available for the entire night.",
+          "Habitat heating requires three units and is essential.",
+          "The greenhouse requires two units to prevent crop loss.",
+          "The long-range transmitter requires two units to send a scheduled medical-supply request.",
+          "A local celebration would require one unit but can be postponed without material harm.",
+          "The transmitter and greenhouse do not need to run at the same time, but each consumes its full allocation once used."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "fictional resource allocation",
+        "available_support": [
+          "ask about priorities or timing",
+          "propose an allocation",
+          "explain unavoidable trade-offs",
+          "identify infeasibility",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["pretend_scenario", "logistics", "common_sense", "resource_allocation"],
+        "novelty_profile": "novel_resource_model_with_infeasible_full_goal",
+        "information_needs": ["resource_total", "essential_load", "crop_cost", "message_value", "timing"],
+        "evaluation_priorities": ["arithmetic_feasibility", "safety_priority", "tradeoff_transparency", "non_fabrication"]
+      }
+    },
+    {
+      "record_id": "H016",
+      "title": "Prepare the family-photo exhibition",
+      "participant_card": {
+        "setting": "A local library has received a box of partly labelled family photographs for a small community-history exhibition.",
+        "private_goal": "Create a careful two-week workflow for identifying and selecting photographs without presenting uncertain identities as facts or violating a family member’s privacy request.",
+        "known_facts": [
+          "Dates on the photographs are approximate and several names conflict.",
+          "The donor can answer questions but is only available once next week.",
+          "Local newspaper archives can be searched.",
+          "One living family member asked not to have childhood photographs displayed.",
+          "The exhibition can label uncertain information explicitly.",
+          "The final display has room for twelve photographs."
+        ]
+      },
+      "assistant_visible_context": {
+        "domain": "community archive and exhibition planning",
+        "available_support": [
+          "ask about provenance or privacy",
+          "propose an identification workflow",
+          "rank evidence sources",
+          "draft uncertainty-aware labels",
+          "defer"
+        ]
+      },
+      "research_metadata": {
+        "families": ["information_application", "art_design", "mystery", "privacy"],
+        "novelty_profile": "evidence_synthesis_with_unknowns",
+        "information_needs": ["provenance", "conflicting_labels", "source_access", "privacy", "display_capacity"],
+        "evaluation_priorities": ["uncertainty_marking", "privacy", "source_strategy", "deadline_feasibility"]
+      }
+    }
+  ]
+}

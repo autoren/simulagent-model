@@ -1,0 +1,107 @@
+{
+  "schema_version": "prospective-language-pilot-v1-phase2-design-1.0.0",
+  "experiment": "prospective_language_pilot_v1_phase2_bounded_local_architecture",
+  "role": "development_single_speaker",
+  "claim_boundary": "One post-collection-frozen, shadow-only, bounded local assistant condition on 16 prospectively authored requests from one participant. It evaluates structural realization, conservative routing, and later participant-facing clarification utility. It is not a blind confirmation, population evidence, unrestricted language understanding, ontology truth, authority, action, or execution.",
+  "participant": {
+    "participant_code": "P001",
+    "required_record_count": 16,
+    "public_requests": "data/prospective-language-pilot/prospective-language-pilot-v1/P001/public/phase1_initial_requests.jsonl",
+    "public_requests_sha256": "df3667ebdfa73b6308eb7f59efd1d4c90ed5436efbcc514d166bc7cf31568aa3",
+    "phase1_manifest": "data/prospective-language-pilot/prospective-language-pilot-v1/P001/audit/phase1_manifest.json",
+    "phase1_manifest_sha256": "d5dafba1970a7cb98e2d3e5b304515ba5e728d8a55a739301e9c95cb351b2b79",
+    "phase1_required_verification": "pass",
+    "phase1_required_assistant_generation_count": 0
+  },
+  "model": {
+    "repository": "mlx-community/Qwen3.8-27B-4bit",
+    "revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "model_manifest": "outputs/v90-capacity-generation/model-acquisition/qwen38_27b_4bit.json",
+    "model_manifest_sha256": "fb26a4fb3d878b56a2bcae17620d799b5a2cdb5baeeb078bfdf5e802e0ef87f2",
+    "quantization_bits": 4,
+    "temperature": 0.0,
+    "samples_per_request": 1,
+    "retry_count": 0,
+    "model_load_limit": 1,
+    "enable_thinking": true,
+    "reasoning_effort": "low",
+    "reasoning_phase_maximum_tokens": 48,
+    "final_phase_maximum_tokens": 320,
+    "mechanically_force_close_thinking_before_final_phase": true
+  },
+  "prompt": {
+    "maximum_prompt_tokens": 2048,
+    "demonstration_count": 0,
+    "system": "You are an offline, non-authoritative assistant inside a controlled language-and-decision study. You know only the exact user request and the supplied limited support context. You have no access to people, devices, accounts, live locations, records, inventories, schedules, archives, or events unless their contents appear in the request. Never imply that you inspected or learned an undisclosed fact. Preserve multiple plausible interpretations when the request does not identify one. Your output can only support a deterministic controller that will either provide a sandbox-only text plan, ask at most two related clarification questions, or defer. You cannot send, buy, book, contact, browse, register, act, or execute.",
+    "instruction": "Return exactly one JSON object and nothing else. Use exactly these seven keys: semantic_state, candidate_goals, missing_evidence, evidence_source, clarification_questions, sandbox_plan, defer_reason. semantic_state must be ONE_CLEAR_READING, MULTIPLE_PLAUSIBLE_READINGS, or INSUFFICIENT_OBSERVABLE_EVIDENCE. candidate_goals must contain one to three short plausible user goals. missing_evidence must contain zero to three distinct codes from USER_GOAL, USER_CONSTRAINT, PERSONAL_PREFERENCE, LOCAL_FACT, PRIVATE_THIRD_PARTY_FACT, LIVE_EXTERNAL_FACT, SOURCE_CONTENT, or RULE_INTERPRETATION. evidence_source must be NONE_REQUIRED, USER_CAN_SUPPLY, EXTERNAL_SOURCE_REQUIRED, or NOT_OBTAINABLE. If there is one clear reading and no missing evidence, put a useful sandbox-only answer or plan in sandbox_plan, use an empty clarification_questions list, and set defer_reason to null. If several readings remain or the user can supply necessary evidence, set sandbox_plan and defer_reason to null and provide one or two closely related clarification questions; each array item must be exactly one question ending in ?. If necessary evidence requires unavailable external access or is not obtainable, use an empty clarification_questions list, set sandbox_plan to null, and briefly explain the limitation in defer_reason. Do not claim to have inspected anything not supplied. Do not add confidence, markdown, commentary, or extra keys.",
+    "visible_fields": [
+      "record_id",
+      "initial_request",
+      "assistant_visible_context"
+    ]
+  },
+  "schema": {
+    "allowed_semantic_states": [
+      "ONE_CLEAR_READING",
+      "MULTIPLE_PLAUSIBLE_READINGS",
+      "INSUFFICIENT_OBSERVABLE_EVIDENCE"
+    ],
+    "allowed_evidence_codes": [
+      "USER_GOAL",
+      "USER_CONSTRAINT",
+      "PERSONAL_PREFERENCE",
+      "LOCAL_FACT",
+      "PRIVATE_THIRD_PARTY_FACT",
+      "LIVE_EXTERNAL_FACT",
+      "SOURCE_CONTENT",
+      "RULE_INTERPRETATION"
+    ],
+    "allowed_evidence_sources": [
+      "NONE_REQUIRED",
+      "USER_CAN_SUPPLY",
+      "EXTERNAL_SOURCE_REQUIRED",
+      "NOT_OBTAINABLE"
+    ],
+    "maximum_candidate_goals": 3,
+    "maximum_missing_evidence_codes": 3,
+    "maximum_clarification_questions": 2,
+    "maximum_sandbox_plan_characters": 1800,
+    "maximum_defer_reason_characters": 600
+  },
+  "controller": {
+    "invalid_output_route": "DEFER",
+    "invalid_output_message": "I cannot safely determine an answer or clarification from the available information.",
+    "one_clear_no_missing_route": "PLAN",
+    "multiple_readings_route": "CLARIFY",
+    "user_can_supply_route": "CLARIFY",
+    "external_or_unobtainable_route": "DEFER",
+    "model_output_is_non_authoritative": true,
+    "real_world_execution_enabled": false
+  },
+  "qualification_gates": {
+    "minimum_structural_validity_rate": 0.9375,
+    "maximum_final_phase_token_limit_hit_rate": 0.0,
+    "required_controller_coverage_rate": 1.0,
+    "maximum_questions_per_clarification": 2,
+    "required_public_request_count": 16,
+    "maximum_retry_count": 0,
+    "maximum_api_call_count": 0,
+    "maximum_real_service_call_count": 0,
+    "maximum_external_side_effect_count": 0,
+    "maximum_actual_execution_count": 0
+  },
+  "post_run_rule": {
+    "if_all_gates_pass": "freeze_outputs_and_open_one_participant_clarification_batch_for_controller_CLARIFY_records_only",
+    "otherwise": "freeze_negative_or_invalid_development_result_and_do_not_show_model_questions_without_protocol_review",
+    "participant_must_not_see_reasoning_or_candidate_goals": true,
+    "participant_must_not_see_shadow_baseline_outputs": true,
+    "authorizes_api_fallback": false,
+    "authorizes_retry_or_reprompt": false,
+    "authorizes_action_or_execution": false
+  },
+  "prelock_disclosure": {
+    "request_distribution_was_inspected_before_phase2_design": true,
+    "individual_requests_were_qualitatively_reviewed": true,
+    "confirmation_claim_is_prohibited": true
+  }
+}

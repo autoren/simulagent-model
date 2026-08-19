@@ -1,0 +1,44 @@
+{
+  "schema_version": "prospective-language-pilot-v1-phase3-design-1.0.0",
+  "experiment": "prospective_language_pilot_v1_exploratory_valid_only_clarification_batch",
+  "role": "post_failure_exploratory_salvage",
+  "claim_boundary": "Participant responses to the exact 11 structurally valid non-fallback clarification outputs from one failed Phase 2 development condition. This does not reclassify Phase 2 as passing, repair invalid records, compare alternate questions, confirm semantic understanding, or establish population reliability.",
+  "participant_code": "P001",
+  "phase2": {
+    "result": "data/prospective-language-pilot/prospective-language-pilot-v1/P001/assistant/phase2_architecture/result.json",
+    "result_sha256": "a42ff35a789a19c9823b570fc5b14d91adeb2e9bc1192d530b8e002be28206cf",
+    "controller_outputs": "data/prospective-language-pilot/prospective-language-pilot-v1/P001/assistant/phase2_architecture/participant/phase2_controller_outputs.jsonl",
+    "controller_outputs_sha256": "0d414c8fdd3d0afa02c16d5c68c79b68bc205c653fab3d5aa50ed1adb56ed73b",
+    "required_completed": true,
+    "required_qualified_for_clarification_batch": false,
+    "required_valid_nonfallback_clarification_records": 11,
+    "required_question_count": 22,
+    "required_safe_access_counters": true
+  },
+  "eligibility": {
+    "include_only_route": "CLARIFY",
+    "exclude_safe_fallback": true,
+    "exclude_plan_and_defer_records": true,
+    "exclude_invalid_records": true,
+    "allow_question_rewrite": false,
+    "allow_model_rerun_or_reprompt": false,
+    "allow_alternate_condition": false,
+    "maximum_questions_per_record": 2,
+    "require_each_question_to_end_with_question_mark": true,
+    "forbid_urls_and_credential_requests": true
+  },
+  "collection": {
+    "minimum_answer_characters": 2,
+    "all_answers_before_terminal_generation": true,
+    "responses_immutable_after_lock": true,
+    "explicit_unable_path": true,
+    "show_candidate_goals_or_reasoning": false,
+    "show_terminal_plans_or_defers": false,
+    "assistant_generation_enabled": false,
+    "terminal_run_authorized": false
+  },
+  "decision_rule": {
+    "if_eligibility_audit_passes": "open_exact_valid_only_exploratory_clarification_batch",
+    "otherwise": "keep_interaction_closed_and_freeze_protocol_review_failure"
+  }
+}

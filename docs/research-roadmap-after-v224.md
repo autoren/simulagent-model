@@ -1,5 +1,9 @@
 # Research roadmap after V224
 
+> **Historical status (2026-08-19):** this roadmap was superseded by the
+> [Simulagent final closure](simulagent-final-closure.md). It authorizes no current work. See the
+> [unresolved-track registry](simulagent-unpursued-tracks.md) for the final disposition of work not completed.
+
 ## Cross-track audit resolution (2026-08-19)
 
 The requested cross-track audit is complete. It validates all 198 frozen outcome-lock payloads through V224/V224r2,

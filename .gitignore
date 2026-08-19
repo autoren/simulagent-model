@@ -12,6 +12,9 @@ adapters/*
 !adapters/.gitkeep
 outputs/*
 !outputs/.gitkeep
+!outputs/simulagent-final-closure/
+outputs/simulagent-final-closure/*
+!outputs/simulagent-final-closure/result.json
 data/*
 !data/.gitkeep
 *.log

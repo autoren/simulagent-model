@@ -2,7 +2,41 @@
 
 ## Canonical current status
 
-The active scientific status is frozen after V224 and the cross-track audit:
+### Final closure (2026-08-19)
+
+**Simulagent is closed as an active experimental program.** The
+[final closure](simulagent-final-closure.md) records the supported claims and final pilot disposition. The
+[unresolved-track registry](simulagent-unpursued-tracks.md) records work that was incomplete, blocked, intentionally
+excluded, or better treated as a separate successor project. These two documents and the machine-readable closure at
+`outputs/simulagent-final-closure/result.json` supersede all earlier experimental authorization.
+
+No new collection, terminal continuation, model/API run, training, protected-language opening, ontology registration,
+trusted-state mutation, service action, or execution is authorized. Historical results and locked pilot records remain
+immutable. Documentation and non-mutating reproduction remain allowed.
+
+### Final prospective single-speaker pilot disposition
+
+An external-state change occurred after V224: a human speaker volunteered to author prospective requests and answer
+later clarification questions. The [V1 protocol and testing plan](prospective-language-pilot-v1-plan.md) governs the
+pilot, and the [participant guide](prospective-language-pilot-v1-participant-guide.md) explains the local workflow.
+Phase 1 completed 16/16 requests with a passing integrity audit and zero assistant generations.
+
+The frozen Phase 2 local architecture run then completed but failed its usability gates: 13/16 exact semantic
+proposals were structurally valid and one final continuation reached its token cap. The
+[Phase 2 plan](prospective-language-pilot-v1-phase2-plan.md) and
+[negative result](prospective-language-pilot-v1-phase2-results.md) preserve that outcome. The deterministic controller
+still safely covered every record with zero retries, APIs, services, actions, or executions.
+
+A separately locked exploratory Phase 3 was opened for the 11 already-valid, non-fallback clarification outputs. It is
+now stopped after one locked `unable_to_answer` / `do_not_know` response. The fictional scenario cards did not define
+the additional world facts requested by arbitrary model-generated questions, so the participant was not an independent
+observation channel for those facts. The remaining 10 responses will not be collected and no terminal continuation is
+authorized.
+
+The V224 conclusions remain the historical basis for this role separation; participant availability changes the
+external feasibility premise but does not retroactively create evidence.
+
+The final scientific record includes:
 
 1. [Cross-track evidence synthesis](cross-track-evidence-synthesis-through-v224.md)
 2. [Research stopping rule](research-stopping-rule-after-v224.md)
@@ -11,10 +45,11 @@ The active scientific status is frozen after V224 and the cross-track audit:
 5. [Reference architecture integration result](model-free-reference-architecture-integration-results.md)
 6. [Dependency-drift provenance addendum](dependency-drift-provenance-addendum-through-v224.md)
 7. [Post-V224 consolidation result](post-v224-consolidation-results.md)
+8. [Final closure](simulagent-final-closure.md)
+9. [Unresolved and unpursued tracks](simulagent-unpursued-tracks.md)
 
-These documents supersede every earlier roadmap authorization. No new experiment, protected/request-language access,
-local or API model run, training, ontology registration, trusted-state mutation, service action, or execution is
-authorized. The program may reopen experimentally only under the external-state conditions in the stopping rule.
+The closure documents supersede every earlier roadmap authorization. A scientifically separate successor may reuse
+the reference architecture only under a new frozen protocol and explicit authorization.
 
 ## Machine-readable evidence
 
@@ -25,6 +60,7 @@ authorized. The program may reopen experimentally only under the external-state 
 - `outputs/cross-track-evidence-audit-through-v224/dependency-drift-provenance-addendum.json`
 - `outputs/model-free-reference-architecture/result.json`
 - `outputs/model-free-reference-architecture/audit.json`
+- `outputs/simulagent-final-closure/result.json`
 
 ## Historical roadmap rule
 

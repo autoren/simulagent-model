@@ -1,0 +1,70 @@
+{
+  "schema_version": "simulagent-final-closure-1.0.0",
+  "project": "simulagent",
+  "project_status": "closed",
+  "effective_date": "2026-08-19",
+  "decision": "close_active_experimental_program_and_preserve_read_only_evidence",
+  "canonical_documents": {
+    "final_closure": "docs/simulagent-final-closure.md",
+    "unresolved_track_registry": "docs/simulagent-unpursued-tracks.md",
+    "historical_synthesis": "docs/cross-track-evidence-synthesis-through-v224.md",
+    "historical_stopping_rule": "docs/research-stopping-rule-after-v224.md"
+  },
+  "prospective_pilot": {
+    "study_id": "prospective-language-pilot-v1",
+    "participant_code": "P001",
+    "phase1": {
+      "status": "complete_and_frozen",
+      "locked_record_count": 16,
+      "assistant_generation_count": 0,
+      "public_requests_sha256": "df3667ebdfa73b6308eb7f59efd1d4c90ed5436efbcc514d166bc7cf31568aa3"
+    },
+    "phase2": {
+      "status": "complete_negative",
+      "record_count": 16,
+      "structurally_valid_count": 13,
+      "final_phase_token_limit_hit_count": 1,
+      "qualified_for_clarification_batch": false,
+      "result_sha256": "a42ff35a789a19c9823b570fc5b14d91adeb2e9bc1192d530b8e002be28206cf"
+    },
+    "phase3": {
+      "status": "stopped_protocol_design_failure",
+      "eligible_record_count": 11,
+      "locked_response_count": 1,
+      "remaining_response_count": 10,
+      "locked_response_status_counts": {
+        "unable_to_answer": 1
+      },
+      "terminal_run_authorized": false,
+      "stop_reason": "fictional_scenarios_did_not_define_an_independent_answer_channel_for_arbitrary_clarification_questions",
+      "state_sha256": "d521addfc7b4aa0c85202c5946888e40130b8fdb43ce4b4203a718a2887576f9"
+    }
+  },
+  "authorization": {
+    "new_participant_collection": false,
+    "new_model_or_api_runs": false,
+    "new_training_runs": false,
+    "terminal_continuation": false,
+    "protected_language_reopening": false,
+    "ontology_registration": false,
+    "trusted_state_mutation": false,
+    "service_calls": false,
+    "real_world_execution": false,
+    "automatic_monitoring": false,
+    "documentation_and_non_mutating_reproduction": true
+  },
+  "reopening_policy": {
+    "automatic_reopening": false,
+    "requires_explicit_new_user_authorization": true,
+    "requires_new_protocol": true,
+    "requires_fresh_role_separated_evidence": true,
+    "requires_independently_observable_semantics_or_task_outcomes": true,
+    "forbids_treating_model_consensus_or_simulated_people_as_independent_gold": true
+  },
+  "successor_projects": {
+    "must_be_scientifically_separate": true,
+    "may_reuse_reference_architecture": true,
+    "may_not_retroactively_change_simulagent_claims": true
+  }
+}
+

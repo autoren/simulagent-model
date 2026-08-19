@@ -1,0 +1,82 @@
+{
+  "schema_version": "simulagent-final-closure-result-1.0.0",
+  "project": "simulagent",
+  "project_status": "closed",
+  "effective_date": "2026-08-19",
+  "decision": "close_active_experimental_program_and_preserve_read_only_evidence",
+  "scientific_disposition": {
+    "mechanism_level_architecture_established": true,
+    "general_open_world_language_understanding_established": false,
+    "prospective_semantic_calibration_established": false,
+    "real_world_execution_safety_established": false,
+    "additional_model_scaling_justified_under_current_evidence": false
+  },
+  "prospective_pilot": {
+    "study_id": "prospective-language-pilot-v1",
+    "phase1": {
+      "status": "complete_and_frozen",
+      "locked_record_count": 16,
+      "assistant_generation_count": 0
+    },
+    "phase2": {
+      "status": "complete_negative",
+      "record_count": 16,
+      "structurally_valid_count": 13,
+      "structural_validity_rate": 0.8125,
+      "final_phase_token_limit_hit_count": 1,
+      "safe_fallback_count": 3,
+      "route_counts": {
+        "CLARIFY": 11,
+        "DEFER": 4,
+        "PLAN": 1
+      },
+      "qualified_for_clarification_batch": false,
+      "retry_count": 0,
+      "api_call_count": 0,
+      "real_service_call_count": 0,
+      "actual_execution_count": 0
+    },
+    "phase3": {
+      "status": "stopped_protocol_design_failure",
+      "eligible_record_count": 11,
+      "locked_response_count": 1,
+      "remaining_response_count": 10,
+      "locked_unable_to_answer_count": 1,
+      "terminal_run_authorized": false,
+      "terminal_run_count": 0,
+      "participant_failure": false
+    }
+  },
+  "frozen_source_hashes": {
+    "phase1_public_requests": "df3667ebdfa73b6308eb7f59efd1d4c90ed5436efbcc514d166bc7cf31568aa3",
+    "phase2_result": "a42ff35a789a19c9823b570fc5b14d91adeb2e9bc1192d530b8e002be28206cf",
+    "phase2_controller_outputs": "0d414c8fdd3d0afa02c16d5c68c79b68bc205c653fab3d5aa50ed1adb56ed73b",
+    "phase3_state": "d521addfc7b4aa0c85202c5946888e40130b8fdb43ce4b4203a718a2887576f9",
+    "phase3_public_answers": "0f3d2c7dc95e2ea66d0d2f87bb6c35199d6cd834f5de3c267ce09ce007c5171d",
+    "phase3_private_records": "ef6b10ab01a4137e65cc4d2dbfa89f17079d11dd9d6fe0a1e8f971edb2000916",
+    "phase3_manifest": "a5aff54245bb01ecf27779625b7a533a81cbf5ebb4e052b96a0facbf81888f04"
+  },
+  "closure_artifact_hashes": {
+    "config": "2c50a466707f78d147582133fba46d80923dff00a680c41b63015a8c431f7258",
+    "final_closure_document": "8ef6563c252075887fc61e7227ed14c90b2abef5796ef5d32ae10a4d1473e5d0",
+    "unresolved_track_registry": "fb00f7df912cf52438e5f76439e612b87c502ccef24db4ea1b4bf30ba7d370f2",
+    "local_pilot_closure_disposition": "4e3d6b31ac656a9ab31b3e3d89416d9b86d19c8ae33a69031d69af383e466fda"
+  },
+  "authorization": {
+    "new_experiments": false,
+    "new_participant_collection": false,
+    "new_model_or_api_runs": false,
+    "terminal_continuation": false,
+    "service_actions_or_execution": false,
+    "automatic_reopening": false,
+    "documentation_and_non_mutating_reproduction": true
+  },
+  "verification": {
+    "status": "pass",
+    "locked_source_hashes_checked": true,
+    "phase3_exact_locked_response_count_checked": true,
+    "terminal_artifact_absence_checked": true,
+    "participant_ui_closed_checked": true,
+    "unresolved_track_registry_present": true
+  }
+}
